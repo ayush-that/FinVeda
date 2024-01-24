@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f9fd; /* Fresh light blue background color */
+    color: #333; /* Dark text color */
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    color: #3498db; /* Breezy blue heading color */
+}
+
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff; /* White background for the form */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow for the form */
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #2980b9; /* Dark blue label color */
+}
+
+input[type="radio"] {
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #3498db; /* Breezy blue button color */
+    color: #fff; /* White text color */
+    padding: 10px 20px;
+    border: 2px solid #3498db; /* Bordered button with breezy blue border */
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+#quizResult {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #2ecc71; /* Emerald green result color */
+}
+
+/* Add stars to the correct answers */
+input[type="radio"]:checked+label::before {
+    content: '\2605'; /* Unicode character for a star */
+    color: #f39c12; /* Orange star color */
+    margin-right: 5px;
+}
