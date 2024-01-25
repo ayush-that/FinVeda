@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fin veda</title>
+    <link rel="stylesheet" type="text/css" href="cal.css">
+
+
+</head>
+
+<body>
+
+<!-- SIP Calculator Section -->
+<section>
+    <h2>SIP Calculator</h2>
+
+    <!-- SIP Calculator Content -->
+    <div>
+        <h3>What is SIP (Systematic Investment Plan)?</h3>
+        <p>SIP, or Systematic Investment Plan, is a disciplined way of investing in mutual funds. It allows you to invest a fixed amount regularly, typically monthly, in a mutual fund scheme of your choice.</p>
+
+        <h3>Benefits of SIP:</h3>
+        <ul>
+            <li> SIP encourages regular and disciplined investing, helping you avoid the temptation of timing the market.</li>
+            <li> SIP allows you to buy more units when prices are low and fewer units when prices are high, resulting in better average costs over time.</li>
+            <li>The longer you stay invested, the greater the power of compounding. SIP enables you to benefit from the compounding effect over the long term.</li>
+            <li> SIP allows you to start with a small amount and increase your investment gradually as your financial situation improves.</li>
+        </ul>
+
+        <!-- SIP Calculator Form -->
+        <form id="sipCalculatorForm">
+            <label for="monthlyInvestment">Monthly Investment Amount (INR):</label>
+            <input type="number" id="monthlyInvestment" name="monthlyInvestment" required>
+
+            <label for="annualInterestRate">Annual Interest Rate (%):</label>
+            <input type="number" id="annualInterestRate" name="annualInterestRate" required>
+
+            <label for="investmentPeriod">Investment Period (Years):</label>
+            <input type="number" id="investmentPeriod" name="investmentPeriod" required>
+
+            <button type="button" onclick="calculateSIP()">Calculate Returns</button>
+
+            <!-- Display result here -->
+            <div id="sipResult"></div>
+        </form>
+    </div>
+</section>
+
+<!-- PPF Calculator Section -->
+<section>
+    <h2>PPF Calculator</h2>
+
+    <!-- PPF Content -->
+    <div>
+        <h3>What is PPF (Public Provident Fund)?</h3>
+        <p>PPF, or Public Provident Fund, is a popular long-term savings scheme backed by the Government of India. It allows individuals to invest a fixed amount annually for a specified period, offering attractive interest rates and tax benefits.</p>
+
+        <h3>Benefits of PPF:</h3>
+        <ul>
+            <li> PPF is a government-backed investment, ensuring the safety and security of your savings.</li>
+            <li> PPF provides competitive interest rates that are compounded annually, contributing to your wealth over time.</li>
+            <li>Contributions to PPF are eligible for tax deductions under Section 80C of the Income Tax Act.</li>
+            <li>PPF has a lock-in period, promoting long-term savings habits and financial discipline.</li>
+        </ul>
+
+    <!-- PPF Calculator Form -->
+    <form id="ppfCalculatorForm">
+        <label for="principalAmount">Principal Amount (INR):</label>
+        <input type="number" id="principalAmount" name="principalAmount" required>
+
+        <label for="annualInterestRate">Annual Interest Rate (%):</label>
+        <input type="number" id="annualInterestRatePPF" name="annualInterestRatePPF" required>
+
+        <label for="investmentPeriod">Investment Period (Years):</label>
+        <input type="number" id="investmentPeriodPPF" name="investmentPeriodPPF" required>
+
+        <button type="button" onclick="calculatePPF()">Calculate Returns</button>
+
+        <!-- Display result here -->
+        <div id="ppfResult"></div>
+    </form>
+</section>
+
+
+
+<script src="cal.js"></script>
+</body>
+</html>
+
+
