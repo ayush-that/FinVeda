@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Mutual Fund Investment Calculator</title>
+    <title>Tools - FinVeda</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
@@ -43,9 +43,6 @@
           <div class="row">
             <div class="col-lg-12">
               <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="../index.html">
-                <img src="../assets/images/logo.svg" alt="Logo" />
-                </a>
                 <button
                   class="navbar-toggler"
                   type="button"
@@ -75,6 +72,9 @@
                     </li>
                     <li class="nav-item">
                       <a class="page-scroll" href="../blog.html">Blogs 📰</a>
+                    </li>
+                    <li class="nav-item active">
+                      <a class="page-scroll" href="../quiz.html">Quiz 🤔</a>
                     </li>
                   </ul>
                 </div>
@@ -143,221 +143,201 @@
         <div id="particles-1" class="particles"></div>
       </div>
     </header>
-
-
-<link rel="stylesheet" type="text/css" href="sipcalculatorCss.css">
-        <script type="text/javascript" src="sipcalculatorJs.js"></script>
-    
+    <link rel="stylesheet" type="text/css" href="sipcalculatorCss.css">
+    <script type="text/javascript" src="sipcalculatorJs.js"></script>
     <body class="body-background">
-        <div class="header"><h3>Mutual Fund Investment Calculator</h3></div>
-        <div class="page-container">
-            <div class="switch-container">
-                <div class="radio-button">
-                    <label for="sip">SIP</label>
-                    <input type="radio" checked name="checked" value="SIP"><br>
-                    <label for="lumpsum">LumpSum</label>
-                    <input type="radio" name="checked" value="LumpSum">
-                </div>
-                <div class="dropdown">
-                    Currency
-                    <select onchange="currencyChange(this)" id="currency" class="currency">
-                        <!-- &#8377; -->
-                        <option value="Rs">&#8377; &nbsp;INR</option>
-                        <option value="$">&#128176;USD</option>
-                        <!-- &#x24; -->
-                    </select>
-            </div>
+      <div class="header">
+        <h3>Mutual Fund Investment Calculator</h3>
+      </div>
+      <div class="page-container">
+        <div class="switch-container">
+          <div class="radio-button">
+            <label for="sip">SIP</label>
+            <input type="radio" checked name="checked" value="SIP"><br>
+            <label for="lumpsum">LumpSum</label>
+            <input type="radio" name="checked" value="LumpSum">
+          </div>
+          <div class="dropdown">
+            Currency
+            <select onchange="currencyChange(this)" id="currency" class="currency">
+              <!-- &#8377; -->
+              <option value="Rs">&#8377; &nbsp;INR</option>
+              <option value="$">&#128176;USD</option>
+              <!-- &#x24; -->
+            </select>
+          </div>
         </div>
-            <div class="input-container">
-                <div>
-                    <div><b>Monthly investment</b></div>
-                    <div><input id="investment" type="text" onchange="commas(this)"/></div>
-                    <br/>
-                    <div><b>Time period (yr)</b></div>
-                    <div><input id="years" type="number"></div> 
-                    <br/>
-                    <div><b>Expected return rate (p.a)</b></div>
-                    <div><input id="return-rate"  type="text" onchange="percentage(this)")/></div> 
-                </div>
-            </div>
-            </br/>
-            <div class="btn-calculate">
-                <button type="button" onclick="calculateResult()">
-                    Calculate
-                </button>
-            </div>
-            </br/>
-            <div style="display: flex;">
-                <div class="result"><b>Result :</b></div>
-              <div class="result-container">
-                    <div>Monthly Investment for <span id="mode-1">SIP</span></div>
-                    <div><span>Rs.</span>&nbsp;<span id="input-1"></span></div>
-                    <br/>
-                    <div>Number of Years <span id="mode-2">SIP</span></div>
-                    <div><span>Years:</span>&nbsp;<span id="input-2"></span></div> 
-                    <br/>
-                    <div>Expected Rate of Return <span id="mode-3">SIP</span></div>
-                    <div><span>%:</span>&nbsp;<span id="input-3"></span></div> 
-            </div>
-            <div class="result-container">
-                <div>Total Investment</div>
-                <div><span id="currency-change-1">Rs.</span>&nbsp;<span id="total"></span></div>
-                <br/>
-                <div>Wealth Gained</div>
-                <div><span id="currency-change-2">Rs.</span>&nbsp;<span id="wealth-gained"></span></div> 
-                <br/>
-                <div>Maturity Value</div>
-                <div><span id="currency-change-3">Rs.</span>&nbsp;<span id="maturity-value"></span></div> 
+        <div class="input-container">
+          <div>
+            <div><b>Monthly investment</b></div>
+            <div><input id="investment" type="text" onchange="commas(this)"/></div>
+            <br/>
+            <div><b>Time period (yr)</b></div>
+            <div><input id="years" type="number"></div>
+            <br/>
+            <div><b>Expected return rate (p.a)</b></div>
+            <div><input id="return-rate"  type="text" onchange="percentage(this)")/></div>
+          </div>
         </div>
-    </div>            
+        </br/>
+        <div class="btn-calculate">
+          <button type="button" onclick="calculateResult()">
+          Calculate
+          </button>
         </div>
-    </div>
-    </body>
-    <footer id="footer" class="footer-area pt-120">
-      <div class="container">
-        <div
-          class="subscribe-area wow fadeIn"
-          data-wow-duration="1s"
-          data-wow-delay="0.5s"
-          >
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="subscribe-content mt-45">
-                <h2 class="subscribe-title">
-                  Subscribe Our Newsletter <span>get regular updates</span>
-                </h2>
-              </div>
+        </br/>
+        <div style="display: flex;">
+          <div class="result"><b>Result :</b></div>
+          <div class="result-container">
+            <div>Monthly Investment for <span id="mode-1">SIP</span></div>
+            <div><span>Rs.</span>&nbsp;<span id="input-1"></span></div>
+            <br/>
+            <div>Number of Years <span id="mode-2">SIP</span></div>
+            <div><span>Years:</span>&nbsp;<span id="input-2"></span></div>
+            <br/>
+            <div>Expected Rate of Return <span id="mode-3">SIP</span></div>
+            <div><span>%:</span>&nbsp;<span id="input-3"></span></div>
+          </div>
+          <div class="result-container">
+            <div>Total Investment</div>
+            <div><span id="currency-change-1">Rs.</span>&nbsp;<span id="total"></span></div>
+            <br/>
+            <div>Wealth Gained</div>
+            <div><span id="currency-change-2">Rs.</span>&nbsp;<span id="wealth-gained"></span></div>
+            <br/>
+            <div>Maturity Value</div>
+            <div><span id="currency-change-3">Rs.</span>&nbsp;<span id="maturity-value"></span></div>
+          </div>
+        </div>
+      </div>
+      </div>
+  </body>
+  <footer id="footer" class="footer-area pt-120">
+    <div class="container">
+      <div
+        class="subscribe-area wow fadeIn"
+        data-wow-duration="1s"
+        data-wow-delay="0.5s"
+        >
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="subscribe-content mt-45">
+              <h2 class="subscribe-title">
+                Subscribe Our Newsletter <span>get regular updates</span>
+              </h2>
             </div>
-            <div class="col-lg-6">
-              <div class="subscribe-form mt-50">
-                <form action="#">
-                  <input type="text" placeholder="Enter Email" />
-                  <button class="main-btn">Subscribe</button>
-                </form>
-              </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="subscribe-form mt-50">
+              <form action="#">
+                <input type="text" placeholder="Enter Email" />
+                <button class="main-btn">Subscribe</button>
+              </form>
             </div>
           </div>
         </div>
-        <div class="footer-widget pb-100">
-          <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-8">
-              <div
-                class="footer-about mt-50 wow fadeIn"
-                data-wow-duration="1s"
-                data-wow-delay="0.2s"
-                >
-                <a class="logo" href="#">
-                <img src="../assets/images/logo.svg" alt="logo" />
-                </a>
-                <p class="text">
-                  We at FinVeda aim to make you a stock market Guru easy with our AI powered teaching and financial blogs.
-                </p>
-                <ul class="social">
-                  <li>
-                    <a href="#"><i class="lni-facebook-filled"></i></a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="lni-twitter-filled"></i></a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="lni-instagram-filled"></i></a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="lni-linkedin-original"></i></a>
-                  </li>
-                </ul>
-              </div>
+      </div>
+      <div class="footer-widget pb-100">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-8">
+            <div
+              class="footer-about mt-50 wow fadeIn"
+              data-wow-duration="1s"
+              data-wow-delay="0.2s"
+              >
+              <a class="logo" href="../index.html">
+              <img src="../assets/images/logo.svg" alt="logo" />
+              </a>
+              <p class="text">
+                We at FinVeda aim to make you a stock market Guru easy with our AI powered teaching and financial blogs.
+              </p>
             </div>
-            <div class="col-lg-5 col-md-7 col-sm-7">
-              <div class="footer-link d-flex mt-50 justify-content-md-between">
-                <div
-                  class="link-wrapper wow fadeIn"
-                  data-wow-duration="1s"
-                  data-wow-delay="0.4s"
-                  >
-                  <div class="footer-title">
-                    <h4 class="title">Quick Link</h4>
-                  </div>
-                  <ul class="link">
-                    <li><a href="#">Road Map</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Refund Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Pricing</a></li>
-                  </ul>
-                </div>
-                <div
-                  class="link-wrapper wow fadeIn"
-                  data-wow-duration="1s"
-                  data-wow-delay="0.6s"
-                  >
-                  <div class="footer-title">
-                    <h4 class="title">Resources</h4>
-                  </div>
-                  <ul class="link">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Page</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-5 col-sm-5">
+          </div>
+          <div class="col-lg-5 col-md-7 col-sm-7">
+            <div class="footer-link d-flex mt-50 justify-content-md-between">
               <div
-                class="footer-contact mt-50 wow fadeIn"
+                class="link-wrapper wow fadeIn"
                 data-wow-duration="1s"
-                data-wow-delay="0.8s"
+                data-wow-delay="0.4s"
                 >
                 <div class="footer-title">
-                  <h4 class="title">Contact Us</h4>
+                  <h4 class="title">Quick Link</h4>
                 </div>
-                <ul class="contact">
-                  <li>+809272XX23</li>
-                  <li>finveda345@gmail.com</li>
-                  <li>https://fin-veda.vercel.app/</li>
-                  <li>
-                    Delhi, India
-                  </li>
+                <ul class="link">
+                  <li><a href="../blogs/privacy-policy.html">Privacy Policy</a></li>
+                  <li><a href="../blogs/refund-policy.html">Refund Policy</a></li>
+                  <li><a href="../blogs/terms-of-service.html">Terms of Service</a></li>
+                </ul>
+              </div>
+              <div
+                class="link-wrapper wow fadeIn"
+                data-wow-duration="1s"
+                data-wow-delay="0.6s"
+                >
+                <div class="footer-title">
+                  <h4 class="title">Resources</h4>
+                </div>
+                <ul class="link">
+                  <li><a href="../index.html">Home</a></li>
+                  <li><a href="../login.html">Page</a></li>
+                  <li><a href="../blog.html">Blog</a></li>
                 </ul>
               </div>
             </div>
           </div>
+          <div class="col-lg-3 col-md-5 col-sm-5">
+            <div
+              class="footer-contact mt-50 wow fadeIn"
+              data-wow-duration="1s"
+              data-wow-delay="0.8s"
+              >
+              <div class="footer-title">
+                <h4 class="title">Contact Us</h4>
+              </div>
+              <ul class="contact">
+                <li>ayush1337@hotmail.com</li>
+                <li>fin-veda.vercel.app/</li>
+                <li>
+                  Delhi, India
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="footer-copyright">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="copyright d-sm-flex justify-content-between">
-                <div class="copyright-content">
-                  <p class="text">
-                    © Copyright 2024 FinVeda. All rights reserved.
-                  </p>
-                </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="copyright d-sm-flex justify-content-between">
+              <div class="copyright-content">
+                <p class="text">
+                  © 2024 FinVeda. All rights reserved, Built with ♥ in India
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div id="particles-2"></div>
-    </footer>
-    <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
-    <script src="../assets/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="../assets/js/vendor/modernizr-3.7.1.min.js"></script>
-    <script src="../assets/js/popper.min.js"></script>
-    <script src="../assets/js/bootstrap.min.js"></script>
-    <script src="../assets/js/plugins.js"></script>
-    <script src="../assets/js/slick.min.js"></script>
-    <script src="../assets/js/ajax-contact.js"></script>
-    <script src="../assets/js/waypoints.min.js"></script>
-    <script src="../assets/js/jquery.counterup.min.js"></script>
-    <script src="../assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="../assets/js/jquery.easing.min.js"></script>
-    <script src="../assets/js/scrolling-nav.js"></script>
-    <script src="../assets/js/wow.min.js"></script>
-    <script src="../assets/js/particles.min.js"></script>
-    <script src="../assets/js/main.js"></script>
-    <script src="../https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-    <script src="../https://mediafiles.botpress.cloud/5e160793-5606-4412-ba4c-337e416f14fe/webchat/config.js" defer></script>
+    </div>
+    <div id="particles-2"></div>
+  </footer>
+  <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
+  <script src="../assets/js/vendor/jquery-1.12.4.min.js"></script>
+  <script src="../assets/js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="../assets/js/popper.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/plugins.js"></script>
+  <script src="../assets/js/slick.min.js"></script>
+  <script src="../assets/js/ajax-contact.js"></script>
+  <script src="../assets/js/waypoints.min.js"></script>
+  <script src="../assets/js/jquery.counterup.min.js"></script>
+  <script src="../assets/js/jquery.magnific-popup.min.js"></script>
+  <script src="../assets/js/jquery.easing.min.js"></script>
+  <script src="../assets/js/scrolling-nav.js"></script>
+  <script src="../assets/js/wow.min.js"></script>
+  <script src="../assets/js/particles.min.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+  <script src="https://mediafiles.botpress.cloud/5e160793-5606-4412-ba4c-337e416f14fe/webchat/config.js" defer></script>
   </body>
 </html>
