@@ -1,5 +1,4 @@
 # FinVeda
-# FinVeda
 
 FinVeda is a comprehensive web application designed to enhance financial literacy. It offers a range of features, including an intelligent AI chatbot, financial blogs, financial calculation tools, and up-to-date market trends.
 
