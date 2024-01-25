@@ -1,0 +1,126 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f8ff; /* very light blue */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    border: 10px solid #e6e6e6; /* light gray border */
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+    text-align: center;
+}
+
+.calculator-section {
+    max-width: 600px;
+    margin: 0 auto; /* Center align the calculator section */
+}
+
+h2 {
+    color: #004080;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #0066cc;
+}
+
+/* Make specific headings bold and enlarged */
+label[for="monthlyInvestment"],
+label[for="annualInterestRate"],
+label[for="investmentPeriod"],
+label[for="principalAmount"],
+label[for="annualInterestRatePPF"],
+label[for="investmentPeriodPPF"] {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+p {
+    line-height: 1.6;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+form {
+    display: grid;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+label {
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #004080;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+button:hover {
+    background-color: #00264d;
+}
+
+#sipResult,
+#ppfResult {
+    font-weight: bold;
+    color: #333;
+    margin-top: 15px;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* Star pop-up animation for SIP result */
+#sipResult::after {
+    content: '\2605'; /* Unicode character for a star */
+    display: block;
+    font-size: 2em;
+    color: gold;
+    animation: popUp 0.5s ease-out 1s forwards;
+}
+
+/* Rs pop-up animation for PPF result */
+#ppfResult::after {
+    content: '₹'; /* Unicode character for Rupee symbol */
+    display: block;
+    font-size: 1.5em;
+    color: #004080;
+    animation: popUp 0.5s ease-out 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes popUp {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+
