@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/default.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+        <link rel="stylesheet" href="assets/css/popup.css" />
+
   </head>
 <body>    <div class="preloader">
       <div class="loader">
@@ -132,10 +134,20 @@
                   </ul>
                 </div>
                 <div class="navbar-btn d-none d-sm-inline-block">
-                  <a class="main-btn" data-scroll-nav="0" href="./index.html"
-                    >Login/Register 💻</a
-                    >
-                </div>
+<div class="navbar-btn d-none d-sm-inline-block">
+  <div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>🚧 Feature in Development 🚧</p>
+  </div>
+
+</div>
+  <a class="main-btn" data-scroll-nav="0" href="#"
+    onclick="openModal()" >Login/Register 💻</a
+  >
+</div>
               </nav>
             </div>
           </div>
@@ -262,7 +274,7 @@
                 <div class="subscribe-form mt-50">
                   <form action="#">
                     <input type="text" placeholder="Enter Email" />
-                    <button class="main-btn">Subscribe</button>
+  <button class="main-btn" onclick="event.preventDefault(); openModal();">Subscribe</button>
                   </form>
                 </div>
               </div>
@@ -356,6 +368,8 @@
       <script src="../assets/js/popper.min.js"></script>
       <script src="../assets/js/bootstrap.min.js"></script>
       <script src="../assets/js/plugins.js"></script>
+            <script src="../assets/js/popup.js"></script>
+
       <script src="../assets/js/slick.min.js"></script>
       <script src="../assets/js/ajax-contact.js"></script>
       <script src="../assets/js/waypoints.min.js"></script>
