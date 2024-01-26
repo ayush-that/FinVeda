@@ -2,12 +2,12 @@
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Quiz - FinVeda</title>
+    <title>Login/Register - FinVeda</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="shortcut icon"
-      href="assets/images/favicon.ico"
+      href="./assets/images/favicon.ico"
       type="image/png"
       />
     <link rel="stylesheet" href="assets/css/animate.css" />
@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="assets/css/default.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/quiz.css" />
+    <link rel="stylesheet" href="assets/css/popup.css" />
   </head>
   <body>
     <div class="preloader">
@@ -56,7 +57,6 @@
                 <span class="toggler-icon"></span>
                 <span class="toggler-icon"></span>
                 </button>
-                
                 <div
                   class="collapse navbar-collapse sub-menu-bar"
                   id="navbarSupportedContent"
@@ -69,19 +69,28 @@
                       <a class="page-scroll" href="./trends.html">Trends 📈</a>
                     </li>
                     <li class="nav-item">
-                      <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
+                      <a class="page-scroll" href="./tools/sip.html"
+                        >Tools 🔧</a
+                        >
                     </li>
                     <li class="nav-item">
                       <a class="page-scroll" href="./blog.html">Blogs 📰</a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                       <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
                     </li>
                   </ul>
                 </div>
                 <div class="navbar-btn d-none d-sm-inline-block">
-                  <a class="main-btn" data-scroll-nav="0" href="./login.html"
-                    >Login/Register 💻</a
+                  <div id="myModal" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                      <span class="close">&times;</span>
+                      <p>🚧 Feature in Development 🚧</p>
+                    </div>
+                  </div>
+                  <a class="main-btn" data-scroll-nav="0" href="#"
+                    onclick="openModal()" >Login/Register 💻</a
                     >
                 </div>
               </nav>
@@ -117,10 +126,12 @@
                   data-wow-duration="1.3s"
                   data-wow-delay="0.8s"
                   >
-                  Wanna learn how to grow your money to become rich? We have made becoming a stock market Guru easy with our AI powered finance advisor - <b>Arth Sathi 🤵🏻</b>
+                  Wanna learn how to grow your money to become rich? We have
+                  made becoming a stock market Guru easy with our AI
+                  powered finance advisor - <b>Arth Sathi 🤵🏻</b>
                 </p>
                 <a
-                  href="#"
+                  href="./index.html"
                   class="main-btn wow fadeInUp"
                   data-wow-duration="1.3s"
                   data-wow-delay="1.1s"
@@ -144,223 +155,131 @@
         <div id="particles-1" class="particles"></div>
       </div>
     </header>
-    <div class="blog-content">
-      <br><br><br><br>
-      <p></p>
-      <h2>Test you knowledge</h2>
-      </p><br>
-      <form id="financeQuizForm">
-        <!-- Question 1 -->
-        <label>1. What is the primary purpose of creating a budget?</label>
-        <input type="radio" name="q1" value="A"> A. To restrict spending<br>
-        <input type="radio" name="q1" value="B"> B. To track income and expenses<br>
-        <input type="radio" name="q1" value="C"> C. To increase debt<br>
-        <input type="radio" name="q1" value="D"> D. To eliminate savings<br>
-        <br>
-        <!-- Question 2 -->
-        <label>2. Why is maintaining an emergency fund important?</label>
-        <input type="radio" name="q2" value="A"> A. It earns high interest<br>
-        <input type="radio" name="q2" value="B"> B. It provides investment opportunities<br>
-        <input type="radio" name="q2" value="C"> C. It covers unexpected expenses<br>
-        <input type="radio" name="q2" value="D"> D. It helps build credit<br>
-        <br>
-        <!-- Credit and Debt -->
-        <!-- Question 3 -->
-        <label>3. What is a credit score based on?</label>
-        <input type="radio" name="q3" value="A"> A. Monthly income<br>
-        <input type="radio" name="q3" value="B"> B. Number of credit cards<br>
-        <input type="radio" name="q3" value="C"> C. Payment history and debt utilization<br>
-        <input type="radio" name="q3" value="D"> D. Social media activity<br>
-        <br>
-        <!-- Question 4 -->
-        <label>4. How does compound interest affect debt?</label>
-        <input type="radio" name="q4" value="A"> A. It reduces interest over time<br>
-        <input type="radio" name="q4" value="B"> B. It increases debt exponentially<br>
-        <input type="radio" name="q4" value="C"> C. It only applies to savings accounts<br>
-        <input type="radio" name="q4" value="D"> D. It has no impact on debt<br>
-        <br>       
-        <!-- Question 5 -->
-        <label>5. What is the primary purpose of diversification in an investment portfolio?</label>
-        <input type="radio" name="q5" value="A"> A. To maximize returns<br>
-        <input type="radio" name="q5" value="B"> B. To minimize risk<br>
-        <input type="radio" name="q5" value="C"> C. To focus on a single investment<br>
-        <input type="radio" name="q5" value="D"> D. To avoid taxes<br>
-        <br>
-        <!-- Question 6 -->
-        <label>6. What is a stock?</label>
-        <input type="radio" name="q6" value="A"> A. A type of bond<br>
-        <input type="radio" name="q6" value="B"> B. Ownership in a company<br>
-        <input type="radio" name="q6" value="C"> C. A savings account<br>
-        <input type="radio" name="q6" value="D"> D. A loan to the government<br>
-        <br>       
-        <!-- Question 7 -->
-        <label>7. Why is starting to save for retirement early advantageous?</label>
-        <input type="radio" name="q7" value="A"> A. Early savers receive higher interest rates<br>
-        <input type="radio" name="q7" value="B"> B. Retirement accounts are only available to young savers<br>
-        <input type="radio" name="q7" value="C"> C. Compounding can work over a longer period<br>
-        <input type="radio" name="q7" value="D"> D. Early savers pay fewer taxes<br>
-        <br>
-        <!-- Question 8 -->
-        <label>8. What is the main difference between a 401(k) and an IRA?</label>
-        <input type="radio" name="q8" value="A"> A. Contribution limits<br>
-        <input type="radio" name="q8" value="B"> B. Eligibility criteria<br>
-        <input type="radio" name="q8" value="C"> C. Investment options<br>
-        <input type="radio" name="q8" value="D"> D. Tax treatment<br>
-        <br>        
-        <!-- Question 9 -->
-        <label>9. Why is health insurance important?</label>
-        <input type="radio" name="q9" value="A"> A. It helps save for retirement<br>
-        <input type="radio" name="q9" value="B"> B. It covers unexpected expenses<br>
-        <input type="radio" name="q9" value="C"> C. It protects against medical costs<br>
-        <input type="radio" name="q9" value="D"> D. It provides life coverage<br>
-        <br>
-        <!-- Question 10 -->
-        <label>10. What does life insurance primarily provide?</label>
-        <input type="radio" name="q10" value="A"> A. Investment returns<br>
-        <input type="radio" name="q10" value="B"> B. Retirement income<br>
-        <input type="radio" name="q10" value="C"> C. Death benefit to beneficiaries<br>
-        <input type="radio" name="q10" value="D"> D. Home insurance<br>
-        <br>
-        <button type="button" class="submit-button" onclick="gradeQuiz()">Submit Answers</button>
-        <div id="quizResult"></div>
-      </form>
-      <br><br>
-      <div id="quizResult"></div>
-    </div>
-    <style>
-      .blog-content {
-      text-align: left;
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 80%; /* Adjust this value to increase or decrease the margins */
-      }
-    </style>
-  </body>
-  <footer id="footer" class="footer-area pt-120">
-    <div class="container">
-      <div
-        class="subscribe-area wow fadeIn"
-        data-wow-duration="1s"
-        data-wow-delay="0.5s"
-        >
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="subscribe-content mt-45">
-              <h2 class="subscribe-title">
-                Subscribe Our Newsletter <span>get regular updates</span>
-              </h2>
+    <footer id="footer" class="footer-area pt-120">
+      <div class="container">
+        <div
+          class="subscribe-area wow fadeIn"
+          data-wow-duration="1s"
+          data-wow-delay="0.5s"
+          >
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="subscribe-content mt-45">
+                <h2 class="subscribe-title">
+                  Subscribe Our Newsletter <span>get regular updates</span>
+                </h2>
+              </div>
             </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="subscribe-form mt-50">
-              <form action="#">
-                <input type="text" placeholder="Enter Email" />
-  <button class="main-btn" onclick="event.preventDefault(); openModal();">Subscribe</button>
-              </form>
+            <div class="col-lg-6">
+              <div class="subscribe-form mt-50">
+                <form action="#">
+                  <input type="text" placeholder="Enter Email" />
+                  <button class="main-btn" onclick="event.preventDefault(); openModal();">Subscribe</button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="footer-widget pb-100">
-        <div class="row">
-          <div class="col-lg-4 col-md-6 col-sm-8">
-            <div
-              class="footer-about mt-50 wow fadeIn"
-              data-wow-duration="1s"
-              data-wow-delay="0.2s"
-              >
-              <a class="logo" href="#">
-              <img src="./assets/images/logo.svg" alt="logo" />
-              </a>
-              <p class="text">
-                We at FinVeda aim to make you a stock market Guru easy with our AI powered teaching and financial blogs.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-5 col-md-7 col-sm-7">
-            <div class="footer-link d-flex mt-50 justify-content-md-between">
+        <div class="footer-widget pb-100">
+          <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-8">
               <div
-                class="link-wrapper wow fadeIn"
+                class="footer-about mt-50 wow fadeIn"
                 data-wow-duration="1s"
-                data-wow-delay="0.4s"
+                data-wow-delay="0.2s"
                 >
-                <div class="footer-title">
-                  <h4 class="title">Quick Link</h4>
-                </div>
-                <ul class="link">
-                  <li><a href="./blogs/privacy-policy.html">Privacy Policy</a></li>
-                  <li><a href="./blogs/refund-policy.html">Refund Policy</a></li>
-                  <li><a href="./blogs/terms-of-service.html">Terms of Service</a></li>
-                </ul>
-              </div>
-              <div
-                class="link-wrapper wow fadeIn"
-                data-wow-duration="1s"
-                data-wow-delay="0.6s"
-                >
-                <div class="footer-title">
-                  <h4 class="title">Resources</h4>
-                </div>
-                <ul class="link">
-                  <li><a href="./index.html">Home</a></li>
-                  <li><a href="./login.html">Page</a></li>
-                  <li><a href="./blog.html">Blog</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-5 col-sm-5">
-            <div
-              class="footer-contact mt-50 wow fadeIn"
-              data-wow-duration="1s"
-              data-wow-delay="0.8s"
-              >
-              <div class="footer-title">
-                <h4 class="title">Contact Us</h4>
-              </div>
-              <ul class="contact">
-                <li>ayush1337@hotmail.com</li>
-                <li>fin-veda.vercel.app</li>
-                <li>
-                  Delhi, India
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="footer-copyright">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="copyright d-sm-flex justify-content-between">
-              <div class="copyright-content">
+                <a class="logo" href="#">
+                <img src="../assets/images/logo.svg" alt="logo" />
+                </a>
                 <p class="text">
-                  © 2024 FinVeda. All rights reserved, Built with ♥ in India
+                  We at FinVeda aim to make you a stock market Guru easy with our AI powered teaching and financial blogs.
                 </p>
               </div>
             </div>
+            <div class="col-lg-5 col-md-7 col-sm-7">
+              <div class="footer-link d-flex mt-50 justify-content-md-between">
+                <div
+                  class="link-wrapper wow fadeIn"
+                  data-wow-duration="1s"
+                  data-wow-delay="0.4s"
+                  >
+                  <div class="footer-title">
+                    <h4 class="title">Quick Link</h4>
+                  </div>
+                  <ul class="link">
+                    <li><a href="./blogs/privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="./blogs/refund-policy.html">Refund Policy</a></li>
+                    <li><a href="./blogs/terms-of-service.html">Terms of Service</a></li>
+                  </ul>
+                </div>
+                <div
+                  class="link-wrapper wow fadeIn"
+                  data-wow-duration="1s"
+                  data-wow-delay="0.6s"
+                  >
+                  <div class="footer-title">
+                    <h4 class="title">Resources</h4>
+                  </div>
+                  <ul class="link">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./login.html">Page</a></li>
+                    <li><a href="./blog.html">Blog</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-5 col-sm-5">
+              <div
+                class="footer-contact mt-50 wow fadeIn"
+                data-wow-duration="1s"
+                data-wow-delay="0.8s"
+                >
+                <div class="footer-title">
+                  <h4 class="title">Contact Us</h4>
+                </div>
+                <ul class="contact">
+                  <li>ayush1337@hotmail.com</li>
+                  <li>fin-veda.vercel.app</li>
+                  <li>
+                    Delhi, India
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="copyright d-sm-flex justify-content-between">
+                <div class="copyright-content">
+                  <p class="text">
+                    © 2024 FinVeda. All rights reserved, Built with ♥ in India
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div id="particles-2"></div>
-  </footer>
-  <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
-  <script src="../assets/js/vendor/jquery-1.12.4.min.js"></script>
-  <script src="../assets/js/vendor/modernizr-3.7.1.min.js"></script>
-  <script src="../assets/js/popper.min.js"></script>
-  <script src="../assets/js/bootstrap.min.js"></script>
-  <script src="../assets/js/plugins.js"></script>
-  <script src="../assets/js/slick.min.js"></script>
-  <script src="../assets/js/ajax-contact.js"></script>
-  <script src="../assets/js/waypoints.min.js"></script>
-  <script src="../assets/js/jquery.counterup.min.js"></script>
-  <script src="../assets/js/jquery.magnific-popup.min.js"></script>
-  <script src="../assets/js/jquery.easing.min.js"></script>
-  <script src="../assets/js/scrolling-nav.js"></script>
-  <script src="../assets/js/wow.min.js"></script>
-  <script src="../assets/js/particles.min.js"></script>
-  <script src="../assets/js/main.js"></script>
-  <script src="../assets/js/quiz.js"></script>
+      <div id="particles-2"></div>
+    </footer>
+    <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
+    <script src="../assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="../assets/js/vendor/modernizr-3.7.1.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/plugins.js"></script>
+    <script src="../assets/js/slick.min.js"></script>
+    <script src="../assets/js/ajax-contact.js"></script>
+    <script src="../assets/js/waypoints.min.js"></script>
+    <script src="../assets/js/jquery.counterup.min.js"></script>
+    <script src="../assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="../assets/js/jquery.easing.min.js"></script>
+    <script src="../assets/js/scrolling-nav.js"></script>
+    <script src="../assets/js/wow.min.js"></script>
+    <script src="../assets/js/particles.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/popup.js"></script>
   </body>
 </html>
