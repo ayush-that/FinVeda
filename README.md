@@ -54,4 +54,4 @@ FinVeda is a dynamic financial literacy app that'll help you Learn finance with 
 
 ### 🪪 License
 
-FinVeda is free and open-source software licensed under the GNU General Public License v3.0.
+FinVeda is free and open-source software licensed under the GNU General Public License v3.0. It was built at IIT Jammu's Udyamitsav'24 Hackathon where it stood first in the GenAI track and third overall.
