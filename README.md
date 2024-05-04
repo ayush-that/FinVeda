@@ -14,17 +14,20 @@
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-### 🌟 Features
+### 🤔 Problem
 
-- AI Chatbot
+<img alt="Preview" align="right" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmFldGFqZDU1cGl5MGE1eWVpY2g1YTNqcW83eXBwcTNrendmamlqYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/uF6LnKJqqsoG7vborH/giphy.gif">
+
+<i>According to a survey by the OECD, <b>only 38% of adults in India are financially literate</b>. Finveda aims to solve this problem by providing a comprehensive and engaging platform for financial literacy education.</i>
+
+### 🌟 Features
+FinVeda is a dynamic financial literacy app that'll help you Learn finance with finesse. It has the following features:
+- <strong>AI Chatbot 
 - Finance Blogs
 - Market Trends
 - SIP Calculator
-- Finance Quiz
-
-![Preview](preview.gif)
-
-
+- Finance Quiz</strong>
+   
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 
