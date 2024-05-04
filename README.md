@@ -21,7 +21,7 @@
 <i>According to a survey by the OECD, <b>only 38% of adults in India are financially literate</b>. Finveda aims to solve this problem by providing a comprehensive and engaging platform for financial literacy education.</i>
 
 ### 🌟 Features
-FinVeda is a dynamic financial literacy app that'll help you Learn finance with finesse. It has the following features:
+FinVeda is a dynamic financial literacy app that'll help you Learn finance with finesse.
 - <strong>AI Chatbot 
 - Finance Blogs
 - Market Trends
