@@ -11,6 +11,7 @@ function gradeQuiz() {
         q9: "C", // Correct answer: C. It protects against medical costs
         q10: "C" // Correct answer: C. Death benefit to beneficiaries
     };
+    //explaination to each answers
     const explain = {
         q1: "The correct answer is B. To track income and expenses. Creating a budget helps in tracking where your money comes from and where it goes.",
         q2: "The correct answer is C. It covers unexpected expenses. An emergency fund provides a financial safety net for unexpected expenses like medical emergencies or car repairs.",
@@ -34,8 +35,10 @@ function gradeQuiz() {
             const userAnswer = selectedAnswer.value;
             if (userAnswer === answers[question]) {
                 score++;
+                //added green color
                 explanations += `<strong style="color: #2ecc71">${question.toUpperCase()}: Correct!</strong>`;
             } else {
+                // added colors and explanation
                 explanations += `<p style="color: red"> <strong>${question.toUpperCase()}: Incorrect.</strong><span style="color:green">${explain[question]}</span></p>`;
             }
         }
@@ -46,5 +49,6 @@ function gradeQuiz() {
                                <p>You scored ${score} out of ${Object.keys(answers).length}.</p>
                                <p>Explanations of Answers:</p>
                                <ul>${explanations}</ul>`;
+    // quiz section reset after clicking submit
     document.querySelector('#financeQuizForm').reset()
 }
