@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="stylesheet" href="../assets/css/quiz.css" />
     <link rel="stylesheet" href="../assets/css/popup.css" />
+    <link rel="stylesheet" type="text/css" href="sipcalculatorCss.css">
   </head>
   <body>
     <div class="preloader">
@@ -184,7 +185,7 @@
             <div><input id="years" type="number"></div>
             <br/>
             <div><b>Expected return rate (p.a)</b></div>
-            <div><input id="return-rate"  type="text" onchange="percentage(this)")/></div>
+            <div><input id="return-rate"  type="text" onchange="percentage(this)"/></div>
           </div>
         </div>
         </br/>
@@ -219,6 +220,45 @@
         </div>
       </div>
       </div>
+      <!-- EMI Calculator -->
+      <script src="emiCalculator.js"></script>
+      <div class="header" style="padding-top: 100px;">
+        <h3>EMI Calculator</h3>
+      </div>
+      <div class="page-container">
+          <div class="input-container">
+              <div>
+                  <div><b>Loan Amount (INR)</b></div>
+                  <div><input id="loanAmount" type="number" style="margin: 1% 5% 0 0"/></div>
+                  <br/>
+                  <div><b>Interest Rate (%)</b></div>
+                  <div><input id="interestRate" type="number"/></div>
+                  <br/>
+                  <div><b>Loan Tenure (Months)</b></div>
+                  <div><input id="loanTenure" type="number"/></div>
+              </div>
+          </div>
+          </br/>
+          <div class="btn-calculate">
+              <button type="button" onclick="calculateEMI()">Calculate EMI</button>
+          </div>
+          </br/>
+          <div style="display: flex;">
+              <div class="result"><b>Result :</b></div>
+              <div class="result-container">
+                  <div>Monthly EMI</div>
+                  <div><span id="monthlyEMI"></span></div>
+                  <br/>
+                  <div>Total Payment</div>
+                  <div><span id="totalPayment"></span></div>
+                  <br/>
+                  <div>Total Interest Paid</div>
+                  <div><span id="totalInterestPaid"></span></div>
+              </div>
+          </div>
+      </div>
+    </div>
+    <!-- End EMI Calculator -->
   </body>
   <footer id="footer" class="footer-area pt-120">
     <div class="container">
