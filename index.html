@@ -76,7 +76,7 @@
                     </li>
                     <li class="nav-item">
                       <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
-                    </li>
+                    
                   </ul>
                 </div>
                 <div class="navbar-btn d-none d-sm-inline-block">
@@ -84,6 +84,8 @@
                     onclick="openModal()" >Login/Register 💻</a
                     >
                 </div>
+              </li>
+              <li class="dark_mode"><img src="/assets/images/moon.png" id="moon-icon" alt=""></li>
             </div>  
             </nav>
           </div>
@@ -986,5 +988,19 @@
     <script src="../assets/js/main.js"></script>
     <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
     <script src="https://mediafiles.botpress.cloud/5e160793-5606-4412-ba4c-337e416f14fe/webchat/config.js" defer></script>
+  
+  <script>
+    var  icon=document.getElementById("moon-icon");
+    icon.onclick=function()
+    {
+      document.body.classList.toggle("dark-theme");
+      if(document.body.classList.contains("dark-theme")){
+        icon.src="/assets/images/sun.png";
+      }
+      else{
+        icon.src="/assets/images/moon.png";
+      }
+    }
+  </script>
   </body>
 </html>

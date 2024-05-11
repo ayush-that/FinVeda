@@ -1,10 +1,24 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,700|Lato:300,400,700&display=swap");
+
+:root {
+  --light-black: #212121 ;/* Define light black color variable */
+  --bright-mode: #fff; /* Define bright mode color variable */
+
+ 
+}
+.dark-theme{
+  --light-black: #fff ;/* Define light black color variable */
+  --bright-mode:#212121 ;/* Define bright mode color variable */
+}
+
 body {
   font-family: "Poppins", sans-serif;
   font-weight: normal;
   font-style: normal;
   color: #6a6972;
   overflow-x: hidden;
+  
+ 
 }
 
 * {
@@ -13,6 +27,7 @@ body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+ 
 }
 
 img {
@@ -168,6 +183,7 @@ p {
   font-size: 38px;
   font-weight: 700;
   line-height: 42px;
+  color: var(--light-black);
 }
 
 @media (max-width: 767px) {
@@ -597,7 +613,8 @@ p {
 .sticky {
   position: fixed;
   z-index: 99;
-  background-color: #fff;
+  background-color: var(--bright-mode);
+  
   -webkit-box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.05);
   -moz-box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.05);
   box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.05);
@@ -635,6 +652,7 @@ p {
   width: 30px;
   height: 2px;
   background-color: #fff;
+  
   display: block;
   margin: 5px 0;
   position: relative;
@@ -736,6 +754,19 @@ p {
   position: relative;
   font-family: "Poppins", sans-serif;
 }
+
+
+.dark_mode img{
+  width: 30px;
+  margin-left: 100px;
+  
+}
+
+.dark_mode img:hover {
+  cursor: pointer; 
+}
+
+
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .navbar-nav .nav-item a {
@@ -926,6 +957,7 @@ p {
 
 .sticky .navbar-nav .nav-item a {
   color: #2e2e2e;
+  color:var(--light-black);
 }
 
 .sticky .navbar-nav .nav-item.active > a,
@@ -1202,6 +1234,7 @@ p {
 .about-area {
   position: relative;
   z-index: 5;
+  background-color: var(--bright-mode);
 }
 
 .about-shape-1 {
@@ -1538,6 +1571,10 @@ p {
 
 .single-team .team-content {
   padding: 30px;
+  background: var(--light-black);
+}
+#facts{
+  background-color: var(--bright-mode);
 }
 
 .single-team .team-content .holder-name a {
@@ -1699,7 +1736,7 @@ p {
   font-size: 23px;
   font-weight: 400;
   line-height: 30px;
-  color: #2e2e2e;
+  color: var(--light-black);
   margin-top: 15px;
 }
 
@@ -1727,6 +1764,8 @@ p {
   box-shadow: 0px 0px 18px 0px rgba(50, 77, 215, 0.14);
   border-radius: 10px;
   background-color: #fff;
+  background-color: var(--bright-mode);
+
 }
 
 @media (max-width: 767px) {
@@ -1738,6 +1777,7 @@ p {
 .subscribe-content .subscribe-title {
   font-size: 35px;
   font-weight: 700;
+  color:var(--light-black); /* White text color */
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -1881,7 +1921,7 @@ p {
 }
 
 .footer-about .text {
-  color: #fff;
+  color:var(--bright-mode); /* White text color */
   line-height: 30px;
   margin-top: 30px;
 }
@@ -1912,7 +1952,7 @@ p {
 .footer-title .title {
   font-size: 24px;
   font-weight: 700;
-  color: #fff;
+  color:var(--bright-mode); /* White text color */
 }
 
 .link-wrapper {
@@ -1936,7 +1976,7 @@ p {
 
 .link-wrapper .link li a {
   font-size: 16px;
-  color: #fff;
+    color:var(--bright-mode); /* White text color */
   -webkit-transition: all 0.3s ease-out 0s;
   -moz-transition: all 0.3s ease-out 0s;
   -ms-transition: all 0.3s ease-out 0s;
@@ -1955,7 +1995,7 @@ p {
 .footer-contact .contact li {
   margin-top: 20px;
   font-size: 16px;
-  color: #fff;
+  color:var(--bright-mode); /* White text color */
 }
 
 .footer-copyright {
@@ -1970,7 +2010,8 @@ p {
 }
 
 .copyright-content p {
-  color: #fff;
+  color:var(--bright-mode); /* White text color */
+  
 }
 
 .copyright-content a {
