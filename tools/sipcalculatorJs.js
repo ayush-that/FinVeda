@@ -74,7 +74,7 @@ validateAmount = (x) => {
   let amount = document.getElementById("investment");
   let returnRate = document.getElementById("return-rate");
   let timeY = document.getElementById("years");
-  if(isNaN(amount.value)){
+  if(isNaN(amount.value) || amount.value <0){
     alert("The Investment Amount is invalid.")
     amount.style.borderColor="red";
     amount.style.borderWidth="2px";
@@ -93,7 +93,7 @@ validateReturnRate = (x) => {
   let amount = document.getElementById("investment");
   let returnRate = document.getElementById("return-rate");
   let timeY = document.getElementById("years");
-  if(isNaN(returnRate.value)){
+  if(isNaN(returnRate.value) || returnRate.value < 0){
     alert("The Return Rate is invalid.")
     returnRate.style.borderColor="red";
     returnRate.style.borderWidth="2px";
@@ -112,7 +112,7 @@ validateTime = (x) => {
   let amount = document.getElementById("investment");
   let returnRate = document.getElementById("return-rate");
   let timeY = document.getElementById("years");
-  if(isNaN(timeY.value)){
+  if(isNaN(timeY.value) || timeY.value < 0){
     alert("The Time is invalid.");
     timeY.style.borderColor="red";
     timeY.style.borderWidth="2px";
