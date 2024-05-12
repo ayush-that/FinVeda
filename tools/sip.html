@@ -179,18 +179,18 @@
         <div class="input-container">
           <div>
             <div><b>Monthly investment</b></div>
-            <div><input id="investment" type="text" onchange="commas(this)"/></div>
+            <div><input id="investment" type="text" onchange="validateAmount(this)"/></div>
             <br/>
             <div><b>Time period (yr)</b></div>
-            <div><input id="years" type="number"></div>
+            <div><input id="years" type="text" onchange="validateTime(this)"></div>
             <br/>
             <div><b>Expected return rate (p.a)</b></div>
-            <div><input id="return-rate"  type="text" onchange="percentage(this)"/></div>
+            <div><input id="return-rate"  type="text" onchange="validateReturnRate(this)"/></div>
           </div>
         </div>
         </br/>
         <div class="btn-calculate">
-          <button type="button" onclick="calculateResult()">
+          <button id = "calculateButton" type="button" onclick="calculateResult()">
           Calculate
           </button>
         </div>
@@ -229,18 +229,18 @@
           <div class="input-container">
               <div>
                   <div><b>Loan Amount (INR)</b></div>
-                  <div><input id="loanAmount" type="number" style="margin: 1% 5% 0 0"/></div>
+                  <div><input id="loanAmount" type="text" style="margin: 1% 5% 0 0" onchange="validateLoan(this)"/></div>
                   <br/>
                   <div><b>Interest Rate (%)</b></div>
-                  <div><input id="interestRate" type="number"/></div>
+                  <div><input id="interestRate" type="text" onchange="validateRate(this)"/></div>
                   <br/>
                   <div><b>Loan Tenure (Months)</b></div>
-                  <div><input id="loanTenure" type="number"/></div>
+                  <div><input id="loanTenure" type="text" onchange="validateTenure(this)"/></div>
               </div>
           </div>
           </br/>
           <div class="btn-calculate">
-              <button type="button" onclick="calculateEMI()">Calculate EMI</button>
+              <button id = "calculateE" type="button" onclick="calculateEMI()">Calculate EMI</button>
           </div>
           </br/>
           <div style="display: flex;">

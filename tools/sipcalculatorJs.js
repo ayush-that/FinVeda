@@ -1,20 +1,7 @@
 calculateResult = () => {
-  let amountValue = document.getElementById("investment").value;
-  let amountWithComma = amountValue.split(" ")[0];
-  let amount = parseInt(amountWithComma.split(",").join(""));
-  document.getElementById("input-1").innerHTML = isNaN(amount) ? 0 : amount;
-
+  let amount = document.getElementById("investment").value;
   let years = document.getElementById("years").value;
-
-  document.getElementById("input-2").innerHTML =
-    years.length === 0 ? "0" : years;
-
-  let returnRateValue = document.getElementById("return-rate").value;
-  let returnRateWithComma = returnRateValue.split(" ")[0];
-  let returnRate = parseInt(returnRateWithComma.split(",").join(""));
-  document.getElementById("input-3").innerHTML = isNaN(returnRate)
-    ? 0
-    : returnRate;
+  let returnRate = document.getElementById("return-rate").value;
 
   let checkedValue = document.getElementsByName("checked")[0].checked;
   let wealthGained = 0;
@@ -66,6 +53,14 @@ calculateResult = () => {
     wealthGained === "NaN" ? "0" : wealthGained;
   document.getElementById("maturity-value").innerHTML =
     maturityValue === "NaN" ? "0" : maturityValue;
+
+    amount = amount.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    document.getElementById("investment").value = amount
+      .concat(" Rs");
+    document.getElementById("years").value = years
+      .concat(" Yrs")  
+    document.getElementById("return-rate").value = returnRate
+      .concat(" %");
 };
 
 currencyChange = () => {
@@ -75,23 +70,58 @@ currencyChange = () => {
   document.getElementById("currency-change-3").innerHTML = selectedValue;
 };
 
-commas = (x) => {
-  let amount = document.getElementById("investment").value;
-  let temp = amount.split(" ");
-  if (temp.includes("Rs")) {
-    amount = amount.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  } else {
-    amount = amount.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    document.getElementById("investment").value = amount
-      .concat(" ")
-      .concat("Rs");
+validateAmount = (x) => {
+  let amount = document.getElementById("investment");
+  let returnRate = document.getElementById("return-rate");
+  let timeY = document.getElementById("years");
+  if(isNaN(amount.value)){
+    alert("The Investment Amount is invalid.")
+    amount.style.borderColor="red";
+    amount.style.borderWidth="2px";
+    document.getElementById("calculateButton").disabled=true;
+  }
+  else{
+    amount.style.borderColor="#000000";
+    amount.style.borderWidth="1px";
+    if(!isNaN(amount.value) && !isNaN(returnRate.value) && !isNaN(timeY.value)){
+      document.getElementById("calculateE").disabled=false;
+    }
   }
 };
-percentage = (x) => {
-  let value = document.getElementById("return-rate").value;
-  let temp = value.split(" ");
-  if (temp.length < 2)
-    document.getElementById("return-rate").value = value
-      .concat(" ")
-      .concat("%");
+
+validateReturnRate = (x) => {
+  let amount = document.getElementById("investment");
+  let returnRate = document.getElementById("return-rate");
+  let timeY = document.getElementById("years");
+  if(isNaN(returnRate.value)){
+    alert("The Return Rate is invalid.")
+    returnRate.style.borderColor="red";
+    returnRate.style.borderWidth="2px";
+    document.getElementById("calculateButton").disabled=true;
+  }
+  else{
+    returnRate.style.borderColor="#000000";
+    returnRate.style.borderWidth="1px";
+    if(!isNaN(amount.value) && !isNaN(returnRate.value) && !isNaN(timeY.value)){
+      document.getElementById("calculateE").disabled=false;
+    }
+  }
+};
+
+validateTime = (x) => {
+  let amount = document.getElementById("investment");
+  let returnRate = document.getElementById("return-rate");
+  let timeY = document.getElementById("years");
+  if(isNaN(timeY.value)){
+    alert("The Time is invalid.");
+    timeY.style.borderColor="red";
+    timeY.style.borderWidth="2px";
+    document.getElementById("calculateButton").disabled=true;
+  }
+  else{
+    timeY.style.borderColor="#000000";
+    timeY.style.borderWidth="1px";
+    if(!isNaN(amount.value) && !isNaN(returnRate.value) && !isNaN(timeY.value)){
+      document.getElementById("calculateE").disabled=false;
+    }  }
 };
