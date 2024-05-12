@@ -1,3 +1,7 @@
+
+![image](https://camo.githubusercontent.com/baebe7bd53cddccd8bb2181cba613bca938163bb9451dea6dd3db58aa42137ba/68747470733a2f2f696d6775722e636f6d2f7775694a5871722e706e67)
+
+--------------------------------
 <div align="center">
 <a href="https://fin-veda.vercel.app/" target="_blank" title="Go to the FinVeda website"><img height="144px" alt="FinVeda logo" src="/assets/images/logo.svg"></a>
 <a name="readme-top"></a>
