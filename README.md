@@ -33,6 +33,10 @@ FinVeda is a dynamic financial literacy app that'll help you Learn finance with 
 
 ### 💵 How to Contribute
 
+<div align="center">
+<a href="https://gssoc.girlscript.tech/" target="_blank" title="GSSoC"><img height="144px" alt="FinVeda logo" src=https://camo.githubusercontent.com/baebe7bd53cddccd8bb2181cba613bca938163bb9451dea6dd3db58aa42137ba/68747470733a2f2f696d6775722e636f6d2f7775694a5871722e706e67></a>
+</div>
+
    ```bash
    # Fork the repository to your GitHub account.
    # Clone the forked repository to your local machine.
@@ -52,6 +56,10 @@ FinVeda is a dynamic financial literacy app that'll help you Learn finance with 
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-### 🪪 License
+### 🥑 License
 
 FinVeda is free and open-source software licensed under the GNU General Public License v3.0. It was built at IIT Jammu's Udyamitsav'24 Hackathon where it stood first in the GenAI track and third overall.
+
+<a href="https://github.com/ayush-that/FinVeda/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ayush-that/FinVeda" />
+</a>
