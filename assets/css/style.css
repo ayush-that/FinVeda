@@ -3,9 +3,40 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: normal;
   font-style: normal;
-  color: #6a6972;
+  background-color: #ffffff;
+  color: #333333;
   overflow-x: hidden;
+  --text-color: #333333;
+  --nav-color: #ffffff;
+  --nav-text-color: #000000;
+  --toggle-button-color:#ffffff;
+  --toggle-label-color: #000000;
+  --navbar-collapse: #ffffff;
+  --sticky-navbar-toggler: #000000;
 }
+
+
+/* Dark mode styles */
+body.dark-mode {
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #333333;
+  color: #ffffff;
+  overflow-x: hidden;
+  --text-color: #ffffff;
+  --nav-color: #333333;
+  --nav-text-color: #ffffff;
+  --toggle-button-color:#000000;
+  --toggle-label-color: #ffffff;
+  --navbar-collapse: #333333;
+  --sticky-navbar-toggler: #ffffff;
+}
+
+body.dark-mode .navbar-nav .nav-item a {
+  color: #fff;
+}
+
 
 * {
   margin: 0;
@@ -61,7 +92,7 @@ h5,
 h6 {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
-  color: #2e2e2e;
+  color: var(--text-color);
   margin: 0px;
 }
 
@@ -102,6 +133,9 @@ p {
   line-height: 26px;
   color: #6a6972;
   margin: 0px;
+}
+p .text{
+  color: var(--text-color);
 }
 
 .bg_cover {
@@ -597,7 +631,8 @@ p {
 .sticky {
   position: fixed;
   z-index: 99;
-  background-color: #fff;
+  background-color: var(--nav-color);
+  color: var(--text-color);
   -webkit-box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.05);
   -moz-box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.05);
   box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.05);
@@ -688,7 +723,7 @@ p {
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: #fff;
+    background-color: var(--navbar-collapse);
     z-index: 9;
     -webkit-box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.1);
@@ -698,7 +733,7 @@ p {
 }
 
 .navbar-nav .nav-item {
-  margin-right: 50px;
+  margin-right: 20px;
   padding-right: 60px;
   justify-content: center;
   align-items: center;
@@ -726,7 +761,7 @@ p {
 .navbar-nav .nav-item a {
   font-size: 16px;
   font-weight: 400;
-  color: #fff;
+  color: var(--nav-text-color, #fff);
   -webkit-transition: all 0.3s ease-out 0s;
   -moz-transition: all 0.3s ease-out 0s;
   -ms-transition: all 0.3s ease-out 0s;
@@ -921,16 +956,16 @@ p {
 }
 
 .sticky .navbar-toggler .toggler-icon {
-  background-color: #2e2e2e;
+  background-color: var(--sticky-navbar-toggler);
 }
 
 .sticky .navbar-nav .nav-item a {
-  color: #2e2e2e;
+  color: var(--text-color);
 }
 
 .sticky .navbar-nav .nav-item.active > a,
 .sticky .navbar-nav .nav-item:hover > a {
-  color: #361cc1;
+  color: var(--text-color);
 }
 
 .header-hero {
@@ -1543,7 +1578,7 @@ p {
 .single-team .team-content .holder-name a {
   font-size: 20px;
   font-weight: 700;
-  color: #2e2e2e;
+  color: var(--text-color );
 }
 
 .single-team .team-content .text {
@@ -1699,7 +1734,7 @@ p {
   font-size: 23px;
   font-weight: 400;
   line-height: 30px;
-  color: #2e2e2e;
+  color: var(--text-color);
   margin-top: 15px;
 }
 
@@ -1726,7 +1761,7 @@ p {
   -moz-box-shadow: 0px 0px 18px 0px rgba(50, 77, 215, 0.14);
   box-shadow: 0px 0px 18px 0px rgba(50, 77, 215, 0.14);
   border-radius: 10px;
-  background-color: #fff;
+  background-color: var(--nav-color);
 }
 
 @media (max-width: 767px) {
@@ -2012,4 +2047,47 @@ p {
 
 .back-to-top:hover {
   color: #fff;
+}
+
+/*Theme Switching Button*/
+.toggle_btn{
+  left: auto;
+  right: 36px;
+  top: auto;
+  position: fixed;
+  float: left;
+  clear: both;
+}
+.toggle_label{
+  width: 3rem;
+  height: 2rem;
+  background-color: var(--toggle-label-color);
+  display: inline-block;
+  position: relative;
+  border-radius: 5rem;
+}
+.toggle_ball{
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: #ECF2FF;
+  display: inline-block;
+  position: absolute;
+  top: .5rem;
+  left: .5rem;
+  transition: all .2s linear;
+}
+#checkbox{
+  visibility: hidden;
+}
+#checkbox:checked + .toggle_label .toggle_ball{
+  background-color: var(--toggle-button-color);
+  transform: translateX(1rem);
+}
+.navbar-collapse.show .toggle_btn {
+  position: relative;
+  right: auto;
+  left: 0; 
+  top: 0; 
+  display: block;
 }

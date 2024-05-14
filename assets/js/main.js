@@ -321,3 +321,27 @@ $(function () {
       retina_detect: !0,
     });
 });
+
+//Theme Switching
+document.addEventListener('DOMContentLoaded', function () {
+  const toggle_btn = document.querySelector('#checkbox');
+  const savedTheme = localStorage.getItem('theme');
+
+  if (savedTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+      toggle_btn.checked = true;
+  } else {
+      document.body.classList.remove('dark-mode');
+      toggle_btn.checked = false;
+  }
+
+  toggle_btn.addEventListener('change', function () {
+      if (toggle_btn.checked) {
+          document.body.classList.add('dark-mode');
+          localStorage.setItem('theme', 'dark');
+      } else {
+          document.body.classList.remove('dark-mode');
+          localStorage.setItem('theme', 'light');
+      }
+  });
+});
