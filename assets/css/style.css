@@ -594,6 +594,40 @@ p {
   transition: all 0.3s ease-out 0s;
 }
 
+.navbar-nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.nav-item {
+  float: left;
+}
+
+.nav-item a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-item a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s;
+}
+
+.nav-item a:hover::after {
+  width: 100%;
+}
 .sticky {
   position: fixed;
   z-index: 99;
@@ -928,10 +962,9 @@ p {
   color: #2e2e2e;
 }
 
-.sticky .navbar-nav .nav-item.active > a,
 .sticky .navbar-nav .nav-item:hover > a {
   color: #361cc1;
-}
+} 
 
 .header-hero {
   position: relative;
@@ -1765,7 +1798,7 @@ p {
   height: 65px;
   padding: 0 30px;
   border-radius: 5px;
-  width: 100%;
+  width: 60%;
   color: #2e2e2e;
 }
 
@@ -1790,16 +1823,20 @@ p {
 }
 
 .subscribe-form input:focus {
-  border-color: #361cc1;
+  border-color: #fe6e9a;
+}
+
+@media(max-width: 576px){
+  .subscribe-form input {
+  width: 100%;
+}
 }
 
 .subscribe-form button {
   position: absolute;
   top: 0;
   right: 0;
-  border-radius: 0;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-radius: 8px;
   height: 65px;
   line-height: 65px;
   background: -webkit-linear-gradient(
@@ -1817,8 +1854,8 @@ p {
   .subscribe-form button {
     position: relative;
     width: 100%;
-    margin-top: 10px;
-    border-radius: 5px;
+    margin-top: 20px;
+    border-radius: 8px;
   }
 }
 
@@ -1827,9 +1864,7 @@ p {
     position: absolute;
     width: auto;
     margin-top: 0;
-    border-radius: 0;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-radius: 8px;
   }
 }
 
@@ -2012,4 +2047,17 @@ p {
 
 .back-to-top:hover {
   color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: #c4d2e5;
+}
+
+::-webkit-scrollbar-thumb {
+  background:#505fde;
+  border-radius: 10px;
 }
