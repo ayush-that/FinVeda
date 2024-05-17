@@ -22,6 +22,23 @@
       <link rel="stylesheet" href="assets/css/popup.css" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+      <style>
+         @keyframes float {
+            0% {
+               transform: translateY(0);
+            }
+      
+            50% {
+               transform: translateY(-5px);
+            }
+      
+            100% {
+               transform: translateY(0);
+            }
+         }
+      </style>
+
    <body>
       <div class="preloader">
          <div class="loader">
@@ -147,7 +164,9 @@
                         data-wow-duration="1.3s"
                         data-wow-delay="1.4s"
                         >
-                        <img src="assets/images/header-hero.png" alt="hero" />
+                      <div class="anim" data-tilt="">
+                        <img src="assets/images/header-hero.png" alt="hero" style="animation: float 1.5s ease-in-out infinite;" data-tilt="" />
+                      </div>
                      </div>
                   </div>
                </div>
@@ -191,7 +210,7 @@
                      <div class="services-content mt-30">
                         <h4 class="services-title"><a href="#">Financial Blogs</a></h4>
                         <p class="text">
-                           We offer expert written blogs on investment tips and strategies, and current economic trends, all crafted to keep you well-informed.    
+                           We offer expert written blogs on investment tips and strategies, and current economic trends, all crafted to keep you well-informed.
                         </p>
                         <a class="more" href="#">Learn More <i class="lni-chevron-right"></i></a>
                      </div>
@@ -219,7 +238,7 @@
                      <div class="services-content mt-30">
                         <h4 class="services-title"><a href="./tools/sip.html">Finance Tools</a></h4>
                         <p class="text">
-                           With  our SIP and PPF tools you'll discover power of compounding and make informed decisions regarding your savings. 
+                           With  our SIP and PPF tools you'll discover power of compounding and make informed decisions regarding your savings.
                         </p>
                         <a class="more" href="#">Learn More <i class="lni-chevron-right"></i></a>
                      </div>
@@ -247,7 +266,7 @@
                      <div class="services-content mt-30">
                         <h4 class="services-title"><a href="#">Financial Trends</a></h4>
                         <p class="text">
-                           You will make smarter decisions by staying updated to the current market happenings in real time with our Stock Market API's results. 
+                           You will make smarter decisions by staying updated to the current market happenings in real time with our Stock Market API's results.
                         </p>
                         <a class="more" href="./trends.html"
                            >Learn More <i class="lni-chevron-right"></i
@@ -298,7 +317,7 @@
                            }
                         </script>
                      </div>
-                     <!-- TradingView Widget END -->            
+                     <!-- TradingView Widget END -->
                   </div>
                </div>
             </div>
@@ -426,7 +445,7 @@
                               }
                            </script>
                         </div>
-                        <!-- TradingView Widget END -->          
+                        <!-- TradingView Widget END -->
                      </div>
                   </div>
                </div>
@@ -448,7 +467,7 @@
       </h3>
       </div>
       <p class="text">
-      FinVeda fetches live market figures, ensuring users access the most up-to-date information instantly. Be it stock prices, currency rates, or commodity values, 
+      FinVeda fetches live market figures, ensuring users access the most up-to-date information instantly. Be it stock prices, currency rates, or commodity values,
       </p>
       <a href="#" class="main-btn">Try it Free</a>
       </div>
@@ -478,7 +497,7 @@
       </div>
       <!-- TradingView Widget END -->
       </div>
-      <!-- TradingView Widget END -->            
+      <!-- TradingView Widget END -->
       </div>
       </div>
       </div>
@@ -524,7 +543,7 @@
                         </div>
                         <p class="text">
                         <ul>
-                           <li>Vivian Tu is a former Wall Street trader-turned-expert, entrepreneur, and the founder and CEO of the financial equity phenomenon, “Your Rich BFF.” 
+                           <li>Vivian Tu is a former Wall Street trader-turned-expert, entrepreneur, and the founder and CEO of the financial equity phenomenon, “Your Rich BFF.”
                            </li>
                            <br>
                            <li>In this episode Vivian explains how she found financial success and you can too!
@@ -1003,7 +1022,7 @@
                      <div class="copyright d-sm-flex justify-content-between">
                         <div class="copyright-content">
                            <p class="text">
-                              © 2024 FinVeda. All rights reserved, Built with ♥ in India
+                              © <span id="copyright-year"></span> FinVeda. All rights reserved, Built with ♥ in India
                            </p>
                         </div>
                      </div>
@@ -1013,8 +1032,10 @@
          </div>
          <div id="particles-2"></div>
       </footer>
+      <script>document.getElementById("copyright-year").textContent = new Date().getFullYear();</script>
       <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
      </script>
+      
       <script src="../assets/js/vendor/jquery-1.12.4.min.js"></script>
       <script src="../assets/js/vendor/modernizr-3.7.1.min.js"></script>
       <script src="../assets/js/popper.min.js"></script>
@@ -1033,5 +1054,6 @@
       <script src="../assets/js/main.js"></script>
       <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
       <script src="https://mediafiles.botpress.cloud/5e160793-5606-4412-ba4c-337e416f14fe/webchat/config.js" defer></script>
+      <script src="./assets/js/vanilla-tilt.js"></script>
    </body>
 </html>
