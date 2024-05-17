@@ -287,15 +287,19 @@
               <!-- TradingView Widget BEGIN -->
               <div class="tradingview-widget-container" style="height: 372px;">
                 <div class="tradingview-widget-container__widget"></div>
-                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-timeline.js" async>
-                  {
-                  "feedMode": "all_symbols",
-                  "isTransparent":"true",
-                  "displayMode": "adaptive",
-                  "colorTheme": "light",
-                  "locale": "in"
-                  }
-                </script>
+                <!-- Embedding the TradingView widget script -->
+<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-timeline.js" async></script>
+
+<!-- Initializing the widget with the specified configuration -->
+<script type="text/javascript">
+  new TradingView.widget({
+    "feedMode": "all_symbols",
+    "isTransparent": "true",
+    "displayMode": "adaptive",
+    "colorTheme": "light",
+    "locale": "in"
+  });
+</script>                 
               </div>
               <!-- TradingView Widget END -->            
             </div>
@@ -341,44 +345,51 @@
                 <!-- TradingView Widget BEGIN -->
                 <div class="tradingview-widget-container">
                   <div class="tradingview-widget-container__widget"></div>
-                  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
-                    {
-                    "colorTheme": "light",
-                    "dateRange": "1D",
-                    "showChart": false,
-                    "locale": "in",
-                    "width": "100%",
-                    "height": "100%",
-                    "largeChartUrl": "",
-                    "isTransparent": true,
-                    "showSymbolLogo": true,
-                    "showFloatingTooltip": false,
-                    "tabs": [
-                      {
-                        "title": "Forex",
-                        "symbols": [
-                          {
-                            "s": "FX:EURUSD",
-                            "d": "EUR to USD"
-                          },
-                          {
-                            "s": "FX:GBPUSD",
-                            "d": "GBP to USD"
-                          },
-                          {
-                            "s": "FX:USDJPY",
-                            "d": "USD to JPY"
-                          },
-                          {
-                            "s": "FX:USDCHF",
-                            "d": "USD to CHF"
-                          }
-                        ],
-                        "originalTitle": "Forex"
-                      }
-                    ]
-                    }
-                  </script>
+                  <!-- Embedding the TradingView widget script -->
+<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async></script>
+
+<!-- Initializing the widget with the specified configuration -->
+<script type="text/javascript">
+  window.addEventListener('load', function() {
+    new TradingView.MarketOverviewWidget({
+      "colorTheme": "light",
+      "dateRange": "1D",
+      "showChart": false,
+      "locale": "in",
+      "width": "100%",
+      "height": "100%",
+      "largeChartUrl": "",
+      "isTransparent": true,
+      "showSymbolLogo": true,
+      "showFloatingTooltip": false,
+      "tabs": [
+        {
+          "title": "Forex",
+          "symbols": [
+            {
+              "s": "FX:EURUSD",
+              "d": "EUR to USD"
+            },
+            {
+              "s": "FX:GBPUSD",
+              "d": "GBP to USD"
+            },
+            {
+              "s": "FX:USDJPY",
+              "d": "USD to JPY"
+            },
+            {
+              "s": "FX:USDCHF",
+              "d": "USD to CHF"
+            }
+          ],
+          "originalTitle": "Forex"
+        }
+      ]
+    });
+  });
+</script>
+
                 </div>
                 <!-- TradingView Widget END -->          
               </div>
@@ -416,8 +427,13 @@
     <!-- TradingView Widget BEGIN -->
     <div class="tradingview-widget-container">
     <div class="tradingview-widget-container__widget"></div>
-    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-      {
+    <!-- Embedding the TradingView widget script -->
+<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async></script>
+
+<!-- Initializing the widget with the specified configuration -->
+<script type="text/javascript">
+  window.addEventListener('load', function() {
+    new TradingView.MiniSymbolOverviewWidget({
       "symbol": "ECONOMICS:INGDP",
       "width": "auto",
       "height": 250,
@@ -427,8 +443,9 @@
       "isTransparent": true,
       "autosize": false,
       "largeChartUrl": ""
-      }
-    </script>
+    });
+  });
+</script>
     </div>
     <!-- TradingView Widget END -->
     </div>
@@ -937,12 +954,12 @@
                       <h4 class="title">Contact Us</h4>
                   </div>
                   <ul class="contact">
-                      <li><a href="mailto:ayush1337@hotmail.com">ayush1337@hotmail.com</a></li>
+                      <li><a href="mailto:ayush1337@hotmail.com">&#x1F4E7; ayush1337@hotmail.com</a></li>
                       <li><a href="https://fin-veda.vercel.app">fin-veda.vercel.app</a></li>
                       <li>Delhi, India</li>
                   </ul>
               </div>
-          </div>r 
+          </div>
           </div>
         </div>
         <div class="footer-copyright">
