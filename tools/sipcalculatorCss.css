@@ -5,13 +5,26 @@
 .page-container {
   margin: 1% 20%;
   font-size: 16px;
+  background: linear-gradient(135deg, rgba(38, 21, 225, 0.1), rgba(42, 57, 194, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  padding: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row;
 }
 .switch-container {
   display: flex;
-  padding-left: 50px;  justify-content: center;
+  padding-left: 50px;
+  justify-content: center;
+  flex-direction: column;
 }
 .switch-container > div {
-  margin: 1% 10% 3% 0;
+  margin: 1% 10% 3% -16px;
 }
 .input-container {
   display: flex;
@@ -30,17 +43,19 @@ input {
   border-radius: 10px;
   margin: 1% 5% 0 0;
 }
-
 .result {
-  padding: 10% 0 0 0;
   font-size: 24px;
+  margin-left: 60px;
+  margin-bottom: 10px;
 }
 .result-container {
-  /* display: flex; */
+  display: flex;
   padding-left: 60px;
   flex-wrap: wrap;
   align-content: flex-start;
   justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
 }
 .btn-calculate {
   text-align: center;
@@ -56,10 +71,16 @@ input {
   width: 125px;
   cursor: pointer;
 }
-
+.btn-calculate > button:hover {
+  background-color: #258e64;
+  border-color: #258e64; 
+  color: white;
+}
 .currency {
   background: white;
-  border-radius: 10px;
+  border-radius: 9px;
+  padding: 1px 0px;
+  margin-left: 15px;
 }
 #total {
   border: 1px solid;
@@ -84,4 +105,106 @@ input {
   height: 30px;
   border-radius: 9px;
   border-color: #333;
+}
+
+#loanAmount, #interestRate, #loanTenure{
+  height: 30px;
+  border-radius: 9px;
+  border-color: #333;
+}
+
+.radio-button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 650;
+}
+.calc-label{
+  display: block;
+  margin-bottom: 10px;
+  color: #ffffff;
+  margin-right: 8px;
+  background: rgb(131, 131, 235);
+  padding: 5px 8px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.calc-radio{
+  display: none;
+}
+#sip:checked ~ .label1,
+#lumpsum:checked ~ .label2 {
+  background-color: blue;
+}
+.dropdown {
+  color: #6A6972;
+  font-weight: bolder;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dropdown p{
+  margin-left: -27px;
+  font-weight: bolder;
+}
+
+.mf-text{
+  text-align: center;
+  width: max-content;
+}
+.result-side{
+  display: flex;
+  flex-flow: column;
+}
+@media (max-width: 600px) {
+  .page-container {
+    margin: 1% 5%;
+    flex-flow: column;
+    padding: 5%;
+  }
+  .switch-container {
+    padding-left: 0;
+  }
+  .switch-container > div, .input-container > div {
+    margin: 1% 0 3% 0;
+  }
+  .btn-calculate > button {
+    width: 100%;
+    margin-right: 0;
+  }
+  .result {
+    margin-left: 0;
+    text-align: center;
+  }
+  .result-container {
+    padding-left: 0;
+    align-items: center;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+  .page-container {
+    margin: 1% 10%;
+    flex-flow: column;
+    padding: 4%;
+  }
+  .switch-container {
+    padding-left: 0;
+  }
+  .switch-container > div, .input-container > div {
+    margin: 1% 0 3% 0;
+  }
+  .btn-calculate > button {
+    width: 100%;
+    margin-right: 0;
+  }
+  .result {
+    margin-left: 0;
+    text-align: center;
+  }
+  .result-container {
+    padding-left: 0;
+    align-items: center;
+  }
 }

@@ -159,63 +159,66 @@
         <h3>Mutual Fund Investment Calculator</h3>
       </div>
       <div class="page-container">
-        <div class="switch-container">
-          <div class="radio-button">
-            <label for="sip">SIP</label>
-            <input type="radio" checked name="checked" value="SIP"><br>
-            <label for="lumpsum">LumpSum</label>
-            <input type="radio" name="checked" value="LumpSum">
+        <div class="inner1">
+          <div class="switch-container">
+            <div class="radio-button">
+              <input type="radio" id="sip" name="checked" value="SIP" class="calc-radio" checked>
+              <label for="sip" class="calc-label label1">SIP</label><br>           
+              <input type="radio" id="lumpsum" name="checked" value="LumpSum" class="calc-radio">
+              <label for="lumpsum" class="calc-label label2">LumpSum</label>
+            </div>       
+            <div class="dropdown">
+              <p>Currency</p>
+              <select onchange="currencyChange(this)" id="currency" class="currency">
+                <!-- &#8377; -->
+                <option value="Rs">&#8377;&nbsp;INR</option>
+                <option value="$">&#128176;USD</option>
+                <!-- &#x24; -->
+              </select>
+            </div>
           </div>
-          <div class="dropdown">
-            Currency
-            <select onchange="currencyChange(this)" id="currency" class="currency">
-              <!-- &#8377; -->
-              <option value="Rs">&#8377; &nbsp;INR</option>
-              <option value="$">&#128176;USD</option>
-              <!-- &#x24; -->
-            </select>
+          <div class="input-container">
+            <div>
+              <div class="mf-text"><b>Monthly investment</b></div>
+              <div><input id="investment" placeholder="  Enter amount" type="text" onchange="commas(this)"/></div>
+              <br/>
+              <div class="mf-text"><b>Time period (yr)</b></div>
+              <div><input id="years" placeholder="  Enter years" type="number"></div>
+              <br/>
+              <div class="mf-text"><b>Expected return rate (p.a)</b></div>
+              <div><input id="return-rate" placeholder="  Enter return rate" type="text" onchange="percentage(this)"/></div>
+            </div>
           </div>
+          </br/>
+          <div class="btn-calculate">
+            <button type="button" onclick="calculateResult()">
+            Calculate
+            </button>
+          </div>
+          </br/>
         </div>
-        <div class="input-container">
-          <div>
-            <div><b>Monthly investment</b></div>
-            <div><input id="investment" type="text" onchange="commas(this)"/></div>
-            <br/>
-            <div><b>Time period (yr)</b></div>
-            <div><input id="years" type="number"></div>
-            <br/>
-            <div><b>Expected return rate (p.a)</b></div>
-            <div><input id="return-rate"  type="text" onchange="percentage(this)"/></div>
-          </div>
-        </div>
-        </br/>
-        <div class="btn-calculate">
-          <button type="button" onclick="calculateResult()">
-          Calculate
-          </button>
-        </div>
-        </br/>
-        <div style="display: flex;">
-          <div class="result"><b>Result :</b></div>
-          <div class="result-container">
-            <div>Monthly Investment for <span id="mode-1">SIP</span></div>
-            <div><span>Rs.</span>&nbsp;<span id="input-1"></span></div>
-            <br/>
-            <div>Number of Years <span id="mode-2">SIP</span></div>
-            <div><span>Years:</span>&nbsp;<span id="input-2"></span></div>
-            <br/>
-            <div>Expected Rate of Return <span id="mode-3">SIP</span></div>
-            <div><span>%:</span>&nbsp;<span id="input-3"></span></div>
-          </div>
-          <div class="result-container">
-            <div>Total Investment</div>
-            <div><span id="currency-change-1">Rs.</span>&nbsp;<span id="total"></span></div>
-            <br/>
-            <div>Wealth Gained</div>
-            <div><span id="currency-change-2">Rs.</span>&nbsp;<span id="wealth-gained"></span></div>
-            <br/>
-            <div>Maturity Value</div>
-            <div><span id="currency-change-3">Rs.</span>&nbsp;<span id="maturity-value"></span></div>
+        <div class="inner2">
+          <div class="result-side">
+            <div class="result"><b>Result :</b></div>
+            <div class="result-container">
+              <div>Monthly Investment for <span id="mode-1">SIP</span></div>
+              <div><span>Rs.</span>&nbsp;<span id="input-1"></span></div>
+              <br/>
+              <div>Number of Years <span id="mode-2">SIP</span></div>
+              <div><span>Years:</span>&nbsp;<span id="input-2"></span></div>
+              <br/>
+              <div>Expected Rate of Return <span id="mode-3">SIP</span></div>
+              <div><span>%:</span>&nbsp;<span id="input-3"></span></div>
+              <br/>
+              <div>Total Investment</div>
+              <div><span id="currency-change-1">Rs.</span>&nbsp;<span id="total"></span></div>
+              <br/>
+              <div>Wealth Gained</div>
+              <div><span id="currency-change-2">Rs.</span>&nbsp;<span id="wealth-gained"></span></div>
+              <br/>
+              <div>Maturity Value</div>
+              <div><span id="currency-change-3">Rs.</span>&nbsp;<span id="maturity-value"></span></div>
+            </div>
           </div>
         </div>
       </div>
@@ -226,36 +229,39 @@
         <h3>EMI Calculator</h3>
       </div>
       <div class="page-container">
+         <div class="inner1">
           <div class="input-container">
-              <div>
-                  <div><b>Loan Amount (INR)</b></div>
-                  <div><input id="loanAmount" type="number" style="margin: 1% 5% 0 0"/></div>
-                  <br/>
-                  <div><b>Interest Rate (%)</b></div>
-                  <div><input id="interestRate" type="number"/></div>
-                  <br/>
-                  <div><b>Loan Tenure (Months)</b></div>
-                  <div><input id="loanTenure" type="number"/></div>
-              </div>
-          </div>
-          </br/>
-          <div class="btn-calculate">
-              <button type="button" onclick="calculateEMI()">Calculate EMI</button>
-          </div>
-          </br/>
-          <div style="display: flex;">
-              <div class="result"><b>Result :</b></div>
-              <div class="result-container">
-                  <div>Monthly EMI</div>
-                  <div><span id="monthlyEMI"></span></div>
-                  <br/>
-                  <div>Total Payment</div>
-                  <div><span id="totalPayment"></span></div>
-                  <br/>
-                  <div>Total Interest Paid</div>
-                  <div><span id="totalInterestPaid"></span></div>
-              </div>
-          </div>
+            <div>
+                <div><b>Loan Amount (INR)</b></div>
+                <div><input id="loanAmount" type="number" placeholder="  Enter amount in INR"  style="margin: 1% 5% 0 0"/></div>
+                <br/>
+                <div><b>Interest Rate (%)</b></div>
+                <div><input id="interestRate" placeholder="  Enter interest rate"  type="number"/></div>
+                <br/>
+                <div><b>Loan Tenure (Months)</b></div>
+                <div><input id="loanTenure" placeholder="  Enter months" type="number"/></div>
+            </div>
+        </div>
+        </br/>
+        <div class="btn-calculate">
+            <button type="button" onclick="calculateEMI()">Calculate EMI</button>
+        </div>
+         </div>
+         <div class="innet2">
+          <div class="result-side">
+            <div class="result"><b>Result :</b></div>
+            <div class="result-container">
+                <div>Monthly EMI</div>
+                <div><span id="monthlyEMI"></span></div>
+                <br/>
+                <div>Total Payment</div>
+                <div><span id="totalPayment"></span></div>
+                <br/>
+                <div>Total Interest Paid</div>
+                <div><span id="totalInterestPaid"></span></div>
+            </div>
+        </div>
+         </div>
       </div>
     </div>
     <!-- End EMI Calculator -->
