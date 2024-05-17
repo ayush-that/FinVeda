@@ -22,6 +22,23 @@
       <link rel="stylesheet" href="assets/css/popup.css" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+      <style>
+         @keyframes float {
+            0% {
+               transform: translateY(0);
+            }
+      
+            50% {
+               transform: translateY(-5px);
+            }
+      
+            100% {
+               transform: translateY(0);
+            }
+         }
+      </style>
+
    <body>
       <div class="preloader">
          <div class="loader">
@@ -147,7 +164,9 @@
                         data-wow-duration="1.3s"
                         data-wow-delay="1.4s"
                         >
-                        <img src="assets/images/header-hero.png" alt="hero" />
+                      <div class="anim" data-tilt="">
+                        <img src="assets/images/header-hero.png" alt="hero" style="animation: float 1.5s ease-in-out infinite;" data-tilt="" />
+                      </div>
                      </div>
                   </div>
                </div>
@@ -1015,6 +1034,7 @@
       </footer>
       <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
      </script>
+      
       <script src="../assets/js/vendor/jquery-1.12.4.min.js"></script>
       <script src="../assets/js/vendor/modernizr-3.7.1.min.js"></script>
       <script src="../assets/js/popper.min.js"></script>
@@ -1033,5 +1053,6 @@
       <script src="../assets/js/main.js"></script>
       <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
       <script src="https://mediafiles.botpress.cloud/5e160793-5606-4412-ba4c-337e416f14fe/webchat/config.js" defer></script>
+      <script src="./assets/js/vanilla-tilt.js"></script>
    </body>
 </html>
