@@ -83,8 +83,8 @@ validateAmount = (x) => {
   else{
     amount.style.borderColor="#000000";
     amount.style.borderWidth="1px";
-    if(!isNaN(amount.value) && !isNaN(returnRate.value) && !isNaN(timeY.value)){
-      document.getElementById("calculateE").disabled=false;
+    if(isFinite(amount.value) && isFinite(returnRate.value) && isFinite(timeY.value)){
+      document.getElementById("calculateButton").disabled=false;
     }
   }
 };
@@ -102,8 +102,8 @@ validateReturnRate = (x) => {
   else{
     returnRate.style.borderColor="#000000";
     returnRate.style.borderWidth="1px";
-    if(!isNaN(amount.value) && !isNaN(returnRate.value) && !isNaN(timeY.value)){
-      document.getElementById("calculateE").disabled=false;
+    if(isFinite(amount.value) && isFinite(returnRate.value) && isFinite(timeY.value)){
+      document.getElementById("calculateEButton").disabled=false;
     }
   }
 };
@@ -121,7 +121,7 @@ validateTime = (x) => {
   else{
     timeY.style.borderColor="#000000";
     timeY.style.borderWidth="1px";
-    if(!isNaN(amount.value) && !isNaN(returnRate.value) && !isNaN(timeY.value)){
-      document.getElementById("calculateE").disabled=false;
+    if(isFinite(amount.value) && isFinite(returnRate.value) && isFinite(timeY.value)){
+      document.getElementById("calculateButton").disabled=false;
     }  }
 };
