@@ -37,6 +37,8 @@
                transform: translateY(0);
             }
          }
+
+
       </style>
 
    <body>
@@ -80,6 +82,8 @@
                            id="navbarSupportedContent"
                            >
                            <ul id="nav" class="navbar-nav ml-auto">
+                                <li class="nav-item active"><button class="btn" onclick="myFunction()">Toggle dark mode</button>
+</li>
                               <li class="nav-item active">
                                  <a class="page-scroll" href="./index.html">Home 🏡</a>
                               </li>
@@ -1052,9 +1056,9 @@
          <div id="particles-2"></div>
       </footer>
 
-      <script>document.getElementById("copyright-year").textContent = new Date().getFullYear();</script>
+    <script>
+document.getElementById("copyright-year").textContent = new Date().getFullYear();</script>
       <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
-
      </script>
       
       <script src="../assets/js/vendor/jquery-1.12.4.min.js"></script>
@@ -1077,4 +1081,10 @@
       <script src="https://mediafiles.botpress.cloud/5e160793-5606-4412-ba4c-337e416f14fe/webchat/config.js" defer></script>
       <script src="./assets/js/vanilla-tilt.js"></script>
    </body>
+    <script>
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+</script>
 </html>
