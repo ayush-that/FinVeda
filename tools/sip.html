@@ -262,6 +262,45 @@
       </div>
     </div>
     <!-- End EMI Calculator -->
+    <!-- NPV Calculator -->
+    <script src="npvCalculator.js" defer></script>
+    <div class="header" style="padding-top: 100px;">
+        <h3>Net Present Value (NPV) Calculator</h3>
+    </div>
+    <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5">
+      <div class="input-container">
+          <div>
+            <div><b>Initial Investment (INR)</b></div>
+            <div><input class="form-control" id="initialInvestment" type="number" style="margin: 1% 5% 0 0"/></div>
+            <br/>
+            <div><b>Discount Rate (%)</b></div>
+            <div><input class="form-control" id="discountRate" type="number"/></div>
+          </div>
+      </div>
+      <br/>
+      <div class="cash-flows-container">
+        <div><b>Cash Flow</b></div>
+        <div id="cashFlows">
+          <!-- Cash flow inputs will be added here dynamically -->
+        </div>
+        <div class="npv-calculate">
+          <button type="button" onclick="addCashFlow()">+ Add Year</button>
+        </div>
+      </div>
+      <br/>
+      <div class="btn-calculate">
+        <button class="btn btn-success" type="button" onclick="calculateNPV()">Calculate</button>
+      </div>
+      <br/>
+      <div style="display: flex;">
+        <div class="nresult"><b>Result :</b></div>
+        <div class="nresult-container">
+          <div>NPV</div>
+          <div><span id="NPV_result">Rs.</span>&nbsp;<span id="npvResult"></span></div>
+        </div>
+      </div>
+    </div>
+    <!-- End NPV Calculator -->
   </body>
   <footer id="footer" class="footer-area pt-120">
     <div class="container">
