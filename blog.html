@@ -152,9 +152,10 @@
         <div id="particles-1" class="particles"></div>
       </div>
     </header>
+   
     <div class="blog-content">
       <article>
-      <section id="blog" class="blog-area pt-120">
+     <!-- <section id="blog" class="blog-area pt-120">
         <div class="container">
           <div class="row">
             <div class="col-lg-6">
@@ -234,9 +235,142 @@
       text-align: left;
       margin-left: auto;
       margin-right: auto;
-      max-width: 80%; /* Adjust this value to increase or decrease the margins */
+      max-width: 80%; 
       }
-    </style>
+    </style> -->
+    <section id="blog" class="blog-area pt-120">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="section-title pb-35">
+              <div class="line"></div>
+              <h3 class="title"><span>Our Recent</span> Blog Posts</h3>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-12">
+            <div class="blog-slider">
+              <div class="slide">
+                <div class="single-blog mt-30">
+                  <div class="blog-image">
+                    <img src="assets/images/blog-1.jpg" alt="blog" />
+                  </div>
+                  <div class="blog-content">
+                    <p class="text">How to deal with Unknown Risks in Life and Investing?</p>
+                    <a class="more" href="./blogs/how-to-deal-with-unknown-risks-in-life-and-investing.html">
+                     [ Learn More ] </a>
+                  </div>
+                </div>
+              </div>
+              <div class="slide">
+                <div class="single-blog mt-30">
+                  <div class="blog-image">
+                    <img src="assets/images/blog-2.jpg" alt="blog" />
+                  </div>
+                  <div class="blog-content">
+                    <p class="text">How to 10x your Generational Wealth?</p>
+                    <a class="more" href="./blogs/how-to-deal-with-unknown-risks-in-life-and-investing.html">
+                      [ Learn More ] </a>
+                  </div>
+                </div>
+              </div>
+              <div class="slide">
+                <div class="single-blog mt-30">
+                  <div class="blog-image">
+                    <img src="assets/images/blog-3.jpg" alt="blog" />
+                  </div>
+                  <div class="blog-content">
+                    <p class="text">Why investing in stocks is better than fixed deposit?</p>
+                    <a class="more" href="./blogs/how-to-deal-with-unknown-risks-in-life-and-investing.html">
+                      [ Learn More ] </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slider-nav">
+              <span class="prev" onclick="changeSlide(-1)">&#10094;</span>
+              <span class="next" onclick="changeSlide(1)">&#10095;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <style>
+
+      .container h3{
+        text-align: left;
+      }
+      
+       .blog-content {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 80%; 
+      }
+
+      .blog-image {
+      max-width: 40%;
+      height: auto;
+      display: block;
+      margin: 0 auto; 
+    }
+
+    .blog-content a{
+      margin: 0 auto;
+      text-align: center;
+      padding: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .blog-content a:hover{
+      background-color: rgb(255, 242, 234);
+      border-bottom: 1px solid rgb(255, 126, 67);
+      border-radius: 5px;
+      padding: 7px;
+      transform: scale(2.5s);
+    }
+
+      .blog-slider {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+      }
+      .slide {
+        min-width: 100%;
+        transition: transform 0.9s ease-in-out;
+      }
+      .slider-nav {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+      }
+      .slider-nav span {
+        background-color: transparent;
+        color: rgb(255, 47, 47);
+        font-size: 25px;
+        padding: 10px;
+        cursor: pointer;
+      }
+      .slider-nav span:hover {
+        background-color: rgb(255, 242, 234);
+        border-radius: 5px;
+        color: rgb(255, 47, 47);
+        padding: 5x;
+        cursor: pointer;
+      }
+      .single-blog {
+        text-align: center;
+      }
+
+      </style> 
+
     <footer id="footer" class="footer-area pt-120">
       <div class="container">
         <div
@@ -264,7 +398,7 @@
         </div>
         <div class="footer-widget pb-100">
           <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-8">
+            <div class="col-lg-4 col-md-6 col-sm-8"></div>
               <div
                 class="footer-about mt-50 wow fadeIn"
                 data-wow-duration="1s"
@@ -361,5 +495,6 @@
     <script src="../assets/js/particles.min.js"></script>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/popup.js"></script>
+    <script src="blog.js"></script>
   </body>
 </html>
