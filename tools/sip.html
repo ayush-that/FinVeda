@@ -262,6 +262,54 @@
       </div>
     </div>
     <!-- End EMI Calculator -->
+    <!-- NPV Calculator -->
+    <script src="npvCalculator.js" defer></script>
+    <div class="header" style="padding-top: 100px;">
+      <h3>Net Present Value (NPV) Calculator</h3>
+      <h6 style="text-align: left; margin: 1% 20%; padding-left: 50px;">The NPV (Net Present Value) Calculator is a tool designed to help you evaluate the profitability of an investment by calculating the present value of expected future cash flows. Here's how it works:</h6>
+      <p style="text-align: left; margin: 1% 20%; padding-left: 50px;">
+        1. <b>Initial Investment:</b> Enter the amount of your initial investment. <br>
+        2. <b>Discount Rate:</b> Enter the discount rate, which represents the rate of return required to make the investment worthwhile.<br>
+        3. <b>Cash Flows:</b> Add the expected cash flows for each year of the investment. You can add multiple cash flow inputs for different years and remove any as needed.<br>
+        4. <b>Calculate NPV:</b> Once all inputs are provided, click the 'Calculate NPV' button to compute the net present value. The result will display the NPV, indicating the potential profitability of your investment.<br>
+      </p>
+      <h6 style="text-align: left; margin: 1% 20%; padding-left: 50px;">This calculator helps investors make informed decisions by considering the time value of money, ensuring that future cash flows are accurately evaluated in today's terms.</h6>
+      
+    </div>
+    <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5">
+      <div class="input-container">
+          <div>
+            <div><b>Initial Investment (INR)</b></div>
+            <div><input class="form-control" id="initialInvestment" type="number" style="margin: 1% 5% 0 0"/></div>
+            <br/>
+            <div><b>Discount Rate (%)</b></div>
+            <div><input class="form-control" id="discountRate" type="number"/></div>
+          </div>
+      </div>
+      <br/>
+      <div class="cash-flows-container">
+        <div><b>Cash Flow</b></div>
+        <div id="cashFlows">
+          <!-- Cash flow inputs will be added here dynamically -->
+        </div>
+        <div class="npv-calculate">
+          <button type="button" onclick="addCashFlow()">+ Add Year</button>
+        </div>
+      </div>
+      <br/>
+      <div class="btn-calculate">
+        <button class="btn btn-success" type="button" onclick="calculateNPV()">Calculate</button>
+      </div>
+      <br/>
+      <div style="display: flex;">
+        <div class="nresult"><b>Result :</b></div>
+        <div class="nresult-container">
+          <div>NPV</div>
+          <div><span id="NPV_result">Rs.</span>&nbsp;<span id="npvResult"></span></div>
+        </div>
+      </div>
+    </div>
+    <!-- End NPV Calculator -->
   </body>
   <footer id="footer" class="footer-area pt-120">
     <div class="container">
