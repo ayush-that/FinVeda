@@ -155,20 +155,23 @@
     <link rel="stylesheet" type="text/css" href="sipcalculatorCss.css">
     <script type="text/javascript" src="sipcalculatorJs.js"></script>
     <body class="body-background">
-      <div class="header">
+      <div class="header mt-5">
         <h3>Mutual Fund Investment Calculator</h3>
       </div>
-      <div class="page-container">
-        <div class="switch-container">
-          <div class="radio-button">
-            <label for="sip">SIP</label>
-            <input type="radio" checked name="checked" value="SIP"><br>
-            <label for="lumpsum">LumpSum</label>
-            <input type="radio" name="checked" value="LumpSum">
+      <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5">
+        <div class="switch-container radio-button">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio"  value="SIP" checked name="checked">
+            <label class="form-check-label" for="SIP">SIP</label>
           </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="checked" value="LumpSum">
+            <label class="form-check-label" for="lumpsum">LumpSum</label>
+          </div>
+          
           <div class="dropdown">
             Currency
-            <select onchange="currencyChange(this)" id="currency" class="currency">
+            <select class="form-control" onchange="currencyChange(this)" id="currency" class="currency">
               <!-- &#8377; -->
               <option value="Rs">&#8377; &nbsp;INR</option>
               <option value="$">&#128176;USD</option>
@@ -177,20 +180,20 @@
           </div>
         </div>
         <div class="input-container">
-          <div>
+          <div >
             <div><b>Monthly investment</b></div>
-            <div><input id="investment" type="text" onchange="commas(this)"/></div>
+            <div><input class="form-control" id="investment" type="text" onchange="commas(this)"/></div>
             <br/>
             <div><b>Time period (yr)</b></div>
-            <div><input id="years" type="number"></div>
+            <div><input class="form-control" id="years" type="number"></div>
             <br/>
             <div><b>Expected return rate (p.a)</b></div>
-            <div><input id="return-rate"  type="text" onchange="percentage(this)"/></div>
+            <div><input class="form-control" id="return-rate"  type="text" onchange="percentage(this)"/></div>
           </div>
         </div>
         </br/>
         <div class="btn-calculate">
-          <button type="button" onclick="calculateResult()">
+          <button type="button" onclick="calculateResult()" class="btn btn-success">
           Calculate
           </button>
         </div>
@@ -225,22 +228,22 @@
       <div class="header" style="padding-top: 100px;">
         <h3>EMI Calculator</h3>
       </div>
-      <div class="page-container">
+      <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5">
           <div class="input-container">
               <div>
                   <div><b>Loan Amount (INR)</b></div>
-                  <div><input id="loanAmount" type="number" style="margin: 1% 5% 0 0"/></div>
+                  <div><input class="form-control" id="loanAmount" type="number" style="margin: 1% 5% 0 0"/></div>
                   <br/>
                   <div><b>Interest Rate (%)</b></div>
-                  <div><input id="interestRate" type="number"/></div>
+                  <div><input class="form-control" id="interestRate" type="number"/></div>
                   <br/>
                   <div><b>Loan Tenure (Months)</b></div>
-                  <div><input id="loanTenure" type="number"/></div>
+                  <div><input class="form-control" id="loanTenure" type="number"/></div>
               </div>
           </div>
           </br/>
           <div class="btn-calculate">
-              <button type="button" onclick="calculateEMI()">Calculate EMI</button>
+              <button class="btn btn-success" type="button" onclick="calculateEMI()">Calculate EMI</button>
           </div>
           </br/>
           <div style="display: flex;">
