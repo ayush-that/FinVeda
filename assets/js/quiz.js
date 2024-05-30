@@ -14,7 +14,7 @@ function gradeQuiz() {
 
     let score = 0;
     let explanations = "";
-    let answered = false; // Flag to track if any question has been answered
+    let answeredAll = true; // Flag to track if all questions have been answered
 
     for (const question in answers) {
         const selectedAnswer = document.querySelector(`input[name=${question}]:checked`);
@@ -27,16 +27,19 @@ function gradeQuiz() {
             } else {
                 explanations += `<li>${question}: Incorrect.</li>`;
             }
+        } else {
+            answeredAll = false; // Set the flag to false if any question remains unanswered
         }
     }
 
     const resultElement = document.getElementById('quizResult');
-    if (answered) { // Check if any question has been answered
+
+    if (answeredAll) { // Check if all questions have been answered
         resultElement.innerHTML = `<h3>Quiz Result:</h3>
                                    <p>You scored ${score} out of ${Object.keys(answers).length}.</p>
                                    <p>Explanations of Answers:</p>
                                    <ul>${explanations}</ul>`;
     } else {
-        resultElement.innerHTML = `<p style="color: red;">Please answer at least one question before submitting.</p>`;
+        resultElement.innerHTML = `<p style="color: red;">Please answer all questions before submitting.</p>`;
     }
 }
