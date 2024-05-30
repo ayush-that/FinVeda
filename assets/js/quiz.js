@@ -14,6 +14,7 @@ function gradeQuiz() {
 
     let score = 0;
     let explanations = "";
+    let answered = false; // Flag to track if any question has been answered
 
     for (const question in answers) {
         const selectedAnswer = document.querySelector(`input[name=${question}]:checked`);
@@ -30,8 +31,12 @@ function gradeQuiz() {
     }
 
     const resultElement = document.getElementById('quizResult');
-    resultElement.innerHTML = `<h3>Quiz Result:</h3>
-                               <p>You scored ${score} out of ${Object.keys(answers).length}.</p>
-                               <p>Explanations of Answers:</p>
-                               <ul>${explanations}</ul>`;
+    if (answered) { // Check if any question has been answered
+        resultElement.innerHTML = `<h3>Quiz Result:</h3>
+                                   <p>You scored ${score} out of ${Object.keys(answers).length}.</p>
+                                   <p>Explanations of Answers:</p>
+                                   <ul>${explanations}</ul>`;
+    } else {
+        resultElement.innerHTML = `<p style="color: red;">Please answer at least one question before submitting.</p>`;
+    }
 }
