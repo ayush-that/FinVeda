@@ -21,7 +21,11 @@
     <link rel="stylesheet" href="assets/css/quiz.css" />
     <link rel="stylesheet" href="assets/css/popup.css" />
   </head>
-  <body>
+  <body onload="checkmode3()">
+    <!-- <div  class="navbar-btn d-none d-sm-inline-block" style="z-index: 99;position: absolute ;right: 10px;">
+      <button id="dark-mode-toggle" style="z-index: 99;" class="main-btn">Dark Mode 🌙</button>
+    </div> -->
+    
     <div class="preloader">
       <div class="loader">
         <div class="ytp-spinner">
@@ -79,6 +83,13 @@
                     <li class="nav-item">
                       <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
                     </li>
+                    <li class="nav-item" >
+
+                      <div  class="navbar-btn  d-sm-inline-block" style="z-index: 99;position:relative;top: 10px;">
+                <button id="dark-mode-toggle" style="z-index: 99;" class="main-btn">🌙</button>
+          
+              </div>
+                    </li>
                   </ul>
                 </div>
                 <div class="navbar-btn d-none d-sm-inline-block">
@@ -88,7 +99,7 @@
                       <span class="close d-flex justify-content-end">&times;</span>
       
                       <div class="mt-3"><p><h3 class="join">Login to join us....</h3></p>
-                <form class="px-3 py-4">
+                <form class="px-3 py-4 ">
                   <div class="form-group">
                       <label class="d-flex">Username</label>
                       <input type="text" placeholder="Username" class="form-control"/>
@@ -112,6 +123,7 @@
                     onclick="openModal()" >Login/Register 💻</a
                     >
                 </div>
+                
               </nav>
             </div>
           </div>
@@ -179,7 +191,7 @@
       <p></p>
       <h2>Test you knowledge</h2>
       </p><br>
-      <form id="financeQuizForm">
+      <form id="financeQuizForm" class="dark">
         <!-- Question 1 -->
         <label>1. What is the primary purpose of creating a budget?</label><br>
         <input type="radio" name="q1" value="A"> A. To restrict spending<br>
@@ -394,5 +406,54 @@
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/quiz.js"></script>
     <script src="../assets/js/popup.js"></script>
+    <script>
+      function checkmode3(){
+        if (localStorage.getItem('dark-mode') === 'enabled') {
+          body.classList.add('dark-mode');
+        }
+        if (body.classList.contains('dark-mode')) {
+            toggleButton.textContent = '☀️';
+          } else {
+            toggleButton.textContent = '🌙';
+          }
+      }
+    </script>
+     <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        const toggleButton = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+  
+        // Function to update the button icon
+        const updateButtonIcon = () => {
+          if (body.classList.contains('dark-mode')) {
+            toggleButton.textContent = '☀️';
+          } else {
+            toggleButton.textContent = '🌙';
+          }
+        };
+  
+        // Check for saved user preference and apply it
+        if (localStorage.getItem('dark-mode') === 'enabled') {
+          body.classList.add('dark-mode');
+        }
+  
+        // Update the button icon based on the initial mode
+        updateButtonIcon();
+  
+        toggleButton.addEventListener('click', () => {
+          body.classList.toggle('dark-mode');
+          
+          // Save user preference
+          if (body.classList.contains('dark-mode')) {
+            localStorage.setItem('dark-mode', 'enabled');
+          } else {
+            localStorage.removeItem('dark-mode');
+          }
+  
+          // Update the button icon after toggling mode
+          updateButtonIcon();
+        });
+      });
+    </script>
   </body>
 </html>

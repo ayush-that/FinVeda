@@ -22,7 +22,9 @@
     <link rel="stylesheet" href="../assets/css/popup.css" />
     <link rel="stylesheet" type="text/css" href="sipcalculatorCss.css">
   </head>
-  <body>
+  <body onload="checkmode1()">
+    
+    
     <div class="preloader">
       <div class="loader">
         <div class="ytp-spinner">
@@ -77,6 +79,13 @@
                     </li>
                     <li class="nav-item">
                       <a class="page-scroll" href="../quiz.html">Quiz 🤔</a>
+                    </li>
+                    <li class="nav-item" >
+
+                      <div  class="navbar-btn  d-sm-inline-block" style="z-index: 99;position:relative;top: 10px;">
+                <button id="dark-mode-toggle" style="z-index: 99;" class="main-btn">🌙</button>
+          
+              </div>
                     </li>
                   </ul>
                 </div>
@@ -434,5 +443,54 @@
   <script src="../assets/js/particles.min.js"></script>
   <script src="../assets/js/main.js"></script>
   <script src="../assets/js/popup.js"></script>
+  <script>
+    function checkmode1(){
+      if (localStorage.getItem('dark-mode') === 'enabled') {
+        body.classList.add('dark-mode');
+      }
+      if (body.classList.contains('dark-mode')) {
+          toggleButton.textContent = '☀️';
+        } else {
+          toggleButton.textContent = '🌙';
+        }
+    }
+  </script>
+   <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const toggleButton = document.getElementById('dark-mode-toggle');
+      const body = document.body;
+
+      // Function to update the button icon
+      const updateButtonIcon = () => {
+        if (body.classList.contains('dark-mode')) {
+          toggleButton.textContent = '☀️';
+        } else {
+          toggleButton.textContent = '🌙';
+        }
+      };
+
+      // Check for saved user preference and apply it
+      if (localStorage.getItem('dark-mode') === 'enabled') {
+        body.classList.add('dark-mode');
+      }
+
+      // Update the button icon based on the initial mode
+      updateButtonIcon();
+
+      toggleButton.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        
+        // Save user preference
+        if (body.classList.contains('dark-mode')) {
+          localStorage.setItem('dark-mode', 'enabled');
+        } else {
+          localStorage.removeItem('dark-mode');
+        }
+
+        // Update the button icon after toggling mode
+        updateButtonIcon();
+      });
+    });
+  </script>
   </body>
 </html>

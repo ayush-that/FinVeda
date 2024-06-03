@@ -36,6 +36,8 @@
       }
     </style>
   <body>
+    
+    
     <div class="preloader">
       <div class="loader">
         <div class="ytp-spinner">
@@ -53,7 +55,7 @@
       </div>
     </div>
     <header class="header-area">
-      <div class="navbar-area">
+      <div class="navbar-area" style="z-index: 50;">
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
@@ -91,6 +93,13 @@
                     <li class="nav-item">
                       <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
                     </li>
+           <li class="nav-item" >
+
+             <div  class="navbar-btn  d-sm-inline-block" style="z-index: 99;position:relative;top: 10px;">
+       <button id="dark-mode-toggle" style="z-index: 99;" class="main-btn">🌙</button>
+ 
+     </div>
+           </li>
                   </ul>
                 </div>
                 <div class="navbar-btn d-none d-sm-inline-block">
@@ -98,7 +107,7 @@
                     onclick="openModal()" >Login/Register 💻</a
                     >
                 </div>
-            </div>
+              </div>
             </nav>
           </div>
         </div>
@@ -980,6 +989,47 @@
     <script>document.getElementById("copyright-year").textContent = new Date().getFullYear();</script>
     <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
     </script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        const toggleButton = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+
+        // Function to update the button icon
+        const updateButtonIcon = () => {
+          if (body.classList.contains('dark-mode')) {
+            toggleButton.textContent = '☀️';
+          } else {
+            toggleButton.textContent = '🌙';
+          }
+        };
+
+        // Check for saved user preference and apply it
+        if (localStorage.getItem('dark-mode') === 'enabled') {
+          body.classList.add('dark-mode');
+        }
+
+        // Update the button icon based on the initial mode
+        updateButtonIcon();
+
+        toggleButton.addEventListener('click', () => {
+          body.classList.toggle('dark-mode');
+          
+          // Save user preference
+          if (body.classList.contains('dark-mode')) {
+            localStorage.setItem('dark-mode', 'enabled');
+          } else {
+            localStorage.removeItem('dark-mode');
+          }
+
+          // Update the button icon after toggling mode
+          updateButtonIcon();
+        });
+      });
+    </script>
+    
+    
+
     <script src="../assets/js/vendor/jquery-1.12.4.min.js"></script>
     <script src="../assets/js/vendor/modernizr-3.7.1.min.js"></script>
     <script src="../assets/js/popper.min.js"></script>
