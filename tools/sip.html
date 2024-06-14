@@ -310,6 +310,109 @@
       </div>
     </div>
     <!-- End NPV Calculator -->
+    <!--ROI Calculator-->
+    <div class="header mt-5">
+      <h3>Return on Investment (ROI) Calculator</h3>
+  </div>
+  <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5">
+      <div class="input-container">
+          <div>
+              <div><b>Total Revenue</b></div>
+              <div><input class="form-control" id="total-revenue" type="text" onchange="commas(this)" /></div>
+              <br />
+              <div><b>Total Costs</b></div>
+              <div><input class="form-control" id="total-costs" type="text" onchange="commas(this)" /></div>
+              <br />
+              <div><b>Number of Years</b></div>
+              <div><input class="form-control" id="investment-years" type="number" /></div>
+          </div>
+      </div>
+      <br />
+      <div class="btn-calculate">
+          <button type="button" onclick="calculateROI()" class="btn btn-success">
+              Calculate ROI
+          </button>
+      </div>
+      <br />
+      <div class="result">
+          <b>ROI:</b>
+          <span id="roi-result"></span>
+      </div>
+  </div>
+</body>
+<script>
+  function openModal() {
+      var modal = document.getElementById("myModal");
+      var span = document.getElementsByClassName("close")[0];
+      modal.style.display = "block";
+      span.onclick = function() {
+          modal.style.display = "none";
+      };
+      window.onclick = function(event) {
+          if (event.target == modal) {
+              modal.style.display = "none";
+          }
+      };
+  }
+
+  function commas(x) {
+      x.value = x.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
+  function calculateResult() {
+      var investment = parseFloat(document.getElementById("investment").value.replace(/,/g, ''));
+      var years = parseFloat(document.getElementById("years").value);
+      var returnRate = parseFloat(document.getElementById("return-rate").value) / 100;
+
+      var totalAmount = investment * ((Math.pow(1 + returnRate / 12, years * 12) - 1) / (returnRate / 12)) * (1 + returnRate / 12);
+      var principal = investment * years * 12;
+      var interest = totalAmount - principal;
+
+      document.getElementById("input-1").innerText = investment.toFixed(2);
+      document.getElementById("input-2").innerText = years;
+      document.getElementById("input-3").innerText = (returnRate * 100).toFixed(2);
+
+      var tableBody = document.getElementById("table-body");
+      tableBody.innerHTML = "";
+      for (var i = 1; i <= years; i++) {
+          var yearPrincipal = investment * i * 12;
+          var yearInterest = yearPrincipal * returnRate;
+          var closingBalance = yearPrincipal + yearInterest;
+
+          var row = document.createElement("tr");
+          var cell1 = document.createElement("td");
+          var cell2 = document.createElement("td");
+          var cell3 = document.createElement("td");
+          var cell4 = document.createElement("td");
+
+          cell1.innerText = i;
+          cell2.innerText = yearPrincipal.toFixed(2);
+          cell3.innerText = yearInterest.toFixed(2);
+          cell4.innerText = closingBalance.toFixed(2);
+
+          row.appendChild(cell1);
+          row.appendChild(cell2);
+          row.appendChild(cell3);
+          row.appendChild(cell4);
+
+          tableBody.appendChild(row);
+      }
+  }
+
+  function calculateROI() {
+    var totalRevenue = parseFloat(document.getElementById("total-revenue").value.replace(/,/g, ''));
+    var totalCosts = parseFloat(document.getElementById("total-costs").value.replace(/,/g, ''));
+    var investmentYears = parseFloat(document.getElementById("investment-years").value);
+
+    if (investmentYears > 0) {
+        var roi = ((totalRevenue / totalCosts) ** (1 / investmentYears) - 1) * 100;
+        document.getElementById("roi-result").innerText = roi.toFixed(2) + "% (Annualized)";
+    } else {
+        document.getElementById("roi-result").innerText = "Investment years must be greater than 0.";
+    }
+}
+
+</script>
   </body>
   <footer id="footer" class="footer-area pt-120">
     <div class="container">
