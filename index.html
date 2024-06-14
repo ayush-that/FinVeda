@@ -24,15 +24,68 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
       @keyframes float {
-      0% {
-      transform: translateY(0);
+        0% {
+          transform: translateY(0);
+        }
+    
+        50% {
+          transform: translateY(-5px);
+        }
+    
+        100% {
+          transform: translateY(0);
+        }
       }
-      50% {
-      transform: translateY(-5px);
+    
+      .footer-widget {
+        padding: 20px 0;
+    
       }
-      100% {
-      transform: translateY(0);
+    
+      .footer-title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        margin-top: 30px;
+        color: white;
       }
+    
+      .footer-title img {
+        margin-right: 10px;
+        width: 44px;
+        /* Adjust icon size if necessary */
+        height: 44px;
+      }
+    
+      .footer-links,
+      .contact-info {
+        list-style: none;
+        padding-left: 0;
+        color: black;
+      }
+    
+      .footer-about p {
+        color: black;
+        /* Set paragraph text color to black */
+      }
+    
+      .footer-links li,
+      .contact-info li {
+        margin-bottom: 8px;
+        color: black;
+    
+      }
+    
+      @media (max-width: 768px) {
+        .footer-widget {
+          padding: 30px 0;
+        }
+      }
+    
+      .footer-quick-links .footer-links li a,
+      .footer-resources .footer-links li a {
+        color: black;
+        /* Set quick links and resources text color to black */
       }
     </style>
   <body>
@@ -896,71 +949,56 @@
             </div>
           </div>
         </div>
-        <div class="footer-widget pb-100">
-          <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-8">
-              <div
-                class="footer-about mt-50 wow fadeIn"
-                data-wow-duration="1s"
-                data-wow-delay="0.2s"
-                >
-                <p class="text">
-                  We at FinVeda aim to make you a stock market Guru easy with our AI powered teaching and financial blogs.
-                </p>
+        <div class="footer-widget">
+          <div class="container">
+            <div class="row align-items-center">
+              <!-- About Us -->
+              <div class="col-lg-3 col-md-6 col-sm-12 mb-4 mb-md-0">
+                <div class="footer-about">
+                  <h3 class="footer-title"><img src="https://img.icons8.com/?size=100&id=64047&format=png&color=000000" alt="About Us Icon"> About Us</h3>
+                  <p>We at FinVeda aim to make you a stock market Guru easy with our AI powered teaching and financial blogs.</p>
+                </div>
               </div>
-            </div>
-            <div class="col-lg-5 col-md-7 col-sm-7">
-              <div class="footer-link d-flex mt-50 justify-content-md-between">
-                <div
-                  class="link-wrapper wow fadeIn"
-                  data-wow-duration="1s"
-                  data-wow-delay="0.4s"
-                  >
-                  <div class="footer-title">
-                    <h4 class="title">Quick Link</h4>
-                  </div>
-                  <ul class="link">
+        
+              <!-- Quick Links -->
+              <div class="col-lg-3 col-md-6 col-sm-12 mb-4 mb-md-0">
+                <div class="footer-quick-links">
+                  <h3 class="footer-title"><img src="https://img.icons8.com/?size=100&id=64054&format=png&color=000000" alt="Quick Links Icon"> Quick Links</h3>
+                  <ul class="footer-links">
                     <li><a href="./blogs/privacy-policy.html">Privacy Policy</a></li>
                     <li><a href="./blogs/refund-policy.html">Refund Policy</a></li>
                     <li><a href="./blogs/terms-of-service.html">Terms of Service</a></li>
                   </ul>
                 </div>
-                <div
-                  class="link-wrapper wow fadeIn"
-                  data-wow-duration="1s"
-                  data-wow-delay="0.6s"
-                  >
-                  <div class="footer-title">
-                    <h4 class="title">Resources</h4>
-                  </div>
-                  <ul class="link">
+              </div>
+        
+              <!-- Resources -->
+              <div class="col-lg-3 col-md-6 col-sm-12 mb-4 mb-md-0">
+                <div class="footer-resources">
+                  <h3 class="footer-title"><img src="https://img.icons8.com/?size=100&id=gWdj3S1n42fu&format=png&color=000000" alt="Resources Icon"> Resources</h3>
+                  <ul class="footer-links">
                     <li><a href="./index.html">Home</a></li>
                     <li><a href="./login.html">Page</a></li>
                     <li><a href="./blog.html">Blog</a></li>
                   </ul>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-3 col-md-5 col-sm-5">
-              <div
-                class="footer-contact mt-50 wow fadeIn"
-                data-wow-duration="1s"
-                data-wow-delay="0.8s"
-                >
-                <div class="footer-title">
-                  <h4 class="title">Contact Us</h4>
+        
+              <!-- Contact Us -->
+              <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="footer-contact">
+                  <h3 class="footer-title"><img src="https://img.icons8.com/?size=100&id=100721&format=png&color=000000" alt="Contact Us Icon"> Contact Us</h3>
+                  <ul class="contact-info">
+                    <li>✉️: <a href="mailto:ayush1337@hotmail.com">ayush1337@hotmail.com</a></li>
+                    <li>🔗: <a href="https://fin-veda.vercel.app">fin-veda.vercel.app</a></li>
+                    <li>📍: Delhi, India</li>
+                  </ul>
                 </div>
-                <ul class="contact">
-                  <li>ayush1337@hotmail.com</li>
-                  <li>fin-veda.vercel.app</li>
-                  <li>
-                    Delhi, India
-                  </li>
-                </ul>
               </div>
             </div>
           </div>
         </div>
+    
         <div class="footer-copyright">
           <div class="row">
             <div class="col-lg-12">
