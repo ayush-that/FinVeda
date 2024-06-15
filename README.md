@@ -46,6 +46,9 @@ FinVeda is a dynamic financial literacy app that'll help you Learn finance with 
    git checkout -b feature/your-feature
 
    # Make your changes, whether they're bug fixes, new features, or improvements.
+   # add the change in your branch
+   git add .
+   
    # Commit your changes with descriptive commit messages.
    git commit -m "Add your descriptive commit message here"
    git push origin feature/your-feature
