@@ -26,27 +26,35 @@ function gradeQuiz() {
   let score = 0;
   let explanations = "";
 
-  for (const question in answers) {
-    const selectedAnswer = document.querySelector(
-      `input[name=${question}]:checked`
-    );
+    let score = 0;
+    let explanations = "";
+    let answeredAll = true; // Flag to track if all questions have been answered
 
-    if (selectedAnswer) {
-      const userAnswer = selectedAnswer.value;
-      if (userAnswer === answers[question]) {
-        score++;
-        explanations += `<li>${question}: Correct!</li>`;
-      } else {
-        explanations += `<li>${question}: Incorrect.</li>${explanation[question]}`;
-      }
+    for (const question in answers) {
+        const selectedAnswer = document.querySelector(`input[name=${question}]:checked`);
+
+        if (selectedAnswer) {
+            const userAnswer = selectedAnswer.value;
+            if (userAnswer === answers[question]) {
+                score++;
+                explanations += `<li>${question}: Correct!</li>`;
+            } else {
+                explanations += `<li>${question}: Incorrect.</li>`;
+            }
+        } else {
+            answeredAll = false; // Set the flag to false if any question remains unanswered
+        }
     }
   }
 
-  const resultElement = document.getElementById("quizResult");
-  resultElement.innerHTML = `<h3>Quiz Result:</h3>
-                               <p>You scored ${score} out of ${
-    Object.keys(answers).length
-  }.</p>
-                               <p>Explanations of Answers:</p>
-                               <ul>${explanations}</ul>`;
+    const resultElement = document.getElementById('quizResult');
+
+    if (answeredAll) { // Check if all questions have been answered
+        resultElement.innerHTML = `<h3>Quiz Result:</h3>
+                                   <p>You scored ${score} out of ${Object.keys(answers).length}.</p>
+                                   <p>Explanations of Answers:</p>
+                                   <ul>${explanations}</ul>`;
+    } else {
+        resultElement.innerHTML = `<p style="color: red;">Please answer all questions before submitting.</p>`;
+    }
 }
