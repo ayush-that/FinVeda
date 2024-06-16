@@ -80,32 +80,57 @@
                   </ul>
                 </div>
                 <div class="navbar-btn d-none d-sm-inline-block">
-                  <div id="myModal" class="modal">
-                    <!-- Modal content -->
-                    <div class="modal-content">
-                      <span class="close d-flex justify-content-end">&times;</span>
-      
-                      <div class="mt-3"><p><h3 class="join">Login to join us....</h3></p>
-                <form class="px-3 py-4">
-                  <div class="form-group">
-                      <label class="d-flex">Username</label>
-                      <input type="text" placeholder="Username" class="form-control"/>
+                  <!-- Login Modal -->
+               <div id="myModal" class="modal">
+                <div class="modal-content">
+                  <span class="close" style="display: flex; justify-content: right;">&times;</span>
+                  <div class="mt-3">
+                    <h3 class="join">Login to join us....</h3>
+                    <form class="px-3 py-4">
+                      <div class="form-group">
+                        <label class="d-flex">Username</label>
+                        <input type="text" placeholder="Username" class="form-control"/>
+                      </div>
+                      <div class="form-group">
+                        <label class="d-flex">Password</label>
+                        <input type="password" placeholder="Password" class="form-control"/>
+                      </div>
+                      <div class="form-check d-flex">
+                        <input type="checkbox" class="form-check-input">
+                        <label class="form-check-label">Remember me</label>
+                      </div>
+                    </form>
+                    <button class="main-btn mt-2 w-100 mb-3">Sign in</button>
+                    <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
                   </div>
-                  <div class="form-group">
-                      <label class="d-flex">Password</label>
-                      <input type="text" placeholder="Password" class="form-control"/>
-                  </div>
-                  <div class="form-check d-flex">
-                      <input type="checkbox" class="form-check-input" >
-                      <label class="form-check-label">
-                          Remember me
-                      </label>
-                  </div>
-              </form>
+                </div>
+              </div>
               
-                <button class="main-btn mt-2 w-100 mb-3">Sign in</button></div>
-                    </div>
+              <!-- Register Modal -->
+              <div id="registerModal" class="modal">
+                <div class="modal-content">
+                  <span class="close" style="display: flex; justify-content: right;">&times;</span>
+                  <div class="mt-3">
+                    <h3 class="join">Register to join us....</h3>
+                    <form class="px-3 py-4">
+                      <div class="form-group">
+                        <label class="d-flex">Email</label>
+                        <input type="email" placeholder="Email" class="form-control"/>
+                      </div>
+                      <div class="form-group">
+                        <label class="d-flex">Username</label>
+                        <input type="text" placeholder="Username" class="form-control"/>
+                      </div>
+                      <div class="form-group">
+                        <label class="d-flex">Password</label>
+                        <input type="password" placeholder="Password" class="form-control"/>
+                      </div>
+                    </form>
+                    <button class="main-btn mt-2 w-100 mb-3">Register</button>
+                    <p class="text-center">Already have an account? <a href="#" id="loginLink">Login</a></p>
                   </div>
+                </div>
+              </div>
                   <a class="main-btn" data-scroll-nav="0" href="#"
                     onclick="openModal()" >Login/Register 💻</a
                     >
@@ -380,5 +405,53 @@
     <script src="../assets/js/particles.min.js"></script>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/popup.js"></script>
+    <script>
+      // Get the modals
+      var loginModal = document.getElementById('myModal');
+      var registerModal = document.getElementById('registerModal');
+    
+      // Get the button that opens the login modal
+      var loginBtn = document.getElementById('loginBtn');
+    
+      // Get the links that open the register and login modals
+      var registerLink = document.getElementById('registerLink');
+      var loginLink = document.getElementById('loginLink');
+    
+      // Get the <span> elements that close the modals
+      var closeBtns = document.getElementsByClassName('close');
+    
+    
+      // When the user clicks the register link, open the register modal
+      registerLink.onclick = function(event) {
+        event.preventDefault();
+        loginModal.style.display = 'none';
+        registerModal.style.display = 'block';
+      }
+    
+      // When the user clicks the login link, open the login modal
+      loginLink.onclick = function(event) {
+        event.preventDefault();
+        registerModal.style.display = 'none';
+        loginModal.style.display = 'block';
+      }
+    
+      // When the user clicks on <span> (x), close the modal
+      for (var i = 0; i < closeBtns.length; i++) {
+        closeBtns[i].onclick = function() {
+          loginModal.style.display = 'none';
+          registerModal.style.display = 'none';
+        }
+      }
+    
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == loginModal) {
+          loginModal.style.display = 'none';
+        }
+        if (event.target == registerModal) {
+          registerModal.style.display = 'none';
+        }
+      }
+    </script>
   </body>
 </html>
