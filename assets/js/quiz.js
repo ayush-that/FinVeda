@@ -11,7 +11,7 @@ function gradeQuiz() {
     q9: "C", // Correct answer: C. It protects against medical costs
     q10: "C", // Correct answer: C. Death benefit to beneficiaries
   };
-  const explanation = {
+  const explanations = {
     q1: "Creating a budget helps individuals or organizations monitor their financial situation by keeping track of their income and expenses, allowing for better financial planning and management.",
     q2: "Credit scores are primarily determined by factors such as how consistently you pay your bills on time (payment history) and how much of your available credit you are using (debt utilization), among other factors.",
     q3: "A credit score is a numerical representation of an individual's creditworthiness, based on their credit history.",
@@ -21,40 +21,37 @@ function gradeQuiz() {
     q7: "The power of compound interest means that the earlier you start saving, the more time your money has to grow. Compounding allows the interest you earn on your savings to itself earn interest, leading to exponential growth of your retirement funds over time.",
     q8: "While there are several differences between 401(k)s and IRAs, one of the primary distinctions is the contribution limits. 401(k) plans, which are employer-sponsored, generally have higher annual contribution limits compared to IRAs, which are individual retirement accounts.",
     q9: "Health insurance helps individuals manage and mitigate the financial burden of medical expenses, including those resulting from unexpected illnesses, accidents, or routine healthcare needs.",
-    q10: " This payment, known as the death benefit, is typically intended to provide financial support to the insured's beneficiaries in the event of their death.",
+    q10: "This payment, known as the death benefit, is typically intended to provide financial support to the insured's beneficiaries in the event of their death.",
   };
+
   let score = 0;
-  let explanations = "";
+  let answerResults = "";
+  let answeredAll = true; // Flag to track if all questions have been answered
 
-    let score = 0;
-    let explanations = "";
-    let answeredAll = true; // Flag to track if all questions have been answered
+  for (const question in answers) {
+    const selectedAnswer = document.querySelector(`input[name=${question}]:checked`);
 
-    for (const question in answers) {
-        const selectedAnswer = document.querySelector(`input[name=${question}]:checked`);
-
-        if (selectedAnswer) {
-            const userAnswer = selectedAnswer.value;
-            if (userAnswer === answers[question]) {
-                score++;
-                explanations += `<li>${question}: Correct!</li>`;
-            } else {
-                explanations += `<li>${question}: Incorrect.</li>`;
-            }
-        } else {
-            answeredAll = false; // Set the flag to false if any question remains unanswered
-        }
+    if (selectedAnswer) {
+      const userAnswer = selectedAnswer.value;
+      if (userAnswer === answers[question]) {
+        score++;
+        answerResults += `<li>${question}: Correct! (${explanations[question]})</li>`;
+      } else {
+        answerResults += `<li>${question}: Incorrect. (${explanations[question]})</li>`;
+      }
+    } else {
+      answeredAll = false; // Set the flag to false if any question remains unanswered
     }
   }
 
-    const resultElement = document.getElementById('quizResult');
+  const resultElement = document.getElementById('quizResult');
 
-    if (answeredAll) { // Check if all questions have been answered
-        resultElement.innerHTML = `<h3>Quiz Result:</h3>
-                                   <p>You scored ${score} out of ${Object.keys(answers).length}.</p>
-                                   <p>Explanations of Answers:</p>
-                                   <ul>${explanations}</ul>`;
-    } else {
-        resultElement.innerHTML = `<p style="color: red;">Please answer all questions before submitting.</p>`;
-    }
+  if (answeredAll) { // Check if all questions have been answered
+    resultElement.innerHTML = `<h3>Quiz Result:</h3>
+                               <p>You scored ${score} out of ${Object.keys(answers).length}.</p>
+                               <p>Explanations of Answers:</p>
+                               <ul>${answerResults}</ul>`;
+  } else {
+    resultElement.innerHTML = `<p style="color: red;">Please answer all questions before submitting.</p>`;
+  }
 }
