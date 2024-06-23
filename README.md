@@ -24,6 +24,21 @@ Finance Quiz: Fun and interactive quizzes to test your knowledge.
 # Fork the repository to your GitHub account.
 # Clone the forked repository to your local machine.
 git clone https://github.com/ayush-that/FinVeda.git
+   
+   # Fork the repository to your GitHub account.
+   # Clone the forked repository to your local machine.
+   git clone https://github.com/ayush-that/FinVeda.git
+
+   # Create a new branch for your changes.
+   git checkout -b feature/your-feature
+
+   # Make your changes, whether they're bug fixes, new features, or improvements.
+   # add the change in your branch
+   git add .
+   
+   # Commit your changes with descriptive commit messages.
+   git commit -m "Add your descriptive commit message here"
+   git push origin feature/your-feature
 
 # Create a new branch for your changes.
 git checkout -b feature/your-feature

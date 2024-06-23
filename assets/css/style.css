@@ -151,7 +151,7 @@ p {
 }
 
 .main-btn:hover {
-  color: #fff;
+  color: #eda8a8;
   background-position: right center;
 }
 
@@ -633,6 +633,11 @@ p {
 .nav-item a:hover::after {
   width: 100%;
 }
+
+#active-page::after{
+  width: 100%;
+}
+
 .sticky {
   position: fixed;
   z-index: 99;
@@ -1602,7 +1607,10 @@ p {
   border-radius: 10px;
   padding: 25px 30px 5px;
   border-radius: 10px;
-  border: 2px solid transparent;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid transparent;
   margin: 30px 0;
   -webkit-transition: all 0.3s ease-out 0s;
   -moz-transition: all 0.3s ease-out 0s;
@@ -1994,6 +2002,7 @@ p {
 
 .footer-contact .contact li {
   margin-top: 20px;
+  margin-left: -10px;
   font-size: 16px;
   color: #fff;
 }
@@ -2039,7 +2048,7 @@ p {
   border-radius: 10px;
   /* background: -webkit-linear-gradient(left, #361cc1 0%, #2e82ef 100%); */
   /* background: -o-linear-gradient(left, #361cc1 0%, #2e82ef 100%); */
-  background: linear-gradient(to right, #7d91e9 0%, #6791db 100%);
+  background-color:rgb(102, 107, 234);
   text-align: center;
   z-index: 99;
   -webkit-transition: all 0.3s ease-out 0s;
@@ -2047,7 +2056,6 @@ p {
   -ms-transition: all 0.3s ease-out 0s;
   -o-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out ;
-  
 }
 
 .back-to-top:hover {
@@ -2065,4 +2073,22 @@ p {
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(#ff7979, #cd4343);
   border-radius: 0px;
+}
+
+.white{
+  color: white;
+}
+
+@media (max-width: 576px) {
+  .contact li{
+    display: flex;
+    align-items: center;
+  }
+  .contact i {
+    font-size: 14px;
+  }
+
+  .contact div {
+    font-size: 14px;
+  }
 }

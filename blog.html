@@ -3,6 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <title>Blogs - FinVeda</title>
+     <style>
+      .update{
+        display: block;
+          margin-bottom: 34px;
+      }
+  </style>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
@@ -20,8 +26,29 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/quiz.css" />
     <link rel="stylesheet" href="assets/css/popup.css" />
+    <style>
+      #progressBar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 8px;
+        background-color: #f76b45;
+        z-index: 9999;
+
+      }
+    </style>
   </head>
   <body>
+    <div id="progressBar"></div>
+    <script>
+      window.onscroll = function () {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progressBar").style.width = scrolled + "%";
+      };
+    </script>
     <div class="preloader">
       <div class="loader">
         <div class="ytp-spinner">
@@ -72,7 +99,7 @@
                       <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
                     </li>
                     <li class="nav-item active">
-                      <a class="page-scroll" href="./blog.html">Blogs 📰</a>
+                      <a class="page-scroll" href="./blog.html" id="active-page">Blogs 📰</a>
                     </li>
                     <li class="nav-item">
                       <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
@@ -80,32 +107,57 @@
                   </ul>
                 </div>
                 <div class="navbar-btn d-none d-sm-inline-block">
-                  <div id="myModal" class="modal">
-                    <!-- Modal content -->
-                    <div class="modal-content">
-                      <span class="close d-flex justify-content-end">&times;</span>
-      
-                      <div class="mt-3"><p><h3 class="join">Login to join us....</h3></p>
-                <form class="px-3 py-4">
-                  <div class="form-group">
-                      <label class="d-flex">Username</label>
-                      <input type="text" placeholder="Username" class="form-control"/>
+                  <!-- Login Modal -->
+               <div id="myModal" class="modal">
+                <div class="modal-content">
+                  <span class="close" style="display: flex; justify-content: right;">&times;</span>
+                  <div class="mt-3">
+                    <h3 class="join">Login to join us....</h3>
+                    <form class="px-3 py-4">
+                      <div class="form-group">
+                        <label class="d-flex">Username</label>
+                        <input type="text" placeholder="Username" class="form-control"/>
+                      </div>
+                      <div class="form-group">
+                        <label class="d-flex">Password</label>
+                        <input type="password" placeholder="Password" class="form-control"/>
+                      </div>
+                      <div class="form-check d-flex">
+                        <input type="checkbox" class="form-check-input">
+                        <label class="form-check-label">Remember me</label>
+                      </div>
+                    </form>
+                    <button class="main-btn mt-2 w-100 mb-3">Sign in</button>
+                    <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
                   </div>
-                  <div class="form-group">
-                      <label class="d-flex">Password</label>
-                      <input type="text" placeholder="Password" class="form-control"/>
-                  </div>
-                  <div class="form-check d-flex">
-                      <input type="checkbox" class="form-check-input" >
-                      <label class="form-check-label">
-                          Remember me
-                      </label>
-                  </div>
-              </form>
+                </div>
+              </div>
               
-                <button class="main-btn mt-2 w-100 mb-3">Sign in</button></div>
-                    </div>
+              <!-- Register Modal -->
+              <div id="registerModal" class="modal">
+                <div class="modal-content">
+                  <span class="close" style="display: flex; justify-content: right;">&times;</span>
+                  <div class="mt-3">
+                    <h3 class="join">Register to join us....</h3>
+                    <form class="px-3 py-4">
+                      <div class="form-group">
+                        <label class="d-flex">Email</label>
+                        <input type="email" placeholder="Email" class="form-control"/>
+                      </div>
+                      <div class="form-group">
+                        <label class="d-flex">Username</label>
+                        <input type="text" placeholder="Username" class="form-control"/>
+                      </div>
+                      <div class="form-group">
+                        <label class="d-flex">Password</label>
+                        <input type="password" placeholder="Password" class="form-control"/>
+                      </div>
+                    </form>
+                    <button class="main-btn mt-2 w-100 mb-3">Register</button>
+                    <p class="text-center">Already have an account? <a href="#" id="loginLink">Login</a></p>
                   </div>
+                </div>
+              </div>
                   <a class="main-btn" data-scroll-nav="0" href="#"
                     onclick="openModal()" >Login/Register 💻</a
                     >
@@ -216,9 +268,11 @@
                   <ul class="meta">
                   <ul class="meta">
                   </ul>
+                  <div class="update">
                   <p class="text">
                     How to 10x your Generational Wealth?
                   </p>
+                   </div>  
                   <a class="more" href="./blogs/how-to-10x-your-generational-wealth.html"
                     >Learn More <i class="lni-chevron-right"></i
                     ></a>
@@ -320,8 +374,10 @@
                   </div>
                   <ul class="link">
                     <li><a href="./index.html">Home</a></li>
-                    <li><a href="./login.html">Page</a></li>
+                    <li><a href="./trends.html">Trends</a></li>
+                    <li><a href="./tools/sip.html">Tools</a></li>
                     <li><a href="./blog.html">Blog</a></li>
+                    <li><a href="./quiz.html">Quiz</a></li>
                   </ul>
                 </div>
               </div>
@@ -380,5 +436,53 @@
     <script src="../assets/js/particles.min.js"></script>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/popup.js"></script>
+    <script>
+      // Get the modals
+      var loginModal = document.getElementById('myModal');
+      var registerModal = document.getElementById('registerModal');
+    
+      // Get the button that opens the login modal
+      var loginBtn = document.getElementById('loginBtn');
+    
+      // Get the links that open the register and login modals
+      var registerLink = document.getElementById('registerLink');
+      var loginLink = document.getElementById('loginLink');
+    
+      // Get the <span> elements that close the modals
+      var closeBtns = document.getElementsByClassName('close');
+    
+    
+      // When the user clicks the register link, open the register modal
+      registerLink.onclick = function(event) {
+        event.preventDefault();
+        loginModal.style.display = 'none';
+        registerModal.style.display = 'block';
+      }
+    
+      // When the user clicks the login link, open the login modal
+      loginLink.onclick = function(event) {
+        event.preventDefault();
+        registerModal.style.display = 'none';
+        loginModal.style.display = 'block';
+      }
+    
+      // When the user clicks on <span> (x), close the modal
+      for (var i = 0; i < closeBtns.length; i++) {
+        closeBtns[i].onclick = function() {
+          loginModal.style.display = 'none';
+          registerModal.style.display = 'none';
+        }
+      }
+    
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == loginModal) {
+          loginModal.style.display = 'none';
+        }
+        if (event.target == registerModal) {
+          registerModal.style.display = 'none';
+        }
+      }
+    </script>
   </body>
 </html>
