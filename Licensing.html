@@ -18,9 +18,10 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
+            margin: 0 40px;
             padding: 0;
             line-height: 1.6;
+            background-color: #f9f9f9;
         }
 
         main h1 {
@@ -63,6 +64,354 @@
 
         li {
             margin: 10px 0;
+        }
+        .navbar-collapse {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .navbar-nav {
+            display: flex;
+            justify-content: space-around;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-item {
+            margin: 0 10px;
+        }
+
+        .nav-item a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .nav-item a:hover {
+            background-color: #f0f0f0;
+            color: #007bff;
+        }
+
+        .sub-menu-bar {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .navbar-btn {
+            display: none;
+        }
+
+        @media (min-width: 576px) {
+            .navbar-btn {
+                display: inline-block;
+            }
+        }
+
+        .main-btn {
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .main-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .license-wrapper {
+            padding: 50px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .license-wrapper .content {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-left {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .text-left h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .text-left h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .text-left p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .text-left ul {
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        .text-left ul li {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .text-left a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .text-left a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-info {
+            margin-top: 30px;
+        }
+
+        .contact-info p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .header-hero-image {
+            margin-top: 30px; /* Add margin above the image for space */
+        }
+        
+        .banner-image {
+            width: 100%;
+            height: auto; /* Ensures the image maintains its aspect ratio */
+            max-width: 100%; /* Ensures the image doesn't overflow its container */
+            border-radius: 8px; /* Optional: Add rounded corners */
+        }
+        
+        /* Add some padding to the surrounding content */
+        .header-hero-content {
+            padding: 20px;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* Flexbox Styles for Footer Widgets */
+        .footer-flex {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .footer-flex .footer-widget {
+            flex: 1 1 30%;
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-flex {
+                flex-direction: column;
+            }
+            .footer-flex .footer-widget {
+                flex: 1 1 100%;
+            }
+        }
+
+        #footer {
+            padding: 60px 0;
+            font-size: 14px;
+            color: #333;
+            border-top: 1px solid #ccc;
+        }
+
+        .footer-area {
+            position: relative;
+        }
+
+        .subscribe-area {
+            padding-bottom: 40px;
+        }
+
+        .subscribe-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        .subscribe-title span {
+            color: #ffc107;
+        }
+
+        .subscribe-form input[type="text"] {
+            width: 70%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-right: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .subscribe-form .main-btn {
+            padding: 10px 20px;
+            background-color: #ffc107;
+            border: none;
+            color: #222;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .subscribe-form .main-btn:hover {
+            background-color: #ffdb4d;
+        }
+
+        .footer-widget {
+            margin-top: 50px;
+        }
+
+        .footer-about .text {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        .footer-link .title {
+            font-size: 18px;
+            color: #222;
+            margin-bottom: 15px;
+        }
+
+        .footer-link .link {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-link .link li {
+            margin-bottom: 8px;
+        }
+
+        .footer-link .link li a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-link .link li a:hover {
+            color: #222;
+        }
+
+        .footer-contact .title {
+            font-size: 18px;
+            color: #222;
+            margin-bottom: 15px;
+        }
+
+        .footer-contact .contact {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-contact .contact li {
+            margin-bottom: 8px;
+            color: #666;
+        }
+
+        .footer-copyright {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+        }
+
+        .copyright {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .copyright a {
+            color: #ffc107;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .copyright a:hover {
+            color: #ffdb4d;
+        }
+
+        /* Flexbox Styles for Footer Widgets */
+        .footer-flex {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-flex .footer-widget {
+            flex: 1 1 30%;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-flex {
+                flex-direction: column;
+            }
+            .footer-flex .footer-widget {
+                flex: 1 1 100%;
+            }
         }
     </style>
 </head>
@@ -154,9 +503,8 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="header-hero-image text-center wow fadeIn" data-wow-duration="1.3s"
-                            data-wow-delay="1.4s">
-                            <img src="../assets/images/header-hero.png" alt="hero" />
+                        <div class="header-hero-image text-center wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">
+                            <img src="/assets/images/header-hero.png" alt="hero" class="banner-image"/>
                         </div>
                     </div>
                 </div>
@@ -239,59 +587,56 @@
                         <div class="subscribe-form mt-50">
                             <form action="#">
                                 <input type="text" placeholder="Enter Email" />
-                                <button class="main-btn"
-                                    onclick="event.preventDefault(); openModal();">Subscribe</button>
+                                <button class="main-btn" onclick="event.preventDefault(); openModal();">Subscribe</button>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="footer-widget">
+                <div class="footer-about wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                    <p class="text">
+                        We at FinVeda aim to make you a stock market Guru easy with our AI powered teaching and
+                        financial blogs.
+                    </p>
+                </div>
+            </div>
             <div class="footer-widget pb-100">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-8">
-                        <div class="footer-about mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                            <p class="text">
-                                We at FinVeda aim to make you a stock market Guru easy with our AI powered teaching and
-                                financial blogs.
-                            </p>
+                <div class="footer-flex">
+                    <div class="footer-widget">
+                        <div class="footer-link wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+                            <div class="footer-title">
+                                <h4 class="title">Quick Links</h4>
+                            </div>
+                            <ul class="link">
+                                <li><a href="./privacy-policy.html">Privacy Policy</a></li>
+                                <li><a href="./refund-policy.html">Refund Policy</a></li>
+                                <li><a href="./licensing.html">Licensing</a></li>
+                                <li><a href="./terms-of-service.html">Terms of Service</a></li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="col-lg-5 col-md-7 col-sm-7">
-                        <div class="footer-link d-flex mt-50 justify-content-md-between">
-                            <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-                                <div class="footer-title">
-                                    <h4 class="title">Quick Link</h4>
-                                </div>
-                                <ul class="link">
-                                    <li><a href="./privacy-policy.html">Privacy Policy</a></li>
-                                    <li><a href="./refund-policy.html">Refund Policy</a></li>
-                                    <li><a href="Licensing.html">Licensing</a></li>
-                                    <li><a href="./terms-of-service.html">Terms of Service</a></li>
-                                </ul>
-                            </div>
-                            <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
-                                <div class="footer-title">
-                                    <h4 class="title">Resources</h4>
-                                </div>
-                                <ul class="link">
-                                    <li><a href="../index.html">Home</a></li>
-                                    <li><a href="../login.html">Page</a></li>
-                                    <li><a href="../blog.html">Blog</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-5 col-sm-5">
-                        <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                    <div class="footer-widget">
+                        <div class="footer-contact wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
                             <div class="footer-title">
                                 <h4 class="title">Contact Us</h4>
                             </div>
                             <ul class="contact">
                                 <li>ayush1337@hotmail.com</li>
                                 <li>fin-veda.vercel.app</li>
-                                <li>
-                                    Delhi, India
-                                </li>
+                                <li>Delhi, India</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-widget">
+                        <div class="footer-link wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                            <div class="footer-title">
+                                <h4 class="title">Resources</h4>
+                            </div>
+                            <ul class="link">
+                                <li><a href="../index.html">Home</a></li>
+                                <li><a href="../login.html">Page</a></li>
+                                <li><a href="../blog.html">Blog</a></li>
                             </ul>
                         </div>
                     </div>
@@ -314,6 +659,16 @@
         </div>
         <div id="particles-2"></div>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
     <script>document.getElementById("copyright-year").textContent = new Date().getFullYear();</script>
     <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
     <script src="../assets/js/vendor/jquery-1.12.4.min.js"></script>
