@@ -20,6 +20,15 @@
   <link rel="stylesheet" href="assets\css\preloader.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+        // https://dashboard.emailjs.com/admin/account
+        emailjs.init({
+          publicKey: "o6kveYmOSDrs0l1Mg",
+        });
+    })();
+  </script>
   <style>
     @keyframes float {
       0% {
@@ -721,6 +730,106 @@
         </div>
       </div>
     </div>
+    <button id="CommentBtn" aria-label="Toggle Comment Form"><i class="fas fa-comment"></i></button>
+    <!-- Comment form -->
+
+    <!-- Modal background -->
+    <div id="modalBackground">
+      <!-- Comment form -->
+      <div id="commentForm">
+        <form id="feedback-form">
+          <label for="userComment">Your Feedback:</label>
+          <div class="form-group">
+            <div class="icon" >
+              <i class="fas fa-user"></i>
+            </div>
+            <input type="text" id="name" onfocus="changeColor()" placeholder="Your Name" name="name" required>
+          </div>
+          <div class="form-group">
+            <div class="icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <input type="email" id="email" onfocus="changeColor()" placeholder="Email Id" required>
+          </div>
+          <div class="form-group">
+            <textarea cols="30" rows="5" placeholder="Your Feedback" required></textarea>
+          </div>
+          <div class="rating">
+            <h2>Rate us:</h2>
+            <i class="rating__star far fa-star"></i>
+            <i class="rating__star far fa-star"></i>
+            <i class="rating__star far fa-star"></i>
+            <i class="rating__star far fa-star"></i>
+            <i class="rating__star far fa-star"></i>
+          </div>
+          <button id="ll" >Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+       const ratingStars = [...document.getElementsByClassName("rating__star")];
+
+function executeRating(stars) {
+  const starClassActive = "rating__star fas fa-star";
+  const starClassInactive = "rating__star far fa-star";
+  const starsLength = stars.length;
+  let i;
+  stars.map((star) => {
+    star.onclick = () => {
+      i = stars.indexOf(star);
+
+      if (star.className===starClassInactive) {
+        for (i; i >= 0; --i) stars[i].className = starClassActive;
+      } else {
+        for (i; i < starsLength; ++i) stars[i].className = starClassInactive;
+      }
+    };
+  });
+}
+executeRating(ratingStars);
+
+
+      const ratingInputs = document.querySelectorAll('input[name="rating"]');
+  ratingInputs.forEach((input) => {
+    input.addEventListener("click", function() {
+      const value = parseInt(input.value);
+      for (let i = 1; i <= value; i++) {
+        document.getElementById(`star${i}`).checked = true;
+      }
+      for (let i = value + 1; i <= 5; i++) {
+        document.getElementById(`star${i}`).checked = false;
+      }
+    });
+  });
+      document.getElementById("CommentBtn").addEventListener("click", function () {
+        document.getElementById("modalBackground").style.display = "flex";
+      });
+
+      // Close the form when clicking outside of it (optional)
+      document.getElementById("modalBackground").addEventListener("click", function (event) {
+        if (event.target === this) {
+          this.style.display = "none";
+        }
+      });
+      let commentForm = document.getElementById("commentForm");
+let modalBackground = document.getElementById("modalBackground");
+
+document.getElementById("CommentBtn").addEventListener("click", function(event) {
+  if (commentForm.style.display === "none") {
+    commentForm.style.display = "block";
+    modalBackground.style.display = "flex";
+  } else {
+    commentForm.style.display = "none";
+    modalBackground.style.display = "none";
+  }
+});
+
+document.getElementById("ll").addEventListener("click", function(event) {
+  commentForm.style.display = "none";
+  modalBackground.style.display = "none";
+});
+    </script>
   </section>
   <footer id="footer" class="footer-area pt-120">
     <div class="container">
@@ -736,8 +845,8 @@
           <div class="col-lg-6">
             <div class="subscribe-form mt-50">
               <form action="#">
-                <input type="text" placeholder="Enter Email" />
-                <button class="main-btn" onclick="event.preventDefault(); openModal();">Subscribe</button>
+                <input type="text" id="news-email" placeholder="Enter Email" />
+                <button class="main-btn" onclick=sendMail()>Subscribe</button>
               </form>
             </div>
           </div>
@@ -855,6 +964,24 @@
 
     // Get the <span> elements that close the modals
     var closeBtns = document.getElementsByClassName('close');
+
+    // email sending on subscribing to newsletter
+    function sendMail(){
+      event.preventDefault();
+      var params={
+        from_name: "FinVeda",
+        email_id:document.getElementById("news-email").value,
+        message: "Thank you for subscribing to our newsletter. Stay tuned for regular updates."
+      }
+      emailjs.send('service_lktb68z', 'template_w79vd94', params)
+      .then(function(response){
+        alert('Subscribed to FinVeda Newsletter')
+        console.log('SUCCESS!', response.status, response.text);
+      }, function(error){
+        alert('FAILED...', error);
+        console.log('FAILED...', error);
+      });
+    }
 
 
     // When the user clicks the register link, open the register modal
