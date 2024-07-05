@@ -19,6 +19,15 @@
   <link rel="stylesheet" href="assets/css/popup.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+        // https://dashboard.emailjs.com/admin/account
+        emailjs.init({
+          publicKey: "o6kveYmOSDrs0l1Mg",
+        });
+    })();
+  </script>
   <style>
     @keyframes float {
       0% {
@@ -851,8 +860,8 @@ document.getElementById("ll").addEventListener("click", function(event) {
           <div class="col-lg-6">
             <div class="subscribe-form mt-50">
               <form action="#">
-                <input type="text" placeholder="Enter Email" />
-                <button class="main-btn" onclick="event.preventDefault(); openModal();">Subscribe</button>
+                <input type="text" id="news-email" placeholder="Enter Email" />
+                <button class="main-btn" onclick=sendMail()>Subscribe</button>
               </form>
             </div>
           </div>
@@ -970,6 +979,24 @@ document.getElementById("ll").addEventListener("click", function(event) {
 
     // Get the <span> elements that close the modals
     var closeBtns = document.getElementsByClassName('close');
+
+    // email sending on subscribing to newsletter
+    function sendMail(){
+      event.preventDefault();
+      var params={
+        from_name: "FinVeda",
+        email_id:document.getElementById("news-email").value,
+        message: "Thank you for subscribing to our newsletter. Stay tuned for regular updates."
+      }
+      emailjs.send('service_lktb68z', 'template_w79vd94', params)
+      .then(function(response){
+        alert('Subscribed to FinVeda Newsletter')
+        console.log('SUCCESS!', response.status, response.text);
+      }, function(error){
+        alert('FAILED...', error);
+        console.log('FAILED...', error);
+      });
+    }
 
 
     // When the user clicks the register link, open the register modal
