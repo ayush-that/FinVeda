@@ -327,6 +327,37 @@
       </div>
     </div>
     <!-- End EMI Calculator -->
+  
+    <!-- Savings Goal Calculator -->
+    <script src="SavingsGoalCalculator.js" defer></script>
+    <div class="header" style="padding-top: 100px;">
+      <h3>Savings Goal Calculator</h3>
+      <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5">
+        <div class="input-container">
+            <div>
+                <div><b>Savings Goal Amount (INR)</b></div>
+                <div><input class="form-control" type="number" id="goalAmount" required /></div>
+                <br/>
+                <div><b>Current Savings (INR)</b></div>
+                <div><input class="form-control" type="number" id="currentSavings" required /></div>
+                <br/>
+                <div><b>Time Period (Months)</b></div>
+                <div><input class="form-control" type="number" id="timePeriod" required /></div>
+            </div>
+        </div>
+        <br/>
+        <div class="btn-calculate">
+            <button class="btn btn-success" type="button" onclick="calculateSavings()">Calculate</button>
+        </div>
+        <br/>
+        <div style="display: flex;">
+            <div class="sresult"><b>Result:</b></div>
+            <div class="sresult-container">
+                <div class="sgresult" id="result"></div>
+            </div>
+        </div>
+    </div>
+    <!-- End Savings Goal Calculator -->
 
       <!-- Insurance Calculator -->
       <script src="insuranceCalculator.js"></script>
