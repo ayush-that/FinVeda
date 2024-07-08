@@ -22,11 +22,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script type="text/javascript">
-    (function() {
-        // https://dashboard.emailjs.com/admin/account
-        emailjs.init({
-          publicKey: "o6kveYmOSDrs0l1Mg",
-        });
+    (function () {
+      // https://dashboard.emailjs.com/admin/account
+      emailjs.init({
+        publicKey: "o6kveYmOSDrs0l1Mg",
+      });
     })();
   </script>
   <style>
@@ -52,7 +52,7 @@
       height: 8px;
       background-color: #f76b45;
       z-index: 9999;
-  
+
     }
   </style>
 
@@ -98,9 +98,9 @@
                 </ul>
               </div>
               <div class="navbar-btn d-none d-sm-inline-block">
-                 <a class="main-btn" data-scroll-nav="0" href="#" onclick="openModal()" onmouseover="this.style.color='yellow'"
-                 onmouseout="this.style.color='white'">Login/Register 💻</a> 
-                
+                <a class="main-btn" data-scroll-nav="0" href="#" onclick="openModal()"
+                  onmouseover="this.style.color='yellow'" onmouseout="this.style.color='white'">Login/Register 💻</a>
+
               </div>
           </div>
           </nav>
@@ -136,7 +136,8 @@
                       </div>
                       <div class="form-group">
                         <label class="d-flex">Password</label>
-                        <input type="password" placeholder="Password" class="form-control" />
+                        <input type="password" placeholder="Password" class="form-control">
+                        <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
                       </div>
                       <div class="form-check d-flex">
                         <input type="checkbox" class="form-check-input">
@@ -166,7 +167,8 @@
                       </div>
                       <div class="form-group">
                         <label class="d-flex">Password</label>
-                        <input type="password" placeholder="Password" class="form-control" />
+                        <input type="password" placeholder="Password" class="form-control" required>
+                        <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
                       </div>
                     </form>
                     <button class="main-btn mt-2 w-100 mb-3">Register</button>
@@ -740,7 +742,7 @@
         <form id="feedback-form">
           <label for="userComment">Your Feedback:</label>
           <div class="form-group">
-            <div class="icon" >
+            <div class="icon">
               <i class="fas fa-user"></i>
             </div>
             <input type="text" id="name" onfocus="changeColor()" placeholder="Your Name" name="name" required>
@@ -762,46 +764,46 @@
             <i class="rating__star far fa-star"></i>
             <i class="rating__star far fa-star"></i>
           </div>
-          <button id="ll" >Submit</button>
+          <button id="ll">Submit</button>
         </form>
       </div>
     </div>
 
     <script>
-       const ratingStars = [...document.getElementsByClassName("rating__star")];
+      const ratingStars = [...document.getElementsByClassName("rating__star")];
 
-function executeRating(stars) {
-  const starClassActive = "rating__star fas fa-star";
-  const starClassInactive = "rating__star far fa-star";
-  const starsLength = stars.length;
-  let i;
-  stars.map((star) => {
-    star.onclick = () => {
-      i = stars.indexOf(star);
+      function executeRating(stars) {
+        const starClassActive = "rating__star fas fa-star";
+        const starClassInactive = "rating__star far fa-star";
+        const starsLength = stars.length;
+        let i;
+        stars.map((star) => {
+          star.onclick = () => {
+            i = stars.indexOf(star);
 
-      if (star.className===starClassInactive) {
-        for (i; i >= 0; --i) stars[i].className = starClassActive;
-      } else {
-        for (i; i < starsLength; ++i) stars[i].className = starClassInactive;
+            if (star.className === starClassInactive) {
+              for (i; i >= 0; --i) stars[i].className = starClassActive;
+            } else {
+              for (i; i < starsLength; ++i) stars[i].className = starClassInactive;
+            }
+          };
+        });
       }
-    };
-  });
-}
-executeRating(ratingStars);
+      executeRating(ratingStars);
 
 
       const ratingInputs = document.querySelectorAll('input[name="rating"]');
-  ratingInputs.forEach((input) => {
-    input.addEventListener("click", function() {
-      const value = parseInt(input.value);
-      for (let i = 1; i <= value; i++) {
-        document.getElementById(`star${i}`).checked = true;
-      }
-      for (let i = value + 1; i <= 5; i++) {
-        document.getElementById(`star${i}`).checked = false;
-      }
-    });
-  });
+      ratingInputs.forEach((input) => {
+        input.addEventListener("click", function () {
+          const value = parseInt(input.value);
+          for (let i = 1; i <= value; i++) {
+            document.getElementById(`star${i}`).checked = true;
+          }
+          for (let i = value + 1; i <= 5; i++) {
+            document.getElementById(`star${i}`).checked = false;
+          }
+        });
+      });
       document.getElementById("CommentBtn").addEventListener("click", function () {
         document.getElementById("modalBackground").style.display = "flex";
       });
@@ -813,22 +815,22 @@ executeRating(ratingStars);
         }
       });
       let commentForm = document.getElementById("commentForm");
-let modalBackground = document.getElementById("modalBackground");
+      let modalBackground = document.getElementById("modalBackground");
 
-document.getElementById("CommentBtn").addEventListener("click", function(event) {
-  if (commentForm.style.display === "none") {
-    commentForm.style.display = "block";
-    modalBackground.style.display = "flex";
-  } else {
-    commentForm.style.display = "none";
-    modalBackground.style.display = "none";
-  }
-});
+      document.getElementById("CommentBtn").addEventListener("click", function (event) {
+        if (commentForm.style.display === "none") {
+          commentForm.style.display = "block";
+          modalBackground.style.display = "flex";
+        } else {
+          commentForm.style.display = "none";
+          modalBackground.style.display = "none";
+        }
+      });
 
-document.getElementById("ll").addEventListener("click", function(event) {
-  commentForm.style.display = "none";
-  modalBackground.style.display = "none";
-});
+      document.getElementById("ll").addEventListener("click", function (event) {
+        commentForm.style.display = "none";
+        modalBackground.style.display = "none";
+      });
     </script>
   </section>
   <footer id="footer" class="footer-area pt-120">
@@ -964,23 +966,41 @@ document.getElementById("ll").addEventListener("click", function(event) {
 
     // Get the <span> elements that close the modals
     var closeBtns = document.getElementsByClassName('close');
+    
+    //show and hide icon button
+    document.addEventListener('DOMContentLoaded', () => {
+      const togglePasswordButtons = document.querySelectorAll('.toggle-password-btn');
+
+      togglePasswordButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const passwordInput = button.previousElementSibling;
+          if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            button.innerHTML = `<i class="fa-solid fa-eye-slash"></i>`
+          } else {
+            passwordInput.type = 'password';
+            button.innerHTML = `<i class="fa-solid fa-eye"></i>`
+          }
+        });
+      });
+    });
 
     // email sending on subscribing to newsletter
-    function sendMail(){
+    function sendMail() {
       event.preventDefault();
-      var params={
+      var params = {
         from_name: "FinVeda",
-        email_id:document.getElementById("news-email").value,
+        email_id: document.getElementById("news-email").value,
         message: "Thank you for subscribing to our newsletter. Stay tuned for regular updates."
       }
       emailjs.send('service_lktb68z', 'template_w79vd94', params)
-      .then(function(response){
-        alert('Subscribed to FinVeda Newsletter')
-        console.log('SUCCESS!', response.status, response.text);
-      }, function(error){
-        alert('FAILED...', error);
-        console.log('FAILED...', error);
-      });
+        .then(function (response) {
+          alert('Subscribed to FinVeda Newsletter')
+          console.log('SUCCESS!', response.status, response.text);
+        }, function (error) {
+          alert('FAILED...', error);
+          console.log('FAILED...', error);
+        });
     }
 
 
@@ -1020,9 +1040,10 @@ document.getElementById("ll").addEventListener("click", function(event) {
 
   <!-- Preloader -->
   <div id="preloader">
-    <iframe src="https://lottie.host/embed/a260d14c-4620-4967-a713-8fa24540d0c9/dszisNXOoO.json" frameborder="0" style="border: none; width: 1000px; height: 1000px;"></iframe>
+    <iframe src="https://lottie.host/embed/a260d14c-4620-4967-a713-8fa24540d0c9/dszisNXOoO.json" frameborder="0"
+      style="border: none; width: 1000px; height: 1000px;"></iframe>
     <script src="assets\js\preloader.js"></script>
-</div>
+  </div>
 </body>
 
 </html>
