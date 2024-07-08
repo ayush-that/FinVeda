@@ -22,11 +22,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script type="text/javascript">
-    (function() {
-        // https://dashboard.emailjs.com/admin/account
-        emailjs.init({
-          publicKey: "o6kveYmOSDrs0l1Mg",
-        });
+    (function () {
+      // https://dashboard.emailjs.com/admin/account
+      emailjs.init({
+        publicKey: "o6kveYmOSDrs0l1Mg",
+      });
     })();
   </script>
   <style>
@@ -52,7 +52,7 @@
       height: 8px;
       background-color: #f76b45;
       z-index: 9999;
-  
+
     }
   </style>
 
@@ -98,9 +98,9 @@
                 </ul>
               </div>
               <div class="navbar-btn d-none d-sm-inline-block">
-                 <a class="main-btn" data-scroll-nav="0" href="#" onclick="openModal()" onmouseover="this.style.color='yellow'"
-                 onmouseout="this.style.color='white'">Login/Register 💻</a> 
-                
+                <a class="main-btn" data-scroll-nav="0" href="#" onclick="openModal()"
+                  onmouseover="this.style.color='yellow'" onmouseout="this.style.color='white'">Login/Register 💻</a>
+
               </div>
           </div>
           </nav>
@@ -732,106 +732,106 @@
     </div>
     <button id="CommentBtn" aria-label="Toggle Comment Form"><i class="fas fa-comment"></i></button>
 
-<!-- Modal Background -->
-<div id="newModalBackground">
-  <!-- Feedback Form Modal -->
-  <div id="newCommentForm">
-    <form id="newFeedbackForm">
-      <span id="closeModal" class="close">&times;</span>
-      <h2>We'd Love Your <strong><span style="color:#200f91;">Feedback!</span></strong>💙</h2>
-      <p class="feed-para">Let us know how we're doing and how we can improve</p>
-      <div class="form-group">
-        <label for="newName">Your Name </label>
-        <input type="text" id="newName" placeholder="Enter your name" required>
+    <!-- Modal Background -->
+    <div id="newModalBackground">
+      <!-- Feedback Form Modal -->
+      <div id="newCommentForm">
+        <form id="newFeedbackForm">
+          <span id="closeModal" class="close">&times;</span>
+          <h2>We'd Love Your <strong><span style="color:#200f91;">Feedback!</span></strong>💙</h2>
+          <p class="feed-para">Let us know how we're doing and how we can improve</p>
+          <div class="form-group">
+            <label for="newName">Your Name </label>
+            <input type="text" id="newName" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label for="newEmail">Your Email </label>
+            <input type="email" id="newEmail" placeholder="Enter your email" required>
+          </div>
+          <div class="form-group">
+            <label for="newFeedback">Your Feedback</label>
+            <textarea id="newFeedback" rows="4" placeholder="Let us know how can improve.." required></textarea>
+          </div>
+          <div class="rating">
+            <div>Rate Us:</div>
+            <i class="rating__star far fa-star"></i>
+            <i class="rating__star far fa-star"></i>
+            <i class="rating__star far fa-star"></i>
+            <i class="rating__star far fa-star"></i>
+            <i class="rating__star far fa-star"></i>
+          </div>
+          <button type="submit">Submit Feedback</button>
+        </form>
       </div>
-      <div class="form-group">
-        <label for="newEmail">Your Email </label>
-        <input type="email" id="newEmail" placeholder="Enter your email" required>
-      </div>
-      <div class="form-group">
-        <label for="newFeedback">Your Feedback</label>
-        <textarea id="newFeedback" rows="4" placeholder="Let us know how can improve.." required></textarea>
-      </div>
-      <div class="rating">
-        <div>Rate Us:</div>
-        <i class="rating__star far fa-star"></i>
-        <i class="rating__star far fa-star"></i>
-        <i class="rating__star far fa-star"></i>
-        <i class="rating__star far fa-star"></i>
-        <i class="rating__star far fa-star"></i>
-      </div>
-      <button type="submit">Submit Feedback</button>
-    </form>
-  </div>
-</div>
-
-<div id="popup" class="popup" style="display: none;">
-  <div class="popup-content">
-    <h2>Thank you for your Feedback!!</h2>
-    <div class="popup-icon">
-      <img src="https://cdn-icons-png.flaticon.com/512/12348/12348749.png" alt="✅" height="100" width="100">
     </div>
-    <p>Your feedback has been received.<br> We appreciate the input you provide.</p>
-    <button class="popup-button" onclick="closePopup()">Back to Home</button>
-  </div>
-</div>
+
+    <div id="popup" class="popup" style="display: none;">
+      <div class="popup-content">
+        <h2>Thank you for your Feedback!!</h2>
+        <div class="popup-icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/12348/12348749.png" alt="✅" height="100" width="100">
+        </div>
+        <p>Your feedback has been received.<br> We appreciate the input you provide.</p>
+        <button class="popup-button" onclick="closePopup()">Back to Home</button>
+      </div>
+    </div>
 
 
     <script>
-   // Function to open the feedback form modal
-document.getElementById("CommentBtn").addEventListener("click", function() {
-  document.getElementById("newModalBackground").style.display = "flex";
-});
+      // Function to open the feedback form modal
+      document.getElementById("CommentBtn").addEventListener("click", function () {
+        document.getElementById("newModalBackground").style.display = "flex";
+      });
 
-// Function to close the feedback form modal
-document.getElementById("closeModal").addEventListener("click", function() {
-  document.getElementById("newModalBackground").style.display = "none";
-});
+      // Function to close the feedback form modal
+      document.getElementById("closeModal").addEventListener("click", function () {
+        document.getElementById("newModalBackground").style.display = "none";
+      });
 
-// Function to handle feedback form submission
-document.getElementById("newFeedbackForm").addEventListener("submit", function(event) {
-  event.preventDefault();
-  this.reset(); // Reset all form fields
-  resetRatingStars(); // Reset rating stars
-  openPopup(); // Open the custom popup after feedback submission
-});
+      // Function to handle feedback form submission
+      document.getElementById("newFeedbackForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        this.reset(); // Reset all form fields
+        resetRatingStars(); // Reset rating stars
+        openPopup(); // Open the custom popup after feedback submission
+      });
 
-// Function to open the custom popup
-function openPopup() {
-  var popup = document.getElementById('popup');
-  popup.style.display = 'flex'; // Display the popup
-}
+      // Function to open the custom popup
+      function openPopup() {
+        var popup = document.getElementById('popup');
+        popup.style.display = 'flex'; // Display the popup
+      }
 
-// Function to close the custom popup
-function closePopup() {
-  var popup = document.getElementById('popup');
-  popup.style.display = 'none'; // Hide the popup
-}
+      // Function to close the custom popup
+      function closePopup() {
+        var popup = document.getElementById('popup');
+        popup.style.display = 'none'; // Hide the popup
+      }
 
-// Function to reset rating stars
-function resetRatingStars() {
-  const ratingStars = [...document.getElementsByClassName("rating__star")];
-  const inactiveClass = "rating__star far fa-star";
+      // Function to reset rating stars
+      function resetRatingStars() {
+        const ratingStars = [...document.getElementsByClassName("rating__star")];
+        const inactiveClass = "rating__star far fa-star";
 
-  ratingStars.forEach(star => {
-    star.className = inactiveClass; // Reset all stars to inactive
-  });
-}
+        ratingStars.forEach(star => {
+          star.className = inactiveClass; // Reset all stars to inactive
+        });
+      }
 
-// Code for handling star ratings (assuming you have a rating system implemented)
-const ratingStars = [...document.getElementsByClassName("rating__star")];
+      // Code for handling star ratings (assuming you have a rating system implemented)
+      const ratingStars = [...document.getElementsByClassName("rating__star")];
 
-ratingStars.forEach(star => {
-  star.addEventListener("click", function() {
-    const activeClass = "rating__star fas fa-star";
-    const inactiveClass = "rating__star far fa-star";
-    let i = ratingStars.indexOf(star);
+      ratingStars.forEach(star => {
+        star.addEventListener("click", function () {
+          const activeClass = "rating__star fas fa-star";
+          const inactiveClass = "rating__star far fa-star";
+          let i = ratingStars.indexOf(star);
 
-    ratingStars.forEach((s, index) => {
-      s.className = index <= i ? activeClass : inactiveClass;
-    });
-  });
-});
+          ratingStars.forEach((s, index) => {
+            s.className = index <= i ? activeClass : inactiveClass;
+          });
+        });
+      });
 
     </script>
   </section>
@@ -970,21 +970,21 @@ ratingStars.forEach(star => {
     var closeBtns = document.getElementsByClassName('close');
 
     // email sending on subscribing to newsletter
-    function sendMail(){
+    function sendMail() {
       event.preventDefault();
-      var params={
+      var params = {
         from_name: "FinVeda",
-        email_id:document.getElementById("news-email").value,
+        email_id: document.getElementById("news-email").value,
         message: "Thank you for subscribing to our newsletter. Stay tuned for regular updates."
       }
       emailjs.send('service_lktb68z', 'template_w79vd94', params)
-      .then(function(response){
-        alert('Subscribed to FinVeda Newsletter')
-        console.log('SUCCESS!', response.status, response.text);
-      }, function(error){
-        alert('FAILED...', error);
-        console.log('FAILED...', error);
-      });
+        .then(function (response) {
+          alert('Subscribed to FinVeda Newsletter')
+          console.log('SUCCESS!', response.status, response.text);
+        }, function (error) {
+          alert('FAILED...', error);
+          console.log('FAILED...', error);
+        });
     }
 
 
@@ -1024,9 +1024,10 @@ ratingStars.forEach(star => {
 
   <!-- Preloader -->
   <div id="preloader">
-    <iframe src="https://lottie.host/embed/a260d14c-4620-4967-a713-8fa24540d0c9/dszisNXOoO.json" frameborder="0" style="border: none; width: 1000px; height: 1000px;"></iframe>
+    <iframe src="https://lottie.host/embed/a260d14c-4620-4967-a713-8fa24540d0c9/dszisNXOoO.json" frameborder="0"
+      style="border: none; width: 1000px; height: 1000px;"></iframe>
     <script src="assets\js\preloader.js"></script>
-</div>
+  </div>
 </body>
 
 </html>
