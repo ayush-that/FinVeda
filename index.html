@@ -733,31 +733,33 @@
       </div>
     </div>
     <button id="CommentBtn" aria-label="Toggle Comment Form"><i class="fas fa-comment"></i></button>
-    <!-- Comment form -->
 
-    <!-- Modal background -->
-    <div id="modalBackground">
-      <!-- Comment form -->
-      <div id="commentForm">
-        <form id="feedback-form">
-          <label for="userComment">Your Feedback:</label>
+    <!-- Modal Background -->
+    <div id="newModalBackground">
+      <!-- Feedback Form Modal -->
+      <div id="newCommentForm">
+        <form id="newFeedbackForm">
+          <span id="closeModal" class="close">&times;</span>
+          <h2>We'd Love Your <strong><span style="color:#200f91;">Feedback!</span></strong>💙</h2>
+          <p class="feed-para">Let us know how we're doing and how we can improve</p>
           <div class="form-group">
             <div class="icon">
               <i class="fas fa-user"></i>
             </div>
             <input type="text" id="name" onfocus="changeColor()" placeholder="Your Name" name="name" required>
+            <label for="newName">Your Name </label>
+            <input type="text" id="newName" placeholder="Enter your name" required>
           </div>
           <div class="form-group">
-            <div class="icon">
-              <i class="fas fa-envelope"></i>
-            </div>
-            <input type="email" id="email" onfocus="changeColor()" placeholder="Email Id" required>
+            <label for="newEmail">Your Email </label>
+            <input type="email" id="newEmail" placeholder="Enter your email" required>
           </div>
           <div class="form-group">
-            <textarea cols="30" rows="5" placeholder="Your Feedback" required></textarea>
+            <label for="newFeedback">Your Feedback</label>
+            <textarea id="newFeedback" rows="4" placeholder="Let us know how can improve.." required></textarea>
           </div>
           <div class="rating">
-            <h2>Rate us:</h2>
+            <div>Rate Us:</div>
             <i class="rating__star far fa-star"></i>
             <i class="rating__star far fa-star"></i>
             <i class="rating__star far fa-star"></i>
@@ -765,9 +767,22 @@
             <i class="rating__star far fa-star"></i>
           </div>
           <button id="ll">Submit</button>
+          <button type="submit">Submit Feedback</button>
         </form>
       </div>
     </div>
+
+    <div id="popup" class="popup" style="display: none;">
+      <div class="popup-content">
+        <h2>Thank you for your Feedback!!</h2>
+        <div class="popup-icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/12348/12348749.png" alt="✅" height="100" width="100">
+        </div>
+        <p>Your feedback has been received.<br> We appreciate the input you provide.</p>
+        <button class="popup-button" onclick="closePopup()">Back to Home</button>
+      </div>
+    </div>
+
 
     <script>
       const ratingStars = [...document.getElementsByClassName("rating__star")];
@@ -790,7 +805,29 @@
         });
       }
       executeRating(ratingStars);
+      // Function to open the feedback form modal
+      document.getElementById("CommentBtn").addEventListener("click", function () {
+        document.getElementById("newModalBackground").style.display = "flex";
+      });
 
+      // Function to close the feedback form modal
+      document.getElementById("closeModal").addEventListener("click", function () {
+        document.getElementById("newModalBackground").style.display = "none";
+      });
+
+      // Function to handle feedback form submission
+      document.getElementById("newFeedbackForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        this.reset(); // Reset all form fields
+        resetRatingStars(); // Reset rating stars
+        openPopup(); // Open the custom popup after feedback submission
+      });
+
+      // Function to open the custom popup
+      function openPopup() {
+        var popup = document.getElementById('popup');
+        popup.style.display = 'flex'; // Display the popup
+      }
 
       const ratingInputs = document.querySelectorAll('input[name="rating"]');
       ratingInputs.forEach((input) => {
@@ -830,6 +867,36 @@
       document.getElementById("ll").addEventListener("click", function (event) {
         commentForm.style.display = "none";
         modalBackground.style.display = "none";
+      });
+      // Function to close the custom popup
+      function closePopup() {
+        var popup = document.getElementById('popup');
+        popup.style.display = 'none'; // Hide the popup
+      }
+
+      // Function to reset rating stars
+      function resetRatingStars() {
+        const ratingStars = [...document.getElementsByClassName("rating__star")];
+        const inactiveClass = "rating__star far fa-star";
+
+        ratingStars.forEach(star => {
+          star.className = inactiveClass; // Reset all stars to inactive
+        });
+      }
+
+      // Code for handling star ratings (assuming you have a rating system implemented)
+      const ratingStars = [...document.getElementsByClassName("rating__star")];
+
+      ratingStars.forEach(star => {
+        star.addEventListener("click", function () {
+          const activeClass = "rating__star fas fa-star";
+          const inactiveClass = "rating__star far fa-star";
+          let i = ratingStars.indexOf(star);
+
+          ratingStars.forEach((s, index) => {
+            s.className = index <= i ? activeClass : inactiveClass;
+          });
+        });
       });
     </script>
   </section>
