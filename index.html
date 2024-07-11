@@ -102,6 +102,94 @@
                   onmouseover="this.style.color='yellow'" onmouseout="this.style.color='white'">Login/Register 💻</a>
 
               </div>
+               <div style="position: absolute; margin-left: 105%;">
+                <label class="switch">
+                  <input type="checkbox" id="brightDarkToggle">
+                  <span class="slider round">
+                    <span class="slider-icon bright-mode">☀️</span>
+                    <span class="slider-icon dark-mode">🌙</span>
+                  </span>
+                </label>
+              </div>
+              
+              <style>
+                .switch {
+                  position: relative;
+                  display: inline-block;
+                  width: 48px;
+                  height: 24px;
+                }
+              
+                .switch input {
+                  opacity: 0;
+                  width: 0;
+                  height: 0;
+                }
+              
+                .slider {
+                  position: absolute;
+                  cursor: pointer;
+                  top: 0;
+                  left: 0;
+                  right: 0;
+                  bottom: 0;
+                  background-color: #ccc;
+                  transition: .4s;
+                  border-radius: 24px;
+                }
+              
+                .slider:before {
+                  position: absolute;
+                  content: "";
+                  height: 20px;
+                  width: 20px;
+                  left: 2px;
+                  bottom: 2px;
+                  background-color: white;
+                  transition: .4s;
+                  border-radius: 50%;
+                  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+                }
+              
+                input:checked + .slider {
+                  background-color: #2196F3;
+                }
+              
+                input:checked + .slider:before {
+                  transform: translateX(24px);
+                }
+              
+                .slider-icon {
+                  position: absolute;
+                  display: inline-block;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  font-size: 18px;
+                  transition: opacity 0.4s;
+                }
+              
+                .bright-mode {
+                  left: 4px;
+                  color: #FFD700; /* Adjust color as needed */
+                }
+              
+                .dark-mode {
+                  right: 4px;
+                  color: #708090; /* Adjust color as needed */
+                  opacity: 0;
+                }
+              
+                input:checked + .slider .bright-mode {
+                  opacity: 0;
+                }
+              
+                input:checked + .slider .dark-mode {
+                  opacity: 1;
+                }
+              </style>
+              
+            </label>
+          </div>
           </div>
           </nav>
         </div>
