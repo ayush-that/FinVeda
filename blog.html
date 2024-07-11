@@ -299,12 +299,13 @@
           </div>
           <div class="col-lg-6">
             <div class="subscribe-form mt-50">
-              <form action="#">
-                <input type="text" placeholder="Enter Email" />
-                <button class="main-btn" onclick="event.preventDefault(); openModal();">Subscribe</button>
-              </form>
+                <form id="subscribe-form">
+                    <input type="text" id="news-email" placeholder="Enter Email" />
+                    <button class="main-btn">Subscribe</button>
+                </form>
+                <div id="message" style="display: none;"></div>
             </div>
-          </div>
+        </div>        
         </div>
       </div>
       <div class="footer-widget pb-100">
@@ -320,43 +321,12 @@
             <div class="footer-link d-flex mt-50 justify-content-md-between">
               <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
                 <div class="footer-title">
-                  <h4 class="title">Quick Link</h4>
-            <div class="col-lg-5 col-md-7 col-sm-7">
-              <div class="footer-link d-flex mt-50 justify-content-md-between">
-                <div
-                  class="link-wrapper wow fadeIn"
-                  data-wow-duration="1s"
-                  data-wow-delay="0.4s"
-                  >
-                  <div class="footer-title">
-                    <h4 class="title">Quick Link</h4>
-                  </div>
-                  <ul class="link">
-                    <li><a href="./blogs/privacy-policy.html">Privacy Policy</a></li>
-                    <li><a href="./blogs/refund-policy.html">Refund Policy</a></li>
-                    <li><a href="Licensing.html">Licensing</a></li>
-                    <li><a href="./blogs/terms-of-service.html">Terms of Service</a></li>
-                  </ul>
-                </div>
-                <div
-                  class="link-wrapper wow fadeIn"
-                  data-wow-duration="1s"
-                  data-wow-delay="0.6s"
-                  >
-                  <div class="footer-title">
-                    <h4 class="title">Resources</h4>
-                  </div>
-                  <ul class="link">
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./trends.html">Trends</a></li>
-                    <li><a href="./tools/sip.html">Tools</a></li>
-                    <li><a href="./blog.html">Blog</a></li>
-                    <li><a href="./quiz.html">Quiz</a></li>
-                  </ul>
+                  <h4 class="title">Quick Links</h4>
                 </div>
                 <ul class="link">
                   <li><a href="./blogs/privacy-policy.html">Privacy Policy</a></li>
                   <li><a href="./blogs/refund-policy.html">Refund Policy</a></li>
+                  <li><a href="Licensing.html">Licensing</a></li>
                   <li><a href="./blogs/terms-of-service.html">Terms of Service</a></li>
                 </ul>
               </div>
@@ -380,10 +350,18 @@
                 <h4 class="title">Contact Us</h4>
               </div>
               <ul class="contact">
-                <li>ayush1337@hotmail.com</li>
-                <li>fin-veda.vercel.app</li>
-                <li>
-                  Delhi, India
+                <li class="d-sm-flex justify-content-center">
+                  <i class="fa fa-envelope d-sm-flex align-items-center white" style="font: size 16px; width: 10%;"></i>
+                  <div style="width: 80%;">ayush1337@hotmail.com</div>
+                </li>
+                <li class="d-sm-flex justify-content-center">
+                  <i class="fa fa-globe d-sm-flex align-items-center white" style="font: size 16px; width: 10%;"></i>
+                  <div style="width: 80%;">fin-veda.vercel.app</div>
+                </li>
+                <li class="d-sm-flex justify-content-center">
+                  <i class="fa fa-location-dot d-sm-flex align-items-center white"
+                    style="font: size 12px; width: 10%;"></i>
+                  <div style="width: 80%;">Delhi, India</div>
                 </li>
               </ul>
             </div>
@@ -403,8 +381,8 @@
           </div>
         </div>
       </div>
-    </div>
-    <div id="particles-2"></div>
+
+      <div id="particles-2"></div>
   </footer>
   <script>document.getElementById("copyright-year").textContent = new Date().getFullYear();</script>
   <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
