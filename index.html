@@ -913,12 +913,13 @@
           </div>
           <div class="col-lg-6">
             <div class="subscribe-form mt-50">
-              <form action="#">
-                <input type="text" id="news-email" placeholder="Enter Email" />
-                <button class="main-btn" onclick=sendMail()>Subscribe</button>
-              </form>
+                <form id="subscribe-form">
+                    <input type="text" id="news-email" placeholder="Enter Email" />
+                    <button class="main-btn">Subscribe</button>
+                </form>
+                <div id="message" style="display: none;"></div>
             </div>
-          </div>
+        </div>        
         </div>
       </div>
       <div class="footer-widget pb-100">
@@ -1053,24 +1054,64 @@
     });
 
     // email sending on subscribing to newsletter
-    function sendMail() {
-      event.preventDefault();
-      var params = {
-        from_name: "FinVeda",
-        email_id: document.getElementById("news-email").value,
-        message: "Thank you for subscribing to our newsletter. Stay tuned for regular updates."
-      }
-      emailjs.send('service_lktb68z', 'template_w79vd94', params)
-        .then(function (response) {
-          alert('Subscribed to FinVeda Newsletter')
-          console.log('SUCCESS!', response.status, response.text);
-        }, function (error) {
-          alert('FAILED...', error);
-          console.log('FAILED...', error);
-        });
-    }
-
-
+    document.addEventListener('DOMContentLoaded', function () {
+      // Get the form element
+      var form = document.getElementById('subscribe-form');
+      
+      // Add event listener to submit event of the form
+      form.addEventListener('submit', function (event) {
+          event.preventDefault(); // Prevent default form submission
+          
+          // Get the email input value
+          var email = document.getElementById('news-email').value;
+          
+          // Check if email is not empty
+          if (email.trim() === '') {
+              showMessage('Please enter your email address.', 'error');
+              return;
+          }
+          
+          // Parameters for email service
+          var params = {
+              from_name: "FinVeda",
+              email_id: email,
+              message: "Thank you for subscribing to our newsletter. Stay tuned for regular updates."
+          }
+          
+          // Send email using EmailJS
+          emailjs.send('service_lktb68z', 'template_w79vd94', params)
+              .then(function (response) 
+              {
+                  // Show success message
+                  showMessage('Subscribed to FinVeda Newsletter', 'success');
+                  console.log('SUCCESS!', response.status, response.text);
+              }, function (error) 
+              {
+                  // Show error message
+                  showMessage('Subscription failed. Please try again later.', 'error');
+                  console.log('FAILED...', error);
+              });
+  
+          // Reset input after 3 seconds
+          setTimeout(function() {
+              document.getElementById('news-email').value = '';
+          }, 3000);
+      });
+  });
+  
+  function showMessage(message, type) {
+      var messageDiv = document.getElementById('message');
+      messageDiv.textContent = message;
+      messageDiv.style.display = 'block';
+      
+      // Clear message after 3 seconds
+      setTimeout(function() 
+      {
+          messageDiv.textContent = '';
+          messageDiv.style.display = 'none';
+      }, 3000);
+  }
+  
     // When the user clicks the register link, open the register modal
     registerLink.onclick = function (event) {
       event.preventDefault();
