@@ -139,6 +139,14 @@
                                 </span>
                               </td>
                             </tr>
+                            <tr>
+                              <td colspan="2">
+                                <div class="form-check d-flex">
+                                  <input type="checkbox" class="form-check-input" id="register-terms" required />
+                                  <label class="form-check-label">I accept the <a href="./blogs/terms-of-service.html" target="_blank">Terms and Conditions</a></label>
+                                </div>
+                              </td>
+                            </tr>
                           </table>
                           <div class="error" id="register-error"></div>
                           <button type="submit" class="main-btn mt-2 w-100 mb-3" style="padding: 0px;">Register</button>
@@ -180,10 +188,16 @@
           <div class="row">
             <div class="col-lg-4 col-md-6 col-sm-8">
               <div class="footer-about mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                <p class="text">We at FinVeda aim to make you a stock market Guru easy with our AI powered teaching and financial blogs.</p>
+                <p class="text">We at FinVeda aim to make you a stock market Guru easy with our AI powered teaching methods. Learning is now simple and fun.</p>
+                <ul class="social">
+                  <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
+                  <li><a href="#"><i class="lni-twitter-original"></i></a></li>
+                  <li><a href="#"><i class="lni-instagram-original"></i></a></li>
+                  <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
+                </ul>
               </div>
             </div>
-            <div class="col-lg-5 col-md-7 col-sm-7">
+            <div class="col-lg-5 col-md-7 col-sm-12">
               <div class="footer-link d-flex mt-50 justify-content-md-between">
                 <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
                   <div class="footer-title">
@@ -191,162 +205,148 @@
                   </div>
                   <ul class="link">
                     <li><a href="./index.html">Home</a></li>
-                    <li><a href="./blog.html">Blog</a></li>
                     <li><a href="./trends.html">Trends</a></li>
-                    <li><a href="./quiz.html">Quiz</a></li>
                     <li><a href="./tools/sip.html">Tools</a></li>
+                    <li><a href="./blog.html">Blogs</a></li>
+                    <li><a href="./quiz.html">Quiz</a></li>
                   </ul>
                 </div>
                 <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
                   <div class="footer-title">
-                    <h4 class="title">Resources</h4>
+                    <h4 class="title">Support</h4>
                   </div>
                   <ul class="link">
-                    <li><a href="https://groww.in/">Groww</a></li>
-                    <li><a href="https://www.moneycontrol.com/">Money Control</a></li>
-                    <li><a href="https://www.tickertape.in/">Ticker Tape</a></li>
-                    <li><a href="https://economictimes.indiatimes.com/">Economic Times</a></li>
-                    <li><a href="https://in.tradingview.com/">Trading View</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
                   </ul>
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-md-5 col-sm-5">
+            <div class="col-lg-3 col-md-5 col-sm-8">
               <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
                 <div class="footer-title">
                   <h4 class="title">Contact Us</h4>
                 </div>
                 <ul class="contact">
-                  <li>Email: contact@finveda.com</li>
-                  <li>Phone: +123 456 7890</li>
-                  <li>Address: 123 Street, City, Country</li>
+                  <li><i class="fa fa-phone"></i> +91 8089341927</li>
+                  <li><i class="fa fa-envelope"></i> info@finveda.in</li>
+                  <li><i class="fa fa-map-marker"></i> Bhubaneswar, Odisha, India</li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
-        <div class="footer-copyright">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="copyright text-center">
-                <p class="text">© 2023 FinVeda. All Rights Reserved.</p>
-              </div>
-            </div>
-          </div>
+        <div class="footer-copyright text-center">
+          <p class="text">Copyright © 2023 FinVeda Pvt. Ltd. All Rights Reserved</p>
         </div>
       </div>
+      <div id="particles-2"></div>
     </footer>
+    <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
     <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
     <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/slick.min.js"></script>
     <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/ajax-contact.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/scrolling-nav.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
-      function togglePasswordVisibility(id) {
-        const passwordField = document.getElementById(id);
-        const eyeIcons = passwordField.parentElement.querySelectorAll('.fa-eye, .fa-eye-slash');
-        if (passwordField.type === 'password') {
-          passwordField.type = 'text';
-          eyeIcons[0].style.display = 'none';
-          eyeIcons[1].style.display = 'inline';
-        } else {
-          passwordField.type = 'password';
-          eyeIcons[0].style.display = 'inline';
-          eyeIcons[1].style.display = 'none';
-        }
-      }
-
       function openModal() {
-        document.getElementById('myModal').style.display = 'block';
+        var modal = document.getElementById("myModal");
+        modal.style.display = "block";
       }
-
       function closeModal() {
-        document.getElementById('myModal').style.display = 'none';
-        document.getElementById('registerModal').style.display = 'none';
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
       }
-
-      window.onclick = function(event) {
-        if (event.target == document.getElementById('myModal')) {
-          closeModal();
+      window.onclick = function (event) {
+        var modal = document.getElementById("myModal");
+        if (event.target == modal) {
+          modal.style.display = "none";
         }
-        if (event.target == document.getElementById('registerModal')) {
-          closeModal();
-        }
-      }
-
-      document.querySelector('.close').onclick = closeModal;
-
-      document.getElementById('registerLink').onclick = function() {
-        document.getElementById('myModal').style.display = 'none';
-        document.getElementById('registerModal').style.display = 'block';
       };
+      document.addEventListener("DOMContentLoaded", function () {
+        const registerModal = document.getElementById("registerModal");
+        const loginModal = document.getElementById("myModal");
+        const registerLink = document.getElementById("registerLink");
+        const loginLink = document.getElementById("loginLink");
 
-      document.getElementById('loginLink').onclick = function() {
-        document.getElementById('registerModal').style.display = 'none';
-        document.getElementById('myModal').style.display = 'block';
-      };
+        registerLink.addEventListener("click", function (event) {
+          event.preventDefault();
+          loginModal.style.display = "none";
+          registerModal.style.display = "block";
+        });
 
-      document.getElementById('loginForm').addEventListener('submit', function(event) {
-        // event.preventDefault();
-        validateLoginForm();
+        loginLink.addEventListener("click", function (event) {
+          event.preventDefault();
+          registerModal.style.display = "none";
+          loginModal.style.display = "block";
+        });
+
+        registerModal.querySelector(".close").addEventListener("click", function () {
+          registerModal.style.display = "none";
+        });
+
+        loginModal.querySelector(".close").addEventListener("click", function () {
+          loginModal.style.display = "none";
+        });
       });
 
-      document.getElementById('registerForm').addEventListener('submit', function(event) {
-        // event.preventDefault();
-        validateRegisterForm();
+      function togglePasswordVisibility(inputId) {
+        const input = document.getElementById(inputId);
+        const iconShow = input.nextElementSibling.querySelector(".fa-regular.fa-eye");
+        const iconHide = input.nextElementSibling.querySelector(".fa-solid.fa-eye-slash");
+
+        if (input.type === "password") {
+          input.type = "text";
+          iconShow.style.display = "none";
+          iconHide.style.display = "inline";
+        } else {
+          input.type = "password";
+          iconShow.style.display = "inline";
+          iconHide.style.display = "none";
+        }
+      }
+
+      document.getElementById("loginForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        const email = document.getElementById("login-email").value;
+        const password = document.getElementById("login-password").value;
+        const errorDiv = document.getElementById("login-error");
+
+        if (!email || !password) {
+          errorDiv.textContent = "Please fill out all fields.";
+        } else {
+          errorDiv.textContent = "";
+          // Submit the form
+          this.submit();
+        }
       });
 
-      function validateLoginForm() {
-        const email = document.getElementById('login-email').value;
-        const password = document.getElementById('login-password').value;
-        const errorElement = document.getElementById('login-error');
-        errorElement.textContent = '';
+      document.getElementById("registerForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        const email = document.getElementById("register-email").value;
+        const username = document.getElementById("register-username").value;
+        const password = document.getElementById("register-password").value;
+        const terms = document.getElementById("register-terms").checked;
+        const errorDiv = document.getElementById("register-error");
 
-        if (!validateEmail(email)) {
-          errorElement.textContent = 'Invalid email format.';
-          return;
+        if (!email || !username || !password || !terms) {
+          errorDiv.textContent = "Please fill out all fields and accept the terms and conditions.";
+        } else {
+          errorDiv.textContent = "";
+          // Submit the form
+          this.submit();
         }
-        if (password.length < 6) {
-          errorElement.textContent = 'Password must be at least 6 characters long.';
-          return;
-        }
-
-        alert('Login successful!');
-        closeModal();
-      }
-
-      function validateRegisterForm() {
-        const email = document.getElementById('register-email').value;
-        const username = document.getElementById('register-username').value;
-        const password = document.getElementById('register-password').value;
-        const errorElement = document.getElementById('register-error');
-        errorElement.textContent = '';
-
-        if (!validateEmail(email)) {
-          errorElement.textContent = 'Invalid email format.';
-          return;
-        }
-        if (username.length < 3) {
-          errorElement.textContent = 'Username must be at least 3 characters long.';
-          return;
-        }
-        if (password.length < 6) {
-          errorElement.textContent = 'Password must be at least 6 characters long.';
-          return;
-        }
-
-        // Add your registration logic here
-
-        alert('Registration successful!');
-        closeModal();
-      }
-
-      function validateEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
-      }
+      });
     </script>
   </body>
 </html>
