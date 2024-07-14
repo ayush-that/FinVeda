@@ -41,6 +41,14 @@
         color: red;
         font-size: 0.9em;
       }
+      .form-check-input {
+
+    margin-left: -1.45rem;
+     }
+
+     body{
+      font-family: Arial;
+     }
     </style>
   </head>
   <body>
@@ -82,37 +90,65 @@
                       <div class="mt-3">
                         <h3 class="join">Login to join us....</h3>
                         <form class="px-3 py-4" id="loginForm">
-                          <table>
-                            <tr>
-                              <td><label class="d-flex">Email</label></td>
-                              <td><input type="email" placeholder="Email" class="form-control" id="login-email" required /></td>
-                            </tr>
-                            <tr>
-                              <td><label class="d-flex">Password</label></td>
-                              <td class="password-container">
-                                <input type="password" placeholder="Password" class="form-control" id="login-password" required />
-                                <span class="toggle-password" onclick="togglePasswordVisibility('login-password')">
-                                  <i class="fa-regular fa-eye"></i>
-                                  <i class="fa-solid fa-eye-slash" style="display: none;"></i>
-                                </span>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td colspan="2">
-                                <div class="form-check d-flex">
-                                  <input type="checkbox" class="form-check-input" id="login-remember" />
-                                  <label class="form-check-label">Remember me</label>
-                                </div>
-                              </td>
-                            </tr>
-                          </table>
-                          <div class="error" id="login-error"></div>
-                          <button type="submit" class="main-btn mt-2 w-100 mb-2" style="padding: 0px;">Sign in</button>
+                          <div class="form-group">
+                            <label class="d-flex">Username</label>
+                            <input type="text" placeholder="Username" class="form-control" id="loginUsername">
+                            <div class="invalid-feedback" id="loginUsernameFeedback">Username is required.</div>
+                          </div>
+                          <div class="form-group">
+                            <label class="d-flex">Password</label>
+                            <input type="password" placeholder="Password" class="form-control" id="loginPassword">
+                            <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
+                            <div class="invalid-feedback" id="loginPasswordFeedback">Password is required.</div>
+                          </div>
+                          <div class="form-check d-flex">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-check-label">Remember me</label>
+                          </div>
                         </form>
+                        <button class="main-btn mt-2 w-100 mb-3" id="loginButton">Sign in</button>
                         <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
                       </div>
                     </div>
                   </div>
+    
+                  <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+        const loginButton = document.getElementById('loginButton');
+        const loginUsername = document.getElementById('loginUsername');
+        const loginPassword = document.getElementById('loginPassword');
+        const loginUsernameFeedback = document.getElementById('loginUsernameFeedback');
+        const loginPasswordFeedback = document.getElementById('loginPasswordFeedback');
+    
+        loginButton.addEventListener('click', function(event) {
+          event.preventDefault();
+          let isValid = true;
+    
+          if (loginUsername.value.trim() === "") {
+            loginUsernameFeedback.style.display = "block";
+            loginUsername.classList.add("is-invalid");
+            isValid = false;
+          } else {
+            loginUsernameFeedback.style.display = "none";
+            loginUsername.classList.remove("is-invalid");
+          }
+    
+          if (loginPassword.value.trim() === "") {
+            loginPasswordFeedback.style.display = "block";
+            loginPassword.classList.add("is-invalid");
+            isValid = false;
+          } else {
+            loginPasswordFeedback.style.display = "none";
+            loginPassword.classList.remove("is-invalid");
+          }
+    
+          if (isValid) {
+            // Perform login action (e.g., form submission, AJAX request, etc.)
+            alert('Login successful!');
+          }
+        });
+      });
+                  </script>
                   <!-- Register Modal -->
                   <div id="registerModal" class="modal">
                     <div class="modal-content">
@@ -120,41 +156,86 @@
                       <div class="mt-3">
                         <h3 class="join">Register to join us....</h3>
                         <form class="px-3 py-4" id="registerForm">
-                          <table>
-                            <tr>
-                              <td><label class="d-flex">Email</label></td>
-                              <td><input type="email" placeholder="Email" class="form-control" id="register-email" required /></td>
-                            </tr>
-                            <tr>
-                              <td><label class="d-flex">Username</label></td>
-                              <td><input type="text" placeholder="Username" class="form-control" id="register-username" required /></td>
-                            </tr>
-                            <tr>
-                              <td><label class="d-flex">Password</label></td>
-                              <td class="password-container">
-                                <input type="password" placeholder="Password" class="form-control" id="register-password" required />
-                                <span class="toggle-password" onclick="togglePasswordVisibility('register-password')">
-                                  <i class="fa-regular fa-eye"></i>
-                                  <i class="fa-solid fa-eye-slash" style="display: none;"></i>
-                                </span>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td colspan="2">
-                                <div class="form-check d-flex">
-                                  <input type="checkbox" class="form-check-input" id="register-terms" required />
-                                  <label class="form-check-label">I accept the <a href="./blogs/terms-of-service.html" target="_blank">Terms and Conditions</a></label>
-                                </div>
-                              </td>
-                            </tr>
-                          </table>
-                          <div class="error" id="register-error"></div>
-                          <button type="submit" class="main-btn mt-2 w-100 mb-3" style="padding: 0px;">Register</button>
+                          <div class="form-group">
+                            <label class="d-flex">Email</label>
+                            <input type="email" placeholder="Email" class="form-control" id="registerEmail">
+                            <div class="invalid-feedback" id="registerEmailFeedback">Please enter a valid email address.</div>
+                          </div>
+                          <div class="form-group">
+                            <label class="d-flex">Username</label>
+                            <input type="text" placeholder="Username" class="form-control" id="registerUsername">
+                            <div class="invalid-feedback" id="registerUsernameFeedback">Username is required.</div>
+                          </div>
+                          <div class="form-group">
+                            <label class="d-flex">Password</label>
+                            <input type="password" placeholder="Password" class="form-control" id="registerPassword">
+                            <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
+                            <div class="invalid-feedback" id="registerPasswordFeedback">Please enter at least 8 characters with a number, symbol, capital, and small letter.</div>
+                          </div>
                         </form>
+                        <button class="main-btn mt-2 w-100 mb-3" id="registerButton">Register</button>
                         <p class="text-center">Already have an account? <a href="#" id="loginLink">Login</a></p>
                       </div>
                     </div>
                   </div>
+                  <script>
+                     document.addEventListener("DOMContentLoaded", function() {
+        const registerButton = document.getElementById('registerButton');
+        const registerEmail = document.getElementById('registerEmail');
+        const registerUsername = document.getElementById('registerUsername');
+        const registerPassword = document.getElementById('registerPassword');
+        const registerEmailFeedback = document.getElementById('registerEmailFeedback');
+        const registerUsernameFeedback = document.getElementById('registerUsernameFeedback');
+        const registerPasswordFeedback = document.getElementById('registerPasswordFeedback');
+    
+        const validateEmail = (email) => {
+          const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return re.test(String(email).toLowerCase());
+        };
+    
+        const validatePassword = (password) => {
+          const re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/;
+          return re.test(password);
+        };
+    
+        registerButton.addEventListener('click', function(event) {
+          event.preventDefault();
+          let isValid = true;
+    
+          if (!validateEmail(registerEmail.value)) {
+            registerEmailFeedback.style.display = "block";
+            registerEmail.classList.add("is-invalid");
+            isValid = false;
+          } else {
+            registerEmailFeedback.style.display = "none";
+            registerEmail.classList.remove("is-invalid");
+          }
+    
+          if (registerUsername.value.trim() === "") {
+            registerUsernameFeedback.style.display = "block";
+            registerUsername.classList.add("is-invalid");
+            isValid = false;
+          } else {
+            registerUsernameFeedback.style.display = "none";
+            registerUsername.classList.remove("is-invalid");
+          }
+    
+          if (!validatePassword(registerPassword.value)) {
+            registerPasswordFeedback.style.display = "block";
+            registerPassword.classList.add("is-invalid");
+            isValid = false;
+          } else {
+            registerPasswordFeedback.style.display = "none";
+            registerPassword.classList.remove("is-invalid");
+          }
+    
+          if (isValid) {
+            // Perform register action (e.g., form submission, AJAX request, etc.)
+            alert('Registration successful!');
+          }
+        });
+      });
+                  </script>
                   <a class="main-btn" data-scroll-nav="0" href="#" onclick="openModal()">Login/Register 💻</a>
                 </div>
               </nav>
@@ -188,16 +269,10 @@
           <div class="row">
             <div class="col-lg-4 col-md-6 col-sm-8">
               <div class="footer-about mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                <p class="text">We at FinVeda aim to make you a stock market Guru easy with our AI powered teaching methods. Learning is now simple and fun.</p>
-                <ul class="social">
-                  <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                  <li><a href="#"><i class="lni-twitter-original"></i></a></li>
-                  <li><a href="#"><i class="lni-instagram-original"></i></a></li>
-                  <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
-                </ul>
+                <p class="text">We at FinVeda aim to make you a stock market Guru easy with our AI powered teaching and financial blogs.</p>
               </div>
             </div>
-            <div class="col-lg-5 col-md-7 col-sm-12">
+            <div class="col-lg-5 col-md-7 col-sm-7">
               <div class="footer-link d-flex mt-50 justify-content-md-between">
                 <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
                   <div class="footer-title">
@@ -205,148 +280,162 @@
                   </div>
                   <ul class="link">
                     <li><a href="./index.html">Home</a></li>
+                    <li><a href="./blog.html">Blog</a></li>
                     <li><a href="./trends.html">Trends</a></li>
-                    <li><a href="./tools/sip.html">Tools</a></li>
-                    <li><a href="./blog.html">Blogs</a></li>
                     <li><a href="./quiz.html">Quiz</a></li>
+                    <li><a href="./tools/sip.html">Tools</a></li>
                   </ul>
                 </div>
                 <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
                   <div class="footer-title">
-                    <h4 class="title">Support</h4>
+                    <h4 class="title">Resources</h4>
                   </div>
                   <ul class="link">
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="https://groww.in/">Groww</a></li>
+                    <li><a href="https://www.moneycontrol.com/">Money Control</a></li>
+                    <li><a href="https://www.tickertape.in/">Ticker Tape</a></li>
+                    <li><a href="https://economictimes.indiatimes.com/">Economic Times</a></li>
+                    <li><a href="https://in.tradingview.com/">Trading View</a></li>
                   </ul>
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-md-5 col-sm-8">
+            <div class="col-lg-3 col-md-5 col-sm-5">
               <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
                 <div class="footer-title">
                   <h4 class="title">Contact Us</h4>
                 </div>
                 <ul class="contact">
-                  <li><i class="fa fa-phone"></i> +91 8089341927</li>
-                  <li><i class="fa fa-envelope"></i> info@finveda.in</li>
-                  <li><i class="fa fa-map-marker"></i> Bhubaneswar, Odisha, India</li>
+                  <li>Email: contact@finveda.com</li>
+                  <li>Phone: +123 456 7890</li>
+                  <li>Address: 123 Street, City, Country</li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
-        <div class="footer-copyright text-center">
-          <p class="text">Copyright © 2023 FinVeda Pvt. Ltd. All Rights Reserved</p>
+        <div class="footer-copyright">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="copyright text-center">
+                <p class="text">© 2023 FinVeda. All Rights Reserved.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div id="particles-2"></div>
     </footer>
-    <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
     <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
     <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/slick.min.js"></script>
     <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="assets/js/ajax-contact.js"></script>
-    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/waypoints.min.js"></script>
-    <script src="assets/js/jquery.counterup.min.js"></script>
-    <script src="assets/js/jquery.easing.min.js"></script>
-    <script src="assets/js/scrolling-nav.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
+      function togglePasswordVisibility(id) {
+        const passwordField = document.getElementById(id);
+        const eyeIcons = passwordField.parentElement.querySelectorAll('.fa-eye, .fa-eye-slash');
+        if (passwordField.type === 'password') {
+          passwordField.type = 'text';
+          eyeIcons[0].style.display = 'none';
+          eyeIcons[1].style.display = 'inline';
+        } else {
+          passwordField.type = 'password';
+          eyeIcons[0].style.display = 'inline';
+          eyeIcons[1].style.display = 'none';
+        }
+      }
+
       function openModal() {
-        var modal = document.getElementById("myModal");
-        modal.style.display = "block";
+        document.getElementById('myModal').style.display = 'block';
       }
+
       function closeModal() {
-        var modal = document.getElementById("myModal");
-        modal.style.display = "none";
+        document.getElementById('myModal').style.display = 'none';
+        document.getElementById('registerModal').style.display = 'none';
       }
-      window.onclick = function (event) {
-        var modal = document.getElementById("myModal");
-        if (event.target == modal) {
-          modal.style.display = "none";
+
+      window.onclick = function(event) {
+        if (event.target == document.getElementById('myModal')) {
+          closeModal();
         }
+        if (event.target == document.getElementById('registerModal')) {
+          closeModal();
+        }
+      }
+
+      document.querySelector('.close').onclick = closeModal;
+
+      document.getElementById('registerLink').onclick = function() {
+        document.getElementById('myModal').style.display = 'none';
+        document.getElementById('registerModal').style.display = 'block';
       };
-      document.addEventListener("DOMContentLoaded", function () {
-        const registerModal = document.getElementById("registerModal");
-        const loginModal = document.getElementById("myModal");
-        const registerLink = document.getElementById("registerLink");
-        const loginLink = document.getElementById("loginLink");
 
-        registerLink.addEventListener("click", function (event) {
-          event.preventDefault();
-          loginModal.style.display = "none";
-          registerModal.style.display = "block";
-        });
+      document.getElementById('loginLink').onclick = function() {
+        document.getElementById('registerModal').style.display = 'none';
+        document.getElementById('myModal').style.display = 'block';
+      };
 
-        loginLink.addEventListener("click", function (event) {
-          event.preventDefault();
-          registerModal.style.display = "none";
-          loginModal.style.display = "block";
-        });
-
-        registerModal.querySelector(".close").addEventListener("click", function () {
-          registerModal.style.display = "none";
-        });
-
-        loginModal.querySelector(".close").addEventListener("click", function () {
-          loginModal.style.display = "none";
-        });
+      document.getElementById('loginForm').addEventListener('submit', function(event) {
+        // event.preventDefault();
+        validateLoginForm();
       });
 
-      function togglePasswordVisibility(inputId) {
-        const input = document.getElementById(inputId);
-        const iconShow = input.nextElementSibling.querySelector(".fa-regular.fa-eye");
-        const iconHide = input.nextElementSibling.querySelector(".fa-solid.fa-eye-slash");
+      document.getElementById('registerForm').addEventListener('submit', function(event) {
+        // event.preventDefault();
+        validateRegisterForm();
+      });
 
-        if (input.type === "password") {
-          input.type = "text";
-          iconShow.style.display = "none";
-          iconHide.style.display = "inline";
-        } else {
-          input.type = "password";
-          iconShow.style.display = "inline";
-          iconHide.style.display = "none";
+      function validateLoginForm() {
+        const email = document.getElementById('login-email').value;
+        const password = document.getElementById('login-password').value;
+        const errorElement = document.getElementById('login-error');
+        errorElement.textContent = '';
+
+        if (!validateEmail(email)) {
+          errorElement.textContent = 'Invalid email format.';
+          return;
         }
+        if (password.length < 6) {
+          errorElement.textContent = 'Password must be at least 6 characters long.';
+          return;
+        }
+
+        alert('Login successful!');
+        closeModal();
       }
 
-      document.getElementById("loginForm").addEventListener("submit", function (event) {
-        event.preventDefault();
-        const email = document.getElementById("login-email").value;
-        const password = document.getElementById("login-password").value;
-        const errorDiv = document.getElementById("login-error");
+      function validateRegisterForm() {
+        const email = document.getElementById('register-email').value;
+        const username = document.getElementById('register-username').value;
+        const password = document.getElementById('register-password').value;
+        const errorElement = document.getElementById('register-error');
+        errorElement.textContent = '';
 
-        if (!email || !password) {
-          errorDiv.textContent = "Please fill out all fields.";
-        } else {
-          errorDiv.textContent = "";
-          // Submit the form
-          this.submit();
+        if (!validateEmail(email)) {
+          errorElement.textContent = 'Invalid email format.';
+          return;
         }
-      });
-
-      document.getElementById("registerForm").addEventListener("submit", function (event) {
-        event.preventDefault();
-        const email = document.getElementById("register-email").value;
-        const username = document.getElementById("register-username").value;
-        const password = document.getElementById("register-password").value;
-        const terms = document.getElementById("register-terms").checked;
-        const errorDiv = document.getElementById("register-error");
-
-        if (!email || !username || !password || !terms) {
-          errorDiv.textContent = "Please fill out all fields and accept the terms and conditions.";
-        } else {
-          errorDiv.textContent = "";
-          // Submit the form
-          this.submit();
+        if (username.length < 3) {
+          errorElement.textContent = 'Username must be at least 3 characters long.';
+          return;
         }
-      });
+        if (password.length < 6) {
+          errorElement.textContent = 'Password must be at least 6 characters long.';
+          return;
+        }
+
+        // Add your registration logic here
+
+        alert('Registration successful!');
+        closeModal();
+      }
+
+      function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+      }
     </script>
   </body>
 </html>
