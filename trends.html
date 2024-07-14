@@ -27,10 +27,6 @@
       background-color: #f76b45;
       z-index: 9999;
     }
-    .form-check-input {
-   
-    margin-left: -1.45rem;
-}
   </style>
 </head>
 
@@ -153,153 +149,53 @@
                       <span class="close" style="display: flex; justify-content: right;">&times;</span>
                       <div class="mt-3">
                         <h3 class="join">Login to join us....</h3>
-                        <form class="px-3 py-4" id="loginForm">
+                        <form class="px-3 py-4">
                           <div class="form-group">
                             <label class="d-flex">Username</label>
-                            <input type="text" placeholder="Username" class="form-control" id="loginUsername">
-                            <div class="invalid-feedback" id="loginUsernameFeedback">Username is required.</div>
+                            <input type="text" placeholder="Username" class="form-control" />
                           </div>
                           <div class="form-group">
                             <label class="d-flex">Password</label>
-                            <input type="password" placeholder="Password" class="form-control" id="loginPassword">
+                            <input type="password" placeholder="Password" class="form-control">
                             <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
-                            <div class="invalid-feedback" id="loginPasswordFeedback">Password is required.</div>
                           </div>
                           <div class="form-check d-flex">
                             <input type="checkbox" class="form-check-input">
                             <label class="form-check-label">Remember me</label>
                           </div>
                         </form>
-                        <button class="main-btn mt-2 w-100 mb-3" id="loginButton">Sign in</button>
+                        <button class="main-btn mt-2 w-100 mb-3">Sign in</button>
                         <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
                       </div>
                     </div>
                   </div>
-    
-                  <script>
-                    document.addEventListener("DOMContentLoaded", function() {
-        const loginButton = document.getElementById('loginButton');
-        const loginUsername = document.getElementById('loginUsername');
-        const loginPassword = document.getElementById('loginPassword');
-        const loginUsernameFeedback = document.getElementById('loginUsernameFeedback');
-        const loginPasswordFeedback = document.getElementById('loginPasswordFeedback');
-    
-        loginButton.addEventListener('click', function(event) {
-          event.preventDefault();
-          let isValid = true;
-    
-          if (loginUsername.value.trim() === "") {
-            loginUsernameFeedback.style.display = "block";
-            loginUsername.classList.add("is-invalid");
-            isValid = false;
-          } else {
-            loginUsernameFeedback.style.display = "none";
-            loginUsername.classList.remove("is-invalid");
-          }
-    
-          if (loginPassword.value.trim() === "") {
-            loginPasswordFeedback.style.display = "block";
-            loginPassword.classList.add("is-invalid");
-            isValid = false;
-          } else {
-            loginPasswordFeedback.style.display = "none";
-            loginPassword.classList.remove("is-invalid");
-          }
-    
-          if (isValid) {
-            // Perform login action (e.g., form submission, AJAX request, etc.)
-            alert('Login successful!');
-          }
-        });
-      });
-          </script>
+
                   <!-- Register Modal -->
                   <div id="registerModal" class="modal">
                     <div class="modal-content">
                       <span class="close" style="display: flex; justify-content: right;">&times;</span>
                       <div class="mt-3">
                         <h3 class="join">Register to join us....</h3>
-                        <form class="px-3 py-4" id="registerForm">
+                        <form class="px-3 py-4">
                           <div class="form-group">
                             <label class="d-flex">Email</label>
-                            <input type="email" placeholder="Email" class="form-control" id="registerEmail">
-                            <div class="invalid-feedback" id="registerEmailFeedback">Please enter a valid email address.</div>
+                            <input type="email" placeholder="Email" class="form-control" />
                           </div>
                           <div class="form-group">
                             <label class="d-flex">Username</label>
-                            <input type="text" placeholder="Username" class="form-control" id="registerUsername">
-                            <div class="invalid-feedback" id="registerUsernameFeedback">Username is required.</div>
+                            <input type="text" placeholder="Username" class="form-control" />
                           </div>
                           <div class="form-group">
                             <label class="d-flex">Password</label>
-                            <input type="password" placeholder="Password" class="form-control" id="registerPassword">
+                            <input type="password" placeholder="Password" class="form-control" required>
                             <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
-                            <div class="invalid-feedback" id="registerPasswordFeedback">Please enter at least 8 characters with a number, symbol, capital, and small letter.</div>
                           </div>
                         </form>
-                        <button class="main-btn mt-2 w-100 mb-3" id="registerButton">Register</button>
+                        <button class="main-btn mt-2 w-100 mb-3">Register</button>
                         <p class="text-center">Already have an account? <a href="#" id="loginLink">Login</a></p>
                       </div>
                     </div>
                   </div>
-                  <script>
-                     document.addEventListener("DOMContentLoaded", function() {
-        const registerButton = document.getElementById('registerButton');
-        const registerEmail = document.getElementById('registerEmail');
-        const registerUsername = document.getElementById('registerUsername');
-        const registerPassword = document.getElementById('registerPassword');
-        const registerEmailFeedback = document.getElementById('registerEmailFeedback');
-        const registerUsernameFeedback = document.getElementById('registerUsernameFeedback');
-        const registerPasswordFeedback = document.getElementById('registerPasswordFeedback');
-    
-        const validateEmail = (email) => {
-          const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          return re.test(String(email).toLowerCase());
-        };
-    
-        const validatePassword = (password) => {
-          const re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/;
-          return re.test(password);
-        };
-    
-        registerButton.addEventListener('click', function(event) {
-          event.preventDefault();
-          let isValid = true;
-    
-          if (!validateEmail(registerEmail.value)) {
-            registerEmailFeedback.style.display = "block";
-            registerEmail.classList.add("is-invalid");
-            isValid = false;
-          } else {
-            registerEmailFeedback.style.display = "none";
-            registerEmail.classList.remove("is-invalid");
-          }
-    
-          if (registerUsername.value.trim() === "") {
-            registerUsernameFeedback.style.display = "block";
-            registerUsername.classList.add("is-invalid");
-            isValid = false;
-          } else {
-            registerUsernameFeedback.style.display = "none";
-            registerUsername.classList.remove("is-invalid");
-          }
-    
-          if (!validatePassword(registerPassword.value)) {
-            registerPasswordFeedback.style.display = "block";
-            registerPassword.classList.add("is-invalid");
-            isValid = false;
-          } else {
-            registerPasswordFeedback.style.display = "none";
-            registerPassword.classList.remove("is-invalid");
-          }
-    
-          if (isValid) {
-            // Perform register action (e.g., form submission, AJAX request, etc.)
-            alert('Registration successful!');
-          }
-        });
-      });
-                  </script>
                   <a class="main-btn" data-scroll-nav="0" href="#" onclick="openModal()">Login/Register 💻</a>
                 </div>
             </nav>
