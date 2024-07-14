@@ -2,6 +2,11 @@ body {
     background-color: #f4f9fd; /* Fresh light blue background color */
 }
 
+:root{
+    --white:white;
+    --slider:rgba(75, 147, 255, 0.808);
+}
+
 #financeQuizForm {
     max-width: 600px;
     margin: 20px auto;
@@ -49,4 +54,64 @@ input[type="radio"]:checked+label::before {
     content: '\2605'; /* Unicode character for a star */
     color: #f39c12; /* Orange star color */
     margin-right: 5px;
+}
+
+.correct{
+    background: rgb(64, 214, 122);
+}
+
+.incorrect{
+    background: rgb(226, 78, 78);
+}
+
+#answer-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.btn:hover:not([disabled]){
+    background:var(--slider-dark);
+    color: var(--white);
+}
+
+.btn:disabled{
+    cursor: no-drop;
+}
+
+.btn{
+    color: var(--dark);
+    border: none;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    font-weight: 500;
+    padding: 10px;
+    width: 400px;
+    margin: 10px 0;
+    text-align: left;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.4s;
+}
+
+#next-btn{
+    border: none;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    padding: 10px;
+    width: 150px;
+    margin: 20px auto 0;
+    color: var(--white);
+    border-radius: 4px;
+    background: var(--slider);
+    cursor: pointer;
+    transition: transform 0.4s;
+    display: block;
+}
+
+#next-btn:active{
+    transform: scale(0.96);
+}
+
+.btn:active{
+    transform: scale(0.96);
 }
