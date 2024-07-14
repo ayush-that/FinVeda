@@ -184,82 +184,94 @@
   <div class="blog-content">
     <br><br><br><br>
     <p></p>
-    <h2>Test you knowledge</h2>
+    <h2 class="test">Test your knowledge</h2>
     </p><br>
     <form id="financeQuizForm">
-      <!-- Question 1 -->
+      <div id="quiz">
+        <div class="quiz">
+          <h2 id="question">Question goes here</h2>
+          <div id="answer-buttons">
+              <button class="btn">Answer 1</button>
+              <button class="btn">Answer 2</button>
+              <button class="btn">Answer 3</button>
+              <button class="btn">Answer 4</button>
+          </div>
+          <button id="next-btn">Next</button>
+        </div>  
+      </div>
+      <!-- Question 1
       <label>1. What is the primary purpose of creating a budget?</label><br>
       <input type="radio" name="q1" value="A"> A. To restrict spending<br>
       <input type="radio" name="q1" value="B"> B. To track income and expenses<br>
       <input type="radio" name="q1" value="C"> C. To increase debt<br>
       <input type="radio" name="q1" value="D"> D. To eliminate savings<br>
       <br>
-      <!-- Question 2 -->
+      Question 2
       <label>2. Why is maintaining an emergency fund important?</label><br>
       <input type="radio" name="q2" value="A"> A. It earns high interest<br>
       <input type="radio" name="q2" value="B"> B. It provides investment opportunities<br>
       <input type="radio" name="q2" value="C"> C. It covers unexpected expenses<br>
       <input type="radio" name="q2" value="D"> D. It helps build credit<br>
       <br>
-      <!-- Credit and Debt -->
-      <!-- Question 3 -->
+      Credit and Debt
+      Question 3
       <label>3. What is a credit score based on?</label><br>
       <input type="radio" name="q3" value="A"> A. Monthly income<br>
       <input type="radio" name="q3" value="B"> B. Number of credit cards<br>
       <input type="radio" name="q3" value="C"> C. Payment history and debt utilization<br>
       <input type="radio" name="q3" value="D"> D. Social media activity<br>
       <br>
-      <!-- Question 4 -->
+      Question 4
       <label>4. How does compound interest affect debt?</label><br>
       <input type="radio" name="q4" value="A"> A. It reduces interest over time<br>
       <input type="radio" name="q4" value="B"> B. It increases debt exponentially<br>
       <input type="radio" name="q4" value="C"> C. It only applies to savings accounts<br>
       <input type="radio" name="q4" value="D"> D. It has no impact on debt<br>
       <br>
-      <!-- Question 5 -->
+      Question 5
       <label>5. What is the primary purpose of diversification in an investment portfolio?</label><br>
       <input type="radio" name="q5" value="A"> A. To maximize returns<br>
       <input type="radio" name="q5" value="B"> B. To minimize risk<br>
       <input type="radio" name="q5" value="C"> C. To focus on a single investment<br>
       <input type="radio" name="q5" value="D"> D. To avoid taxes<br>
       <br>
-      <!-- Question 6 -->
+      Question 6
       <label>6. What is a stock?</label><br>
       <input type="radio" name="q6" value="A"> A. A type of bond<br>
       <input type="radio" name="q6" value="B"> B. Ownership in a company<br>
       <input type="radio" name="q6" value="C"> C. A savings account<br>
       <input type="radio" name="q6" value="D"> D. A loan to the government<br>
       <br>
-      <!-- Question 7 -->
+      Question 7
       <label>7. Why is starting to save for retirement early advantageous?</label><br>
       <input type="radio" name="q7" value="A"> A. Early savers receive higher interest rates<br>
       <input type="radio" name="q7" value="B"> B. Retirement accounts are only available to young savers<br>
       <input type="radio" name="q7" value="C"> C. Compounding can work over a longer period<br>
       <input type="radio" name="q7" value="D"> D. Early savers pay fewer taxes<br>
       <br>
-      <!-- Question 8 -->
+      Question 8
       <label>8. What is the main difference between a 401(k) and an IRA?</label><br>
       <input type="radio" name="q8" value="A"> A. Contribution limits<br>
       <input type="radio" name="q8" value="B"> B. Eligibility criteria<br>
       <input type="radio" name="q8" value="C"> C. Investment options<br>
       <input type="radio" name="q8" value="D"> D. Tax treatment<br>
       <br>
-      <!-- Question 9 -->
+      Question 9
       <label>9. Why is health insurance important?</label><br>
       <input type="radio" name="q9" value="A"> A. It helps save for retirement<br>
       <input type="radio" name="q9" value="B"> B. It covers unexpected expenses<br>
       <input type="radio" name="q9" value="C"> C. It protects against medical costs<br>
       <input type="radio" name="q9" value="D"> D. It provides life coverage<br>
       <br>
-      <!-- Question 10 -->
+      Question 10
       <label>10. What does life insurance primarily provide?</label><br>
       <input type="radio" name="q10" value="A"> A. Investment returns<br>
       <input type="radio" name="q10" value="B"> B. Retirement income<br>
       <input type="radio" name="q10" value="C"> C. Death benefit to beneficiaries<br>
       <input type="radio" name="q10" value="D"> D. Home insurance<br>
-      <br>
-      <button type="button" class="submit-button" onclick="gradeQuiz()">Submit Answers</button>
-      <div id="quizResult"></div>
+      <br> -->
+      <!-- <button type="button" class="submit-button" ">Submit Answers</button> -->
+      <div id="quizResult" onclick="gradeQuiz()"></div>
     </form>
     <br><br>
     <div id="quizResult"></div>
@@ -390,6 +402,7 @@
 <script src="../assets/js/main.js"></script>
 <script src="../assets/js/quiz.js"></script>
 <script src="../assets/js/popup.js"></script>
+<script src="../assets/js/quiz_modify.js"></script>
 <script>
   // Get the modals
   var loginModal = document.getElementById('myModal');
