@@ -243,82 +243,365 @@
           </div>
         </div>
       </div>
-    </header>
-    <footer id="footer" class="footer-area pt-120">
-      <div class="container">
-        <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="subscribe-content mt-45">
-                <h2 class="subscribe-title">
-                  Subscribe Our Newsletter <span>get regular updates</span>
-                </h2>
-              </div>
+      <div id="particles-1" class="particles"></div>
+    </div>
+  </header>
+  <link rel="stylesheet" type="text/css" href="sipcalculatorCss.css">
+  <script type="text/javascript" src="sipcalculatorJs.js"></script>
+
+  <body class="body-background">
+    <div class="header mt-5">
+      <h3>Mutual Fund Investment Calculator</h3>
+    </div>
+    <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5">
+      <div class="switch-container radio-button">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" value="SIP" checked name="checked">
+          <label class="form-check-label" for="SIP">SIP</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="checked" value="LumpSum">
+          <label class="form-check-label" for="lumpsum">LumpSum</label>
+        </div>
+
+        <div class="dropdown">
+          Currency
+          <select class="form-control" onchange="currencyChange(this)" id="currency" class="currency">
+            <!-- &#8377; -->
+            <option value="Rs">&#8377; &nbsp;INR</option>
+            <option value="$">&#128176;USD</option>
+            <!-- &#x24; -->
+          </select>
+        </div>
+      </div>
+      <div class="input-container">
+        <div>
+          <div><b>Monthly investment</b></div>
+          <div><input class="form-control" id="investment" type="text" onchange="commas(this)" /></div>
+          <br />
+          <div><b>Time period (yr)</b></div>
+          <div><input class="form-control" id="years" type="number"></div>
+          <br />
+          <div><b>Expected return rate (p.a)</b></div>
+          <div><input class="form-control" id="return-rate" type="text" onchange="percentage(this)" /></div>
+        </div>
+      </div>
+      </br />
+      <div class="btn-calculate">
+        <button type="button" onclick="calculateResult()" class="btn btn-success">
+          Calculate
+        </button>
+      </div>
+      </br />
+      <div style="display: flex;">
+        <div class="result"><b>Result :</b></div>
+        <div class="result-container">
+          <div>Monthly Investment for <span id="mode-1">SIP</span></div>
+          <div><span>Rs.</span>&nbsp;<span id="input-1"></span></div>
+          <br />
+          <div>Number of Years <span id="mode-2">SIP</span></div>
+          <div><span>Years:</span>&nbsp;<span id="input-2"></span></div>
+          <br />
+          <div>Expected Rate of Return <span id="mode-3">SIP</span></div>
+          <div><span>%:</span>&nbsp;<span id="input-3"></span></div>
+        </div>
+        <div class="result-container">
+          <div>Total Investment</div>
+          <div><span id="currency-change-1">Rs.</span>&nbsp;<span id="total"></span></div>
+          <br />
+          <div>Wealth Gained</div>
+          <div><span id="currency-change-2">Rs.</span>&nbsp;<span id="wealth-gained"></span></div>
+          <br />
+          <div>Maturity Value</div>
+          <div><span id="currency-change-3">Rs.</span>&nbsp;<span id="maturity-value"></span></div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!-- EMI Calculator -->
+    <script src="emiCalculator.js"></script>
+    <div class="header" style="padding-top: 100px;">
+      <h3>EMI Calculator</h3>
+    </div>
+    <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5">
+      <div class="input-container">
+        <div>
+          <div><b>Loan Amount (INR)</b></div>
+          <div><input class="form-control" id="loanAmount" type="number" style="margin: 1% 5% 0 0" /></div>
+          <br />
+          <div><b>Interest Rate (%)</b></div>
+          <div><input class="form-control" id="interestRate" type="number" /></div>
+          <br />
+          <div><b>Loan Tenure (Months)</b></div>
+          <div><input class="form-control" id="loanTenure" type="number" /></div>
+        </div>
+      </div>
+      </br />
+      <div class="btn-calculate">
+        <button class="btn btn-success" type="button" onclick="calculateEMI()">Calculate EMI</button>
+      </div>
+      </br />
+      <div style="display: flex;">
+        <div class="result"><b>Result :</b></div>
+        <div class="result-container">
+          <div>Monthly EMI</div>
+          <div><span id="monthlyEMI"></span></div>
+          <br />
+          <div>Total Payment</div>
+          <div><span id="totalPayment"></span></div>
+          <br />
+          <div>Total Interest Paid</div>
+          <div><span id="totalInterestPaid"></span></div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!-- End EMI Calculator -->
+
+    <!-- Insurance Calculator -->
+    <script src="insuranceCalculator.js"></script>
+    <div class="header" style="padding-top: 100px;">
+      <h3>Insurance Calculator</h3>
+    </div>
+    <div class="page-container">
+      <div class="input-container">
+        <div>
+          <div><b>Sum assured (INR)</b></div>
+          <div><input id="Sumassured" type="number" style="margin: 1% 5% 0 0" /></div>
+          <br />
+          <div><b>Policy term (Years)</b></div>
+          <div><input id="Policyterm" type="number" /></div>
+          <br />
+          <div><b>Annual premium (%)</b></div>
+          <div><input id="Annualpremium" type="number" /></div>
+          <br />
+          <div><b>Reversionary Bonus (%)</b></div>
+          <div><input id="ReversionaryBonus" type="number" /></div>
+          <br />
+          <div><b>Terminal Bonus (%)</b></div>
+          <div><input id="TerminalBonus" type="number" /></div>
+          <br />
+          <div style="display: flex;">
+            <input name="check" id="surrendered" type="radio" style="width: 20px;" /><b>Early Surrendered</b>
+            <input name="check" id="death" type="radio" style="width: 20px;" /><b>Policyholder's Death</b>
+          </div>
+          <br />
+        </div>
+      </div>
+      </br />
+      <div class="btn-calculate">
+        <button type="button" style="width: 11rem;" onclick="calculateInsurance()">Calculate Insurance</button>
+      </div>
+      </br />
+      <div style="display: flex;">
+        <div class="result"><b>Result :</b></div>
+        <div class="result-container">
+          <div>Reversionary Bonus</div>
+          <div><span id="ReversionaryBonusAmt"></span></div>
+          <br />
+          <div>Terminal Bonus</div>
+          <div><span id="TerminalBonusAmt"></span></div>
+          <br />
+          <div>TotalBonus</div>
+          <div><span id="TotalBonus"></span></div>
+          <br />
+          <div>Total Premium Paid </div>
+          <div><span id="TotalPremium"></span></div>
+          <br>
+          <div>Net Gain </div>
+          <div><span id="netGain"></span></div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!-- End Insurance Calculator -->
+
+    <!-- NPV Calculator -->
+    <script src="npvCalculator.js" defer></script>
+    <div class="header" style="padding-top: 100px;">
+      <h3>Net Present Value (NPV) Calculator</h3>
+      <h6 style="text-align: left; margin: 1% 20%; padding-left: 50px;">The NPV (Net Present Value) Calculator is a tool
+        designed to help you evaluate the profitability of an investment by calculating the present value of expected
+        future cash flows. Here's how it works:</h6>
+      <p style="text-align: left; margin: 1% 20%; padding-left: 50px;">
+        1. <b>Initial Investment:</b> Enter the amount of your initial investment. <br>
+        2. <b>Discount Rate:</b> Enter the discount rate, which represents the rate of return required to make the
+        investment worthwhile.<br>
+        3. <b>Cash Flows:</b> Add the expected cash flows for each year of the investment. You can add multiple cash
+        flow inputs for different years and remove any as needed.<br>
+        4. <b>Calculate NPV:</b> Once all inputs are provided, click the 'Calculate NPV' button to compute the net
+        present value. The result will display the NPV, indicating the potential profitability of your investment.<br>
+      </p>
+      <h6 style="text-align: left; margin: 1% 20%; padding-left: 50px;">This calculator helps investors make informed
+        decisions by considering the time value of money, ensuring that future cash flows are accurately evaluated in
+        today's terms.</h6>
+
+    </div>
+    <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5">
+      <div class="input-container">
+        <div>
+          <div><b>Initial Investment (INR)</b></div>
+          <div><input class="form-control" id="initialInvestment" type="number" style="margin: 1% 5% 0 0" /></div>
+          <br />
+          <div><b>Discount Rate (%)</b></div>
+          <div><input class="form-control" id="discountRate" type="number" /></div>
+        </div>
+      </div>
+      <br />
+      <div class="cash-flows-container">
+        <div><b>Cash Flow</b></div>
+        <div id="cashFlows">
+          <!-- Cash flow inputs will be added here dynamically -->
+        </div>
+        <div class="npv-calculate">
+          <button type="button" onclick="addCashFlow()">+ Add Year</button>
+        </div>
+      </div>
+      <br />
+      <div class="btn-calculate">
+        <button class="btn btn-success" type="button" onclick="calculateNPV()">Calculate</button>
+      </div>
+      <br />
+      <div style="display: flex;">
+        <div class="nresult"><b>Result :</b></div>
+        <div class="nresult-container">
+          <div>NPV</div>
+          <div><span id="NPV_result">Rs.</span>&nbsp;<span id="npvResult"></span></div>
+        </div>
+      </div>
+    </div>
+    <!-- End NPV Calculator -->
+
+
+
+
+    <!--ROI calculator-->
+    <script src="roiCalculator.js"></script>
+    <div class="header" style="padding-top: 100px;">
+      <h3>Return on Investment(ROI) Calculator</h3>
+    </div>
+    <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5">
+      <div class="">
+        <form id="roi-form" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+          <div class="form-group">
+              <label for="invested">
+                <b style="color: #6a6972;">Total Amount Invested(Rs):</b>
+              </label>
+              <input class="form-control" type="number" id="invested" name="invested" required>
+          </div>
+          <div class="form-group">
+              <label for="return">
+                <b style="color: #6a6972;">
+                Total Amount Returned(Rs):
+                </b>
+              </label>
+              <input class="form-control" type="number" id="return" name="return" required>
+          </div>
+          <button type="submit" class="btn btn-success">Calculate ROI</button>
+      </form>
+      <div class="calculation" style="margin-top: 20px; display: flex; gap: 20px;">
+        <b>Result:</b>
+        <div class="ans" style="margin-top: -3px;">
+      <div id="gl" class="gl" style="font-size: 20px;"></div>
+      <div id="result" class="roi" style="font-size: 20px; padding-top: 10px;"></div>
+        </div>
+    </div>
+      </div>
+    </div>
+
+
+
+    <!--End of RoI calculator-->
+
+  </body>
+  <footer id="footer" class="footer-area pt-120">
+    <div class="container">
+      <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="subscribe-content mt-45">
+              <h2 class="subscribe-title">
+                Subscribe Our Newsletter <span>get regular updates</span>
+              </h2>
             </div>
-            <div class="col-lg-6">
-              <div class="subscribe-form mt-50">
-                <form action="#">
-                  <input type="text" placeholder="Enter Email" />
-                  <button class="main-btn" onclick="event.preventDefault(); openModal();">Subscribe</button>
-                </form>
-              </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="subscribe-form mt-50">
+              <form action="#">
+                <input type="text" placeholder="Enter Email" />
+                <button class="main-btn" onclick="event.preventDefault(); openModal();">Subscribe</button>
+              </form>
             </div>
           </div>
         </div>
-        <div class="footer-widget pb-100">
-          <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-8">
-              <div class="footer-about mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                <p class="text">We at FinVeda aim to make you a stock market Guru easy with our AI powered teaching and financial blogs.</p>
-              </div>
+      </div>
+      <div class="footer-widget pb-100">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-8">
+            <div class="footer-about mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+              <p class="text">
+                We at FinVeda aim to make you a stock market Guru easy with our AI powered teaching and financial blogs.
+              </p>
             </div>
-            <div class="col-lg-5 col-md-7 col-sm-7">
-              <div class="footer-link d-flex mt-50 justify-content-md-between">
-                <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-                  <div class="footer-title">
-                    <h4 class="title">Quick Links</h4>
-                  </div>
-                  <ul class="link">
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./blog.html">Blog</a></li>
-                    <li><a href="./trends.html">Trends</a></li>
-                    <li><a href="./quiz.html">Quiz</a></li>
-                    <li><a href="./tools/sip.html">Tools</a></li>
-                  </ul>
-                </div>
-                <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
-                  <div class="footer-title">
-                    <h4 class="title">Resources</h4>
-                  </div>
-                  <ul class="link">
-                    <li><a href="https://groww.in/">Groww</a></li>
-                    <li><a href="https://www.moneycontrol.com/">Money Control</a></li>
-                    <li><a href="https://www.tickertape.in/">Ticker Tape</a></li>
-                    <li><a href="https://economictimes.indiatimes.com/">Economic Times</a></li>
-                    <li><a href="https://in.tradingview.com/">Trading View</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-5 col-sm-5">
-              <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+          </div>
+          <div class="col-lg-5 col-md-7 col-sm-7">
+            <div class="footer-link d-flex mt-50 justify-content-md-between">
+              <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
                 <div class="footer-title">
-                  <h4 class="title">Contact Us</h4>
+                  <h4 class="title">Quick Link</h4>
                 </div>
-                <ul class="contact">
-                  <li>Email: contact@finveda.com</li>
-                  <li>Phone: +123 456 7890</li>
-                  <li>Address: 123 Street, City, Country</li>
+                <ul class="link">
+                  <li><a href="../blogs/privacy-policy.html">Privacy Policy</a></li>
+                  <li><a href="../blogs/refund-policy.html">Refund Policy</a></li>
+                  <li><a href="Licensing.html">Licensing</a></li>
+                  <li><a href="../blogs/terms-of-service.html">Terms of Service</a></li>
+                </ul>
+              </div>
+              <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+                <div class="footer-title">
+                  <h4 class="title">Resources</h4>
+                </div>
+                <ul class="link">
+                  <li><a href="../index.html">Home</a></li>
+                  <li><a href="../login.html">Page</a></li>
+                  <li><a href="../blog.html">Blog</a></li>
                 </ul>
               </div>
             </div>
           </div>
+          <div class="col-lg-3 col-md-5 col-sm-5">
+            <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+              <div class="footer-title">
+                <h4 class="title">Contact Us</h4>
+              </div>
+               <ul class="contact">
+                <li class="d-sm-flex justify-content-center">
+                  <i class="fa fa-envelope d-sm-flex align-items-center white" style="font: size 16px; width: 10%;"></i>
+                  <div style="width: 80%;">ayush1337@hotmail.com</div>
+                </li>
+                <li class="d-sm-flex justify-content-center">
+                  <i class="fa fa-globe d-sm-flex align-items-center white" style="font: size 16px; width: 10%;"></i>
+                  <div style="width: 80%;">fin-veda.vercel.app</div>
+                </li>
+                <li class="d-sm-flex justify-content-center">
+                  <i class="fa fa-location-dot d-sm-flex align-items-center white"
+                    style="font: size 12px; width: 10%;"></i>
+                  <div style="width: 80%;">Delhi, India</div>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="footer-copyright">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="copyright text-center">
-                <p class="text">© 2023 FinVeda. All Rights Reserved.</p>
+      </div>
+      <div class="footer-copyright">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="copyright d-sm-flex justify-content-between">
+              <div class="copyright-content">
+                <p class="text">
+                  © 2024 FinVeda. All rights reserved, Built with ♥ in India
+                </p>
               </div>
             </div>
           </div>
