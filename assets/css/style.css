@@ -61,6 +61,7 @@ button:focus {
 a:focus,
 a:hover {
   text-decoration: none;
+  cursor: pointer;
 }
 
 i,
@@ -212,7 +213,7 @@ p {
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 375px) {
   .container {
     overflow-x: hidden;
   }
@@ -1484,6 +1485,12 @@ p {
   position: relative;
   z-index: 5;
   margin-top: 60px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.single-counter:hover {
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 @media (max-width: 767px) {
@@ -1683,6 +1690,19 @@ p {
   -ms-transition: all 0.3s ease-out 0s;
   -o-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgb(47, 63, 80);
+  border: 2px solid transparent;
+  overflow: hidden;  
+  border-radius: 10px;
+  cursor: pointer;
+
+}
+.single-testimonial:hover{
+  transform: translateY(-15px);
+  box-shadow: 0 4px 8px rgb(233, 156, 31);
+  border: 2px solid #f7ff03;
 }
 
 @media (max-width: 767px) {
@@ -1825,7 +1845,7 @@ p {
 
 .single-blog .blog-content .more {
   font-size: 16px;
-  color: #fe7e71;
+  color: #d32f2f;
   margin-top: 30px;
 }
 
@@ -2121,6 +2141,7 @@ p {
   -ms-transition: all 0.3s ease-out 0s;
   -o-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out;
+  bottom: -0.5%;
 }
 
 .back-to-top:hover {
