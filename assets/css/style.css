@@ -1829,13 +1829,18 @@ p {
   line-height: 30px;
   color: #2e2e2e;
   margin-top: 15px;
+  transition: 0.25s ease;
 }
 
 .single-blog:hover {
-  transform: scale(1.1);
+  transform: scale(1.02);
   cursor: pointer;
 }
-
+.single-blog .blog-content .text:hover{
+  color: #300404;
+  font: bold;
+  transform: scale(1.03);
+}
 @media (max-width: 767px) {
   .single-blog .blog-content .text {
     font-size: 20px;
@@ -1847,6 +1852,29 @@ p {
   font-size: 16px;
   color: #d32f2f;
   margin-top: 30px;
+  transition: 2s ease;
+}
+.single-blog .blog-content .more::after {
+  content: '';
+  position: absolute;
+  width: 35%;
+  transform: scaleX(0);
+  height: 1.7px;
+  bottom: 0;
+  left: 10%;
+  background-color: #fe6e9a;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.single-blog .blog-content .more:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+@media (max-width: 980px){
+  .single-blog .blog-content .more::after {
+    width: 32%;
+    height: 1.7px;}
 }
 
 .single-blog .blog-content .more i {
