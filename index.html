@@ -4,7 +4,8 @@
 <head>
   <meta charset="utf-8" />
   <title>Home - FinVeda</title>
-  <meta name="description" content="FinVeda is a dynamic financial literacy app that'll help you Learn finance with finesse."/>
+  <meta name="description"
+    content="FinVeda is a dynamic financial literacy app that'll help you Learn finance with finesse." />
   <meta name="author" content="Ayush Singh">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/png" />
@@ -55,12 +56,107 @@
       z-index: 9999;
 
     }
-    *{
-  cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'),auto;
-}
+
+    * {
+      cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
+    }
+
+
+    .circle {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
+      transition: transform 0.1s, left 0.1s, top 0.1s;
+    }
+
+    .circle-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+    }
   </style>
 
 <body>
+
+  <div class="circle-container">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const coords = { x: 0, y: 0 };
+      const circles = document.querySelectorAll(".circle");
+
+      circles.forEach(function (circle) {
+        circle.x = 0;
+        circle.y = 0;
+      });
+
+      window.addEventListener("mousemove", function (e) {
+        coords.x = e.pageX;
+        coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
+      });
+
+      function animateCircles() {
+        let x = coords.x;
+        let y = coords.y;
+
+        circles.forEach(function (circle, index) {
+          circle.style.left = `${x - 12}px`;
+          circle.style.top = `${y - 12}px`;
+          circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+
+          const nextCircle = circles[index + 1] || circles[0];
+          circle.x = x;
+          circle.y = y;
+
+          x += (nextCircle.x - x) * 0.3;
+          y += (nextCircle.y - y) * 0.3;
+        });
+
+        requestAnimationFrame(animateCircles);
+      }
+
+      animateCircles();
+    });
+
+  </script>
+
   <div id="progressBar"></div>
   <script>
     window.onscroll = function () {
@@ -106,14 +202,14 @@
               </div>
               <div class="navbar-btn d-none d-sm-inline-block">
                 <a class="main-btn" data-scroll-nav="0" href="#" onclick="openModal()"
-                   onmouseout="this.style.color='white'">Login/Register 💻</a>
+                  onmouseout="this.style.color='white'">Login/Register 💻</a>
 
               </div>
           </div>
         </div>
-          </nav>
-        </div>
+        </nav>
       </div>
+    </div>
 
     </div>
     <div id="home" class="header-hero bg_cover" style="background-image: url(assets/images/banner-bg.svg)">
@@ -426,7 +522,8 @@
                 <img src="assets/images/video.png" alt="video" />
               </div>
               <div class="video-icon">
-                <a href="https://www.youtube.com/watch?v=fUtDU0U7Zqw" class="video-popup" aria-label="Watch video about investment"><i class="lni-play"></i></a>
+                <a href="https://www.youtube.com/watch?v=fUtDU0U7Zqw" class="video-popup"
+                  aria-label="Watch video about investment"><i class="lni-play"></i></a>
               </div>
             </div>
           </div>
@@ -451,30 +548,30 @@
             </div>
             <div class="row no-gutters">
               <div class="col-4">
-                  <div class="single-counter counter-color-1 d-flex align-items-center justify-content-center">
-                      <div class="counter-items text-center">
-                          <span class="count"><span class="counter" data-target="415">0</span>K</span>
-                          <p class="text">Views</p>
-                      </div>
+                <div class="single-counter counter-color-1 d-flex align-items-center justify-content-center">
+                  <div class="counter-items text-center">
+                    <span class="count"><span class="counter" data-target="415">0</span>K</span>
+                    <p class="text">Views</p>
                   </div>
+                </div>
               </div>
               <div class="col-4">
-                  <div class="single-counter counter-color-2 d-flex align-items-center justify-content-center">
-                      <div class="counter-items text-center">
-                          <span class="count"><span class="counter-likes" data-target="14">0</span>K</span>
-                          <p class="text">Likes</p>
-                      </div>
+                <div class="single-counter counter-color-2 d-flex align-items-center justify-content-center">
+                  <div class="counter-items text-center">
+                    <span class="count"><span class="counter-likes" data-target="14">0</span>K</span>
+                    <p class="text">Likes</p>
                   </div>
+                </div>
               </div>
               <div class="col-4">
-                  <div class="single-counter counter-color-3 d-flex align-items-center justify-content-center">
-                      <div class="counter-items text-center">
-                          <span class="count"><span class="counter" data-target="522">0</span></span>
-                          <p class="text">Comments</p>
-                      </div>
+                <div class="single-counter counter-color-3 d-flex align-items-center justify-content-center">
+                  <div class="counter-items text-center">
+                    <span class="count"><span class="counter" data-target="522">0</span></span>
+                    <p class="text">Comments</p>
                   </div>
+                </div>
               </div>
-          </div>
+            </div>
           </div>
         </div>
       </div>
@@ -498,7 +595,8 @@
               <div class="social">
                 <ul>
                   <li>
-                    <a href="https://twitter.com/manyasingh297" title="X profile of Manya Singh"><i class="fa-brands fa-x-twitter"></i></i></a>
+                    <a href="https://twitter.com/manyasingh297" title="X profile of Manya Singh"><i
+                        class="fa-brands fa-x-twitter"></i></i></a>
                   </li>
                   <li>
                     <a href="https://www.linkedin.com/in/manya-singh-7a814327b/" title="Linkedin of Manya Singh"><i
@@ -520,10 +618,12 @@
               <div class="social">
                 <ul>
                   <li>
-                    <a href="https://twitter.com/ayushdotpro" title="X profile of Ayush Singh"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://twitter.com/ayushdotpro" title="X profile of Ayush Singh"><i
+                        class="fa-brands fa-x-twitter"></i></a>
                   </li>
                   <li>
-                    <a href="https://www.linkedin.com/in/ayush-that/" title="Linkedin of Ayush Singh"><i class="lni-linkedin-original"></i></a>
+                    <a href="https://www.linkedin.com/in/ayush-that/" title="Linkedin of Ayush Singh"><i
+                        class="lni-linkedin-original"></i></a>
                   </li>
                 </ul>
               </div>
@@ -538,471 +638,472 @@
   </section>
 
 
-     <style>
-   .testimonial-slider-container {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
+  <style>
+    .testimonial-slider-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
 
-.testimonial-slider {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
+    .testimonial-slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
 
-.slide {
-  /* min-width: 100%; */
-  box-sizing: border-box;
-}
+    .slide {
+      /* min-width: 100%; */
+      box-sizing: border-box;
+    }
 
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  z-index: 10;
-}
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      z-index: 10;
+    }
 
-.prev {
-  left: 0;
-  border-radius: 3px 0 0 3px;
-}
+    .prev {
+      left: 0;
+      border-radius: 3px 0 0 3px;
+    }
 
-.next {
-  right: 0;
-  border-radius: 0 3px 3px 0;
-}
+    .next {
+      right: 0;
+      border-radius: 0 3px 3px 0;
+    }
 
-.prev:hover, .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
 
-.row {
-  display: flex;
-  margin-right: -15px;
-  margin-left: -15px;
-}
-
-     </style>
-
+    .row {
+      display: flex;
+      margin-right: -15px;
+      margin-left: -15px;
+    }
+  </style>
 
 
-     <script>
-let slideIndex = 0;
 
-function moveSlide(n) {
-  const slides = document.querySelectorAll('.slide');
-  const totalSlides = slides.length;
+  <script>
+    let slideIndex = 0;
 
-  slideIndex += n;
+    function moveSlide(n) {
+      const slides = document.querySelectorAll('.slide');
+      const totalSlides = slides.length;
 
-  // Handle infinite scroll by using modulus operation
-  slideIndex = (slideIndex + totalSlides) % totalSlides;
+      slideIndex += n;
 
-  document.querySelector('.testimonial-slider').style.transform = `translateX(${-slideIndex * 100}%)`;
-}
+      // Handle infinite scroll by using modulus operation
+      slideIndex = (slideIndex + totalSlides) % totalSlides;
 
-// Clone slides to create an infinite loop effect
-function cloneSlides() {
-  const slider = document.querySelector('.testimonial-slider');
-  const slides = document.querySelectorAll('.slide');
+      document.querySelector('.testimonial-slider').style.transform = `translateX(${-slideIndex * 100}%)`;
+    }
 
-  slides.forEach(slide => {
-    const clone = slide.cloneNode(true);
-    slider.appendChild(clone);
-  });
-}
+    // Clone slides to create an infinite loop effect
+    function cloneSlides() {
+      const slider = document.querySelector('.testimonial-slider');
+      const slides = document.querySelectorAll('.slide');
 
-// Initialize the slider by cloning slides
-cloneSlides();
+      slides.forEach(slide => {
+        const clone = slide.cloneNode(true);
+        slider.appendChild(clone);
+      });
+    }
 
-     </script>
-           <!-- Testimonial section starts from here  -->
+    // Initialize the slider by cloning slides
+    cloneSlides();
 
-           <section id="testimonial" class="testimonial-area pt-120">
-            <div class="container">
-              <div class="row justify-content-center">
-                <div class="col-lg-5">
-                  <div class="section-title text-center pb-40">
-                    <div class="line m-auto"></div>
-                    <h3 class="title">Users sharing<span> their experience</span></h3>
-                  </div>
+  </script>
+  <!-- Testimonial section starts from here  -->
+
+  <section id="testimonial" class="testimonial-area pt-120">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-5">
+          <div class="section-title text-center pb-40">
+            <div class="line m-auto"></div>
+            <h3 class="title">Users sharing<span> their experience</span></h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-slider-container">
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <div class="row testimonial-slider wow fadeInUpBig" data-wow-duration="1s" data-wow-delay="0.8s">
+          <!-- first testimonial card -->
+          <div class="col-lg-4 slide">
+            <div class="single-testimonial">
+              <div class="testimonial-review d-flex align-items-center justify-content-between">
+                <div class="quota">
+                  <i class="lni-quotation"></i>
+                </div>
+                <div class="star">
+                  <ul>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                  </ul>
                 </div>
               </div>
-          
-              <div class="testimonial-slider-container">
-                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-                <div class="row testimonial-slider wow fadeInUpBig" data-wow-duration="1s" data-wow-delay="0.8s">
-                  <!-- first testimonial card -->
-                  <div class="col-lg-4 slide">
-                    <div class="single-testimonial">
-                      <div class="testimonial-review d-flex align-items-center justify-content-between">
-                        <div class="quota">
-                          <i class="lni-quotation"></i>
-                        </div>
-                        <div class="star">
-                          <ul>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="testimonial-text">
-                        <p class="text">
-                          ArthaSathi has proven to be an indispensable asset in my financial endeavors. Its user-friendly design
-                          and blogs ensure best learning experience for me.
-                        </p>
-                      </div>
-                      <div class="testimonial-author d-flex align-items-center">
-                        <div class="author-image">
-                          <img class="shape" src="assets/images/textimonial-shape.svg" alt="shape" />
-                          <img class="author" src="assets/images/emptyprofile.png" alt="author" />
-                        </div>
-                        <div class="author-content media-body">
-                          <h4 class="holder-name">Amit Patel</h4>
-                          <p class="text">Student, BCom</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-          
-                  <!-- second testimonial card -->
-                  <div class="col-lg-4 slide">
-                    <div class="single-testimonial">
-                      <div class="testimonial-review d-flex align-items-center justify-content-between">
-                        <div class="quota">
-                          <i class="lni-quotation"></i>
-                        </div>
-                        <div class="star">
-                          <ul>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="testimonial-text">
-                        <p class="text">
-                          FinVeda has become an invaluable tool in my monetary journey. The robust security tells us about
-                          finances and intuitive design make it accessible to everyone.
-                        </p>
-                      </div>
-                      <div class="testimonial-author d-flex align-items-center">
-                        <div class="author-image">
-                          <img class="shape" src="assets/images/textimonial-shape.svg" alt="shape" />
-                          <img class="author" src="assets/images/emptyprofile.png" alt="author" />
-                        </div>
-                        <div class="author-content media-body">
-                          <h4 class="holder-name">Sachin Sharma</h4>
-                          <p class="text">Student, BSc</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-          
-                  <!-- third testimonial card -->
-                  <div class="col-lg-4 slide">
-                    <div class="single-testimonial">
-                      <div class="testimonial-review d-flex align-items-center justify-content-between">
-                        <div class="quota">
-                          <i class="lni-quotation"></i>
-                        </div>
-                        <div class="star">
-                          <ul>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="testimonial-text">
-                        <p class="text">
-                          FinVeda has transformed the way I approach my financial tasks. The lightning-fast performance and
-                          user-friendly design cater perfectly to my tech-savvy & financial needs.
-                        </p>
-                      </div>
-                      <div class="testimonial-author d-flex align-items-center">
-                        <div class="author-image">
-                          <img class="shape" src="assets/images/textimonial-shape.svg" alt="shape" />
-                          <img class="author" src="assets/images/emptyprofile.png" alt="author" />
-                        </div>
-                        <div class="author-content media-body">
-                          <h4 class="holder-name">Srushti Rustogi</h4>
-                          <p class="text">Student, BCA</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-          
-
-                  <div class="col-lg-4 slide">
-                    <div class="single-testimonial">
-                      <div class="testimonial-review d-flex align-items-center justify-content-between">
-                        <div class="quota">
-                          <i class="lni-quotation"></i>
-                        </div>
-                        <div class="star">
-                          <ul>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="testimonial-text">
-                        <p class="text">
-                          FinVeda has transformed the way I approach my financial tasks. The lightning-fast performance and
-                          user-friendly design cater perfectly to my tech-savvy & financial needs.
-                        </p>
-                      </div>
-                      <div class="testimonial-author d-flex align-items-center">
-                        <div class="author-image">
-                          <img class="shape" src="assets/images/textimonial-shape.svg" alt="shape" />
-                          <img class="author" src="assets/images/emptyprofile.png" alt="author" />
-                        </div>
-                        <div class="author-content media-body">
-                          <h4 class="holder-name">Srushti Rustogi</h4>
-                          <p class="text">Student, BCA</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-lg-4 slide">
-                    <div class="single-testimonial">
-                      <div class="testimonial-review d-flex align-items-center justify-content-between">
-                        <div class="quota">
-                          <i class="lni-quotation"></i>
-                        </div>
-                        <div class="star">
-                          <ul>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="testimonial-text">
-                        <p class="text">
-                          FinVeda has transformed the way I approach my financial tasks. The lightning-fast performance and
-                          user-friendly design cater perfectly to my tech-savvy & financial needs.
-                        </p>
-                      </div>
-                      <div class="testimonial-author d-flex align-items-center">
-                        <div class="author-image">
-                          <img class="shape" src="assets/images/textimonial-shape.svg" alt="shape" />
-                          <img class="author" src="assets/images/emptyprofile.png" alt="author" />
-                        </div>
-                        <div class="author-content media-body">
-                          <h4 class="holder-name">Srushti Rustogi</h4>
-                          <p class="text">Student, BCA</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-lg-4 slide">
-                    <div class="single-testimonial">
-                      <div class="testimonial-review d-flex align-items-center justify-content-between">
-                        <div class="quota">
-                          <i class="lni-quotation"></i>
-                        </div>
-                        <div class="star">
-                          <ul>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="testimonial-text">
-                        <p class="text">
-                          FinVeda has transformed the way I approach my financial tasks. The lightning-fast performance and
-                          user-friendly design cater perfectly to my tech-savvy & financial needs.
-                        </p>
-                      </div>
-                      <div class="testimonial-author d-flex align-items-center">
-                        <div class="author-image">
-                          <img class="shape" src="assets/images/textimonial-shape.svg" alt="shape" />
-                          <img class="author" src="assets/images/emptyprofile.png" alt="author" />
-                        </div>
-                        <div class="author-content media-body">
-                          <h4 class="holder-name">Srushti Rustogi</h4>
-                          <p class="text">Student, BCA</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-lg-4 slide">
-                    <div class="single-testimonial">
-                      <div class="testimonial-review d-flex align-items-center justify-content-between">
-                        <div class="quota">
-                          <i class="lni-quotation"></i>
-                        </div>
-                        <div class="star">
-                          <ul>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="testimonial-text">
-                        <p class="text">
-                          FinVeda has transformed the way I approach my financial tasks. The lightning-fast performance and
-                          user-friendly design cater perfectly to my tech-savvy & financial needs.
-                        </p>
-                      </div>
-                      <div class="testimonial-author d-flex align-items-center">
-                        <div class="author-image">
-                          <img class="shape" src="assets/images/textimonial-shape.svg" alt="shape" />
-                          <img class="author" src="assets/images/emptyprofile.png" alt="author" />
-                        </div>
-                        <div class="author-content media-body">
-                          <h4 class="holder-name">Srushti Rustogi</h4>
-                          <p class="text">Student, BCA</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-lg-4 slide">
-                    <div class="single-testimonial">
-                      <div class="testimonial-review d-flex align-items-center justify-content-between">
-                        <div class="quota">
-                          <i class="lni-quotation"></i>
-                        </div>
-                        <div class="star">
-                          <ul>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="testimonial-text">
-                        <p class="text">
-                          FinVeda has transformed the way I approach my financial tasks. The lightning-fast performance and
-                          user-friendly design cater perfectly to my tech-savvy & financial needs.
-                        </p>
-                      </div>
-                      <div class="testimonial-author d-flex align-items-center">
-                        <div class="author-image">
-                          <img class="shape" src="assets/images/textimonial-shape.svg" alt="shape" />
-                          <img class="author" src="assets/images/emptyprofile.png" alt="author" />
-                        </div>
-                        <div class="author-content media-body">
-                          <h4 class="holder-name">Srushti Rustogi</h4>
-                          <p class="text">Student, BCA</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-lg-4 slide">
-                    <div class="single-testimonial">
-                      <div class="testimonial-review d-flex align-items-center justify-content-between">
-                        <div class="quota">
-                          <i class="lni-quotation"></i>
-                        </div>
-                        <div class="star">
-                          <ul>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="testimonial-text">
-                        <p class="text">
-                          FinVeda has transformed the way I approach my financial tasks. The lightning-fast performance and
-                          user-friendly design cater perfectly to my tech-savvy & financial needs.
-                        </p>
-                      </div>
-                      <div class="testimonial-author d-flex align-items-center">
-                        <div class="author-image">
-                          <img class="shape" src="assets/images/textimonial-shape.svg" alt="shape" />
-                          <img class="author" src="assets/images/emptyprofile.png" alt="author" />
-                        </div>
-                        <div class="author-content media-body">
-                          <h4 class="holder-name">Srushti Rustogi</h4>
-                          <p class="text">Student, BCA</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- fourth testimonial card -->
-                  <div class="col-lg-4 slide">
-                    <div class="single-testimonial">
-                      <div class="testimonial-review d-flex align-items-center justify-content-between">
-                        <div class="quota">
-                          <i class="lni-quotation"></i>
-                        </div>
-                        <div class="star">
-                          <ul>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                            <li><i class="lni-star-filled"></i></li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="testimonial-text">
-                        <p class="text">
-                          FinVeda has been a game-changer for me! The smart AI integration and regular updates have made it an
-                          indispensable part of my daily routine, increases efficiency.
-                        </p>
-                      </div>
-                      <div class="testimonial-author d-flex align-items-center">
-                        <div class="author-image">
-                          <img class="shape" src="assets/images/textimonial-shape.svg" alt="shape" />
-                          <img class="author" src="assets/images/emptyprofile.png" alt="author" />
-                        </div>
-                        <div class="author-content media-body">
-                          <h4 class="holder-name">Priyanka Khatri</h4>
-                          <p class="text">Student, BTech</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+              <div class="testimonial-text">
+                <p class="text">
+                  ArthaSathi has proven to be an indispensable asset in my financial endeavors. Its user-friendly design
+                  and blogs ensure best learning experience for me.
+                </p>
+              </div>
+              <div class="testimonial-author d-flex align-items-center">
+                <div class="author-image">
+                  <img class="shape" src="assets/images/textimonial-shape.svg" alt="shape" />
+                  <img class="author" src="assets/images/emptyprofile.png" alt="author" />
                 </div>
-                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+                <div class="author-content media-body">
+                  <h4 class="holder-name">Amit Patel</h4>
+                  <p class="text">Student, BCom</p>
+                </div>
               </div>
             </div>
-          </section>
-          
-          
-          
-      <!-- testimonail section ends here  -->
+          </div>
+
+          <!-- second testimonial card -->
+          <div class="col-lg-4 slide">
+            <div class="single-testimonial">
+              <div class="testimonial-review d-flex align-items-center justify-content-between">
+                <div class="quota">
+                  <i class="lni-quotation"></i>
+                </div>
+                <div class="star">
+                  <ul>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="testimonial-text">
+                <p class="text">
+                  FinVeda has become an invaluable tool in my monetary journey. The robust security tells us about
+                  finances and intuitive design make it accessible to everyone.
+                </p>
+              </div>
+              <div class="testimonial-author d-flex align-items-center">
+                <div class="author-image">
+                  <img class="shape" src="assets/images/textimonial-shape.svg" alt="shape" />
+                  <img class="author" src="assets/images/emptyprofile.png" alt="author" />
+                </div>
+                <div class="author-content media-body">
+                  <h4 class="holder-name">Sachin Sharma</h4>
+                  <p class="text">Student, BSc</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- third testimonial card -->
+          <div class="col-lg-4 slide">
+            <div class="single-testimonial">
+              <div class="testimonial-review d-flex align-items-center justify-content-between">
+                <div class="quota">
+                  <i class="lni-quotation"></i>
+                </div>
+                <div class="star">
+                  <ul>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="testimonial-text">
+                <p class="text">
+                  FinVeda has transformed the way I approach my financial tasks. The lightning-fast performance and
+                  user-friendly design cater perfectly to my tech-savvy & financial needs.
+                </p>
+              </div>
+              <div class="testimonial-author d-flex align-items-center">
+                <div class="author-image">
+                  <img class="shape" src="assets/images/textimonial-shape.svg" alt="shape" />
+                  <img class="author" src="assets/images/emptyprofile.png" alt="author" />
+                </div>
+                <div class="author-content media-body">
+                  <h4 class="holder-name">Srushti Rustogi</h4>
+                  <p class="text">Student, BCA</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-lg-4 slide">
+            <div class="single-testimonial">
+              <div class="testimonial-review d-flex align-items-center justify-content-between">
+                <div class="quota">
+                  <i class="lni-quotation"></i>
+                </div>
+                <div class="star">
+                  <ul>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="testimonial-text">
+                <p class="text">
+                  FinVeda has transformed the way I approach my financial tasks. The lightning-fast performance and
+                  user-friendly design cater perfectly to my tech-savvy & financial needs.
+                </p>
+              </div>
+              <div class="testimonial-author d-flex align-items-center">
+                <div class="author-image">
+                  <img class="shape" src="assets/images/textimonial-shape.svg" alt="shape" />
+                  <img class="author" src="assets/images/emptyprofile.png" alt="author" />
+                </div>
+                <div class="author-content media-body">
+                  <h4 class="holder-name">Srushti Rustogi</h4>
+                  <p class="text">Student, BCA</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 slide">
+            <div class="single-testimonial">
+              <div class="testimonial-review d-flex align-items-center justify-content-between">
+                <div class="quota">
+                  <i class="lni-quotation"></i>
+                </div>
+                <div class="star">
+                  <ul>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="testimonial-text">
+                <p class="text">
+                  FinVeda has transformed the way I approach my financial tasks. The lightning-fast performance and
+                  user-friendly design cater perfectly to my tech-savvy & financial needs.
+                </p>
+              </div>
+              <div class="testimonial-author d-flex align-items-center">
+                <div class="author-image">
+                  <img class="shape" src="assets/images/textimonial-shape.svg" alt="shape" />
+                  <img class="author" src="assets/images/emptyprofile.png" alt="author" />
+                </div>
+                <div class="author-content media-body">
+                  <h4 class="holder-name">Srushti Rustogi</h4>
+                  <p class="text">Student, BCA</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 slide">
+            <div class="single-testimonial">
+              <div class="testimonial-review d-flex align-items-center justify-content-between">
+                <div class="quota">
+                  <i class="lni-quotation"></i>
+                </div>
+                <div class="star">
+                  <ul>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="testimonial-text">
+                <p class="text">
+                  FinVeda has transformed the way I approach my financial tasks. The lightning-fast performance and
+                  user-friendly design cater perfectly to my tech-savvy & financial needs.
+                </p>
+              </div>
+              <div class="testimonial-author d-flex align-items-center">
+                <div class="author-image">
+                  <img class="shape" src="assets/images/textimonial-shape.svg" alt="shape" />
+                  <img class="author" src="assets/images/emptyprofile.png" alt="author" />
+                </div>
+                <div class="author-content media-body">
+                  <h4 class="holder-name">Srushti Rustogi</h4>
+                  <p class="text">Student, BCA</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 slide">
+            <div class="single-testimonial">
+              <div class="testimonial-review d-flex align-items-center justify-content-between">
+                <div class="quota">
+                  <i class="lni-quotation"></i>
+                </div>
+                <div class="star">
+                  <ul>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="testimonial-text">
+                <p class="text">
+                  FinVeda has transformed the way I approach my financial tasks. The lightning-fast performance and
+                  user-friendly design cater perfectly to my tech-savvy & financial needs.
+                </p>
+              </div>
+              <div class="testimonial-author d-flex align-items-center">
+                <div class="author-image">
+                  <img class="shape" src="assets/images/textimonial-shape.svg" alt="shape" />
+                  <img class="author" src="assets/images/emptyprofile.png" alt="author" />
+                </div>
+                <div class="author-content media-body">
+                  <h4 class="holder-name">Srushti Rustogi</h4>
+                  <p class="text">Student, BCA</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 slide">
+            <div class="single-testimonial">
+              <div class="testimonial-review d-flex align-items-center justify-content-between">
+                <div class="quota">
+                  <i class="lni-quotation"></i>
+                </div>
+                <div class="star">
+                  <ul>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="testimonial-text">
+                <p class="text">
+                  FinVeda has transformed the way I approach my financial tasks. The lightning-fast performance and
+                  user-friendly design cater perfectly to my tech-savvy & financial needs.
+                </p>
+              </div>
+              <div class="testimonial-author d-flex align-items-center">
+                <div class="author-image">
+                  <img class="shape" src="assets/images/textimonial-shape.svg" alt="shape" />
+                  <img class="author" src="assets/images/emptyprofile.png" alt="author" />
+                </div>
+                <div class="author-content media-body">
+                  <h4 class="holder-name">Srushti Rustogi</h4>
+                  <p class="text">Student, BCA</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 slide">
+            <div class="single-testimonial">
+              <div class="testimonial-review d-flex align-items-center justify-content-between">
+                <div class="quota">
+                  <i class="lni-quotation"></i>
+                </div>
+                <div class="star">
+                  <ul>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="testimonial-text">
+                <p class="text">
+                  FinVeda has transformed the way I approach my financial tasks. The lightning-fast performance and
+                  user-friendly design cater perfectly to my tech-savvy & financial needs.
+                </p>
+              </div>
+              <div class="testimonial-author d-flex align-items-center">
+                <div class="author-image">
+                  <img class="shape" src="assets/images/textimonial-shape.svg" alt="shape" />
+                  <img class="author" src="assets/images/emptyprofile.png" alt="author" />
+                </div>
+                <div class="author-content media-body">
+                  <h4 class="holder-name">Srushti Rustogi</h4>
+                  <p class="text">Student, BCA</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- fourth testimonial card -->
+          <div class="col-lg-4 slide">
+            <div class="single-testimonial">
+              <div class="testimonial-review d-flex align-items-center justify-content-between">
+                <div class="quota">
+                  <i class="lni-quotation"></i>
+                </div>
+                <div class="star">
+                  <ul>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                    <li><i class="lni-star-filled"></i></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="testimonial-text">
+                <p class="text">
+                  FinVeda has been a game-changer for me! The smart AI integration and regular updates have made it an
+                  indispensable part of my daily routine, increases efficiency.
+                </p>
+              </div>
+              <div class="testimonial-author d-flex align-items-center">
+                <div class="author-image">
+                  <img class="shape" src="assets/images/textimonial-shape.svg" alt="shape" />
+                  <img class="author" src="assets/images/emptyprofile.png" alt="author" />
+                </div>
+                <div class="author-content media-body">
+                  <h4 class="holder-name">Priyanka Khatri</h4>
+                  <p class="text">Student, BTech</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- testimonail section ends here  -->
 
 
 
@@ -1056,8 +1157,7 @@ cloneSlides();
               <p class="text">
                 Investing with Minimal Savings: A Guide for Women Investors
               </p>
-              <a class="more" href="./blogs/invest-minimal.html">Learn More <i
-                  class="lni-chevron-right"></i></a>
+              <a class="more" href="./blogs/invest-minimal.html">Learn More <i class="lni-chevron-right"></i></a>
             </div>
           </div>
         </div>
@@ -1077,7 +1177,7 @@ cloneSlides();
         </div>
       </div>
     </div>
-    
+
     <button id="CommentBtn" aria-label="Toggle Comment Form"><i class="fas fa-comment"></i></button>
 
     <!-- Modal Background -->
@@ -1259,13 +1359,13 @@ cloneSlides();
           </div>
           <div class="col-lg-6">
             <div class="subscribe-form mt-50">
-                <form id="subscribe-form">
-                    <input type="text" id="news-email" placeholder="Enter Email" />
-                    <button class="main-btn">Subscribe</button>
-                </form>
-                <div id="message" style="display: none;"></div>
+              <form id="subscribe-form">
+                <input type="text" id="news-email" placeholder="Enter Email" />
+                <button class="main-btn">Subscribe</button>
+              </form>
+              <div id="message" style="display: none;"></div>
             </div>
-        </div>        
+          </div>
         </div>
       </div>
       <div class="footer-widget pb-100">
@@ -1314,20 +1414,22 @@ cloneSlides();
                 <li class="d-sm-flex justify-content-center">
                   <i class="fa fa-envelope d-sm-flex align-items-center white" style="font: size 16px; width: 10%;"></i>
                   <p style="width: 80%;">
-                    <a href="mailto:ayush1337@hotmail.com" target="_blank" style="color: white; text-decoration: underline;"
-                      >ayush1337@hotmail.com</a
-                    >
+                    <a href="mailto:ayush1337@hotmail.com" target="_blank"
+                      style="color: white; text-decoration: underline;">ayush1337@hotmail.com</a>
                   </p>
                 </li>
                 <li class="d-sm-flex justify-content-center">
                   <i class="fa fa-globe d-sm-flex align-items-center white" style="font: size 16px; width: 10%;"></i>
-                  <div style="width: 80%;"><a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff;">fin-veda.vercel.app</a></div>
+                  <div style="width: 80%;"><a href="https://fin-veda.vercel.app/index.html" target="_blank"
+                      style="color: #fff;">fin-veda.vercel.app</a></div>
                 </li>
                 <li class="d-sm-flex justify-content-center">
                   <i class="fa fa-location-dot d-sm-flex align-items-center white"
                     style="font: size 12px; width: 10%;"></i>
-                  <div style="width: 80%;"><a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu" style="color:#fff">
-                    Delhi, India</a></div>
+                  <div style="width: 80%;"><a
+                      href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
+                      style="color:#fff">
+                      Delhi, India</a></div>
                 </li>
               </ul>
             </div>
@@ -1386,7 +1488,7 @@ cloneSlides();
 
     // Get the <span> elements that close the modals
     var closeBtns = document.getElementsByClassName('close');
-    
+
     //show and hide icon button
     document.addEventListener('DOMContentLoaded', () => {
       const togglePasswordButtons = document.querySelectorAll('.toggle-password-btn');
@@ -1409,61 +1511,58 @@ cloneSlides();
     document.addEventListener('DOMContentLoaded', function () {
       // Get the form element
       var form = document.getElementById('subscribe-form');
-      
+
       // Add event listener to submit event of the form
       form.addEventListener('submit', function (event) {
-          event.preventDefault(); // Prevent default form submission
-          
-          // Get the email input value
-          var email = document.getElementById('news-email').value;
-          
-          // Check if email is not empty
-          if (email.trim() === '') {
-              showMessage('Please enter your email address.', 'error');
-              return;
-          }
-          
-          // Parameters for email service
-          var params = {
-              from_name: "FinVeda",
-              email_id: email,
-              message: "Thank you for subscribing to our newsletter. Stay tuned for regular updates."
-          }
-          
-          // Send email using EmailJS
-          emailjs.send('service_lktb68z', 'template_w79vd94', params)
-              .then(function (response) 
-              {
-                  // Show success message
-                  showMessage('Subscribed to FinVeda Newsletter', 'success');
-                  console.log('SUCCESS!', response.status, response.text);
-              }, function (error) 
-              {
-                  // Show error message
-                  showMessage('Subscription failed. Please try again later.', 'error');
-                  console.log('FAILED...', error);
-              });
-  
-          // Reset input after 3 seconds
-          setTimeout(function() {
-              document.getElementById('news-email').value = '';
-          }, 3000);
+        event.preventDefault(); // Prevent default form submission
+
+        // Get the email input value
+        var email = document.getElementById('news-email').value;
+
+        // Check if email is not empty
+        if (email.trim() === '') {
+          showMessage('Please enter your email address.', 'error');
+          return;
+        }
+
+        // Parameters for email service
+        var params = {
+          from_name: "FinVeda",
+          email_id: email,
+          message: "Thank you for subscribing to our newsletter. Stay tuned for regular updates."
+        }
+
+        // Send email using EmailJS
+        emailjs.send('service_lktb68z', 'template_w79vd94', params)
+          .then(function (response) {
+            // Show success message
+            showMessage('Subscribed to FinVeda Newsletter', 'success');
+            console.log('SUCCESS!', response.status, response.text);
+          }, function (error) {
+            // Show error message
+            showMessage('Subscription failed. Please try again later.', 'error');
+            console.log('FAILED...', error);
+          });
+
+        // Reset input after 3 seconds
+        setTimeout(function () {
+          document.getElementById('news-email').value = '';
+        }, 3000);
       });
-  });
-  
-  function showMessage(message, type) {
+    });
+
+    function showMessage(message, type) {
       var messageDiv = document.getElementById('message');
       messageDiv.textContent = message;
       messageDiv.style.display = 'block';
-      
+
       // Clear message after 3 seconds
-      setTimeout(function() 
-      {
-          messageDiv.textContent = '';
-          messageDiv.style.display = 'none';
+      setTimeout(function () {
+        messageDiv.textContent = '';
+        messageDiv.style.display = 'none';
       }, 3000);
-  }
-  
+    }
+
     // When the user clicks the register link, open the register modal
     registerLink.onclick = function (event) {
       event.preventDefault();
@@ -1495,48 +1594,48 @@ cloneSlides();
         registerModal.style.display = 'none';
       }
     }
-   //counter for INVESTING Expert 
+    //counter for INVESTING Expert 
     document.addEventListener("DOMContentLoaded", () => {
       const counters = document.querySelectorAll('.counter');
 
       counters.forEach(counter => {
-          const updateCount = () => {
-              const target = +counter.getAttribute('data-target');
-              const count = +counter.innerText;
+        const updateCount = () => {
+          const target = +counter.getAttribute('data-target');
+          const count = +counter.innerText;
 
-              const speed = 200; 
-              const increment = target / speed;
+          const speed = 200;
+          const increment = target / speed;
 
-              if (count < target) {
-                  counter.innerText = Math.ceil(count + increment);
-                  setTimeout(updateCount, 70);
-              } else {
-                  counter.innerText = target;
-              }
-          };
+          if (count < target) {
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(updateCount, 70);
+          } else {
+            counter.innerText = target;
+          }
+        };
 
-          updateCount();
+        updateCount();
       });
 
       // Separate function for the Likes counter
       const likesCounter = document.querySelector('.counter-likes');
       const updateLikesCount = () => {
-          const target = +likesCounter.getAttribute('data-target');
-          const count = +likesCounter.innerText;
+        const target = +likesCounter.getAttribute('data-target');
+        const count = +likesCounter.innerText;
 
-          const speed = 5000; 
-          const increment = target / speed;
+        const speed = 5000;
+        const increment = target / speed;
 
-          if (count < target) {
-              likesCounter.innerText = Math.ceil(count + increment);
-              setTimeout(updateLikesCount, 900); 
-          } else {
-              likesCounter.innerText = target;
-          }
+        if (count < target) {
+          likesCounter.innerText = Math.ceil(count + increment);
+          setTimeout(updateLikesCount, 900);
+        } else {
+          likesCounter.innerText = target;
+        }
       };
 
       updateLikesCount();
-  });
+    });
   </script>
   <script src="./tools/smoothScroll.js"></script>
 
@@ -1546,7 +1645,7 @@ cloneSlides();
       style="border: none; width: 1000px; height: 1000px;"></iframe>
     <script src="assets\js\preloader.js"></script>
   </div>
-  
+
   <script defer src="./assets/js/arthsathi-style.js"></script>
 </body>
 
