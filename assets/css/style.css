@@ -642,6 +642,7 @@ p {
   }
 }
 
+/* Navbar Area */
 .navbar-area {
   position: absolute;
   top: 0;
@@ -655,20 +656,26 @@ p {
   transition: all 0.3s ease-out 0s;
 }
 
+/* Navbar Navigation */
 .navbar-nav {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  display: flex;  
+  justify-content: space-around; 
+  align-items: center; 
 }
 
+/* Navigation Item */
 .nav-item {
-  float: left;
+  margin-right: 15px; 
+  margin-top: 25px;
 }
 
-
+/* Navigation Link */
 .nav-item a {
-  display: block;
+  display: flex; 
+  align-items: center; 
   color: white;
   text-align: center;
   padding: 14px 16px;
@@ -677,6 +684,12 @@ p {
   cursor: pointer;
 }
 
+/* Add space between text and icon */
+.nav-item a span {
+  margin-left: 5px; 
+}
+
+/* Hover Effect */
 .nav-item a::after {
   content: "";
   position: absolute;
@@ -689,10 +702,6 @@ p {
 }
 
 .nav-item a:hover::after {
-  width: 100%;
-}
-
-#active-page::after {
   width: 100%;
 }
 
@@ -1005,6 +1014,7 @@ p {
 .navbar-btn .main-btn {
   height: 45px;
   line-height: 45px;
+  margin-top: 20px;
   background: -webkit-linear-gradient(
     left,
     #fe8464 0%,
