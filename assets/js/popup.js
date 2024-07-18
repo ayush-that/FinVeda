@@ -20,3 +20,12 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+function submitForm(formId) {
+  var form = document.getElementById(formId);
+  if (form.checkValidity()) {
+    form.submit();
+  } else {
+    form.reportValidity();
+  }
+}

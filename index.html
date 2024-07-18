@@ -4,7 +4,9 @@
 <head>
   <meta charset="utf-8" />
   <title>Home - FinVeda</title>
-  <meta name="description" content="" />
+  <meta name="description"
+    content="FinVeda is a dynamic financial literacy app that'll help you Learn finance with finesse." />
+  <meta name="author" content="Ayush Singh">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/png" />
   <link rel="stylesheet" href="assets/css/animate.css" />
@@ -54,12 +56,107 @@
       z-index: 9999;
 
     }
-    *{
-  cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'),auto;
-}
+
+    * {
+      cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
+    }
+
+
+    .circle {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
+      transition: transform 0.1s, left 0.1s, top 0.1s;
+    }
+
+    .circle-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+    }
   </style>
 
 <body>
+
+  <div class="circle-container">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const coords = { x: 0, y: 0 };
+      const circles = document.querySelectorAll(".circle");
+
+      circles.forEach(function (circle) {
+        circle.x = 0;
+        circle.y = 0;
+      });
+
+      window.addEventListener("mousemove", function (e) {
+        coords.x = e.pageX;
+        coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
+      });
+
+      function animateCircles() {
+        let x = coords.x;
+        let y = coords.y;
+
+        circles.forEach(function (circle, index) {
+          circle.style.left = `${x - 12}px`;
+          circle.style.top = `${y - 12}px`;
+          circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+
+          const nextCircle = circles[index + 1] || circles[0];
+          circle.x = x;
+          circle.y = y;
+
+          x += (nextCircle.x - x) * 0.3;
+          y += (nextCircle.y - y) * 0.3;
+        });
+
+        requestAnimationFrame(animateCircles);
+      }
+
+      animateCircles();
+    });
+
+  </script>
+
   <div id="progressBar"></div>
   <script>
     window.onscroll = function () {
@@ -86,6 +183,9 @@
                   <li class="nav-item active">
                     <a class="page-scroll" href="./index.html" id="active-page">Home 🏡</a>
                   </li>
+                  <li class="nav-item active">
+                    <a class="page-scroll" href="./about.html">About us </a>
+                  </li>
                   <li class="nav-item">
                     <a class="page-scroll" href="./trends.html">Trends 📈</a>
                   </li>
@@ -102,13 +202,14 @@
               </div>
               <div class="navbar-btn d-none d-sm-inline-block">
                 <a class="main-btn" data-scroll-nav="0" href="#" onclick="openModal()"
-                   onmouseout="this.style.color='white'">Login/Register 💻</a>
+                  onmouseout="this.style.color='white'">Login/Register 💻</a>
 
               </div>
           </div>
-          </nav>
         </div>
+        </nav>
       </div>
+    </div>
 
     </div>
     <div id="home" class="header-hero bg_cover" style="background-image: url(assets/images/banner-bg.svg)">
@@ -132,14 +233,14 @@
                   <span class="close" style="display: flex; justify-content: right;">&times;</span>
                   <div class="mt-3">
                     <h3 class="join">Login to join us....</h3>
-                    <form class="px-3 py-4">
+                    <form class="px-3 py-4" id="loginForm">
                       <div class="form-group">
                         <label class="d-flex">Username</label>
-                        <input type="text" placeholder="Username" class="form-control" />
+                        <input type="text" placeholder="Username" class="form-control" required />
                       </div>
                       <div class="form-group">
                         <label class="d-flex">Password</label>
-                        <input type="password" placeholder="Password" class="form-control">
+                        <input type="password" placeholder="Password" class="form-control" required>
                         <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
                       </div>
                       <div class="form-check d-flex">
@@ -147,7 +248,7 @@
                         <label class="form-check-label">Remember me</label>
                       </div>
                     </form>
-                    <button class="main-btn mt-2 w-100 mb-3">Sign in</button>
+                    <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('loginForm')">Sign in</button>
                     <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
                   </div>
                 </div>
@@ -159,14 +260,14 @@
                   <span class="close" style="display: flex; justify-content: right;">&times;</span>
                   <div class="mt-3">
                     <h3 class="join">Register to join us....</h3>
-                    <form class="px-3 py-4">
+                    <form class="px-3 py-4" id="registerForm">
                       <div class="form-group">
                         <label class="d-flex">Email</label>
-                        <input type="email" placeholder="Email" class="form-control" />
+                        <input type="email" placeholder="Email" class="form-control" required />
                       </div>
                       <div class="form-group">
                         <label class="d-flex">Username</label>
-                        <input type="text" placeholder="Username" class="form-control" />
+                        <input type="text" placeholder="Username" class="form-control" required />
                       </div>
                       <div class="form-group">
                         <label class="d-flex">Password</label>
@@ -174,7 +275,7 @@
                         <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
                       </div>
                     </form>
-                    <button class="main-btn mt-2 w-100 mb-3">Register</button>
+                    <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('registerForm')">Register</button>
                     <p class="text-center">Already have an account? <a href="#" id="loginLink">Login</a></p>
                   </div>
                 </div>
@@ -224,7 +325,7 @@
               <i class="lni-baloon"></i>
             </div>
             <div class="services-content mt-30">
-              <h4 class="services-title"><a href="#">Financial Blogs</a></h4>
+              <h4 class="services-title"><a href="blog.html">Financial Blogs</a></h4>
               <p class="text">
                 We offer expert written blogs on investment tips and strategies, and current economic trends, all
                 crafted to keep you well-informed.
@@ -241,12 +342,12 @@
               <i class="lni-cog"></i>
             </div>
             <div class="services-content mt-30">
-              <h4 class="services-title"><a href="./tools/sip.html">Finance Tools</a></h4>
+              <h4 class="services-title"><a href="tools/sip.html">Finance Tools</a></h4>
               <p class="text">
                 With our SIP and PPF tools you'll discover power of compounding and make informed decisions regarding
                 your savings.
               </p>
-              <a class="more" href="#">Learn More <i class="lni-chevron-right"></i></a>
+              <a class="more" href="tools/sip.html">Learn More <i class="lni-chevron-right"></i></a>
             </div>
           </div>
         </div>
@@ -258,7 +359,7 @@
               <i class="lni-bolt-alt"></i>
             </div>
             <div class="services-content mt-30">
-              <h4 class="services-title"><a href="#">Financial Trends</a></h4>
+              <h4 class="services-title"><a href="trends.html">Financial Trends</a></h4>
               <p class="text">
                 You will make smarter decisions by staying updated to the current market happenings in real time with
                 our Stock Market API's results.
@@ -421,7 +522,8 @@
                 <img src="assets/images/video.png" alt="video" />
               </div>
               <div class="video-icon">
-                <a href="https://www.youtube.com/watch?v=fUtDU0U7Zqw" class="video-popup"><i class="lni-play"></i></a>
+                <a href="https://www.youtube.com/watch?v=fUtDU0U7Zqw" class="video-popup"
+                  aria-label="Watch video about investment"><i class="lni-play"></i></a>
               </div>
             </div>
           </div>
@@ -448,7 +550,7 @@
               <div class="col-4">
                 <div class="single-counter counter-color-1 d-flex align-items-center justify-content-center">
                   <div class="counter-items text-center">
-                    <span class="count"><span class="counter">415</span>K</span>
+                    <span class="count"><span class="counter" data-target="415">0</span>K</span>
                     <p class="text">Views</p>
                   </div>
                 </div>
@@ -456,7 +558,7 @@
               <div class="col-4">
                 <div class="single-counter counter-color-2 d-flex align-items-center justify-content-center">
                   <div class="counter-items text-center">
-                    <span class="count"><span class="counter">14</span>K</span>
+                    <span class="count"><span class="counter-likes" data-target="14">0</span>K</span>
                     <p class="text">Likes</p>
                   </div>
                 </div>
@@ -464,7 +566,7 @@
               <div class="col-4">
                 <div class="single-counter counter-color-3 d-flex align-items-center justify-content-center">
                   <div class="counter-items text-center">
-                    <span class="count"><span class="counter">522</span></span>
+                    <span class="count"><span class="counter" data-target="522">0</span></span>
                     <p class="text">Comments</p>
                   </div>
                 </div>
@@ -493,17 +595,18 @@
               <div class="social">
                 <ul>
                   <li>
-                    <a href="https://twitter.com/manyasingh297"><i class="fa-brands fa-x-twitter"></i></i></a>
+                    <a href="https://twitter.com/manyasingh297" title="X profile of Manya Singh"><i
+                        class="fa-brands fa-x-twitter"></i></i></a>
                   </li>
                   <li>
-                    <a href="https://www.linkedin.com/in/manya-singh-7a814327b/"><i
+                    <a href="https://www.linkedin.com/in/manya-singh-7a814327b/" title="Linkedin of Manya Singh"><i
                         class="lni-linkedin-original"></i></a>
                   </li>
                 </ul>
               </div>
             </div>
             <div class="team-content">
-              <h5 class="holder-name"><a href="#">Manya Singh</a></h5>
+              <h3 class="holder-name"><a href="#">Manya Singh</a></h3>
               <p class="text">Developer</p>
             </div>
           </div>
@@ -515,22 +618,27 @@
               <div class="social">
                 <ul>
                   <li>
-                    <a href="https://twitter.com/ayushdotpro"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://twitter.com/ayushdotpro" title="X profile of Ayush Singh"><i
+                        class="fa-brands fa-x-twitter"></i></a>
                   </li>
                   <li>
-                    <a href="https://www.linkedin.com/in/ayush-that/"><i class="lni-linkedin-original"></i></a>
+                    <a href="https://www.linkedin.com/in/ayush-that/" title="Linkedin of Ayush Singh"><i
+                        class="lni-linkedin-original"></i></a>
                   </li>
                 </ul>
               </div>
             </div>
             <div class="team-content">
-              <h5 class="holder-name"><a href="#">Ayush Singh</a></h5>
+              <h3 class="holder-name"><a href="#">Ayush Singh</a></h3>
               <p class="text">Developer</p>
             </div>
           </div>
         </div>
       </div>
   </section>
+
+
+<!-- testimonail section starts here  -->
   <section id="testimonial" class="testimonial-area pt-120">
     <div class="container">
       <div class="row justify-content-center">
@@ -643,6 +751,7 @@
               </div>
             </div>
           </div>
+
         </div>
         <div class="col-lg-4">
           <div class="single-testimonial">
@@ -681,6 +790,12 @@
       </div>
     </div>
   </section>
+  <!-- testimonail section ends here  -->
+
+
+
+
+
   <section id="blog" class="blog-area pt-120">
     <div class="container">
       <div class="row">
@@ -721,6 +836,19 @@
           </div>
         </div>
         <div class="col-lg-4 col-md-7">
+          <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+            <div class="blog-image">
+              <img src="assets/images/women.jpg" alt="blog" />
+            </div>
+            <div class="blog-content">
+              <p class="text">
+                Investing with Minimal Savings: A Guide for Women Investors
+              </p>
+              <a class="more" href="./blogs/invest-minimal.html">Learn More <i class="lni-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-7">
           <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
             <div class="blog-image">
               <img src="assets/images/blog-3.jpg" alt="blog" />
@@ -736,6 +864,7 @@
         </div>
       </div>
     </div>
+
     <button id="CommentBtn" aria-label="Toggle Comment Form"><i class="fas fa-comment"></i></button>
 
     <!-- Modal Background -->
@@ -917,13 +1046,13 @@
           </div>
           <div class="col-lg-6">
             <div class="subscribe-form mt-50">
-                <form id="subscribe-form">
-                    <input type="text" id="news-email" placeholder="Enter Email" />
-                    <button class="main-btn">Subscribe</button>
-                </form>
-                <div id="message" style="display: none;"></div>
+              <form id="subscribe-form">
+                <input type="text" id="news-email" placeholder="Enter Email" />
+                <button class="main-btn">Subscribe</button>
+              </form>
+              <div id="message" style="display: none;"></div>
             </div>
-        </div>        
+          </div>
         </div>
       </div>
       <div class="footer-widget pb-100">
@@ -939,13 +1068,14 @@
             <div class="footer-link d-flex mt-50 justify-content-md-between">
               <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
                 <div class="footer-title">
-                  <h4 class="title">Quick Links</h4>
+                  <h3 class="title">Quick Links</h3>
                 </div>
                 <ul class="link">
                   <li><a href="./blogs/privacy-policy.html">Privacy Policy</a></li>
                   <li><a href="./blogs/refund-policy.html">Refund Policy</a></li>
                   <li><a href="Licensing.html">Licensing</a></li>
                   <li><a href="./blogs/terms-of-service.html">Terms of Service</a></li>
+                  <li><a href="./contributors.html">Our Contributors</a></li>
                 </ul>
               </div>
               <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
@@ -967,23 +1097,26 @@
               <div class="footer-title">
                 <h4 class="title">Contact Us</h4>
               </div>
-              <ul class="contact">
+              <ul class="contact custom-margin">
                 <li class="d-sm-flex justify-content-center">
                   <i class="fa fa-envelope d-sm-flex align-items-center white" style="font: size 16px; width: 10%;"></i>
                   <p style="width: 80%;">
-                    <a href="mailto:ayush1337@hotmail.com" target="_blank" style="color: white; text-decoration: underline;"
-                      >ayush1337@hotmail.com</a
-                    >
+                    <a href="mailto:ayush1337@hotmail.com" target="_blank"
+                      style="color: white; text-decoration: underline;">ayush1337@hotmail.com</a>
                   </p>
                 </li>
                 <li class="d-sm-flex justify-content-center">
                   <i class="fa fa-globe d-sm-flex align-items-center white" style="font: size 16px; width: 10%;"></i>
-                  <div style="width: 80%;">fin-veda.vercel.app</div>
+                  <div style="width: 80%;"><a href="https://fin-veda.vercel.app/index.html" target="_blank"
+                      style="color: #fff;">fin-veda.vercel.app</a></div>
                 </li>
                 <li class="d-sm-flex justify-content-center">
                   <i class="fa fa-location-dot d-sm-flex align-items-center white"
                     style="font: size 12px; width: 10%;"></i>
-                  <div style="width: 80%;">Delhi, India</div>
+                  <div style="width: 80%;"><a
+                      href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
+                      style="color:#fff">
+                      Delhi, India</a></div>
                 </li>
               </ul>
             </div>
@@ -1007,7 +1140,7 @@
       <div id="particles-2"></div>
   </footer>
   <script>document.getElementById("copyright-year").textContent = new Date().getFullYear();</script>
-  <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
+  <a href="#" class="back-to-top" aria-label="Return to the top"><i class="lni-chevron-up"></i></a>
   </script>
   <script src="../assets/js/vendor/jquery-1.12.4.min.js"></script>
   <script src="../assets/js/vendor/modernizr-3.7.1.min.js"></script>
@@ -1042,7 +1175,7 @@
 
     // Get the <span> elements that close the modals
     var closeBtns = document.getElementsByClassName('close');
-    
+
     //show and hide icon button
     document.addEventListener('DOMContentLoaded', () => {
       const togglePasswordButtons = document.querySelectorAll('.toggle-password-btn');
@@ -1065,61 +1198,58 @@
     document.addEventListener('DOMContentLoaded', function () {
       // Get the form element
       var form = document.getElementById('subscribe-form');
-      
+
       // Add event listener to submit event of the form
       form.addEventListener('submit', function (event) {
-          event.preventDefault(); // Prevent default form submission
-          
-          // Get the email input value
-          var email = document.getElementById('news-email').value;
-          
-          // Check if email is not empty
-          if (email.trim() === '') {
-              showMessage('Please enter your email address.', 'error');
-              return;
-          }
-          
-          // Parameters for email service
-          var params = {
-              from_name: "FinVeda",
-              email_id: email,
-              message: "Thank you for subscribing to our newsletter. Stay tuned for regular updates."
-          }
-          
-          // Send email using EmailJS
-          emailjs.send('service_lktb68z', 'template_w79vd94', params)
-              .then(function (response) 
-              {
-                  // Show success message
-                  showMessage('Subscribed to FinVeda Newsletter', 'success');
-                  console.log('SUCCESS!', response.status, response.text);
-              }, function (error) 
-              {
-                  // Show error message
-                  showMessage('Subscription failed. Please try again later.', 'error');
-                  console.log('FAILED...', error);
-              });
-  
-          // Reset input after 3 seconds
-          setTimeout(function() {
-              document.getElementById('news-email').value = '';
-          }, 3000);
+        event.preventDefault(); // Prevent default form submission
+
+        // Get the email input value
+        var email = document.getElementById('news-email').value;
+
+        // Check if email is not empty
+        if (email.trim() === '') {
+          showMessage('Please enter your email address.', 'error');
+          return;
+        }
+
+        // Parameters for email service
+        var params = {
+          from_name: "FinVeda",
+          email_id: email,
+          message: "Thank you for subscribing to our newsletter. Stay tuned for regular updates."
+        }
+
+        // Send email using EmailJS
+        emailjs.send('service_lktb68z', 'template_w79vd94', params)
+          .then(function (response) {
+            // Show success message
+            showMessage('Subscribed to FinVeda Newsletter', 'success');
+            console.log('SUCCESS!', response.status, response.text);
+          }, function (error) {
+            // Show error message
+            showMessage('Subscription failed. Please try again later.', 'error');
+            console.log('FAILED...', error);
+          });
+
+        // Reset input after 3 seconds
+        setTimeout(function () {
+          document.getElementById('news-email').value = '';
+        }, 3000);
       });
-  });
-  
-  function showMessage(message, type) {
+    });
+
+    function showMessage(message, type) {
       var messageDiv = document.getElementById('message');
       messageDiv.textContent = message;
       messageDiv.style.display = 'block';
-      
+
       // Clear message after 3 seconds
-      setTimeout(function() 
-      {
-          messageDiv.textContent = '';
-          messageDiv.style.display = 'none';
+      setTimeout(function () {
+        messageDiv.textContent = '';
+        messageDiv.style.display = 'none';
       }, 3000);
-  }
-  
+    }
+
     // When the user clicks the register link, open the register modal
     registerLink.onclick = function (event) {
       event.preventDefault();
@@ -1151,6 +1281,48 @@
         registerModal.style.display = 'none';
       }
     }
+    //counter for INVESTING Expert 
+    document.addEventListener("DOMContentLoaded", () => {
+      const counters = document.querySelectorAll('.counter');
+
+      counters.forEach(counter => {
+        const updateCount = () => {
+          const target = +counter.getAttribute('data-target');
+          const count = +counter.innerText;
+
+          const speed = 200;
+          const increment = target / speed;
+
+          if (count < target) {
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(updateCount, 70);
+          } else {
+            counter.innerText = target;
+          }
+        };
+
+        updateCount();
+      });
+
+      // Separate function for the Likes counter
+      const likesCounter = document.querySelector('.counter-likes');
+      const updateLikesCount = () => {
+        const target = +likesCounter.getAttribute('data-target');
+        const count = +likesCounter.innerText;
+
+        const speed = 5000;
+        const increment = target / speed;
+
+        if (count < target) {
+          likesCounter.innerText = Math.ceil(count + increment);
+          setTimeout(updateLikesCount, 900);
+        } else {
+          likesCounter.innerText = target;
+        }
+      };
+
+      updateLikesCount();
+    });
   </script>
   <script src="./tools/smoothScroll.js"></script>
 
@@ -1160,6 +1332,8 @@
       style="border: none; width: 1000px; height: 1000px;"></iframe>
     <script src="assets\js\preloader.js"></script>
   </div>
+
+  <script defer src="./assets/js/arthsathi-style.js"></script>
 </body>
 
 </html>

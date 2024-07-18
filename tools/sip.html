@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/quiz.css" />
   <link rel="stylesheet" href="../assets/css/popup.css" />
+  <link rel="stylesheet" href="GSTstyle.css"/>
   <link rel="stylesheet" type="text/css" href="sipcalculatorCss.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <style>
@@ -30,10 +31,108 @@
       z-index: 9999;
 
     }
+    * {
+      cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
+    }
+
+
+    .circle {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
+      transition: transform 0.1s, left 0.1s, top 0.1s;
+    }
+
+    .circle-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+    }
   </style>
-</head>
 
 <body>
+
+  <div class="circle-container">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const coords = { x: 0, y: 0 };
+      const circles = document.querySelectorAll(".circle");
+
+      circles.forEach(function (circle) {
+        circle.x = 0;
+        circle.y = 0;
+      });
+
+      window.addEventListener("mousemove", function (e) {
+        coords.x = e.pageX;
+        coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
+      });
+
+      function animateCircles() {
+        let x = coords.x;
+        let y = coords.y;
+
+        circles.forEach(function (circle, index) {
+          circle.style.left = `${x - 12}px`;
+          circle.style.top = `${y - 12}px`;
+          circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+
+          const nextCircle = circles[index + 1] || circles[0];
+          circle.x = x;
+          circle.y = y;
+
+          x += (nextCircle.x - x) * 0.3;
+          y += (nextCircle.y - y) * 0.3;
+        });
+
+        requestAnimationFrame(animateCircles);
+      }
+
+      animateCircles();
+    });
+
+  </script>
+
+  <button id="CommentBtn" aria-label="Toggle Comment Form"><i class="fas fa-comment"></i></button>
+
   <div id="progressBar"></div>
   <script>
     window.onscroll = function () {
@@ -92,58 +191,58 @@
               </div>
               <div class="navbar-btn d-none d-sm-inline-block">
                 <!-- Login Modal -->
-                <div id="myModal" class="modal">
-                  <div class="modal-content">
-                    <span class="close" style="display: flex; justify-content: right;">&times;</span>
-                    <div class="mt-3">
-                      <h3 class="join">Login to join us....</h3>
-                      <form class="px-3 py-4">
-                        <div class="form-group">
-                          <label class="d-flex">Username</label>
-                          <input type="text" placeholder="Username" class="form-control" />
-                        </div>
-                        <div class="form-group">
-                          <label class="d-flex">Password</label>
-                          <input type="password" placeholder="Password" class="form-control">
-                          <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
-                        </div>
-                        <div class="form-check d-flex">
-                          <input type="checkbox" class="form-check-input">
-                          <label class="form-check-label">Remember me</label>
-                        </div>
-                      </form>
-                      <button class="main-btn mt-2 w-100 mb-3">Sign in</button>
-                      <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
-                    </div>
+              <div id="myModal" class="modal">
+                <div class="modal-content">
+                  <span class="close" style="display: flex; justify-content: right;">&times;</span>
+                  <div class="mt-3">
+                    <h3 class="join">Login to join us....</h3>
+                    <form class="px-3 py-4" id="loginForm">
+                      <div class="form-group">
+                        <label class="d-flex">Username</label>
+                        <input type="text" placeholder="Username" class="form-control" required />
+                      </div>
+                      <div class="form-group">
+                        <label class="d-flex">Password</label>
+                        <input type="password" placeholder="Password" class="form-control" required>
+                        <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
+                      </div>
+                      <div class="form-check d-flex">
+                        <input type="checkbox" class="form-check-input">
+                        <label class="form-check-label">Remember me</label>
+                      </div>
+                    </form>
+                    <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('loginForm')">Sign in</button>
+                    <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
                   </div>
                 </div>
+              </div>
 
-                <!-- Register Modal -->
-                <div id="registerModal" class="modal">
-                  <div class="modal-content">
-                    <span class="close" style="display: flex; justify-content: right;">&times;</span>
-                    <div class="mt-3">
-                      <h3 class="join">Register to join us....</h3>
-                      <form class="px-3 py-4">
-                        <div class="form-group">
-                          <label class="d-flex">Email</label>
-                          <input type="email" placeholder="Email" class="form-control" />
-                        </div>
-                        <div class="form-group">
-                          <label class="d-flex">Username</label>
-                          <input type="text" placeholder="Username" class="form-control" />
-                        </div>
-                        <div class="form-group">
-                          <label class="d-flex">Password</label>
-                          <input type="password" placeholder="Password" class="form-control" required>
-                          <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
-                        </div>
-                      </form>
-                      <button class="main-btn mt-2 w-100 mb-3">Register</button>
-                      <p class="text-center">Already have an account? <a href="#" id="loginLink">Login</a></p>
-                    </div>
+              <!-- Register Modal -->
+              <div id="registerModal" class="modal">
+                <div class="modal-content">
+                  <span class="close" style="display: flex; justify-content: right;">&times;</span>
+                  <div class="mt-3">
+                    <h3 class="join">Register to join us....</h3>
+                    <form class="px-3 py-4" id="registerForm">
+                      <div class="form-group">
+                        <label class="d-flex">Email</label>
+                        <input type="email" placeholder="Email" class="form-control" required />
+                      </div>
+                      <div class="form-group">
+                        <label class="d-flex">Username</label>
+                        <input type="text" placeholder="Username" class="form-control" required />
+                      </div>
+                      <div class="form-group">
+                        <label class="d-flex">Password</label>
+                        <input type="password" placeholder="Password" class="form-control" required>
+                        <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
+                      </div>
+                    </form>
+                    <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('registerForm')">Register</button>
+                    <p class="text-center">Already have an account? <a href="#" id="loginLink">Login</a></p>
                   </div>
                 </div>
+              </div>
                 <a class="main-btn" data-scroll-nav="0" href="#" onclick="openModal()">Login/Register 💻</a>
               </div>
             </nav>
@@ -222,15 +321,15 @@
           <div><input class="form-control" id="return-rate" type="text" onchange="percentage(this)" /></div>
         </div>
       </div>
-      </br />
+      <br/>
       <div class="btn-calculate">
-        <button type="button" onclick="calculateResult()" class="btn btn-success">
+        <button type="button" onclick="calculateResult()" class="btn btn-calculate">
           Calculate
         </button>
       </div>
-      </br />
-      <div style="display: flex;">
-        <div class="result"><b>Result :</b></div>
+      <br />
+      <div style="display: flex; justify-content: flex-start; font-size: medium;" class="result"><b>Result :</b></div>
+      <div style="display: flex; justify-content: center;">
         <div class="result-container">
           <div>Monthly Investment for <span id="mode-1">SIP</span></div>
           <div><span>Rs.</span>&nbsp;<span id="input-1"></span></div>
@@ -251,7 +350,6 @@
           <div>Maturity Value</div>
           <div><span id="currency-change-3">Rs.</span>&nbsp;<span id="maturity-value"></span></div>
         </div>
-      </div>
     </div>
     </div>
     <!-- EMI Calculator -->
@@ -272,13 +370,13 @@
           <div><input class="form-control" id="loanTenure" type="number" /></div>
         </div>
       </div>
-      </br />
+      <br />
       <div class="btn-calculate">
-        <button class="btn btn-success" type="button" onclick="calculateEMI()">Calculate EMI</button>
+        <button class="btn btn-calculate" type="button" onclick="calculateEMI()">Calculate</button>
       </div>
-      </br />
+      <br />
+       <div class="result" style="display: flex; justify-content: flex-start; font-size: medium;"><b>Result :</b></div>
       <div style="display: flex;">
-        <div class="result"><b>Result :</b></div>
         <div class="result-container">
           <div>Monthly EMI</div>
           <div><span id="monthlyEMI"></span></div>
@@ -313,7 +411,7 @@
         </div>
         <br/>
         <div class="btn-calculate">
-            <button class="btn btn-success" type="button" onclick="calculateSavings()">Calculate</button>
+            <button class="btn btn-calculate" type="button" onclick="calculateSavings()">Calculate</button>
         </div>
         <br/>
         <div style="display: flex;">
@@ -330,36 +428,39 @@
     <div class="header" style="padding-top: 100px;">
       <h3>Insurance Calculator</h3>
     </div>
-    <div class="page-container">
+    <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5">
       <div class="input-container">
         <div>
           <div><b>Sum assured (INR)</b></div>
-          <div><input id="Sumassured" type="number" style="margin: 1% 5% 0 0" /></div>
+          <div><input class="form-control" id="Sumassured" type="number" style="margin: 1% 5% 0 0" /></div>
           <br />
           <div><b>Policy term (Years)</b></div>
-          <div><input id="Policyterm" type="number" /></div>
+          <div><input class="form-control" id="Policyterm" type="number" /></div>
           <br />
           <div><b>Annual premium (%)</b></div>
-          <div><input id="Annualpremium" type="number" /></div>
+          <div><input class="form-control" id="Annualpremium" type="number" /></div>
           <br />
           <div><b>Reversionary Bonus (%)</b></div>
-          <div><input id="ReversionaryBonus" type="number" /></div>
+          <div><input class="form-control" id="ReversionaryBonus" type="number" /></div>
           <br />
           <div><b>Terminal Bonus (%)</b></div>
-          <div><input id="TerminalBonus" type="number" /></div>
+          <div><input class="form-control" id="TerminalBonus" type="number" /></div>
           <br />
-          <div style="display: flex;">
-            <input name="check" id="surrendered" type="radio" style="width: 20px;" />early surrendered
-            <input name="check" id="death" type="radio" style="width: 20px;" />policyholder's death
+          <div class="centered-content" style="display: flex;">
+            <input name="check" id="surrendered" type="radio" style="width: 20px;" /><b>Early Surrendered</b>
+          </div>
+            <br>
+            <div class="centered-content" style="display: flex;">
+              <input name="check" id="death" type="radio" style="width: 20px;" /><b>Policyholder's Death</b>
           </div>
           <br />
         </div>
       </div>
-      </br />
+      <br />
       <div class="btn-calculate">
-        <button type="button" style="width: 11rem;" onclick="calculateInsurance()">Calculate Insurance</button>
+        <button type="button" onclick="calculateInsurance()">Calculate</button>
       </div>
-      </br />
+      <br />
       <div style="display: flex;">
         <div class="result"><b>Result :</b></div>
         <div class="result-container">
@@ -427,7 +528,7 @@
       </div>
       <br />
       <div class="btn-calculate">
-        <button class="btn btn-success" type="button" onclick="calculateNPV()">Calculate</button>
+        <button class="btn btn-calculate" type="button" onclick="calculateNPV()">Calculate</button>
       </div>
       <br />
       <div style="display: flex;">
@@ -465,7 +566,7 @@
               </label>
               <input class="form-control" type="number" id="return" name="return" required>
           </div>
-          <button type="submit" class="btn btn-success">Calculate ROI</button>
+          <button id="submitBtn1" type="submit" class="btn btn-calculate" style="width: 10rem; background-color: #28a745; color: #fff;">Calculate</button>
       </form>
       <div class="calculation" style="margin-top: 20px; display: flex; gap: 20px;">
         <b>Result:</b>
@@ -480,6 +581,70 @@
 
 
     <!--End of RoI calculator-->
+    <!--Start of GST Calculator-->
+    <script src="GSTcalc.js"></script>
+    <div class="header" style="padding-top: 100px;">
+        <h3>Goods and Service Tax (GST) Calculator</h3>
+    </div>
+      <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5" id="GST">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+               <form id="gst-calculator" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                        <div class="form-group">
+                        <label for="mode" class="mode">Mode:</label>
+                        <select id="mode" class="form-control">
+                            <option value="exclusive">Exclusive of GST</option>
+                            <option value="inclusive">Inclusive of GST</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount" class="amount">Amount:</label>
+                        <input type="number" id="amount" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tax-slab" class="tax-slab">Tax Slab (%):</label>
+                        <input type="number" id="tax-slab" class="form-control" required>
+                    </div>
+                    <button id="submitBtn2" type="submit" class="btn btn-calculate" style="width: 10rem; background-color: #28a745; color: #fff;">Calculate</button>
+                </form>
+                <div id="result" class="mt-3">
+                    <h5>Result:</h5>
+                    <p id="total-gst"></p>
+                    <p id="post-gst-amount"></p>
+                </div>
+            </div>
+          </div>
+      </div>
+    <!--end of GST Calc-->
+
+    <!--Start of Income Tax Calc-->
+    <script src="IncomeTax.js" defer></script>
+    <div class="header" style="padding-top: 100px;">
+      <h3>Income Tax Calculator</h3>
+  </div>
+  <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5" id="IncomeTax">
+      <div class="row">
+          <div class="col-md-6 offset-md-3">
+              <form id="income-tax-calculator" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                  <div class="form-group">
+                      <label for="income" class="income">Income:</label>
+                      <input type="number" id="income" class="form-control" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="tax-rate" class="tax-rate">Tax Rate (%):</label>
+                      <input type="number" id="tax-rate" class="form-control" required>
+                  </div>
+                  <button id="submitBtn3" type="submit" class="btn btn-calculate" style="width: 10rem; background-color: #28a745; color: #fff;">Calculate</button>
+              </form>
+              <div id="result" class="mt-3">
+                  <h5>Result:</h5>
+                  <p id="income-tax"></p>
+                  <p id="real-income"></p>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- end of Income Tax Calc-->
 
   </body>
   <footer id="footer" class="footer-area pt-120">
@@ -530,9 +695,11 @@
                   <h4 class="title">Resources</h4>
                 </div>
                 <ul class="link">
-                  <li><a href="../index.html">Home</a></li>
-                  <li><a href="../login.html">Page</a></li>
-                  <li><a href="../blog.html">Blog</a></li>
+                  <li><a href="./index.html">Home</a></li>
+                  <li><a href="./trends.html">Trends</a></li>
+                  <li><a href="./tools/sip.html">Tools</a></li>
+                  <li><a href="./blog.html">Blog</a></li>
+                  <li><a href="./quiz.html">Quiz</a></li>
                 </ul>
               </div>
             </div>
@@ -545,16 +712,16 @@
                <ul class="contact">
                 <li class="d-sm-flex justify-content-center">
                   <i class="fa fa-envelope d-sm-flex align-items-center white" style="font: size 16px; width: 10%;"></i>
-                  <div style="width: 80%;">ayush1337@hotmail.com</div>
+                  <div style="width: 80%;"><a href="mailto:ayush1337@hotmail.com"  style="color: #fff;" target="_blank">ayush1337@hotmail.com</a></div>
                 </li>
                 <li class="d-sm-flex justify-content-center">
                   <i class="fa fa-globe d-sm-flex align-items-center white" style="font: size 16px; width: 10%;"></i>
-                  <div style="width: 80%;">fin-veda.vercel.app</div>
+                  <div style="width: 80%;"><a href="https://fin-veda.vercel.app/index.html" style="color: #fff;">fin-veda.vercel.app</a></div>
                 </li>
                 <li class="d-sm-flex justify-content-center">
                   <i class="fa fa-location-dot d-sm-flex align-items-center white"
                     style="font: size 12px; width: 10%;"></i>
-                  <div style="width: 80%;">Delhi, India</div>
+                  <div style="width: 80%;"><a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"  style="color: #fff;">Delhi, India</a></div>
                 </li>
               </ul>
             </div>
