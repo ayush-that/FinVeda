@@ -1834,11 +1834,15 @@ p {
 
 .single-blog {
   transition: transform 0.5s ease;
+  box-shadow: 0 4px 8px rgb(51, 55, 55);
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .single-blog .blog-image img {
   border-radius: 10px;
   width: 100%;
+  box-shadow: 0 2px 4px rgba(9, 11, 10, 0.7);
 }
 
 .single-blog .blog-content {
@@ -1870,8 +1874,13 @@ p {
 }
 
 .single-blog:hover {
-  transform: scale(1.02);
+  transform: translateY(-20px);
   cursor: pointer;
+  border: 1px solid orange;
+  box-shadow: 0 4px 8px rgb(233, 156, 31);
+}
+.single-blog.blog-content img{
+  box-shadow: 0 2px 4px rgba(7, 228, 22, 0.725);
 }
 .single-blog .blog-content .text:hover {
   color: #300404;
@@ -1889,7 +1898,7 @@ p {
   font-size: 16px;
   color: #d32f2f;
   margin-top: 30px;
-  transition: 2s ease;
+  transition: 0.8s ease;
 }
 .single-blog .blog-content .more::after {
   content: "";
@@ -1901,12 +1910,18 @@ p {
   left: 10%;
   background-color: #fe6e9a;
   transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
+  transition: transform 0.5s ease-out;
 }
 
 .single-blog .blog-content .more:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+.single-blog .blog-content .more:hover{
+  background: orange;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
 }
 @media (max-width: 980px) {
   .single-blog .blog-content .more::after {
