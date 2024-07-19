@@ -312,13 +312,13 @@
       <div class="input-container">
         <div>
           <div><b>Monthly investment</b></div>
-          <div><input class="form-control" id="investment" type="text" onchange="commas(this)" /></div>
+          <div><input class="form-control" id="investment" type="number" for="amount"/></div>
           <br />
           <div><b>Time period (yr)</b></div>
           <div><input class="form-control" id="years" type="number"></div>
           <br />
           <div><b>Expected return rate (p.a)</b></div>
-          <div><input class="form-control" id="return-rate" type="text" onchange="percentage(this)" /></div>
+          <div><input class="form-control" id="return-rate" type="number" for="amount" /></div>
         </div>
       </div>
       <br/>
@@ -488,10 +488,15 @@
     <!-- NPV Calculator -->
     <script src="npvCalculator.js" defer></script>
     <div class="header" style="padding-top: 100px;">
-      <h3>Net Present Value (NPV) Calculator</h3>
-      <h6 style="text-align: left; margin: 1% 20%; padding-left: 50px;">The NPV (Net Present Value) Calculator is a tool
+      <h3>Net Present Value<br> (NPV) Calculator</h3>
+      <p style="text-align: justify; margin: 1% 20%; padding-left: 50px;">The NPV (Net Present Value) Calculator is a tool
         designed to help you evaluate the profitability of an investment by calculating the present value of expected
-        future cash flows. Here's how it works:</h6>
+        future cash flows. This calculator helps investors make informed decisions, ensuring that future cash flows are accurately evaluated in
+        today's terms.</p>
+        <div class="know-more">
+  <button class="know-more-btn">Know More</button>
+  <div class="know-more-content">
+     <h6 style="text-align: left; margin: 1% 20%; padding-left: 50px;">Here's how it works:</h6>
       <p style="text-align: left; margin: 1% 20%; padding-left: 50px;">
         1. <b>Initial Investment:</b> Enter the amount of your initial investment. <br>
         2. <b>Discount Rate:</b> Enter the discount rate, which represents the rate of return required to make the
@@ -501,11 +506,9 @@
         4. <b>Calculate NPV:</b> Once all inputs are provided, click the 'Calculate NPV' button to compute the net
         present value. The result will display the NPV, indicating the potential profitability of your investment.<br>
       </p>
-      <h6 style="text-align: left; margin: 1% 20%; padding-left: 50px;">This calculator helps investors make informed
-        decisions by considering the time value of money, ensuring that future cash flows are accurately evaluated in
-        today's terms.</h6>
-
-    </div>
+  </div>
+</div>
+   </div>
     <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5">
       <div class="input-container">
         <div>

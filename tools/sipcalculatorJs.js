@@ -116,3 +116,12 @@ percentage = (x) => {
       .concat(" ")
       .concat("%");
 };
+//for know more button
+document.addEventListener("DOMContentLoaded", function () {
+  const knowMoreBtn = document.querySelector(".know-more-btn");
+  const knowMoreContent = document.querySelector(".know-more-content");
+
+  knowMoreBtn.addEventListener("click", function () {
+    knowMoreContent.classList.toggle("show");
+  });
+});
