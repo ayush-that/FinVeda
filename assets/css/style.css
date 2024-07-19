@@ -1634,14 +1634,30 @@ p {
   box-shadow: 0px 0px 30px 0px rgba(167, 167, 167, 0.16);
   overflow: hidden;
   border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 2px solid transparent;
+  box-shadow: 0px 8px 16px rgb(96, 99, 103);
+
+}
+.single-team:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  border: 2px solid orange; /* Adjust the color to your preference */
+  box-shadow: 0px 5px 10px rgb(248, 170, 1);
 }
 
 .single-team .team-image {
   position: relative;
+  padding: 2px;
+  border: 1px solid yellow;
+  box-shadow: 0px 8px 16px rgb(136, 134, 132);
 }
 
 .single-team .team-image img {
   width: 100%;
+}
+.single-team:hover .images-team {
+  transform: scale(1.1);
 }
 
 .single-team .team-image .social {
@@ -1708,6 +1724,9 @@ p {
   opacity: 1;
   visibility: visible;
 }
+
+
+
 
 .single-testimonial {
   background-color: #fff;
