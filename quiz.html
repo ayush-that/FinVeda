@@ -146,7 +146,7 @@
     };
   </script>
   
-  <button id="CommentBtn" aria-label="Toggle Comment Form"><i class="fas fa-comment"></i></button>
+ 
 
   <div class="preloader">
     <div class="loader">
@@ -277,8 +277,10 @@
                 made becoming a stock market Guru easy with our AI
                 powered finance advisor - <b>Arth Sathi 🤵🏻</b>
               </p>
-              <a href="./index.html" class="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s">Chat
-                with ArthaSathi 💬</a>
+              <a href="#" class="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s"
+                onclick="window.botpressWebChat.sendEvent({ type: 'show' }); return false;">
+                Chat with ArthaSathi 💬
+              </a>
             </div>
           </div>
         </div>
@@ -552,6 +554,10 @@ display:flex;justify-content: center; align-items: center;">Get ready to test yo
 <script src="../assets/js/quiz.js"></script>
 <script src="../assets/js/popup.js"></script>
 <script src="../assets/js/quiz_modify.js"></script>
+<script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+<script src="https://mediafiles.botpress.cloud/5e160793-5606-4412-ba4c-337e416f14fe/webchat/config.js" defer></script>
+    <script defer src="./assets/js/arthsathi-style.js"></script>
+<script src="./assets/js/botpress.js"></script>
 <script>
   // Get the modals
   var loginModal = document.getElementById('myModal');
