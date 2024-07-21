@@ -2211,17 +2211,53 @@ p {
 }
 
 .link-wrapper .link li a {
+  position: relative;
   font-size: 16px;
   color: #fff;
-  -webkit-transition: all 0.3s ease-out 0s;
-  -moz-transition: all 0.3s ease-out 0s;
-  -ms-transition: all 0.3s ease-out 0s;
-  -o-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
+  text-decoration: none;
 }
 
-.link-wrapper .link li a:hover, .footer-contact .contact li a:hover{
-  color: #fe8464 !important;
+.link-wrapper .link li a,
+.footer-contact .contact li a,
+.copyright-content a {
+  font-size: 16px;
+  color: #fff;
+  transition: all 0.3s ease-out 0s;
+  text-decoration: none;
+} 
+
+
+.link-wrapper .link li a:hover::after,
+.footer-contact .contact li a:hover::after,
+.copyright-content a:hover::after {
+  width: 100%;
+}
+
+.link-wrapper .link li a:hover,
+.footer-contact .contact li a:hover,
+.copyright-content a:hover {
+  color: #ffffff !important;
+  text-shadow: #FC0 1px 0 10px !important; 
+  transform: scale(1.04);
+}
+
+.link-wrapper .link li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  color: white !important;
+  text-shadow: #FC0 1px 0 10px;
+  background-color: #ffffff;
+
+  transition: width 0.4s ease;
+}
+
+.link-wrapper .link li a:hover::after{
+  width: 100%;
 }
 
 .footer-contact .contact {
@@ -2234,6 +2270,22 @@ p {
   font-size: 16px;
   color: #fff;
 }
+
+.footer-contact .contact li a {
+  position: relative;
+  font-size: 16px;
+  color: #fff;
+  transition: all 0.3s ease-out 0s;
+  text-decoration: none;
+}
+
+.footer-contact .contact li a:hover::after {
+  width: 100%;
+}
+.footer-contact .contact li a:hover{
+  color: white !important;
+}
+
 
 .custom-margin {
   margin-left: 0px;
@@ -2263,15 +2315,25 @@ p {
 .copyright-content a {
   font-size: 16px;
   color: #fff;
-  -webkit-transition: all 0.3s ease-out 0s;
-  -moz-transition: all 0.3s ease-out 0s;
-  -ms-transition: all 0.3s ease-out 0s;
-  -o-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
+  text-decoration: none;
 }
 
-.copyright-content a:hover {
-  color: #fe8464;
+.copyright-content a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2.5px;
+  text-shadow: #FC0 1px 0 10px;
+  background-color: #ffffff;
+  transition: width 0.4s ease;
+}
+
+
+.copyright-content a:hover::after {
+  width: 100%;
 }
 
 .back-to-top {
