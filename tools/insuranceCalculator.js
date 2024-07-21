@@ -33,9 +33,9 @@ function calculateInsurance() {
             netGain=maturityAmt-TotalPremium;
         }
     // Display results
-    document.getElementById('ReversionaryBonusAmt').textContent = 'INR ' + ReversionaryBonusAmt.toFixed(2);
-    document.getElementById('TerminalBonusAmt').textContent = 'INR ' + TerminalBonusAmt.toFixed(2);
-    document.getElementById('TotalBonus').textContent = 'INR ' + TotalBonus.toFixed(2);
-    document.getElementById('TotalPremium').textContent = 'INR ' + TotalPremium.toFixed(2);
-    document.getElementById('netGain').textContent = 'INR ' + netGain.toFixed(2);
+    document.getElementById('ReversionaryBonusAmt').textContent = '₹' + ReversionaryBonusAmt.toFixed(2);
+    document.getElementById('TerminalBonusAmt').textContent = '₹' + TerminalBonusAmt.toFixed(2);
+    document.getElementById('TotalBonus').textContent = '₹' + TotalBonus.toFixed(2);
+    document.getElementById('TotalPremium').textContent = '₹' + TotalPremium.toFixed(2);
+    document.getElementById('netGain').textContent = '₹' + netGain.toFixed(2);
 }
