@@ -31,10 +31,108 @@
       z-index: 9999;
 
     }
+    * {
+      cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
+    }
+
+
+    .circle {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
+      transition: transform 0.1s, left 0.1s, top 0.1s;
+    }
+
+    .circle-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+    }
   </style>
-</head>
 
 <body>
+
+  <div class="circle-container">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const coords = { x: 0, y: 0 };
+      const circles = document.querySelectorAll(".circle");
+
+      circles.forEach(function (circle) {
+        circle.x = 0;
+        circle.y = 0;
+      });
+
+      window.addEventListener("mousemove", function (e) {
+        coords.x = e.pageX;
+        coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
+      });
+
+      function animateCircles() {
+        let x = coords.x;
+        let y = coords.y;
+
+        circles.forEach(function (circle, index) {
+          circle.style.left = `${x - 12}px`;
+          circle.style.top = `${y - 12}px`;
+          circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+
+          const nextCircle = circles[index + 1] || circles[0];
+          circle.x = x;
+          circle.y = y;
+
+          x += (nextCircle.x - x) * 0.3;
+          y += (nextCircle.y - y) * 0.3;
+        });
+
+        requestAnimationFrame(animateCircles);
+      }
+
+      animateCircles();
+    });
+
+  </script>
+
+  <button id="CommentBtn" aria-label="Toggle Comment Form"><i class="fas fa-comment"></i></button>
+
   <div id="progressBar"></div>
   <script>
     window.onscroll = function () {
@@ -78,6 +176,9 @@
                     <a class="page-scroll" href="../index.html">Home 🏡</a>
                   </li>
                   <li class="nav-item">
+                      <a class="page-scroll" href="/about.html">About us </a>
+                  </li>
+                  <li class="nav-item">
                     <a class="page-scroll" href="../trends.html">Trends 📈</a>
                   </li>
                   <li class="nav-item active">
@@ -89,63 +190,65 @@
                   <li class="nav-item">
                     <a class="page-scroll" href="../quiz.html">Quiz 🤔</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none; border: none;" data-scroll-nav="0" href="#" onclick="openModal()">Login/Register 💻</a>
+                  </li>
                 </ul>
               </div>
               <div class="navbar-btn d-none d-sm-inline-block">
                 <!-- Login Modal -->
-                <div id="myModal" class="modal">
-                  <div class="modal-content">
-                    <span class="close" style="display: flex; justify-content: right;">&times;</span>
-                    <div class="mt-3">
-                      <h3 class="join">Login to join us....</h3>
-                      <form class="px-3 py-4">
-                        <div class="form-group">
-                          <label class="d-flex">Username</label>
-                          <input type="text" placeholder="Username" class="form-control" />
-                        </div>
-                        <div class="form-group">
-                          <label class="d-flex">Password</label>
-                          <input type="password" placeholder="Password" class="form-control">
-                          <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
-                        </div>
-                        <div class="form-check d-flex">
-                          <input type="checkbox" class="form-check-input">
-                          <label class="form-check-label">Remember me</label>
-                        </div>
-                      </form>
-                      <button class="main-btn mt-2 w-100 mb-3">Sign in</button>
-                      <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
-                    </div>
+              <div id="myModal" class="modal">
+                <div class="modal-content">
+                  <span class="close" style="display: flex; justify-content: right;">&times;</span>
+                  <div class="mt-3">
+                    <h3 class="join">Login to join us....</h3>
+                    <form class="px-3 py-4" id="loginForm">
+                      <div class="form-group">
+                        <label class="d-flex">Username</label>
+                        <input type="text" placeholder="Username" class="form-control" required />
+                      </div>
+                      <div class="form-group">
+                        <label class="d-flex">Password</label>
+                        <input type="password" placeholder="Password" class="form-control" required>
+                        <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
+                      </div>
+                      <div class="form-check d-flex">
+                        <input type="checkbox" class="form-check-input">
+                        <label class="form-check-label">Remember me</label>
+                      </div>
+                    </form>
+                    <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('loginForm')">Sign in</button>
+                    <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
                   </div>
                 </div>
+              </div>
 
-                <!-- Register Modal -->
-                <div id="registerModal" class="modal">
-                  <div class="modal-content">
-                    <span class="close" style="display: flex; justify-content: right;">&times;</span>
-                    <div class="mt-3">
-                      <h3 class="join">Register to join us....</h3>
-                      <form class="px-3 py-4">
-                        <div class="form-group">
-                          <label class="d-flex">Email</label>
-                          <input type="email" placeholder="Email" class="form-control" />
-                        </div>
-                        <div class="form-group">
-                          <label class="d-flex">Username</label>
-                          <input type="text" placeholder="Username" class="form-control" />
-                        </div>
-                        <div class="form-group">
-                          <label class="d-flex">Password</label>
-                          <input type="password" placeholder="Password" class="form-control" required>
-                          <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
-                        </div>
-                      </form>
-                      <button class="main-btn mt-2 w-100 mb-3">Register</button>
-                      <p class="text-center">Already have an account? <a href="#" id="loginLink">Login</a></p>
-                    </div>
+              <!-- Register Modal -->
+              <div id="registerModal" class="modal">
+                <div class="modal-content">
+                  <span class="close" style="display: flex; justify-content: right;">&times;</span>
+                  <div class="mt-3">
+                    <h3 class="join">Register to join us....</h3>
+                    <form class="px-3 py-4" id="registerForm">
+                      <div class="form-group">
+                        <label class="d-flex">Email</label>
+                        <input type="email" placeholder="Email" class="form-control" required />
+                      </div>
+                      <div class="form-group">
+                        <label class="d-flex">Username</label>
+                        <input type="text" placeholder="Username" class="form-control" required />
+                      </div>
+                      <div class="form-group">
+                        <label class="d-flex">Password</label>
+                        <input type="password" placeholder="Password" class="form-control" required>
+                        <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
+                      </div>
+                    </form>
+                    <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('registerForm')">Register</button>
+                    <p class="text-center">Already have an account? <a href="#" id="loginLink">Login</a></p>
                   </div>
                 </div>
-                <a class="main-btn" data-scroll-nav="0" href="#" onclick="openModal()">Login/Register 💻</a>
+              </div>
               </div>
             </nav>
           </div>
@@ -214,18 +317,18 @@
       <div class="input-container">
         <div>
           <div><b>Monthly investment</b></div>
-          <div><input class="form-control" id="investment" type="text" onchange="commas(this)" /></div>
+          <div><input class="form-control" id="investment" type="number" for="amount"/></div>
           <br />
           <div><b>Time period (yr)</b></div>
           <div><input class="form-control" id="years" type="number"></div>
           <br />
           <div><b>Expected return rate (p.a)</b></div>
-          <div><input class="form-control" id="return-rate" type="text" onchange="percentage(this)" /></div>
+          <div><input class="form-control" id="return-rate" type="number" for="amount" /></div>
         </div>
       </div>
       <br/>
       <div class="btn-calculate">
-        <button type="button" onclick="calculateResult()" class="btn btn-success">
+        <button type="button" onclick="calculateResult()" class="btn btn-calculate">
           Calculate
         </button>
       </div>
@@ -274,7 +377,7 @@
       </div>
       <br />
       <div class="btn-calculate">
-        <button class="btn btn-success" type="button" onclick="calculateEMI()">Calculate EMI</button>
+        <button class="btn btn-calculate" type="button" onclick="calculateEMI()">Calculate</button>
       </div>
       <br />
        <div class="result" style="display: flex; justify-content: flex-start; font-size: medium;"><b>Result :</b></div>
@@ -313,7 +416,7 @@
         </div>
         <br/>
         <div class="btn-calculate">
-            <button class="btn btn-success" type="button" onclick="calculateSavings()">Calculate</button>
+            <button class="btn btn-calculate" type="button" onclick="calculateSavings()">Calculate</button>
         </div>
         <br/>
         <div style="display: flex;">
@@ -360,7 +463,7 @@
       </div>
       <br />
       <div class="btn-calculate">
-        <button type="button" style="width: 11rem;" onclick="calculateInsurance()">Calculate Insurance</button>
+        <button type="button" onclick="calculateInsurance()">Calculate</button>
       </div>
       <br />
       <div style="display: flex;">
@@ -390,10 +493,15 @@
     <!-- NPV Calculator -->
     <script src="npvCalculator.js" defer></script>
     <div class="header" style="padding-top: 100px;">
-      <h3>Net Present Value (NPV) Calculator</h3>
-      <h6 style="text-align: left; margin: 1% 20%; padding-left: 50px;">The NPV (Net Present Value) Calculator is a tool
+      <h3>Net Present Value<br> (NPV) Calculator</h3>
+      <p style="text-align: justify; margin: 1% 20%; padding-left: 50px;">The NPV (Net Present Value) Calculator is a tool
         designed to help you evaluate the profitability of an investment by calculating the present value of expected
-        future cash flows. Here's how it works:</h6>
+        future cash flows. This calculator helps investors make informed decisions, ensuring that future cash flows are accurately evaluated in
+        today's terms.</p>
+        <div class="know-more">
+  <button class="know-more-btn">Know More</button>
+  <div class="know-more-content">
+     <h6 style="text-align: left; margin: 1% 20%; padding-left: 50px;">Here's how it works:</h6>
       <p style="text-align: left; margin: 1% 20%; padding-left: 50px;">
         1. <b>Initial Investment:</b> Enter the amount of your initial investment. <br>
         2. <b>Discount Rate:</b> Enter the discount rate, which represents the rate of return required to make the
@@ -403,11 +511,9 @@
         4. <b>Calculate NPV:</b> Once all inputs are provided, click the 'Calculate NPV' button to compute the net
         present value. The result will display the NPV, indicating the potential profitability of your investment.<br>
       </p>
-      <h6 style="text-align: left; margin: 1% 20%; padding-left: 50px;">This calculator helps investors make informed
-        decisions by considering the time value of money, ensuring that future cash flows are accurately evaluated in
-        today's terms.</h6>
-
-    </div>
+  </div>
+</div>
+   </div>
     <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5">
       <div class="input-container">
         <div>
@@ -430,7 +536,7 @@
       </div>
       <br />
       <div class="btn-calculate">
-        <button class="btn btn-success" type="button" onclick="calculateNPV()">Calculate</button>
+        <button class="btn btn-calculate" type="button" onclick="calculateNPV()">Calculate</button>
       </div>
       <br />
       <div style="display: flex;">
@@ -468,7 +574,7 @@
               </label>
               <input class="form-control" type="number" id="return" name="return" required>
           </div>
-          <button type="submit" class="btn btn-success">Calculate ROI</button>
+          <button id="submitBtn1" type="submit" class="btn btn-calculate" style="width: 10rem; background-color: #28a745; color: #fff;">Calculate</button>
       </form>
       <div class="calculation" style="margin-top: 20px; display: flex; gap: 20px;">
         <b>Result:</b>
@@ -507,7 +613,7 @@
                         <label for="tax-slab" class="tax-slab">Tax Slab (%):</label>
                         <input type="number" id="tax-slab" class="form-control" required>
                     </div>
-                    <button type="submit" class="btn btn-success btn-calculate">Calculate</button>
+                    <button id="submitBtn2" type="submit" class="btn btn-calculate" style="width: 10rem; background-color: #28a745; color: #fff;">Calculate</button>
                 </form>
                 <div id="result" class="mt-3">
                     <h5>Result:</h5>
@@ -518,6 +624,35 @@
           </div>
       </div>
     <!--end of GST Calc-->
+
+    <!--Start of Income Tax Calc-->
+    <script src="IncomeTax.js" defer></script>
+    <div class="header" style="padding-top: 100px;">
+      <h3>Income Tax Calculator</h3>
+  </div>
+  <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5" id="IncomeTax">
+      <div class="row">
+          <div class="col-md-6 offset-md-3">
+              <form id="income-tax-calculator" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                  <div class="form-group">
+                      <label for="income" class="income">Income:</label>
+                      <input type="number" id="income" class="form-control" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="tax-rate" class="tax-rate">Tax Rate (%):</label>
+                      <input type="number" id="tax-rate" class="form-control" required>
+                  </div>
+                  <button id="submitBtn3" type="submit" class="btn btn-calculate" style="width: 10rem; background-color: #28a745; color: #fff;">Calculate</button>
+              </form>
+              <div id="result" class="mt-3">
+                  <h5>Result:</h5>
+                  <p id="income-tax"></p>
+                  <p id="real-income"></p>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- end of Income Tax Calc-->
 
   </body>
   <footer id="footer" class="footer-area pt-120">
@@ -557,10 +692,11 @@
                   <h4 class="title">Quick Link</h4>
                 </div>
                 <ul class="link">
-                  <li><a href="../blogs/privacy-policy.html">Privacy Policy</a></li>
-                  <li><a href="../blogs/refund-policy.html">Refund Policy</a></li>
-                  <li><a href="Licensing.html">Licensing</a></li>
-                  <li><a href="../blogs/terms-of-service.html">Terms of Service</a></li>
+                  <li><a href="/blogs/privacy-policy.html">Privacy Policy</a></li>
+                  <li><a href="/blogs/refund-policy.html">Refund Policy</a></li>
+                  <li><a href="/Licensing.html">Licensing</a></li>
+                  <li><a href="/blogs/terms-of-service.html">Terms of Service</a></li>
+                  <li><a href="/contributors.html">Our Contributors</a></li>
                 </ul>
               </div>
               <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
@@ -569,8 +705,11 @@
                 </div>
                 <ul class="link">
                   <li><a href="../index.html">Home</a></li>
-                  <li><a href="../login.html">Page</a></li>
+                  <li><a href="../about.html">About Us</a></li>
+                  <li><a href="../trends.html">Trends</a></li>
+                  <li><a href="../tools/sip.html">Tools</a></li>
                   <li><a href="../blog.html">Blog</a></li>
+                  <li><a href="../quiz.html">Quiz</a></li>
                 </ul>
               </div>
             </div>
@@ -599,13 +738,24 @@
           </div>
         </div>
       </div>
-      <div class="footer-copyright">
+      <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center">
         <div class="row">
           <div class="col-lg-12">
-            <div class="copyright d-sm-flex justify-content-between">
-              <div class="copyright-content">
-                <p class="text">
-                  © 2024 FinVeda. All rights reserved, Built with ♥ in India
+            <div
+              class="copyright d-sm-flex justify-content-center"
+              style="
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                width: 100%;
+                height: 100%;
+              "
+            >
+              <div class="copyright-content" style="text-align: center">
+                <p class="text" style="text-align: center">
+                  © <span id="copyright-year"></span> FinVeda. All rights
+                  reserved<br />
+                  Made with ♥ in India
                 </p>
               </div>
             </div>

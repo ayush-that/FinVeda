@@ -9,8 +9,9 @@
         margin-bottom: 34px;
       }
     </style>
-    <meta name="description" content="" />
+    <meta name="description" content="Explore insightful articles and updates on finance, investments, and economics at FinVeda's blog. Stay informed with expert perspectives and analysis." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Ayush Singh">
     <link
       rel="shortcut icon"
       href="./assets/images/favicon.ico"
@@ -40,10 +41,109 @@
         background-color: #f76b45;
         z-index: 9999;
       }
-    </style>
-  </head>
+      * {
+      cursor: url('./assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
+    }
 
-  <body>
+
+    .circle {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
+      transition: transform 0.1s, left 0.1s, top 0.1s;
+    }
+
+    .circle-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+    }
+  </style>
+
+<body>
+
+  <div class="circle-container">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const coords = { x: 0, y: 0 };
+      const circles = document.querySelectorAll(".circle");
+
+      circles.forEach(function (circle) {
+        circle.x = 0;
+        circle.y = 0;
+      });
+
+      window.addEventListener("mousemove", function (e) {
+        coords.x = e.pageX;
+        coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
+      });
+
+      function animateCircles() {
+        let x = coords.x;
+        let y = coords.y;
+
+        circles.forEach(function (circle, index) {
+          circle.style.left = `${x - 12}px`;
+          circle.style.top = `${y - 12}px`;
+          circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+
+          const nextCircle = circles[index + 1] || circles[0];
+          circle.x = x;
+          circle.y = y;
+
+          x += (nextCircle.x - x) * 0.3;
+          y += (nextCircle.y - y) * 0.3;
+        });
+
+        requestAnimationFrame(animateCircles);
+      }
+
+      animateCircles();
+    });
+
+  </script>
+
+    
+    <button id="CommentBtn" aria-label="Toggle Comment Form"><i class="fas fa-comment"></i></button>
+
     <div id="progressBar"></div>
     <script>
       window.onscroll = function () {
@@ -100,6 +200,9 @@
                       <a class="page-scroll" href="./index.html">Home 🏡</a>
                     </li>
                     <li class="nav-item">
+                      <a class="page-scroll" href="./about.html">About us </a>
+                    </li>
+                    <li class="nav-item">
                       <a class="page-scroll" href="./trends.html">Trends 📈</a>
                     </li>
                     <li class="nav-item">
@@ -114,6 +217,9 @@
                     </li>
                     <li class="nav-item">
                       <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none; border: none;" data-scroll-nav="0" href="#" onclick="openModal()">Login/Register 💻</a>
                     </li>
                   </ul>
                 </div>
@@ -212,13 +318,6 @@
                       </div>
                     </div>
                   </div>
-                  <a
-                    class="main-btn"
-                    data-scroll-nav="0"
-                    href="#"
-                    onclick="openModal()"
-                    >Login/Register 💻</a
-                  >
                 </div>
               </nav>
             </div>
@@ -228,7 +327,7 @@
       <div
         id="home"
         class="header-hero bg_cover"
-        style="background-image: url(../assets/images/banner-bg.svg)"
+        style="background-image: url(./assets/images/banner-bg.svg)"
       >
         <div class="container">
           <div class="row justify-content-center">
@@ -274,7 +373,7 @@
                 data-wow-duration="1.3s"
                 data-wow-delay="1.4s"
               >
-                <img src="../assets/images/header-hero.png" alt="hero" />
+                <img src="./assets/images/header-hero.png" alt="hero" />
               </div>
             </div>
           </div>
@@ -294,7 +393,7 @@
                 </div>
               </div>
             </div>
-            <div class="row justify-content-center">
+            <div class="row justify-content-start">
               <div class="col-lg-4 col-md-7">
                 <div
                   class="single-blog mt-30 wow fadeIn"
@@ -309,31 +408,21 @@
                     <!-- <img src="assets/images/blog-1.jpg" alt="blog" /> -->
                   </div>
                   <div class="blog-content">
-                    <a
-                      href="./blogs/how-to-deal-with-unknown-risks-in-life-and-investing.html"
-                    >
+                    <a href="./blogs/how-to-deal-with-unknown-risks-in-life-and-investing.html">
                       <p class="text">
                         How to deal with Unknown Risks in Life and Investing?
                       </p>
                     </a>
-                    <a
-                      class="more"
-                      href="./blogs/how-to-deal-with-unknown-risks-in-life-and-investing.html"
-                    >
-                      Learn More <i class="lni-chevron-right"></i
-                    ></a>
+                    <a class="more" href="./blogs/how-to-deal-with-unknown-risks-in-life-and-investing.html">
+                      Learn More <i class="lni-chevron-right"></i></a>
                   </div>
                 </div>
               </div>
               <div class="col-lg-4 col-md-7">
-                <div
-                  class="single-blog mt-30 wow fadeIn"
-                  data-wow-duration="1s"
-                  data-wow-delay="0.5s"
-                >
+                <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                   <div class="blog-image">
                     <a href="./blogs/how-to-10x-your-generational-wealth.html">
-                      <img src="assets/images/blog-2.jpg" alt="blog" />
+                      <img src="./assets/images/blog-2.jpg" alt="blog" />
                     </a>
                   </div>
                   <div class="blog-content">
@@ -342,62 +431,113 @@
                     <div class="update">
                       <p class="text">How to 10x your Generational Wealth?</p>
                     </div>
+
+                    <a class="more" href="./blogs/how-to-10x-your-generational-wealth.html" class="learnmore">Learn More <i
+                        class="lni-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-7">
+                <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                  <div class="blog-image">
+                    <a href="./blogs/how-to-10x-your-generational-wealth.html">
+                      <img src="./assets/images/women.jpg" alt="blog" />
+                    </a>
+                  </div>
+                  <div class="blog-content">
+                    <a
+                      href="./blogs/invest-minimal.html"
+                    >
+                      <p class="text">
+                        Investing with Minimal Savings: A Guide for Women Investors
+                      </p>
+                    </a>
                     <a
                       class="more"
-                      href="./blogs/how-to-10x-your-generational-wealth.html"
-                      >Learn More <i class="lni-chevron-right"></i
-                    ></a>
-                    <ul class="meta"></ul>
-                    <div class="update">
-                      <a
-                        href="./blogs/how-to-10x-your-generational-wealth.html"
-                      >
-                        <p class="text">How to 10x your Generational Wealth?</p>
-                      </a>
-                    </div>
-                    <a
-                      class="more"
-                      href="./blogs/how-to-10x-your-generational-wealth.html"
-                      >Learn More <i class="lni-chevron-right"></i
+                      href="./blogs/invest-minimal.html"
+                    >
+                      Learn More <i class="lni-chevron-right"></i
                     ></a>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-4 col-md-7">
-              <div
-                class="single-blog mt-30 wow fadeIn"
-                data-wow-duration="1s"
-                data-wow-delay="0.8s"
-              >
-                <div class="blog-image">
-                  <a
-                    href="./blogs/why-investing-in-stocks-is-better-than-fixed-deposit.html"
-                  >
-                    <img src="assets/images/blog-3.jpg" alt="blog" />
-                  </a>
+              <div class="col-lg-4 col-md-7">
+                <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                  <div class="blog-image">
+                    <a href="./blogs/how-to-10x-your-generational-wealth.html">
+                      <img src="./assets/images/pocket.jpg" alt="blog" />
+                    </a>
+                  </div>
+                  <div class="blog-content">
+                    
+                      <p class="text">
+                        Can Pocket Money Turn Into Investment? A Guide for Teenagers
+                      </p>
+                    </a>
+                    <a
+                      class="more"
+                      href="./blogs/Pocketmoney.html"
+                    >
+                      Learn More <i class="lni-chevron-right"></i
+                    ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-7">
+                    <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">    
+                      <div class="blog-image">
+                        <a href="./blogs/how-to-10x-your-generational-wealth.html">
+                          <img src="./assets/images/senior.jpg" alt="blog" />
+                        </a>
+                      </div>
+                  <div class="blog-content">
+                    <p class="text">
+                      Investment Opportunities for Senior Citizens : Securing Your Future
+                    </p>
+                    <a
+                      class="more"
+                      href="./blogs/senior.html"
+                    >
+                      Learn More <i class="lni-chevron-right"></i
+                    ></a>
+                  </div>
+                  <div class="blog-image">
+                    <a href="./blogs/how-to-10x-your-generational-wealth.html">
+                      <img src="assets/images/staryp.jpeg" alt="blog" />
+                    </a>
+                  </div>
+                  <br>
+                  <div class="blog-content">
+                    
+                      <p class="text">
+                        Unlocking Potential: The Benefits and Opportunities of Investing in Startups
+                      </p>
+                    </a>
+                    <a
+                      class="more"
+                      href="./blogs/starup.html"
+                    >
+                      Learn More <i class="lni-chevron-right"></i
+                    ></a>
+                  </div>
                 </div>
-                <div class="blog-content">
-                  <p class="text">
-                    Why investing in stocks is better than fixed deposit?
-                  </p>
-                  <a
-                    class="more"
-                    href="./blogs/why-investing-in-stocks-is-better-than-fixed-deposit.html"
-                    >Learn More <i class="lni-chevron-right"></i
-                  ></a>
-                  <a
-                    href="./blogs/why-investing-in-stocks-is-better-than-fixed-deposit.html"
-                  >
+              </div>
+              <div class="col-lg-4 col-md-7">
+                <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                  <div class="blog-image">
+                    <a
+                      href="./blogs/why-investing-in-stocks-is-better-than-fixed-deposit.html"
+                    >
+                      <img src="./assets/images/blog-3.jpg" alt="blog" />
+                    </a>
+                  </div>
+                  <div class="blog-content">
                     <p class="text">
                       Why investing in stocks is better than fixed deposit?
                     </p>
-                  </a>
-                  <a
-                    class="more"
-                    href="./blogs/why-investing-in-stocks-is-better-than-fixed-deposit.html"
-                    >Learn More <i class="lni-chevron-right"></i
-                  ></a>
+  
+                    <a class="more" href="./blogs/why-investing-in-stocks-is-better-than-fixed-deposit.html">Learn More <i class="lni-chevron-right"></i></a>
+                  </div>  
                 </div>
               </div>
             </div>
@@ -469,18 +609,11 @@
                     <h4 class="title">Quick Links</h4>
                   </div>
                   <ul class="link">
-                    <li>
-                      <a href="./blogs/privacy-policy.html">Privacy Policy</a>
-                    </li>
-                    <li>
-                      <a href="./blogs/refund-policy.html">Refund Policy</a>
-                    </li>
+                    <li><a href="./blogs/privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="./blogs/refund-policy.html">Refund Policy</a></li>
                     <li><a href="Licensing.html">Licensing</a></li>
-                    <li>
-                      <a href="./blogs/terms-of-service.html"
-                        >Terms of Service</a
-                      >
-                    </li>
+                    <li><a href="./blogs/terms-of-service.html">Terms of Service</a></li>
+                    <li><a href="./contributors.html">Our Contributors</a></li>
                   </ul>
                 </div>
                 <div
@@ -493,6 +626,7 @@
                   </div>
                   <ul class="link">
                     <li><a href="./index.html">Home</a></li>
+                    <li><a href="./about.html">About Us</a></li>
                     <li><a href="./trends.html">Trends</a></li>
                     <li><a href="./tools/sip.html">Tools</a></li>
                     <li><a href="./blog.html">Blog</a></li>
@@ -540,7 +674,7 @@
             </div>
           </div>
         </div>
-        <div class="footer-copyright" style="text-align: center">
+        <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center">
           <div class="row">
             <div class="col-lg-12">
               <div
