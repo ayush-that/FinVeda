@@ -105,6 +105,7 @@ const questions=[
     }
 ];
 
+const quizimg=document.getElementById("quizimg");
 const questionElement=document.getElementById("question");
 const answerButton=document.getElementById("answer-buttons");
 const nextButton=document.getElementById("next-btn");
@@ -168,13 +169,14 @@ function selectAnswer(e){
 function showScore(){
     resetState();
     if(score>30){
-        questionElement.innerHTML=`Congratulations! You scored ${score} out of ${questions.length*5} !`;
+        questionElement.innerHTML=`You scored ${score} out of ${questions.length*5} !`;
     }
     else{
         questionElement.innerHTML=`You scored ${score} out of ${questions.length*5} !`;
     }
     nextButton.innerHTML="Play Again";
     nextButton.style.display="block";
+    quizimg.style.display="block";
 }
 
 function nextbtn(event){
