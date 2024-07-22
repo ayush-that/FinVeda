@@ -1,39 +1,45 @@
+/* Base styles */
 .header {
   text-align: center;
   font-size: 30px;
 }
+
 .page-container {
   margin: 1% 20%;
   font-size: 16px;
 }
+
 .switch-container {
   display: flex;
-  padding-left: 50px;  justify-content: center;
+  justify-content: center;
+  padding-left: 50px;
 }
+
 .switch-container > div {
   margin: 1% 10% 3% 0;
 }
+
 .input-container {
+  display: flex;
   align-content: flex-start;
   justify-content: center;
-  display: flex;
 }
+
 .input-container > div {
   flex-wrap: wrap;
   margin: 1% 5% 0 0;
 }
 
 input {
-
   width: 100%;
   box-sizing: border-box;
   border: 1px solid #000000;
   border-radius: 10px;
   margin: 5% 0% 0 0;
-  
 }
+
 .centered-content {
-  
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -42,23 +48,25 @@ input {
   margin-left: 0px; /* Adjust as needed */
 }
 
-
 .result {
   padding: 10% 0 0 0;
   font-size: 24px;
 }
+
 .result-container {
-  /* display: flex; */
-  padding-left: 60px;
+  display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
   justify-content: center;
+  padding-left: 60px;
 }
+
 .btn-calculate {
   text-align: center;
   cursor: pointer;
   margin-right: 3%;
 }
+
 .btn-calculate button {
   width: 10rem;
   padding: 10px 20px; /* Adds padding inside the button */
@@ -76,43 +84,25 @@ input {
   background-color: #377fed; /* Blue on hover */
 }
 
-/* .btn-calculate > button {
-  height: 35px;
-  width: 125px;
-  border-radius: 10px;
-  border: 2px solid #25aa78;
-  background-color: #25aa78;
-  border-color: #25aa78;
-  font-size: 15px;
-} */ 
-
 .currency {
   background: white;
   border-radius: 5px;
   padding: 5px;
   border-color: dimgray;
 }
-option{
+
+option {
   background: white;
-  border-radius: 5px ;
+  border-radius: 5px;
   padding: 5px;
   border-color: dimgray;
 }
-#total {
-  border: 1px solid;
-}
-#wealth-gained {
-  border: 1px solid;
-}
+
+#total,
+#wealth-gained,
 #maturity-value {
   border: 1px solid;
 }
-
-/* #return-rate {
-  height: 30px;
-  border-radius: 9px;
-  border-color: #333;
-} */
 
 .npv-calculate > button {
   height: 35px;
@@ -125,44 +115,129 @@ option{
   width: 125px;
   cursor: pointer;
 }
+
 .cash-flows-container {
   margin: 1% 5% 0 0;
   align-items: center;
   text-align: center;
 }
+
 #cashFlows {
-  text-align: left; 
+  text-align: left;
 }
+
 .cash-flow-item {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 10px;
 }
+
 .cash-flow-item input {
   text-align: left;
   align-items: center;
-  width: calc(35% - 60px); 
+  width: calc(35% - 60px);
 }
+
 .nresult {
   padding: 2% 0 0 0;
   font-size: 24px;
 }
-.nresult-container {
+
+.nresult-container,
+.sresult-container,
+.sgresult-container {
   padding-left: 60px;
   flex-direction: column;
   align-items: center;
 }
-.sresult {
-  padding: 0% 0 0 0;
-  font-size: 23px;
-}
-.sresult-container {
-  padding-left: 60px;
-  flex-direction: column;
-  align-items: center;
-}
+
+.sresult,
 .sgresult {
   padding: 0% 0 0 0;
   font-size: 24px;
+}
+
+.know-more {
+  margin-top: 20px;
+}
+
+.know-more-btn {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.know-more-btn:hover {
+  background-color: #3e8e41;
+}
+
+.know-more-content {
+  display: none;
+  padding: 5px 10px;
+  margin: 10px 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+}
+
+.know-more-content.show {
+  display: block;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .page-container {
+    margin: 1% 10%;
+  }
+
+  .switch-container,
+  .input-container {
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+  }
+
+  .switch-container > div,
+  .input-container > div {
+    margin: 1% 0;
+  }
+
+  .btn-calculate button {
+    width: 8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    margin: 1% 5%;
+  }
+
+  .btn-calculate button {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .result-container,
+  .nresult-container,
+  .sresult-container,
+  .sgresult-container {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    font-size: 24px;
+  }
+
+  .btn-calculate button {
+    font-size: 14px;
+  }
+
+  input {
+    margin: 2% 0;
+  }
 }

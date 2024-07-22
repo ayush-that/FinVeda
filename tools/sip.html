@@ -55,6 +55,12 @@
       pointer-events: none;
       z-index: 9999;
     }
+
+    @media (max-width: 720px) {
+      .circle-container{
+        display: none;
+      }
+    }
   </style>
 
 <body>
@@ -131,7 +137,7 @@
 
   </script>
 
-  <button id="CommentBtn" aria-label="Toggle Comment Form"><i class="fas fa-comment"></i></button>
+  
 
   <div id="progressBar"></div>
   <script>
@@ -176,6 +182,9 @@
                     <a class="page-scroll" href="../index.html">Home 🏡</a>
                   </li>
                   <li class="nav-item">
+                      <a class="page-scroll" href="/about.html">About us </a>
+                  </li>
+                  <li class="nav-item">
                     <a class="page-scroll" href="../trends.html">Trends 📈</a>
                   </li>
                   <li class="nav-item active">
@@ -186,6 +195,9 @@
                   </li>
                   <li class="nav-item">
                     <a class="page-scroll" href="../quiz.html">Quiz 🤔</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none; border: none;" data-scroll-nav="0" href="#" onclick="openModal()">Login/Register 💻</a>
                   </li>
                 </ul>
               </div>
@@ -243,7 +255,6 @@
                   </div>
                 </div>
               </div>
-                <a class="main-btn" data-scroll-nav="0" href="#" onclick="openModal()">Login/Register 💻</a>
               </div>
             </nav>
           </div>
@@ -265,8 +276,10 @@
                 Wanna learn how to grow your money to become rich? We have made becoming a stock market Guru easy with
                 our AI powered finance advisor - <b>Arth Sathi 🤵🏻</b>
               </p>
-              <a href="../index.html" class="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s">Chat
-                with ArthaSathi 💬</a>
+              <a href="#" class="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s"
+                onclick="window.botpressWebChat.sendEvent({ type: 'show' }); return false;">
+                Chat with ArthaSathi 💬
+              </a>
             </div>
           </div>
         </div>
@@ -312,13 +325,13 @@
       <div class="input-container">
         <div>
           <div><b>Monthly investment</b></div>
-          <div><input class="form-control" id="investment" type="text" onchange="commas(this)" /></div>
+          <div><input class="form-control" id="investment" type="number" for="amount"/></div>
           <br />
           <div><b>Time period (yr)</b></div>
           <div><input class="form-control" id="years" type="number"></div>
           <br />
           <div><b>Expected return rate (p.a)</b></div>
-          <div><input class="form-control" id="return-rate" type="text" onchange="percentage(this)" /></div>
+          <div><input class="form-control" id="return-rate" type="number" for="amount" /></div>
         </div>
       </div>
       <br/>
@@ -340,7 +353,7 @@
           <div>Expected Rate of Return <span id="mode-3">SIP</span></div>
           <div><span>%:</span>&nbsp;<span id="input-3"></span></div>
         </div>
-        <div class="result-container">
+        <div class="result-container ps-2 pe-2 border">
           <div>Total Investment</div>
           <div><span id="currency-change-1">Rs.</span>&nbsp;<span id="total"></span></div>
           <br />
@@ -461,23 +474,13 @@
         <button type="button" onclick="calculateInsurance()">Calculate</button>
       </div>
       <br />
-      <div style="display: flex;">
+      <div style="display: flex; flex-direction: column;">
         <div class="result"><b>Result :</b></div>
-        <div class="result-container">
-          <div>Reversionary Bonus</div>
-          <div><span id="ReversionaryBonusAmt"></span></div>
-          <br />
-          <div>Terminal Bonus</div>
-          <div><span id="TerminalBonusAmt"></span></div>
-          <br />
-          <div>TotalBonus</div>
-          <div><span id="TotalBonus"></span></div>
-          <br />
-          <div>Total Premium Paid </div>
-          <div><span id="TotalPremium"></span></div>
-          <br>
-          <div>Net Gain </div>
-          <div><span id="netGain"></span></div>
+          <p id="ReversionaryBonusAmt" class="pb-2"></p>
+          <p id="TerminalBonusAmt" class="pb-2"></p>
+          <p id="TotalBonus" class="pb-2"></p>
+          <p id="TotalPremium" class="pb-2"></p>
+          <p id="netGain" class="pb-2"></p>
         </div>
       </div>
     </div>
@@ -488,10 +491,15 @@
     <!-- NPV Calculator -->
     <script src="npvCalculator.js" defer></script>
     <div class="header" style="padding-top: 100px;">
-      <h3>Net Present Value (NPV) Calculator</h3>
-      <h6 style="text-align: left; margin: 1% 20%; padding-left: 50px;">The NPV (Net Present Value) Calculator is a tool
+      <h3>Net Present Value<br> (NPV) Calculator</h3>
+      <p style="text-align: justify; margin: 1% 20%; padding-left: 50px;">The NPV (Net Present Value) Calculator is a tool
         designed to help you evaluate the profitability of an investment by calculating the present value of expected
-        future cash flows. Here's how it works:</h6>
+        future cash flows. This calculator helps investors make informed decisions, ensuring that future cash flows are accurately evaluated in
+        today's terms.</p>
+        <div class="know-more">
+  <button class="know-more-btn">Know More</button>
+  <div class="know-more-content">
+     <h6 style="text-align: left; margin: 1% 20%; padding-left: 50px;">Here's how it works:</h6>
       <p style="text-align: left; margin: 1% 20%; padding-left: 50px;">
         1. <b>Initial Investment:</b> Enter the amount of your initial investment. <br>
         2. <b>Discount Rate:</b> Enter the discount rate, which represents the rate of return required to make the
@@ -501,11 +509,9 @@
         4. <b>Calculate NPV:</b> Once all inputs are provided, click the 'Calculate NPV' button to compute the net
         present value. The result will display the NPV, indicating the potential profitability of your investment.<br>
       </p>
-      <h6 style="text-align: left; margin: 1% 20%; padding-left: 50px;">This calculator helps investors make informed
-        decisions by considering the time value of money, ensuring that future cash flows are accurately evaluated in
-        today's terms.</h6>
-
-    </div>
+  </div>
+</div>
+   </div>
     <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5">
       <div class="input-container">
         <div>
@@ -684,10 +690,11 @@
                   <h4 class="title">Quick Link</h4>
                 </div>
                 <ul class="link">
-                  <li><a href="../blogs/privacy-policy.html">Privacy Policy</a></li>
-                  <li><a href="../blogs/refund-policy.html">Refund Policy</a></li>
-                  <li><a href="Licensing.html">Licensing</a></li>
-                  <li><a href="../blogs/terms-of-service.html">Terms of Service</a></li>
+                  <li><a href="/blogs/privacy-policy.html">Privacy Policy</a></li>
+                  <li><a href="/blogs/refund-policy.html">Refund Policy</a></li>
+                  <li><a href="/Licensing.html">Licensing</a></li>
+                  <li><a href="/blogs/terms-of-service.html">Terms of Service</a></li>
+                  <li><a href="/contributors.html">Our Contributors</a></li>
                 </ul>
               </div>
               <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
@@ -695,11 +702,12 @@
                   <h4 class="title">Resources</h4>
                 </div>
                 <ul class="link">
-                  <li><a href="./index.html">Home</a></li>
-                  <li><a href="./trends.html">Trends</a></li>
-                  <li><a href="./tools/sip.html">Tools</a></li>
-                  <li><a href="./blog.html">Blog</a></li>
-                  <li><a href="./quiz.html">Quiz</a></li>
+                  <li><a href="../index.html">Home</a></li>
+                  <li><a href="../about.html">About Us</a></li>
+                  <li><a href="../trends.html">Trends</a></li>
+                  <li><a href="../tools/sip.html">Tools</a></li>
+                  <li><a href="../blog.html">Blog</a></li>
+                  <li><a href="../quiz.html">Quiz</a></li>
                 </ul>
               </div>
             </div>
@@ -728,13 +736,24 @@
           </div>
         </div>
       </div>
-      <div class="footer-copyright">
+      <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center">
         <div class="row">
           <div class="col-lg-12">
-            <div class="copyright d-sm-flex justify-content-between">
-              <div class="copyright-content">
-                <p class="text">
-                  © 2024 FinVeda. All rights reserved, Built with ♥ in India
+            <div
+              class="copyright d-sm-flex justify-content-center"
+              style="
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                width: 100%;
+                height: 100%;
+              "
+            >
+              <div class="copyright-content" style="text-align: center">
+                <p class="text" style="text-align: center">
+                  © <span id="copyright-year"></span> FinVeda. All rights
+                  reserved<br />
+                  Made with ♥ in India
                 </p>
               </div>
             </div>
@@ -761,6 +780,10 @@
   <script src="../assets/js/particles.min.js"></script>
   <script src="../assets/js/main.js"></script>
   <script src="../assets/js/popup.js"></script>
+  <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+  <script src="https://mediafiles.botpress.cloud/5e160793-5606-4412-ba4c-337e416f14fe/webchat/config.js" defer></script>
+      <script defer src="./assets/js/arthsathi-style.js"></script>
+  <script src="./assets/js/botpress.js"></script>
   <script>
     // Get the modals
     var loginModal = document.getElementById('myModal');

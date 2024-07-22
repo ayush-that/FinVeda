@@ -239,11 +239,15 @@
           </div>
         </div>
         <div class="footer-copyright text-center">
-          <p class="text">Copyright © 2023 FinVeda Pvt. Ltd. All Rights Reserved</p>
+          <p class="text" style="color: white;"> © <span id="copyright-year"></span> FinVeda. All rights reserved<br />
+            Made with ♥ in India</p>
         </div>
       </div>
       <div id="particles-2"></div>
     </footer>
+    <script>
+      document.getElementById("copyright-year").textContent = new Date().getFullYear();
+    </script>
     <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
     <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
     <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
@@ -274,6 +278,7 @@
           modal.style.display = "none";
         }
       };
+      
       document.addEventListener("DOMContentLoaded", function () {
         const registerModal = document.getElementById("registerModal");
         const loginModal = document.getElementById("myModal");
