@@ -118,6 +118,7 @@ function startQuiz(){
     score=0;
     nextButton.innerHTML="Next";
     showQuestion();
+    quizimg.style.display="none";
 }
 
 function showQuestion(){
