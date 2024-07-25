@@ -101,10 +101,14 @@ input[type="radio"]:checked+label::before {
     flex-direction: column;
 }
 
-
-.btn:hover:not([disabled]){
+.btn:hover:not([disabled]):not([focused]){
     background:var(--slider-dark);
     color: var(--white);
+}
+
+.btn:focus{
+    background-color: #fe8464;
+    outline: none;
 }
 
 .btn:disabled{
@@ -125,26 +129,75 @@ input[type="radio"]:checked+label::before {
     transition: transform 0.4s;
 }
 
-#next-btn{
+.quiz-bottom-btns{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    margin: auto;
+    /* align-items: center; */
+}
+
+#next-btn, #submit-btn, #pass-btn{
     border: none;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     padding: 10px;
-    width: 150px;
+    width: 100px;
     margin: 20px auto 0;
     color: var(--white);
     border-radius: 4px;
     background: var(--slider-dark);
     cursor: pointer;
     transition: transform 0.4s;
-    display: block;
+    /* display: block; */
 }
 
-#next-btn:active{
+#submitButton:disabled{
+    cursor: no-drop;
+    /* background-color: rgba(0, 0, 0, 0.808); */
+}
+
+#next-btn:active, 
+#submit-btn:active, 
+#pass-btn:active{
     transform: scale(0.96);
 }
 
 .btn:active{
     transform: scale(0.96);
+}
+
+#correct-span, #incorrect-span{
+    font-size: 14px;
+    text-align: center;
+    display: none;
+}
+#correct-span{
+    color: rgb(64, 214, 122);
+}
+
+#incorrect-span{
+    color: rgb(226, 78, 78);
+}
+#play-again-btn{
+    border: none;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    padding: 10px;
+    width: 70%;
+    margin: 20px auto 0;
+    color: rgb(33, 32, 32);
+    border-radius: 4px;
+    background: linear-gradient(to right, #fe8464 0%, #fe8464 50%, #fe8464 100%);
+    cursor: pointer;
+    transition: transform 0.4s;
+    animation: playagain 2s infinite ;
+}
+#play-again-btn:hover{
+    transform: scale(1.04);
+}
+@keyframes playagain {
+    50%{
+        transform: scale(1.04);
+    }
 }
 
 @media(max-width:680px){

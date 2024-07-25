@@ -318,7 +318,7 @@ display:flex;justify-content: center; align-items: center;">Get ready to test yo
     <div style="margin:2rem; display:flex;justify-content: center; align-items: center; font-weight: bold; font-size: xx-large; color: var(--slider-dark);;">Good Luck!</div>
       
     </div>
-    <form id="financeQuizForm">
+    <form id="financeQuizForm"> 
       <div id="quiz">
         <center>
           <div id="congratulations-image" ><img id="quizimg" style="display: none" src="./assets/images/quiz.png" alt="congratulations" srcset=""></div>
@@ -326,12 +326,21 @@ display:flex;justify-content: center; align-items: center;">Get ready to test yo
         <div class="quiz">
           <h2 id="question">Question goes here</h2>
           <div id="answer-buttons">
-              <button class="btn">Answer 1</button>
-              <button class="btn">Answer 2</button>
-              <button class="btn">Answer 3</button>
-              <button class="btn">Answer 4</button>
+              <button class="btn" onclick="selectAnswer()">Answer 1</button>
+              <button class="btn" onclick="selectAnswer()">Answer 2</button>
+              <button class="btn" onclick="selectAnswer()">Answer 3</button>
+              <button class="btn" onclick="selectAnswer()">Answer 4</button>
           </div>
-          <button id="next-btn">Next</button>
+          <div>
+            <span id="correct-span">Correct Answer! <br> Score: 5/5</span>
+            <span id="incorrect-span">Wrong Answer <br> Score: 0/5</span>
+          </div>
+          <div class="quiz-bottom-btns">
+            <button id="pass-btn">Pass</button>
+            <button id="next-btn">Next</button>
+            <button id="submit-btn">Submit</button>
+            <button id="play-again-btn">Play Again</button>
+          </div>
         </div>  
       </div>
       <!-- Question 1
