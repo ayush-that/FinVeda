@@ -55,3 +55,4 @@
 //     resultElement.innerHTML = `<p style="color: red;">Please answer all questions before submitting.</p>`;
 //   }
 // }
+ 
