@@ -116,13 +116,21 @@ const playagainButton=document.getElementById("play-again-btn");
 const spanCorrect= document.getElementById('correct-span');
 const spanIncorrect= document.getElementById('incorrect-span');
 
+const progressBar= document.getElementById('quiz-progress');
+const progressBox=document.getElementById('quiz-progress-bar');
+const progressText= document.getElementById('completed-perc');
+
 let currentQuestionIndex=0;
 let score=0;
 
 function startQuiz(){
     spanCorrect.style.display='none';
     spanIncorrect.style.display='none';
-    playagainButton.style.display='none'
+
+    // progressBox.style.display='block';
+    
+    playagainButton.style.display='none';
+
     currentQuestionIndex=0;
     score=0;
     nextButton.style.display='none';
@@ -130,13 +138,21 @@ function startQuiz(){
     quizimg.style.display="none";
 }
 
+function updateProgress(){
+    let percentProgress= (currentQuestionIndex) * 10;
+    progressBar.style.width= percentProgress + '%';
+    progressText.innerHTML=percentProgress+ "% COMPLETED";
+}
+
 function showQuestion(){
     resetState();
+    
     spanCorrect.style.display='none';
     spanIncorrect.style.display='none';
     submitButton.disabled=true;
     let currentQuestion =questions[currentQuestionIndex];
     let questionNo= currentQuestionIndex+1;
+
     questionElement.innerHTML=questionNo+". "+ currentQuestion.question; 
 
     currentQuestion.answers.forEach(answer =>{
@@ -149,6 +165,8 @@ function showQuestion(){
         }
         but.addEventListener("click",selectAnswer);
     });
+
+    updateProgress();
 }
 
 
@@ -165,13 +183,11 @@ function selectAnswer(e){
     e.preventDefault();
     selectedBtn=e.target;
     isCorrect = selectedBtn.dataset.correct==="true";
-    console.log(isCorrect)
     submitButton.disabled=false;
     submitButton.addEventListener("click", submitAnswer)   
 }
 
 function submitAnswer(){
-    console.log(isCorrect)
     if(isCorrect){
         selectedBtn.classList.add("correct");
         score+=5;
@@ -192,12 +208,16 @@ function submitAnswer(){
     passButton.style.display='none';
     nextButton.addEventListener("click", nextQuestion);
 }
+
 function showScore(){
     nextButton.style.display='none'; 
     submitButton.style.display='none';
     passButton.style.display='none';
     spanCorrect.style.display='none';
     spanIncorrect.style.display='none';
+
+    progressBox.style.display='none';
+    progressText.style.display='none';
     
     playagainButton.style.display='block';
     
@@ -228,7 +248,8 @@ function passQuestion(){
 function nextQuestion(){
     if(currentQuestionIndex<questions.length){
         handleNextButton();
-    }else{
+    }
+    else{
         startQuiz();
     }
 };
@@ -239,6 +260,7 @@ function handleNextButton(){
     passButton.style.display='block';
     console.log(currentQuestionIndex);
     currentQuestionIndex++;
+    
     if(currentQuestionIndex<questions.length){
         showQuestion();
     }else{
