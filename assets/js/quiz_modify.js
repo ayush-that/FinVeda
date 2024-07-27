@@ -105,7 +105,11 @@ const questions=[
     }
 ];
 
-const quizimg=document.getElementById("quizimg");
+const quizimg1=document.getElementById("quizimg1");
+const quizimg2=document.getElementById("quizimg2");
+const quizimg3=document.getElementById("quizimg3");
+const quizimg4=document.getElementById("quizimg4");
+const quizimg5=document.getElementById("quizimg5");
 const questionElement=document.getElementById("question");
 const answerButton=document.getElementById("answer-buttons");
 const nextButton=document.getElementById("next-btn");
@@ -171,7 +175,12 @@ function showQuestion(){
 
 
 function resetState(){
-    // nextButton.style.display="none";
+    nextButton.style.display="none";
+    quizimg1.style.display="none";
+    quizimg2.style.display="none";
+    quizimg3.style.display="none";
+    quizimg4.style.display="none";
+    quizimg5.style.display="none";
     while(answerButton.firstChild){
         answerButton.removeChild(answerButton.firstChild);
     }
@@ -222,11 +231,28 @@ function showScore(){
     playagainButton.style.display='block';
     
     resetState();
-    if(score>30){
-        questionElement.innerHTML=`You scored ${score} out of ${questions.length*5} !`;
+    if(score>=0 && score<18){
+        questionElement.innerHTML= ` You scored ${score} out of ${questions.length*5} !`;
+        quizimg1.style.display="block";
+    }
+     else if(score>=18 && score<30){
+        questionElement.innerHTML=` You scored ${score} out of ${questions.length*5} !`;
+        quizimg2.style.display="block";
+    }
+     else if(score>=30 && score<37){
+        questionElement.innerHTML=` You scored ${score} out of ${questions.length*5} !`;
+        quizimg3.style.display="block";
+    }
+    else if(score>=38 && score<45){
+        questionElement.innerHTML=` You scored ${score} out of ${questions.length*5} !`;
+        quizimg4.style.display="block";
+    }
+     else if(score>=45 && score<=50){
+        questionElement.innerHTML=` You scored ${score} out of ${questions.length*5} !`;
+        quizimg5.style.display="block";
     }
     else{
-        questionElement.innerHTML=`You scored ${score} out of ${questions.length*5} !`;
+        questionElement.innerHTML= `You scored ${score} out of ${questions.length*5}!`;
     }
     // nextButton./style.display="block";
     quizimg.style.display="block";
