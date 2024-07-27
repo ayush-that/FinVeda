@@ -814,11 +814,228 @@
         </div>
       </div>
     </div>
+
+    <div id = "slide-buttons" style = "position: relative;">
+      <div>
+      <button id = "prevButton" class = "arrow arrow-left">
+        <div class="arrow-top"></div>
+        <div class="arrow-bottom"></div>
+      </button>
+    </div>
+    <div>
+      <button id = "nextButton" class = "arrow arrow-right">
+        <div class="arrow-top"></div>
+        <div class="arrow-bottom"></div>
+      </button>
+    </div>
+    </div>
   </section>
   <!-- testimonail section ends here  -->
 
 
+  <style>
 
+    #slide-buttons {
+      width: 100vw;
+    }
+
+    .arrow {
+      position: absolute;
+      z-index: 1;
+    }
+
+    .arrow-left {
+      left: 20%;
+    }
+    .arrow-right {
+      right: calc(20% - 120px);
+    }
+    
+    .arrow {
+      cursor: pointer;
+      height: 120px;
+      transform: translateX(-50%) translateY(-50%);
+      transition: transform 0.1s;
+      width: 80px;
+      background-color: transparent;
+      border: none;
+    }
+
+    /* Width more than 1100px. Arrows goes to side */
+    @media (min-width: 1100px) {
+      .arrow {
+        bottom: 200px;
+      }
+
+      .arrow-left { 
+        left: 60px;
+      }
+
+      .arrow-right {
+        right: -60px;
+      }
+    }
+
+    /* Width more than 1250px. Arrows remains at same place with respect to the testimonials */
+    @media (min-width: 1250px) {
+      .arrow {
+        bottom: 200px;
+      }
+
+      .arrow-left { 
+        left: calc(50vw - 575px);
+      }
+
+      .arrow-right {
+        right: calc(50vw - 575px - 120px);
+      }
+    }
+
+    @media (min-width: 1200px) and (max-width: 1220px) {
+      .arrow {
+        bottom: inherit;
+      }
+      .arrow-left { 
+        left: 20%;
+      }
+
+      .arrow-right {
+        right: calc(20% - 120px);
+      }
+      
+    }
+
+    .arrow-top, .arrow-bottom {
+      background-color: #000;  /* Initial color of the arrow */
+      height: 4px;
+      left: -5px;
+      position: absolute;
+      top: 50%;
+      width: 50px;
+    }
+    .arrow-top:after, .arrow-bottom:after {
+      background-color: #fe8464;  /* Color of the arrow at hover */
+      content: "";
+      height: 100%;
+      position: absolute;
+      top: 0;
+      transition: all 0.15s;
+    }
+    .arrow-top {
+      transform: rotate(45deg);
+      transform-origin: bottom right;
+    }
+    .arrow-top:after {
+      left: 100%;
+      right: 0;
+      transition-delay: 0s;
+    }
+    .arrow-bottom {
+      transform: rotate(-45deg);
+      transform-origin: top right;
+    }
+    .arrow-bottom:after {
+      left: 0;
+      right: 100%;
+      transition-delay: 0.15s;
+    }
+    .arrow:hover .arrow-top:after {
+      left: 0;
+      transition-delay: 0.15s;
+    }
+    .arrow:hover .arrow-bottom:after {
+      right: 0;
+      transition-delay: 0s;
+    }
+    .arrow:active {
+      transform: translateX(-50%) translateY(-50%) scale(0.9);
+    }
+
+    .arrow-left .arrow-bottom {
+      transform-origin: left;
+    }
+    
+    .arrow-left .arrow-top {
+      transform-origin: left;
+    }
+
+    .arrow-left .arrow-top::after {
+      transition: all 0.15s;
+      transition-delay: 0.15s; /* Default transition-delay */
+    }
+    
+    .arrow-left .arrow-bottom::after {
+      transition: all 0.15s;
+      transition-delay: 0s; /* Default transition-delay */
+    }
+    
+    /* Apply styles on hover of .arrow-left */
+    .arrow-left:hover .arrow-top::after {
+      transition-delay: 0s !important;
+    }
+    
+    .arrow-left:hover .arrow-bottom::after {
+      transition-delay: 0.15s !important;
+    }
+    
+  </style>
+
+  <script>
+    const next = document.getElementById('nextButton');
+    const prev = document.getElementById('prevButton');
+
+function getCurrentIndex(id) {
+  const match = id.match(/\d+$/); // Extract the number from the ID
+  return match ? parseInt(match[0], 10) : -1;
+}
+
+function getIdWithIndex(index) {
+  // Format index to match ID format with leading zeros
+  return `slick-slide-control${index.toString().padStart(2, '0')}`;
+}
+
+function getNextId(currentId) {
+  // Decrease 1 from the total count
+  const total = document.getElementsByClassName("slick-dots")[0].children.length  -1; //Since the counting starts from 1
+  let index = getCurrentIndex(currentId);
+  index = (index + 1) % (total + 1); // Wrap around to 0 after the max
+  return getIdWithIndex(index);
+}
+
+function getPrevId(currentId) {
+  // Decrease 1 from the total count
+  const total = document.getElementsByClassName("slick-dots")[0].children.length  -1; //Since the counting starts from 1
+  let index = getCurrentIndex(currentId);
+  index = (index - 1 + (total + 1)) % (total + 1); // Wrap around to max
+  return getIdWithIndex(index);
+}
+
+
+    prev.addEventListener('click', function() {
+
+    stuffs = document.getElementsByClassName("slick-active")
+    last = stuffs.length - 1
+
+    const currentId = stuffs[last].children[0].getAttribute('id');;
+    const prevId = getPrevId(currentId);
+        
+    const targetButton = document.getElementById(prevId);
+        targetButton.click();
+    }); 
+    
+    
+    next.addEventListener('click', function() {
+      
+    stuffs = document.getElementsByClassName("slick-active")
+    last = stuffs.length - 1
+  
+    const currentId = stuffs[last].children[0].getAttribute('id');;
+      const nextID = getNextId(currentId);
+          
+       const targetButton = document.getElementById(nextID);
+          targetButton.click();
+      }); 
+    </script>
 
 
   <!-- <section id="blog" class="blog-area pt-120"> -->
