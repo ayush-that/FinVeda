@@ -670,6 +670,35 @@
   </div>
   <!-- end of Income Tax Calc-->
 
+  <script src="ProfitMargin.js" defer></script>
+
+<div class="header" style="padding-top: 100px;">
+  <h3>Profit Margin Calculator</h3>
+</div>
+
+<div class="page-container shadow p-5 mb-5 bg-white rounded mt-5" id="ProfitMargin">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <form id="profit-margin-calculator" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <div class="form-group">
+          <label for="cost" class="cost">Cost Price:</label>
+          <input type="number" id="cost" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="selling-price" class="selling-price">Selling Price:</label>
+          <input type="number" id="selling-price" class="form-control" required>
+        </div>
+        <button id="submitBtn" type="submit" class="btn btn-calculate" style="width: 10rem; background-color: #007bff; color: #fff;">Calculate</button>
+      </form>
+      <div id="result" class="mt-3">
+        <h5>Result:</h5>
+        <p id="profit-margin"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
   </body>
   <footer id="footer" class="footer-area pt-120">
     <div class="container">
