@@ -1231,217 +1231,76 @@ function getPrevId(currentId) {
     </div>    
 
 
-
-    <!-- Modal Background -->
-    <div id="newModalBackground">
-      <!-- Feedback Form Modal -->
-      <div id="newCommentForm">
-        <form id="newFeedbackForm">
-          <span id="closeModal" class="close">&times;</span>
-          <h2>We'd Love Your <strong><span style="color:#200f91;">Feedback!</span></strong>💙</h2>
-          <p class="feed-para">Let us know how we're doing and how we can improve</p>
-          <div class="form-group">
-            <div class="icon">
-              <i class="fas fa-user"></i>
-            </div>
-            <input type="text" id="name" onfocus="changeColor()" placeholder="Your Name" name="name" required>
-            <label for="newName">Your Name </label>
-            <input type="text" id="newName" placeholder="Enter your name" required>
-          </div>
-          <div class="form-group">
-            <label for="newEmail">Your Email </label>
-            <input type="email" id="newEmail" placeholder="Enter your email" required>
-          </div>
-          <div class="form-group">
-            <label for="newFeedback">Your Feedback</label>
-            <textarea id="newFeedback" rows="4" placeholder="Let us know how can improve.." required></textarea>
-          </div>
-          <div class="rating">
-            <div>Rate Us:</div>
-            <i class="rating__star far fa-star"></i>
-            <i class="rating__star far fa-star"></i>
-            <i class="rating__star far fa-star"></i>
-            <i class="rating__star far fa-star"></i>
-            <i class="rating__star far fa-star"></i>
-          </div>
-          <button id="ll">Submit</button>
-          <button type="submit">Submit Feedback</button>
-        </form>
+    <div class="form-main-container">
+      <div class="form-info-section">
+          <h2 class="form-heading">We Value Your Feedback</h2>
+          <br/>
+          <p class="form-para">Your input helps us to improve and provide better services. Please fill out the form to let us know your thoughts.</p>
       </div>
-    </div>
-
-    <div id="popup" class="popup" style="display: none;">
-      <div class="popup-content">
-        <h2>Thank you for your Feedback!!</h2>
-        <div class="popup-icon">
-          <img src="https://cdn-icons-png.flaticon.com/512/12348/12348749.png" alt="✅" height="100" width="100">
-        </div>
-        <p>Your feedback has been received.<br> We appreciate the input you provide.</p>
-        <button class="popup-button" onclick="closePopup()">Back to Home</button>
+      <div class="form-section">
+          <h2 class="form-heading2">Feedback Form</h2>
+          <form action="/submit-feedback" method="post">
+              <div class="form-group">
+                  <label class="form-label" for="name">Name:</label>
+                  <input class="form-input" type="text" id="name" name="name" required>
+              </div>
+              <div class="form-group">
+                  <label class="form-label" for="email">Email:</label>
+                  <input class="form-input" type="email" id="email" name="email" required>
+              </div>
+              <div class="form-group">
+                  <label class="form-label">Rating:</label>
+                  <div id="emoji-description" class="emoji-description">Select an option</div>
+              </div>
+                  <div class="emojis">
+                      <input class="form-input" type="radio" id="emoji1" name="rating" value="1">
+                      <label class="form-label"for="emoji1">&#128577;</label> <!-- Very Bad -->
+                      <input class="form-input" type="radio" id="emoji2" name="rating" value="2">
+                      <label class="form-label" for="emoji2">&#128542;</label> <!-- Bad -->
+                      <input class="form-input" type="radio" id="emoji3" name="rating" value="3">
+                      <label class="form-label"for="emoji3">&#128528;</label> <!-- Neutral -->
+                      <input class="form-input" type="radio" id="emoji4" name="rating" value="4">
+                      <label class="form-label"for="emoji4">&#128522;</label> <!-- Good -->
+                      <input class="form-input" type="radio" id="emoji5" name="rating" value="5">
+                      <label class="form-label" for="emoji5">&#128515;</label> <!-- Excellent -->
+                  </div>
+              <div class="form-group">
+                  <label class="form-label" for="comments">Comments:</label>
+                  <textarea class="form-textarea" id="comments" name="comments" rows="4" required></textarea>
+              </div>
+              <div class="form-group">
+                  <button class="form-button" type="submit">Submit Feedback</button>
+              </div>
+          </form>
       </div>
-    </div>
+  </div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const emojis = document.querySelectorAll('.emojis input');
+    const descriptions = [
+        "Very Bad",
+        "Bad",
+        "Neutral",
+        "Good",
+        "Excellent"
+    ];
 
+    emojis.forEach((emoji, index) => {
+        const descriptionDiv = document.createElement('div');
+        descriptionDiv.classList.add('emoji-description');
+        descriptionDiv.textContent = descriptions[index];
+        emoji.nextElementSibling.appendChild(descriptionDiv);
 
-    <script>
-      const ratingStars = [...document.getElementsByClassName("rating__star")];
-
-      function executeRating(stars) {
-        const starClassActive = "rating__star fas fa-star";
-        const starClassInactive = "rating__star far fa-star";
-        const starsLength = stars.length;
-        let i;
-        stars.map((star) => {
-          star.onclick = () => {
-            i = stars.indexOf(star);
-
-            if (star.className === starClassInactive) {
-              for (i; i >= 0; --i) stars[i].className = starClassActive;
-            } else {
-              for (i; i < starsLength; ++i) stars[i].className = starClassInactive;
-            }
-          };
+        emoji.addEventListener('change', () => {
+            document.querySelectorAll('.emoji-description').forEach(desc => {
+                desc.style.display = 'none';
+            });
+            descriptionDiv.style.display = 'block';
         });
-      }
-      executeRating(ratingStars);
-      // Function to open the feedback form modal
-      document.getElementById("CommentBtn").addEventListener("click", function () {
-        document.getElementById("newModalBackground").style.display = "flex";
-      });
+    });
+});
+</script>
 
-      // Function to close the feedback form modal
-      document.getElementById("closeModal").addEventListener("click", function () {
-        document.getElementById("newModalBackground").style.display = "none";
-      });
-
-      // Function to handle feedback form submission
-      document.getElementById("newFeedbackForm").addEventListener("submit", function (event) {
-        event.preventDefault();
-        this.reset(); // Reset all form fields
-        resetRatingStars(); // Reset rating stars
-        openPopup(); // Open the custom popup after feedback submission
-      });
-
-      // Function to open the custom popup
-      function openPopup() {
-        var popup = document.getElementById('popup');
-        popup.style.display = 'flex'; // Display the popup
-      }
-
-      const ratingInputs = document.querySelectorAll('input[name="rating"]');
-      ratingInputs.forEach((input) => {
-        input.addEventListener("click", function () {
-          const value = parseInt(input.value);
-          for (let i = 1; i <= value; i++) {
-            document.getElementById(`star${i}`).checked = true;
-          }
-          for (let i = value + 1; i <= 5; i++) {
-            document.getElementById(`star${i}`).checked = false;
-          }
-        });
-      });
-      document.getElementById("CommentBtn").addEventListener("click", function () {
-        document.getElementById("modalBackground").style.display = "flex";
-      });
-
-      // Close the form when clicking outside of it (optional)
-      document.getElementById("modalBackground").addEventListener("click", function (event) {
-        if (event.target === this) {
-          this.style.display = "none";
-        }
-      });
-      let commentForm = document.getElementById("commentForm");
-      let modalBackground = document.getElementById("modalBackground");
-
-      document.getElementById("CommentBtn").addEventListener("click", function (event) {
-        if (commentForm.style.display === "none") {
-          commentForm.style.display = "block";
-          modalBackground.style.display = "flex";
-        } else {
-          commentForm.style.display = "none";
-          modalBackground.style.display = "none";
-        }
-      });
-
-      document.getElementById("ll").addEventListener("click", function (event) {
-        commentForm.style.display = "none";
-        modalBackground.style.display = "none";
-      });
-      // Function to close the custom popup
-      function closePopup() {
-        var popup = document.getElementById('popup');
-        popup.style.display = 'none'; // Hide the popup
-      }
-
-      // Function to reset rating stars
-      function resetRatingStars() {
-        const ratingStars = [...document.getElementsByClassName("rating__star")];
-        const inactiveClass = "rating__star far fa-star";
-
-        ratingStars.forEach(star => {
-          star.className = inactiveClass; // Reset all stars to inactive
-        });
-      }
-
-      // Code for handling star ratings (assuming you have a rating system implemented)
-      const ratingStars = [...document.getElementsByClassName("rating__star")];
-
-      ratingStars.forEach(star => {
-        star.addEventListener("click", function () {
-          const activeClass = "rating__star fas fa-star";
-          const inactiveClass = "rating__star far fa-star";
-          let i = ratingStars.indexOf(star);
-
-          ratingStars.forEach((s, index) => {
-            s.className = index <= i ? activeClass : inactiveClass;
-          });
-        });
-      });
-    </script>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-          const counters = document.querySelectorAll('.counter');
-
-          counters.forEach(counter => {
-              const updateCount = () => {
-                  const target = +counter.getAttribute('data-target');
-                  const count = +counter.innerText;
-
-                  const speed = 500;
-                  const increment = target / speed;
-
-                  if (count < target) {
-                      counter.innerText = Math.ceil(count + increment);
-                      setTimeout(updateCount, 40);
-                  } else {
-                      counter.innerText = target;
-                  }
-              };
-
-              updateCount();
-          });
-
-          // Separate function for the Likes counter
-          const likesCounter = document.querySelector('.counter-likes');
-          const updateLikesCount = () => {
-              const target = +likesCounter.getAttribute('data-target');
-              const count = +likesCounter.innerText;
-
-              const speed = 5000;
-              const increment = target / speed;
-
-              if (count < target) {
-                  likesCounter.innerText = Math.ceil(count + increment);
-                  setTimeout(updateLikesCount, 900);
-              } else {
-                  likesCounter.innerText = target;
-              }
-          };
-
-          updateLikesCount();
-      });
-  </script>
-  
   <footer id="footer" class="footer-area pt-120">
     <div class="container">
       <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
