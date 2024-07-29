@@ -2638,7 +2638,8 @@ p {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   overflow: hidden;
-  margin-left: 23%;
+  margin-left:auto;
+  margin-right:auto;
 
 }
 
@@ -2778,4 +2779,26 @@ text-align: center;
   margin-top: 10px;
   font-size: 14px;
   color: #00118e;
+}
+
+@media (max-width: 768px) {
+  .form-main-container {
+    flex-direction: column;
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  .form-info-section,
+  .form-section {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .form-info-section {
+    flex: 1 1 100%;
+  }
+
+  .form-section {
+    flex: 1 1 100%;
+  }
 }

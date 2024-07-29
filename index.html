@@ -1374,6 +1374,49 @@ function getPrevId(currentId) {
 });
 </script>
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+      const counters = document.querySelectorAll('.counter');
+
+      counters.forEach(counter => {
+          const updateCount = () => {
+              const target = +counter.getAttribute('data-target');
+              const count = +counter.innerText;
+
+              const speed = 500;
+              const increment = target / speed;
+
+              if (count < target) {
+                  counter.innerText = Math.ceil(count + increment);
+                  setTimeout(updateCount, 40);
+              } else {
+                  counter.innerText = target;
+              }
+          };
+
+          updateCount();
+      });
+
+      // Separate function for the Likes counter
+      const likesCounter = document.querySelector('.counter-likes');
+      const updateLikesCount = () => {
+          const target = +likesCounter.getAttribute('data-target');
+          const count = +likesCounter.innerText;
+
+          const speed = 5000;
+          const increment = target / speed;
+
+          if (count < target) {
+              likesCounter.innerText = Math.ceil(count + increment);
+              setTimeout(updateLikesCount, 900);
+          } else {
+              likesCounter.innerText = target;
+          }
+      };
+      updateLikesCount();
+      });
+  </script>
+
   <footer id="footer" class="footer-area pt-120">
     <div class="container">
       <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
