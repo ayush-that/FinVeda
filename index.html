@@ -1312,7 +1312,7 @@ function getPrevId(currentId) {
       </div>
       <div class="form-section">
           <h2 class="form-heading2">Feedback Form</h2>
-          <form action="/submit-feedback" method="post">
+          <form class="feedbackform">
               <div class="form-group">
                   <label class="form-label" for="name">Name:</label>
                   <input class="form-input" type="text" id="name" name="name" required>
@@ -1342,13 +1342,43 @@ function getPrevId(currentId) {
                   <textarea class="form-textarea" id="comments" name="comments" rows="4" required></textarea>
               </div>
               <div class="form-group">
-                  <button class="form-button" type="submit">Submit Feedback</button>
+                  <button class="form-button" id="feed-submit">Submit Feedback</button>
               </div>
           </form>
       </div>
   </div>
+  <!-- Timed popup that will appear after succesful submission of feebback form! -->
+  <button class="notification" id="successnotification" style="display:none;">
+    <span class="message" id="successmsg">Feedback Submitted!</span>
+    <span class="closenotif" id="closeSuccessNotification">✖</span>
+    <div class="timerline" id="timerline"></div>
+  </button>
+
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
+
+    const successNotif = document.getElementById('successnotification');
+    const closeSuccess = document.getElementById('closeSuccessNotification');
+    const successMessage = document.getElementById('successmsg');
+
+    closeSuccess.addEventListener('click', () => {
+        successNotif.style.display = 'none';
+    })
+    
+    function showSuccess() {
+        successNotif.style.display = 'flex';
+        setTimeout(() => {
+            successNotif.style.display = 'none';
+        }, 2000);     
+      }
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    const feedbackSubmit = document.getElementById('feed-submit');
+
+    feedbackSubmit.addEventListener('click', (event) => {
+      console.log("here");
+      event.preventDefault();
+      showSuccess();
+    });
     const emojis = document.querySelectorAll('.emojis input');
     const descriptions = [
         "Very Bad",
@@ -1372,6 +1402,7 @@ function getPrevId(currentId) {
         });
     });
 });
+
 </script>
 
 <script>
