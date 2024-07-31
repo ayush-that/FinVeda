@@ -2804,3 +2804,68 @@ text-align: center;
     flex: 1 1 100%;
   }
 }
+.notification {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #fff;
+  padding: 10px;
+  padding-left: 4px;
+  border-radius: 5px;
+  z-index: 1200;/*we need it to show above the mute btn*/
+  width: 300px;
+  position: fixed;
+  top: 65px;
+  /* margin-left: 90vw; */
+  right: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-out;
+  border: 0.2px solid #36f43f;
+  
+}
+#successnotification:hover {
+    background-color: white; 
+    filter: initial;
+}
+
+.notification .message {
+  flex-grow: 1;
+  color: #000;
+  font-family: "Poppins", sans-serif;
+  font-weight: lighter;
+  font-size: 18px;
+}
+
+.notification .closenotif {
+  cursor: pointer;
+  font-size: 16px;
+  color: #aaa;
+  right: 2px;
+}
+
+.notification .closenotif:hover {
+  color: #000;
+}
+
+.notification .timerline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 5px;
+  animation: timerline 2s linear forwards;
+  background-color: #4cf436;
+}
+.closenotif:hover{
+  cursor:pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes timerline {
+  from { width: 100%; }
+  to { width: 0; }
+}
+
