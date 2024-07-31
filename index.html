@@ -1349,7 +1349,7 @@ function getPrevId(currentId) {
                   <label class="form-label" for="email">Email:</label>
                   <input class="form-input" type="email" id="email" name="email" required>
               </div>
-              <div class="form-group">
+              <div class="form-group"> 
                   <label class="form-label">Rating:</label>
                   <div id="emoji-description" class="emoji-description">Select an option</div>
               </div>
@@ -1369,7 +1369,7 @@ function getPrevId(currentId) {
                   <label class="form-label" for="comments">Comments:</label>
                   <textarea class="form-textarea" id="comments" name="comments" rows="4" required></textarea>
               </div>
-              <div class="form-group">
+              <div class="form-group"> 
                   <button class="form-button" id="feed-submit">Submit Feedback</button>
               </div>
           </form>
@@ -1403,10 +1403,21 @@ function getPrevId(currentId) {
     const feedbackSubmit = document.getElementById('feed-submit');
 
     feedbackSubmit.addEventListener('click', (event) => {
-      console.log("here");
+      // name email emoji-description comments
+      const name =document.getElementById('name');
+      const email =document.getElementById('email');
+      const rating= document.getElementById('emoji-description');
+      const comments= document.getElementById('comments');
+
+      if (name.value === '' || email.value==='' || rating.value==='' || comments.value==='') {
+                // Empty input
+                return;
+            }
+
       event.preventDefault();
       showSuccess();
     });
+
     const emojis = document.querySelectorAll('.emojis input');
     const descriptions = [
         "Very Bad",
