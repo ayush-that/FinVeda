@@ -405,12 +405,20 @@
         </div>
 
       </div>
-        
-<footer id="footer" class="footer-area pt-120">
-  <div class="container">
-    <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-      <div class="row">
-        <div class="col-lg-6">
+      
+      <!-- Timed popup that will appear after succesful submission of feebback form! -->
+      <button class="notification" id="successnotification" style="display:none;">
+    <span class="message" id="successmsg">Submitted successfully!</span>
+    <span class="closenotif" id="closeSuccessNotification">✖</span>
+    <div class="timerline" id="timerline"></div>
+  </button>     
+  
+  
+  <footer id="footer" class="footer-area pt-120">
+    <div class="container">
+      <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+        <div class="row">
+          <div class="col-lg-6">
           <div class="subscribe-content mt-45">
             <h2 class="subscribe-title">
               Subscribe Our Newsletter <span>get regular updates</span>
@@ -419,9 +427,9 @@
         </div>
         <div class="col-lg-6">
           <div class="subscribe-form mt-50">
-            <form action="#">
-              <input type="text" placeholder="Enter Email" />
-              <button class="main-btn" onclick="event.preventDefault(); openModal();">Subscribe</button>
+            <form id="subscribe-form">
+              <input type="email" id="news-email" placeholder="Enter Email" required/>          
+              <button class="main-btn" id="subscribe-btn" type="submit">Subscribe</button>
             </form>
           </div>
         </div>
@@ -475,22 +483,22 @@
                 <i class="fa fa-envelope d-sm-flex align-items-center white" style="font: size 16px; width: 10%;"></i>
                 <p style="width: 80%;">
                   <a href="mailto:ayush1337@hotmail.com" target="_blank"
-                    style="color: white; text-decoration: underline;">ayush1337@hotmail.com</a>
+                  style="color: white; text-decoration: underline;">ayush1337@hotmail.com</a>
                 </p>
               </li>
               <li class="d-sm-flex justify-content-center">
                 <i class="fa fa-globe d-sm-flex align-items-center white" style="font: size 16px; width: 10%;"></i>
                 <div style="width: 80%;"><a href="https://fin-veda.vercel.app/index.html" target="_blank"
-                    style="color: #fff;">fin-veda.vercel.app</a></div>
-              </li>
-              <li class="d-sm-flex justify-content-center">
-                <i class="fa fa-location-dot d-sm-flex align-items-center white"
+                  style="color: #fff;">fin-veda.vercel.app</a></div>
+                </li>
+                <li class="d-sm-flex justify-content-center">
+                  <i class="fa fa-location-dot d-sm-flex align-items-center white"
                   style="font: size 12px; width: 10%;"></i>
                 <div style="width: 80%;"><a
-                    href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
+                  href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
                     style="color:#fff">
                     Delhi, India</a></div>
-              </li>
+                  </li>
             </ul>
           </div>
         </div>
@@ -500,8 +508,8 @@
       <div class="row">
         <div class="col-lg-12">
           <div
-            class="copyright d-sm-flex justify-content-center"
-            style="
+          class="copyright d-sm-flex justify-content-center"
+          style="
               display: flex;
               justify-content: center;
               text-align: center;
@@ -509,19 +517,19 @@
               height: 100%;
             "
           >
-            <div class="copyright-content" style="text-align: center">
-              <p class="text" style="text-align: center">
-                © <span id="copyright-year"></span> FinVeda. All rights
-                reserved<br />
-                Made with ♥ in India
-              </p>
-            </div>
+          <div class="copyright-content" style="text-align: center">
+            <p class="text" style="text-align: center">
+              © <span id="copyright-year"></span> FinVeda. All rights
+              reserved<br />
+              Made with ♥ in India
+            </p>
           </div>
         </div>
       </div>
+      </div>
     </div>
     
-
+    
   </div>
   <div id="particles-2"></div>
 </footer>
@@ -545,27 +553,28 @@
 <script src="../assets/js/quiz.js"></script>
 <script src="../assets/js/popup.js"></script>
 <script src="../assets/js/quiz_modify.js"></script>
+<script src="./assets/js/subscribe.js"></script>
 <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
 <script src="https://mediafiles.botpress.cloud/5e160793-5606-4412-ba4c-337e416f14fe/webchat/config.js" defer></script>
 <script>
   // Get the modals
   var loginModal = document.getElementById('myModal');
   var registerModal = document.getElementById('registerModal');
-
+  
   // Get the button that opens the login modal
   var loginBtn = document.getElementById('loginBtn');
-
+  
   // Get the links that open the register and login modals
   var registerLink = document.getElementById('registerLink');
   var loginLink = document.getElementById('loginLink');
-
+  
   // Get the <span> elements that close the modals
   var closeBtns = document.getElementsByClassName('close');
-
+  
   //show and hide icon button
   document.addEventListener('DOMContentLoaded', () => {
     const togglePasswordButtons = document.querySelectorAll('.toggle-password-btn');
-
+    
     togglePasswordButtons.forEach(button => {
       button.addEventListener('click', () => {
         const passwordInput = button.previousElementSibling;

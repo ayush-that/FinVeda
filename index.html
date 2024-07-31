@@ -1377,36 +1377,37 @@ function getPrevId(currentId) {
   </div>
   <!-- Timed popup that will appear after succesful submission of feebback form! -->
   <button class="notification" id="successnotification" style="display:none;">
-    <span class="message" id="successmsg">Feedback Submitted!</span>
+    <span class="message" id="successmsg">Submitted successfully!</span>
     <span class="closenotif" id="closeSuccessNotification">✖</span>
     <div class="timerline" id="timerline"></div>
   </button>
-
+<script src="./assets/js/subscribe.js"></script>
 <script>
 
-    const successNotif = document.getElementById('successnotification');
-    const closeSuccess = document.getElementById('closeSuccessNotification');
-    const successMessage = document.getElementById('successmsg');
+    // const successNotif = document.getElementById('successnotification');
+    // const closeSuccess = document.getElementById('closeSuccessNotification');
+    // const successMessage = document.getElementById('successmsg');
 
-    closeSuccess.addEventListener('click', () => {
-        successNotif.style.display = 'none';
-    })
+    // closeSuccess.addEventListener('click', () => {
+    //     successNotif.style.display = 'none';
+    // })
     
-    function showSuccess() {
-        successNotif.style.display = 'flex';
-        setTimeout(() => {
-            successNotif.style.display = 'none';
-        }, 2000);     
-      }
+    // function showSuccess() {
+    //   console.log('jwekjfh')
+    //     successNotif.style.display = 'flex';
+    //     setTimeout(() => {
+    //         successNotif.style.display = 'none';
+    //     }, 2000);     
+    //   }
   
   document.addEventListener('DOMContentLoaded', () => {
     const feedbackSubmit = document.getElementById('feed-submit');
 
     feedbackSubmit.addEventListener('click', (event) => {
-      console.log("here");
       event.preventDefault();
       showSuccess();
     });
+
     const emojis = document.querySelectorAll('.emojis input');
     const descriptions = [
         "Very Bad",
@@ -1491,10 +1492,8 @@ function getPrevId(currentId) {
           <div class="col-lg-6">
             <div class="subscribe-form mt-50">
               <form id="subscribe-form">
-                <input type="email" id="news-email" placeholder="Enter Email" required/>
-                <!-- <input class="form-input" type="email" id="email" name="email" required> -->
-              
-                <button class="main-btn" id="subscribe-btn">Subscribe</button>
+                <input type="email" id="news-email" placeholder="Enter Email" required/>          
+                <button class="main-btn" id="subscribe-btn" type="submit">Subscribe</button>
               </form>
               <div id="message" style="display: none;"></div>
             </div>
