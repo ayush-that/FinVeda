@@ -1297,6 +1297,34 @@ function getPrevId(currentId) {
                   </div>
                 </div>
               </div>
+              <div class="col-lg-4 col-md-7">
+                <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                  <div class="blog-image">
+
+                    <a href="./blogs/saving-for-future.html">
+                      <img src="./assets/images/saving.jpeg" alt="blog" />
+
+                    <a href="./blogs/Mutual-Funds-101-A-Beginners-Guide-to-Smart-Investing.html">
+                      <img src="./assets/images/mutual-funds-blog.jpg" alt="blog" />
+
+                    </a>
+                  </div>
+                  <div class="blog-content">
+                    <p class="reviewtext">
+
+                      Saving for the Future.
+                    </p>
+                    <a class="more" href="./blogs/saving-for-future.html">
+
+                      Mutual Funds 101: A Beginner’s Guide to Smart Investing
+                    </p>
+                    <a class="more" href="./blogs/Mutual-Funds-101-A-Beginners-Guide-to-Smart-Investing.html">
+
+                      Learn More <i class="lni-chevron-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -1304,15 +1332,15 @@ function getPrevId(currentId) {
     </div>    
 
 
-    <div class="form-main-container">
+    <div class="form-main-container wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
       <div class="form-info-section">
-          <h2 class="form-heading">We Value Your Feedback</h2>
+          <h2 class="form-heading wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">We Value Your Feedback</h2>
           <br/>
-          <p class="form-para">Your input helps us to improve and provide better services. Please fill out the form to let us know your thoughts.</p>
+          <p class="form-para wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">Your input helps us to improve and provide better services. Please fill out the form to let us know your thoughts.</p>
       </div>
-      <div class="form-section">
+      <div class="form-section wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
           <h2 class="form-heading2">Feedback Form</h2>
-          <form action="/submit-feedback" method="post">
+          <form class="feedbackform">
               <div class="form-group">
                   <label class="form-label" for="name">Name:</label>
                   <input class="form-input" type="text" id="name" name="name" required>
@@ -1342,13 +1370,43 @@ function getPrevId(currentId) {
                   <textarea class="form-textarea" id="comments" name="comments" rows="4" required></textarea>
               </div>
               <div class="form-group">
-                  <button class="form-button" type="submit">Submit Feedback</button>
+                  <button class="form-button" id="feed-submit">Submit Feedback</button>
               </div>
           </form>
       </div>
   </div>
+  <!-- Timed popup that will appear after succesful submission of feebback form! -->
+  <button class="notification" id="successnotification" style="display:none;">
+    <span class="message" id="successmsg">Feedback Submitted!</span>
+    <span class="closenotif" id="closeSuccessNotification">✖</span>
+    <div class="timerline" id="timerline"></div>
+  </button>
+
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
+
+    const successNotif = document.getElementById('successnotification');
+    const closeSuccess = document.getElementById('closeSuccessNotification');
+    const successMessage = document.getElementById('successmsg');
+
+    closeSuccess.addEventListener('click', () => {
+        successNotif.style.display = 'none';
+    })
+    
+    function showSuccess() {
+        successNotif.style.display = 'flex';
+        setTimeout(() => {
+            successNotif.style.display = 'none';
+        }, 2000);     
+      }
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    const feedbackSubmit = document.getElementById('feed-submit');
+
+    feedbackSubmit.addEventListener('click', (event) => {
+      console.log("here");
+      event.preventDefault();
+      showSuccess();
+    });
     const emojis = document.querySelectorAll('.emojis input');
     const descriptions = [
         "Very Bad",
@@ -1372,6 +1430,7 @@ function getPrevId(currentId) {
         });
     });
 });
+
 </script>
 
 <script>
@@ -1415,6 +1474,7 @@ function getPrevId(currentId) {
       };
       updateLikesCount();
       });
+
   </script>
 
   <footer id="footer" class="footer-area pt-120">
@@ -1431,8 +1491,10 @@ function getPrevId(currentId) {
           <div class="col-lg-6">
             <div class="subscribe-form mt-50">
               <form id="subscribe-form">
-                <input type="text" id="news-email" placeholder="Enter Email" />
-                <button class="main-btn">Subscribe</button>
+                <input type="email" id="news-email" placeholder="Enter Email" required/>
+                <!-- <input class="form-input" type="email" id="email" name="email" required> -->
+              
+                <button class="main-btn" id="subscribe-btn">Subscribe</button>
               </form>
               <div id="message" style="display: none;"></div>
             </div>
