@@ -1266,7 +1266,7 @@ p {
   display: inline-block;
   position: absolute;
   top: 60px;
-  widh: 300px;
+  width: 300px;
   border-radius: 20px;
   transition: 0.5s;
   overflow: hidden;
@@ -1275,7 +1275,7 @@ p {
 .single-services:hover .services-icon {
   top: -20px;
   scale: 0.75;
-  ox-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
 }
 
 .single-services .services-icon img {
@@ -2872,3 +2872,44 @@ text-align: center;
   to { width: 0; }
 }
 
+@media (max-width: 600px) {
+  .footer-link {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-link .link-wrapper {
+    margin-bottom: 30px; 
+  }
+
+  .footer-link .link-wrapper:first-child {
+    margin-bottom: 60px; 
+  }
+  
+  .footer-link .link-wrapper:last-child {
+    margin-bottom: 0; 
+  }
+
+  .footer-contact .contact li a {
+    word-wrap: break-word; 
+    white-space: normal;  
+}
+}
+
+@media (max-width: 600px) {
+  .footer-contact .contact li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 10px; 
+  }
+
+  .footer-contact .contact li i {
+    margin-right: 10px;
+  }
+
+  .footer-contact .contact li p,
+  .footer-contact .contact li div {
+    width: auto;
+  }
+}
