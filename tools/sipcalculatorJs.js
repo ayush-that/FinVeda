@@ -116,12 +116,15 @@ percentage = (x) => {
       .concat(" ")
       .concat("%");
 };
+
 //for know more button
 document.addEventListener("DOMContentLoaded", function () {
-  const knowMoreBtn = document.querySelector(".know-more-btn");
-  const knowMoreContent = document.querySelector(".know-more-content");
+  const knowMoreBtns = document.querySelectorAll(".know-more-btn");
 
-  knowMoreBtn.addEventListener("click", function () {
-    knowMoreContent.classList.toggle("show");
+  knowMoreBtns.forEach((button) => {
+    button.addEventListener("click", function () {
+      const knowMoreContent = this.nextElementSibling;
+      knowMoreContent.classList.toggle("show");
+    });
   });
 });
