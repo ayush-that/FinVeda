@@ -101,6 +101,45 @@
       li {
         margin: 10px 0;
       }
+
+      
+.unique-popup-message {
+  position: fixed; /* Change to fixed positioning */
+  top: 30px; /* Adjust this value to be below the navbar */
+  right: 2px; /* Adjust this value for the desired distance from the right edge */
+  width: 300px; /* Adjust width as needed */
+  transform: translateX(0); /* Center the popup horizontally */
+  background-color: #a4d8ff;
+  color: #131722;
+  padding: 11px;
+  border-radius: 5px;
+  text-align: center;
+  z-index: 1000;
+  box-sizing: border-box;
+  overflow: hidden; /* Hide the expanding border animation */
+  position: relative;
+}
+
+.border-animation {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 7px; /* Same height as the border */
+  background-color: rgb(4, 0, 128);
+  width: 100%;
+  transform-origin: right; /* Start shrinking from the right */
+}
+
+@keyframes borderAnimation {
+  from {
+    transform: scaleX(0); /* Full width initially */
+  }
+  to {
+    transform: scaleX(1); /* Shrink to zero width */
+  }
+}
+
+
     </style>
   </head>
 
@@ -465,30 +504,55 @@
       </button>
 
       <footer id="footer" class="footer-area pt-120">
-      <div class="container">
-        <div
-          class="subscribe-area wow fadeIn"
-          data-wow-duration="1s"
-          data-wow-delay="0.5s"
-        >
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="subscribe-content mt-45">
-                <h2 class="subscribe-title">
-                  Subscribe Our Newsletter <span>get regular updates</span>
-                </h2>
+        <div class="container">
+          <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="subscribe-content mt-45">
+                  <h2 class="subscribe-title">
+                    Subscribe Our Newsletter <span>get regular updates</span>
+                  </h2>
+                </div>
               </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="subscribe-form mt-50">
-                <form id="subscribe-form">
-                  <input type="email" id="news-email" placeholder="Enter Email" required/>          
-                  <button class="main-btn" id="subscribe-btn" type="submit">Subscribe</button>
-                </form>
+              <div class="col-lg-6">
+                <div class="subscribe-form mt-50">
+                  <form id="unique-subscribe-form">
+                    <input type="email" id="unique-news-email" placeholder="Enter Email" required/>
+                    <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
+                  </form>
+                  <div id="unique-message" class="unique-popup-message" style="display: none;">
+                    <div class="border-animation"></div>
+                    Thank You for the subscription!
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <script>
+          document.getElementById('unique-subscribe-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting normally
+        
+            // Show popup message
+            var messageDiv = document.getElementById('unique-message');
+            messageDiv.style.display = 'block';
+            
+            // Reset existing animation
+            var borderAnimationDiv = messageDiv.querySelector('.border-animation');
+            borderAnimationDiv.style.animation = 'none';
+            borderAnimationDiv.offsetHeight; // Trigger reflow to restart the animation
+            borderAnimationDiv.style.animation = 'borderAnimation 3s linear forwards';
+        
+            // Hide popup message after 10 seconds
+            setTimeout(function() {
+              messageDiv.style.display = 'none';
+            }, 3000); // 10 seconds
+        
+            // Reset form
+            this.reset();
+          });
+        </script>
+        
         <div class="footer-widget pb-100">
           <div class="row">
             <div class="col-lg-4 col-md-6 col-sm-8">
