@@ -456,7 +456,15 @@
       </div>
     </main>
 
-    <footer id="footer" class="footer-area pt-120">
+    
+<!-- Timed popup that will appear after succesful submission of feebback form! -->
+      <button class="notification" id="successnotification" style="display:none;">
+        <span class="message" id="successmsg">Submitted successfully!</span>
+        <span class="closenotif" id="closeSuccessNotification">✖</span>
+        <div class="timerline" id="timerline"></div>
+      </button>
+
+      <footer id="footer" class="footer-area pt-120">
       <div class="container">
         <div
           class="subscribe-area wow fadeIn"
@@ -473,14 +481,9 @@
             </div>
             <div class="col-lg-6">
               <div class="subscribe-form mt-50">
-                <form action="#">
-                  <input type="text" placeholder="Enter Email" />
-                  <button
-                    class="main-btn"
-                    onclick="event.preventDefault(); openModal();"
-                  >
-                    Subscribe
-                  </button>
+                <form id="subscribe-form">
+                  <input type="email" id="news-email" placeholder="Enter Email" required/>          
+                  <button class="main-btn" id="subscribe-btn" type="submit">Subscribe</button>
                 </form>
               </div>
             </div>
@@ -510,7 +513,7 @@
                   <div class="footer-title">
                     <h4 class="title">Quick Link</h4>
                   </div>
-                  <ul class="link">
+                  <ul class="link" style="list-style-type: none; margin-left: 3px;">
                     <li><a href="/blogs/privacy-policy.html">Privacy Policy</a></li>
                     <li><a href="/blogs/refund-policy.html">Refund Policy</a></li>
                     <li><a href="Licensing.html">Licensing</a></li>
@@ -526,7 +529,7 @@
                   <div class="footer-title">
                     <h4 class="title">Resources</h4>
                   </div>
-                  <ul class="link">
+                  <ul class="link" style="list-style-type: none; margin-left: 3px;">
                     <li><a href="./index.html">Home</a></li>
                     <li><a href="/about.html">About Us</a></li>
                     <li><a href="./trends.html">Trends</a></li>
@@ -546,7 +549,7 @@
                 <div class="footer-title">
                   <h4 class="title">Contact Us</h4>
                 </div>
-                <ul class="contact custom-margin">
+                <ul class="contact custom-margin" style="list-style-type: none; margin-left: 3px;">
                   <li class="d-sm-flex justify-content-center">
                     <i class="fa fa-envelope d-sm-flex align-items-center white" style="font: size 16px; width: 10%;"></i>
                     <p style="width: 80%;">
@@ -670,6 +673,8 @@
       }
     </script>
     <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
+
+    <script src="./assets/js/subscribe.js"></script>
     <script src="../assets/js/vendor/jquery-1.12.4.min.js"></script>
     <script src="../assets/js/vendor/modernizr-3.7.1.min.js"></script>
     <script src="../assets/js/popper.min.js"></script>

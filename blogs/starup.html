@@ -375,6 +375,15 @@
       /* Adjust this value to increase or decrease the margins */
     }
   </style>
+  
+  
+  <!-- Timed popup that will appear after succesful submission of feebback form! -->
+      <button class="notification" id="successnotification" style="display:none;">
+        <span class="message" id="successmsg">Submitted successfully!</span>
+        <span class="closenotif" id="closeSuccessNotification">✖</span>
+        <div class="timerline" id="timerline"></div>
+      </button>
+
   <footer id="footer" class="footer-area pt-120">
     <div class="container">
       <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
@@ -388,10 +397,10 @@
           </div>
           <div class="col-lg-6">
             <div class="subscribe-form mt-50">
-              <form action="#">
-                <input type="text" placeholder="Enter Email" />
-                <button class="main-btn" onclick="event.preventDefault(); openModal();">Subscribe</button>
-              </form>
+              <form id="subscribe-form">
+                  <input type="email" id="news-email" placeholder="Enter Email" required/>          
+                  <button class="main-btn" id="subscribe-btn" type="submit">Subscribe</button>
+                </form>
             </div>
           </div>
         </div>
@@ -490,6 +499,7 @@
   </footer>
   <script>document.getElementById("copyright-year").textContent = new Date().getFullYear();</script>
   <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
+  <script src="../assets/js/subscribe.js"></script>
   <script src="../assets/js/vendor/jquery-1.12.4.min.js"></script>
   <script src="../assets/js/vendor/modernizr-3.7.1.min.js"></script>
   <script src="../assets/js/popper.min.js"></script>
