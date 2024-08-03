@@ -92,6 +92,45 @@
       }
     }
 
+.unique-popup-message {
+  position: fixed; /* Change to fixed positioning */
+  top: 30px; /* Adjust this value to be below the navbar */
+  right: 2px; /* Adjust this value for the desired distance from the right edge */
+  width: 300px; /* Adjust width as needed */
+  transform: translateX(0); /* Center the popup horizontally */
+  background-color: #a4d8ff;
+  color: #131722;
+  padding: 11px;
+  border-radius: 5px;
+  text-align: center;
+  z-index: 1000;
+  box-sizing: border-box;
+  overflow: hidden; /* Hide the expanding border animation */
+  position: relative;
+}
+
+.border-animation {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 7px; /* Same height as the border */
+  background-color: rgb(4, 0, 128);
+  width: 100%;
+  transform-origin: right; /* Start shrinking from the right */
+}
+
+@keyframes borderAnimation {
+  from {
+    transform: scaleX(0); /* Full width initially */
+  }
+  to {
+    transform: scaleX(1); /* Shrink to zero width */
+  }
+}
+
+
+
+
     
   </style>
 
@@ -1354,16 +1393,17 @@ function getPrevId(currentId) {
       </article>
     </div>    
 
-
     <div class="form-main-container wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
       <div class="form-info-section">
           <h2 class="form-heading wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">We Value Your Feedback</h2>
           <br/>
-          <p class="form-para wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">Your input helps us to improve and provide better services. Please fill out the form to let us know your thoughts.</p>
+          <p class="form-para wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
+              Your input helps us to improve and provide better services. Please fill out the form to let us know your thoughts.
+          </p>
       </div>
       <div class="form-section wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
           <h2 class="form-heading2">Feedback Form</h2>
-          <form class="feedbackform">
+          <form class="feedbackform" id="feedback-form">
               <div class="form-group">
                   <label class="form-label" for="name">Name:</label>
                   <input class="form-input" type="text" id="name" name="name" required>
@@ -1372,103 +1412,93 @@ function getPrevId(currentId) {
                   <label class="form-label" for="email">Email:</label>
                   <input class="form-input" type="email" id="email" name="email" required>
               </div>
-              <div class="form-group"> 
+              <div class="form-group">
                   <label class="form-label">Rating:</label>
                   <div id="emoji-description" class="emoji-description">Select an option</div>
               </div>
-                  <div class="emojis">
-                      <input class="form-input" type="radio" id="emoji1" name="rating" value="1">
-                      <label class="form-label"for="emoji1">&#128577;</label> <!-- Very Bad -->
-                      <input class="form-input" type="radio" id="emoji2" name="rating" value="2">
-                      <label class="form-label" for="emoji2">&#128542;</label> <!-- Bad -->
-                      <input class="form-input" type="radio" id="emoji3" name="rating" value="3">
-                      <label class="form-label"for="emoji3">&#128528;</label> <!-- Neutral -->
-                      <input class="form-input" type="radio" id="emoji4" name="rating" value="4">
-                      <label class="form-label"for="emoji4">&#128522;</label> <!-- Good -->
-                      <input class="form-input" type="radio" id="emoji5" name="rating" value="5">
-                      <label class="form-label" for="emoji5">&#128515;</label> <!-- Excellent -->
-                  </div>
+              <div class="emojis">
+                  <input class="form-input" type="radio" id="emoji1" name="rating" value="1">
+                  <label class="form-label" for="emoji1">&#128577;</label> <!-- Very Bad -->
+                  <input class="form-input" type="radio" id="emoji2" name="rating" value="2">
+                  <label class="form-label" for="emoji2">&#128542;</label> <!-- Bad -->
+                  <input class="form-input" type="radio" id="emoji3" name="rating" value="3">
+                  <label class="form-label" for="emoji3">&#128528;</label> <!-- Neutral -->
+                  <input class="form-input" type="radio" id="emoji4" name="rating" value="4">
+                  <label class="form-label" for="emoji4">&#128522;</label> <!-- Good -->
+                  <input class="form-input" type="radio" id="emoji5" name="rating" value="5">
+                  <label class="form-label" for="emoji5">&#128515;</label> <!-- Excellent -->
+              </div>
               <div class="form-group">
                   <label class="form-label" for="comments">Comments:</label>
                   <textarea class="form-textarea" id="comments" name="comments" rows="4" required></textarea>
               </div>
-              <div class="form-group"> 
-                  <button class="form-button" id="feed-submit">Submit Feedback</button>
+              <div class="form-group">
+                  <button class="form-button" id="feed-submit" type="submit">Submit Feedback</button>
               </div>
           </form>
       </div>
   </div>
-  <!-- Timed popup that will appear after succesful submission of feebback form! -->
-  <button class="notification" id="successnotification" style="display:none;">
-    <span class="message" id="successmsg">Submitted successfully!</span>
-    <span class="closenotif" id="closeSuccessNotification">✖</span>
-    <div class="timerline" id="timerline"></div>
-  </button>
-<script src="./assets/js/subscribe.js"></script>
-<script>
-
-    // const successNotif = document.getElementById('successnotification');
-    // const closeSuccess = document.getElementById('closeSuccessNotification');
-    // const successMessage = document.getElementById('successmsg');
-
-    // closeSuccess.addEventListener('click', () => {
-    //     successNotif.style.display = 'none';
-    // })
-    
-    // function showSuccess() {
-    //   console.log('jwekjfh')
-    //     successNotif.style.display = 'flex';
-    //     setTimeout(() => {
-    //         successNotif.style.display = 'none';
-    //     }, 2000);     
-    //   }
   
+  <!-- Timed popup that will appear after successful submission of feedback form! -->
+  <button class="notification" id="successnotification" style="display:none;">
+      <span class="message" id="successmsg">Submitted successfully!</span>
+      <span class="closenotif" id="closeSuccessNotification">✖</span>
+      <div class="timerline" id="timerline"></div>
+  </button>
+  
+  <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const feedbackSubmit = document.getElementById('feed-submit');
-
-    feedbackSubmit.addEventListener('click', (event) => {
-
-      // name email emoji-description comments
-      const name =document.getElementById('name');
-      const email =document.getElementById('email');
-      const rating= document.getElementById('emoji-description');
-      const comments= document.getElementById('comments');
-
-      if (name.value === '' || email.value==='' || rating.value==='' || comments.value==='') {
-                // Empty input
-                return;
-            }
-
-      event.preventDefault();
-      showSuccess();
-    });
-
-    const emojis = document.querySelectorAll('.emojis input');
-    const descriptions = [
-        "Very Bad",
-        "Bad",
-        "Neutral",
-        "Good",
-        "Excellent"
-    ];
-
-    emojis.forEach((emoji, index) => {
-        const descriptionDiv = document.createElement('div');
-        descriptionDiv.classList.add('emoji-description');
-        descriptionDiv.textContent = descriptions[index];
-        emoji.nextElementSibling.appendChild(descriptionDiv);
-
-        emoji.addEventListener('change', () => {
-            document.querySelectorAll('.emoji-description').forEach(desc => {
-                desc.style.display = 'none';
-            });
-            descriptionDiv.style.display = 'block';
-        });
-    });
-});
-
-</script>
-
+      const feedbackForm = document.getElementById('feedback-form');
+      const successNotif = document.getElementById('successnotification');
+      const closeSuccess = document.getElementById('closeSuccessNotification');
+  
+      // Show success notification and reset form
+      feedbackForm.addEventListener('submit', (event) => {
+          event.preventDefault(); // Prevent form submission
+  
+          // Check if all fields are filled out (validation)
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const comments = document.getElementById('comments').value;
+          const ratingChecked = document.querySelector('input[name="rating"]:checked');
+  
+          if (name === '' || email === '' || !ratingChecked || comments === '') {
+              return;
+          }
+  
+          // Display the success notification
+          successNotif.style.display = 'flex';
+          
+          // Reset the form after 2 seconds
+          setTimeout(() => {
+              feedbackForm.reset();
+              successNotif.style.display = 'none';
+          }, 2000);
+      });
+  
+      // Close the notification manually
+      closeSuccess.addEventListener('click', () => {
+          successNotif.style.display = 'none';
+      });
+  
+      // Handle emoji descriptions
+      const emojis = document.querySelectorAll('.emojis input');
+      const descriptions = [
+          "Very Bad",
+          "Bad",
+          "Neutral",
+          "Good",
+          "Excellent"
+      ];
+  
+      emojis.forEach((emoji, index) => {
+          emoji.addEventListener('change', () => {
+              document.getElementById('emoji-description').textContent = descriptions[index];
+          });
+      });
+  });
+  </script>
+  
 <script>
   document.addEventListener("DOMContentLoaded", () => {
       const counters = document.querySelectorAll('.counter');
@@ -1526,15 +1556,45 @@ function getPrevId(currentId) {
           </div>
           <div class="col-lg-6">
             <div class="subscribe-form mt-50">
-              <form id="subscribe-form">
-                <input type="email" id="news-email" placeholder="Enter Email" required/>          
-                <button class="main-btn" id="subscribe-btn" type="submit">Subscribe</button>
+              <form id="unique-subscribe-form">
+                <input type="email" id="unique-news-email" placeholder="Enter Email" required/>
+                <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
               </form>
-              <div id="message" style="display: none;"></div>
+              <div id="unique-message" class="unique-popup-message" style="display: none;">
+                <div class="border-animation"></div>
+                Thank You for the subscription!
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+    <script>
+      document.getElementById('unique-subscribe-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form from submitting normally
+    
+        // Show popup message
+        var messageDiv = document.getElementById('unique-message');
+        messageDiv.style.display = 'block';
+        
+        // Reset existing animation
+        var borderAnimationDiv = messageDiv.querySelector('.border-animation');
+        borderAnimationDiv.style.animation = 'none';
+        borderAnimationDiv.offsetHeight; // Trigger reflow to restart the animation
+        borderAnimationDiv.style.animation = 'borderAnimation 3s linear forwards';
+    
+        // Hide popup message after 10 seconds
+        setTimeout(function() {
+          messageDiv.style.display = 'none';
+        }, 3000); // 10 seconds
+    
+        // Reset form
+        this.reset();
+      });
+    </script>
+    
+    
+    
       <div class="footer-widget pb-100">
         <div class="row">
           <div class="col-lg-4 col-md-6 col-sm-8">
