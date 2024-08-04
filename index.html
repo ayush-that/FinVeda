@@ -1484,8 +1484,8 @@ function getPrevId(currentId) {
       // Handle emoji descriptions
       const emojis = document.querySelectorAll('.emojis input');
       const descriptions = [
-        "Very Bad",
-        "Bad",
+          "Very Bad",
+          "Bad",
           "Neutral",
           "Good",
           "Excellent"
@@ -1508,23 +1508,23 @@ function getPrevId(currentId) {
             const target = +counter.getAttribute('data-target');
             const count = +counter.innerText;
             
-              const speed = 500;
-              const increment = target / speed;
+            const speed = 500;
+            const increment = target / speed;
 
-              if (count < target) {
-                counter.innerText = Math.ceil(count + increment);
-                  setTimeout(updateCount, 40);
-                } else {
-                  counter.innerText = target;
-                }
-              };
-              
-              updateCount();
-            });
+            if (count < target) {
+              counter.innerText = Math.ceil(count + increment);
+                setTimeout(updateCount, 40);
+              } else {
+                counter.innerText = target;
+              }
+            };
 
-            // Separate function for the Likes counter
-            const likesCounter = document.querySelector('.counter-likes');
-            const updateLikesCount = () => {
+            updateCount();
+          });
+
+          // Separate function for the Likes counter
+          const likesCounter = document.querySelector('.counter-likes');
+          const updateLikesCount = () => {
           const target = +likesCounter.getAttribute('data-target');
           const count = +likesCounter.innerText;
           
