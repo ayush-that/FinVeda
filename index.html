@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="assets/css/quiz.css" />
   <link rel="stylesheet" href="assets/css/popup.css" />
+  <link rel="stylesheet" href="assets/css/cookiepopup.css">
   <link rel="stylesheet" href="assets\css\preloader.css" />
   <link rel="stylesheet" href="assets/css/faq.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
@@ -128,10 +129,6 @@
     transform: scaleX(1); /* Shrink to zero width */
   }
 }
-
-
-
-
     
   </style>
 
@@ -218,6 +215,7 @@
       document.getElementById("progressBar").style.width = scrolled + "%";
     };
   </script>
+
   <header class="header-area">
     <div class="navbar-area">
       <div class="container">
@@ -374,6 +372,18 @@
     <div id="particles-1" class="particles"></div>
     </div>
   </header>
+
+  <!-- Cookie Consent Popup -->
+  <div id="cookieConsent" class="cookie-consent">
+    <h4>🍪Cookies Consent <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#175394" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cookie-icon">
+      <circle cx="12" cy="12" r="10"></circle>
+      <path d="M12 8v4"></path>
+      <path d="M12 16h.01"></path>
+  </svg></h4>
+    <p>We use cookies to enhance your experience on FinVeda. By continuing to use our site, you agree to our use of cookies. <br> <a href="blogs/privacy-policy.html" target="_blank">Learn more</a> <button id="acceptCookies">Accept all cookies</button></p>
+    
+</div>
+
   <section id="features" class="services-area pt-120">
     <div class="container">
       <div class="row justify-content-center">
@@ -1813,6 +1823,28 @@ function getPrevId(currentId) {
     <script src="assets/js/preloader.js"></script>
   </div>
   <script defer src="./assets/js/arthsathi-style.js"></script>
+
+  <script>
+
+   document.addEventListener('DOMContentLoaded', function () {
+    const cookieConsent = document.getElementById('cookieConsent');
+    const acceptCookiesButton = document.getElementById('acceptCookies');
+
+    // Show the cookie consent popup on every page refresh
+    cookieConsent.classList.add('show');
+
+    // Handle the "Accept" button click
+    acceptCookiesButton.addEventListener('click', function () {
+        cookieConsent.classList.remove('show');
+        cookieConsent.classList.add('hide');
+        // Hide the popup after animation ends
+        setTimeout(() => {
+            cookieConsent.style.display = 'none';
+        }, 500); // Matches animation duration
+    });
+});
+
+  </script>
 
 </body>
 
