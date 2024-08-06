@@ -101,6 +101,20 @@
   }
 }
 
+        .Lastupdate {
+          margin-top: 18px;
+          font-size: 20px !important;
+          font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, serif !important;
+          font-weight: 500;
+          /* margin-bottom: 15px; */
+          color: rgb(67, 67, 67) !important;
+        }
+
+        #last-updated-date {
+          font-size: 18px;
+          color: rgb(77, 77, 77) !important;
+        }
+
 
   </style>
 
@@ -431,7 +445,9 @@
         <div class="header">
         <h1 style="text-align: center;">Privacy Policy</h1>
         </div><br>
-        <p>Last updated: January 25, 2024</p>
+        <div class="Lastupdate">
+          Last updated: <span id="last-updated-date"></span>
+        </div>
         <br>
         <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
         <br>
@@ -710,5 +726,45 @@
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/popup.js"></script>
     <script src="../tools/smoothScroll.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(() => {
+          const loader = document.getElementById("loader");
+          if (loader) {
+            loader.style.display = "none";
+          } else {
+            console.error("Element with ID 'loader' not found.");
+          }
+        }, 500);
+
+        // Update the date dynamically
+        function updateLastUpdatedDate() {
+          const dateElement = document.getElementById("last-updated-date");
+          const now = new Date();
+          const day = now.getDate();
+          const monthNames = [
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+          ];
+          const month = monthNames[now.getMonth()]; // Get the full month name
+          const year = now.getFullYear();
+          dateElement.textContent = `${month} ${day}, ${year}`;
+        }
+
+        // Update the date weekly
+        function updateWeekly() {
+          const now = new Date();
+          const dayOfWeek = now.getDay(); // 0 (Sunday) to 6 (Saturday)
+          const timeUntilNextUpdate = (7 - dayOfWeek) * 24 * 60 * 60 * 1000; // Time until next Sunday
+          updateLastUpdatedDate();
+          setTimeout(updateWeekly, timeUntilNextUpdate);
+        }
+
+        // Initialize weekly updates
+        updateWeekly();
+      });
+    </script>
+
   </body>
 </html>
