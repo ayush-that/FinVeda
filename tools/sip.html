@@ -1061,6 +1061,58 @@
   </div>
 
   <script src="SWPCalculator.js"></script>
+
+
+  <!-- credit card payoff calculator starts here  -->
+       
+  <div class="header" style="padding-top: 100px;">
+    <h3 class="text-center mb-4">Credit Card Payoff Calculator</h3>
+    <p class="cal-content">Calculate how long it will take to pay off your credit card balance with this calculator. Enter your balance, APR, and monthly payment to get started.</p>
+    <div class="know-more">
+        <button class="know-more-btn">Know More</button>
+        <div class="know-more-content">
+            <h6 style="text-align: left; margin: 2% 16%; padding-left: 5px;">Here's how it works:</h6>
+            <ol type="1" style="font-size: 1rem; text-align: left; margin-left: 17%; margin-bottom: 2rem;">
+                <li><b>Credit Card Balance</b>: Enter your current credit card balance.</li>
+                <li><b>Annual Percentage Rate (APR)</b>: Input the annual interest rate on your credit card.</li>
+                <li><b>Monthly Payment</b>: Enter the amount you can pay each month.</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="page-container shadow p-5 mb-5 bg-white rounded mt-5" id="CreditCardPayoff">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form id="credit-card-payoff-calculator" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <div class="form-group">
+                    <label for="balance" class="income">Credit Card Balance:</label>
+                    <input type="number" id="balance" class="form-control" placeholder="Enter your balance (in ₹)" required>
+                </div>
+                <div class="form-group">
+                    <label for="apr" class="income">Annual Percentage Rate (APR):</label>
+                    <input type="number" id="apr" class="form-control" placeholder="Enter APR (in %)" required>
+                </div>
+                <div class="form-group">
+                    <label for="monthly-payment" class="income">Monthly Payment:</label>
+                    <input type="number" id="monthly-payment" class="form-control" placeholder="Enter monthly payment (in ₹)" required>
+                </div>
+                <div class="btn-calculate">
+                    <button id="calculateBtn" type="button" class="btn btn-calculate">Calculate</button>
+                </div>
+            </form>
+            <div id="result-payoff" class="mt-3">
+                <h5>Result:</h5>
+                <p>Months to Pay Off: <span id="monthsToPayOff">0</span></p>
+                <p>Total Interest Paid: ₹<span id="totalInterestPaid">0.00</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="creditcardpayoff.js"></script>
+      
+  <!-- credeit card payoff calculator ends here  -->
 </body>
   
   <!-- Timed popup that will appear after succesful submission of feebback form! -->
