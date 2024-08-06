@@ -354,6 +354,103 @@
   <link rel="stylesheet" type="text/css" href="sipcalculatorCss.css">
   <script type="text/javascript" src="sipcalculatorJs.js"></script>
 
+<style>
+  /* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.tools-page {
+    padding: 20px;
+}
+
+#search-bar {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.tools-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tool-item {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    flex: 1 1 calc(33% - 20px); /* Adjust as needed */
+    box-sizing: border-box;
+}
+
+.tool-item.hidden {
+    display: none;
+}
+
+</style>
+<div class="tools-page">
+        <input type="text" id="search-bar" placeholder="Search for calculators..." onkeyup="filterCalculators()">
+        <div id="calculators-container" class="tools-container">
+            <!-- Calculators will be dynamically inserted here -->
+        </div>
+        <script>
+          // script.js
+
+// Sample calculators data
+const calculators = [
+    { name: 'Mutual Fund Investment Calculator' },
+    { name: 'EMI Calculator' },
+    { name: 'Savings Goal Calculator' },
+  { name: 'Net Present Value(NPV) Calculator'},
+   { name: 'Return on Investment(ROI) Calculator'},
+   { name: 'Goods and Service Tax (GST) Calculator'},
+   { name: 'Income Tax Calculator'},
+   { name: 'Profit Margin Calculator'},
+  { name: 'Expenditure and Savings Calculator'},
+  { name: 'GDP Calculator'}
+    // Add more calculators as needed
+];
+
+document.addEventListener('DOMContentLoaded', () => {
+    renderCalculators(calculators);
+});
+
+function renderCalculators(calculators) {
+    const container = document.getElementById('calculators-container');
+    container.innerHTML = '';
+    calculators.forEach(calculator => {
+        const calculatorDiv = document.createElement('div');
+        calculatorDiv.className = 'tool-item';
+        calculatorDiv.innerHTML = `<h3>${calculator.name}</h3>`;
+        container.appendChild(calculatorDiv);
+    });
+}
+
+function filterCalculators() {
+    const searchValue = document.getElementById('search-bar').value.toLowerCase();
+    
+    const filteredCalculators = calculators.filter(calculator => {
+        return calculator.name.toLowerCase().includes(searchValue);
+    });
+    
+    renderCalculators(filteredCalculators);
+}
+
+        </script>
+  
+    </div>
+
+
+
+
+
+
+  
+  
   <body class="body-background">
     <div class="header mt-5">
       <h3>Mutual Fund Investment Calculator</h3>
