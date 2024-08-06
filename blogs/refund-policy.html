@@ -103,6 +103,20 @@
 }
 
 
+.Lastupdate {
+          margin-top: 18px;
+          font-size: 18px !important;
+          font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, serif !important;
+          font-weight: 500;
+          margin-bottom: 15px;
+          color: #636262 !important;
+        }
+
+        #last-updated-date {
+          font-size: 17px;
+          color: #636262 !important;
+        }
+
   </style>
 
 <body>
@@ -397,6 +411,9 @@
         <div class="header">
         <h1 style="text-align: center;">Refund Policy</h1>
         </div><br>
+        <div class="Lastupdate">
+          Last updated: <span id="last-updated-date"></span>
+        </div>
       <p>Certain types of items cannot be returned, like
         <ul class="ps-4 ms-4" style="list-style: circle;"><br>
           <li><strong>perishable goods </strong>(such as food, flowers, or plants),</li>
@@ -580,6 +597,7 @@
   <script>document.getElementById("copyright-year").textContent = new Date().getFullYear();</script>
   <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
 
+  
   <script src="../assets/js/subscribe.js"></script>
   <script src="../assets/js/vendor/jquery-1.12.4.min.js"></script>
   <script src="../assets/js/vendor/modernizr-3.7.1.min.js"></script>
@@ -598,6 +616,46 @@
   <script src="../assets/js/main.js"></script>
   <script src="../assets/js/popup.js"></script>
   <script src="../tools/smoothScroll.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      setTimeout(() => {
+        const loader = document.getElementById("loader");
+        if (loader) {
+          loader.style.display = "none";
+        } else {
+          console.error("Element with ID 'loader' not found.");
+        }
+      }, 500);
+
+      // Update the date dynamically
+      function updateLastUpdatedDate() {
+        const dateElement = document.getElementById("last-updated-date");
+        const now = new Date();
+        const day = now.getDate();
+        const monthNames = [
+          "January", "February", "March", "April", "May", "June",
+          "July", "August", "September", "October", "November", "December"
+        ];
+        const month = monthNames[now.getMonth()]; // Get the full month name
+        const year = now.getFullYear();
+        dateElement.textContent = `${month} ${day}, ${year}`;
+      }
+
+      // Update the date weekly
+      function updateWeekly() {
+        const now = new Date();
+        const dayOfWeek = now.getDay(); // 0 (Sunday) to 6 (Saturday)
+        const timeUntilNextUpdate = (7 - dayOfWeek) * 24 * 60 * 60 * 1000; // Time until next Sunday
+        updateLastUpdatedDate();
+        setTimeout(updateWeekly, timeUntilNextUpdate);
+      }
+
+      // Initialize weekly updates
+      updateWeekly();
+    });
+  </script>
+  
 </body>
 
 </html>
