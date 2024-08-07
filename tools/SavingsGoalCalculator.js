@@ -18,3 +18,11 @@ function calculateSavings() {
 
     document.getElementById('result').textContent =`You need to save Rs. ${monthlySavings.toFixed(2)} per month to reach your goal.`;
 }
+function clearSavings() {
+    document.getElementById('goalAmount').value = '';
+    document.getElementById('currentSavings').value = '';
+    document.getElementById('monthlySavings').value = '';
+    document.getElementById('interestRate').value = '';
+    document.getElementById('result').innerText = '';
+  }
+  

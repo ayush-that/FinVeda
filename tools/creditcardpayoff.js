@@ -44,3 +44,41 @@ function calculateCreditCardPayoff() {
     document.getElementById('monthsToPayOff').textContent = monthsToPayOff;
     document.getElementById('totalInterestPaid').textContent = totalInterestPaid.toFixed(2);
 }
+document.getElementById('calculateBtn').addEventListener('click', function() {
+    const balance = parseFloat(document.getElementById('balance').value);
+    const apr = parseFloat(document.getElementById('apr').value);
+    const monthlyPayment = parseFloat(document.getElementById('monthly-payment').value);
+
+    if (isNaN(balance) || isNaN(apr) || isNaN(monthlyPayment)) {
+        alert('Please enter valid numbers for all fields.');
+        return;
+    }
+
+    const monthlyInterestRate = apr / 100 / 12;
+    let monthsToPayOff = 0;
+    let totalInterestPaid = 0;
+    let currentBalance = balance;
+
+    while (currentBalance > 0) {
+        const interest = currentBalance * monthlyInterestRate;
+        currentBalance = currentBalance + interest - monthlyPayment;
+        totalInterestPaid += interest;
+        monthsToPayOff++;
+        if (monthsToPayOff > 600) {
+            alert('It will take more than 50 years to pay off the balance with the current monthly payment.');
+            break;
+        }
+    }
+
+    document.getElementById('monthsToPayOff').innerText = monthsToPayOff;
+    document.getElementById('totalInterestPaid').innerText = totalInterestPaid.toFixed(2);
+});
+
+document.getElementById('clearBtn').addEventListener('click', function() {
+    console.log('Clear button clicked'); // Debug log
+    document.getElementById('balance').value = '';
+    document.getElementById('apr').value = '';
+    document.getElementById('monthly-payment').value = '';
+    document.getElementById('monthsToPayOff').innerText = '0';
+    document.getElementById('totalInterestPaid').innerText = '0.00';
+});

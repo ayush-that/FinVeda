@@ -19,4 +19,27 @@ document.addEventListener('DOMContentLoaded', function() {
       resultElement.textContent = `Profit Margin: ${profitMargin.toFixed(2)}%`;
     });
   });
-  
+  function clearProfitMargin() {
+    document.getElementById('profit-margin-calculator').reset();
+    document.getElementById('profit-margin').innerText = '';
+}
+
+document.getElementById('profit-margin-calculator').addEventListener('submit', function(event) {
+    event.preventDefault();
+    calculateProfitMargin();
+});
+
+function calculateProfitMargin() {
+    const costPrice = parseFloat(document.getElementById('cost').value);
+    const sellingPrice = parseFloat(document.getElementById('selling-price').value);
+
+    if (isNaN(costPrice) || isNaN(sellingPrice)) {
+        alert('Please enter valid numbers for both cost price and selling price.');
+        return;
+    }
+
+    const profit = sellingPrice - costPrice;
+    const profitMargin = (profit / sellingPrice) * 100;
+
+    document.getElementById('profit-margin').innerText = `Profit Margin: ${profitMargin.toFixed(2)}%`;
+}
