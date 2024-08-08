@@ -1,0 +1,37 @@
+name: "📝 Documentation"
+description: "Use this format to suggest improvements in our docs"
+title: "📝[DOCS] <suggestion title>"
+labels: ["documentation", "goal: enhancement"]
+
+body:
+  - type: textarea
+    id: docs_description
+    attributes:
+      label: "Issue Description"
+      description: "A brief summary of the documentation issue you would like to address."
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots_examples_docs
+    attributes:
+      label: "Screenshots or Examples (if applicable)"
+      description: "Please add relevant screenshots or examples to illustrate the problem."
+
+  - type: checkboxes
+    id: terms_checklist_docs
+    attributes:
+      label: "Checklist"
+      description: "By submitting this issue, you agree to follow our Code of Conduct"
+      options:
+        - label: "I have checked the existing issues."
+          required: true
+
+        - label: "I have read the Contributing Guidelines."
+          required: true
+
+        - label: "I have read the Code Of Conduct."
+          required: true
+
+        - label: "The changes doesn't break the code"
+          required: true
