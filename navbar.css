@@ -1,3 +1,5 @@
+
+
 *,
 *::before,
 *::after {
@@ -13,12 +15,11 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: rgba(51, 32, 195, 0.5);
+    background-color: rgba(51,32,195,0.5);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s;
 }
-
 .mobile-menu {
     top: 0;
     left: 0;
@@ -26,7 +27,7 @@
     height: 100vh;
     position: fixed;
     z-index: 2;
-    background: rgba(51, 32, 195, 0.9);
+    background: rgba(51,32,195,0.9);
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -36,13 +37,17 @@
 }
 
 /* Screen more than 991px wide */
-@media (min-width: 991px) {
+@media ((min-width: 991px)) {
     .mobile-menu {
         display: none !important;
-    }
+    }   
+
 }
 
 .mobile-menu a {
+    /* box-shadow: inset 0 0 1rem rgba(255,255,255,0.7); */
+    /* border-top: 3px solid #fff; */
+    /* border-bottom: 1px solid #fff; */
     text-align: center;
     margin: 1.5px;
     padding: 13px;
@@ -51,21 +56,17 @@
     text-transform: uppercase;
     position: relative;
     font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s;
 }
 
 .mobile-menu a:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 25%;
-    width: 0;
-    height: 2px;
-    background-color: white;
-    transition: width 0.3s;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s;
 }
 
 .mobile-menu a:hover:after {
@@ -76,29 +77,9 @@
 }
 
 .mobile-menu .active-link {
-
-    background: linear-gradient(white 0 0) bottom / 100% 2px no-repeat, transparent;
-}
-
-.nav-icon {
-    margin-right: 8px;
-    transition: transform 0.3s;
-}
-
-.mobile-menu a:hover .nav-icon,
-.navbar-nav .nav-item a:hover .nav-icon {
-    transform: scale(1.2) rotate(15deg);
-}
-
-.navbar-nav .nav-item a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
     background: 
     linear-gradient(white 0 0) bottom/ 100% 2px no-repeat, 
     transparent;
-
 }
 
 .mobile-menu__trigger {
@@ -111,12 +92,11 @@
     border-radius: 50%;
     top: 2rem;
     right: -5rem;
-    background: rgba(51, 32, 195, 0.5);
+    background: rgba(51,32,195,0.5);
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 .mobile-menu__trigger span {
     display: block;
     width: 50%;
@@ -124,69 +104,49 @@
     background: #fff;
     position: relative;
 }
-
 .mobile-menu__trigger span::before,
 .mobile-menu__trigger span::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
-    height: 100%;
-    background: inherit;
-    transition: transform 0.3s;
+    height: 2px;
+    right: 0;
+    background: #fff;
+    transition: all 0.3s;
 }
-
 .mobile-menu__trigger span::before {
-    transform: translateY(-8px);
+    top: -7px;
 }
-
 .mobile-menu__trigger span::after {
-    transform: translateY(8px);
+    top: 7px;
 }
-
-.mobile-menu-open .mobile-menu {
-    transform: translateX(0);
+.mobile-menu__trigger:hover span::before {
+    width: 50%;
+    top: -3px;
+    right: 0;
+    transform: rotate(30deg);
 }
-
-.mobile-menu-open .overlay {
-    opacity: 1;
+.mobile-menu__trigger:hover span::after {
+    width: 50%;
+    top: 3px;
+    right: 0;
+    transform: rotate(-30deg);
+}
+.mobile-menu_open {
+    transform: translateX(0%);
+    box-shadow: 0 0 2rem #000;
+}
+.mobile-menu_open+.overlay {
     visibility: visible;
+    opacity: 1;
 }
-
-.mobile-menu-open .mobile-menu__trigger span {
-    background: transparent;
+.mobile-menu_open .mobile-menu__trigger span::before,
+.mobile-menu_open .mobile-menu__trigger span::after {
+    left: 0;
 }
-
-.mobile-menu-open .mobile-menu__trigger span::before {
-    transform: rotate(45deg);
+.mobile-menu_open .mobile-menu__trigger:hover span::before {
+    transform: rotate(-30deg);
 }
-
-.mobile-menu-open .mobile-menu__trigger span::after {
-    transform: rotate(-45deg);
+.mobile-menu_open .mobile-menu__trigger:hover span::after {
+    transform: rotate(30deg);
 }
-.footer-link ul li {
-    display: flex;
-    align-items: center;
-  }
-  
-  .footer-link ul li a {
-    display: flex;
-    align-items: center;
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  .footer-link ul li a i {
-    margin-left: 8px;
-    font-size: 16px;
-    transition: transform 0.3s;
-  }
-  
-  .footer-link ul li a:hover {
-    color: #ccc; /* Adjust the hover color as needed */
-  }
-  
-  .footer-link ul li a:hover i {
-    transform: scale(1.2) rotate(15deg);
-  }
-  
