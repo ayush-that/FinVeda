@@ -20,3 +20,37 @@ document.addEventListener('DOMContentLoaded', function() {
     );
   });
 });
+function clearGST() {
+  document.getElementById('gst-calculator').reset();
+  document.getElementById('total-gst').innerText = '';
+  document.getElementById('post-gst-amount').innerText = '';
+}
+
+document.getElementById('gst-calculator').addEventListener('submit', function(event) {
+  event.preventDefault();
+  calculateGST();
+});
+
+function calculateGST() {
+  const mode = document.getElementById('mode').value;
+  const amount = parseFloat(document.getElementById('amount').value);
+  const taxSlab = parseFloat(document.getElementById('tax-slab').value);
+
+  if (isNaN(amount) || isNaN(taxSlab)) {
+      alert('Please enter valid numbers for both amount and tax slab.');
+      return;
+  }
+
+  let gstAmount, postGSTAmount;
+
+  if (mode === 'exclusive') {
+      gstAmount = (amount * (taxSlab / 100));
+      postGSTAmount = amount + gstAmount;
+  } else if (mode === 'inclusive') {
+      gstAmount = (amount * (taxSlab / (100 + taxSlab)));
+      postGSTAmount = amount - gstAmount;
+  }
+
+  document.getElementById('total-gst').innerText = `GST Amount: Rs. ${gstAmount.toFixed(2)}`;
+  document.getElementById('post-gst-amount').innerText = `Post GST Amount: Rs. ${postGSTAmount.toFixed(2)}`;
+}

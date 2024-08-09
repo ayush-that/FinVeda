@@ -39,3 +39,19 @@ function calculateInsurance() {
     document.getElementById('TotalPremium').textContent = 'Total Premium: ₹' + TotalPremium.toFixed(2);
     document.getElementById('netGain').textContent = 'Net Gain: ₹' + netGain.toFixed(2);
 }
+
+function clearInsurance() {
+    document.getElementById('Sumassured').value = '';
+    document.getElementById('Policyterm').value = '';
+    document.getElementById('Annualpremium').value = '';
+    document.getElementById('ReversionaryBonus').value = '';
+    document.getElementById('TerminalBonus').value = '';
+    document.getElementById('surrendered').checked = false;
+    document.getElementById('death').checked = false;
+    document.getElementById('ReversionaryBonusAmt').innerText = '';
+    document.getElementById('TerminalBonusAmt').innerText = '';
+    document.getElementById('TotalBonus').innerText = '';
+    document.getElementById('TotalPremium').innerText = '';
+    document.getElementById('netGain').innerText = '';
+  }
+  

@@ -6,7 +6,7 @@
   <title>Tools - FinVeda</title>
   <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="shortcut icon" href="../assets/images/Favicon1.ico" type="image/png" />
+  <link rel="shortcut icon" href="../assets/images/favicon2.png" type="image/png" />
   <link rel="stylesheet" href="../assets/css/animate.css" />
   <link rel="stylesheet" href="../assets/css/magnific-popup.css" />
   <link rel="stylesheet" href="../assets/css/slick.css" />
@@ -357,23 +357,23 @@
   <body class="body-background">
     <div class="header mt-5">
       <h3>Mutual Fund Investment Calculator</h3>
-      <p class="cal-content">The Mutual Fund Investment Calculator helps you estimate the potential returns of your investments, whether through Systematic Investment Plans (SIP) or LumpSum investments. 
+      <p class="cal-content">
+        The Mutual Fund Investment Calculator helps you estimate the potential returns of your investments, whether through Systematic Investment Plans (SIP) or LumpSum investments. 
         By inputting your monthly investment amount, investment duration, and expected annual return rate, this tool calculates the total investment, wealth gained, and maturity value, providing a clear 
-        picture of your investment growth.</p>
-        <div class="know-more">
-          <button class="know-more-btn">Know More</button>
-          <div class="know-more-content">
-            <h6 style="text-align: left; margin: 2% 16%; padding-left: 5px;">Here's how it works:</h6>
-              <!-- <p style="text-align: left; margin: 2% 16%; padding: 5px;"> -->
-                <ol type="1" style="font-size: 1rem; text-align: left; margin-left: 17%; margin-bottom: 2rem;">
-                  <li><b>Monthly Investment</b>: Enter the amount you plan to invest monthly.</li>
-                  <li><b>Time Period (years)</b>: Specify the number of years for the investment.</li>
-                  <li><b>Expected Return Rate (p.a.)</b>: Enter the annual return rate you expect.</li>
-                  <li><b>Calculate</b>: Computes the total investment, wealth gained, and maturity value based on inputs.</li>
-                </ol>
-              <!-- </p> -->
-          </div>
-</div>
+        picture of your investment growth.
+      </p>
+      <div class="know-more">
+        <button class="know-more-btn">Know More</button>
+        <div class="know-more-content">
+          <h6 style="text-align: left; margin: 2% 16%; padding-left: 5px;">Here's how it works:</h6>
+          <ol type="1" style="font-size: 1rem; text-align: left; margin-left: 17%; margin-bottom: 2rem;">
+            <li><b>Monthly Investment:</b> Enter the amount you plan to invest monthly.</li>
+            <li><b>Time Period (years):</b> Specify the number of years for the investment.</li>
+            <li><b>Expected Return Rate (p.a.):</b> Enter the annual return rate you expect.</li>
+            <li><b>Calculate:</b> Computes the total investment, wealth gained, and maturity value based on inputs.</li>
+          </ol>
+        </div>
+      </div>
     </div>
     <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5">
       <div class="switch-container radio-button">
@@ -385,14 +385,11 @@
           <input class="form-check-input" type="radio" name="checked" value="LumpSum">
           <label class="form-check-label" for="lumpsum">LumpSum</label>
         </div>
-
         <div class="dropdown">
           Currency
           <select class="form-control" onchange="currencyChange(this)" id="currency" class="currency">
-            <!-- &#8377; -->
             <option value="Rs">&#8377; &nbsp;INR</option>
             <option value="$">&#128176;USD</option>
-            <!-- &#x24; -->
           </select>
         </div>
       </div>
@@ -410,9 +407,8 @@
       </div>
       <br/>
       <div class="btn-calculate">
-        <button type="button" onclick="calculateResult()" class="btn btn-calculate">
-          Calculate
-        </button>
+        <button type="button" onclick="calculateResult()" class="btn btn-calculate">Calculate</button>
+        <button type="button" onclick="clearAll()" class="btn btn-secondary"><p class="btn-text">Clear</p></button>
       </div>
       <br />
       <div style="display: flex; justify-content: flex-start; font-size: medium;" class="result"><b>Result :</b></div>
@@ -437,28 +433,32 @@
           <div>Maturity Value</div>
           <div><span id="currency-change-3">Rs.</span>&nbsp;<span id="maturity-value"></span></div>
         </div>
+      </div>
     </div>
-    </div>
+    
+    
     <!-- EMI Calculator -->
     <script src="emiCalculator.js"></script>
+    <script src="emiCalculator.js" defer></script>
+    
     <div class="header" style="padding-top: 100px;">
       <h3>EMI Calculator</h3>
-      <p class="cal-content">The EMI (Equated Monthly Installment) Calculator assists in calculating the monthly installment amount for a loan based on the loan amount, interest rate, and loan tenure.
-         It provides insights into the total payment and total interest paid over the loan period, helping you plan your finances better.</p>
-        <div class="know-more">
-          <button class="know-more-btn">Know More</button>
-          <div class="know-more-content">
-            <h6 style="text-align: left; margin: 2% 16%; padding-left: 5px;">Here's how it works:</h6>
-              <!-- <p style="text-align: left; margin: 2% 16%; padding: 5px;"> -->
-                <ol type="1" style="font-size: 1rem; text-align: left; margin-left: 17%; margin-bottom: 2rem;">
-                  <li><b>Loan Amount</b>: Enter the principal amount of the loan.</li>
-                  <li><b>Interest Rate</b>: Specify the annual interest rate.</li>
-                  <li><b>Loan Tenure (years)</b>: Enter the loan period in years.</li>
-                  <li><b>Calculate EMI</b>: Provides the monthly EMI, total payment, and total interest.</li>
-                </ol>  
-              <!-- </p> -->
-          </div>
+      <p class="cal-content">
+        The EMI (Equated Monthly Installment) Calculator assists in calculating the monthly installment amount for a loan based on the loan amount, interest rate, and loan tenure.
+        It provides insights into the total payment and total interest paid over the loan period, helping you plan your finances better.
+      </p>
+      <div class="know-more">
+        <button class="know-more-btn">Know More</button>
+        <div class="know-more-content">
+          <h6 style="text-align: left; margin: 2% 16%; padding-left: 5px;">Here's how it works:</h6>
+          <ol type="1" style="font-size: 1rem; text-align: left; margin-left: 17%; margin-bottom: 2rem;">
+            <li><b>Loan Amount</b>: Enter the principal amount of the loan.</li>
+            <li><b>Interest Rate</b>: Specify the annual interest rate.</li>
+            <li><b>Loan Tenure (years)</b>: Enter the loan period in years.</li>
+            <li><b>Calculate EMI</b>: Provides the monthly EMI, total payment, and total interest.</li>
+          </ol>
         </div>
+      </div>
     </div>
     <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5">
       <div class="input-container">
@@ -476,9 +476,10 @@
       <br />
       <div class="btn-calculate">
         <button class="btn btn-calculate" type="button" onclick="calculateEMI()">Calculate</button>
+        <button type="button" onclick="clearAll()" class="btn btn-secondary"><p class="btn-text">Clear</p></button>
       </div>
       <br />
-       <div class="result" style="display: flex; justify-content: flex-start; font-size: medium;"><b>Result :</b></div>
+      <div class="result" style="display: flex; justify-content: flex-start; font-size: medium;"><b>Result :</b></div>
       <div style="display: flex;">
         <div class="result-container">
           <div>Monthly EMI</div>
@@ -492,442 +493,434 @@
         </div>
       </div>
     </div>
-    </div>
+    
     <!-- End EMI Calculator -->
   
     <!-- Savings Goal Calculator -->
     <script src="SavingsGoalCalculator.js" defer></script>
+    <script src="SavingsGoalCalculator.js" ></script>
     <div class="header" style="padding-top: 100px;">
       <h3>Savings Goal Calculator</h3>
-      <p class="cal-content">The Savings Goal Calculator is designed to help you determine how much you need to save monthly to reach your financial goals. By entering your goal amount, current savings, monthly savings, and expected annual interest rate, this calculator shows the time required to achieve your goal.</p>
-        <div class="know-more">
-          <button class="know-more-btn">Know More</button>
-          <div class="know-more-content">
-            <h6 style="text-align: left; margin: 2% 16%; padding-left: 5px;">Here's how it works:</h6>
-              <!-- <p style="text-align: left; margin: 2% 16%; padding: 5px;"> -->
-                <ol type="1" style="font-size: 1rem; text-align: left; margin-left: 17%; margin-bottom: 2rem;">
-                  <li><b>Goal Amount</b>: Enter your financial goal amount.</li>
-                  <li><b>Current Savings</b>: Enter the amount you have already saved.</li>
-                  <li><b>Monthly Savings</b>: Specify the amount you plan to save monthly.</li>
-                  <li><b>Interest Rate</b>: Enter the expected annual interest rate.</li>
-                  <li><b>Calculate Savings Goal</b>: Calculates the time needed to reach your goal.</li>
-                </ol> 
-              <!-- </p> -->
-          </div>
+      <p class="cal-content">
+        The Savings Goal Calculator is designed to help you determine how much you need to save monthly to reach your financial goals. By entering your goal amount, current savings, monthly savings, and expected annual interest rate, this calculator shows the time required to achieve your goal.
+      </p>
+      <div class="know-more">
+        <button class="know-more-btn">Know More</button>
+        <div class="know-more-content">
+          <h6 style="text-align: left; margin: 2% 16%; padding-left: 5px;">Here's how it works:</h6>
+          <ol type="1" style="font-size: 1rem; text-align: left; margin-left: 17%; margin-bottom: 2rem;">
+            <li><b>Goal Amount</b>: Enter your financial goal amount.</li>
+            <li><b>Current Savings</b>: Enter the amount you have already saved.</li>
+            <li><b>Monthly Savings</b>: Specify the amount you plan to save monthly.</li>
+            <li><b>Interest Rate</b>: Enter the expected annual interest rate.</li>
+            <li><b>Calculate Savings Goal</b>: Calculates the time needed to reach your goal.</li>
+          </ol>
         </div>
-
-      <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5">
-        <div class="input-container">
-            <div>
-                <div><b>Savings Goal Amount (INR)</b></div>
-                <div><input class="form-control" type="number" id="goalAmount" required /></div>
-                <br/>
-                <div><b>Current Savings (INR)</b></div>
-                <div><input class="form-control" type="number" id="currentSavings" required /></div>
-                <br/>
-                <div><b>Time Period (Months)</b></div>
-                <div><input class="form-control" type="number" id="timePeriod" required /></div>
-            </div>
-        </div>
-        <br/>
-        <div class="btn-calculate">
-            <button class="btn btn-calculate" type="button" onclick="calculateSavings()">Calculate</button>
-        </div>
-        <br/>
-        <div style="display: flex;">
-            <div class="sresult"><b>Result:</b></div>
-            <div class="sresult-container">
-                <div class="sgresult" id="result"></div>
-            </div>
-        </div>
+      </div>
     </div>
-    <!-- End Savings Goal Calculator -->
-
-    <!-- Insurance Calculator -->
-    <script src="insuranceCalculator.js"></script>
-    <div class="header" style="padding-top: 100px;">
-      <h3>Insurance Calculator</h3>
-      <p class="cal-content">The Insurance Calculator estimates the benefits of an insurance policy
-         based on the sum assured, policy term, and annual premium. This tool helps you understand the potential returns from your insurance policy and plan your coverage effectively.</p>
-        <div class="know-more">
-          <button class="know-more-btn">Know More</button>
-          <div class="know-more-content">
-            <h6 style="text-align: left; margin: 2% 16%; padding-left: 5px;">Here's how it works:</h6>
-              <!-- <p style="text-align: left; margin: 2% 16%; padding: 5px;"> -->
-                <ol type="1" style="font-size: 1rem; text-align: left; margin-left: 17%; margin-bottom: 2rem;">
-                  <li><b>Goal Amount</b>: Enter your financial goal amount.</li>
-                  <li><b>Current Savings</b>: Enter the amount you have already saved.</li>
-                  <li><b>Monthly Savings</b>: Specify the amount you plan to save monthly.</li>
-                  <li><b>Interest Rate</b>: Enter the expected annual interest rate.</li>
-                  <li><b>Calculate Savings Goal</b>: Calculates the time needed to reach your goal.</li>
-                </ol>  
-              <!-- </p> -->
-          </div>
-        </div>
-    </div>
+    
     <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5">
       <div class="input-container">
         <div>
-          <div><b>Sum assured (INR)</b></div>
-          <div><input class="form-control" id="Sumassured" type="number" style="margin: 1% 5% 0 0" /></div>
+          <div><b>Savings Goal Amount (INR)</b></div>
+          <div><input class="form-control" type="number" id="goalAmount" required /></div>
           <br />
-          <div><b>Policy term (Years)</b></div>
-          <div><input class="form-control" id="Policyterm" type="number" /></div>
+          <div><b>Current Savings (INR)</b></div>
+          <div><input class="form-control" type="number" id="currentSavings" required /></div>
           <br />
-          <div><b>Annual premium (%)</b></div>
-          <div><input class="form-control" id="Annualpremium" type="number" /></div>
+          <div><b>Monthly Savings (INR)</b></div>
+          <div><input class="form-control" type="number" id="monthlySavings" required /></div>
           <br />
-          <div><b>Reversionary Bonus (%)</b></div>
-          <div><input class="form-control" id="ReversionaryBonus" type="number" /></div>
-          <br />
-          <div><b>Terminal Bonus (%)</b></div>
-          <div><input class="form-control" id="TerminalBonus" type="number" /></div>
-          <br />
-          <div class="centered-content" style="display: flex;">
-            <input name="check" id="surrendered" type="radio" style="width: 20px;" /><b>Early Surrendered</b>
-          </div>
-            <br>
-            <div class="centered-content" style="display: flex;">
-              <input name="check" id="death" type="radio" style="width: 20px;" /><b>Policyholder's Death</b>
-          </div>
-          <br />
+          <div><b>Interest Rate (%)</b></div>
+          <div><input class="form-control" type="number" id="interestRate" required /></div>
         </div>
       </div>
       <br />
       <div class="btn-calculate">
-        <button type="button" onclick="calculateInsurance()">Calculate</button>
+        <button class="btn btn-calculate" type="button" onclick="calculateSavings()">Calculate</button>
+        <button class="btn btn-secondary" type="button" onclick="clearSavings()"><p class="btn-text">Clear</p></button>
       </div>
       <br />
-      <div style="display: flex; flex-direction: column;">
-        <div class="result"><b>Result :</b></div>
-          <p id="ReversionaryBonusAmt" class="pb-2"></p>
-          <p id="TerminalBonusAmt" class="pb-2"></p>
-          <p id="TotalBonus" class="pb-2"></p>
-          <p id="TotalPremium" class="pb-2"></p>
-          <p id="netGain" class="pb-2"></p>
+      <div style="display: flex;">
+        <div class="sresult"><b>Result:</b></div>
+        <div class="sresult-container">
+          <div class="sgresult" id="result"></div>
         </div>
       </div>
     </div>
+    
+    <!-- End Savings Goal Calculator -->
+
+    <!-- Insurance Calculator -->
+    <script src="insuranceCalculator.js" defer></script>
+<div class="header" style="padding-top: 100px;">
+  <h3>Insurance Calculator</h3>
+  <p class="cal-content">
+    The Insurance Calculator estimates the benefits of an insurance policy based on the sum assured, policy term, and annual premium. This tool helps you understand the potential returns from your insurance policy and plan your coverage effectively.
+  </p>
+  <div class="know-more">
+    <button class="know-more-btn">Know More</button>
+    <div class="know-more-content">
+      <h6 style="text-align: left; margin: 2% 16%; padding-left: 5px;">Here's how it works:</h6>
+      <ol type="1" style="font-size: 1rem; text-align: left; margin-left: 17%; margin-bottom: 2rem;">
+        <li><b>Sum assured</b>: Enter the sum assured amount.</li>
+        <li><b>Policy term</b>: Enter the policy term in years.</li>
+        <li><b>Annual premium</b>: Enter the annual premium percentage.</li>
+        <li><b>Reversionary Bonus</b>: Enter the reversionary bonus percentage.</li>
+        <li><b>Terminal Bonus</b>: Enter the terminal bonus percentage.</li>
+        <li><b>Calculate Insurance</b>: Calculates the insurance benefits based on the inputs.</li>
+      </ol>
     </div>
+  </div>
+</div>
+<div class="page-container shadow p-5 mb-5 bg-white rounded mt-5">
+  <div class="input-container">
+    <div>
+      <div><b>Sum assured (INR)</b></div>
+      <div><input class="form-control" id="Sumassured" type="number" style="margin: 1% 5% 0 0" /></div>
+      <br />
+      <div><b>Policy term (Years)</b></div>
+      <div><input class="form-control" id="Policyterm" type="number" /></div>
+      <br />
+      <div><b>Annual premium (%)</b></div>
+      <div><input class="form-control" id="Annualpremium" type="number" /></div>
+      <br />
+      <div><b>Reversionary Bonus (%)</b></div>
+      <div><input class="form-control" id="ReversionaryBonus" type="number" /></div>
+      <br />
+      <div><b>Terminal Bonus (%)</b></div>
+      <div><input class="form-control" id="TerminalBonus" type="number" /></div>
+      <br />
+      <div class="centered-content" style="display: flex;">
+        <input name="check" id="surrendered" type="radio" style="width: 20px;" /><b>Early Surrendered</b>
+      </div>
+      <br />
+      <div class="centered-content" style="display: flex;">
+        <input name="check" id="death" type="radio" style="width: 20px;" /><b>Policyholder's Death</b>
+      </div>
+      <br />
+    </div>
+  </div>
+  <br />
+  <div class="btn-calculate">
+    <button type="button" onclick="calculateInsurance()">Calculate</button>
+    <button class="btn btn-secondary" type="button" onclick="clearInsurance()"><p class="btn-text">Clear</p></button>
+  </div>
+  <br />
+  <div style="display: flex; flex-direction: column;">
+    <div class="result"><b>Result :</b></div>
+    <p id="ReversionaryBonusAmt" class="pb-2"></p>
+    <p id="TerminalBonusAmt" class="pb-2"></p>
+    <p id="TotalBonus" class="pb-2"></p>
+    <p id="TotalPremium" class="pb-2"></p>
+    <p id="netGain" class="pb-2"></p>
+  </div>
+</div>
+
 
     <!-- End Insurance Calculator -->
 
     <!-- NPV Calculator -->
     <script src="npvCalculator.js" defer></script>
-    <div class="header" style="padding-top: 100px;">
-      <h3>Net Present Value<br> (NPV) Calculator</h3>
-      <p class="cal-content">The NPV (Net Present Value) Calculator is a tool designed to help you evaluate the profitability of an investment by calculating the present value of expectedfuture cash flows. This calculator helps investors make informed decisions, ensuring that future cash flows are accurately evaluated in today's terms.</p>
-        <div class="know-more">
-  <button class="know-more-btn">Know More</button>
-  <div class="know-more-content">
-     <h6 style="text-align: left; margin: 2% 16%; padding-left: 5px;">Here's how it works:</h6>
+<div class="header" style="padding-top: 100px;">
+  <h3>Net Present Value<br> (NPV) Calculator</h3>
+  <p class="cal-content">
+    The NPV (Net Present Value) Calculator is a tool designed to help you evaluate the profitability of an investment by calculating the present value of expected future cash flows. This calculator helps investors make informed decisions, ensuring that future cash flows are accurately evaluated in today's terms.
+  </p>
+  <div class="know-more">
+    <button class="know-more-btn">Know More</button>
+    <div class="know-more-content">
+      <h6 style="text-align: left; margin: 2% 16%; padding-left: 5px;">Here's how it works:</h6>
       <p style="text-align: left; margin: 2% 16%; padding: 5px;">
         1. <b>Initial Investment:</b> Enter the amount of your initial investment. <br>
-        2. <b>Discount Rate:</b> Enter the discount rate, which represents the rate of return required to make the
-        investment worthwhile.<br>
-        3. <b>Cash Flows:</b> Add the expected cash flows for each year of the investment. You can add multiple cash
-        flow inputs for different years and remove any as needed.<br>
-        4. <b>Calculate NPV:</b> Once all inputs are provided, click the 'Calculate NPV' button to compute the net
-        present value. The result will display the NPV, indicating the potential profitability of your investment.<br>
+        2. <b>Discount Rate:</b> Enter the discount rate, which represents the rate of return required to make the investment worthwhile.<br>
+        3. <b>Cash Flows:</b> Add the expected cash flows for each year of the investment. You can add multiple cash flow inputs for different years and remove any as needed.<br>
+        4. <b>Calculate NPV:</b> Once all inputs are provided, click the 'Calculate NPV' button to compute the net present value. The result will display the NPV, indicating the potential profitability of your investment.<br>
       </p>
+    </div>
   </div>
 </div>
-   </div>
-    <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5">
-      <div class="input-container">
-        <div>
-          <div><b>Initial Investment (INR)</b></div>
-          <div><input class="form-control" id="initialInvestment" type="number" style="margin: 1% 5% 0 0" /></div>
-          <br />
-          <div><b>Discount Rate (%)</b></div>
-          <div><input class="form-control" id="discountRate" type="number" /></div>
-        </div>
-      </div>
+<div class="page-container shadow p-5 mb-5 bg-white rounded mt-5">
+  <div class="input-container">
+    <div>
+      <div><b>Initial Investment (INR)</b></div>
+      <div><input class="form-control" id="initialInvestment" type="number" style="margin: 1% 5% 0 0" /></div>
       <br />
-      <div class="cash-flows-container">
-        <div><b>Cash Flow</b></div>
-        <div id="cashFlows">
-          <!-- Cash flow inputs will be added here dynamically -->
-        </div>
-        <div class="npv-calculate">
-          <button type="button" onclick="addCashFlow()">+ Add Year</button>
-        </div>
-      </div>
-      <br />
-      <div class="btn-calculate">
-        <button class="btn btn-calculate" type="button" onclick="calculateNPV()">Calculate</button>
-      </div>
-      <br />
-      <div style="display: flex;">
-        <div class="nresult"><b>Result :</b></div>
-        <div class="nresult-container">
-          <div>NPV</div>
-          <div><span id="NPV_result">Rs.</span>&nbsp;<span id="npvResult"></span></div>
-        </div>
-      </div>
+      <div><b>Discount Rate (%)</b></div>
+      <div><input class="form-control" id="discountRate" type="number" /></div>
     </div>
+  </div>
+  <br />
+  <div class="cash-flows-container">
+    <div><b>Cash Flow</b></div>
+    <div id="cashFlows">
+      <!-- Cash flow inputs will be added here dynamically -->
+    </div>
+    <div class="npv-calculate">
+      <button type="button" onclick="addCashFlow()">+ Add Year</button>
+    </div>
+  </div>
+  <br />
+  <div class="btn-calculate">
+    <button class="btn btn-calculate" type="button" onclick="calculateNPV()">Calculate</button>
+    <button class="btn btn-secondary" type="button" onclick="clearNPV()"><p class="btn-text">Clear</p></button>
+  </div>
+  <br />
+  <div style="display: flex;">
+    <div class="nresult"><b>Result :</b></div>
+    <div class="nresult-container">
+      <div>NPV</div>
+      <div><span id="NPV_result">Rs.</span>&nbsp;<span id="npvResult"></span></div>
+    </div>
+  </div>
+</div>
+
     <!-- End NPV Calculator -->
 
 
 
 
     <!--ROI calculator-->
-    <script src="roiCalculator.js"></script>
+    <script src="roiCalculator.js" defer></script>
     <div class="header" style="padding-top: 100px;">
       <h3>Return on Investment(ROI) Calculator</h3>
-      <p class="cal-content">The ROI (Return on Investment) Calculator helps you measure the profitability of an investment. By inputting the initial investment amount and the final value of the investment, this tool 
-        calculates the percentage return on investment, helping you assess the efficiency of your investment.</p>
-        <div class="know-more">
-          <button class="know-more-btn">Know More</button>
-          <div class="know-more-content">
-            <h6 style="text-align: left; margin: 2% 16%; padding-left: 5px;">Here's how it works:</h6>
-              <!-- <p style="text-align: left; margin: 2% 16%; padding: 5px;"> -->
-                <ol type="1" style="font-size: 1rem; text-align: left; margin-left: 17%; margin-bottom: 2rem;">
-                  <li><b>Initial Investment</b>: Enter the initial investment amount.</li>
-                  <li><b>Final Value</b>: Enter the final value of the investment.</li>
-                  <li><b>Calculate ROI</b>: Determines the return on investment percentage.</li>
-                </ol> 
-              <!-- </p> -->
-          </div>
+      <p class="cal-content">
+        The ROI (Return on Investment) Calculator helps you measure the profitability of an investment. By inputting the initial investment amount and the final value of the investment, this tool calculates the percentage return on investment, helping you assess the efficiency of your investment.
+      </p>
+      <div class="know-more">
+        <button class="know-more-btn">Know More</button>
+        <div class="know-more-content">
+          <h6 style="text-align: left; margin: 2% 16%; padding-left: 5px;">Here's how it works:</h6>
+          <ol type="1" style="font-size: 1rem; text-align: left; margin-left: 17%; margin-bottom: 2rem;">
+            <li><b>Initial Investment</b>: Enter the initial investment amount.</li>
+            <li><b>Final Value</b>: Enter the final value of the investment.</li>
+            <li><b>Calculate ROI</b>: Determines the return on investment percentage.</li>
+          </ol>
         </div>
-        </div>
+      </div>
+    </div>
     <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5">
       <div class="">
         <form id="roi-form" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
           <div class="form-group">
-              <label for="invested">
-                <b style="color: #6a6972;">Total Amount Invested(Rs):</b>
-              </label>
-              <input class="form-control" type="number" id="invested" name="invested" required>
+            <label for="invested">
+              <b style="color: #6a6972;">Total Amount Invested (Rs):</b>
+            </label>
+            <input class="form-control" type="number" id="invested" name="invested" required>
           </div>
           <div class="form-group">
-              <label for="return">
-                <b style="color: #6a6972;">
-                Total Amount Returned(Rs):
-                </b>
-              </label>
-              <input class="form-control" type="number" id="return" name="return" required>
+            <label for="return">
+              <b style="color: #6a6972;">Total Amount Returned (Rs):</b>
+            </label>
+            <input class="form-control" type="number" id="return" name="return" required>
           </div>
           <div class="btn-calculate">
             <button id="submitBtn1" type="submit" class="btn btn-calculate">Calculate</button>
+            <button type="button" class="btn btn-secondary" onclick="clearROI()"><p class="btn-text">Clear</p></button>
           </div>
-      </form>
-      <div class="calculation" style="margin-top: 20px; display: flex; gap: 20px;">
-        <b>Result:</b>
-        <div class="ans" style="margin-top: -3px;">
-      <div id="gl" class="gl" style="font-size: 20px;"></div>
-      <div id="result" class="roi" style="font-size: 20px; padding-top: 10px;"></div>
+        </form>
+        <div class="calculation" style="margin-top: 20px; display: flex; gap: 20px;">
+          <b>Result:</b>
+          <div class="ans" style="margin-top: -3px;">
+            <div id="gl" class="gl" style="font-size: 20px;"></div>
+            <div id="result" class="roi" style="font-size: 20px; padding-top: 10px;"></div>
+          </div>
         </div>
-    </div>
       </div>
     </div>
+    
 
 
 
     <!--End of RoI calculator-->
+
+
     <!--Start of GST Calculator-->
-    <script src="GSTcalc.js"></script>
-    <div class="header" style="padding-top: 100px;">
-        <h3>Goods and Service Tax (GST) Calculator</h3>
-        <p class="cal-content">The GST (Goods and Services Tax) Calculator computes the GST-inclusive or exclusive amount based on the original amount and the applicable GST rate.
-           This tool simplifies the calculation of GST for various transactions.</p>
-        <div class="know-more">
-          <button class="know-more-btn">Know More</button>
-          <div class="know-more-content">
+    <script src="GSTcalc.js" defer></script>
+<div class="header" style="padding-top: 100px;">
+    <h3>Goods and Service Tax (GST) Calculator</h3>
+    <p class="cal-content">The GST (Goods and Services Tax) Calculator computes the GST-inclusive or exclusive amount based on the original amount and the applicable GST rate. This tool simplifies the calculation of GST for various transactions.</p>
+    <div class="know-more">
+        <button class="know-more-btn">Know More</button>
+        <div class="know-more-content">
             <h6 style="text-align: left; margin: 2% 16%; padding-left: 5px;">Here's how it works:</h6>
-              <!-- <p style="text-align: left; margin: 2% 16%; padding: 5px;"> -->
-                <ol type="1" style="font-size: 1rem; text-align: left; margin-left: 17%; margin-bottom: 2rem;">
-                  <li><b>Original Amount</b>: Enter the original amount before GST.</li>
-                  <li><b>GST Rate</b>: Specify the GST rate.</li>
-                  <li><b>Calculate GST</b>: Computes the GST-inclusive or exclusive amount.</li>
-                </ol>
-              <!-- </p> -->
-          </div>
+            <ol type="1" style="font-size: 1rem; text-align: left; margin-left: 17%; margin-bottom: 2rem;">
+                <li><b>Original Amount</b>: Enter the original amount before GST.</li>
+                <li><b>GST Rate</b>: Specify the GST rate.</li>
+                <li><b>Calculate GST</b>: Computes the GST-inclusive or exclusive amount.</li>
+            </ol>
         </div>
     </div>
-      <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5" id="GST">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-               <form id="gst-calculator" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                        <div class="form-group">
-                        <label for="mode" class="mode">Mode:</label>
-                        <select id="mode" class="form-control">
-                            <option value="exclusive">Exclusive of GST</option>
-                            <option value="inclusive">Inclusive of GST</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="amount" class="amount">Amount:</label>
-                        <input type="number" id="amount" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="tax-slab" class="tax-slab">Tax Slab (%):</label>
-                        <input type="number" id="tax-slab" class="form-control" required>
-                    </div>
-                    <div class="btn-calculate">
-
-                      <button id="submitBtn2" type="submit" class="btn btn-calculate">Calculate</button>
-
-                    </div>
-                </form>
-                <div id="result" class="mt-3">
-                    <h5>Result:</h5>
-                    <p id="total-gst"></p>
-                    <p id="post-gst-amount"></p>
+</div>
+<div class="page-container shadow p-5 mb-5 bg-white rounded mt-5" id="GST">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form id="gst-calculator" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <div class="form-group">
+                    <label for="mode" class="mode">Mode:</label>
+                    <select id="mode" class="form-control">
+                        <option value="exclusive">Exclusive of GST</option>
+                        <option value="inclusive">Inclusive of GST</option>
+                    </select>
                 </div>
+                <div class="form-group">
+                    <label for="amount" class="amount">Amount:</label>
+                    <input type="number" id="amount" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="tax-slab" class="tax-slab">Tax Slab (%):</label>
+                    <input type="number" id="tax-slab" class="form-control" required>
+                </div>
+                <div class="btn-calculate">
+                    <button id="submitBtn2" type="submit" class="btn btn-calculate">Calculate</button>
+                    <button type="button" class="btn btn-secondary" onclick="clearGST()">Clear</button>
+                </div>
+            </form>
+            <div id="result" class="mt-3">
+                <h5>Result:</h5>
+                <p id="total-gst"></p>
+                <p id="post-gst-amount"></p>
             </div>
-          </div>
-      </div>
+        </div>
+    </div>
+</div>
+
     <!--end of GST Calc-->
 
     <!--Start of Income Tax Calc-->
     <script src="IncomeTax.js" defer></script>
     <div class="header" style="padding-top: 100px;">
-      <h3>Income Tax Calculator</h3>
-      <p class="cal-content">The Income Tax Calculator determines the tax payable based on your annual income and applicable tax rate. It helps you estimate your tax liability and plan your finances accordingly.</p>
+        <h3>Income Tax Calculator</h3>
+        <p class="cal-content">The Income Tax Calculator determines the tax payable based on your annual income and applicable tax rate. It helps you estimate your tax liability and plan your finances accordingly.</p>
         <div class="know-more">
-          <button class="know-more-btn">Know More</button>
-          <div class="know-more-content">
-            <h6 style="text-align: left; margin: 2% 16%; padding-left: 5px;">Here's how it works:</h6>
-              <!-- <p style="text-align: left; margin: 2% 16%; padding: 5px;"> -->
+            <button class="know-more-btn">Know More</button>
+            <div class="know-more-content">
+                <h6 style="text-align: left; margin: 2% 16%; padding-left: 5px;">Here's how it works:</h6>
                 <ol type="1" style="font-size: 1rem; text-align: left; margin-left: 17%; margin-bottom: 2rem;">
-                  <li><b>Income</b>: Enter your total annual income.</li>
-                  <li><b>Tax Rate</b>: Specify the applicable tax rate.</li>
-                  <li><b>Calculate Tax</b>: Computes the income tax based on the inputs.</li>
+                    <li><b>Income</b>: Enter your total annual income.</li>
+                    <li><b>Tax Rate</b>: Specify the applicable tax rate.</li>
+                    <li><b>Calculate Tax</b>: Computes the income tax based on the inputs.</li>
                 </ol>
-              <!-- </p> -->
-          </div>
+            </div>
         </div>
     </div>
-  </div>
-  <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5" id="IncomeTax">
-      <div class="row">
-          <div class="col-md-6 offset-md-3">
-              <form id="income-tax-calculator" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                  <div class="form-group">
-                      <label for="income" class="income">Income:</label>
-                      <input type="number" id="income" class="form-control" required>
-                  </div>
-                  <div class="form-group">
-                      <label for="tax-rate" class="tax-rate">Tax Rate (%):</label>
-                      <input type="number" id="tax-rate" class="form-control" required>
-                  </div>
-                  <div class="btn-calculate">      
-                      <button id="submitBtn3" type="submit" class="btn btn-calculate">Calculate</button>
-                  </div>
-            </form>
-              <div id="result" class="mt-3">
-                  <h5>Result:</h5>
-                  <p id="income-tax"></p>
-                  <p id="real-income"></p>
-              </div>
-          </div>
-      </div>
-  </div>
+    <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5" id="IncomeTax">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <form id="income-tax-calculator" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <div class="form-group">
+                        <label for="income" class="income">Income:</label>
+                        <input type="number" id="income" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tax-rate" class="tax-rate">Tax Rate (%):</label>
+                        <input type="number" id="tax-rate" class="form-control" required>
+                    </div>
+                    <div class="btn-calculate">
+                        <button id="submitBtn3" type="submit" class="btn btn-calculate">Calculate</button>
+                        <button type="button" class="btn btn-secondary" onclick="clearIncomeTax()"><p class="btn-text">Clear</p></button>
+                    </div>
+                </form>
+                <div id="result" class="mt-3">
+                    <h5>Result:</h5>
+                    <p id="income-tax"></p>
+                    <p id="real-income"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
   <!-- end of Income Tax Calc-->
    
   <!-- Profit Margin Calculator starts here -->
   <script src="ProfitMargin.js" defer></script>
 
-<div class="header" style="padding-top: 100px;">
-  <h3>Profit Margin Calculator</h3>
-  <p class="cal-content">The Profit Margin Calculator calculates the profit margin percentage based on the revenue and cost inputs. This tool helps businesses and individuals assess their profitability and make informed pricing and cost management decisions.</p>
-        <div class="know-more">
-          <button class="know-more-btn">Know More</button>
-          <div class="know-more-content">
-            <h6 style="text-align: left; margin: 2% 16%; padding-left: 5px;">Here's how it works:</h6>
-              <!-- <p style="text-align: left; margin: 2% 16%; padding: 5px;"> -->
-                <ol type="1" style="font-size: 1rem; text-align: left; margin-left: 17%; margin-bottom: 2rem;">
-                  <li><b>Income</b>: Enter your total annual income.</li>
-                  <li><b>Tax Rate</b>: Specify the applicable tax rate.</li>
-                  <li><b>Calculate Tax</b>: Computes the income tax based on the inputs.</li>
-                </ol> 
-              <!-- </p> -->
-          </div>
-        </div>
-    </div>
-</div>
-
-<div class="page-container shadow p-5 mb-5 bg-white rounded mt-5" id="ProfitMargin">
-  <div class="row">
-    <div class="col-md-6 offset-md-3">
-      <form id="profit-margin-calculator" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-        <div class="form-group">
-          <label for="cost" class="cost">Cost Price:</label>
-          <input type="number" id="cost" class="form-control" required>
-        </div>
-        <div class="form-group">
-          <label for="selling-price" class="selling-price">Selling Price:</label>
-          <input type="number" id="selling-price" class="form-control" required>
-        </div>
-        <div class="btn-calculate">
-
-          <button id="submitBtn" type="submit" class="btn btn-calculate">Calculate</button>
-        </div>
-      </form>
-      <div id="result" class="mt-3">
-        <h5>Result:</h5>
-        <p id="profit-margin"></p>
+  <div class="header" style="padding-top: 100px;">
+    <h3>Profit Margin Calculator</h3>
+    <p class="cal-content">The Profit Margin Calculator calculates the profit margin percentage based on the revenue and cost inputs. This tool helps businesses and individuals assess their profitability and make informed pricing and cost management decisions.</p>
+    <div class="know-more">
+      <button class="know-more-btn">Know More</button>
+      <div class="know-more-content">
+        <h6 style="text-align: left; margin: 2% 16%; padding-left: 5px;">Here's how it works:</h6>
+        <ol type="1" style="font-size: 1rem; text-align: left; margin-left: 17%; margin-bottom: 2rem;">
+          <li><b>Cost Price</b>: Enter the cost price of the product.</li>
+          <li><b>Selling Price</b>: Enter the selling price of the product.</li>
+          <li><b>Calculate Profit Margin</b>: Computes the profit margin based on the inputs.</li>
+        </ol>
       </div>
     </div>
   </div>
-</div>
-
+  
+  <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5" id="ProfitMargin">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <form id="profit-margin-calculator" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+          <div class="form-group">
+            <label for="cost" class="cost">Cost Price:</label>
+            <input type="number" id="cost" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="selling-price" class="selling-price">Selling Price:</label>
+            <input type="number" id="selling-price" class="form-control" required>
+          </div>
+          <div class="btn-calculate">
+            <button id="submitBtn" type="submit" class="btn btn-calculate">Calculate</button>
+            <button type="button" class="btn btn-secondary" onclick="clearProfitMargin()"><p class="btn-text">Clear</p></button>
+          </div>
+        </form>
+        <div id="result" class="mt-3">
+          <h5>Result:</h5>
+          <p id="profit-margin"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 <!-- Profit Margin Calculator ends here  -->
 
-
-
-
-
 <!-- expenditure and saving Calculator starts here -->
+<script src="expenditureandsaving.js" defer></script>
 
 <div class="header" style="padding-top: 100px;">
   <h3 class="text-center mb-4">Expenditure and Savings Calculator</h3>
-  <p class="cal-content">The Profit Margin Calculator calculates the profit margin percentage based on the revenue and cost inputs. This tool helps businesses and individuals assess their profitability and make informed pricing and cost management decisions.</p>
-      <div class="know-more">
-        <button class="know-more-btn">Know More</button>
-        <div class="know-more-content">
-          <h6 style="text-align: left; margin: 2% 16%; padding-left: 5px;">Here's how it works:</h6>
-            <!-- <p style="text-align: left; margin: 2% 16%; padding: 5px;"> -->
-              <ol type="1" style="font-size: 1rem; text-align: left; margin-left: 17%; margin-bottom: 2rem;">
-                <li><b>Income</b>: Enter your total monthly income.</li>
-                <li><b>Expenses</b>: List your monthly expenses.</li>
-                <li><b>Calculate Savings</b>: Analyzes and provides your monthly savings.</li>
-              </ol> 
-            <!-- </p> -->
-
-        </div>
-      </div>
-  </div>
- 
-<div class="page-container shadow p-5 mb-5 bg-white rounded mt-5" id="ExpenditureSavings">
-  <div class="row">
-      <div class="col-md-6 offset-md-3">
-          <form id="expenditure-savings-calculator" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-              <div class="form-group">
-                  <label for="monthly-income" class="income">Monthly Income:</label>
-                  <input type="number" id="monthly-income" class="form-control" placeholder="Enter your income" required>
-              </div>
-              <div class="form-group">
-                  <label for="monthly-expenditure" class="income">Monthly Expenditure:</label>
-                  <input type="number" id="monthly-expenditure" class="form-control" placeholder="Enter your expenditure" required>
-              </div>
-              <div class="btn-calculate">
-
-                <button id="calculateBtn" type="button" class="btn btn-calculate" >Calculate</button>
-              </div>
-          </form>
-          <div id="result-savings" class="mt-3">
-              <h5>Result:</h5>
-              <p>Your Savings: $<span id="savingsAmount">0.00</span></p>
-          </div>
-      </div>
+  <p class="cal-content">The Expenditure and Savings Calculator helps you analyze your monthly savings based on your income and expenses. This tool assists in managing your finances effectively.</p>
+  <div class="know-more">
+    <button class="know-more-btn">Know More</button>
+    <div class="know-more-content">
+      <h6 style="text-align: left; margin: 2% 16%; padding-left: 5px;">Here's how it works:</h6>
+      <ol type="1" style="font-size: 1rem; text-align: left; margin-left: 17%; margin-bottom: 2rem;">
+        <li><b>Income</b>: Enter your total monthly income.</li>
+        <li><b>Expenses</b>: List your monthly expenses.</li>
+        <li><b>Calculate Savings</b>: Analyzes and provides your monthly savings.</li>
+      </ol>
+    </div>
   </div>
 </div>
 
-
-    <script src="expenditureandsaving.js"></script>
-
+<div class="page-container shadow p-5 mb-5 bg-white rounded mt-5" id="ExpenditureSavings">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <form id="expenditure-savings-calculator" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <div class="form-group">
+          <label for="monthly-income" class="income">Monthly Income:</label>
+          <input type="number" id="monthly-income" class="form-control" placeholder="Enter your income" required>
+        </div>
+        <div class="form-group">
+          <label for="monthly-expenditure" class="income">Monthly Expenditure:</label>
+          <input type="number" id="monthly-expenditure" class="form-control" placeholder="Enter your expenditure" required>
+        </div>
+        <div class="btn-calculate">
+          <button id="calculateBtn" type="button" class="btn btn-calculate">Calculate</button>
+          <button id="clearBtn" type="button" class="btn btn-clear"><p class="btn-text">Clear</p></button>
+        </div>
+      </form>
+      <div id="result-savings" class="mt-3">
+        <h5>Result:</h5>
+        <p>Your Savings: $<span id="savingsAmount">0.00</span></p>
+      </div>
+    </div>
+  </div>
+</div>
 
    <!-- expenditure and saving Calculator ends here  -->
 
@@ -986,7 +979,7 @@
           </div>
           <div class="buttons">
             <button type="submit" class="btn btn-calculate">Calculate</button>
-            <button type="reset" class="btn btn-secondary">Clear</button>
+            <button type="reset" class="btn btn-secondary"><p class="btn-text">Clear</p></button>
           </div>
         </fieldset>
       </form>
@@ -999,120 +992,262 @@
 </div>
 
 <script src="gdp.js" defer></script>
-<script src="gdp.js"></script>
 
      <!-- GDP calucltor end here  -->
 
-    <!--SWP Calculator-->
-    <div class="header" style="padding-top: 100px;">
-      <h3 class="text-center mb-4">Systematic Withdrawal Plan Calculator</h3>
-      <p class="cal-content">The SWP (Systematic Withdrawal Plan) calculator is a financial tool that helps investors plan and manage the regular withdrawal of funds from their investment corpus, typically mutual funds. SWP is used to generate a steady income stream, often for retirees or those looking to supplement their income.</p>
-      <div class="know-more">
-          <button class="know-more-btn">Know More</button>
-          <div class="know-more-content">
-              <h6 style="text-align: left; margin: 2% 16%; padding-left: 5px;">Here's how it works:</h6>
-              <ol type="1" style="font-size: 1rem; text-align: left; margin-left: 17%; margin-bottom: 2rem;">
-                  <li><b>Total Investment</b>: Enter your total investment.</li>
-                  <li><b>Withdrawal Per Month</b>: Enter your withdrawal per month.</li>
-                  <li><b>Expected Return Rate (p.a)</b>: Enter your expected return rate (p.a).</li>
-                  <li><b>Total Period (in years)</b>: Enter your total period of investment in years.</li>
-                  <li><b>Remaining Amount</b>: Analyzes and provides the remaining balance of your investment after scheduled withdrawals, total amount withdrawn, and the duration the investment will last.</li>
-              </ol>
-          </div>
-      </div>
-  </div>
+     <!--SWP Calculator Start-->
+     <script src="SWPCalculator.js" defer></script>
 
-  <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5" id="SWPCalculator">
-      <div class="row">
-          <div class="col-md-6 offset-md-3">
-              <form id="systematic-withdrawal-plan-calculator" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                <fieldset>
-                <div class="form-group">
-                      <label for="totalInvestment">Total Investment:</label>
-                      <input type="number" id="totalInvestment" placeholder="Enter total investment amount" required>            
-                  </div>
-
-                  <div class="form-group">
-                      <label for="withdrawalPerMonth">Withdrawal Per Month:</label>
-                      <input type="number" id="withdrawalPerMonth" placeholder="Enter withdrawal per month" required>            
-                  </div>
-
-                  <div class="form-group">
-                      <label for="expectedReturnRate">Expected Return Rate (p.a):</label>
-                      <input type="number" id="expectedReturnRate" placeholder="Enter Expected Return Rate" required>
-                  </div>
-
-                  <div class="form-group">
-                      <label for="totalPeriod">Total Period (in years):</label>
-                      <input type="number" id="totalPeriod" placeholder="Enter time period in years" required>
-                  </div>
-
-                  <div class="btn-calculate">
-                      <button id="calculateBtn1" type="button" class="btn btn-calculate">Calculate</button>
-                  </div>
-                </fieldset>
-              </form>
-              <div id="result-swp" class="mt-3">
-                  <h5>Result:</h5>
-                  <p>Your Remaining Amount: <span id="remainingAmount"></span></p>
-              </div>
-          </div>
-      </div>
-  </div>
-
-  <script src="SWPCalculator.js"></script>
-
+     <div class="header" style="padding-top: 100px;">
+       <h3 class="text-center mb-4">Systematic Withdrawal Plan Calculator</h3>
+       <p class="cal-content">The SWP (Systematic Withdrawal Plan) calculator is a financial tool that helps investors plan and manage the regular withdrawal of funds from their investment corpus, typically mutual funds. SWP is used to generate a steady income stream, often for retirees or those looking to supplement their income.</p>
+       <div class="know-more">
+         <button class="know-more-btn">Know More</button>
+         <div class="know-more-content">
+           <h6 style="text-align: left; margin: 2% 16%; padding-left: 5px;">Here's how it works:</h6>
+           <ol type="1" style="font-size: 1rem; text-align: left; margin-left: 17%; margin-bottom: 2rem;">
+             <li><b>Total Investment</b>: Enter your total investment.</li>
+             <li><b>Withdrawal Per Month</b>: Enter your withdrawal per month.</li>
+             <li><b>Expected Return Rate (p.a)</b>: Enter your expected return rate (p.a).</li>
+             <li><b>Total Period (in years)</b>: Enter your total period of investment in years.</li>
+             <li><b>Remaining Amount</b>: Analyzes and provides the remaining balance of your investment after scheduled withdrawals, total amount withdrawn, and the duration the investment will last.</li>
+           </ol>
+         </div>
+       </div>
+     </div>
+     
+     <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5" id="SWPCalculator">
+       <div class="row">
+         <div class="col-md-6 offset-md-3">
+           <form id="systematic-withdrawal-plan-calculator" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+             <fieldset>
+               <div class="form-group">
+                 <label for="totalInvestment">Total Investment:</label>
+                 <input type="number" id="totalInvestment" class="form-control" placeholder="Enter total investment amount" required>
+               </div>
+               <div class="form-group">
+                 <label for="withdrawalPerMonth">Withdrawal Per Month:</label>
+                 <input type="number" id="withdrawalPerMonth" class="form-control" placeholder="Enter withdrawal per month" required>
+               </div>
+               <div class="form-group">
+                 <label for="expectedReturnRate">Expected Return Rate (p.a):</label>
+                 <input type="number" id="expectedReturnRate" class="form-control" placeholder="Enter Expected Return Rate" required>
+               </div>
+               <div class="form-group">
+                 <label for="totalPeriod">Total Period (in years):</label>
+                 <input type="number" id="totalPeriod" class="form-control" placeholder="Enter time period in years" required>
+               </div>
+               <div class="btn-calculate">
+                 <button id="calculateBtn1" type="button" class="btn btn-calculate">Calculate</button>
+                 <button id="clearBtn" type="button" class="btn btn-clear"><p class="btn-text">Clear</p></button>
+               </div>
+             </fieldset>
+           </form>
+           <div id="result-swp" class="mt-3">
+             <h5>Result:</h5>
+             <p>Your Remaining Amount: <span id="remainingAmount"></span></p>
+           </div>
+         </div>
+       </div>
+     </div>
+     <!--SWP Calculator End-->
 
   <!-- credit card payoff calculator starts here  -->
-       
+  <script src="creditcardpayoff.js" defer></script>
+
   <div class="header" style="padding-top: 100px;">
     <h3 class="text-center mb-4">Credit Card Payoff Calculator</h3>
     <p class="cal-content">Calculate how long it will take to pay off your credit card balance with this calculator. Enter your balance, APR, and monthly payment to get started.</p>
     <div class="know-more">
-        <button class="know-more-btn">Know More</button>
-        <div class="know-more-content">
-            <h6 style="text-align: left; margin: 2% 16%; padding-left: 5px;">Here's how it works:</h6>
-            <ol type="1" style="font-size: 1rem; text-align: left; margin-left: 17%; margin-bottom: 2rem;">
-                <li><b>Credit Card Balance</b>: Enter your current credit card balance.</li>
-                <li><b>Annual Percentage Rate (APR)</b>: Input the annual interest rate on your credit card.</li>
-                <li><b>Monthly Payment</b>: Enter the amount you can pay each month.</li>
-            </ol>
-        </div>
+      <button class="know-more-btn">Know More</button>
+      <div class="know-more-content">
+        <h6 style="text-align: left; margin: 2% 16%; padding-left: 5px;">Here's how it works:</h6>
+        <ol type="1" style="font-size: 1rem; text-align: left; margin-left: 17%; margin-bottom: 2rem;">
+          <li><b>Credit Card Balance</b>: Enter your current credit card balance.</li>
+          <li><b>Annual Percentage Rate (APR)</b>: Input the annual interest rate on your credit card.</li>
+          <li><b>Monthly Payment</b>: Enter the amount you can pay each month.</li>
+        </ol>
+      </div>
     </div>
-</div>
+  </div>
+  
+  <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5" id="CreditCardPayoff">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <form id="credit-card-payoff-calculator" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+          <div class="form-group">
+            <label for="balance" class="income">Credit Card Balance:</label>
+            <input type="number" id="balance" class="form-control" placeholder="Enter your balance (in ₹)" required>
+          </div>
+          <div class="form-group">
+            <label for="apr" class="income">Annual Percentage Rate (APR):</label>
+            <input type="number" id="apr" class="form-control" placeholder="Enter APR (in %)" required>
+          </div>
+          <div class="form-group">
+            <label for="monthly-payment" class="income">Monthly Payment:</label>
+            <input type="number" id="monthly-payment" class="form-control" placeholder="Enter monthly payment (in ₹)" required>
+          </div>
+          <div class="btn-calculate">
+            <button id="calculateBtn" type="button" class="btn btn-calculate">Calculate</button>
+            <button id="clearBtn" type="button" class="btn btn-clear"><p class="btn-text">Clear</p></button>
+          </div>
+        </form>
+        <div id="result-payoff" class="mt-3">
+          <h5>Result:</h5>
+          <p>Months to Pay Off: <span id="monthsToPayOff">0</span></p>
+          <p>Total Interest Paid: ₹<span id="totalInterestPaid">0.00</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- credeit card payoff calculator ends here  -->
 
-<div class="page-container shadow p-5 mb-5 bg-white rounded mt-5" id="CreditCardPayoff">
+  <!-- Bill split calculator  -->
+  <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5">
     <div class="row">
         <div class="col-md-6 offset-md-3">
-            <form id="credit-card-payoff-calculator" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <div class="header" style="padding-top: 100px;">
+                <h3 class="text-center mb-4">Split Bill Calculator</h3>
+            </div>
+            <form id="split-bill-calculator-form" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
                 <div class="form-group">
-                    <label for="balance" class="income">Credit Card Balance:</label>
-                    <input type="number" id="balance" class="form-control" placeholder="Enter your balance (in ₹)" required>
+                    <label for="billSubtotal" class="income">Bill Subtotal:</label>
+                    <input type="number" id="billSubtotal" class="form-control" placeholder="Enter Bill Subtotal" required>
                 </div>
                 <div class="form-group">
-                    <label for="apr" class="income">Annual Percentage Rate (APR):</label>
-                    <input type="number" id="apr" class="form-control" placeholder="Enter APR (in %)" required>
+                    <label for="tipPercentage" class="income">Tip (%):</label>
+                    <input type="number" id="tipPercentage" class="form-control" placeholder="Enter Tip Percentage" required>
                 </div>
                 <div class="form-group">
-                    <label for="monthly-payment" class="income">Monthly Payment:</label>
-                    <input type="number" id="monthly-payment" class="form-control" placeholder="Enter monthly payment (in ₹)" required>
+                    <label for="numberOfPersons" class="income">No. of Persons:</label>
+                    <input type="number" id="numberOfPersons" class="form-control" placeholder="Enter No. of Persons" required>
                 </div>
                 <div class="btn-calculate">
-                    <button id="calculateBtn" type="button" class="btn btn-calculate">Calculate</button>
+                    <button id="calculateBillSplitBtn" type="button" class="btn btn-calculate">Calculate</button>
+                    <button id="clearBillSplitBtn" type="button" class="btn btn-clear">Clear</button>
                 </div>
             </form>
-            <div id="result-payoff" class="mt-3">
+            <div id="result-split-bill" class="mt-3">
                 <h5>Result:</h5>
-                <p>Months to Pay Off: <span id="monthsToPayOff">0</span></p>
-                <p>Total Interest Paid: ₹<span id="totalInterestPaid">0.00</span></p>
+                <p>Total Bill: Rs <span id="totalBill">00.00</span></p>
+                <p>Bill Per Person: Rs <span id="billPerPerson">00.00</span></p>
             </div>
         </div>
     </div>
 </div>
+ <script src="../tools/Billsplit.js"></script>
 
-<script src="creditcardpayoff.js"></script>
-      
-  <!-- credeit card payoff calculator ends here  -->
+  <!-- Bill split calculator end  -->
+
+ <!--FD Calculator Start-->
+     <script src="FDCalculator.js" defer></script>
+
+     <div class="header" style="padding-top: 100px;">
+       <h3 class="text-center mb-4">Fixed Deposit Calculator</h3>
+       <p class="cal-content">The FD(Fixed Deposit) Calculator helps compute the maturity amount and interest earned on fixed deposits based on the principal, interest rate, and duration.</p>
+       <div class="know-more">
+         <button class="know-more-btn">Know More</button>
+         <div class="know-more-content">
+           <h6 style="text-align: left; margin: 2% 16%; padding-left: 5px;">Here's how it works:</h6>
+           <ol type="1" style="font-size: 1rem; text-align: left; margin-left: 17%; margin-bottom: 2rem;">
+             <li><b>Principal Amount (₹)</b>: Enter your principal amount.</li>
+             <li><b>Annual Interest Rate (%)</b>: Enter your annual interest rate.</li>
+             <li><b>Total Period (in years)</b>: Enter your total period of investment in years.</li>
+             <li><b>Total Interest Earned</b>: Analyzes and provides the total interest earned on your investment.</li>
+             <li><b>Total Maturity Amount</b>: Analyzes and provides total maturity amount.</li>
+           </ol>
+         </div>
+       </div>
+     </div>
+     
+     <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5" id="SWPCalculator">
+       <div class="row">
+         <div class="col-md-6 offset-md-3">
+           <form id="fixed-deposit-calculator" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+             <fieldset>
+               <div class="form-group">
+                <label for="principal">Principal Amount (₹):</label>
+                <input type="number" id="principal" placeholder="Enter Principal Amount" required>
+               </div>
+               <div class="form-group">
+                <label for="rate">Annual Interest Rate (%):</label>
+                <input type="number" id="rate" step="0.01" placeholder="Enter Annual Interest Rate" required>
+               </div>
+               <div class="form-group">
+                <label for="years">Time Period (in years):</label>
+                <input type="number" id="years1" placeholder="Enter Time Period" required>
+               </div>
+               <div class="btn-calculate">
+                 <button id="calculateBtn2" type="button" class="btn btn-calculate">Calculate</button>
+                 <button id="clearBtn1" type="button" class="btn btn-clear"><p class="btn-text">Clear</p></button>
+               </div>
+             </fieldset>
+           </form>
+           <div id="result-fd" class="mt-3">
+             <h5>Result:</h5>
+             <p>Total Interest Earned: <span id="interestEarned"></span></p>
+             <p>Total Maturity Amount: <span id="maturityAmount"></span></p>
+           </div>
+         </div>
+       </div>
+     </div>
+     <!--FD Calculator End-->
+
+ <!--RD Calculator Start-->
+ <script src="RDCalculator.js" defer></script>
+
+ <div class="header" style="padding-top: 100px;">
+   <h3 class="text-center mb-4">Recurring Deposit Calculator</h3>
+   <p class="cal-content">The RD (Recurring Deposit) calculator computes the maturity amount and interest earned on regular monthly deposits over a fixed period, given a specified annual interest rate.</p>
+   <div class="know-more">
+     <button class="know-more-btn">Know More</button>
+     <div class="know-more-content">
+       <h6 style="text-align: left; margin: 2% 16%; padding-left: 5px;">Here's how it works:</h6>
+       <ol type="1" style="font-size: 1rem; text-align: left; margin-left: 17%; margin-bottom: 2rem;">
+         <li><b>Monthly Installment (₹)</b>: Enter your monthly installment amount.</li>
+         <li><b>Annual Interest Rate (%)</b>: Enter your annual interest rate.</li>
+         <li><b>Total Period (in months)</b>: Enter your total period of investment in months.</li>
+         <li><b>Total Interest Earned</b>: Analyzes and provides the total interest earned on your investment.</li>
+         <li><b>Total Maturity Amount</b>: Analyzes and provides total maturity amount.</li>
+       </ol>
+     </div>
+   </div>
+ </div>
+ 
+ <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5" id="SWPCalculator">
+   <div class="row">
+     <div class="col-md-6 offset-md-3">
+       <form id="recurring-deposit-calculator" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+         <fieldset>
+           <div class="form-group">
+            <label for="monthly-installment">Monthly Installment (₹):</label>
+            <input type="number" id="monthly-installment" placeholder="Enter Monthly Installment" required>
+           </div>
+           <div class="form-group">
+            <label for="rate">Annual Interest Rate (%):</label>
+            <input type="number" id="rate1" step="0.01" placeholder="Enter Annual Interest Rate" required>
+           </div>
+           <div class="form-group">
+            <label for="months">Time Period (in months):</label>
+            <input type="number" id="months1" placeholder="Enter Time Period" required>
+           </div>
+           <div class="btn-calculate">
+             <button id="calculate-Btn3" type="button" class="btn btn-calculate">Calculate</button>
+             <button id="clearBtn2" type="button" class="btn btn-clear"><p class="btn-text">Clear</p></button>
+           </div>
+         </fieldset>
+       </form>
+       <div id="result-rd" class="mt-3">
+         <h5>Result:</h5>
+         <p>Total Interest Earned: <span id="interestEarned1"></span></p>
+         <p>Total Maturity Amount: <span id="maturityAmount1"></span></p>
+       </div>
+     </div>
+   </div>
+ </div>
+ <!--RD Calculator End-->
+
 </body>
   
   <!-- Timed popup that will appear after succesful submission of feebback form! -->
@@ -1172,68 +1307,81 @@
       });
     </script>
     
-      <div class="footer-widget pb-100">
-        <div class="row" id="footer">
+    <div class="footer-widget pb-100">
+      <div class="row" id="footer">
           <div class="col-lg-4 col-md-6 col-sm-8">
-            <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-              <p class="text">
-                We at FinVeda aim to make you a stock market Guru easy with our AI powered teaching and financial blogs.
-              </p>
-            </div>
+              <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                  <p class="text custom-margin">
+                      We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
+                  </p>
+              </div>
           </div>
           <div class="col-lg-5 col-md-7 col-sm-7">
-            <div class="footer-link d-flex mt-50 justify-content-md-between" style="justify-content: space-around !important;">
-              <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-                <div class="footer-title">
-                  <h4 class="title">Quick Link</h4>
-                </div>
-                <ul class="link">
-                  <li><a href="/blogs/privacy-policy.html">Privacy Policy</a></li>
-                  <li><a href="/blogs/refund-policy.html">Refund Policy</a></li>
-                  <li><a href="/Licensing.html">Licensing</a></li>
-                  <li><a href="/blogs/terms-of-service.html">Terms of Service</a></li>
-                  <li><a href="/contributors.html">Our Contributors</a></li>
-                </ul>
+              <div class="footer-link d-flex mt-50 justify-content-md-between" style="justify-content: space-around !important;">
+                  <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+                      <div class="footer-title">
+                          <h3 class="title custom-margin">Quick Links</h3>
+                      </div>
+                      <ul class="link custom-margin">
+                          <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+                          <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
+                          <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
+                          <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+                          <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+                      </ul>
+                  </div>
+                  <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+                      <div class="footer-title">
+                          <h4 class="title custom-margin">Resources</h4>
+                      </div>
+                      <ul class="link custom-margin">
+                          <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+                          <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                          <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
+                          <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
+                          <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                          <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                      </ul>
+                  </div>
               </div>
-              <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
-                <div class="footer-title">
-                  <h4 class="title">Resources</h4>
-                </div>
-                <ul class="link">
-                  <li><a href="../index.html">Home</a></li>
-                  <li><a href="../about.html">About Us</a></li>
-                  <li><a href="../trends.html">Trends</a></li>
-                  <li><a href="../tools/sip.html">Tools</a></li>
-                  <li><a href="../blog.html">Blog</a></li>
-                  <li><a href="../quiz.html">Quiz</a></li>
-                </ul>
-              </div>
-            </div>
           </div>
           <div class="col-lg-3 col-md-5 col-sm-5">
-            <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-              <div class="footer-title">
-                <h4 class="title">Contact Us</h4>
+              <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                  <div class="footer-title">
+                      <h4 class="title custom-margin">Contact Us</h4>
+                  </div>
+                  <ul class="contact custom-margin-big" style="justify-content: space-around;">
+                      <li class="d-sm-flex justify-content-center">
+                          <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                          <p style="width: 80%;">
+                              <a href="mailto:ayush1337@hotmail.com" target="_blank"
+                                 style="color: white; text-decoration: underline;">
+                                  ayush1337@hotmail.com
+                              </a>
+                          </p>
+                      </li>
+                      <li class="d-sm-flex justify-content-center">
+                          <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                          <div style="width: 80%;">
+                              <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
+                                  fin-veda.vercel.app
+                              </a>
+                          </div>
+                      </li>
+                      <li class="d-sm-flex justify-content-center">
+                          <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 12px; width: 10%;"></i>
+                          <div style="width: 80%;">
+                              <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
+                                 style="color:#fff">
+                                  Delhi, India
+                              </a>
+                          </div>
+                      </li>
+                  </ul>
               </div>
-               <ul class="contact">
-                <li class="d-sm-flex justify-content-center">
-                  <i class="fa fa-envelope d-sm-flex align-items-center white" style="font: size 16px; width: 10%;"></i>
-                  <div style="width: 80%;"><a href="mailto:ayush1337@hotmail.com"  style="color: #fff;" target="_blank">ayush1337@hotmail.com</a></div>
-                </li>
-                <li class="d-sm-flex justify-content-center">
-                  <i class="fa fa-globe d-sm-flex align-items-center white" style="font: size 16px; width: 10%;"></i>
-                  <div style="width: 80%;"><a href="https://fin-veda.vercel.app/index.html" style="color: #fff;">fin-veda.vercel.app</a></div>
-                </li>
-                <li class="d-sm-flex justify-content-center">
-                  <i class="fa fa-location-dot d-sm-flex align-items-center white"
-                    style="font: size 12px; width: 10%;"></i>
-                  <div style="width: 80%;"><a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"  style="color: #fff;">Delhi, India</a></div>
-                </li>
-              </ul>
-            </div>
           </div>
-        </div>
       </div>
+  </div>
       <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center">
         <div class="row">
           <div class="col-lg-12">

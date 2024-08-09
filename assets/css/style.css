@@ -8,6 +8,11 @@ body {
   overflow-x: hidden;
 }
 
+.btn-text{
+  margin-left: 35px;
+  color: white;
+}
+
 /* show and hide button css */
 
 .form-control {
@@ -1273,9 +1278,11 @@ p {
 }
 
 .single-services:hover .services-icon {
-  top: -20px;
+  top: -30px;
   scale: 0.75;
   box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  background-color: white;
 }
 
 .single-services .services-icon img {
@@ -1973,12 +1980,12 @@ p {
 .single-blog .blog-content .more {
   font-size: 16px;
   color: #d32f2f;
-  margin-top: 30px;
+  margin-top: 10px;
   transition: 0.8s ease;
 }
 .single-blog .blog-content .more:hover::after {
   transform: scaleX(1);
-  transform-origin: bottom left;
+  transform-origin: left;
 }
 .single-blog .blog-content .more:hover{
   background: orange;
@@ -2257,6 +2264,9 @@ p {
   
   .custom-margin-big{
     margin-left: 20px;
+  }
+  .footer-title{
+    width: 100%;
   }
 }
 
@@ -2893,6 +2903,7 @@ text-align: center;
 
 @media (max-width: 600px) {
   .footer-link {
+    padding-left: 1rem;
     flex-direction: column;
     align-items: flex-start;
   }
@@ -2915,12 +2926,14 @@ text-align: center;
   }
 
   .footer-about{
-    margin-left: 0px;
+    margin-left: 1rem;
   }
 }
 
 @media (max-width: 600px) {
   .footer-contact .contact li {
+    padding-left: 1rem;
+
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -2934,11 +2947,14 @@ text-align: center;
   .footer-contact .contact li p,
   .footer-contact .contact li div {
     width: auto;
+
   }
 }
 
 @media (max-width: 1024px) {
   #footer{
     margin-top: 160px;
+    padding-left: 1rem;
+
   }
 }

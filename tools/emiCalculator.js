@@ -21,3 +21,12 @@ function calculateEMI() {
     document.getElementById('totalPayment').textContent = 'INR ' + totalPayment.toFixed(2);
     document.getElementById('totalInterestPaid').textContent = 'INR ' + totalInterestPaid.toFixed(2);
 }
+function clearEMI() {
+    document.getElementById('loanAmount').value = '';
+    document.getElementById('interestRate').value = '';
+    document.getElementById('loanTenure').value = '';
+    document.getElementById('monthlyEMI').innerText = '';
+    document.getElementById('totalPayment').innerText = '';
+    document.getElementById('totalInterestPaid').innerText = '';
+  }
+  
