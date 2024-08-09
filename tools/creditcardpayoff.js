@@ -1,18 +1,21 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Add event listener to the Calculate button
-    document.getElementById('calculateBtn').addEventListener('click', calculateCreditCardPayoff);
+    // Event listener for the Calculate button within the Credit Card Payoff Calculator
+    document.querySelector('#CreditCardPayoff #calculateBtn').addEventListener('click', function() {
+        calculateCreditCardPayoff('#CreditCardPayoff');
+    });
+
+    // Event listener for the Clear button within the Credit Card Payoff Calculator
+    document.querySelector('#CreditCardPayoff #clearBtn').addEventListener('click', function() {
+        clearCreditCardPayoff('#CreditCardPayoff');
+    });
 });
 
-function calculateCreditCardPayoff() {
-    // Retrieve user inputs
-    let balance = parseFloat(document.getElementById('balance').value);
-    let apr = parseFloat(document.getElementById('apr').value);
-    let monthlyPayment = parseFloat(document.getElementById('monthly-payment').value);
-
-    // Debugging: Log the inputs to the console
-    console.log("Balance:", balance);
-    console.log("APR:", apr);
-    console.log("Monthly Payment:", monthlyPayment);
+function calculateCreditCardPayoff(containerId) {
+    // Retrieve user inputs within the specified container
+    let container = document.querySelector(containerId);
+    let balance = parseFloat(container.querySelector('#balance').value);
+    let apr = parseFloat(container.querySelector('#apr').value);
+    let monthlyPayment = parseFloat(container.querySelector('#monthly-payment').value);
 
     // Validate inputs
     if (isNaN(balance) || isNaN(apr) || isNaN(monthlyPayment) || balance <= 0 || apr <= 0 || monthlyPayment <= 0) {
@@ -22,9 +25,6 @@ function calculateCreditCardPayoff() {
 
     // Convert APR to monthly interest rate
     let monthlyInterestRate = apr / 100 / 12;
-
-    // Debugging: Log the monthly interest rate to the console
-    console.log("Monthly Interest Rate:", monthlyInterestRate);
 
     // Check if the monthly payment is greater than the interest
     if (monthlyPayment <= balance * monthlyInterestRate) {
@@ -36,49 +36,17 @@ function calculateCreditCardPayoff() {
     let monthsToPayOff = Math.ceil(-Math.log(1 - (balance * monthlyInterestRate) / monthlyPayment) / Math.log(1 + monthlyInterestRate));
     let totalInterestPaid = monthsToPayOff * monthlyPayment - balance;
 
-    // Debugging: Log the calculated results to the console
-    console.log("Months to Pay Off:", monthsToPayOff);
-    console.log("Total Interest Paid:", totalInterestPaid);
-
-    // Display results
-    document.getElementById('monthsToPayOff').textContent = monthsToPayOff;
-    document.getElementById('totalInterestPaid').textContent = totalInterestPaid.toFixed(2);
+    // Display results within the specified container
+    container.querySelector('#monthsToPayOff').textContent = monthsToPayOff;
+    container.querySelector('#totalInterestPaid').textContent = totalInterestPaid.toFixed(2);
 }
-document.getElementById('calculateBtn').addEventListener('click', function() {
-    const balance = parseFloat(document.getElementById('balance').value);
-    const apr = parseFloat(document.getElementById('apr').value);
-    const monthlyPayment = parseFloat(document.getElementById('monthly-payment').value);
 
-    if (isNaN(balance) || isNaN(apr) || isNaN(monthlyPayment)) {
-        alert('Please enter valid numbers for all fields.');
-        return;
-    }
-
-    const monthlyInterestRate = apr / 100 / 12;
-    let monthsToPayOff = 0;
-    let totalInterestPaid = 0;
-    let currentBalance = balance;
-
-    while (currentBalance > 0) {
-        const interest = currentBalance * monthlyInterestRate;
-        currentBalance = currentBalance + interest - monthlyPayment;
-        totalInterestPaid += interest;
-        monthsToPayOff++;
-        if (monthsToPayOff > 600) {
-            alert('It will take more than 50 years to pay off the balance with the current monthly payment.');
-            break;
-        }
-    }
-
-    document.getElementById('monthsToPayOff').innerText = monthsToPayOff;
-    document.getElementById('totalInterestPaid').innerText = totalInterestPaid.toFixed(2);
-});
-
-document.getElementById('clearBtn').addEventListener('click', function() {
-    console.log('Clear button clicked'); // Debug log
-    document.getElementById('balance').value = '';
-    document.getElementById('apr').value = '';
-    document.getElementById('monthly-payment').value = '';
-    document.getElementById('monthsToPayOff').innerText = '0';
-    document.getElementById('totalInterestPaid').innerText = '0.00';
-});
+function clearCreditCardPayoff(containerId) {
+    // Clear inputs and results within the specified container
+    let container = document.querySelector(containerId);
+    container.querySelector('#balance').value = '';
+    container.querySelector('#apr').value = '';
+    container.querySelector('#monthly-payment').value = '';
+    container.querySelector('#monthsToPayOff').textContent = '0';
+    container.querySelector('#totalInterestPaid').textContent = '0.00';
+}
