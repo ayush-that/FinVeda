@@ -878,10 +878,6 @@
   
 <!-- Profit Margin Calculator ends here  -->
 
-
-
-
-
 <!-- expenditure and saving Calculator starts here -->
 <script src="expenditureandsaving.js" defer></script>
 
@@ -925,8 +921,6 @@
     </div>
   </div>
 </div>
-
-
 
    <!-- expenditure and saving Calculator ends here  -->
 
@@ -1107,7 +1101,6 @@
     </div>
   </div>
   
-      
   <!-- credeit card payoff calculator ends here  -->
 
   <!-- Bill split calculator  -->
@@ -1200,6 +1193,60 @@
        </div>
      </div>
      <!--FD Calculator End-->
+
+ <!--RD Calculator Start-->
+ <script src="RDCalculator.js" defer></script>
+
+ <div class="header" style="padding-top: 100px;">
+   <h3 class="text-center mb-4">Recurring Deposit Calculator</h3>
+   <p class="cal-content">The RD (Recurring Deposit) calculator computes the maturity amount and interest earned on regular monthly deposits over a fixed period, given a specified annual interest rate.</p>
+   <div class="know-more">
+     <button class="know-more-btn">Know More</button>
+     <div class="know-more-content">
+       <h6 style="text-align: left; margin: 2% 16%; padding-left: 5px;">Here's how it works:</h6>
+       <ol type="1" style="font-size: 1rem; text-align: left; margin-left: 17%; margin-bottom: 2rem;">
+         <li><b>Monthly Installment (₹)</b>: Enter your monthly installment amount.</li>
+         <li><b>Annual Interest Rate (%)</b>: Enter your annual interest rate.</li>
+         <li><b>Total Period (in months)</b>: Enter your total period of investment in months.</li>
+         <li><b>Total Interest Earned</b>: Analyzes and provides the total interest earned on your investment.</li>
+         <li><b>Total Maturity Amount</b>: Analyzes and provides total maturity amount.</li>
+       </ol>
+     </div>
+   </div>
+ </div>
+ 
+ <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5" id="SWPCalculator">
+   <div class="row">
+     <div class="col-md-6 offset-md-3">
+       <form id="recurring-deposit-calculator" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+         <fieldset>
+           <div class="form-group">
+            <label for="monthly-installment">Monthly Installment (₹):</label>
+            <input type="number" id="monthly-installment" placeholder="Enter Monthly Installment" required>
+           </div>
+           <div class="form-group">
+            <label for="rate">Annual Interest Rate (%):</label>
+            <input type="number" id="rate1" step="0.01" placeholder="Enter Annual Interest Rate" required>
+           </div>
+           <div class="form-group">
+            <label for="months">Time Period (in months):</label>
+            <input type="number" id="months1" placeholder="Enter Time Period" required>
+           </div>
+           <div class="btn-calculate">
+             <button id="calculate-Btn3" type="button" class="btn btn-calculate">Calculate</button>
+             <button id="clearBtn2" type="button" class="btn btn-clear"><p class="btn-text">Clear</p></button>
+           </div>
+         </fieldset>
+       </form>
+       <div id="result-rd" class="mt-3">
+         <h5>Result:</h5>
+         <p>Total Interest Earned: <span id="interestEarned1"></span></p>
+         <p>Total Maturity Amount: <span id="maturityAmount1"></span></p>
+       </div>
+     </div>
+   </div>
+ </div>
+ <!--RD Calculator End-->
 
 </body>
   
