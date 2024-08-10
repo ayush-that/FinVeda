@@ -287,6 +287,7 @@
             />
           </div>
           <div class="form-group">
+            <label class="d-flex">Password</label>
             <input
               type="password"
               placeholder="Password"
@@ -301,7 +302,7 @@
             <label class="form-check-label">Remember me</label>
           </div>
         </form>
-        <button class="main-btn mt-2 w-100 mb-3">
+        <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('loginForm')">
           Sign in
         </button>
         <p class="text-center">
@@ -340,6 +341,7 @@
             />
           </div>
           <div class="form-group">
+            <label class="d-flex">Password</label>
             <input
               type="password"
               placeholder="Password"
@@ -707,6 +709,72 @@
     </footer>
     <script>document.getElementById("copyright-year").textContent = new Date().getFullYear();</script>
     <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
+
+    <script>
+      // Get the modals
+      var loginModal = document.getElementById('myModal');
+      var registerModal = document.getElementById('registerModal');
+    
+      // Get the button that opens the login modal
+      var loginBtn = document.getElementById('loginBtn');
+    
+      // Get the links that open the register and login modals
+      var registerLink = document.getElementById('registerLink');
+      var loginLink = document.getElementById('loginLink');
+    
+      // Get the <span> elements that close the modals
+      var closeBtns = document.getElementsByClassName('close');
+    
+      //show and hide icon button
+      document.addEventListener('DOMContentLoaded', () => {
+        const togglePasswordButtons = document.querySelectorAll('.toggle-password-btn');
+    
+        togglePasswordButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            const passwordInput = button.previousElementSibling;
+            if (passwordInput.type === 'password') {
+              passwordInput.type = 'text';
+              button.innerHTML = `<i class="fa-solid fa-eye-slash"></i>`
+            } else {
+              passwordInput.type = 'password';
+              button.innerHTML = `<i class="fa-solid fa-eye"></i>`
+            }
+          });
+        });
+      });
+    
+      // When the user clicks the register link, open the register modal
+      registerLink.onclick = function (event) {
+        event.preventDefault();
+        loginModal.style.display = 'none';
+        registerModal.style.display = 'block';
+      }
+    
+      // When the user clicks the login link, open the login modal
+      loginLink.onclick = function (event) {
+        event.preventDefault();
+        registerModal.style.display = 'none';
+        loginModal.style.display = 'block';
+      }
+    
+      // When the user clicks on <span> (x), close the modal
+      for (var i = 0; i < closeBtns.length; i++) {
+        closeBtns[i].onclick = function () {
+          loginModal.style.display = 'none';
+          registerModal.style.display = 'none';
+        }
+      }
+    
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == loginModal) {
+          loginModal.style.display = 'none';
+        }
+        if (event.target == registerModal) {
+          registerModal.style.display = 'none';
+        }
+      }
+    </script>
 
     <script src="../assets/js/subscribe.js"></script>
     <script src="../assets/js/vendor/jquery-1.12.4.min.js"></script>
