@@ -1,57 +1,65 @@
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('calculateBtn').addEventListener('click', calculateInsurance);
+  document.getElementById('clearBtn').addEventListener('click', clearInsurance);
+});
+
 function calculateInsurance() {
-    // Retrieve input values
-    var Sumassured = parseFloat(document.getElementById('Sumassured').value);
-    var Policyterm = parseFloat(document.getElementById('Policyterm').value);
-    var Annualpremium = parseFloat(document.getElementById('Annualpremium').value);
-    var ReversionaryBonus = parseFloat(document.getElementById('ReversionaryBonus').value);
-    var TerminalBonus = parseFloat(document.getElementById('TerminalBonus').value);
-    var surrendered = document.getElementById('surrendered').checked;
-    var death = document.getElementById('death').checked;
+  const sumAssured = parseFloat(document.getElementById('Sumassured').value);
+  const policyTerm = parseFloat(document.getElementById('Policyterm').value);
+  const annualPremium = parseFloat(document.getElementById('Annualpremium').value) / 100;
+  const reversionaryBonus = parseFloat(document.getElementById('ReversionaryBonus').value) / 100;
+  const terminalBonus = parseFloat(document.getElementById('TerminalBonus').value) / 100;
 
+  if (isNaN(sumAssured) || isNaN(policyTerm) || isNaN(annualPremium) || isNaN(reversionaryBonus) || isNaN(terminalBonus)) {
+    alert('Please enter valid numbers for all fields.');
+    return;
+  }
 
+  const surrenderType = document.querySelector('input[name="surrenderType"]:checked');
+  if (!surrenderType) {
+    alert('Please select a surrender type.');
+    return;
+  }
 
-    // Calculate Insurance
-    let ReversionaryBonusAmt =(ReversionaryBonus/100)* Sumassured* Policyterm;
-    let TerminalBonusAmt =(TerminalBonus/100)* Sumassured;
-    let TotalBonus;
-    let maturityAmt;
-    let TotalPremium=Annualpremium* Policyterm;
-    let netGain;
+  const type = surrenderType.id;
 
+  let reversionaryBonusAmt, terminalBonusAmt, totalBonus, totalPremium, netGain;
 
-    if(surrendered)
-        {
-            TotalBonus = ReversionaryBonusAmt;
-            TerminalBonusAmt=0;
-            maturityAmt=Sumassured+TotalBonus;
-            netGain=maturityAmt-TotalPremium;
-        }
-        else
-        {
-            TotalBonus = ReversionaryBonusAmt+TerminalBonusAmt;
-            maturityAmt=Sumassured+ TotalBonus;
-            netGain=maturityAmt-TotalPremium;
-        }
-    // Display results
-    document.getElementById('ReversionaryBonusAmt').textContent = 'Reversionary Bonus: ₹' + ReversionaryBonusAmt.toFixed(2);
-    document.getElementById('TerminalBonusAmt').textContent = 'Terminal Bonus: ₹' + TerminalBonusAmt.toFixed(2);
-    document.getElementById('TotalBonus').textContent = 'Total Bonus: ₹' + TotalBonus.toFixed(2);
-    document.getElementById('TotalPremium').textContent = 'Total Premium: ₹' + TotalPremium.toFixed(2);
-    document.getElementById('netGain').textContent = 'Net Gain: ₹' + netGain.toFixed(2);
+  if (type === 'surrendered') {
+    reversionaryBonusAmt = (sumAssured * reversionaryBonus * policyTerm).toFixed(2);
+    terminalBonusAmt = 0;
+    totalBonus = reversionaryBonusAmt;
+  } else if (type === 'death') {
+    reversionaryBonusAmt = (sumAssured * reversionaryBonus * policyTerm).toFixed(2);
+    terminalBonusAmt = (sumAssured * terminalBonus).toFixed(2);
+    totalBonus = (parseFloat(reversionaryBonusAmt) + parseFloat(terminalBonusAmt)).toFixed(2);
+  }
+
+  totalPremium = (sumAssured * annualPremium * policyTerm).toFixed(2);
+  netGain = (parseFloat(totalBonus) - parseFloat(totalPremium)).toFixed(2);
+
+  document.getElementById('ReversionaryBonusAmt').textContent = `Reversionary Bonus Amount: ₹${reversionaryBonusAmt}`;
+  document.getElementById('TerminalBonusAmt').textContent = `Terminal Bonus Amount: ₹${terminalBonusAmt}`;
+  document.getElementById('TotalBonus').textContent = `Total Bonus: ₹${totalBonus}`;
+  document.getElementById('TotalPremium').textContent = `Total Premium: ₹${totalPremium}`;
+  document.getElementById('netGain').textContent = `Net Gain: ₹${netGain}`;
 }
 
 function clearInsurance() {
-    document.getElementById('Sumassured').value = '';
-    document.getElementById('Policyterm').value = '';
-    document.getElementById('Annualpremium').value = '';
-    document.getElementById('ReversionaryBonus').value = '';
-    document.getElementById('TerminalBonus').value = '';
-    document.getElementById('surrendered').checked = false;
-    document.getElementById('death').checked = false;
-    document.getElementById('ReversionaryBonusAmt').innerText = '';
-    document.getElementById('TerminalBonusAmt').innerText = '';
-    document.getElementById('TotalBonus').innerText = '';
-    document.getElementById('TotalPremium').innerText = '';
-    document.getElementById('netGain').innerText = '';
-  }
+  document.getElementById('Sumassured').value = '';
+  document.getElementById('Policyterm').value = '';
+  document.getElementById('Annualpremium').value = '';
+  document.getElementById('ReversionaryBonus').value = '';
+  document.getElementById('TerminalBonus').value = '';
   
+  document.getElementById('ReversionaryBonusAmt').textContent = '';
+  document.getElementById('TerminalBonusAmt').textContent = '';
+  document.getElementById('TotalBonus').textContent = '';
+  document.getElementById('TotalPremium').textContent = '';
+  document.getElementById('netGain').textContent = '';
+
+  const checkedRadio = document.querySelector('input[name="surrenderType"]:checked');
+  if (checkedRadio) {
+    checkedRadio.checked = false;
+  }
+}
