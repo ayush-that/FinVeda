@@ -591,20 +591,24 @@
       <div><b>Terminal Bonus (%)</b></div>
       <div><input class="form-control" id="TerminalBonus" type="number" /></div>
       <br />
-      <div class="centered-content" style="display: flex;">
-        <input name="check" id="surrendered" type="radio" style="width: 20px;" /><b>Early Surrendered</b>
+      <div class="select" style="display: flex; flex-direction: row;"">
+      <div class="centered-content">
+        <input name="surrenderType" id="surrendered" type="radio" />
+        <label for="surrendered"><b>Early Surrendered</b></label>
       </div>
       <br />
-      <div class="centered-content" style="display: flex;">
-        <input name="check" id="death" type="radio" style="width: 20px;" /><b>Policyholder's Death</b>
+      <div class="centered-content">
+        <input name="surrenderType" id="death" type="radio" />
+        <label for="death"><b>Policyholder's Death</b></label>
       </div>
+    </div>
       <br />
     </div>
   </div>
   <br />
-  <div class="btn-calculate">
-    <button type="button" onclick="calculateInsurance()">Calculate</button>
-    <button class="btn btn-secondary" type="button" onclick="clearInsurance()"><p class="btn-text">Clear</p></button>
+  <div class="btn-calculate" style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+    <button type="button" id="calculateBtn" onclick="calculateInsurance()" style="margin-right: 10px;">Calculate</button>
+    <button class="button" type="button" id="clearBtn" onclick="clearInsurance()">Clear</button>
   </div>
   <br />
   <div style="display: flex; flex-direction: column;">
@@ -617,8 +621,7 @@
   </div>
 </div>
 
-
-    <!-- End Insurance Calculator -->
+  <!-- End Insurance Calculator -->
 
     <!-- NPV Calculator -->
     <script src="npvCalculator.js" defer></script>
@@ -677,9 +680,6 @@
 
     <!-- End NPV Calculator -->
 
-
-
-
     <!--ROI calculator-->
     <script src="roiCalculator.js" defer></script>
     <div class="header" style="padding-top: 100px;">
@@ -714,7 +714,7 @@
             </label>
             <input class="form-control" type="number" id="return" name="return" required>
           </div>
-          <div class="btn-calculate">
+          <div class="btn-calculate" style="display: flex; flex-direction: row;">
             <button id="submitBtn1" type="submit" class="btn btn-calculate">Calculate</button>
             <button type="button" class="btn btn-secondary" onclick="clearROI()"><p class="btn-text">Clear</p></button>
           </div>
@@ -729,9 +729,6 @@
       </div>
     </div>
     
-
-
-
     <!--End of RoI calculator-->
 
 
@@ -771,9 +768,9 @@
                     <label for="tax-slab" class="tax-slab">Tax Slab (%):</label>
                     <input type="number" id="tax-slab" class="form-control" required>
                 </div>
-                <div class="btn-calculate">
+                <div class="btn-calculate" style="display: flex; flex-direction: row;">
                     <button id="submitBtn2" type="submit" class="btn btn-calculate">Calculate</button>
-                    <button type="button" class="btn btn-secondary" onclick="clearGST()">Clear</button>
+                    <button type="clearBtn7" class="btn btn-secondary" style="text-align: center;" clearGST()">Clear</button>
                 </div>
             </form>
             <div id="result" class="mt-3">
@@ -816,7 +813,7 @@
                         <label for="tax-rate" class="tax-rate">Tax Rate (%):</label>
                         <input type="number" id="tax-rate" class="form-control" required>
                     </div>
-                    <div class="btn-calculate">
+                    <div class="btn-calculate" style="display: flex; flex-direction: row;">
                         <button id="submitBtn3" type="submit" class="btn btn-calculate">Calculate</button>
                         <button type="button" class="btn btn-secondary" onclick="clearIncomeTax()"><p class="btn-text">Clear</p></button>
                     </div>
@@ -863,7 +860,7 @@
             <label for="selling-price" class="selling-price">Selling Price:</label>
             <input type="number" id="selling-price" class="form-control" required>
           </div>
-          <div class="btn-calculate">
+          <div class="btn-calculate" style="display: flex; flex-direction: row;">
             <button id="submitBtn" type="submit" class="btn btn-calculate">Calculate</button>
             <button type="button" class="btn btn-secondary" onclick="clearProfitMargin()"><p class="btn-text">Clear</p></button>
           </div>
@@ -909,7 +906,7 @@
           <label for="monthly-expenditure" class="income">Monthly Expenditure:</label>
           <input type="number" id="monthly-expenditure" class="form-control" placeholder="Enter your expenditure" required>
         </div>
-        <div class="btn-calculate">
+        <div class="btn-calculate" style="display: flex; flex-direction: row;">
           <button id="calculateBtn" type="button" class="btn btn-calculate">Calculate</button>
           <button id="clearBtn" type="button" class="btn btn-clear"><p class="btn-text">Clear</p></button>
         </div>
@@ -963,7 +960,7 @@
           </div>
           <div class="form-group">
             <label for="investment" class="selling-price">Gross Investment:</label>
-            <input type="number" id="investment" class="form-control" required>
+            <input type="number" id="investment1" class="form-control" required>
           </div>
           <div class="form-group">
             <label for="consumption" class="cost">Government Consumption:</label>
@@ -977,10 +974,10 @@
             <label for="imports" class="cost">Imports:</label>
             <input type="number" id="imports" class="form-control" required>
           </div>
-          <div class="buttons">
-            <button type="submit" class="btn btn-calculate">Calculate</button>
-            <button type="reset" class="btn btn-secondary"><p class="btn-text">Clear</p></button>
-          </div>
+          <div class="btn-calculate" style="display: flex; flex-direction: row;">
+            <button id="submitBtn" type="button" class="btn btn-calculate" onclick="calculateGDP()">Calculate</button>
+            <button type="button" class="btn btn-secondary" onclick="clearFields()"><p class="btn-text">Clear</p></button>
+          </div>          
         </fieldset>
       </form>
       <div id="result" class="mt-3">
@@ -1037,9 +1034,9 @@
                  <label for="totalPeriod">Total Period (in years):</label>
                  <input type="number" id="totalPeriod" class="form-control" placeholder="Enter time period in years" required>
                </div>
-               <div class="btn-calculate">
+               <div class="btn-calculate" style="display: flex; flex-direction: row;">
                  <button id="calculateBtn1" type="button" class="btn btn-calculate">Calculate</button>
-                 <button id="clearBtn" type="button" class="btn btn-clear"><p class="btn-text">Clear</p></button>
+                 <button id="clearBtn6" type="button" class="btn btn-clear"><p class="btn-text">Clear</p></button>
                </div>
              </fieldset>
            </form>
@@ -1075,6 +1072,7 @@
     <div class="row">
       <div class="col-md-6 offset-md-3">
         <form id="credit-card-payoff-calculator" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+          <fieldset>
           <div class="form-group">
             <label for="balance" class="income">Credit Card Balance:</label>
             <input type="number" id="balance" class="form-control" placeholder="Enter your balance (in ₹)" required>
@@ -1087,15 +1085,16 @@
             <label for="monthly-payment" class="income">Monthly Payment:</label>
             <input type="number" id="monthly-payment" class="form-control" placeholder="Enter monthly payment (in ₹)" required>
           </div>
-          <div class="btn-calculate">
+          <div class="btn-calculate" style="display: flex; flex-direction: row;">
             <button id="calculateBtn" type="button" class="btn btn-calculate">Calculate</button>
             <button id="clearBtn" type="button" class="btn btn-clear"><p class="btn-text">Clear</p></button>
           </div>
+        </fieldset>
         </form>
         <div id="result-payoff" class="mt-3">
           <h5>Result:</h5>
-          <p>Months to Pay Off: <span id="monthsToPayOff">0</span></p>
-          <p>Total Interest Paid: ₹<span id="totalInterestPaid">0.00</span></p>
+          <p>Months to Pay Off: <span id="monthsToPayOff"></span></p>
+          <p>Total Interest Paid: <span id="totalInterestPaid"></span></p>
         </div>
       </div>
     </div>
@@ -1120,11 +1119,12 @@
     </div>
 </div>
 
-<div class="page-container shadow p-5 mb-5 bg-white rounded mt-5">
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
+<div class="page-container shadow p-5 mb-5 bg-white rounded mt-5" id="SplitbillCalculator">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
             <form id="split-bill-calculator-form" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                <div class="form-group">
+              <fieldset>
+              <div class="form-group">
                     <label for="billSubtotal" class="income">Bill Subtotal:</label>
                     <input type="number" id="billSubtotal" class="form-control" placeholder="Enter Bill Subtotal" required>
                 </div>
@@ -1136,19 +1136,20 @@
                     <label for="numberOfPersons" class="income">No. of Persons:</label>
                     <input type="number" id="numberOfPersons" class="form-control" placeholder="Enter No. of Persons" required>
                 </div>
-                <div class="btn-calculate">
-                    <button id="calculateBillSplitBtn" type="button" class="btn btn-calculate">Calculate</button>
-                    <button id="clearBillSplitBtn" type="button" class="btn btn-clear">Clear</button>
+                <div class="btn-calculate" style="display: flex; flex-direction: row;">
+                  <button id="calculateBtn5" type="button" class="btn btn-calculate">Calculate</button>
+                  <button id="clearBtn5" type="button" class="btn btn-clear"><p class="btn-text">Clear</p></button>
                 </div>
+              </fieldset>
             </form>
             <div id="result-split-bill" class="mt-3">
                 <h5>Result:</h5>
-                <p>Total Bill: Rs <span id="totalBill">00.00</span></p>
-                <p>Bill Per Person: Rs <span id="billPerPerson">00.00</span></p>
+                <p>Total Bill: <span id="totalBill"></span></p>
+                <p>Bill Per Person: <span id="billPerPerson"></span></p>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-</div>
 
 <script src="../tools/Billsplit.js"></script>
 
@@ -1177,7 +1178,7 @@
        </div>
      </div>
      
-     <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5" id="SWPCalculator">
+     <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5" id="FDCalculator">
        <div class="row">
          <div class="col-md-6 offset-md-3">
            <form id="fixed-deposit-calculator" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
@@ -1231,7 +1232,7 @@
    </div>
  </div>
  
- <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5" id="SWPCalculator">
+ <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5" id="RDCalculator">
    <div class="row">
      <div class="col-md-6 offset-md-3">
        <form id="recurring-deposit-calculator" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
@@ -1286,30 +1287,30 @@
     </div>
   </div>
   
-  <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5" id="SWPCalculator">
+  <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5" id="EPFCalculator">
     <div class="row">
       <div class="col-md-6 offset-md-3">
         <form id="epf-calculator" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
           <fieldset>
             <div class="form-group">
               <label for="salary">Monthly Salary (Basic + DA): </label>
-              <input type="number" id="salary" name="salary" required>
+              <input type="number" id="salary" name="salary" placeholder="Enter Your Monthly Salary" required>
             </div>
             <div class="form-group">
               <label for="age">Your Age: </label>
-              <input type="number" id="age" name="age" required>
+              <input type="number" id="age" name="age" placeholder="Enter Your Age" required>
             </div>
             <div class="form-group">
               <label for="contribution">Your Contribution to EPF (%): </label>
-              <input type="number" id="contribution" name="contribution" required>
+              <input type="number" id="contribution" name="contribution" placeholder="Enter Your Contribution to EPF" required>
             </div>
             <div class="form-group">
               <label for="increase">Annual Increase in Salary (%): </label>
-              <input type="number" id="increase" name="increase" required>
+              <input type="number" id="increase" name="increase" placeholder="Enter Your Annual Increase in Salary" required>
             </div>
             <div class="form-group">
               <label for="rate">Rate of Interest (%): </label>
-              <input type="number" id="rate2" name="rate" required>
+              <input type="number" id="rate2" name="rate" placeholder="Enter Rate of Interest" required>
             </div>
             <div class="btn-calculate">
               <button id="calculate-Btn4" type="button" class="btn btn-calculate">Calculate</button>
