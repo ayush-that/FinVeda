@@ -1,8 +1,7 @@
 <div align="center">
-<a href="https://fin-veda.vercel.app/" target="_blank" title="Go to the FinVeda website"><img height="144px" alt="FinVeda logo" src="/assets/images/logo.svg"></a>
-<a name="readme-top"></a>
+<a href="https://fin-veda.vercel.app/" target="_blank" title="Go to the FinVeda website"><img height="256px" alt="FinVeda logo" src="https://github.com/user-attachments/assets/5e45e1f4-7e0d-45b1-914d-80b6ab77ddd8"></a>
 
-###  Say 👋🏼 to FinVeda<br>your savvy financial companion
+###  Say 👋🏼 to Arth Sathi<br>your savvy financial companion
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
@@ -10,24 +9,25 @@
 ![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
 ![ChatGPT](https://img.shields.io/badge/chatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white)
 
+https://github.com/user-attachments/assets/ea67dd85-795a-4c19-b840-0ada099689be
+
 </div>
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ### 🤔 Problem
 
-<img alt="Preview" align="right" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmFldGFqZDU1cGl5MGE1eWVpY2g1YTNqcW83eXBwcTNrendmamlqYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/uF6LnKJqqsoG7vborH/giphy.gif">
-
-<i>According to a survey by the OECD, <b>only 38% of adults in India are financially literate</b>. Finveda aims to solve this problem by providing a platform for financial literacy education.</i>
+According to a survey by the OECD, <b>only 38% of adults in India are financially literate</b>. Finveda aims to solve this problem by providing a platform for financial literacy education.
 
 ### 🌟 Features
 FinVeda is a dynamic financial literacy app that'll help you Learn finance with finesse.
-- <strong>AI Chatbot 
-- Finance Blogs
-- Market Trends
-- SIP Calculator
-- Finance Quiz</strong>
-   
+<strong>
+- AI-Powered Consultant
+- Financial Blogs and quizzes 
+- Latest Market Trends & News
+- Finance Tools
+</strong>
+
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 
@@ -61,16 +61,14 @@ FinVeda is a dynamic financial literacy app that'll help you Learn finance with 
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-### 🥑 License
-
-FinVeda is free and open-source software licensed under the GNU General Public License v3.0. It was built at IIT Jammu's Udyamitsav'24 Hackathon where it stood first in the GenAI track and third overall.
-
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
-
 ### 💗 Contributors
 
 <a href="https://github.com/ayush-that/FinVeda/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=ayush-that/FinVeda" />
 </a>
 
-Made with [contrib.rocks](https://contrib.rocks).
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+### 🥑 License
+
+FinVeda is free and open-source software licensed under the GNU General Public License v3.0. It was built at IIT Jammu's Udyamitsav'24 Hackathon where it stood first in the GenAI track and third overall.
