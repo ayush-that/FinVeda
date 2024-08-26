@@ -1,13 +1,13 @@
 <div align="center">
 <a href="https://fin-veda.vercel.app/" target="_blank" title="Go to the FinVeda website"><img height="256px" alt="FinVeda logo" src="https://github.com/user-attachments/assets/5e45e1f4-7e0d-45b1-914d-80b6ab77ddd8"></a>
 
-###  Say 👋🏼 to Arth Sathi<br>your savvy financial companion
-
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
 ![ChatGPT](https://img.shields.io/badge/chatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white)
+
+###  Say 👋🏼 to Arth Sathi, your AI-powered financial companion
 
 https://github.com/user-attachments/assets/ea67dd85-795a-4c19-b840-0ada099689be
 
