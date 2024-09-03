@@ -33,9 +33,7 @@ FinVeda is a dynamic financial literacy app that'll help you Learn finance with 
 
 ### 💵 How to Contribute
 
-<div align="center">
-<a href="https://gssoc.girlscript.tech/" target="_blank" title="GSSoC"><img height="144px" alt="FinVeda logo" src=https://camo.githubusercontent.com/baebe7bd53cddccd8bb2181cba613bca938163bb9451dea6dd3db58aa42137ba/68747470733a2f2f696d6775722e636f6d2f7775694a5871722e706e67></a>
-</div>
+   ![image](https://github.com/user-attachments/assets/5263dc32-ce09-4835-b964-7f996e970eb5)
 
    ```bash
    # Fork the repository to your GitHub account.
