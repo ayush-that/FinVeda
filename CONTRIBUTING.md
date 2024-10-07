@@ -1,47 +1,47 @@
-# **Contributing Guidelines** 📄
+ # **Contributing Guidelines** 📄
 
-This documentation contains a set of guidelines to help you during the contribution process.
-We are happy to welcome all the contributions from anyone willing to improve/add new scripts to this project.
-Thank you for helping out and remember, **no contribution is too small.**
-<br>
-Please note we have a [code of conduct](CODE_OF_CONDUCT.md)  please follow it in all your interactions with the project.
+Welcome to our project! We're thrilled to have you contribute. Your efforts, big or small, make a difference. Please ensure that you follow our [Code of Conduct](CODE_OF_CONDUCT.md) in all interactions.
 
+---
 
+## **Need Help with the Basics? 🤔**
 
-<br>
-
-## **Need some help regarding the basics?🤔**
-
-
-You can refer to the following articles on basics of Git and Github and also contact the Project Mentors,
-in case you are stuck:
+If you're new to Git and GitHub, no worries! Here are some useful resources:
 
 - [Forking a Repo](https://help.github.com/en/github/getting-started-with-github/fork-a-repo)
 - [Cloning a Repo](https://help.github.com/en/desktop/contributing-to-projects/creating-an-issue-or-pull-request)
-- [How to create a Pull Request](https://opensource.com/article/19/7/create-pull-request-github)
-- [Getting started with Git and GitHub](https://towardsdatascience.com/getting-started-with-git-and-github-6fcd0f2d4ac6)
+- [How to Create a Pull Request](https://opensource.com/article/19/7/create-pull-request-github)
+- [Getting Started with Git and GitHub](https://towardsdatascience.com/getting-started-with-git-and-github-6fcd0f2d4ac6)
 - [Learn GitHub from Scratch](https://docs.github.com/en/get-started/start-your-journey/git-and-github-learning-resources)
 
-<br>
+Feel free to reach out to the Project Mentors if you encounter any issues!
+
+---
 
 ## **Issue Report Process 📌**
 
-1. Go to the project's issues.
-2. Give proper description for the issues.
-3. Don't spam to get the assignment of the issue 😀.
-4. Wait for till someone is looking into it !.
-5. Start working on issue only after you got assigned that issue 🚀.
+To report an issue, follow these steps:
 
-<br>
+1. Navigate to the project's **Issues** section.
+2. Provide a clear and concise description of the issue.
+3. **Avoid spamming** to claim an issue. Patience is key! 😀
+4. Wait until someone looks into your report.
+5. Begin working on the issue only after you have been assigned to it. 🚀
+
+---
 
 ## **Pull Request Process 🚀**
 
-1. Ensure that you have self reviewed your code 😀
-2. Make sure you have added the proper description for the functionality of the code
-3. I have commented my code, particularly in hard-to-understand areas.
-4. Add screenshot it help in review.
-5. Submit your PR by giving the necesarry information in PR template and hang tight we will review it really soon 🚀
+When submitting a pull request, please adhere to the following:
 
-<br>
+1. **Self-review your code** before submission. 😀
+2. Include a detailed description of the functionality you’ve added or modified.
+3. Comment your code, especially in complex sections, to aid understanding.
+4. Add relevant screenshots to assist in the review process.
+5. Submit your PR using the provided template and hang tight; we'll review it as soon as possible! 🚀
 
-# **Thank you for contributing💗** 
+---
+
+# **Thank You for Contributing! 💗**
+
+Your contributions make our project better! We're excited to see what you bring to the table.
