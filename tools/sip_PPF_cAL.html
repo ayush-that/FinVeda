@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fin veda</title>
+    <link rel="stylesheet" type="text/css" href="cal.css">
+    <style>
+        #progressBar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 0%;
+          height: 8px;
+          background-color: #f76b45;
+          z-index: 9999;
+  
+        }
+        * {
+      cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
+    }
+
+
+    .circle {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
+      transition: transform 0.1s, left 0.1s, top 0.1s;
+    }
+
+    .circle-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    @media (max-width: 720px) {
+      .circle-container{
+        display: none;
+      }
+    }
+  </style>
+
+<body>
+
+  <div class="circle-container">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const coords = { x: 0, y: 0 };
+      const circles = document.querySelectorAll(".circle");
+
+      circles.forEach(function (circle) {
+        circle.x = 0;
+        circle.y = 0;
+      });
+
+      window.addEventListener("mousemove", function (e) {
+        coords.x = e.pageX;
+        coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
+      });
+
+      function animateCircles() {
+        let x = coords.x;
+        let y = coords.y;
+
+        circles.forEach(function (circle, index) {
+          circle.style.left = `${x - 12}px`;
+          circle.style.top = `${y - 12}px`;
+          circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+
+          const nextCircle = circles[index + 1] || circles[0];
+          circle.x = x;
+          circle.y = y;
+
+          x += (nextCircle.x - x) * 0.3;
+          y += (nextCircle.y - y) * 0.3;
+        });
+
+        requestAnimationFrame(animateCircles);
+      }
+
+      animateCircles();
+    });
+
+  </script>
+
+    <div id="progressBar"></div>
+    <script>
+      window.onscroll = function () {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progressBar").style.width = scrolled + "%";
+      };
+    </script>
+<!-- SIP Calculator Section -->
+<section>
+    <h2>SIP Calculator</h2>
+
+    <!-- SIP Calculator Content -->
+    <div>
+        <h3>What is SIP (Systematic Investment Plan)?</h3>
+        <p>SIP, or Systematic Investment Plan, is a disciplined way of investing in mutual funds. It allows you to invest a fixed amount regularly, typically monthly, in a mutual fund scheme of your choice.</p>
+
+        <h3>Benefits of SIP:</h3>
+        <ul>
+            <li> SIP encourages regular and disciplined investing, helping you avoid the temptation of timing the market.</li>
+            <li> SIP allows you to buy more units when prices are low and fewer units when prices are high, resulting in better average costs over time.</li>
+            <li>The longer you stay invested, the greater the power of compounding. SIP enables you to benefit from the compounding effect over the long term.</li>
+            <li> SIP allows you to start with a small amount and increase your investment gradually as your financial situation improves.</li>
+        </ul>
+
+        <!-- SIP Calculator Form -->
+        <form id="sipCalculatorForm">
+            <label for="monthlyInvestment">Monthly Investment Amount (INR):</label>
+            <input type="number" id="monthlyInvestment" name="monthlyInvestment" required>
+
+            <label for="annualInterestRate">Annual Interest Rate (%):</label>
+            <input type="number" id="annualInterestRate" name="annualInterestRate" required>
+
+            <label for="investmentPeriod">Investment Period (Years):</label>
+            <input type="number" id="investmentPeriod" name="investmentPeriod" required>
+
+            <button type="button" onclick="calculateSIP()">Calculate Returns</button>
+
+            <!-- Display result here -->
+            <div id="sipResult"></div>
+        </form>
+    </div>
+</section>
+
+<!-- PPF Calculator Section -->
+<section>
+    <h2>PPF Calculator</h2>
+
+    <!-- PPF Content -->
+    <div>
+        <h3>What is PPF (Public Provident Fund)?</h3>
+        <p>PPF, or Public Provident Fund, is a popular long-term savings scheme backed by the Government of India. It allows individuals to invest a fixed amount annually for a specified period, offering attractive interest rates and tax benefits.</p>
+
+        <h3>Benefits of PPF:</h3>
+        <ul>
+            <li> PPF is a government-backed investment, ensuring the safety and security of your savings.</li>
+            <li> PPF provides competitive interest rates that are compounded annually, contributing to your wealth over time.</li>
+            <li>Contributions to PPF are eligible for tax deductions under Section 80C of the Income Tax Act.</li>
+            <li>PPF has a lock-in period, promoting long-term savings habits and financial discipline.</li>
+        </ul>
+
+    <!-- PPF Calculator Form -->
+    <form id="ppfCalculatorForm">
+        <label for="principalAmount">Principal Amount (INR):</label>
+        <input type="number" id="principalAmount" name="principalAmount" required>
+
+        <label for="annualInterestRate">Annual Interest Rate (%):</label>
+        <input type="number" id="annualInterestRatePPF" name="annualInterestRatePPF" required>
+
+        <label for="investmentPeriod">Investment Period (Years):</label>
+        <input type="number" id="investmentPeriodPPF" name="investmentPeriodPPF" required>
+
+        <button type="button" onclick="calculatePPF()">Calculate Returns</button>
+
+        <!-- Display result here -->
+        <div id="ppfResult"></div>
+    </form>
+</section>
+
+
+
+<script src="cal.js"></script>
+</body>
+</html>
+
+

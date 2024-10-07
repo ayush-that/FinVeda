@@ -1,0 +1,249 @@
+:root{
+    --slider-dark:rgba(7, 97, 233, 0.808);
+}
+
+.main{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    position: relative;
+    top: 0;
+    cursor: pointer;
+    /* border: 2px solid saddlebrown; */
+}
+
+.card{
+    /* border: 2px solid salmon; */
+    height: max-content;
+    text-align: center;
+    padding: 10px; 
+    font-size: 25px;
+    font-weight: 500;
+    width: 100%;
+}
+
+.card h2{
+    color: var(--slider-dark);
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.service{
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    position: relative;
+    /* bottom: 0; */
+    box-shadow: 0 0 20px -15px black;
+    z-index: 2;
+    transition: transform .9s;
+}
+
+.row-card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* border: 2px solid saddlebrown; */
+    /* height: fit-content; */
+}
+
+.col-md-4 {
+    flex: 0 0 30%;
+    max-width: 30%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.service-logo img{
+    height: 150px;
+    width: 150px;
+    margin-top: -20px;
+}
+
+.shadow1{
+    height: 200px;
+    width: 80%;
+    /* border: 2px solid salmon; */
+    position: absolute;
+    bottom: 0px;
+    left: 10%;
+    box-shadow: 0 0 20px -15px black;
+    transition: transform .7s;
+    z-index: 1;
+    background:  #ffc1b1;
+}
+
+/* .col-md-4{
+    width: 20%;
+    align-items: center;
+    height: 300px;
+    background: black;
+    border: 2px solid white;
+} */
+
+.shadow2{
+    height: 200px;
+    width: 64%;
+    /* border: 2px solid salmon; */
+    position: absolute;
+    bottom: 0px;
+    left: 18%;
+    box-shadow: 0 0 20px -15px black;
+    transition: transform .7s;
+    /* z-index: 0; */
+    background: #fa9c82e1;
+
+}
+
+.main:hover .service{
+    transform: translateY(-40px);
+    box-shadow: 0 0 25px -15px #f76b45;
+}
+
+.main:hover .shadow1{
+    transform: translateY(-20px);
+}
+
+.service h4{
+    margin-bottom: 20px;
+}
+
+.good-card{
+    margin-top: 10%;
+    margin-left: 5%;
+    display: flex;
+    /* background: rgba(80, 120, 255,0.9); */
+    padding: 30px 20px;
+    align-content: center;
+    border-radius: 10px;
+    justify-content: center;
+    z-index: -2;
+}
+
+.white-card{
+    height: 300px;
+    width: 80%;
+    /* border: 2px solid salmon; */
+    text-align: justify;
+    padding: 10px 15px;
+    background: white;
+    border-radius: 10px;
+    /* clip-path: polygon(0 0, 100% 0, 100% 62%, 50% 100%, 0 64%); */
+    clip-path: polygon(0 0, 100% 0, 100% 78%, 50% 100%, 0 78%);
+    transition: transform .4s;
+    cursor: pointer;
+}
+
+.white-card:hover{
+    transform: translateY(-10px);
+}
+
+
+.color-card{
+    height: 400px;
+    width: 80%;
+    top: -300px;
+    position: relative;
+    z-index: -1;
+    /* border: 2px solid seagreen; */
+    border-radius: 10px;
+    clip-path: polygon(0 0, 100% 0, 100% 78%, 50% 100%, 0 78%);
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+}
+
+.green{
+    background: rgb(86, 255, 213);
+}
+
+.purple{
+    background: rgb(246, 142, 255);
+}
+
+.orange{
+    background-color: #ff9071;
+}
+
+.shadow{
+    height: 20px;
+    /* border: 2px solid sandybrown; */
+    width: 250px;
+    border-radius: 50%;
+    background: rgb(223, 223, 223);
+    margin-top: -300px;
+    margin-left: 2%;
+}
+
+.round1{
+    height: 120px;
+    width: 120px;
+    margin-left: 25%;
+    border-radius: 50%;
+    border: 2px solid saddlebrown;
+    margin-top: -50px;
+    /* margin-bottom: -10px; */
+    overflow-y:visible;
+    z-index: 2;
+    visibility: hidden;
+}
+
+@media (max-width: 390px) {
+    /* .row-card{
+        gap: 330px; 
+        margin-top: 20px;
+    } */
+    /* .card{
+        height: 2530px;
+    } */
+    .card h2 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    .service h4 {
+        font-size: 16px;
+    }
+
+    .service p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .card h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .row-card {
+        flex-direction: column; 
+        /* gap: 20px; */
+    }
+
+    .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 10px 0;
+    }
+
+    .service {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .shadow1,
+    .shadow2 {
+        width: 100%;
+        left: 0;
+    }
+
+    .good-card {
+        flex-direction: column; 
+        gap: 10px;
+        margin-top: 5%;
+    }
+
+    .white-card,
+    .color-card {
+        width: 100%; 
+        max-width: none; 
+    }
+}

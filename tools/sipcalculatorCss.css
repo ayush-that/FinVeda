@@ -1,0 +1,292 @@
+/* Base styles */
+.header {
+  text-align: center;
+  font-size: 30px;
+}
+
+.page-container {
+  margin: 1% 20%;
+  font-size: 16px;
+}
+
+.switch-container {
+  display: flex;
+  justify-content: center;
+  padding-left: 50px;
+}
+
+.switch-container > div {
+  margin: 1% 10% 3% 0;
+}
+
+.input-container {
+  display: flex;
+  align-content: flex-start;
+  justify-content: center;
+}
+
+.input-container > div {
+  flex-wrap: wrap;
+  margin: 1% 5% 0 0;
+}
+
+input {
+  width: 100%;
+  max-width: 900px;
+  box-sizing: border-box;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  margin: 5px 0% 0 0;
+  padding: 10px;
+}
+
+.centered-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centered-content b {
+  margin-left: 0px; /* Adjust as needed */
+}
+
+.result {
+  padding: 10% 0 0 0;
+  font-size: 24px;
+}
+
+.result-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: center;
+  padding-left: 60px;
+}
+
+.btn-calculate {
+  text-align: center;
+  cursor: pointer;
+  margin-right: 3%;
+}
+
+.btn-calculate button {
+  width: 10rem;
+  padding: 10px 20px; /* Adds padding inside the button */
+  background-color: #28a745; /* Green background color */
+  color: #fff; /* White text color */
+  border: none; /* Removes default border */
+  border-radius: 5px; /* Rounds the corners */
+  font-size: 16px; /* Increases font size */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  align-content: center;
+}
+
+.btn-calculate button:hover {
+  background-color: #377fed; /* Blue on hover */
+}
+
+.currency {
+  background: white;
+  border-radius: 5px;
+  padding: 5px;
+  border-color: dimgray;
+}
+
+option {
+  background: white;
+  border-radius: 5px;
+  padding: 5px;
+  border-color: dimgray;
+}
+
+#total,
+#wealth-gained,
+#maturity-value {
+  border: 1px solid;
+}
+
+.npv-calculate > button {
+  height: 35px;
+  align-items: center;
+  border-radius: 10px;
+  border: 2px solid #19a4cf;
+  background-color: #19a4cf;
+  border-color: #19a4cf;
+  font-size: 15px;
+  width: 125px;
+  cursor: pointer;
+}
+
+.cash-flows-container {
+  margin: 1% 5% 0 0;
+  align-items: center;
+  text-align: center;
+}
+
+#cashFlows {
+  text-align: left;
+}
+
+.cash-flow-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.cash-flow-item input {
+  text-align: left;
+  align-items: center;
+  width: calc(35% - 60px);
+}
+
+.nresult {
+  padding: 2% 0 0 0;
+  font-size: 24px;
+}
+
+.nresult-container,
+.sresult-container,
+.sgresult-container {
+  padding-left: 60px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sresult,
+.sgresult {
+  padding: 0% 0 0 0;
+  font-size: 24px;
+}
+
+.know-more {
+  margin-top: 20px;
+}
+
+.know-more-btn {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.know-more-btn:hover {
+  background-color: #3e8e41;
+}
+
+.know-more-content {
+  display: none;
+  padding: 5px 10px;
+  margin: 10px 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+}
+
+.know-more-content.show {
+  display: block;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .page-container {
+    margin: 1% 10%;
+  }
+
+  .switch-container,
+  .input-container {
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+  }
+
+  .switch-container > div,
+  .input-container > div {
+    margin: 1% 0;
+  }
+
+  .btn-calculate button {
+    width: 8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    margin: 1% 5%;
+  }
+
+  .btn-calculate button {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .result-container,
+  .nresult-container,
+  .sresult-container,
+  .sgresult-container {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    font-size: 24px;
+  }
+
+  .btn-calculate button {
+    font-size: 14px;
+  }
+
+  input {
+    margin: 2% 0;
+  }
+}
+
+.cal-content{
+  text-align: center;
+  margin: 1% 15%;
+  padding: 50px;
+  }
+  
+@media(max-width: 430px){
+  .npv-content{
+    margin:5%;
+    padding:1%;
+
+  }
+}
+
+.result-container{
+  font-size: medium;
+  text-align: left;
+  display: block;
+  padding :30px;
+  margin-right: 100px;
+}
+
+
+@media(max-width: 430px){
+  .result-container{
+    margin:6%;
+    padding:3%;
+    font-size: smaller;
+    text-align: left;
+  }
+}
+
+.result-container2{
+  font-size: medium;
+  padding:20px;
+  margin-left: 100px;
+
+    }
+
+@media(max-width: 430px){
+  .result-container2{
+    margin:5%;
+    padding:1%;
+    font-size: smaller;
+    }
+ }
