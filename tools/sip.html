@@ -1623,6 +1623,53 @@
         registerModal.style.display = 'none';
       }
     }
+    function openModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "block";
+    document.title = "Login/Register - FinVeda";  // Update the title when modal is opened
+  }
+
+  function closeModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
+    document.title = "FinVeda";  // Revert the title back when modal is closed
+  }
+
+  window.onclick = function (event) {
+    var modal = document.getElementById("myModal");
+    if (event.target == modal) {
+      closeModal(); // Call closeModal function
+    }
+  };
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const registerModal = document.getElementById("registerModal");
+    const loginModal = document.getElementById("myModal");
+    const registerLink = document.getElementById("registerLink");
+    const loginLink = document.getElementById("loginLink");
+
+    // Event listener for the register link
+    registerLink.addEventListener("click", function (event) {
+      event.preventDefault();
+      loginModal.style.display = "none";
+      registerModal.style.display = "block";
+      document.title = "Login/Register - FinVeda";  // Update title when registering
+    });
+
+    // Event listener for the login link
+    loginLink.addEventListener("click", function (event) {
+      event.preventDefault();
+      registerModal.style.display = "none";
+      loginModal.style.display = "block";
+      document.title = "Login/Register - FinVeda";  // Update title when logging in
+    });
+
+    // Close button event listeners for modals
+    registerModal.querySelector(".close").addEventListener("click", closeModal);
+    loginModal.querySelector(".close").addEventListener("click", closeModal);
+  });
+
+
   </script>
   <script src="./smoothScroll.js"></script>
 </body>
