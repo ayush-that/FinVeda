@@ -7,6 +7,44 @@
     margin: 0;
     padding: 0;
 }
+/* Navbar Styling */
+.navbar-collapse {
+    background-color: #adb4ff;
+    border-radius: 10px; 
+    padding: 15px 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    border-bottom: 3px solid #edf2f4; 
+    width: 100vw;
+    position: relative;
+    left: 0;
+    transition: background-color 0.3s ease-in-out; 
+}
+
+.navbar-collapse:hover {
+    background-color: #1a1c29; 
+}
+
+.navbar-nav .nav-item {
+    display: inline-block;
+    margin: 0 15px;
+    padding: 5px;
+}
+
+.navbar-nav .nav-item a {
+    color: #edf2f4; 
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-item a:hover {
+    color: #2b2d42; 
+    background-color: rgba(255, 255, 255, 0.1); 
+    border-radius: 5px; 
+}
+
 
 .overlay {
     width: 100%;
@@ -15,7 +53,7 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: rgba(51,32,195,0.5);
+    background-color: black;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s;
@@ -27,7 +65,7 @@
     height: 100vh;
     position: fixed;
     z-index: 2;
-    background: rgba(51,32,195,0.9);
+    background-color: black;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -65,7 +103,7 @@
   left: 25%;
   width: 0;
   height: 2px;
-  background-color: white;
+  background-color:black;
   transition: width 0.3s;
 }
 
@@ -78,7 +116,7 @@
 
 .mobile-menu .active-link {
     background: 
-    linear-gradient(white 0 0) bottom/ 100% 2px no-repeat, 
+    linear-gradient(black) bottom/ 100% 2px no-repeat, 
     transparent;
 }
 
@@ -92,7 +130,7 @@
     border-radius: 50%;
     top: 2rem;
     right: -5rem;
-    background: rgba(51,32,195,0.5);
+    background: black;
     display: flex;
     justify-content: center;
     align-items: center;
