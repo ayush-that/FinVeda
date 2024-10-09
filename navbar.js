@@ -66,3 +66,19 @@ function SmoothScrollTo(element) {
 		});
 	}
 }
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar-collapse');
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-item a');
+    
+    if (window.scrollY > 50) { 
+      navbar.style.backgroundColor = "#1a1c29"; 
+      navLinks.forEach(link => {
+        link.style.color = "#ffffff"; 
+      });
+    } else {
+      navbar.style.backgroundColor = "#2b2d42"; 
+      navLinks.forEach(link => {
+        link.style.color = "#edf2f4"; 
+      });
+    }
+  });
