@@ -14,100 +14,18 @@
     <meta name="author" content="Ayush Singh">
     <link
       rel="shortcut icon" href="./assets/images/favicon2.png" type="image/png" />
-    <link rel="stylesheet" href="assets/css/animate.css" />
-    <link rel="stylesheet" href="assets/css/magnific-popup.css" />
-    <link rel="stylesheet" href="assets/css/slick.css" />
-    <link rel="stylesheet" href="assets/css/LineIcons.css" />
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/default.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/quiz.css" />
-    <link rel="stylesheet" href="assets/css/popup.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
-    <style>
-      #progressBar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 0%;
-        height: 8px;
-        background-color: #f76b45;
-        z-index: 9999;
-      }
-      * {
-      cursor: url('./assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
-    }
-
-
-    .circle {
-      position: absolute;
-      width: 25px;
-      height: 25px;
-      border-radius: 50%;
-      pointer-events: none;
-      background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
-      transition: transform 0.1s, left 0.1s, top 0.1s;
-    }
-
-    .circle-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 9999;
-    }
-
-    @media (max-width: 720px) {
-      .circle-container{
-        display: none;
-      }
-    }
-
-    .unique-popup-message {
-  position: fixed; /* Change to fixed positioning */
-  top: 30px; /* Adjust this value to be below the navbar */
-  right: 2px; /* Adjust this value for the desired distance from the right edge */
-  width: 300px; /* Adjust width as needed */
-  transform: translateX(0); /* Center the popup horizontally */
-  background-color: #a4d8ff;
-  color: #131722;
-  padding: 11px;
-  border-radius: 5px;
-  text-align: center;
-  z-index: 1000;
-  box-sizing: border-box;
-  overflow: hidden; /* Hide the expanding border animation */
-  position: relative;
-}
-
-.border-animation {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 7px; /* Same height as the border */
-  background-color: rgb(4, 0, 128);
-  width: 100%;
-  transform-origin: right; /* Start shrinking from the right */
-}
-
-@keyframes borderAnimation {
-  from {
-    transform: scaleX(0); /* Full width initially */
-  }
-  to {
-    transform: scaleX(1); /* Shrink to zero width */
-  }
-}
-
-
-  </style>
-
+    <link rel="stylesheet" href="./assets/css/animate.css" />
+    <link rel="stylesheet" href="./assets/css/magnific-popup.css" />
+    <link rel="stylesheet" href="./assets/css/slick.css" />
+    <link rel="stylesheet" href="./assets/css/LineIcons.css" />
+    <link rel="stylesheet" href="./assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/default.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/quiz.css" />
+    <link rel="stylesheet" href="./assets/css/popup.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <link rel="stylesheet" href="./assets/css/blog.css"/>
 <body>
 
   <div class="circle-container">
@@ -142,61 +60,8 @@
     <div class="circle"></div>
     <div class="circle"></div>
   </div>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const coords = { x: 0, y: 0 };
-      const circles = document.querySelectorAll(".circle");
-
-      circles.forEach(function (circle) {
-        circle.x = 0;
-        circle.y = 0;
-      });
-
-      window.addEventListener("mousemove", function (e) {
-        coords.x = e.pageX;
-        coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
-      });
-
-      function animateCircles() {
-        let x = coords.x;
-        let y = coords.y;
-
-        circles.forEach(function (circle, index) {
-          circle.style.left = `${x - 12}px`;
-          circle.style.top = `${y - 12}px`;
-          circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
-
-          const nextCircle = circles[index + 1] || circles[0];
-          circle.x = x;
-          circle.y = y;
-
-          x += (nextCircle.x - x) * 0.3;
-          y += (nextCircle.y - y) * 0.3;
-        });
-
-        requestAnimationFrame(animateCircles);
-      }
-
-      animateCircles();
-    });
-
-  </script>
-
-    
- 
 
     <div id="progressBar"></div>
-    <script>
-      window.onscroll = function () {
-        var winScroll =
-          document.body.scrollTop || document.documentElement.scrollTop;
-        var height =
-          document.documentElement.scrollHeight -
-          document.documentElement.clientHeight;
-        var scrolled = (winScroll / height) * 100;
-        document.getElementById("progressBar").style.width = scrolled + "%";
-      };
-    </script>
      <div class="preloader">
       <div class="loader">
         <div class="ytp-spinner">
@@ -736,29 +601,6 @@
           </div>
         </div>
       </div>
-      <script>
-        document.getElementById('unique-subscribe-form').addEventListener('submit', function(event) {
-          event.preventDefault(); // Prevent form from submitting normally
-      
-          // Show popup message
-          var messageDiv = document.getElementById('unique-message');
-          messageDiv.style.display = 'block';
-          
-          // Reset existing animation
-          var borderAnimationDiv = messageDiv.querySelector('.border-animation');
-          borderAnimationDiv.style.animation = 'none';
-          borderAnimationDiv.offsetHeight; // Trigger reflow to restart the animation
-          borderAnimationDiv.style.animation = 'borderAnimation 3s linear forwards';
-      
-          // Hide popup message after 10 seconds
-          setTimeout(function() {
-            messageDiv.style.display = 'none';
-          }, 3000); // 10 seconds
-      
-          // Reset form
-          this.reset();
-        });
-      </script>
       <div class="footer-widget pb-100">
         <div class="row" id="footer">
             <div class="col-lg-4 col-md-6 col-sm-8">
@@ -862,147 +704,32 @@
         <div id="particles-2"></div>
       </div>
     </footer>
-    <script>
-      document.getElementById("copyright-year").textContent =
-        new Date().getFullYear();
-    </script>
     <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
+    <script src="./assets/js/blog.js"></script>
     <script src="./assets/js/subscribe.js"></script>
-    <script src="../assets/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="../assets/js/vendor/modernizr-3.7.1.min.js"></script>
-    <script src="../assets/js/popper.min.js"></script>
-    <script src="../assets/js/bootstrap.min.js"></script>
-    <script src="../assets/js/plugins.js"></script>
-    <script src="../assets/js/slick.min.js"></script>
-    <script src="../assets/js/ajax-contact.js"></script>
-    <script src="../assets/js/waypoints.min.js"></script>
-    <script src="../assets/js/jquery.counterup.min.js"></script>
-    <script src="../assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="./assets/js/vendor/modernizr-3.7.1.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/slick.min.js"></script>
+    <script src="./assets/js/ajax-contact.js"></script>
+    <script src="./assets/js/waypoints.min.js"></script>
+    <script src="./assets/js/jquery.counterup.min.js"></script>
+    <script src="./assets/js/jquery.magnific-popup.min.js"></script>
     <script src="./assets/js/blogposts.js"></script>
-    <script src="../assets/js/jquery.easing.min.js"></script>
-    <script src="../assets/js/scrolling-nav.js"></script>
-    <script src="../assets/js/wow.min.js"></script>
-    <script src="../assets/js/particles.min.js"></script>
-    <script src="../assets/js/main.js"></script>
-    <script src="../assets/js/popup.js"></script>
+    <script src="./assets/js/jquery.easing.min.js"></script>
+    <script src="./assets/js/scrolling-nav.js"></script>
+    <script src="./assets/js/wow.min.js"></script>
+    <script src="./assets/js/particles.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/popup.js"></script>
     <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-<script src="https://mediafiles.botpress.cloud/5e160793-5606-4412-ba4c-337e416f14fe/webchat/config.js" defer></script>
+    <script src="https://mediafiles.botpress.cloud/5e160793-5606-4412-ba4c-337e416f14fe/webchat/config.js" defer></script>
     <script defer src="./assets/js/arthsathi-style.js"></script>
-<script src="./assets/js/botpress.js"></script>
-    <script>
-      // Get the modals
-      var loginModal = document.getElementById("myModal");
-      var registerModal = document.getElementById("registerModal");
-
-      // Get the button that opens the login modal
-      var loginBtn = document.getElementById("loginBtn");
-
-      // Get the links that open the register and login modals
-      var registerLink = document.getElementById("registerLink");
-      var loginLink = document.getElementById("loginLink");
-
-      // Get the <span> elements that close the modals
-      var closeBtns = document.getElementsByClassName("close");
-
-      //show and hide icon button
-      document.addEventListener("DOMContentLoaded", () => {
-        const togglePasswordButtons = document.querySelectorAll(
-          ".toggle-password-btn"
-        );
-
-        togglePasswordButtons.forEach((button) => {
-          button.addEventListener("click", () => {
-            const passwordInput = button.previousElementSibling;
-            if (passwordInput.type === "password") {
-              passwordInput.type = "text";
-              button.innerHTML = `<i class="fa-solid fa-eye-slash"></i>`;
-            } else {
-              passwordInput.type = "password";
-              button.innerHTML = `<i class="fa-solid fa-eye"></i>`;
-            }
-          });
-        });
-      });
-
-      // When the user clicks the register link, open the register modal
-      registerLink.onclick = function (event) {
-        event.preventDefault();
-        loginModal.style.display = "none";
-        registerModal.style.display = "block";
-      };
-
-      // When the user clicks the login link, open the login modal
-      loginLink.onclick = function (event) {
-        event.preventDefault();
-        registerModal.style.display = "none";
-        loginModal.style.display = "block";
-      };
-
-      // When the user clicks on <span> (x), close the modal
-      for (var i = 0; i < closeBtns.length; i++) {
-        closeBtns[i].onclick = function () {
-          loginModal.style.display = "none";
-          registerModal.style.display = "none";
-        };
-      }
-
-      // When the user clicks anywhere outside of the modal, close it
-      window.onclick = function (event) {
-        if (event.target == loginModal) {
-          loginModal.style.display = "none";
-        }
-        if (event.target == registerModal) {
-          registerModal.style.display = "none";
-        }
-      };
-      function openModal() {
-    var modal = document.getElementById("myModal");
-    modal.style.display = "block";
-    document.title = "Login/Register - FinVeda";  // Update the title when modal is opened
-  }
-
-  function closeModal() {
-    var modal = document.getElementById("myModal");
-    modal.style.display = "none";
-    document.title = "FinVeda";  // Revert the title back when modal is closed
-  }
-
-  window.onclick = function (event) {
-    var modal = document.getElementById("myModal");
-    if (event.target == modal) {
-      closeModal(); // Call closeModal function
-    }
-  };
-
-  document.addEventListener("DOMContentLoaded", function () {
-    const registerModal = document.getElementById("registerModal");
-    const loginModal = document.getElementById("myModal");
-    const registerLink = document.getElementById("registerLink");
-    const loginLink = document.getElementById("loginLink");
-
-    // Event listener for the register link
-    registerLink.addEventListener("click", function (event) {
-      event.preventDefault();
-      loginModal.style.display = "none";
-      registerModal.style.display = "block";
-      document.title = "Login/Register - FinVeda";  // Update title when registering
-    });
-
-    // Event listener for the login link
-    loginLink.addEventListener("click", function (event) {
-      event.preventDefault();
-      registerModal.style.display = "none";
-      loginModal.style.display = "block";
-      document.title = "Login/Register - FinVeda";  // Update title when logging in
-    });
-
-    // Close button event listeners for modals
-    registerModal.querySelector(".close").addEventListener("click", closeModal);
-    loginModal.querySelector(".close").addEventListener("click", closeModal);
-  });
-
-
-    </script>
+    <script src="./assets/js/botpress.js"></script>
+    <script src="./assets/js/blogmodals.js"></script>
     <script src="./tools/smoothScroll.js"></script>
+    
   </body>
 </html>

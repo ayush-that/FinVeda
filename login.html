@@ -7,44 +7,18 @@
     <meta name="author" content="Ayush Singh">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" href="./assets/images/favicon2.png" type="image/png" />
-    <link rel="stylesheet" href="assets/css/animate.css" />
-    <link rel="stylesheet" href="assets/css/magnific-popup.css" />
-    <link rel="stylesheet" href="assets/css/slick.css" />
-    <link rel="stylesheet" href="assets/css/LineIcons.css" />
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/default.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/quiz.css" />
-    <link rel="stylesheet" href="assets/css/popup.css" />
+    <link rel="stylesheet" href="./assets/css/animate.css" />
+    <link rel="stylesheet" href="./assets/css/magnific-popup.css" />
+    <link rel="stylesheet" href="./assets/css/slick.css" />
+    <link rel="stylesheet" href="./assets/css/LineIcons.css" />
+    <link rel="stylesheet" href="./assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/default.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/quiz.css" />
+    <link rel="stylesheet" href="./assets/css/popup.css" />
+    <link rel="stylesheet" href="./assets/css/login.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <style>
-      .password-container {
-        position: relative;
-      }
-      .password-container input {
-        padding-right: 30px;
-      }
-      .password-container .toggle-password {
-        position: absolute;
-        top: 50%;
-        right: 10px;
-        transform: translateY(-50%);
-        cursor: pointer;
-      }
-      table {
-        width: 100%;
-      }
-      table tr td {
-        padding: 10px 0;
-      }
-      .error {
-        color: red;
-        font-size: 0.9em;
-      }
-    </style>
-    
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
 
   </head>
   <body>
@@ -289,8 +263,8 @@
       document.getElementById("copyright-year").textContent = new Date().getFullYear();
     </script>
     <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
-
     <script src="./assets/js/subscribe.js"></script>
+    <script src="./assets/js/login.js"></script>
     <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
     <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
@@ -305,138 +279,5 @@
     <script src="assets/js/jquery.easing.min.js"></script>
     <script src="assets/js/scrolling-nav.js"></script>
     <script src="assets/js/main.js"></script>
-    <script>
-      function openModal() {
-        var modal = document.getElementById("myModal");
-        modal.style.display = "block";
-      }
-      function closeModal() {
-        var modal = document.getElementById("myModal");
-        modal.style.display = "none";
-      }
-      window.onclick = function (event) {
-        var modal = document.getElementById("myModal");
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      };
-      
-      document.addEventListener("DOMContentLoaded", function () {
-        const registerModal = document.getElementById("registerModal");
-        const loginModal = document.getElementById("myModal");
-        const registerLink = document.getElementById("registerLink");
-        const loginLink = document.getElementById("loginLink");
-
-        registerLink.addEventListener("click", function (event) {
-          event.preventDefault();
-          loginModal.style.display = "none";
-          registerModal.style.display = "block";
-        });
-
-        loginLink.addEventListener("click", function (event) {
-          event.preventDefault();
-          registerModal.style.display = "none";
-          loginModal.style.display = "block";
-        });
-
-        registerModal.querySelector(".close").addEventListener("click", function () {
-          registerModal.style.display = "none";
-        });
-
-        loginModal.querySelector(".close").addEventListener("click", function () {
-          loginModal.style.display = "none";
-        });
-      });
-
-      function togglePasswordVisibility(inputId) {
-        const input = document.getElementById(inputId);
-        const iconShow = input.nextElementSibling.querySelector(".fa-regular.fa-eye");
-        const iconHide = input.nextElementSibling.querySelector(".fa-solid.fa-eye-slash");
-
-        if (input.type === "password") {
-          input.type = "text";
-          iconShow.style.display = "none";
-          iconHide.style.display = "inline";
-        } else {
-          input.type = "password";
-          iconShow.style.display = "inline";
-          iconHide.style.display = "none";
-        }
-      }
-
-      document.getElementById("loginForm").addEventListener("submit", function (event) {
-        event.preventDefault();
-        const email = document.getElementById("login-email").value;
-        const password = document.getElementById("login-password").value;
-        const errorDiv = document.getElementById("login-error");
-
-        if (!email || !password) {
-          errorDiv.textContent = "Please fill out all fields.";
-        } else {
-          errorDiv.textContent = "";
-          // Submit the form
-          this.submit();
-        }
-      });
-
-      document.getElementById("registerForm").addEventListener("submit", function (event) {
-        event.preventDefault();
-        const email = document.getElementById("register-email").value;
-        const username = document.getElementById("register-username").value;
-        const password = document.getElementById("register-password").value;
-        const terms = document.getElementById("register-terms").checked;
-        const errorDiv = document.getElementById("register-error");
-
-        if (!email || !username || !password || !terms) {
-          errorDiv.textContent = "Please fill out all fields and accept the terms and conditions.";
-        } else {
-          errorDiv.textContent = "";
-          // Submit the form
-          this.submit();
-        }
-      });
-    </script>
-    <script>// Load the Google API client library
-      function onLoad() {
-        gapi.load('auth2', function() {
-          gapi.auth2.init({
-            client_id: '226572113891-uj0fmt3qe68159fn43p013orr6la5s2u.apps.googleusercontent.com', // Replace with your client ID
-          });
-        });
-      }
-      
-      // Function to handle sign-in
-      function signIn() {
-        const auth2 = gapi.auth2.getAuthInstance();
-        auth2.signIn().then(function (user) {
-          const profile = user.getBasicProfile();
-          console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-          console.log('Name: ' + profile.getName());
-          console.log('Image URL: ' + profile.getImageUrl());
-          console.log('Email: ' + profile.getEmail());
-      
-          // Send ID token to your backend server for validation
-          const id_token = user.getAuthResponse().id_token;
-          // Example: send id_token to your server for further processing
-          // fetch('/your-backend-endpoint', {
-          //   method: 'POST',
-          //   headers: {
-          //     'Content-Type': 'application/json'
-          //   },
-          //   body: JSON.stringify({ id_token })
-          // });
-        }).catch(function (error) {
-          console.error('Error signing in: ', error);
-        });
-      }
-      
-      // Bind the signIn function to the button click
-      document.getElementById('googleSignInBtn').addEventListener('click', signIn);
-      
-      // Load the API when the window loads
-      window.onload = onLoad;
-      </script>
-      <script src="path/to/google-login.js"></script>
-
   </body>
 </html>
