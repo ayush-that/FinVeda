@@ -1,9 +1,7 @@
-/* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
+  position: fixed;
   z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -16,11 +14,14 @@
 /* Modal Content */
 .modal-content {
   background-color: #fefefe;
-  margin: auto;
+  margin: 10% auto; /* Adjusted for better vertical centering */
   padding: 20px;
   border: 1px solid #888;
-  width: 450px;
-  text-align: center; /* Added */
+  width: 90%; /* Use percentage for responsiveness */
+  max-width: 450px; /* Maximum width from your original CSS */
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* The Close Button */
@@ -29,11 +30,46 @@
   float: right;
   font-size: 28px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .close:hover,
 .close:focus {
   color: #000;
   text-decoration: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 575px) {
+  .modal-content {
+    margin: 5% auto; /* Less top margin on small screens */
+    width: 95%; /* Slightly wider on very small screens */
+    padding: 15px;
+  }
+}
+
+/* Additional styles for form elements */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.main-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
+}
+
+.main-btn:hover {
+  background-color: #0056b3;
 }

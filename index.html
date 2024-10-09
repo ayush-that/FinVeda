@@ -77,7 +77,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <nav class="navbar navbar-expand-lg">
+            <nav class="navbar navbar-expand-lg " style="display: flex;">
               <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="toggler-icon"></span>
@@ -111,10 +111,10 @@
                   </li>
                 </ul>
               </div>
-              <div class="navbar-btn d-none d-sm-inline-block">
+              <div class="">
                 <!-- Login Modal -->
           <div id="myModal" class="modal">
-            <div class="modal-content">
+            <div class="modal-content" >
               <span class="close" style="display: flex; justify-content: right;">&times;</span>
               <div class="mt-3">
                 <h3 class="join"><i class="fa-solid fa-right-to-bracket"></i>  Login to join us....</h3>
@@ -1116,6 +1116,130 @@
   <script src="/assets/js/faq.js"></script>
   
 
+  <style>
+    .footer-widget {
+      background: linear-gradient(to right, #2C3E50, #4CA1AF);
+      color: white;
+      padding: 50px 20px;
+    }
+  
+    .footer-widget .footer-title h3, .footer-widget .footer-title h4 {
+      color: #F39C12;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+  
+    .footer-widget p.text {
+      color: white;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+  
+    .footer-widget a {
+      color: #ECF0F1;
+      text-decoration: none;
+      transition: color 0.3s ease-in-out;
+    }
+  
+    .footer-widget a:hover {
+      color: #F39C12;
+    }
+  
+    .footer-widget ul {
+      list-style: none;
+      padding: 0;
+    }
+  
+    .footer-widget ul li {
+      margin-bottom: 10px;
+    }
+  
+    .footer-widget ul li a {
+      display: flex;
+      align-items: center;
+    }
+  
+    .footer-widget ul li a i {
+      margin-right: 10px;
+      font-size: 18px;
+    }
+  
+    .footer-contact ul li i {
+      color: #F39C12;
+    }
+  
+    .footer-contact ul li a {
+      color: white;
+      text-decoration: none;
+    }
+  
+    .footer-contact ul li a:hover {
+      color: #F39C12;
+    }
+  
+    .footer-widget .contact p {
+      margin: 0;
+    }
+  
+    /* Hover effects for icons */
+    .footer-widget ul li a:hover i {
+      color: #F39C12;
+    }
+  
+    /* Styling for copyright */
+    .footer-copyright {
+      background: #1C2833;
+      padding: 20px;
+      color: white;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .footer-widget .row {
+        display: block;
+      }
+  
+      .footer-widget .footer-about,
+      .footer-widget .footer-link,
+      .footer-widget .footer-contact {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    }
+    .col-lg-4, .col-md-6, .col-sm-8 {
+      margin-bottom: 30px; 
+      padding: 10px;
+      border-radius: 10px; 
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+      color: white; 
+  }
+  
+  .footer-about {
+      text-align: left; 
+      font-family: 'Roboto', sans-serif; 
+      color: #333; 
+  }
+  
+  .footer-about p.text {
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 0;
+      padding: 10px 0;
+  }
+  
+  .footer-about p.custom-margin {
+      margin-top: 20px;
+  }
+  
+  @media (max-width: 768px) {
+      .col-lg-4, .col-md-6, .col-sm-8 {
+          padding: 10px;
+      }
+  }
+  
+  </style>
   <footer id="footer" class="footer-area pt-120">
     <div class="container">
       <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s"> 
@@ -1212,6 +1336,14 @@
                                   Delhi, India
                               </a>
                           </div>
+                      </li>
+                      <li id="social_icons" class="d-sm-flex justify-content-center">
+                        <div style="width: 80%;">
+                          <i class="fa-brands fa-instagram"></i>
+                          <i class="fa-brands fa-facebook"></i>
+                          <i class="fa-brands fa-x-twitter"></i>
+                          <i class="fa-brands fa-discord"></i>
+                        </div>
                       </li>
                   </ul>
               </div>
