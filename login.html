@@ -43,6 +43,9 @@
         font-size: 0.9em;
       }
     </style>
+    
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
   </head>
   <body>
     <header class="header-area">
@@ -112,6 +115,8 @@
                           </table>
                           <div class="error" id="login-error"></div>
                           <button type="submit" class="main-btn mt-2 w-100 mb-2" style="padding: 0px;">Sign in</button>
+                          <button class="main-btn" id="googleSignInBtn" style="padding: 0px;">Sign in with Google</button>
+
                         </form>
                         <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
                       </div>
@@ -154,6 +159,7 @@
                           </table>
                           <div class="error" id="register-error"></div>
                           <button type="submit" class="main-btn mt-2 w-100 mb-3" style="padding: 0px;">Register</button>
+
                         </form>
                         <p class="text-center">Already have an account? <a href="#" id="loginLink">Login</a></p>
                       </div>
@@ -390,5 +396,47 @@
         }
       });
     </script>
+    <script>// Load the Google API client library
+      function onLoad() {
+        gapi.load('auth2', function() {
+          gapi.auth2.init({
+            client_id: '226572113891-uj0fmt3qe68159fn43p013orr6la5s2u.apps.googleusercontent.com', // Replace with your client ID
+          });
+        });
+      }
+      
+      // Function to handle sign-in
+      function signIn() {
+        const auth2 = gapi.auth2.getAuthInstance();
+        auth2.signIn().then(function (user) {
+          const profile = user.getBasicProfile();
+          console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+          console.log('Name: ' + profile.getName());
+          console.log('Image URL: ' + profile.getImageUrl());
+          console.log('Email: ' + profile.getEmail());
+      
+          // Send ID token to your backend server for validation
+          const id_token = user.getAuthResponse().id_token;
+          // Example: send id_token to your server for further processing
+          // fetch('/your-backend-endpoint', {
+          //   method: 'POST',
+          //   headers: {
+          //     'Content-Type': 'application/json'
+          //   },
+          //   body: JSON.stringify({ id_token })
+          // });
+        }).catch(function (error) {
+          console.error('Error signing in: ', error);
+        });
+      }
+      
+      // Bind the signIn function to the button click
+      document.getElementById('googleSignInBtn').addEventListener('click', signIn);
+      
+      // Load the API when the window loads
+      window.onload = onLoad;
+      </script>
+      <script src="path/to/google-login.js"></script>
+
   </body>
 </html>
