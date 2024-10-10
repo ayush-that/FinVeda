@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="./assets/images/favicon2.png" type="image/png" />
+    <link rel="stylesheet" href="./assets/css/animate.css" />
+    <link rel="stylesheet" href="./assets/css/magnific-popup.css" />
+    <link rel="stylesheet" href="./assets/css/slick.css" />
+    <link rel="stylesheet" href="./assets/css/LineIcons.css" />
+    <link rel="stylesheet" href="./assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/default.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/quiz.css" />
+    <link rel="stylesheet" href="./assets/css/popup.css" />
+    <link rel="stylesheet" href="./assets/css/cookiepopup.css">
+    <link rel="stylesheet" href="./assets/css/preloader.css" />
+    <link rel="stylesheet" href="./assets/css/faq.css" />
+    <link rel="stylesheet" href="./assets/css/index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "o6kveYmOSDrs0l1Mg",
+        });
+      })();
+    </script>
+    <style>
+      body {
+        margin: 0;
+        color: black;
+        padding: 0;
+        overflow-y: auto; /* Enables vertical scrollbar */
+        height: 100vh; /* Set the height of the body */
+        font-family: 'Poppins', sans-serif; /* Use the specified font */
+      }
+      .circle-container {
+        position: relative;
+        /* Add other styles if needed */
+      }
+      .faq-answer {
+        display: none; /* Initially hide the answers */
+        margin-top: 10px; /* Space above the answer */
+      }
+      .faq-question {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.1em;
+        text-align: left;
+        padding: 10px;
+        width: 100%;
+      }
+      .faq-icon {
+        margin-left: 10px;
+      }
+    </style>
+</head>
+<body>
+    <div class="circle-container">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <!-- More circles... -->
+    </div>
+    <div id="progressBar"></div>
+    <!-- FAQ section -->
+    <header class="header-area">
+        <div class="navbar-area">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <section class="faq-section wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            What is Finveda? <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Finveda is a dynamic financial literacy app with Arthsathi AI chatbot, finance blogs, market trends, SIP calculator, and a quiz for effortless finance learning.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            What problem does Finveda solve? <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                          <p>According to a survey by the OECD, only 38% of adults in India are financially literate. Finveda aims to solve this problem by providing a platform for financial literacy education.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            What services does Finveda offer? <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                          <p>We offer expert written blogs on investment tips and strategies, and current economic trends, all crafted to keep you well-informed. With our SIP and PPF tools you'll discover the power of compounding and make informed decisions regarding your savings.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            How can I start using Finveda? <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                          <p>Simply sign up, and you'll have access to all our features, including personalized finance education and tools.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Is Finveda free to use? <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                          <p>Yes, Finveda is free to use!</p>
+                        </div>
+                    </div>
+                </section>
+                <script src="/assets/js/faq.js"></script>
+              </div>
+            </div>
+          </div>
+        </div>
+    </header>
+
+    <script>
+      const faqButtons = document.querySelectorAll('.faq-question');
+      
+      faqButtons.forEach(button => {
+          button.addEventListener('click', () => {
+              const answer = button.nextElementSibling;
+              const icon = button.querySelector('.faq-icon');
+              
+              // Toggle the answer visibility
+              if (answer.style.display === 'block') {
+                  answer.style.display = 'none';
+                  icon.textContent = '+'; // Change icon back to +
+              } else {
+                  answer.style.display = 'block';
+                  icon.textContent = '-'; // Change icon to -
+              }
+          });
+      });
+    document.addEventListener('DOMContentLoaded', function () {
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const icon = question.querySelector('.faq-icon');
+
+        question.addEventListener('click', () => {
+            const answer = item.querySelector('.faq-answer');
+            const isActive = answer.classList.contains('show');
+
+            // Close all open answers
+            document.querySelectorAll('.faq-answer').forEach(answer => {
+                answer.classList.remove('show');
+                answer.style.maxHeight = '0'; // Hide immediately
+                answer.style.opacity = '0'; // Fade out
+                answer.style.padding = '0'; // Reduce padding
+            });
+            document.querySelectorAll('.faq-icon').forEach(icon => {
+                icon.textContent = '+'; // Reset all icons to "+"
+            });
+            // Toggle the clicked answer
+            if (!isActive) {
+                answer.style.display = 'block'; // Ensure display is block to apply transition
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        answer.classList.add('show'); // Add class for transition
+                        answer.style.maxHeight = '1000px'; // Allow height to adjust to content
+                        answer.style.opacity = '1'; // Fade in
+                        answer.style.padding = '10px 20px'; // Restore padding
+                    });
+                });
+                icon.textContent = '-';
+            } else {
+                icon.textContent = '+';
+            }
+        });
+    });
+});
+
+    </script>
+    <script src="/assets/js/faq.js"></script>
+</footer>
+  
+<script>
+  document.getElementById("copyright-year").textContent = new Date().getFullYear();
+</script>
+
+</script>
+</body>
+</html>
