@@ -114,13 +114,83 @@
                   <li class="nav-item">
                     <a class="page-scroll" href="./contact.html" style="">Contact📞</a>
                   </li>
+                  <li>
+                    <button id="theme-toggle" class="toggle-button">🌙</button>
+                  </li>
+            
                   <li class="nav-item no-underline">
                     <a class="main-btn navbar-btn" style="border-radius: 15px; transform: none; border: none; position: relative; width: 200px;" href="#"
                       onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
                   </li>
-
+                  
                 </ul>
               </div>
+              <script>
+                const toggleButton = document.getElementById('theme-toggle');
+                const body = document.body;
+                const currentTheme = localStorage.getItem('theme');
+
+if (currentTheme === 'dark') {
+body.classList.add('dark-mode');
+toggleButton.classList.add('dark');
+toggleButton.textContent = '☀️';
+}
+
+toggleButton.addEventListener('click', function () {
+body.classList.toggle('dark-mode');
+toggleButton.classList.toggle('dark');
+
+// Update button icon based on mode
+if (body.classList.contains('dark-mode')) {
+  toggleButton.textContent = '☀️';  // Light mode icon
+  localStorage.setItem('theme', 'dark');
+} else {
+  toggleButton.textContent = '🌙';  // Dark mode icon
+  localStorage.setItem('theme', 'light');
+}
+});
+            </script>
+            <style>.toggle-button {
+              padding: 0.5em 1em;
+              cursor: pointer;
+              border: none;
+              background-color: #0c0a0a;
+              color: #fff;
+              border-radius: 5px;
+              transition: background-color 0.3s;
+          }
+          
+          .toggle-button:hover {
+              background-color: #555;
+          }
+          
+          .content {
+              padding: 2em;
+              text-align: center;
+          }
+          
+          h1 {
+              font-size: 2.5rem;
+          }
+          
+          p {
+              font-size: 1.2rem;
+          }
+          
+          body.dark-mode {
+    background-color: #222;
+    color: #f1f1f1; /* Change text color to light for dark mode */
+}
+
+.toggle-button.dark {
+    background-color: #f1f1f1; /* Button background in dark mode */
+    color: #333; /* Button text color in dark mode */
+}
+
+.toggle-button.dark:hover {
+    background-color: #ddd; /* Button hover color in dark mode */
+}
+          </style>
               <div class="">
                 <!-- Login Modal -->
           <div id="myModal" class="modal">
