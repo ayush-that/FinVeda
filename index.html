@@ -38,7 +38,7 @@
 
 <body>
 
-  <div class="circle-container">
+  <!-- <div class="circle-container">
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
@@ -69,14 +69,14 @@
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
-  </div>
+  </div> -->
   <div id="progressBar"></div>
 
   <header class="header-area">
-    <div class="navbar-area">
-      <div class="container">
+    <div style="display: flex; justify-content: center;" class="navbar-area">
+      <div style="display: flex; justify-content: center;" class="container">
         <div class="row">
-          <div class="col-lg-12">
+          <div style="display: flex; justify-content: center;;" class="">
             <nav class="navbar navbar-expand-lg " style="display: flex;">
               <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -86,30 +86,39 @@
               </button> -->
 
               <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-                <ul id="nav" class="navbar-nav ml-auto">
+                <ul id="nav" class="navbar-nav m-0-auto">
                   <li class="nav-item active">
                     <a class="page-scroll" href="./index.html" id="active-page">Home 🏡</a>
                   </li>
                   <li class="nav-item">
+ 
                     <a class="page-scroll" href="./about.html" style=" width: 120px; position: relative; left: -50px;">About Us 📖</a>
+ 
+                    <a class="page-scroll" href="./about.html" style="width: 120px;">About Us 📖</a>
+ 
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="./trends.html" style=" position: relative; left: -70px;">Trends 📈</a>
+                    <a class="page-scroll" href="./trends.html" style="">Trends 📈</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="./tools/sip.html" style="position: relative; left: -90px;">Tools 🔧</a>
+                    <a class="page-scroll" href="./tools/sip.html" style="">Tools 🔧</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="./blog.html" style="position: relative; left: -120px;">Blogs 📰</a>
+                    <a class="page-scroll" href="./blog.html" style="">Blogs 📰</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="./quiz.html" style="position: relative; left: -140px;">Quiz 🤔</a>
+                    <a class="page-scroll" href="./quiz.html" style="">Quiz 🤔</a>
                   </li>
                   <li class="nav-item">
+ 
                     <a class="page-scroll" href="./careers.html" style="width: 110px; position: relative; left: -180px;">careers 🤔</a>
+ 
+                    <a class="page-scroll" href="./careers.html" style="">careers 🤔</a>
+ 
                   </li>
                  
                   <li class="nav-item">
+
                     <a class="page-scroll" href="./contact.html" style=" width: 120px; position: relative; left: -240px;">Contact📞</a>
                   </li>
                   <li class="nav-item">
@@ -117,6 +126,15 @@
                   </li>
                   <li class="nav-item no-underline">
                     <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none; border: none; position: relative; left: -300px; width: 200px;" href="#"
+
+                    <a class="page-scroll" href="./careers.html" style="">Career 👔</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./contact.html" style="">Contact📞</a>
+                  </li>
+                  <li class="nav-item no-underline">
+                    <a class="main-btn navbar-btn" style="border-radius: 15px; transform: none; border: none; position: relative; width: 200px;" href="#"
+
                       onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
                   </li>
 
@@ -158,19 +176,88 @@
                 <h3 class="join"><i class="fa-solid fa-user"></i>  Register to join us....</h3>
                 <form class="px-3 py-4" id="registerForm">
                   <div class="form-group">
-                    <label class="d-flex">Email</label>
-                    <input type="email" placeholder="Email" class="form-control" required />
+                      <label class="d-flex">Email</label>
+                      <input type="email" placeholder="Email" class="form-control" required />
                   </div>
                   <div class="form-group">
-                    <label class="d-flex">Username</label>
-                    <input type="text" placeholder="Username" class="form-control" required />
+                      <label class="d-flex">Username</label>
+                      <input type="text" placeholder="Username" class="form-control" required />
                   </div>
                   <div class="form-group">
-                    <label class="d-flex">Password</label>
-                    <input type="password" placeholder="Password" class="form-control" required>
-                    <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
+                      <label class="d-flex">Password</label>
+                      <input type="password" placeholder="Password" class="form-control" id="register-password" required oninput="checkPasswordStrength()">
+                      <button type="button" class="toggle-password-btn" onclick="togglePasswordVisibility('register-password')">
+                          <i class="fa-solid fa-eye"></i>
+                          <i class="fa-solid fa-eye-slash" style="display: none;"></i>
+                      </button>
                   </div>
-                </form>
+                  <div id="password-meter" style="display: none; margin-top: 5px;">
+                      <div id="meter" style="height: 10px; background-color: #ccc; border-radius: 5px; transition: width 0.3s;"></div>
+                      <div id="strength-text" style="margin-top: 5px; font-weight: bold;"></div>
+                  </div>
+                  </form>
+                  
+                  <!-- Import zxcvbn library -->
+                  <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+                  <script>
+                      function checkPasswordStrength() {
+                          const password = document.getElementById('register-password').value;
+                          const meter = document.getElementById('meter');
+                          const meterContainer = document.getElementById('password-meter');
+                          const strengthText = document.getElementById('strength-text');
+                  
+                          if (password) {
+                              meterContainer.style.display = 'block'; // Show the meter when typing
+                              const result = zxcvbn(password);
+                              const score = result.score; // Score ranges from 0 to 4
+                  
+                              // Set meter width and color based on score
+                              meter.style.width = (score + 1) * 20 + '%'; // Convert score to percentage
+                              meter.style.backgroundColor = getMeterColor(score);
+                              strengthText.innerText = getStrengthText(score); // Update strength text
+                          } else {
+                              meterContainer.style.display = 'none'; // Hide the meter if no password
+                              strengthText.innerText = ''; // Clear strength text
+                          }
+                      }
+                  
+                      function getMeterColor(score) {
+                          switch (score) {
+                              case 0: return 'red'; // Weak
+                              case 1: return 'orange'; // Fair
+                              case 2: return 'yellow'; // Good
+                              case 3: return 'blue'; // Strong
+                              case 4: return 'green'; // Very Strong
+                              default: return 'gray';
+                          }
+                      }
+                  
+                      function getStrengthText(score) {
+                          switch (score) {
+                              case 0: return 'Very Weak';
+                              case 1: return 'Weak';
+                              case 2: return 'Fair';
+                              case 3: return 'Strong';
+                              case 4: return 'Very Strong';
+                              default: return '';
+                          }
+                      }
+                  
+                      function togglePasswordVisibility(id) {
+                          const passwordInput = document.getElementById(id);
+                          const eyeIcon = passwordInput.nextElementSibling;
+                          if (passwordInput.type === 'password') {
+                              passwordInput.type = 'text';
+                              eyeIcon.children[0].style.display = 'none';
+                              eyeIcon.children[1].style.display = 'inline';
+                          } else {
+                              passwordInput.type = 'password';
+                              eyeIcon.children[0].style.display = 'inline';
+                              eyeIcon.children[1].style.display = 'none';
+                          }
+                      }
+                  </script>
+                  
                 <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('registerForm')">Register</button>
                 <p class="text-center">Already have an account? <a href="#" id="loginLink">Login</a></p>
               </div>
@@ -404,7 +491,7 @@
                               "showIntervalTabs": true,
                                 "displayMode": "single",
                                   "locale": "en",
-                                    "colorTheme": "light"
+                                    "colorTheme": "light",
                   }
                 </script>
             </div>
@@ -665,6 +752,7 @@
               <p class="text">
                 FinVeda has become an invaluable tool in my monetary journey. The robust security tells us about
                 finances and intuitive design make it accessible to everyone.
+                It's user-friendly nature is best!
               </p>
             </div>
             <div class="testimonial-author d-flex align-items-center">
@@ -1243,6 +1331,60 @@
   .footer-about p.custom-margin {
       margin-top: 20px;
   }
+
+/* for social link styling */
+#social_icons{
+  margin-top: 20px;
+    margin-left: -52px;
+    font-size: 18px;
+    color: #fff;
+}
+#social_icons i{
+  color: #fff;
+  margin: 0 0.6vw;
+}
+.socialtitle{
+  color: #F39C12;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+
+/* for facebook */
+#social_icons .fa-facebook {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+#social_icons .fa-facebook:hover{
+  color:#4267B2;
+  transform:scale(1.1);
+}
+
+/* for twitter */
+#social_icons .fa-x-twitter {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+#social_icons .fa-x-twitter:hover{
+  color:black;
+  transform:scale(1.1);
+}
+/* for instagram */
+#social_icons .fa-instagram {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+#social_icons .fa-instagram:hover{
+  color:#c32aa3;
+  transform:scale(1.1);
+}
+
+/* for discord */
+  #social_icons .fa-discord{
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  #social_icons .fa-discord:hover{
+    color:#4267B2;
+  transform:scale(1.1);
+}
   
   @media (max-width: 768px) {
       .col-lg-4, .col-md-6, .col-sm-8 {
@@ -1323,7 +1465,7 @@
                   </div>
                   <ul class="contact custom-margin-big" style="justify-content: space-around;">
                       <li class="d-sm-flex justify-content-center">
-                          <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                          <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 25px; width: 10%;"></i>
                           <p style="width: 80%;">
                               <a href="mailto:ayush1337@hotmail.com" target="_blank"
                                  style="color: white; text-decoration: underline;">
@@ -1332,7 +1474,7 @@
                           </p>
                       </li>
                       <li class="d-sm-flex justify-content-center">
-                          <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                          <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 25px; width: 10%;"></i>
                           <div style="width: 80%;">
                               <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
                                   fin-veda.vercel.app
@@ -1340,7 +1482,7 @@
                           </div>
                       </li>
                       <li class="d-sm-flex justify-content-center">
-                          <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 12px; width: 10%;"></i>
+                          <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 25px; width: 10%;"></i>
                           <div style="width: 80%;">
                               <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
                                  style="color:#fff">
@@ -1348,14 +1490,34 @@
                               </a>
                           </div>
                       </li>
-                      <li id="social_icons" class="d-sm-flex justify-content-center">
-                        <div style="width: 80%;">
-                          <i class="fa-brands fa-instagram"></i>
-                          <i class="fa-brands fa-facebook"></i>
-                          <i class="fa-brands fa-x-twitter"></i>
-                          <i class="fa-brands fa-discord"></i>
+                      <li id="social_icons" class="d-sm-flex justify-content-evenly my-3">
+                        <div style="width: 100%; display:flex; ">
+                          <!-- Instagram Icon -->
+                          <a href="https://instagram.com" target="_blank" style="margin: 0 10px; color: #E4405F;" aria-label="Instagram">
+                            <i style="font-size: 25px" class="fa-brands fa-instagram"></i>
+                          </a>
+                      
+                          <!-- Facebook Icon -->
+                          <a href="https://facebook.com" target="_blank" style="margin: 0 10px; color: #4267B2;" aria-label="Facebook">
+                            <i style="font-size: 25px" class="fa-brands fa-facebook"></i>
+                          </a>
+                      
+                          <!-- X/Twitter Icon -->
+                          <a href="https://twitter.com" target="_blank" style="margin: 0 10px; color: #1DA1F2;" aria-label="Twitter">
+                            <i style="font-size: 25px" class="fa-brands fa-x-twitter"></i>
+                          </a>
+                      
+                          <!-- Discord Icon -->
+                          <a href="https://discord.com" target="_blank" style="margin: 0 10px; color: #7289DA;" aria-label="Discord">
+                            <i style="font-size: 25px" class="fa-brands fa-discord"></i>
+                          </a>
+                      
+                          <!-- GitHub Icon -->
+                          <a href="https://github.com" target="_blank" style="margin: 0 10px; color: #333;" aria-label="GitHub">
+                            <i style="font-size: 25px" class="fa-brands fa-github"></i>
+                          </a>
                         </div>
-                      </li>
+                      </li>                                       
                   </ul>
               </div>
           </div>
