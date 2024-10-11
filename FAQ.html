@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Section</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to bottom right, rgba(0, 123, 255, 0.7), rgba(0, 87, 142, 0.7)), url('https://example.com/charts-background.jpg'); /* Gradient + background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #fff; /* White text color */
+            margin: 0;
+            height: 100vh; /* Set the height to full screen */
+            display: flex;
+            justify-content: center; /* Horizontally center the FAQ box */
+            align-items: center; /* Vertically center the FAQ box */
+            font-family: 'Roboto', sans-serif;
+        }
+        .faq-section {
+            max-width: 800px;
+            width: 90%; /* Adjusted for smaller screens */
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+            color: #000; /* Black text for better readability inside the section */
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px); /* Adds a blur effect to the background */
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.5em; /* Increased font size */
+        }
+        .faq {
+            margin-bottom: 15px; /* Added margin for better spacing */
+        }
+        .faq-question {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 5px;
+            background-color: #007bff; /* Blue background for questions */
+            margin: 5px 0;
+            border-radius: 5px;
+            transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+        }
+        .faq-question:hover {
+            background-color: #0a9113; /* Darker blue on hover */
+        }
+        .faq-question img {
+            width: 30px; /* Increased icon size */
+            height: 30px;
+            margin-right: 10px;
+        }
+        .faq-answer {
+            display: none;
+            padding: 15px;
+            background-color: #f1f1f1;
+            border-left: 4px solid #11e268; /* Border for better separation */
+            margin-top: 5px;
+            border-radius: 5px;
+            transition: max-height 0.3s ease; /* Smooth transition for max height */
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="faq-section">
+        <h1>Frequently Asked Questions</h1>
+
+        <div class="faq">
+            <div class="faq-question">
+               
+                What is Sevy?
+            </div>
+            <div class="faq-answer">Sevy is an educational platform designed to foster a ‘think like a trader’ mindset. It provides students with interactive tools to learn about financial markets, science, and space, using AI-powered simulations and games.</div>
+        </div>
+
+        <div class="faq">
+            <div class="faq-question">
+                Do I need coding knowledge to use Sevy?
+            </div>
+            <div class="faq-answer">No, Sevy is designed for both coders and non-coders. Our platform allows you to explore trading and educational tools without the need for prior coding experience.</div>
+        </div>
+
+        <div class="faq">
+            <div class="faq-question">
+                How do AI tools work in Sevy?
+            </div>
+            <div class="faq-answer">Our AI tools provide personalized learning experiences and simulate real-world trading environments. This helps users better understand market dynamics and develop a trader's mindset through practice.</div>
+        </div>
+
+        <div class="faq">
+            <div class="faq-question">
+                What topics does Sevy cover?
+            </div>
+            <div class="faq-answer">Sevy covers a wide range of topics, including financial trading, space theories, environmental issues, and science. We aim to create educational games and simulations to make learning more engaging and interactive.</div>
+        </div>
+
+        <div class="faq">
+            <div class="faq-question">
+                Is Sevy suitable for beginners?
+            </div>
+            <div class="faq-answer">Yes! Sevy is built for users of all levels, from beginners to advanced learners. Whether you're learning about trading, space, or science, Sevy provides the tools to guide you step by step.</div>
+        </div>
+
+        <div class="faq">
+            <div class="faq-question">
+                Can I use Sevy on my mobile device?
+            </div>
+            <div class="faq-answer">Yes, Sevy is fully responsive and can be used on any mobile device. You can access all features of the platform through your smartphone or tablet.</div>
+        </div>
+
+        <div class="faq">
+            <div class="faq-question">
+                Is there a fee to use Sevy?
+            </div>
+            <div class="faq-answer">Sevy offers both free and premium content. You can explore a wide range of resources for free, and we also offer premium tools for those who want a more advanced learning experience.</div>
+        </div>
+
+        <div class="faq">
+            <div class="faq-question">
+                What makes Sevy different from other educational platforms?
+            </div>
+            <div class="faq-answer">Sevy combines traditional learning with interactive AI tools and simulations to make education more engaging. We focus on cultivating a trader's mindset and provide unique content related to space, science, and environmental issues, making it a one-stop platform for diverse educational needs.</div>
+        </div>
+
+        <div class="faq">
+            <div class="faq-question">
+                How can I contact the Sevy support team?
+            </div>
+            <div class="faq-answer">You can contact us by emailing support@sevy.com or by using the contact form on our website’s ‘Contact Us’ page. We are here to help you with any queries or issues you may have.</div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+                if (answer.style.display === 'block') {
+                    answer.style.maxHeight = answer.scrollHeight + 'px'; // Allow the answer to expand smoothly
+                } else {
+                    answer.style.maxHeight = '0'; // Collapse the answer smoothly
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
