@@ -1,108 +1,114 @@
 /* Custom CSS with Tailwind-inspired utility classes */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  .header-hero {
-    position: relative;
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-  
-  .header-hero .container {
-    position: relative;
-  }
-  
-  .header-hero .header-hero-content {
-    position: relative;
-    color: #fff;
-  }
-  
-  .header-hero .header-hero-image {
-    margin-top: 50px;
-  }
-  
-  .header-sub-title {
-    font-size: 1.5rem;
-    font-weight: 500;
-  }
-  
-  .header-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-  }
-  
-  .text {
-    font-size: 1rem;
-    font-weight: 400;
-  }
-  
-  .main-btn {
-    font-size: 1rem;
-    font-weight: 500;
-    padding: 12px 30px;
-    border-radius: 30px;
-    background-color: #ffffff;
-    color: #000;
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-  
-  .main-btn:hover {
-    background-color: #000;
-    color: #ffffff;
-  }
-  
-  .content {
-    position: relative;
-    padding-top: 0; 
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 16px;
-  }
-  
-  .text-center {
-    text-align: center;
-  }
-  
-  .text-3xl {
-    font-size: 1.875rem;
-  }
-  
-  .font-semibold {
-    font-weight: 600;
-  }
-  
-  .mb-8 {
-    margin-bottom: 0.8rem;
-  }
-  
-  .flex {
-    display: flex;
-  }
-  
-  .flex-wrap {
-    flex-wrap: wrap;
-  }
-  
-  .justify-center {
-    justify-content: center;
-  }
-  
-  .gap-8 {
-    gap: 2rem;
-  }.contributors {
-    padding-top: 10px; 
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
+
+.header-hero {
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.header-hero .container {
+  position: relative;
+}
+
+.header-hero .header-hero-content {
+  position: relative;
+  color: #fff;
+}
+
+.header-hero .header-hero-image {
+  margin-top: 50px;
+}
+
+.header-sub-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.header-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.text {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.main-btn {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 12px 30px;
+  border-radius: 30px;
+  background-color: #ffffff;
+  color: #000;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.main-btn:hover {
+  background-color: #000;
+  color: #ffffff;
+}
+
+.content {
+  position: relative;
+  padding-top: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.text-center {
+  justify-content: center;
+  display: flex;
+  width: 490px;
+
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.mb-8 {
+  margin-bottom: 0.8rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+
+.contributors {
+  padding-top: 10px;
+}
+
 .contributor-card {
   position: relative;
   overflow: hidden;
   width: 100%;
-  max-width: calc(25% - 16px); 
+  max-width: calc(25% - 16px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -114,7 +120,7 @@ body {
   transition: transform 0.3s, box-shadow 0.3s;
   text-decoration: none;
   color: inherit;
-  margin-bottom: 16px; 
+  margin-bottom: 16px;
 }
 
 .contributor-card::before {
@@ -218,14 +224,12 @@ body {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background-image: -webkit-gradient(
-      linear,
+  background-image: -webkit-gradient(linear,
       left bottom,
       left top,
       color-stop(0.44, rgb(122, 153, 217)),
       color-stop(0.72, rgb(73, 125, 189)),
-      color-stop(0.86, rgb(28, 58, 148))
-  );
+      color-stop(0.86, rgb(28, 58, 148)));
   transition: background-color 0.3s, box-shadow 0.3s;
 }
 
@@ -238,7 +242,7 @@ body {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .contributor-card {
-      max-width: 80%;
+    max-width: 80%;
   }
 }
 
@@ -287,46 +291,55 @@ body {
 }
 
 @media (max-width: 720px) {
-  .circle-container{
+  .circle-container {
     display: none;
   }
 }
 
 
 .unique-popup-message {
-position: fixed; /* Change to fixed positioning */
-top: 30px; /* Adjust this value to be below the navbar */
-right: 2px; /* Adjust this value for the desired distance from the right edge */
-width: 300px; /* Adjust width as needed */
-transform: translateX(0); /* Center the popup horizontally */
-background-color: #a4d8ff;
-color: #131722;
-padding: 11px;
-border-radius: 5px;
-text-align: center;
-z-index: 1000;
-box-sizing: border-box;
-overflow: hidden; /* Hide the expanding border animation */
-position: relative;
+  position: fixed;
+  /* Change to fixed positioning */
+  top: 30px;
+  /* Adjust this value to be below the navbar */
+  right: 2px;
+  /* Adjust this value for the desired distance from the right edge */
+  width: 300px;
+  /* Adjust width as needed */
+  transform: translateX(0);
+  /* Center the popup horizontally */
+  background-color: #a4d8ff;
+  color: #131722;
+  padding: 11px;
+  border-radius: 5px;
+  text-align: center;
+  z-index: 1000;
+  box-sizing: border-box;
+  overflow: hidden;
+  /* Hide the expanding border animation */
+  position: relative;
 }
 
 .border-animation {
-position: absolute;
-bottom: 0;
-left: 0;
-height: 7px; /* Same height as the border */
-background-color: rgb(4, 0, 128);
-width: 100%;
-transform-origin: right; /* Start shrinking from the right */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 7px;
+  /* Same height as the border */
+  background-color: rgb(4, 0, 128);
+  width: 100%;
+  transform-origin: right;
+  /* Start shrinking from the right */
 }
 
 @keyframes borderAnimation {
-from {
-transform: scaleX(0); /* Full width initially */
-}
-to {
-transform: scaleX(1); /* Shrink to zero width */
-}
-}
+  from {
+    transform: scaleX(0);
+    /* Full width initially */
+  }
 
-
+  to {
+    transform: scaleX(1);
+    /* Shrink to zero width */
+  }
+}
