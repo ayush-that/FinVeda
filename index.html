@@ -427,7 +427,6 @@
               <script type="text/javascript"
                 src="https://s3.tradingview.com/external-embedding/embed-widget-timeline.js" async>
                   {
-
                     "feedMode" : "all_symbols",
                     "isTransparent": true,
                     "displayMode": "adaptive",
@@ -1108,55 +1107,103 @@
 
     <div class="form-main-container wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
       <div class="form-info-section">
-          <h2 class="form-heading wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">We Value Your Feedback</h2>
-          <br/>
-          <p class="form-para wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
-              Your input helps us to improve and provide better services. Please fill out the form to let us know your thoughts.
-          </p>
+        <h2 class="form-heading wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">We Value Your Feedback</h2>
+        <br/>
+        <p class="form-para wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
+          Your input helps us to improve and provide better services. Please fill out the form to let us know your thoughts.
+        </p>
       </div>
       <div class="form-section wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-          <h2 class="form-heading2">Feedback Form</h2>
-          <form class="feedbackform" id="feedback-form">
-              <div class="form-group">
-                  <label class="form-label" for="name">Name:</label>
-                  <input class="form-input" type="text" id="name" name="name" required>
-              </div>
-              <div class="form-group">
-                  <label class="form-label" for="email">Email:</label>
-                  <input class="form-input" type="email" id="email" name="email" required>
-              </div>
-              <div class="form-group">
-                  <label class="form-label">Rating:</label>
-                  <div id="emoji-description" class="emoji-description">Select an option</div>
-              </div>
-              <div class="emojis">
-                  <input class="form-input" type="radio" id="emoji1" name="rating" value="1">
-                  <label class="form-label" for="emoji1">&#128577;</label> <!-- Very Bad -->
-                  <input class="form-input" type="radio" id="emoji2" name="rating" value="2">
-                  <label class="form-label" for="emoji2">&#128542;</label> <!-- Bad -->
-                  <input class="form-input" type="radio" id="emoji3" name="rating" value="3">
-                  <label class="form-label" for="emoji3">&#128528;</label> <!-- Neutral -->
-                  <input class="form-input" type="radio" id="emoji4" name="rating" value="4">
-                  <label class="form-label" for="emoji4">&#128522;</label> <!-- Good -->
-                  <input class="form-input" type="radio" id="emoji5" name="rating" value="5">
-                  <label class="form-label" for="emoji5">&#128515;</label> <!-- Excellent -->
-              </div>
-              <div class="form-group">
-                  <label class="form-label" for="comments">Comments:</label>
-                  <textarea class="form-textarea" id="comments" name="comments" rows="4" required></textarea>
-              </div>
-              <div class="form-group">
-                  <button class="form-button" id="feed-submit" type="submit">Submit Feedback</button>
-              </div>
-          </form>
+        <h2 class="form-heading2">Feedback Form</h2>
+        <form class="feedbackform" id="feedback-form">
+          <div class="form-group">
+            <label class="form-label" for="name">Name:</label>
+            <input class="form-input" type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email:</label>
+            <input class="form-input" type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Rating:</label>
+            <div id="emoji-description" class="emoji-description">Select an option</div>
+          </div>
+          <div class="emojis">
+            <input class="form-input" type="radio" id="emoji1" name="rating" value="1">
+            <label class="form-label" for="emoji1">&#128577;</label> <!-- Very Bad -->
+            <input class="form-input" type="radio" id="emoji2" name="rating" value="2">
+            <label class="form-label" for="emoji2">&#128542;</label> <!-- Bad -->
+            <input class="form-input" type="radio" id="emoji3" name="rating" value="3">
+            <label class="form-label" for="emoji3">&#128528;</label> <!-- Neutral -->
+            <input class="form-input" type="radio" id="emoji4" name="rating" value="4">
+            <label class="form-label" for="emoji4">&#128522;</label> <!-- Good -->
+            <input class="form-input" type="radio" id="emoji5" name="rating" value="5">
+            <label class="form-label" for="emoji5">&#128515;</label> <!-- Excellent -->
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="comments">Comments:</label>
+            <textarea class="form-textarea" id="comments" name="comments" rows="4" required></textarea>
+          </div>
+          <div class="form-group">
+            <button class="form-button" id="feed-submit" type="submit">Submit Feedback</button>
+          </div>
+        </form>
       </div>
-  </div>
-  <!-- Timed popup that will appear after successful submission of feedback form! -->
-  <button class="notification" id="successnotification" style="display:none;">
+    </div>
+    
+    <!-- Timed popup that will appear after successful submission of feedback form! -->
+    <button class="notification" id="successnotification" style="display:none;">
       <span class="message" id="successmsg">Submitted successfully!</span>
       <span class="closenotif" id="closeSuccessNotification">✖</span>
       <div class="timerline" id="timerline"></div>
-  </button>
+    </button>
+    
+    <script>
+      document.getElementById('feedback-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+    
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const rating = document.querySelector('input[name="rating"]:checked') ? document.querySelector('input[name="rating"]:checked').value : '';
+        const comments = document.getElementById('comments').value;
+    
+        // Create feedback object
+        const feedback = {
+          name,
+          email,
+          rating,
+          comments
+        };
+    
+        // Get existing feedback from localStorage or initialize with an empty array
+        let feedbackData = localStorage.getItem('feedbacks');
+        feedbackData = feedbackData ? JSON.parse(feedbackData) : [];
+    
+        // Add new feedback
+        feedbackData.push(feedback);
+    
+        // Store updated feedback array back in localStorage
+        localStorage.setItem('feedbacks', JSON.stringify(feedbackData));
+    
+        // Clear form inputs
+        document.getElementById('feedback-form').reset();
+    
+        // Show success notification
+        document.getElementById('successnotification').style.display = 'block';
+    
+        // Hide notification after 3 seconds
+        setTimeout(function () {
+          document.getElementById('successnotification').style.display = 'none';
+        }, 3000);
+    
+        // Close notification on click
+        document.getElementById('closeSuccessNotification').addEventListener('click', function () {
+          document.getElementById('successnotification').style.display = 'none';
+        });
+      });
+    </script>
+    
   
    <!-- FAQ section -->
    <!-- <section class="faq-section wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
