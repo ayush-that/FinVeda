@@ -10,15 +10,17 @@
 /* Navbar Styling */
 .navbar-collapse {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     background-color: #3a90dc;
     border-radius: 10px;
-    padding: 15px 30px;
+    padding: 15px 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-bottom: 2px solid #edf2f4;
     width: 100vw;
+    margin: 0 auto;
     position: relative;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
 
     transition: background-color 0.3s ease-in-out;
     -webkit-transition: background-color 0.3s ease-in-out;
@@ -30,11 +32,17 @@
 .navbar-collapse:hover {
     background-color: #1a1c29; 
 }
+.navbar-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
 
 .navbar-nav .nav-item {
     display: inline-block;
     margin: 0 15px;
-    padding: 5px;
+    padding: 0;
 }
 
 .navbar-nav .nav-item a {
@@ -44,6 +52,7 @@
     text-decoration: none;
     padding: 10px 15px;
     transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+    white-space: nowrap;
 }
 
 .navbar-nav .nav-item a:hover {
@@ -51,7 +60,6 @@
     background-color: rgba(255, 255, 255, 0.1); 
     border-radius: 5px; 
 }
-
 
 .overlay {
     width: 100%;
