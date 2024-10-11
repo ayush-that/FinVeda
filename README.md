@@ -55,9 +55,9 @@ FinVeda is a dynamic financial literacy app that'll help you Learn finance with 
    git push origin feature/your-feature
    ```
    #### 7. Open a Pull Request (PR) against the main repository.
-   #### 8. Your contribution will be reviewed and merged into the main repository.
-   #### 9. Start working on the issue, Dont wait to get it assigned by the maintainers
-   #### [Your every contribution counts, Thanks for contributing to FinVeda]
+### Additional Notes
+   #### Start working on the issue, Dont wait to get it assigned by the maintainers
+   #### Your every contribution counts, Thanks for contributing to FinVeda
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
