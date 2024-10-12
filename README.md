@@ -35,27 +35,29 @@ FinVeda is a dynamic financial literacy app that'll help you Learn finance with 
 
    ![image](https://github.com/user-attachments/assets/5263dc32-ce09-4835-b964-7f996e970eb5)
 
+   #### 1. Fork the repository to your GitHub account.
+   #### 2. Clone the forked repository to your local machine.
    ```bash
-   # Fork the repository to your GitHub account.
-   # Clone the forked repository to your local machine.
    git clone https://github.com/ayush-that/FinVeda.git
-
-   # Create a new branch for your changes.
+   ```
+   #### 3. Create a new branch for your changes.
+   ```bash
    git checkout -b feature/your-feature
-
-   # Make your changes, whether they're bug fixes, new features, or improvements.
-   # add the change in your branch
+   ```
+   #### 4. Make your changes, whether they're bug fixes, new features, or improvements.
+   #### 5. add the change in your branch
+   ```bash
    git add .
-   
-   # Commit your changes with descriptive commit messages.
+   ```
+   #### 6. Commit your changes with descriptive commit messages.
+   ```bash
    git commit -m "Add your descriptive commit message here"
    git push origin feature/your-feature
-
-   # Open a Pull Request (PR) against the main repository.
-   # Your contribution will be reviewed and merged into the main repository.
-   # Start working on the issue, Dont wait to get it assigned by the maintainers
-   # Your every contribution counts, Thanks for contributing to FinVeda
    ```
+   #### 7. Open a Pull Request (PR) against the main repository.
+### Additional Notes
+   #### Start working on the issue, Dont wait to get it assigned by the maintainers
+   #### Your every contribution counts, Thanks for contributing to FinVeda
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
