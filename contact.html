@@ -4,8 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <title>Quiz - FinVeda</title>
-  <meta name="description"
-    content="Explore engaging quizzes on finance and economics at Fin Veda. Test your knowledge and learn with interactive quizzes covering various topics." />
+  <meta name="description" content="Explore engaging quizzes on finance and economics at Fin Veda. Test your knowledge and learn with interactive quizzes covering various topics." />
   <meta name="author" content="Ayush Singh">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="shortcut icon" href="./assets/images/favicon2.png" type="image/png" />
@@ -22,66 +21,59 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
 
-    header {
-      background: #f76b45;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
+        header {
+            background: #f76b45;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
 
-    nav a {
-      color: #fff;
-      margin: 0 15px;
-      text-decoration: none;
-    }
+        main {
+            padding: 20px;
+        }
 
-    h1 {
-      margin-bottom: 20px;
-    }
+        .job-posting {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            background-color: #fff;
+        }
 
-    main {
-      padding: 20px;
-    }
+        button {
+            background: #f76b45;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
 
-    .job-posting {
-      border: 1px solid #ddd;
-      padding: 15px;
-      margin-bottom: 15px;
-      border-radius: 5px;
-      background-color: #fff;
-    }
+        button:hover {
+            background: #e65c39;
+        }
 
-    button {
-      background: #f76b45;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-
-    button:hover {
-      background: #e65c39;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #333;
-      color: white;
-      position: relative;
-      bottom: 0;
-      width: 100%;
-    }
-
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
     #progressBar {
       position: fixed;
       top: 0;
@@ -90,9 +82,8 @@
       height: 8px;
       background-color: #f76b45;
       z-index: 9999;
-
+      
     }
-
     * {
       cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
     }
@@ -119,58 +110,49 @@
     }
 
     @media (max-width: 720px) {
-      .circle-container {
+      .circle-container{
         display: none;
       }
     }
 
+    
+.unique-popup-message {
+  position: fixed; /* Change to fixed positioning */
+  top: 30px; /* Adjust this value to be below the navbar */
+  right: 2px; /* Adjust this value for the desired distance from the right edge */
+  width: 300px; /* Adjust width as needed */
+  transform: translateX(0); /* Center the popup horizontally */
+  background-color: #a4d8ff;
+  color: #131722;
+  padding: 11px;
+  border-radius: 5px;
+  text-align: center;
+  z-index: 1000;
+  box-sizing: border-box;
+  overflow: hidden; /* Hide the expanding border animation */
+  position: relative;
+}
 
-    .unique-popup-message {
-      position: fixed;
-      /* Change to fixed positioning */
-      top: 30px;
-      /* Adjust this value to be below the navbar */
-      right: 2px;
-      /* Adjust this value for the desired distance from the right edge */
-      width: 300px;
-      /* Adjust width as needed */
-      transform: translateX(0);
-      /* Center the popup horizontally */
-      background-color: #a4d8ff;
-      color: #131722;
-      padding: 11px;
-      border-radius: 5px;
-      text-align: center;
-      z-index: 1000;
-      box-sizing: border-box;
-      overflow: hidden;
-      /* Hide the expanding border animation */
-      position: relative;
-    }
+.border-animation {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 7px; /* Same height as the border */
+  background-color: rgb(4, 0, 128);
+  width: 100%;
+  transform-origin: right; /* Start shrinking from the right */
+}
 
-    .border-animation {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 7px;
-      /* Same height as the border */
-      background-color: rgb(4, 0, 128);
-      width: 100%;
-      transform-origin: right;
-      /* Start shrinking from the right */
-    }
+@keyframes borderAnimation {
+  from {
+    transform: scaleX(0); /* Full width initially */
+  }
+  to {
+    transform: scaleX(1); /* Shrink to zero width */
+  }
+}
 
-    @keyframes borderAnimation {
-      from {
-        transform: scaleX(0);
-        /* Full width initially */
-      }
 
-      to {
-        transform: scaleX(1);
-        /* Shrink to zero width */
-      }
-    }
   </style>
 
 <body class="quizpage">
@@ -256,8 +238,8 @@
       document.getElementById("progressBar").style.width = scrolled + "%";
     };
   </script>
-
-
+  
+ 
 
   <div class="preloader">
     <div class="loader">
@@ -287,14 +269,14 @@
                 <span class="toggler-icon"></span>
                 <span class="toggler-icon"></span>
               </button> -->
-              <div class=" navbar-collapse " id="navbarSupportedContent">
-                <ul id="nav" class="navbar-nav ml-auto" margin-left="1px" ;>
+              <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                <ul id="nav" class="navbar-nav ml-auto">
                   <li class="nav-item">
                     <a class="page-scroll" href="./index.html">Home 🏡</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./about.html">About Us 📖</a>
-                  </li>
+                  <li class="nav-item active">
+                    <a class="page-scroll" href="./about.html" id="active-page">About Us 📖</a>
+                  </li>    
                   <li class="nav-item">
                     <a class="page-scroll" href="./trends.html">Trends 📈</a>
                   </li>
@@ -304,83 +286,78 @@
                   <li class="nav-item">
                     <a class="page-scroll" href="./blog.html">Blogs 📰</a>
                   </li>
-                  <li class="nav-item active">
-                    <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./quiz.html" >Quiz 🤔</a>
                   </li>
                   <li class="nav-item">
                     <a class="page-scroll" href="./careers.html">Career 👔</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="./contact.html" id="active-page"><span
-                        style="font-size: 25px;">📞</span></a>
+                    <a class="page-scroll" href="./contact.html">Contact📞</a>
                   </li>
                   <li class="nav-item no-underline">
-                    <a class="main-btn navbar-btn" style="padding: 0px; transform: none; border: none; width:39px"
-                      data-scroll-nav="0" href="#" onclick="openModal()">👤</a>
+                    <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none;" data-scroll-nav="0" href="#" onclick="openModal()">Login/Register 💻</a>
                   </li>
-
-
                 </ul>
               </div>
-
               <div class="navbar-btn d-none d-sm-inline-block">
                 <!-- Login Modal -->
-                <div id="myModal" class="modal">
-                  <div class="modal-content">
-                    <span class="close" style="display: flex; justify-content: right;">&times;</span>
-                    <div class="mt-3">
-                      <h3 class="join">Login to join us....</h3>
-                      <form class="px-3 py-4" id="loginForm">
-                        <div class="form-group">
-                          <label class="d-flex">Username</label>
-                          <input type="text" placeholder="Username" class="form-control" required />
-                        </div>
-                        <div class="form-group">
-                          <label class="d-flex">Password</label>
-                          <input type="password" placeholder="Password" class="form-control" required>
-                          <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
-                        </div>
-                        <div class="form-check d-flex">
-                          <input type="checkbox" class="form-check-input">
-                          <label class="form-check-label">Remember me</label>
-                        </div>
-                      </form>
-                      <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('loginForm')">Sign in</button>
-                      <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
-                    </div>
+              <div id="myModal" class="modal">
+                <div class="modal-content">
+                  <span class="close" style="display: flex; justify-content: right;">&times;</span>
+                  <div class="mt-3">
+                    <h3 class="join">Login to join us....</h3>
+                    <form class="px-3 py-4" id="loginForm">
+                      <div class="form-group">
+                        <label class="d-flex">Username</label>
+                        <input type="text" placeholder="Username" class="form-control" required />
+                      </div>
+                      <div class="form-group">
+                        <label class="d-flex">Password</label>
+                        <input type="password" placeholder="Password" class="form-control" required>
+                        <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
+                      </div>
+                      <div class="form-check d-flex">
+                        <input type="checkbox" class="form-check-input">
+                        <label class="form-check-label">Remember me</label>
+                      </div>
+                    </form>
+                    <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('loginForm')">Sign in</button>
+                    <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
                   </div>
                 </div>
+              </div>
 
-                <!-- Register Modal -->
-                <div id="registerModal" class="modal">
-                  <div class="modal-content">
-                    <span class="close" style="display: flex; justify-content: right;">&times;</span>
-                    <div class="mt-3">
-                      <h3 class="join">Register to join us....</h3>
-                      <form class="px-3 py-4" id="registerForm">
-                        <div class="form-group">
-                          <label class="d-flex">Email</label>
-                          <input type="email" placeholder="Email" class="form-control" required />
-                        </div>
-                        <div class="form-group">
-                          <label class="d-flex">Username</label>
-                          <input type="text" placeholder="Username" class="form-control" required />
-                        </div>
-                        <div class="form-group">
-                          <label class="d-flex">Password</label>
-                          <input type="password" placeholder="Password" class="form-control" required>
-                          <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
-                        </div>
-                      </form>
-                      <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('registerForm')">Register</button>
-                      <p class="text-center">Already have an account? <a href="#" id="loginLink">Login</a></p>
-                    </div>
+              <!-- Register Modal -->
+              <div id="registerModal" class="modal">
+                <div class="modal-content">
+                  <span class="close" style="display: flex; justify-content: right;">&times;</span>
+                  <div class="mt-3">
+                    <h3 class="join">Register to join us....</h3>
+                    <form class="px-3 py-4" id="registerForm">
+                      <div class="form-group">
+                        <label class="d-flex">Email</label>
+                        <input type="email" placeholder="Email" class="form-control" required />
+                      </div>
+                      <div class="form-group">
+                        <label class="d-flex">Username</label>
+                        <input type="text" placeholder="Username" class="form-control" required />
+                      </div>
+                      <div class="form-group">
+                        <label class="d-flex">Password</label>
+                        <input type="password" placeholder="Password" class="form-control" required>
+                        <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
+                      </div>
+                    </form>
+                    <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('registerForm')">Register</button>
+                    <p class="text-center">Already have an account? <a href="#" id="loginLink">Login</a></p>
                   </div>
                 </div>
+              </div>
               </div>
             </nav>
 
-
+            
             <nav class="mobile-menu ">
               <a class="page-scroll" href="./index.html">Home 🏡</a>
               <a class="page-scroll" href="./about.html">About Us 📖</a>
@@ -388,14 +365,13 @@
               <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
               <a class="page-scroll" href="./blog.html">Blogs 📰</a>
               <a class="page-scroll active-link" href="./quiz.html">Quiz 🤔</a>
-              <a class="page-scroll main-btn" href="#" onclick="openModal()"
-                onmouseout="this.style.color='white'">Login/Register 💻</a>
+              <a class="page-scroll main-btn" href="#" onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
               <div class="mobile-menu__trigger"><span></span></div>
             </nav>
 
-
-            <link href="./navbar.css" rel="stylesheet">
-            <script type="text/javascript" src="./navbar.js"></script>
+                
+              <link href="./navbar.css" rel="stylesheet">
+              <script type="text/javascript" src="./navbar.js"></script>
 
           </div>
         </div>
@@ -435,482 +411,365 @@
       <div id="particles-1" class="particles"></div>
     </div>
   </header>
-
-  <div
-    style="font-family: Arial, sans-serif; background-color: #f0f8ff; padding: 2rem; display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 2rem;">
+  
+  <div style="font-family: Arial, sans-serif; background-color: #f0f8ff; padding: 2rem; display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 2rem;">
     <div style="flex: 1 1 300px; max-width: 100%;">
       <h2 style="color: #0056b3; margin-bottom: 1rem;">Get in Touch</h2>
-      <p><strong>Email:</strong> <a href="mailto:ayush1337@hotmail.com"
-          style="color: #0056b3; text-decoration: none;">ayush1337@hotmail.com</a></p>
-      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ayush-that/" target="_blank"
-          rel="noopener noreferrer" style="color: #0056b3; text-decoration: none;">Ayush That</a></p>
-      <p><strong>YouTube:</strong> <a href="https://www.youtube.com/@ayush-that/" target="_blank"
-          rel="noopener noreferrer" style="color: #0056b3; text-decoration: none;">Ayush That Channel</a></p>
-      <p><strong>Website:</strong> <a href="https://ayush.top/" target="_blank" rel="noopener noreferrer"
-          style="color: #0056b3; text-decoration: none;">https://ayush.top/</a></p>
-
+      <p><strong>Email:</strong> <a href="mailto:ayush1337@hotmail.com" style="color: #0056b3; text-decoration: none;">ayush1337@hotmail.com</a></p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ayush-that/" target="_blank" rel="noopener noreferrer" style="color: #0056b3; text-decoration: none;">Ayush That</a></p>
+      <p><strong>YouTube:</strong> <a href="https://www.youtube.com/@ayush-that/" target="_blank" rel="noopener noreferrer" style="color: #0056b3; text-decoration: none;">Ayush That Channel</a></p>
+      <p><strong>Website:</strong> <a href="https://ayush.top/" target="_blank" rel="noopener noreferrer" style="color: #0056b3; text-decoration: none;">https://ayush.top/</a></p>
+      
       <div style="margin-top: 1rem;">
-        <a href="mailto:ayush1337@hotmail.com" title="Email"
-          style="color: #0056b3; font-size: 1.5rem; margin-right: 1rem;"><i class="fa-solid fa-envelope"></i></a>
-        <a href="https://www.linkedin.com/in/ayush-that/" target="_blank" rel="noopener noreferrer" title="LinkedIn"
-          style="color: #0056b3; font-size: 1.5rem; margin-right: 1rem;"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://www.youtube.com/@ayush-that/" target="_blank" rel="noopener noreferrer" title="YouTube"
-          style="color: #0056b3; font-size: 1.5rem; margin-right: 1rem;"><i class="fa-brands fa-youtube"></i></a>
-        <a href="https://ayush.top/" target="_blank" rel="noopener noreferrer" title="Website"
-          style="color: #0056b3; font-size: 1.5rem;"><i class="fa-solid fa-globe"></i></a>
+        <a href="mailto:ayush1337@hotmail.com" title="Email" style="color: #0056b3; font-size: 1.5rem; margin-right: 1rem;"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/ayush-that/" target="_blank" rel="noopener noreferrer" title="LinkedIn" style="color: #0056b3; font-size: 1.5rem; margin-right: 1rem;"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://www.youtube.com/@ayush-that/" target="_blank" rel="noopener noreferrer" title="YouTube" style="color: #0056b3; font-size: 1.5rem; margin-right: 1rem;"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://ayush.top/" target="_blank" rel="noopener noreferrer" title="Website" style="color: #0056b3; font-size: 1.5rem;"><i class="fa-solid fa-globe"></i></a>
       </div>
     </div>
-
-    <!-- CONTACT US FORM   -->
-
+    
     <div style="flex: 1 1 300px; max-width: 100%;">
-      <div
-        style="background-color: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); width: 100%; max-width: 400px; margin: 0 auto;">
+      <div style="background-color: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); width: 100%; max-width: 400px; margin: 0 auto;">
         <h2 style="color: #0056b3; text-align: center; margin-bottom: 1.5rem;">Contact Us</h2>
-        <form id="contactForm" action="#" method="POST" style="display: flex; flex-direction: column;">
+        <form action="#" method="POST" style="display: flex; flex-direction: column;">
           <label for="name" style="color: #0056b3; margin-bottom: 0.5rem;">Name:</label>
-          <input type="text" id="name" name="name" required
-            style="padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #0056b3; border-radius: 4px;">
-
+          <input type="text" id="name" name="name" required style="padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #0056b3; border-radius: 4px;">
+          
           <label for="email" style="color: #0056b3; margin-bottom: 0.5rem;">Email:</label>
-          <input type="email" id="email" name="email" required
-            style="padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #0056b3; border-radius: 4px;">
-
+          <input type="email" id="email" name="email" required style="padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #0056b3; border-radius: 4px;">
+          
           <label for="subject" style="color: #0056b3; margin-bottom: 0.5rem;">Subject:</label>
-          <input type="text" id="subject" name="subject" required
-            style="padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #0056b3; border-radius: 4px;">
-
+          <input type="text" id="subject" name="subject" required style="padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #0056b3; border-radius: 4px;">
+          
           <label for="message" style="color: #0056b3; margin-bottom: 0.5rem;">Message:</label>
-          <textarea id="message" name="message" required
-            style="padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #0056b3; border-radius: 4px; min-height: 100px; resize: vertical;"></textarea>
-
-          <button type="submit">Send Message</button>
+          <textarea id="message" name="message" required style="padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #0056b3; border-radius: 4px; min-height: 100px; resize: vertical;"></textarea>
+          
+          <button type="submit" style="background-color: #0056b3; color: white; padding: 0.75rem; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; transition: background-color 0.3s ease;">Send Message</button>
         </form>
       </div>
     </div>
+  </div>
 
-    <style>
-      /* Custom highly styled success toast */
-      .toast-success {
-        position: fixed;
-        bottom: 2rem;
-        /* Distance from the bottom */
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1055;
-        background: linear-gradient(135deg, #43e97b, #38f9d7);
-        /* Gradient background */
-        color: #ffffff;
-        /* White text color */
-        border: 2px solid #38f9d7;
-        /* Border matching the gradient */
-        border-radius: 10px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-        min-width: 350px;
-        /* Larger width for more space */
-        text-align: center;
-        padding: 1rem;
-        font-family: 'Arial', sans-serif;
-        font-weight: bold;
-        font-size: 1.2rem;
-        animation: slideIn 0.5s ease-out, fadeOut 0.5s ease-in 2.5s forwards;
-        /* Custom animations */
-      }
+        <script>
 
-      /* Custom slide-in animation */
-      @keyframes slideIn {
-        0% {
-          transform: translateX(-50%) translateY(100%);
-          opacity: 0;
+        </script>
+
+  <style>
+     
+        h2 {
+            color: #007bff;
+            text-align: center;
+            margin-top: 20px;
         }
 
-        100% {
-          transform: translateX(-50%) translateY(0);
-          opacity: 1;
+        .books-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
-      }
 
-      /* Custom fade-out animation */
-      @keyframes fadeOut {
-        0% {
-          opacity: 1;
+        .books-list {
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
         }
 
-        100% {
-          opacity: 0;
+        .books-list li {
+            background: #e9ecef;
+            border-radius: 5px;
+            margin: 10px 0;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            transition: background 0.3s;
         }
-      }
-    </style>
 
-    <!-- TOAST NOTIFICATION ON SUBMITING  -->
-    <div aria-live="polite" aria-atomic="true" style="position: relative;">
-      <div class="toast toast-success fade" id="formToastSuccess" data-delay="3000" style="display: none;">
-        <div class="toast-body">
-          Your message has been submitted successfully!
-        </div>
-      </div>
-    </div>
-
-    <script>
-      // Function to handle form submission for the Contact Us form
-      function handleContactFormSubmit(event) {
-        event.preventDefault(); // Prevent actual form submission
-
-        // Check if the form is valid
-        const form = document.getElementById('contactForm');
-        if (form.checkValidity()) {
-          // Show the success toast
-          const toast = $('#formToastSuccess');
-          toast.css('display', 'block').toast('show');
-
-          // Clear the form after a brief delay
-          setTimeout(() => {
-            form.reset();
-          }, 2500); // Delay to reset the form
-
-          // Hide the toast after it has been shown
-          setTimeout(() => {
-            toast.css('display', 'none'); // Reset display
-          }, 3000); // Match the data-delay time
-        } else {
-          // Show error messages for invalid fields
-          form.reportValidity();
+        .books-list li:hover {
+            background: #d4d4d4;
         }
-      }
 
-      // Add event listener to the form after the DOM is fully loaded
-      document.addEventListener('DOMContentLoaded', function () {
-        document.getElementById('contactForm').addEventListener('submit', handleContactFormSubmit);
-      });
-    </script>
-
-    <style>
-      h2 {
-        color: #007bff;
-        text-align: center;
-        margin-top: 20px;
-      }
-
-      .books-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 20px;
-        padding: 20px;
-        background: #ffffff;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .books-list {
-        list-style-type: none;
-        padding: 0;
-        width: 100%;
-      }
-
-      .books-list li {
-        background: #e9ecef;
-        border-radius: 5px;
-        margin: 10px 0;
-        padding: 15px;
-        display: flex;
-        align-items: center;
-        transition: background 0.3s;
-      }
-
-      .books-list li:hover {
-        background: #d4d4d4;
-      }
-
-      .emoji {
-        margin-right: 10px;
-        /* Space between emoji and text */
-        font-size: 1.5em;
-        /* Adjust the size of the emoji */
-      }
-
-      body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-      }
-
-      header {
-        background: #007bff;
-        color: #fff;
-        padding: 20px;
-        text-align: center;
-      }
-
-      h1 {
-        margin: 0;
-      }
-
-      main {
-        padding: 20px;
-      }
-
-      .roadmap {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 20px;
-      }
-
-      .roadmap-step {
-        background: #fff;
-        border: 1px solid #ddd;
-        padding: 15px;
-        border-radius: 5px;
-        margin: 10px 0;
-        position: relative;
-        width: 80%;
-      }
-
-      .roadmap-step::before {
-        content: '';
-        position: absolute;
-        left: 50%;
-        top: -10px;
-        transform: translateX(-50%);
-        border: 10px solid transparent;
-        border-bottom-color: #007bff;
-      }
-
-      .roadmap-step:last-child::before {
-        border-bottom-color: transparent;
-        /* Remove triangle from last step */
-      }
-
-      .roadmap-title {
-        font-size: 1.5em;
-        color: #007bff;
-      }
-
-      footer {
-        text-align: center;
-        padding: 20px;
-        background: #333;
-        color: white;
-        position: relative;
-        bottom: 0;
-        width: 100%;
-      }
-
-      body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-      }
-
-      header {
-        background: #007bff;
-        color: #fff;
-        padding: 20px;
-        text-align: center;
-      }
-
-      h1 {
-        margin: 0;
-      }
-
-      main {
-        padding: 20px;
-      }
-
-      .jobs-table {
-        width: 100%;
-        border-collapse: separate;
-        /* Allows for spacing */
-        border-spacing: 0 10px;
-        /* Vertical spacing between rows */
-        margin-top: 20px;
-      }
-
-      .jobs-table th,
-      .jobs-table td {
-        background: #fff;
-        border: 1px solid #ddd;
-        padding: 15px;
-        text-align: left;
-        border-radius: 5px;
-        /* Rounded corners for cells */
-      }
-
-      .jobs-table th {
-        background: #f76b45;
-        color: white;
-      }
-
-      footer {
-        text-align: center;
-        padding: 20px;
-        background: #333;
-        color: white;
-        position: relative;
-        bottom: 0;
-        width: 100%;
-      }
-
-      /* Modal styles */
-      .modal {
-        display: none;
-        position: fixed;
-        z-index: 1;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgb(0, 0, 0);
-        background-color: rgba(0, 0, 0, 0.4);
-        padding-top: 60px;
-      }
-
-      .modal-content {
-        background-color: #fefefe;
-        margin: 5% auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%;
-        border-radius: 5px;
-      }
-
-      .close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-      }
-
-      .close:hover,
-      .close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-      }
-
-      header {
-        background: #007bff;
-        color: #fff;
-        padding: 20px;
-        text-align: center;
-      }
-
-      h1 {
-        margin: 0;
-      }
-
-      main {
-        padding: 20px;
-      }
-
-      section {
-        margin-bottom: 40px;
-        padding: 20px;
-        background: #fff;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-
-      h2 {
-        color: #007bff;
-      }
-
-      .jobs-list {
-        list-style-type: none;
-        padding: 0;
-      }
-
-      .jobs-list li {
-        margin-bottom: 10px;
-        padding: 10px;
-        background: #e9ecef;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-
-      footer {
-        text-align: center;
-        padding: 20px;
-        background: #333;
-        color: #fff;
-        position: relative;
-        bottom: 0;
-        width: 100%;
-      }
-
-      /* Modal styles */
-      .modal {
-        display: none;
-        position: fixed;
-        z-index: 1;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgb(0, 0, 0);
-        background-color: rgba(0, 0, 0, 0.4);
-        padding-top: 60px;
-      }
-
-      .modal-content {
-        background-color: #fefefe;
-        margin: 5% auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%;
-        border-radius: 5px;
-      }
-
-      .close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-      }
-
-      .close:hover,
-      .close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-      }
-
-      .blog-content {
-        text-align: left;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 80%;
-        /* Adjust this value to increase or decrease the margins */
-      }
-
-      @media (max-width: 768px) {
-
-        /* Change the max-width to fit your design needs */
-        .blog-content {
-          max-width: 100%;
+        .emoji {
+            margin-right: 10px; /* Space between emoji and text */
+            font-size: 1.5em; /* Adjust the size of the emoji */
         }
-      }
-    </style>
+    body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .roadmap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .roadmap-step {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            position: relative;
+            width: 80%;
+        }
+
+        .roadmap-step::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: -10px;
+            transform: translateX(-50%);
+            border: 10px solid transparent;
+            border-bottom-color: #007bff;
+        }
+
+        .roadmap-step:last-child::before {
+            border-bottom-color: transparent; /* Remove triangle from last step */
+        }
+
+        .roadmap-title {
+            font-size: 1.5em;
+            color: #007bff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .jobs-table {
+            width: 100%;
+            border-collapse: separate; /* Allows for spacing */
+            border-spacing: 0 10px; /* Vertical spacing between rows */
+            margin-top: 20px;
+        }
+
+        .jobs-table th,
+        .jobs-table td {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: left;
+            border-radius: 5px; /* Rounded corners for cells */
+        }
+
+        .jobs-table th {
+            background: #f76b45;
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            border-radius: 5px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        header {
+            background: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+        .jobs-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .jobs-list li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background: #e9ecef;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            border-radius: 5px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    
+    .blog-content {
+      text-align: left;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 80%;
+      /* Adjust this value to increase or decrease the margins */
+    }
+    @media (max-width: 768px) { /* Change the max-width to fit your design needs */
+    .blog-content {
+      max-width: 100%;
+    }}
+  </style>
 </body>
 
 
 
 <!-- Timed popup that will appear after succesful submission of feebback form! -->
-<button class="notification" id="successnotification" style="display:none;">
-  <span class="message" id="successmsg">Submitted successfully!</span>
-  <span class="closenotif" id="closeSuccessNotification">✖</span>
-  <div class="timerline" id="timerline"></div>
-</button>
+      <button class="notification" id="successnotification" style="display:none;">
+        <span class="message" id="successmsg">Submitted successfully!</span>
+        <span class="closenotif" id="closeSuccessNotification">✖</span>
+        <div class="timerline" id="timerline"></div>
+      </button>
 
 
 <footer id="footer" class="footer-area pt-120">
@@ -927,7 +786,7 @@
         <div class="col-lg-6">
           <div class="subscribe-form mt-50">
             <form id="unique-subscribe-form">
-              <input type="email" id="unique-news-email" placeholder="Enter Email" required />
+              <input type="email" id="unique-news-email" placeholder="Enter Email" required/>
               <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
             </form>
             <div id="unique-message" class="unique-popup-message" style="display: none;">
@@ -940,130 +799,131 @@
     </div>
   </div>
   <script>
-    document.getElementById('unique-subscribe-form').addEventListener('submit', function (event) {
+    document.getElementById('unique-subscribe-form').addEventListener('submit', function(event) {
       event.preventDefault(); // Prevent form from submitting normally
-
+  
       // Show popup message
       var messageDiv = document.getElementById('unique-message');
       messageDiv.style.display = 'block';
-
+      
       // Reset existing animation
       var borderAnimationDiv = messageDiv.querySelector('.border-animation');
       borderAnimationDiv.style.animation = 'none';
       borderAnimationDiv.offsetHeight; // Trigger reflow to restart the animation
       borderAnimationDiv.style.animation = 'borderAnimation 3s linear forwards';
-
+  
       // Hide popup message after 10 seconds
-      setTimeout(function () {
+      setTimeout(function() {
         messageDiv.style.display = 'none';
       }, 3000); // 10 seconds
-
+  
       // Reset form
       this.reset();
     });
   </script>
-
+  
   <div class="footer-widget pb-100">
     <div class="row" id="footer">
-      <div class="col-lg-4 col-md-6 col-sm-8">
-        <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-          <p class="text custom-margin">
-            We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
-          </p>
-        </div>
-      </div>
-      <div class="col-lg-5 col-md-7 col-sm-7">
-        <div class="footer-link d-flex mt-50 justify-content-md-between"
-          style="justify-content: space-around !important;">
-          <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-            <div class="footer-title">
-              <h3 class="title custom-margin">Quick Links</h3>
+        <div class="col-lg-4 col-md-6 col-sm-8">
+            <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                <p class="text custom-margin">
+                    We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
+                </p>
             </div>
-            <ul class="link custom-margin">
-              <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
-              <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
-              <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
-              <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
-              <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
-            </ul>
-          </div>
-          <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
-            <div class="footer-title">
-              <h4 class="title custom-margin">Resources</h4>
+        </div>
+        <div class="col-lg-5 col-md-7 col-sm-7">
+            <div class="footer-link d-flex mt-50 justify-content-md-between" style="justify-content: space-around !important;">
+                <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+                    <div class="footer-title">
+                        <h3 class="title custom-margin">Quick Links</h3>
+                    </div>
+                    <ul class="link custom-margin">
+                        <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+                        <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
+                        <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
+                        <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+                        <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+                    </ul>
+                </div>
+                <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+                    <div class="footer-title">
+                        <h4 class="title custom-margin">Resources</h4>
+                    </div>
+                    <ul class="link custom-margin">
+                        <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
+                        <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
+                        <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                        
+                        <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                        
+                          </ul>
+                </div>
             </div>
-            <ul class="link custom-margin">
-              <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
-              <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
-              <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
-              <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
-              <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
-
-              <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
-
-            </ul>
-          </div>
         </div>
-      </div>
-      <div class="col-lg-3 col-md-5 col-sm-5">
-        <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-          <div class="footer-title">
-            <h4 class="title custom-margin">Contact Us</h4>
-          </div>
-          <ul class="contact custom-margin-big" style="justify-content: space-around;">
-            <li class="d-sm-flex justify-content-center">
-              <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-              <p style="width: 80%;">
-                <a href="mailto:ayush1337@hotmail.com" target="_blank"
-                  style="color: white; text-decoration: underline;">
-                  ayush1337@hotmail.com
-                </a>
-              </p>
-            </li>
-            <li class="d-sm-flex justify-content-center">
-              <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-              <div style="width: 80%;">
-                <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
-                  fin-veda.vercel.app
-                </a>
-              </div>
-            </li>
-            <li class="d-sm-flex justify-content-center">
-              <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 12px; width: 10%;"></i>
-              <div style="width: 80%;">
-                <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
-                  style="color:#fff">
-                  Delhi, India
-                </a>
-              </div>
-            </li>
-          </ul>
+        <div class="col-lg-3 col-md-5 col-sm-5">
+            <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                <div class="footer-title">
+                    <h4 class="title custom-margin">Contact Us</h4>
+                </div>
+                <ul class="contact custom-margin-big" style="justify-content: space-around;">
+                    <li class="d-sm-flex justify-content-center">
+                        <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                        <p style="width: 80%;">
+                            <a href="mailto:ayush1337@hotmail.com" target="_blank"
+                               style="color: white; text-decoration: underline;">
+                                ayush1337@hotmail.com
+                            </a>
+                        </p>
+                    </li>
+                    <li class="d-sm-flex justify-content-center">
+                        <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                        <div style="width: 80%;">
+                            <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
+                                fin-veda.vercel.app
+                            </a>
+                        </div>
+                    </li>
+                    <li class="d-sm-flex justify-content-center">
+                        <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 12px; width: 10%;"></i>
+                        <div style="width: 80%;">
+                            <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
+                               style="color:#fff">
+                                Delhi, India
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-  <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s"
-    style="text-align: center">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="copyright d-sm-flex justify-content-center" style="
+</div>
+    <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center">
+      <div class="row">
+        <div class="col-lg-12">
+          <div
+            class="copyright d-sm-flex justify-content-center"
+            style="
               display: flex;
               justify-content: center;
               text-align: center;
               width: 100%;
               height: 100%;
-            ">
-          <div class="copyright-content" style="text-align: center">
-            <p class="text" style="text-align: center">
-              © <span id="copyright-year"></span> FinVeda. All rights
-              reserved<br />
-              Made with ♥ in India
-            </p>
+            "
+          >
+            <div class="copyright-content" style="text-align: center">
+              <p class="text" style="text-align: center">
+                © <span id="copyright-year"></span> FinVeda. All rights
+                reserved<br />
+                Made with ♥ in India
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-
+    
   </div>
   <div id="particles-2"></div>
 </footer>
@@ -1092,7 +952,7 @@
 <script src="../assets/js/quiz_modify.js"></script>
 <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
 <script src="https://mediafiles.botpress.cloud/5e160793-5606-4412-ba4c-337e416f14fe/webchat/config.js" defer></script>
-<script defer src="./assets/js/arthsathi-style.js"></script>
+    <script defer src="./assets/js/arthsathi-style.js"></script>
 <script src="./assets/js/botpress.js"></script>
 
 <script>
@@ -1205,15 +1065,17 @@
     loginModal.querySelector(".close").addEventListener("click", closeModal);
   });
 
+  
+        document.getElementById("copyright-year").textContent = new Date().getFullYear();
 
-  document.getElementById("copyright-year").textContent = new Date().getFullYear();
-
-  function applyJob(jobTitle) {
-    alert("You have applied for: " + jobTitle);
-  }
-
+        function applyJob(jobTitle) {
+            alert("You have applied for: " + jobTitle);
+        }
+   
 </script>
 <script src="./tools/smoothScroll.js"></script>
 </body>
 
 </html>
+
+   

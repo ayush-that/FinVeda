@@ -7,7 +7,7 @@
   <meta name="description"
     content="FinVeda is a dynamic financial literacy app that'll help you Learn finance with finesse." />
   <meta name="author" content="Ayush Singh">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="shortcut icon" href="./assets/images/favicon2.png" type="image/png" />
   <link rel="stylesheet" href="./assets/css/animate.css" />
@@ -25,7 +25,6 @@
   <link rel="stylesheet" href="./assets/css/faq.css">
   <link rel="stylesheet" href="./assets/css/index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script type="text/javascript">
@@ -36,9 +35,8 @@
       });
     })();
   </script>
-
+  
 <body>
-
   <!-- <div class="circle-container">
     <div class="circle"></div>
     <div class="circle"></div>
@@ -71,52 +69,116 @@
     <div class="circle"></div>
     <div class="circle"></div>
   </div> -->
-  <div id="progressBar"></div>
 
-  <header class="header-area">
-        <div class="row">
-          <div style="display: flex; justify-content: center;;" class="">
-            <nav class="navbar navbar-expand-lg " style="display: flex;">
-              <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="toggler-icon"></span>
-                <span class="toggler-icon"></span>
-                <span class="toggler-icon"></span>
-              </button> -->
-              <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-                <ul id="nav" class="navbar-nav m-0-auto" style="display: flex; justify-content: center; align-items: center; list-style: none; padding: 8px; margin: 0; gap: 5px;">
-                  <li class="nav-item active" style="margin: 0 8px;">
-                    <a class="page-scroll" href="./index.html" id="active-page" style="padding: 6px 12px; color: #007bff; font-weight: bold; text-decoration: none;">Home 🏡</a>
-                  </li>
-                  <li class="nav-item" style="margin: 0 8px;">
-                    <a class="page-scroll" href="./about.html" style="padding: 6px 12px; text-decoration: none; color: #333;">About Us 📖</a>
-                  </li>
-                  <li class="nav-item" style="margin: 0 8px;">
-                    <a class="page-scroll" href="./trends.html" style="padding: 6px 12px; text-decoration: none; color: #333;">Trends 📈</a>
-                  </li>
-                  <li class="nav-item" style="margin: 0 8px;">
-                    <a class="page-scroll" href="./tools/sip.html" style="padding: 6px 12px; text-decoration: none; color: #333;">Tools 🔧</a>
-                  </li>
-                  <li class="nav-item" style="margin: 0 8px;">
-                    <a class="page-scroll" href="./blog.html" style="padding: 6px 12px; text-decoration: none; color: #333;">Blogs 📰</a>
-                  </li>
-                  <li class="nav-item" style="margin: 0 8px;">
-                    <a class="page-scroll" href="./quiz.html" style="padding: 6px 12px; text-decoration: none; color: #333;">Quiz 🤔</a>
-                  </li>
-                  <li class="nav-item" style="margin: 0 8px;">
-                    <a class="page-scroll" href="./careers.html" style="padding: 6px 12px; text-decoration: none; color: #333;">Careers 👔</a>
-                  </li>
-                  <li class="nav-item" style="margin: 0 8px;">
-                    <a class="page-scroll" href="./contact.html" style="padding: 6px 12px; text-decoration: none; color: #333;">Contact 📞</a>
-                  </li>
-                  <li class="nav-item" style="margin: 0 8px;">
-                    <a class="page-scroll" href="./faq.html" style="padding: 6px 12px; text-decoration: none; color: #333;">Help 🙋‍♂️</a>
-                  </li>
-                  <li class="nav-item no-underline" style="margin: 0 8px;">
-                    <a class="main-btn navbar-btn" href="#" style="padding: 6px 12px; border-radius: 15px; border: none; background-color: #007bff; color: white; text-decoration: none; display: inline-block;" onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
-                  </li>
-                </ul>
+
+     <div class="preloader">
+      <div class="loader">
+        <div class="ytp-spinner">
+          <div class="ytp-spinner-container">
+            <div class="ytp-spinner-rotator">
+              <div class="ytp-spinner-left">
+                <div class="ytp-spinner-circle"></div>
               </div>
+              <div class="ytp-spinner-right">
+                <div class="ytp-spinner-circle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <header class="header-area">
+      <div class="navbar-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <nav class="navbar navbar-expand-lg">
+                <!-- <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span class="toggler-icon"></span>
+                  <span class="toggler-icon"></span>
+                  <span class="toggler-icon"></span>
+                </button> -->
+                  <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                    <ul id="nav" class="navbar-nav ml-auto">
+                      <li class="nav-item">
+                        <a class="page-scroll" href="./index.html">Home 🏡</a>
+                      </li>
+                      <li class="nav-item active">
+                        <a class="page-scroll" href="./about.html" id="active-page">About Us 📖</a>
+                      </li>    
+                      <li class="nav-item">
+                        <a class="page-scroll" href="./trends.html">Trends 📈</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="page-scroll" href="./blog.html">Blogs 📰</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="page-scroll" href="./quiz.html" >Quiz 🤔</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="page-scroll" href="./careers.html">Career 👔</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="page-scroll" href="./contact.html">Contact📞</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="page-scroll" href="./faq.html">Help 🙋‍♂️</a>
+                      </li>
+                      <li class="nav-item no-underline">
+                        <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none;" data-scroll-nav="0" href="#" onclick="openModal()">Login/Register 💻</a>
+                      </li>
+                    </ul>
+                  </div>
+                <div class="navbar-btn d-none d-sm-inline-block">
+                <!-- Login Modal -->
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close" style="display: flex; justify-content: right;">&times;</span>
+                    <div class="mt-3">
+                      <h3 class="join"><i class="fa-solid fa-right-to-bracket"></i>  Login to join us....</h3>
+                      <form class="px-3 py-4" id="loginForm">
+                        <div class="form-group">
+                          <label class="d-flex">Username</label>
+                          <input type="text" placeholder="Username" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                          <label class="d-flex">Password</label>
+                          <input type="password" placeholder="Password" class="form-control" required>
+                          <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
+                        </div>
+                        <div class="form-check d-flex">
+                          <input type="checkbox" class="form-check-input">
+                          <label class="form-check-label">Remember me</label>
+                          <a href="#" id="forgot-password" style="margin-left: 120px;">Forget Password?</a>
+                        </div>
+                        <div style="height: 20px;"></div>
+                        <button class="main-btn w-100 mb-3" onclick="submitForm('loginForm')">Sign in</button>
+                        <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
+                        <div class="or-sign-in-with text-center">
+                          <p>Or sign in with</p>
+                        </div>
+                        <div class="social-icons mt-3">
+                          <ul class="list-inline">
+                            <li><a href="#" class="google" id="google-login"><i class="fa-brands fa-google"></i></a></li>
+                            <li><a href="#" class="facebook" id="facebook-login"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="#" class="twitter" id="twitter-login"><i class="fa-brands fa-twitter"></i></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                
                 <script>
                   // Add event listeners to the social media icons
                   document.getElementById('google-login').addEventListener('click', function() {
@@ -422,18 +484,18 @@
           <div class="about-image text-center mt-50 wow fadeInRightBig" data-wow-duration="1s" data-wow-delay="0.5s">
             <!-- TradingView Widget BEGIN -->
             <div class="tradingview-widget-container" style="height: 372px;">
-              <div class="tradingview-widget-container__widget"></div>
-              <script type="text/javascript"
-                src="https://s3.tradingview.com/external-embedding/embed-widget-timeline.js" async>
-                  {
+              <div id="tv-widget-container"></div>
 
-                    "feedMode" : "all_symbols",
-                    "isTransparent": true,
-                    "displayMode": "adaptive",
-                    "colorTheme": "light",
-                    "locale": "in"
-                  }
-                </script>
+              <script type="text/javascript">
+                new TradingView.widget({
+                  "container_id": "tv-widget-container",
+                  "feedMode": "all_symbols",
+                  "isTransparent": true,
+                  "displayMode": "adaptive",
+                  "colorTheme": "light",
+                  "locale": "in"
+                });
+              </script>
             </div>
             <!-- TradingView Widget END -->
           </div>
@@ -470,20 +532,22 @@
             <!-- TradingView Widget BEGIN -->
             <div class="tradingview-widget-container">
               <div class="tradingview-widget-container__widget"></div>
-              <script type="text/javascript"
-                src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
-                  {
+              <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async></script>
+              <script type="text/javascript">
+                window.onload = function() {
+                  new TradingView.widget({
                     "interval": "1m",
-                      "width": "425",
-                        "isTransparent": true,
-                          "height": "250",
-                            "symbol": "NASDAQ:AAPL",
-                              "showIntervalTabs": true,
-                                "displayMode": "single",
-                                  "locale": "en",
-                                    "colorTheme": "light",
-                  }
-                </script>
+                    "width": "425",
+                    "isTransparent": true,
+                    "height": "250",
+                    "symbol": "NASDAQ:AAPL",
+                    "showIntervalTabs": true,
+                    "displayMode": "single",
+                    "locale": "en",
+                    "colorTheme": "light",
+                  });
+                };
+              </script>
             </div>
             <!-- TradingView Widget END -->
           </div>
@@ -512,23 +576,26 @@
         <div class="col-lg-6">
           <div class="about-image text-center mt-50 wow fadeInRightBig" data-wow-duration="1s" data-wow-delay="0.5s">
             <!-- TradingView Widget BEGIN -->
-            <div class="tradingview-widget-container">
-              <div class="tradingview-widget-container__widget"></div>
-              <script type="text/javascript"
-                src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-                  {
-                    "symbol": "ECONOMICS:INGDP",
-                      "width": "auto",
-                        "height": 250,
-                          "locale": "in",
-                            "dateRange": "ALL",
-                              "colorTheme": "light",
-                                "isTransparent": true,
-                                  "autosize": false,
-                                    "largeChartUrl": ""
-                  }
-                </script>
-            </div>
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async></script>
+  <script type="text/javascript">
+    window.onload = function() {
+      var widgetConfig = {
+        "symbol": "ECONOMICS:INGDP",
+        "width": "auto",
+        "height": 250,
+        "locale": "in",
+        "dateRange": "ALL",
+        "colorTheme": "light",
+        "isTransparent": true,
+        "autosize": false,
+        "largeChartUrl": ""
+      };
+      new TradingView.widget(widgetConfig);
+    };
+  </script>
+</div>
             <!-- TradingView Widget END -->
           </div>
           <!-- TradingView Widget END -->
