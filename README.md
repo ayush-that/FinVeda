@@ -1,6 +1,28 @@
 <div align="center">
 <a href="https://fin-veda.vercel.app/" target="_blank" title="Go to the FinVeda website"><img height="256px" alt="FinVeda logo" src="https://github.com/user-attachments/assets/5e45e1f4-7e0d-45b1-914d-80b6ab77ddd8"></a>
-
+<table align="center">
+    <thead align="center">
+        <tr border: 2px;>
+            <td><b>🌟 Stars</b></td>
+            <td><b>🍴 Forks</b></td>
+            <td><b>🐛 Issues</b></td>
+            <td><b>🔔 Open PRs</b></td>
+            <td><b>🔕 Close PRs</b></td>
+        </tr>
+     </thead>
+    <tbody>
+         <tr>
+            <td><img alt="Stars" src="https://img.shields.io/github/stars/ayush-that/FinVeda?style=flat&logo=github"/></td>
+             <td><img alt="Forks" src="https://img.shields.io/github/forks/ayush-that/FinVeda?style=flat&logo=github"/></td>
+            <td><img alt="Issues" src="https://img.shields.io/github/issues/ayush-that/FinVeda?style=flat&logo=github"/></td>
+            <td><img alt="Open Pull Requests" src="https://img.shields.io/github/issues-pr/ayush-that/FinVeda?style=flat&logo=github"/></td>
+           <td><img alt="Close Pull Requests" src="https://img.shields.io/github/issues-pr-closed/ayush-that/FinVeda?style=flat&color=critical&logo=github"/></td>
+        </tr>
+    </tbody>
+</table>
+   
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+   
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
@@ -56,7 +78,7 @@ FinVeda is a dynamic financial literacy app that'll help you Learn finance with 
    ```
    #### 7. Open a Pull Request (PR) against the main repository.
 ### Additional Notes
-   #### Start working on the issue, Dont wait to get it assigned by the maintainers
+   #### Start working on the issue, Don't wait to get it assigned by the maintainers
    #### Your every contribution counts, Thanks for contributing to FinVeda
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
@@ -72,3 +94,9 @@ FinVeda is a dynamic financial literacy app that'll help you Learn finance with 
 ### 🥑 License
 
 FinVeda is free and open-source software licensed under the GNU General Public License v3.0. It was built at IIT Jammu's Udyamitsav'24 Hackathon where it stood first in the GenAI track and third overall.
+
+### ⭐ Star the Repo!
+If you find this project useful and would like to support the project, please consider giving it a ⭐ star on GitHub! Your support helps us grow and improve. Thank you! 🙌
+
+<h3 align="center">Keep learning and exploring! 🚀</h3>
+<h3 align="center">Happy coding! 👩‍💻🎉 </h3>
