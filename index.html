@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="./assets/css/faq.css">
   <link rel="stylesheet" href="./assets/css/index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script type="text/javascript">
@@ -73,8 +74,6 @@
   <div id="progressBar"></div>
 
   <header class="header-area">
-    <div style="display: flex; justify-content: center;" class="navbar-area">
-      <div style="display: flex; justify-content: center;" class="container">
         <div class="row">
           <div style="display: flex; justify-content: center;;" class="">
             <nav class="navbar navbar-expand-lg " style="display: flex;">
@@ -84,36 +83,36 @@
                 <span class="toggler-icon"></span>
                 <span class="toggler-icon"></span>
               </button> -->
-
               <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-                <ul id="nav" class="navbar-nav m-0-auto">
-                  <li class="nav-item active">
-                    <a class="page-scroll" href="./index.html" id="active-page">Home 🏡</a>
+                <ul id="nav" class="navbar-nav m-0-auto" style="display: flex; justify-content: center; align-items: center; list-style: none; padding: 8px; margin: 0; gap: 5px;">
+                  <li class="nav-item active" style="margin: 0 8px;">
+                    <a class="page-scroll" href="./index.html" id="active-page" style="padding: 6px 12px; color: #007bff; font-weight: bold; text-decoration: none;">Home 🏡</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./about.html" style="width: 120px;">About Us 📖</a>
+                  <li class="nav-item" style="margin: 0 8px;">
+                    <a class="page-scroll" href="./about.html" style="padding: 6px 12px; text-decoration: none; color: #333;">About Us 📖</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./trends.html" style="">Trends 📈</a>
+                  <li class="nav-item" style="margin: 0 8px;">
+                    <a class="page-scroll" href="./trends.html" style="padding: 6px 12px; text-decoration: none; color: #333;">Trends 📈</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./tools/sip.html" style="">Tools 🔧</a>
+                  <li class="nav-item" style="margin: 0 8px;">
+                    <a class="page-scroll" href="./tools/sip.html" style="padding: 6px 12px; text-decoration: none; color: #333;">Tools 🔧</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./blog.html" style="">Blogs 📰</a>
+                  <li class="nav-item" style="margin: 0 8px;">
+                    <a class="page-scroll" href="./blog.html" style="padding: 6px 12px; text-decoration: none; color: #333;">Blogs 📰</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./quiz.html" style="">Quiz 🤔</a>
+                  <li class="nav-item" style="margin: 0 8px;">
+                    <a class="page-scroll" href="./quiz.html" style="padding: 6px 12px; text-decoration: none; color: #333;">Quiz 🤔</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./careers.html" style="">careers 🤔</a>
+                  <li class="nav-item" style="margin: 0 8px;">
+                    <a class="page-scroll" href="./careers.html" style="padding: 6px 12px; text-decoration: none; color: #333;">Careers 👔</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./careers.html" style="">Career 👔</a>
+                  <li class="nav-item" style="margin: 0 8px;">
+                    <a class="page-scroll" href="./contact.html" style="padding: 6px 12px; text-decoration: none; color: #333;">Contact 📞</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./contact.html" style="">Contact📞</a>
+                  <li class="nav-item" style="margin: 0 8px;">
+                    <a class="page-scroll" href="./faq.html" style="padding: 6px 12px; text-decoration: none; color: #333;">Help 🙋‍♂️</a>
                   </li>
+
                   <li>
                     <button id="theme-toggle" class="toggle-button">🌙</button>
                   </li>
@@ -218,6 +217,26 @@ if (body.classList.contains('dark-mode')) {
               </div>
             </div>
           </div>
+                  <li class="nav-item no-underline" style="margin: 0 8px;">
+                    <a class="main-btn navbar-btn" href="#" style="padding: 6px 12px; border-radius: 15px; border: none; background-color: #007bff; color: white; text-decoration: none; display: inline-block;" onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
+                  </li>
+                </ul>
+              </div>
+                <script>
+                  // Add event listeners to the social media icons
+                  document.getElementById('google-login').addEventListener('click', function() {
+                    window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
+                  });
+                
+                  document.getElementById('facebook-login').addEventListener('click', function() {
+                    window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
+                  });
+                
+                  document.getElementById('twitter-login').addEventListener('click', function() {
+                    window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
+                  });
+                </script>
+
   
           <!-- Register Modal -->
           <div id="registerModal" class="modal">
@@ -311,9 +330,34 @@ if (body.classList.contains('dark-mode')) {
                   
                 <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('registerForm')">Register</button>
                 <p class="text-center">Already have an account? <a href="#" id="loginLink">Login</a></p>
+                <div class="or-sign-in-with text-center">
+                  <p>Or sign up with</p>
+                </div>
+                <div class="social-icons mt-3">
+                  <ul class="list-inline">
+                    <li><a href="#" class="google" id="google-signup"><i class="fa-brands fa-google"></i></a></li>
+                    <li><a href="#" class="facebook" id="facebook-signup"><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href="#" class="twitter" id="twitter-signup"><i class="fa-brands fa-twitter"></i></a></li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
+          
+          <script>
+            // Add event listeners to the social media icons
+            document.getElementById('google-signup').addEventListener('click', function() {
+              window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
+            });
+          
+            document.getElementById('facebook-signup').addEventListener('click', function() {
+              window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
+            });
+          
+            document.getElementById('twitter-signup').addEventListener('click', function() {
+              window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
+            });
+          </script>
               </div>
             </nav>
           
@@ -326,6 +370,7 @@ if (body.classList.contains('dark-mode')) {
               <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
               <a class="page-scroll" href="./blog.html">Blogs 📰</a>
               <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
+              <a class="page-scroll" href="./contact.html">Contact🤔</a>
               <li class="nav-item no-underline">
                 <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none; border: none;" href="#"
                   onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
@@ -1219,7 +1264,7 @@ if (body.classList.contains('dark-mode')) {
   </button>
   
    <!-- FAQ section -->
-   <section class="faq-section wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
+   <!-- <section class="faq-section wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
     <h2>Frequently Asked Questions</h2>
     <div class="faq-item">
         <button class="faq-question">
@@ -1262,7 +1307,7 @@ if (body.classList.contains('dark-mode')) {
         </div>
     </div>
   </section>
-  
+   -->
   <script src="/assets/js/faq.js"></script>
   
 
@@ -1646,6 +1691,19 @@ if (body.classList.contains('dark-mode')) {
             cookieConsent.style.display = 'none';
         }, 500); // Matches animation duration
     });
+});
+</script>
+<script>
+  $(document).ready(function() {
+  // Bind click event for the previous button
+  $('#prevButton').click(function() {
+    $('.testimonial-active').slick('slickPrev'); // Go to the previous slide
+  });
+
+  // Bind click event for the next button
+  $('#nextButton').click(function() {
+    $('.testimonial-active').slick('slickNext'); // Go to the next slide
+  });
 });
 </script>
 </body>
