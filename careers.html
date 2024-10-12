@@ -19,67 +19,186 @@
   <link rel="stylesheet" href="assets/css/quiz.css" />
   <link rel="stylesheet" href="assets/css/popup.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <style>
-    
+<style>
     body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
 
-        header {
-            background: #f76b45;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
+    header {
+      background: #f76b45;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
 
-        nav a {
-            color: #fff;
-            margin: 0 15px;
-            text-decoration: none;
-        }
+    nav a {
+      color: #fff;
+      margin: 0 3px;
+      text-decoration: none;
+    }
 
-        h1 {
-            margin-bottom: 20px;
-        }
+    h1 {
+      margin-bottom: 20px;
+    }
 
-        main {
-            padding: 20px;
-        }
+    main {
+      padding: 20px;
+    }
 
-        .job-posting {
-            border: 1px solid #ddd;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            background-color: #fff;
-        }
+    .job-posting {
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      background-color: #fff;
+    }
 
-        button {
-            background: #f76b45;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
+    button {
+      background: #f76b45;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
 
-        button:hover {
-            background: #e65c39;
-        }
+    button:hover {
+      background: #e65c39;
+    }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #333;
-            color: white;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #333;
+      color: white;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    section {
+      padding: 20px;
+    }
+
+    /* Responsive table */
+    .jobs-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    .jobs-table th,
+    .jobs-table td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+
+    .jobs-table th {
+      background-color: #f4f4f4;
+    }
+
+    .jobs-table tbody tr {
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+
+      .jobs-table,
+      .jobs-table th,
+      .jobs-table td,
+      .jobs-table thead,
+      .jobs-table tbody,
+      .jobs-table tr {
+        display: block;
+        width: 100%;
+      }
+
+      .jobs-table tr {
+        margin-bottom: 10px;
+      }
+
+      .jobs-table td {
+        border: none;
+        padding-left: 50%;
+        position: relative;
+        text-align: right;
+      }
+
+      .jobs-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+      }
+
+      .jobs-table th {
+        display: none;
+      }
+    }
+
+    /* Roadmap Section */
+    .roadmap-step {
+      margin-bottom: 20px;
+    }
+
+    .roadmap-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    /* Recommended Books Section */
+    .books-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .books-list li {
+      margin-bottom: 15px;
+    }
+
+    .books-list li .emoji {
+      margin-right: 10px;
+    }
+
+    /* Media Queries for Responsive Layout */
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      section {
+        padding: 15px;
+      }
+
+      .roadmap-step,
+      .books-list li {
+        font-size: 1rem;
+      }
+    }
+
+    @media (min-width: 769px) {
+      h2 {
+        font-size: 2rem;
+      }
+
+      section {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .roadmap-step,
+      .books-list li {
+        font-size: 1.2rem;
+      }
+    }
+
     #progressBar {
       position: fixed;
       top: 0;
@@ -88,8 +207,9 @@
       height: 8px;
       background-color: #f76b45;
       z-index: 9999;
-      
+
     }
+
     * {
       cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
     }
@@ -116,49 +236,58 @@
     }
 
     @media (max-width: 720px) {
-      .circle-container{
+      .circle-container {
         display: none;
       }
     }
 
-    
-.unique-popup-message {
-  position: fixed; /* Change to fixed positioning */
-  top: 30px; /* Adjust this value to be below the navbar */
-  right: 2px; /* Adjust this value for the desired distance from the right edge */
-  width: 300px; /* Adjust width as needed */
-  transform: translateX(0); /* Center the popup horizontally */
-  background-color: #a4d8ff;
-  color: #131722;
-  padding: 11px;
-  border-radius: 5px;
-  text-align: center;
-  z-index: 1000;
-  box-sizing: border-box;
-  overflow: hidden; /* Hide the expanding border animation */
-  position: relative;
-}
 
-.border-animation {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 7px; /* Same height as the border */
-  background-color: rgb(4, 0, 128);
-  width: 100%;
-  transform-origin: right; /* Start shrinking from the right */
-}
+    .unique-popup-message {
+      position: fixed;
+      /* Change to fixed positioning */
+      top: 30px;
+      /* Adjust this value to be below the navbar */
+      right: 2px;
+      /* Adjust this value for the desired distance from the right edge */
+      width: 300px;
+      /* Adjust width as needed */
+      transform: translateX(0);
+      /* Center the popup horizontally */
+      background-color: #a4d8ff;
+      color: #131722;
+      padding: 11px;
+      border-radius: 5px;
+      text-align: center;
+      z-index: 1000;
+      box-sizing: border-box;
+      overflow: hidden;
+      /* Hide the expanding border animation */
+      position: relative;
+    }
 
-@keyframes borderAnimation {
-  from {
-    transform: scaleX(0); /* Full width initially */
-  }
-  to {
-    transform: scaleX(1); /* Shrink to zero width */
-  }
-}
+    .border-animation {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 7px;
+      /* Same height as the border */
+      background-color: rgb(4, 0, 128);
+      width: 100%;
+      transform-origin: right;
+      /* Start shrinking from the right */
+    }
 
+    @keyframes borderAnimation {
+      from {
+        transform: scaleX(0);
+        /* Full width initially */
+      }
 
+      to {
+        transform: scaleX(1);
+        /* Shrink to zero width */
+      }
+    }
   </style>
 
 <body class="quizpage">
