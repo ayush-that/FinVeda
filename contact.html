@@ -29,7 +29,43 @@
       padding: 0;
       background-color: #f4f4f4;
     }
-
+    .mobile-menu {
+      display: flex;
+      flex-wrap: wrap; /* Allow items to wrap if needed */
+      justify-content: space-between; /* Distribute items evenly */
+      background-color: #3a90dc;
+      padding: 5px 5px; /* Adjust padding for a compact look */
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .mobile-menu a {
+      color: white; /* Ensure text color contrasts with background */
+      text-decoration: none;
+      padding: 15px 15px; /* Increase padding for better clickability */
+      transition: background 0.3s ease-in-out;
+  }
+  
+  .mobile-menu a:hover {
+      background-color: rgba(255, 255, 255, 0.2); /* Slight background change on hover */
+      border-radius: 5px; /* Rounded corners on hover */
+  }
+  
+  .mobile-menu .main-btn {
+      background-color: #0077b8; /* Differentiate Login/Register button */
+      border: none;
+      padding: 4px 10px; /* Provide enough padding */
+      border-radius: 5px; /* Rounded corners */
+  }
+  
+  .mobile-menu .main-btn:hover {
+      background-color: #005fa3; /* Darker on hover */
+  }
+  
+  .mobile-menu__trigger {
+      display: none; /* Hide the trigger unless needed */
+  }
+  
     header {
       background: #f76b45;
       color: #fff;
@@ -58,7 +94,53 @@
       border-radius: 5px;
       background-color: #fff;
     }
-
+    .navbar-collapse {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap; /* Ensure items wrap on smaller screens */
+      background-color: #3a90dc;
+      padding: 10px 15px;
+      margin-left: 5px; 
+      height: 100x;/* Adjust padding */
+      border-radius: 5px;
+  }
+  
+  .navbar-nav {
+      display: flex;
+      align-items: center;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+  }
+  
+  .navbar-nav .nav-item {
+      margin: 0 8px; /* Space between items */
+  }
+  
+  .page-scroll {
+      text-decoration: none;
+      color: white;
+      padding: 8px 10px; /* Adjust padding */
+      font-size: 16px;
+  }
+  
+  .main-btn {
+      background-color: #f77f00;
+      padding: 5px 10px;
+      border-radius: 5px;
+      color: white;
+      text-align: center;
+      font-size: 20px;
+  }
+  
+  .main-btn:hover {
+      background-color: #e66e00;
+  }
+  
+  #active-page {
+      font-size: 25px;
+  }
+  
     button {
       background: #f76b45;
       color: white;
@@ -314,10 +396,7 @@
                     <a class="page-scroll" href="./contact.html" id="active-page"><span
                         style="font-size: 25px;">📞</span></a>
                   </li>
-                  <li class="nav-item no-underline">
-                    <a class="main-btn navbar-btn" style="padding: 0px; transform: none; border: none; width:39px"
-                      data-scroll-nav="0" href="#" onclick="openModal()">👤</a>
-                  </li>
+                  
 
 
                 </ul>
@@ -388,8 +467,7 @@
               <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
               <a class="page-scroll" href="./blog.html">Blogs 📰</a>
               <a class="page-scroll active-link" href="./quiz.html">Quiz 🤔</a>
-              <a class="page-scroll main-btn" href="#" onclick="openModal()"
-                onmouseout="this.style.color='white'">Login/Register 💻</a>
+             
               <div class="mobile-menu__trigger"><span></span></div>
             </nav>
 

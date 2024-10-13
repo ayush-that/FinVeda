@@ -10,16 +10,14 @@
 /* Navbar Styling */
 .navbar-collapse {
     display: flex;
-    justify-content: center;
+    justify-content: space-around; /* Distributes items evenly */
     background-color: #3a90dc;
-    border-radius: 10px;
-    padding: 15px 30px;
+    border-radius: 5px;
+    padding: 10px 15px; /* Adjusted padding for a tighter fit */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-bottom: 2px solid #edf2f4;
-    width: 100%; /* Full width of the container */
-    max-width: calc(100vw - 40px); /* Ensures it doesn't overflow */
-    box-sizing: border-box; /* Includes padding/margin in width */
-    margin: 20px auto; /* Equal space on all sides and center it */
+    max-width: 100%;
+    margin: 0 auto; /* Centers the navbar */
     position: relative;
     
     transition: background-color 0.3s ease-in-out;
@@ -29,25 +27,25 @@
     -o-transition: background-color 0.3s ease-in-out;
 }
 
-
 .navbar-collapse:hover {
-    background-color: #1a1c29; 
+    background-color: #1a1c29;
 }
 
 .navbar-nav .nav-item {
     display: inline-block;
-    margin: 0 15px;
-    padding: 5px;
+    margin: 2px 15px;
+    padding: 1px;
 }
 
 .navbar-nav .nav-item a {
-    color: #0077b8; 
+    color: #0077b8;
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
-    padding: 10px 15px;
+    padding: 5px 5px ;
     transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
 }
+
 
 .navbar-nav .nav-item a:hover {
     color: #f60e0e; 
