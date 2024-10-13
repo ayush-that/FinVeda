@@ -352,7 +352,7 @@ document.querySelector('#register-btn').addEventListener('click', (event) => {
         allFilled = false;
         error_div.innerHTML = "You must be at least 13 years old.";
     }
-    
+
     if (allFilled) {
         alert("Registration done!!");
         const userData = {
@@ -363,23 +363,7 @@ document.querySelector('#register-btn').addEventListener('click', (event) => {
     }
 });
 
-document.getElementById("login-btn").addEventListener('click', (event) => {
-    event.preventDefault(); // Prevent default form submission
-    const emailLogin = loginEmail.value;
-    const storedUser = JSON.parse(localStorage.getItem(emailLogin));
 
-    if (!storedUser) {
-        document.getElementById("login-error").innerHTML = "No account found. Please register first.";
-        return;
-    }
-
-    if (loginPassword.value === storedUser.password) {
-        alert("Logged in successfully");
-        // Optionally, redirect to a different page or perform other actions
-    } else {
-        document.getElementById("login-error").innerHTML = "Please check your credentials";
-    }
-});
 
 
 
