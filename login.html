@@ -89,7 +89,7 @@
                             </tr>
                           </table>
                           <div class="error" id="login-error"></div>
-                          <button type="submit" class="main-btn mt-2 w-100 mb-2" style="padding: 0px;">Sign in</button>
+                          <button type="submit" class="main-btn mt-2 w-100 mb-2" style="padding: 0px;" id="login-btn">Sign in</button>
                           <button class="main-btn" id="googleSignInBtn" style="padding: 0px;">Sign in with Google</button>
 
                         </form>
@@ -115,7 +115,7 @@
                             </tr>
                             <tr>
                               <td><label class="d-flex">DOB</label></td>
-                              <td><input type="text" placeholder="Username" class="form-control" id="register-DOB" required /></td>
+                              <td><input type="date" placeholder="Username" class="form-control" id="register-DOB" required /></td>
                             </tr>
                             <tr>
                               <td><label class="d-flex">Password</label></td>
@@ -137,7 +137,7 @@
                             </tr>
                           </table>
                           <div class="error" id="register-error"></div>
-                          <button type="submit" class="main-btn mt-2 w-100 mb-3" style="padding: 0px;">Register</button>
+                          <button type="submit" class="main-btn mt-2 w-100 mb-3" style="padding: 0px;" id="register-btn" >Register</button>
 
                         </form>
                         <p class="text-center">Already have an account? <a href="#" id="loginLink">Login</a></p>
@@ -293,7 +293,100 @@
       <div id="particles-2"></div>
     </footer>
     <script>
-      document.getElementById("copyright-year").textContent = new Date().getFullYear();
+     document.getElementById("copyright-year").textContent = new Date().getFullYear();
+
+const inputFields = document.querySelectorAll("#registerForm input[required]");
+const checkbox = document.getElementById("register-terms");
+const useremail = document.getElementById("register-email");
+const registerPassword = document.getElementById("register-password");
+const error_div = document.getElementById("register-error");
+const loginEmail = document.getElementById("login-email");
+const loginPassword = document.getElementById("login-password");
+const registerDOB= document.getElementById("register-DOB");
+const date= new Date();
+const today= date.getDate();
+
+
+document.querySelector('#register-btn').addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent default form submission
+
+    let allFilled = true;
+    
+    inputFields.forEach(input => {
+        if (!input.value) {
+            allFilled = false;
+            error_div.innerHTML = `Please fill in the required field: ${input.placeholder}`;
+        }
+    });
+
+    if (!checkbox.checked) {
+        allFilled = false;
+        error_div.innerHTML = "Please check the terms and conditions.";
+    }
+
+    if (registerPassword.value.length < 8) { // Check for minimum length
+        allFilled = false;
+        error_div.innerHTML = "Password length should be at least 8 characters.";
+    } else {
+        const specialCharacterRegex = /[!@#$%^&*(),.?":{}|<>]/; 
+        const capitalLetterRegex = /[A-Z]/; // Check for at least one uppercase letter
+        const digitRegex = /[0-9]/; // Check for at least one number
+
+        if (!specialCharacterRegex.test(registerPassword.value) || 
+            !capitalLetterRegex.test(registerPassword.value) || 
+            !digitRegex.test(registerPassword.value)) {
+            allFilled = false;
+            error_div.innerHTML = "Password must include at least one special character, one capital letter, and one number.";
+        }
+    }
+
+    const dobValue = new Date(registerDOB.value);
+    const age = new Date().getFullYear() - dobValue.getFullYear();
+    const monthDiff = new Date().getMonth() - dobValue.getMonth();
+    const isValidDOB = monthDiff > 0 || (monthDiff === 0 && new Date().getDate() >= dobValue.getDate());
+
+    if (dobValue > new Date()) {
+        allFilled = false;
+        error_div.innerHTML = "Date of birth cannot be in the future.";
+    } else if (age < 13 || (age === 13 && !isValidDOB)) { // Assuming a minimum age of 13
+        allFilled = false;
+        error_div.innerHTML = "You must be at least 13 years old.";
+    }
+    
+    if (allFilled) {
+        alert("Registration done!!");
+        const userData = {
+            email: useremail.value,
+            password: registerPassword.value
+        };
+        localStorage.setItem(useremail.value, JSON.stringify(userData));
+    }
+});
+
+document.getElementById("login-btn").addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent default form submission
+    const emailLogin = loginEmail.value;
+    const storedUser = JSON.parse(localStorage.getItem(emailLogin));
+
+    if (!storedUser) {
+        document.getElementById("login-error").innerHTML = "No account found. Please register first.";
+        return;
+    }
+
+    if (loginPassword.value === storedUser.password) {
+        alert("Logged in successfully");
+        // Optionally, redirect to a different page or perform other actions
+    } else {
+        document.getElementById("login-error").innerHTML = "Please check your credentials";
+    }
+});
+
+
+
+
+
+     
+
     </script>
     <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
     <script src="./assets/js/subscribe.js"></script>
