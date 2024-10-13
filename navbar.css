@@ -1,206 +1,114 @@
-
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
+* {
     margin: 0;
     padding: 0;
-}
-/* Navbar Styling */
-.navbar-collapse {
-    display: flex;
-    justify-content: space-between;
-    background-color: #3a90dc;
-    border-radius: 10px;
-    padding: 15px 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-bottom: 2px solid #edf2f4;
-    width: 100vw;
-    margin: 0 auto;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-
-    transition: background-color 0.3s ease-in-out;
-    -webkit-transition: background-color 0.3s ease-in-out;
-    -moz-transition: background-color 0.3s ease-in-out;
-    -ms-transition: background-color 0.3s ease-in-out;
-    -o-transition: background-color 0.3s ease-in-out;
+    box-sizing: border-box;
 }
 
-.navbar-collapse:hover {
-    background-color: #1a1c29; 
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
 }
-.navbar-nav {
+
+.navbar {
+    width: 100%;
+    background-color: #1a202c;
+    color: white;
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: nowrap;
-}
-
-.navbar-nav .nav-item {
-    display: inline-block;
-    margin: 0 15px;
-    padding: 0;
-}
-
-.navbar-nav .nav-item a {
-    color: #0077b8; 
-    font-weight: bold;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 10px 15px;
-    transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
-    white-space: nowrap;
-}
-
-.navbar-nav .nav-item a:hover {
-    color: #f60e0e; 
-    background-color: rgba(255, 255, 255, 0.1); 
-    border-radius: 5px; 
-}
-
-.overlay {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: black;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s;
-}
-.mobile-menu {
-    top: 0;
-    left: 0;
-    width: 70vw;
-    height: 100vh;
     position: fixed;
-    z-index: 2;
-    background-color: black;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    transform: translateX(-100%);
-    transition: transform 0.3s;
-}
-
-/* Screen more than 991px wide */
-@media ((min-width: 991px)) {
-    .mobile-menu {
-        display: none !important;
-    }   
-
-}
-
-.mobile-menu a {
-    /* box-shadow: inset 0 0 1rem rgba(255,255,255,0.7); */
-    /* border-top: 3px solid #fff; */
-    /* border-bottom: 1px solid #fff; */
-    text-align: center;
-    margin: 1.5px;
-    padding: 13px;
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    position: relative;
-    font-size: 16px;
-}
-
-.mobile-menu a:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 25%;
-  width: 0;
-  height: 2px;
-  background-color:black;
-  transition: width 0.3s;
-}
-
-.mobile-menu a:hover:after {
-    width: 75%;
-}
-.mobile-menu li a:hover:after {
-    width: 0;
-}
-
-.mobile-menu .active-link {
-    background: 
-    linear-gradient(black) bottom/ 100% 2px no-repeat, 
-    transparent;
-}
-
-.mobile-menu__trigger {
-    cursor: pointer;
-    content: "";
-    position: absolute;
-    z-index: 3;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    top: 2rem;
-    right: -5rem;
-    background: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.mobile-menu__trigger span {
-    display: block;
-    width: 50%;
-    height: 2px;
-    background: #fff;
-    position: relative;
-}
-.mobile-menu__trigger span::before,
-.mobile-menu__trigger span::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    right: 0;
-    background: #fff;
-    transition: all 0.3s;
-}
-.mobile-menu__trigger span::before {
-    top: -7px;
-}
-.mobile-menu__trigger span::after {
-    top: 7px;
-}
-.mobile-menu__trigger:hover span::before {
-    width: 50%;
-    top: -3px;
-    right: 0;
-    transform: rotate(30deg);
-}
-.mobile-menu__trigger:hover span::after {
-    width: 50%;
-    top: 3px;
-    right: 0;
-    transform: rotate(-30deg);
-}
-.mobile-menu_open {
-    transform: translateX(0%);
-    box-shadow: 0 0 2rem #000;
-}
-.mobile-menu_open+.overlay {
-    visibility: visible;
-    opacity: 1;
-}
-.mobile-menu_open .mobile-menu__trigger span::before,
-.mobile-menu_open .mobile-menu__trigger span::after {
+    top: 0;
     left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-.mobile-menu_open .mobile-menu__trigger:hover span::before {
-    transform: rotate(-30deg);
-}
-.mobile-menu_open .mobile-menu__trigger:hover span::after {
-    transform: rotate(30deg);
 
+.container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #ff3333; /* Red color for logo */
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: #ff3333; /* Red color for all links */
+    text-decoration: none;
+    font-size: 15px;
+    padding: 8px 15px;
+    transition: background-color 0.3s ease;
+    cursor: pointer; /* Pointer cursor for links */
+}
+
+.nav-links a:hover {
+    background-color: #2d3748;
+    border-radius: 5px;
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.dark-mode-toggle {
+    font-size: 20px;
+    cursor: pointer;
+    color: #ff3333; /* Red color for dark mode toggle */
+}
+
+.btn {
+    padding: 8px 12px;
+    color: white;
+    background-color: #ff3333; /* Red color for buttons */
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    cursor: pointer; /* Pointer cursor for buttons */
+}
+
+.login-btn {
+    background-color: #cc0000; /* Darker red for login button */
+}
+
+.register-btn {
+    background-color: #ff3333; /* Red color for register button */
+}
+
+.btn:hover {
+    background-color: #f7c400; /* Yellowish hover effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .right-section {
+        margin-top: 10px;
+    }
 }
