@@ -499,11 +499,14 @@ function startQuiz(){
 
     //the code below will generate 10 random numbers from 0-49
     while (numbers.length < 10) {
-        let randomNumber = Math.floor(Math.random() * 20); 
+        let randomNumber = Math.floor(Math.random() * 50); 
         if (!numbers.includes(randomNumber)) {
             numbers.push(randomNumber); 
         }
     }
+    // for(let i=0;i<numbers.length;i++){
+    //     console.log(numbers[i]);
+    // }
     //num is used as the index of numbers list
     if(num<numbers.length){
         currentQuestionIndex=numbers[num];
