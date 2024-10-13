@@ -70,14 +70,155 @@
     <div class="circle"></div>
   </div> -->
 
+  <header class="header-area">
+        <div class="row">
+          <div style="display: flex; justify-content: center;;" class="">
+            <nav class="navbar navbar-expand-lg " style="display: flex;">
+              <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+              </button> -->
+              <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                <ul id="nav" class="navbar-nav m-0-auto" style="display: flex; justify-content: center; align-items: center; list-style: none; padding: 8px; margin: 0; gap: 5px;">
+                  <li class="nav-item active" style="margin: 0 8px;">
+                    <a class="page-scroll" href="./index.html" id="active-page" style="padding: 6px 12px; color: #007bff; font-weight: bold; text-decoration: none;">Home 🏡</a>
+                  </li>
+                  <li class="nav-item" style="margin: 0 8px;">
+                    <a class="page-scroll" href="./about.html" style="padding: 6px 12px; text-decoration: none; color: #333;">About Us 📖</a>
+                  </li>
+                  <li class="nav-item" style="margin: 0 8px;">
+                    <a class="page-scroll" href="./trends.html" style="padding: 6px 12px; text-decoration: none; color: #333;">Trends 📈</a>
+                  </li>
+                  <li class="nav-item" style="margin: 0 8px;">
+                    <a class="page-scroll" href="./tools/sip.html" style="padding: 6px 12px; text-decoration: none; color: #333;">Tools 🔧</a>
+                  </li>
+                  <li class="nav-item" style="margin: 0 8px;">
+                    <a class="page-scroll" href="./blog.html" style="padding: 6px 12px; text-decoration: none; color: #333;">Blogs 📰</a>
+                  </li>
+                  <li class="nav-item" style="margin: 0 8px;">
+                    <a class="page-scroll" href="./quiz.html" style="padding: 6px 12px; text-decoration: none; color: #333;">Quiz 🤔</a>
+                  </li>
+                  <li class="nav-item" style="margin: 0 8px;">
+                    <a class="page-scroll" href="./careers.html" style="padding: 6px 12px; text-decoration: none; color: #333;">Careers 👔</a>
+                  </li>
+                  <li class="nav-item" style="margin: 0 8px;">
+                    <a class="page-scroll" href="./contact.html" style="padding: 6px 12px; text-decoration: none; color: #333;">Contact 📞</a>
+                  </li>
+                  <li class="nav-item" style="margin: 0 8px;">
+                    <a class="page-scroll" href="./faq.html" style="padding: 6px 12px; text-decoration: none; color: #333;">Help 🙋‍♂️</a>
+                  </li>
 
-     <div class="preloader">
-      <div class="loader">
-        <div class="ytp-spinner">
-          <div class="ytp-spinner-container">
-            <div class="ytp-spinner-rotator">
-              <div class="ytp-spinner-left">
-                <div class="ytp-spinner-circle"></div>
+                  <li>
+                    <button id="theme-toggle" class="toggle-button">🌙</button>
+                  </li>
+            
+                  <li class="nav-item no-underline">
+                    <a class="main-btn navbar-btn" style="border-radius: 15px; transform: none; border: none; position: relative; width: 200px;" href="#"
+                      onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
+                  </li>
+                  
+                </ul>
+              </div>
+              <script>
+                const toggleButton = document.getElementById('theme-toggle');
+                const body = document.body;
+                const currentTheme = localStorage.getItem('theme');
+
+if (currentTheme === 'dark') {
+body.classList.add('dark-mode');
+toggleButton.classList.add('dark');
+toggleButton.textContent = '☀️';
+}
+
+toggleButton.addEventListener('click', function () {
+body.classList.toggle('dark-mode');
+toggleButton.classList.toggle('dark');
+
+// Update button icon based on mode
+if (body.classList.contains('dark-mode')) {
+  toggleButton.textContent = '☀️';  // Light mode icon
+  localStorage.setItem('theme', 'dark');
+} else {
+  toggleButton.textContent = '🌙';  // Dark mode icon
+  localStorage.setItem('theme', 'light');
+}
+});
+            </script>
+            <style>.toggle-button {
+              padding: 0.5em 1em;
+              cursor: pointer;
+              border: none;
+              background-color: #0c0a0a;
+              color: #fff;
+              border-radius: 5px;
+              transition: background-color 0.3s;
+          }
+          
+          .toggle-button:hover {
+              background-color: #555;
+          }
+          
+          .content {
+              padding: 2em;
+              text-align: center;
+          }
+          
+          h1 {
+              font-size: 2.5rem;
+          }
+          
+          p {
+              font-size: 1.2rem;
+          }
+          
+          body.dark-mode {
+    background-color: #222;
+    color: #f1f1f1; /* Change text color to light for dark mode */
+}
+
+.toggle-button.dark {
+    background-color: #f1f1f1; /* Button background in dark mode */
+    color: #333; /* Button text color in dark mode */
+}
+
+.toggle-button.dark:hover {
+    background-color: #ddd; /* Button hover color in dark mode */
+}
+          </style>
+              <div class="">
+                <!-- Login Modal -->
+          <div id="myModal" class="modal">
+            <div class="modal-content" >
+              <span class="close" style="display: flex; justify-content: right;">&times;</span>
+              <div class="mt-3">
+                <h3 class="join"><i class="fa-solid fa-right-to-bracket"></i>  Login to join us....</h3>
+                <form class="px-3 py-4" id="loginForm">
+                  <div class="form-group">
+                    <label class="d-flex">Username</label>
+                    <input type="text" placeholder="Username" class="form-control" required />
+                  </div>
+                  <div class="form-group">
+                    <label class="d-flex">Password</label>
+                    <input type="password" placeholder="Password" class="form-control" required>
+                    <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
+                  </div>
+                  <div class="form-check d-flex">
+                    <input type="checkbox" class="form-check-input">
+                    <label class="form-check-label">Remember me</label>
+                  </div>
+                </form>
+                <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('loginForm')">Sign in</button>
+                <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
+              </div>
+            </div>
+          </div>
+                  <li class="nav-item no-underline" style="margin: 0 8px;">
+                    <a class="main-btn navbar-btn" href="#" style="padding: 6px 12px; border-radius: 15px; border: none; background-color: #007bff; color: white; text-decoration: none; display: inline-block;" onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
+                  </li>
+                </ul>
+
               </div>
               <div class="ytp-spinner-right">
                 <div class="ytp-spinner-circle"></div>
@@ -193,6 +334,7 @@
                     window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
                   });
                 </script>
+
   
           <!-- Register Modal -->
           <div id="registerModal" class="modal">
