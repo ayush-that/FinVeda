@@ -2,26 +2,32 @@
 <html class="no-js" lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <title>About Us - FinVeda</title>
-  <meta name="description" content="Explore engaging quizzes on finance and economics at Fin Veda. Test your knowledge and learn with interactive quizzes covering various topics." />
-  <meta name="author" content="Ayush Singh">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="shortcut icon" href="./assets/images/favicon2.png" type="image/png" />
-  <link rel="stylesheet" href="assets/css/animate.css" />
-  <link rel="stylesheet" href="assets/css/magnific-popup.css" />
-  <link rel="stylesheet" href="assets/css/slick.css" />
-  <link rel="stylesheet" href="assets/css/LineIcons.css" />
-  <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/default.css" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="stylesheet" href="assets/css/quiz.css" />
-  <link rel="stylesheet" href="assets/css/popup.css" />
-  <link rel="stylesheet" href="assets/css/about.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <title>About Us - FinVeda</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="shortcut icon" href="./assets/images/favicon2.png" type="image/png" />
+    <link rel="stylesheet" href="./assets/css/animate.css" />
+    <link rel="stylesheet" href="./assets/css/magnific-popup.css" />
+    <link rel="stylesheet" href="./assets/css/slick.css" />
+    <link rel="stylesheet" href="./assets/css/LineIcons.css" />
+    <link rel="stylesheet" href="./assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/default.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/quiz.css" />
+    <link rel="stylesheet" href="./assets/css/popup.css" />
+    <link rel="stylesheet" href="./assets/css/about.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/about(inlines).css" />
+     <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
+    <link rel="stylesheet" href="navbar.css">
+        
+</head>
 
-<body class="quizpage">
+<body>
+    <div id="progressBar"></div>
 
   <div class="circle-container">
     <div class="circle"></div>
@@ -90,11 +96,68 @@
           <div class="col-lg-12">
             <nav class="navbar navbar-expand-lg">
               <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="toggler-icon"></span>
-                <span class="toggler-icon"></span>
-                <span class="toggler-icon"></span>
-              </button> -->
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="toggler-icon"></span>
+                    <span class="toggler-icon"></span>
+                    <span class="toggler-icon"></span>
+                  </button> --><main>
+
+                  <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                    <ul id="nav" class="navbar-nav ml-auto">
+                      <li class="nav-item">
+                        <a class="page-scroll" href="./index.html">Home 🏡</a>
+                      </li>
+                      <li class="nav-item active">
+                        <a class="page-scroll" href="./about.html" id="active-page">About Us 📖</a>
+                      </li>    
+                      <li class="nav-item">
+                        <a class="page-scroll" href="./trends.html">Trends 📈</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="page-scroll" href="./blog.html">Blogs 📰</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="page-scroll" href="./quiz.html" >Quiz 🤔</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="page-scroll" href="./careers.html">Career 👔</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="page-scroll" href="./contact.html">Contact📞</a>
+                      </li>
+                      <li class="nav-item no-underline">
+                        <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none;" data-scroll-nav="0" href="#" onclick="openModal()">Login/Register 💻</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="navbar-btn d-none d-sm-inline-block">
+                    <!-- Login Modal -->
+              <div id="myModal" class="modal">
+                <div class="modal-content">
+                  <span class="close" style="display: flex; justify-content: right;">&times;</span>
+                  <div class="mt-3">
+                    <h3 class="join">Login to join us....</h3>
+                    <form class="px-3 py-4" id="loginForm">
+                      <div class="form-group">
+                        <label class="d-flex">Username</label>
+                        <input type="text" placeholder="Username" class="form-control" required />
+                      </div>
+                      <div class="form-group">
+                        <label class="d-flex">Password</label>
+                        <input type="password" placeholder="Password" class="form-control" required>
+                        <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
+                      </div>
+                      <div class="form-check d-flex">
+                        <input type="checkbox" class="form-check-input">
+                        <label class="form-check-label">Remember me</label>
+                      </div>
+                    </form>
+                    <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('loginForm')">Sign in</button>
+                    <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
+
               <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                 <ul id="nav" class="navbar-nav ml-auto">
                   <li class="nav-item">
