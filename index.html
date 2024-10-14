@@ -128,71 +128,14 @@
                 </ul>
               </div>
               <script>
-                const toggleButton = document.getElementById('theme-toggle');
-                const body = document.body;
-                const currentTheme = localStorage.getItem('theme');
-
-if (currentTheme === 'dark') {
-body.classList.add('dark-mode');
-toggleButton.classList.add('dark');
-toggleButton.textContent = '☀️';
-}
-
-toggleButton.addEventListener('click', function () {
-body.classList.toggle('dark-mode');
-toggleButton.classList.toggle('dark');
-
-// Update button icon based on mode
-if (body.classList.contains('dark-mode')) {
-  toggleButton.textContent = '☀️';  // Light mode icon
-  localStorage.setItem('theme', 'dark');
-} else {
-  toggleButton.textContent = '🌙';  // Dark mode icon
-  localStorage.setItem('theme', 'light');
-}
-});
+               
             </script>
-            <style>.toggle-button {
-              padding: 0.5em 1em;
-              cursor: pointer;
-              border: none;
-              background-color: #0c0a0a;
-              color: #fff;
-              border-radius: 5px;
-              transition: background-color 0.3s;
-          }
-          
-          .toggle-button:hover {
-              background-color: #555;
-          }
-          
-          .content {
-              padding: 2em;
-              text-align: center;
-          }
-          
-          h1 {
-              font-size: 2.5rem;
-          }
-          
-          p {
-              font-size: 1.2rem;
-          }
-          
-          body.dark-mode {
-    background-color: #222;
-    color: #f1f1f1; /* Change text color to light for dark mode */
-}
+            <style>
 
-.toggle-button.dark {
-    background-color: #f1f1f1; /* Button background in dark mode */
-    color: #333; /* Button text color in dark mode */
-}
-
-.toggle-button.dark:hover {
-    background-color: #ddd; /* Button hover color in dark mode */
-}
+    
           </style>
+
+
               <div class="">
                 <!-- Login Modal -->
           <div id="myModal" class="modal">
@@ -327,18 +270,7 @@ if (body.classList.contains('dark-mode')) {
                   </div>
                 
                 <script>
-                  // Add event listeners to the social media icons
-                  document.getElementById('google-login').addEventListener('click', function() {
-                    window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
-                  });
-                
-                  document.getElementById('facebook-login').addEventListener('click', function() {
-                    window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
-                  });
-                
-                  document.getElementById('twitter-login').addEventListener('click', function() {
-                    window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
-                  });
+                 
                 </script>
 
   
@@ -374,62 +306,6 @@ if (body.classList.contains('dark-mode')) {
                   <!-- Import zxcvbn library -->
                   <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
                   <script>
-                      function checkPasswordStrength() {
-                          const password = document.getElementById('register-password').value;
-                          const meter = document.getElementById('meter');
-                          const meterContainer = document.getElementById('password-meter');
-                          const strengthText = document.getElementById('strength-text');
-                  
-                          if (password) {
-                              meterContainer.style.display = 'block'; // Show the meter when typing
-                              const result = zxcvbn(password);
-                              const score = result.score; // Score ranges from 0 to 4
-                  
-                              // Set meter width and color based on score
-                              meter.style.width = (score + 1) * 20 + '%'; // Convert score to percentage
-                              meter.style.backgroundColor = getMeterColor(score);
-                              strengthText.innerText = getStrengthText(score); // Update strength text
-                          } else {
-                              meterContainer.style.display = 'none'; // Hide the meter if no password
-                              strengthText.innerText = ''; // Clear strength text
-                          }
-                      }
-                  
-                      function getMeterColor(score) {
-                          switch (score) {
-                              case 0: return 'red'; // Weak
-                              case 1: return 'orange'; // Fair
-                              case 2: return 'yellow'; // Good
-                              case 3: return 'blue'; // Strong
-                              case 4: return 'green'; // Very Strong
-                              default: return 'gray';
-                          }
-                      }
-                  
-                      function getStrengthText(score) {
-                          switch (score) {
-                              case 0: return 'Very Weak';
-                              case 1: return 'Weak';
-                              case 2: return 'Fair';
-                              case 3: return 'Strong';
-                              case 4: return 'Very Strong';
-                              default: return '';
-                          }
-                      }
-                  
-                      function togglePasswordVisibility(id) {
-                          const passwordInput = document.getElementById(id);
-                          const eyeIcon = passwordInput.nextElementSibling;
-                          if (passwordInput.type === 'password') {
-                              passwordInput.type = 'text';
-                              eyeIcon.children[0].style.display = 'none';
-                              eyeIcon.children[1].style.display = 'inline';
-                          } else {
-                              passwordInput.type = 'password';
-                              eyeIcon.children[0].style.display = 'inline';
-                              eyeIcon.children[1].style.display = 'none';
-                          }
-                      }
                   </script>
                   
                 <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('registerForm')">Register</button>
@@ -449,18 +325,7 @@ if (body.classList.contains('dark-mode')) {
           </div>
           
           <script>
-            // Add event listeners to the social media icons
-            document.getElementById('google-signup').addEventListener('click', function() {
-              window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
-            });
-          
-            document.getElementById('facebook-signup').addEventListener('click', function() {
-              window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
-            });
-          
-            document.getElementById('twitter-signup').addEventListener('click', function() {
-              window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
-            });
+           
           </script>
               </div>
             </nav>
@@ -682,19 +547,7 @@ if (body.classList.contains('dark-mode')) {
               <div class="tradingview-widget-container__widget"></div>
               <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async></script>
               <script type="text/javascript">
-                window.onload = function() {
-                  new TradingView.widget({
-                    "interval": "1m",
-                    "width": "425",
-                    "isTransparent": true,
-                    "height": "250",
-                    "symbol": "NASDAQ:AAPL",
-                    "showIntervalTabs": true,
-                    "displayMode": "single",
-                    "locale": "en",
-                    "colorTheme": "light",
-                  });
-                };
+               
               </script>
             </div>
             <!-- TradingView Widget END -->
@@ -728,20 +581,7 @@ if (body.classList.contains('dark-mode')) {
   <div class="tradingview-widget-container__widget"></div>
   <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async></script>
   <script type="text/javascript">
-    window.onload = function() {
-      var widgetConfig = {
-        "symbol": "ECONOMICS:INGDP",
-        "width": "auto",
-        "height": 250,
-        "locale": "in",
-        "dateRange": "ALL",
-        "colorTheme": "light",
-        "isTransparent": true,
-        "autosize": false,
-        "largeChartUrl": ""
-      };
-      new TradingView.widget(widgetConfig);
-    };
+   
   </script>
 </div>
             <!-- TradingView Widget END -->
@@ -1371,229 +1211,14 @@ if (body.classList.contains('dark-mode')) {
 </button>
 
 <script>
-  document.getElementById('feedback-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    // Get form values
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const rating = document.querySelector('input[name="rating"]:checked') ? document.querySelector('input[name="rating"]:checked').value : '';
-    const comments = document.getElementById('comments').value;
-
-    // Create feedback object
-    const feedback = {
-      name,
-      email,
-      rating,
-      comments
-    };
-
-    // Get existing feedback from localStorage or initialize with an empty array
-    let feedbackData = localStorage.getItem('feedbacks');
-    feedbackData = feedbackData ? JSON.parse(feedbackData) : [];
-
-    // Add new feedback
-    feedbackData.push(feedback);
-
-    // Store updated feedback array back in localStorage
-    localStorage.setItem('feedbacks', JSON.stringify(feedbackData));
-
-    // Clear form inputs
-    document.getElementById('feedback-form').reset();
-
-    // Show success notification
-    document.getElementById('successnotification').style.display = 'block';
-
-    // Hide notification after 3 seconds
-    setTimeout(function () {
-      document.getElementById('successnotification').style.display = 'none';
-    }, 3000);
-
-    // Close notification on click
-    document.getElementById('closeSuccessNotification').addEventListener('click', function () {
-      document.getElementById('successnotification').style.display = 'none';
-    });
-  });
+ 
 </script>
 
-  <script src="/assets/js/faq.js"></script>
+  
   
 
   <style>
-    .footer-widget {
-      background: linear-gradient(to right, #2C3E50, #4CA1AF);
-      color: white;
-      padding: 50px 20px;
-    }
-  
-    .footer-widget .footer-title h3, .footer-widget .footer-title h4 {
-      color: #F39C12;
-      font-size: 1.5rem;
-      margin-bottom: 20px;
-    }
-  
-    .footer-widget p.text {
-      color: white;
-      line-height: 1.6;
-      font-size: 1rem;
-    }
-  
-    .footer-widget a {
-      color: #ECF0F1;
-      text-decoration: none;
-      transition: color 0.3s ease-in-out;
-    }
-  
-    .footer-widget a:hover {
-      color: #F39C12;
-    }
-  
-     .footer-widget ul {
-      list-style: none;
-      padding: 0;
-    } 
-  
-    .footer-widget ul li {
-      margin-bottom: 10px;
-    }
-   
-    /* .footer-widget ul li a {
-      display: flex;
-      align-items: center;
-    }  */
-     
-    .footer-widget ul li a i {
-      margin-right: 10px;
-      font-size: 18px;
-    }
-  
-    .footer-contact ul li i {
-      color: #F39C12;
-    }
-  
-    .footer-contact ul li a {
-      color: white;
-      text-decoration: none;
-    }
-  
-    .footer-contact ul li a:hover {
-      color: #F39C12;
-    }
-  
-    .footer-widget .contact p {
-      margin: 0;
-    }
-  
-    /* Hover effects for icons */
-    .footer-widget ul li a:hover i {
-      color: #F39C12;
-    } 
-  
-    /* Styling for copyright */
-    .footer-copyright {
-      background: #1C2833;
-      padding: 20px;
-      color: white;
-      text-align: center;
-      font-size: 0.9rem;
-    }
     
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .footer-widget .row {
-        display: block;
-      }
-  
-      .footer-widget .footer-about,
-      .footer-widget .footer-link,
-      .footer-widget .footer-contact {
-        text-align: center;
-        margin-bottom: 20px;
-      }
-    }
-    .col-lg-4, .col-md-6, .col-sm-8 {
-      margin-bottom: 30px; 
-      padding: 10px;
-      border-radius: 10px; 
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-      color: white; 
-  }
-  
-  .footer-about {
-      text-align: left; 
-      font-family: 'Roboto', sans-serif; 
-      color: #333; 
-  }
-  
-  .footer-about p.text {
-      font-size: 16px;
-      line-height: 1.6;
-      margin: 0;
-      padding: 10px 0;
-  }
-  
-  .footer-about p.custom-margin {
-      margin-top: 20px;
-  }
-
-/* for social link styling */
-#social_icons{
-    padding-top:10px;
-    font-size: 18px;
-    color: #fff;
-}
-#social_icons i{
-  color: #fff;
-  margin: 0 0.6vw;
-}
-.socialtitle{
-  color: #F39C12;
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    margin-top: 50px;
-}
-
-/* for facebook */
-#social_icons .fa-facebook {
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-#social_icons .fa-facebook:hover{
-  color:#4267B2;
-  transform:scale(1.1);
-}
-
-/* for twitter */
-#social_icons .fa-x-twitter {
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-#social_icons .fa-x-twitter:hover{
-  color:black;
-  transform:scale(1.1);
-}
-/* for instagram */
-#social_icons .fa-instagram {
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-#social_icons .fa-instagram:hover{
-  color:#c32aa3;
-  transform:scale(1.1);
-}
-
-/* for discord */
-  #social_icons .fa-discord{
-    transition: color 0.3s ease, transform 0.3s ease;
-  }
-
-  #social_icons .fa-discord:hover{
-    color:#4267B2;
-  transform:scale(1.1);
-}
-  
-  @media (max-width: 768px) {
-      .col-lg-4, .col-md-6, .col-sm-8 {
-          padding: 10px;
-      }
-  }
   
   </style>
   <footer id="footer" class="footer-area pt-120">
@@ -1746,9 +1371,9 @@ if (body.classList.contains('dark-mode')) {
   </div>
   </footer>
   
-  <script>
+  <!-- <script>
     document.getElementById("copyright-year").textContent = new Date().getFullYear();
-  </script>
+  </script> -->
   
   <a href="#" class="back-to-top" aria-label="Return to the top"><i class="lni-chevron-up"></i></a>
   <script src="./assets/js/indexmodals.js"></script>
@@ -1783,6 +1408,191 @@ if (body.classList.contains('dark-mode')) {
 
   <script>
 
+function updateProgressBar(percentage) {
+        const progressBar = document.getElementById('progressBar');
+        progressBar.style.width = percentage + '%';}
+
+        function updateProgressBar() {
+    let taskProgress = 0; // Replace with your calculation of task completion
+    let percentage = (taskProgress / 100) * 100;
+    updateProgressBar(percentage);
+}
+
+
+window.onload = function() {
+      var widgetConfig = {
+        "symbol": "ECONOMICS:INGDP",
+        "width": "auto",
+        "height": 250,
+        "locale": "in",
+        "dateRange": "ALL",
+        "colorTheme": "light",
+        "isTransparent": true,
+        "autosize": false,
+        "largeChartUrl": ""
+      };
+      new TradingView.widget(widgetConfig);
+    };
+window.onload = function() {
+                  new TradingView.widget({
+                    "interval": "1m",
+                    "width": "425",
+                    "isTransparent": true,
+                    "height": "250",
+                    "symbol": "NASDAQ:AAPL",
+                    "showIntervalTabs": true,
+                    "displayMode": "single",
+                    "locale": "en",
+                    "colorTheme": "light",
+                  });
+                };
+     // Add event listeners to the social media icons
+     document.getElementById('google-login').addEventListener('click', function() {
+                    window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
+                  });
+                
+                  document.getElementById('facebook-login').addEventListener('click', function() {
+                    window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
+                  });
+                
+                  document.getElementById('twitter-login').addEventListener('click', function() {
+                    window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
+                  });
+    function checkPasswordStrength() {
+                          const password = document.getElementById('register-password').value;
+                          const meter = document.getElementById('meter');
+                          const meterContainer = document.getElementById('password-meter');
+                          const strengthText = document.getElementById('strength-text');
+                  
+                          if (password) {
+                              meterContainer.style.display = 'block'; // Show the meter when typing
+                              const result = zxcvbn(password);
+                              const score = result.score; // Score ranges from 0 to 4
+                  
+                              // Set meter width and color based on score
+                              meter.style.width = (score + 1) * 20 + '%'; // Convert score to percentage
+                              meter.style.backgroundColor = getMeterColor(score);
+                              strengthText.innerText = getStrengthText(score); // Update strength text
+                          } else {
+                              meterContainer.style.display = 'none'; // Hide the meter if no password
+                              strengthText.innerText = ''; // Clear strength text
+                          }
+                      }
+                  
+                      function getMeterColor(score) {
+                          switch (score) {
+                              case 0: return 'red'; // Weak
+                              case 1: return 'orange'; // Fair
+                              case 2: return 'yellow'; // Good
+                              case 3: return 'blue'; // Strong
+                              case 4: return 'green'; // Very Strong
+                              default: return 'gray';
+                          }
+                      }
+                  
+                      function getStrengthText(score) {
+                          switch (score) {
+                              case 0: return 'Very Weak';
+                              case 1: return 'Weak';
+                              case 2: return 'Fair';
+                              case 3: return 'Strong';
+                              case 4: return 'Very Strong';
+                              default: return '';
+                          }
+                      }
+                  
+                      function togglePasswordVisibility(id) {
+                          const passwordInput = document.getElementById(id);
+                          const eyeIcon = passwordInput.nextElementSibling;
+                          if (passwordInput.type === 'password') {
+                              passwordInput.type = 'text';
+                              eyeIcon.children[0].style.display = 'none';
+                              eyeIcon.children[1].style.display = 'inline';
+                          } else {
+                              passwordInput.type = 'password';
+                              eyeIcon.children[0].style.display = 'inline';
+                              eyeIcon.children[1].style.display = 'none';
+                          }
+                      }
+     const toggleButton = document.getElementById('theme-toggle');
+                const body = document.body;
+                const currentTheme = localStorage.getItem('theme');
+
+if (currentTheme === 'dark') {
+body.classList.add('dark-mode');
+toggleButton.classList.add('dark');
+toggleButton.textContent = '☀️';
+}
+
+toggleButton.addEventListener('click', function () {
+body.classList.toggle('dark-mode');
+toggleButton.classList.toggle('dark');
+
+// Update button icon based on mode
+if (body.classList.contains('dark-mode')) {
+  toggleButton.textContent = '☀️';  // Light mode icon
+  localStorage.setItem('theme', 'dark');
+} else {
+  toggleButton.textContent = '🌙';  // Dark mode icon
+  localStorage.setItem('theme', 'light');
+}
+});
+     // Add event listeners to the social media icons
+     document.getElementById('google-signup').addEventListener('click', function() {
+              window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
+            });
+          
+            document.getElementById('facebook-signup').addEventListener('click', function() {
+              window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
+            });
+          
+            document.getElementById('twitter-signup').addEventListener('click', function() {
+              window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
+            });
+     document.getElementById('feedback-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // Get form values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const rating = document.querySelector('input[name="rating"]:checked') ? document.querySelector('input[name="rating"]:checked').value : '';
+    const comments = document.getElementById('comments').value;
+
+    // Create feedback object
+    const feedback = {
+      name,
+      email,
+      rating,
+      comments
+    };
+
+    // Get existing feedback from localStorage or initialize with an empty array
+    let feedbackData = localStorage.getItem('feedbacks');
+    feedbackData = feedbackData ? JSON.parse(feedbackData) : [];
+
+    // Add new feedback
+    feedbackData.push(feedback);
+
+    // Store updated feedback array back in localStorage
+    localStorage.setItem('feedbacks', JSON.stringify(feedbackData));
+
+    // Clear form inputs
+    document.getElementById('feedback-form').reset();
+
+    // Show success notification
+    document.getElementById('successnotification').style.display = 'block';
+
+    // Hide notification after 3 seconds
+    setTimeout(function () {
+      document.getElementById('successnotification').style.display = 'none';
+    }, 3000);
+
+    // Close notification on click
+    document.getElementById('closeSuccessNotification').addEventListener('click', function () {
+      document.getElementById('successnotification').style.display = 'none';
+    });
+  });
+ document.getElementById("copyright-year").textContent = new Date().getFullYear();
    document.addEventListener('DOMContentLoaded', function () {
     const cookieConsent = document.getElementById('cookieConsent');
     const acceptCookiesButton = document.getElementById('acceptCookies');
@@ -1819,6 +1629,10 @@ window.onscroll = function() {
             let scrolled = (winScroll / height) * 100;
             document.getElementById("progressBar").style.width = scrolled + "%";
         };
+
+        setInterval(updateProgressBar, 500); 
 </script>
+
+<script src="/assets/js/faq.js"></script>
 </body>
 </html>

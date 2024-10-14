@@ -20,23 +20,13 @@
     background-color: #f3f3f3;
     z-index: 100;
 }
-/* Progress bar itself */
+
 #progressBar {
     height: 8px;
     width: 0%;
     background: linear-gradient(to right,#ff6ec7, #facf32, #ff6600);;
 }
-/* 
-  #progressBar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 8px;
-    background-color: #f76b45;
-    z-index: 9999;
 
-  } */
 
   * {
     cursor: url(./assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg), auto;
@@ -74,11 +64,11 @@
   }
 
 .unique-popup-message {
-position: fixed; /* Change to fixed positioning */
-top: 30px; /* Adjust this value to be below the navbar */
-right: 2px; /* Adjust this value for the desired distance from the right edge */
-width: 300px; /* Adjust width as needed */
-transform: translateX(0); /* Center the popup horizontally */
+position: fixed; 
+top: 30px; 
+right: 2px;
+width: 300px; 
+transform: translateX(0); 
 background-color: #a4d8ff;
 color: #131722;
 padding: 11px;
@@ -86,7 +76,7 @@ border-radius: 5px;
 text-align: center;
 z-index: 1000;
 box-sizing: border-box;
-overflow: hidden; /* Hide the expanding border animation */
+overflow: hidden; 
 position: relative;
 }
 
@@ -94,18 +84,18 @@ position: relative;
 position: absolute;
 bottom: 0;
 left: 0;
-height: 7px; /* Same height as the border */
+height: 7px; 
 background-color: rgb(4, 0, 128);
 width: 100%;
-transform-origin: right; /* Start shrinking from the right */
+transform-origin: right; 
 }
 
 @keyframes borderAnimation {
 from {
-  transform: scaleX(0); /* Full width initially */
+  transform: scaleX(0); 
 }
 to {
-  transform: scaleX(1); /* Shrink to zero width */
+  transform: scaleX(1); 
 }
 }
 
@@ -187,7 +177,7 @@ to {
   border: none;
 }
 
-/* Width more than 1100px. Arrows goes to side */
+
 @media (min-width: 1100px) {
   .arrow {
     bottom: 200px;
@@ -202,7 +192,7 @@ to {
   }
 }
 
-/* Width more than 1250px. Arrows remains at same place with respect to the testimonials */
+
 @media (min-width: 1250px) {
   .arrow {
     bottom: 200px;
@@ -232,7 +222,7 @@ to {
 }
 
 .arrow-top, .arrow-bottom {
-  background-color: #000;  /* Initial color of the arrow */
+  background-color: #000;  
   height: 4px;
   left: -5px;
   position: absolute;
@@ -240,7 +230,7 @@ to {
   width: 50px;
 }
 .arrow-top:after, .arrow-bottom:after {
-  background-color: #fe8464;  /* Color of the arrow at hover */
+  background-color: #fe8464;  
   content: "";
   height: 100%;
   position: absolute;
@@ -287,15 +277,15 @@ to {
 
 .arrow-left .arrow-top::after {
   transition: all 0.15s;
-  transition-delay: 0.15s; /* Default transition-delay */
+  transition-delay: 0.15s;
 }
 
 .arrow-left .arrow-bottom::after {
   transition: all 0.15s;
-  transition-delay: 0s; /* Default transition-delay */
+  transition-delay: 0s; 
 }
 
-/* Apply styles on hover of .arrow-left */
+
 .arrow-left:hover .arrow-top::after {
   transition-delay: 0s !important;
 }
@@ -324,7 +314,7 @@ to {
   color: #337ab7;
   text-decoration: none;
   border-radius: 50%;
-  border: 1px solid #ccc; /* Change the stroke color to light gray */
+  border: 1px solid #ccc;
   padding: 10px;
   display: inline-block;
   width: 40px;
@@ -335,13 +325,13 @@ to {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 0.3s; /* Add transition effect */
+  transition: transform 0.3s;
 }
 
 .social-icons a:hover {
   color: #fe8464;
-  border-color: #fe8464; /* Change the stroke color to blue on hover */
-  transform: scale(1.1); /* Add zooming effect on hover */
+  border-color: #fe8464; 
+  transform: scale(1.1);
 }
 
 .social-icons {
@@ -412,7 +402,7 @@ to {
   border-top: 1px solid #ccc;
 }
 
-/* Adjusted the margin from right side so that it looks uniform on all web pages. */
+
 .navbar-collapse{
   display: flex;
   margin-left: -5.6rem;
@@ -430,4 +420,234 @@ to {
   -moz-transition: background-color 0.3s ease-in-out;
   -ms-transition: background-color 0.3s ease-in-out;
   -o-transition: background-color 0.3s ease-in-out;
+
+  .toggle-button {
+    padding: 0.5em 1em;
+    cursor: pointer;
+    border: none;
+    background-color: #0c0a0a;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
+
+.toggle-button:hover {
+    background-color: #555;
+}
+
+.content {
+    padding: 2em;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+body.dark-mode {
+background-color: #222;
+color: #f1f1f1; /* Change text color to light for dark mode */
+}
+
+.toggle-button.dark {
+background-color: #f1f1f1; /* Button background in dark mode */
+color: #333; /* Button text color in dark mode */
+}
+
+.toggle-button.dark:hover {
+background-color: #ddd; /* Button hover color in dark mode */
+}
+.footer-widget {
+background: linear-gradient(to right, #2C3E50, #4CA1AF);
+color: white;
+padding: 50px 20px;
+}
+
+.footer-widget .footer-title h3, .footer-widget .footer-title h4 {
+color: #F39C12;
+font-size: 1.5rem;
+margin-bottom: 20px;
+}
+
+.footer-widget p.text {
+color: white;
+line-height: 1.6;
+font-size: 1rem;
+}
+
+.footer-widget a {
+color: #ECF0F1;
+text-decoration: none;
+transition: color 0.3s ease-in-out;
+}
+
+.footer-widget a:hover {
+color: #F39C12;
+}
+
+.footer-widget ul {
+list-style: none;
+padding: 0;
+} 
+
+.footer-widget ul li {
+margin-bottom: 10px;
+}
+
+/* .footer-widget ul li a {
+display: flex;
+align-items: center;
+}  */
+
+.footer-widget ul li a i {
+margin-right: 10px;
+font-size: 18px;
+}
+
+.footer-contact ul li i {
+color: #F39C12;
+}
+
+.footer-contact ul li a {
+color: white;
+text-decoration: none;
+}
+
+.footer-contact ul li a:hover {
+color: #F39C12;
+}
+
+.footer-widget .contact p {
+margin: 0;
+}
+
+/* Hover effects for icons */
+.footer-widget ul li a:hover i {
+color: #F39C12;
+} 
+
+/* Styling for copyright */
+.footer-copyright {
+background: #1C2833;
+padding: 20px;
+color: white;
+text-align: center;
+font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+.footer-widget .row {
+display: block;
+}
+
+.footer-widget .footer-about,
+.footer-widget .footer-link,
+.footer-widget .footer-contact {
+text-align: center;
+margin-bottom: 20px;
+}
+}
+.col-lg-4, .col-md-6, .col-sm-8 {
+margin-bottom: 30px; 
+padding: 10px;
+border-radius: 10px; 
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+color: white; 
+}
+
+.footer-about {
+text-align: left; 
+font-family: 'Roboto', sans-serif; 
+color: #333; 
+}
+
+.footer-about p.text {
+font-size: 16px;
+line-height: 1.6;
+margin: 0;
+padding: 10px 0;
+}
+
+.footer-about p.custom-margin {
+margin-top: 20px;
+}
+
+/* for social link styling */
+#social_icons{
+padding-top:10px;
+font-size: 18px;
+color: #fff;
+}
+#social_icons i{
+color: #fff;
+margin: 0 0.6vw;
+}
+.socialtitle{
+color: #F39C12;
+font-size: 1.5rem;
+margin-bottom: 20px;
+margin-top: 50px;
+}
+
+/* for facebook */
+#social_icons .fa-facebook {
+transition: color 0.3s ease, transform 0.3s ease;
+}
+#social_icons .fa-facebook:hover{
+color:#4267B2;
+transform:scale(1.1);
+}
+
+/* for twitter */
+#social_icons .fa-x-twitter {
+transition: color 0.3s ease, transform 0.3s ease;
+}
+#social_icons .fa-x-twitter:hover{
+color:black;
+transform:scale(1.1);
+}
+/* for instagram */
+#social_icons .fa-instagram {
+transition: color 0.3s ease, transform 0.3s ease;
+}
+#social_icons .fa-instagram:hover{
+color:#c32aa3;
+transform:scale(1.1);
+}
+
+/* for discord */
+#social_icons .fa-discord{
+transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#social_icons .fa-discord:hover{
+color:#4267B2;
+transform:scale(1.1);
+}
+
+@media (max-width: 768px) {
+.col-lg-4, .col-md-6, .col-sm-8 {
+padding: 10px;
+}
+}
+#progressBarContainer {
+  width: 100%;
+  height: 5px;
+  background-color: #ddd;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+#progressBar {
+  height: 100%;
+  width: 0%;
+  background-color: #007bff;
+  border-radius: 5px;
+  transition: width 0.4s ease;
+}
+
+} 
