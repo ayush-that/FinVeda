@@ -20,6 +20,8 @@
   <link rel="stylesheet" href="GSTstyle.css"/>
   <link rel="stylesheet" type="text/css" href="sipcalculatorCss.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+   <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
+  <link rel="stylesheet" href="navbar.css">
   <style>
     #progressBar {
       position: fixed;
@@ -98,6 +100,81 @@
     transform: scaleX(1); /* Shrink to zero width */
   }
 }
+.social-icons {
+    text-align: center;
+  }
+  
+  .social-icons ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .social-icons li {
+    margin: 0 10px;
+  }
+  
+  .social-icons a {
+    color: #337ab7;
+    text-decoration: none;
+    border-radius: 50%;
+    border: 1px solid #ccc; 
+    padding: 10px;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s; 
+  }
+  
+  .social-icons a:hover {
+    color: #fe8464;
+    border-color: #fe8464; 
+    transform: scale(1.1); 
+  }
+  
+  .or-sign-in-with {
+    margin: 20px 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
+    text-align: center;
+    position: relative;
+  }
+  
+  .or-sign-in-with::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0; 
+    width: 35%; 
+    border-top: 1px solid #ccc;
+    transform: translateX(-2%); 
+  }
+  
+  .or-sign-in-with::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0; 
+    width: 35%; 
+    border-top: 1px solid #ccc;
+    transform: translateX(2%);
+  }
+  .form-check {
+    display: flex;
+    align-items: center;
+  }
+  .form-check a {
+    margin-left: auto; 
+  }
 
 
   </style>
@@ -236,117 +313,192 @@
                     <a class="page-scroll" href="../quiz.html">Quiz 🤔</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="../contact.html">Quiz 🤔</a>
+                    <a class="page-scroll" href="./careers.html">Career 👔</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="../contact.html">Contact📞</a>
                   </li>
                   <li class="nav-item no-underline">
                     <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none; border: none;" data-scroll-nav="0" href="#" onclick="openModal()">Login/Register 💻</a>
                   </li>
                 </ul>
               </div>
-              <div class="navbar-btn d-none d-sm-inline-block">
-                <!-- Login Modal -->
+              <div class="">
            <!-- Login Modal -->
-<div id="myModal" class="modal">
-  <div class="modal-content">
-      <span class="close" style="display: flex; justify-content: right;">&times;</span>
-      <div class="mt-3">
-          <h3 class="join">Login to join us....</h3>
-          <form class="px-3 py-4" id="loginForm">
-              <div class="form-group">
-                  <label class="d-flex">Username</label>
-                  <div class="input-container">
-                      <i class="fa fa-user icon"></i>
-                      <input type="text" placeholder="Username" class="form-control" required />
+           <div id="myModal" class="modal">
+            <div class="modal-content">
+              <span class="close" style="display: flex; justify-content: right;">&times;</span>
+              <div class="mt-3">
+                <h3 class="join"><i class="fa-solid fa-right-to-bracket"></i>  Login to join us....</h3>
+                <form class="px-3 py-4" id="loginForm">
+                  <div class="form-group">
+                    <label class="d-flex">Username</label>
+                    <input type="text" placeholder="Username" class="form-control" required />
                   </div>
-              </div>
-              <div class="form-group">
-                  <label class="d-flex">Password</label>
-                  <div class="input-container">
-                      <i class="fa fa-lock icon"></i>
-                      <input type="password" placeholder="Password" class="form-control" required>
-                      <button type="button" class="toggle-password-btn"><i class="fa fa-eye"></i></button>
+                  <div class="form-group">
+                    <label class="d-flex">Password</label>
+                    <input type="password" placeholder="Password" class="form-control" required>
+                    <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
                   </div>
+                  <div class="form-check d-flex">
+                    <input type="checkbox" class="form-check-input">
+                    <label class="form-check-label">Remember me</label>
+                    <a href="#" id="forgot-password" style="margin-left: 120px;">Forget Password?</a>
+                  </div>
+                  <div style="height: 20px;"></div>
+                  <button class="main-btn w-100 mb-3" onclick="submitForm('loginForm')">Sign in</button>
+                  <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
+                  <div class="or-sign-in-with text-center">
+                    <p>Or sign in with</p>
+                  </div>
+                  <div class="social-icons mt-3">
+                    <ul class="list-inline">
+                      <li><a href="#" class="google" id="google-login"><i class="fa-brands fa-google"></i></a></li>
+                      <li><a href="#" class="facebook" id="facebook-login"><i class="fa-brands fa-facebook-f"></i></a></li>
+                      <li><a href="#" class="twitter" id="twitter-login"><i class="fa-brands fa-twitter"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-              <div class="form-check d-flex">
-                  <input type="checkbox" class="form-check-input">
-                  <label class="form-check-label">Remember me</label>
-              </div>
-          </form>
-          <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('loginForm')">Sign in</button>
-          <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
-      </div>
-  </div>
-</div>
+            </div>
+          
+          <script>
+            // Add event listeners to the social media icons
+            document.getElementById('google-login').addEventListener('click', function() {
+              window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
+            });
+          
+            document.getElementById('facebook-login').addEventListener('click', function() {
+              window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
+            });
+          
+            document.getElementById('twitter-login').addEventListener('click', function() {
+              window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
+            });
+          </script>
 
-<!-- Register Modal -->
-<div id="registerModal" class="modal">
-  <div class="modal-content">
-      <span class="close" style="display: flex; justify-content: right;">&times;</span>
-      <div class="mt-3">
-          <h3 class="join">Register to join us....</h3>
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+      <div class="modal-content">
+        <span class="close" style="display: flex; justify-content: right;">&times;</span>
+        <div class="mt-3">
+          <h3 class="join"><i class="fa-solid fa-user"></i>  Register to join us....</h3>
           <form class="px-3 py-4" id="registerForm">
-              <div class="form-group">
-                  <label class="d-flex">Email</label>
-                  <div class="input-container">
-                      <i class="fa fa-envelope icon"></i>
-                      <input type="email" placeholder="Email" class="form-control" required />
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label class="d-flex">Username</label>
-                  <div class="input-container">
-                      <i class="fa fa-user icon"></i>
-                      <input type="text" placeholder="Username" class="form-control" required />
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label class="d-flex">Password</label>
-                  <div class="input-container">
-                      <i class="fa fa-lock icon"></i>
-                      <input type="password" placeholder="Password" class="form-control" required>
-                      <button type="button" class="toggle-password-btn"><i class="fa fa-eye"></i></button>
-                  </div>
-              </div>
-          </form>
+            <div class="form-group">
+                <label class="d-flex">Email</label>
+                <input type="email" placeholder="Email" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label class="d-flex">Username</label>
+                <input type="text" placeholder="Username" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label class="d-flex">Password</label>
+                <input type="password" placeholder="Password" class="form-control" id="register-password" required oninput="checkPasswordStrength()">
+                <button type="button" class="toggle-password-btn" onclick="togglePasswordVisibility('register-password')">
+                    <i class="fa-solid fa-eye"></i>
+                    <i class="fa-solid fa-eye-slash" style="display: none;"></i>
+                </button>
+            </div>
+            <div id="password-meter" style="display: none; margin-top: 5px;">
+                <div id="meter" style="height: 10px; background-color: #ccc; border-radius: 5px; transition: width 0.3s;"></div>
+                <div id="strength-text" style="margin-top: 5px; font-weight: bold;"></div>
+            </div>
+            </form>
+            
+            <!-- Import zxcvbn library -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+            <script>
+                function checkPasswordStrength() {
+                    const password = document.getElementById('register-password').value;
+                    const meter = document.getElementById('meter');
+                    const meterContainer = document.getElementById('password-meter');
+                    const strengthText = document.getElementById('strength-text');
+            
+                    if (password) {
+                        meterContainer.style.display = 'block'; // Show the meter when typing
+                        const result = zxcvbn(password);
+                        const score = result.score; // Score ranges from 0 to 4
+            
+                        // Set meter width and color based on score
+                        meter.style.width = (score + 1) * 20 + '%'; // Convert score to percentage
+                        meter.style.backgroundColor = getMeterColor(score);
+                        strengthText.innerText = getStrengthText(score); // Update strength text
+                    } else {
+                        meterContainer.style.display = 'none'; // Hide the meter if no password
+                        strengthText.innerText = ''; // Clear strength text
+                    }
+                }
+            
+                function getMeterColor(score) {
+                    switch (score) {
+                        case 0: return 'red'; // Weak
+                        case 1: return 'orange'; // Fair
+                        case 2: return 'yellow'; // Good
+                        case 3: return 'blue'; // Strong
+                        case 4: return 'green'; // Very Strong
+                        default: return 'gray';
+                    }
+                }
+            
+                function getStrengthText(score) {
+                    switch (score) {
+                        case 0: return 'Very Weak';
+                        case 1: return 'Weak';
+                        case 2: return 'Fair';
+                        case 3: return 'Strong';
+                        case 4: return 'Very Strong';
+                        default: return '';
+                    }
+                }
+            
+                function togglePasswordVisibility(id) {
+                    const passwordInput = document.getElementById(id);
+                    const eyeIcon = passwordInput.nextElementSibling;
+                    if (passwordInput.type === 'password') {
+                        passwordInput.type = 'text';
+                        eyeIcon.children[0].style.display = 'none';
+                        eyeIcon.children[1].style.display = 'inline';
+                    } else {
+                        passwordInput.type = 'password';
+                        eyeIcon.children[0].style.display = 'inline';
+                        eyeIcon.children[1].style.display = 'none';
+                    }
+                }
+            </script>
+            
           <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('registerForm')">Register</button>
           <p class="text-center">Already have an account? <a href="#" id="loginLink">Login</a></p>
+          <div class="or-sign-in-with text-center">
+            <p>Or sign up with</p>
+          </div>
+          <div class="social-icons mt-3">
+            <ul class="list-inline">
+              <li><a href="#" class="google" id="google-signup"><i class="fa-brands fa-google"></i></a></li>
+              <li><a href="#" class="facebook" id="facebook-signup"><i class="fa-brands fa-facebook-f"></i></a></li>
+              <li><a href="#" class="twitter" id="twitter-signup"><i class="fa-brands fa-twitter"></i></a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-  </div>
-</div>
-<style>
-  .input-container {
-    position: relative;
-    width: 100%;
-}
-
-.icon {
-  position: absolute;
-    left: 10px;
-    top: 10%;
-    transform: translateY(-50%);
-    color: gray;
-    pointer-events: none;
-    font-size: 1.3em; /* Reduce icon size by 70% */
-}
-
-.form-control {
-    padding-left: 40px; /* Add padding to leave space for the icon */
-}
-
-.toggle-password-btn {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: gray;
-}
-
-</style>
-            </nav>
-
+    </div>
+    
+    <script>
+      // Add event listeners to the social media icons
+      document.getElementById('google-signup').addEventListener('click', function() {
+        window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
+      });
+    
+      document.getElementById('facebook-signup').addEventListener('click', function() {
+        window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
+      });
+    
+      document.getElementById('twitter-signup').addEventListener('click', function() {
+        window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
+      });
+    </script>
+        </div>
+      </nav>
             
             <nav class="mobile-menu ">
               <a class="page-scroll" href="../index.html">Home 🏡</a>
@@ -368,7 +520,9 @@
         </div>
       </div>
     </div>
-    <div id="home" class="header-hero bg_cover" style="background-image: url(../assets/images/banner-bg.svg)">
+
+    <!-- removing intro section -->
+    <!-- <div id="home" class="header-hero bg_cover" style="background-image: url(../assets/images/banner-bg.svg)">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8">
@@ -399,13 +553,14 @@
         </div>
       </div>
       <div id="particles-1" class="particles"></div>
-    </div>
+    </div> -->
   </header>
   <link rel="stylesheet" type="text/css" href="sipcalculatorCss.css">
   <script type="text/javascript" src="sipcalculatorJs.js"></script>
 
   <body class="body-background">
-    <div class="header mt-5">
+    <div class="header mt-5"><br><br>
+      <h2>Tools</h2><br>
       <h3>Mutual Fund Investment Calculator</h3>
       <p class="cal-content">
         The Mutual Fund Investment Calculator helps you estimate the potential returns of your investments, whether through Systematic Investment Plans (SIP) or LumpSum investments. 
@@ -1504,6 +1659,34 @@
                                   Delhi, India
                               </a>
                           </div>
+                      </li>
+                      <li id="social_icons" class="d-sm-flex justify-content-evenly my-3">
+                        <div style="width: 100%; display:flex; ">
+                          <!-- Instagram Icon -->
+                          <a href="https://instagram.com" target="_blank" style="margin: 0 10px; color: #E4405F;" aria-label="Instagram">
+                            <i style="font-size: 25px" class="fa-brands fa-instagram"></i>
+                          </a>
+                      
+                          <!-- Facebook Icon -->
+                          <a href="https://facebook.com" target="_blank" style="margin: 0 10px; color: #4267B2;" aria-label="Facebook">
+                            <i style="font-size: 25px" class="fa-brands fa-facebook"></i>
+                          </a>
+                      
+                          <!-- X/Twitter Icon -->
+                          <a href="https://twitter.com" target="_blank" style="margin: 0 10px; color: #1DA1F2;" aria-label="Twitter">
+                            <i style="font-size: 25px" class="fa-brands fa-x-twitter"></i>
+                          </a>
+                      
+                          <!-- Discord Icon -->
+                          <a href="https://discord.com" target="_blank" style="margin: 0 10px; color: #7289DA;" aria-label="Discord">
+                            <i style="font-size: 25px" class="fa-brands fa-discord"></i>
+                          </a>
+                      
+                          <!-- GitHub Icon -->
+                          <a href="https://github.com" target="_blank" style="margin: 0 10px; color: #333;" aria-label="GitHub">
+                            <i style="font-size: 25px" class="fa-brands fa-github"></i>
+                          </a>
+                        </div>
                       </li>
                   </ul>
               </div>

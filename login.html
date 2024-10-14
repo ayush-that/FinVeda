@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="./assets/css/login.css" />
     <link rel="stylesheet" href="./assets/css/register.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+     <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
+    <link rel="stylesheet" href="navbar.css">
 
   </head>
   <body>
@@ -57,11 +59,11 @@
                   </ul>
                 </div>
                 <div class="navbar-btn d-none d-sm-inline-block">
-                  <!-- Login Modal -->
+                  <!-- Login Modal --> 
                   <div id="myModal" class="modal">
                     <div class="modal-content">
                       <span class="close" style="display: flex; justify-content: right;">&times;</span>
-                      <div class="mt-3">
+                      <div class="mt-3"> 
                         <h3 class="join">Login to join us....</h3>
                         <form class="px-3 py-4" id="loginForm">
                           <table>
@@ -89,7 +91,7 @@
                             </tr>
                           </table>
                           <div class="error" id="login-error"></div>
-                          <button type="submit" class="main-btn mt-2 w-100 mb-2" style="padding: 0px;">Sign in</button>
+                          <button type="submit" class="main-btn mt-2 w-100 mb-2" style="padding: 0px;" id="login-btn">Sign in</button>
                           <button class="main-btn" id="googleSignInBtn" style="padding: 0px;">Sign in with Google</button>
 
                         </form>
@@ -115,7 +117,7 @@
                             </tr>
                             <tr>
                               <td><label class="d-flex">DOB</label></td>
-                              <td><input type="text" placeholder="Username" class="form-control" id="register-DOB" required /></td>
+                              <td><input type="date" placeholder="Username" class="form-control" id="register-DOB" required /></td>
                             </tr>
                             <tr>
                               <td><label class="d-flex">Password</label></td>
@@ -137,7 +139,7 @@
                             </tr>
                           </table>
                           <div class="error" id="register-error"></div>
-                          <button type="submit" class="main-btn mt-2 w-100 mb-3" style="padding: 0px;">Register</button>
+                          <button type="submit" class="main-btn mt-2 w-100 mb-3" style="padding: 0px;" id="register-btn" >Register</button>
 
                         </form>
                         <p class="text-center">Already have an account? <a href="#" id="loginLink">Login</a></p>
@@ -252,6 +254,34 @@
                                   </a>
                               </div>
                           </li>
+                          <li id="social_icons" class="d-sm-flex justify-content-evenly my-3">
+                            <div style="width: 100%; display:flex; ">
+                              <!-- Instagram Icon -->
+                              <a href="https://instagram.com" target="_blank" style="margin: 0 10px; color: #E4405F;" aria-label="Instagram">
+                                <i style="font-size: 25px" class="fa-brands fa-instagram"></i>
+                              </a>
+                          
+                              <!-- Facebook Icon -->
+                              <a href="https://facebook.com" target="_blank" style="margin: 0 10px; color: #4267B2;" aria-label="Facebook">
+                                <i style="font-size: 25px" class="fa-brands fa-facebook"></i>
+                              </a>
+                          
+                              <!-- X/Twitter Icon -->
+                              <a href="https://twitter.com" target="_blank" style="margin: 0 10px; color: #1DA1F2;" aria-label="Twitter">
+                                <i style="font-size: 25px" class="fa-brands fa-x-twitter"></i>
+                              </a>
+                          
+                              <!-- Discord Icon -->
+                              <a href="https://discord.com" target="_blank" style="margin: 0 10px; color: #7289DA;" aria-label="Discord">
+                                <i style="font-size: 25px" class="fa-brands fa-discord"></i>
+                              </a>
+                          
+                              <!-- GitHub Icon -->
+                              <a href="https://github.com" target="_blank" style="margin: 0 10px; color: #333;" aria-label="GitHub">
+                                <i style="font-size: 25px" class="fa-brands fa-github"></i>
+                              </a>
+                            </div>
+                          </li>
                       </ul>
                   </div>
               </div>
@@ -265,7 +295,84 @@
       <div id="particles-2"></div>
     </footer>
     <script>
-      document.getElementById("copyright-year").textContent = new Date().getFullYear();
+     document.getElementById("copyright-year").textContent = new Date().getFullYear();
+
+const inputFields = document.querySelectorAll("#registerForm input[required]");
+const checkbox = document.getElementById("register-terms");
+const useremail = document.getElementById("register-email");
+const registerPassword = document.getElementById("register-password");
+const error_div = document.getElementById("register-error");
+const loginEmail = document.getElementById("login-email");
+const loginPassword = document.getElementById("login-password");
+const registerDOB= document.getElementById("register-DOB");
+const date= new Date();
+const today= date.getDate();
+
+
+document.querySelector('#register-btn').addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent default form submission
+
+    let allFilled = true;
+    
+    inputFields.forEach(input => {
+        if (!input.value) {
+            allFilled = false;
+            error_div.innerHTML = `Please fill in the required field: ${input.placeholder}`;
+        }
+    });
+
+    if (!checkbox.checked) {
+        allFilled = false;
+        error_div.innerHTML = "Please check the terms and conditions.";
+    }
+
+    if (registerPassword.value.length < 8) { // Check for minimum length
+        allFilled = false;
+        error_div.innerHTML = "Password length should be at least 8 characters.";
+    } else {
+        const specialCharacterRegex = /[!@#$%^&*(),.?":{}|<>]/; 
+        const capitalLetterRegex = /[A-Z]/; // Check for at least one uppercase letter
+        const digitRegex = /[0-9]/; // Check for at least one number
+
+        if (!specialCharacterRegex.test(registerPassword.value) || 
+            !capitalLetterRegex.test(registerPassword.value) || 
+            !digitRegex.test(registerPassword.value)) {
+            allFilled = false;
+            error_div.innerHTML = "Password must include at least one special character, one capital letter, and one number.";
+        }
+    }
+
+    const dobValue = new Date(registerDOB.value);
+    const age = new Date().getFullYear() - dobValue.getFullYear();
+    const monthDiff = new Date().getMonth() - dobValue.getMonth();
+    const isValidDOB = monthDiff > 0 || (monthDiff === 0 && new Date().getDate() >= dobValue.getDate());
+
+    if (dobValue > new Date()) {
+        allFilled = false;
+        error_div.innerHTML = "Date of birth cannot be in the future.";
+    } else if (age < 13 || (age === 13 && !isValidDOB)) { // Assuming a minimum age of 13
+        allFilled = false;
+        error_div.innerHTML = "You must be at least 13 years old.";
+    }
+
+    if (allFilled) {
+        alert("Registration done!!");
+        const userData = {
+            email: useremail.value,
+            password: registerPassword.value
+        };
+        localStorage.setItem(useremail.value, JSON.stringify(userData));
+    }
+});
+
+
+
+
+
+
+
+     
+
     </script>
     <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
     <script src="./assets/js/subscribe.js"></script>
@@ -282,7 +389,10 @@
     <script src="assets/js/waypoints.min.js"></script>
     <script src="assets/js/jquery.counterup.min.js"></script>
     <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+  <script src="https://mediafiles.botpress.cloud/5e160793-5606-4412-ba4c-337e416f14fe/webchat/config.js" defer></script>
     <script src="assets/js/scrolling-nav.js"></script>
     <script src="assets/js/main.js"></script>
+    <script defer src="./assets/js/arthsathi-style.js"></script>
   </body>
 </html>

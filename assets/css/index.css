@@ -11,7 +11,22 @@
       transform: translateY(0);
     }
   }
-
+  #progressBarContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #f3f3f3;
+    z-index: 100;
+}
+/* Progress bar itself */
+#progressBar {
+    height: 8px;
+    width: 0%;
+    background: linear-gradient(to right,#ff6ec7, #facf32, #ff6600);;
+}
+/* 
   #progressBar {
     position: fixed;
     top: 0;
@@ -21,7 +36,7 @@
     background-color: #f76b45;
     z-index: 9999;
 
-  }
+  } */
 
   * {
     cursor: url(./assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg), auto;
@@ -329,29 +344,90 @@ to {
   transform: scale(1.1); /* Add zooming effect on hover */
 }
 
+.social-icons {
+  text-align: center;
+}
+
+.social-icons ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.social-icons li {
+  margin: 0 10px;
+}
+
+.social-icons a {
+  color: #337ab7;
+  text-decoration: none;
+  border-radius: 50%;
+  border: 1px solid #ccc; 
+  padding: 10px;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s; 
+}
+
+.social-icons a:hover {
+  color: #fe8464;
+  border-color: #fe8464; 
+  transform: scale(1.1); 
+}
+
 .or-sign-in-with {
   margin: 20px 0;
   font-size: 14px;
   font-weight: bold;
   color: #666;
   text-align: center;
-  position: relative; /* add relative positioning */
+  position: relative;
 }
 
 .or-sign-in-with::before {
   content: "";
   position: absolute;
   top: 50%;
-  left: 12px;
-  width: 34%;
+  left: 0; 
+  width: 35%; 
   border-top: 1px solid #ccc;
+  transform: translateX(-2%); 
 }
 
 .or-sign-in-with::after {
   content: "";
   position: absolute;
   top: 50%;
-  right: 12px;
-  width: 34%;
+  right: 0; 
+  width: 35%; 
   border-top: 1px solid #ccc;
+}
+
+/* Adjusted the margin from right side so that it looks uniform on all web pages. */
+.navbar-collapse{
+  display: flex;
+  margin-left: -5.6rem;
+  justify-content: center;
+  background-color: #3a90dc;
+  border-radius: 10px;
+  padding: 15px 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-bottom: 2px solid #edf2f4;
+  width: 101vw;
+  position: relative;
+  left: 0;
+  transition: background-color 0.3s ease-in-out;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  -moz-transition: background-color 0.3s ease-in-out;
+  -ms-transition: background-color 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out;
 }
