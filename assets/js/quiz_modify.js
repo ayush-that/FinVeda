@@ -579,12 +579,15 @@ function selectAnswer(e){
 function submitAnswer(){
     if(isCorrect){
         selectedBtn.classList.add("correct");
-        score+=5;
+        score+=1;
         spanCorrect.style.display='block';
+        spanCorrect.innerHTML = `Yay Correct Answer! <br> Score: ${score}/10`;
         }
     else{            
         selectedBtn.classList.add("incorrect");
         spanIncorrect.style.display='block';
+        spanIncorrect.innerHTML = `Oops.. Wrong Answer <br> Score: ${score}/10`;
+
     }
     Array.from(answerButton.children).forEach(but=>{
         if(but.dataset.correct==='true'){
@@ -611,28 +614,28 @@ function showScore(){
     playagainButton.style.display='block';
     
     resetState();
-    if(score>=0 && score<18){
-        questionElement.innerHTML= ` You scored ${score} out of ${10*5} !`;
+    if(score < 2){
+        questionElement.innerHTML= ` You scored ${score} out of ${10} !`;
         quizimg1.style.display="block";
     }
-     else if(score>=18 && score<30){
-        questionElement.innerHTML=` You scored ${score} out of ${10*5} !`;
+     else if(score < 4){
+        questionElement.innerHTML=` You scored ${score} out of ${10} !`;
         quizimg2.style.display="block";
     }
-     else if(score>=30 && score<37){
-        questionElement.innerHTML=` You scored ${score} out of ${10*5} !`;
+     else if(score < 6){
+        questionElement.innerHTML=` You scored ${score} out of ${10} !`;
         quizimg3.style.display="block";
     }
-    else if(score>=38 && score<45){
-        questionElement.innerHTML=` You scored ${score} out of ${10*5} !`;
+    else if(score < 8){
+        questionElement.innerHTML=` You scored ${score} out of ${10} !`;
         quizimg4.style.display="block";
     }
-     else if(score>=45 && score<=50){
-        questionElement.innerHTML=` You scored ${score} out of ${10*5} !`;
+     else if(score <=10 ){
+        questionElement.innerHTML=` You scored ${score} out of ${10} !`;
         quizimg5.style.display="block";
     }
     else{
-        questionElement.innerHTML= `You scored ${score} out of ${10*5}!`;
+        questionElement.innerHTML= `You scored ${score} out of ${10}!`;
     }
     // nextButton./style.display="block";
     quizimg.style.display="block";
