@@ -71,6 +71,9 @@
     <div class="circle"></div>
     <div class="circle"></div>
   </div> -->
+  <div id="progressBarContainer">
+    <div id="progressBar"></div>
+</div>
 
   <header class="header-area">
         <div class="row">
@@ -1810,6 +1813,12 @@ if (body.classList.contains('dark-mode')) {
     $('.testimonial-active').slick('slickNext'); // Go to the next slide
   });
 });
+window.onscroll = function() {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("progressBar").style.width = scrolled + "%";
+        };
 </script>
 </body>
 </html>
