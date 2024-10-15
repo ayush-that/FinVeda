@@ -3,52 +3,64 @@
 html{
   overflow-x: hidden;
 }
-
+ 
 body {
-  font-family: "Poppins", sans-serif;
-  font-weight: normal;
-  font-style: normal;
-  color: #6a6972;
-  overflow-x: hidden;
-}
 
+  font-family:  "Poppins", sans-serif;
+  font-weight:  normal;
+  font-style:  normal;
+  color:  #6a6972;
+  overflow-x:  hidden;
+
+}
+ 
 .btn-text{
-  margin-left: 35px;
-  color: white;
-}
 
+  margin-left:  35px;
+  color:  white;
+
+}
+ 
 /* show and hide button css */
 
 .form-control {
-  width: 100%;
+
+  width:  100%;
   padding: 8px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  margin-top:  5px;
+  border: 1px  solid #ccc;
+  border-radius:  4px;
+
 }
+ 
 
 .toggle-password-btn {
-  background: none;
-  border: none;
-  color: #007bff;
-  cursor: pointer;
-  padding: 5px;
-  font-size: 14px;
-  position: absolute;
-  margin-top: -32px;
-  margin-left: -50px;
-  margin-right: 40px;
-  right: 0;
+
+  background:  none;
+  border:  none;
+  color:  #ff4141;
+  cursor:  pointer;
+  padding:  5px;
+  font-size:  14px;
+  position:  absolute;
+  margin-top:  -33px;
+  margin-left:  -50px;
+  margin-right:  42px;
+  right:  3px;
+
 }
 
+ 
 * {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
 
+  margin:  0;
+  padding:  0;
+  -webkit-box-sizing:  border-box;
+  -moz-box-sizing:  border-box;
+  box-sizing:  border-box;
+
+}
+ 
 img {
   max-width: 100%;
 }
@@ -666,6 +678,25 @@ p {
   transition: all 0.3s ease-out 0s;
 }
 
+/* Adjusted the margin from right side so that it looks uniform on all web pages. */
+.navbar-collapse{
+  display: flex;
+  margin-right: -5.6rem;
+  justify-content: center;
+  background-color: #3a90dc;
+  border-radius: 10px;
+  padding: 15px 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-bottom: 2px solid #edf2f4;
+  width: 100vw;
+  position: relative;
+  left: 0;
+  transition: background-color 0.3s ease-in-out;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  -moz-transition: background-color 0.3s ease-in-out;
+  -ms-transition: background-color 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out;
+}
 .navbar-nav {
   list-style-type: none;
   margin: 0 1rem;
@@ -704,7 +735,8 @@ p {
 }
 
 .nav-item a:hover::after {
-  width: 100%;
+  width: 96%;
+  margin: 0 2.5%;
 }
 
 .navbar-nav .nav-item a {
@@ -715,9 +747,6 @@ p {
   text-decoration: none !important;
 }
 
-#active-page::after {
-  width: 100%;
-}
 
 .sticky {
   position: fixed;
@@ -738,9 +767,12 @@ p {
 }
 
 .navbar {
-  padding: 25px 0;
+  padding: 0 0;
   border-radius: 5px;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
   -webkit-transition: all 0.3s ease-out 0s;
   -moz-transition: all 0.3s ease-out 0s;
   -ms-transition: all 0.3s ease-out 0s;
@@ -1810,14 +1842,16 @@ p {
   -moz-box-shadow: 0px 0px 30px 0px rgba(167, 167, 167, 0.16);
   box-shadow: 0px 0px 30px 0px rgba(167, 167, 167, 0.16);
   overflow: hidden;
-  border-radius: 10px;
-  padding: 25px 30px 5px;
-  border-radius: 10px;
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
+  flex: 1 ;
   border: 1px solid transparent;
   margin: 30px 0;
+  display: inline-block;
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 300px; /* Ensure each testimonial has a fixed width */
+    border-radius: 8px;
+    vertical-align: top;
   -webkit-transition: all 0.3s ease-out 0s;
   -moz-transition: all 0.3s ease-out 0s;
   -ms-transition: all 0.3s ease-out 0s;
@@ -1829,7 +1863,10 @@ p {
   border: 2px solid transparent;
   overflow: hidden;
   border-radius: 10px;
-  cursor: pointer;
+  cursor:grabbing;
+    
+  
+  
 }
 .single-testimonial:hover {
   transform: translateY(-15px);
@@ -1861,6 +1898,8 @@ p {
 
 .single-testimonial .testimonial-text {
   margin-top: 25px;
+  overflow: auto;
+  height: 200px;
 }
 
 .single-testimonial .testimonial-author {
@@ -1937,6 +1976,7 @@ p {
   box-shadow: 0 4px 8px rgb(51, 55, 55);
   padding: 20px;
   border-radius: 10px;
+  background: linear-gradient(135deg,#4a90e2,#e05a4f);
 }
 .blog-content {
   text-align: left;
@@ -1959,8 +1999,10 @@ p {
 .single-blog:hover {
   transform: translateY(-20px);
   cursor: pointer;
-  border: 1px solid orange;
-  box-shadow: 0 4px 8px rgb(233, 156, 31);
+  background: linear-gradient(135deg,rgba(0,191,255,0.9),rgba(255,105,180,0.9));
+}
+.blog-content .reviewtext{
+  color: black;
 }
 
 .reviewtext {
@@ -1990,8 +2032,9 @@ p {
 }
 .single-blog .blog-content .more {
   font-size: 16px;
-  color: #d32f2f;
-  margin-top: 10px;
+  color: black;
+  font-weight: 600;
+  margin-top: 20px;
   transition: 0.8s ease;
 }
 .single-blog .blog-content .more:hover::after {
@@ -1999,7 +2042,7 @@ p {
   transform-origin: left;
 }
 .single-blog .blog-content .more:hover{
-  background: orange;
+  background: rgba(0,0,0,0.6);
   color: white;
   padding: 10px;
   border-radius: 5px;
@@ -2153,6 +2196,7 @@ p {
   background: linear-gradient(to right, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
   background-size: 200%;
   transition: all 0.4s ease;
+  padding-top: 3px;
 }
 
 .subscribe-form button:hover{
@@ -2704,19 +2748,21 @@ p {
 }
 
 .form-heading{
-  color: white;
+  color: black;
   text-align: center;
   font-size: 32px;
+  margin-left: 15px;
 }
 
 .form-para{
-color: white;
+color: black;
 text-align: center;
 font-size: 16px;
+margin-bottom: 30px;
 }
 
 .form-heading2{
-  color:#007bff;
+  color:white;
 text-align: center;
 }
 
@@ -2727,11 +2773,17 @@ text-align: center;
 
 .form-section {
   padding: 40px;
-  width: 60%;
+  padding-top: 10px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   animation: fadeIn 1s ease-in-out;
+}
+
+.form-section form {
+  width: 60%;
+  align-self: center;
 }
 
 .form-section h1 {
@@ -2748,7 +2800,7 @@ text-align: center;
 
 .form-label {
   display: block;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 5px;
   color: #555;
 }
@@ -2757,7 +2809,7 @@ text-align: center;
   width: 100%;
   padding: 12px;
   border-radius: 8px;
-  border: 1px solid #ddd;
+  border: 1px solid #aaaaaa;
   box-sizing: border-box;
   font-size: 16px;
   background-color: #f9f9f9;
@@ -2771,7 +2823,7 @@ text-align: center;
 }
 
 .form-button {
-  width: 100%;
+  width: 60%;
   padding: 15px 20px;
   border: none;
   border-radius: 8px;
@@ -2779,13 +2831,16 @@ text-align: center;
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  background-color: #007bff;
+  transition: all 0.4s ease;
+  background-color: rgba(0,0,0,0.4);
+  margin-left: 77px;
+
 }
 
 .form-button:hover {
-  background-color: #3522db;
+  background-color: rgba(0,0,0,0.7);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: scale(0.95);
 }
 
 .form-button:active {
@@ -2826,7 +2881,7 @@ text-align: center;
 .emoji-description {
   margin-top: 10px;
   font-size: 14px;
-  color: #00118e;
+  color: white;
 }
 
 @media (max-width: 768px) {

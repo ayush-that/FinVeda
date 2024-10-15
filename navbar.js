@@ -6,7 +6,7 @@ finalPoint;
 
 document.addEventListener("touchstart", function(event) {
 	initialPoint = event.changedTouches[0];
-});
+});z
 
 document.addEventListener("touchend", function(event) {
 	finalPoint = event.changedTouches[0];
