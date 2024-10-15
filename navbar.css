@@ -6,32 +6,46 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
+}z
 /* Navbar Styling */
-.navbar-collapse {
+/* Adjusted the margin from left side so that it looks uniform on all web pages. */
+.navbar-collapse{
     display: flex;
-    justify-content: space-between;
+    margin-left: -13rem;
+    justify-content: center;
     background-color: #3a90dc;
     border-radius: 10px;
-    padding: 15px 10px;
+    padding: 15px 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-bottom: 2px solid #edf2f4;
-    width: 100vw;
-    margin: 0 auto;
+    width: 101vw;
     position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-
+    left: 0;
     transition: background-color 0.3s ease-in-out;
     -webkit-transition: background-color 0.3s ease-in-out;
     -moz-transition: background-color 0.3s ease-in-out;
     -ms-transition: background-color 0.3s ease-in-out;
     -o-transition: background-color 0.3s ease-in-out;
 }
+/* .navbar-collapse {
+    display: flex;
+    justify-content: center;
+    background-color: #3a90dc;
+    border-radius: 10px;
+    padding: 15px 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid #edf2f4;
+    width: 100vw;
+    position: relative;
+    left: 0;
 
-.navbar-collapse:hover {
-    background-color: #1a1c29; 
-}
+    transition: background-color 0.3s ease-in-out;
+    -webkit-transition: background-color 0.3s ease-in-out;
+    -moz-transition: background-color 0.3s ease-in-out;
+    -ms-transition: background-color 0.3s ease-in-out;
+    -o-transition: background-color 0.3s ease-in-out;
+} */
+
 .navbar-nav {
     display: flex;
     justify-content: space-between;
@@ -46,21 +60,31 @@
 }
 
 .navbar-nav .nav-item a {
-    color: #0077b8; 
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
     padding: 10px 15px;
-    transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+    transition: all 0.3s ease;
     white-space: nowrap;
 }
 
-.navbar-nav .nav-item a:hover {
-    color: #f60e0e; 
-    background-color: rgba(255, 255, 255, 0.1); 
-    border-radius: 5px; 
+/* On hover the text color was also set to the background color earlier hence I have changed to red color since all other tabs navbar text was already to red color, I have set to !important because the inline CSS has more priority compared to external CSS whether it applied on hover or without hover so the #333 should not overwrite when hovered hence I have set it to !important. */
+
+.navbar-nav .nav-item a:hover { 
+    background-color: rgba(255,255,255,0.1); 
+    border-radius: 5px;
+    transform: scale(0.95);
 }
 
+.nav-item .navbar-btn{
+    background: linear-gradient(135deg,#00bfff,#ff1493);
+    transition:all 0.4s ease;
+}
+
+.nav-item .navbar-btn:hover{
+    transform: scale(0.95);
+    background: linear-gradient(135deg,#ff1493,#00bfff);
+}
 .overlay {
     width: 100%;
     height: 100%;

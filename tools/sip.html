@@ -20,6 +20,8 @@
   <link rel="stylesheet" href="GSTstyle.css"/>
   <link rel="stylesheet" type="text/css" href="sipcalculatorCss.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+   <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
+  <link rel="stylesheet" href="navbar.css">
   <style>
     #progressBar {
       position: fixed;
@@ -641,62 +643,309 @@
     
     
     <!-- EMI Calculator -->
-    <script src="emiCalculator.js"></script>
-    <script src="emiCalculator.js" defer></script>
-    
-    <div class="header" style="padding-top: 100px;">
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #f8f9fa;
+          margin: 0;
+          padding: 0;
+      }
+      .header {
+          padding-top: 100px;
+          text-align: center;
+          background-color: #007bff;
+          color: white;
+          padding: 20px;
+      }
+      .header h3 {
+          margin: 0;
+      }
+      .cal-content {
+          margin: 20px 0;
+      }
+      .know-more {
+          margin-top: 20px;
+      }
+      .know-more-btn {
+          background-color: white;
+          border: none;
+          padding: 10px 20px;
+          color: #007bff;
+          cursor: pointer;
+          font-weight: bold;
+          border-radius: 5px;
+          transition: background-color 0.3s;
+      }
+      .know-more-btn:hover {
+          background-color: #e0e0e0;
+      }
+      .know-more-content {
+          display: none;
+          background: white;
+          padding: 15px;
+          border-radius: 5px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .input-container {
+          padding: 20px;
+          background: white;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          margin: 20px 0;
+      }
+      .form-control {
+          width: 100%;
+          padding: 10px;
+          margin-top: 5px;
+          border: 1px solid #ced4da;
+          border-radius: 4px;
+      }
+      .btn-calculate {
+          display: flex;
+          justify-content: space-between;
+          margin: 20px 0;
+      }
+      .btn {
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-weight: bold;
+          transition: background-color 0.3s;
+      }
+      .btn-calculate {
+           
+          color: white;
+      }
+      .btn-secondary {
+          background-color: #6c757d;
+          color: white;
+      }
+      .btn:hover {
+          opacity: 0.9;
+      }
+      .result {
+          margin-top: 20px;
+          font-size: medium;
+          padding: 15px;
+          background: #e9ecef;
+          border-radius: 5px;
+      }
+      .result-container {
+          display: flex;
+          flex-direction: column;
+          margin-left: 20px;
+      }
+  </style>
+  <script src="emiCalculator.js"></script>
+</head>
+<body>
+  <div class="header">
       <h3>EMI Calculator</h3>
       <p class="cal-content">
-        The EMI (Equated Monthly Installment) Calculator assists in calculating the monthly installment amount for a loan based on the loan amount, interest rate, and loan tenure.
-        It provides insights into the total payment and total interest paid over the loan period, helping you plan your finances better.
+          The EMI (Equated Monthly Installment) Calculator assists in calculating the monthly installment amount for a loan based on the loan amount, interest rate, and loan tenure.
+          It provides insights into the total payment and total interest paid over the loan period, helping you plan your finances better.
       </p>
       <div class="know-more">
-        <button class="know-more-btn">Know More</button>
-        <div class="know-more-content">
-          <h6 style="text-align: left; margin: 2% 16%; padding-left: 5px;">Here's how it works:</h6>
-          <ol type="1" style="font-size: 1rem; text-align: left; margin-left: 17%; margin-bottom: 2rem;">
-            <li><b>Loan Amount</b>: Enter the principal amount of the loan.</li>
-            <li><b>Interest Rate</b>: Specify the annual interest rate.</li>
-            <li><b>Loan Tenure (years)</b>: Enter the loan period in years.</li>
-            <li><b>Calculate EMI</b>: Provides the monthly EMI, total payment, and total interest.</li>
-          </ol>
-        </div>
+          <button class="know-more-btn" onclick="document.querySelector('.know-more-content').style.display = 'block'">Know More</button>
+          <div class="know-more-content">
+              <h6 style="text-align: left; margin: 0;">Here's how it works:</h6>
+              <ol type="1" style="font-size: 1rem; text-align: left; margin: 10px 0;">
+                  <li><b>Loan Amount</b>: Enter the principal amount of the loan.</li>
+                  <li><b>Interest Rate</b>: Specify the annual interest rate.</li>
+                  <li><b>Loan Tenure (months)</b>: Enter the loan period in months.</li>
+                  <li><b>Calculate EMI</b>: Provides the monthly EMI, total payment, and total interest.</li>
+              </ol>
+          </div>
       </div>
-    </div>
-    <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5">
+  </div>
+  <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5">
       <div class="input-container">
-        <div>
-          <div><b>Loan Amount (INR)</b></div>
-          <div><input class="form-control" id="loanAmount" type="number" style="margin: 1% 5% 0 0" /></div>
-          <br />
-          <div><b>Interest Rate (%)</b></div>
-          <div><input class="form-control" id="interestRate" type="number" /></div>
-          <br />
-          <div><b>Loan Tenure (Months)</b></div>
-          <div><input class="form-control" id="loanTenure" type="number" /></div>
-        </div>
+          <div>
+              <div><b>Loan Amount (INR)</b></div>
+              <div><input class="form-control" id="loanAmount" type="number" placeholder="Enter loan amount" /></div>
+              <br />
+              <div><b>Interest Rate (%)</b></div>
+              <div><input class="form-control" id="interestRate" type="number" placeholder="Enter interest rate" /></div>
+              <br />
+              <div><b>Loan Tenure (Months)</b></div>
+              <div><input class="form-control" id="loanTenure" type="number" placeholder="Enter tenure in months" /></div>
+          </div>
       </div>
-      <br />
       <div class="btn-calculate">
-        <button class="btn btn-calculate" type="button" onclick="calculateEMI()">Calculate</button>
-        <button type="button" onclick="clearAll()" class="btn btn-secondary"><p class="btn-text">Clear</p></button>
+          <button class="btn" type="button" onclick="calculateEMI()">Calculate</button>
+          <button type="button" onclick="clearAll()" class="btn btn-secondary">Clear</button>
       </div>
-      <br />
-      <div class="result" style="display: flex; justify-content: flex-start; font-size: medium;"><b>Result :</b></div>
-      <div style="display: flex;">
-        <div class="result-container">
-          <div>Monthly EMI</div>
-          <div><span id="monthlyEMI"></span></div>
-          <br />
-          <div>Total Payment</div>
-          <div><span id="totalPayment"></span></div>
-          <br />
-          <div>Total Interest Paid</div>
-          <div><span id="totalInterestPaid"></span></div>
-        </div>
+      <div class="result">
+          <div><b>Result :</b></div>
+          <div class="result-container">
+              <div>Monthly EMI: <span id="monthlyEMI"></span></div>
+              <div>Total Payment: <span id="totalPayment"></span></div>
+              <div>Total Interest Paid: <span id="totalInterestPaid"></span></div>
+          </div>
       </div>
-    </div>
-    
+  </div>
+  <script src="emiCalculator.js" defer></script>
+</body>
+</html>
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EMI Calculator</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #f0f4f8;
+          margin: 0;
+          padding: 0;
+      }
+      .header {
+          padding-top: 50px;
+          text-align: center;
+          background-color: #81d4fa;
+          color: #0d47a1;
+          padding: 20px;
+          border-bottom: 2px solid #0288d1;
+      }
+      .header h3 {
+          margin: 0;
+      }
+      .cal-content {
+          margin: 20px 0;
+          font-size: 1.1rem;
+      }
+      .know-more {
+          margin-top: 20px;
+      }
+      .know-more-btn {
+          background-color: #ffffff;
+          border: none;
+          padding: 10px 20px;
+          color: #0d47a1;
+          cursor: pointer;
+          font-weight: bold;
+          border-radius: 5px;
+          transition: background-color 0.3s;
+      }
+      .know-more-btn:hover {
+          background-color: #e0f7fa;
+      }
+      .know-more-content {
+          display: none;
+          background: #ffffff;
+          padding: 15px;
+          border-radius: 5px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          margin-top: 10px;
+      }
+      .input-container {
+          padding: 20px;
+          background: #ffffff;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          margin: 20px 0;
+      }
+      .form-control {
+          width: 100%;
+          padding: 10px;
+          margin-top: 5px;
+          border: 1px solid #b0bec5;
+          border-radius: 4px;
+          font-size: 1rem;
+      }
+      .btn-calculate {
+          display: flex;
+          justify-content: space-between;
+          margin: 20px 0;
+      }
+      .btn {
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-weight: bold;
+          transition: background-color 0.3s;
+          flex: 1; /* Equal spacing */
+          margin: 0 5px; /* Space between buttons */
+      }
+      .btn-primary {
+          background-color: #0288d1;
+          color: white;
+      }
+      .btn-primary:hover {
+          background-color: #0277bd;
+      }
+      .btn-secondary {
+          background-color: #cfd8dc;
+          color: black;
+      }
+      .btn-secondary:hover {
+          background-color: #b0bec5;
+      }
+      .result {
+          margin-top: 20px;
+          font-size: medium;
+          padding: 15px;
+          background: #e3f2fd;
+          border-radius: 5px;
+      }
+      .result-container {
+          display: flex;
+          flex-direction: column;
+          margin-left: 20px;
+      }
+  </style>
+  <script src="emiCalculator.js"></script>
+</head>
+<body>
+  <div class="header">
+      <h3>EMI Calculator</h3>
+      <p class="cal-content">
+          The EMI (Equated Monthly Installment) Calculator assists in calculating the monthly installment amount for a loan based on the loan amount, interest rate, and loan tenure.
+          It provides insights into the total payment and total interest paid over the loan period, helping you plan your finances better.
+      </p>
+      <div class="know-more">
+          <button class="know-more-btn" onclick="document.querySelector('.know-more-content').style.display = 'block'">Know More</button>
+          <div class="know-more-content">
+              <h6 style="text-align: left; margin: 0;">Here's how it works:</h6>
+              <ol type="1" style="font-size: 1rem; text-align: left; margin: 10px 0;">
+                  <li><b>Loan Amount</b>: Enter the principal amount of the loan.</li>
+                  <li><b>Interest Rate</b>: Specify the annual interest rate.</li>
+                  <li><b>Loan Tenure (months)</b>: Enter the loan period in months.</li>
+                  <li><b>Calculate EMI</b>: Provides the monthly EMI, total payment, and total interest.</li>
+              </ol>
+          </div>
+      </div>
+  </div>
+  <div class="page-container">
+      <div class="input-container">
+          <div>
+              <div><b>Loan Amount (INR)</b></div>
+              <div><input class="form-control" id="loanAmount" type="number" placeholder="Enter loan amount" /></div>
+              <br />
+              <div><b>Interest Rate (%)</b></div>
+              <div><input class="form-control" id="interestRate" type="number" placeholder="Enter interest rate" /></div>
+              <br />
+              <div><b>Loan Tenure (Months)</b></div>
+              <div><input class="form-control" id="loanTenure" type="number" placeholder="Enter tenure in months" /></div>
+          </div>
+      </div>
+      <div class="btn-calculate">
+          <button class="btn btn-primary" type="button" onclick="calculateEMI()">Calculate</button>
+          <button type="button" onclick="clearAll()" class="btn btn-secondary">Clear</button>
+      </div>
+      <div class="result">
+          <div><b>Result :</b></div>
+          <div class="result-container">
+              <div>Monthly EMI: <span id="monthlyEMI"></span></div>
+              <div>Total Payment: <span id="totalPayment"></span></div>
+              <div>Total Interest Paid: <span id="totalInterestPaid"></span></div>
+          </div>
+      </div>
+  </div>
     <!-- End EMI Calculator -->
   
     <!-- Savings Goal Calculator -->
