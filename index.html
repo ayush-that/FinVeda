@@ -39,6 +39,15 @@
   </script>
   
 <body>
+  <div id="progressBar"></div>
+  <script>
+    window.onscroll = function () {
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      document.getElementById("progressBar").style.width = scrolled + "%";
+    };
+  </script>
   <!-- <div class="circle-container">
     <div class="circle"></div>
     <div class="circle"></div>
@@ -72,7 +81,6 @@
     <div class="circle"></div>
     <div class="circle"></div>
   </div> -->
-
   <header class="header-area">
         <div class="row">
           <div style="display: flex; justify-content: center;" class="">
