@@ -3,23 +3,23 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Quiz - FinVeda</title>
+  <title>Contact - FinVeda</title>
   <meta name="description" content="Explore engaging quizzes on finance and economics at Fin Veda. Test your knowledge and learn with interactive quizzes covering various topics." />
   <meta name="author" content="Ayush Singh">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="shortcut icon" href="./assets/images/favicon2.png" type="image/png" />
-  <link rel="stylesheet" href="assets/css/animate.css" />
-  <link rel="stylesheet" href="assets/css/magnific-popup.css" />
-  <link rel="stylesheet" href="assets/css/slick.css" />
-  <link rel="stylesheet" href="assets/css/LineIcons.css" />
-  <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/default.css" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="stylesheet" href="assets/css/quiz.css" />
-  <link rel="stylesheet" href="assets/css/popup.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="shortcut icon"  href="./assets/images/favicon2.png" type="image/png" />
+  <link rel="stylesheet"  href="assets/css/animate.css" />
+  <link rel="stylesheet"  href="assets/css/magnific-popup.css" />
+  <link rel="stylesheet"  href="assets/css/slick.css" />
+  <link rel="stylesheet"  href="assets/css/LineIcons.css" />
+  <link rel="stylesheet"  href="assets/css/font-awesome.min.css" />
+  <link rel="stylesheet"  href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet"  href="assets/css/default.css" />
+  <link rel="stylesheet"  href="assets/css/style.css" />
+  <link rel="stylesheet"  href="assets/css/quiz.css" />
+  <link rel="stylesheet"  href="assets/css/popup.css" />
+  <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     
     body {
@@ -152,7 +152,7 @@
   }
 }
 
-social-icons {
+.social-icons {
   text-align: center;
 }
 
@@ -371,7 +371,7 @@ social-icons {
                     <a class="page-scroll" href="./careers.html">Career 👔</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="./contact.html">Contact📞</a>
+                    <a class="page-scroll active-link" href="./contact.html">Contact📞</a>
                   </li>
                   <li class="nav-item no-underline">
                     <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none;" data-scroll-nav="0" href="#" onclick="openModal()">Login/Register 💻</a>
@@ -551,6 +551,34 @@ social-icons {
             document.getElementById('twitter-signup').addEventListener('click', function() {
               window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
             });
+                            // Add event listener to the "Register" button in the login modal
+    document.getElementById('registerLink').addEventListener('click', function() {
+      // Close the login modal
+      document.getElementById('myModal').style.display = 'none';
+      
+      // Open the registration modal
+      document.getElementById('registerModal').style.display = 'block';
+    });
+        // Add event listener to the "Login" button in the registration modal
+        document.getElementById('loginLink').addEventListener('click', function() {
+      // Close the registration modal
+      document.getElementById('registerModal').style.display = 'none';
+      
+      // Open the login modal
+      document.getElementById('myModal').style.display = 'block';
+    });
+    // Function to close the modal window
+var loginCloseButton = document.querySelector("#myModal .close");
+loginCloseButton.addEventListener("click", function() {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "none";
+});
+
+var registerCloseButton = document.querySelector("#registerModal .close");
+registerCloseButton.addEventListener("click", function() {
+  var modal = document.getElementById("registerModal");
+  modal.style.display = "none";
+});
           </script>
               </div>
             </nav>
@@ -659,6 +687,12 @@ social-icons {
         width: 100%;
         max-width: 600px;
         height: 650px;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .contact-frame:hover {
+        background-color: rgba(240, 240, 240, 0.7);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transform: scale(1.02);
     }
     .info-frame {
         border: 2px solid #0056b3;
@@ -666,7 +700,7 @@ social-icons {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         width: 350px;
         height: 315px;
-        text-align: left;
+        text-align: center;
         color: #0056b3;
         margin-top: 50px;
     }
@@ -680,7 +714,12 @@ social-icons {
         display: flex;
         flex-direction: column;
         align-items: center;
+ main6
         gap: 3.5rem;
+
+        gap: 1.5rem;
+        margin-left: 1rem; 
+ main
     }
     h2 {
         color: #0056b3;
@@ -690,56 +729,127 @@ social-icons {
     .info-frame a {
         color: #0056b3;
         text-decoration: none;
+        margin-top: 20px;
     }
     .info-frame a:hover {
         text-decoration: underline;
     }
     .contact-info-map-container {
+ main6
         display: flex;
         gap: 6rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem; 
+    padding-bottom: 10%;
+    padding-top: 2%;
+}
+    input:hover, 
+    textarea:hover {
+        border-color: #f48727;
+        box-shadow: 0 0 5px rgba(240, 135, 39, 0.5);
+        transform: scale(1.02);
+        transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
     }
-    </style>
+    button:hover {
+        background-color: #ff8c00;
+        transform: scale(1.05);
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    #info-frame {
+        transition: background-color 0.3s ease, transform 0.3s ease;
+ main
+    }
+    #info-frame:hover {
+        background-color: rgba(240, 240, 240, 0.7);
+        transform: scale(1.02);
+    }
+    #info-frame a {
+        color: #0056b3;
+        transition: color 0.3s ease;
+    }
+    #info-frame a:hover {
+        color: #f48727;
+    }
+    #map-frame {
+        transition: transform 0.3s ease;
+    }
+    #map-frame:hover {
+        transform: scale(1.02);
+    }
+</style>
 <h2 style="color: #0056b3;">Get in Touch</h2>
 <div class="contact-info-map-container">
-<div class="container">
-        <div class="contact-frame">
-            <h2 style="text-align: left; font-size: 24px; color: #0056b3;">Contact Us</h2>
-            <form action="#" method="POST" style="display: flex; flex-direction: column;">
-                <label for="name" style="color: #0056b3; margin-bottom: 0.5rem;">Name:</label>
-                <input type="text" id="name" name="name" required style="padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #0056b3; border-radius: 4px;">
-                
-                <label for="email" style="color: #0056b3; margin-bottom: 0.5rem;">Email:</label>
-                <input type="email" id="email" name="email" required style="padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #0056b3; border-radius: 4px;">
-                
-                <label for="subject" style="color: #0056b3; margin-bottom: 0.5rem;">Subject:</label>
-                <input type="text" id="subject" name="subject" required style="padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #0056b3; border-radius: 4px;">
-                
-                <label for="message" style="color: #0056b3; margin-bottom: 0.5rem;">Message:</label>
-                <textarea id="message" name="message" required style="padding: 0.5rem; margin-bottom: 2rem; border: 1px solid #0056b3; border-radius: 4px; min-height: 100px; resize: vertical;"></textarea>
-                
-                <button type="submit" style="background-color: #0056b3; color: white; padding: 0.75rem;border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; transition: background-color 0.3s ease;">Send Message</button>
-            </form>
+    <div class="contact-frame">
+        <h2 style="text-align: left; font-size: 24px; color: #0056b3;">Contact Us</h2>
+        <form action="#" method="POST" style="display: flex; flex-direction: column;">
+            <label for="name" style="color: #0056b3; margin-bottom: 0.5rem;">Name:</label >
+            <input type="text" placeholder="Enter your name" id="name" name="name" required style="padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #0056b3; border-radius: 4px;">
+            
+            <label for="email" style="color: #0056b3; margin-bottom: 0.5rem;">Email:</label>
+            <input type="email" placeholder="Enter your email" id="email" name="email" required style="padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #0056b3; border-radius: 4px;">
+            
+            <label for="subject" style="color: #0056b3; margin-bottom: 0.5rem;">Subject:</label>
+            <input type="text" placeholder="Enter subject" id="subject" name="subject" required style="padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #0056b3; border-radius: 4px;">
+            
+            <label for="message" style="color: #0056b3; margin-bottom: 0.5rem;">Message:</label>
+            <textarea id="message" placeholder="Enter message" name="message" required style="padding: 0.5rem; margin-bottom: 2rem; border: 1px solid #0056b3; border-radius: 4px; min-height: 100px; resize: vertical;"></textarea>
+            
+            <button type="submit" style="background-color: #f48727; color: white; padding: 0.75rem;border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; transition: background-color 0.3s ease;">Send Message</button>
+        </form>
+    </div>
+    <div class="info-map-container">
+        <div id="info-frame" class="info-frame">
+            <p><strong>Email:</strong> <a href="mailto:ayush1337@hotmail.com">ayush1337@hotmail.com</a></p>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ayush-that/" target="_blank" rel="noopener noreferrer">Ayush That</a></p>
+            <p><strong>YouTube:</strong> <a href="https://www.youtube.com/@ayush-that/" target="_blank" rel="noopener noreferrer">Ayush That Channel</a></p>
+            <p><strong>Website:</strong> <a href="https://ayush.top/" target="_blank" rel="noopener noreferrer">https://ayush.top/</a></p>
+            
+            <div style="margin-top: 1rem;">
+                <a href="mailto:ayush1337@hotmail.com" title="Email" style="color: #0056b3; font-size: 1.5rem; margin-right: 1rem;"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/ayush-that/" target="_blank" rel="noopener noreferrer" title="LinkedIn" style="color: #0056b3; font-size: 1.5rem; margin-right: 1rem;"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.youtube.com/@ayush-that/" target="_blank" rel="noopener noreferrer" title="YouTube" style="color: #0056b3; font-size: 1.5rem; margin-right: 1rem;"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://ayush.top/" target="_blank" rel="noopener noreferrer" title="Website" style="color: #0056b3; font-size: 1.5rem;"><i class="fa-solid fa-globe"></i></a>
+            </div>
         </div>
-        <div class="info-map-container">
-            <div class="info-frame">
-                <p><strong>Email:</strong> <a href="mailto:ayush1337@hotmail.com">ayush1337@hotmail.com</a></p>
-                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ayush-that/" target="_blank" rel="noopener noreferrer">Ayush That</a ></p>
-                <p><strong>YouTube:</strong> <a href=" https://www.youtube.com/@ayush-that/" target="_blank" rel="noopener noreferrer">Ayush That Channel</a></p>
-                <p><strong>Website:</strong> <a href="https://ayush.top/" target="_blank" rel="noopener noreferrer">https://ayush.top/</a></p>
-                
-                <div style="margin-top: 1rem;">
-                    <a href="mailto:ayush1337@hotmail.com" title="Email" style="color: #0056b3; font-size: 1.5rem; margin-right: 1rem;"><i class="fa-solid fa-envelope"></i></a>
-                    <a href="https://www.linkedin.com/in/ayush-that/" target="_blank" rel="noopener noreferrer" title="LinkedIn" style="color: #0056b3; font-size: 1.5rem; margin-right: 1rem;"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://www.youtube.com/@ayush-that/" target="_blank" rel="noopener noreferrer" title="YouTube" style="color: #0056b3; font-size: 1.5rem; margin-right: 1rem;"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="https://ayush.top/" target="_blank" rel="noopener noreferrer" title="Website" style="color: #0056b3; font-size: 1.5rem;"><i class="fa-solid fa-globe"></i></a>
-                </div>
-            </div>
-            <div class="map-frame">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d448196.5263247024!2d76.76357512440586!3d28.643684628180505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x37205b715389640!2sDelhi!5e0!3m2!1sen!2sin!4v1728752958279!5m2!1sen!2sin" width="350" height="315" style="border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+        <div id="map-frame" class="map-frame">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d448196.5263247024!2d76.76357512440586!3d28.643684628180505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x37205b715389640!2sDelhi!5e0!3m2!1sen!2sin!4v1728752958279!5m2! 1sen!2sin" width="350" height="315" style="border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
 </div>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form from actually submitting
+        
+        // Get values from input fields
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+        
+        // Create an object with form data
+        const formData = {
+            name: name,
+            email: email,
+            subject: subject,
+            message: message
+        };
+        
+        // Save the form data in local storage in JSON format
+        localStorage.setItem('formData', JSON.stringify(formData));
+        
+        // Clear input fields after submitting
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('subject').value = '';
+        document.getElementById('message').value = '';
+        
+        alert('User  saved! We will get in touch with you soon');
+    });
+</script>
   <style>
      
         h2 {
@@ -1045,6 +1155,7 @@ social-icons {
     .blog-content {
       max-width: 100%;
     }}
+
   </style>
 </body>
 
@@ -1072,9 +1183,32 @@ social-icons {
         <div class="col-lg-6">
           <div class="subscribe-form mt-50">
             <form id="unique-subscribe-form">
-              <input type="email" id="unique-news-email" placeholder="Enter Email" required/>
-              <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
-            </form>
+              <input type="email" id="unique-news-email" placeholder="Enter Email" required style="padding: 0.5rem; margin-right: 0.5rem; border: 1px solid #0056b3; border-radius: 4px;">
+              <button class="unique-main-btn" id="unique-subscribe-btn" type="submit" style="background-color: #0056b3; color: white; padding: 0.5rem 1rem; border: none; border-radius: 4px; cursor: pointer;">Subscribe</button>
+          </form>
+          
+          <script>
+              document.getElementById('unique-subscribe-form').addEventListener('submit', function(event) {
+                  event.preventDefault(); // Prevent form from actually submitting
+          
+                  // Get the email value from the input field
+                  const email = document.getElementById('unique-news-email').value;
+          
+                  // Create an object to store email data
+                  const subscribeData = {
+                      email: email
+                  };
+          
+                  // Save the email data to local storage in JSON format
+                  localStorage.setItem('subscribeData', JSON.stringify(subscribeData));
+          
+                  // Clear the email input field after submitting
+                  document.getElementById('unique-news-email').value = '';
+          
+                  alert('Email subscribed!');
+              });
+          </script>
+          
             <div id="unique-message" class="unique-popup-message" style="display: none;">
               <div class="border-animation"></div>
               Thank You for the subscription!
