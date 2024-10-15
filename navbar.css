@@ -46,9 +46,6 @@
     -o-transition: background-color 0.3s ease-in-out;
 } */
 
-.navbar-collapse:hover {
-    background-color: #b6bee7; 
-}
 .navbar-nav {
     display: flex;
     justify-content: space-between;
@@ -67,18 +64,27 @@
     text-transform: uppercase;
     text-decoration: none;
     padding: 10px 15px;
-    transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+    transition: all 0.3s ease;
     white-space: nowrap;
 }
 
 /* On hover the text color was also set to the background color earlier hence I have changed to red color since all other tabs navbar text was already to red color, I have set to !important because the inline CSS has more priority compared to external CSS whether it applied on hover or without hover so the #333 should not overwrite when hovered hence I have set it to !important. */
 
 .navbar-nav .nav-item a:hover { 
-    background-color: rgba(209, 212, 208, 0.454); 
+    background-color: rgba(255,255,255,0.1); 
     border-radius: 5px;
-    color: #f60e0e !important; 
+    transform: scale(0.95);
 }
 
+.nav-item .navbar-btn{
+    background: linear-gradient(135deg,#00bfff,#ff1493);
+    transition:all 0.4s ease;
+}
+
+.nav-item .navbar-btn:hover{
+    transform: scale(0.95);
+    background: linear-gradient(135deg,#ff1493,#00bfff);
+}
 .overlay {
     width: 100%;
     height: 100%;
