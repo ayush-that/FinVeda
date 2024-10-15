@@ -1,15 +1,16 @@
-
-
 *,
 *::before,
 *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}z
+}
+
+z
+
 /* Navbar Styling */
 /* Adjusted the margin from left side so that it looks uniform on all web pages. */
-.navbar-collapse{
+.navbar-collapse {
     display: flex;
     margin-left: -13rem;
     justify-content: center;
@@ -27,6 +28,7 @@
     -ms-transition: background-color 0.3s ease-in-out;
     -o-transition: background-color 0.3s ease-in-out;
 }
+
 /* .navbar-collapse {
     display: flex;
     justify-content: center;
@@ -45,7 +47,15 @@
     -ms-transition: background-color 0.3s ease-in-out;
     -o-transition: background-color 0.3s ease-in-out;
 } */
-
+.active-link {
+            background-color: rgba(255, 99, 71, 0.2);
+            /* Soft coral with slight transparency */
+            border-radius: 5px;
+            color: #ffffff;
+            /* White text for contrast */
+            transform: scale(0.95);
+    border-bottom: 2px solid #edf2f4;
+}
 .navbar-nav {
     display: flex;
     justify-content: space-between;
@@ -70,21 +80,22 @@
 
 /* On hover the text color was also set to the background color earlier hence I have changed to red color since all other tabs navbar text was already to red color, I have set to !important because the inline CSS has more priority compared to external CSS whether it applied on hover or without hover so the #333 should not overwrite when hovered hence I have set it to !important. */
 
-.navbar-nav .nav-item a:hover { 
-    background-color: rgba(255,255,255,0.1); 
+.navbar-nav .nav-item a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
     transform: scale(0.95);
 }
+
 
 .nav-item .navbar-btn{
     background: linear-gradient(135deg,#00bfff,#150e4e);
     transition:all 0.4s ease;
 }
-
-.nav-item .navbar-btn:hover{
+.nav-item .navbar-btn:hover {
     transform: scale(0.95);
     background: linear-gradient(135deg,#150e4e,#00bfff);
 }
+
 .overlay {
     width: 100%;
     height: 100%;
@@ -97,13 +108,14 @@
     visibility: hidden;
     transition: all 0.3s;
 }
+
 .mobile-menu {
     top: 0;
     left: 0;
     width: 70vw;
     height: 100vh;
     position: fixed;
-    z-index: 2;
+    z-index: 99;
     background-color: black;
     display: flex;
     flex-flow: column nowrap;
@@ -117,7 +129,7 @@
 @media ((min-width: 991px)) {
     .mobile-menu {
         display: none !important;
-    }   
+    }
 
 }
 
@@ -136,27 +148,28 @@
 }
 
 .mobile-menu a:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 25%;
-  width: 0;
-  height: 2px;
-  background-color:black;
-  transition: width 0.3s;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    transition: width 0.3s;
 }
 
 .mobile-menu a:hover:after {
     width: 75%;
 }
+
 .mobile-menu li a:hover:after {
     width: 0;
 }
 
 .mobile-menu .active-link {
-    background: 
-    linear-gradient(black) bottom/ 100% 2px no-repeat, 
-    transparent;
+    background:
+        linear-gradient(black) bottom/ 100% 2px no-repeat,
+        transparent;
 }
 
 .mobile-menu__trigger {
@@ -174,6 +187,7 @@
     justify-content: center;
     align-items: center;
 }
+
 .mobile-menu__trigger span {
     display: block;
     width: 50%;
@@ -181,6 +195,7 @@
     background: #fff;
     position: relative;
 }
+
 .mobile-menu__trigger span::before,
 .mobile-menu__trigger span::after {
     content: "";
@@ -191,39 +206,48 @@
     background: #fff;
     transition: all 0.3s;
 }
+
 .mobile-menu__trigger span::before {
     top: -7px;
 }
+
 .mobile-menu__trigger span::after {
     top: 7px;
 }
+
 .mobile-menu__trigger:hover span::before {
     width: 50%;
     top: -3px;
     right: 0;
     transform: rotate(30deg);
 }
+
 .mobile-menu__trigger:hover span::after {
     width: 50%;
     top: 3px;
     right: 0;
     transform: rotate(-30deg);
 }
+
 .mobile-menu_open {
     transform: translateX(0%);
     box-shadow: 0 0 2rem #000;
 }
+
 .mobile-menu_open+.overlay {
     visibility: visible;
     opacity: 1;
 }
+
 .mobile-menu_open .mobile-menu__trigger span::before,
 .mobile-menu_open .mobile-menu__trigger span::after {
     left: 0;
 }
+
 .mobile-menu_open .mobile-menu__trigger:hover span::before {
     transform: rotate(-30deg);
 }
+
 .mobile-menu_open .mobile-menu__trigger:hover span::after {
     transform: rotate(30deg);
 

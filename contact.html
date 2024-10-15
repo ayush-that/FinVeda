@@ -3,23 +3,23 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Quiz - FinVeda</title>
+  <title>Contact - FinVeda</title>
   <meta name="description" content="Explore engaging quizzes on finance and economics at Fin Veda. Test your knowledge and learn with interactive quizzes covering various topics." />
   <meta name="author" content="Ayush Singh">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="shortcut icon" href="./assets/images/favicon2.png" type="image/png" />
-  <link rel="stylesheet" href="assets/css/animate.css" />
-  <link rel="stylesheet" href="assets/css/magnific-popup.css" />
-  <link rel="stylesheet" href="assets/css/slick.css" />
-  <link rel="stylesheet" href="assets/css/LineIcons.css" />
-  <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/default.css" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="stylesheet" href="assets/css/quiz.css" />
-  <link rel="stylesheet" href="assets/css/popup.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="shortcut icon"  href="./assets/images/favicon2.png" type="image/png" />
+  <link rel="stylesheet"  href="assets/css/animate.css" />
+  <link rel="stylesheet"  href="assets/css/magnific-popup.css" />
+  <link rel="stylesheet"  href="assets/css/slick.css" />
+  <link rel="stylesheet"  href="assets/css/LineIcons.css" />
+  <link rel="stylesheet"  href="assets/css/font-awesome.min.css" />
+  <link rel="stylesheet"  href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet"  href="assets/css/default.css" />
+  <link rel="stylesheet"  href="assets/css/style.css" />
+  <link rel="stylesheet"  href="assets/css/quiz.css" />
+  <link rel="stylesheet"  href="assets/css/popup.css" />
+  <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     
     body {
@@ -152,7 +152,7 @@
   }
 }
 
-social-icons {
+.social-icons {
   text-align: center;
 }
 
@@ -371,7 +371,7 @@ social-icons {
                     <a class="page-scroll" href="./careers.html">Career 👔</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="./contact.html">Contact📞</a>
+                    <a class="page-scroll active-link" href="./contact.html">Contact📞</a>
                   </li>
                   <li class="nav-item no-underline">
                     <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none;" data-scroll-nav="0" href="#" onclick="openModal()">Login/Register 💻</a>
@@ -551,6 +551,34 @@ social-icons {
             document.getElementById('twitter-signup').addEventListener('click', function() {
               window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
             });
+                            // Add event listener to the "Register" button in the login modal
+    document.getElementById('registerLink').addEventListener('click', function() {
+      // Close the login modal
+      document.getElementById('myModal').style.display = 'none';
+      
+      // Open the registration modal
+      document.getElementById('registerModal').style.display = 'block';
+    });
+        // Add event listener to the "Login" button in the registration modal
+        document.getElementById('loginLink').addEventListener('click', function() {
+      // Close the registration modal
+      document.getElementById('registerModal').style.display = 'none';
+      
+      // Open the login modal
+      document.getElementById('myModal').style.display = 'block';
+    });
+    // Function to close the modal window
+var loginCloseButton = document.querySelector("#myModal .close");
+loginCloseButton.addEventListener("click", function() {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "none";
+});
+
+var registerCloseButton = document.querySelector("#registerModal .close");
+registerCloseButton.addEventListener("click", function() {
+  var modal = document.getElementById("registerModal");
+  modal.style.display = "none";
+});
           </script>
               </div>
             </nav>
@@ -798,7 +826,7 @@ social-icons {
                 <button type="submit" style="background-color: #f48727; color: white; padding: 0.75rem;border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; transition: background-color 0.3s ease;">Send Message</button>
             </form>
 
-          
+ 
           <script>
               document.getElementById('contactForm').addEventListener('submit', function(event) {
                   event.preventDefault(); // Prevent form from actually submitting
