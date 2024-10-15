@@ -70,6 +70,7 @@
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
+    <div class="circle"></div>
   </div> -->
 
   <header class="header-area">
@@ -85,10 +86,10 @@
               <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto;">
                 <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
                   <li class="nav-item">
-                    <a class="page-scroll" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
+                    <a class="page-scroll active-link" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="./about.html" id="active-page" style="color: rgb(237, 242, 244);">About Us 📖</a>
+                    <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
                   </li>    
                   <li class="nav-item">
                     <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
@@ -431,7 +432,7 @@ if (body.classList.contains('dark-mode')) {
     <script type="text/javascript" src="./navbar.js"></script>
 
     </div>
-    <div id="home" class="header-hero bg_cover" style="background-image: url(assets/images/banner-bg.svg)">
+    <div id="home" class="header-hero bg_cover" style="background-image: url(assets/images/banner-bg.svg);">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8">
@@ -721,7 +722,7 @@ if (body.classList.contains('dark-mode')) {
               <p class="text">
               <ul>
                 <li>Vivian Tu is a former Wall Street trader-turned-expert, entrepreneur, and the founder and CEO of the
-                  financial equity phenomenon, “Your Rich BFF.”
+                  financial equity phenomenon, "Your Rich BFF."
                 </li>
                 <br>
                 <li>In this episode Vivian explains how she found financial success and you can too!
@@ -1195,7 +1196,7 @@ if (body.classList.contains('dark-mode')) {
                   </div>
                   <div class="blog-content">
                     <p class="reviewtext">
-                      Mutual Funds 101: A Beginner’s Guide to Smart Investing
+                      Mutual Funds 101: A Beginner's Guide to Smart Investing
                     </p>
                     <a class="more" href="./blogs/Mutual-Funds-101-A-Beginners-Guide-to-Smart-Investing.html">
                       Learn More <i class="lni-chevron-right"></i>
@@ -1285,9 +1286,9 @@ if (body.classList.contains('dark-mode')) {
       </div>
       <div class="emojis">
         <input class="form-input" type="radio" id="emoji1" name="rating" value="1">
-        <label class="form-label" for="emoji1">&#128577;</label> <!-- Very Bad -->
+        <label class="form-label" for="emoji1">&#128542;</label> <!-- Very Bad -->
         <input class="form-input" type="radio" id="emoji2" name="rating" value="2">
-        <label class="form-label" for="emoji2">&#128542;</label> <!-- Bad -->
+        <label class="form-label" for="emoji2">&#128577;</label> <!-- Bad -->
         <input class="form-input" type="radio" id="emoji3" name="rating" value="3">
         <label class="form-label" for="emoji3">&#128528;</label> <!-- Neutral -->
         <input class="form-input" type="radio" id="emoji4" name="rating" value="4">
@@ -1458,6 +1459,9 @@ if (body.classList.contains('dark-mode')) {
                               </a>
                           </div>
                       </li>
+                      <li class="d-sm-flex justify-content-center">
+                        <div class="gtranslate_wrapper"></div>
+                      </li>
                   </ul>
               </div>
           </div>
@@ -1525,7 +1529,11 @@ if (body.classList.contains('dark-mode')) {
   <script defer src="./assets/js/arthsathi-style.js"></script>
 
   <script>
+    window.gtranslateSettings = {"default_language":"en", "detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}
+  </script>
+  <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
+  <script>
    document.addEventListener('DOMContentLoaded', function () {
     const cookieConsent = document.getElementById('cookieConsent');
     const acceptCookiesButton = document.getElementById('acceptCookies');
