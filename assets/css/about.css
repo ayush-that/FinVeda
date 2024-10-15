@@ -327,3 +327,144 @@
   .form-check a {
     margin-left: auto; 
   }
+
+
+  .contributors {
+    width: 90%;
+    margin: 0 auto;
+    background: var(--seashell);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    max-width: 1200px;
+  }
+
+  .contributor-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .contributor-member {
+    color: var(--sonic-silver);
+    text-align: center;
+    background-color: var(--seashell);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgb(240, 239, 239);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 250px;
+    margin: 10px;
+    flex: 1 1 calc(33.333% - 40px);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contributor-member:hover {
+    scale: 1.1;
+    box-shadow: 0 6px 12px rgb(226, 206, 24);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .contributor-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 10px auto;
+  }
+
+  .contributors h2 {
+    color: var(--sonic-silver);
+  }
+
+  .contributor-member h3 {
+    font-size: 1rem;
+    margin: 10px 0 5px;
+  }
+
+  .contributor-member p {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .contributor-member button {
+    background-color: transparent;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px 20px;
+    font-size: 0.8rem;
+    color: var(--sonic-silver);
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 1.1rem;
+
+  }
+
+
+  .contributor-member button:hover {
+    /* color: var(--old-rose); */
+    background: orange;
+    color: rgb(255, 255, 255)
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .pagination button {
+    color: var(--old-rose);
+    margin: 0 5px;
+    padding: 10px 15px;
+    border: 1px solid transparent;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  body.dark-mode .pagination button {
+    background-color: #e333;
+    color: #fff;
+    border: 1px solid #444;
+  }
+
+  body.dark-mode .pagination button:hover {
+    background-color: #0056b3;
+    color: #fff;
+  }
+
+  .pagination button.active {
+    background-color: transparent;
+    text-decoration: underline;
+    font-size: x-large;
+  }
+
+  /* General styles for the about-us-block divs */
+  .about-us-block>div {
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(179, 179, 179, 0.555);
+  }
+
+  .about-us-block>div:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgb(248, 153, 12);
+  }
+
+  .about-us-block>div:hover img {
+    filter: brightness(1.2);
+  }
+
+  .about-us-block>div:hover .about-us-blk-text {
+    color: #d26d6d;
+  }
+
+  .about-us-block>div:hover .about-us-blk-para {
+    color: var(--sonic-silver);
+  }
