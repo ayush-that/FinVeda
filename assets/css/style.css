@@ -769,9 +769,12 @@ p {
 }
 
 .navbar {
-  padding: 25px 0;
+  padding: 0 0;
   border-radius: 5px;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
   -webkit-transition: all 0.3s ease-out 0s;
   -moz-transition: all 0.3s ease-out 0s;
   -ms-transition: all 0.3s ease-out 0s;
@@ -1841,14 +1844,16 @@ p {
   -moz-box-shadow: 0px 0px 30px 0px rgba(167, 167, 167, 0.16);
   box-shadow: 0px 0px 30px 0px rgba(167, 167, 167, 0.16);
   overflow: hidden;
-  border-radius: 10px;
-  padding: 25px 30px 5px;
-  border-radius: 10px;
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
+  flex: 1 ;
   border: 1px solid transparent;
   margin: 30px 0;
+  display: inline-block;
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 300px; /* Ensure each testimonial has a fixed width */
+    border-radius: 8px;
+    vertical-align: top;
   -webkit-transition: all 0.3s ease-out 0s;
   -moz-transition: all 0.3s ease-out 0s;
   -ms-transition: all 0.3s ease-out 0s;
@@ -1860,7 +1865,10 @@ p {
   border: 2px solid transparent;
   overflow: hidden;
   border-radius: 10px;
-  cursor: pointer;
+  cursor:grabbing;
+    
+  
+  
 }
 .single-testimonial:hover {
   transform: translateY(-15px);
@@ -1892,6 +1900,8 @@ p {
 
 .single-testimonial .testimonial-text {
   margin-top: 25px;
+  overflow: auto;
+  height: 200px;
 }
 
 .single-testimonial .testimonial-author {
@@ -2184,6 +2194,7 @@ p {
   background: linear-gradient(to right, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
   background-size: 200%;
   transition: all 0.4s ease;
+  padding-top: 3px;
 }
 
 .subscribe-form button:hover{
@@ -2735,19 +2746,21 @@ p {
 }
 
 .form-heading{
-  color: white;
+  color: black;
   text-align: center;
   font-size: 32px;
+  margin-left: 15px;
 }
 
 .form-para{
-color: white;
+color: black;
 text-align: center;
 font-size: 16px;
+margin-bottom: 30px;
 }
 
 .form-heading2{
-  color:#007bff;
+  color:white;
 text-align: center;
 }
 
@@ -2758,11 +2771,11 @@ text-align: center;
 
 .form-section {
   padding: 40px;
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  width: 30%;
+  margin: auto;
   animation: fadeIn 1s ease-in-out;
+  background: linear-gradient(135deg,#4A90E2,#E05A4F);
+  border-radius: 20px;
 }
 
 .form-section h1 {
@@ -2780,8 +2793,8 @@ text-align: center;
 .form-label {
   display: block;
   font-weight: 500;
-  margin-bottom: 5px;
-  color: #555;
+  margin-top: 20px;
+  color: white;
 }
 
 .form-input, .form-select, .form-textarea {
@@ -2802,7 +2815,7 @@ text-align: center;
 }
 
 .form-button {
-  width: 100%;
+  width: 60%;
   padding: 15px 20px;
   border: none;
   border-radius: 8px;
@@ -2810,13 +2823,15 @@ text-align: center;
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  background-color: #007bff;
+  transition: all 0.4s ease;
+  background-color: rgba(0,0,0,0.4);
+  margin-left: 90px;
 }
 
 .form-button:hover {
-  background-color: #3522db;
+  background-color: rgba(0,0,0,0.7);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: scale(0.95);
 }
 
 .form-button:active {
@@ -2857,7 +2872,7 @@ text-align: center;
 .emoji-description {
   margin-top: 10px;
   font-size: 14px;
-  color: #00118e;
+  color: white;
 }
 
 @media (max-width: 768px) {
