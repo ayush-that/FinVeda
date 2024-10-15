@@ -391,6 +391,15 @@
     </div>
 
   </div>
+  <section class="contributors">
+    <h2>Our Contributors</h2>
+    <div class="contributor-cards" id="contributor-cards">
+      <!-- Contributor cards will be inserted here -->
+    </div>
+    <div class="pagination" id="pagination">
+      <!-- Pagination buttons will be inserted here -->
+    </div>
+  </section>
 
   <!-- Timed popup that will appear after succesful submission of feebback form! -->
   <button class="notification" id="successnotification" style="display:none;">
@@ -526,3 +535,92 @@
           </div>
         </div>
 
+
+        <script>
+          // Function for the contributors section
+          const owner = 'ayush-that';
+          const repo = 'FinVeda';
+          const contributorsPerPage = 8;
+          let contributors = [];
+          let currentPage = 1;
+    
+          async function fetchContributors() {
+            const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/contributors`);
+            if (!response.ok) {
+              console.error('Failed to fetch contributors:', response.statusText);
+              return;
+            }
+            contributors = await response.json();
+            displayContributors();
+            createPaginationButtons();
+          }
+    
+          function displayContributors() {
+            const container = document.getElementById('contributor-cards');
+            container.innerHTML = '';
+            const start = (currentPage - 1) * contributorsPerPage;
+            const end = start + contributorsPerPage;
+            const currentContributors = contributors.slice(start, end);
+    
+            currentContributors.forEach(contributor => {
+              const card = document.createElement('div');
+              card.className = 'contributor-member';
+              card.setAttribute('data-tilt', '');
+    
+              const img = document.createElement('img');
+              img.src = contributor.avatar_url;
+              img.alt = contributor.login;
+    
+              const name = document.createElement('h3');
+              name.textContent = contributor.login;
+    
+              const contributions = document.createElement('p');
+              contributions.textContent = `${contributor.contributions} contributions`;
+    
+              const viewProfileButton = document.createElement("button");
+              viewProfileButton.textContent = "View Profile";
+              viewProfileButton.addEventListener("click", () => {
+                window.open(contributor.html_url, "_blank");
+              });
+    
+              card.appendChild(img);
+              card.appendChild(name);
+              card.appendChild(contributions);
+              container.appendChild(card);
+              card.appendChild(viewProfileButton);
+            });
+          }
+    
+          function createPaginationButtons() {
+            const paginationContainer = document.getElementById('pagination');
+            paginationContainer.innerHTML = '';
+            const totalPages = Math.ceil(contributors.length / contributorsPerPage);
+    
+            for (let i = 1; i <= totalPages; i++) {
+              const button = document.createElement('button');
+              button.textContent = i;
+              button.classList.add('pagination-button');
+              if (i === currentPage) {
+                button.classList.add('active');
+              }
+              button.addEventListener('click', () => {
+                currentPage = i;
+                displayContributors();
+                updatePaginationButtons();
+              });
+              paginationContainer.appendChild(button);
+            }
+          }
+    
+          function updatePaginationButtons() {
+            const buttons = document.querySelectorAll('.pagination-button');
+            buttons.forEach(button => {
+              button.classList.remove('active');
+              if (parseInt(button.textContent) === currentPage) {
+                button.classList.add('active');
+              }
+            });
+          }
+    
+          fetchContributors();
+        </script>
