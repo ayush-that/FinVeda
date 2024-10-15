@@ -152,7 +152,7 @@
   }
 }
 
-social-icons {
+.social-icons {
   text-align: center;
 }
 
@@ -551,6 +551,34 @@ social-icons {
             document.getElementById('twitter-signup').addEventListener('click', function() {
               window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
             });
+                            // Add event listener to the "Register" button in the login modal
+    document.getElementById('registerLink').addEventListener('click', function() {
+      // Close the login modal
+      document.getElementById('myModal').style.display = 'none';
+      
+      // Open the registration modal
+      document.getElementById('registerModal').style.display = 'block';
+    });
+        // Add event listener to the "Login" button in the registration modal
+        document.getElementById('loginLink').addEventListener('click', function() {
+      // Close the registration modal
+      document.getElementById('registerModal').style.display = 'none';
+      
+      // Open the login modal
+      document.getElementById('myModal').style.display = 'block';
+    });
+    // Function to close the modal window
+var loginCloseButton = document.querySelector("#myModal .close");
+loginCloseButton.addEventListener("click", function() {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "none";
+});
+
+var registerCloseButton = document.querySelector("#registerModal .close");
+registerCloseButton.addEventListener("click", function() {
+  var modal = document.getElementById("registerModal");
+  modal.style.display = "none";
+});
           </script>
               </div>
             </nav>
