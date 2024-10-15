@@ -2773,11 +2773,17 @@ text-align: center;
 
 .form-section {
   padding: 40px;
-  width: 30%;
-  margin: auto;
+  padding-top: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   animation: fadeIn 1s ease-in-out;
-  background: linear-gradient(135deg,#4A90E2,#E05A4F);
-  border-radius: 20px;
+}
+
+.form-section form {
+  width: 60%;
+  align-self: center;
 }
 
 .form-section h1 {
@@ -2794,16 +2800,16 @@ text-align: center;
 
 .form-label {
   display: block;
-  font-weight: 500;
-  margin-top: 20px;
-  color: white;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #555;
 }
 
 .form-input, .form-select, .form-textarea {
   width: 100%;
   padding: 12px;
   border-radius: 8px;
-  border: 1px solid #ddd;
+  border: 1px solid #aaaaaa;
   box-sizing: border-box;
   font-size: 16px;
   background-color: #f9f9f9;
@@ -2828,6 +2834,7 @@ text-align: center;
   transition: all 0.4s ease;
   background-color: rgba(0,0,0,0.4);
   margin-left: 77px;
+
 }
 
 .form-button:hover {
