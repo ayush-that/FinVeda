@@ -129,13 +129,11 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 function clearAll() {
-  document.getElementById('investment').value = '';
-  document.getElementById('years').value = '';
-  document.getElementById('return-rate').value = '';
-  document.getElementById('total').innerText = '';
-  document.getElementById('wealth-gained').innerText = '';
-  document.getElementById('maturity-value').innerText = '';
-  document.getElementById('input-1').innerText = '';
-  document.getElementById('input-2').innerText = '';
-  document.getElementById('input-3').innerText = '';
+  document.getElementById('loanAmount').value = '';
+  document.getElementById('interestRate').value = '';
+  document.getElementById('loanTenure').value = '';
+  document.getElementById('monthlyEMI').innerText = '';
+  document.getElementById('totalPayment').innerText = '';
+  document.getElementById('totalInterestPaid').innerText = '';
 }
+

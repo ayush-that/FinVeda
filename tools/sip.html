@@ -769,54 +769,7 @@ registerCloseButton.addEventListener("click", function() {
   </style>
   <script src="emiCalculator.js"></script>
 </head>
-<body>
-  <div class="header">
-      <h3>EMI Calculator</h3>
-      <p class="cal-content">
-          The EMI (Equated Monthly Installment) Calculator assists in calculating the monthly installment amount for a loan based on the loan amount, interest rate, and loan tenure.
-          It provides insights into the total payment and total interest paid over the loan period, helping you plan your finances better.
-      </p>
-      <div class="know-more">
-          <button class="know-more-btn" onclick="document.querySelector('.know-more-content').style.display = 'block'">Know More</button>
-          <div class="know-more-content">
-              <h6 style="text-align: left; margin: 0;">Here's how it works:</h6>
-              <ol type="1" style="font-size: 1rem; text-align: left; margin: 10px 0;">
-                  <li><b>Loan Amount</b>: Enter the principal amount of the loan.</li>
-                  <li><b>Interest Rate</b>: Specify the annual interest rate.</li>
-                  <li><b>Loan Tenure (months)</b>: Enter the loan period in months.</li>
-                  <li><b>Calculate EMI</b>: Provides the monthly EMI, total payment, and total interest.</li>
-              </ol>
-          </div>
-      </div>
-  </div>
-  <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5">
-      <div class="input-container">
-          <div>
-              <div><b>Loan Amount (INR)</b></div>
-              <div><input class="form-control" id="loanAmount" type="number" placeholder="Enter loan amount" /></div>
-              <br />
-              <div><b>Interest Rate (%)</b></div>
-              <div><input class="form-control" id="interestRate" type="number" placeholder="Enter interest rate" /></div>
-              <br />
-              <div><b>Loan Tenure (Months)</b></div>
-              <div><input class="form-control" id="loanTenure" type="number" placeholder="Enter tenure in months" /></div>
-          </div>
-      </div>
-      <div class="btn-calculate">
-          <button class="btn" type="button" onclick="calculateEMI()">Calculate</button>
-          <button type="button" onclick="clearAll()" class="btn btn-secondary">Clear</button>
-      </div>
-      <div class="result">
-          <div><b>Result :</b></div>
-          <div class="result-container">
-              <div>Monthly EMI: <span id="monthlyEMI"></span></div>
-              <div>Total Payment: <span id="totalPayment"></span></div>
-              <div>Total Interest Paid: <span id="totalInterestPaid"></span></div>
-          </div>
-      </div>
-  </div>
-  <script src="emiCalculator.js" defer></script>
-</body>
+
 </html>
  
 <!DOCTYPE html>
