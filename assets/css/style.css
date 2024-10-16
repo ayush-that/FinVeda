@@ -267,6 +267,7 @@ p {
 .section-title .title {
   font-size: 32px;
   padding-top: 10px;
+  color: white;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -1976,6 +1977,7 @@ p {
   box-shadow: 0 4px 8px rgb(51, 55, 55);
   padding: 20px;
   border-radius: 10px;
+  background: linear-gradient(135deg,rgba(0,191,255,0.9),rgba(255,105,180,0.9));
 }
 .blog-content {
   text-align: left;
@@ -1996,10 +1998,12 @@ p {
   position: relative;
 }
 .single-blog:hover {
-  transform: translateY(-20px);
+  transform: scale(0.95);
   cursor: pointer;
-  border: 1px solid orange;
-  box-shadow: 0 4px 8px rgb(233, 156, 31);
+  background: linear-gradient(170deg,rgba(0,191,255,0.9),rgba(255,105,180,0.9));
+}
+.blog-content .reviewtext{
+  color: black;
 }
 
 .reviewtext {
@@ -2029,8 +2033,9 @@ p {
 }
 .single-blog .blog-content .more {
   font-size: 16px;
-  color: #d32f2f;
-  margin-top: 10px;
+  color: black;
+  font-weight: 600;
+  margin-top: 20px;
   transition: 0.8s ease;
 }
 .single-blog .blog-content .more:hover::after {
@@ -2038,7 +2043,7 @@ p {
   transform-origin: left;
 }
 .single-blog .blog-content .more:hover{
-  background: orange;
+  background: rgba(0,0,0,0.6);
   color: white;
   padding: 10px;
   border-radius: 5px;
@@ -2296,8 +2301,28 @@ p {
 .footer-title .title {
   font-size: 24px;
   font-weight: 700;
-  color: #fff;
+  transition: all 0.3s ease-out 0s;
+    transition-behavior: normal;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+    transition-delay: 0s;
+    transition-property: all;
+    text-decoration: none;
+    text-shadow: #FC0 1px 0 10px;
+    color: #fff;
 }
+h3.footer-title.custom-margin :hover{
+  transform: scale(1.04);
+  text-shadow: #FC0 1px 0 10px;
+  text-decoration: underline;}
+
+.footer-title .title:hover {             /* Pop-out effect */
+  color: #ffffff !important;
+  text-shadow: #FC0 1px 0 10px !important; 
+  transform: scale(1.04) ;
+  text-decoration: underline;
+}
+
 
 .link-wrapper {
   padding: 0 0px;
@@ -2362,7 +2387,8 @@ p {
 
 .link-wrapper .link li a:hover,
 .footer-contact .contact li a:hover,
-.copyright-content a:hover {
+.copyright-content a:hover 
+.footer-title .title:hover {
   color: #ffffff !important;
   text-shadow: #FC0 1px 0 10px !important; 
   transform: scale(1.04);
@@ -2751,10 +2777,14 @@ p {
 }
 
 .form-para{
-color: black;
+color: white;
 text-align: center;
 font-size: 16px;
-margin-bottom: 30px;
+margin: 20px 0;
+}
+.skbtn{
+  display: flex;
+  justify-content: center;
 }
 
 .form-heading2{
@@ -2768,12 +2798,25 @@ text-align: center;
 }
 
 .form-section {
-  padding: 40px;
-  width: 30%;
+  width: 40%;
+  display: flex;
   margin: auto;
   animation: fadeIn 1s ease-in-out;
-  background: linear-gradient(135deg,#4A90E2,#E05A4F);
   border-radius: 20px;
+  background: linear-gradient(105deg, #00bfff,#150e4e);
+  transform: scale(0.8);
+  transition: all 0.3s ease;
+}
+
+.form-section:hover{
+  background: linear-gradient(115deg, #00bfff,#150e4e);
+  transform: scale(0.81);
+}
+
+.form-section form {
+  width: 70%;
+  margin: 40px auto;
+  transform: scale(1.05);
 }
 
 .form-section h1 {
@@ -2790,8 +2833,8 @@ text-align: center;
 
 .form-label {
   display: block;
-  font-weight: 500;
-  margin-top: 20px;
+  font-weight: 600;
+  margin-bottom: 5px;
   color: white;
 }
 
@@ -2799,7 +2842,7 @@ text-align: center;
   width: 100%;
   padding: 12px;
   border-radius: 8px;
-  border: 1px solid #ddd;
+  border: 1px solid #aaaaaa;
   box-sizing: border-box;
   font-size: 16px;
   background-color: #f9f9f9;
@@ -2814,16 +2857,15 @@ text-align: center;
 
 .form-button {
   width: 60%;
-  padding: 15px 20px;
+  padding: 15px 30px;
   border: none;
   border-radius: 8px;
   color: #f8fafb;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.4s ease;
   background-color: rgba(0,0,0,0.4);
-  margin-left: 90px;
 }
 
 .form-button:hover {
