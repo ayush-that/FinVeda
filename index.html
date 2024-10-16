@@ -80,6 +80,9 @@
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
   </div>
   <header class="header-area">
         <div class="row">
@@ -285,10 +288,6 @@ if (body.classList.contains('dark-mode')) {
         <div class="col-lg-10">
           <div class="section-title text-center pb-40">
             <div class="line m-auto"></div>
-
-           
-
-
 
 
               FinVeda,
@@ -696,7 +695,6 @@ if (body.classList.contains('dark-mode')) {
               </div>
             </div>
             <div class="testimonial-text">
-              
               <p class="text" >
                 FinVeda has become an invaluable tool in my monetary journey. The robust security tells us about
                 finances and intuitive design make it accessible to everyone.
@@ -1126,6 +1124,12 @@ if (body.classList.contains('dark-mode')) {
     const rating = document.querySelector('input[name="rating"]:checked') ? document.querySelector('input[name="rating"]:checked').value : '';
     const comments = document.getElementById('comments').value;
 
+    // Validate emoji rating
+    if (!rating) {
+      alert('Please select an emoji rating before submitting.');
+      return;
+    }
+
     // Create feedback object
     const feedback = {
       name,
@@ -1146,6 +1150,9 @@ if (body.classList.contains('dark-mode')) {
 
     // Clear form inputs
     document.getElementById('feedback-form').reset();
+    
+    // Reset emoji description
+    document.getElementById('emoji-description').textContent = 'Select an option';
 
     // Show success notification
     document.getElementById('successnotification').style.display = 'block';
@@ -1154,10 +1161,31 @@ if (body.classList.contains('dark-mode')) {
     setTimeout(function () {
       document.getElementById('successnotification').style.display = 'none';
     }, 3000);
+  });
 
-    // Close notification on click
-    document.getElementById('closeSuccessNotification').addEventListener('click', function () {
-      document.getElementById('successnotification').style.display = 'none';
+  // Add event listeners for emoji selection
+  const emojis = document.querySelectorAll('input[name="rating"]');
+  const emojiDescription = document.getElementById('emoji-description');
+
+  emojis.forEach(emoji => {
+    emoji.addEventListener('change', function() {
+      switch(this.value) {
+        case '1':
+          emojiDescription.textContent = 'Very Bad';
+          break;
+        case '2':
+          emojiDescription.textContent = 'Bad';
+          break;
+        case '3':
+          emojiDescription.textContent = 'Neutral';
+          break;
+        case '4':
+          emojiDescription.textContent = 'Good';
+          break;
+        case '5':
+          emojiDescription.textContent = 'Excellent';
+          break;
+      }
     });
   });
 </script>
