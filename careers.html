@@ -3,7 +3,11 @@
 
 <head>
   <meta charset="utf-8" />
+
+  <title>Carrers - FinVeda</title>
+
   <title>Careers - FinVeda</title>
+
   <meta name="description" content="Explore engaging quizzes on finance and economics at Fin Veda. Test your knowledge and learn with interactive quizzes covering various topics." />
   <meta name="author" content="Ayush Singh">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -21,6 +25,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
    <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
   <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="careers.css"> <!-- Link to careers.css -->
   <style>
     
     body {
@@ -613,6 +618,11 @@
   <main>
     <section><br><br>
         <h2>Jobs in Finance</h2>
+        <!-- Search Bar -->
+  <div class="search-container">
+    <input type="text" id="jobSearch" placeholder="Search for jobs by title or keyword">
+  </div>
+   
         <table class="jobs-table">
             <thead>
                 <tr>
@@ -674,7 +684,9 @@
                 </tr>
             </tbody>
         </table>
+       
     </section>
+  
 
     <main>
         <section class="roadmap">
@@ -718,6 +730,7 @@
         <script>
 
         </script>
+
 
   <style>
      
@@ -1128,38 +1141,40 @@
             </div>
         </div>
         <div class="col-lg-3 col-md-5 col-sm-5">
-            <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-                <div class="footer-title">
-                    <h4 class="title custom-margin">Contact Us</h4>
-                </div>
+          <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+              <div class="footer-title">
+                  <h4 class="title custom-margin" style="text-align: left; margin-bottom: 15px;">Contact Us</h4> <!-- Aligning heading to the left -->
+              </div>
                 <ul class="contact custom-margin-big" style="justify-content: space-around;">
-                    <li class="d-sm-flex justify-content-center">
-                        <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                        <p style="width: 80%;">
-                            <a href="mailto:ayush1337@hotmail.com" target="_blank"
-                               style="color: white; text-decoration: underline;">
+                  
+                    <li class="d-sm-flex justify-content-center" style="align-items: center; margin: 0; padding: 0; margin-bottom: 10px;">
+                        <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; margin-right: 10px;"></i>
+                        <div style="width: 100%; display: flex; align-items: center;">
+                            <a href="mailto:ayush1337@hotmail.com" target="_blank" style="color: white; text-decoration: underline;">
                                 ayush1337@hotmail.com
                             </a>
-                        </p>
+                        </div>
                     </li>
-                    <li class="d-sm-flex justify-content-center">
-                        <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                        <div style="width: 80%;">
-                            <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
+                
+                    <li class="d-sm-flex justify-content-center" style="align-items: center; margin: 0; padding: 0;margin-bottom: 10px;">
+                        <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; margin-right: 10px;"></i>
+                        <div style="width: 100%; display: flex; align-items: center;">
+                            <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff;">
                                 fin-veda.vercel.app
                             </a>
                         </div>
                     </li>
-                    <li class="d-sm-flex justify-content-center">
-                        <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 12px; width: 10%;"></i>
-                        <div style="width: 80%;">
+                
+                    <li class="d-sm-flex justify-content-center" style="align-items: center; margin: 0; padding: 0; margin-bottom: 10px;">
+                        <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 12.0px; margin-right: 10px;"></i>
+                        <div style="width: 100%; display: flex; align-items: center;">
                             <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
-                               style="color:#fff">
+                               style="color: #fff;">
                                 Delhi, India
                             </a>
                         </div>
                     </li>
-                    <li id="social_icons" class="d-sm-flex justify-content-evenly my-3">
+               <li id="social_icons" class="d-sm-flex justify-content-evenly my-3">
                       <div style="width: 100%; display:flex; ">
                         <!-- Instagram Icon -->
                         <a href="https://instagram.com" target="_blank" style="margin: 0 10px; color: #E4405F;" aria-label="Instagram">
@@ -1220,6 +1235,7 @@
   </div>
   <div id="particles-2"></div>
 </footer>
+<script src="careers.js"></script> <!-- Link to careers.js -->
 <script>document.getElementById("copyright-year").textContent = new Date().getFullYear();</script>
 <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
 
@@ -1367,6 +1383,7 @@
    
 </script>
 <script src="./tools/smoothScroll.js"></script>
+
 </body>
 
 </html>

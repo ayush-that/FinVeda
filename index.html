@@ -121,7 +121,9 @@
                     <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
                   </li>
                   <li class="nav-item no-underline">
+
                     <a class="main-btn navbar-btn" style="padding: 2px 2px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="#" onclick="openModal()">Login/Register 💻</a>
+
                   </li>
                 </ul>
               </div>
@@ -199,182 +201,7 @@ if (body.classList.contains('dark-mode')) {
     background-color: #ddd; /* Button hover color in dark mode */
 }
           </style>
-                <div class="">
-
-                  <!-- Login Modal -->
-                  <div id="myModal" class="modal">
-                    <div class="modal-content">
-                      <span class="close" style="display: flex; justify-content: right;">&times;</span>
-                      <div class="mt-3">
-                        <h3 class="join"><i class="fa-solid fa-right-to-bracket"></i>  Login to join us....</h3>
-                        <form class="px-3 py-4" id="loginForm">
-                          <div class="form-group">
-                            <label class="d-flex">Username</label>
-                            <input type="text" placeholder="Username" class="form-control" required />
-                          </div>
-                          <div class="form-group">
-                            <label class="d-flex">Password</label>
-                            <input type="password" placeholder="Password" class="form-control" required>
-                            <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
-                          </div>
-                          <div class="form-check d-flex">
-                            <input type="checkbox" class="form-check-input me-1" style="margin-top: 0;">
-                            <label class="form-check-label" style="margin-bottom: 0;">Remember me</label>
-                            <a href="#" id="forgot-password" style="margin-left: 90px;">Forget Password?</a>
-                          </div>
-                          <div style="height: 20px;"></div>
-                          <button class="main-btn w-100 mb-3"onclick="submitForm('loginForm')">Sign in</button>
-                          <p class="text-center"  style="font-size: 16px;" >Don't have an account? <a href="#" id="registerLink">Register</a></p>
-                          <div class="or-sign-in-with text-center">
-                            <p style="font-size: 16px;" >Or sign in with</p>
-                          </div>
-                          <div class="social-icons mt-3">
-                            <ul class="list-inline">
-                              <li><a href="#" class="google" id="google-login"><i class="fa-brands fa-google"></i></a></li>
-                              <li><a href="#" class="facebook" id="facebook-login"><i class="fa-brands fa-facebook-f"></i></a></li>
-                              <li><a href="#" class="twitter" id="twitter-login"><i class="fa-brands fa-twitter"></i></a></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                   
-                  <script>
-                    // Add event listeners to the social media icons
-                    document.getElementById('google-login').addEventListener('click', function() {
-                      window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
-                    });
-                  
-                    document.getElementById('facebook-login').addEventListener('click', function() {
-                      window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
-                    });
-                  
-                    document.getElementById('twitter-login').addEventListener('click', function() {
-                      window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
-                    });
-                  </script>
-    
-            <!-- Register Modal -->
-            <div id="registerModal" class="modal">
-              <div class="modal-content">
-                <span class="close" style="display: flex; justify-content: right;">&times;</span>
-                <div class="mt-3">
-                  <h3 class="join"><i class="fa-solid fa-user"></i>  Register to join us....</h3>
-                  <form class="px-3 py-4" id="registerForm">
-                    <div class="form-group">
-                        <label class="d-flex">Email</label>
-                        <input type="email" placeholder="Email" class="form-control" required />
-                    </div>
-                    <div class="form-group">
-                        <label class="d-flex">Username</label>
-                        <input type="text" placeholder="Username" class="form-control" required />
-                    </div>
-                    <div class="form-group">
-                        <label class="d-flex">Password</label>
-                        <input type="password" placeholder="Password" class="form-control" id="register-password" required oninput="checkPasswordStrength()">
-                        <button type="button" class="toggle-password-btn" onclick="togglePasswordVisibility('register-password')">
-                            <i class="fa-solid fa-eye"></i>
-                            <i class="fa-solid fa-eye-slash" style="display: none;"></i>
-                        </button>
-                    </div>
-                    <div id="password-meter" style="display: none; margin-top: 5px;">
-                        <div id="meter" style="height: 10px; background-color: #ccc; border-radius: 5px; transition: width 0.3s;"></div>
-                        <div id="strength-text" style="margin-top: 5px; font-weight: bold;"></div>
-                    </div>
-                    </form>
-                    
-                    <!-- Import zxcvbn library -->
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
-                    <script>
-                        function checkPasswordStrength() {
-                            const password = document.getElementById('register-password').value;
-                            const meter = document.getElementById('meter');
-                            const meterContainer = document.getElementById('password-meter');
-                            const strengthText = document.getElementById('strength-text');
-                    
-                            if (password) {
-                                meterContainer.style.display = 'block'; // Show the meter when typing
-                                const result = zxcvbn(password);
-                                const score = result.score; // Score ranges from 0 to 4
-                    
-                                // Set meter width and color based on score
-                                meter.style.width = (score + 1) * 20 + '%'; // Convert score to percentage
-                                meter.style.backgroundColor = getMeterColor(score);
-                                strengthText.innerText = getStrengthText(score); // Update strength text
-                            } else {
-                                meterContainer.style.display = 'none'; // Hide the meter if no password
-                                strengthText.innerText = ''; // Clear strength text
-                            }
-                        }
-                    
-                        function getMeterColor(score) {
-                            switch (score) {
-                                case 0: return 'red'; // Weak
-                                case 1: return 'orange'; // Fair
-                                case 2: return 'yellow'; // Good
-                                case 3: return 'blue'; // Strong
-                                case 4: return 'green'; // Very Strong
-                                default: return 'gray';
-                            }
-                        }
-                    
-                        function getStrengthText(score) {
-                            switch (score) {
-                                case 0: return 'Very Weak';
-                                case 1: return 'Weak';
-                                case 2: return 'Fair';
-                                case 3: return 'Strong';
-                                case 4: return 'Very Strong';
-                                default: return '';
-                            }
-                        }
-                    
-                        function togglePasswordVisibility(id) {
-                            const passwordInput = document.getElementById(id);
-                            const eyeIcon = passwordInput.nextElementSibling;
-                            if (passwordInput.type === 'password') {
-                                passwordInput.type = 'text';
-                                eyeIcon.children[0].style.display = 'none';
-                                eyeIcon.children[1].style.display = 'inline';
-                            } else {
-                                passwordInput.type = 'password';
-                                eyeIcon.children[0].style.display = 'inline';
-                                eyeIcon.children[1].style.display = 'none';
-                            }
-                        }
-                    </script>
-                    
-                  <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('registerForm')">Register</button>
-                  <p class="text-center" style="font-size: 16px;">Already have an account? <a href="#" id="loginLink">Login</a></p>
-                  <div class="or-sign-in-with text-center">
-                    <p style="font-size: 16px;">Or sign up with</p>
-                  </div>
-                  <div class="social-icons mt-3">
-                    <ul class="list-inline">
-                      <li><a href="#" class="google" id="google-signup"><i class="fa-brands fa-google"></i></a></li>
-                      <li><a href="#" class="facebook" id="facebook-signup"><i class="fa-brands fa-facebook-f"></i></a></li>
-                      <li><a href="#" class="twitter" id="twitter-signup"><i class="fa-brands fa-twitter"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <script>
-              // Add event listeners to the social media icons
-              document.getElementById('google-signup').addEventListener('click', function() {
-                window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
-              });
-            
-              document.getElementById('facebook-signup').addEventListener('click', function() {
-                window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
-              });
-            
-              document.getElementById('twitter-signup').addEventListener('click', function() {
-                window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
-              });
-            </script>
-                </div>
+                
               </nav>
           
             <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
@@ -1232,19 +1059,19 @@ if (body.classList.contains('dark-mode')) {
         </section>
       </article>
     </div>  
-    <div class="section-title text-center pb-40 pt-40">
-      <div class="line m-auto"></div>
-      <h2 class="form-heading wow fadeInUp title" data-wow-duration="1s" data-wow-delay="0.2s">We Value Your Feedback</h2>
-      <p class="form-para wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
-        Your input helps us to improve and provide better services. Please fill out the form to let us know your thoughts.
-      </p>
-    </div>
    
   </div>
   <div class="form-section wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
     <!-- <h2 class="form-heading2">Feedback Form</h2> -->
     <form class="feedbackform" id="feedback-form">
       <div class="form-group">
+        <div class="section-title text-center">
+          <div class="line m-auto"></div>
+          <h2 class="form-heading wow fadeInUp title" data-wow-duration="1s" data-wow-delay="0.2s">We Value Your Feedback</h2>
+          <p class="form-para wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
+            Your input helps us to improve and provide better services. Please fill out the form to let us know your thoughts.
+          </p>
+        </div>
         <label class="form-label" for="name">Name:</label>
         <input class="form-input" type="text" id="name" name="name" required>
       </div>
@@ -1255,25 +1082,25 @@ if (body.classList.contains('dark-mode')) {
       <div class="form-group">
         <label class="form-label">Rating:</label>
         <div id="emoji-description" class="emoji-description">Select an option</div>
-      </div>
-      <div class="emojis">
-        <input class="form-input" type="radio" id="emoji1" name="rating" value="1">
-        <label class="form-label" for="emoji1">&#128542;</label> <!-- Very Bad -->
-        <input class="form-input" type="radio" id="emoji2" name="rating" value="2">
-        <label class="form-label" for="emoji2">&#128577;</label> <!-- Bad -->
-        <input class="form-input" type="radio" id="emoji3" name="rating" value="3">
-        <label class="form-label" for="emoji3">&#128528;</label> <!-- Neutral -->
-        <input class="form-input" type="radio" id="emoji4" name="rating" value="4">
-        <label class="form-label" for="emoji4">&#128522;</label> <!-- Good -->
-        <input class="form-input" type="radio" id="emoji5" name="rating" value="5">
-        <label class="form-label" for="emoji5">&#128515;</label> <!-- Excellent -->
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="comments">Comments:</label>
-        <textarea class="form-textarea" id="comments" name="comments" rows="4" required></textarea>
-      </div>
-      <div class="form-group">
-        <button class="form-button" id="feed-submit" type="submit">Submit Feedback</button>
+        <div class="emojis">
+          <input class="form-input" type="radio" id="emoji1" name="rating" value="1">
+          <label class="form-label" for="emoji1">&#128542;</label> <!-- Very Bad -->
+          <input class="form-input" type="radio" id="emoji2" name="rating" value="2">
+          <label class="form-label" for="emoji2">&#128577;</label> <!-- Bad -->
+          <input class="form-input" type="radio" id="emoji3" name="rating" value="3">
+          <label class="form-label" for="emoji3">&#128528;</label> <!-- Neutral -->
+          <input class="form-input" type="radio" id="emoji4" name="rating" value="4">
+          <label class="form-label" for="emoji4">&#128522;</label> <!-- Good -->
+          <input class="form-input" type="radio" id="emoji5" name="rating" value="5">
+          <label class="form-label" for="emoji5">&#128515;</label> <!-- Excellent -->
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="comments">Comments:</label>
+          <textarea class="form-textarea" id="comments" name="comments" rows="4" required></textarea>
+        </div>
+        <div class="form-group skbtn">
+          <button class="form-button" id="feed-submit" type="submit">Submit Feedback</button>
+        </div>
       </div>
     </form>
   </div>
