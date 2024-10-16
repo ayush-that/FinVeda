@@ -267,6 +267,7 @@ p {
 .section-title .title {
   font-size: 32px;
   padding-top: 10px;
+  color: white;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -2755,10 +2756,14 @@ p {
 }
 
 .form-para{
-color: black;
+color: white;
 text-align: center;
 font-size: 16px;
-margin-bottom: 30px;
+margin: 20px 0;
+}
+.skbtn{
+  display: flex;
+  justify-content: center;
 }
 
 .form-heading2{
@@ -2772,18 +2777,25 @@ text-align: center;
 }
 
 .form-section {
-  padding: 40px;
-  padding-top: 10px;
-  width: 100%;
+  width: 40%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  margin: auto;
   animation: fadeIn 1s ease-in-out;
+  border-radius: 20px;
+  background: linear-gradient(105deg, #00bfff,#150e4e);
+  transform: scale(0.8);
+  transition: all 0.3s ease;
+}
+
+.form-section:hover{
+  background: linear-gradient(115deg, #00bfff,#150e4e);
+  transform: scale(0.81);
 }
 
 .form-section form {
-  width: 60%;
-  align-self: center;
+  width: 70%;
+  margin: 40px auto;
+  transform: scale(1.05);
 }
 
 .form-section h1 {
@@ -2802,7 +2814,7 @@ text-align: center;
   display: block;
   font-weight: 600;
   margin-bottom: 5px;
-  color: #555;
+  color: white;
 }
 
 .form-input, .form-select, .form-textarea {
@@ -2833,8 +2845,6 @@ text-align: center;
   cursor: pointer;
   transition: all 0.4s ease;
   background-color: rgba(0,0,0,0.4);
-  margin-left: 77px;
-
 }
 
 .form-button:hover {
