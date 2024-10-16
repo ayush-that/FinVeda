@@ -2300,8 +2300,27 @@ p {
 .footer-title .title {
   font-size: 24px;
   font-weight: 700;
-  color: #fff;
+  transition: all 0.3s ease-out 0s;
+    transition-behavior: normal;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+    transition-delay: 0s;
+    transition-property: all;
+    text-decoration: none;
+    color: #fff;
 }
+h3.footer-title.custom-margin :hover{
+  transform: scale(1.04);
+  text-shadow: #FC0 1px 0 10px;
+  text-decoration: underline}
+
+.footer-title .title:hover {             /* Pop-out effect */
+  color: #ffffff !important;
+  text-shadow: #FC0 1px 0 10px !important; 
+  transform: scale(1.04) ;
+  text-decoration: underline;
+}
+
 
 .link-wrapper {
   padding: 0 0px;
@@ -2366,7 +2385,8 @@ p {
 
 .link-wrapper .link li a:hover,
 .footer-contact .contact li a:hover,
-.copyright-content a:hover {
+.copyright-content a:hover 
+.footer-title .title:hover {
   color: #ffffff !important;
   text-shadow: #FC0 1px 0 10px !important; 
   transform: scale(1.04);
