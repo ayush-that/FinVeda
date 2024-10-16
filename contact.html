@@ -687,53 +687,45 @@ registerCloseButton.addEventListener("click", function() {
         width: 100%;
         max-width: 600px;
         height: 650px;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
     }
-
-    .info-frame {
-
-        border:  1px solid #0056b3;
-        padding:  1rem;
-        box-shadow:  0 0 10px rgba(0, 0, 0, 0.1);
-        width:  350px;
-        height:  315px;
-        text-align:  center;
-        color:  #0056b3;
+    .contact-frame:hover {
+        background-color: rgba(240, 240, 240, 0.7);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transform: scale(1.02);
     }
-
     .info-frame {
-        border: 1px solid #0056b3;
+        border: 2px solid #0056b3;
         padding: 1rem;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         width: 350px;
         height: 315px;
         text-align: center;
         color: #0056b3;
+        margin-top: 50px;
     }
     .map-frame {
         border-radius: 10px;
-        width: 350px;
+        width: 400px;
         height: 315px;
         margin: 0 auto;
     }
     .info-map-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
-    }
+
+    display: flex;               /* Use flexbox layout */
+    flex-direction: column;      /* Stack items vertically */
+    align-items: center;         /* Center align items horizontally */
+    gap: 1.5rem;                 /* Space between items */
+    margin-left: 1rem;           /* Margin on the left */
+}
+
+
+
     h2 {
         color: #0056b3;
         text-align: center;
-        margin-bottom: 1.5rem;
+        margin-bottom: 2.5rem;
     }
-
-    .info-frame a {
-
-        color: #0056b3;
-        text-decoration: none;
-        margin-top: 20px;
-    }
-
     .info-frame a {
         color: #0056b3;
         text-decoration: none;
@@ -743,20 +735,16 @@ registerCloseButton.addEventListener("click", function() {
         text-decoration: underline;
     }
     .contact-info-map-container {
-        display: flex;
-        gap: 5rem;
-    }
+
+    display: flex; /* Use flexbox layout */
+    justify-content: center; /* Center align items horizontally */
+    align-items: center; /* Center align items vertically */
+    gap: 1.5rem; /* Space between items */
+    padding-bottom: 10%; /* Padding at the bottom */
+    padding-top: 2%; /* Padding at the top */
+}
 
 
-    .contact-frame {
-        transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-    }
-
-    .contact-frame:hover {
-        background-color: rgba(240, 240, 240, 0.7);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        transform: scale(1.02);
-    }
 
     input:hover, 
     textarea:hover {
@@ -764,121 +752,94 @@ registerCloseButton.addEventListener("click", function() {
         box-shadow: 0 0 5px rgba(240, 135, 39, 0.5);
         transform: scale(1.02);
         transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-    }
 
+    }
     button:hover {
         background-color: #ff8c00;
         transform: scale(1.05);
         transition: background-color 0.3s ease, transform 0.3s ease;
     }
-
-
     #info-frame {
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and scaling */
 }
 
-#info-frame:hover {
-    background-color: rgba(240, 240, 240, 0.7);
-    transform: scale(1.02);
-}
-
-#info-frame p {
-    transition: color 0.3s ease;
-}
-
-#info-frame a {
-    color: #0056b3;
-    transition: color 0.3s ease;
-}
-
-#info-frame a:hover {
-    color: #f48727;
-}
-
-#map-frame {
-    transition: transform 0.3s ease;
-}
-
-#map-frame:hover {
-    transform: scale(1.02);
+  
+ #info-frame:hover {
+    background-color: rgba(240, 240, 240, 0.7); /* Light grey background on hover */
+    transform: scale(1.02);                    /* Slightly enlarges the element */
 }
 
 
-  </style>
-  <h2 style="color: #0056b3;">Get in Touch</h2>
- <div class="contact-info-map-container">
-   <div class="container">
-        <div class="contact-frame">
-            <h2 style="text-align: left; font-size: 24px; color: #0056b3;">Contact Us</h2>
-            <form action="#" method="POST" style="display: flex; flex-direction: column;">
-                <label for="name" style="color: #0056b3; margin-bottom: 0.5rem;">Name:</label>
-                <input type="text" placeholder="Enter your name" id="name" name="name" required style="padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #0056b3; border-radius: 4px;">
-                
-                <label for="email" style="color: #0056b3; margin-bottom: 0.5rem;">Email:</label>
-                <input type="email" placeholder="Enter your email" id="email" name="email" required style="padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #0056b3; border-radius: 4px;">
-                
-                <label for="subject" style="color: #0056b3; margin-bottom: 0.5rem;">Subject:</label>
-                <input type="text" placeholder="Enter subject" id="subject" name="subject" required style="padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #0056b3; border-radius: 4px;">
-                
-                <label for="message" style="color: #0056b3; margin-bottom: 0.5rem;">Message:</label>
-                <textarea id="message" placeholder="Enter message" name="message" required style="padding: 0.5rem; margin-bottom: 2rem; border: 1px solid #0056b3; border-radius: 4px; min-height: 100px; resize: vertical;"></textarea>
-                
-                <button type="submit" style="background-color: #f48727; color: white; padding: 0.75rem;border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; transition: background-color 0.3s ease;">Send Message</button>
-            </form>
+  
+    button:hover {
+        background-color: #ff8c00;
+        transform: scale(1.05);
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    #info-frame {
+        transition: background-color 0.3s ease, transform 0.3s ease;
 
- 
-          <script>
-              document.getElementById('contactForm').addEventListener('submit', function(event) {
-                  event.preventDefault(); // Prevent form from actually submitting
-          
-                  // Get values from input fields
-                  const name = document.getElementById('name').value;
-                  const email = document.getElementById('email').value;
-                  const subject = document.getElementById('subject').value;
-                  const message = document.getElementById('message').value;
-          
-                  // Create an object with form data
-                  const formData = {
-                      name: name,
-                      email: email,
-                      subject: subject,
-                      message: message
-                  };
-          
-                  // Save the form data in local storage in JSON format
-                  localStorage.setItem('formData', JSON.stringify(formData));
-          
-                  // Clear input fields after submitting
-                  document.getElementById('name').value = '';
-                  document.getElementById('email').value = '';
-                  document.getElementById('subject').value = '';
-                  document.getElementById('message').value = '';
-          
-                  alert('User saved! We will get in touch with u soon');
-              });
-          </script>
+    }
+    #info-frame:hover {
+        background-color: rgba(240, 240, 240, 0.7);
+        transform: scale(1.02);
+    }
 
-<div class="info-map-container">
-  <div id="info-frame" class="info-frame">
-      <p><strong>Email:</strong> <a href="mailto:ayush1337@hotmail.com">ayush1337@hotmail.com</a></p>
-      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ayush-that/" target="_blank" rel="noopener noreferrer">Ayush That</a></p>
-      <p><strong>YouTube:</strong> <a href="https://www.youtube.com/@ayush-that/" target="_blank" rel="noopener noreferrer">Ayush That Channel</a></p>
-      <p><strong>Website:</strong> <a href="https://ayush.top/" target="_blank" rel="noopener noreferrer">https://ayush.top/</a></p>
-      
-      <div style="margin-top: 1rem;">
-          <a href="mailto:ayush1337@hotmail.com" title="Email" style="color: #0056b3; font-size: 1.5rem; margin-right: 1rem;"><i class="fa-solid fa-envelope"></i></a>
-          <a href="https://www.linkedin.com/in/ayush-that/" target="_blank" rel="noopener noreferrer" title="LinkedIn" style="color: #0056b3; font-size: 1.5rem; margin-right: 1rem;"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="https://www.youtube.com/@ayush-that/" target="_blank" rel="noopener noreferrer" title="YouTube" style="color: #0056b3; font-size: 1.5rem; margin-right: 1rem;"><i class="fa-brands fa-youtube"></i></a>
-          <a href="https://ayush.top/" target="_blank" rel="noopener noreferrer" title="Website" style="color: #0056b3; font-size: 1.5rem;"><i class="fa-solid fa-globe"></i></a>
-      </div>
-  </div>
-  <div id="map-frame" class="map-frame">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d448196.5263247024!2d76.76357512440586!3d28.643684628180505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x37205b715389640!2sDelhi!5e0!3m2!1sen!2sin!4v1728752958279!5m2!1sen!2sin" width="350" height="315" style="border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </div>
-</div>
-
+    #info-frame a {
+        color: #0056b3;
+        transition: color 0.3s ease;
+    }
+    #info-frame a:hover {
+        color: #f48727;
+    }
+    #map-frame {
+        transition: transform 0.3s ease;
+    }
+    #map-frame:hover {
+        transform: scale(1.02);
+    }
+</style>
+<h2 style="color: #0056b3;">Get in Touch</h2>
+<div class="contact-info-map-container">
+    <div class="contact-frame">
+        <h2 style="text-align: left; font-size: 24px; color: #0056b3;">Contact Us</h2>
+        <form action="submit" method="POST" style="display: flex; flex-direction: column;">
+            <label for="name" style="color: #0056b3; margin-bottom: 0.5rem;">Name:</label >
+            <input type="text" placeholder="Enter your name" id="name" name="name" required style="padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #0056b3; border-radius: 4px;">
+            
+            <label for="email" style="color: #0056b3; margin-bottom: 0.5rem;">Email:</label>
+            <input type="email" placeholder="Enter your email" id="email" name="email" required style="padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #0056b3; border-radius: 4px;">
+            
+            <label for="subject" style="color: #0056b3; margin-bottom: 0.5rem;">Subject:</label>
+            <input type="text" placeholder="Enter subject" id="subject" name="subject" required style="padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #0056b3; border-radius: 4px;">
+            
+            <label for="message" style="color: #0056b3; margin-bottom: 0.5rem;">Message:</label>
+            <textarea id="message" placeholder="Enter message" name="message" required style="padding: 0.5rem; margin-bottom: 2rem; border: 1px solid #0056b3; border-radius: 4px; min-height: 100px; resize: vertical;"></textarea>
+            
+            <button type="submit" style="background-color: #f48727; color: white; padding: 0.75rem;border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; transition: background-color 0.3s ease;">Send Message</button>
+        </form>
+    </div>
+    <div class="info-map-container">
+        <div id="info-frame" class="info-frame">
+            <p><strong>Email:</strong> <a href="mailto:ayush1337@hotmail.com">ayush1337@hotmail.com</a></p>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ayush-that/" target="_blank" rel="noopener noreferrer">Ayush That</a></p>
+            <p><strong>YouTube:</strong> <a href="https://www.youtube.com/@ayush-that/" target="_blank" rel="noopener noreferrer">Ayush That Channel</a></p>
+            <p><strong>Website:</strong> <a href="https://ayush.top/" target="_blank" rel="noopener noreferrer">https://ayush.top/</a></p>
+            
+            <div style="margin-top: 1rem;">
+                <a href="mailto:ayush1337@hotmail.com" title="Email" style="color: #0056b3; font-size: 1.5rem; margin-right: 1rem;"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/ayush-that/" target="_blank" rel="noopener noreferrer" title="LinkedIn" style="color: #0056b3; font-size: 1.5rem; margin-right: 1rem;"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.youtube.com/@ayush-that/" target="_blank" rel="noopener noreferrer" title="YouTube" style="color: #0056b3; font-size: 1.5rem; margin-right: 1rem;"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://ayush.top/" target="_blank" rel="noopener noreferrer" title="Website" style="color: #0056b3; font-size: 1.5rem;"><i class="fa-solid fa-globe"></i></a>
+            </div>
+        </div>
+        <div id="map-frame" class="map-frame">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d448196.5263247024!2d76.76357512440586!3d28.643684628180505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x37205b715389640!2sDelhi!5e0!3m2!1sen!2sin!4v1728752958279!5m2! 1sen!2sin" width="350" height="315" style="border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
     </div>
 </div>
+
+
   <style>
      
         h2 {
@@ -1312,37 +1273,42 @@ registerCloseButton.addEventListener("click", function() {
             </div>
         </div>
         <div class="col-lg-3 col-md-5 col-sm-5">
-            <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-                <div class="footer-title">
-                    <h4 class="title custom-margin">Contact Us</h4>
-                </div>
+          <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+              <div class="footer-title">
+                  <h4 class="title custom-margin" style="text-align: left; margin-bottom: 15.1px;">Contact Us</h4> <!-- Aligning heading to the left -->
+              </div>
                 <ul class="contact custom-margin-big" style="justify-content: space-around;">
-                    <li class="d-sm-flex justify-content-center">
-                        <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                        <p style="width: 80%;">
-                            <a href="mailto:ayush1337@hotmail.com" target="_blank"
-                               style="color: white; text-decoration: underline;">
+                  
+                    <li class="d-sm-flex justify-content-center" style="align-items: center; margin: 0; padding: 0; margin-bottom: 10px;">
+                        <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; margin-right: 10px;"></i>
+                        <div style="width: 100%; display: flex; align-items: center;">
+                            <a href="mailto:ayush1337@hotmail.com" target="_blank" style="color: white; text-decoration: underline;">
                                 ayush1337@hotmail.com
                             </a>
-                        </p>
+                        </div>
                     </li>
-                    <li class="d-sm-flex justify-content-center">
-                        <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                        <div style="width: 80%;">
-                            <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
+                
+                    <li class="d-sm-flex justify-content-center" style="align-items: center; margin: 0; padding: 0;margin-bottom: 10px;">
+                        <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; margin-right: 10px;"></i>
+                        <div style="width: 100%; display: flex; align-items: center;">
+                            <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff;">
                                 fin-veda.vercel.app
                             </a>
                         </div>
                     </li>
-                    <li class="d-sm-flex justify-content-center">
-                        <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 12px; width: 10%;"></i>
-                        <div style="width: 80%;">
+                
+                    <li class="d-sm-flex justify-content-center" style="align-items: center; margin: 0; padding: 0; margin-bottom: 10px;">
+                        <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 12px; margin-right: 10px;"></i>
+                        <div style="width: 100%; display: flex; align-items: center;">
                             <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
-                               style="color:#fff">
+                               style="color: #fff;">
                                 Delhi, India
                             </a>
                         </div>
                     </li>
+              
+                
+            
                     <li id="social_icons" class="d-sm-flex justify-content-evenly my-3">
                       <div style="width: 100%; display:flex; ">
                         <!-- Instagram Icon -->
@@ -1549,6 +1515,14 @@ registerCloseButton.addEventListener("click", function() {
             alert("You have applied for: " + jobTitle);
         }
    
+</script>
+<script>
+document.querySelector('.contact-frame form').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form from actually submitting
+  alert('Your details have been submitted successfully!');
+  // Clear the form fields
+  this.reset();
+});
 </script>
 <script src="./tools/smoothScroll.js"></script>
 </body>

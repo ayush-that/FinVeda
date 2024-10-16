@@ -255,6 +255,7 @@ p {
 .section-title .title {
   font-size: 32px;
   padding-top: 10px;
+  color: white;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -1963,7 +1964,7 @@ p {
     #fe8464 0%,
     #fe6e99 50%,
     #fe8364b5 100%
-  );
+  )
 }
 .blog-content {
   text-align: left;
@@ -1984,7 +1985,7 @@ p {
   position: relative;
 }
 .single-blog:hover {
-  transform: translateY(-20px);
+  transform: scale(0.95);
   cursor: pointer;
   /* background: linear-gradient(
     135deg,
@@ -2302,8 +2303,28 @@ p {
 .footer-title .title {
   font-size: 24px;
   font-weight: 700;
-  color: #fff;
+  transition: all 0.3s ease-out 0s;
+    transition-behavior: normal;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+    transition-delay: 0s;
+    transition-property: all;
+    text-decoration: none;
+    text-shadow: #FC0 1px 0 10px;
+    color: #fff;
 }
+h3.footer-title.custom-margin :hover{
+  transform: scale(1.04);
+  text-shadow: #FC0 1px 0 10px;
+  text-decoration: underline;}
+
+.footer-title .title:hover {             /* Pop-out effect */
+  color: #ffffff !important;
+  text-shadow: #FC0 1px 0 10px !important; 
+  transform: scale(1.04) ;
+  text-decoration: underline;
+}
+
 
 .link-wrapper {
   padding: 0 0px;
@@ -2367,7 +2388,8 @@ p {
 
 .link-wrapper .link li a:hover,
 .footer-contact .contact li a:hover,
-.copyright-content a:hover {
+.copyright-content a:hover 
+.footer-title .title:hover {
   color: #ffffff !important;
   text-shadow: #fc0 1px 0 10px !important;
   transform: scale(1.04);
@@ -2752,11 +2774,15 @@ p {
   margin-left: 15px;
 }
 
-.form-para {
-  color: black;
-  text-align: center;
-  font-size: 16px;
-  margin-bottom: 30px;
+.form-para{
+color: white;
+text-align: center;
+font-size: 16px;
+margin: 20px 0;
+}
+.skbtn{
+  display: flex;
+  justify-content: center;
 }
 
 .form-heading2 {
@@ -2770,18 +2796,25 @@ p {
 }
 
 .form-section {
-  padding: 40px;
-  padding-top: 10px;
-  width: 100%;
+  width: 40%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  margin: auto;
   animation: fadeIn 1s ease-in-out;
+  border-radius: 20px;
+  background: linear-gradient(105deg, #00bfff,#150e4e);
+  transform: scale(0.8);
+  transition: all 0.3s ease;
+}
+
+.form-section:hover{
+  background: linear-gradient(115deg, #00bfff,#150e4e);
+  transform: scale(0.81);
 }
 
 .form-section form {
-  width: 60%;
-  align-self: center;
+  width: 70%;
+  margin: 40px auto;
+  transform: scale(1.05);
 }
 
 .form-section h1 {
@@ -2800,7 +2833,7 @@ p {
   display: block;
   font-weight: 600;
   margin-bottom: 5px;
-  color: #555;
+  color: white;
 }
 
 .form-input,
@@ -2825,20 +2858,20 @@ p {
 }
 
 .form-button {
-  width: 100%;
-  padding: 15px 20px;
+  width: 60%;
+  padding: 15px 30px;
   border: none;
   border-radius: 8px;
   color: #f8fafb;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.4s ease;
-  background-color: rgb(89 95 229);
+  background-color: rgba(0,0,0,0.4);
 }
 
 .form-button:hover {
-  background-color: rgba(89, 96, 229, 0.736);
+  background-color: rgba(0,0,0,0.7);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transform: scale(0.95);
 }
