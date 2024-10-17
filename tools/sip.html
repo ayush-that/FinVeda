@@ -641,9 +641,9 @@ registerCloseButton.addEventListener("click", function() {
         </div>
       </div>
       <br/>
-      <div class="btn-calculate">
-        <button type="button" onclick="calculateResult()" class="btn btn-calculate">Calculate</button>
-        <button type="button" onclick="clearAll()" class="btn btn-secondary"><p class="btn-text">Clear</p></button>
+      <div class="btn-calculate" style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+        <button type="button" id="calculateBtn" onclick="calculateResult()" style="margin-right: 10px;">Calculate</button>
+        <button class="button" type="button" id="clearBtn" onclick="clearAll()">Clear</button>
       </div>
       <br />
       <div style="display: flex; justify-content: flex-start; font-size: medium;" class="result"><b>Result :</b></div>
@@ -916,9 +916,9 @@ registerCloseButton.addEventListener("click", function() {
               <div><input class="form-control" id="loanTenure" type="number" placeholder="Enter tenure in months" /></div>
           </div>
       </div>
-      <div class="btn-calculate">
-          <button class="btn btn-primary" type="button" onclick="calculateEMI()">Calculate</button>
-          <button type="button" onclick="clearAll()" class="btn btn-secondary">Clear</button>
+      <div class="btn-calculate" style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+        <button type="button" id="calculateBtn" onclick="calculateEMI()" style="margin-right: 10px;">Calculate</button>
+        <button class="button" type="button" id="clearBtn" onclick="clearAll()">Clear</button>
       </div>
       <div class="result">
           <div><b>Result :</b></div>
@@ -971,9 +971,10 @@ registerCloseButton.addEventListener("click", function() {
         </div>
       </div>
       <br />
-      <div class="btn-calculate">
-        <button class="btn btn-calculate" type="button" onclick="calculateSavings()">Calculate</button>
-        <button class="btn btn-secondary" type="button" onclick="clearSavings()"><p class="btn-text">Clear</p></button>
+      <br />
+      <div class="btn-calculate" style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+        <button type="button" id="calculateBtn" onclick="calculateSavings()" style="margin-right: 10px;">Calculate</button>
+        <button class="button" type="button" id="clearBtn" onclick="clearsSavings()">Clear</button>
       </div>
       <br />
       <div style="display: flex;">
@@ -1057,7 +1058,6 @@ registerCloseButton.addEventListener("click", function() {
 </div>
 
   <!-- End Insurance Calculator -->
-
     <!-- NPV Calculator -->
     <script src="npvCalculator.js" defer></script>
 <div class="header toool" style="padding-top: 100px;">
@@ -1114,7 +1114,7 @@ registerCloseButton.addEventListener("click", function() {
 </div>
 
     <!-- End NPV Calculator -->
-
+ 
     <!--ROI calculator-->
     <script src="roiCalculator.js" defer></script>
     <div class="header toool" style="padding-top: 100px;">
