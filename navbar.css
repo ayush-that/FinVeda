@@ -61,19 +61,26 @@ z
     justify-content: space-between;
     align-items: center;
     flex-wrap: nowrap;
+    gap:15px;
 }
 
 .navbar-nav .nav-item {
     display: inline-block;
-    margin: 0 15px;
     padding: 0;
+}
+
+
+@media (max-width: 1320px) { /* 100% width */
+    .navbar-nav {
+        gap: 3px;
+    }
 }
 
 .navbar-nav .nav-item a {
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
-    padding: 10px 15px;
+    padding: 10px 5px;
     transition: all 0.3s ease;
     white-space: nowrap;
 }
