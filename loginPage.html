@@ -67,6 +67,21 @@
       document.getElementById('home-btn').addEventListener('click', function() {
         window.location.href = "index.html";
       });
+
+      function togglePassword(inputId, eyeIcon) {
+        const passwordField = document.getElementById(inputId);
+        const isPasswordVisible = passwordField.type === "text";
+        
+        if (isPasswordVisible) {
+          passwordField.type = "password";
+          eyeIcon.classList.remove("fa-eye-slash");
+          eyeIcon.classList.add("fa-eye");
+        } else {
+          passwordField.type = "text";
+          eyeIcon.classList.remove("fa-eye");
+          eyeIcon.classList.add("fa-eye-slash");
+        }
+      }
     </script>
       <div class="panels-container">
         <div class="panel left-panel">
@@ -100,7 +115,7 @@
     </a>
     
     <script src="auth.js"></script>
-    <!-- <script type="module" src="SignUpWithGoogle.js"></script> -->
     <script type="module" src="SignIn-Up-withGithub.js"></script>
   </body>
 </html>
+
