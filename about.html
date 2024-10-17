@@ -701,7 +701,7 @@
               </li>
               <li id="social_icons" class="d-sm-flex justify-content-evenly my-3">
                 <div style="width: 100%; display:flex; ">
-                  
+                  <!-- Instagram Icon -->
                   <a href="https://instagram.com" target="_blank" style="margin: 0 10px; color: #E4405F;"
                     aria-label="Instagram">
                     <i style="font-size: 25px" class="fa-brands fa-instagram"></i>
@@ -758,39 +758,134 @@
         </div>
       </div>
     </div>
-  
-    </div>
-    <div id="particles-2"></div>
-  </footer>
-  <script>document.getElementById("copyright-year").textContent = new Date().getFullYear();</script>
-  <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
-  
-  
-  <script src="./assets/js/subscribe.js"></script>
-  <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
-  <script src="./assets/js/vendor/modernizr-3.7.1.min.js"></script>
-  <script src="./assets/js/popper.min.js"></script>
-  <script src="./assets/js/bootstrap.min.js"></script>
-  <script src="./assets/js/plugins.js"></script>
-  <script src="./assets/js/slick.min.js"></script>
-  <script src="./assets/js/ajax-contact.js"></script>
-  <script src="./assets/js/waypoints.min.js"></script>
-  <script src="./assets/js/jquery.counterup.min.js"></script>
-  <script src="./assets/js/jquery.magnific-popup.min.js"></script>
-  <script src="./assets/js/jquery.easing.min.js"></script>
-  <script src="./assets/js/scrolling-nav.js"></script>
-  <script src="./assets/js/wow.min.js"></script>
-  <script src="./assets/js/particles.min.js"></script>
-  <script src="./assets/js/main.js"></script>
-  <script src="./assets/js/quiz.js"></script>
-  <script src="./assets/js/popup.js"></script>
-  <script src="./assets/js/quiz_modify.js"></script>
-  <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-  <script src="https://mediafiles.botpress.cloud/5e160793-5606-4412-ba4c-337e416f14fe/webchat/config.js" defer></script>
-  <script defer src="./assets/js/arthsathi-style.js"></script>
-  <script src="./assets/js/botpress.js"></script>
-  <script src="./assets/js/quizmodals.js"></script>
-  <script src="./tools/smoothScroll.js"></script>
+    <script>
+      // Function for the contributors section
+      const owner = 'ayush-that';
+      const repo = 'FinVeda';
+      const contributorsPerPage = 8;
+      let contributors = [];
+      let currentPage = 1;
+
+      async function fetchContributors() {
+        const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/contributors`);
+        if (!response.ok) {
+          console.error('Failed to fetch contributors:', response.statusText);
+          return;
+        }
+        contributors = await response.json();
+        displayContributors();
+        createPaginationButtons();
+      }
+
+      function displayContributors() {
+        const container = document.getElementById('contributor-cards');
+        container.innerHTML = '';
+        const start = (currentPage - 1) * contributorsPerPage;
+        const end = start + contributorsPerPage;
+        const currentContributors = contributors.slice(start, end);
+
+        currentContributors.forEach(contributor => {
+          const card = document.createElement('div');
+          card.className = 'contributor-member';
+          card.setAttribute('data-tilt', '');
+
+          const img = document.createElement('img');
+          img.src = contributor.avatar_url;
+          img.alt = contributor.login;
+
+          const name = document.createElement('h3');
+          name.textContent = contributor.login;
+
+          const contributions = document.createElement('p');
+          contributions.textContent = `${contributor.contributions} contributions`;
+
+          const viewProfileButton = document.createElement("button");
+          viewProfileButton.textContent = "View Profile";
+          viewProfileButton.addEventListener("click", () => {
+            window.open(contributor.html_url, "_blank");
+          });
+
+          card.appendChild(img);
+          card.appendChild(name);
+          card.appendChild(contributions);
+          container.appendChild(card);
+          card.appendChild(viewProfileButton);
+        });
+      }
+
+      function createPaginationButtons() {
+        const paginationContainer = document.getElementById('pagination');
+        paginationContainer.innerHTML = '';
+        const totalPages = Math.ceil(contributors.length / contributorsPerPage);
+
+        for (let i = 1; i <= totalPages; i++) {
+          const button = document.createElement('button');
+          button.textContent = i;
+          button.classList.add('pagination-button');
+          if (i === currentPage) {
+            button.classList.add('active');
+          }
+          button.addEventListener('click', () => {
+            currentPage = i;
+            displayContributors();
+            updatePaginationButtons();
+          });
+          paginationContainer.appendChild(button);
+        }
+      }
+
+      function updatePaginationButtons() {
+        const buttons = document.querySelectorAll('.pagination-button');
+        buttons.forEach(button => {
+          button.classList.remove('active');
+          if (parseInt(button.textContent) === currentPage) {
+            button.classList.add('active');
+          }
+        });
+      }
+
+      fetchContributors();
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+const coords = { x: 0, y: 0 };
+const circles = document.querySelectorAll(".circle");
+
+circles.forEach(function (circle) {
+  circle.x = 0;
+  circle.y = 0;
+});
+
+window.addEventListener("mousemove", function (e) {
+  coords.x = e.pageX;
+  coords.y = e.pageY - window.scrollY; 
+});
+
+function animateCircles() {
+  let x = coords.x;
+  let y = coords.y;
+
+  circles.forEach(function (circle, index) {
+    circle.style.left = `${x - 12}px`;
+    circle.style.top = `${y - 12}px`;
+    circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+
+    const nextCircle = circles[index + 1] || circles[0];
+    circle.x = x;
+    circle.y = y;
+
+    x += (nextCircle.x - x) * 0.3;
+    y += (nextCircle.y - y) * 0.3;
+  });
+
+  requestAnimationFrame(animateCircles);
+}
+
+animateCircles();
+});
+    </script>
+<div class="gtranslate_wrapper"></div>
+    <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
   </body>
   </html>
-  
