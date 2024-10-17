@@ -20,6 +20,7 @@
   <link rel="stylesheet"  href="assets/css/popup.css" />
   <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <style>
     
     body {
@@ -267,6 +268,9 @@
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
   </div>
   <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -348,7 +352,7 @@
                 <span class="toggler-icon"></span>
               </button> -->
               <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-                <ul id="nav" class="navbar-nav ml-auto">
+                <ul id="nav" class="navbar-nav">
                   <li class="nav-item">
                     <a class="page-scroll" href="./index.html">Home 🏡</a>
                   </li>
@@ -374,7 +378,7 @@
                     <a class="page-scroll active-link" href="./contact.html">Contact📞</a>
                   </li>
                   <li class="nav-item no-underline">
-                    <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none;" data-scroll-nav="0" href="#" onclick="openModal()">Login/Register 💻</a>
+                    <a class="main-btn navbar-btn" style="padding: 2px 20px; transition: all 0.4s ease;" data-scroll-nav="0" href="#" onclick="openModal()">Login/Register 💻</a>
                   </li>
                 </ul>
               </div>
@@ -410,7 +414,7 @@
                           <ul class="list-inline">
                             <li><a href="#" class="google" id="google-login"><i class="fa-brands fa-google"></i></a></li>
                             <li><a href="#" class="facebook" id="facebook-login"><i class="fa-brands fa-facebook-f"></i></a></li>
-                            <li><a href="#" class="twitter" id="twitter-login"><i class="fa-brands fa-twitter"></i></a></li>
+                            <li><a href="#" class="twitter" id="twitter-login"><i class="fa-brands fa-x-twitter"></i></a></li>
                           </ul>
                         </div>
                       </div>
@@ -610,7 +614,7 @@ registerCloseButton.addEventListener("click", function() {
     <script type="text/javascript" src="./navbar.js"></script>
 
     </div>
-
+<!-- 
 <!--             
             <nav class="mobile-menu ">
               <a class="page-scroll" href="./index.html">Home 🏡</a>
@@ -625,12 +629,7 @@ registerCloseButton.addEventListener("click", function() {
 
                 
               <link href="./navbar.css" rel="stylesheet">
-              <script type="text/javascript" src="./navbar.js"></script> -->
-
-          </div>
-        </div>
-      </div>
-    </div>
+              <script type="text/javascript" src="./navbar.js"></script> --> -->
     <div id="home" class="header-hero bg_cover" style="background-image: url(../assets/images/banner-bg.svg)">
       <div class="container">
         <div class="row justify-content-center">
@@ -657,7 +656,10 @@ registerCloseButton.addEventListener("click", function() {
         <div class="row">
           <div class="col-lg-12">
             <div class="header-hero-image text-center wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">
-              <img src="../assets/images/header-hero.png" alt="hero" />
+              <div class="anim" data-tilt="">
+                <img src="assets/images/header-hero.png" alt="hero" style="animation: float 1.5s ease-in-out infinite;"
+                  data-tilt="" />
+              </div>
             </div>
           </div>
         </div>
@@ -699,26 +701,25 @@ registerCloseButton.addEventListener("click", function() {
         padding: 1rem;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         width: 350px;
-        height: 315px;
+        height: 312px;
         text-align: center;
         color: #0056b3;
         margin-top: 50px;
     }
     .map-frame {
         border-radius: 10px;
-        width: 400px;
-        height: 315px;
+        width: 350px;
+        height: 312px;
         margin: 0 auto;
     }
     .info-map-container {
-
-    display: flex;               /* Use flexbox layout */
-    flex-direction: column;      /* Stack items vertically */
-    align-items: center;         /* Center align items horizontally */
-    gap: 1.5rem;                 /* Space between items */
-    margin-left: 1rem;           /* Margin on the left */
+    display: flex;               
+    flex-direction: column;      
+    align-items: center;        
+    gap: 1.5rem;                 
+    margin-left: 1rem; 
+    padding-bottom: 3%;         
 }
-
 
 
     h2 {
@@ -736,13 +737,14 @@ registerCloseButton.addEventListener("click", function() {
     }
     .contact-info-map-container {
 
-    display: flex; /* Use flexbox layout */
-    justify-content: center; /* Center align items horizontally */
-    align-items: center; /* Center align items vertically */
-    gap: 1.5rem; /* Space between items */
-    padding-bottom: 10%; /* Padding at the bottom */
-    padding-top: 2%; /* Padding at the top */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 1.5rem; 
+    padding-bottom: 10%; 
+    padding-top: 2%; 
 }
+
 
 
 
@@ -770,7 +772,7 @@ registerCloseButton.addEventListener("click", function() {
 }
 
 
-  
+
     button:hover {
         background-color: #ff8c00;
         transform: scale(1.05);
@@ -1173,8 +1175,8 @@ registerCloseButton.addEventListener("click", function() {
         <div class="col-lg-6">
           <div class="subscribe-form mt-50">
             <form id="unique-subscribe-form">
-              <input type="email" id="unique-news-email" placeholder="Enter Email" required style="padding: 0.5rem; margin-right: 0.5rem; border: 1px solid #0056b3; border-radius: 4px;">
-              <button class="unique-main-btn" id="unique-subscribe-btn" type="submit" style="background-color: #0056b3; color: white; padding: 0.5rem 1rem; border: none; border-radius: 4px; cursor: pointer;">Subscribe</button>
+              <input type="email" id="unique-news-email" placeholder="Enter Email" required style="padding: 0.5rem; border: 1px solid #0056b3; border-radius: 4px; position: relative; right: 60px;">
+              <button class="unique-main-btn" id="unique-subscribe-btn" type="submit" style="background-color: #0056b3; color: white;  border: none; border-radius: 4px; cursor: pointer;">Subscribe</button>
           </form>
           
           <script>
@@ -1519,12 +1521,40 @@ registerCloseButton.addEventListener("click", function() {
 <script>
 document.querySelector('.contact-frame form').addEventListener('submit', function(event) {
   event.preventDefault(); // Prevent form from actually submitting
-  alert('Your details have been submitted successfully!');
+  
+  // Show the success notification
+  var notification = document.getElementById('successnotification');
+  notification.style.display = 'block';
+  
+  // Start the timer animation
+  var timerline = document.getElementById('timerline');
+  timerline.style.animation = 'timer 3s linear';
+  
+  // Hide the notification after 3 seconds
+  setTimeout(function() {
+    notification.style.display = 'none';
+    timerline.style.animation = 'none';
+  }, 3000);
+  
   // Clear the form fields
   this.reset();
 });
+
+// Close button functionality for the notification
+document.getElementById('closeSuccessNotification').addEventListener('click', function() {
+  document.getElementById('successnotification').style.display = 'none';
+});
 </script>
 <script src="./tools/smoothScroll.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>
+
+<div class="gtranslate_wrapper"></div>
+<script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 </body>
 
 </html>

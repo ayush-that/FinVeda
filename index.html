@@ -37,9 +37,47 @@
       });
     })();
   </script>
+  <script>
+    // Scroll button functionality
+    const scrollToNextSection = () => {
+    window.scrollBy({
+      top: window.innerHeight,
+      behavior: 'smooth',
+    });
+  };
+  </script>
+  <style>
+    .scroll-btn {
+    position: fixed; 
+    top: 150px; 
+    right: 50px; 
+    background-color: #635adc; 
+    color: white; 
+    border: none; 
+    border-radius: 50%; 
+    width: 45px; 
+    height: 45px; 
+    font-size: 24px; 
+    cursor: pointer; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s; 
+    display: flex;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.scroll-btn:hover {
+    background-color: #555; /* Darker blue on hover */
+}
+
+  </style>
   
 <body>
   <div id="progressBar"></div>
+  <button id="scrollBtn" class="scroll-btn" onclick="scrollToNextSection()">
+    ↓
+  </button>
   <script>
     window.onscroll = function () {
       var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -49,6 +87,10 @@
     };
   </script>
   <div class="circle-container">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
@@ -91,7 +133,676 @@
                 <span class="toggler-icon"></span>
                 <span class="toggler-icon"></span>
               </button> -->
+              <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
+                <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
+                  <li class="nav-item">
+                    <a class="page-scroll active-link" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
+                  </li>    
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
+                  </li>
+                  <li class="nav-item no-underline">
+                    <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
+                  </li>
+                </ul>
+              </div>
+              <script>
+                const toggleButton = document.getElementById('theme-toggle');
+                const body = document.body;
+                const currentTheme = localStorage.getItem('theme');
+
+if (currentTheme === 'dark') {
+body.classList.add('dark-mode');
+toggleButton.classList.add('dark');
+toggleButton.textContent = '☀️';
+}
+
+toggleButton.addEventListener('click', function () {
+body.classList.toggle('dark-mode');
+toggleButton.classList.toggle('dark');
+
+// Update button icon based on mode
+if (body.classList.contains('dark-mode')) {
+  toggleButton.textContent = '☀️';  // Light mode icon
+  localStorage.setItem('theme', 'dark');
+} else {
+  toggleButton.textContent = '🌙';  // Dark mode icon
+  localStorage.setItem('theme', 'light');
+}
+});
+            </script>
+            <style>
+
+              h3{
+                color: #fff;
+              }
+
+            .toggle-button {
+              padding: 0.5em 1em;
+              cursor: pointer;
+              border: none;
+              background-color: #0c0a0a;
+              color: #fff;
+              border-radius: 5px;
+              transition: background-color 0.3s;
+          }
+          
+          .toggle-button:hover {
+              background-color: #555;
+          }
+          
+          .content {
+              padding: 2em;
+              text-align: center;
+          }
+          
+          h1 {
+              font-size: 2.5rem;
+              color: whitesmoke;
+              margin-top:130px;
+          }
+          
+          p {
+              font-size: 1.2rem;
+          }
+          
+          body.dark-mode {
+    background-color: #222;
+    color: #f1f1f1; /* Change text color to light for dark mode */
+}
+
+.toggle-button.dark {
+    background-color: #f1f1f1; /* Button background in dark mode */
+    color: #333; /* Button text color in dark mode */
+}
+
+.toggle-button.dark:hover {
+    background-color: #ddd; /* Button hover color in dark mode */
+}
+          </style>
+                
+              </nav>
+          
+            <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+            <nav class="mobile-menu ">
+              <a class="page-scroll active-link" href="./index.html">Home 🏡</a>
+              <a class="page-scroll" href="./about.html">About Us 📖</a>
+              <a class="page-scroll" href="./trends.html">Trends 📈</a>
+              <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
+              <a class="page-scroll" href="./blog.html">Blogs 📰</a>
+              <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
+              <a class="page-scroll" href="./contact.html">Contact🤔</a>
+              <li class="nav-item no-underline">
+                <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none; border: none;" href="#"
+                  onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
+              </li>
+              
+              <div class="mobile-menu__trigger"><span></span></div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <link href="./navbar.css" rel="stylesheet">
+    <script type="text/javascript" src="./navbar.js"></script>
+
+    </div>
+    <div id="home" class="header-hero bg_cover" style="background-image: url(assets/images/banner-bg.svg);">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="header-hero-content text-center">
+              <h3 class="header-sub-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
+                Say 👋🏼 to FinVeda
+              </h3>
+              <h2 class="header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">
+                your savvy financial companion
+              </h2>
+              <p class="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">
+                Wanna learn how to grow your money to become rich? We have made becoming a stock market Guru easy with
+                our AI powered finance advisor - <b>Arth Sathi 🤵🏻</b>
+              </p>
+              <a href="#" class="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s"
+                onclick="window.botpressWebChat.sendEvent({ type: 'show' }); return false;">
+                Chat with ArthaSathi 💬
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="header-hero-image text-center wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">
+              <div class="anim" data-tilt="">
+                <img src="assets/images/header-hero.png" alt="hero" style="animation: float 1.5s ease-in-out infinite;"
+                  data-tilt="" />
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="particles-1" class="particles"></div>
+    </div>
+  </header>
+
+  <!-- Cookie Consent Popup -->
+  <div id="cookieConsent" class="cookie-consent">
+    <h4>🍪Cookies Consent <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#175394" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cookie-icon">
+      <circle cx="12" cy="12" r="10"></circle>
+      <path d="M12 8v4"></path>
+      <path d="M12 16h.01"></path>
+  </svg></h4>
+    <p>We use cookies to enhance your experience on FinVeda. By continuing to use our site, you agree to our use of cookies. <br> <a href="blogs/privacy-policy.html" target="_blank">Learn more</a></p>
+    <div class="cookie-buttons">
+      <button id="acceptNecessaryCookies">Accept necessary cookies only</button>
+      <button id="acceptAllCookies">Accept all cookies</button>
+    </div>
+</div>
+    
+  </section>
+   
+  <!-- testimonail section starts here  -->
+  <section id="testimonial" class="testimonial-area pt-120">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-5">
+          <div class="section-title text-center pb-40">
+            <div class="line m-auto"></div>
+            <h3 class="title"style="color: #2f6be5;">Users sharing<span> their experience</span></h3>
+          </div>
+        </div>
+      </div>
+      <div class="row testimonial-active wow fadeInUpBig" data-wow-duration="1s" data-wow-delay="0.8s">
+        <div class="col-lg-4">
+          <div class="single-testimonial">
+            <div class="testimonial-review d-flex align-items-center justify-content-between">
+              <div class="quota">
+                <i class="lni-quotation"></i>
+              </div>
+              <div class="star">
+                <ul>
+                  <li><i class="lni-star-filled"></i></li>
+                  <li><i class="lni-star-filled"></i></li>
+                  <li><i class="lni-star-filled"></i></li>
+                  <li><i class="lni-star-filled"></i></li>
+                  <li><i class="lni-star-filled"></i></li>
+                </ul>
+              </div>
+            </div>
+            <div class="testimonial-text">
+              <p class="text">
+                ArthaSathi has proven to be an indispensable asset in my financial endeavors. Its user-friendly design
+                and blogs ensure best learning experience for me.
+              </p>
+            </div>
+            <div class="testimonial-author d-flex align-items-center">
+              <div class="author-image">
+                <img class="shape" src="assets/images/textimonial-shape.svg" alt="shape" />
+                <img class="author" src="assets/images/emptyprofile.png" alt="author" />
+              </div>
+              <div class="author-content media-body">
+                <h6 class="holder-name">Amit Patel</h6>
+                <p class="text">Student, BCom</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="single-testimonial">
+            <div class="testimonial-review d-flex align-items-center justify-content-between">
+              <div class="quota">
+                <i class="lni-quotation"></i>
+              </div>
+              <div class="star">
+                <ul>
+                  <li><i class="lni-star-filled"></i></li>
+                  <li><i class="lni-star-filled"></i></li>
+                  <li><i class="lni-star-filled"></i></li>
+                  <li><i class="lni-star-filled"></i></li>
+                  <li><i class="lni-star-filled"></i></li>
+                </ul>
+              </div>
+            </div>
+            <div class="testimonial-text">
+              <p class="text" >
+                FinVeda has become an invaluable tool in my monetary journey. The robust security tells us about
+                finances and intuitive design make it accessible to everyone.
+                It's user-friendly nature is best!
+              </p>
+            </div>
+            <div class="testimonial-author d-flex align-items-center">
+              <div class="author-image">
+                <img class="shape" src="assets/images/textimonial-shape.svg" alt="shape" />
+                <img class="author" src="assets/images/emptyprofile.png" alt="author" />
+              </div>
+              <div class="author-content media-body">
+                <h6 class="holder-name">Sachin Sharma</h6>
+                <p class="text">Student, BSc</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="single-testimonial">
+            <div class="testimonial-review d-flex align-items-center justify-content-between">
+              <div class="quota">
+                <i class="lni-quotation"></i>
+              </div>
+              <div class="star">
+                <ul>
+                  <li><i class="lni-star-filled"></i></li>
+                  <li><i class="lni-star-filled"></i></li>
+                  <li><i class="lni-star-filled"></i></li>
+                  <li><i class="lni-star-filled"></i></li>
+                  <li><i class="lni-star-filled"></i></li>
+                </ul>
+              </div>
+            </div>
+            <div class="testimonial-text">
+              <p class="text">
+                FinVeda has transformed the way I approach my financial tasks. The lightning-fast performance and
+                user-friendly design cater perfectly to my tech-savvy & financial needs.
+              </p>
+            </div>
+            <div class="testimonial-author d-flex align-items-center">
+              <div class="author-image">
+                <img class="shape" src="assets/images/textimonial-shape.svg" alt="shape" />
+                <img class="author" src="assets/images/emptyprofile.png" alt="author" />
+              </div>
+              <div class="author-content media-body">
+                <h6 class="holder-name">Srushti Rustogi</h6>
+                <p class="text">Student, BCA</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-lg-4">
+          <div class="single-testimonial">
+            <div class="testimonial-review d-flex align-items-center justify-content-between">
+              <div class="quota">
+                <i class="lni-quotation"></i>
+              </div>
+              <div class="star">
+                <ul>
+                  <li><i class="lni-star-filled"></i></li>
+                  <li><i class="lni-star-filled"></i></li>
+                  <li><i class="lni-star-filled"></i></li>
+                  <li><i class="lni-star-filled"></i></li>
+                  <li><i class="lni-star-filled"></i></li>
+                </ul>
+              </div>
+            </div>
+            <div class="testimonial-text">
+              <p class="text">
+                FinVeda has been a game-changer for me! The smart AI integration and regular updates have made it an
+                indispensable part of my daily routine, increases efficiency.
+              </p>
+            </div>
+            <div class="testimonial-author d-flex align-items-center">
+              <div class="author-image">
+                <img class="shape" src="assets/images/textimonial-shape.svg" alt="shape" />
+                <img class="author" src="assets/images/emptyprofile.png" alt="author" />
+              </div>
+              <div class="author-content media-body">
+                <h6 class="holder-name">Priyanka Khatri</h6>
+                <p class="text">Student, BTech</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id = "slide-buttons" style = "position: relative;">
+      <div>
+      <button id = "prevButton" class = "arrow arrow-left">
+        <div class="arrow-top"></div>
+        <div class="arrow-bottom"></div>
+      </button>
+    </div>
+    <div>
+      <button id = "nextButton" class = "arrow arrow-right">
+        <div class="arrow-top"></div>
+        <div class="arrow-bottom"></div>
+      </button>
+    </div>
+    </div>
+  </section>
+  <!-- testimonail section ends here  -->
+  <!-- <section id="blog" class="blog-area pt-120"> -->
+    <div class="blogfull">
+      <article>
+        <section id="blog" class="blog-area pt-100">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="section-title pb-35">
+                  <div class="line"></div>
+                  <h3 class="title"style="color: #2f6be5;"><span></span> Blog Posts</h3>
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-start">
+              <div class="col-lg-4 col-md-7">
+                <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                  <div class="blog-image">
+                    <a href="./blogs/how-to-deal-with-unknown-risks-in-life-and-investing.html">
+                      <img src="assets/images/blog-1.jpg" alt="blog" />
+                    </a>
+                  </div>
+                  <div class="blog-content">
+                    <a href="./blogs/how-to-deal-with-unknown-risks-in-life-and-investing.html">
+                      <p class="reviewtext">
+                        How to deal with Unknown Risks in Life and Investing?
+                      </p>
+                    </a>
+                    <a class="more" href="./blogs/how-to-deal-with-unknown-risks-in-life-and-investing.html">
+                      Learn More <i class="lni-chevron-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-7">
+                <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                  <div class="blog-image">
+                    <a href="./blogs/how-to-10x-your-generational-wealth.html">
+                      <img src="./assets/images/blog-2.jpg" alt="blog" />
+                    </a>
+                  </div>
+                  <div class="blog-content">
+                      <p class="reviewtext">How to 10x your Generational Wealth?</p>
+                    <a class="more" href="./blogs/how-to-10x-your-generational-wealth.html">
+                      Learn More <i class="lni-chevron-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-7">
+                <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                  <div class="blog-image">
+                    <a href="./blogs/invest-minimal.html">
+                      <img src="./assets/images/women.jpg" alt="blog" />
+                    </a>
+                  </div>
+                  <div class="blog-content">
+                    <a href="./blogs/invest-minimal.html">
+                      <p class="reviewtext">
+                        Investing with Minimal Savings: A Guide for Women Investors
+                      </p>
+                    </a>
+                    <a class="more" href="./blogs/invest-minimal.html">
+                      Learn More <i class="lni-chevron-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-7">
+                <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                  <div class="blog-image">
+                    <a href="./blogs/Pocketmoney.html">
+                      <img src="./assets/images/pocket.jpg" alt="blog" />
+                    </a>
+                  </div>
+                  <div class="blog-content">
+                    <p class="reviewtext">
+                      Can Pocket Money Turn Into Investment? A Guide for Teenagers
+                    </p>
+                    <a class="more" href="./blogs/Pocketmoney.html">
+                      Learn More <i class="lni-chevron-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-7">
+                <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                  <div class="blog-image">
+                    <a href="./blogs/senior.html">
+                      <img src="./assets/images/senior.jpg" alt="blog" />
+                    </a>
+                  </div>
+                  <div class="blog-content">
+                    <p class="reviewtext">
+                      Investment Opportunities for Senior Citizens: Securing Your Future
+                    </p>
+                    <a class="more" href="./blogs/senior.html">
+                      Learn More <i class="lni-chevron-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-7">
+                <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                  <div class="blog-image">
+                    <a href="./blogs/why-investing-in-stocks-is-better-than-fixed-deposit.html">
+                      <img src="./assets/images/blog-3.jpg" alt="blog" />
+                    </a>
+                  </div>
+                  <div class="blog-content">
+                    <p class="reviewtext">
+                      Why investing in stocks is better than fixed deposit?
+                    </p>
+                    <a class="more" href="./blogs/why-investing-in-stocks-is-better-than-fixed-deposit.html">
+                      Learn More <i class="lni-chevron-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-7">
+                <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                  <div class="blog-image">
+                    <a href="/blogs/starup.html">
+                      <img src="assets/images/staryp.jpeg" alt="blog" />
+                    </a>
+                  </div>
+                  <div class="blog-content">
+                    <p class="reviewtext">
+                      Unlocking Potential: The Benefits and Opportunities of Investing in Startups
+                    </p>
+                    <a class="more" href="./blogs/starup.html">
+                      Learn More <i class="lni-chevron-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-7">
+                <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                  <div class="blog-image">
+                    <a href="./blogs/how-fintech-is-revolutionizing-small-business-lending.html">
+                      <img src="./assets/images/fintech.jpeg" alt="blog" />
+                    </a>
+                  </div>
+                  <div class="blog-content">
+                    <p class="reviewtext">
+                      How Fintech is Revolutionizing Small Business Lending.
+                    </p>
+                    <a class="more" href="./blogs/how-fintech-is-revolutionizing-small-business-lending.html">
+                      Learn More <i class="lni-chevron-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-7">
+                <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                  <div class="blog-image">
+                    <a href="./blogs/economic-trends-and-analysis.html">
+                      <img src="./assets/images/economic-trend-analysis.jpg" alt="blog" />
+                    </a>
+                  </div>
+                  <div class="blog-content">
+                    <p class="reviewtext">
+                      Economic Trends and Analysis.
+                    </p>
+                    <a class="more" href="./blogs/economic-trends-and-analysis.html">
+                      Learn More <i class="lni-chevron-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+ 
+<head>
+  <meta charset="utf-8" />
+  <title>Home - FinVeda</title>
+  <meta name="description"
+    content="FinVeda is a dynamic financial literacy app that'll help you Learn finance with finesse." />
+  <meta name="author" content="Ayush Singh">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="shortcut icon"  href="./assets/images/favicon2.png" type="image/png" />
+  <link rel="stylesheet"  href="./assets/css/animate.css" />
+  <link rel="stylesheet"  href="./assets/css/magnific-popup.css" />
+  <link rel="stylesheet"  href="./assets/css/slick.css" />
+  <link rel="stylesheet"  href="./assets/css/LineIcons.css" />
+  <link rel="stylesheet"  href="./assets/css/font-awesome.min.css" />
+  <link rel="stylesheet"  href="./assets/css/bootstrap.min.css" />
+  <link rel="stylesheet"  href="./assets/css/default.css" />
+  <link rel="stylesheet"  href="./assets/css/style.css" />
+  <link rel="stylesheet"  href="./assets/css/quiz.css" />
+  <link rel="stylesheet"  href="./assets/css/popup.css" />
+  <link rel="stylesheet"  href="./assets/css/cookiepopup.css">
+  <link rel="stylesheet"  href="./assets\css\preloader.css" />
+  <link rel="stylesheet"  href="./assets/css/faq.css">
+  <link rel="stylesheet"  href="./assets/css/index.css">
+   <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
+  <link rel="stylesheet"  href="navbar.css">
+  <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      // https://dashboard.emailjs.com/admin/account
+      emailjs.init({
+        publicKey: "o6kveYmOSDrs0l1Mg",
+      });
+    })();
+  </script>
+  <script>
+    // Scroll button functionality
+    const scrollToNextSection = () => {
+    window.scrollBy({
+      top: window.innerHeight,
+      behavior: 'smooth',
+    });
+  };
+  </script>
+  <style>
+    .scroll-btn {
+    position: fixed; 
+    top: 150px; 
+    right: 50px; 
+    background-color: #635adc; 
+    color: white; 
+    border: none; 
+    border-radius: 50%; 
+    width: 45px; 
+    height: 45px; 
+    font-size: 24px; 
+    cursor: pointer; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s; 
+    display: flex;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.scroll-btn:hover {
+    background-color: #555; /* Darker blue on hover */
+}
+
+  </style>
+  
+<body>
+  <div id="progressBar"></div>
+  <button id="scrollBtn" class="scroll-btn" onclick="scrollToNextSection()">
+    ↓
+  </button>
+  <script>
+    window.onscroll = function () {
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      document.getElementById("progressBar").style.width = scrolled + "%";
+    };
+  </script>
+  <div class="circle-container">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+  <header class="header-area">
+        <div class="row">
+          <div style="display: flex; justify-content: center;" class="">
+            <nav class="navbar navbar-expand-lg " style="display: flex;">
+              <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+              </button> -->
+
               <div class="collapse navbar-collapse sub-menu-bar" id="navbox"  >
+
+              <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
+
                 <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
                   <li class="nav-item">
                     <a class="page-scroll active-link" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
@@ -277,7 +988,12 @@ if (body.classList.contains('dark-mode')) {
       <path d="M12 8v4"></path>
       <path d="M12 16h.01"></path>
   </svg></h4>
-    <p>We use cookies to enhance your experience on FinVeda. By continuing to use our site, you agree to our use of cookies. <br> <a href="blogs/privacy-policy.html" target="_blank">Learn more</a> <button id="acceptCookies">Accept all cookies</button></p>
+    <p>We use cookies to enhance your experience on FinVeda. By continuing to use our site, you agree to our use of cookies. <br> <a href="blogs/privacy-policy.html" target="_blank">Learn more</a></p>
+    <div class="cookie-buttons">
+      <button id="acceptNecessaryCookies">Accept necessary cookies only</button>
+      <button id="acceptAllCookies">Accept all cookies</button>
+    </div>
+</div>
     
 </div>
 
@@ -286,10 +1002,10 @@ if (body.classList.contains('dark-mode')) {
       <div class="row justify-content-center">
         <div class="col-lg-10">
           <div class="section-title text-center pb-40">
+            <h3 style="color: #2f6be5;">
             <div class="line m-auto"></div>
-            <h3 class="title" style="color: #fff;">
               FinVeda,
-              <span> comes with everything you need to get started!</span>
+              <span style="color:#2f6be5;"> comes with everything you need to get started!</span>
             </h3>
           </div>
         </div>
@@ -356,7 +1072,7 @@ if (body.classList.contains('dark-mode')) {
           <div class="about-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
             <div class="section-title">
               <div class="line"></div>
-              <h3 class="title" >
+              <h3 class="title" style="color: #2f6be5;">
                 Personalized AI Guru <span>to Teach You Finance</span>
               </h3>
             </div>
@@ -403,7 +1119,7 @@ if (body.classList.contains('dark-mode')) {
           <div class="about-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
             <div class="section-title">
               <div class="line"></div>
-              <h3 class="title">
+              <h3 class="title"style="color: #2f6be5;">
                 Finance Blogs <span> that Don't Suck</span>
               </h3>
             </div>
@@ -449,7 +1165,7 @@ if (body.classList.contains('dark-mode')) {
           <div class="about-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
             <div class="section-title">
               <div class="line"></div>
-              <h3 class="title">
+              <h3 class="title"style="color:#2f6be5 ;">
                 <span>Market Monitoring</span> Real-time
               </h3>
             </div>
@@ -516,7 +1232,7 @@ if (body.classList.contains('dark-mode')) {
             <div class="counter-content">
               <div class="section-title">
                 <div class="line"></div>
-                <h3 class="title">INVESTING Expert <span> How I Went From $0-$1M By 30!</span></h3>
+                <h3 class="title"style="color: #2f6be5;">INVESTING Expert <span> How I Went From $0-$1M By 30!</span></h3>
               </div>
               <p class="text">
               <ul>
@@ -566,7 +1282,7 @@ if (body.classList.contains('dark-mode')) {
         <div class="col-lg-5">
           <div class="section-title text-center pb-30">
             <div class="line m-auto"></div>
-            <h3 class="title"><span>Meet Our</span> tech-savvy Team</h3>
+            <h3 class="title"style="color: #2f6be5;"><span>Meet Our</span> tech-savvy Team</h3>
           </div>
         </div>
       </div>
@@ -637,7 +1353,7 @@ if (body.classList.contains('dark-mode')) {
         <div class="col-lg-5">
           <div class="section-title text-center pb-40">
             <div class="line m-auto"></div>
-            <h3 class="title">Users sharing<span> their experience</span></h3>
+            <h3 class="title"style="color:#2f6be5 ;">Users sharing<span> their experience</span></h3>
           </div>
         </div>
       </div>
@@ -693,7 +1409,6 @@ if (body.classList.contains('dark-mode')) {
               </div>
             </div>
             <div class="testimonial-text">
-              
               <p class="text" >
                 FinVeda has become an invaluable tool in my monetary journey. The robust security tells us about
                 finances and intuitive design make it accessible to everyone.
@@ -809,7 +1524,7 @@ if (body.classList.contains('dark-mode')) {
               <div class="col-lg-6">
                 <div class="section-title pb-35">
                   <div class="line"></div>
-                  <h3 class="title"><span></span> Blog Posts</h3>
+                  <h3 class="title"style="color: #2f6be5;"><span></span> Blog Posts</h3>
                 </div>
               </div>
             </div>
@@ -1065,6 +1780,10 @@ if (body.classList.contains('dark-mode')) {
     <!-- <h2 class="form-heading2">Feedback Form</h2> -->
     <form class="feedbackform" id="feedback-form">
       <div class="form-group">
+ main7
+        <label class="form-label"  for="name">Name:</label>
+        <input class="form-input" placeholder="Enter your name" type="text" id="name" name="name" required>
+
         <div class="section-title text-center">
           <div class="line m-auto"></div>
           <h2 class="form-heading wow fadeInUp title" data-wow-duration="1s" data-wow-delay="0.2s">We Value Your Feedback</h2>
@@ -1074,14 +1793,36 @@ if (body.classList.contains('dark-mode')) {
         </div>
         <label class="form-label" for="name">Name:</label>
         <input class="form-input" type="text" id="name" name="name" required>
+ main
       </div>
       <div class="form-group">
         <label class="form-label" for="email">Email:</label>
-        <input class="form-input" type="email" id="email" name="email" required>
+        <input class="form-input" placeholder="Enter your email" type="email" id="email" name="email" required>
       </div>
       <div class="form-group">
         <label class="form-label">Rating:</label>
         <div id="emoji-description" class="emoji-description">Select an option</div>
+ main7
+      </div>
+      <div class="emojis">
+        <input class="form-input" type="radio" id="emoji1" name="rating" value="1">
+        <label class="form-label" for="emoji1">&#128577;</label> <!-- Very Bad -->
+        <input class="form-input" type="radio" id="emoji2" name="rating" value="2">
+        <label class="form-label" for="emoji2">&#128542;</label> <!-- Bad -->
+        <input class="form-input" type="radio" id="emoji3" name="rating" value="3">
+        <label class="form-label" for="emoji3">&#128528;</label> <!-- Neutral -->
+        <input class="form-input" type="radio" id="emoji4" name="rating" value="4">
+        <label class="form-label" for="emoji4">&#128522;</label> <!-- Good -->
+        <input class="form-input" type="radio" id="emoji5" name="rating" value="5">
+        <label class="form-label" for="emoji5">&#128515;</label> <!-- Excellent -->
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="comments">Comments:</label>
+        <textarea class="form-textarea" placeholder="Enter your comments" id="comments" name="comments" rows="4" required></textarea>
+      </div>
+      <div class="form-group">
+        <button class="form-button" id="feed-submit" type="submit">Submit Feedback</button>
+
         <div class="emojis">
           <input class="form-input" type="radio" id="emoji1" name="rating" value="1">
           <label class="form-label" for="emoji1">&#128542;</label> <!-- Very Bad -->
@@ -1101,6 +1842,7 @@ if (body.classList.contains('dark-mode')) {
         <div class="form-group skbtn">
           <button class="form-button" id="feed-submit" type="submit">Submit Feedback</button>
         </div>
+ main
       </div>
     </form>
   </div>
@@ -1123,6 +1865,12 @@ if (body.classList.contains('dark-mode')) {
     const rating = document.querySelector('input[name="rating"]:checked') ? document.querySelector('input[name="rating"]:checked').value : '';
     const comments = document.getElementById('comments').value;
 
+    // Validate emoji rating
+    if (!rating) {
+      alert('Please select an emoji rating before submitting.');
+      return;
+    }
+
     // Create feedback object
     const feedback = {
       name,
@@ -1143,6 +1891,9 @@ if (body.classList.contains('dark-mode')) {
 
     // Clear form inputs
     document.getElementById('feedback-form').reset();
+    
+    // Reset emoji description
+    document.getElementById('emoji-description').textContent = 'Select an option';
 
     // Show success notification
     document.getElementById('successnotification').style.display = 'block';
@@ -1151,10 +1902,31 @@ if (body.classList.contains('dark-mode')) {
     setTimeout(function () {
       document.getElementById('successnotification').style.display = 'none';
     }, 3000);
+  });
 
-    // Close notification on click
-    document.getElementById('closeSuccessNotification').addEventListener('click', function () {
-      document.getElementById('successnotification').style.display = 'none';
+  // Add event listeners for emoji selection
+  const emojis = document.querySelectorAll('input[name="rating"]');
+  const emojiDescription = document.getElementById('emoji-description');
+
+  emojis.forEach(emoji => {
+    emoji.addEventListener('change', function() {
+      switch(this.value) {
+        case '1':
+          emojiDescription.textContent = 'Very Bad';
+          break;
+        case '2':
+          emojiDescription.textContent = 'Bad';
+          break;
+        case '3':
+          emojiDescription.textContent = 'Neutral';
+          break;
+        case '4':
+          emojiDescription.textContent = 'Good';
+          break;
+        case '5':
+          emojiDescription.textContent = 'Excellent';
+          break;
+      }
     });
   });
 </script>
@@ -1201,7 +1973,7 @@ if (body.classList.contains('dark-mode')) {
               <div class="footer-link d-flex mt-50 justify-content-md-between" style="justify-content: space-around !important;">
                   <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
                       <div class="footer-title">
-                          <h3 class="title custom-margin">Quick Links</h3>
+                          <h3 class="title "style="margin-top: 0;">Quick Links</h3>
                       </div>
                       <ul class="link custom-margin">
                           <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
@@ -1213,7 +1985,7 @@ if (body.classList.contains('dark-mode')) {
                   </div>
                   <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
                       <div class="footer-title">
-                          <h4 class="title custom-margin">Resources</h4>
+                          <h4 class="title " style="margin-top: 0;">Resources</h4>
                       </div>
                       <ul class="link custom-margin">
                           <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
@@ -1227,13 +1999,13 @@ if (body.classList.contains('dark-mode')) {
               </div>
           </div>
           <div class="col-lg-3 col-md-5 col-sm-5">
-              <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.7s">
+              <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
                   <div class="footer-title">
                       <h4 class="title custom-margin">Contact Us</h4>
                   </div>
                   <ul class="contact custom-margin-big" style="justify-content: space-around;">
                       <li class="d-sm-flex justify-content-center">
-                          <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 15px; width: 10%;"></i>
+                          <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
                           <p style="width: 80%;">
                               <a href="mailto:ayush1337@hotmail.com" target="_blank"
                                  style="color: white; text-decoration: underline;">
@@ -1258,8 +2030,33 @@ if (body.classList.contains('dark-mode')) {
                               </a>
                           </div>
                       </li>
-                      <li class="d-sm-flex justify-content-center">
-                        <div class="gtranslate_wrapper"></div>
+                      <li id="social_icons" class="d-sm-flex justify-content-evenly my-3">
+                        <div style="width: 100%; display:flex; ">
+                          <!-- Instagram Icon -->
+                          <a href="https://instagram.com" target="_blank" style="margin: 0 10px; color: #E4405F;" aria-label="Instagram">
+                            <i style="font-size: 25px" class="fa-brands fa-instagram"></i>
+                          </a>
+                      
+                          <!-- Facebook Icon -->
+                          <a href="https://facebook.com" target="_blank" style="margin: 0 10px; color: #4267B2;" aria-label="Facebook">
+                            <i style="font-size: 25px" class="fa-brands fa-facebook"></i>
+                          </a>
+                      
+                          <!-- X/Twitter Icon -->
+                          <a href="https://twitter.com" target="_blank" style="margin: 0 10px; color: #1DA1F2;" aria-label="Twitter">
+                            <i style="font-size: 25px" class="fa-brands fa-x-twitter"></i>
+                          </a>
+                      
+                          <!-- Discord Icon -->
+                          <a href="https://discord.com" target="_blank" style="margin: 0 10px; color: #7289DA;" aria-label="Discord">
+                            <i style="font-size: 25px" class="fa-brands fa-discord"></i>
+                          </a>
+                      
+                          <!-- GitHub Icon -->
+                          <a href="https://github.com" target="_blank" style="margin: 0 10px; color: #333;" aria-label="GitHub">
+                            <i style="font-size: 25px" class="fa-brands fa-github"></i>
+                          </a>
+                        </div>
                       </li>
                   </ul>
               </div>
@@ -1335,44 +2132,61 @@ if (body.classList.contains('dark-mode')) {
   <script>
    document.addEventListener('DOMContentLoaded', function () {
     const cookieConsent = document.getElementById('cookieConsent');
-    const acceptCookiesButton = document.getElementById('acceptCookies');
+    const acceptAllCookiesButton = document.getElementById('acceptAllCookies');
+    const acceptNecessaryCookiesButton = document.getElementById('acceptNecessaryCookies');
 
     // Show the cookie consent popup on every page refresh
     cookieConsent.classList.add('show');
 
-    // Handle the "Accept" button click
-    acceptCookiesButton.addEventListener('click', function () {
-        cookieConsent.classList.remove('show');
-        cookieConsent.classList.add('hide');
-        // Hide the popup after animation ends
-        setTimeout(() => {
-            cookieConsent.style.display = 'none';
-        }, 500); // Matches animation duration
+    // Function to hide the cookie consent popup
+    function hideCookieConsent() {
+      cookieConsent.classList.remove('show');
+      cookieConsent.classList.add('hide');
+      // Hide the popup after animation ends
+      setTimeout(() => {
+        cookieConsent.style.display = 'none';
+      }, 500); // Matches animation duration
+    }
+
+    // Handle the "Accept all cookies" button click
+    acceptAllCookiesButton.addEventListener('click', function () {
+      // Set a cookie to remember user's choice
+      document.cookie = "cookieConsent=all; max-age=" + 30 * 24 * 60 * 60; // 30 days
+      hideCookieConsent();
+      // You can add code here to enable all cookies
     });
-});
-</script>
-<script>
-  $(document).ready(function() {
-  // Bind click event for the previous button
-  $('#prevButton').click(function() {
-    $('.testimonial-active').slick('slickPrev'); // Go to the previous slide
+
+    // Handle the "Accept necessary cookies only" button click
+    acceptNecessaryCookiesButton.addEventListener('click', function () {
+      // Set a cookie to remember user's choice
+      document.cookie = "cookieConsent=necessary; max-age=" + 30 * 24 * 60 * 60; // 30 days
+      hideCookieConsent();
+      // You can add code here to enable necessary cookies
+    });
   });
+  </script>
+  <script>
+    $(document).ready(function() {
+    // Bind click event for the previous button
+    $('#prevButton').click(function() {
+      $('.testimonial-active').slick('slickPrev'); // Go to the previous slide
+    });
 
-  // Bind click event for the next button
-  $('#nextButton').click(function() {
-    $('.testimonial-active').slick('slickNext'); // Go to the next slide
+    // Bind click event for the next button
+    $('#nextButton').click(function() {
+      $('.testimonial-active').slick('slickNext'); // Go to the next slide
+    });
   });
-});
-window.onscroll = function() {
-            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            let scrolled = (winScroll / height) * 100;
-            document.getElementById("progressBar").style.width = scrolled + "%";
-        };
-</script>
+  window.onscroll = function() {
+              let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+              let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+              let scrolled = (winScroll / height) * 100;
+              document.getElementById("progressBar").style.width = scrolled + "%";
+          };
+  </script>
 
 
-<div class="gtranslate_wrapper"></div>
+  <div class="gtranslate_wrapper"></div>
         <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
         <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
