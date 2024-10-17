@@ -37,9 +37,47 @@
       });
     })();
   </script>
+  <script>
+    // Scroll button functionality
+    const scrollToNextSection = () => {
+    window.scrollBy({
+      top: window.innerHeight,
+      behavior: 'smooth',
+    });
+  };
+  </script>
+  <style>
+    .scroll-btn {
+    position: fixed; 
+    top: 150px; 
+    right: 50px; 
+    background-color: #635adc; 
+    color: white; 
+    border: none; 
+    border-radius: 50%; 
+    width: 45px; 
+    height: 45px; 
+    font-size: 24px; 
+    cursor: pointer; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s; 
+    display: flex;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.scroll-btn:hover {
+    background-color: #555; /* Darker blue on hover */
+}
+
+  </style>
   
 <body>
   <div id="progressBar"></div>
+  <button id="scrollBtn" class="scroll-btn" onclick="scrollToNextSection()">
+    ↓
+  </button>
   <script>
     window.onscroll = function () {
       var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
