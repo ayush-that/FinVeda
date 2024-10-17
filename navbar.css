@@ -1,3 +1,4 @@
+/* Global Reset */
 *,
 *::before,
 *::after {
@@ -6,10 +7,7 @@
     padding: 0;
 }
 
-z
-
 /* Navbar Styling */
-/* Adjusted the margin from left side so that it looks uniform on all web pages. */
 .navbar-collapse {
     display: flex;
     margin-left: -13rem;
@@ -23,39 +21,16 @@ z
     position: relative;
     left: 0;
     transition: background-color 0.3s ease-in-out;
-    -webkit-transition: background-color 0.3s ease-in-out;
-    -moz-transition: background-color 0.3s ease-in-out;
-    -ms-transition: background-color 0.3s ease-in-out;
-    -o-transition: background-color 0.3s ease-in-out;
 }
 
-/* .navbar-collapse {
-    display: flex;
-    justify-content: center;
-    background-color: #3a90dc;
-    border-radius: 10px;
-    padding: 15px 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-bottom: 2px solid #edf2f4;
-    width: 100vw;
-    position: relative;
-    left: 0;
-
-    transition: background-color 0.3s ease-in-out;
-    -webkit-transition: background-color 0.3s ease-in-out;
-    -moz-transition: background-color 0.3s ease-in-out;
-    -ms-transition: background-color 0.3s ease-in-out;
-    -o-transition: background-color 0.3s ease-in-out;
-} */
 .active-link {
-            background-color: rgba(255, 99, 71, 0.2);
-            /* Soft coral with slight transparency */
-            border-radius: 5px;
-            color: #ffffff;
-            /* White text for contrast */
-            transform: scale(0.95);
+    background-color: rgba(255, 99, 71, 0.2); /* Soft coral with slight transparency */
+    border-radius: 5px;
+    color: #ffffff; /* White text for contrast */
+    transform: scale(0.95);
     border-bottom: 2px solid #edf2f4;
 }
+
 .navbar-nav {
     display: flex;
     justify-content: space-between;
@@ -66,7 +41,6 @@ z
 .navbar-nav .nav-item {
     display: inline-block;
     margin: 0 15px;
-    padding: 0;
 }
 
 .navbar-nav .nav-item a {
@@ -78,24 +52,23 @@ z
     white-space: nowrap;
 }
 
-/* On hover the text color was also set to the background color earlier hence I have changed to red color since all other tabs navbar text was already to red color, I have set to !important because the inline CSS has more priority compared to external CSS whether it applied on hover or without hover so the #333 should not overwrite when hovered hence I have set it to !important. */
-
 .navbar-nav .nav-item a:hover {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
     transform: scale(0.95);
 }
 
-
-.nav-item .navbar-btn{
-    background: linear-gradient(135deg,#00bfff,#150e4e);
-    transition:all 0.4s ease;
+.nav-item .navbar-btn {
+    background: linear-gradient(135deg, #00bfff, #150e4e);
+    transition: all 0.4s ease;
 }
+
 .nav-item .navbar-btn:hover {
     transform: scale(0.95);
-    background: linear-gradient(135deg,#150e4e,#00bfff);
+    background: linear-gradient(135deg, #150e4e, #00bfff);
 }
 
+/* Overlay for mobile menu */
 .overlay {
     width: 100%;
     height: 100%;
@@ -109,6 +82,7 @@ z
     transition: all 0.3s;
 }
 
+/* Mobile Menu Styling */
 .mobile-menu {
     top: 0;
     left: 0;
@@ -118,33 +92,28 @@ z
     z-index: 99;
     background-color: black;
     display: flex;
-    flex-flow: column nowrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     transform: translateX(-100%);
     transition: transform 0.3s;
 }
 
-/* Screen more than 991px wide */
-@media ((min-width: 991px)) {
+@media (min-width: 991px) {
     .mobile-menu {
         display: none !important;
     }
-
 }
 
 .mobile-menu a {
-    /* box-shadow: inset 0 0 1rem rgba(255,255,255,0.7); */
-    /* border-top: 3px solid #fff; */
-    /* border-bottom: 1px solid #fff; */
     text-align: center;
     margin: 1.5px;
     padding: 13px;
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
-    position: relative;
     font-size: 16px;
+    position: relative;
 }
 
 .mobile-menu a:after {
@@ -162,19 +131,12 @@ z
     width: 75%;
 }
 
-.mobile-menu li a:hover:after {
-    width: 0;
-}
-
 .mobile-menu .active-link {
-    background:
-        linear-gradient(black) bottom/ 100% 2px no-repeat,
-        transparent;
+    background: linear-gradient(black) bottom/ 100% 2px no-repeat, transparent;
 }
 
 .mobile-menu__trigger {
     cursor: pointer;
-    content: "";
     position: absolute;
     z-index: 3;
     width: 3rem;
@@ -202,7 +164,6 @@ z
     position: absolute;
     width: 100%;
     height: 2px;
-    right: 0;
     background: #fff;
     transition: all 0.3s;
 }
@@ -218,14 +179,12 @@ z
 .mobile-menu__trigger:hover span::before {
     width: 50%;
     top: -3px;
-    right: 0;
     transform: rotate(30deg);
 }
 
 .mobile-menu__trigger:hover span::after {
     width: 50%;
     top: 3px;
-    right: 0;
     transform: rotate(-30deg);
 }
 
@@ -234,7 +193,7 @@ z
     box-shadow: 0 0 2rem #000;
 }
 
-.mobile-menu_open+.overlay {
+.mobile-menu_open + .overlay {
     visibility: visible;
     opacity: 1;
 }
@@ -250,5 +209,4 @@ z
 
 .mobile-menu_open .mobile-menu__trigger:hover span::after {
     transform: rotate(30deg);
-
 }

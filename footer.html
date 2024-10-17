@@ -14,40 +14,41 @@
             background: linear-gradient(to right, #346479, #0f2027);
             color: white;
             padding: 20px 0;
+            text-align: center;
         }
         .footer-content {
             display: flex;
-            justify-content: space-around;
-            align-items: flex-start;
+            flex-wrap: wrap;
+            justify-content: center;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
-        .footer-content div {
-            flex: 1;
-            margin: 0 10px;
+        .footer-content div, .footer-content nav {
+            margin: 10px;
+            flex: 1 1 200px;
         }
-        .footer-content div ul {
+        .footer-content ul {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
-        .footer-content div ul li {
+        .footer-content ul li {
             margin: 10px 0;
             color: #ffffff;
         }
-        .footer-content div ul li a {
+        .footer-content ul li a {
             color: #ffffff;
             text-decoration: none;
             transition: color 0.3s ease;
         }
-        .footer-content div ul li a:hover {
-            color: #ff8c00; /* Change to highlight color */
+        .footer-content ul li a:hover {
+            color: #ff8c00;
             text-decoration: underline;
         }
-        .footer-icons {
+        .footer-icons div {
             display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
         }
         .footer-icons i {
             margin-right: 10px;
@@ -55,9 +56,8 @@
         }
         .footer-bottom {
             background-color: #0f2027;
-            text-align: center;
-            padding: 10px 0;
             color: #ffffff;
+            padding: 10px 0;
         }
         .floating-buttons {
             position: fixed;
