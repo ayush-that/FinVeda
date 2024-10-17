@@ -672,7 +672,7 @@ registerCloseButton.addEventListener("click", function() {
               </li>
               <li id="social_icons" class="d-sm-flex justify-content-evenly my-3">
                 <div style="width: 100%; display:flex; ">
-                  
+                  <!-- Instagram Icon -->
                   <a href="https://instagram.com" target="_blank" style="margin: 0 10px; color: #E4405F;"
                     aria-label="Instagram">
                     <i style="font-size: 25px" class="fa-brands fa-instagram"></i>
@@ -685,12 +685,11 @@ registerCloseButton.addEventListener("click", function() {
                   </a>
   
                   <!-- X/Twitter Icon -->
-                  <a href="https://twitter.com" target="_blank" style="margin: 0 10px; color: #1DA1F2;"
+                  <a href="https://twitter.com" target="_blank"style="margin: 0 10px; color: #1DA1F2;"
                     aria-label="Twitter">
                     <i style="font-size: 25px" class="fa-brands fa-x-twitter"></i>
                   </a>
-  
-                  <!-- Discord Icon -->
+
                   <a href="https://discord.com" target="_blank" style="margin: 0 10px; color: #7289DA;"
                     aria-label="Discord">
                     <i style="font-size: 25px" class="fa-brands fa-discord"></i>
@@ -724,12 +723,13 @@ registerCloseButton.addEventListener("click", function() {
               <p class="text" style="text-align: center">
                 © <span id="copyright-year"></span> FinVeda. All rights
                 reserved<br />
-                Made with ♥ in India
+                Made with ♥ In India
               </p>
 
             </div>
           </div>
         </div>
+
 
 
         <script>
@@ -865,3 +865,135 @@ registerCloseButton.addEventListener("click", function() {
 
       </body>
       </html>
+      </div>
+    </div>
+    <script>
+      const owner = 'ayush-that';
+      const repo = 'FinVeda';
+      const contributorsPerPage = 8;
+      let contributors = [];
+      let currentPage = 1;
+
+      async function fetchContributors() {
+        const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/contributors`);
+        if (!response.ok) {
+          console.error('Failed to fetch contributors:', response.statusText);
+          return;
+        }
+        contributors = await response.json();
+        displayContributors();
+        createPaginationButtons();
+      }
+
+      function displayContributors() {
+        const container = document.getElementById('contributor-cards');
+        container.innerHTML = '';
+        const start = (currentPage - 1) * contributorsPerPage;
+        const end = start + contributorsPerPage;
+        const currentContributors = contributors.slice(start, end);
+
+        currentContributors.forEach(contributor => {
+          const card = document.createElement('div');
+          card.className = 'contributor-member';
+          card.setAttribute('data-tilt', '');
+
+          const img = document.createElement('img');
+          img.src = contributor.avatar_url;
+          img.alt = contributor.login;
+
+          const name = document.createElement('h3');
+          name.textContent = contributor.login;
+
+          const contributions = document.createElement('p');
+          contributions.textContent = `${contributor.contributions} contributions`;
+
+          const viewProfileButton = document.createElement("button");
+          viewProfileButton.textContent = "View Profile";
+          viewProfileButton.addEventListener("click", () => {
+            window.open(contributor.html_url, "_blank");
+          });
+
+          card.appendChild(img);
+          card.appendChild(name);
+          card.appendChild(contributions);
+          container.appendChild(card);
+          card.appendChild(viewProfileButton);
+        });
+      }
+
+      function createPaginationButtons() {
+        const paginationContainer = document.getElementById('pagination');
+        paginationContainer.innerHTML = '';
+        const totalPages = Math.ceil(contributors.length / contributorsPerPage);
+
+        for (let i = 1; i <= totalPages; i++) {
+          const button = document.createElement('button');
+          button.textContent = i;
+          button.classList.add('pagination-button');
+          if (i === currentPage) {
+            button.classList.add('active');
+          }
+          button.addEventListener('click', () => {
+            currentPage = i;
+            displayContributors();
+            updatePaginationButtons();
+          });
+          paginationContainer.appendChild(button);
+        }
+      }
+
+      function updatePaginationButtons() {
+        const buttons = document.querySelectorAll('.pagination-button');
+        buttons.forEach(button => {
+          button.classList.remove('active');
+          if (parseInt(button.textContent) === currentPage) {
+            button.classList.add('active');
+          }
+        });
+      }
+
+      fetchContributors();
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+const coords = { x: 0, y: 0 };
+const circles = document.querySelectorAll(".circle");
+
+circles.forEach(function (circle) {
+  circle.x = 0;
+  circle.y = 0;
+});
+
+window.addEventListener("mousemove", function (e) {
+  coords.x = e.pageX;
+  coords.y = e.pageY - window.scrollY; 
+});
+
+function animateCircles() {
+  let x = coords.x;
+  let y = coords.y;
+
+  circles.forEach(function (circle, index) {
+    circle.style.left = `${x - 12}px`;
+    circle.style.top = `${y - 12}px`;
+    circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+
+    const nextCircle = circles[index + 1] || circles[0];
+    circle.x = x;
+    circle.y = y;
+
+    x += (nextCircle.x - x) * 0.3;
+    y += (nextCircle.y - y) * 0.3;
+  });
+
+  requestAnimationFrame(animateCircles);
+}
+
+animateCircles();
+});
+    </script>
+<div class="gtranslate_wrapper"></div>
+    <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+  </body>
+  </html>
