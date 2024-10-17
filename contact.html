@@ -267,6 +267,9 @@
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
   </div>
   <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -1519,9 +1522,28 @@ registerCloseButton.addEventListener("click", function() {
 <script>
 document.querySelector('.contact-frame form').addEventListener('submit', function(event) {
   event.preventDefault(); // Prevent form from actually submitting
-  alert('Your details have been submitted successfully!');
+  
+  // Show the success notification
+  var notification = document.getElementById('successnotification');
+  notification.style.display = 'block';
+  
+  // Start the timer animation
+  var timerline = document.getElementById('timerline');
+  timerline.style.animation = 'timer 3s linear';
+  
+  // Hide the notification after 3 seconds
+  setTimeout(function() {
+    notification.style.display = 'none';
+    timerline.style.animation = 'none';
+  }, 3000);
+  
   // Clear the form fields
   this.reset();
+});
+
+// Close button functionality for the notification
+document.getElementById('closeSuccessNotification').addEventListener('click', function() {
+  document.getElementById('successnotification').style.display = 'none';
 });
 </script>
 <script src="./tools/smoothScroll.js"></script>
