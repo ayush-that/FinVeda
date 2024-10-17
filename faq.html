@@ -2,9 +2,7 @@
 <html lang="en">
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <style>
-
-  </style>
+  
 </head>
 <body>
   <div class="circle-container">
@@ -89,22 +87,33 @@
 
     .home-link:hover .fa-home {
       color: #2F4F7F; 
+      cursor: pointer;
     }
+
+    .faq-area{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 99;
+      -webkit-transition: all 0.3s ease-out 0s;
+     -moz-transition: all 0.3s ease-out 0s;
+     -ms-transition: all 0.3s ease-out 0s;
+     -o-transition: all 0.3s ease-out 0s;
+     transition: all 0.3s ease-out 0s;
+    }
+
     </style>
 </head>
 <body>
   <a href="index.html" class="home-link">
     <i class="fas fa-home" style="font-size: 30px;"></i>
   </a>  
-    <div class="circle-container">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <!-- More circles... -->
-    </div>
+    
     <div id="progressBar"></div>
     <!-- FAQ section -->
     <header class="header-area">
-        <div class="navbar-area">
+        <div class="faq-area">
           <div class="container">
             <div class="row">
               <div class="col-lg-12">
@@ -158,65 +167,39 @@
         </div>
     </header>
 
-    <script>
-      const faqButtons = document.querySelectorAll('.faq-question');
-      
-      faqButtons.forEach(button => {
-          button.addEventListener('click', () => {
-              const answer = button.nextElementSibling;
-              const icon = button.querySelector('.faq-icon');
-              
-              // Toggle the answer visibility
-              if (answer.style.display === 'block') {
-                  answer.style.display = 'none';
-                  icon.textContent = '+'; // Change icon back to +
-              } else {
-                  answer.style.display = 'block';
-                  icon.textContent = '-'; // Change icon to -
-              }
-          });
-      });
-    document.addEventListener('DOMContentLoaded', function () {
-    const faqItems = document.querySelectorAll('.faq-item');
+    <!-- JavaScript for FAQ Toggle -->
+<script>
+  const faqItems = document.querySelectorAll('.faq-item');
 
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        const icon = question.querySelector('.faq-icon');
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    question.addEventListener('click', () => {
+      const answer = item.querySelector('.faq-answer');
+      const icon = question.querySelector('.faq-icon');
 
-        question.addEventListener('click', () => {
-            const answer = item.querySelector('.faq-answer');
-            const isActive = answer.classList.contains('show');
-
-            // Close all open answers
-            document.querySelectorAll('.faq-answer').forEach(answer => {
-                answer.classList.remove('show');
-                answer.style.maxHeight = '0'; // Hide immediately
-                answer.style.opacity = '0'; // Fade out
-                answer.style.padding = '0'; // Reduce padding
-            });
-            document.querySelectorAll('.faq-icon').forEach(icon => {
-                icon.textContent = '+'; // Reset all icons to "+"
-            });
-            // Toggle the clicked answer
-            if (!isActive) {
-                answer.style.display = 'block'; // Ensure display is block to apply transition
-                requestAnimationFrame(() => {
-                    requestAnimationFrame(() => {
-                        answer.classList.add('show'); // Add class for transition
-                        answer.style.maxHeight = '1000px'; // Allow height to adjust to content
-                        answer.style.opacity = '1'; // Fade in
-                        answer.style.padding = '10px 20px'; // Restore padding
-                    });
-                });
-                icon.textContent = '-';
-            } else {
-                icon.textContent = '+';
-            }
+      // Toggle the clicked answer
+      if (answer.style.maxHeight) {
+        answer.style.maxHeight = null;
+        icon.textContent = '+';
+      } else {
+        // Close all other open answers
+        faqItems.forEach(otherItem => {
+          const otherAnswer = otherItem.querySelector('.faq-answer');
+          const otherIcon = otherItem.querySelector('.faq-icon');
+          if (otherAnswer !== answer) {
+            otherAnswer.style.maxHeight = null;
+            otherIcon.textContent = '+';
+          }
         });
-    });
-});
 
-    </script>   
+        // Open the clicked answer
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        icon.textContent = '-';
+      }
+    });
+  });
+</script>
+
     <script src="/assets/js/faq.js"></script>
 
 
