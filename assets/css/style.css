@@ -203,10 +203,7 @@ p {
   color: rgb(255, 255, 255);
   background-position: right center;
 }
-
 .section-title .line {
-  background: -webkit-linear-gradient(#fe8464 0%, #fe6e9a 100%);
-  background: -o-linear-gradient(#fe8464 0%, #fe6e9a 100%);
   background: linear-gradient(#fe8464 0%, #fe6e9a 100%);
   width: 150px;
   height: 5px;
@@ -223,27 +220,7 @@ p {
   font-size: 38px;
   font-weight: 700;
   line-height: 42px;
-}
-
-@media (max-width: 767px) {
-  .section-title .title {
-    font-size: 20px;
-  }
-}
-
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-  .section-title .title {
-    font-size: 30px;
-  }
-}
-
-@media screen and (max-width: 375px) {
-  .container {
-    overflow-x: hidden;
-  }
-  .page-container {
-    overflow-x: auto;
-  }
+  padding-top: 10px;
 }
 
 .section-title .title span {
@@ -259,14 +236,19 @@ p {
 }
 
 @media (max-width: 767px) {
+  .section-title .title {
+    font-size: 24px;
+  }
+
   .section-title .sub-title {
     font-size: 16px;
   }
 }
 
-.section-title .title {
-  font-size: 32px;
-  padding-top: 10px;
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .section-title .title {
+    font-size: 30px;
+  }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -275,15 +257,14 @@ p {
   }
 }
 
-@media (max-width: 767px) {
-  .section-title .title {
-    font-size: 24px;
+@media (max-width: 375px) {
+  .container {
+    overflow-x: hidden;
   }
-}
 
-.section-title .title span {
-  font-weight: 400;
-  display: contents;
+  .page-container {
+    overflow-x: auto;
+  }
 }
 
 .slick-slide {
