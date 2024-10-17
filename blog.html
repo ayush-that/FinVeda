@@ -405,6 +405,7 @@
                   </div>
                 </div>
               </div>
+              <div ><img id="blog-pic" src="./assets/images/blog-img.jpeg" alt="QUIZ"></div>
               <div class="row justify-content-start">
                 <div class="col-lg-4 col-md-7">
                   <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
@@ -651,7 +652,206 @@
           </section>
         </article>
       </div>      
+      <style>
+  /* General Styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
 
+.blogfull {
+  padding: 50px 0;
+  background: #fff;
+}
+
+/* Title Styling */
+/* Title Styling */
+.section-title {
+  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 550px;
+}
+
+/* Title with Gradient and Shadow */
+.section-title h1 {
+  font-size: 4rem; /* Larger font size for more impact */
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 50px;
+  letter-spacing: 7px;
+  text-align: center;
+  background: linear-gradient(90deg, #ff6b6b, #ff4757, #ffa502);
+  -webkit-background-clip: text;
+  color: transparent; /* The text color is taken from the gradient */
+  
+  /* Text shadow mimicking the gradient colors */
+  text-shadow: 2px 2px 10px rgba(255, 107, 107, 0.6),
+               4px 4px 15px rgba(255, 71, 87, 0.4),
+               6px 6px 20px rgba(255, 165, 2, 0.4);
+}
+
+
+/* Line Styling (above title) */
+.section-title .line {
+  background: linear-gradient(90deg, #ff4757, #ff6b6b);
+  width: 80px;
+  height: 5px;
+  margin: 0 auto 20px;
+  border-radius: 3px;
+}
+
+/* Hover Effects for Blog Content */
+.single-blog {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+/* Gradient background for blog blocks */
+.single-blog {
+  background: linear-gradient(135deg, rgba(177, 65, 233, 0.8), rgba(41, 118, 233, 0.8));
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  color: rgb(255, 255, 255); /* Text color to make content readable on dark background */
+}
+
+.single-blog:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  background-color: white;
+}
+
+/* Blog content inside the blocks */
+.single-blog .blog-content p {
+  color: #b11414; /* Ensuring text remains visible against dark background */
+}
+
+.single-blog .blog-content a.more {
+  color: #ffa502; /* Highlight links with a color contrast */
+}
+
+.single-blog .blog-image img {
+  width: 100%;
+  filter: brightness(0.8); /* Adjust image brightness for better contrast with gradient */
+}
+
+
+.single-blog:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.blog-image img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+  transition: transform 0.2s;
+}
+
+.single-blog:hover .blog-image img {
+  transform: scale(1.05);
+}
+
+.blog-content {
+  padding: 20px;
+  text-align: center;
+  background-color: #f0f0f0;
+}
+
+.blog-content .reviewtext {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 15px;
+  height: 60px;
+  overflow: hidden;
+}
+
+.blog-content .reviewtext:hover {
+  color: #ff4757;
+  transition: color 0.2s ease;
+}
+
+.blog-content .more {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: #fff;
+  background-color: #ff4757;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.blog-content .more:hover {
+  background-color: #e33d4e;
+  color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .single-blog {
+    margin-bottom: 30px;
+  }
+
+  .section-title h1 {
+    font-size: 3rem;
+  }
+
+  .blog-content .reviewtext {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-content {
+    padding: 15px;
+  }
+
+  .blog-content .more {
+    font-size: 0.8rem;
+  }
+}
+
+/* Styling for the blog-pic container */
+#blog-pic {
+  position: absolute; /* Absolute positioning */
+  top: 220px; /* Vertically center the image */
+  left: 220px; /* Position it 20px from the left edge of the screen */
+  transform: translateY(-50%); /* Centering the image vertically */
+  width: 120px; /* Width for the container */
+  z-index: 1; /* Ensure it stays on top */
+}
+
+/* Styling for the image inside the blog-pic */
+#blog-pic img {
+  width: 100%; /* Image will fit the container */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Shadow around the image */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for hover effects */
+}
+
+/* Hover effect for the image */
+#blog-pic img:hover {
+  transform: scale(1.05); /* Slightly enlarge the image on hover */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* Increase the shadow on hover */
+  filter: brightness(1.2); /* Slightly increase the brightness on hover */
+}
+
+
+</style>
   <!-- Timed popup that will appear after succesful submission of feebback form! -->
         <button class="notification" id="successnotification" style="display:none;">
           <span class="message" id="successmsg">Submitted successfully!</span>
