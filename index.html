@@ -258,17 +258,18 @@ if (body.classList.contains('dark-mode')) {
                 <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none; border: none;" href="#"
                   onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
               </li>
-              
-              <div class="mobile-menu__trigger"><span></span></div>
+
+
             </nav>
+
+
           </div>
         </div>
       </div>
     </div>
 
-    
-    <link href="./navbar.css" rel="stylesheet">
-    <script type="text/javascript" src="./navbar.js"></script>
+
+  
 
     </div>
     <div id="home" class="header-hero bg_cover" style="background-image: url(assets/images/banner-bg.svg);">
@@ -333,7 +334,9 @@ if (body.classList.contains('dark-mode')) {
         <div class="col-lg-5">
           <div class="section-title text-center pb-40">
             <div class="line m-auto"></div>
+
             <h3 class="title"style="color: #2f6be5;">Users sharing<span> their experience</span></h3>
+
           </div>
         </div>
       </div>
@@ -504,7 +507,9 @@ if (body.classList.contains('dark-mode')) {
               <div class="col-lg-6">
                 <div class="section-title pb-35">
                   <div class="line"></div>
+
                   <h3 class="title"style="color: #2f6be5;"><span></span> Blog Posts</h3>
+
                 </div>
               </div>
             </div>
@@ -791,123 +796,8 @@ if (body.classList.contains('dark-mode')) {
   <header class="header-area">
         <div class="row">
           <div style="display: flex; justify-content: center;" class="">
-            <nav class="navbar navbar-expand-lg " style="display: flex;">
-              <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="toggler-icon"></span>
-                <span class="toggler-icon"></span>
-                <span class="toggler-icon"></span>
-              </button> -->
-              <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
-                <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
-                  <li class="nav-item">
-                    <a class="page-scroll active-link" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
-                  </li>    
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
-                  </li>
-                  <li class="nav-item active">
-                    <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
-                  </li>
-                  <li class="nav-item no-underline">
-                    <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
-                  </li>
-                </ul>
-              </div>
-              <script>
-                const toggleButton = document.getElementById('theme-toggle');
-                const body = document.body;
-                const currentTheme = localStorage.getItem('theme');
+            
 
-if (currentTheme === 'dark') {
-body.classList.add('dark-mode');
-toggleButton.classList.add('dark');
-toggleButton.textContent = '☀️';
-}
-
-toggleButton.addEventListener('click', function () {
-body.classList.toggle('dark-mode');
-toggleButton.classList.toggle('dark');
-
-// Update button icon based on mode
-if (body.classList.contains('dark-mode')) {
-  toggleButton.textContent = '☀️';  // Light mode icon
-  localStorage.setItem('theme', 'dark');
-} else {
-  toggleButton.textContent = '🌙';  // Dark mode icon
-  localStorage.setItem('theme', 'light');
-}
-});
-            </script>
-            <style>
-
-              h3{
-                color: #fff;
-              }
-
-            .toggle-button {
-              padding: 0.5em 1em;
-              cursor: pointer;
-              border: none;
-              background-color: #0c0a0a;
-              color: #fff;
-              border-radius: 5px;
-              transition: background-color 0.3s;
-          }
-          
-          .toggle-button:hover {
-              background-color: #555;
-          }
-          
-          .content {
-              padding: 2em;
-              text-align: center;
-          }
-          
-          h1 {
-              font-size: 2.5rem;
-              color: whitesmoke;
-              margin-top:130px;
-          }
-          
-          p {
-              font-size: 1.2rem;
-          }
-          
-          body.dark-mode {
-    background-color: #222;
-    color: #f1f1f1; /* Change text color to light for dark mode */
-}
-
-.toggle-button.dark {
-    background-color: #f1f1f1; /* Button background in dark mode */
-    color: #333; /* Button text color in dark mode */
-}
-
-.toggle-button.dark:hover {
-    background-color: #ddd; /* Button hover color in dark mode */
-}
-          </style>
-                
-              </nav>
           
             <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 
@@ -919,21 +809,24 @@ if (body.classList.contains('dark-mode')) {
               <a class="page-scroll" href="./blog.html">Blogs 📰</a>
               <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
               <a class="page-scroll" href="./contact.html">Contact🤔</a>
-              <li class="nav-item no-underline">
+          
                 <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none; border: none;" href="#"
                   onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
-              </li>
+        
               
-              <div class="mobile-menu__trigger"><span></span></div>
+              <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
+                <span></span>
+              </div>
             </nav>
+            <link href="./navbar.css" rel="stylesheet">
+            <script type="text/javascript" src="./navbar.js" defer></script>
+
           </div>
         </div>
       </div>
     </div>
 
     
-    <link href="./navbar.css" rel="stylesheet">
-    <script type="text/javascript" src="./navbar.js"></script>
 
     </div>
     <div id="home" class="header-hero bg_cover" style="background-image: url(assets/images/banner-bg.svg);">
@@ -998,8 +891,10 @@ if (body.classList.contains('dark-mode')) {
           <div class="section-title text-center pb-40">
             <h3 style="color: #2f6be5;">
             <div class="line m-auto"></div>
+
               FinVeda,
               <span style="color:#2f6be5;"> comes with everything you need to get started!</span>
+
             </h3>
           </div>
         </div>
@@ -1066,7 +961,9 @@ if (body.classList.contains('dark-mode')) {
           <div class="about-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
             <div class="section-title">
               <div class="line"></div>
+
               <h3 class="title" style="color: #2f6be5;">
+
                 Personalized AI Guru <span>to Teach You Finance</span>
               </h3>
             </div>
@@ -1113,7 +1010,9 @@ if (body.classList.contains('dark-mode')) {
           <div class="about-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
             <div class="section-title">
               <div class="line"></div>
+
               <h3 class="title"style="color: #2f6be5;">
+
                 Finance Blogs <span> that Don't Suck</span>
               </h3>
             </div>
@@ -1159,7 +1058,9 @@ if (body.classList.contains('dark-mode')) {
           <div class="about-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
             <div class="section-title">
               <div class="line"></div>
+
               <h3 class="title"style="color:#2f6be5 ;">
+
                 <span>Market Monitoring</span> Real-time
               </h3>
             </div>
@@ -1226,7 +1127,9 @@ if (body.classList.contains('dark-mode')) {
             <div class="counter-content">
               <div class="section-title">
                 <div class="line"></div>
+
                 <h3 class="title"style="color: #2f6be5;">INVESTING Expert <span> How I Went From $0-$1M By 30!</span></h3>
+
               </div>
               <p class="text">
               <ul>
@@ -1276,7 +1179,9 @@ if (body.classList.contains('dark-mode')) {
         <div class="col-lg-5">
           <div class="section-title text-center pb-30">
             <div class="line m-auto"></div>
+
             <h3 class="title"style="color: #2f6be5;"><span>Meet Our</span> tech-savvy Team</h3>
+
           </div>
         </div>
       </div>
@@ -1347,7 +1252,9 @@ if (body.classList.contains('dark-mode')) {
         <div class="col-lg-5">
           <div class="section-title text-center pb-40">
             <div class="line m-auto"></div>
+
             <h3 class="title"style="color:#2f6be5 ;">Users sharing<span> their experience</span></h3>
+
           </div>
         </div>
       </div>
@@ -1518,7 +1425,9 @@ if (body.classList.contains('dark-mode')) {
               <div class="col-lg-6">
                 <div class="section-title pb-35">
                   <div class="line"></div>
+
                   <h3 class="title"style="color: #2f6be5;"><span></span> Blog Posts</h3>
+
                 </div>
               </div>
             </div>
@@ -1967,7 +1876,7 @@ if (body.classList.contains('dark-mode')) {
               <div class="footer-link d-flex mt-50 justify-content-md-between" style="justify-content: space-around !important;">
                   <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
                       <div class="footer-title">
-                          <h3 class="title "style="margin-top: 0;">Quick Links</h3>
+                          <h3 class="title custom-margin">Quick Links</h3>
                       </div>
                       <ul class="link custom-margin">
                           <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
@@ -1979,7 +1888,7 @@ if (body.classList.contains('dark-mode')) {
                   </div>
                   <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
                       <div class="footer-title">
-                          <h4 class="title " style="margin-top: 0;">Resources</h4>
+                          <h4 class="title custom-margin">Resources</h4>
                       </div>
                       <ul class="link custom-margin">
                           <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
@@ -1993,13 +1902,13 @@ if (body.classList.contains('dark-mode')) {
               </div>
           </div>
           <div class="col-lg-3 col-md-5 col-sm-5">
-              <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+              <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.7s">
                   <div class="footer-title">
                       <h4 class="title custom-margin">Contact Us</h4>
                   </div>
                   <ul class="contact custom-margin-big" style="justify-content: space-around;">
                       <li class="d-sm-flex justify-content-center">
-                          <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                          <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 15px; width: 10%;"></i>
                           <p style="width: 80%;">
                               <a href="mailto:ayush1337@hotmail.com" target="_blank"
                                  style="color: white; text-decoration: underline;">
@@ -2024,33 +1933,8 @@ if (body.classList.contains('dark-mode')) {
                               </a>
                           </div>
                       </li>
-                      <li id="social_icons" class="d-sm-flex justify-content-evenly my-3">
-                        <div style="width: 100%; display:flex; ">
-                          <!-- Instagram Icon -->
-                          <a href="https://instagram.com" target="_blank" style="margin: 0 10px; color: #E4405F;" aria-label="Instagram">
-                            <i style="font-size: 25px" class="fa-brands fa-instagram"></i>
-                          </a>
-                      
-                          <!-- Facebook Icon -->
-                          <a href="https://facebook.com" target="_blank" style="margin: 0 10px; color: #4267B2;" aria-label="Facebook">
-                            <i style="font-size: 25px" class="fa-brands fa-facebook"></i>
-                          </a>
-                      
-                          <!-- X/Twitter Icon -->
-                          <a href="https://twitter.com" target="_blank" style="margin: 0 10px; color: #1DA1F2;" aria-label="Twitter">
-                            <i style="font-size: 25px" class="fa-brands fa-x-twitter"></i>
-                          </a>
-                      
-                          <!-- Discord Icon -->
-                          <a href="https://discord.com" target="_blank" style="margin: 0 10px; color: #7289DA;" aria-label="Discord">
-                            <i style="font-size: 25px" class="fa-brands fa-discord"></i>
-                          </a>
-                      
-                          <!-- GitHub Icon -->
-                          <a href="https://github.com" target="_blank" style="margin: 0 10px; color: #333;" aria-label="GitHub">
-                            <i style="font-size: 25px" class="fa-brands fa-github"></i>
-                          </a>
-                        </div>
+                      <li class="d-sm-flex justify-content-center">
+                        <div class="gtranslate_wrapper"></div>
                       </li>
                   </ul>
               </div>
