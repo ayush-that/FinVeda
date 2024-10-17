@@ -403,10 +403,11 @@
                 <div class="col-lg-6">
                   <div class="section-title pb-35">
                     <div class="line"></div><br>
-                    <h1 class="title" > Blog Posts</h1>
+                    <h1 id="title" > Blog Posts</h1>
                   </div>
                 </div>
               </div>
+              <div ><img id="blog-pic" src="./assets/images/blog-img.jpeg" alt="QUIZ"></div>
               <div class="row justify-content-start">
                 <div class="col-lg-4 col-md-7">
                   <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
@@ -653,7 +654,68 @@
           </section>
         </article>
       </div>      
+     <style>
+   /* General Styling */ 
+   #title { 
+    font-size: 4rem;/* Adjust to fit your layout */
+    margin-left: 400px;
+    font-weight: bold; 
+    color: #2c3e50; 
+    text-align: center;
+     white-space: nowrap; /* Ensures "Blog Posts" stays on one line */ 
+     text-transform: uppercase; /* Optional: Makes text uppercase */ 
+     letter-spacing: 0.1em; /* Adjusts spacing between letters */ 
+     transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */ 
+     text-shadow: 3px 4px 8px rgba(0, 0, 0, 0.4); /* Adds shadow for a 3D effect */ 
+     cursor: pointer; /* Changes cursor on hover */ 
+     display: inline-block; /* Helps with hover animation */ 
+     position: relative; 
+    } /* Hover effect to make it interactive */
+     
+     #title:hover {
+       color: #3498db; /* Changes color on hover */ 
+       text-shadow: 5px 7px 15px rgba(0, 0, 0, 0.6); 
+       /* Enhances shadow on hover */ transform: scale(1.05); 
+       /* Slight zoom effect on hover */ 
+    }
+     /* Optional animation for an underline effect on hover */ 
+    #title::after { 
+      content: '';
+      position: absolute;
+      left: 0; bottom: -10px; /* Distance from the text */
+      width: 100%; height: 3px; background-color: #3498db; 
+      transform: scaleX(0); transition: transform 0.3s ease;
+    }
+    #title:hover::after {
+    transform: scaleX(1); /* Expands the underline on hover */ 
+    }
 
+    /* Styling for the blog-pic container */
+#blog-pic {
+  position: absolute; /* Absolute positioning */
+  top: 175px; /* Vertically center the image */
+  left: 220px; /* Position it 20px from the left edge of the screen */
+  transform: translateY(-50%); /* Centering the image vertically */
+  width: 100px; /* Width for the container */
+  z-index: 1; /* Ensure it stays on top */
+  
+}
+
+/* Styling for the image inside the blog-pic */
+#blog-pic img {
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Shadow around the image */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for hover effects */
+}
+
+/* Hover effect for the image */
+#blog-pic img:hover {
+  transform: scale(1.05); /* Slightly enlarge the image on hover */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* Increase the shadow on hover */
+  filter: brightness(1.2); /* Slightly increase the brightness on hover */
+}
+
+</style>
   <!-- Timed popup that will appear after succesful submission of feebback form! -->
         <button class="notification" id="successnotification" style="display:none;">
           <span class="message" id="successmsg">Submitted successfully!</span>
