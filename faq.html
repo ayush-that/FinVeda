@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <style>
+
+  </style>
+</head>
+<body>
+  <div class="circle-container">
+    </div>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -58,9 +66,36 @@
       .faq-icon {
         margin-left: 10px;
       }
+
+.home-link {
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.3s; 
+    background-color: #4267B2; 
+    color: #fff; 
+    padding: 10px;
+    border-radius: 10px; 
+    text-decoration: none; /* Ensure no underline */
+    position: fixed; /* Fixed position */
+    top: 20px; /* Adjust as needed */
+    left: 20px; /* Adjust as needed */
+    z-index: 1000; /* Ensure it's on top of other elements */
+}
+
+    .home-link:hover {
+      background-color: #fff; 
+      transform: scale(1.1); 
+      border: 1px solid #2F4F7F;
+    }
+
+    .home-link:hover .fa-home {
+      color: #2F4F7F; 
+    }
     </style>
 </head>
 <body>
+  <a href="index.html" class="home-link">
+    <i class="fas fa-home" style="font-size: 30px;"></i>
+  </a>  
     <div class="circle-container">
         <div class="circle"></div>
         <div class="circle"></div>
