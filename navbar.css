@@ -1,3 +1,4 @@
+/* General Resets */
 *,
 *::before,
 *::after {
@@ -6,73 +7,50 @@
     padding: 0;
 }
 
-z
-
 /* Navbar Styling */
-/* Adjusted the margin from left side so that it looks uniform on all web pages. */
 .navbar-collapse {
     display: flex;
-    margin-left: -13rem;
     justify-content: center;
-    background-color: #3a90dc;
+    align-items: center; /* Center items vertically */
+    background-color: rgba(58, 144, 220, 0.9); /* Slightly transparent background */
     border-radius: 10px;
     padding: 15px 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-bottom: 2px solid #edf2f4;
-    width: 101vw;
-    position: relative;
-    left: 0;
-    transition: background-color 0.3s ease-in-out;
-    -webkit-transition: background-color 0.3s ease-in-out;
-    -moz-transition: background-color 0.3s ease-in-out;
-    -ms-transition: background-color 0.3s ease-in-out;
-    -o-transition: background-color 0.3s ease-in-out;
-}
-
-/* .navbar-collapse {
-    display: flex;
-    justify-content: center;
-    background-color: #3a90dc;
-    border-radius: 10px;
-    padding: 15px 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Increased shadow for depth */
     border-bottom: 2px solid #edf2f4;
     width: 100vw;
-    position: relative;
+    position: fixed; /* Fixed position to remain visible while scrolling */
+    top: 0; /* Align to the top */
     left: 0;
+    z-index: 1000; /* Ensure it stays above other content */
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition */
+}
 
-    transition: background-color 0.3s ease-in-out;
-    -webkit-transition: background-color 0.3s ease-in-out;
-    -moz-transition: background-color 0.3s ease-in-out;
-    -ms-transition: background-color 0.3s ease-in-out;
-    -o-transition: background-color 0.3s ease-in-out;
-} */
+/* Active Link Styling */
 .active-link {
-            background-color: rgba(255, 99, 71, 0.2);
-            /* Soft coral with slight transparency */
-            border-radius: 5px;
-            color: #ffffff;
-            /* White text for contrast */
-            transform: scale(0.95);
+    background-color: rgba(255, 99, 71, 0.3); /* Softer coral with transparency */
+    border-radius: 5px;
+    color: #ffffff; /* White text for contrast */
+    transform: scale(0.95);
     border-bottom: 2px solid #edf2f4;
 }
+
+/* Navbar Nav Styling */
 .navbar-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: nowrap;
-    gap:15px;
+    gap: 15px;
 }
 
 .navbar-nav .nav-item {
     display: inline-block;
-    padding: 0;
 }
 
-
-@media (max-width: 1320px) { /* 100% width */
+/* Adjusting navbar items on smaller screens */
+@media (max-width: 1320px) {
     .navbar-nav {
-        gap: 3px;
+        gap: 10px;
     }
 }
 
@@ -80,29 +58,31 @@ z
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
-    padding: 10px 5px;
+    padding: 10px 15px; /* Increased padding for better touch targets */
     transition: all 0.3s ease;
     white-space: nowrap;
+    color: #edf2f4; /* Default link color */
 }
 
-/* On hover the text color was also set to the background color earlier hence I have changed to red color since all other tabs navbar text was already to red color, I have set to !important because the inline CSS has more priority compared to external CSS whether it applied on hover or without hover so the #333 should not overwrite when hovered hence I have set it to !important. */
-
+/* Navbar Item Hover Effect */
 .navbar-nav .nav-item a:hover {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
     transform: scale(0.95);
 }
 
-
-.nav-item .navbar-btn{
-    background: linear-gradient(135deg,#00bfff,#150e4e);
-    transition:all 0.4s ease;
+/* Button Styling */
+.nav-item .navbar-btn {
+    background: linear-gradient(135deg, #00bfff, #150e4e);
+    transition: all 0.4s ease;
 }
+
 .nav-item .navbar-btn:hover {
     transform: scale(0.95);
-    background: linear-gradient(135deg,#150e4e,#00bfff);
+    background: linear-gradient(135deg, #150e4e, #00bfff);
 }
 
+/* Overlay for Mobile Menu */
 .overlay {
     width: 100%;
     height: 100%;
@@ -116,6 +96,7 @@ z
     transition: all 0.3s;
 }
 
+/* Mobile Menu Styles */
 .mobile-menu {
     top: 0;
     left: 0;
@@ -123,7 +104,7 @@ z
     height: 100vh;
     position: fixed;
     z-index: 99;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.9); /* Dark background for contrast */
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -132,18 +113,15 @@ z
     transition: transform 0.3s;
 }
 
-/* Screen more than 991px wide */
-@media ((min-width: 991px)) {
+/* Media Query for Larger Screens */
+@media (min-width: 991px) {
     .mobile-menu {
-        display: none !important;
+        display: none !important; /* Hide on larger screens */
     }
-
 }
 
+/* Mobile Menu Links */
 .mobile-menu a {
-    /* box-shadow: inset 0 0 1rem rgba(255,255,255,0.7); */
-    /* border-top: 3px solid #fff; */
-    /* border-bottom: 1px solid #fff; */
     text-align: center;
     margin: 1.5px;
     padding: 13px;
@@ -154,6 +132,7 @@ z
     font-size: 16px;
 }
 
+/* Mobile Menu Link Hover Effect */
 .mobile-menu a:after {
     content: "";
     position: absolute;
@@ -161,7 +140,7 @@ z
     left: 25%;
     width: 0;
     height: 2px;
-    background-color: black;
+    background-color: #fff; /* White underline effect */
     transition: width 0.3s;
 }
 
@@ -169,19 +148,14 @@ z
     width: 75%;
 }
 
-.mobile-menu li a:hover:after {
-    width: 0;
-}
-
+/* Mobile Menu Active Link */
 .mobile-menu .active-link {
-    background:
-        linear-gradient(black) bottom/ 100% 2px no-repeat,
-        transparent;
+    background: linear-gradient(black) bottom/100% 2px no-repeat, transparent;
 }
 
+/* Mobile Menu Trigger Styles */
 .mobile-menu__trigger {
     cursor: pointer;
-    content: "";
     position: absolute;
     z-index: 3;
     width: 3rem;
@@ -189,12 +163,13 @@ z
     border-radius: 50%;
     top: 2rem;
     right: -5rem;
-    background: black;
+    background: black; /* Black button for visibility */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* Trigger Bars */
 .mobile-menu__trigger span {
     display: block;
     width: 50%;
@@ -203,6 +178,7 @@ z
     position: relative;
 }
 
+/* Trigger Animation */
 .mobile-menu__trigger span::before,
 .mobile-menu__trigger span::after {
     content: "";
@@ -236,16 +212,18 @@ z
     transform: rotate(-30deg);
 }
 
+/* Open State for Mobile Menu */
 .mobile-menu_open {
     transform: translateX(0%);
-    box-shadow: 0 0 2rem #000;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.5);
 }
 
-.mobile-menu_open+.overlay {
+.mobile-menu_open + .overlay {
     visibility: visible;
     opacity: 1;
 }
 
+/* Open Trigger Animation */
 .mobile-menu_open .mobile-menu__trigger span::before,
 .mobile-menu_open .mobile-menu__trigger span::after {
     left: 0;
@@ -257,5 +235,4 @@ z
 
 .mobile-menu_open .mobile-menu__trigger:hover span::after {
     transform: rotate(30deg);
-
 }
