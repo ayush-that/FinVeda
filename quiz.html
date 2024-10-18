@@ -70,7 +70,7 @@
 
 
 
-  <div class="preloader">
+  <!-- <div class="preloader">
     <div class="loader">
       <div class="ytp-spinner">
         <div class="ytp-spinner-container">
@@ -85,7 +85,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <header class="header-area">
     <div class="navbar-area">
       <div class="container">
@@ -529,6 +529,20 @@ body {
   text-align: center;
 }
 
+#contact_icon{
+  width: 300px;
+}
+
+#contact_icon li{
+  width: 250px;
+  justify-content: space-around;
+  display: flex;
+  position: relative;
+  left: 50px;
+  bottom: 20px;
+}
+
+
 .test {
   font-size: 2.5rem;
   color: #333;
@@ -778,6 +792,7 @@ h2#question {
 #pass-btn {
   background-color: #6c757d; /* Grey */
   color: white;
+  margin-bottom: 30px;
 }
 
 #next-btn {
@@ -788,6 +803,7 @@ h2#question {
 #submit-btn {
   background-color: #28a745; /* Green */
   color: white;
+  margin-bottom: 30px;
 }
 
 #play-again-btn {
@@ -903,8 +919,8 @@ h2#question {
         </div>
         <div class="col-lg-6">
           <div class="subscribe-form mt-50">
-            <form id="unique-subscribe-form">
-              <input type="email" id="unique-news-email" placeholder="Enter Email" required />
+            <form id="unique-subscribe-form" style="display: flex;">
+              <input type="email" id="unique-news-email" placeholder="Enter Email" required style="width: 55%; margin-right: auto;" />
               <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
             </form>
             <div id="unique-message" class="unique-popup-message" style="display: none;">
@@ -956,13 +972,13 @@ h2#question {
           </div>
         </div>
       </div>
-      <div class="col-lg-3 col-md-5 col-sm-5">
+      <div style="position: relative; top: 16px; left: 40px;">
         <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
           <div class="footer-title">
             <h4 class="title custom-margin">Contact Us</h4>
           </div>
-          <ul class="contact custom-margin-big" style="justify-content: space-around;">
-            <li class="d-sm-flex justify-content-center">
+          <ul id="contact_icon" class="contact custom-margin-big" style="justify-content: space-around;">
+            <li>
               <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
               <p style="width: 80%;">
                 <a href="mailto:ayush1337@hotmail.com" target="_blank"
@@ -971,24 +987,24 @@ h2#question {
                 </a>
               </p>
             </li>
-            <li class="d-sm-flex justify-content-center">
+            <li>
               <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
               <div style="width: 80%;">
-                <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
+                <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff; position: relative; right: 25px;">
                   fin-veda.vercel.app
                 </a>
               </div>
             </li>
-            <li class="d-sm-flex justify-content-center">
+            <li>
               <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 12px; width: 10%;"></i>
               <div style="width: 80%;">
                 <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
-                  style="color:#fff">
+                  style="color:#fff; position: relative; right: 50px;">
                   Delhi, India
                 </a>
               </div>
             </li>
-            <li id="social_icons" class="d-sm-flex justify-content-evenly my-3">
+            <li id="social_icons" class="d-sm-flex justify-content-evenly" style=" position: relative; left:45px;">
               <div style="width: 100%; display:flex; ">
                 <!-- Instagram Icon -->
                 <a href="https://instagram.com" target="_blank" style="margin: 0 10px; color: #E4405F;"
