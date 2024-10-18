@@ -333,7 +333,7 @@ if (body.classList.contains('dark-mode')) {
         <div class="col-lg-5">
           <div class="section-title text-center pb-40">
             <div class="line m-auto"></div>
-            <h3 class="title"style="color: #c4def8;">Users sharing<span> their experience</span></h3>
+            <h3 class="title"style="color: #2f6be5;">Users sharing<span> their experience</span></h3>
           </div>
         </div>
       </div>
@@ -504,7 +504,7 @@ if (body.classList.contains('dark-mode')) {
               <div class="col-lg-6">
                 <div class="section-title pb-35">
                   <div class="line"></div>
-                  <h3 class="title"style="color: #c4def8;"><span></span> Blog Posts</h3>
+                  <h3 class="title"style="color: #2f6be5;"><span></span> Blog Posts</h3>
                 </div>
               </div>
             </div>
@@ -828,10 +828,209 @@ if (body.classList.contains('dark-mode')) {
                     <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
                   </li>
                   <li class="nav-item no-underline">
-                    <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
+                    <a class="main-btn navbar-btn" style="padding: 2px 20px;" data-scroll-nav="0" href="#" onclick="openModal()">Login/Register 💻</a>
                   </li>
                 </ul>
               </div>
+              <div class="">
+
+                <!-- Login Modal -->
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close" style="display: flex; justify-content: right;">&times;</span>
+                    <div class="mt-3">
+                      <h3 class="join"><i class="fa-solid fa-right-to-bracket"></i>  Login to join us....</h3>
+                      <form class="px-3 py-4" id="loginForm">
+                        <div class="form-group">
+                          <label class="d-flex">Username</label>
+                          <input type="text" placeholder="Username" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                          <label class="d-flex">Password</label>
+                          <input type="password" placeholder="Password" class="form-control" required>
+                          <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
+                        </div>
+                        <div class="form-check d-flex">
+                          <input type="checkbox" class="form-check-input me-1" style="margin-top: 0;">
+                          <label class="form-check-label" style="margin-bottom: 0;">Remember me</label>
+                          <a href="#" id="forgot-password" style="margin-left: 90px;">Forget Password?</a>
+                        </div>
+                        <div style="height: 20px;"></div>
+                        <button class="main-btn w-100 mb-3" onclick="submitForm('loginForm')">Sign in</button>
+                        <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
+                        <div class="or-sign-in-with text-center">
+                          <p>Or sign in with</p>
+                        </div>
+                        <div class="social-icons mt-3">
+                          <ul class="list-inline">
+                            <li><a href="#" class="google" id="google-login"><i class="fa-brands fa-google"></i></a></li>
+                            <li><a href="#" class="facebook" id="facebook-login"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="#" class="twitter" id="twitter-login"><i class="fa-brands fa-x-twitter"></i></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                 
+                <script>
+                  // Add event listeners to the social media icons
+                  document.getElementById('google-login').addEventListener('click', function() {
+                    window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
+                  });
+                
+                  document.getElementById('facebook-login').addEventListener('click', function() {
+                    window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
+                  });
+                
+                  document.getElementById('twitter-login').addEventListener('click', function() {
+                    window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
+                  });
+                </script>
+  
+          <!-- Register Modal -->
+          <div id="registerModal" class="modal">
+            <div class="modal-content">
+              <span class="close" style="display: flex; justify-content: right;">&times;</span>
+              <div class="mt-3">
+                <h3 class="join"><i class="fa-solid fa-user"></i>  Register to join us....</h3>
+                <form class="px-3 py-4" id="registerForm">
+                  <div class="form-group">
+                      <label class="d-flex">Email</label>
+                      <input type="email" placeholder="Email" class="form-control" required />
+                  </div>
+                  <div class="form-group">
+                      <label class="d-flex">Username</label>
+                      <input type="text" placeholder="Username" class="form-control" required />
+                  </div>
+                  <div class="form-group">
+                      <label class="d-flex">Password</label>
+                      <input type="password" placeholder="Password" class="form-control" id="register-password" required oninput="checkPasswordStrength()">
+                      <button type="button" class="toggle-password-btn" onclick="togglePasswordVisibility('register-password')">
+                          <i class="fa-solid fa-eye"></i>
+                          <i class="fa-solid fa-eye-slash" style="display: none;"></i>
+                      </button>
+                  </div>
+                  <div id="password-meter" style="display: none; margin-top: 5px;">
+                      <div id="meter" style="height: 10px; background-color: #ccc; border-radius: 5px; transition: width 0.3s;"></div>
+                      <div id="strength-text" style="margin-top: 5px; font-weight: bold;"></div>
+                  </div>
+                  </form>
+                  
+                  <!-- Import zxcvbn library -->
+                  <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+                  <script>
+                      function checkPasswordStrength() {
+                          const password = document.getElementById('register-password').value;
+                          const meter = document.getElementById('meter');
+                          const meterContainer = document.getElementById('password-meter');
+                          const strengthText = document.getElementById('strength-text');
+                  
+                          if (password) {
+                              meterContainer.style.display = 'block'; // Show the meter when typing
+                              const result = zxcvbn(password);
+                              const score = result.score; // Score ranges from 0 to 4
+                  
+                              // Set meter width and color based on score
+                              meter.style.width = (score + 1) * 20 + '%'; // Convert score to percentage
+                              meter.style.backgroundColor = getMeterColor(score);
+                              strengthText.innerText = getStrengthText(score); // Update strength text
+                          } else {
+                              meterContainer.style.display = 'none'; // Hide the meter if no password
+                              strengthText.innerText = ''; // Clear strength text
+                          }
+                      }
+                  
+                      function getMeterColor(score) {
+                          switch (score) {
+                              case 0: return 'red'; // Weak
+                              case 1: return 'orange'; // Fair
+                              case 2: return 'yellow'; // Good
+                              case 3: return 'blue'; // Strong
+                              case 4: return 'green'; // Very Strong
+                              default: return 'gray';
+                          }
+                      }
+                  
+                      function getStrengthText(score) {
+                          switch (score) {
+                              case 0: return 'Very Weak';
+                              case 1: return 'Weak';
+                              case 2: return 'Fair';
+                              case 3: return 'Strong';
+                              case 4: return 'Very Strong';
+                              default: return '';
+                          }
+                      }
+                  
+                      function togglePasswordVisibility(id) {
+                          const passwordInput = document.getElementById(id);
+                          const eyeIcon = passwordInput.nextElementSibling;
+                          if (passwordInput.type === 'password') {
+                              passwordInput.type = 'text';
+                              eyeIcon.children[0].style.display = 'none';
+                              eyeIcon.children[1].style.display = 'inline';
+                          } else {
+                              passwordInput.type = 'password';
+                              eyeIcon.children[0].style.display = 'inline';
+                              eyeIcon.children[1].style.display = 'none';
+                          }
+                      }
+                  </script>
+                  
+                <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('registerForm')">Register</button>
+                <p class="text-center">Already have an account? <a href="#" id="loginLink">Login</a></p>
+                <div class="or-sign-in-with text-center">
+                  <p>Or sign up with</p>
+                </div>
+                <div class="social-icons mt-3">
+                  <ul class="list-inline">
+                    <li><a href="#" class="google" id="google-signup"><i class="fa-brands fa-google"></i></a></li>
+                    <li><a href="#" class="facebook" id="facebook-signup"><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href="#" class="twitter" id="twitter-signup"><i class="fa-brands fa-twitter"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <script>
+            // Add event listeners to the social media icons
+            document.getElementById('google-signup').addEventListener('click', function() {
+              window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
+            });
+          
+            document.getElementById('facebook-signup').addEventListener('click', function() {
+              window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
+            });
+          
+            document.getElementById('twitter-signup').addEventListener('click', function() {
+              window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
+            });
+            
+          </script>
+              </div>
+            </nav>
+
+
+            <nav class="mobile-menu ">
+              <a class="page-scroll" href="./index.html">Home 🏡</a>
+              <a class="page-scroll" href="./about.html">About Us 📖</a>
+              <a class="page-scroll" href="./trends.html">Trends 📈</a>
+              <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
+              <a class="page-scroll" href="./blog.html">Blogs 📰</a>
+              <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
+              <a class="page-scroll main-btn" href="#" onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
+              <div class="mobile-menu__trigger"><span></span></div>
+            </nav>
+
+                
+              <link href="./navbar.css" rel="stylesheet">
+              <script type="text/javascript" src="./navbar.js"></script>
+
+          </div>
+        </div>
+      </div>
+    </div>
               <script>
                 const toggleButton = document.getElementById('theme-toggle');
                 const body = document.body;
@@ -996,11 +1195,10 @@ if (body.classList.contains('dark-mode')) {
       <div class="row justify-content-center">
         <div class="col-lg-10">
           <div class="section-title text-center pb-40">
+            <h3 style="color: #2f6be5;">
             <div class="line m-auto"></div>
-
-
               FinVeda,
-              <span style="color: #2e2e2e;"> comes with everything you need to get started!</span>
+              <span style="color:#2f6be5;"> comes with everything you need to get started!</span>
             </h3>
           </div>
         </div>
@@ -1067,7 +1265,7 @@ if (body.classList.contains('dark-mode')) {
           <div class="about-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
             <div class="section-title">
               <div class="line"></div>
-              <h3 class="title" style="color: #c4def8;">
+              <h3 class="title" style="color: #2f6be5;">
                 Personalized AI Guru <span>to Teach You Finance</span>
               </h3>
             </div>
@@ -1114,7 +1312,7 @@ if (body.classList.contains('dark-mode')) {
           <div class="about-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
             <div class="section-title">
               <div class="line"></div>
-              <h3 class="title"style="color: #c4def8;">
+              <h3 class="title"style="color: #2f6be5;">
                 Finance Blogs <span> that Don't Suck</span>
               </h3>
             </div>
@@ -1160,7 +1358,7 @@ if (body.classList.contains('dark-mode')) {
           <div class="about-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
             <div class="section-title">
               <div class="line"></div>
-              <h3 class="title"style="color: #c4def8;">
+              <h3 class="title"style="color:#2f6be5 ;">
                 <span>Market Monitoring</span> Real-time
               </h3>
             </div>
@@ -1227,7 +1425,7 @@ if (body.classList.contains('dark-mode')) {
             <div class="counter-content">
               <div class="section-title">
                 <div class="line"></div>
-                <h3 class="title"style="color: #c4def8;">INVESTING Expert <span> How I Went From $0-$1M By 30!</span></h3>
+                <h3 class="title"style="color: #2f6be5;">INVESTING Expert <span> How I Went From $0-$1M By 30!</span></h3>
               </div>
               <p class="text">
               <ul>
@@ -1277,7 +1475,7 @@ if (body.classList.contains('dark-mode')) {
         <div class="col-lg-5">
           <div class="section-title text-center pb-30">
             <div class="line m-auto"></div>
-            <h3 class="title"style="color: #c4def8;"><span>Meet Our</span> tech-savvy Team</h3>
+            <h3 class="title"style="color: #2f6be5;"><span>Meet Our</span> tech-savvy Team</h3>
           </div>
         </div>
       </div>
@@ -1348,7 +1546,7 @@ if (body.classList.contains('dark-mode')) {
         <div class="col-lg-5">
           <div class="section-title text-center pb-40">
             <div class="line m-auto"></div>
-            <h3 class="title"style="color: #c4def8;">Users sharing<span> their experience</span></h3>
+            <h3 class="title"style="color:#2f6be5 ;">Users sharing<span> their experience</span></h3>
           </div>
         </div>
       </div>
@@ -1519,7 +1717,7 @@ if (body.classList.contains('dark-mode')) {
               <div class="col-lg-6">
                 <div class="section-title pb-35">
                   <div class="line"></div>
-                  <h3 class="title"style="color: #c4def8;"><span></span> Blog Posts</h3>
+                  <h3 class="title"style="color: #2f6be5;"><span></span> Blog Posts</h3>
                 </div>
               </div>
             </div>
@@ -1775,6 +1973,10 @@ if (body.classList.contains('dark-mode')) {
     <!-- <h2 class="form-heading2">Feedback Form</h2> -->
     <form class="feedbackform" id="feedback-form">
       <div class="form-group">
+ main7
+        <label class="form-label"  for="name">Name:</label>
+        <input class="form-input" placeholder="Enter your name" type="text" id="name" name="name" required>
+
         <div class="section-title text-center">
           <div class="line m-auto"></div>
           <h2 class="form-heading wow fadeInUp title" data-wow-duration="1s" data-wow-delay="0.2s">We Value Your Feedback</h2>
@@ -1784,14 +1986,36 @@ if (body.classList.contains('dark-mode')) {
         </div>
         <label class="form-label" for="name">Name:</label>
         <input class="form-input" type="text" id="name" name="name" required>
+ main
       </div>
       <div class="form-group">
         <label class="form-label" for="email">Email:</label>
-        <input class="form-input" type="email" id="email" name="email" required>
+        <input class="form-input" placeholder="Enter your email" type="email" id="email" name="email" required>
       </div>
       <div class="form-group">
         <label class="form-label">Rating:</label>
         <div id="emoji-description" class="emoji-description">Select an option</div>
+ main7
+      </div>
+      <div class="emojis">
+        <input class="form-input" type="radio" id="emoji1" name="rating" value="1">
+        <label class="form-label" for="emoji1">&#128577;</label> <!-- Very Bad -->
+        <input class="form-input" type="radio" id="emoji2" name="rating" value="2">
+        <label class="form-label" for="emoji2">&#128542;</label> <!-- Bad -->
+        <input class="form-input" type="radio" id="emoji3" name="rating" value="3">
+        <label class="form-label" for="emoji3">&#128528;</label> <!-- Neutral -->
+        <input class="form-input" type="radio" id="emoji4" name="rating" value="4">
+        <label class="form-label" for="emoji4">&#128522;</label> <!-- Good -->
+        <input class="form-input" type="radio" id="emoji5" name="rating" value="5">
+        <label class="form-label" for="emoji5">&#128515;</label> <!-- Excellent -->
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="comments">Comments:</label>
+        <textarea class="form-textarea" placeholder="Enter your comments" id="comments" name="comments" rows="4" required></textarea>
+      </div>
+      <div class="form-group">
+        <button class="form-button" id="feed-submit" type="submit">Submit Feedback</button>
+
         <div class="emojis">
           <input class="form-input" type="radio" id="emoji1" name="rating" value="1">
           <label class="form-label" for="emoji1">&#128542;</label> <!-- Very Bad -->
@@ -1811,6 +2035,7 @@ if (body.classList.contains('dark-mode')) {
         <div class="form-group skbtn">
           <button class="form-button" id="feed-submit" type="submit">Submit Feedback</button>
         </div>
+ main
       </div>
     </form>
   </div>
@@ -1941,7 +2166,7 @@ if (body.classList.contains('dark-mode')) {
               <div class="footer-link d-flex mt-50 justify-content-md-between" style="justify-content: space-around !important;">
                   <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
                       <div class="footer-title">
-                          <h3 class="title custom-margin">Quick Links</h3>
+                          <h3 class="title "style="margin-top: 0;">Quick Links</h3>
                       </div>
                       <ul class="link custom-margin">
                           <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
@@ -1953,7 +2178,7 @@ if (body.classList.contains('dark-mode')) {
                   </div>
                   <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
                       <div class="footer-title">
-                          <h4 class="title custom-margin">Resources</h4>
+                          <h4 class="title " style="margin-top: 0;">Resources</h4>
                       </div>
                       <ul class="link custom-margin">
                           <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
@@ -1967,13 +2192,13 @@ if (body.classList.contains('dark-mode')) {
               </div>
           </div>
           <div class="col-lg-3 col-md-5 col-sm-5">
-              <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.7s">
+              <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
                   <div class="footer-title">
                       <h4 class="title custom-margin">Contact Us</h4>
                   </div>
                   <ul class="contact custom-margin-big" style="justify-content: space-around;">
                       <li class="d-sm-flex justify-content-center">
-                          <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 15px; width: 10%;"></i>
+                          <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
                           <p style="width: 80%;">
                               <a href="mailto:ayush1337@hotmail.com" target="_blank"
                                  style="color: white; text-decoration: underline;">
@@ -1998,8 +2223,33 @@ if (body.classList.contains('dark-mode')) {
                               </a>
                           </div>
                       </li>
-                      <li class="d-sm-flex justify-content-center">
-                        <div class="gtranslate_wrapper"></div>
+                      <li id="social_icons" class="d-sm-flex justify-content-evenly my-3">
+                        <div style="width: 100%; display:flex; ">
+                          <!-- Instagram Icon -->
+                          <a href="https://instagram.com" target="_blank" style="margin: 0 10px; color: #E4405F;" aria-label="Instagram">
+                            <i style="font-size: 25px" class="fa-brands fa-instagram"></i>
+                          </a>
+                      
+                          <!-- Facebook Icon -->
+                          <a href="https://facebook.com" target="_blank" style="margin: 0 10px; color: #4267B2;" aria-label="Facebook">
+                            <i style="font-size: 25px" class="fa-brands fa-facebook"></i>
+                          </a>
+                      
+                          <!-- X/Twitter Icon -->
+                          <a href="https://twitter.com" target="_blank" style="margin: 0 10px; color: #1DA1F2;" aria-label="Twitter">
+                            <i style="font-size: 25px" class="fa-brands fa-x-twitter"></i>
+                          </a>
+                      
+                          <!-- Discord Icon -->
+                          <a href="https://discord.com" target="_blank" style="margin: 0 10px; color: #7289DA;" aria-label="Discord">
+                            <i style="font-size: 25px" class="fa-brands fa-discord"></i>
+                          </a>
+                      
+                          <!-- GitHub Icon -->
+                          <a href="https://github.com" target="_blank" style="margin: 0 10px; color: #333;" aria-label="GitHub">
+                            <i style="font-size: 25px" class="fa-brands fa-github"></i>
+                          </a>
+                        </div>
                       </li>
                   </ul>
               </div>
@@ -2021,7 +2271,7 @@ if (body.classList.contains('dark-mode')) {
             >
               <div class="copyright-content" style="text-align: center">
                 <p class="text" style="text-align: center">
-                  © <span id="copyright-year"></span> FinVeda. All rights
+                  © <span id="copyright-year"></span> FinVeda. All rights are
                   reserved<br />
                   Made with ♥ in India
                 </p>

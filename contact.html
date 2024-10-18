@@ -20,6 +20,7 @@
   <link rel="stylesheet"  href="assets/css/popup.css" />
   <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <style>
     
     body {
@@ -613,7 +614,7 @@ registerCloseButton.addEventListener("click", function() {
     <script type="text/javascript" src="./navbar.js"></script>
 
     </div>
-
+<!-- 
 <!--             
             <nav class="mobile-menu ">
               <a class="page-scroll" href="./index.html">Home 🏡</a>
@@ -628,12 +629,7 @@ registerCloseButton.addEventListener("click", function() {
 
                 
               <link href="./navbar.css" rel="stylesheet">
-              <script type="text/javascript" src="./navbar.js"></script> -->
-
-          </div>
-        </div>
-      </div>
-    </div>
+              <script type="text/javascript" src="./navbar.js"></script> --> -->
     <div id="home" class="header-hero bg_cover" style="background-image: url(../assets/images/banner-bg.svg)">
       <div class="container">
         <div class="row justify-content-center">
@@ -660,7 +656,10 @@ registerCloseButton.addEventListener("click", function() {
         <div class="row">
           <div class="col-lg-12">
             <div class="header-hero-image text-center wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">
-              <img src="../assets/images/header-hero.png" alt="hero" />
+              <div class="anim" data-tilt="">
+                <img src="assets/images/header-hero.png" alt="hero" style="animation: float 1.5s ease-in-out infinite;"
+                  data-tilt="" />
+              </div>
             </div>
           </div>
         </div>
@@ -1360,7 +1359,7 @@ registerCloseButton.addEventListener("click", function() {
           >
             <div class="copyright-content" style="text-align: center">
               <p class="text" style="text-align: center">
-                © <span id="copyright-year"></span> FinVeda. All rights
+                © <span id="copyright-year"></span> FinVeda. All rights are
                 reserved<br />
                 Made with ♥ in India
               </p>
@@ -1547,6 +1546,15 @@ document.getElementById('closeSuccessNotification').addEventListener('click', fu
 });
 </script>
 <script src="./tools/smoothScroll.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>
+
+<div class="gtranslate_wrapper"></div>
+<script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 </body>
 
 </html>
