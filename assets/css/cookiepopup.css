@@ -22,7 +22,7 @@
 
 #cookieConsent{
     display: fixed;
-    bottom: 2vh;
+    bottom: 3vh;    
     left: 1vw;
 }
 
@@ -39,7 +39,7 @@
     font-size: 14px;
     z-index: 1000; 
     width: 25%;
-    height: 200px;
+    height: auto;
     opacity: 0;
     transform: translateY(10px);
     animation: fadeIn 0.5s ease-out forwards;
@@ -74,17 +74,20 @@
     color: #003169; 
 }
 
+.cookie-buttons {
+    display: flex; /* Align buttons adjacent */
+    justify-content: flex-start; /* Align to the left */
+    gap: 10px; /* Space between buttons */
+}
+
 .cookie-consent button {
     background-color: #0056b3; 
     border: none;
     color: #fff;
-    padding: 0px 10px;
+    padding: 5px 15px;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 20px;
-    margin-top: 3px;
     transition: background-color 0.3s ease;
-    margin-bottom: 5px;
 }
 
 .cookie-consent button:hover {
