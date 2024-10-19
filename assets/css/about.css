@@ -438,6 +438,36 @@
     color: #fff;
   }
 
+  /* Scroll to Top Button */
+  #back-to-top {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position on the page */
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+    z-index: 99; /* Ensure it's above other elements */
+    background-color: #7b82ee; /* Light blue button background color */
+    color: white; /* Button icon color */
+    border: none; /* No border */
+    outline: none; /* No outline */
+    cursor: pointer; /* Pointer cursor on hover */
+    width: 50px; /* Width for circular shape */
+    height: 50px; /* Height for circular shape */
+    border-radius: 50%; /* Fully rounded corners for circle */
+    font-size: 18px; /* Button icon size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for button */
+    text-align: center; /* Center the text inside */
+    line-height: 50px; /* Vertically center the icon */
+  }
+  
+  #back-to-top:hover {
+    background-color: #512ce1; /* Darker background on hover */
+    color: white; /* White icon color on hover */
+    transform: translateY(-5px); /* Slight move up on hover */
+    transition: background-color 0.3s, transform 0.3s ease;
+  }
+  
+
+
   .pagination button.active {
     background-color: transparent;
     text-decoration: underline;
