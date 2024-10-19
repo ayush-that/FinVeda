@@ -1,179 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
+    <title>FinVeda Home Page</title>
     <style>
         body {
-            margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-        }
-        .footer {
-            background: linear-gradient(to right, #346479, #0f2027);
-            color: white;
-            padding: 20px 0;
-        }
-        .footer-content {
-            display: flex;
-            justify-content: space-around;
-            align-items: flex-start;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .footer-content div {
-            flex: 1;
-            margin: 0 10px;
-        }
-        .footer-content div ul {
-            list-style: none;
+            margin: 0;
             padding: 0;
         }
-        .footer-content div ul li {
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 0;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 0 20px;
+        }
+
+        .footer-section {
+            flex: 1;
+            padding: 10px 20px;
+        }
+
+        .footer-section h3 {
+            color: #ff9800;
+            margin-bottom: 15px;
+        }
+
+        .footer-section p, .footer-section ul {
+            color: #ddd;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer-section ul {
+            list-style-type: none;
+        }
+
+        .footer-section ul li {
             margin: 10px 0;
-            color: #ffffff;
         }
-        .footer-content div ul li a {
-            color: #ffffff;
+
+        .footer-section ul li a {
+            color: #ff9800;
             text-decoration: none;
-            transition: color 0.3s ease;
         }
-        .footer-content div ul li a:hover {
-            color: #ff8c00; /* Change to highlight color */
+
+        .footer-section ul li a:hover {
             text-decoration: underline;
         }
-        .footer-icons {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        .footer-icons i {
-            margin-right: 10px;
-            color: #ff8c00;
-        }
-        .footer-bottom {
-            background-color: #0f2027;
-            text-align: center;
-            padding: 10px 0;
-            color: #ffffff;
-        }
-        .floating-buttons {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            flex-direction: column;
-        }
-        .floating-buttons a {
-            background-color: #6a5acd;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            border-radius: 50%;
-            margin: 5px 0;
-            text-decoration: none;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s ease;
-        }
-        .floating-buttons a:hover {
-            background-color: #483d8b;
-        }
-        @media (max-width: 768px) {
-            .footer-content {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
 
-            .footer-content div {
-                margin: 10px 0;
-            }
-        }
-        #social_icons div {
+        .social-icons {
+            list-style-type: none;
+            padding: 0;
             display: flex;
-            justify-content: center;
-            gap: 10px;
+            gap: 15px;
         }
-        #social_icons a:hover i {
-            color: #ff4500;
+
+        .social-icons li {
+            display: inline-block;
+        }
+
+        .social-icons a {
+            color: #ff9800;
+            font-size: 1.5em;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #222;
         }
     </style>
 </head>
 <body>
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-icons">
-                <div><i class="fab fa-instagram"></i><a href="https://instagram.com" target="_blank" aria-label="Instagram">@instagram_user</a></div>
-                <div><i class="fab fa-facebook"></i><a href="https://facebook.com" target="_blank" aria-label="Facebook">@facebook_user</a></div>
-                <div><i class="fab fa-twitter"></i><a href="https://twitter.com" target="_blank" aria-label="Twitter">@twitter_user</a></div>
-                <div><i class="fab fa-discord"></i><a href="https://discord.com" target="_blank" aria-label="Discord">@discord_user</a></div>
-                <div><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/sampada-tiwari-217123257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="Linkedin">@linkedin_user</a></div>
-            <nav>
-                <ul>
-                    <li><a href="#"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
-                    <li><a href="#"><i class="fas fa-undo"></i> Refund Policy</a></li>
-                    <li><a href="#"><i class="fas fa-file-contract"></i> Licensing</a></li>
-                    <li><a href="#"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
-                    <li><a href="#"><i class="fas fa-users"></i> Our Contributors</a></li>
-                </ul>
-            </nav>
-            <nav>
-                <ul>
-                    <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="#"><i class="fas fa-info-circle"></i> About Us</a></li>
-                    <li><a href="#"><i class="fas fa-chart-line"></i> Trends</a></li>
-                    <li><a href="#"><i class="fas fa-tools"></i> Tools</a></li>
-                    <li><a href="#"><i class="fas fa-blog"></i> Blog</a></li>
-                    <li><a href="#"><i class="fas fa-question-circle"></i> Quiz</a></li>
-                </ul>
-            </nav>
-            <div>
-                <ul>
-                    <li><i class="fas fa-envelope"></i> <a href="mailto:ayush1337@hotmail.com">ayush1337@hotmail.com</a></li>
-                    <li><i class="fas fa-globe"></i> <a href="https://fin-veda.vercel.app" target="_blank">fin-veda.vercel.app</a></li>
-                    <li><i class="fas fa-map-marker-alt"></i> Delhi, India</li>
 
-                    <li id="social_icons" class="d-sm-flex justify-content-evenly my-3">
-                        <div style="width: 100%; display:flex; ">
-                          <a href="https://instagram.com" target="_blank" style="margin: 0 10px; color: #E4405F;" aria-label="Instagram">
-                            <i style="font-size: 25px" class="fa-brands fa-instagram"></i>
-                          </a>
-                          <a href="https://facebook.com" target="_blank" style="margin: 0 10px; color: #4267B2;" aria-label="Facebook">
-                            <i style="font-size: 25px" class="fa-brands fa-facebook"></i>
-                          </a>
-                          <a href="https://twitter.com" target="_blank" style="margin: 0 10px; color: #1DA1F2;" aria-label="Twitter">
-                            <i style="font-size: 25px" class="fa-brands fa-twitter"></i>
-                          </a>
-                          <a href="https://discord.com" target="_blank" style="margin: 0 10px; color: #7289DA;" aria-label="Discord">
-                            <i style="font-size: 25px" class="fa-brands fa-discord"></i>
-                          </a>
-                          <a href="https://github.com" target="_blank" style="margin: 0 10px; color: #333;" aria-label="GitHub">
-                            <i style="font-size: 25px" class="fa-brands fa-github"></i>
-                          </a>
-                        </div>
-                      </li>
+    <!-- Content of the page (for demonstration purposes) -->
+    <div>
+        <h1>Welcome to FinVeda</h1>
+        <p>FinVeda is your go-to platform for financial solutions and services.</p>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h3>About Us</h3>
+                <p>FinVeda is dedicated to providing financial insights and innovative solutions to help you manage your finances efficiently.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
             </div>
-        </div>
-
+            <div class="footer-section social">
+                <h3>Follow Us</h3>
+                <ul class="social-icons">
+                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2024 FinVeda. All rights are reserved</p>
-            <p>Made with ♥ in India</p>
+            <p>© 2024 FinVeda. All rights reserved.</p>
         </div>
     </footer>
-    <div class="floating-buttons">
-        <a href="#"><i class="fas fa-comment"></i></a>
-        <a href="#"><i class="fas fa-arrow-up"></i></a>
-    </div>
+
+    <!-- Font Awesome CDN for social icons (if needed) -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
 </html>
-
