@@ -1,91 +1,56 @@
-// Mobile Menu and Trigger Selectors
-const mobile_menu = document.querySelector(".mobile-menu"),
-      mobile_trigger = document.querySelector(".mobile-menu__trigger");
+const mobileMenu = document.querySelector(".mobile-menu");
+const mobileTrigger = document.querySelector(".mobile-menu__trigger");
+const overlay = document.querySelector(".overlay");
 
 let initialPoint, finalPoint;
 
-// Touch Start Event to detect swipe gestures
 document.addEventListener("touchstart", function(event) {
-	initialPoint = event.changedTouches[0];
+    initialPoint = event.changedTouches[0];
 });
 
 document.addEventListener("touchend", function(event) {
-	finalPoint = event.changedTouches[0];
-	
-	let xAbs = Math.abs(initialPoint.pageX - finalPoint.pageX),
-	    yAbs = Math.abs(initialPoint.pageY - finalPoint.pageY);
-	
-	// Detect Swipe Width and Direction
-	if(xAbs > 120 || yAbs > 120) { // 120 - SWIPE WIDTH
-		if(xAbs > yAbs) {
-			if(finalPoint.pageX < initialPoint.pageX) {
-				// SWIPE LEFT - Close the mobile menu
-				mobile_menu.classList.remove("mobile-menu_open");
-			} else {
-				// SWIPE RIGHT - Open the mobile menu
-				mobile_menu.classList.add("mobile-menu_open");
-			}
-		} else {
-			// Swipe Up or Down Detected (Not used in this case)
-		}
-	}
+    finalPoint = event.changedTouches[0];
+    let xAbs = Math.abs(initialPoint.pageX - finalPoint.pageX),
+        yAbs = Math.abs(initialPoint.pageY - finalPoint.pageY);
+
+    if (xAbs > 120 || yAbs > 120) {
+        if (xAbs > yAbs) {
+            if (finalPoint.pageX < initialPoint.pageX) {
+                // Swipe left
+                mobileMenu.classList.remove("mobile-menu_open");
+                overlay.style.visibility = "hidden";
+            } else {
+                // Swipe right
+                mobileMenu.classList.add("mobile-menu_open");
+                overlay.style.visibility = "visible";
+            }
+        }
+    }
 });
 
-// Toggle Mobile Menu on Click
-document.addEventListener("click", function(event) {
-	const target = event.target.closest(".mobile-menu__trigger");
-	if(target && target == mobile_trigger) {
-		// Toggle mobile menu visibility
-		mobile_menu.classList.toggle("mobile-menu_open");
-	} else if(event.target !== mobile_trigger && !mobile_menu.contains(event.target)) {
-		// Close the mobile menu if clicking outside
-		if( mobile_menu.classList.contains("mobile-menu_open") ) {
-			mobile_menu.classList.remove("mobile-menu_open");
-		}
-	}
+mobileTrigger.addEventListener("click", function() {
+    mobileMenu.classList.toggle("mobile-menu_open");
+    overlay.style.visibility = mobileMenu.classList.contains("mobile-menu_open") ? "visible" : "hidden";
 });
 
-// Handle Smooth Scroll for Anchor Links in the Menu
-mobile_menu.querySelectorAll("a").forEach(function(element) {
-	element.addEventListener("click", function(event) {
-		const anchor_href = event.currentTarget.getAttribute("href");
-		if(anchor_href.charAt(0) === "#") {
-			event.preventDefault();
-			if(anchor_href.length > 1) { // Check if #hash is not empty
-				const scroll_to_node = document.querySelector(event.currentTarget.hash);
-				if(scroll_to_node) {
-					SmoothScrollTo(scroll_to_node);
-				}
-			}
-		}
-	});
+overlay.addEventListener("click", function() {
+    mobileMenu.classList.remove("mobile-menu_open");
+    overlay.style.visibility = "hidden";
 });
 
-// Smooth Scrolling Function
-function SmoothScrollTo(element) {
-	if(element) {
-		element.scrollIntoView({
-			behavior: "smooth"
-		});
-	}
-}
+window.addEventListener("scroll", function() {
+    const navbar = document.querySelector(".navbar-collapse");
+    const navLinks = document.querySelectorAll(".navbar-nav .nav-item a");
 
-// Navbar Visibility and Style on Scroll
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar-collapse'); // Make sure .navbar-collapse exists in the HTML
-    const navLinks = document.querySelectorAll('.navbar-nav .nav-item a'); // Select all nav links
-    
-    if (window.scrollY > 50) { 
-      // If scroll is greater than 50px, change navbar style
-      navbar.style.backgroundColor = "#1a1c29"; // Darker background for better visibility
-      navLinks.forEach(link => {
-        link.style.color = "#ffffff"; // White text color for better contrast
-      });
+    if (window.scrollY > 50) {
+        navbar.style.backgroundColor = "#1a1c29";
+        navLinks.forEach(link => {
+            link.style.color = "#ffffff";
+        });
     } else {
-      // Reset to original colors when scrolled to the top
-      navbar.style.backgroundColor = "transparent"; // Transparent background when at top
-      navLinks.forEach(link => {
-        link.style.color = "#edf2f4"; // Original link color
-      });
+        navbar.style.backgroundColor = "#2b2d42";
+        navLinks.forEach(link => {
+            link.style.color = "#edf2f4";
+        });
     }
 });
