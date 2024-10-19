@@ -91,6 +91,29 @@ FinVeda is a dynamic financial literacy app that'll help you Learn finance with 
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
+### 🛠️ Troubleshooting
+
+If you encounter any issues while using FinVeda, here are some common solutions:
+
+1. **Installation and Setup Errors**
+   - **Issue**: Errors during installation or setup.
+   - **Solution**: Ensure all dependencies are installed. Run `npm install` to install any missing packages. Check for Node.js version compatibility.
+
+2. **Dependency Conflicts**
+   - **Issue**: Conflicts between dependencies.
+   - **Solution**: Update or downgrade conflicting packages as necessary. Use `npm install --force` to bypass issues, but be cautious of potential side effects.
+
+3. **Configuration Problems**
+   - **Issue**: Issues with configuring environment variables.
+   - **Solution**: Double-check your `.env` file configurations. Refer to `.env.example` for the correct variable setup.
+
+4. **External Resources**
+   - Check the [Issues](https://github.com/ayush-that/FinVeda/issues) page for similar problems or create a new issue.
+   - For additional help, visit our community channels.
+
+Feel free to reach out via the FinVeda community channels for more support. Happy learning! 🚀
+
+
 ### 🥑 License
 
 FinVeda is free and open-source software licensed under the GNU General Public License v3.0. It was built at IIT Jammu's Udyamitsav'24 Hackathon where it stood first in the GenAI track and third overall.
