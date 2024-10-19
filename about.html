@@ -139,7 +139,35 @@
                       <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
                     </li>
                   </ul>
+                  <button id="theme-toggle" class="theme-toggle">
+                    🌙
+                  </button>
                 </div>
+                <script>
+                  const toggleButton = document.getElementById('theme-toggle');
+                  const body = document.body;
+                  const currentTheme = localStorage.getItem('theme');
+  
+              if (currentTheme === 'dark') {
+              body.classList.add('dark-mode');
+              toggleButton.classList.add('dark');
+              toggleButton.textContent = '🌞';
+              }
+              
+              toggleButton.addEventListener('click', function () {
+              body.classList.toggle('dark-mode');
+              toggleButton.classList.toggle('dark');
+              
+              // Update button icon based on mode
+              if (body.classList.contains('dark-mode')) {
+                toggleButton.textContent = '🌞';  // Light mode icon
+                localStorage.setItem('theme', 'dark');
+              } else {
+                toggleButton.textContent = '🌙';  // Dark mode icon
+                localStorage.setItem('theme', 'light');
+              }
+              });
+              </script>
                 <div class="">
 
                   <!-- Login Modal -->
