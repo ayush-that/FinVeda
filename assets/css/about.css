@@ -11,7 +11,28 @@
     cursor: pointer;
     /* border: 2px solid saddlebrown; */
 }
+.theme-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: #444;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 20px;
+}
 
+body.dark-mode {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+.theme-toggle.dark {
+  background-color: #eceae0;
+  color: #000;
+} 
 .navbar-collapse {
   display: flex;
   margin-right: -5.6rem;
@@ -150,7 +171,7 @@
     /* border: 2px solid salmon; */
     text-align: justify;
     padding: 10px 15px;
-    background: white;
+    /* background: white; */
     border-radius: 10px;
     /* clip-path: polygon(0 0, 100% 0, 100% 62%, 50% 100%, 0 64%); */
     clip-path: polygon(0 0, 100% 0, 100% 78%, 50% 100%, 0 78%);
