@@ -1,188 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ Page with Progress Bar</title>
+    <title>FAQ - FinVeda</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* Basic styles for FAQ page */
         body {
             font-family: Arial, sans-serif;
-            padding: 20px;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
         }
-        .progress {
-            height: 30px;
-            background-color: #e0e0e0;
+
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             border-radius: 5px;
+        }
+
+        .faq-item {
+            margin: 15px 0;
+        }
+
+        .faq-item h3 {
+            cursor: pointer;
+            padding: 10px;
+            background: #007BFF;
+            color: white;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .faq-item h3:hover {
+            background: #0056b3;
+        }
+
+        .faq-answer {
+            padding: 10px;
+            display: none; /* Hidden by default */
+            background: #f1f1f1;
+            border-left: 4px solid #007BFF;
+            border-radius: 0 0 5px 5px;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #1e1e1e;
+            color: #ffffff;
+            padding: 40px 0;
+            font-family: Arial, sans-serif;
+            margin-top: 20px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 0 20px;
+        }
+
+        .footer-section {
+            flex-basis: 30%;
             margin-bottom: 20px;
         }
-        .progress-bar {
-            background-color: #007bff;
-            height: 100%;
-            width: 0;
-            border-radius: 5px;
+
+        .footer-section h3 {
+            color: #e0e0e0;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            border-bottom: 2px solid #ffffff;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .footer-section p {
+            color: #bfbfbf;
+            line-height: 1.6;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #bfbfbf;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: #ffffff;
+        }
+
+        .footer-bottom {
             text-align: center;
-            line-height: 30px;
-            color: white;
-            transition: width 0.3s ease;
+            padding: 20px;
+            border-top: 1px solid #2e2e2e;
+            margin-top: 30px;
         }
-        .faq-item {
-            margin: 20px 0;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            cursor: pointer;
+
+        .footer-bottom p {
+            margin: 0;
+            color: #888888;
         }
-        .faq-item.read {
-            background-color: #f0f8ff;
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons li {
+            display: inline-block;
+        }
+
+        .social-icons li a {
+            color: #bfbfbf;
+            font-size: 1.5em;
+            transition: color 0.3s;
+        }
+
+        .social-icons li a:hover {
+            color: #ffffff;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .footer-section {
+                flex-basis: 100%;
+                text-align: center;
+            }
+
+            .footer-bottom p {
+                font-size: 0.9em;
+            }
         }
     </style>
 </head>
 <body>
-
     <h1>Frequently Asked Questions</h1>
+    <div class="faq-container">
+        <div class="faq-item">
+            <h3>What is FinVeda?</h3>
+            <div class="faq-answer">
+                <p>FinVeda is a platform that provides financial insights and innovative solutions.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <h3>How can I contact support?</h3>
+            <div class="faq-answer">
+                <p>You can contact support via the Contact Us page or email us at support@finveda.com.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <h3>What services do you offer?</h3>
+            <div class="faq-answer">
+                <p>We offer a range of services, including financial planning, investment advice, and more.</p>
+            </div>
+        </div>
+    </div>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Enhanced FAQ Accordion with Progress Bar</title>
-  <link rel="shortcut icon"  href="./assets/images/favicon2.png" type="image/png" />
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h3>About Us</h3>
+                <p>FinVeda is dedicated to providing financial insights and innovative solutions to help you manage your finances efficiently.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section social">
+                <h3>Follow Us</h3>
+                <ul class="social-icons">
+                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 FinVeda. All rights reserved.</p>
+        </div>
+    </footer>
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome for Icons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
-  <link rel="stylesheet"  href="./assets/css/style.css" />
-  <style>
-    body {
-      background-color: #f4f4f9;
-      font-family: 'Arial', sans-serif;
-    }
-
-    .faq-section {
-      max-width: 1100px; 
-      margin: 50px auto;
-      background-color: #fff;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      padding: 40px;
-      transition: all 0.3s ease;
-      margin-top: 120px;
-    }
-
-    .faq-title {
-      text-align: center;
-      font-size: 34px;
-      font-weight: bold;
-      color: #333;
-      margin-bottom: 30px;
-    }
-
-    .accordion-button {
-      background-color: #fff;
-      font-size: 18px;
-      font-weight: bold;
-      color: #333;
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      padding: 20px;
-      transition: all 0.3s ease;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .accordion-button:focus {
-      box-shadow: none;
-    }
-
-    .accordion-button:not(.collapsed) {
-      color: #1565C0;
-      background-color: #f7f7ff;
-    }
-
-    .accordion-button:not(.collapsed)::after {
-      /* content: '-'; */
-      font-size: 24px;
-      color: #1565C0;
-    }
-
-    .accordion-button.collapsed::after {
-      /* content: '+'; */
-      font-size: 24px;
-      color: #333;
-    }
-
- 
-   
-
-    .accordion-item {
-      border: none;
-      margin-bottom: 10px;
-    }
-
-    .accordion-header {
-      border-radius: 12px;
-    }
-
-    .accordion-body {
-      background-color: #f9f9f9;
-      font-size: 16px;
-      color: #666;
-      border-radius: 12px;
-      padding: 20px;
-    }
-
-    /* Hover effects for better interaction */
-    .accordion-button:hover {
-      background-color: #eef2fa;
-      border-color: #1565C0;
-      color: #1565C0;
-    }
-
-    .accordion-body {
-      border-top: 1px solid #ddd;
-    }
-
-    #progressBar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 10px;
-    height: 0%;
-    background-color: #4267B2;
-    z-index: 9999;
-    transition: height 0.25s ease-in-out;
-    border-radius: 10px ;
-}
-
-
-
-    /* Home Icon */
-    .home-icon {
-      display: inline-block;
-    transition: background-color 0.3s, transform 0.3s; 
-    background-color: #4267B2; 
-    color: #fff; 
-    padding: 10px;
-    border-radius: 10px; 
-    text-decoration: none; 
-    position: fixed; 
-    top: 20px; 
-    left: 20px; 
-    z-index: 1000; 
-    font-size:xx-large;
-    }
-
-    .home-icon:hover {
-      color: #1565C0;
-      background-color: #fff; 
-      transform: scale(1.1); 
-      border: 1px solid #2F4F7F;
-    }
-  </style>
-</head>
-<!DOCTYPE html>
+    <script>
+        // FAQ toggle functionality
+        const faqItems = document.querySelectorAll('.faq-item h3');
+        faqItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -206,6 +241,26 @@
             background-color: #4caf50;
             transition: width 0.3s;
         }
+
+        /* Footer styles */
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer a {
+            color: #4caf50;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -228,6 +283,12 @@
         <!-- Add more questions and answers as needed -->
     </div>
 
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 FinVeda. All rights reserved.</p>
+        <p><a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a></p>
+    </footer>
+
     <script>
         // Function to update the progress bar
         function updateProgressBar() {
@@ -243,570 +304,5 @@
 </body>
 </html>
 
-<body>
-
-  <header class="header-area">
-    <div class="row">
-      <div style="display: flex; justify-content: center;" class="">
-        <nav class="navbar navbar-expand-lg " style="display: flex;">
-          <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="toggler-icon"></span>
-            <span class="toggler-icon"></span>
-            <span class="toggler-icon"></span>
-          </button> -->
-          <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
-            <div class="icon1">
-              <img src="assets/images/icon.png" alt="icon.png">
-            </div> 
-            <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
-              <li class="nav-item">
-                <a class="page-scroll" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
-              </li>    
-              <li class="nav-item">
-                <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
-              </li>
-              <li class="nav-item active-link">
-                <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
-              </li>
-              <li class="nav-item no-underline">
-                <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
-              </li>
-            </ul>
-          </div>
-
-          <script>
-            const toggleButton = document.getElementById('theme-toggle');
-            const body = document.body;
-            const currentTheme = localStorage.getItem('theme');
-
-if (currentTheme === 'dark') {
-body.classList.add('dark-mode');
-toggleButton.classList.add('dark');
-toggleButton.textContent = '☀️';
-}
-
-toggleButton.addEventListener('click', function () {
-body.classList.toggle('dark-mode');
-toggleButton.classList.toggle('dark');
-
-// Update button icon based on mode
-if (body.classList.contains('dark-mode')) {
-toggleButton.textContent = '☀️';  // Light mode icon
-localStorage.setItem('theme', 'dark');
-} else {
-toggleButton.textContent = '🌙';  // Dark mode icon
-localStorage.setItem('theme', 'light');
-}
-});
-        </script>
-        <style>
-
-          h3{
-            color: #fff;
-          }
-
-        .toggle-button {
-          padding: 0.5em 1em;
-          cursor: pointer;
-          border: none;
-          background-color: #0c0a0a;
-          color: #fff;
-          border-radius: 5px;
-          transition: background-color 0.3s;
-      }
-      
-      .toggle-button:hover {
-          background-color: #555;
-      }
-      
-      .content {
-          padding: 2em;
-          text-align: center;
-      }
-      
-      h1 {
-          font-size: 2.5rem;
-          color: whitesmoke;
-          margin-top:130px;
-      }
-      
-      p {
-          font-size: 1.2rem;
-      }
-      
-      body.dark-mode {
-background-color: #222;
-color: #f1f1f1; /* Change text color to light for dark mode */
-}
-
-.toggle-button.dark {
-background-color: #f1f1f1; /* Button background in dark mode */
-color: #333; /* Button text color in dark mode */
-}
-
-.toggle-button.dark:hover {
-background-color: #ddd; /* Button hover color in dark mode */
-}
-      </style>
-            
-          </nav>
-      
-
-        <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-
-        <nav class="mobile-menu ">
-          <a class="page-scroll active-link" href="./index.html">Home 🏡</a>
-          <a class="page-scroll" href="./about.html">About Us 📖</a>
-          <a class="page-scroll" href="./trends.html">Trends 📈</a>
-          <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
-          <a class="page-scroll" href="./blog.html">Blogs 📰</a>
-          <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
-          <a class="page-scroll" href="./contact.html">Contact🤔</a>
-          <li class="nav-item no-underline">
-            <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none; border: none;" href="#"
-              onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
-          </li>
-
-
-          <div class="mobile-menu__trigger"><span></span></div>
-        </nav>
-
-
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-<link href="./navbar.css" rel="stylesheet">
-<script type="text/javascript" src="./navbar.js"></script>
-
-</div>
-
-<div id="particles-1" class="particles"></div>
-</div>
-</header>
-
-
-
-  <!-- Progress Bar -->
-  <div class="progress-bar-container">
-    <div id="progressBar"></div>
-  </div>
-
-  <div id="progressBar"></div>
-  <div class="preloader">
-   <div class="loader">
-     <div class="ytp-spinner">
-       <div class="ytp-spinner-container">
-         <div class="ytp-spinner-rotator">
-           <div class="ytp-spinner-left">
-             <div class="ytp-spinner-circle"></div>
-           </div>
-           <div class="ytp-spinner-right">
-             <div class="ytp-spinner-circle"></div>
-           </div>
-         </div>
-       </div>
-     </div>
-   </div>
- </div>
-
-  <div class="faq-section">
-
-    <img style="position:absolute;width:250px; top: 400px; right: 1250px;mix-blend-mode: multiply;" src="assets/images/HELP-IMG.jpg" alt="image">
-    <!-- Introduction Section -->
-    <div class="faq-intro">
-        <h1 class="faq-title">Frequently Asked Questions</h1>
-        <p>Welcome to Finveda’s FAQ! Here you’ll find answers to common questions about our services, tools, and how we can help you on your financial journey. Still have questions? Contact us or use our AI chatbot for more assistance.</p>
-    </div>
-
-    <!-- Search Bar -->
-    <div class="faq-search">
-        <input type="text" class="faq-search-input" placeholder="Type your question..." aria-label="Search FAQ">
-        <button class="faq-search-btn">Search</button>
-    </div>
-
-    <div class="accordion" id="faqAccordion">
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingOne">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-            What is Finveda?
-          </button>
-        </h2>
-        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Finveda is a dynamic financial literacy app with Arthsathi AI chatbot, finance blogs, market trends, SIP calculator, and a quiz for effortless finance learning.
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingTwo">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            What problem does Finveda solve?
-          </button>
-        </h2>
-        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Finveda aims to solve the lack of financial literacy in India, providing tools and resources to improve financial knowledge for individuals.
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingThree">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            What services does Finveda offer?
-          </button>
-        </h2>
-        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Finveda offers expert-written blogs, market trends, SIP and PPF calculators, and more for personalized finance education. 
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingFour">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-            How can I start using Finveda?
-          </button>
-        </h2>
-        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Simply sign up and access all our features, including personalized financial education and tools.
-          </div>
-        </div>
-      </div>
-
-    <!-- Progress Bar -->
-    <div style="margin: 20px 0;">
-        <h3>FAQ Progress</h3>
-        <div class="progress">
-            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
-        </div>
-    </div>
-
-
-    <!-- Feedback Section -->
-    <<div class="faq-section">
-      <!-- Feedback Section -->
-      <div class="faq-feedback">
-        <h3>Submit Your Feedback or Ask a New Question</h3>
-        
-        <!-- Feedback Form -->
-        <form class="feedback-form" id="feedbackForm">
-          <!-- Name Input -->
-          <div class="form-group">
-            <label for="userName">Your Name</label>
-            <input type="text" id="userName" class="form-input" placeholder="Enter your name" required>
-          </div>
-    
-          <!-- Email Input -->
-          <div class="form-group">
-            <label for="userEmail">Your Email</label>
-            <input type="email" id="userEmail" class="form-input" placeholder="Enter your email" required>
-          </div>
-    
-          <!-- Feedback or Question Input -->
-          <div class="form-group">
-            <label for="userFeedback">Your Feedback / Question</label>
-            <textarea id="userFeedback" class="form-input" rows="5" placeholder="Enter your feedback or ask a question" required></textarea>
-          </div>
-    
-          <!-- Submit Button -->
-          <button type="submit" class="submit-btn">Submit Feedback</button>
-        </form>
-      </div>
-    </div>
-    
-</div>
-
-<style>
-/* General FAQ Section */
-.faq-section {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f8f9fa;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Introduction Section - 100% Width for Heading */
-.faq-title {
-  width: 100%; /* Full width for heading */
-  text-align: center;
-  font-size:xx-large;
-  color: #080808;
-  transition: color 0.3s ease, transform 0.3s ease;
-  margin-bottom: 20px;
-}
-
-.faq-intro p {
-  margin-top:50px;
-  text-align: center;
-  font-size: 1.2rem;
-  color: #134878;
-  margin-bottom: 30px;
-}
-
-.faq-title:hover {
-  text-decoration: underline;
-  color: #007bff;
-  transform: scale(1.05);
-}
-
-/* Search Bar */
-.faq-search {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.faq-search-input {
-  margin-top: 30px;
-  padding: 10px;
-  font-size: 1rem;
-  width: 40%;
-  border: 2px solid #007bff;
-  border-radius: 5px;
-  transition: border-color 0.3s ease;
-}
-
-.faq-search-input:focus {
-  border-color: #0056b3;
-  background-color: #080808;
-  color: white;
-}
-
-.faq-search-btn {
-  margin-top: 30px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  margin-left: 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: #007bff;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.faq-search-btn:hover {
-  background-color: #0056b3;
-  transform: scale(1.05);
-}
-
-/* Accordion Section - 80% Width for Questions */
-.accordion {
-  width: 80%; /* Set 80% width for the questions */
-  margin: 0 auto; /* Center the accordion */
-}
-
-.accordion-button {
-  background-color: #f8f9fa;
-  color: #343a40;
-  border: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-align: left;
-  width: 100%;
-  padding: 15px;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-  cursor: pointer;
-}
-
-.accordion-button:hover {
-  background-color: #007bff;
-  color: #fff;
-  transform: translateX(10px);
-}
-
-.accordion-button:focus {
-  box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
-}
-
-.accordion-button[aria-expanded="true"] {
-  background-color: #0056b3;
-  color: white;
-}
-
-.accordion-body {
-  padding: 20px;
-  background-color: #e9ecef;
-  color: #495057;
-  transition: background-color 0.3s ease;
-}
-
-.accordion-body:hover {
-  background-color: #dee2e6;
-}
-
-.accordion-item {
-  border: 1px solid #007bff;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.accordion-item:hover {
-  transform: scale(1.02);
-}
-
-/* Feedback Section */
-.faq-feedback {
-  text-align: center;
-  margin-top: 30px;
-  padding: 20px;
-  background-color: #f1f3f5;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.faq-feedback h3 {
-  font-size: 1.5rem;
-  color: #495057;
-}
-
-.feedback-btn {
-  padding: 10px 20px;
-  margin: 5px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: #007bff;
-  color: #fff;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.feedback-btn:hover {
-  background-color: #00b374;
-  transform: scale(1.05);
-}
-/* Feedback Form Section */
-.faq-feedback {
-  text-align: center;
-  margin-top: 40px;
-  padding: 20px;
-  background-color: #e9ecef; /* Light gray background */
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border: 2px solid #007bff; /* Blue border */
-  transition: background-color 0.3s ease; /* Transition for background color */
-}
-
-.faq-feedback:hover {
-  background-color: #d9edf7; /* Light blue background on hover */
-}
-
-.faq-feedback h3 {
-  font-size: 1.8rem;
-  color: #343a40; /* Dark gray color for text */
-  margin-bottom: 20px;
-}
-
-/* Form Group */
-.form-group {
-  margin-bottom: 20px;
-  text-align: left;
-}
-
-.form-group label {
-  font-size: 1rem;
-  color: #495057; /* Medium gray color */
-  display: block;
-  margin-bottom: 8px;
-}
-
-.form-input {
-  width: 100%;
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ced4da; /* Default border color */
-  border-radius: 5px;
-  box-sizing: border-box;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transition effects */
-}
-
-/* Focus effect on inputs */
-.form-input:focus {
-  color: white;
-  border-color: #007bff; /* Blue border on focus */
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Soft blue shadow */
-  outline: none; /* Remove default outline */
-}
-
-/* Hover effect on inputs */
-.form-input:hover {
-  border-color: #0056b3; /* Darker blue border on hover */
-}
-
-/* Submit Button */
-.submit-btn {
-  padding: 10px 20px;
-  font-size: 1.2rem;
-  border: none;
-  border-radius: 5px;
-  background-color: #007bff; /* Blue background */
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease; /* Transition effects */
-}
-
-.submit-btn:hover {
-  background-color: #0056b3; /* Darker blue on hover */
-  transform: scale(1.05); /* Scale effect on hover */
-}
-
-.submit-btn:focus {
-  outline: none; /* Remove default outline */
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Soft blue shadow on focus */
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-  .form-input {
-    width: 100%;
-  }
-}
-
-
-</style>
-
-  <!-- Bootstrap JS and jQuery -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- JS for Home Icon Navigation and Progress Bar -->
-  <script>
-    // Home icon click event handler
-    function goToHome() {
-      window.location.href = '/'; 
-    }
-
-
-
+</body>
+</html>
