@@ -88,12 +88,32 @@ calculateResult = () => {
     maturityValue === "NaN" ? "0" : maturityValue;
 };
 
-currencyChange = () => {
-  let selectedValue = currency.value;
-  document.getElementById("currency-change-1").innerHTML = selectedValue;
-  document.getElementById("currency-change-2").innerHTML = selectedValue;
-  document.getElementById("currency-change-3").innerHTML = selectedValue;
-};
+document.addEventListener("DOMContentLoaded", function() {
+  // Toggle the dropdown menu when the .select element is clicked
+  const selectElement = document.querySelector('.select');
+  
+  if (selectElement) {  // Ensure that the .select element exists
+    selectElement.addEventListener('click', function() {
+      this.classList.toggle('clicked');  // Add/remove the 'clicked' class to change border color
+      document.querySelector('.menu').classList.toggle('open');  // Show/hide the menu
+    });
+  }
+
+  // Update the selected currency and close the dropdown menu when an option is clicked
+  const currencyOptions = document.querySelectorAll('.currency-option');
+  
+  if (currencyOptions) {
+    currencyOptions.forEach(option => {
+      option.addEventListener('click', function() {
+        const selected = document.querySelector('.selected');  // Find the .selected span
+        selected.innerHTML = this.innerHTML;  // Update the .selected span with the clicked option
+        document.querySelector('.menu').classList.remove('open');  // Close the menu
+        document.querySelector('.select').classList.remove('clicked');  // Reset the select border color
+      });
+    });
+  }
+});
+
 
 commas = (x) => {
   let amount = document.getElementById("investment").value;

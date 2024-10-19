@@ -94,18 +94,98 @@ input {
   background-color: #377fed; /* Blue on hover */
 }
 
-.currency {
-  background: white;
-  border-radius: 5px;
-  padding: 5px;
-  border-color: dimgray;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-option {
-  background: white;
+.dropdown {
+  min-width: 200px;
+  position: relative;
+  margin: 20px;
+  margin-top: 59px !important;
+}
+
+.dropdown * {
+  box-sizing: border-box;
+}
+
+.select {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  padding: 5px;
-  border-color: dimgray;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 150px;
+}
+
+.select.clicked {
+  border-color: #007bff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.select:hover {
+  background-color: #f9f9f9;
+}
+
+.caret {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #333;
+  transition: transform 0.3s ease;
+}
+
+.select.clicked .caret {
+  transform: rotate(180deg);
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  color: #333;
+  position: absolute;
+  top: 63%;
+  left: 0;
+  width: 75%;
+  transform: scaleY(0);
+  transform-origin: top;
+  opacity: 0;
+  display: none;
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.menu.open {
+  display: block;
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.menu li {
+  padding: 10px;
+  margin: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.menu li:hover {
+  background-color: #f0f0f0;
 }
 
 #total,
@@ -298,3 +378,31 @@ option {
     font-size: smaller;
     }
  }
+ @media (max-width: 768px) {
+  .dropdown {
+    min-width: 150px; /* Smaller width for smaller screens */
+  }
+  
+  .select {
+    padding: 8px; /* Adjust padding */
+  }
+
+  .menu {
+    width: 100%; /* Ensure dropdown matches the container's width */
+  }
+}
+
+@media (max-width: 480px) {
+  .dropdown {
+    min-width: 120px; /* Further reduce width on very small screens */
+  }
+
+  .select {
+    padding: 6px; /* Smaller padding */
+    font-size: 14px; /* Adjust font size for readability */
+  }
+
+  .menu {
+    width: 100%; /* Still cover full width under the text box */
+  }
+}

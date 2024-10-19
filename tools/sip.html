@@ -626,12 +626,15 @@ registerCloseButton.addEventListener("click", function() {
           <label class="form-check-label" for="lumpsum">LumpSum</label>
         </div>
         <div class="dropdown">
-          Currency
-          <select class="form-control" onchange="currencyChange(this)" id="currency" class="currency">
-            <option value="Rs">&#8377; &nbsp;INR</option>
-            <option value="$">&#128176;USD</option>
-          </select>
-        </div>
+          <div class="select">
+            <span class="selected">Currency</span>
+            <div class="caret"></div>
+          </div>
+          <ul class="menu">
+            <li class="currency-option">&nbsp;&#8377; &nbsp;INR</li>
+            <li class="currency-option">&#128176; USD</li>
+          </ul>
+        </div>                  
       </div>
       <div class="input-container">
         <div>
