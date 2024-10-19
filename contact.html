@@ -20,6 +20,7 @@
   <link rel="stylesheet"  href="assets/css/popup.css" />
   <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <style>
     
     body {
@@ -267,6 +268,9 @@
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
   </div>
   <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -336,10 +340,10 @@
     </div>
   </div>
   <header class="header-area">
-    <div class="navbar-area">
-      <div class="container">
+    <!-- <div class="navbar-area"> -->
+      <!-- <div class="container"> -->
         <div class="row">
-          <div class="col-lg-12">
+          <!-- <div class="col-lg-12"> -->
             <nav class="navbar navbar-expand-lg">
               <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -348,33 +352,41 @@
                 <span class="toggler-icon"></span>
               </button> -->
               <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-                <ul id="nav" class="navbar-nav ml-auto">
+                <div class="icon1">
+                  <img src="assets/images/icon.png" alt="icon.png">
+                </div>
+                
+                <ul id="nav" class="navbar-nav" style="margin:auto">
+
                   <li class="nav-item">
-                    <a class="page-scroll" href="./index.html">Home 🏡</a>
+                    <a class="page-scroll" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
                   </li>
-                  <li class="nav-item active">
-                    <a class="page-scroll" href="./about.html" id="active-page">About Us 📖</a>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
                   </li>    
                   <li class="nav-item">
-                    <a class="page-scroll" href="./trends.html">Trends 📈</a>
+                    <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
+                    <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="./blog.html">Blogs 📰</a>
+                    <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="./quiz.html" >Quiz 🤔</a>
+                    <a class="page-scroll" href="./quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="./careers.html">Career 👔</a>
+                    <a class="page-scroll" href="./careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll active-link" href="./contact.html">Contact📞</a>
+                    <a class="page-scroll active-link" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
                   </li>
                   <li class="nav-item no-underline">
-                    <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none;" data-scroll-nav="0" href="#" onclick="openModal()">Login/Register 💻</a>
+                    <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
                   </li>
                 </ul>
               </div>
@@ -410,7 +422,7 @@
                           <ul class="list-inline">
                             <li><a href="#" class="google" id="google-login"><i class="fa-brands fa-google"></i></a></li>
                             <li><a href="#" class="facebook" id="facebook-login"><i class="fa-brands fa-facebook-f"></i></a></li>
-                            <li><a href="#" class="twitter" id="twitter-login"><i class="fa-brands fa-twitter"></i></a></li>
+                            <li><a href="#" class="twitter" id="twitter-login"><i class="fa-brands fa-x-twitter"></i></a></li>
                           </ul>
                         </div>
                       </div>
@@ -598,7 +610,9 @@ registerCloseButton.addEventListener("click", function() {
                   onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
               </li>
               
-              <div class="mobile-menu__trigger"><span></span></div>
+              <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
+                <span></span>
+              </div>
             </nav>
           </div>
         </div>
@@ -610,7 +624,7 @@ registerCloseButton.addEventListener("click", function() {
     <script type="text/javascript" src="./navbar.js"></script>
 
     </div>
-
+<!-- 
 <!--             
             <nav class="mobile-menu ">
               <a class="page-scroll" href="./index.html">Home 🏡</a>
@@ -625,12 +639,7 @@ registerCloseButton.addEventListener("click", function() {
 
                 
               <link href="./navbar.css" rel="stylesheet">
-              <script type="text/javascript" src="./navbar.js"></script> -->
-
-          </div>
-        </div>
-      </div>
-    </div>
+              <script type="text/javascript" src="./navbar.js"></script> --> -->
     <div id="home" class="header-hero bg_cover" style="background-image: url(../assets/images/banner-bg.svg)">
       <div class="container">
         <div class="row justify-content-center">
@@ -657,7 +666,10 @@ registerCloseButton.addEventListener("click", function() {
         <div class="row">
           <div class="col-lg-12">
             <div class="header-hero-image text-center wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">
-              <img src="../assets/images/header-hero.png" alt="hero" />
+              <div class="anim" data-tilt="">
+                <img src="assets/images/header-hero.png" alt="hero" style="animation: float 1.5s ease-in-out infinite;"
+                  data-tilt="" />
+              </div>
             </div>
           </div>
         </div>
@@ -695,31 +707,35 @@ registerCloseButton.addEventListener("click", function() {
         transform: scale(1.02);
     }
     .info-frame {
-        border: 1px solid #0056b3;
+        border: 2px solid #0056b3;
         padding: 1rem;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         width: 350px;
-        height: 315px;
+        height: 312px;
         text-align: center;
         color: #0056b3;
+        margin-top: 50px;
     }
     .map-frame {
         border-radius: 10px;
         width: 350px;
-        height: 315px;
+        height: 312px;
         margin: 0 auto;
     }
     .info-map-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
-        margin-left: 1rem; 
-    }
+    display: flex;               
+    flex-direction: column;      
+    align-items: center;        
+    gap: 1.5rem;                 
+    margin-left: 1rem; 
+    padding-bottom: 3%;         
+}
+
+
     h2 {
         color: #0056b3;
         text-align: center;
-        margin-bottom: 1.5rem;
+        margin-bottom: 2.5rem;
     }
     .info-frame a {
         color: #0056b3;
@@ -730,13 +746,18 @@ registerCloseButton.addEventListener("click", function() {
         text-decoration: underline;
     }
     .contact-info-map-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
     gap: 1.5rem; 
-    padding-bottom: 10%;
-    padding-top: 2%;
+    padding-bottom: 10%; 
+    padding-top: 2%; 
 }
+
+
+
+
     input:hover, 
     textarea:hover {
         border-color: #f48727;
@@ -750,12 +771,31 @@ registerCloseButton.addEventListener("click", function() {
         transition: background-color 0.3s ease, transform 0.3s ease;
     }
     #info-frame {
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and scaling */
+}
+
+  
+ #info-frame:hover {
+    background-color: rgba(240, 240, 240, 0.7); /* Light grey background on hover */
+    transform: scale(1.02);                    /* Slightly enlarges the element */
+}
+
+
+
+    button:hover {
+        background-color: #ff8c00;
+        transform: scale(1.05);
         transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    #info-frame {
+        transition: background-color 0.3s ease, transform 0.3s ease;
+
     }
     #info-frame:hover {
         background-color: rgba(240, 240, 240, 0.7);
         transform: scale(1.02);
     }
+
     #info-frame a {
         color: #0056b3;
         transition: color 0.3s ease;
@@ -769,12 +809,17 @@ registerCloseButton.addEventListener("click", function() {
     #map-frame:hover {
         transform: scale(1.02);
     }
+    .subscribe-form button:hover {
+      color: #fff;
+      background-position: right center;
+      transform: scale(0.95);
+    }
 </style>
 <h2 style="color: #0056b3;">Get in Touch</h2>
 <div class="contact-info-map-container">
     <div class="contact-frame">
         <h2 style="text-align: left; font-size: 24px; color: #0056b3;">Contact Us</h2>
-        <form action="#" method="POST" style="display: flex; flex-direction: column;">
+        <form action="submit" method="POST" style="display: flex; flex-direction: column;">
             <label for="name" style="color: #0056b3; margin-bottom: 0.5rem;">Name:</label >
             <input type="text" placeholder="Enter your name" id="name" name="name" required style="padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #0056b3; border-radius: 4px;">
             
@@ -810,36 +855,7 @@ registerCloseButton.addEventListener("click", function() {
     </div>
 </div>
 
-<script>
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent form from actually submitting
-        
-        // Get values from input fields
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const subject = document.getElementById('subject').value;
-        const message = document.getElementById('message').value;
-        
-        // Create an object with form data
-        const formData = {
-            name: name,
-            email: email,
-            subject: subject,
-            message: message
-        };
-        
-        // Save the form data in local storage in JSON format
-        localStorage.setItem('formData', JSON.stringify(formData));
-        
-        // Clear input fields after submitting
-        document.getElementById('name').value = '';
-        document.getElementById('email').value = '';
-        document.getElementById('subject').value = '';
-        document.getElementById('message').value = '';
-        
-        alert('User  saved! We will get in touch with you soon');
-    });
-</script>
+
   <style>
      
         h2 {
@@ -1173,8 +1189,8 @@ registerCloseButton.addEventListener("click", function() {
         <div class="col-lg-6">
           <div class="subscribe-form mt-50">
             <form id="unique-subscribe-form">
-              <input type="email" id="unique-news-email" placeholder="Enter Email" required style="padding: 0.5rem; margin-right: 0.5rem; border: 1px solid #0056b3; border-radius: 4px;">
-              <button class="unique-main-btn" id="unique-subscribe-btn" type="submit" style="background-color: #0056b3; color: white; padding: 0.5rem 1rem; border: none; border-radius: 4px; cursor: pointer;">Subscribe</button>
+              <input type="email" id="unique-news-email" placeholder="Enter Email" required style="padding: 0.5rem; border: 1px solid #0056b3; border-radius: 4px; position: relative; right: 60px;">
+              <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
           </form>
           
           <script>
@@ -1273,37 +1289,42 @@ registerCloseButton.addEventListener("click", function() {
             </div>
         </div>
         <div class="col-lg-3 col-md-5 col-sm-5">
-            <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-                <div class="footer-title">
-                    <h4 class="title custom-margin">Contact Us</h4>
-                </div>
+          <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+              <div class="footer-title">
+                  <h4 class="title custom-margin" style="text-align: left; margin-bottom: 15.1px;">Contact Us</h4> <!-- Aligning heading to the left -->
+              </div>
                 <ul class="contact custom-margin-big" style="justify-content: space-around;">
-                    <li class="d-sm-flex justify-content-center">
-                        <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                        <p style="width: 80%;">
-                            <a href="mailto:ayush1337@hotmail.com" target="_blank"
-                               style="color: white; text-decoration: underline;">
+                  
+                    <li class="d-sm-flex justify-content-center" style="align-items: center; margin: 0; padding: 0; margin-bottom: 10px;">
+                        <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; margin-right: 10px;"></i>
+                        <div style="width: 100%; display: flex; align-items: center;">
+                            <a href="mailto:ayush1337@hotmail.com" target="_blank" style="color: white; text-decoration: underline;">
                                 ayush1337@hotmail.com
                             </a>
-                        </p>
+                        </div>
                     </li>
-                    <li class="d-sm-flex justify-content-center">
-                        <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                        <div style="width: 80%;">
-                            <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
+                
+                    <li class="d-sm-flex justify-content-center" style="align-items: center; margin: 0; padding: 0;margin-bottom: 10px;">
+                        <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; margin-right: 10px;"></i>
+                        <div style="width: 100%; display: flex; align-items: center;">
+                            <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff;">
                                 fin-veda.vercel.app
                             </a>
                         </div>
                     </li>
-                    <li class="d-sm-flex justify-content-center">
-                        <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 12px; width: 10%;"></i>
-                        <div style="width: 80%;">
+                
+                    <li class="d-sm-flex justify-content-center" style="align-items: center; margin: 0; padding: 0; margin-bottom: 10px;">
+                        <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 12px; margin-right: 10px;"></i>
+                        <div style="width: 100%; display: flex; align-items: center;">
                             <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
-                               style="color:#fff">
+                               style="color: #fff;">
                                 Delhi, India
                             </a>
                         </div>
                     </li>
+              
+                
+            
                     <li id="social_icons" class="d-sm-flex justify-content-evenly my-3">
                       <div style="width: 100%; display:flex; ">
                         <!-- Instagram Icon -->
@@ -1352,7 +1373,7 @@ registerCloseButton.addEventListener("click", function() {
           >
             <div class="copyright-content" style="text-align: center">
               <p class="text" style="text-align: center">
-                © <span id="copyright-year"></span> FinVeda. All rights
+                © <span id="copyright-year"></span> FinVeda. All rights are
                 reserved<br />
                 Made with ♥ in India
               </p>
@@ -1511,7 +1532,43 @@ registerCloseButton.addEventListener("click", function() {
         }
    
 </script>
+<script>
+document.querySelector('.contact-frame form').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form from actually submitting
+  
+  // Show the success notification
+  var notification = document.getElementById('successnotification');
+  notification.style.display = 'block';
+  
+  // Start the timer animation
+  var timerline = document.getElementById('timerline');
+  timerline.style.animation = 'timer 3s linear';
+  
+  // Hide the notification after 3 seconds
+  setTimeout(function() {
+    notification.style.display = 'none';
+    timerline.style.animation = 'none';
+  }, 3000);
+  
+  // Clear the form fields
+  this.reset();
+});
+
+// Close button functionality for the notification
+document.getElementById('closeSuccessNotification').addEventListener('click', function() {
+  document.getElementById('successnotification').style.display = 'none';
+});
+</script>
 <script src="./tools/smoothScroll.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>
+
+<div class="gtranslate_wrapper"></div>
+<script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 </body>
 
 </html>

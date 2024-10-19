@@ -3,7 +3,11 @@
 
 <head>
   <meta charset="utf-8" />
+
+  <title>Carrers - FinVeda</title>
+
   <title>Careers - FinVeda</title>
+
   <meta name="description" content="Explore engaging quizzes on finance and economics at Fin Veda. Test your knowledge and learn with interactive quizzes covering various topics." />
   <meta name="author" content="Ayush Singh">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -21,6 +25,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
    <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
   <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="careers.css"> <!-- Link to careers.css -->
   <style>
     
     body {
@@ -345,34 +350,42 @@
                 <span class="toggler-icon"></span>
                 <span class="toggler-icon"></span>
               </button> -->
-              <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-                <ul id="nav" class="navbar-nav ml-auto">
+      <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
+              <div class="icon1">
+                  <img src="assets/images/icon.png" alt="icon.png">
+                </div>
+                
+              
+                <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
                   <li class="nav-item">
-                    <a class="page-scroll" href="./index.html">Home 🏡</a>
+                    <a class="page-scroll " href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
                   </li>
-                  <li class="nav-item active">
-                    <a class="page-scroll" href="./about.html" id="active-page">About Us 📖</a>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
                   </li>    
                   <li class="nav-item">
-                    <a class="page-scroll" href="./trends.html">Trends 📈</a>
+                    <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
+                    <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="./blog.html">Blogs 📰</a>
+                    <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="./quiz.html" >Quiz 🤔</a>
+                    <a class="page-scroll" href="./quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll active-link" href="./careers.html">Career 👔</a>
+                    <a class="page-scroll active-link" href="./careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="./contact.html">Contact📞</a>
+                    <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
                   </li>
                   <li class="nav-item no-underline">
-                    <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none;" data-scroll-nav="0" href="#" onclick="openModal()">Login/Register 💻</a>
+                    <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
                   </li>
                 </ul>
               </div>
@@ -409,7 +422,7 @@
                           <ul class="list-inline">
                             <li><a href="#" class="google" id="google-login"><i class="fa-brands fa-google"></i></a></li>
                             <li><a href="#" class="facebook" id="facebook-login"><i class="fa-brands fa-facebook-f"></i></a></li>
-                            <li><a href="#" class="twitter" id="twitter-login"><i class="fa-brands fa-twitter"></i></a></li>
+                            <li><a href="#" class="twitter" id="twitter-login"><i class="fa-brands fa-x-twitter"></i></a></li>
                           </ul>
                         </div>
                       </div>
@@ -563,7 +576,9 @@
               <a class="page-scroll" href="./blog.html">Blogs 📰</a>
               <a class="page-scroll active-link" href="./quiz.html">Quiz 🤔</a>
               <a class="page-scroll main-btn" href="#" onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
-              <div class="mobile-menu__trigger"><span></span></div>
+              <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
+                <span></span>
+              </div>
             </nav>
 
                 
@@ -613,6 +628,11 @@
   <main>
     <section><br><br>
         <h2>Jobs in Finance</h2>
+        <!-- Search Bar -->
+  <div class="search-container">
+    <input type="text" id="jobSearch" placeholder="Search for jobs by title or keyword">
+  </div>
+   
         <table class="jobs-table">
             <thead>
                 <tr>
@@ -674,7 +694,9 @@
                 </tr>
             </tbody>
         </table>
+       
     </section>
+  
 
     <main>
         <section class="roadmap">
@@ -719,6 +741,7 @@
 
         </script>
 
+
   <style>
      
         h2 {
@@ -757,12 +780,17 @@
             transition: background 0.3s;
         }
 
+        li {
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            display: flex;
+          }
+
         .books-list li:hover {
             background: #d4d4d4;
         }
 
         .emoji {
-            margin-right: 10px; /* Space between emoji and text */
             font-size: 1.5em; /* Adjust the size of the emoji */
         }
     body {
@@ -809,7 +837,7 @@
             content: '';
             position: absolute;
             left: 50%;
-            top: -10px;
+            top: 89px;
             transform: translateX(-50%);
             border: 10px solid transparent;
             border-bottom-color: #007bff;
@@ -1050,8 +1078,8 @@
         </div>
         <div class="col-lg-6">
           <div class="subscribe-form mt-50">
-            <form id="unique-subscribe-form">
-              <input type="email" id="unique-news-email" placeholder="Enter Email" required/>
+            <form id="unique-subscribe-form" style="display: flex;">
+              <input type="email" id="unique-news-email" placeholder="Enter Email" required style="width: 55%; margin-right: auto;"/>
               <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
             </form>
             <div id="unique-message" class="unique-popup-message" style="display: none;">
@@ -1128,38 +1156,40 @@
             </div>
         </div>
         <div class="col-lg-3 col-md-5 col-sm-5">
-            <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-                <div class="footer-title">
-                    <h4 class="title custom-margin">Contact Us</h4>
-                </div>
+          <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+              <div class="footer-title">
+                  <h4 class="title custom-margin" style="text-align: left; margin-bottom: 15px;">Contact Us</h4> <!-- Aligning heading to the left -->
+              </div>
                 <ul class="contact custom-margin-big" style="justify-content: space-around;">
-                    <li class="d-sm-flex justify-content-center">
-                        <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                        <p style="width: 80%;">
-                            <a href="mailto:ayush1337@hotmail.com" target="_blank"
-                               style="color: white; text-decoration: underline;">
+                  
+                    <li class="d-sm-flex justify-content-center" style="align-items: center; margin: 0; padding: 0; margin-bottom: 10px;">
+                        <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; margin-right: 10px;"></i>
+                        <div style="width: 100%; display: flex; align-items: center;">
+                            <a href="mailto:ayush1337@hotmail.com" target="_blank" style="color: white; text-decoration: underline;">
                                 ayush1337@hotmail.com
                             </a>
-                        </p>
+                        </div>
                     </li>
-                    <li class="d-sm-flex justify-content-center">
-                        <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                        <div style="width: 80%;">
-                            <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
+                
+                    <li class="d-sm-flex justify-content-center" style="align-items: center; margin: 0; padding: 0;margin-bottom: 10px;">
+                        <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; margin-right: 10px;"></i>
+                        <div style="width: 100%; display: flex; align-items: center;">
+                            <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff;">
                                 fin-veda.vercel.app
                             </a>
                         </div>
                     </li>
-                    <li class="d-sm-flex justify-content-center">
-                        <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 12px; width: 10%;"></i>
-                        <div style="width: 80%;">
+                
+                    <li class="d-sm-flex justify-content-center" style="align-items: center; margin: 0; padding: 0; margin-bottom: 10px;">
+                        <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 12.0px; margin-right: 10px;"></i>
+                        <div style="width: 100%; display: flex; align-items: center;">
                             <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
-                               style="color:#fff">
+                               style="color: #fff;">
                                 Delhi, India
                             </a>
                         </div>
                     </li>
-                    <li id="social_icons" class="d-sm-flex justify-content-evenly my-3">
+               <li id="social_icons" class="d-sm-flex justify-content-evenly my-3">
                       <div style="width: 100%; display:flex; ">
                         <!-- Instagram Icon -->
                         <a href="https://instagram.com" target="_blank" style="margin: 0 10px; color: #E4405F;" aria-label="Instagram">
@@ -1207,7 +1237,7 @@
           >
             <div class="copyright-content" style="text-align: center">
               <p class="text" style="text-align: center">
-                © <span id="copyright-year"></span> FinVeda. All rights
+                © <span id="copyright-year"></span> FinVeda. All rights are
                 reserved<br />
                 Made with ♥ in India
               </p>
@@ -1220,6 +1250,7 @@
   </div>
   <div id="particles-2"></div>
 </footer>
+<script src="careers.js"></script> <!-- Link to careers.js -->
 <script>document.getElementById("copyright-year").textContent = new Date().getFullYear();</script>
 <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
 
@@ -1367,6 +1398,7 @@
    
 </script>
 <script src="./tools/smoothScroll.js"></script>
+
 </body>
 
 </html>

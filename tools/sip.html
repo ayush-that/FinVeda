@@ -291,6 +291,9 @@
             <span class="toggler-icon"></span>
           </button> -->
           <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto;">
+            <div class="icon1">
+              <img src="../assets/images/icon.png" alt="icon.png">
+            </div> 
             <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
               <li class="nav-item">
                 <a class="page-scroll" href="../index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
@@ -357,7 +360,7 @@
                           <ul class="list-inline">
                             <li><a href="#" class="google" id="google-login"><i class="fa-brands fa-google"></i></a></li>
                             <li><a href="#" class="facebook" id="facebook-login"><i class="fa-brands fa-facebook-f"></i></a></li>
-                            <li><a href="#" class="twitter" id="twitter-login"><i class="fa-brands fa-twitter"></i></a></li>
+                            <li><a href="#" class="twitter" id="twitter-login"><i class="fa-brands fa-x-twitter"></i></a></li>
                           </ul>
                         </div>
                       </div>
@@ -538,7 +541,9 @@ registerCloseButton.addEventListener("click", function() {
               <a class="page-scroll" href="../blog.html">Blogs 📰</a>
               <a class="page-scroll" href="../quiz.html">Quiz 🤔</a>
               <a class="page-scroll main-btn" href="#" onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
-              <div class="mobile-menu__trigger"><span></span></div>
+              <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
+                <span></span>
+              </div>
             </nav>
 
                 
@@ -589,7 +594,7 @@ registerCloseButton.addEventListener("click", function() {
   <script type="text/javascript" src="sipcalculatorJs.js"></script>
 
   <body class="body-background">
-    <div class="header mt-5"><br><br>
+    <div class="header"><br><br>
       <h2>Tools</h2><br>
       <h3>Mutual Fund Investment Calculator</h3>
       <p class="cal-content">
@@ -621,12 +626,15 @@ registerCloseButton.addEventListener("click", function() {
           <label class="form-check-label" for="lumpsum">LumpSum</label>
         </div>
         <div class="dropdown">
-          Currency
-          <select class="form-control" onchange="currencyChange(this)" id="currency" class="currency">
-            <option value="Rs">&#8377; &nbsp;INR</option>
-            <option value="$">&#128176;USD</option>
-          </select>
-        </div>
+          <div class="select">
+            <span class="selected">Currency</span>
+            <div class="caret"></div>
+          </div>
+          <ul class="menu">
+            <li class="currency-option">&nbsp;&#8377; &nbsp;INR</li>
+            <li class="currency-option">&#128176; USD</li>
+          </ul>
+        </div>                  
       </div>
       <div class="input-container">
         <div>
@@ -641,9 +649,9 @@ registerCloseButton.addEventListener("click", function() {
         </div>
       </div>
       <br/>
-      <div class="btn-calculate">
-        <button type="button" onclick="calculateResult()" class="btn btn-calculate">Calculate</button>
-        <button type="button" onclick="clearAll()" class="btn btn-secondary"><p class="btn-text">Clear</p></button>
+      <div class="btn-calculate" style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+        <button type="button" id="calculateBtn" onclick="calculateResult()" style="margin-right: 10px;">Calculate</button>
+        <button class="button" type="button" id="clearBtn" onclick="clearAll()">Clear</button>
       </div>
       <br />
       <div style="display: flex; justify-content: flex-start; font-size: medium;" class="result"><b>Result :</b></div>
@@ -683,7 +691,6 @@ registerCloseButton.addEventListener("click", function() {
       .header {
           padding-top: 100px;
           text-align: center;
-          background-color: #007bff;
           color: white;
           padding: 20px;
       }
@@ -769,54 +776,7 @@ registerCloseButton.addEventListener("click", function() {
   </style>
   <script src="emiCalculator.js"></script>
 </head>
-<body>
-  <div class="header">
-      <h3>EMI Calculator</h3>
-      <p class="cal-content">
-          The EMI (Equated Monthly Installment) Calculator assists in calculating the monthly installment amount for a loan based on the loan amount, interest rate, and loan tenure.
-          It provides insights into the total payment and total interest paid over the loan period, helping you plan your finances better.
-      </p>
-      <div class="know-more">
-          <button class="know-more-btn" onclick="document.querySelector('.know-more-content').style.display = 'block'">Know More</button>
-          <div class="know-more-content">
-              <h6 style="text-align: left; margin: 0;">Here's how it works:</h6>
-              <ol type="1" style="font-size: 1rem; text-align: left; margin: 10px 0;">
-                  <li><b>Loan Amount</b>: Enter the principal amount of the loan.</li>
-                  <li><b>Interest Rate</b>: Specify the annual interest rate.</li>
-                  <li><b>Loan Tenure (months)</b>: Enter the loan period in months.</li>
-                  <li><b>Calculate EMI</b>: Provides the monthly EMI, total payment, and total interest.</li>
-              </ol>
-          </div>
-      </div>
-  </div>
-  <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5">
-      <div class="input-container">
-          <div>
-              <div><b>Loan Amount (INR)</b></div>
-              <div><input class="form-control" id="loanAmount" type="number" placeholder="Enter loan amount" /></div>
-              <br />
-              <div><b>Interest Rate (%)</b></div>
-              <div><input class="form-control" id="interestRate" type="number" placeholder="Enter interest rate" /></div>
-              <br />
-              <div><b>Loan Tenure (Months)</b></div>
-              <div><input class="form-control" id="loanTenure" type="number" placeholder="Enter tenure in months" /></div>
-          </div>
-      </div>
-      <div class="btn-calculate">
-          <button class="btn" type="button" onclick="calculateEMI()">Calculate</button>
-          <button type="button" onclick="clearAll()" class="btn btn-secondary">Clear</button>
-      </div>
-      <div class="result">
-          <div><b>Result :</b></div>
-          <div class="result-container">
-              <div>Monthly EMI: <span id="monthlyEMI"></span></div>
-              <div>Total Payment: <span id="totalPayment"></span></div>
-              <div>Total Interest Paid: <span id="totalInterestPaid"></span></div>
-          </div>
-      </div>
-  </div>
-  <script src="emiCalculator.js" defer></script>
-</body>
+
 </html>
  
 <!DOCTYPE html>
@@ -828,21 +788,19 @@ registerCloseButton.addEventListener("click", function() {
   <style>
       body {
           font-family: Arial, sans-serif;
-          background-color: #f0f4f8;
+          background-color: #fff0f5;
           margin: 0;
           padding: 0;
       }
       .header {
           padding-top: 50px;
           text-align: center;
-          background-color: #81d4fa;
-          color: #0d47a1;
           padding: 20px;
-          border-bottom: 2px solid #0288d1;
-      }
+          background: linear-gradient(135deg,#a18cd1,#fbc2eb);
+        }
       .header h3 {
           margin: 0;
-      }
+        }
       .cal-content {
           margin: 20px 0;
           font-size: 1.1rem;
@@ -873,7 +831,7 @@ registerCloseButton.addEventListener("click", function() {
       }
       .input-container {
           padding: 20px;
-          background: #ffffff;
+          background: linear-gradient(135deg,#eadff2,#fff0f8);
           border-radius: 5px;
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
           margin: 20px 0;
@@ -927,11 +885,14 @@ registerCloseButton.addEventListener("click", function() {
           flex-direction: column;
           margin-left: 20px;
       }
+      .toool{
+        background: linear-gradient(135deg,#eadff2,#fff0f8);
+      }
   </style>
   <script src="emiCalculator.js"></script>
 </head>
 <body>
-  <div class="header">
+  <div class="header toool">
       <h3>EMI Calculator</h3>
       <p class="cal-content">
           The EMI (Equated Monthly Installment) Calculator assists in calculating the monthly installment amount for a loan based on the loan amount, interest rate, and loan tenure.
@@ -963,9 +924,9 @@ registerCloseButton.addEventListener("click", function() {
               <div><input class="form-control" id="loanTenure" type="number" placeholder="Enter tenure in months" /></div>
           </div>
       </div>
-      <div class="btn-calculate">
-          <button class="btn btn-primary" type="button" onclick="calculateEMI()">Calculate</button>
-          <button type="button" onclick="clearAll()" class="btn btn-secondary">Clear</button>
+      <div class="btn-calculate" style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+        <button type="button" id="calculateBtn" onclick="calculateEMI()" style="margin-right: 10px;">Calculate</button>
+        <button class="button" type="button" id="clearBtn" onclick="clearAll()">Clear</button>
       </div>
       <div class="result">
           <div><b>Result :</b></div>
@@ -981,7 +942,7 @@ registerCloseButton.addEventListener("click", function() {
     <!-- Savings Goal Calculator -->
     <script src="SavingsGoalCalculator.js" defer></script>
     <script src="SavingsGoalCalculator.js" ></script>
-    <div class="header" style="padding-top: 100px;">
+    <div class="header toool" style="padding-top: 100px;">
       <h3>Savings Goal Calculator</h3>
       <p class="cal-content">
         The Savings Goal Calculator is designed to help you determine how much you need to save monthly to reach your financial goals. By entering your goal amount, current savings, monthly savings, and expected annual interest rate, this calculator shows the time required to achieve your goal.
@@ -1018,9 +979,10 @@ registerCloseButton.addEventListener("click", function() {
         </div>
       </div>
       <br />
-      <div class="btn-calculate">
-        <button class="btn btn-calculate" type="button" onclick="calculateSavings()">Calculate</button>
-        <button class="btn btn-secondary" type="button" onclick="clearSavings()"><p class="btn-text">Clear</p></button>
+      <br />
+      <div class="btn-calculate" style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+        <button type="button" id="calculateBtn" onclick="calculateSavings()" style="margin-right: 10px;">Calculate</button>
+        <button class="button" type="button" id="clearBtn" onclick="clearsSavings()">Clear</button>
       </div>
       <br />
       <div style="display: flex;">
@@ -1035,7 +997,7 @@ registerCloseButton.addEventListener("click", function() {
 
     <!-- Insurance Calculator -->
     <script src="insuranceCalculator.js" defer></script>
-<div class="header" style="padding-top: 100px;">
+<div class="header toool" style="padding-top: 100px;">
   <h3>Insurance Calculator</h3>
   <p class="cal-content">
     The Insurance Calculator estimates the benefits of an insurance policy based on the sum assured, policy term, and annual premium. This tool helps you understand the potential returns from your insurance policy and plan your coverage effectively.
@@ -1104,10 +1066,9 @@ registerCloseButton.addEventListener("click", function() {
 </div>
 
   <!-- End Insurance Calculator -->
-
     <!-- NPV Calculator -->
     <script src="npvCalculator.js" defer></script>
-<div class="header" style="padding-top: 100px;">
+<div class="header toool" style="padding-top: 100px;">
   <h3>Net Present Value<br> (NPV) Calculator</h3>
   <p class="cal-content">
     The NPV (Net Present Value) Calculator is a tool designed to help you evaluate the profitability of an investment by calculating the present value of expected future cash flows. This calculator helps investors make informed decisions, ensuring that future cash flows are accurately evaluated in today's terms.
@@ -1161,10 +1122,10 @@ registerCloseButton.addEventListener("click", function() {
 </div>
 
     <!-- End NPV Calculator -->
-
+ 
     <!--ROI calculator-->
     <script src="roiCalculator.js" defer></script>
-    <div class="header" style="padding-top: 100px;">
+    <div class="header toool" style="padding-top: 100px;">
       <h3>Return on Investment(ROI) Calculator</h3>
       <p class="cal-content">
         The ROI (Return on Investment) Calculator helps you measure the profitability of an investment. By inputting the initial investment amount and the final value of the investment, this tool calculates the percentage return on investment, helping you assess the efficiency of your investment.
@@ -1216,7 +1177,7 @@ registerCloseButton.addEventListener("click", function() {
 
     <!--Start of GST Calculator-->
     <script src="GSTcalc.js" defer></script>
-<div class="header" style="padding-top: 100px;">
+<div class="header toool" style="padding-top: 100px;">
     <h3>Goods and Service Tax (GST) Calculator</h3>
     <p class="cal-content">The GST (Goods and Services Tax) Calculator computes the GST-inclusive or exclusive amount based on the original amount and the applicable GST rate. This tool simplifies the calculation of GST for various transactions.</p>
     <div class="know-more">
@@ -1268,7 +1229,7 @@ registerCloseButton.addEventListener("click", function() {
 
     <!--Start of Income Tax Calc-->
     <script src="IncomeTax.js" defer></script>
-    <div class="header" style="padding-top: 100px;">
+    <div class="header toool" style="padding-top: 100px;">
         <h3>Income Tax Calculator</h3>
         <p class="cal-content">The Income Tax Calculator determines the tax payable based on your annual income and applicable tax rate. It helps you estimate your tax liability and plan your finances accordingly.</p>
         <div class="know-more">
@@ -1314,7 +1275,7 @@ registerCloseButton.addEventListener("click", function() {
   <!-- Profit Margin Calculator starts here -->
   <script src="ProfitMargin.js" defer></script>
 
-  <div class="header" style="padding-top: 100px;">
+  <div class="header toool" style="padding-top: 100px;">
     <h3>Profit Margin Calculator</h3>
     <p class="cal-content">The Profit Margin Calculator calculates the profit margin percentage based on the revenue and cost inputs. This tool helps businesses and individuals assess their profitability and make informed pricing and cost management decisions.</p>
     <div class="know-more">
@@ -1360,7 +1321,7 @@ registerCloseButton.addEventListener("click", function() {
 <!-- expenditure and saving Calculator starts here -->
 <script src="expenditureandsaving.js" defer></script>
 
-<div class="header" style="padding-top: 100px;">
+<div class="header toool" style="padding-top: 100px;">
   <h3 class="text-center mb-4">Expenditure and Savings Calculator</h3>
   <p class="cal-content">The Expenditure and Savings Calculator helps you analyze your monthly savings based on your income and expenses. This tool assists in managing your finances effectively.</p>
   <div class="know-more">
@@ -1405,7 +1366,7 @@ registerCloseButton.addEventListener("click", function() {
 
  <!-- GDP calculator  starts from here -->
 
- <div class="header">
+ <div class="header toool">
   <h3>GDP Calculator</h3>
   <p class="cal-content">
     The GDP Calculator computes the Gross Domestic Product (GDP) using the Expenditure Approach, which aggregates personal consumption, gross investment, government consumption, and net exports (exports minus imports) to determine the economic output of a country.
@@ -1477,7 +1438,7 @@ registerCloseButton.addEventListener("click", function() {
      <!--SWP Calculator Start-->
      <script src="SWPCalculator.js" defer></script>
 
-     <div class="header" style="padding-top: 100px;">
+     <div class="header toool" style="padding-top: 100px;">
        <h3 class="text-center mb-4">Systematic Withdrawal Plan Calculator</h3>
        <p class="cal-content">The SWP (Systematic Withdrawal Plan) calculator is a financial tool that helps investors plan and manage the regular withdrawal of funds from their investment corpus, typically mutual funds. SWP is used to generate a steady income stream, often for retirees or those looking to supplement their income.</p>
        <div class="know-more">
@@ -1534,7 +1495,7 @@ registerCloseButton.addEventListener("click", function() {
   <!-- credit card payoff calculator starts here  -->
   <script src="creditcardpayoff.js" defer></script>
 
-  <div class="header" style="padding-top: 100px;">
+  <div class="header toool" style="padding-top: 100px;">
     <h3 class="text-center mb-4">Credit Card Payoff Calculator</h3>
     <p class="cal-content">Calculate how long it will take to pay off your credit card balance with this calculator. Enter your balance, APR, and monthly payment to get started.</p>
     <div class="know-more">
@@ -1585,7 +1546,7 @@ registerCloseButton.addEventListener("click", function() {
   <!-- credeit card payoff calculator ends here  -->
 
   <!-- Bill split calculator  -->
-  <div class="header" style="padding-top: 100px;">
+  <div class="header toool" style="padding-top: 100px;">
     <h3 class="text-center mb-4">Split Bill Calculator</h3>
     <p class="cal-content">Calculate how much each person should pay when splitting a bill, including tips. Enter the bill subtotal, desired tip percentage, and the number of people to split the bill.</p>
     <div class="know-more">
@@ -1642,7 +1603,7 @@ registerCloseButton.addEventListener("click", function() {
  <!--FD Calculator Start-->
      <script src="FDCalculator.js" defer></script>
 
-     <div class="header" style="padding-top: 100px;">
+     <div class="header toool" style="padding-top: 100px;">
        <h3 class="text-center mb-4">Fixed Deposit Calculator</h3>
        <p class="cal-content">The FD(Fixed Deposit) Calculator helps compute the maturity amount and interest earned on fixed deposits based on the principal, interest rate, and duration.</p>
        <div class="know-more">
@@ -1696,7 +1657,7 @@ registerCloseButton.addEventListener("click", function() {
  <!--RD Calculator Start-->
  <script src="RDCalculator.js" defer></script>
 
- <div class="header" style="padding-top: 100px;">
+ <div class="header toool" style="padding-top: 100px;">
    <h3 class="text-center mb-4">Recurring Deposit Calculator</h3>
    <p class="cal-content">The RD (Recurring Deposit) calculator computes the maturity amount and interest earned on regular monthly deposits over a fixed period, given a specified annual interest rate.</p>
    <div class="know-more">
@@ -1750,7 +1711,7 @@ registerCloseButton.addEventListener("click", function() {
   <!--EPF Calculator Start-->
   <script src="EPFCalculator.js" defer></script>
 
-  <div class="header" style="padding-top: 100px;">
+  <div class="header toool" style="padding-top: 100px;">
     <h3 class="text-center mb-4">Employee Provident Fund Calculator</h3>
     <p class="cal-content">The Employee Provident Fund Calculator helps employees estimate their total savings at retirement by factoring in monthly salary, age, contribution rate, annual salary increase, and interest rate. It provides a projection of the accumulated fund, aiding in financial planning for retirement.</p>
     <div class="know-more">

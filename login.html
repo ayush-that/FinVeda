@@ -15,14 +15,10 @@
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="./assets/css/default.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="stylesheet" href="./assets/css/quiz.css" />
-    <link rel="stylesheet" href="./assets/css/popup.css" />
     <link rel="stylesheet" href="./assets/css/login.css" />
     <link rel="stylesheet" href="./assets/css/register.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-     <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
     <link rel="stylesheet" href="navbar.css">
-
   </head>
   <body>
     <header class="header-area">
@@ -38,114 +34,15 @@
                 </button>
                 <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                   <ul id="nav" class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./index.html">Home 🏡</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./about.html">About Us 📖</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./trends.html">Trends 📈</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./blog.html">Blogs 📰</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
-                    </li>
+                    <li class="nav-item"><a class="page-scroll" href="./index.html">Home 🏡</a></li>
+                    <li class="nav-item"><a class="page-scroll" href="./about.html">About Us 📖</a></li>
+                    <li class="nav-item"><a class="page-scroll" href="./trends.html">Trends 📈</a></li>
+                    <li class="nav-item"><a class="page-scroll" href="./tools/sip.html">Tools 🔧</a></li>
+                    <li class="nav-item"><a class="page-scroll" href="./blog.html">Blogs 📰</a></li>
+                    <li class="nav-item"><a class="page-scroll" href="./quiz.html">Quiz 🤔</a></li>
                   </ul>
                 </div>
                 <div class="navbar-btn d-none d-sm-inline-block">
-                  <!-- Login Modal --> 
-                  <div id="myModal" class="modal">
-                    <div class="modal-content">
-                      <span class="close" style="display: flex; justify-content: right;">&times;</span>
-                      <div class="mt-3"> 
-                        <h3 class="join">Login to join us....</h3>
-                        <form class="px-3 py-4" id="loginForm">
-                          <table>
-                            <tr>
-                              <td><label class="d-flex">Email</label></td>
-                              <td><input type="email" placeholder="Email" class="form-control" id="login-email" required /></td>
-                            </tr>
-                            <tr>
-                              <td><label class="d-flex">Password</label></td>
-                              <td class="password-container">
-                                <input type="password" placeholder="Password" class="form-control" id="login-password" required />
-                                <span class="toggle-password" onclick="togglePasswordVisibility('login-password')">
-                                  <i class="fa-regular fa-eye"></i>
-                                  <i class="fa-solid fa-eye-slash" style="display: none;"></i>
-                                </span>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td colspan="2">
-                                <div class="form-check d-flex">
-                                  <input type="checkbox" class="form-check-input" id="login-remember" />
-                                  <label class="form-check-label">Remember me</label>
-                                </div>
-                              </td>
-                            </tr>
-                          </table>
-                          <div class="error" id="login-error"></div>
-                          <button type="submit" class="main-btn mt-2 w-100 mb-2" style="padding: 0px;" id="login-btn">Sign in</button>
-                          <button class="main-btn" id="googleSignInBtn" style="padding: 0px;">Sign in with Google</button>
-
-                        </form>
-                        <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Register Form -->
-                  <div id="registerModal" class="modal">
-                    <div class="modal-content">
-                      <span class="close" style="display: flex; justify-content: right;">&times;</span>
-                      <div class="mt-3">
-                        <h3 class="join">Register To join us....</h3>
-                        <form class="px-3 py-4" id="registerForm">
-                          <table>
-                            <tr>
-                              <td><label class="d-flex">Email</label></td>
-                              <td><input type="email" placeholder="Email" class="form-control" id="register-email" required /></td>
-                            </tr>
-                            <tr>
-                              <td><label class="d-flex">Username</label></td>
-                              <td><input type="text" placeholder="Username" class="form-control" id="register-username" required /></td>
-                            </tr>
-                            <tr>
-                              <td><label class="d-flex">DOB</label></td>
-                              <td><input type="date" placeholder="Username" class="form-control" id="register-DOB" required /></td>
-                            </tr>
-                            <tr>
-                              <td><label class="d-flex">Password</label></td>
-                              <td class="password-container">
-                                <input type="password" placeholder="Password" class="form-control" id="register-password" required />
-                                <span class="toggle-password" onclick="togglePasswordVisibility('register-password')">
-                                  <i class="fa-regular fa-eye"></i>
-                                  <i class="fa-solid fa-eye-slash" style="display: none;"></i>
-                                </span>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td colspan="2">
-                                <div class="form-check d-flex">
-                                  <input type="checkbox" class="form-check-input" id="register-terms" required />
-                                  <label class="form-check-label">I accept the <a href="./blogs/terms-of-service.html" target="_blank">Terms and Conditions</a></label>
-                                </div>
-                              </td>
-                            </tr>
-                          </table>
-                          <div class="error" id="register-error"></div>
-                          <button type="submit" class="main-btn mt-2 w-100 mb-3" style="padding: 0px;" id="register-btn" >Register</button>
-
-                        </form>
-                        <p class="text-center">Already have an account? <a href="#" id="loginLink">Login</a></p>
-                      </div>
-                    </div>
-                  </div>
                   <a class="main-btn" data-scroll-nav="0" href="#" onclick="openModal()">Login/Register 💻</a>
                 </div>
               </nav>
@@ -155,244 +52,155 @@
       </div>
     </header>
 
+    <!-- Login/Register Modals -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close" style="display: flex; justify-content: right;">&times;</span>
+        <div class="mt-3"> 
+          <h3 class="join">Login to join us....</h3>
+          <form class="px-3 py-4" id="loginForm">
+            <table>
+              <tr>
+                <td><label class="d-flex">Email</label></td>
+                <td><input type="email" placeholder="Email" class="form-control" id="login-email" required /></td>
+              </tr>
+              <tr>
+                <td><label class="d-flex">Password</label></td>
+                <td class="password-container">
+                  <input type="password" placeholder="Password" class="form-control" id="login-password" required />
+                  <span class="toggle-password" onclick="togglePasswordVisibility('login-password')">
+                    <i class="fa-regular fa-eye"></i>
+                    <i class="fa-solid fa-eye-slash" style="display: none;"></i>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <div class="form-check d-flex">
+                    <input type="checkbox" class="form-check-input" id="login-remember" />
+                    <label class="form-check-label">Remember me</label>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <div class="error" id="login-error"></div>
+            <button type="submit" class="main-btn mt-2 w-100 mb-2" style="padding: 0px;" id="login-btn">Sign in</button>
+          </form>
+        </div>
+      </div>
+    </div>
 
- <!-- Timed popup that will appear after succesful submission of feebback form! -->
-      <button class="notification" id="successnotification" style="display:none;">
-        <span class="message" id="successmsg">Submitted successfully!</span>
-        <span class="closenotif" id="closeSuccessNotification">✖</span>
-        <div class="timerline" id="timerline"></div>
-      </button>
+    <div id="registerModal" class="modal">
+      <div class="modal-content">
+        <span class="close" style="display: flex; justify-content: right;">&times;</span>
+        <div class="mt-3">
+          <h3 class="join">Register To join us....</h3>
+          <form class="px-3 py-4" id="registerForm">
+            <table>
+              <tr>
+                <td><label class="d-flex">Email</label></td>
+                <td><input type="email" placeholder="Email" class="form-control" id="register-email" required /></td>
+              </tr>
+              <tr>
+                <td><label class="d-flex">Username</label></td>
+                <td><input type="text" placeholder="Username" class="form-control" id="register-username" required /></td>
+              </tr>
+              <tr>
+                <td><label class="d-flex">DOB</label></td>
+                <td><input type="date" placeholder="DOB" class="form-control" id="register-DOB" required /></td>
+              </tr>
+              <tr>
+                <td><label class="d-flex">Password</label></td>
+                <td class="password-container">
+                  <input type="password" placeholder="Password" class="form-control" id="register-password" required />
+                  <span class="toggle-password" onclick="togglePasswordVisibility('register-password')">
+                    <i class="fa-regular fa-eye"></i>
+                    <i class="fa-solid fa-eye-slash" style="display: none;"></i>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <div class="form-check d-flex">
+                    <input type="checkbox" class="form-check-input" id="register-terms" required />
+                    <label class="form-check-label">I accept the <a href="./blogs/terms-of-service.html" target="_blank">Terms and Conditions</a></label>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <div class="error" id="register-error"></div>
+            <button type="submit" class="main-btn mt-2 w-100 mb-3" style="padding: 0px;" id="register-btn">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
 
     <footer id="footer" class="footer-area pt-120">
       <div class="container">
-        <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="subscribe-content mt-45">
-                <h2 class="subscribe-title">
-                  Subscribe Our Newsletter <span>get regular updates</span>
-                </h2>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="subscribe-form mt-50">
-                <form id="subscribe-form">
-                  <input type="email" id="news-email" placeholder="Enter Email" required/>          
-                  <button class="main-btn" id="subscribe-btn" type="submit">Subscribe</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="footer-widget pb-100">
-          <div class="row" id="footer">
-              <div class="col-lg-4 col-md-6 col-sm-8">
-                  <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                      <p class="text custom-margin">
-                          We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
-                      </p>
-                  </div>
-              </div>
-              <div class="col-lg-5 col-md-7 col-sm-7">
-                  <div class="footer-link d-flex mt-50 justify-content-md-between" style="justify-content: space-around !important;">
-                      <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-                          <div class="footer-title">
-                              <h3 class="title custom-margin">Quick Links</h3>
-                          </div>
-                          <ul class="link custom-margin">
-                              <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
-                              <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
-                              <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
-                              <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
-                              <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
-                          </ul>
-                      </div>
-                      <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
-                          <div class="footer-title">
-                              <h4 class="title custom-margin">Resources</h4>
-                          </div>
-                          <ul class="link custom-margin">
-                              <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
-                              <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
-                              <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
-                              <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
-                              <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
-                              <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
-                          </ul>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-lg-3 col-md-5 col-sm-5">
-                  <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-                      <div class="footer-title">
-                          <h4 class="title custom-margin">Contact Us</h4>
-                      </div>
-                      <ul class="contact custom-margin-big" style="justify-content: space-around;">
-                          <li class="d-sm-flex justify-content-center">
-                              <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                              <p style="width: 80%;">
-                                  <a href="mailto:ayush1337@hotmail.com" target="_blank"
-                                     style="color: white; text-decoration: underline;">
-                                      ayush1337@hotmail.com
-                                  </a>
-                              </p>
-                          </li>
-                          <li class="d-sm-flex justify-content-center">
-                              <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                              <div style="width: 80%;">
-                                  <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
-                                      fin-veda.vercel.app
-                                  </a>
-                              </div>
-                          </li>
-                          <li class="d-sm-flex justify-content-center">
-                              <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 12px; width: 10%;"></i>
-                              <div style="width: 80%;">
-                                  <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
-                                     style="color:#fff">
-                                      Delhi, India
-                                  </a>
-                              </div>
-                          </li>
-                          <li id="social_icons" class="d-sm-flex justify-content-evenly my-3">
-                            <div style="width: 100%; display:flex; ">
-                              <!-- Instagram Icon -->
-                              <a href="https://instagram.com" target="_blank" style="margin: 0 10px; color: #E4405F;" aria-label="Instagram">
-                                <i style="font-size: 25px" class="fa-brands fa-instagram"></i>
-                              </a>
-                          
-                              <!-- Facebook Icon -->
-                              <a href="https://facebook.com" target="_blank" style="margin: 0 10px; color: #4267B2;" aria-label="Facebook">
-                                <i style="font-size: 25px" class="fa-brands fa-facebook"></i>
-                              </a>
-                          
-                              <!-- X/Twitter Icon -->
-                              <a href="https://twitter.com" target="_blank" style="margin: 0 10px; color: #1DA1F2;" aria-label="Twitter">
-                                <i style="font-size: 25px" class="fa-brands fa-x-twitter"></i>
-                              </a>
-                          
-                              <!-- Discord Icon -->
-                              <a href="https://discord.com" target="_blank" style="margin: 0 10px; color: #7289DA;" aria-label="Discord">
-                                <i style="font-size: 25px" class="fa-brands fa-discord"></i>
-                              </a>
-                          
-                              <!-- GitHub Icon -->
-                              <a href="https://github.com" target="_blank" style="margin: 0 10px; color: #333;" aria-label="GitHub">
-                                <i style="font-size: 25px" class="fa-brands fa-github"></i>
-                              </a>
-                            </div>
-                          </li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
-      </div>
         <div class="footer-copyright text-center">
-          <p class="text" style="color: white;"> © <span id="copyright-year"></span> FinVeda. All rights reserved<br />
+          <p class="text" style="color: white;"> © <span id="copyright-year"></span> FinVeda. All rights are reserved<br />
             Made with ♥ in India</p>
         </div>
       </div>
-      <div id="particles-2"></div>
     </footer>
+
     <script>
-     document.getElementById("copyright-year").textContent = new Date().getFullYear();
+      document.getElementById("copyright-year").textContent = new Date().getFullYear();
 
-const inputFields = document.querySelectorAll("#registerForm input[required]");
-const checkbox = document.getElementById("register-terms");
-const useremail = document.getElementById("register-email");
-const registerPassword = document.getElementById("register-password");
-const error_div = document.getElementById("register-error");
-const loginEmail = document.getElementById("login-email");
-const loginPassword = document.getElementById("login-password");
-const registerDOB= document.getElementById("register-DOB");
-const date= new Date();
-const today= date.getDate();
+      const inputFields = document.querySelectorAll("#registerForm input[required]");
+      const checkbox = document.getElementById("register-terms");
+      const registerPassword = document.getElementById("register-password");
+      const error_div = document.getElementById("register-error");
 
+      document.querySelector('#register-btn').addEventListener('click', (event) => {
+        event.preventDefault();
 
-document.querySelector('#register-btn').addEventListener('click', (event) => {
-    event.preventDefault(); // Prevent default form submission
+        let allFilled = true;
+        error_div.innerHTML = "";
 
-    let allFilled = true;
-    
-    inputFields.forEach(input => {
-        if (!input.value) {
+        inputFields.forEach(input => {
+          if (!input.value) {
             allFilled = false;
-            error_div.innerHTML = `Please fill in the required field: ${input.placeholder}`;
+            error_div.innerHTML += `Please fill in the required field: ${input.placeholder}<br>`;
+          }
+        });
+
+        if (!checkbox.checked) {
+          allFilled = false;
+          error_div.innerHTML += "Please check the terms and conditions.<br>";
         }
-    });
 
-    if (!checkbox.checked) {
-        allFilled = false;
-        error_div.innerHTML = "Please check the terms and conditions.";
-    }
-
-    if (registerPassword.value.length < 8) { // Check for minimum length
-        allFilled = false;
-        error_div.innerHTML = "Password length should be at least 8 characters.";
-    } else {
-        const specialCharacterRegex = /[!@#$%^&*(),.?":{}|<>]/; 
-        const capitalLetterRegex = /[A-Z]/; // Check for at least one uppercase letter
-        const digitRegex = /[0-9]/; // Check for at least one number
-
-        if (!specialCharacterRegex.test(registerPassword.value) || 
-            !capitalLetterRegex.test(registerPassword.value) || 
-            !digitRegex.test(registerPassword.value)) {
+        if (registerPassword.value.length < 8) {
+          allFilled = false;
+          error_div.innerHTML += "Password length should be at least 8 characters.<br>";
+        } else {
+          const specialCharacterRegex = /[!@#$%^&*(),.?":{}|<>]/;
+          if (!specialCharacterRegex.test(registerPassword.value)) {
             allFilled = false;
-            error_div.innerHTML = "Password must include at least one special character, one capital letter, and one number.";
+            error_div.innerHTML += "Password should contain at least one special character.<br>";
+          }
         }
-    }
 
-    const dobValue = new Date(registerDOB.value);
-    const age = new Date().getFullYear() - dobValue.getFullYear();
-    const monthDiff = new Date().getMonth() - dobValue.getMonth();
-    const isValidDOB = monthDiff > 0 || (monthDiff === 0 && new Date().getDate() >= dobValue.getDate());
+        if (allFilled) {
+          document.getElementById('registerForm').submit();
+        }
+      });
 
-    if (dobValue > new Date()) {
-        allFilled = false;
-        error_div.innerHTML = "Date of birth cannot be in the future.";
-    } else if (age < 13 || (age === 13 && !isValidDOB)) { // Assuming a minimum age of 13
-        allFilled = false;
-        error_div.innerHTML = "You must be at least 13 years old.";
-    }
+      function togglePasswordVisibility(inputId) {
+        const passwordInput = document.getElementById(inputId);
+        const eyeOpen = passwordInput.nextElementSibling.children[0];
+        const eyeClosed = passwordInput.nextElementSibling.children[1];
 
-    if (allFilled) {
-        alert("Registration done!!");
-        const userData = {
-            email: useremail.value,
-            password: registerPassword.value
-        };
-        localStorage.setItem(useremail.value, JSON.stringify(userData));
-    }
-});
-
-
-
-
-
-
-
-     
-
+        if (passwordInput.type === "password") {
+          passwordInput.type = "text";
+          eyeOpen.style.display = "none";
+          eyeClosed.style.display = "inline";
+        } else {
+          passwordInput.type = "password";
+          eyeOpen.style.display = "inline";
+          eyeClosed.style.display = "none";
+        }
+      }
     </script>
-    <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
-    <script src="./assets/js/subscribe.js"></script>
-    <script src="./assets/js/login.js"></script>
-    <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
-    <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/slick.min.js"></script>
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="assets/js/ajax-contact.js"></script>
-    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/waypoints.min.js"></script>
-    <script src="assets/js/jquery.counterup.min.js"></script>
-    <script src="assets/js/jquery.easing.min.js"></script>
-    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-  <script src="https://mediafiles.botpress.cloud/5e160793-5606-4412-ba4c-337e416f14fe/webchat/config.js" defer></script>
-    <script src="assets/js/scrolling-nav.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script defer src="./assets/js/arthsathi-style.js"></script>
   </body>
 </html>

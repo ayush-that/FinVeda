@@ -1,5 +1,5 @@
 :root{
-    --slider-dark:rgba(7, 97, 233, 0.808);
+    --slider-dark:rgba(255,255,255,0.5);
 }
 
 .main{
@@ -10,6 +10,26 @@
     top: 0;
     cursor: pointer;
     /* border: 2px solid saddlebrown; */
+}
+
+.navbar-collapse {
+  display: flex;
+  margin-right: -5.6rem;
+  justify-content: center;
+  
+  background-color: black;
+  border-radius: 10px;
+  padding: 15px 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100vw;
+  height: 10vh;
+  position: relative;
+  left: 0;
+  transition: background-color 0.3s ease-in-out;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  -moz-transition: background-color 0.3s ease-in-out;
+  -ms-transition: background-color 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out;
 }
 
 .card{
@@ -332,7 +352,7 @@
   .contributors {
     width: 90%;
     margin: 0 auto;
-    background: var(--seashell);
+    background: linear-gradient(135deg, #112d60 20%,#b6c0c5);
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -349,12 +369,11 @@
   .contributor-member {
     color: var(--sonic-silver);
     text-align: center;
-    background-color: var(--seashell);
+    background: linear-gradient(135deg,#f3e9e8,#96b9d9);
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 4px 6px rgb(240, 239, 239);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.4s ease;
     max-width: 250px;
     margin: 10px;
     flex: 1 1 calc(33.333% - 40px);
@@ -365,9 +384,8 @@
   }
 
   .contributor-member:hover {
-    scale: 1.1;
-    box-shadow: 0 6px 12px rgb(226, 206, 24);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    scale: 0.95;
+    box-shadow: 0 8px 12px #2e3061;
   }
 
   .contributor-member img {
@@ -379,7 +397,7 @@
   }
 
   .contributors h2 {
-    color: var(--sonic-silver);
+    color: white;
   }
 
   .contributor-member h3 {
@@ -393,22 +411,22 @@
   }
 
   .contributor-member button {
-    background-color: transparent;
+    background-color: rgba(40, 62, 78,0.4);
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 5px 20px;
     font-size: 0.8rem;
-    color: var(--sonic-silver);
+    color: black;
     cursor: pointer;
     margin-top: 10px;
     font-size: 1.1rem;
-
+    transition: all 0.4s ease;
   }
 
 
   .contributor-member button:hover {
     /* color: var(--old-rose); */
-    background: orange;
+    background: rgb(40, 62, 78);
     color: rgb(255, 255, 255)
   }
 
@@ -419,7 +437,7 @@
   }
 
   .pagination button {
-    color: var(--old-rose);
+    color: black;
     margin: 0 5px;
     padding: 10px 15px;
     border: 1px solid transparent;
@@ -434,7 +452,7 @@
   }
 
   body.dark-mode .pagination button:hover {
-    background-color: #0056b3;
+    background-color: rgba(255,255,255,0.5);
     color: #fff;
   }
 
