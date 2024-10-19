@@ -275,25 +275,25 @@
             const body = document.body;
             const currentTheme = localStorage.getItem('theme');
 
-if (currentTheme === 'dark') {
-body.classList.add('dark-mode');
-toggleButton.classList.add('dark');
-toggleButton.textContent = '☀️';
-}
+            if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            toggleButton.classList.add('dark');
+            toggleButton.textContent = '☀️';
+            }
 
-toggleButton.addEventListener('click', function () {
-body.classList.toggle('dark-mode');
-toggleButton.classList.toggle('dark');
+            toggleButton.addEventListener('click', function () {
+            body.classList.toggle('dark-mode');
+            toggleButton.classList.toggle('dark');
 
-// Update button icon based on mode
-if (body.classList.contains('dark-mode')) {
-toggleButton.textContent = '☀️';  // Light mode icon
-localStorage.setItem('theme', 'dark');
-} else {
-toggleButton.textContent = '🌙';  // Dark mode icon
-localStorage.setItem('theme', 'light');
-}
-});
+            // Update button icon based on mode
+            if (body.classList.contains('dark-mode')) {
+            toggleButton.textContent = '☀️';  // Light mode icon
+            localStorage.setItem('theme', 'dark');
+            } else {
+            toggleButton.textContent = '🌙';  // Dark mode icon
+            localStorage.setItem('theme', 'light');
+            }
+            });
         </script>
         <style>
 
@@ -331,18 +331,18 @@ localStorage.setItem('theme', 'light');
       }
       
       body.dark-mode {
-background-color: #222;
-color: #f1f1f1; /* Change text color to light for dark mode */
-}
+                background-color: #222;
+                color: #f1f1f1; /* Change text color to light for dark mode */
+                }
 
-.toggle-button.dark {
-background-color: #f1f1f1; /* Button background in dark mode */
-color: #333; /* Button text color in dark mode */
-}
+                .toggle-button.dark {
+                background-color: #f1f1f1; /* Button background in dark mode */
+                color: #333; /* Button text color in dark mode */
+                }
 
-.toggle-button.dark:hover {
-background-color: #ddd; /* Button hover color in dark mode */
-}
+                .toggle-button.dark:hover {
+                background-color: #ddd; /* Button hover color in dark mode */
+                }
       </style>
             
           </nav>
