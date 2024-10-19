@@ -23,6 +23,8 @@
     <link rel="stylesheet"  href="./assets/css/trends.css"/>
     <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <link rel="stylesheet"  href="navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/market-time.css">
 <body>
 
   
@@ -145,7 +147,19 @@
     </div> -->
   </header>
   <br><br><br><br>
-  <div><a href="index.html"><button style=" padding: 10px; border: none; background-color: #4267B2; color: #fff; border-radius: 10px; position: relative; left: 20px;"> Back To Home</button></a></div>
+  <div>
+    <a href="index.html" class="home-link" style="border-radius: 10px; position: relative; left: 20px; text-decoration: none;">
+        <i class="fas fa-home" style="font-size: 30px;"></i>
+    </a>
+</div>
+
+<section class="market-status-section-unique">
+  <h2 class="market-status-heading-unique">Global Market Open & Close Status</h2>
+  <div class="market-scroll-container-unique">
+    <div class="market-card-container-unique" id="marketStatusContainerUnique"></div>
+  </div>
+</section>
+
   <div class="container"><br><br>
     <!-- TradingView Widget BEGIN -->
      <br><br>
@@ -399,7 +413,7 @@
             >
               <div class="copyright-content" style="text-align: center">
                 <p class="text" style="text-align: center">
-                  © <span id="copyright-year"></span> FinVeda. All rights
+                  © <span id="copyright-year"></span> FinVeda. All rights are
                   reserved<br />
                   Made with ♥ in India
                 </p>
@@ -415,6 +429,7 @@
   <script>document.getElementById("copyright-year").textContent = new Date().getFullYear();</script>
   <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
   <script src="./assets/js/trends.js"></script>
+  <script src="./assets/js/market-time.js"></script>
   <script src="./assets/js/subscribe.js"></script>
   <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
   <script src="./assets/js/vendor/modernizr-3.7.1.min.js"></script>

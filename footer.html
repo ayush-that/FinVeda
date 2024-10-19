@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
     <style>
         body {
             margin: 0;
@@ -80,6 +84,25 @@
         .floating-buttons a:hover {
             background-color: #483d8b;
         }
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-content div {
+                margin: 10px 0;
+            }
+        }
+        #social_icons div {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        #social_icons a:hover i {
+            color: #ff4500;
+        }
     </style>
 </head>
 <body>
@@ -90,7 +113,7 @@
                 <div><i class="fab fa-facebook"></i><a href="https://facebook.com" target="_blank" aria-label="Facebook">@facebook_user</a></div>
                 <div><i class="fab fa-twitter"></i><a href="https://twitter.com" target="_blank" aria-label="Twitter">@twitter_user</a></div>
                 <div><i class="fab fa-discord"></i><a href="https://discord.com" target="_blank" aria-label="Discord">@discord_user</a></div>
-            </div>
+                <div><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/sampada-tiwari-217123257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="Linkedin">@linkedin_user</a></div>
             <nav>
                 <ul>
                     <li><a href="#"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
@@ -115,11 +138,35 @@
                     <li><i class="fas fa-envelope"></i> <a href="mailto:ayush1337@hotmail.com">ayush1337@hotmail.com</a></li>
                     <li><i class="fas fa-globe"></i> <a href="https://fin-veda.vercel.app" target="_blank">fin-veda.vercel.app</a></li>
                     <li><i class="fas fa-map-marker-alt"></i> Delhi, India</li>
+
+                    <li id="social_icons" class="d-sm-flex justify-content-evenly my-3">
+                        <div style="width: 100%; display:flex; ">
+                          <a href="https://instagram.com" target="_blank" style="margin: 0 10px; color: #E4405F;" aria-label="Instagram">
+                            <i style="font-size: 25px" class="fa-brands fa-instagram"></i>
+                          </a>
+                          <a href="https://facebook.com" target="_blank" style="margin: 0 10px; color: #4267B2;" aria-label="Facebook">
+                            <i style="font-size: 25px" class="fa-brands fa-facebook"></i>
+                          </a>
+                          <a href="https://twitter.com" target="_blank" style="margin: 0 10px; color: #1DA1F2;" aria-label="Twitter">
+                            <i style="font-size: 25px" class="fa-brands fa-twitter"></i>
+                          </a>
+                          <a href="https://discord.com" target="_blank" style="margin: 0 10px; color: #7289DA;" aria-label="Discord">
+                            <i style="font-size: 25px" class="fa-brands fa-discord"></i>
+                          </a>
+                          <a href="https://github.com" target="_blank" style="margin: 0 10px; color: #333;" aria-label="GitHub">
+                            <i style="font-size: 25px" class="fa-brands fa-github"></i>
+                          </a>
+                        </div>
+                      </li>
+                </ul>
+            </div>
+        </div>
+
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2024 FinVeda. All rights reserved</p>
+            <p>© 2024 FinVeda. All rights are reserved</p>
             <p>Made with ♥ in India</p>
         </div>
     </footer>
@@ -129,3 +176,4 @@
     </div>
 </body>
 </html>
+
