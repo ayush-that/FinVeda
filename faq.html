@@ -143,6 +143,167 @@
 </head>
 <body>
 
+  <header class="header-area">
+    <div class="row">
+      <div style="display: flex; justify-content: center;" class="">
+        <nav class="navbar navbar-expand-lg " style="display: flex;">
+          <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="toggler-icon"></span>
+            <span class="toggler-icon"></span>
+            <span class="toggler-icon"></span>
+          </button> -->
+          <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;"> 
+            <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
+              <li class="nav-item">
+                <a class="page-scroll active-link" href="./index.html" style="color: rgb(237, 242, 244);z-index: 10;">Home 🏡</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
+              </li>    
+              <li class="nav-item">
+                <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll" href="./quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll" href="./careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
+              </li>
+              <li class="nav-item active">
+                <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
+              </li>
+              <li class="nav-item no-underline">
+                <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
+              </li>
+            </ul>
+          </div>
+
+          <script>
+            const toggleButton = document.getElementById('theme-toggle');
+            const body = document.body;
+            const currentTheme = localStorage.getItem('theme');
+
+if (currentTheme === 'dark') {
+body.classList.add('dark-mode');
+toggleButton.classList.add('dark');
+toggleButton.textContent = '☀️';
+}
+
+toggleButton.addEventListener('click', function () {
+body.classList.toggle('dark-mode');
+toggleButton.classList.toggle('dark');
+
+// Update button icon based on mode
+if (body.classList.contains('dark-mode')) {
+toggleButton.textContent = '☀️';  // Light mode icon
+localStorage.setItem('theme', 'dark');
+} else {
+toggleButton.textContent = '🌙';  // Dark mode icon
+localStorage.setItem('theme', 'light');
+}
+});
+        </script>
+        <style>
+
+          h3{
+            color: #fff;
+          }
+
+        .toggle-button {
+          padding: 0.5em 1em;
+          cursor: pointer;
+          border: none;
+          background-color: #0c0a0a;
+          color: #fff;
+          border-radius: 5px;
+          transition: background-color 0.3s;
+      }
+      
+      .toggle-button:hover {
+          background-color: #555;
+      }
+      
+      .content {
+          padding: 2em;
+          text-align: center;
+      }
+      
+      h1 {
+          font-size: 2.5rem;
+          color: whitesmoke;
+          margin-top:130px;
+      }
+      
+      p {
+          font-size: 1.2rem;
+      }
+      
+      body.dark-mode {
+background-color: #222;
+color: #f1f1f1; /* Change text color to light for dark mode */
+}
+
+.toggle-button.dark {
+background-color: #f1f1f1; /* Button background in dark mode */
+color: #333; /* Button text color in dark mode */
+}
+
+.toggle-button.dark:hover {
+background-color: #ddd; /* Button hover color in dark mode */
+}
+      </style>
+            
+          </nav>
+      
+
+        <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+        <nav class="mobile-menu ">
+          <a class="page-scroll active-link" href="./index.html">Home 🏡</a>
+          <a class="page-scroll" href="./about.html">About Us 📖</a>
+          <a class="page-scroll" href="./trends.html">Trends 📈</a>
+          <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
+          <a class="page-scroll" href="./blog.html">Blogs 📰</a>
+          <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
+          <a class="page-scroll" href="./contact.html">Contact🤔</a>
+          <li class="nav-item no-underline">
+            <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none; border: none;" href="#"
+              onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
+          </li>
+
+
+          <div class="mobile-menu__trigger"><span></span></div>
+        </nav>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<link href="./navbar.css" rel="stylesheet">
+<script type="text/javascript" src="./navbar.js"></script>
+
+</div>
+
+<div id="particles-1" class="particles"></div>
+</div>
+</header>
+
+
+
   <!-- Progress Bar -->
   <div class="progress-bar-container">
     <div id="progressBar"></div>
@@ -166,11 +327,20 @@
    </div>
  </div>
 
-  <!-- Home Icon -->
-  <i class="fas fa-home home-icon" onclick="goToHome()"></i>
-
   <div class="faq-section">
-    <h2 class="faq-title">Frequently Asked Questions</h2>
+
+    <img style="position:absolute;width:250px; top: 400px; right: 1250px;mix-blend-mode: multiply;" src="assets/images/HELP-IMG.jpg" alt="image">
+    <!-- Introduction Section -->
+    <div class="faq-intro">
+        <h1 class="faq-title">Frequently Asked Questions</h1>
+        <p>Welcome to Finveda’s FAQ! Here you’ll find answers to common questions about our services, tools, and how we can help you on your financial journey. Still have questions? Contact us or use our AI chatbot for more assistance.</p>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="faq-search">
+        <input type="text" class="faq-search-input" placeholder="Type your question..." aria-label="Search FAQ">
+        <button class="faq-search-btn">Search</button>
+    </div>
 
     <div class="accordion" id="faqAccordion">
       <div class="accordion-item">
@@ -238,7 +408,294 @@
         </div>
       </div>
     </div>
-  </div>
+
+    <!-- Feedback Section -->
+    <<div class="faq-section">
+      <!-- Feedback Section -->
+      <div class="faq-feedback">
+        <h3>Submit Your Feedback or Ask a New Question</h3>
+        
+        <!-- Feedback Form -->
+        <form class="feedback-form" id="feedbackForm">
+          <!-- Name Input -->
+          <div class="form-group">
+            <label for="userName">Your Name</label>
+            <input type="text" id="userName" class="form-input" placeholder="Enter your name" required>
+          </div>
+    
+          <!-- Email Input -->
+          <div class="form-group">
+            <label for="userEmail">Your Email</label>
+            <input type="email" id="userEmail" class="form-input" placeholder="Enter your email" required>
+          </div>
+    
+          <!-- Feedback or Question Input -->
+          <div class="form-group">
+            <label for="userFeedback">Your Feedback / Question</label>
+            <textarea id="userFeedback" class="form-input" rows="5" placeholder="Enter your feedback or ask a question" required></textarea>
+          </div>
+    
+          <!-- Submit Button -->
+          <button type="submit" class="submit-btn">Submit Feedback</button>
+        </form>
+      </div>
+    </div>
+    
+</div>
+
+<style>
+/* General FAQ Section */
+.faq-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Introduction Section - 100% Width for Heading */
+.faq-title {
+  width: 100%; /* Full width for heading */
+  text-align: center;
+  font-size:xx-large;
+  color: #080808;
+  transition: color 0.3s ease, transform 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.faq-intro p {
+  margin-top:50px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #134878;
+  margin-bottom: 30px;
+}
+
+.faq-title:hover {
+  text-decoration: underline;
+  color: #007bff;
+  transform: scale(1.05);
+}
+
+/* Search Bar */
+.faq-search {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.faq-search-input {
+  margin-top: 30px;
+  padding: 10px;
+  font-size: 1rem;
+  width: 40%;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.faq-search-input:focus {
+  border-color: #0056b3;
+  background-color: #080808;
+  color: white;
+}
+
+.faq-search-btn {
+  margin-top: 30px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  margin-left: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.faq-search-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Accordion Section - 80% Width for Questions */
+.accordion {
+  width: 80%; /* Set 80% width for the questions */
+  margin: 0 auto; /* Center the accordion */
+}
+
+.accordion-button {
+  background-color: #f8f9fa;
+  color: #343a40;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: left;
+  width: 100%;
+  padding: 15px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.accordion-button:hover {
+  background-color: #007bff;
+  color: #fff;
+  transform: translateX(10px);
+}
+
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+}
+
+.accordion-button[aria-expanded="true"] {
+  background-color: #0056b3;
+  color: white;
+}
+
+.accordion-body {
+  padding: 20px;
+  background-color: #e9ecef;
+  color: #495057;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-body:hover {
+  background-color: #dee2e6;
+}
+
+.accordion-item {
+  border: 1px solid #007bff;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.accordion-item:hover {
+  transform: scale(1.02);
+}
+
+/* Feedback Section */
+.faq-feedback {
+  text-align: center;
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f1f3f5;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faq-feedback h3 {
+  font-size: 1.5rem;
+  color: #495057;
+}
+
+.feedback-btn {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.feedback-btn:hover {
+  background-color: #00b374;
+  transform: scale(1.05);
+}
+/* Feedback Form Section */
+.faq-feedback {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #e9ecef; /* Light gray background */
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid #007bff; /* Blue border */
+  transition: background-color 0.3s ease; /* Transition for background color */
+}
+
+.faq-feedback:hover {
+  background-color: #d9edf7; /* Light blue background on hover */
+}
+
+.faq-feedback h3 {
+  font-size: 1.8rem;
+  color: #343a40; /* Dark gray color for text */
+  margin-bottom: 20px;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 1rem;
+  color: #495057; /* Medium gray color */
+  display: block;
+  margin-bottom: 8px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ced4da; /* Default border color */
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transition effects */
+}
+
+/* Focus effect on inputs */
+.form-input:focus {
+  color: white;
+  border-color: #007bff; /* Blue border on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Soft blue shadow */
+  outline: none; /* Remove default outline */
+}
+
+/* Hover effect on inputs */
+.form-input:hover {
+  border-color: #0056b3; /* Darker blue border on hover */
+}
+
+/* Submit Button */
+.submit-btn {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff; /* Blue background */
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transition effects */
+}
+
+.submit-btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.05); /* Scale effect on hover */
+}
+
+.submit-btn:focus {
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Soft blue shadow on focus */
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .form-input {
+    width: 100%;
+  }
+}
+
+
+</style>
 
   <!-- Bootstrap JS and jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
