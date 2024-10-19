@@ -111,7 +111,7 @@ If you encounter any issues while using FinVeda, here are some common solutions:
    - Check the [Issues](https://github.com/ayush-that/FinVeda/issues) page for similar problems or create a new issue.
    - For additional help, visit our community channels.
 
-Feel free to reach out via the FinVeda community channels for more support. Happy learning! 🚀
+Feel free to reach out via the FinVeda community channels for more support. Happy learning! 
 
 
 ### 🥑 License
