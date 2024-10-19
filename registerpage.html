@@ -13,21 +13,30 @@
       <div class="forms-container">
         <div class="sign-in-signup">
           <form action="#" class="sign-in-form">
-            <h2 class="title">Sign in</h2>
+            <h2 class="title">Create Account</h2>
             
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
+              <input type="text" placeholder=" Full Name" required />
             </div>
             <div class="input-field">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" placeholder="Email" required />
+              </div>
+            <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" id="sign-in-password" />
-              <i class="fas fa-eye password-toggle" onclick="togglePassword('sign-in-password', this)"></i>
+              <input type="password" placeholder="Password" id="password" />
+              <i class="fas fa-eye password-toggle" onclick="togglePassword('password', this)"></i>
             </div>
-            <input type="submit" value="Login" class="btn solid" />
+            <div class="input-field">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder=" Confirm Password" id="confirm-password" />
+                <i class="fas fa-eye password-toggle" onclick="togglePassword('confirm-password', this)"></i>
+              </div>
+            <button type="submit" class="btn solid" onclick="handleregister(event)">Register</button>
           </form>
-            <p class="social-text">Or Sign in with social platforms</p>
-            <div class="social-media">
+            <p class="social-text" style="position: relative; bottom: 30px;">Or Sign Up using social platforms</p>
+            <div class="social-media" style="position: relative; bottom: 30px;">
               <a href="https://www.google.com" target="_blank" class="social-icon" id="google">
                 <i class="fab fa-google"></i>
               </a>
@@ -69,30 +78,57 @@
       });
 
       function togglePassword(inputId, eyeIcon) {
-        const passwordField = document.getElementById(inputId);
-        const isPasswordVisible = passwordField.type === "text";
-        
-        if (isPasswordVisible) {
-          passwordField.type = "password";
-          eyeIcon.classList.remove("fa-eye-slash");
-          eyeIcon.classList.add("fa-eye");
-        } else {
-          passwordField.type = "text";
-          eyeIcon.classList.remove("fa-eye");
-          eyeIcon.classList.add("fa-eye-slash");
-        }
-      }
+    const passwordField = document.getElementById(inputId);
+    const isPasswordVisible = passwordField.type === "text";
+    
+    if (isPasswordVisible) {
+        passwordField.type = "password";
+        eyeIcon.classList.remove("fa-eye-slash");
+        eyeIcon.classList.add("fa-eye");
+    } else {
+        passwordField.type = "text";
+        eyeIcon.classList.remove("fa-eye");
+        eyeIcon.classList.add("fa-eye-slash");
+    }
+}
+    </script>
+    <script>
+       function handleregister(event) {
+    // Prevent the form from submitting
+    event.preventDefault();
+
+    // Getting the values of the input fields
+    const fullName = document.querySelector('.sign-in-form input[type="text"]').value;
+    const email = document.querySelector('.sign-in-form input[type="email"]').value;
+    const password = document.querySelector('.sign-in-form input[type="password"]').value;
+    const confirmPassword = document.querySelectorAll('.sign-in-form input[type="password"]')[1].value;
+
+    // Checking if all fields are filled
+    if (!fullName || !email || !password || !confirmPassword) {
+        alert("Please fill all fields.");
+        return;
+    }
+
+    // Checking if password and confirm password match
+    if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return;
+    }
+
+    alert("Your Account has been Created Successfully!");
+    window.location.href = "index.html"; // Redirect to index.html
+}
     </script>
       <div class="panels-container">
         <div class="panel left-panel">
           <div class="content">
-            <h3>New here ?</h3>
+            <h3>Already Have a Account ?</h3>
             <p>
-              Discover new experiences with BuddyTrail! <br> Create your account.
+              Discover new experiences with BuddyTrail! <br>Signing in to your Account.
             </p>
-            <a href="registerpage.html"><button class="btn transparent" id="sign-up-btn">
-              Sign up
-            </button></a>
+            <button class="btn transparent" id="sign-up-btn">
+              Login
+            </button>
           </div>
           <img src="img/log.svg" class="image" alt="" />
         </div>

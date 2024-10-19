@@ -42,6 +42,46 @@
 
     <h1>Frequently Asked Questions</h1>
 
+
+    <!-- Progress Bar -->
+    <div style="margin: 20px 0;">
+        <h3>FAQ Progress</h3>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+        </div>
+    </div>
+
+    <!-- FAQ Items -->
+    <div class="faq-item">What is FinVeda?</div>
+    <div class="faq-item">How does FinVeda work?</div>
+    <div class="faq-item">What are the features of FinVeda?</div>
+    <div class="faq-item">How do I contact support?</div>
+
+    <script>
+        const faqs = document.querySelectorAll('.faq-item');
+        const progressBar = document.querySelector('.progress-bar');
+
+        function updateProgress() {
+            let completed = 0;
+            faqs.forEach(faq => {
+                if (faq.classList.contains('read')) {
+                    completed++;
+                }
+            });
+            let progress = (completed / faqs.length) * 100;
+            progressBar.style.width = progress + '%';
+            progressBar.textContent = Math.round(progress) + '%';
+        }
+
+        faqs.forEach(faq => {
+            faq.addEventListener('click', function() {
+                faq.classList.toggle('read');
+                updateProgress();
+            });
+        });
+    </script>
+
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Enhanced FAQ Accordion with Progress Bar</title>
@@ -144,7 +184,7 @@
       border-top: 1px solid #ddd;
     }
 
-    #progressBar {
+    <!-- #progressBar {
     position: fixed;
     top: 0;
     right: 0;
@@ -154,7 +194,7 @@
     z-index: 9999;
     transition: height 0.25s ease-in-out;
     border-radius: 10px ;
-}
+    } -->
 
 
 
@@ -348,12 +388,6 @@ background-color: #ddd; /* Button hover color in dark mode */
 
 
 
-  <!-- Progress Bar -->
-  <div class="progress-bar-container">
-    <div id="progressBar"></div>
-  </div>
-
-  <div id="progressBar"></div>
   <div class="preloader">
    <div class="loader">
      <div class="ytp-spinner">
@@ -781,6 +815,229 @@ background-color: #ddd; /* Button hover color in dark mode */
 <script src="./assets/js/vendor/modernizr-3.7.1.min.js"></script>
 <script src="./assets/js/main.js"></script>
 <script src="./tools/smoothScroll.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - FinVeda</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Basic styles for FAQ page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+
+        .faq-item {
+            margin: 15px 0;
+        }
+
+        .faq-item h3 {
+            cursor: pointer;
+            padding: 10px;
+            background: #007BFF;
+            color: white;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .faq-item h3:hover {
+            background: #0056b3;
+        }
+
+        .faq-answer {
+            padding: 10px;
+            display: none; /* Hidden by default */
+            background: #f1f1f1;
+            border-left: 4px solid #007BFF;
+            border-radius: 0 0 5px 5px;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #1e1e1e;
+            color: #ffffff;
+            padding: 40px 0;
+            font-family: Arial, sans-serif;
+            margin-top: 20px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 0 20px;
+        }
+
+        .footer-section {
+            flex-basis: 30%;
+            margin-bottom: 20px;
+        }
+
+        .footer-section h3 {
+            color: #e0e0e0;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            border-bottom: 2px solid #ffffff;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .footer-section p {
+            color: #bfbfbf;
+            line-height: 1.6;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #bfbfbf;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: #ffffff;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #2e2e2e;
+            margin-top: 30px;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            color: #888888;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons li {
+            display: inline-block;
+        }
+
+        .social-icons li a {
+            color: #bfbfbf;
+            font-size: 1.5em;
+            transition: color 0.3s;
+        }
+
+        .social-icons li a:hover {
+            color: #ffffff;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .footer-section {
+                flex-basis: 100%;
+                text-align: center;
+            }
+
+            .footer-bottom p {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Frequently Asked Questions</h1>
+    <div class="faq-container">
+        <div class="faq-item">
+            <h3>What is FinVeda?</h3>
+            <div class="faq-answer">
+                <p>FinVeda is a platform that provides financial insights and innovative solutions.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <h3>How can I contact support?</h3>
+            <div class="faq-answer">
+                <p>You can contact support via the Contact Us page or email us at support@finveda.com.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <h3>What services do you offer?</h3>
+            <div class="faq-answer">
+                <p>We offer a range of services, including financial planning, investment advice, and more.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h3>About Us</h3>
+                <p>FinVeda is dedicated to providing financial insights and innovative solutions to help you manage your finances efficiently.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section social">
+                <h3>Follow Us</h3>
+                <ul class="social-icons">
+                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 FinVeda. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ toggle functionality
+        const faqItems = document.querySelectorAll('.faq-item h3');
+        faqItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+</html>
+
+
 
 </body>
 </html>
