@@ -182,6 +182,67 @@
     }
   </style>
 </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Progress bar styles */
+        .progress-container {
+            width: 100%;
+            background-color: #f3f3f3;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        
+        .progress-bar {
+            height: 5px;
+            width: 0%;
+            background-color: #4caf50;
+            transition: width 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+    </div>
+
+    <h1>Frequently Asked Questions</h1>
+    <div class="faq-section">
+        <h2>Question 1</h2>
+        <p>Answer to question 1.</p>
+        
+        <h2>Question 2</h2>
+        <p>Answer to question 2.</p>
+
+        <h2>Question 3</h2>
+        <p>Answer to question 3.</p>
+
+        <!-- Add more questions and answers as needed -->
+    </div>
+
+    <script>
+        // Function to update the progress bar
+        function updateProgressBar() {
+            const scrollTop = document.documentElement.scrollTop;
+            const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const progressPercentage = (scrollTop / windowHeight) * 100;
+            const progressBar = document.getElementById("myBar");
+            progressBar.style.width = progressPercentage + "%";
+        }
+
+        window.addEventListener('scroll', updateProgressBar);
+    </script>
+</body>
+</html>
+
 <body>
 
   <header class="header-area">
@@ -747,41 +808,5 @@ background-color: #ddd; /* Button hover color in dark mode */
       window.location.href = '/'; 
     }
 
-    <!-- FAQ Items -->
-    <div class="faq-item">What is FinVeda?</div>
-    <div class="faq-item">How does FinVeda work?</div>
-    <div class="faq-item">What are the features of FinVeda?</div>
-    <div class="faq-item">How do I contact support?</div>
 
-    <script>
-        const faqs = document.querySelectorAll('.faq-item');
-        const progressBar = document.querySelector('.progress-bar');
-
-        function updateProgress() {
-            let completed = 0;
-            faqs.forEach(faq => {
-                if (faq.classList.contains('read')) {
-                    completed++;
-                }
-            });
-            let progress = (completed / faqs.length) * 100;
-            progressBar.style.width = progress + '%';
-            progressBar.textContent = Math.round(progress) + '%';
-        }
-
-        faqs.forEach(faq => {
-            faq.addEventListener('click', function() {
-                faq.classList.toggle('read');
-                updateProgress();
-            });
-        });
-    </script>
-
-<script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
-<script src="./assets/js/vendor/modernizr-3.7.1.min.js"></script>
-<script src="./assets/js/main.js"></script>
-<script src="./tools/smoothScroll.js"></script>
-
-</body>
-</html>
 
