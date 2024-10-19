@@ -37,44 +37,23 @@
       });
     })();
   </script>
-  <script>
-    // Scroll button functionality
-    const scrollToNextSection = () => {
-    window.scrollBy({
-      top: window.innerHeight,
-      behavior: 'smooth',
-    });
-  };
-  </script>
-  <style>
-    .scroll-btn {
-    position: fixed; 
-    top: 150px; 
-    right: 50px; 
-    background-color: #635adc; 
-    color: white; 
-    border: none; 
-    border-radius: 50%; 
-    width: 45px; 
-    height: 45px; 
-    font-size: 24px; 
-    cursor: pointer; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s; 
-    display: flex;
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-}
+
+  
+
+
+
+
+
+
 .scrlUp{
   position: fixed;
   background-color: #635adc;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  top: 84.89%;
-  right: 40px;
+  top: 91.89%;
+  right: 4px;
   bottom: 900px;
-  width:50px; 
-  height: 50px; 
+  width:40px; 
+  height: 40px; 
   display: flex;
   z-index: 1000;
   justify-content: center;
@@ -82,15 +61,17 @@
   border-radius: 50%;
   cursor: pointer;
   font-size: 30px;
-  transition: background-color 0.3s; 
+  transition: background-color 0.3s;
+  color: white;
 }
 
 .scrlUp:hover{
   background-color: #555;
 }
 .scroll-btn:hover {
-    background-color: #555; /* Darker blue on hover */
+    background-color: #110a6f; /* Darker blue on hover */
 }
+
 
   </style>
   
@@ -190,6 +171,9 @@
                     <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
                   </li>
                 </ul>
+                <button id="theme-toggle" class="theme-toggle">
+                  🌙
+                </button>
               </div>
 
               <script>
@@ -200,7 +184,7 @@
 if (currentTheme === 'dark') {
 body.classList.add('dark-mode');
 toggleButton.classList.add('dark');
-toggleButton.textContent = '☀️';
+toggleButton.textContent = '🌞';
 }
 
 toggleButton.addEventListener('click', function () {
@@ -209,7 +193,7 @@ toggleButton.classList.toggle('dark');
 
 // Update button icon based on mode
 if (body.classList.contains('dark-mode')) {
-  toggleButton.textContent = '☀️';  // Light mode icon
+  toggleButton.textContent = '🌞';  // Light mode icon
   localStorage.setItem('theme', 'dark');
 } else {
   toggleButton.textContent = '🌙';  // Dark mode icon
@@ -410,19 +394,19 @@ if (body.classList.contains('dark-mode')) {
   </script>
   <style>
     .scroll-btn {
-    position: fixed; 
-    top: 150px; 
-    right: 50px; 
-    background-color: #635adc; 
-    color: white; 
-    border: none; 
-    border-radius: 50%; 
-    width: 45px; 
-    height: 45px; 
-    font-size: 24px; 
-    cursor: pointer; 
+   position: fixed;
+    top: 115px;
+    right: 4px;
+    background-color: #635adc;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    cursor: pointer;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s; 
+    transition: background-color 0.3s;
     display: flex;
     z-index: 1000;
     justify-content: center;
