@@ -66,7 +66,28 @@
     justify-content: center;
     align-items: center;
 }
+.scrlUp{
+  position: fixed;
+  background-color: #635adc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  top: 84.89%;
+  right: 40px;
+  bottom: 900px;
+  width:50px; 
+  height: 50px; 
+  display: flex;
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 30px;
+  transition: background-color 0.3s; 
+}
 
+.scrlUp:hover{
+  background-color: #555;
+}
 .scroll-btn:hover {
     background-color: #555; /* Darker blue on hover */
 }
@@ -419,6 +440,8 @@ if (body.classList.contains('dark-mode')) {
   <button id="scrollBtn" class="scroll-btn" onclick="scrollToNextSection()">
     ↓
   </button>
+
+  <div class="scrlUp" id="scrlUp" onclick="">↑</div>
   <script>
     window.onscroll = function () {
       var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -426,6 +449,22 @@ if (body.classList.contains('dark-mode')) {
       var scrolled = (winScroll / height) * 100;
       document.getElementById("progressBar").style.width = scrolled + "%";
     };
+
+    let scrollToTopBtn = document.getElementById("scrlUp");
+
+window.onscroll = function() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        scrollToTopBtn.style.display = "block";
+    } else {
+        scrollToTopBtn.style.display = "none";
+    }
+};
+
+scrollToTopBtn.onclick = function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
+
   </script>
   <div class="circle-container">
     <div class="circle"></div>
