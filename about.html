@@ -1,98 +1,4 @@
 <!DOCTYPE html>
-
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - FinVeda</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Global Styling */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 1rem 0;
-        }
-
-        header nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-        }
-
-        header nav ul li {
-            margin: 0 20px;
-        }
-
-        header nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        /* About Section Styling */
-        .about-section {
-            padding: 3rem;
-            background-color: #fff;
-            text-align: center;
-        }
-
-        .about-section h1 {
-            margin-bottom: 1.5rem;
-            font-size: 2.5rem;
-            color: #333;
-        }
-
-        .about-section p {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            line-height: 1.8;
-            color: #666;
-        }
-
-        /* Team Section */
-        .team-section {
-            background-color: #fafafa;
-            padding: 3rem;
-            text-align: center;
-        }
-
-        .team-section h2 {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            color: #333;
-        }
-
-        .team-members {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
-
-        .team-member {
-            max-width: 250px;
-        }
-
-        .team-member img {
-            width: 100%;
-            border-radius: 50%;
-            margin-bottom: 1rem;
-        }
-
 <html lang="en" class="no-js">
 
 <head>
@@ -113,6 +19,7 @@
     <link rel="stylesheet"  href="./assets/css/quiz.css" />
     <link rel="stylesheet"  href="./assets/css/popup.css" />
     <link rel="stylesheet"  href="./assets/css/about.css"/>
+    <link rel="stylesheet"  href="./assets/css/preloader.css"/>
     <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <link rel="stylesheet"  href="./assets/css/about(inlines).css" />
     <link rel="stylesheet" href="navbar.css">
@@ -162,7 +69,7 @@
     <div class="circle"></div>
   </div>
 
-    <!-- <div id="progressBar"></div>
+    <div id="progressBar"></div>
      <div class="preloader">
       <div class="loader">
         <div class="ytp-spinner">
@@ -177,8 +84,9 @@
             </div>
           </div>
         </div>
+
       </div>
-    </div> -->
+    </div>
     <header class="header-area">
       <div style="display: flex; justify-content: center;" class="navbar-area">
         <div style="display: flex; justify-content: center;" class="container">
@@ -198,42 +106,40 @@
                   <span class="toggler-icon"></span>
                   <span class="toggler-icon"></span>
                 </button> -->
-                <div
-                  class="collapse navbar-collapse sub-menu-bar"
-                  id="navbarSupportedContent"
-                >
-                
-                  <ul id="nav" class="navbar-nav">
+                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
+                  <div class="icon1">
+                    <img src="assets/images/icon.png" alt="icon.png">
+                  </div> 
+                  <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
                     <li class="nav-item">
-                      <a class="page-scroll" href="./index.html">Home 🏡</a>
+                      <a class="page-scroll" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
                     </li>
                     <li class="nav-item">
-                      <a class="page-scroll active-link" href="./about.html">About Us 📖</a>
+                      <a class="page-scroll active-link" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
+                    </li>    
+                    <li class="nav-item">
+                      <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
                     </li>
                     <li class="nav-item">
-                      <a class="page-scroll" href="./trends.html">Trends 📈</a>
+                      <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
                     </li>
                     <li class="nav-item">
-                      <a class="page-scroll" href="./tools/sip.html"
-                        >Tools 🔧</a
-                      >
+                      <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll" href="./quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll" href="./careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
                     </li>
                     <li class="nav-item active">
-                      <a class="page-scroll" href="./blog.html" 
-                        >Blogs 📰</a
-                      >
-                    </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./careers.html">Career 👔</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./contact.html">Contact📞</a>
+                      <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
                     </li>
                     <li class="nav-item no-underline">
-                      <a class="main-btn navbar-btn" style="padding: 2px 20px;" data-scroll-nav="0" href="#" onclick="openModal()">Login/Register 💻</a>
+                      <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
                     </li>
                   </ul>
                 </div>
@@ -454,58 +360,15 @@ registerCloseButton.addEventListener("click", function() {
                 </div>
               </nav>
 
-        .team-member h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: #333;
-        }
 
-        .team-member p {
-            font-size: 1rem;
-            color: #777;
-        }
-
-        /* Mission Section */
-        .mission-section {
-            padding: 3rem;
-            background-color: #fff;
-            text-align: center;
-        }
-
-        .mission-section h2 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: #333;
-        }
+            <link href="./navbar.css" rel="stylesheet">
+            <script type="text/javascript" src="./navbar.js"></script>
 
 
-        .mission-section p {
-            font-size: 1.1rem;
-            color: #666;
-            line-height: 1.8;
-        }
-
-        /* Footer Styling */
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 2rem 0;
-            text-align: center;
-        }
-
-        footer ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        footer ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- removing intro section -->
     <!-- <div id="home" class="header-hero bg_cover" style="background-image: url(./assets/images/banner-bg.svg)">
@@ -578,76 +441,8 @@ registerCloseButton.addEventListener("click", function() {
                 concepts, providing a dyanmic learning experiences.</p>
             </div>
 
-
-        footer p {
-            margin-top: 1rem;
-            font-size: 0.9rem;
-        }
-
-
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .team-members {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
-</head>
-
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="about-section">
-            <h1>About FinVeda</h1>
-            <p>Welcome to FinVeda, your premier platform for comprehensive financial solutions. We are committed to providing you with cutting-edge tools to help you succeed financially, with an emphasis on innovation, efficiency, and customer service.</p>
-            <p>Since our founding, we have grown into a global service provider, serving thousands of clients and helping them navigate the complex world of finance. We aim to empower individuals and organizations to manage their financial futures with confidence.</p>
-        </section>
-
-        <section class="team-section">
-            <h2>Meet the Team</h2>
-            <div class="team-members">
-                <article class="team-member">
-                    <img src="team1.jpg" alt="Photo of CEO">
-                    <h3>John Doe</h3>
-                    <p>CEO</p>
-                </article>
-                <article class="team-member">
-                    <img src="team2.jpg" alt="Photo of CTO">
-                    <h3>Jane Smith</h3>
-                    <p>CTO</p>
-                </article>
-                <!-- Add more team members here -->
-            </div>
-        </section>
-
-        <section class="mission-section">
-            <h2>Our Mission</h2>
-            <p>Our mission is to simplify the complexities of financial management by offering tools that help people and businesses make informed financial decisions. At FinVeda, we believe in the power of technology and data to drive financial success.</p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 FinVeda. All Rights Reserved.</p>
-        <ul>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="terms.html">Terms of Service</a></li>
-        </ul>
-    </footer>
-</body>
-
-</html>
+            <div class="shadow1"></div>
+            <div class="shadow2"></div>
 
           </div>
         </div>
@@ -697,7 +492,6 @@ registerCloseButton.addEventListener("click", function() {
           Be it stock prices, currency rates, or commodity values.
         </div>
         <div class="color-card orange">
-
 
         </div>
         <div class="shadow"></div>
@@ -860,6 +654,8 @@ registerCloseButton.addEventListener("click", function() {
             </ul>
         </div>
     </div>
+
+
 </div>
 </div>
 <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center">
@@ -881,47 +677,10 @@ registerCloseButton.addEventListener("click", function() {
             reserved<br />
             Made with ♥ in India
           </p>
+
         </div>
       </div>
     </div>
-
-  
-    </div>
-    <div id="particles-2"></div>
-  </footer>
-  <script>document.getElementById("copyright-year").textContent = new Date().getFullYear();</script>
-  <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
-  
-  
-  <script src="./assets/js/subscribe.js"></script>
-  <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
-  <script src="./assets/js/vendor/modernizr-3.7.1.min.js"></script>
-  <script src="./assets/js/popper.min.js"></script>
-  <script src="./assets/js/bootstrap.min.js"></script>
-  <script src="./assets/js/plugins.js"></script>
-  <script src="./assets/js/slick.min.js"></script>
-  <script src="./assets/js/ajax-contact.js"></script>
-  <script src="./assets/js/waypoints.min.js"></script>
-  <script src="./assets/js/jquery.counterup.min.js"></script>
-  <script src="./assets/js/jquery.magnific-popup.min.js"></script>
-  <script src="./assets/js/jquery.easing.min.js"></script>
-  <script src="./assets/js/scrolling-nav.js"></script>
-  <script src="./assets/js/wow.min.js"></script>
-  <script src="./assets/js/particles.min.js"></script>
-  <script src="./assets/js/main.js"></script>
-  <script src="./assets/js/quiz.js"></script>
-  <script src="./assets/js/popup.js"></script>
-  <script src="./assets/js/quiz_modify.js"></script>
-  <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-  <script src="https://mediafiles.botpress.cloud/5e160793-5606-4412-ba4c-337e416f14fe/webchat/config.js" defer></script>
-  <script defer src="./assets/js/arthsathi-style.js"></script>
-  <script src="./assets/js/botpress.js"></script>
-  <script src="./assets/js/quizmodals.js"></script>
-  <script src="./tools/smoothScroll.js"></script>
-  </body>
-  </html>
-
-=======
   </div>
 </div>
 
@@ -1032,6 +791,29 @@ registerCloseButton.addEventListener("click", function() {
         <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
         <script src="./assets/js/about.js"></script>
+        <script src="./assets/js/subscribe.js"></script>
+        <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="./assets/js/vendor/modernizr-3.7.1.min.js"></script>
+        <script src="./assets/js/popper.min.js"></script>
+        <script src="./assets/js/bootstrap.min.js"></script>
+        <script src="./assets/js/plugins.js"></script>
+        <script src="./assets/js/slick.min.js"></script>
+        <script src="./assets/js/ajax-contact.js"></script>
+        <script src="./assets/js/waypoints.min.js"></script>
+        <script src="./assets/js/jquery.counterup.min.js"></script>
+        <script src="./assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="./assets/js/blogposts.js"></script>
+        <script src="./assets/js/jquery.easing.min.js"></script>
+        <script src="./assets/js/scrolling-nav.js"></script>
+        <script src="./assets/js/wow.min.js"></script>
+        <script src="./assets/js/particles.min.js"></script>
+        <script src="./assets/js/main.js"></script>
+        <script src="./assets/js/popup.js"></script>
+        <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+        <script src="https://mediafiles.botpress.cloud/5e160793-5606-4412-ba4c-337e416f14fe/webchat/config.js" defer></script>
+        <script defer src="./assets/js/arthsathi-style.js"></script>
+        <script src="./assets/js/botpress.js"></script>
+        <script src="./assets/js/blogmodals.js"></script>
+        <script src="./tools/smoothScroll.js"></script>
       </body>
       </html>
-
