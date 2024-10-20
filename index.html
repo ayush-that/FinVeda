@@ -1,90 +1,186 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
- 
+
 <head>
   <meta charset="utf-8" />
-  <title>Home - FinVeda</title>
-  <meta name="description"
-    content="FinVeda is a dynamic financial literacy app that'll help you Learn finance with finesse." />
-  <meta name="author" content="Ayush Singh">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link rel="shortcut icon"  href="./assets/images/favicon2.png" type="image/png" />
-  <link rel="stylesheet"  href="./assets/css/animate.css" />
-  <link rel="stylesheet"  href="./assets/css/magnific-popup.css" />
-  <link rel="stylesheet"  href="./assets/css/slick.css" />
-  <link rel="stylesheet"  href="./assets/css/LineIcons.css" />
-  <link rel="stylesheet"  href="./assets/css/font-awesome.min.css" />
-  <link rel="stylesheet"  href="./assets/css/bootstrap.min.css" />
-  <link rel="stylesheet"  href="./assets/css/default.css" />
-  <link rel="stylesheet"  href="./assets/css/style.css" />
-  <link rel="stylesheet"  href="./assets/css/quiz.css" />
-  <link rel="stylesheet"  href="./assets/css/popup.css" />
-  <link rel="stylesheet"  href="./assets/css/cookiepopup.css">
-  <link rel="stylesheet"  href="./assets\css\preloader.css" />
-  <link rel="stylesheet"  href="./assets/css/faq.css">
-  <link rel="stylesheet"  href="./assets/css/index.css">
+  <title>Tools - FinVeda</title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" href="../assets/images/favicon2.png" type="image/png" />
+  <link rel="stylesheet" href="../assets/css/animate.css" />
+  <link rel="stylesheet" href="../assets/css/magnific-popup.css" />
+  <link rel="stylesheet" href="../assets/css/slick.css" />
+  <link rel="stylesheet" href="../assets/css/LineIcons.css" />
+  <link rel="stylesheet" href="../assets/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../assets/css/default.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/quiz.css" />
+  <link rel="stylesheet" href="../assets/css/popup.css" />
+  <link rel="stylesheet" href="GSTstyle.css"/>
+  <link rel="stylesheet" type="text/css" href="sipcalculatorCss.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
    <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
-  <link rel="stylesheet"  href="navbar.css">
-  <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script type="text/javascript">
-    (function () {
-      // https://dashboard.emailjs.com/admin/account
-      emailjs.init({
-        publicKey: "o6kveYmOSDrs0l1Mg",
-      });
-    })();
-  </script>
+  <link rel="stylesheet" href="navbar.css">
+  <style>
+    #progressBar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 8px;
+      background-color: #f76b45;
+      z-index: 9999;
 
-  
+    }
+    * {
+      cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
+    }
 
 
+    .circle {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
+      transition: transform 0.1s, left 0.1s, top 0.1s;
+    }
 
+    .circle-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+    }
 
-<style>
+    @media (max-width: 720px) {
+      .circle-container{
+        display: none;
+      }
+    }
 
-.scrlUp{
-  position: fixed;
-  background-color: #635adc;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  top: 91.89%;
-  right: 4px;
-  bottom: 800px;
-  width:40px; 
-  height: 40px; 
-  display: flex;
+    
+.unique-popup-message {
+  position: fixed; /* Change to fixed positioning */
+  top: 30px; /* Adjust this value to be below the navbar */
+  right: 2px; /* Adjust this value for the desired distance from the right edge */
+  width: 300px; /* Adjust width as needed */
+  transform: translateX(0); /* Center the popup horizontally */
+  background-color: #a4d8ff;
+  color: #131722;
+  padding: 11px;
+  border-radius: 5px;
+  text-align: center;
   z-index: 1000;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 30px;
-  transition: background-color 0.3s;
-  color: white;
+  box-sizing: border-box;
+  overflow: hidden; /* Hide the expanding border animation */
+  position: relative;
 }
 
-.scrlUp:hover{
-  background-color: #555;
-}
-.scroll-btn:hover {
-    background-color: #110a6f; /* Darker blue on hover */
+.border-animation {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 7px; /* Same height as the border */
+  background-color: rgb(4, 0, 128);
+  width: 100%;
+  transform-origin: right; /* Start shrinking from the right */
 }
 
-
-</style>
+@keyframes borderAnimation {
+  from {
+    transform: scaleX(0); /* Full width initially */
+  }
+  to {
+    transform: scaleX(1); /* Shrink to zero width */
+  }
+}
+.social-icons {
+    text-align: center;
+  }
   
+  .social-icons ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .social-icons li {
+    margin: 0 10px;
+  }
+  
+  .social-icons a {
+    color: #337ab7;
+    text-decoration: none;
+    border-radius: 50%;
+    border: 1px solid #ccc; 
+    padding: 10px;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s; 
+  }
+  
+  .social-icons a:hover {
+    color: #fe8464;
+    border-color: #fe8464; 
+    transform: scale(1.1); 
+  }
+  
+  .or-sign-in-with {
+    margin: 20px 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
+    text-align: center;
+    position: relative;
+  }
+  
+  .or-sign-in-with::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0; 
+    width: 35%; 
+    border-top: 1px solid #ccc;
+    transform: translateX(-2%); 
+  }
+  
+  .or-sign-in-with::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0; 
+    width: 35%; 
+    border-top: 1px solid #ccc;
+    transform: translateX(2%);
+  }
+  .form-check {
+    display: flex;
+    align-items: center;
+  }
+  .form-check a {
+    margin-left: auto; 
+  }
+
+
+  </style>
+
 <body>
-  <div id="progressBar"></div>
-  <script>
-    window.onscroll = function () {
-      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      var scrolled = (winScroll / height) * 100;
-      document.getElementById("progressBar").style.width = scrolled + "%";
-    };
-  </script>
+
   <div class="circle-container">
     <div class="circle"></div>
     <div class="circle"></div>
@@ -116,68 +212,119 @@
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const coords = { x: 0, y: 0 };
+      const circles = document.querySelectorAll(".circle");
+
+      circles.forEach(function (circle) {
+        circle.x = 0;
+        circle.y = 0;
+      });
+
+      window.addEventListener("mousemove", function (e) {
+        coords.x = e.pageX;
+        coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
+      });
+
+      function animateCircles() {
+        let x = coords.x;
+        let y = coords.y;
+
+        circles.forEach(function (circle, index) {
+          circle.style.left = `${x - 12}px`;
+          circle.style.top = `${y - 12}px`;
+          circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+
+          const nextCircle = circles[index + 1] || circles[0];
+          circle.x = x;
+          circle.y = y;
+
+          x += (nextCircle.x - x) * 0.3;
+          y += (nextCircle.y - y) * 0.3;
+        });
+
+        requestAnimationFrame(animateCircles);
+      }
+
+      animateCircles();
+    });
+
+  </script>
+
+  
+
+  <div id="progressBar"></div>
+  <script>
+    window.onscroll = function () {
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      document.getElementById("progressBar").style.width = scrolled + "%";
+    };
+  </script>
+  <div class="preloader">
+    <div class="loader">
+      <div class="ytp-spinner">
+        <div class="ytp-spinner-container">
+          <div class="ytp-spinner-rotator">
+            <div class="ytp-spinner-left">
+              <div class="ytp-spinner-circle"></div>
+            </div>
+            <div class="ytp-spinner-right">
+              <div class="ytp-spinner-circle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <header class="header-area">
-    <!-- <div class="navbar-area"> -->
-      <!-- <div class="container"> -->
-        <div class="row">
-          <!-- <div class="col-lg-12"> -->
-            <nav class="navbar navbar-expand-lg">
-              <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="toggler-icon"></span>
-                <span class="toggler-icon"></span>
-                <span class="toggler-icon"></span>
-              </button> -->
-              <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-                <a href="./index.html">
-                <div class="icon1">
-
-                  <img src="./assets/images/icon.png" alt="icon.png">
-                </div>
-                </a>
-                
-                <ul id="nav" class="navbar-nav" style="margin:auto">
-
-
-                  <img src="assets/images/icon.webp" alt="icon.webp">
-                </div> 
-                <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
-
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
-                  </li>    
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll active-link" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
-                  </li>
-                  <li class="nav-item active">
-                    <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
-    </li><li class="nav-item no-underline">
-                    <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html">Login/Register 💻</a>
-                  </li>
+    <div class="row">
+      <div style="display: flex; justify-content: center;" class="">
+        <nav class="navbar navbar-expand-lg " style="display: flex;">
+          <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="toggler-icon"></span>
+            <span class="toggler-icon"></span>
+            <span class="toggler-icon"></span>
+          </button> -->
+          <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto;">
+            <div class="icon1">
+              <img src="../assets/images/icon.png" alt="icon.png">
+            </div> 
+            <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
+              <li class="nav-item">
+                <a class="page-scroll" href="../index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll" href="../about.html" id="active-page" style="color: rgb(237, 242, 244);">About Us 📖</a>
+              </li>    
+              <li class="nav-item">
+                <a class="page-scroll" href="../trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll active-link" href="../tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll" href="../blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll" href="../quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll" href="../careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll" href="../contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
+              </li>
+              <li class="nav-item active">
+                <a class="page-scroll" href="../faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
+              </li>
+              <li class="nav-item no-underline">
+                <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="#" onclick="openModal()">Login/Register 💻</a>
+              </li>
                 </ul>
                 <button id="theme-toggle" class="theme-toggle">
                   🌙
@@ -457,8 +604,7 @@ registerCloseButton.addEventListener("click", function() {
     <script type="text/javascript" src="./navbar.js"></script>
 
     
-<!-- 
-<!--             
+<!--           
             <nav class="mobile-menu ">
               <a class="page-scroll" href="./index.html">Home 🏡</a>
               <a class="page-scroll" href="./about.html">About Us 📖</a>
@@ -500,9 +646,9 @@ registerCloseButton.addEventListener("click", function() {
             <div class="header-hero-image text-center wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s" style="visibility: visible; animation-duration: 1.3s; animation-delay: 1.4s;">
               <div class="anim" data-tilt="">
 
-                <img src="./assets/images/header-hero.png" alt="hero" style="animation: float 1.5s ease-in-out infinite;" data-tilt="">
+                <img src="./assets/images/header-hero.png" alt="" style="animation: float 1.5s ease-in-out infinite;" data-tilt="">
 
-                <img src="assets/images/header-hero.webp" alt="hero" style="animation: float 1.5s ease-in-out infinite;"
+                <img src="assets/images/header-hero.webp" alt="" style="animation: float 1.5s ease-in-out infinite;"
                   data-tilt="" />
 
               </div>
