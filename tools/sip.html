@@ -37,18 +37,7 @@
       cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
     }
 
-    .circle-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
-  gap: 10px; /* Adjust the gap between circles as needed */
-}
-.gridd{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin: 20px;
-}
-  
+
     .circle {
       position: absolute;
       width: 25px;
@@ -111,45 +100,34 @@
     transform: scaleX(1); /* Shrink to zero width */
   }
 }
-.social-icons {
-    text-align: center;
-  }
-  
-  .social-icons ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .social-icons li {
-    margin: 0 10px;
-  }
-  
-  .social-icons a {
-    color: #337ab7;
-    text-decoration: none;
-    border-radius: 50%;
-    border: 1px solid #ccc; 
-    padding: 10px;
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s; 
-  }
-  
-  .social-icons a:hover {
-    color: #fe8464;
-    border-color: #fe8464; 
-    transform: scale(1.1); 
-  }
+.social-icons{
+
+text-align: left;
+}
+
+.social-icons a {
+display: inline-flex;
+justify-content: center;
+align-items: center;
+width: 2.1rem;
+height: 2.1rem;
+background-color: transparent;
+border: 0.2rem solid #0890ff;
+font-size: 1.1rem;
+border-radius: 50%;
+margin: 1rem 0.5rem 0.5rem 0;
+transition: 0.3s ease;
+color: #55ff00;
+text-align: left;
+}
+
+.social-icons a:hover {
+color: rgb(139, 249, 12);
+transform: scale(1.3) translateY(-5px);
+background-color: #0048ff;
+box-shadow: 0 0 25px #03133c;
+}
+
   
   .or-sign-in-with {
     margin: 20px 0;
@@ -337,35 +315,7 @@
                 <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="#" onclick="openModal()">Login/Register 💻</a>
               </li>
             </ul>
-            <button id="theme-toggle" class="theme-toggle">
-              🌙
-            </button>
           </div>
-          <script>
-            const toggleButton = document.getElementById('theme-toggle');
-            const body = document.body;
-            const currentTheme = localStorage.getItem('theme');
-
-if (currentTheme === 'dark') {
-body.classList.add('dark-mode');
-toggleButton.classList.add('dark');
-toggleButton.textContent = '🌞';
-}
-
-toggleButton.addEventListener('click', function () {
-body.classList.toggle('dark-mode');
-toggleButton.classList.toggle('dark');
-
-// Update button icon based on mode
-if (body.classList.contains('dark-mode')) {
-toggleButton.textContent = '🌞';  // Light mode icon
-localStorage.setItem('theme', 'dark');
-} else {
-toggleButton.textContent = '🌙';  // Dark mode icon
-localStorage.setItem('theme', 'light');
-}
-});
-        </script>
               <div class="">
 
                 <!-- Login Modal -->
@@ -595,6 +545,39 @@ registerCloseButton.addEventListener("click", function() {
       </div>
     </div>
 
+    <!-- removing intro section -->
+    <!-- <div id="home" class="header-hero bg_cover" style="background-image: url(../assets/images/banner-bg.svg)">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="header-hero-content text-center">
+              <h3 class="header-sub-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
+                Say 👋🏼 to FinVeda
+              </h3>
+              <h2 class="header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">
+                your savvy financial companion
+              </h2>
+              <p class="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">
+                Wanna learn how to grow your money to become rich? We have made becoming a stock market Guru easy with
+                our AI powered finance advisor - <b>Arth Sathi 🤵🏻</b>
+              </p>
+              <a href="#" class="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s"
+                onclick="window.botpressWebChat.sendEvent({ type: 'show' }); return false;">
+                Chat with ArthaSathi 💬
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="header-hero-image text-center wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">
+              <img src="../assets/images/header-hero.png" alt="hero" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="particles-1" class="particles"></div>
+    </div> -->
   </header>
   <link rel="stylesheet" type="text/css" href="sipcalculatorCss.css">
   <script type="text/javascript" src="sipcalculatorJs.js"></script>
@@ -621,7 +604,6 @@ registerCloseButton.addEventListener("click", function() {
         </div>
       </div>
     </div>
-    <div class="gridd">
     <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5">
       <div class="switch-container radio-button">
         <div class="form-check form-check-inline">
@@ -696,7 +678,7 @@ registerCloseButton.addEventListener("click", function() {
           padding: 0;
       }
       .header {
-          padding-top: 10px;
+          padding-top: 100px;
           text-align: center;
           color: white;
           padding: 20px;
@@ -842,6 +824,7 @@ registerCloseButton.addEventListener("click", function() {
           border-radius: 5px;
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
           margin: 20px 0;
+          width: 97%;
       }
       .form-control {
           width: 100%;
@@ -866,7 +849,6 @@ registerCloseButton.addEventListener("click", function() {
           flex: 1; /* Equal spacing */
           margin: 0 5px; /* Space between buttons */
       }
-      
       .btn-primary {
           background-color: #0288d1;
           color: white;
@@ -950,7 +932,7 @@ registerCloseButton.addEventListener("click", function() {
     <!-- Savings Goal Calculator -->
     <script src="SavingsGoalCalculator.js" defer></script>
     <script src="SavingsGoalCalculator.js" ></script>
-    <div class="header toool" style="padding-top: 10px;">
+    <div class="header toool" style="padding-top: 100px;">
       <h3>Savings Goal Calculator</h3>
       <p class="cal-content">
         The Savings Goal Calculator is designed to help you determine how much you need to save monthly to reach your financial goals. By entering your goal amount, current savings, monthly savings, and expected annual interest rate, this calculator shows the time required to achieve your goal.
@@ -1005,7 +987,7 @@ registerCloseButton.addEventListener("click", function() {
 
     <!-- Insurance Calculator -->
     <script src="insuranceCalculator.js" defer></script>
-<div class="header toool" style="padding-top: 10px;">
+<div class="header toool" style="padding-top: 100px;">
   <h3>Insurance Calculator</h3>
   <p class="cal-content">
     The Insurance Calculator estimates the benefits of an insurance policy based on the sum assured, policy term, and annual premium. This tool helps you understand the potential returns from your insurance policy and plan your coverage effectively.
@@ -1043,7 +1025,9 @@ registerCloseButton.addEventListener("click", function() {
       <div><b>Terminal Bonus (%)</b></div>
       <div><input class="form-control" id="TerminalBonus" type="number" /></div>
       <br />
-      <div class="select" style="display: flex; flex-direction: row;"">
+      
+
+      <div class="select" style="display: flex; flex-direction: row; width: 100%;">
       <div class="centered-content">
         <input name="surrenderType" id="surrendered" type="radio" />
         <label for="surrendered"><b>Early Surrendered</b></label>
@@ -1076,7 +1060,7 @@ registerCloseButton.addEventListener("click", function() {
   <!-- End Insurance Calculator -->
     <!-- NPV Calculator -->
     <script src="npvCalculator.js" defer></script>
-<div class="header toool" style="padding-top: 10px;">
+<div class="header toool" style="padding-top: 100px;">
   <h3>Net Present Value<br> (NPV) Calculator</h3>
   <p class="cal-content">
     The NPV (Net Present Value) Calculator is a tool designed to help you evaluate the profitability of an investment by calculating the present value of expected future cash flows. This calculator helps investors make informed decisions, ensuring that future cash flows are accurately evaluated in today's terms.
@@ -1133,7 +1117,7 @@ registerCloseButton.addEventListener("click", function() {
  
     <!--ROI calculator-->
     <script src="roiCalculator.js" defer></script>
-    <div class="header toool" style="padding-top: 10px;">
+    <div class="header toool" style="padding-top: 100px;">
       <h3>Return on Investment(ROI) Calculator</h3>
       <p class="cal-content">
         The ROI (Return on Investment) Calculator helps you measure the profitability of an investment. By inputting the initial investment amount and the final value of the investment, this tool calculates the percentage return on investment, helping you assess the efficiency of your investment.
@@ -1185,7 +1169,7 @@ registerCloseButton.addEventListener("click", function() {
 
     <!--Start of GST Calculator-->
     <script src="GSTcalc.js" defer></script>
-<div class="header toool" style="padding-top: 10px;">
+<div class="header toool" style="padding-top: 100px;">
     <h3>Goods and Service Tax (GST) Calculator</h3>
     <p class="cal-content">The GST (Goods and Services Tax) Calculator computes the GST-inclusive or exclusive amount based on the original amount and the applicable GST rate. This tool simplifies the calculation of GST for various transactions.</p>
     <div class="know-more">
@@ -1237,7 +1221,7 @@ registerCloseButton.addEventListener("click", function() {
 
     <!--Start of Income Tax Calc-->
     <script src="IncomeTax.js" defer></script>
-    <div class="header toool" style="padding-top: 10px;">
+    <div class="header toool" style="padding-top: 100px;">
         <h3>Income Tax Calculator</h3>
         <p class="cal-content">The Income Tax Calculator determines the tax payable based on your annual income and applicable tax rate. It helps you estimate your tax liability and plan your finances accordingly.</p>
         <div class="know-more">
@@ -1283,7 +1267,7 @@ registerCloseButton.addEventListener("click", function() {
   <!-- Profit Margin Calculator starts here -->
   <script src="ProfitMargin.js" defer></script>
 
-  <div class="header toool" style="padding-top: 10px;">
+  <div class="header toool" style="padding-top: 100px;">
     <h3>Profit Margin Calculator</h3>
     <p class="cal-content">The Profit Margin Calculator calculates the profit margin percentage based on the revenue and cost inputs. This tool helps businesses and individuals assess their profitability and make informed pricing and cost management decisions.</p>
     <div class="know-more">
@@ -1329,7 +1313,7 @@ registerCloseButton.addEventListener("click", function() {
 <!-- expenditure and saving Calculator starts here -->
 <script src="expenditureandsaving.js" defer></script>
 
-<div class="header toool" style="padding-top: 10px;">
+<div class="header toool" style="padding-top: 100px;">
   <h3 class="text-center mb-4">Expenditure and Savings Calculator</h3>
   <p class="cal-content">The Expenditure and Savings Calculator helps you analyze your monthly savings based on your income and expenses. This tool assists in managing your finances effectively.</p>
   <div class="know-more">
@@ -1446,7 +1430,7 @@ registerCloseButton.addEventListener("click", function() {
      <!--SWP Calculator Start-->
      <script src="SWPCalculator.js" defer></script>
 
-     <div class="header toool" style="padding-top: 10px;">
+     <div class="header toool" style="padding-top: 100px;">
        <h3 class="text-center mb-4">Systematic Withdrawal Plan Calculator</h3>
        <p class="cal-content">The SWP (Systematic Withdrawal Plan) calculator is a financial tool that helps investors plan and manage the regular withdrawal of funds from their investment corpus, typically mutual funds. SWP is used to generate a steady income stream, often for retirees or those looking to supplement their income.</p>
        <div class="know-more">
@@ -1503,7 +1487,7 @@ registerCloseButton.addEventListener("click", function() {
   <!-- credit card payoff calculator starts here  -->
   <script src="creditcardpayoff.js" defer></script>
 
-  <div class="header toool" style="padding-top: 10px;">
+  <div class="header toool" style="padding-top: 100px;">
     <h3 class="text-center mb-4">Credit Card Payoff Calculator</h3>
     <p class="cal-content">Calculate how long it will take to pay off your credit card balance with this calculator. Enter your balance, APR, and monthly payment to get started.</p>
     <div class="know-more">
@@ -1554,7 +1538,7 @@ registerCloseButton.addEventListener("click", function() {
   <!-- credeit card payoff calculator ends here  -->
 
   <!-- Bill split calculator  -->
-  <div class="header toool" style="padding-top: 10px;">
+  <div class="header toool" style="padding-top: 100px;">
     <h3 class="text-center mb-4">Split Bill Calculator</h3>
     <p class="cal-content">Calculate how much each person should pay when splitting a bill, including tips. Enter the bill subtotal, desired tip percentage, and the number of people to split the bill.</p>
     <div class="know-more">
@@ -1611,7 +1595,7 @@ registerCloseButton.addEventListener("click", function() {
  <!--FD Calculator Start-->
      <script src="FDCalculator.js" defer></script>
 
-     <div class="header toool" style="padding-top: 10px;">
+     <div class="header toool" style="padding-top: 100px;">
        <h3 class="text-center mb-4">Fixed Deposit Calculator</h3>
        <p class="cal-content">The FD(Fixed Deposit) Calculator helps compute the maturity amount and interest earned on fixed deposits based on the principal, interest rate, and duration.</p>
        <div class="know-more">
@@ -1665,7 +1649,7 @@ registerCloseButton.addEventListener("click", function() {
  <!--RD Calculator Start-->
  <script src="RDCalculator.js" defer></script>
 
- <div class="header toool" style="padding-top: 10px;">
+ <div class="header toool" style="padding-top: 100px;">
    <h3 class="text-center mb-4">Recurring Deposit Calculator</h3>
    <p class="cal-content">The RD (Recurring Deposit) calculator computes the maturity amount and interest earned on regular monthly deposits over a fixed period, given a specified annual interest rate.</p>
    <div class="know-more">
@@ -1719,7 +1703,7 @@ registerCloseButton.addEventListener("click", function() {
   <!--EPF Calculator Start-->
   <script src="EPFCalculator.js" defer></script>
 
-  <div class="header toool" style="padding-top: 10px;">
+  <div class="header toool" style="padding-top: 100px;">
     <h3 class="text-center mb-4">Employee Provident Fund Calculator</h3>
     <p class="cal-content">The Employee Provident Fund Calculator helps employees estimate their total savings at retirement by factoring in monthly salary, age, contribution rate, annual salary increase, and interest rate. It provides a projection of the accumulated fund, aiding in financial planning for retirement.</p>
     <div class="know-more">
@@ -1778,7 +1762,6 @@ registerCloseButton.addEventListener("click", function() {
   </div>
   <!--EPF Calculator End-->
 </body>
-</div>
   
   <!-- Timed popup that will appear after succesful submission of feebback form! -->
       <button class="notification" id="successnotification" style="display:none;">
@@ -1898,43 +1881,13 @@ registerCloseButton.addEventListener("click", function() {
                               </a>
                           </div>
                       </li>
-                      <li class="d-sm-flex justify-content-center">
-                          <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 12px; width: 10%;"></i>
-                          <div style="width: 80%;">
-                              <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
-                                 style="color:#fff">
-                                  Delhi, India
-                              </a>
-                          </div>
-                      </li>
-                      <li id="social_icons" class="d-sm-flex justify-content-evenly my-3">
-                        <div style="width: 100%; display:flex; ">
-                          <!-- Instagram Icon -->
-                          <a href="https://instagram.com" target="_blank" style="margin: 0 10px; color: #E4405F;" aria-label="Instagram">
-                            <i style="font-size: 25px" class="fa-brands fa-instagram"></i>
-                          </a>
-                      
-                          <!-- Facebook Icon -->
-                          <a href="https://facebook.com" target="_blank" style="margin: 0 10px; color: #4267B2;" aria-label="Facebook">
-                            <i style="font-size: 25px" class="fa-brands fa-facebook"></i>
-                          </a>
-                      
-                          <!-- X/Twitter Icon -->
-                          <a href="https://twitter.com" target="_blank" style="margin: 0 10px; color: #1DA1F2;" aria-label="Twitter">
-                            <i style="font-size: 25px" class="fa-brands fa-x-twitter"></i>
-                          </a>
-                      
-                          <!-- Discord Icon -->
-                          <a href="https://discord.com" target="_blank" style="margin: 0 10px; color: #7289DA;" aria-label="Discord">
-                            <i style="font-size: 25px" class="fa-brands fa-discord"></i>
-                          </a>
-                      
-                          <!-- GitHub Icon -->
-                          <a href="https://github.com" target="_blank" style="margin: 0 10px; color: #333;" aria-label="GitHub">
-                            <i style="font-size: 25px" class="fa-brands fa-github"></i>
-                          </a>
-                        </div>
-                      </li>
+                      <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-discord"></i></a>
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                    </div>
                   </ul>
               </div>
           </div>
@@ -2076,10 +2029,10 @@ registerCloseButton.addEventListener("click", function() {
   };
 
   document.addEventListener("DOMContentLoaded", function () {
-    const registerModal =  document.getElementById("registerModal");
-    const loginModal =  document.getElementById("myModal");
-    const registerLink =  document.getElementById("registerLink");
-    const loginLink =  document.getElementById("loginLink");
+    const registerModal = document.getElementById("registerModal");
+    const loginModal = document.getElementById("myModal");
+    const registerLink = document.getElementById("registerLink");
+    const loginLink = document.getElementById("loginLink");
 
     // Event listener for the register link
     registerLink.addEventListener("click", function (event) {
@@ -2104,13 +2057,8 @@ registerCloseButton.addEventListener("click", function() {
 
 
   </script>
-
   <script src="./smoothScroll.js"></script>
-  <div class="gtranslate_wrapper"></div>
-  <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
-  <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-
-
 </body>
 
 </html> 
+S

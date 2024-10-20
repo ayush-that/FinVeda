@@ -39,121 +39,123 @@
           </button> -->
           <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
             <a href="./index.html">
-            <div class="icon1">
-              <img src="assets/images/icon.webp" alt="icon.webp">
-            </div> 
+              <i class="fa-solid fa-house"></i>
             </a>
-            <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
-              <li class="nav-item">
-                <a class="page-scroll" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
-              </li>    
-              <li class="nav-item">
-                <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
-              </li>
-              <li class="nav-item active-link">
-                <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
-              </li>
-              <li class="nav-item no-underline">
-                <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
-              </li>
-            </ul>
+            <div class="navbar-logo">
+              <div class="icon1">
+                <a href="./index.html">
+                  <img src="assets/images/icon.webp" alt="icon.webp">
+                </a>
+              </div>
+            </div>
+            <div class="nav-space"></div>
+            <div class="navbar-elements">
+              <button id="theme-toggle" class="theme-toggle">
+                🌙
+              </button>
+              <div class="dropdown">
+                <a>
+                    <i class="fa-solid fa-bars" style="color: #fff;"></i>
+                    <span class="material-symbols-outline"></span>
+                </a>
+                <div class="menu">
+                    <a href="./careers.html">Career 👔</a>
+                    <a href="./quiz.html">Quiz 🤔</a>
+                    <a href="./tools/sip.html">Tools 🔧</a>
+                    <a href="./trends.html">Trends 📈</a>
+                    <a href="./blog.html">Blogs 📰</a>
+                    <a href="./about.html">About Us 📖</a>
+                    <a href="./contact.html">Contact📞</a>
+                    <a href="./faq.html">Help 🙋‍♂</a>
+                </div>
+              </div>
+              <a style="animation-duration: 0.4s;animation-name: ease;" href="./loginPage.html" data-scroll-nav="0"><button class="bn30">Login / Register</button></a>
+            </div>
+            <div class="nav-toggle-btn-space-fixed"></div>
           </div>
 
-          <script>
-            const toggleButton = document.getElementById('theme-toggle');
-            const body = document.body;
-            const currentTheme = localStorage.getItem('theme');
+        <script>
+          const toggleButton = document.getElementById('theme-toggle');
+          const body = document.body;
+          const currentTheme = localStorage.getItem('theme');
 
-            if (currentTheme === 'dark') {
-            body.classList.add('dark-mode');
-            toggleButton.classList.add('dark');
-            toggleButton.textContent = '☀️';
-            }
-
-            toggleButton.addEventListener('click', function () {
-            body.classList.toggle('dark-mode');
-            toggleButton.classList.toggle('dark');
-
-            // Update button icon based on mode
-            if (body.classList.contains('dark-mode')) {
-            toggleButton.textContent = '☀️';  // Light mode icon
-            localStorage.setItem('theme', 'dark');
-            } else {
-            toggleButton.textContent = '🌙';  // Dark mode icon
-            localStorage.setItem('theme', 'light');
-            }
-            });
-        </script>
-        <style>
-
-          h3{
-            color: #fff;
+          if (currentTheme === 'dark') {
+          body.classList.add('dark-mode');
+          toggleButton.classList.add('dark');
+          toggleButton.textContent = '🌞';
           }
 
-        .toggle-button {
-          padding: 0.5em 1em;
-          cursor: pointer;
-          border: none;
-          background-color: #0c0a0a;
+          toggleButton.addEventListener('click', function () {
+          body.classList.toggle('dark-mode');
+          toggleButton.classList.toggle('dark');
+
+          // Update button icon based on mode
+          if (body.classList.contains('dark-mode')) {
+          toggleButton.textContent = '🌞';  // Light mode icon
+          localStorage.setItem('theme', 'dark');
+          } else {
+          toggleButton.textContent = '🌙';  // Dark mode icon
+          localStorage.setItem('theme', 'light');
+          }
+          });
+      </script>
+      <style>
+
+        h3{
           color: #fff;
-          border-radius: 5px;
-          transition: background-color 0.3s;
-      }
-      
-      .toggle-button:hover {
-          background-color: #555;
-      }
-      
-      .content {
-          padding: 2em;
-          text-align: center;
-      }
-      
-      h1 {
-          font-size: 2.5rem;
-          color: whitesmoke;
-          margin-top:130px;
-      }
-      
-      p {
-          font-size: 1.2rem;
-      }
-      
-      body.dark-mode {
-                background-color: #222;
-                color: #f1f1f1; /* Change text color to light for dark mode */
-                }
+        }
 
-                .toggle-button.dark {
-                background-color: #f1f1f1; /* Button background in dark mode */
-                color: #333; /* Button text color in dark mode */
-                }
+      .toggle-button {
+        padding: 0.5em 1em;
+        cursor: pointer;
+        border: none;
+        background-color: #0c0a0a;
+        color: #fff;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+    
+    .toggle-button:hover {
+        background-color: #555;
+    }
+    
+    .content {
+        padding: 2em;
+        text-align: center;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+        color: whitesmoke;
+        margin-top:130px;
+    }
+    
+    p {
+        font-size: 1.2rem;
+    }
+    
+    body.dark-mode {
+background-color: #fefefe;
+color: #f1f1f1; /* Change text color to light for dark mode */
+}
 
-                .toggle-button.dark:hover {
-                background-color: #ddd; /* Button hover color in dark mode */
-                }
-      </style>
-            
-          </nav>
-      
+.dark-mode .para {
+color: white; /* Change text color to white when dark mode class is applied */
+}
+
+.toggle-button.dark {
+background-color: #f1f1f1; /* Button background in dark mode */
+color: #333; /* Button text color in dark mode */
+}
+
+.toggle-button.dark:hover {
+background-color: #ddd; /* Button hover color in dark mode */
+}
+    </style>
+          
+        </nav>
+    
+
 
         <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 
@@ -520,34 +522,13 @@
                               </a>
                           </div>
                       </li>
-                      <li id="social_icons" class="d-sm-flex justify-content-evenly my-3">
-                        <div style="width: 100%; display:flex; ">
-                          <!-- Instagram Icon -->
-                          <a href="https://instagram.com" target="_blank" style="margin: 0 10px; color: #E4405F;" aria-label="Instagram">
-                            <i style="font-size: 25px" class="fa-brands fa-instagram"></i>
-                          </a>
-                      
-                          <!-- Facebook Icon -->
-                          <a href="https://facebook.com" target="_blank" style="margin: 0 10px; color: #4267B2;" aria-label="Facebook">
-                            <i style="font-size: 25px" class="fa-brands fa-facebook"></i>
-                          </a>
-                      
-                          <!-- X/Twitter Icon -->
-                          <a href="https://twitter.com" target="_blank" style="margin: 0 10px; color: #1DA1F2;" aria-label="Twitter">
-                            <i style="font-size: 25px" class="fa-brands fa-x-twitter"></i>
-                          </a>
-                      
-                          <!-- Discord Icon -->
-                          <a href="https://discord.com" target="_blank" style="margin: 0 10px; color: #7289DA;" aria-label="Discord">
-                            <i style="font-size: 25px" class="fa-brands fa-discord"></i>
-                          </a>
-                      
-                          <!-- GitHub Icon -->
-                          <a href="https://github.com" target="_blank" style="margin: 0 10px; color: #333;" aria-label="GitHub">
-                            <i style="font-size: 25px" class="fa-brands fa-github"></i>
-                          </a>
-                        </div>
-                      </li>
+                      <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-discord"></i></a>
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                    </div>
                   </ul>
               </div>
           </div>
