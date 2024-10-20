@@ -5,14 +5,31 @@ document.getElementById("calculate-Btn4").addEventListener("click", function() {
     const increase = parseFloat(document.getElementById("increase").value) / 100;
     const rate = parseFloat(document.getElementById("rate2").value) / 100;
 
-    if (isNaN(salary) || isNaN(age) || isNaN(contribution) || isNaN(increase) || isNaN(rate)) {
-        alert("Please fill in all the fields correctly.");
+    let errorMessage = '';
+
+    if (isNaN(salary) || salary <= 0) {
+        errorMessage += 'Please enter a valid positive number for Salary.\n';
+    }
+    if (isNaN(age) || age < 18 || age >= 60) {
+        errorMessage += 'Please enter a valid age (between 18 and 59).\n';
+    }
+    if (isNaN(contribution) || contribution <= 0 || contribution > 1) {
+        errorMessage += 'Please enter a valid Contribution percentage (greater than 0 and less than or equal to 100).\n';
+    }
+    if (isNaN(increase) || increase < 0 || increase > 1) {
+        errorMessage += 'Please enter a valid yearly salary increase percentage (0 to 100).\n';
+    }
+    if (isNaN(rate) || rate < 0 || rate > 1) {
+        errorMessage += 'Please enter a valid interest rate percentage (0 to 100).\n';
+    }
+
+    if (errorMessage) {
+        alert(errorMessage);
         return;
     }
 
     const retirementAge = 60;
     const monthsInYear = 12;
-
     const yearsToRetirement = retirementAge - age;
 
     let totalEPF = 0;
@@ -21,9 +38,7 @@ document.getElementById("calculate-Btn4").addEventListener("click", function() {
     for (let i = 0; i < yearsToRetirement; i++) {
         const yearlyContribution = currentSalary * contribution * monthsInYear;
         totalEPF += yearlyContribution;
-
         totalEPF += totalEPF * rate;
-
         currentSalary += currentSalary * increase;
     }
 
