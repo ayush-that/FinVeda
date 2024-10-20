@@ -98,74 +98,68 @@
                 <span class="toggler-icon"></span>
                 <span class="toggler-icon"></span>
               </button> -->
-              <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-                <div class="icon1">
-                  <img src="assets/images/icon.png" alt="icon.png">
-                </div> 
-
-                <ul id="nav" class="navbar-nav" style="margin: auto">
-
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
-                  </li>    
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll active-link" href="./quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
-                  </li>
-                  <li class="nav-item active">
-                    <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
-                  </li>
-                 <li class="nav-item no-underline">
-
-                    <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
-                  </li>
+              <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
+                <a href="./index.html">
+                  <i class="fa-solid fa-house"></i>
+                </a>
+                <div class="navbar-logo">
+                  <div class="icon1">
+                    <a href="./index.html">
+                      <img src="assets/images/icon.webp" alt="icon.webp">
+                    </a>
+                  </div>
+                </div>
+                <div class="nav-space"></div>
+                <div class="navbar-elements">
                   <button id="theme-toggle" class="theme-toggle">
                     🌙
                   </button>
-                </ul>
+                  <div class="dropdown">
+                    <a>
+                        <i class="fa-solid fa-bars" style="color: #fff;"></i>
+                        <span class="material-symbols-outline"></span>
+                    </a>
+                    <div class="menu">
+                        <a href="./careers.html">Career 👔</a>
+                        <a href="./quiz.html">Quiz 🤔</a>
+                        <a href="./tools/sip.html">Tools 🔧</a>
+                        <a href="./trends.html">Trends 📈</a>
+                        <a href="./blog.html">Blogs 📰</a>
+                        <a href="./about.html">About Us 📖</a>
+                        <a href="./contact.html">Contact📞</a>
+                        <a href="./faq.html">Help 🙋‍♂</a>
+                    </div>
+                  </div>
+                  <a style="animation-duration: 0.4s;animation-name: ease;" href="./loginPage.html" data-scroll-nav="0"><button class="bn30">Login / Register</button></a>
+                </div>
+                <div class="nav-toggle-btn-space-fixed"></div>
               </div>
+
               <script>
                 const toggleButton = document.getElementById('theme-toggle');
                 const body = document.body;
                 const currentTheme = localStorage.getItem('theme');
 
-if (currentTheme === 'dark') {
-body.classList.add('dark-mode');
-toggleButton.classList.add('dark');
-toggleButton.textContent = '🌞';
-}
+                if (currentTheme === 'dark') {
+                body.classList.add('dark-mode');
+                toggleButton.classList.add('dark');
+                toggleButton.textContent = '🌞';
+                }
 
-toggleButton.addEventListener('click', function () {
-body.classList.toggle('dark-mode');
-toggleButton.classList.toggle('dark');
+                toggleButton.addEventListener('click', function () {
+                body.classList.toggle('dark-mode');
+                toggleButton.classList.toggle('dark');
 
-// Update button icon based on mode
-if (body.classList.contains('dark-mode')) {
-  toggleButton.textContent = '🌞';  // Light mode icon
-  localStorage.setItem('theme', 'dark');
-} else {
-  toggleButton.textContent = '🌙';  // Dark mode icon
-  localStorage.setItem('theme', 'light');
-}
-});
-            </script>
+                // Update button icon based on mode
+                if (body.classList.contains('dark-mode')) {
+                  toggleButton.textContent = '🌞';  // Light mode icon
+                  localStorage.setItem('theme', 'dark');
+                } else {
+                  toggleButton.textContent = '🌙';  // Dark mode icon
+                  localStorage.setItem('theme', 'light');
+                }
+                });
+              </script>
               <div class="">
                 <!-- Login Modal -->
                 <div id="myModal" class="modal">
@@ -403,7 +397,7 @@ if (body.classList.contains('dark-mode')) {
         <div class="row">
           <div class="col-lg-12">
             <div class="header-hero-image text-center wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">
-              <img src="./assets/images/header-hero.png" alt="hero" />
+              <img src="./assets/images/header-hero.webp" alt="hero" />
             </div>
           </div>
         </div>
@@ -415,7 +409,7 @@ if (body.classList.contains('dark-mode')) {
     <br><br><br><br>
     <p></p><br>
     <h2 class="test">Test your knowledge</h2>
-    <div id="quiz-pic"><img src="./assets/images/quiz-anime2.png" alt="QUIZ"></div>
+    <div id="quiz-pic"><img src="./assets/images/quiz-anime2.webp" alt="QUIZ"></div>
 
     <div class="quiz-description wow fadeIn" data-wow-duration="1.3s" data-wow-delay="0.5s">
       <div class="quiztitle wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">Welcome to the Quiz Challenge!</div>
@@ -445,23 +439,23 @@ if (body.classList.contains('dark-mode')) {
           </div>
           <div>
             <center>
-              <div id="congratulations-image"><img id="quizimg5" style="display: none" src="./assets/images/quiz5.png"
+              <div id="congratulations-image"><img id="quizimg5" style="display: none" src="./assets/images/quiz5.webp"
                   alt="congratulations" srcset=""></div>
             </center>
             <center>
-              <div id="congratulations-image"><img id="quizimg1" style="display: none" src="./assets/images/quiz1.png"
+              <div id="congratulations-image"><img id="quizimg1" style="display: none" src="./assets/images/quiz1.webp"
                   alt="congratulations" srcset=""></div>
             </center>
             <center>
-              <div id="congratulations-image"><img id="quizimg2" style="display: none" src="./assets/images/quiz2.png"
+              <div id="congratulations-image"><img id="quizimg2" style="display: none" src="./assets/images/quiz2.webp"
                   alt="congratulations" srcset=""></div>
             </center>
             <center>
-              <div id="congratulations-image"><img id="quizimg3" style="display: none" src="./assets/images/quiz3.png"
+              <div id="congratulations-image"><img id="quizimg3" style="display: none" src="./assets/images/quiz3.webp"
                   alt="congratulations" srcset=""></div>
             </center>
             <center>
-              <div id="congratulations-image"><img id="quizimg4" style="display: none" src="./assets/images/quiz4.png"
+              <div id="congratulations-image"><img id="quizimg4" style="display: none" src="./assets/images/quiz4.webp"
                   alt="congratulations" srcset=""></div>
             </center>
             <span id="correct-span"></span>
@@ -923,6 +917,26 @@ h2#question {
   }
 }
 
+/* Fixing Privacy Policy, Refund Policy and Licensing */
+ul.link li:nth-child(3) {
+  text-align: left; /* Aligning the text to the left */
+  margin-left: 0; 
+}
+ul.link li:nth-child(1), 
+ul.link li:nth-child(2) {
+  text-align: left; /* Aligning to the left */
+  margin-left: 0; 
+  padding: 5px 0; 
+}
+
+/* Fixing Tools (4th item), Blog (5th item), and Quiz (6th item) */
+ul.link li:nth-child(4), 
+ul.link li:nth-child(5), 
+ul.link li:nth-child(6) { 
+  text-align: left; 
+  margin-left: 0; 
+  padding: 5px 0; 
+}
 
 
   </style>
@@ -1036,38 +1050,13 @@ h2#question {
                 </a>
               </div>
             </li>
-            <li id="social_icons" class="d-sm-flex justify-content-evenly" style=" position: relative; left:45px;">
-              <div style="width: 100%; display:flex; ">
-                <!-- Instagram Icon -->
-                <a href="https://instagram.com" target="_blank" style="margin: 0 10px; color: #E4405F;"
-                  aria-label="Instagram">
-                  <i style="font-size: 25px" class="fa-brands fa-instagram"></i>
-                </a>
-
-                <!-- Facebook Icon -->
-                <a href="https://facebook.com" target="_blank" style="margin: 0 10px; color: #4267B2;"
-                  aria-label="Facebook">
-                  <i style="font-size: 25px" class="fa-brands fa-facebook"></i>
-                </a>
-
-                <!-- X/Twitter Icon -->
-                <a href="https://twitter.com" target="_blank" style="margin: 0 10px; color: #1DA1F2;"
-                  aria-label="Twitter">
-                  <i style="font-size: 25px" class="fa-brands fa-x-twitter"></i>
-                </a>
-
-                <!-- Discord Icon -->
-                <a href="https://discord.com" target="_blank" style="margin: 0 10px; color: #7289DA;"
-                  aria-label="Discord">
-                  <i style="font-size: 25px" class="fa-brands fa-discord"></i>
-                </a>
-
-                <!-- GitHub Icon -->
-                <a href="https://github.com" target="_blank" style="margin: 0 10px; color: #333;" aria-label="GitHub">
-                  <i style="font-size: 25px" class="fa-brands fa-github"></i>
-                </a>
-              </div>
-            </li>
+            <div class="social-icons">
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-discord"></i></a>
+              <a href="#"><i class="fa-brands fa-github"></i></a>
+          </div>
           </ul>
         </div>
       </div>
@@ -1103,31 +1092,36 @@ h2#question {
 <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
 
 
-<script src="./assets/js/subscribe.js"></script>
-<script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
-<script src="./assets/js/vendor/modernizr-3.7.1.min.js"></script>
-<script src="./assets/js/popper.min.js"></script>
-<script src="./assets/js/bootstrap.min.js"></script>
-<script src="./assets/js/plugins.js"></script>
-<script src="./assets/js/slick.min.js"></script>
-<script src="./assets/js/ajax-contact.js"></script>
-<script src="./assets/js/waypoints.min.js"></script>
-<script src="./assets/js/jquery.counterup.min.js"></script>
-<script src="./assets/js/jquery.magnific-popup.min.js"></script>
-<script src="./assets/js/jquery.easing.min.js"></script>
-<script src="./assets/js/scrolling-nav.js"></script>
-<script src="./assets/js/wow.min.js"></script>
-<script src="./assets/js/particles.min.js"></script>
-<script src="./assets/js/main.js"></script>
-<script src="./assets/js/quiz.js"></script>
-<script src="./assets/js/popup.js"></script>
-<script src="./assets/js/quiz_modify.js"></script>
-<script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-<script src="https://mediafiles.botpress.cloud/5e160793-5606-4412-ba4c-337e416f14fe/webchat/config.js" defer></script>
-<script defer src="./assets/js/arthsathi-style.js"></script>
-<script src="./assets/js/botpress.js"></script>
-<script src="./assets/js/quizmodals.js"></script>
-<script src="./tools/smoothScroll.js"></script>
+<script src= "./assets/js/subscribe.js"></script>
+<script src= "./assets/js/vendor/jquery-1.12.4.min.js"></script>
+<script src= "./assets/js/vendor/modernizr-3.7.1.min.js"></script>
+<script src= "./assets/js/popper.min.js"></script>
+<script src= "./assets/js/bootstrap.min.js"></script>
+<script src= ./assets/js/plugins.js"></script>
+<script src= "./assets/js/slick.min.js"></script>
+<script src= "./assets/js/ajax-contact.js"></script>
+<script src= "./assets/js/waypoints.min.js"></script>
+<script src= "./assets/js/jquery.counterup.min.js"></script>
+<script src= "./assets/js/jquery.magnific-popup.min.js"></script>
+<script src= "./assets/js/jquery.easing.min.js"></script>
+<script src= "./assets/js/scrolling-nav.js"></script>
+<script src= "./assets/js/wow.min.js"></script>
+<script src= "./assets/js/particles.min.js"></script>
+<script src= "./assets/js/main.js"></script>
+<script src= "./assets/js/quiz.js"></script>
+<script src= "./assets/js/popup.js"></script>
+<script src= "./assets/js/quiz_modify.js"></script>
+<script src= "https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+<script src= "https://mediafiles.botpress.cloud/5e160793-5606-4412-ba4c-337e416f14fe/webchat/config.js" defer></script>
+<script defer src= "./assets/js/arthsathi-style.js"></script>
+<script src= "./assets/js/botpress.js"></script>
+<script src= "./assets/js/quizmodals.js"></script>
+<script src= "./tools/smoothScroll.js"></script>
+
+<div class="gtranslate_wrapper"></div>
+<script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+
 </body>
 
 </html>
