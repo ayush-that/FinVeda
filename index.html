@@ -290,71 +290,69 @@
             <span class="toggler-icon"></span>
             <span class="toggler-icon"></span>
           </button> -->
-          <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto;">
-            <div class="icon1">
-              <img src="../assets/images/icon.png" alt="icon.png">
-            </div> 
-            <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
-              <li class="nav-item">
-                <a class="page-scroll" href="../index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="../about.html" id="active-page" style="color: rgb(237, 242, 244);">About Us 📖</a>
-              </li>    
-              <li class="nav-item">
-                <a class="page-scroll" href="../trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll active-link" href="../tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="../blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="../quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="../careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="../contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
-              </li>
-              <li class="nav-item active">
-                <a class="page-scroll" href="../faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
-              </li>
-              <li class="nav-item no-underline">
-                <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="#" onclick="openModal()">Login/Register 💻</a>
-              </li>
-                </ul>
-                <button id="theme-toggle" class="theme-toggle">
-                  🌙
-                </button>
+          <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
+            <a href="./index.html">
+              <i class="fa-solid fa-house"></i>
+            </a>
+            <div class="navbar-logo">
+              <div class="icon1">
+                <a href="./index.html">
+                  <img src="assets/images/icon.webp" alt="icon.webp">
+                </a>
               </div>
-              <script>
-                const toggleButton = document.getElementById('theme-toggle');
-                const body = document.body;
-                const currentTheme = localStorage.getItem('theme');
+            </div>
+            <div class="nav-space"></div>
+            <div class="navbar-elements">
+              <button id="theme-toggle" class="theme-toggle">
+                🌙
+              </button>
+              <div class="dropdown">
+                <a>
+                    <i class="fa-solid fa-bars" style="color: #fff;"></i>
+                    <span class="material-symbols-outline"></span>
+                </a>
+                <div class="menu">
+                    <a href="./careers.html">Career 👔</a>
+                    <a href="./quiz.html">Quiz 🤔</a>
+                    <a href="./tools/sip.html">Tools 🔧</a>
+                    <a href="./trends.html">Trends 📈</a>
+                    <a href="./blog.html">Blogs 📰</a>
+                    <a href="./about.html">About Us 📖</a>
+                    <a href="./contact.html">Contact📞</a>
+                    <a href="./faq.html">Help 🙋‍♂</a>
+                </div>
+              </div>
+              <a style="animation-duration: 0.4s;animation-name: ease;" href="./loginPage.html" data-scroll-nav="0"><button class="bn30">Login / Register</button></a>
+            </div>
+            <div class="nav-toggle-btn-space-fixed"></div>
+          </div>
 
-if (currentTheme === 'dark') {
-body.classList.add('dark-mode');
-toggleButton.classList.add('dark');
-toggleButton.textContent = '🌞';
-}
+          <script>
+              const toggleButton = document.getElementById('theme-toggle');
+              const body = document.body;
+              const currentTheme = localStorage.getItem('theme');
 
-toggleButton.addEventListener('click', function () {
-body.classList.toggle('dark-mode');
-toggleButton.classList.toggle('dark');
+              if (currentTheme === 'dark') {
+              body.classList.add('dark-mode');
+              toggleButton.classList.add('dark');
+              toggleButton.textContent = '🌞';
+              }
 
-// Update button icon based on mode
-if (body.classList.contains('dark-mode')) {
-  toggleButton.textContent = '🌞';  // Light mode icon
-  localStorage.setItem('theme', 'dark');
-} else {
-  toggleButton.textContent = '🌙';  // Dark mode icon
-  localStorage.setItem('theme', 'light');
-}
-});
-            </script>
+              toggleButton.addEventListener('click', function () {
+              body.classList.toggle('dark-mode');
+              toggleButton.classList.toggle('dark');
+
+              // Update button icon based on mode
+              if (body.classList.contains('dark-mode')) {
+                toggleButton.textContent = '🌞';  // Light mode icon
+                localStorage.setItem('theme', 'dark');
+              } else {
+                toggleButton.textContent = '🌙';  // Dark mode icon
+                localStorage.setItem('theme', 'light');
+              }
+              });
+          </script>
+          
               <div class="">
                 <!-- Login Modal -->
                 <div id="myModal" class="modal">
@@ -551,10 +549,11 @@ loginCloseButton.addEventListener("click", function() {
   var modal = document.getElementById("myModal");
   modal.style.display = "none";
 });
-=======
+</script>
+
           body.dark-mode {
     background-color: #fefefe;
-    color: #f1f1f1; /* Change text color to light for dark mode */
+    color: #f1f1f1; 
 }
 
 .dark-mode .para {
@@ -731,7 +730,7 @@ registerCloseButton.addEventListener("click", function() {
   <style>
     .scroll-btn {
    position: fixed;
-    top: 115px;
+    top: 100px;
     right: 4px;
     background-color: #635adc;
     color: white;
@@ -1834,7 +1833,7 @@ scrollToTopBtn.onclick = function() {
           <div class="col-lg-6">
             <div class="subscribe-form mt-50">
               <form id="unique-subscribe-form">
-                <input type="email" id="unique-news-email" placeholder="Enter Email" required />
+                <input type="email" id="unique-news-email" placeholder="Enter Email" required/>
                 <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
               </form>
               <div id="unique-message" class="unique-popup-message" style="display: none;">
@@ -1846,6 +1845,7 @@ scrollToTopBtn.onclick = function() {
         </div>
       </div>
     </div>
+
     <div class="footer-widget pb-100">
       <div class="row" id="footer">
           <div class="col-lg-4 col-md-6 col-sm-8">
@@ -2102,3 +2102,267 @@ scrollToTopBtn.onclick = function() {
       <script src="./tools/smoothScroll.js"></script>
     </body>
     </html>
+
+
+  
+          </div>
+          <div class="col-lg-5 col-md-7 col-sm-7">
+              <div class="footer-link d-flex mt-50 justify-content-md-between" style="justify-content: space-around !important;">
+                  <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+                      <div class="footer-title">
+                          <h3 class="title custom-margin">Quick Links</h3>
+                      </div>
+                      <ul class="link custom-margin">
+                          <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+                          <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
+                          <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
+                          <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+                          <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+                      </ul>
+                  </div>
+                  <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+                      <div class="footer-title">
+                          <h4 class="title custom-margin">Resources</h4>
+                      </div>
+                      <ul class="link custom-margin">
+                          <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+                          <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                          <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
+                          <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
+                          <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                          <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-3 col-md-5 col-sm-5">
+              <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                  <div class="footer-title">
+                      <h4 class="title custom-margin">Contact Us</h4>
+                  </div>
+                  <ul class="contact custom-margin-big" style="justify-content: space-around;">
+                      <li class="d-sm-flex justify-content-center">
+                          <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                          <p style="width: 80%;">
+                              <a href="mailto:ayush1337@hotmail.com" target="_blank"
+                                 style="color: white; text-decoration: underline;">
+                                  ayush1337@hotmail.com
+                              </a>
+                          </p>
+                      </li>
+                      <li class="d-sm-flex justify-content-center">
+                          <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                          <div style="width: 80%;">
+                              <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
+                                  fin-veda.vercel.app
+                              </a>
+                          </div>
+                      </li>
+                      <li class="d-sm-flex justify-content-center">
+                          <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 12px; width: 10%;"></i>
+                          <div style="width: 80%;">
+                              <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
+                                 style="color:#fff">
+                                  Delhi, India
+                              </a>
+                          </div>
+                      </li>
+                      <li id="social_icons" class="d-sm-flex justify-content-evenly my-3">
+                        <div style="width: 100%; display:flex; ">
+                          <!-- Instagram Icon -->
+                          <a href="https://instagram.com" target="_blank" style="margin: 0 10px; color: #E4405F;" aria-label="Instagram">
+                            <i style="font-size: 25px" class="fa-brands fa-instagram"></i>
+                          </a>
+                      
+                          <!-- Facebook Icon -->
+                          <a href="https://facebook.com" target="_blank" style="margin: 0 10px; color: #4267B2;" aria-label="Facebook">
+                            <i style="font-size: 25px" class="fa-brands fa-facebook"></i>
+                          </a>
+                      
+                          <!-- X/Twitter Icon -->
+                          <a href="https://twitter.com" target="_blank" style="margin: 0 10px; color: #1DA1F2;" aria-label="Twitter">
+                            <i style="font-size: 25px" class="fa-brands fa-x-twitter"></i>
+                          </a>
+                      
+                          <!-- Discord Icon -->
+                          <a href="https://discord.com" target="_blank" style="margin: 0 10px; color: #7289DA;" aria-label="Discord">
+                            <i style="font-size: 25px" class="fa-brands fa-discord"></i>
+                          </a>
+                      
+                          <!-- GitHub Icon -->
+                          <a href="https://github.com" target="_blank" style="margin: 0 10px; color: #333;" aria-label="GitHub">
+                            <i style="font-size: 25px" class="fa-brands fa-github"></i>
+                          </a>
+                        </div>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+      <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center">
+        <div class="row">
+          <div class="col-lg-12">
+            <div
+              class="copyright d-sm-flex justify-content-center"
+              style="
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                width: 100%;
+                height: 100%;
+              "
+            >
+              <div class="copyright-content" style="text-align: center">
+                <p class="text" style="text-align: center">
+                  © <span id="copyright-year"></span> FinVeda. All rights
+                  reserved<br />
+                  Made with ♥ in India
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="particles-2"></div>
+  </footer>
+  <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
+
+  
+  <script src="./assets/js/subscribe.js"></script>
+  <script src="../assets/js/vendor/jquery-1.12.4.min.js"></script>
+  <script src="../assets/js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="../assets/js/popper.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/plugins.js"></script>
+  <script src="../assets/js/slick.min.js"></script>
+  <script src="../assets/js/ajax-contact.js"></script>
+  <script src="../assets/js/waypoints.min.js"></script>
+  <script src="../assets/js/jquery.counterup.min.js"></script>
+  <script src="../assets/js/jquery.magnific-popup.min.js"></script>
+  <script src="../assets/js/jquery.easing.min.js"></script>
+  <script src="../assets/js/scrolling-nav.js"></script>
+  <script src="../assets/js/wow.min.js"></script>
+  <script src="../assets/js/particles.min.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/popup.js"></script>
+  <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+  <script src="https://mediafiles.botpress.cloud/5e160793-5606-4412-ba4c-337e416f14fe/webchat/config.js" defer></script>
+      <script defer src="./assets/js/arthsathi-style.js"></script>
+  <script src="./assets/js/botpress.js"></script>
+  <script>
+    // Get the modals
+    var loginModal = document.getElementById('myModal');
+    var registerModal = document.getElementById('registerModal');
+
+    // Get the button that opens the login modal
+    var loginBtn = document.getElementById('loginBtn');
+
+    // Get the links that open the register and login modals
+    var registerLink = document.getElementById('registerLink');
+    var loginLink = document.getElementById('loginLink');
+
+    // Get the <span> elements that close the modals
+    var closeBtns = document.getElementsByClassName('close');
+
+    //show and hide icon button
+    document.addEventListener('DOMContentLoaded', () => {
+      const togglePasswordButtons = document.querySelectorAll('.toggle-password-btn');
+
+      togglePasswordButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const passwordInput = button.previousElementSibling;
+          if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            button.innerHTML = `<i class="fa-solid fa-eye-slash"></i>`
+          } else {
+            passwordInput.type = 'password';
+            button.innerHTML = `<i class="fa-solid fa-eye"></i>`
+          }
+        });
+      });
+    });
+
+
+    // When the user clicks the register link, open the register modal
+    registerLink.onclick = function (event) {
+      event.preventDefault();
+      loginModal.style.display = 'none';
+      registerModal.style.display = 'block';
+    }
+
+    // When the user clicks the login link, open the login modal
+    loginLink.onclick = function (event) {
+      event.preventDefault();
+      registerModal.style.display = 'none';
+      loginModal.style.display = 'block';
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    for (var i = 0; i < closeBtns.length; i++) {
+      closeBtns[i].onclick = function () {
+        loginModal.style.display = 'none';
+        registerModal.style.display = 'none';
+      }
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      if (event.target == loginModal) {
+        loginModal.style.display = 'none';
+      }
+      if (event.target == registerModal) {
+        registerModal.style.display = 'none';
+      }
+    }
+    function openModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "block";
+    document.title = "Login/Register - FinVeda";  // Update the title when modal is opened
+  }
+
+  function closeModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
+    document.title = "FinVeda";  // Revert the title back when modal is closed
+  }
+
+  window.onclick = function (event) {
+    var modal = document.getElementById("myModal");
+    if (event.target == modal) {
+      closeModal(); // Call closeModal function
+    }
+  };
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const registerModal = document.getElementById("registerModal");
+    const loginModal = document.getElementById("myModal");
+    const registerLink = document.getElementById("registerLink");
+    const loginLink = document.getElementById("loginLink");
+
+    // Event listener for the register link
+    registerLink.addEventListener("click", function (event) {
+      event.preventDefault();
+      loginModal.style.display = "none";
+      registerModal.style.display = "block";
+      document.title = "Login/Register - FinVeda";  // Update title when registering
+    });
+
+    // Event listener for the login link
+    loginLink.addEventListener("click", function (event) {
+      event.preventDefault();
+      registerModal.style.display = "none";
+      loginModal.style.display = "block";
+      document.title = "Login/Register - FinVeda";  // Update title when logging in
+    });
+
+    // Close button event listeners for modals
+    registerModal.querySelector(".close").addEventListener("click", closeModal);
+    loginModal.querySelector(".close").addEventListener("click", closeModal);
+  });
+  </script>
+  <script src="./smoothScroll.js"></script>
+</body>
+</html> 
+
