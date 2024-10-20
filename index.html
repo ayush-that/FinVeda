@@ -37,39 +37,23 @@
       });
     })();
   </script>
-  <script>
+
+  
 
 
-  </script>
-  <style>
-    .scroll-btn {
-    position: fixed; 
-    top: 150px; 
-    right: 50px; 
-    background-color: #635adc; 
-    color: black; 
-    border: none; 
-    border-radius: 50%; 
-    width: 45px; 
-    height: 45px; 
-    font-size: 24px; 
-    cursor: pointer; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s; 
-    display: flex;
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-}
+
+
+<style>
+
 .scrlUp{
   position: fixed;
   background-color: #635adc;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  top: 84.89%;
-  right: 40px;
-  bottom: 900px;
-  width:50px; 
-  height: 50px; 
+  top: 91.89%;
+  right: 4px;
+  bottom: 800px;
+  width:40px; 
+  height: 40px; 
   display: flex;
   z-index: 1000;
   justify-content: center;
@@ -77,7 +61,8 @@
   border-radius: 50%;
   cursor: pointer;
   font-size: 30px;
-  transition: background-color 0.3s; 
+  transition: background-color 0.3s;
+  color: white;
 }
 
 .scrlUp:hover{
@@ -88,13 +73,10 @@
 }
 
 
-  </style>
+</style>
   
 <body>
   <div id="progressBar"></div>
-  <button id="scrollBtn" class="scroll-btn" onclick="scrollToNextSection()">
-    ↓
-  </button>
   <script>
     window.onscroll = function () {
       var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -155,11 +137,17 @@
               <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                 <a href="./index.html">
                 <div class="icon1">
+
                   <img src="./assets/images/icon.png" alt="icon.png">
                 </div>
                 </a>
                 
                 <ul id="nav" class="navbar-nav" style="margin:auto">
+
+
+                  <img src="assets/images/icon.webp" alt="icon.webp">
+                </div> 
+                <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
 
                   <li class="nav-item">
                     <a class="page-scroll" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
@@ -390,6 +378,7 @@ if (body.classList.contains('dark-mode')) {
               window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
             });
           
+
             document.getElementById('twitter-signup').addEventListener('click', function() {
               window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
             });
@@ -415,6 +404,21 @@ loginCloseButton.addEventListener("click", function() {
   var modal = document.getElementById("myModal");
   modal.style.display = "none";
 });
+=======
+          body.dark-mode {
+    background-color: #fefefe;
+    color: #f1f1f1; /* Change text color to light for dark mode */
+}
+
+.dark-mode .para {
+    color: white; /* Change text color to white when dark mode class is applied */
+}
+
+.toggle-button.dark {
+    background-color: #f1f1f1; /* Button background in dark mode */
+    color: #333; /* Button text color in dark mode */
+}
+
 
 var registerCloseButton = document.querySelector("#registerModal .close");
 registerCloseButton.addEventListener("click", function() {
@@ -495,7 +499,12 @@ registerCloseButton.addEventListener("click", function() {
           <div class="col-lg-12">
             <div class="header-hero-image text-center wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s" style="visibility: visible; animation-duration: 1.3s; animation-delay: 1.4s;">
               <div class="anim" data-tilt="">
+
                 <img src="./assets/images/header-hero.png" alt="hero" style="animation: float 1.5s ease-in-out infinite;" data-tilt="">
+
+                <img src="assets/images/header-hero.webp" alt="hero" style="animation: float 1.5s ease-in-out infinite;"
+                  data-tilt="" />
+
               </div>
             </div>
           </div>
@@ -575,19 +584,19 @@ registerCloseButton.addEventListener("click", function() {
   </script>
   <style>
     .scroll-btn {
-    position: fixed; 
-    top: 150px; 
-    right: 50px; 
-    background-color: #635adc; 
-    color: white; 
-    border: none; 
-    border-radius: 50%; 
-    width: 45px; 
-    height: 45px; 
-    font-size: 24px; 
-    cursor: pointer; 
+   position: fixed;
+    top: 115px;
+    right: 4px;
+    background-color: #635adc;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    cursor: pointer;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s; 
+    transition: background-color 0.3s;
     display: flex;
     z-index: 1000;
     justify-content: center;
@@ -803,7 +812,9 @@ scrollToTopBtn.onclick = function() {
                 Personalized AI Guru <span>to Teach You Finance</span>
               </h3>
             </div>
-            <p class="text">
+            
+
+            <p class="text para">
               FinVeda's Personalized AI Assistant Arth Sathi revolutionizes financial learning. Tailored to your needs,
               it simplifies complex finance concepts, providing a dynamic learning experience.
             </p>
@@ -853,7 +864,9 @@ scrollToTopBtn.onclick = function() {
                 Finance Blogs <span> that Don't Suck</span>
               </h3>
             </div>
-            <p class="text">
+            
+
+            <p class="text para">
               FinVeda blogs redefine the conventional narrative and are crafted to resonate with readers of all
               financial backgrounds, making complex concepts digestible.
             </p>
@@ -901,7 +914,9 @@ scrollToTopBtn.onclick = function() {
                 <span>Market Monitoring</span> Real-time
               </h3>
             </div>
-            <p class="text">
+            
+
+            <p class="text para">
               FinVeda fetches live market figures, ensuring users access the most up-to-date information instantly. Be
               it stock prices, currency rates, or commodity values,
             </p>
@@ -950,7 +965,7 @@ scrollToTopBtn.onclick = function() {
             <img class="dots" src="assets/images/dots.svg" alt="dots" />
             <div class="video-wrapper">
               <div class="video-image">
-                <img src="assets/images/video.png" alt="video" />
+                <img src="assets/images/video.webp" alt="video" />
               </div>
               <div class="video-icon">
                 <a href="https://www.youtube.com/watch?v=fUtDU0U7Zqw" class="video-popup"
@@ -1026,7 +1041,7 @@ scrollToTopBtn.onclick = function() {
         <div class="col-lg-4 col-md-7 col-sm-8">
           <div class="single-team text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
             <div class="team-image">
-              <img class="images-team" src="assets/images/img-1.jpg" alt="Team" />
+              <img class="images-team" src="assets/images/img-1.webp" alt="Team" />
               <div class="social-pill">
                 <div class="left">
                   <a href="https://twitter.com/manyasingh297" title="X profile of Manya Singh"><i
@@ -1041,14 +1056,16 @@ scrollToTopBtn.onclick = function() {
             </div>
             <div class="team-content">
               <h3 class="holder-name"><a href="#">Manya Singh</a></h3>
-              <p class="text">Developer</p>
+              
+
+              <p class="text para">Developer</p>
             </div>
           </div>
         </div>
         <div class="col-lg-4 col-md-7 col-sm-8">
           <div class="single-team text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
             <div class="team-image">
-              <img class="images-team" src="assets/images/img-2.jpg" alt="Team" />
+              <img class="images-team" src="assets/images/img-2.webp" alt="Team" />
               <div class="social-pill">
                 <div class="left">
                   <a href="https://twitter.com/ayushdotpro" title="X profile of Ayush Singh"><i
@@ -1075,7 +1092,9 @@ scrollToTopBtn.onclick = function() {
             </div>
             <div class="team-content">
               <h3 class="holder-name"><a href="#">Ayush Singh</a></h3>
-              <p class="text">Developer</p>
+              
+
+              <p class="text para">Developer</p>
             </div>
           </div>
         </div>
@@ -1121,7 +1140,7 @@ scrollToTopBtn.onclick = function() {
             <div class="testimonial-author d-flex align-items-center">
               <div class="author-image">
                 <img class="shape" src="assets/images/textimonial-shape.svg" alt="shape" />
-                <img class="author" src="assets/images/emptyprofile.png" alt="author" />
+                <img class="author" src="assets/images/emptyprofile.webp" alt="author" />
               </div>
               <div class="author-content media-body">
                 <h6 class="holder-name">Amit Patel</h6>
@@ -1156,7 +1175,7 @@ scrollToTopBtn.onclick = function() {
             <div class="testimonial-author d-flex align-items-center">
               <div class="author-image">
                 <img class="shape" src="assets/images/textimonial-shape.svg" alt="shape" />
-                <img class="author" src="assets/images/emptyprofile.png" alt="author" />
+                <img class="author" src="assets/images/emptyprofile.webp" alt="author" />
               </div>
               <div class="author-content media-body">
                 <h6 class="holder-name">Sachin Sharma</h6>
@@ -1190,7 +1209,7 @@ scrollToTopBtn.onclick = function() {
             <div class="testimonial-author d-flex align-items-center">
               <div class="author-image">
                 <img class="shape" src="assets/images/textimonial-shape.svg" alt="shape" />
-                <img class="author" src="assets/images/emptyprofile.png" alt="author" />
+                <img class="author" src="assets/images/emptyprofile.webp" alt="author" />
               </div>
               <div class="author-content media-body">
                 <h6 class="holder-name">Srushti Rustogi</h6>
@@ -1225,7 +1244,7 @@ scrollToTopBtn.onclick = function() {
             <div class="testimonial-author d-flex align-items-center">
               <div class="author-image">
                 <img class="shape" src="assets/images/textimonial-shape.svg" alt="shape" />
-                <img class="author" src="assets/images/emptyprofile.png" alt="author" />
+                <img class="author" src="assets/images/emptyprofile.webp" alt="author" />
               </div>
               <div class="author-content media-body">
                 <h6 class="holder-name">Priyanka Khatri</h6>
@@ -1274,7 +1293,7 @@ scrollToTopBtn.onclick = function() {
                 <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                   <div class="blog-image">
                     <a href="./blogs/how-to-deal-with-unknown-risks-in-life-and-investing.html">
-                      <img src="assets/images/blog-1.jpg" alt="blog" />
+                      <img src="assets/images/blog-1.webp" alt="blog" />
                     </a>
                   </div>
                   <div class="blog-content">
@@ -1293,7 +1312,7 @@ scrollToTopBtn.onclick = function() {
                 <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                   <div class="blog-image">
                     <a href="./blogs/how-to-10x-your-generational-wealth.html">
-                      <img src="./assets/images/blog-2.jpg" alt="blog" />
+                      <img src="./assets/images/blog-2.webp" alt="blog" />
                     </a>
                   </div>
                   <div class="blog-content">
@@ -1308,7 +1327,7 @@ scrollToTopBtn.onclick = function() {
                 <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                   <div class="blog-image">
                     <a href="./blogs/invest-minimal.html">
-                      <img src="./assets/images/women.jpg" alt="blog" />
+                      <img src="./assets/images/women.webp" alt="blog" />
                     </a>
                   </div>
                   <div class="blog-content">
@@ -1327,7 +1346,7 @@ scrollToTopBtn.onclick = function() {
                 <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                   <div class="blog-image">
                     <a href="./blogs/Pocketmoney.html">
-                      <img src="./assets/images/pocket.jpg" alt="blog" />
+                      <img src="./assets/images/pocket.webp" alt="blog" />
                     </a>
                   </div>
                   <div class="blog-content">
@@ -1344,7 +1363,7 @@ scrollToTopBtn.onclick = function() {
                 <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                   <div class="blog-image">
                     <a href="./blogs/senior.html">
-                      <img src="./assets/images/senior.jpg" alt="blog" />
+                      <img src="./assets/images/senior.webp" alt="blog" />
                     </a>
                   </div>
                   <div class="blog-content">
@@ -1361,7 +1380,7 @@ scrollToTopBtn.onclick = function() {
                 <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                   <div class="blog-image">
                     <a href="./blogs/why-investing-in-stocks-is-better-than-fixed-deposit.html">
-                      <img src="./assets/images/blog-3.jpg" alt="blog" />
+                      <img src="./assets/images/blog-3.webp" alt="blog" />
                     </a>
                   </div>
                   <div class="blog-content">
@@ -1378,7 +1397,7 @@ scrollToTopBtn.onclick = function() {
                 <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                   <div class="blog-image">
                     <a href="/blogs/starup.html">
-                      <img src="assets/images/staryp.jpeg" alt="blog" />
+                      <img src="assets/images/staryp.webp" alt="blog" />
                     </a>
                   </div>
                   <div class="blog-content">
@@ -1395,7 +1414,7 @@ scrollToTopBtn.onclick = function() {
                 <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                   <div class="blog-image">
                     <a href="./blogs/how-fintech-is-revolutionizing-small-business-lending.html">
-                      <img src="./assets/images/fintech.jpeg" alt="blog" />
+                      <img src="./assets/images/fintech.webp" alt="blog" />
                     </a>
                   </div>
                   <div class="blog-content">
@@ -1412,7 +1431,7 @@ scrollToTopBtn.onclick = function() {
                 <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                   <div class="blog-image">
                     <a href="./blogs/economic-trends-and-analysis.html">
-                      <img src="./assets/images/economic-trend-analysis.jpg" alt="blog" />
+                      <img src="./assets/images/economic-trend-analysis.webp" alt="blog" />
                     </a>
                   </div>
                   <div class="blog-content">
@@ -1429,7 +1448,7 @@ scrollToTopBtn.onclick = function() {
                 <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                   <div class="blog-image">
                     <a href="./blogs/empowering-you-with-economic-knowledge-for-smarter-decisions.html">
-                      <img src="./assets/images/Empowering.png" alt="blog" />
+                      <img src="./assets/images/Empowering.webp" alt="blog" />
                     </a>
                   </div>
                   <div class="blog-content">
@@ -1446,7 +1465,7 @@ scrollToTopBtn.onclick = function() {
                 <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                   <div class="blog-image">
                     <a href="./blogs/Mutual-Funds-101-A-Beginners-Guide-to-Smart-Investing.html">
-                      <img src="./assets/images/mutual-funds-blog.jpg" alt="blog" />
+                      <img src="./assets/images/mutual-funds-blog.webp" alt="blog" />
                     </a>
                   </div>
                   <div class="blog-content">
@@ -1463,7 +1482,7 @@ scrollToTopBtn.onclick = function() {
                 <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                   <div class="blog-image">
                     <a href="./blogs/saving-for-future.html">
-                      <img src="./assets/images/saving.jpeg" alt="blog" />
+                      <img src="./assets/images/saving.webp" alt="blog" />
                     </a>
                   </div>
                   <div class="blog-content">
@@ -1480,7 +1499,7 @@ scrollToTopBtn.onclick = function() {
                 <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                   <div class="blog-image">
                     <a href="./blogs/real-estate-economics.html">
-                      <img src="./assets/images/real-estate.jpeg" alt="blog" />
+                      <img src="./assets/images/real-estate.webp" alt="blog" />
                     </a>
                   </div>
                   <div class="blog-content">
@@ -1497,7 +1516,7 @@ scrollToTopBtn.onclick = function() {
                 <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                   <div class="blog-image">
                     <a href="./blogs/Types-of-Stock-Investments-A-Quick-Guide.html">
-                      <img src="./assets/images/types-of-stock-investment-a-quick-guide-blog.jpg" alt="blog" />
+                      <img src="./assets/images/types-of-stock-investment-a-quick-guide-blog.webp" alt="blog" />
                     </a>
                   </div>
                   <div class="blog-content">
