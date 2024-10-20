@@ -350,37 +350,76 @@
                 <span class="toggler-icon"></span>
                 <span class="toggler-icon"></span>
               </button> -->
-              <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-                <ul id="nav" class="navbar-nav">
+      <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
+        <a href="./index.html">
+              <div class="icon1">
+                  <img src="assets/images/icon.webp" alt="icon.png">
+                </div>
+                </a>
+              
+                <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
                   <li class="nav-item">
-                    <a class="page-scroll" href="./index.html">Home 🏡</a>
+                    <a class="page-scroll " href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
                   </li>
-                  <li class="nav-item active">
-                    <a class="page-scroll" href="./about.html" id="active-page">About Us 📖</a>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
                   </li>    
                   <li class="nav-item">
-                    <a class="page-scroll" href="./trends.html">Trends 📈</a>
+                    <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
+                    <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="./blog.html">Blogs 📰</a>
+                    <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="./quiz.html" >Quiz 🤔</a>
+                    <a class="page-scroll" href="./quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll active-link" href="./careers.html">Career 👔</a>
+                    <a class="page-scroll active-link" href="./careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="./contact.html">Contact📞</a>
+                    <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
                   </li>
+
+                  <li class="nav-item active">
+                    <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
+                  </li> 
+ 
                   <li class="nav-item no-underline">
-                    <a class="main-btn navbar-btn" style="padding: 2px 20px; transition: 0.4s all ease;" data-scroll-nav="0" href="#" onclick="openModal()">Login/Register 💻</a>
+                    <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
                   </li>
                 </ul>
+                <button id="theme-toggle" class="theme-toggle">
+                  🌙
+                </button>
               </div>
+              <script>
+                const toggleButton = document.getElementById('theme-toggle');
+                const body = document.body;
+                const currentTheme = localStorage.getItem('theme');
+
+if (currentTheme === 'dark') {
+body.classList.add('dark-mode');
+toggleButton.classList.add('dark');
+toggleButton.textContent = '🌞';
+}
+
+toggleButton.addEventListener('click', function () {
+body.classList.toggle('dark-mode');
+toggleButton.classList.toggle('dark');
+
+// Update button icon based on mode
+if (body.classList.contains('dark-mode')) {
+  toggleButton.textContent = '🌞';  // Light mode icon
+  localStorage.setItem('theme', 'dark');
+} else {
+  toggleButton.textContent = '🌙';  // Dark mode icon
+  localStorage.setItem('theme', 'light');
+}
+});
+            </script>
               </div>
               <div class="">
                 <!-- Login Modal -->
@@ -568,7 +607,9 @@
               <a class="page-scroll" href="./blog.html">Blogs 📰</a>
               <a class="page-scroll active-link" href="./quiz.html">Quiz 🤔</a>
               <a class="page-scroll main-btn" href="#" onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
-              <div class="mobile-menu__trigger"><span></span></div>
+              <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
+                <span></span>
+              </div>
             </nav>
 
                 
@@ -607,7 +648,7 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="header-hero-image text-center wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">
-              <img src="../assets/images/header-hero.png" alt="hero" />
+              <img src="../assets/images/header-hero.webp" alt="hero" />
             </div>
           </div>
         </div>
@@ -770,12 +811,17 @@
             transition: background 0.3s;
         }
 
+        li {
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            display: flex;
+          }
+
         .books-list li:hover {
             background: #d4d4d4;
         }
 
         .emoji {
-            margin-right: 10px; /* Space between emoji and text */
             font-size: 1.5em; /* Adjust the size of the emoji */
         }
     body {
@@ -822,7 +868,7 @@
             content: '';
             position: absolute;
             left: 50%;
-            top: -10px;
+            top: 89px;
             transform: translateX(-50%);
             border: 10px solid transparent;
             border-bottom-color: #007bff;
@@ -1348,10 +1394,10 @@
   };
 
   document.addEventListener("DOMContentLoaded", function () {
-    const registerModal = document.getElementById("registerModal");
-    const loginModal = document.getElementById("myModal");
-    const registerLink = document.getElementById("registerLink");
-    const loginLink = document.getElementById("loginLink");
+    const registerModal =  document.getElementById("registerModal");
+    const loginModal =  document.getElementById("myModal");
+    const registerLink =  document.getElementById("registerLink");
+    const loginLink =  document.getElementById("loginLink");
 
     // Event listener for the register link
     registerLink.addEventListener("click", function (event) {
@@ -1364,9 +1410,9 @@
     // Event listener for the login link
     loginLink.addEventListener("click", function (event) {
       event.preventDefault();
-      registerModal.style.display = "none";
-      loginModal.style.display = "block";
-      document.title = "Login/Register - FinVeda";  // Update title when logging in
+      registerModal.style.display =  "none";
+      loginModal.style.display =  "block";
+      document.title =  "Login/Register - FinVeda";  // Update title when logging in
     });
 
     // Close button event listeners for modals
@@ -1383,6 +1429,11 @@
    
 </script>
 <script src="./tools/smoothScroll.js"></script>
+ 
+<div class="gtranslate_wrapper"></div>
+<script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+
 
 </body>
 

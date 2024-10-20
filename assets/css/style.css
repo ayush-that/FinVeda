@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,700|Lato:300,400,700&display=swap");
 
+:root {
+  --bg-color-light: #ffffff;
+  --text-color-light: #000000;
+  --bg-color-dark: #121212;
+  --text-color-dark: #ffffff;
+}
+
 html{
   overflow-x: hidden;
 }
@@ -9,9 +16,34 @@ body {
   font-family:  "Poppins", sans-serif;
   font-weight:  normal;
   font-style:  normal;
-  color:  #6a6972;
+  /* color:  #6a6972; */
   overflow-x:  hidden;
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+  transition: background-color 0.3s, color 0.3s;
 
+}
+.theme-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: #444;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+body.dark-mode {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+.theme-toggle.dark {
+  background-color: #eceae0;
+  color: #000;
 }
  
 .btn-text{
@@ -32,7 +64,18 @@ body {
   border-radius:  4px;
 
 }
+
+
  
+
+
+.icon1 img{
+
+  height: 6vh;
+  background-color: transparent;
+  width: 9vw;
+
+}
 
 .toggle-password-btn {
 
@@ -683,12 +726,16 @@ p {
 .navbar-collapse{
   display: flex;
   margin-right: -5.6rem;
-  justify-content: center;
-  background-color: white;
+  justify-content: center;  
+  
+  background-color: black;
+
+
   border-radius: 10px;
-  padding: 17px 35px;
-  box-shadow: 0 7px 8px rgba(0, 0, 0, 0.2);
+  padding: 15px 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 100vw;
+  height: 10vh;
   position: relative;
   left: 0;
   transition: background-color 0.3s ease-in-out;
@@ -697,11 +744,12 @@ p {
   -ms-transition: background-color 0.3s ease-in-out;
   -o-transition: background-color 0.3s ease-in-out;
 }
-.navbar-nav {
-  background-color: white;
+.navbar-nav {main
+ background-color: saddlebrown;
   list-style-type: none;
-  margin: 0 2rem;
+  margin: 0 1rem;
   padding: 0;
+  overflow: hidden;
 }
 
 .nav-item {
@@ -1297,6 +1345,7 @@ p {
 
 @media (max-width: 767px) {
   .single-services {
+    margin: 0 auto;
     padding: 20px 20px 30px;
   }
 }
@@ -1969,12 +2018,11 @@ p {
 .single-blog {
   transition: transform 0.5s ease;
   height: 27rem;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  box-shadow: 0 4px 8px rgb(51, 55, 55);
   padding: 20px;
   border-radius: 10px;
-  background-color: #A9C9FF;
-  background-image: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);
-  }
+  background: linear-gradient(135deg,rgba(0,191,255,0.9),rgba(255,105,180,0.9));
+}
 .blog-content {
   text-align: left;
   margin-left: auto;
@@ -1996,12 +2044,10 @@ p {
 .single-blog:hover {
   transform: scale(0.95);
   cursor: pointer;
-  background-color: #8EC5FC;
-  background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
-  }
+  background: linear-gradient(170deg,rgba(0,191,255,0.9),rgba(255,105,180,0.9));
+}
 .blog-content .reviewtext{
-  color: #091057;
-  font-size: 1.2rem;
+  color: black;
 }
 
 .reviewtext {
@@ -2041,7 +2087,7 @@ p {
   transform-origin: left;
 }
 .single-blog .blog-content .more:hover{
-  background: #091057;
+  background: rgba(0,0,0,0.6);
   color: white;
   padding: 10px;
   border-radius: 5px;
@@ -2838,7 +2884,6 @@ text-align: center;
 
 .form-input, .form-select, .form-textarea {
   width: 100%;
-  min-height: 30px;
   padding: 12px;
   border-radius: 8px;
   border: 1px solid #aaaaaa;
