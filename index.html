@@ -123,22 +123,34 @@
     <div class="circle"></div>
   </div>
   <header class="header-area">
+    <!-- <div class="navbar-area"> -->
+      <!-- <div class="container"> -->
         <div class="row">
-          <div style="display: flex; justify-content: center;" class="">
-            <nav class="navbar navbar-expand-lg " style="display: flex;">
+          <!-- <div class="col-lg-12"> -->
+            <nav class="navbar navbar-expand-lg">
               <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="toggler-icon"></span>
                 <span class="toggler-icon"></span>
                 <span class="toggler-icon"></span>
               </button> -->
-              <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
+              <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                <a href="./index.html">
                 <div class="icon1">
+
+                  <img src="./assets/images/icon.png" alt="icon.png">
+                </div>
+                </a>
+                
+                <ul id="nav" class="navbar-nav" style="margin:auto">
+
+
                   <img src="assets/images/icon.webp" alt="icon.webp">
                 </div> 
                 <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
+
                   <li class="nav-item">
-                    <a class="page-scroll active-link" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
+                    <a class="page-scroll" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
                   </li>
                   <li class="nav-item">
                     <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
@@ -159,20 +171,18 @@
                     <a class="page-scroll" href="./careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
+                    <a class="page-scroll active-link" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
                   </li>
                   <li class="nav-item active">
                     <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
-                  </li>
-                  <li class="nav-item no-underline">
-                    <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
+    </li><li class="nav-item no-underline">
+                    <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html">Login/Register 💻</a>
                   </li>
                 </ul>
                 <button id="theme-toggle" class="theme-toggle">
                   🌙
                 </button>
               </div>
-
               <script>
                 const toggleButton = document.getElementById('theme-toggle');
                 const body = document.body;
@@ -198,41 +208,203 @@ if (body.classList.contains('dark-mode')) {
 }
 });
             </script>
-            <style>
+              <div class="">
+                <!-- Login Modal -->
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close" style="display: flex; justify-content: right;">×</span>
+                    <div class="mt-3">
+                      <h3 class="join"><i class="fa-solid fa-right-to-bracket"></i>  Login to join us....</h3>
+                      <form class="px-3 py-4" id="loginForm">
+                        <div class="form-group">
+                          <label class="d-flex">Username</label>
+                          <input type="text" placeholder="Username" class="form-control" required="">
+                        </div>
+                        <div class="form-group">
+                          <label class="d-flex">Password</label>
+                          <input type="password" placeholder="Password" class="form-control" required="">
+                          <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
+                        </div>
+                        <div class="form-check d-flex">
+                          <input type="checkbox" class="form-check-input me-1" style="margin-top: 0;">
+                          <label class="form-check-label" style="margin-bottom: 0;">Remember me</label>
+                          <a href="#" id="forgot-password" style="margin-left: 120px;">Forget Password?</a>
+                        </div>
+                        <div style="height: 20px;"></div>
+                        <button class="main-btn w-100 mb-3" onclick="submitForm('loginForm')">Sign in</button>
+                        <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
+                        <div class="or-sign-in-with text-center">
+                          <p>Or sign in with</p>
+                        </div>
+                        <div class="social-icons mt-3">
+                          <ul class="list-inline">
+                            <li><a href="#" class="google" id="google-login"><i class="fa-brands fa-google"></i></a></li>
+                            <li><a href="#" class="facebook" id="facebook-login"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="#" class="twitter" id="twitter-login"><i class="fa-brands fa-x-twitter"></i></a></li>
+                          </ul>
+                        </div>
+                      </form></div>
+                    </div>
+                  </div>
+                
+                <script>
+                  // Add event listeners to the social media icons
+                  document.getElementById('google-login').addEventListener('click', function() {
+                    window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
+                  });
+                
+                  document.getElementById('facebook-login').addEventListener('click', function() {
+                    window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
+                  });
+                
+                  document.getElementById('twitter-login').addEventListener('click', function() {
+                    window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
+                  });
+                </script>
+  
+          <!-- Register Modal -->
+          <div id="registerModal" class="modal">
+            <div class="modal-content">
+              <span class="close" style="display: flex; justify-content: right;">×</span>
+              <div class="mt-3">
+                <h3 class="join"><i class="fa-solid fa-user"></i>  Register to join us....</h3>
+                
+                  <div class="form-group">
+                      <label class="d-flex">Email</label>
+                      <input type="email" placeholder="Email" class="form-control" required="">
+                  </div>
+                  <div class="form-group">
+                      <label class="d-flex">Username</label>
+                      <input type="text" placeholder="Username" class="form-control" required="">
+                  </div>
+                  <div class="form-group">
+                      <label class="d-flex">Password</label>
+                      <input type="password" placeholder="Password" class="form-control" id="register-password" required="" oninput="checkPasswordStrength()">
+                      <button type="button" class="toggle-password-btn" onclick="togglePasswordVisibility('register-password')">
+                          <i class="fa-solid fa-eye"></i>
+                          <i class="fa-solid fa-eye-slash" style="display: none;"></i>
+                      </button>
+                  </div>
+                  <div id="password-meter" style="display: none; margin-top: 5px;">
+                      <div id="meter" style="height: 10px; background-color: #ccc; border-radius: 5px; transition: width 0.3s;"></div>
+                      <div id="strength-text" style="margin-top: 5px; font-weight: bold;"></div>
+                  </div>
+                  
+                  
+                  <!-- Import zxcvbn library -->
+                  <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+                  <script>
+                      function checkPasswordStrength() {
+                          const password = document.getElementById('register-password').value;
+                          const meter = document.getElementById('meter');
+                          const meterContainer = document.getElementById('password-meter');
+                          const strengthText = document.getElementById('strength-text');
+                  
+                          if (password) {
+                              meterContainer.style.display = 'block'; // Show the meter when typing
+                              const result = zxcvbn(password);
+                              const score = result.score; // Score ranges from 0 to 4
+                  
+                              // Set meter width and color based on score
+                              meter.style.width = (score + 1) * 20 + '%'; // Convert score to percentage
+                              meter.style.backgroundColor = getMeterColor(score);
+                              strengthText.innerText = getStrengthText(score); // Update strength text
+                          } else {
+                              meterContainer.style.display = 'none'; // Hide the meter if no password
+                              strengthText.innerText = ''; // Clear strength text
+                          }
+                      }
+                  
+                      function getMeterColor(score) {
+                          switch (score) {
+                              case 0: return 'red'; // Weak
+                              case 1: return 'orange'; // Fair
+                              case 2: return 'yellow'; // Good
+                              case 3: return 'blue'; // Strong
+                              case 4: return 'green'; // Very Strong
+                              default: return 'gray';
+                          }
+                      }
+                  
+                      function getStrengthText(score) {
+                          switch (score) {
+                              case 0: return 'Very Weak';
+                              case 1: return 'Weak';
+                              case 2: return 'Fair';
+                              case 3: return 'Strong';
+                              case 4: return 'Very Strong';
+                              default: return '';
+                          }
+                      }
+                  
+                      function togglePasswordVisibility(id) {
+                          const passwordInput = document.getElementById(id);
+                          const eyeIcon = passwordInput.nextElementSibling;
+                          if (passwordInput.type === 'password') {
+                              passwordInput.type = 'text';
+                              eyeIcon.children[0].style.display = 'none';
+                              eyeIcon.children[1].style.display = 'inline';
+                          } else {
+                              passwordInput.type = 'password';
+                              eyeIcon.children[0].style.display = 'inline';
+                              eyeIcon.children[1].style.display = 'none';
+                          }
+                      }
+                  </script>
+                  
+                <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('registerForm')">Register</button>
+                <p class="text-center">Already have an account? <a href="#" id="loginLink">Login</a></p>
+                <div class="or-sign-in-with text-center">
+                  <p>Or sign up with</p>
+                </div>
+                <div class="social-icons mt-3">
+                  <ul class="list-inline">
+                    <li><a href="#" class="google" id="google-signup"><i class="fa-brands fa-google"></i></a></li>
+                    <li><a href="#" class="facebook" id="facebook-signup"><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href="#" class="twitter" id="twitter-signup"><i class="fa-brands fa-twitter"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <script>
+            // Add event listeners to the social media icons
+            document.getElementById('google-signup').addEventListener('click', function() {
+              window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
+            });
+          
+            document.getElementById('facebook-signup').addEventListener('click', function() {
+              window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
+            });
+          
 
-              h3{
-                color: #fff;
-              }
-
-            .toggle-button {
-              padding: 0.5em 1em;
-              cursor: pointer;
-              border: none;
-              background-color: #0c0a0a;
-              color: #fff;
-              border-radius: 5px;
-              transition: background-color 0.3s;
-          }
-          
-          .toggle-button:hover {
-              background-color: #555;
-          }
-          
-          .content {
-              padding: 2em;
-              text-align: center;
-          }
-          
-          h1 {
-              font-size: 2.5rem;
-              color: whitesmoke;
-              margin-top:130px;
-          }
-          
-          p {
-              font-size: 1.2rem;
-          }
-          
+            document.getElementById('twitter-signup').addEventListener('click', function() {
+              window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
+            });
+                            // Add event listener to the "Register" button in the login modal
+    document.getElementById('registerLink').addEventListener('click', function() {
+      // Close the login modal
+      document.getElementById('myModal').style.display = 'none';
+      
+      // Open the registration modal
+      document.getElementById('registerModal').style.display = 'block';
+    });
+        // Add event listener to the "Login" button in the registration modal
+        document.getElementById('loginLink').addEventListener('click', function() {
+      // Close the registration modal
+      document.getElementById('registerModal').style.display = 'none';
+      
+      // Open the login modal
+      document.getElementById('myModal').style.display = 'block';
+    });
+    // Function to close the modal window
+var loginCloseButton = document.querySelector("#myModal .close");
+loginCloseButton.addEventListener("click", function() {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "none";
+});
+=======
           body.dark-mode {
     background-color: #fefefe;
     color: #f1f1f1; /* Change text color to light for dark mode */
@@ -247,17 +419,19 @@ if (body.classList.contains('dark-mode')) {
     color: #333; /* Button text color in dark mode */
 }
 
-.toggle-button.dark:hover {
-    background-color: #ddd; /* Button hover color in dark mode */
-}
-          </style>
-                
-              </nav>
+
+var registerCloseButton = document.querySelector("#registerModal .close");
+registerCloseButton.addEventListener("click", function() {
+  var modal = document.getElementById("registerModal");
+  modal.style.display = "none";
+});
+          </script>
+              </div>
+            </nav>
           
+            <link href="https://fonts.googleapis.com/css?family=Raleway&amp;display=swap" rel="stylesheet">
 
-            <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-
-            <nav class="mobile-menu ">
+            <nav class="mobile-menu  active">
               <a class="page-scroll active-link" href="./index.html">Home 🏡</a>
               <a class="page-scroll" href="./about.html">About Us 📖</a>
               <a class="page-scroll" href="./trends.html">Trends 📈</a>
@@ -266,43 +440,56 @@ if (body.classList.contains('dark-mode')) {
               <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
               <a class="page-scroll" href="./contact.html">Contact🤔</a>
               <li class="nav-item no-underline">
-                <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none; border: none;" href="#"
-                  onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
+                <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none; border: none;" href="#" onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
               </li>
-
-
-              <div class="mobile-menu__trigger"><span></span></div>
+              
+              <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
+                <span></span>
+              </div>
             </nav>
-
-
           </div>
-        </div>
-      </div>
-    </div>
+        
+      
+    
 
-
-
+    
     <link href="./navbar.css" rel="stylesheet">
     <script type="text/javascript" src="./navbar.js"></script>
 
-    </div>
-    <div id="home" class="header-hero bg_cover" style="background-image: url(assets/images/banner-bg.svg);">
+    
+<!-- 
+<!--             
+            <nav class="mobile-menu ">
+              <a class="page-scroll" href="./index.html">Home 🏡</a>
+              <a class="page-scroll" href="./about.html">About Us 📖</a>
+              <a class="page-scroll" href="./trends.html">Trends 📈</a>
+              <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
+              <a class="page-scroll" href="./blog.html">Blogs 📰</a>
+              <a class="page-scroll active-link" href="./quiz.html">Quiz 🤔</a>
+              <a class="page-scroll main-btn" href="#" onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
+              <div class="mobile-menu__trigger"><span></span></div>
+            </nav>
+
+                
+              <link href="./navbar.css" rel="stylesheet">
+              <script type="text/javascript" src="./navbar.js"></script> --> --&gt;
+    <div id="home" class="header-hero bg_cover" style="background-image: url(./assets/images/banner-bg.svg)">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8">
             <div class="header-hero-content text-center">
-              <h3 class="header-sub-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
+              <h3 class="header-sub-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s" style="visibility: visible; animation-duration: 1.3s; animation-delay: 0.2s;">
                 Say 👋🏼 to FinVeda
               </h3>
-              <h2 class="header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">
+              <h2 class="header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s" style="visibility: visible; animation-duration: 1.3s; animation-delay: 0.5s;">
                 your savvy financial companion
               </h2>
-              <p class="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">
-                Wanna learn how to grow your money to become rich? We have made becoming a stock market Guru easy with
-                our AI powered finance advisor - <b>Arth Sathi 🤵🏻</b>
+              <p class="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s" style="visibility: visible; animation-duration: 1.3s; animation-delay: 0.8s;">
+                Wanna learn how to grow your money to become rich? We have
+                made becoming a stock market Guru easy with our AI
+                powered finance advisor - <b>Arth Sathi 🤵🏻</b>
               </p>
-              <a href="#" class="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s"
-                onclick="window.botpressWebChat.sendEvent({ type: 'show' }); return false;">
+              <a href="#" class="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s" onclick="window.botpressWebChat.sendEvent({ type: 'show' }); return false;" style="visibility: visible; animation-duration: 1.3s; animation-delay: 1.1s;">
                 Chat with ArthaSathi 💬
               </a>
             </div>
@@ -310,18 +497,20 @@ if (body.classList.contains('dark-mode')) {
         </div>
         <div class="row">
           <div class="col-lg-12">
-            <div class="header-hero-image text-center wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">
+            <div class="header-hero-image text-center wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s" style="visibility: visible; animation-duration: 1.3s; animation-delay: 1.4s;">
               <div class="anim" data-tilt="">
+
+                <img src="./assets/images/header-hero.png" alt="hero" style="animation: float 1.5s ease-in-out infinite;" data-tilt="">
+
                 <img src="assets/images/header-hero.webp" alt="hero" style="animation: float 1.5s ease-in-out infinite;"
                   data-tilt="" />
-              </div>
 
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div id="particles-1" class="particles"></div>
+      <div id="particles-1" class="particles"><canvas class="particles-js-canvas-el" width="1998" height="1012" style="width: 100%; height: 100%;"></canvas></div>
     </div>
   </header>
 
