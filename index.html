@@ -419,118 +419,664 @@ if (body.classList.contains('dark-mode')) {
 }
 
 /* styling of footer - css */
-.footer {
-    background: linear-gradient(to right, #346479, #0f2027);
+/* Footer Separator */
+.footer-separator {
+    border-top: 2px solid #ccc;
+    width: 100%;
+    margin-bottom: 40px;
+    box-shadow: -10px -10px 20px rgba(0, 0, 0, 0.1), 10px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Area */
+#footer {
+    background-color: #0f2027;
     color: white;
-    padding: 40px 0 20px 0; /* Added some top padding */
+    padding: 50px 0;
+}
+
+/* Subscribe Area */
+.subscribe-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.subscribe-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+}
+
+.subscribe-title span {
+    color: #ff8c00; /* Highlighted text */
+}
+
+/* Subscribe Form */
+.subscribe-form {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.subscribe-form input {
+    padding: 10px 15px;
+    width: 60%;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.subscribe-form input::placeholder {
+    color: #aaa;
+}
+
+.unique-main-btn {
+    background-color: #ff8c00;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.unique-main-btn:hover {
+    background-color: #e67600;
+}
+
+/* Popup Message */
+.unique-popup-message {
+    padding: 15px;
+    background-color: #0f2027;
+    border: 2px solid #ff8c00;
+    color: white;
+    font-size: 18px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.border-animation {
+    border: 2px dashed #ff8c00;
+    margin-bottom: 10px;
+}
+
+/* Footer Responsiveness */
+@media (max-width: 768px) {
+    .subscribe-area {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .subscribe-form {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .subscribe-form input {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+
+    .subscribe-title {
+        font-size: 24px;
+    }
+}
+
+/* General Footer Styles */
+.footer-wrapper {
+    background-color: #0f2027;
+    color: white;
+    box-shadow: -10px -10px 20px rgba(0, 0, 0, 0.2), 10px 10px 20px rgba(0, 0, 0, 0.4); /* Shadow from top left and bottom */
+    padding: 50px 0;
     position: relative;
 }
 
-.footer-content {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
+.footer-divider {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, transparent, #ff8c00, transparent);
+    margin-bottom: 30px;
+}
+
+.footer-widget {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
-.footer-content div {
-    flex: 1;
-    margin: 0 10px;
+.footer-about .text {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #ffffff;
 }
 
-.footer-content div ul {
+.footer-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff8c00;
+    margin-bottom: 15px;
+}
+
+.footer-links {
     list-style: none;
     padding: 0;
 }
 
-.footer-content div ul li {
-    margin: 10px 0;
-    color: #ffffff;
+.footer-links li {
+    margin-bottom: 10px;
 }
 
-.footer-content div ul li a {
+.footer-links li a {
     color: #ffffff;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.footer-content div ul li a:hover {
-    color: #ff8c00; /* Highlight color */
+.footer-links li a:hover {
+    color: #ff8c00;
     text-decoration: underline;
 }
 
-.footer-icons {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+/* Contact & Social Icons */
+.contact {
+    list-style: none;
+    padding: 0;
 }
 
-.footer-icons i {
-    margin-right: 10px;
-    color: #ff8c00; /* Same highlight color */
+.contact li {
+    margin-bottom: 10px;
 }
 
-.footer-bottom {
-    background-color: #0f2027;
-    text-align: center;
-    padding: 15px 0;
+.contact li a {
     color: #ffffff;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow */
-    border-top: 1px solid #ffffff;
-}
-
-#social_icons div {
-    display: flex;
-    justify-content: center;
-    gap: 15px; /* Increased gap for better spacing */
+    text-decoration: none;
 }
 
 #social_icons a i {
-    font-size: 25px;
-    color: #ffffff;
+    color: #ff8c00;
     transition: color 0.3s ease;
 }
 
 #social_icons a:hover i {
-    color: #ff4500; /* Adjusted hover color */
+    color: #ff4500;
 }
 
-/* Floating buttons for mobile and desktop */
-.floating-buttons {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
+/* Copyright Section */
+.footer-copyright {
+    padding: 15px 0;
+    font-size: 14px;
+    background-color: #0c1e24;
+    border-top: 1px solid #ff8c00;
 }
 
-.floating-buttons a {
-    background-color: #6a5acd; /* Purple color */
-    color: white;
-    text-align: center;
-    padding: 10px;
-    border-radius: 50%;
-    margin: 5px 0;
-    text-decoration: none;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
-}
-
-.floating-buttons a:hover {
-    background-color: #483d8b; /* Darker hover */
-}
-
+/* Responsive Design */
 @media (max-width: 768px) {
-    .footer-content {
+    .footer-widget .row {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
 
-    .footer-content div {
-        margin: 10px 0;
+    .footer-widget .col-lg-4,
+    .footer-widget .col-lg-5,
+    .footer-widget .col-lg-3 {
+        margin-bottom: 30px;
+    }
+
+    .footer-link {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .link-wrapper {
+        margin-bottom: 20px;
+    }
+}
+/* General Footer Styles */
+.footer-wrapper {
+    background-color: #0f2027;
+    color: white;
+    box-shadow: -10px -10px 20px rgba(0, 0, 0, 0.2), 10px 10px 20px rgba(0, 0, 0, 0.4); /* Shadow from top left and bottom */
+    padding: 50px 0;
+    position: relative;
+}
+
+.footer-divider {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, transparent, #ff8c00, transparent);
+    margin-bottom: 30px;
+}
+
+.footer-widget {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.footer-about .text {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.footer-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff8c00;
+    margin-bottom: 15px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links li a:hover {
+    color: #ff8c00;
+    text-decoration: underline;
+}
+
+/* Contact & Social Icons */
+.contact {
+    list-style: none;
+    padding: 0;
+}
+
+.contact li {
+    margin-bottom: 10px;
+}
+
+.contact li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#social_icons a i {
+    color: #ff8c00;
+    transition: color 0.3s ease;
+}
+
+#social_icons a:hover i {
+    color: #ff4500;
+}
+
+/* Copyright Section */
+.footer-copyright {
+    padding: 15px 0;
+    font-size: 14px;
+    background-color: #0c1e24;
+    border-top: 1px solid #ff8c00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-widget .row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-widget .col-lg-4,
+    .footer-widget .col-lg-5,
+    .footer-widget .col-lg-3 {
+        margin-bottom: 30px;
+    }
+
+    .footer-link {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .link-wrapper {
+        margin-bottom: 20px;
+    }
+}
+
+/* General Footer Styles */
+.footer-wrapper {
+    background-color: #0f2027;
+    color: white;
+    box-shadow: -10px -10px 20px rgba(0, 0, 0, 0.2), 10px 10px 20px rgba(0, 0, 0, 0.4); /* Shadow from top left and bottom */
+    padding: 50px 0;
+    position: relative;
+}
+
+.footer-divider {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, transparent, #ff8c00, transparent);
+    margin-bottom: 30px;
+}
+
+.footer-widget {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.footer-about .text {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.footer-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff8c00;
+    margin-bottom: 15px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links li a:hover {
+    color: #ff8c00;
+    text-decoration: underline;
+}
+
+/* Contact & Social Icons */
+.contact {
+    list-style: none;
+    padding: 0;
+}
+
+.contact li {
+    margin-bottom: 10px;
+}
+
+.contact li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#social_icons a i {
+    color: #ff8c00;
+    transition: color 0.3s ease;
+}
+
+#social_icons a:hover i {
+    color: #ff4500;
+}
+
+/* Copyright Section */
+.footer-copyright {
+    padding: 15px 0;
+    font-size: 14px;
+    background-color: #0c1e24;
+    border-top: 1px solid #ff8c00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-widget .row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-widget .col-lg-4,
+    .footer-widget .col-lg-5,
+    .footer-widget .col-lg-3 {
+        margin-bottom: 30px;
+    }
+
+    .footer-link {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .link-wrapper {
+        margin-bottom: 20px;
+    }
+}
+/* General Footer Styles */
+.footer-wrapper {
+    background-color: #0f2027;
+    color: white;
+    box-shadow: -10px -10px 20px rgba(0, 0, 0, 0.2), 10px 10px 20px rgba(0, 0, 0, 0.4); /* Shadow from top left and bottom */
+    padding: 50px 0;
+    position: relative;
+}
+
+.footer-divider {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, transparent, #ff8c00, transparent);
+    margin-bottom: 30px;
+}
+
+.footer-widget {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.footer-about .text {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.footer-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff8c00;
+    margin-bottom: 15px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links li a:hover {
+    color: #ff8c00;
+    text-decoration: underline;
+}
+
+/* Contact & Social Icons */
+.contact {
+    list-style: none;
+    padding: 0;
+}
+
+.contact li {
+    margin-bottom: 10px;
+}
+
+.contact li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#social_icons a i {
+    color: #ff8c00;
+    transition: color 0.3s ease;
+}
+
+#social_icons a:hover i {
+    color: #ff4500;
+}
+
+/* Copyright Section */
+.footer-copyright {
+    padding: 15px 0;
+    font-size: 14px;
+    background-color: #0c1e24;
+    border-top: 1px solid #ff8c00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-widget .row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-widget .col-lg-4,
+    .footer-widget .col-lg-5,
+    .footer-widget .col-lg-3 {
+        margin-bottom: 30px;
+    }
+
+    .footer-link {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .link-wrapper {
+        margin-bottom: 20px;
+    }
+}
+    /* General Footer Styles */
+.footer-wrapper {
+    background-color: #0f2027;
+    color: white;
+    box-shadow: -10px -10px 20px rgba(0, 0, 0, 0.2), 10px 10px 20px rgba(0, 0, 0, 0.4); /* Shadow from top left and bottom */
+    padding: 50px 0;
+    position: relative;
+}
+
+.footer-divider {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, transparent, #ff8c00, transparent);
+    margin-bottom: 30px;
+}
+
+.footer-widget {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.footer-about .text {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.footer-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff8c00;
+    margin-bottom: 15px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links li a:hover {
+    color: #ff8c00;
+    text-decoration: underline;
+}
+
+/* Contact & Social Icons */
+.contact {
+    list-style: none;
+    padding: 0;
+}
+
+.contact li {
+    margin-bottom: 10px;
+}
+
+.contact li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#social_icons a i {
+    color: #ff8c00;
+    transition: color 0.3s ease;
+}
+
+#social_icons a:hover i {
+    color: #ff4500;
+}
+
+/* Copyright Section */
+.footer-copyright {
+    padding: 15px 0;
+    font-size: 14px;
+    background-color: #0c1e24;
+    border-top: 1px solid #ff8c00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-widget .row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-widget .col-lg-4,
+    .footer-widget .col-lg-5,
+    .footer-widget .col-lg-3 {
+        margin-bottom: 30px;
+    }
+
+    .footer-link {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .link-wrapper {
+        margin-bottom: 20px;
     }
 }
 
@@ -1628,68 +2174,73 @@ scrollToTopBtn.onclick = function() {
       </div>
     </div>
   
-    <!-- Footer Widget -->
-    <div class="footer-widget pb-100">
-      <div class="row">
-        <div class="col-lg-4 col-md-6 col-sm-8">
-          <div class="footer-about mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-            <p class="text">
-              We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
-            </p>
-          </div>
+    <!-- Footer Section -->
+<div class="footer-wrapper">
+  <hr class="footer-divider"> <!-- Horizontal line above the footer -->
+  
+  <div class="footer-widget pb-100">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-8">
+        <div class="footer-about mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+          <p class="text">
+            We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
+          </p>
         </div>
-  
-        <div class="col-lg-5 col-md-7 col-sm-7">
-          <div class="footer-link d-flex mt-50 justify-content-between">
-            <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-              <h3 class="footer-title">Quick Links</h3>
-              <ul class="footer-links">
-                <li><a href="./blogs/privacy-policy.html">Privacy Policy</a></li>
-                <li><a href="./blogs/refund-policy.html">Refund Policy</a></li>
-                <li><a href="Licensing.html">Licensing</a></li>
-                <li><a href="./blogs/terms-of-service.html">Terms of Service</a></li>
-                <li><a href="./contributors.html">Our Contributors</a></li>
-              </ul>
-            </div>
-  
-            <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
-              <h4 class="footer-title">Resources</h4>
-              <ul class="footer-links">
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./about.html">About Us</a></li>
-                <li><a href="./trends.html">Trends</a></li>
-                <li><a href="./tools/sip.html">Tools</a></li>
-                <li><a href="./blog.html">Blog</a></li>
-                <li><a href="./quiz.html">Quiz</a></li>
-              </ul>
-            </div>
+      </div>
+
+      <div class="col-lg-5 col-md-7 col-sm-7">
+        <div class="footer-link d-flex mt-50 justify-content-between">
+          <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+            <h3 class="footer-title">Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="./blogs/privacy-policy.html">Privacy Policy</a></li>
+              <li><a href="./blogs/refund-policy.html">Refund Policy</a></li>
+              <li><a href="Licensing.html">Licensing</a></li>
+              <li><a href="./blogs/terms-of-service.html">Terms of Service</a></li>
+              <li><a href="./contributors.html">Our Contributors</a></li>
+            </ul>
           </div>
-        </div>
-  
-        <div class="col-lg-3 col-md-5 col-sm-5">
-          <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-            <h4 class="footer-title">Contact Us</h4>
-            <ul class="contact">
-              <li><i class="fa fa-envelope"></i><a href="mailto:ayush1337@hotmail.com">ayush1337@hotmail.com</a></li>
-              <li><i class="fa fa-globe"></i><a href="https://fin-veda.vercel.app">fin-veda.vercel.app</a></li>
-              <li><i class="fa fa-location-dot"></i><a href="#">Delhi, India</a></li>
-              <li id="social_icons" class="d-flex justify-content-between mt-3">
-                <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://twitter.com"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="https://discord.com"><i class="fa-brands fa-discord"></i></a>
-                <a href="https://github.com"><i class="fa-brands fa-github"></i></a>
-              </li>
+
+          <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+            <h4 class="footer-title">Resources</h4>
+            <ul class="footer-links">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./about.html">About Us</a></li>
+              <li><a href="./trends.html">Trends</a></li>
+              <li><a href="./tools/sip.html">Tools</a></li>
+              <li><a href="./blog.html">Blog</a></li>
+              <li><a href="./quiz.html">Quiz</a></li>
             </ul>
           </div>
         </div>
       </div>
+
+      <div class="col-lg-3 col-md-5 col-sm-5">
+        <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+          <h4 class="footer-title">Contact Us</h4>
+          <ul class="contact">
+            <li><i class="fa fa-envelope"></i><a href="mailto:ayush1337@hotmail.com">ayush1337@hotmail.com</a></li>
+            <li><i class="fa fa-globe"></i><a href="https://fin-veda.vercel.app">fin-veda.vercel.app</a></li>
+            <li><i class="fa fa-location-dot"></i><a href="#">Delhi, India</a></li>
+            <li id="social_icons" class="d-flex justify-content-between mt-3">
+              <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a>
+              <a href="https://twitter.com"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="https://discord.com"><i class="fa-brands fa-discord"></i></a>
+              <a href="https://github.com"><i class="fa-brands fa-github"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-  
-    <!-- Copyright Section -->
-    <div class="footer-copyright text-center mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-      <p>© <span id="copyright-year"></span> FinVeda. All rights reserved. Made with ♥ in India</p>
-    </div>
+  </div>
+
+  <!-- Copyright Section -->
+  <div class="footer-copyright text-center mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+    <p>© <span id="copyright-year"></span> FinVeda. All rights reserved. Made with ♥ in India</p>
+  </div>
+</div>
+
   </footer>
 
       <script>
