@@ -3,6 +3,11 @@ function calculateSIP() {
     const annualInterestRate = parseFloat(document.getElementById('annualInterestRate').value);
     const investmentPeriod = parseFloat(document.getElementById('investmentPeriod').value);
 
+    if (isNaN(monthlyInvestment) || isNaN(annualInterestRate) || isNaN(investmentPeriod) || monthlyInvestment <= 0 || annualInterestRate <= 0 || investmentPeriod <= 0) {
+        document.getElementById('sipResult').innerHTML = `<p>Please enter valid positive values for all fields.</p>`;
+        return;
+    }
+
     const monthlyInterestRate = (annualInterestRate / 100) / 12;
     const totalMonths = investmentPeriod * 12;
 
@@ -19,6 +24,11 @@ function calculatePPF() {
     const annualInterestRatePPF = parseFloat(document.getElementById('annualInterestRatePPF').value);
     const investmentPeriodPPF = parseFloat(document.getElementById('investmentPeriodPPF').value);
 
+    if (isNaN(principalAmount) || isNaN(annualInterestRatePPF) || isNaN(investmentPeriodPPF) || principalAmount <= 0 || annualInterestRatePPF <= 0 || investmentPeriodPPF <= 0) {
+        document.getElementById('ppfResult').innerHTML = `<p>Please enter valid positive values for all fields.</p>`;
+        return;
+    }
+
     const monthlyInterestRatePPF = (annualInterestRatePPF / 100) / 12;
     const totalMonthsPPF = investmentPeriodPPF * 12;
 
@@ -29,6 +39,3 @@ function calculatePPF() {
                                <p>If you invest INR ${principalAmount} at an annual interest rate of ${annualInterestRatePPF}%,</p>
                                <p>your maturity amount after ${investmentPeriodPPF} years could be approximately INR ${futureValuePPF.toFixed(2)}.</p>`;
 }
-
-
-
