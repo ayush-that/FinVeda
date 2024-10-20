@@ -4,14 +4,14 @@ document.addEventListener("DOMContentLoaded", function() {
         const annualInterestRate = parseFloat(document.getElementById("rate1").value);
         const timePeriodMonths = parseFloat(document.getElementById("months1").value);
 
-        if (isNaN(monthlyInstallment) || isNaN(annualInterestRate) || isNaN(timePeriodMonths)) {
-            alert("Please fill in all fields");
+        if (isNaN(monthlyInstallment) || isNaN(annualInterestRate) || isNaN(timePeriodMonths) || monthlyInstallment <= 0 || annualInterestRate <= 0 || timePeriodMonths <= 0) {
+            alert("Please enter valid positive numbers for all fields.");
             return;
         }
 
         const monthlyInterestRate = annualInterestRate / 12 / 100;
-
         let maturityAmount = 0;
+
         for (let i = 0; i < timePeriodMonths; i++) {
             maturityAmount += monthlyInstallment * Math.pow((1 + monthlyInterestRate), (timePeriodMonths - i)); 
         }
