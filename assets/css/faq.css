@@ -1,3 +1,6 @@
+* {
+  cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
+}
 
 .faq-section {
     max-width: 80vw;
@@ -58,4 +61,33 @@
     max-height: 1000px; /* High enough value to accommodate content */
     opacity: 1; /* Make visible */
     padding: 10px 20px; /* Restore padding */
+}
+
+.circle {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
+    transition: transform 0.1s, left 0.1s, top 0.1s;
+}
+.circle-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+@media (max-width: 720px) {
+    .circle-container {
+      display: none;
+    }
+    .tradingview-widget-container{
+      max-width: 100vw;
+      overflow-x: auto;
+    }
 }
