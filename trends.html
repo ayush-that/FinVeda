@@ -51,7 +51,7 @@
                 <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
               </li>    
               <li class="nav-item">
-                <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
+                <a class="page-scroll active-link" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
               </li>
               <li class="nav-item">
                 <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
@@ -68,7 +68,7 @@
               <li class="nav-item">
                 <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
               </li>
-              <li class="nav-item active-link">
+              <li class="nav-item">
                 <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
               </li>
               <li class="nav-item no-underline">
@@ -76,84 +76,93 @@
               </li>
             </ul>
           </div>
+          <button id="theme-toggle" class="theme-toggle">
+            🌙
+          </button>
+        </div>
 
-          <script>
-            const toggleButton = document.getElementById('theme-toggle');
-            const body = document.body;
-            const currentTheme = localStorage.getItem('theme');
+        <script>
+          const toggleButton = document.getElementById('theme-toggle');
+          const body = document.body;
+          const currentTheme = localStorage.getItem('theme');
 
-            if (currentTheme === 'dark') {
-            body.classList.add('dark-mode');
-            toggleButton.classList.add('dark');
-            toggleButton.textContent = '☀️';
-            }
+if (currentTheme === 'dark') {
+body.classList.add('dark-mode');
+toggleButton.classList.add('dark');
+toggleButton.textContent = '🌞';
+}
 
-            toggleButton.addEventListener('click', function () {
-            body.classList.toggle('dark-mode');
-            toggleButton.classList.toggle('dark');
+toggleButton.addEventListener('click', function () {
+body.classList.toggle('dark-mode');
+toggleButton.classList.toggle('dark');
 
-            // Update button icon based on mode
-            if (body.classList.contains('dark-mode')) {
-            toggleButton.textContent = '☀️';  // Light mode icon
-            localStorage.setItem('theme', 'dark');
-            } else {
-            toggleButton.textContent = '🌙';  // Dark mode icon
-            localStorage.setItem('theme', 'light');
-            }
-            });
-        </script>
-        <style>
+// Update button icon based on mode
+if (body.classList.contains('dark-mode')) {
+toggleButton.textContent = '🌞';  // Light mode icon
+localStorage.setItem('theme', 'dark');
+} else {
+toggleButton.textContent = '🌙';  // Dark mode icon
+localStorage.setItem('theme', 'light');
+}
+});
+      </script>
+      <style>
 
-          h3{
-            color: #fff;
-          }
-
-        .toggle-button {
-          padding: 0.5em 1em;
-          cursor: pointer;
-          border: none;
-          background-color: #0c0a0a;
+        h3{
           color: #fff;
-          border-radius: 5px;
-          transition: background-color 0.3s;
-      }
-      
-      .toggle-button:hover {
-          background-color: #555;
-      }
-      
-      .content {
-          padding: 2em;
-          text-align: center;
-      }
-      
-      h1 {
-          font-size: 2.5rem;
-          color: whitesmoke;
-          margin-top:130px;
-      }
-      
-      p {
-          font-size: 1.2rem;
-      }
-      
-      body.dark-mode {
-                background-color: #222;
-                color: #f1f1f1; /* Change text color to light for dark mode */
-                }
+        }
 
-                .toggle-button.dark {
-                background-color: #f1f1f1; /* Button background in dark mode */
-                color: #333; /* Button text color in dark mode */
-                }
+      .toggle-button {
+        padding: 0.5em 1em;
+        cursor: pointer;
+        border: none;
+        background-color: #0c0a0a;
+        color: #fff;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+    
+    .toggle-button:hover {
+        background-color: #555;
+    }
+    
+    .content {
+        padding: 2em;
+        text-align: center;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+        color: whitesmoke;
+        margin-top:130px;
+    }
+    
+    p {
+        font-size: 1.2rem;
+    }
+    
+    body.dark-mode {
+background-color: #fefefe;
+color: #f1f1f1; /* Change text color to light for dark mode */
+}
 
-                .toggle-button.dark:hover {
-                background-color: #ddd; /* Button hover color in dark mode */
-                }
-      </style>
-            
-          </nav>
-      
+.dark-mode .para {
+color: white; /* Change text color to white when dark mode class is applied */
+}
+
+.toggle-button.dark {
+background-color: #f1f1f1; /* Button background in dark mode */
+color: #333; /* Button text color in dark mode */
+}
+
+.toggle-button.dark:hover {
+background-color: #ddd; /* Button hover color in dark mode */
+}
+    </style>
+          
+        </nav>
+    
+
 
         <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 
@@ -520,34 +529,13 @@
                               </a>
                           </div>
                       </li>
-                      <li id="social_icons" class="d-sm-flex justify-content-evenly my-3">
-                        <div style="width: 100%; display:flex; ">
-                          <!-- Instagram Icon -->
-                          <a href="https://instagram.com" target="_blank" style="margin: 0 10px; color: #E4405F;" aria-label="Instagram">
-                            <i style="font-size: 25px" class="fa-brands fa-instagram"></i>
-                          </a>
-                      
-                          <!-- Facebook Icon -->
-                          <a href="https://facebook.com" target="_blank" style="margin: 0 10px; color: #4267B2;" aria-label="Facebook">
-                            <i style="font-size: 25px" class="fa-brands fa-facebook"></i>
-                          </a>
-                      
-                          <!-- X/Twitter Icon -->
-                          <a href="https://twitter.com" target="_blank" style="margin: 0 10px; color: #1DA1F2;" aria-label="Twitter">
-                            <i style="font-size: 25px" class="fa-brands fa-x-twitter"></i>
-                          </a>
-                      
-                          <!-- Discord Icon -->
-                          <a href="https://discord.com" target="_blank" style="margin: 0 10px; color: #7289DA;" aria-label="Discord">
-                            <i style="font-size: 25px" class="fa-brands fa-discord"></i>
-                          </a>
-                      
-                          <!-- GitHub Icon -->
-                          <a href="https://github.com" target="_blank" style="margin: 0 10px; color: #333;" aria-label="GitHub">
-                            <i style="font-size: 25px" class="fa-brands fa-github"></i>
-                          </a>
-                        </div>
-                      </li>
+                      <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-discord"></i></a>
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                    </div>
                   </ul>
               </div>
           </div>
