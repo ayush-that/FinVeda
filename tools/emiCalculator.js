@@ -4,6 +4,12 @@ function calculateEMI() {
     var interestRate = parseFloat(document.getElementById('interestRate').value);
     var loanTenure = parseFloat(document.getElementById('loanTenure').value);
 
+    // Validate inputs
+    if (isNaN(loanAmount) || isNaN(interestRate) || isNaN(loanTenure) || loanAmount <= 0 || interestRate <= 0 || loanTenure <= 0) {
+        alert('Please enter valid positive values for all fields.');
+        return;
+    }
+
     // Calculate monthly interest rate
     var monthlyInterestRate = (interestRate / 12) / 100;
 
@@ -21,6 +27,7 @@ function calculateEMI() {
     document.getElementById('totalPayment').textContent = 'INR ' + totalPayment.toFixed(2);
     document.getElementById('totalInterestPaid').textContent = 'INR ' + totalInterestPaid.toFixed(2);
 }
+
 function clearEMI() {
     document.getElementById('loanAmount').value = '';
     document.getElementById('interestRate').value = '';
@@ -28,5 +35,4 @@ function clearEMI() {
     document.getElementById('monthlyEMI').innerText = '';
     document.getElementById('totalPayment').innerText = '';
     document.getElementById('totalInterestPaid').innerText = '';
-  }
-  
+}
