@@ -37,6 +37,17 @@ https://github.com/user-attachments/assets/44ddffa1-70b6-43d6-9438-3181f25dd0ad
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
+## 📑 Table of Contents
+1. [🤔 Problem](#-problem)
+2. [🌟 Features](#-features)
+3. [💵 How to Contribute](#-how-to-contribute)
+4. [💗 Contributors](#-contributors)
+5. [🛠️ Troubleshooting](#️-troubleshooting)
+6. [🥑 License](#-license)
+7. [⭐ Star the Repo!](#-star-the-repo)
+   
+---
+
 ### 🤔 Problem
 
 According to a survey by the OECD, <b>only 38% of adults in India are financially literate</b>. Finveda aims to solve this problem by providing a platform for financial literacy education.
