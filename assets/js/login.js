@@ -12,6 +12,29 @@
           modal.style.display = "none";
         }
       };
+
+      // Get references to the forms and toggle links
+const loginForm = document.getElementById('login-form');
+const signupForm = document.getElementById('signup-form');
+const showSignup = document.getElementById('show-signup');
+const showLogin = document.getElementById('show-login');
+
+// Show Sign Up form and hide Login form
+showSignup.addEventListener('click', function (e) {
+    e.preventDefault();
+    loginForm.classList.add('hidden');
+    signupForm.classList.remove('hidden');
+    signupForm.classList.add('visible');
+});
+
+// Show Login form and hide Sign Up form
+showLogin.addEventListener('click', function (e) {
+    e.preventDefault();
+    signupForm.classList.add('hidden');
+    loginForm.classList.remove('hidden');
+    loginForm.classList.add('visible');
+});
+
       
       document.addEventListener("DOMContentLoaded", function () {
         const registerModal = document.getElementById("registerModal");

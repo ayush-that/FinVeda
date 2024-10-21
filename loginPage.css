@@ -5,6 +5,117 @@
   padding: 0;
   box-sizing: border-box;
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 300px;
+  position: relative;
+}
+
+.form-container {
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  position: absolute;
+  width: 100%;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+#login-form {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+#signup-form {
+  transform: translateX(100%);
+  opacity: 0;
+  visibility: hidden;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+}
+
+input[type="text"]:hover, input[type="password"]:hover, input[type="email"]:hover {
+  transform: scale(1.05);
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Add fade-in and slide-in animation */
+@keyframes fadeInSlide {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.form-container {
+  animation: fadeInSlide 0.8s ease-out;
+}
+
+button.loading {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+/* Transition for switching between forms */
+.visible {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.hidden {
+  transform: translateX(100%);
+  opacity: 0;
+  visibility: hidden;
+}
+
 
 body,
 input {
