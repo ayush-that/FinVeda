@@ -1169,6 +1169,56 @@ registerCloseButton.addEventListener("click", function() {
       max-width: 100%;
     }}
 
+    /* Fixing the foooter lists */
+    ul.link {
+        padding-left: 0; 
+        margin-left: 0; 
+    }
+
+    ul.link li {
+        margin-left: -15px; 
+    }
+    ul.link li:nth-child(3) {
+        position: relative;
+        left: -15px; 
+    }
+    ul.link li:nth-child(4), 
+    ul.link li:nth-child(5)   {
+        position: relative;
+        left: 15px; 
+    }
+
+
+    .link-wrapper .link {
+        padding-left: 0; 
+        margin-left: 0;  
+    }
+
+    .link-wrapper .link li {
+        margin-left: 0; 
+        padding-left: 15px; 
+    }
+
+    .resources-link li:nth-child(4), 
+    .resources-link li:nth-child(5), 
+    .resources-link li:nth-child(6)   {
+        position: relative;
+        left: -15px; 
+    }
+
+    .resources-link li:nth-child(1), 
+    .resources-link li:nth-child(4), 
+    .resources-link li:nth-child(5)  {
+        position: relative;
+        left: -15px !important; 
+    }
+    .resources-link li:nth-child(2) {
+        position: relative;
+        left: -10px; 
+    }
+
+
+
   </style>
 </body>
 
@@ -1282,7 +1332,7 @@ registerCloseButton.addEventListener("click", function() {
                     <div class="footer-title">
                         <h4 class="title custom-margin">Resources</h4>
                     </div>
-                    <ul class="link custom-margin">
+                    <ul class="link resources-link custom-margin">
                         <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
                         <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
                         <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
