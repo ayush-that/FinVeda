@@ -848,7 +848,9 @@ scrollToTopBtn.onclick = function() {
     <!-- <div class="navbar-area"> -->
       <!-- <div class="container"> -->
         <div class="row">
-          <!-- <div class="col-lg-12"> -->
+HeaderFooter
+           <!-- <div class="col-lg-12"> -->
+main
             <nav class="navbar navbar-expand-lg">
               <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -862,11 +864,13 @@ scrollToTopBtn.onclick = function() {
                   <img src="./assets/images/icon.webp" alt="icon.png">
                 </div>
                 </a>
-                
+HeaderFooter
+
                 <ul id="nav" class="navbar-nav" style="margin:auto">
 
                   <li class="nav-item">
-                    <a class="page-scroll active-link" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
+                    <a class="page-scroll" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
+main
                   </li>
                   <li class="nav-item">
                     <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
@@ -887,7 +891,9 @@ scrollToTopBtn.onclick = function() {
                     <a class="page-scroll" href="./careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll " href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
+HeaderFooter
+                    <a class="page-scroll active-link" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
+ main
                   </li>
                   <li class="nav-item active">
                     <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
@@ -899,6 +905,10 @@ scrollToTopBtn.onclick = function() {
                   🌙
                 </button>
               </div>
+HeaderFooter
+        
+              
+main
               <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
                 <span></span>
               </div>
@@ -2210,139 +2220,13 @@ scrollToTopBtn.onclick = function() {
 
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
-<div id="particles-2"></div>
-</div>
-</footer>
-      <script>
-        // Function for the contributors section
-        const owner = 'ayush-that';
-        const repo = 'FinVeda';
-        const contributorsPerPage = 8;
-        let contributors = [];
-        let currentPage = 1;
-  
-        async function fetchContributors() {
-          const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/contributors`);
-          if (!response.ok) {
-            console.error('Failed to fetch contributors:', response.statusText);
-            return;
-          }
-          contributors = await response.json();
-          displayContributors();
-          createPaginationButtons();
-        }
-  
-        function displayContributors() {
-          const container = document.getElementById('contributor-cards');
-          container.innerHTML = '';
-          const start = (currentPage - 1) * contributorsPerPage;
-          const end = start + contributorsPerPage;
-          const currentContributors = contributors.slice(start, end);
-  
-          currentContributors.forEach(contributor => {
-            const card = document.createElement('div');
-            card.className = 'contributor-member';
-            card.setAttribute('data-tilt', '');
-  
-            const img = document.createElement('img');
-            img.src = contributor.avatar_url;
-            img.alt = contributor.login;
-  
-            const name = document.createElement('h3');
-            name.textContent = contributor.login;
-  
-            const contributions = document.createElement('p');
-            contributions.textContent = `${contributor.contributions} contributions`;
-  
-            const viewProfileButton = document.createElement("button");
-            viewProfileButton.textContent = "View Profile";
-            viewProfileButton.addEventListener("click", () => {
-              window.open(contributor.html_url, "_blank");
-            });
-  
-            card.appendChild(img);
-            card.appendChild(name);
-            card.appendChild(contributions);
-            container.appendChild(card);
-            card.appendChild(viewProfileButton);
-          });
-        }
-  
-        function createPaginationButtons() {
-          const paginationContainer = document.getElementById('pagination');
-          paginationContainer.innerHTML = '';
-          const totalPages = Math.ceil(contributors.length / contributorsPerPage);
-  
-          for (let i = 1; i <= totalPages; i++) {
-            const button = document.createElement('button');
-            button.textContent = i;
-            button.classList.add('pagination-button');
-            if (i === currentPage) {
-              button.classList.add('active');
-            }
-            button.addEventListener('click', () => {
-              currentPage = i;
-              displayContributors();
-              updatePaginationButtons();
-            });
-            paginationContainer.appendChild(button);
-          }
-        }
-  
-        function updatePaginationButtons() {
-          const buttons = document.querySelectorAll('.pagination-button');
-          buttons.forEach(button => {
-            button.classList.remove('active');
-            if (parseInt(button.textContent) === currentPage) {
-              button.classList.add('active');
-            }
-          });
-        }
-  
-        fetchContributors();
-      </script>
-<div class="gtranslate_wrapper"></div>
-      <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
-      <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-
-      <script src="./assets/js/about.js"></script>
-      <script src="./assets/js/subscribe.js"></script>
-      <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
-      <script src="./assets/js/vendor/modernizr-3.7.1.min.js"></script>
-      <script src="./assets/js/popper.min.js"></script>
-      <script src="./assets/js/bootstrap.min.js"></script>
-      <script src="./assets/js/plugins.js"></script>
-      <script src="./assets/js/slick.min.js"></script>
-      <script src="./assets/js/ajax-contact.js"></script>
-      <script src="./assets/js/waypoints.min.js"></script>
-      <script src="./assets/js/jquery.counterup.min.js"></script>
-      <script src="./assets/js/jquery.magnific-popup.min.js"></script>
-      <script src="./assets/js/blogposts.js"></script>
-      <script src="./assets/js/jquery.easing.min.js"></script>
-      <script src="./assets/js/scrolling-nav.js"></script>
-      <script src="./assets/js/wow.min.js"></script>
-      <script src="./assets/js/particles.min.js"></script>
-      <script src="./assets/js/main.js"></script>
-      <script src="./assets/js/popup.js"></script>
-      <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-      <script src="https://mediafiles.botpress.cloud/5e160793-5606-4412-ba4c-337e416f14fe/webchat/config.js" defer></script>
-      <script defer src="./assets/js/arthsathi-style.js"></script>
-      <script src="./assets/js/botpress.js"></script>
-      <script src="./assets/js/blogmodals.js"></script>
-      <script src="./tools/smoothScroll.js"></script>
-    </body>
-    </html>
-
-
-  
-          </div>
-         
-    <div id="particles-2"></div>
-  </footer>
+HeaderFooter
+      
+      <div id="particles-2"></div>
+      </div>
+    </footer>
+    
+main
   <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
   </div>
 
