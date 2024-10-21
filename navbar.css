@@ -239,9 +239,11 @@ z
     width: 100px;
 } */
 
+HeaderFooter
 #theme-toggle {
     margin-top: 0px;
 }
+ main
 
 .icon1 {
     filter: exposure(2);
@@ -379,10 +381,11 @@ z
 /* .nav-toggle-btn-space-fixed {
     width: 100px;
 } */
-
+HeaderFooter
 #theme-toggle {
     margin-top: 0px;
 }
+main
 
 
 @media (max-width: 1320px) { /* 100% width */
@@ -574,3 +577,139 @@ z
     transform: rotate(30deg);
 
 }
+.side-icons {
+    position: fixed;
+    right: 20px;
+    top: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .icon-content {
+    position: relative;
+  }
+  
+  .icon-content a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #4d4d4d;
+    /* Default icon color */
+    background-color: #fff;
+    transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    overflow: hidden;
+    text-decoration: none;
+    position: relative;
+  }
+  
+  .icon-content a i {
+    font-size: 24px;
+    position: relative;
+    z-index: 2;
+    /* Icons should be above the background fill */
+  }
+  
+  .icon-content a .filled {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    transition: transform 0.3s ease-in-out;
+    transform: scaleY(0);
+    /* Hide the fill initially */
+    transform-origin: bottom;
+    /* Start the fill from the bottom */
+    z-index: 1;
+    /* Background fill should be below the icons */
+  }
+  
+  .icon-content a:hover .filled {
+    transform: scaleY(1);
+    /* Scale the fill to full height on hover */
+  }
+  
+  .icon-content a:hover i {
+    color: #fff;
+    /* Change icon color to white on hover */
+  }
+  
+  .icon-content a[data-social="facebook"] .filled {
+    background-color: #3b5998;
+  }
+  
+  .icon-content a[data-social="linkedin"] .filled {
+    background-color: #0077b5;
+  }
+  
+  .icon-content a[data-social="X"] .filled {
+    background-color: #080808;
+  }
+  
+  .icon-content a[data-social="Discord"] .filled {
+    background-color: #600bfd;
+  }
+  
+  .icon-content a[data-social="github"] .filled {
+    background-color: #24292e;
+  }
+  
+  /* Optional: add box-shadow on hover */
+  .icon-content a:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Dark mode styles */
+  body.dark-mode .side-icons .icon-content a {
+    background-color: #333;
+    /* Dark background for icons in dark mode */
+    color: #ddd;
+    /* Light icon color in dark mode */
+  }
+  
+  body.dark-mode .side-icons .icon-content a:hover .filled {
+    background-color: #444;
+    /* Slightly lighter dark mode background fill */
+  }
+  
+  body.dark-mode .side-icons .icon-content a:hover i {
+    color: #fff;
+    /* White icon color on hover in dark mode */
+  }
+  
+  /* Dark mode background colors for different icons */
+  body.dark-mode .side-icons .icon-content a[data-social="facebook"] .filled {
+    background-color: #3b5998;
+    /* Darker shade for Facebook in dark mode */
+  }
+  
+  body.dark-mode .side-icons .icon-content a[data-social="linkedin"] .filled {
+    background-color: #0077b5;
+    /* Darker shade for LinkedIn in dark mode */
+  }
+  
+  body.dark-mode .side-icons .icon-content a[data-social="twitter"] .filled {
+    background-color: #1da1f2;
+    /* Darker shade for Twitter in dark mode */
+  }
+  
+  body.dark-mode .side-icons .icon-content a[data-social="youtube"] .filled {
+    background-color: #ff0000;
+    /* Darker shade for YouTube in dark mode */
+  }
+  
+  body.dark-mode .side-icons .icon-content a[data-social="github"] .filled {
+    background-color: #444c56;
+    /* Darker shade for GitHub in dark mode */
+  }
+  
+  /* Optional: add box-shadow on hover in dark mode */
+  body.dark-mode .side-icons .icon-content a:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    /* Slightly stronger shadow in dark mode */
+  }
