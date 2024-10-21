@@ -1847,65 +1847,177 @@ scrollToTopBtn.onclick = function() {
    
   </div>
 
-  <div class="form-section wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-    <!-- <h2 class="form-heading2">Feedback Form</h2> -->
-    <form class="feedbackform" id="feedback-form">
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Form</title>
+  <style>
+    /* Simple CSS for layout and modal */
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .form-input, .form-textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .form-button {
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .form-button:hover {
+      background-color: #218838;
+    }
+    .emojis label {
+      font-size: 30px;
+      cursor: pointer;
+      padding: 0 10px;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      position: relative;
+      max-width: 400px;
+      width: 100%;
+    }
+    .modal-header {
+      margin-bottom: 10px;
+    }
+    .modal-message {
+      margin-bottom: 20px;
+    }
+    .modal-button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .modal-button:hover {
+      background-color: #218838;
+    }
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-section">
+  <form class="feedbackform" id="feedback-form">
+    <div class="form-group">
+      <div class="section-title text-center">
+        <h2 class="form-heading">We Value Your Feedback</h2>
+        <p>Your input helps us to improve and provide better services. Please fill out the form to let us know your thoughts.</p>
+      </div>
+      <label class="form-label" for="name">Name:</label>
+      <input class="form-input" type="text" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="email">Email:</label>
+      <input class="form-input" placeholder="Enter your email" type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Rating:</label>
+      <div id="emoji-description" class="emoji-description">Select an option</div>
+    </div>
+    <div class="emojis">
+      <input class="form-input" type="radio" id="emoji1" name="rating" value="1">
+      <label class="form-label" for="emoji1">&#128577;</label> <!-- Very Bad -->
+      <input class="form-input" type="radio" id="emoji2" name="rating" value="2">
+      <label class="form-label" for="emoji2">&#128542;</label> <!-- Bad -->
+      <input class="form-input" type="radio" id="emoji3" name="rating" value="3">
+      <label class="form-label" for="emoji3">&#128528;</label> <!-- Neutral -->
+      <input class="form-input" type="radio" id="emoji4" name="rating" value="4">
+      <label class="form-label" for="emoji4">&#128522;</label> <!-- Good -->
+      <input class="form-input" type="radio" id="emoji5" name="rating" value="5">
+      <label class="form-label" for="emoji5">&#128515;</label> <!-- Excellent -->
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="comments">Comments:</label>
+      <textarea class="form-textarea" placeholder="Enter your comments" id="comments" name="comments" rows="4" required></textarea>
+    </div>
+    <div class="form-group">
       <div class="form-group">
-        <div class="section-title text-center">
-          <br>
-          <br>
-          <div class="line m-auto"></div>
-          <h2 class="form-heading wow fadeInUp title" data-wow-duration="1s" data-wow-delay="0.2s">We Value Your Feedback</h2>
-          <p class="form-para wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
-            Your input helps us to improve and provide better services. Please fill out the form to let us know your thoughts.
-          </p>
-        </div>
-        <label class="form-label" for="name">Name:</label>
-        <input class="form-input" type="text" id="name" name="name" required>
+        <button class="form-button" id="feed-submit" type="submit">Submit Feedback</button>
       </div>
-      <div class="form-group">
-        <label class="form-label" for="email">Email:</label>
-        <input class="form-input" placeholder="Enter your email" type="email" id="email" name="email" required>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Rating:</label>
-        <div id="emoji-description" class="emoji-description">Select an option</div>
-      </div>
-      <div class="emojis">
-        <input class="form-input" type="radio" id="emoji1" name="rating" value="1">
-        <label class="form-label" for="emoji1">&#128577;</label> <!-- Very Bad -->
-        <input class="form-input" type="radio" id="emoji2" name="rating" value="2">
-        <label class="form-label" for="emoji2">&#128542;</label> <!-- Bad -->
-        <input class="form-input" type="radio" id="emoji3" name="rating" value="3">
-        <label class="form-label" for="emoji3">&#128528;</label> <!-- Neutral -->
-        <input class="form-input" type="radio" id="emoji4" name="rating" value="4">
-        <label class="form-label" for="emoji4">&#128522;</label> <!-- Good -->
-        <input class="form-input" type="radio" id="emoji5" name="rating" value="5">
-        <label class="form-label" for="emoji5">&#128515;</label> <!-- Excellent -->
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="comments">Comments:</label>
-        <textarea class="form-textarea" placeholder="Enter your comments" id="comments" name="comments" rows="4" required></textarea>
-      </div>
-      <div class="form-group">
-        <div class="form-group skbtn">
-          <button class="form-button" id="feed-submit" type="submit">Submit Feedback</button>
-        </div>
-        <br>
-        <br>
-      </div>
-    </form>
+    </div>
+  </form>
+</div>
+<div class="modal" id="successModal">
+  <div class="modal-content">
+    <span class="modal-close" id="closeSuccessModal">✖</span>
+
+    <!-- Tick  Icon in the center -->
+    <img src="./assets/css/checked.png" alt="Tick Icon" class="tick-icon">
+
+    <h2 class="modal-header">Success!</h2>
+    <p class="modal-message" id="successMessage">Submitted successfully!</p>
+    <div class="modal-footer">
+      <button id="dismissModal" class="modal-button">Dismiss</button>
+    </div>
   </div>
 </div>
-
-<!-- Timed popup that will appear after successful submission of feedback form! -->
-<button class="notification" id="successnotification" style="display:none;">
-  <span class="message" id="successmsg">Submitted successfully!</span>
-  <span class="closenotif" id="closeSuccessNotification">✖</span>
-  <div class="timerline" id="timerline"></div>
-</button>
-
 <script>
+  // Function to update emoji description when an emoji is selected
+  const emojiInputs = document.querySelectorAll('input[name="rating"]');
+  const emojiDescription = document.getElementById('emoji-description');
+
+  emojiInputs.forEach(input => {
+    input.addEventListener('change', function () {
+      switch (this.value) {
+        case '1':
+          emojiDescription.textContent = 'Very Bad 😡';
+          break;
+        case '2':
+          emojiDescription.textContent = 'Bad 😞';
+          break;
+        case '3':
+          emojiDescription.textContent = 'Neutral 😐';
+          break;
+        case '4':
+          emojiDescription.textContent = 'Good 🙂';
+          break;
+        case '5':
+          emojiDescription.textContent = 'Excellent 😍';
+          break;
+        default:
+          emojiDescription.textContent = 'Select an option';
+      }
+    });
+  });
+
+  // Handle form submission and show modal
   document.getElementById('feedback-form').addEventListener('submit', function (e) {
     e.preventDefault();
 
@@ -1943,44 +2055,26 @@ scrollToTopBtn.onclick = function() {
     document.getElementById('feedback-form').reset();
     
     // Reset emoji description
-    document.getElementById('emoji-description').textContent = 'Select an option';
+    emojiDescription.textContent = 'Select an option';
 
-    // Show success notification
-    document.getElementById('successnotification').style.display = 'block';
+    // Show success modal
+    document.getElementById('successModal').style.display = 'flex';
 
-    // Hide notification after 3 seconds
+    // Close modal after 3 seconds
     setTimeout(function () {
-      document.getElementById('successnotification').style.display = 'none';
+      document.getElementById('successModal').style.display = 'none';
     }, 3000);
   });
 
-  // Add event listeners for emoji selection
-  const emojis = document.querySelectorAll('input[name="rating"]');
-  const emojiDescription = document.getElementById('emoji-description');
-
-  emojis.forEach(emoji => {
-    emoji.addEventListener('change', function() {
-      switch(this.value) {
-        case '1':
-          emojiDescription.textContent = 'Very Bad';
-          break;
-        case '2':
-          emojiDescription.textContent = 'Bad';
-          break;
-        case '3':
-          emojiDescription.textContent = 'Neutral';
-          break;
-        case '4':
-          emojiDescription.textContent = 'Good';
-          break;
-        case '5':
-          emojiDescription.textContent = 'Excellent';
-          break;
-      }
-    });
+  // Close the modal when the 'Dismiss' button is clicked or 'X' is pressed
+  document.getElementById('dismissModal').addEventListener('click', function() {
+    document.getElementById('successModal').style.display = 'none';
   });
-</script>
 
+  document.getElementById('closeSuccessModal').addEventListener('click', function() {
+    document.getElementById('successModal').style.display = 'none';
+  });
+  </script>
   <script src="/assets/js/faq.js"></script>
 
   <!-- Footer Section -->
