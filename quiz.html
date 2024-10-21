@@ -409,7 +409,7 @@
     <br><br><br><br>
     <p></p><br>
     <h2 class="test">Test your knowledge</h2>
-    <div id="quiz-pic"><img src="./assets/images/quiz-anime2.webp" alt="QUIZ"></div>
+    <div style="position: absolute;width: 200px;height: 200px;right: 100px;z-index: 10;" id="quiz-pic"><img src="./assets/images/quiz-anime2.webp" alt="QUIZ"></div>
 
     <div class="quiz-description wow fadeIn" data-wow-duration="1.3s" data-wow-delay="0.5s">
       <div class="quiztitle wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">Welcome to the Quiz Challenge!</div>
@@ -546,408 +546,148 @@
     <br><br>
     <div id="quizResult"></div>
   </div>
-  <style>
-        /* General styling */
-body {
+  <div style="mix-blend-mode: multiply;position: absolute;width: 400px;height: 200px;top: 800px;;left: 100px;z-index: 10;"><img src="assets/images/QUIZ.jpeg" alt="photo"></div>
+ 
+<STYLE>
+  /* Quiz container styling */
+.quiz-description {
+  background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+  padding: 2rem;
+  border-radius: 10px;
+  color: white;
   font-family: 'Arial', sans-serif;
-  background-color: #f3f3f3;
-  padding: 20px;
-  text-align: center;
 }
 
-#contact_icon{
-  width: 300px;
-}
-
-#contact_icon li{
-  width: 250px;
-  justify-content: space-around;
-  display: flex;
-  position: relative;
-  left: 50px;
-  bottom: 20px;
-}
-
-
-.test {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 20px;
-  transition: color 0.5s ease-in-out;
-}
-
-.test:hover {
-  color: #ff6347;
-}
-
-body.dark-mode .test {
-  color: white; /* Change heading color to white in dark mode */
-}
-
-body.dark-mode .test:hover {
-  color: #ff6347;
-}
-
-/* Quiz description box with glitter shadow */
-.quiz-description {
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  position: relative;
-  transition: transform 0.4s ease, box-shadow 0.6s ease-out;
-}
-
-.quiz-description {
-  position: relative;
-  background-color: #ffffff;
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.6); /* Light shadow matching the background */
-  transition: box-shadow 0.4s ease, transform 0.4s ease;
-}
-
-
-.quiz-description:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(255, 105, 180, 0.5); /* Glitter shadow effect */
-}
-
-.quiz-description::after {
-  content: '';
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  bottom: -5px;
-  left: -5px;
-  background: linear-gradient(135deg, rgba(255, 105, 180, 0.6), rgba(255, 255, 255, 0.3));
-  border-radius: 10px;
-  z-index: -1;
-  filter: blur(3px);
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.quiz-description:hover::after {
-  opacity: 1;
-}
-
-/* Quiz title and content styling */
 .quiztitle {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 10px;
-  color: #333;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
 }
 
 .quizcontent {
-  font-size: 1.1rem;
-  color: #555;
-  margin-bottom: 10px;
-}
-
-/* Hover and active states for quizcontent */
-.quizcontent:hover {
-  color: #ff6347;
-  transition: color 0.3s ease;
-}
-
-.quizcontent:active {
-  color: #d2691e;
-  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 .quizcontent2 {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  color: #28a745;
-  margin-top: 20px;
-  transition: transform 0.4s ease, color 0.3s ease;
+  margin-top: 1rem;
 }
 
-.quizcontent2:hover {
-  transform: scale(1.1);
-  color: #218838;
+#quiz {
+  background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+  padding: 2rem;
+  border-radius: 10px;
+  color: white;
 }
 
-/* General styling */
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f9f9f9;
-  padding: 20px;
-  text-align: center;
-}
-
-/* Question styling */
-h2#question {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Answer buttons */
-#answer-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 30px;
+h2 {
+  font-weight: bold;
+  font-size: 1.8rem;
 }
 
 #answer-buttons .btn {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  background-color: #007bff;
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
   color: white;
-  font-size: 1rem;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+/* Hover effect for buttons */
 #answer-buttons .btn:hover {
-  background-color: #0056b3;
   transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-#answer-buttons .btn:active {
-  background-color: #004085;
-  transform: scale(0.95);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+/* Click/focus effect for buttons */
+#answer-buttons .btn:focus {
+  background: #4caf50; /* Green when clicked */
+  outline: none; /* Removes default focus outline */
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Congratulations images */
-#congratulations-image img {
-  width: 100px;
-  height: auto;
-  margin-top: 20px;
-}
-
-/* Quiz progress bar */
 #quiz-progress-bar {
-  width: 80%;
-  height: 20px;
-  background-color: #e0e0e0;
-  border-radius: 10px;
-  margin: 20px auto;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  position: relative;
+  width: 100%;
+  background: white;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
 
 #quiz-progress {
-  height: 100%;
+  background: #4caf50;
+  height: 20px;
+  border-radius: 5px;
   width: 0%;
-  background-color: #28a745; /* Start with green */
-  border-radius: 10px;
-  transition: width 0.5s ease, background-color 0.5s ease;
 }
 
-#quiz-progress[data-progress="20%"] {
-  width: 20%;
-  background-color: #17a2b8; /* Cyan for 20% progress */
-}
-
-#quiz-progress[data-progress="50%"] {
-  width: 50%;
-  background-color: #ffc107; /* Yellow for 50% progress */
-}
-
-#quiz-progress[data-progress="80%"] {
-  width: 80%;
-  background-color: #fd7e14; /* Orange for 80% progress */
-}
-
-#quiz-progress[data-progress="100%"] {
-  width: 100%;
-  background-color: #dc3545; /* Red for 100% progress */
-}
-
-/* Progress percentage */
-#completed-perc {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-/* Bottom buttons */
-.quiz-bottom-btns {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-/* Answer buttons */
-#answer-buttons .btn {
-  padding: 10px 20px;
-  border: 2px solid transparent;
-  border-radius: 5px;
-  background-color: #007bff; /* Default button color (blue) */
+#pass-btn, #next-btn, #submit-btn, #play-again-btn {
+  background: linear-gradient(45deg, #56ab2f, #a8e063);
   color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-}
-
-/* Hover effect: Change border to green */
-#answer-buttons .btn:hover {
-  border-color: #28a745; /* Green border on hover */
-  transform: scale(1.05);
-}
-
-/* Selected button: Change background to green when clicked */
-#answer-buttons .btn:focus {
-  background-color: #28a745; /* Green background when selected */
-  border-color: #28a745; /* Green border to match */
-  outline: none; /* Remove default focus outline */
-}
-
-/* Active state for button press */
-#answer-buttons .btn:active {
-  transform: scale(0.95);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-
-.quiz-bottom-btns button {
-  padding: 10px 15px;
-  font-size: 1rem;
   border: none;
+  padding: 10px 15px;
+  margin: 5px;
   border-radius: 5px;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
-#pass-btn {
-  background-color: #6c757d; /* Grey */
-  color: white;
-  margin-bottom: 30px;
-}
-
-#next-btn {
-  background-color: #007bff; /* Blue */
-  color: white;
-}
-
-#submit-btn {
-  background-color: #28a745; /* Green */
-  color: white;
-  margin-bottom: 30px;
-}
-
-#play-again-btn {
-  background-color: #ffc107; /* Yellow */
-  color: white;
-}
-
-/* Hover effects */
-.quiz-bottom-btns button:hover {
+/* Hover effect for bottom buttons */
+#pass-btn:hover, #next-btn:hover, #submit-btn:hover, #play-again-btn:hover {
+  background: linear-gradient(45deg, #43c6ac, #191654);
   transform: scale(1.05);
 }
 
-#pass-btn:hover {
-  background-color: #5a6268;
-}
-
-#next-btn:hover {
-  background-color: #0056b3;
-}
-
-#submit-btn:hover {
-  background-color:  rgba(255, 105, 180, 0.6);
-}
-
-#play-again-btn:hover {
-  background-color: #e0a800;
-}
-
-.quiz-bottom-btns button:active {
-  transform: scale(0.95);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Answer buttons */
-#answer-buttons .btn {
-  padding: 10px 20px;
-  border: 2px solid transparent; /* Initial border */
-  border-radius: 5px;
-  background-color: #007bff; /* Default button color (blue) */
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-}
-
-/* Hover effect: Change border to green */
-#answer-buttons .btn:hover {
-  border-color: #28a745; /* Green border on hover */
+/* Click/focus effect for bottom buttons */
+#pass-btn:focus, #next-btn:focus, #submit-btn:focus, #play-again-btn:focus {
+  background: #4caf50; /* Green when clicked */
+  outline: none; /* Removes default focus outline */
   transform: scale(1.05);
 }
 
-/* Selected button: Change background to green */
-#answer-buttons .btn.selected {
-  background-color: #28a745; /* Green background when selected */
-  border-color: #28a745; /* Ensure the border matches when selected */
+#congratulations-image img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+#correct-span, #incorrect-span {
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+
+#quizResult {
   color: white;
+  font-weight: heavy;
 }
 
-/* Active state */
-#answer-buttons .btn:active {
-  transform: scale(0.95);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+/* Input focus effect (turns green when clicked) */
+input[type="radio"]:focus {
+  outline: none;
+  box-shadow: 0 0 5px 2px #4caf50; /* Green shadow when clicked */
 }
 
-#quiz-pic img {
-  width: 100%; /* Resize image to container width */
-  height: auto; /* Maintain aspect ratio */
-  mix-blend-mode: multiply; /* Blend the image with background */
-  opacity: 0.9; /* Slight transparency for better blending */
-}
-
-/* If you want the background of the image removed entirely */
-#quiz-pic {
-  position: absolute;
-  top: 150px;
-  right:0px;
-  width: 200px;
-  z-index: 1;
-}
-
+/* Media queries for responsiveness */
 @media (max-width: 768px) {
-  #quiz-pic {
-    width: 150px; /* Adjust for smaller screens */
-    right: 10px;
+  .quiz-description, #quiz {
+    padding: 1rem;
+  }
+  .quiztitle {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1.5rem;
   }
 }
 
-/* Fixing Privacy Policy, Refund Policy and Licensing */
-ul.link li:nth-child(3) {
-  text-align: left; /* Aligning the text to the left */
-  margin-left: 0; 
-}
-ul.link li:nth-child(1), 
-ul.link li:nth-child(2) {
-  text-align: left; /* Aligning to the left */
-  margin-left: 0; 
-  padding: 5px 0; 
-}
-
-/* Fixing Tools (4th item), Blog (5th item), and Quiz (6th item) */
-ul.link li:nth-child(4), 
-ul.link li:nth-child(5), 
-ul.link li:nth-child(6) { 
-  text-align: left; 
-  margin-left: 0; 
-  padding: 5px 0; 
-}
-
-
-  </style>
+</STYLE>
 </body>
 
 
