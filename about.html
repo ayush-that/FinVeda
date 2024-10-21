@@ -107,69 +107,65 @@
                   <span class="toggler-icon"></span>
                 </button> -->
                 <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
-                  <div class="icon1">
-                    <img src="assets/images/icon.png" alt="icon.png">
-                  </div> 
-                  <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="page-scroll active-link" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
-                    </li>    
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
-                    </li>
-                    <li class="nav-item active">
-                      <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
-                    </li>
-                    <li class="nav-item no-underline">
-                      <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
-                    </li>
-                  </ul>
-                  <button id="theme-toggle" class="theme-toggle">
-                    🌙
-                  </button>
+                  <a href="./index.html">
+                    <i class="fa-solid fa-house"></i>
+                  </a>
+                  <div class="navbar-logo">
+                    <div class="icon1">
+                      <a href="./index.html">
+                        <img src="assets/images/icon.webp" alt="icon.webp">
+                      </a>
+                    </div>
+                  </div>
+                  <div class="nav-space"></div>
+                  <div class="navbar-elements">
+                    <button id="theme-toggle" class="theme-toggle">
+                      🌙
+                    </button>
+                    <div class="dropdown">
+                      <a>
+                          <i class="fa-solid fa-bars" style="color: #fff;"></i>
+                          <span class="material-symbols-outline"></span>
+                      </a>
+                      <div class="menu">
+                          <a href="./careers.html">Career 👔</a>
+                          <a href="./quiz.html">Quiz 🤔</a>
+                          <a href="./tools/sip.html">Tools 🔧</a>
+                          <a href="./trends.html">Trends 📈</a>
+                          <a href="./blog.html">Blogs 📰</a>
+                          <a href="./about.html">About Us 📖</a>
+                          <a href="./contact.html">Contact📞</a>
+                          <a href="./faq.html">Help 🙋‍♂</a>
+                      </div>
+                    </div>
+                    <a style="animation-duration: 0.4s;animation-name: ease;" href="./loginPage.html" data-scroll-nav="0"><button class="bn30">Login / Register</button></a>
+                  </div>
+                  <div class="nav-toggle-btn-space-fixed"></div>
                 </div>
                 <script>
                   const toggleButton = document.getElementById('theme-toggle');
                   const body = document.body;
                   const currentTheme = localStorage.getItem('theme');
   
-              if (currentTheme === 'dark') {
-              body.classList.add('dark-mode');
-              toggleButton.classList.add('dark');
-              toggleButton.textContent = '🌞';
-              }
-              
-              toggleButton.addEventListener('click', function () {
-              body.classList.toggle('dark-mode');
-              toggleButton.classList.toggle('dark');
-              
-              // Update button icon based on mode
-              if (body.classList.contains('dark-mode')) {
-                toggleButton.textContent = '🌞';  // Light mode icon
-                localStorage.setItem('theme', 'dark');
-              } else {
-                toggleButton.textContent = '🌙';  // Dark mode icon
-                localStorage.setItem('theme', 'light');
-              }
-              });
+                  if (currentTheme === 'dark') {
+                  body.classList.add('dark-mode');
+                  toggleButton.classList.add('dark');
+                  toggleButton.textContent = '🌞';
+                  }
+                  
+                  toggleButton.addEventListener('click', function () {
+                  body.classList.toggle('dark-mode');
+                  toggleButton.classList.toggle('dark');
+                  
+                  // Update button icon based on mode
+                  if (body.classList.contains('dark-mode')) {
+                    toggleButton.textContent = '🌞';  // Light mode icon
+                    localStorage.setItem('theme', 'dark');
+                  } else {
+                    toggleButton.textContent = '🌙';  // Dark mode icon
+                    localStorage.setItem('theme', 'light');
+                  }
+                  });
               </script>
                 <div class="">
 
@@ -425,7 +421,7 @@ registerCloseButton.addEventListener("click", function() {
             <div class="row">
               <div class="col-lg-12">
                 <div class="header-hero-image text-center wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">
-                  <img src="./assets/images/header-hero.png" alt="hero" />
+                  <img src="./assets/images/header-hero.webp" alt="hero" />
                 </div>
               </div>
             </div>
@@ -443,7 +439,7 @@ registerCloseButton.addEventListener("click", function() {
                       <div class="main">
                         <div class="service">
                           <div class="service-logo">
-                            <img src="./assets/images/service-logo.png" alt="">
+                            <img src="./assets/images/service-logo.webp" alt="">
                           </div>
                           <h4>Financial Kit</h4>
                           <p>We offer expert written blogs on investment tips and strategies, and current economic trends, all crafted to keep you well-informed. With our SIP and PPF tools you'll discover power of compounding and make informed decisions regarding your savings.
@@ -461,7 +457,7 @@ registerCloseButton.addEventListener("click", function() {
           <div class="main">
             <div class="service">
               <div class="service-logo">
-                <img src="./assets/images/service-logo3.jpg" alt="">
+                <img src="./assets/images/service-logo3.webp" alt="">
               </div>
               <h4>Stock Market</h4>
               <p>You will make smarter decisions by staying updated to the current market happenings in real time with
@@ -478,7 +474,7 @@ registerCloseButton.addEventListener("click", function() {
           <div class="main">
             <div class="service">
               <div class="service-logo">
-                <img src="./assets/images/service-logo2.jpg" alt="">
+                <img src="./assets/images/service-logo2.webp" alt="">
               </div>
               <h4>Our Team</h4>
               <p>We at FinVeda aim to make you a stock market Guru easy with our AI powered teaching and financial
@@ -536,6 +532,7 @@ registerCloseButton.addEventListener("click", function() {
       </div>
     </div>
 
+  <img style="position: absolute; top: 500px; left:-120px; mix-blend-mode: multiply;" src="./assets/images/contributors.jpeg" alt="photo">
   </div>
   <section class="contributors">
     <h2>Our Contributors</h2>
@@ -547,6 +544,95 @@ registerCloseButton.addEventListener("click", function() {
     </div>
   </section>
 
+  <style>
+    /* Parent element styling */
+.contributors {
+  background: linear-gradient(135deg, #74ebd5, #acb6e5); /* Eye-catching gradient background */
+  padding: 50px 20px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contributors h2 {
+  font-size: 2.5rem;
+  color: #2e2c2c;
+  margin-bottom: 40px;
+  font-weight: 700;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Contributor cards container */
+.contributor-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive layout */
+  gap: 20px;
+  padding: 20px 0;
+}
+
+/* Individual card styling */
+.contributor-cards {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.contributor-cards .card:hover {
+  transform: translateY(-10px); /* Hover effect - card lifts */
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}
+
+/* Interactive color on hover */
+.contributor-cards .card:hover {
+  background: linear-gradient(145deg, #be8efc, #34d185); /* Eye-catching gradient on hover */
+}
+
+/* Smooth transitions for color and shadow */
+.contributor-cards .card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.contributor-cards .card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.contributor-cards .card:hover h3 {
+  color: #333; /* Darker shade on hover */
+}
+
+/* Pagination button styling */
+.pagination {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pagination button {
+  background-color: #151414;
+  border: 2px solid #8ec5fc;
+  color: #b5b6b7;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: #8ec5fc;
+  color: #ffffff;
+}
+
+
+  </style>
  <!-- Timed popup that will appear after succesful submission of feebback form! -->
  <button class="notification" id="successnotification" style="display:none;">
   <span class="message" id="successmsg">Submitted successfully!</span>
@@ -651,34 +737,13 @@ registerCloseButton.addEventListener("click", function() {
                         </a>
                     </div>
                 </li>
-                <li id="social_icons" class="d-sm-flex justify-content-evenly my-3">
-                  <div style="width: 100%; display:flex; ">
-                    <!-- Instagram Icon -->
-                    <a href="https://instagram.com" target="_blank" style="margin: 0 10px; color: #E4405F;" aria-label="Instagram">
-                      <i style="font-size: 25px" class="fa-brands fa-instagram"></i>
-                    </a>
-                
-                    <!-- Facebook Icon -->
-                    <a href="https://facebook.com" target="_blank" style="margin: 0 10px; color: #4267B2;" aria-label="Facebook">
-                      <i style="font-size: 25px" class="fa-brands fa-facebook"></i>
-                    </a>
-                
-                    <!-- X/Twitter Icon -->
-                    <a href="https://twitter.com" target="_blank" style="margin: 0 10px; color: #1DA1F2;" aria-label="Twitter">
-                      <i style="font-size: 25px" class="fa-brands fa-x-twitter"></i>
-                    </a>
-                
-                    <!-- Discord Icon -->
-                    <a href="https://discord.com" target="_blank" style="margin: 0 10px; color: #7289DA;" aria-label="Discord">
-                      <i style="font-size: 25px" class="fa-brands fa-discord"></i>
-                    </a>
-                
-                    <!-- GitHub Icon -->
-                    <a href="https://github.com" target="_blank" style="margin: 0 10px; color: #333;" aria-label="GitHub">
-                      <i style="font-size: 25px" class="fa-brands fa-github"></i>
-                    </a>
-                  </div>
-                </li>
+                <div class="social-icons">
+                  <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                  <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                  <a href="#"><i class="fa-brands fa-discord"></i></a>
+                  <a href="#"><i class="fa-brands fa-github"></i></a>
+              </div>
             </ul>
         </div>
     </div>

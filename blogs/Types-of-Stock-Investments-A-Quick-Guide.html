@@ -54,6 +54,22 @@
         background-color: #f76b45;
         z-index: 9999;
       }
+
+body {
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode h2 {
+  background-color: #121212 !important;
+  color: #e0e0e0 !important;
+}
   </style>
 </head>
 
@@ -128,6 +144,8 @@
       animateCircles();
     });
 
+
+
   </script>
 
 <div id="progressBar"></div>
@@ -141,6 +159,15 @@
     var scrolled = (winScroll / height) * 100;
     document.getElementById("progressBar").style.width = scrolled + "%";
   };
+
+  window.addEventListener("DOMContentLoaded", (event) => {
+      const savedTheme = localStorage.getItem("theme");
+
+      // Apply the theme if stored
+      if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+    });
 </script>
   <div class="preloader">
     <div class="loader">
@@ -338,7 +365,7 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="header-hero-image text-center wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">
-              <img src="../assets/images/header-hero.png" alt="hero" />
+              <img src="../assets/images/header-hero.webp" alt="hero" />
             </div>
           </div>
         </div>

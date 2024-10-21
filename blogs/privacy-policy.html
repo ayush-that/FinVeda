@@ -115,6 +115,22 @@
           color: rgb(77, 77, 77) !important;
         }
 
+body {
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode h2 {
+  background-color: #121212 !important;
+  color: #e0e0e0 !important;
+}
+
 
   </style>
 
@@ -201,6 +217,15 @@
       var scrolled = (winScroll / height) * 100;
       document.getElementById("progressBar").style.width = scrolled + "%";
   };
+
+  window.addEventListener("DOMContentLoaded", (event) => {
+      const savedTheme = localStorage.getItem("theme");
+
+      // Apply the theme if stored
+      if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+    });
  </script>
 
 <div class="preloader">
@@ -431,7 +456,7 @@
                 data-wow-duration="1.3s"
                 data-wow-delay="1.4s"
                 >
-                <img src="../assets/images/header-hero.png" alt="hero" />
+                <img src="../assets/images/header-hero.webp" alt="hero" />
               </div>
             </div>
           </div>

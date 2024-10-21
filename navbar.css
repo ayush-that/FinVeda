@@ -13,7 +13,8 @@ z
 .navbar-collapse {
     display: flex;
     margin-left: -13rem;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     background-color: #3a90dc;
     border-radius: 10px;
     padding: 15px 30px;
@@ -59,7 +60,7 @@ z
 .navbar-nav {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
     flex-wrap: nowrap;
     gap:15px;
 }
@@ -68,6 +69,315 @@ z
     display: inline-block;
     padding: 0;
 }
+
+.navbar-collapse i {
+    color: #e7e7e7;
+    margin: 0 20px;
+    font-size: 18px;
+}
+
+.navbar-collapse i:hover {
+    scale: 1.2;
+    transition: 500ms;
+}
+
+.navbar-logo {
+    margin-right: 50px;
+    width: 125px;
+}
+
+.navbar-collapse i {
+    color: #e7e7e7;
+    margin: 0 20px;
+    font-size: 18px;
+}
+
+.navbar-collapse i:hover {
+    scale: 1.2;
+    transition: 500ms;
+}
+
+.navbar-logo {
+    margin-right: 50px;
+    width: 125px;
+}
+
+.icon1 {
+    filter: exposure(2);
+}
+
+.bn30 {
+    border: 5em;
+    cursor: pointer;
+    outline: none;
+    font-size: 13px;
+    -webkit-transform: translate(0);
+    transform: translate(0);
+    background-image: linear-gradient(45deg, #4568dc, #b06ab3);
+    padding: 0.7em 2em;
+    border-radius: 65px;
+    box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.438);
+    -webkit-transition: box-shadow 0.25s;
+    transition: box-shadow 0.25s;
+    color: white;
+    margin-right: 30px;
+  }
+  
+  .bn30 .text {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(45deg, #4568dc, #b06ab3);
+  }
+  
+  .bn30:after {
+    content: "";
+    border-radius: 18px;
+    position: absolute;
+    margin: 4px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    background: #0e0e10;
+  }
+  
+  .bn30:hover {
+    background-image: linear-gradient(-45deg, #4568dc, #b06ab3);
+    box-shadow: 0 12px 24px rgba(128, 128, 128, 0.1);
+  }
+  
+  .bn30:hover .text {
+    background-image: linear-gradient(-45deg, #4568dc, #b06ab3);
+  }
+
+.nav-space {
+    flex: 1;
+}
+
+.navbar-elements {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 15px;
+}
+
+.dropdown {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    
+}
+.dropdown > a {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    height: 100%;
+    color: #fff;
+    font-size: 25px;
+}
+.dropdown > a > span {
+    font-size: 20px;
+    color: #e7e7e7;
+    translate: 0 2px;
+}
+.menu {
+    position: absolute;
+    top: 60px;
+    right: -20px;
+    width: 180px;
+    background-color: #000;
+    border-radius: 10px;
+    border: 1px solid #1f1f1f;
+    padding: 8px 0;
+    display: grid;
+    opacity: .95;
+    visibility: hidden;
+    transition: 0.3s;
+}
+.dropdown:hover .menu {
+    opacity: .95;
+    visibility: visible;
+}
+.menu::before {
+    content: "";
+    position: absolute;
+    background: inherit;
+    border-top: 1px solid #1f1f1f;
+    border-right: 1px solid #1f1f1f;
+    top: -7px;
+    right: 22px;
+    width: 12px;
+    height: 12px;
+    rotate: -45deg;
+}
+.menu > a {
+    padding: 12px 20px;
+    font-size: 14px;
+    text-decoration: none;
+}
+.menu > a:hover {
+    /* padding: .5px; */
+    /* background: #121212; */
+    border: .5px solid #505050;
+    transition: 300ms;
+}
+.menu a {
+    text-decoration: none;
+    color: #fff;
+}
+.nav-elements a i {
+    padding-left: 3px;
+}
+
+/* .nav-toggle-btn-space-fixed {
+    width: 100px;
+} */
+
+
+.icon1 {
+    filter: exposure(2);
+}
+
+.bn30 {
+    border: 5em;
+    cursor: pointer;
+    outline: none;
+    font-size: 13px;
+    -webkit-transform: translate(0);
+    transform: translate(0);
+    background-image: linear-gradient(45deg, #4568dc, #b06ab3);
+    padding: 0.7em 2em;
+    border-radius: 65px;
+    box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.438);
+    -webkit-transition: box-shadow 0.25s;
+    transition: box-shadow 0.25s;
+    color: white;
+    margin-right: 30px;
+  }
+  
+  .bn30 .text {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(45deg, #4568dc, #b06ab3);
+  }
+  
+  .bn30:after {
+    content: "";
+    border-radius: 18px;
+    position: absolute;
+    margin: 4px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    background: #0e0e10;
+  }
+  
+  .bn30:hover {
+    background-image: linear-gradient(-45deg, #4568dc, #b06ab3);
+    box-shadow: 0 12px 24px rgba(128, 128, 128, 0.1);
+  }
+  
+  .bn30:hover .text {
+    background-image: linear-gradient(-45deg, #4568dc, #b06ab3);
+  }
+
+.nav-space {
+    flex: 1;
+}
+
+.navbar-elements {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 15px;
+}
+
+.dropdown {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    
+}
+.dropdown > a {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    height: 100%;
+    color: #fff;
+    font-size: 25px;
+}
+.dropdown > a > span {
+    font-size: 20px;
+    color: #e7e7e7;
+    translate: 0 2px;
+}
+.menu {
+    position: absolute;
+    top: 60px;
+    right: -20px;
+    width: 180px;
+    background-color: #000;
+    border-radius: 10px;
+    border: 1px solid #1f1f1f;
+    padding: 8px 0;
+    display: grid;
+    opacity: .95;
+    visibility: hidden;
+    transition: 0.3s;
+}
+.dropdown:hover .menu {
+    opacity: .95;
+    visibility: visible;
+}
+.menu::before {
+    content: "";
+    position: absolute;
+    background: inherit;
+    border-top: 1px solid #1f1f1f;
+    border-right: 1px solid #1f1f1f;
+    top: -7px;
+    right: 22px;
+    width: 12px;
+    height: 12px;
+    rotate: -45deg;
+}
+.menu > a {
+    padding: 12px 20px;
+    font-size: 14px;
+    text-decoration: none;
+}
+.menu > a:hover {
+    /* padding: .5px; */
+    /* background: #121212; */
+    border: .5px solid #505050;
+    transition: 300ms;
+}
+.menu a {
+    text-decoration: none;
+    color: #fff;
+}
+.nav-elements a i {
+    padding-left: 3px;
+}
+
+/* .nav-toggle-btn-space-fixed {
+    width: 100px;
+} */
+
+
 
 
 @media (max-width: 1320px) { /* 100% width */
@@ -259,3 +569,139 @@ z
     transform: rotate(30deg);
 
 }
+.side-icons {
+    position: fixed;
+    right: 20px;
+    top: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .icon-content {
+    position: relative;
+  }
+  
+  .icon-content a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #4d4d4d;
+    /* Default icon color */
+    background-color: #fff;
+    transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    overflow: hidden;
+    text-decoration: none;
+    position: relative;
+  }
+  
+  .icon-content a i {
+    font-size: 24px;
+    position: relative;
+    z-index: 2;
+    /* Icons should be above the background fill */
+  }
+  
+  .icon-content a .filled {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    transition: transform 0.3s ease-in-out;
+    transform: scaleY(0);
+    /* Hide the fill initially */
+    transform-origin: bottom;
+    /* Start the fill from the bottom */
+    z-index: 1;
+    /* Background fill should be below the icons */
+  }
+  
+  .icon-content a:hover .filled {
+    transform: scaleY(1);
+    /* Scale the fill to full height on hover */
+  }
+  
+  .icon-content a:hover i {
+    color: #fff;
+    /* Change icon color to white on hover */
+  }
+  
+  .icon-content a[data-social="facebook"] .filled {
+    background-color: #3b5998;
+  }
+  
+  .icon-content a[data-social="linkedin"] .filled {
+    background-color: #0077b5;
+  }
+  
+  .icon-content a[data-social="X"] .filled {
+    background-color: #080808;
+  }
+  
+  .icon-content a[data-social="Discord"] .filled {
+    background-color: #600bfd;
+  }
+  
+  .icon-content a[data-social="github"] .filled {
+    background-color: #24292e;
+  }
+  
+  /* Optional: add box-shadow on hover */
+  .icon-content a:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Dark mode styles */
+  body.dark-mode .side-icons .icon-content a {
+    background-color: #333;
+    /* Dark background for icons in dark mode */
+    color: #ddd;
+    /* Light icon color in dark mode */
+  }
+  
+  body.dark-mode .side-icons .icon-content a:hover .filled {
+    background-color: #444;
+    /* Slightly lighter dark mode background fill */
+  }
+  
+  body.dark-mode .side-icons .icon-content a:hover i {
+    color: #fff;
+    /* White icon color on hover in dark mode */
+  }
+  
+  /* Dark mode background colors for different icons */
+  body.dark-mode .side-icons .icon-content a[data-social="facebook"] .filled {
+    background-color: #3b5998;
+    /* Darker shade for Facebook in dark mode */
+  }
+  
+  body.dark-mode .side-icons .icon-content a[data-social="linkedin"] .filled {
+    background-color: #0077b5;
+    /* Darker shade for LinkedIn in dark mode */
+  }
+  
+  body.dark-mode .side-icons .icon-content a[data-social="twitter"] .filled {
+    background-color: #1da1f2;
+    /* Darker shade for Twitter in dark mode */
+  }
+  
+  body.dark-mode .side-icons .icon-content a[data-social="youtube"] .filled {
+    background-color: #ff0000;
+    /* Darker shade for YouTube in dark mode */
+  }
+  
+  body.dark-mode .side-icons .icon-content a[data-social="github"] .filled {
+    background-color: #444c56;
+    /* Darker shade for GitHub in dark mode */
+  }
+  
+  /* Optional: add box-shadow on hover in dark mode */
+  body.dark-mode .side-icons .icon-content a:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    /* Slightly stronger shadow in dark mode */
+  }
