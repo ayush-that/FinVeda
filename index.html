@@ -20,6 +20,8 @@
   <link rel="stylesheet" href="GSTstyle.css"/>
   <link rel="stylesheet" type="text/css" href="sipcalculatorCss.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.13/lottie.min.js"/>
+
    <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
   <link rel="stylesheet" href="navbar.css">
   <style>
@@ -264,22 +266,11 @@
       document.getElementById("progressBar").style.width = scrolled + "%";
     };
   </script>
-  <div class="preloader">
-    <div class="loader">
-      <div class="ytp-spinner">
-        <div class="ytp-spinner-container">
-          <div class="ytp-spinner-rotator">
-            <div class="ytp-spinner-left">
-              <div class="ytp-spinner-circle"></div>
-            </div>
-            <div class="ytp-spinner-right">
-              <div class="ytp-spinner-circle"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div id="preloader">
+    <div id="lottie-loader"></div>
+</div>
+<div class="content-wrapper">
+
   <header class="header-area">
     <div class="row">
       <div style="display: flex; justify-content: center;" class="">
@@ -2110,6 +2101,7 @@ scrollToTopBtn.onclick = function() {
     <div id="particles-2"></div>
   </footer>
   <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
+  </div>
 
   
   <script src="./assets/js/subscribe.js"></script>
@@ -2245,6 +2237,7 @@ scrollToTopBtn.onclick = function() {
   });
   </script>
   <script src="./smoothScroll.js"></script>
+  <script src="./assets/js/preloader.js"></script>
 </body>
 </html> 
 
