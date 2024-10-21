@@ -1306,14 +1306,14 @@ scrollToTopBtn.onclick = function() {
   </section>
 
   <!-- testimonail section starts here  -->
-  <section id="testimonial" class="testimonial-area pt-120">
-    <div class="container">
+  <section id="testimonial" style="background-color: white;" class="testimonial-area pt-120">
+    <div class="container"  >
       <div class="row justify-content-center">
         <div class="col-lg-5">
           <div class="section-title text-center pb-40">
             <div class="line m-auto"></div>
 
-            <h3 class="title"style="color:#2f6be5 ;">Users sharing<span> their experience</span></h3>
+            <h3 class="title">Users sharing<span> their experience</span></h3>
 
           </div>
         </div>
@@ -1476,6 +1476,112 @@ scrollToTopBtn.onclick = function() {
     </div>
   </section>
   <!-- testimonail section ends here  -->
+
+<style>
+  
+  /* General testimonial section styling */
+#testimonial {
+  background: linear-gradient(135deg, #4b6cb7, #182848); /* Attractive gradient background */
+  padding: 120px 0;
+  color: #fff; /* White font color */
+}
+
+.section-title .title {
+  font-size: 2.5rem;
+  color:greenyellow;
+  font-weight: bold;
+}
+
+.title:hover{
+  color:white;
+  text-decoration: dotted;
+}
+
+/* Styling for each testimonial card */
+.single-testimonial {
+  background: rgba(167, 43, 43, 0.1); /* Semi-transparent background for testimonial cards */
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.single-testimonial:hover {
+  transform: scale(1.05); /* Hover effect to scale up the testimonial */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Add a subtle shadow on hover */
+}
+
+.testimonial-review .quota i {
+  font-size: 2rem;
+  color: #f7b42c; /* Color for the quote icon */
+}
+
+.testimonial-review .star ul li i {
+  color: #ffd700; /* Gold stars for ratings */
+}
+
+/* Styling for testimonial text */
+.testimonial-text p {
+  font-style: italic;
+  color: #e0e0e0;
+}
+
+/* Author section styling */
+.testimonial-author {
+  margin-top: 15px;
+}
+
+.author-image .author {
+  border-radius: 50%;
+  border: 3px solid #fff; /* White border around the profile images */
+  width: 50px;
+  height: 50px;
+}
+
+.author-content h6.holder-name {
+  font-size: 1.2rem;
+  font-weight: 800; /* Heavy font-weight for author names */
+  color: #fff; /* White font for author names */
+}
+
+.author-content p.text {
+  color: #ccc; /* Lighter text color for author details */
+}
+
+/* Navigation buttons */
+#slide-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+#prevButton,
+#nextButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+#prevButton .arrow-left,
+#nextButton .arrow-right {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(to bottom right, #ff7e5f, #feb47b); /* Gradient arrows */
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+#prevButton:hover .arrow-left,
+#nextButton:hover .arrow-right {
+  background: linear-gradient(to bottom right, #feb47b, #ff7e5f); /* Reverse gradient on hover */
+}
+
+</style>
+
+
+
+
   <!-- <section id="blog" class="blog-area pt-120"> -->
 
     <div class="blogfull">
