@@ -57,6 +57,23 @@ z-index: 9999;
         background-color: #f76b45;
         z-index: 9999;
       }
+
+
+body {
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode h2 {
+  background-color: #121212 !important;
+  color: #e0e0e0 !important;
+}
 </style>
 </head>
 <body>
@@ -106,6 +123,15 @@ document.addEventListener("DOMContentLoaded", function () {
     coords.x = e.pageX;
     coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
   });
+
+  window.addEventListener("DOMContentLoaded", (event) => {
+      const savedTheme = localStorage.getItem("theme");
+
+      // Apply the theme if stored
+      if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+    });
 
   function animateCircles() {
     let x = coords.x;
