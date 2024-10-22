@@ -134,3 +134,16 @@ If you find this project useful and would like to support the project, please co
 
 <h3 align="center">Keep learning and exploring! 🚀</h3>
 <h3 align="center">Happy coding! 👩‍💻🎉 </h3>
+
+
+## Connect with Me 🌐
+
+[![Email](https://img.shields.io/badge/Email-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:ayush1337@hotmail.com)
+[![X (formerly Twitter)](https://img.shields.io/badge/X-1DA1F2?style=flat-square&logo=x&logoColor=white)](https://x.com/shydev69)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ayush-that/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ayush-that)
+[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=flat-square&logo=youtube&logoColor=white)](https://www.youtube.com/@ayush-that)
+
+---
+
+Feel free to reach out via any of the platforms above!
