@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Financial Literacy Dashboard</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    
+</head>
+<body>
+
+    
+    <h1>Financial Literacy Dashboard</h1>
+    <div id="map"></div>
+    <h2>Financial Literacy Rates</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>State</th>
+                <th>Literacy Rate</th>
+            </tr>
+        </thead>
+        <tbody id="literacy-data"></tbody>
+    </table>
     <style>
         #map {
             height: 500px;
@@ -27,20 +44,114 @@
             background-color: #f2f2f2;
         }
     </style>
-</head>
-<body>
-    <h1>Financial Literacy Dashboard</h1>
-    <div id="map"></div>
-    <h2>Financial Literacy Rates</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>State</th>
-                <th>Literacy Rate</th>
-            </tr>
-        </thead>
-        <tbody id="literacy-data"></tbody>
-    </table>
+
+    <style>
+        /* Styling for the Financial Literacy Dashboard title */
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    background-color: #4caf50; /* A catchy green background */
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+h1:hover {
+    background-color: #388e3c; /* Darker green on hover */
+}
+
+/* Styling for the map section */
+#map {
+    width: 100%;
+    height: 300px;
+    background-color: #e0f7fa; /* Light blue for the map area */
+    margin-bottom: 20px;
+    border: 2px solid #6fc55a; /* Teal border */
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+#map:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Styling for the Financial Literacy Rates subtitle */
+h2 {
+    text-align: center;
+    background-color: #ff9800; /* Vibrant orange background */
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+h2:hover {
+    background-color: #e65100; /* Darker orange on hover */
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    border: 3px solid #3fb560; /* Vibrant indigo border */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+table:hover {
+    border-color: #3a9328; /* Darker indigo on hover */
+}
+
+th, td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    border-right: 2px solid #3fb557; /* Indigo borders for each cell */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Header row styling */
+th {
+    background-color: #3f51b5; /* A vibrant indigo background */
+    color: white;
+    text-transform: uppercase;
+    border-right: 2px solid #309f3b; /* Darker border for the header cells */
+}
+
+/* Alternating row colors */
+tbody tr:nth-child(odd) {
+    background-color: #f1f1f1;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #e3f2fd;
+}
+
+/* Hover effect on table rows */
+tbody tr:hover {
+    background-color: #bbdefb; /* Light blue on hover */
+}
+
+/* Hover effect for table cells */
+td:hover {
+    border-color: #1a237e; /* Dark blue border when hovered */
+}
+
+/* Interactive colors for Literacy Rate data */
+td {
+    color: #424242;
+}
+
+td:hover {
+    color: #1a237e; /* Dark blue when hovered */
+}
+
+    </style>
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
