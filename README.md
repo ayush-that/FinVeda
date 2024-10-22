@@ -102,6 +102,24 @@ FinVeda is a dynamic financial literacy app that'll help you Learn finance with 
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
+## 💗 Stargazers
+
+<div align='left'>
+
+[![Stargazers repo roster for @ayush-that/FinVeda](https://reporoster.com/stars/ayush-that/FinVeda)](https://github.com/ayush-that/FinVeda/stargazers)
+
+</div>
+
+## 💗 Forkers
+
+[![Forkers repo roster for @ayush-that/FinVeda](https://reporoster.com/forks/ayush-that/FinVeda)](https://github.com/ayush-that/FinVeda/network/members)
+
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+
+
+
 ### 🛠️ Troubleshooting
 
 If you encounter any issues while using FinVeda, here are some common solutions:

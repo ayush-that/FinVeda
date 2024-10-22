@@ -271,7 +271,7 @@ box-shadow: 0 0 25px #03133c;
     </div>
   </div>
   <header class="header-area">
-<<<<<<< Updated upstream
+
     <div class="row">
       <div style="display: flex; justify-content: center;" class="">
         <nav class="navbar navbar-expand-lg " style="display: flex;">
@@ -321,7 +321,7 @@ box-shadow: 0 0 25px #03133c;
             </ul>
           </div>
               <div class="">
-=======
+
     <div class="navbar-area">
       <div class="container">
         <div class="row">
@@ -398,7 +398,7 @@ box-shadow: 0 0 25px #03133c;
       </div>
   </div>
 </div>
->>>>>>> Stashed changes
+
 
                 <!-- Login Modal -->
                 <div id="myModal" class="modal">
@@ -1089,6 +1089,107 @@ registerCloseButton.addEventListener("click", function() {
 </div>
 
     <!-- End NPV Calculator -->
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TCO Calculator - FinVeda</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            color: #555;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .result {
+            font-weight: bold;
+            color: #007bff;
+            margin-top: 10px;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>TCO Calculator</h1>
+    
+    <label for="initialCost">Initial Cost ($):</label>
+    <input type="number" id="initialCost" placeholder="Enter initial cost" required>
+    
+    <label for="operatingCost">Annual Operating Cost ($):</label>
+    <input type="number" id="operatingCost" placeholder="Enter annual operating cost" required>
+    
+    <label for="years">Years of Ownership:</label>
+    <input type="number" id="years" placeholder="Enter number of years" required>
+    
+    <label for="miscCost">Miscellaneous Costs ($):</label>
+    <input type="number" id="miscCost" placeholder="Enter miscellaneous costs" required>
+    
+    <button class="btn" onclick="calculateTCO()">Calculate TCO</button>
+
+    <div class="result" id="tcoResult"></div>
+</div>
+
+<script>
+    function calculateTCO() {
+        // Get the input values
+        const initialCost = parseFloat(document.getElementById('initialCost').value) || 0;
+        const operatingCost = parseFloat(document.getElementById('operatingCost').value) || 0;
+        const years = parseInt(document.getElementById('years').value) || 0;
+        const miscCost = parseFloat(document.getElementById('miscCost').value) || 0;
+
+        // Calculate TCO
+        const totalOperatingCost = operatingCost * years;
+        const tco = initialCost + totalOperatingCost + miscCost;
+
+        // Display the result
+        document.getElementById('tcoResult').innerHTML = `Total Cost of Ownership: $${tco.toFixed(2)}`;
+    }
+</script>
+
+</body>
+</html>
+
  
     <!--ROI calculator-->
     <script src="roiCalculator.js" defer></script>
@@ -1810,6 +1911,7 @@ registerCloseButton.addEventListener("click", function() {
               </div>
           </div>
       </div>
+
  feature/copyright
   </div>
       <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center">
@@ -1836,7 +1938,7 @@ registerCloseButton.addEventListener("click", function() {
           <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
               <div class="footer-title">
                   <h4 class="title custom-margin">Contact Us</h4>
- main
+
               </div>
               <ul class="contact custom-margin-big" style="justify-content: space-around;">
                   <li class="d-sm-flex justify-content-center">
@@ -1890,8 +1992,7 @@ registerCloseButton.addEventListener("click", function() {
             text-align: center;
             width: 100%;
             height: 100%;
-          "
-        >
+       
           <div class="copyright-content" style="text-align: center">
             <p class="text" style="text-align: center">
               © <span id="copyright-year"></span> FinVeda. All rights are
