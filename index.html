@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="GSTstyle.css" />
   <link rel="stylesheet" type="text/css" href="sipcalculatorCss.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.13/lottie.min.js" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.13/lottie.min.js"></script>
 
   <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
   <link rel="stylesheet" href="navbar.css">
@@ -306,10 +306,7 @@
                 </div>
               </div>
               <div class="nav-space"></div>
-              <div class="navbar-elements">
-                <button id="theme-toggle" class="theme-toggle">
-                  🌙
-                </button>
+              <div class="navbar-elements"> 
                 <div class="dropdown">
                   <a>
                     <i class="fa-solid fa-bars" style="color: #fff;"></i>
@@ -367,31 +364,6 @@
 
             </div>
 
-            <script>
-              const toggleButton = document.getElementById('theme-toggle');
-              const body = document.body;
-              const currentTheme = localStorage.getItem('theme');
-
-              if (currentTheme === 'dark') {
-                body.classList.add('dark-mode');
-                toggleButton.classList.add('dark');
-                toggleButton.textContent = '🌞';
-              }
-
-              toggleButton.addEventListener('click', function () {
-                body.classList.toggle('dark-mode');
-                toggleButton.classList.toggle('dark');
-
-                // Update button icon based on mode
-                if (body.classList.contains('dark-mode')) {
-                  toggleButton.textContent = '🌞';  // Light mode icon
-                  localStorage.setItem('theme', 'dark');
-                } else {
-                  toggleButton.textContent = '🌙';  // Dark mode icon
-                  localStorage.setItem('theme', 'light');
-                }
-              });
-            </script>
 
             <div class="">
               <!-- Login Modal -->
@@ -617,22 +589,6 @@
         <link href="./navbar.css" rel="stylesheet">
         <script type="text/javascript" src="./navbar.js"></script>
 
-
-        <!--           
-            <nav class="mobile-menu ">
-              <a class="page-scroll" href="./index.html">Home 🏡</a>
-              <a class="page-scroll" href="./about.html">About Us 📖</a>
-              <a class="page-scroll" href="./trends.html">Trends 📈</a>
-              <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
-              <a class="page-scroll" href="./blog.html">Blogs 📰</a>
-              <a class="page-scroll active-link" href="./quiz.html">Quiz 🤔</a>
-              <a class="page-scroll main-btn" href="#" onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
-              <div class="mobile-menu__trigger"><span></span></div>
-            </nav>
-
-                
-              <link href="./navbar.css" rel="stylesheet">
-              <script type="text/javascript" src="./navbar.js"></script> --> --&gt;
         <div id="home" class="header-hero bg_cover" style="background-image: url(./assets/images/banner-bg.svg)">
           <div class="container">
             <h2 class="head-animate" style="font-size: 90px;">
@@ -884,7 +840,7 @@
           <!-- <div class="navbar-area"> -->
           <!-- <div class="container"> -->
           <div class="row">
-            HeaderFooter
+           
             <!-- <div class="col-lg-12"> -->
             <nav class="navbar navbar-expand-lg">
               <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -898,8 +854,7 @@
                   <div class="icon1">
                     <img src="./assets/images/icon.webp" alt="icon.png">
                   </div>
-                </a>
-                HeaderFooter
+                </a> 
 
                 <ul id="nav" class="navbar-nav" style="margin:auto">
 
@@ -926,47 +881,11 @@
                     <a class="page-scroll" href="./careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
                   </li>
                   <li class="nav-item">
-                    HeaderFooter
-
-                    <a class="page-scroll active-link" href="./contact.html"
-                      style="color: rgb(237, 242, 244); margin-top: -24px;">Contact📞</a>
-
+                    <a class="page-scroll" href="./ContactUs.html" style="color: rgb(237, 242, 244);">Contact Us 👔</a>
+                  
 
                   </li>
-                  <li class="nav-item active">
-<<<<<<< Updated upstream
-                    <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
-=======
-                    <a class="page-scroll" href="./index.html" id="active-page">Home 🏡</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./about.html">About Us 📖</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./trends.html">Trends 📈</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./maps.html">Map🗺 </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./blog.html">Blogs 📰</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./careers.html">careers 🤔</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./careers.html">Career 👔</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./contact.html">Contact📞</a>
->>>>>>> Stashed changes
-                  </li>
+ 
                   <li class="nav-item no-underline">
                     <a class="main-btn navbar-btn"
                       style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;"
@@ -976,39 +895,40 @@
                 <button id="theme-toggle" class="theme-toggle">
                   🌙
                 </button>
-              </div>
-              HeaderFooter
-
-
-              main
+              </div>  
               <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
                 <span></span>
               </div>
             </nav>
             <link href="./navbar.css" rel="stylesheet">
             <script type="text/javascript" src="./navbar.js" defer></script>
+            
+            <script>
+              const toggleButton = document.getElementById('theme-toggle');
+              const body = document.body;
+              const currentTheme = localStorage.getItem('theme');
 
-<<<<<<< Updated upstream
-=======
-            <nav class="mobile-menu ">
-              <a class="page-scroll active-link" href="./index.html">Home 🏡</a>
+              if (currentTheme === 'dark') {
+                body.classList.add('dark-mode');
+                toggleButton.classList.add('dark');
+                toggleButton.textContent = '🌞';
+              }
 
-              <a class="page-scroll" href="./about.html">About Us 📖</a>
-              <a class="page-scroll" href="./trends.html">Trends 📈</a>
-              
-              <a class="page-scroll" href="./maps.html">Map 🗺</a>
-              
-              <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
-              <a class="page-scroll" href="./blog.html">Blogs 📰</a>
-              <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
-              <li class="nav-item no-underline">
-                <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none; border: none;" href="#"
-                  onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
-              </li>
-              
-              <div class="mobile-menu__trigger"><span></span></div>
-            </nav>
->>>>>>> Stashed changes
+              toggleButton.addEventListener('click', function () {
+                body.classList.toggle('dark-mode');
+                toggleButton.classList.toggle('dark');
+
+                // Update button icon based on mode
+                if (body.classList.contains('dark-mode')) {
+                  toggleButton.textContent = '🌞';  // Light mode icon
+                  localStorage.setItem('theme', 'dark');
+                } else {
+                  toggleButton.textContent = '🌙';  // Dark mode icon
+                  localStorage.setItem('theme', 'light');
+                }
+              });
+            </script>
+
           </div>
     </div>
   </div>
@@ -2464,7 +2384,7 @@
     // Close button event listeners for modals
     registerModal.querySelector(".close").addEventListener("click", closeModal);
     loginModal.querySelector(".close").addEventListener("click", closeModal);
-  });
+
 
 
       window.onclick = function (event) {
