@@ -281,9 +281,11 @@ box-shadow: 0 0 25px #03133c;
             <span class="toggler-icon"></span>
           </button> -->
           <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto;">
+            <a href="../index.html">
             <div class="icon1">
               <img src="/assets/images/icon.webp" alt="icon.webp">
             </div> 
+            </a>
             <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
               <li class="nav-item">
                 <a class="page-scroll" href="../index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
@@ -668,113 +670,6 @@ registerCloseButton.addEventListener("click", function() {
         </div>
       </div>
     </div>
-    
-    
-    <!-- EMI Calculator -->
-    <style>
-      body {
-          font-family: Arial, sans-serif;
-          background-color: #f8f9fa;
-          margin: 0;
-          padding: 0;
-      }
-      .header {
-          padding-top: 100px;
-          text-align: center;
-          color: white;
-          padding: 20px;
-      }
-      .header h3 {
-          margin: 0;
-      }
-      .cal-content {
-          margin: 20px 0;
-      }
-      .know-more {
-          margin-top: 20px;
-      }
-      .know-more-btn {
-          background-color: white;
-          border: none;
-          padding: 10px 20px;
-          color: #007bff;
-          cursor: pointer;
-          font-weight: bold;
-          border-radius: 5px;
-          transition: background-color 0.3s;
-      }
-      .know-more-btn:hover {
-          background-color: #e0e0e0;
-      }
-      .know-more-content {
-          display: none;
-          background: white;
-          padding: 15px;
-          border-radius: 5px;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-      .input-container {
-          padding: 20px;
-          background: white;
-          border-radius: 5px;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-          margin: 20px 0;
-      }
-      .form-control {
-          width: 100%;
-          padding: 10px;
-          margin-top: 5px;
-          border: 1px solid #ced4da;
-          border-radius: 4px;
-      }
-      .btn-calculate {
-          display: flex;
-          justify-content: space-between;
-          margin: 20px 0;
-      }
-      .btn {
-          padding: 10px 20px;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-          font-weight: bold;
-          transition: background-color 0.3s;
-      }
-      .btn-calculate {
-           
-          color: white;
-      }
-      .btn-secondary {
-          background-color: #6c757d;
-          color: white;
-      }
-      .btn:hover {
-          opacity: 0.9;
-      }
-      .result {
-          margin-top: 20px;
-          font-size: medium;
-          padding: 15px;
-          background: #e9ecef;
-          border-radius: 5px;
-      }
-      .result-container {
-          display: flex;
-          flex-direction: column;
-          margin-left: 20px;
-      }
-  </style>
-  <script src="emiCalculator.js"></script>
-</head>
-
-</html>
- 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EMI Calculator</title>
   <style>
       body {
           font-family: Arial, sans-serif;
@@ -1115,6 +1010,107 @@ registerCloseButton.addEventListener("click", function() {
 </div>
 
     <!-- End NPV Calculator -->
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TCO Calculator - FinVeda</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            color: #555;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .result {
+            font-weight: bold;
+            color: #007bff;
+            margin-top: 10px;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>TCO Calculator</h1>
+    
+    <label for="initialCost">Initial Cost ($):</label>
+    <input type="number" id="initialCost" placeholder="Enter initial cost" required>
+    
+    <label for="operatingCost">Annual Operating Cost ($):</label>
+    <input type="number" id="operatingCost" placeholder="Enter annual operating cost" required>
+    
+    <label for="years">Years of Ownership:</label>
+    <input type="number" id="years" placeholder="Enter number of years" required>
+    
+    <label for="miscCost">Miscellaneous Costs ($):</label>
+    <input type="number" id="miscCost" placeholder="Enter miscellaneous costs" required>
+    
+    <button class="btn" onclick="calculateTCO()">Calculate TCO</button>
+
+    <div class="result" id="tcoResult"></div>
+</div>
+
+<script>
+    function calculateTCO() {
+        // Get the input values
+        const initialCost = parseFloat(document.getElementById('initialCost').value) || 0;
+        const operatingCost = parseFloat(document.getElementById('operatingCost').value) || 0;
+        const years = parseInt(document.getElementById('years').value) || 0;
+        const miscCost = parseFloat(document.getElementById('miscCost').value) || 0;
+
+        // Calculate TCO
+        const totalOperatingCost = operatingCost * years;
+        const tco = initialCost + totalOperatingCost + miscCost;
+
+        // Display the result
+        document.getElementById('tcoResult').innerHTML = `Total Cost of Ownership: $${tco.toFixed(2)}`;
+    }
+</script>
+
+</body>
+</html>
+
  
     <!--ROI calculator-->
     <script src="roiCalculator.js" defer></script>
@@ -1763,163 +1759,152 @@ registerCloseButton.addEventListener("click", function() {
   </div>
   <!--EPF Calculator End-->
 </body>
-  
-  <!-- Timed popup that will appear after succesful submission of feebback form! -->
-      <button class="notification" id="successnotification" style="display:none;">
-        <span class="message" id="successmsg">Submitted successfully!</span>
-        <span class="closenotif" id="closeSuccessNotification">✖</span>
-        <div class="timerline" id="timerline"></div>
-      </button>
 
+  <!-- Timed popup that will appear after succesful submission of feebback form! -->
+  <button class="notification" id="successnotification" style="display:none;">
+    <span class="message" id="successmsg">Submitted successfully!</span>
+    <span class="closenotif" id="closeSuccessNotification">✖</span>
+    <div class="timerline" id="timerline"></div>
+  </button>
+  
+  
   <footer id="footer" class="footer-area pt-120">
-    <div class="container">
-      <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="subscribe-content mt-45">
-              <h2 class="subscribe-title">
-                Subscribe Our Newsletter <span>get regular updates</span>
-              </h2>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="subscribe-form mt-50">
-              <form id="unique-subscribe-form">
-                <input type="email" id="unique-news-email" placeholder="Enter Email" required/>
-                <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
-              </form>
-              <div id="unique-message" class="unique-popup-message" style="display: none;">
-                <div class="border-animation"></div>
-                Thank You for the subscription!
-              </div>
-            </div>
+  <div class="container">
+  <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="subscribe-content mt-45">
+          <h2 class="subscribe-title">
+            Subscribe Our Newsletter <span>get regular updates</span>
+          </h2>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="subscribe-form mt-50">
+          <form id="unique-subscribe-form">
+            <input type="email" id="unique-news-email" placeholder="Enter Email" required/>
+            <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
+          </form>
+          <div id="unique-message" class="unique-popup-message" style="display: none;">
+            <div class="border-animation"></div>
+            Thank You for the subscription!
           </div>
         </div>
       </div>
     </div>
-    <script>
-      document.getElementById('unique-subscribe-form').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent form from submitting normally
-    
-        // Show popup message
-        var messageDiv = document.getElementById('unique-message');
-        messageDiv.style.display = 'block';
-        
-        // Reset existing animation
-        var borderAnimationDiv = messageDiv.querySelector('.border-animation');
-        borderAnimationDiv.style.animation = 'none';
-        borderAnimationDiv.offsetHeight; // Trigger reflow to restart the animation
-        borderAnimationDiv.style.animation = 'borderAnimation 3s linear forwards';
-    
-        // Hide popup message after 10 seconds
-        setTimeout(function() {
-          messageDiv.style.display = 'none';
-        }, 3000); // 10 seconds
-    
-        // Reset form
-        this.reset();
-      });
-    </script>
-    
-    <div class="footer-widget pb-100">
-      <div class="row" id="footer">
-          <div class="col-lg-4 col-md-6 col-sm-8">
-              <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                  <p class="text custom-margin">
-                      We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
-                  </p>
-              </div>
+  </div>
+  </div>
+  <div class="footer-widget pb-100">
+  <div class="row" id="footer">
+      <div class="col-lg-4 col-md-6 col-sm-8">
+          <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+              <p class="text custom-margin">
+                  We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
+              </p>
           </div>
-          <div class="col-lg-5 col-md-7 col-sm-7">
-              <div class="footer-link d-flex mt-50 justify-content-md-between" style="justify-content: space-around !important;">
-                  <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-                      <div class="footer-title">
-                          <h3 class="title custom-margin">Quick Links</h3>
-                      </div>
-                      <ul class="link custom-margin">
-                          <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
-                          <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
-                          <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
-                          <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
-                          <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
-                      </ul>
-                  </div>
-                  <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
-                      <div class="footer-title">
-                          <h4 class="title custom-margin">Resources</h4>
-                      </div>
-                      <ul class="link custom-margin">
-                          <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
-                          <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
-                          <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
-                          <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
-                          <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
-                          <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
-          <div class="col-lg-3 col-md-5 col-sm-5">
-              <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+      </div>
+      <div class="col-lg-5 col-md-7 col-sm-7">
+          <div class="footer-link d-flex mt-50 justify-content-md-between" style="justify-content: space-around !important;">
+              <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
                   <div class="footer-title">
-                      <h4 class="title custom-margin">Contact Us</h4>
+                      <h3 class="title custom-margin">Quick Links</h3>
                   </div>
-                  <ul class="contact custom-margin-big" style="justify-content: space-around;">
-                      <li class="d-sm-flex justify-content-center">
-                          <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                          <p style="width: 80%;">
-                              <a href="mailto:ayush1337@hotmail.com" target="_blank"
-                                 style="color: white; text-decoration: underline;">
-                                  ayush1337@hotmail.com
-                              </a>
-                          </p>
-                      </li>
-                      <li class="d-sm-flex justify-content-center">
-                          <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                          <div style="width: 80%;">
-                              <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
-                                  fin-veda.vercel.app
-                              </a>
-                          </div>
-                      </li>
-                      <div class="social-icons">
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-discord"></i></a>
-                        <a href="#"><i class="fa-brands fa-github"></i></a>
-                    </div>
+                  <ul class="link custom-margin">
+                      <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+                      <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
+                      <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
+                      <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+                      <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+                  </ul>
+              </div>
+              <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+                  <div class="footer-title">
+                      <h4 class="title custom-margin">Resources</h4>
+                  </div>
+                  <ul class="link custom-margin">
+                      <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+                      <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                      <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
+                      <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
+                      <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                      <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
                   </ul>
               </div>
           </div>
       </div>
-  </div>
-      <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center">
-        <div class="row">
-          <div class="col-lg-12">
-            <div
-              class="copyright d-sm-flex justify-content-center"
-              style="
-                display: flex;
-                justify-content: center;
-                text-align: center;
-                width: 100%;
-                height: 100%;
-              "
-            >
-              <div class="copyright-content" style="text-align: center">
-                <p class="text" style="text-align: center">
-                  © <span id="copyright-year"></span> FinVeda. All rights
-                  reserved<br />
-                  Made with ♥ in India
-                </p>
+      <div class="col-lg-3 col-md-5 col-sm-5">
+          <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+              <div class="footer-title">
+                  <h4 class="title custom-margin">Contact Us</h4>
               </div>
-            </div>
+              <ul class="contact custom-margin-big" style="justify-content: space-around;">
+                  <li class="d-sm-flex justify-content-center">
+                      <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                      <p style="width: 80%;">
+                          <a href="mailto:ayush1337@hotmail.com" target="_blank"
+                             style="color: white; text-decoration: underline;">
+                              ayush1337@hotmail.com
+                          </a>
+                      </p>
+                  </li>
+                  <li class="d-sm-flex justify-content-center">
+                      <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                      <div style="width: 80%;">
+                          <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
+                              fin-veda.vercel.app
+                          </a>
+                      </div>
+                  </li>
+                  <li class="d-sm-flex justify-content-center">
+                      <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 12px; width: 10%;"></i>
+                      <div style="width: 80%;">
+                          <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
+                             style="color:#fff">
+                              Delhi, India
+                          </a>
+                      </div>
+                  </li>
+                  <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-discord"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
+              </ul>
+          </div>
+      </div>
+  
+  
+  </div>
+  </div>
+  <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center">
+    <div class="row">
+      <div class="col-lg-12">
+        <div
+          class="copyright d-sm-flex justify-content-center"
+          style="
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+          "
+        >
+          <div class="copyright-content" style="text-align: center">
+            <p class="text" style="text-align: center">
+              © <span id="copyright-year"></span> FinVeda. All rights are
+              reserved<br />
+              Made with ♥ in India
+            </p>
+  
           </div>
         </div>
       </div>
     </div>
-    <div id="particles-2"></div>
+  </div>
+  <div id="particles-2"></div>
+  </div>
   </footer>
   <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
 
@@ -2062,4 +2047,3 @@ registerCloseButton.addEventListener("click", function() {
 </body>
 
 </html> 
-S
