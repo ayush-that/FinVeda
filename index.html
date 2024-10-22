@@ -2434,12 +2434,20 @@
         document.title = "FinVeda";  // Revert the title back when modal is closed
       }
 
+
+    // Close button event listeners for modals
+    registerModal.querySelector(".close").addEventListener("click", closeModal);
+    loginModal.querySelector(".close").addEventListener("click", closeModal);
+  });
+
+
       window.onclick = function (event) {
         var modal = document.getElementById("myModal");
         if (event.target == modal) {
           closeModal(); // Call closeModal function
         }
       };
+
 
       document.addEventListener("DOMContentLoaded", function () {
         const registerModal = document.getElementById("registerModal");
