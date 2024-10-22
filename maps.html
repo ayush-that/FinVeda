@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Literacy Dashboard</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Financial Literacy Dashboard</h1>
+    <div id="map"></div>
+    <h2>Financial Literacy Rates</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>State</th>
+                <th>Literacy Rate</th>
+            </tr>
+        </thead>
+        <tbody id="literacy-data"></tbody>
+    </table>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map
+        const map = L.map('map').setView([20.5937, 78.9629], 5); // Centered on India
+
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        // Financial literacy rates for Indian states
+        const financialLiteracyRates = {
+            'Andhra Pradesh': 67.90,
+            'Arunachal Pradesh': 61.60,
+            'Assam': 67.70,
+            'Bihar': 53.70,
+            'Chhattisgarh': 59.60,
+            'Goa': 85.20,
+            'Gujarat': 69.10,
+            'Haryana': 76.10,
+            'Himachal Pradesh': 74.30,
+            'Jharkhand': 53.70,
+            'Karnataka': 69.50,
+            'Kerala': 84.50,
+            'Madhya Pradesh': 66.70,
+            'Maharashtra': 76.90,
+            'Manipur': 60.30,
+            'Meghalaya': 65.30,
+            'Mizoram': 71.20,
+            'Nagaland': 65.50,
+            'Odisha': 73.90,
+            'Punjab': 76.70,
+            'Rajasthan': 62.90,
+            'Sikkim': 69.60,
+            'Tamil Nadu': 80.00,
+            'Telangana': 73.80,
+            'Tripura': 71.90,
+            'Uttar Pradesh': 54.70,
+            'Uttarakhand': 78.40,
+            'West Bengal': 76.60,
+            'Andaman and Nicobar Islands': 73.20,
+            'Chandigarh': 87.40,
+            'Dadra and Nagar Haveli and Daman and Diu': 65.70,
+            'Lakshadweep': 72.60,
+            'Delhi': 85.00,
+            'Puducherry': 75.50,
+            'Jammu and Kashmir': 70.10,
+            'Ladakh': 68.20,
+        };
+
+        // Function to categorize states based on financial literacy rates
+        function getLiteracyCategory(rate) {
+            if (rate < 60) {
+                return 'low';
+            } else if (rate >= 60 && rate <= 75) {
+                return 'medium';
+            } else {
+                return 'high';
+            }
+        }
+
+        // Coordinates for Indian states (approximated)
+        const stateCoordinates = {
+            'Andhra Pradesh': [15.9129, 79.7400],
+            'Arunachal Pradesh': [28.2180, 94.7278],
+            'Assam': [26.2006, 92.9376],
+            'Bihar': [25.0961, 85.3131],
+            'Chhattisgarh': [21.2787, 81.8661],
+            'Goa': [15.2993, 74.1240],
+            'Gujarat': [22.2587, 71.1924],
+            'Haryana': [29.0588, 76.0856],
+            'Himachal Pradesh': [31.1048, 77.1734],
+            'Jharkhand': [23.4108, 85.2900],
+            'Karnataka': [15.3173, 75.7139],
+            'Kerala': [10.8505, 76.2711],
+            'Madhya Pradesh': [22.9734, 78.6569],
+            'Maharashtra': [19.6016, 75.3239],
+            'Manipur': [24.6637, 93.9063],
+            'Meghalaya': [25.4670, 91.3662],
+            'Mizoram': [23.1645, 92.9376],
+            'Nagaland': [26.1584, 94.5624],
+            'Odisha': [20.9517, 85.0985],
+            'Punjab': [31.1471, 75.3412],
+            'Rajasthan': [27.0238, 74.2179],
+            'Sikkim': [27.5330, 88.6139],
+            'Tamil Nadu': [11.1271, 78.6569],
+            'Telangana': [17.1232, 78.6569],
+            'Tripura': [23.8435, 91.2868],
+            'Uttar Pradesh': [26.8467, 80.9462],
+            'Uttarakhand': [30.0668, 79.0193],
+            'West Bengal': [22.9868, 87.8550],
+            'Andaman and Nicobar Islands': [11.6230, 92.4623],
+            'Chandigarh': [30.7333, 76.7794],
+            'Dadra and Nagar Haveli and Daman and Diu': [20.2926, 73.4229],
+            'Lakshadweep': [10.5726, 72.6417],
+            'Delhi': [28.6139, 77.2090],
+            'Puducherry': [11.9416, 79.8083],
+            'Jammu and Kashmir': [33.7781, 76.5762],
+            'Ladakh': [34.1526, 77.5772],
+        };
+
+        // Function to display financial literacy rates on the map
+        for (const state in financialLiteracyRates) {
+            const rate = financialLiteracyRates[state];
+            const category = getLiteracyCategory(rate);
+            const [lat, lon] = stateCoordinates[state];
+            let color;
+
+            // Set color based on financial literacy category
+            if (category === 'low') {
+                color = 'red';
+            } else if (category === 'medium') {
+                color = 'yellow';
+            } else {
+                color = 'green';
+            }
+
+            // Add circle markers to the map
+            L.circle([lat, lon], {
+                color: color,
+                fillColor: color,
+                fillOpacity: 0.5,
+                radius: 50000 // Adjust the radius as needed
+            }).addTo(map).bindPopup(`${state}: ${rate.toFixed(2)}% literacy`);
+
+            // Populate the table
+            const literacyTableBody = document.getElementById('literacy-data');
+            const row = document.createElement('tr');
+            row.innerHTML = `<td>${state}</td><td>${rate.toFixed(2)}%</td>`;
+            literacyTableBody.appendChild(row);
+        }
+    </script>
+</body>
+</html>
