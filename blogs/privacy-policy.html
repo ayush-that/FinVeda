@@ -115,6 +115,22 @@
           color: rgb(77, 77, 77) !important;
         }
 
+body {
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode h2 {
+  background-color: #121212 !important;
+  color: #e0e0e0 !important;
+}
+
 
   </style>
 
@@ -201,6 +217,15 @@
       var scrolled = (winScroll / height) * 100;
       document.getElementById("progressBar").style.width = scrolled + "%";
   };
+
+  window.addEventListener("DOMContentLoaded", (event) => {
+      const savedTheme = localStorage.getItem("theme");
+
+      // Apply the theme if stored
+      if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+    });
  </script>
 
 <div class="preloader">
@@ -232,6 +257,11 @@
               <span class="toggler-icon"></span>
             </button> -->
             <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+              <a href="./index.html">
+                <div class="icon1">
+                  <img src="../assets/images/icon.webp" alt="icon.png">
+                </div>
+              </a>
               <ul id="nav" class="navbar-nav">
                 <li class="nav-item">
                   <a class="page-scroll" href="../index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
