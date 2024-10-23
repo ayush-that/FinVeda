@@ -6,6 +6,8 @@
   box-sizing: border-box;
 }
 
+
+
 body,
 input {
   font-family: "Poppins", sans-serif;
@@ -77,7 +79,14 @@ form.sign-in-form {
   grid-template-columns: 15% 70% 15%;
   padding: 0 0.4rem;
   position: relative;
+  border: 2px solid black;
 }
+
+.input-field:focus-within {
+  border-color: #3498db;
+  box-shadow: 0 0 10px #3498db;
+}
+
 
 .input-field i {
   text-align: center;
@@ -162,6 +171,7 @@ form.sign-in-form {
 
 .btn:hover {
   background-color: #161618;
+  transform: scale(1.1);
 }
 
 .panels-container {
@@ -470,3 +480,13 @@ form.sign-in-form {
   background: #191919;
 }
 
+.circle {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  position: fixed;
+  background-color: black;  /* Default color of circles */
+  pointer-events: none;     /* Prevent interaction with circles */
+  z-index: 9999;
+  transition: transform 0.1s ease-out;
+  }
