@@ -2224,7 +2224,10 @@
               thoughts.</p>
           </div>
           <label class="form-label" for="name">Name:</label>
-          <input class="form-input" type="text" id="name" name="name" required>
+          <input class="form-input" type="text" id="name" name="name" required 
+                    pattern="[a-zA-Z ]+"
+                    oninvalid="this.setCustomValidity('Numbers and Symbols are not allowed')"
+                    oninput="this.setCustomValidity('')">
         </div>
         <div class="form-group">
           <label class="form-label" for="email">Email:</label>
