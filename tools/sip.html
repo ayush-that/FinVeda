@@ -297,9 +297,31 @@ box-shadow: 0 0 25px #03133c;
               <li class="nav-item">
                 <a class="page-scroll" href="../trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
               </li>
-              <li class="nav-item">
-                <a class="page-scroll active-link" href="../tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
-              </li>
+              <!-- Creating the list of the tools so we dont have to scroll we can redirect directly -->
+              <div class="dropdown-tools">
+                <li class="nav-item">
+                  <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
+                  <div class="dropdown-content-tools">
+                       <a href="#section1">Mutual Fund Investment Calculator</a>
+                        <a href="#section2">Emi Calculator</a>
+                        <a href="#section3">Saving Goal Calculator</a>
+                        <a href="#section4">Insurance Calculator</a>
+                        <a href="#section5">Net Present Value Calculator</a>
+                        <a href="#section6">Return on Investment Calculator</a>
+                        <a href="#section7">Good and Service Tax(GST) Calculator</a>
+                        <a href="#section8">Income Tax Calculator</a>
+                        <a href="#section9">Profit Margin Calculator</a>
+                        <a href="#section10">Expenditure and Saving Calculator</a>
+                        <a href="#section11">GDP Calculator</a>
+                        <a href="#section12">Systematic Withdrawal Plan Calculator</a>
+                        <a href="#section13">Credit Card Pay Off Calculator</a>
+                        <a href="#section14">Split of Bill Calculator</a>
+                        <a href="#section15">Fixed Deposit Calculator</a>
+                        <a href="#section16">Recurring Deposite Calculator</a>
+                        <a href="#section17">Employee And Provident Fund Calcualtor</a>
+                   </div>
+                </li>
+              </div>
               <li class="nav-item">
                 <a class="page-scroll" href="../blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
               </li>
@@ -667,7 +689,7 @@ registerCloseButton.addEventListener("click", function() {
   <body class="body-background">
     <div class="header"><br><br>
       <h2>Tools</h2><br>
-      <h3>Mutual Fund Investment Calculator</h3>
+      <h3 id="section1">Mutual Fund Investment Calculator</h3>
       <p class="cal-content">
         The Mutual Fund Investment Calculator helps you estimate the potential returns of your investments, whether through Systematic Investment Plans (SIP) or LumpSum investments. 
         By inputting your monthly investment amount, investment duration, and expected annual return rate, this tool calculates the total investment, wealth gained, and maturity value, providing a clear 
@@ -863,7 +885,8 @@ registerCloseButton.addEventListener("click", function() {
 </head>
 <body>
   <div class="header toool">
-      <h3>EMI Calculator</h3>
+    <!-- for Navigation between the tools -->
+      <h3 id="section2">EMI Calculator</h3>
       <p class="cal-content">
           The EMI (Equated Monthly Installment) Calculator assists in calculating the monthly installment amount for a loan based on the loan amount, interest rate, and loan tenure.
           It provides insights into the total payment and total interest paid over the loan period, helping you plan your finances better.
@@ -913,7 +936,7 @@ registerCloseButton.addEventListener("click", function() {
     <script src="SavingsGoalCalculator.js" defer></script>
     <script src="SavingsGoalCalculator.js" ></script>
     <div class="header toool" style="padding-top: 100px;">
-      <h3>Savings Goal Calculator</h3>
+      <h3 id="section3">Savings Goal Calculator</h3>
       <p class="cal-content">
         The Savings Goal Calculator is designed to help you determine how much you need to save monthly to reach your financial goals. By entering your goal amount, current savings, monthly savings, and expected annual interest rate, this calculator shows the time required to achieve your goal.
       </p>
@@ -968,7 +991,7 @@ registerCloseButton.addEventListener("click", function() {
     <!-- Insurance Calculator -->
     <script src="insuranceCalculator.js" defer></script>
 <div class="header toool" style="padding-top: 100px;">
-  <h3>Insurance Calculator</h3>
+  <h3 id="section4">Insurance Calculator</h3>
   <p class="cal-content">
     The Insurance Calculator estimates the benefits of an insurance policy based on the sum assured, policy term, and annual premium. This tool helps you understand the potential returns from your insurance policy and plan your coverage effectively.
   </p>
@@ -1041,7 +1064,7 @@ registerCloseButton.addEventListener("click", function() {
     <!-- NPV Calculator -->
     <script src="npvCalculator.js" defer></script>
 <div class="header toool" style="padding-top: 100px;">
-  <h3>Net Present Value<br> (NPV) Calculator</h3>
+  <h3 id="section5">Net Present Value<br> (NPV) Calculator</h3>
   <p class="cal-content">
     The NPV (Net Present Value) Calculator is a tool designed to help you evaluate the profitability of an investment by calculating the present value of expected future cash flows. This calculator helps investors make informed decisions, ensuring that future cash flows are accurately evaluated in today's terms.
   </p>
@@ -1199,7 +1222,7 @@ registerCloseButton.addEventListener("click", function() {
     <!--ROI calculator-->
     <script src="roiCalculator.js" defer></script>
     <div class="header toool" style="padding-top: 100px;">
-      <h3>Return on Investment(ROI) Calculator</h3>
+      <h3 id="section6">Return on Investment(ROI) Calculator</h3>
       <p class="cal-content">
         The ROI (Return on Investment) Calculator helps you measure the profitability of an investment. By inputting the initial investment amount and the final value of the investment, this tool calculates the percentage return on investment, helping you assess the efficiency of your investment.
       </p>
@@ -1251,7 +1274,7 @@ registerCloseButton.addEventListener("click", function() {
     <!--Start of GST Calculator-->
     <script src="GSTcalc.js" defer></script>
 <div class="header toool" style="padding-top: 100px;">
-    <h3>Goods and Service Tax (GST) Calculator</h3>
+    <h3 id="section7">Goods and Service Tax (GST) Calculator</h3>
     <p class="cal-content">The GST (Goods and Services Tax) Calculator computes the GST-inclusive or exclusive amount based on the original amount and the applicable GST rate. This tool simplifies the calculation of GST for various transactions.</p>
     <div class="know-more">
         <button class="know-more-btn">Know More</button>
@@ -1303,7 +1326,7 @@ registerCloseButton.addEventListener("click", function() {
     <!--Start of Income Tax Calc-->
     <script src="IncomeTax.js" defer></script>
     <div class="header toool" style="padding-top: 100px;">
-        <h3>Income Tax Calculator</h3>
+        <h3 id="section8">Income Tax Calculator</h3>
         <p class="cal-content">The Income Tax Calculator determines the tax payable based on your annual income and applicable tax rate. It helps you estimate your tax liability and plan your finances accordingly.</p>
         <div class="know-more">
             <button class="know-more-btn">Know More</button>
@@ -1349,7 +1372,7 @@ registerCloseButton.addEventListener("click", function() {
   <script src="ProfitMargin.js" defer></script>
 
   <div class="header toool" style="padding-top: 100px;">
-    <h3>Profit Margin Calculator</h3>
+    <h3 id="section9">Profit Margin Calculator</h3>
     <p class="cal-content">The Profit Margin Calculator calculates the profit margin percentage based on the revenue and cost inputs. This tool helps businesses and individuals assess their profitability and make informed pricing and cost management decisions.</p>
     <div class="know-more">
       <button class="know-more-btn">Know More</button>
@@ -1395,7 +1418,7 @@ registerCloseButton.addEventListener("click", function() {
 <script src="expenditureandsaving.js" defer></script>
 
 <div class="header toool" style="padding-top: 100px;">
-  <h3 class="text-center mb-4">Expenditure and Savings Calculator</h3>
+  <h3 class="text-center mb-4" id="section10">Expenditure and Savings Calculator</h3>
   <p class="cal-content">The Expenditure and Savings Calculator helps you analyze your monthly savings based on your income and expenses. This tool assists in managing your finances effectively.</p>
   <div class="know-more">
     <button class="know-more-btn">Know More</button>
@@ -1440,7 +1463,7 @@ registerCloseButton.addEventListener("click", function() {
  <!-- GDP calculator  starts from here -->
 
  <div class="header toool">
-  <h3>GDP Calculator</h3>
+  <h3 id="section11">GDP Calculator</h3>
   <p class="cal-content">
     The GDP Calculator computes the Gross Domestic Product (GDP) using the Expenditure Approach, which aggregates personal consumption, gross investment, government consumption, and net exports (exports minus imports) to determine the economic output of a country.
   </p> 
@@ -1512,7 +1535,7 @@ registerCloseButton.addEventListener("click", function() {
      <script src="SWPCalculator.js" defer></script>
 
      <div class="header toool" style="padding-top: 100px;">
-       <h3 class="text-center mb-4">Systematic Withdrawal Plan Calculator</h3>
+       <h3 class="text-center mb-4" id="section12">Systematic Withdrawal Plan Calculator</h3>
        <p class="cal-content">The SWP (Systematic Withdrawal Plan) calculator is a financial tool that helps investors plan and manage the regular withdrawal of funds from their investment corpus, typically mutual funds. SWP is used to generate a steady income stream, often for retirees or those looking to supplement their income.</p>
        <div class="know-more">
          <button class="know-more-btn">Know More</button>
@@ -1569,7 +1592,7 @@ registerCloseButton.addEventListener("click", function() {
   <script src="creditcardpayoff.js" defer></script>
 
   <div class="header toool" style="padding-top: 100px;">
-    <h3 class="text-center mb-4">Credit Card Payoff Calculator</h3>
+    <h3 class="text-center mb-4" id="section13">Credit Card Payoff Calculator</h3>
     <p class="cal-content">Calculate how long it will take to pay off your credit card balance with this calculator. Enter your balance, APR, and monthly payment to get started.</p>
     <div class="know-more">
       <button class="know-more-btn">Know More</button>
@@ -1620,7 +1643,7 @@ registerCloseButton.addEventListener("click", function() {
 
   <!-- Bill split calculator  -->
   <div class="header toool" style="padding-top: 100px;">
-    <h3 class="text-center mb-4">Split Bill Calculator</h3>
+    <h3 class="text-center mb-4" id="section14">Split Bill Calculator</h3>
     <p class="cal-content">Calculate how much each person should pay when splitting a bill, including tips. Enter the bill subtotal, desired tip percentage, and the number of people to split the bill.</p>
     <div class="know-more">
         <button class="know-more-btn">Know More</button>
@@ -1677,7 +1700,7 @@ registerCloseButton.addEventListener("click", function() {
      <script src="FDCalculator.js" defer></script>
 
      <div class="header toool" style="padding-top: 100px;">
-       <h3 class="text-center mb-4">Fixed Deposit Calculator</h3>
+       <h3 class="text-center mb-4" id="section15">Fixed Deposit Calculator</h3>
        <p class="cal-content">The FD(Fixed Deposit) Calculator helps compute the maturity amount and interest earned on fixed deposits based on the principal, interest rate, and duration.</p>
        <div class="know-more">
          <button class="know-more-btn">Know More</button>
@@ -1731,7 +1754,7 @@ registerCloseButton.addEventListener("click", function() {
  <script src="RDCalculator.js" defer></script>
 
  <div class="header toool" style="padding-top: 100px;">
-   <h3 class="text-center mb-4">Recurring Deposit Calculator</h3>
+   <h3 class="text-center mb-4" id="section16">Recurring Deposit Calculator</h3>
    <p class="cal-content">The RD (Recurring Deposit) calculator computes the maturity amount and interest earned on regular monthly deposits over a fixed period, given a specified annual interest rate.</p>
    <div class="know-more">
      <button class="know-more-btn">Know More</button>
@@ -1785,7 +1808,7 @@ registerCloseButton.addEventListener("click", function() {
   <script src="EPFCalculator.js" defer></script>
 
   <div class="header toool" style="padding-top: 100px;">
-    <h3 class="text-center mb-4">Employee Provident Fund Calculator</h3>
+    <h3 class="text-center mb-4" id="section17">Employee Provident Fund Calculator</h3>
     <p class="cal-content">The Employee Provident Fund Calculator helps employees estimate their total savings at retirement by factoring in monthly salary, age, contribution rate, annual salary increase, and interest rate. It provides a projection of the accumulated fund, aiding in financial planning for retirement.</p>
     <div class="know-more">
       <button class="know-more-btn">Know More</button>
