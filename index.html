@@ -71,121 +71,136 @@
     }
 
 
-    
-.unique-popup-message {
-  position: fixed; /* Change to fixed positioning */
-  top: 30px; /* Adjust this value to be below the navbar */
-  right: 2px; /* Adjust this value for the desired distance from the right edge */
-  width: 300px; /* Adjust width as needed */
-  transform: translateX(0); /* Center the popup horizontally */
-  background-color: #a4d8ff;
-  color: #131722;
-  padding: 11px;
-  border-radius: 5px;
-  text-align: center;
-  z-index: 1000;
-  box-sizing: border-box;
-  overflow: hidden; /* Hide the expanding border animation */
-  position: relative;
-}
 
-.border-animation {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 7px; /* Same height as the border */
-  background-color: rgb(4, 0, 128);
-  width: 100%;
-  transform-origin: right; /* Start shrinking from the right */
-}
+    .unique-popup-message {
+      position: fixed;
+      /* Change to fixed positioning */
+      top: 30px;
+      /* Adjust this value to be below the navbar */
+      right: 2px;
+      /* Adjust this value for the desired distance from the right edge */
+      width: 300px;
+      /* Adjust width as needed */
+      transform: translateX(0);
+      /* Center the popup horizontally */
+      background-color: #a4d8ff;
+      color: #131722;
+      padding: 11px;
+      border-radius: 5px;
+      text-align: center;
+      z-index: 1000;
+      box-sizing: border-box;
+      overflow: hidden;
+      /* Hide the expanding border animation */
+      position: relative;
+    }
 
-@keyframes borderAnimation {
-  from {
-    transform: scaleX(0); /* Full width initially */
-  }
-  to {
-    transform: scaleX(1); /* Shrink to zero width */
-  }
-}
-.social-icons {
-    text-align: center;
-  }
-  
-  .social-icons ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .social-icons li {
-    margin: 0 10px;
-  }
-  
-  .social-icons a {
-    color: #337ab7;
-    text-decoration: none;
-    border-radius: 50%;
-    border: 1px solid #ccc; 
-    padding: 10px;
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s; 
-  }
-  
-  .social-icons a:hover {
-    color: #fe8464;
-    border-color: #fe8464; 
-    transform: scale(1.1); 
-  }
-  
-  .or-sign-in-with {
-    margin: 20px 0;
-    font-size: 14px;
-    font-weight: bold;
-    color: #666;
-    text-align: center;
-    position: relative;
-  }
-  
-  .or-sign-in-with::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 0; 
-    width: 35%; 
-    border-top: 1px solid #ccc;
-    transform: translateX(-2%); 
-  }
-  
-  .or-sign-in-with::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: 0; 
-    width: 35%; 
-    border-top: 1px solid #ccc;
-    transform: translateX(2%);
-  }
-  .form-check {
-    display: flex;
-    align-items: center;
-  }
-  .form-check a {
-    margin-left: auto; 
-  }
-  .dropdown {
-  position: relative;
-  display: inline-block;
-}
+    .border-animation {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 7px;
+      /* Same height as the border */
+      background-color: rgb(4, 0, 128);
+      width: 100%;
+      transform-origin: right;
+      /* Start shrinking from the right */
+    }
+
+    @keyframes borderAnimation {
+      from {
+        transform: scaleX(0);
+        /* Full width initially */
+      }
+
+      to {
+        transform: scaleX(1);
+        /* Shrink to zero width */
+      }
+    }
+
+    .social-icons {
+      text-align: center;
+    }
+
+    .social-icons ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .social-icons li {
+      margin: 0 10px;
+    }
+
+    .social-icons a {
+      color: #337ab7;
+      text-decoration: none;
+      border-radius: 50%;
+      border: 1px solid #ccc;
+      padding: 10px;
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      font-size: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #fe8464;
+      border-color: #fe8464;
+      transform: scale(1.1);
+    }
+
+    .or-sign-in-with {
+      margin: 20px 0;
+      font-size: 14px;
+      font-weight: bold;
+      color: #666;
+      text-align: center;
+      position: relative;
+    }
+
+    .or-sign-in-with::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 35%;
+      border-top: 1px solid #ccc;
+      transform: translateX(-2%);
+    }
+
+    .or-sign-in-with::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 35%;
+      border-top: 1px solid #ccc;
+      transform: translateX(2%);
+    }
+
+    .form-check {
+      display: flex;
+      align-items: center;
+    }
+
+    .form-check a {
+      margin-left: auto;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
 
 .scroll-btn {
             position: fixed;
@@ -742,7 +757,9 @@
     </div>
 
     </section>
-
+  
+  
+  
   <section id="features" class="services-area pt-120">
     <div class="container">
       <div class="row justify-content-center">
@@ -1131,7 +1148,8 @@
           </div>
         </div>
       </div>
-      <div class="row testimonial-wrapper testimonial-active wow fadeInUpBig" data-wow-duration="1s" data-wow-delay="0.8s">
+      <div class="row testimonial-wrapper testimonial-active wow fadeInUpBig" data-wow-duration="1s"
+        data-wow-delay="0.8s">
         <div class="testimonial-item col-lg-4">
           <div class="single-testimonial">
             <div class="testimonial-review d-flex align-items-center justify-content-between">
@@ -1292,7 +1310,7 @@
 
   <style>
     /* General testimonial section styling */
-    
+
     #testimonial {
       background: linear-gradient(135deg, #4b6cb7, #182848);
       /* Attractive gradient background */
@@ -2057,7 +2075,6 @@
                     Made with ♥ in India
                   </p>
                   <a href="./tools/contributor.html" id="ourvisionlink">Our Contributors</a>
-
                   </ul>
                 </div>
               </div>
@@ -2171,9 +2188,9 @@
       }
 
 
-    // Close button event listeners for modals
-    registerModal.querySelector(".close").addEventListener("click", closeModal);
-    loginModal.querySelector(".close").addEventListener("click", closeModal);
+      // Close button event listeners for modals
+      registerModal.querySelector(".close").addEventListener("click", closeModal);
+      loginModal.querySelector(".close").addEventListener("click", closeModal);
 
 
 
@@ -2236,18 +2253,18 @@
 
     </script>
     <script src="./smoothScroll.js"></script>
- 
+
     <script src="./assets/js/preloader.js"></script>
-    <br /><br />
-  <link rel="stylesheet" href="visi.css">
-  <!-- ############### Footer ############### -->
-  <div class="visitor-counter">
-    <div>Visitor</div>
-    <div class="website-counter"></div>
-  </div>
-  <script src="path/to/visitorCounter.js"></script>
-  <script src="./assets/css/visitors.css"></script>
- 
+     
+    <link rel="stylesheet" href="visi.css">
+    <!-- ############### Footer ############### -->
+    <div class="visitor-counter">
+      <div>Visitor</div>
+      <div class="website-counter"></div>
+    </div>
+    <script src="path/to/visitorCounter.js"></script>
+    <script src="./assets/css/visitors.css"></script>
+
     <script src="visi.js"></script>
     <script src="../assets/js/index.js"></script>
   </body>
