@@ -2215,49 +2215,167 @@
   </head>
 
   <body>
-    <div class="form-section">
-      <form class="feedbackform" id="feedback-form">
-        <div class="form-group">
-          <div class="section-title text-center">
-            <h2 class="form-heading">We Value Your Feedback</h2>
-            <p>Your input helps us to improve and provide better services. Please fill out the form to let us know your
-              thoughts.</p>
-          </div>
-          <label class="form-label" for="name">Name:</label>
-          <input class="form-input" type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="email">Email:</label>
-          <input class="form-input" placeholder="Enter your email" type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Rating:</label>
-          <div id="emoji-description" class="emoji-description">Select an option</div>
-        </div>
-        <div class="emojis">
-          <input class="form-input" type="radio" id="emoji1" name="rating" value="1">
-          <label class="form-label" for="emoji1">&#128577;</label> <!-- Very Bad -->
-          <input class="form-input" type="radio" id="emoji2" name="rating" value="2">
-          <label class="form-label" for="emoji2">&#128542;</label> <!-- Bad -->
-          <input class="form-input" type="radio" id="emoji3" name="rating" value="3">
-          <label class="form-label" for="emoji3">&#128528;</label> <!-- Neutral -->
-          <input class="form-input" type="radio" id="emoji4" name="rating" value="4">
-          <label class="form-label" for="emoji4">&#128522;</label> <!-- Good -->
-          <input class="form-input" type="radio" id="emoji5" name="rating" value="5">
-          <label class="form-label" for="emoji5">&#128515;</label> <!-- Excellent -->
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="comments">Comments:</label>
-          <textarea class="form-textarea" placeholder="Enter your comments" id="comments" name="comments" rows="4"
-            required></textarea>
-        </div>
-        <div class="form-group">
+    <div class="feedback-section">
+      <form class="feedback-form" id="feedback-form">
           <div class="form-group">
-            <button class="form-button" id="feed-submit" type="submit">Submit</button>
+              <div class="section-heading text-center">
+                  <h2 class="form-title">We Value Your Feedback</h2>
+                  <p>Your input helps us to improve and provide better services. Please fill out the form to let us know your thoughts.</p>
+              </div>
+              <label class="form-label" for="name">Name:</label>
+              <input class="input-field" type="text" id="name" name="name" required>
           </div>
-        </div>
+          <div class="form-group">
+              <label class="form-label" for="email">Email:</label>
+              <input class="input-field" placeholder="Enter your email" type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+              <label class="form-label">Rating:</label>
+              <div id="emoji-description" class="emoji-text">Select an option</div>
+          </div>
+          <div class="rating-emojis">
+              <input class="rating-input" type="radio" id="emoji1" name="rating" value="1">
+              <label class="emoji-label" for="emoji1">&#128577;</label> <!-- Very Bad -->
+              <input class="rating-input" type="radio" id="emoji2" name="rating" value="2">
+              <label class="emoji-label" for="emoji2">&#128542;</label> <!-- Bad -->
+              <input class="rating-input" type="radio" id="emoji3" name="rating" value="3">
+              <label class="emoji-label" for="emoji3">&#128528;</label> <!-- Neutral -->
+              <input class="rating-input" type="radio" id="emoji4" name="rating" value="4">
+              <label class="emoji-label" for="emoji4">&#128522;</label> <!-- Good -->
+              <input class="rating-input" type="radio" id="emoji5" name="rating" value="5">
+              <label class="emoji-label" for="emoji5">&#128515;</label> <!-- Excellent -->
+          </div>
+          <div class="form-group">
+              <label class="form-label" for="comments">Comments:</label>
+              <textarea class="comments-field" placeholder="Enter your comments" id="comments" name="comments" rows="4" required></textarea>
+          </div>
+          <div class="form-group">
+              <div class="submit-group">
+                  <button class="submit-button" id="submit-feedback" type="submit">Submit</button>
+              </div>
+          </div>
       </form>
-    </div>
+  </div>
+  
+<style>
+  /* Styling the parent container with interactive background color and black border */
+.feedback-section {
+    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+    padding: 40px;
+    margin: 50px auto;
+    border-radius: 10px;
+    max-width: 700px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 5px solid black; /* Added black border */
+    transition: background 0.3s ease-in-out;
+}
+
+.feedback-section:hover {
+    background: linear-gradient(135deg, #fcb69f, #ffecd2); /* Reverse the gradient on hover */
+}
+
+/* Styling the section title */
+.section-heading h2 {
+    color: #333;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Styling the description text */
+.section-heading p {
+    color: #555;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Input fields styling */
+.input-field, .comments-field {
+  
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+/* Focus effects for input fields */
+.input-field:focus, .comments-field:focus {
+    background-color: #fff5e1;
+    outline: none;
+    border-color: #ff8c42;
+    box-shadow: 0 0 5px rgba(255, 140, 66, 0.5);
+}
+
+/* Emoji feedback buttons */
+.rating-emojis {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+/* Hide the radio button dots */
+.rating-input {
+    display: none;
+}
+
+.emoji-label {
+    font-size: 2.5rem;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #141212;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Hover effect for emoji buttons */
+.emoji-label:hover {
+    background-color: #ffe4b3; /* Background color on hover */
+    transform: scale(1.1); /* Slight scale on hover */
+}
+
+/* Active (clicked) state for emoji buttons */
+.emoji-label:active {
+    background-color: #ffda79;
+    transform: scale(1.15); /* A bit larger when clicked */
+}
+
+/* Styling the submit button */
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff8c42;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Hover effect for the submit button */
+.submit-button:hover {
+    background-color: #e67e22;
+    transform: scale(1.05); /* Slight scale on hover */
+}
+
+.submit-button:active {
+    background-color: #d35400; /* Darker color on click */
+    transform: scale(1.03);
+}
+
+/* Background change on form focus */
+.feedback-section:focus-within {
+    background: linear-gradient(135deg, #fff3e1, #fbb387); /* Subtle background shift when form is focused */
+}
+
+</style>
+
+
     <div class="modal" id="successModal">
       <div class="modal-content">
         <span class="modal-close" id="closeSuccessModal">✖</span>
