@@ -755,17 +755,207 @@ body.dark-mode {
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 </head>
+<body>  
+    <style>
+        /* Progress bar styles */
+        .progress-container {
+            width: 100%;
+            background-color: #f3f3f3;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        
+        .progress-bar {
+            height: 5px;
+            width: 0%;
+            background-color: #4caf50;
+            transition: width 0.3s;
+        }
+
+        /* Footer styles */
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            position: relative;
+            width: 100%;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-container p {
+            margin: 5px 0;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .footer-links a {
+            color: #4caf50;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        @media (min-width: 768px) {
+            .footer-container {
+                flex-direction: row;
+                justify-content: space-between;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+
+            .footer-links {
+                margin-top: 0;
+            }
+        }
+
+        /* FAQ section styles */
+        .faq-section {
+            margin: 50px auto;
+            max-width: 900px;
+            padding: 20px;
+        }
+
+        .faq-section h2 {
+            margin-top: 30px;
+        }
+    </style>
+</head>
 <body>
+    <!-- Progress Bar
+    <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+    </div> -->
 
 
 
 
+    <script>
+        // Function to update the progress bar
+        function updateProgressBar() {
+            const scrollTop = document.documentElement.scrollTop;
+            const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const progressPercentage = (scrollTop / windowHeight) * 100;
+            const progressBar = document.getElementById("myBar");
+            progressBar.style.width = progressPercentage + "%";
+        }
 
+        window.addEventListener('scroll', updateProgressBar);
+    </script>
+    <!-- <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FAQ</title>
+        <link rel="stylesheet" href="styles.css">
+        <style>
+            /* Progress bar styles */
+            .progress-container {
+                width: 100%;
+                background-color: #f3f3f3;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 1000;
+            }
+            
+            .progress-bar {
+                height: 5px;
+                width: 0%;
+                background-color: #4caf50;
+                transition: width 0.3s;
+            }
+    
+            /* Footer styles */
+            .footer {
+                background-color: #333;
+                color: white;
+                padding: 40px 0;
+                text-align: center;
+                position: relative;
+                width: 100%;
+            }
+    
+            .footer-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+    
+            .footer-container p {
+                margin: 5px 0;
+            }
+    
+            .footer-links {
+                display: flex;
+                gap: 15px;
+                margin-top: 10px;
+            }
+    
+            .footer-links a {
+                color: #4caf50;
+                text-decoration: none;
+                font-size: 14px;
+            }
+    
+            .footer-links a:hover {
+                text-decoration: underline;
+            }
+    
+            @media (min-width: 768px) {
+                .footer-container {
+                    flex-direction: row;
+                    justify-content: space-between;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    padding: 0 20px;
+                }
+    
+                .footer-links {
+                    margin-top: 0;
+                }
+            }
+    
+            /* FAQ section styles */
+            .faq-section {
+                margin: 50px auto;
+                max-width: 900px;
+                padding: 20px;
+            }
+    
+            .faq-section h2 {
+                margin-top: 30px;
+            }
+        </style>
+    </head>
+    </body>
+    </html> -->
+
+    
     <!-- Footer Section -->
 
 
 
-    <button class="notification" id="successnotification" style="display:none;">
+     <!-- Timed popup that will appear after succesful submission of feebback form! -->
+     <button class="notification" id="successnotification" style="display:none;">
       <span class="message" id="successmsg">Submitted successfully!</span>
       <span class="closenotif" id="closeSuccessNotification">✖</span>
       <div class="timerline" id="timerline"></div>
@@ -868,34 +1058,13 @@ body.dark-mode {
                             </a>
                         </div>
                     </li>
-                    <li id="social_icons" class="d-sm-flex justify-content-evenly my-3">
-                      <div style="width: 100%; display:flex; ">
-                        <!-- Instagram Icon -->
-                        <a href="https://instagram.com" target="_blank" style="margin: 0 10px; color: #E4405F;" aria-label="Instagram">
-                          <i style="font-size: 25px" class="fa-brands fa-instagram"></i>
-                        </a>
-                    
-                        <!-- Facebook Icon -->
-                        <a href="https://facebook.com" target="_blank" style="margin: 0 10px; color: #4267B2;" aria-label="Facebook">
-                          <i style="font-size: 25px" class="fa-brands fa-facebook"></i>
-                        </a>
-                    
-                        <!-- X/Twitter Icon -->
-                        <a href="https://twitter.com" target="_blank" style="margin: 0 10px; color: #1DA1F2;" aria-label="Twitter">
-                          <i style="font-size: 25px" class="fa-brands fa-x-twitter"></i>
-                        </a>
-                    
-                        <!-- Discord Icon -->
-                        <a href="https://discord.com" target="_blank" style="margin: 0 10px; color: #7289DA;" aria-label="Discord">
-                          <i style="font-size: 25px" class="fa-brands fa-discord"></i>
-                        </a>
-                    
-                        <!-- GitHub Icon -->
-                        <a href="https://github.com" target="_blank" style="margin: 0 10px; color: #333;" aria-label="GitHub">
-                          <i style="font-size: 25px" class="fa-brands fa-github"></i>
-                        </a>
-                      </div>
-                    </li>
+                    <div class="social-icons">
+                      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                      <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                      <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                      <a href="#"><i class="fa-brands fa-discord"></i></a>
+                      <a href="#"><i class="fa-brands fa-github"></i></a>
+                  </div>
                 </ul>
             </div>
         </div>
@@ -918,7 +1087,7 @@ body.dark-mode {
           >
             <div class="copyright-content" style="text-align: center">
               <p class="text" style="text-align: center">
-                © <span id="copyright-year"></span> FinVeda. All rights are
+                © <span id="copyright-year">2024</span> FinVeda. All rights are
                 reserved<br />
                 Made with ♥ in India
               </p>
@@ -932,339 +1101,102 @@ body.dark-mode {
     <div id="particles-2"></div>
     </div>
     </footer>
-       
-        <!-- Footer Copyright
-      <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center;">
-          <p>&copy; 2024 FinVeda. All Rights Reserved.</p>
-      </div> -->
-            <script>
-              // Function for the contributors section
-              const owner = 'ayush-that';
-              const repo = 'FinVeda';
-              const contributorsPerPage = 8;
-              let contributors = [];
-              let currentPage = 1;
-        
-              async function fetchContributors() {
-                const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/contributors`);
-                if (!response.ok) {
-                  console.error('Failed to fetch contributors:', response.statusText);
-                  return;
-                }
-                contributors = await response.json();
-                displayContributors();
-                createPaginationButtons();
-              }
-        
-              function displayContributors() {
-                const container = document.getElementById('contributor-cards');
-                container.innerHTML = '';
-                const start = (currentPage - 1) * contributorsPerPage;
-                const end = start + contributorsPerPage;
-                const currentContributors = contributors.slice(start, end);
-        
-                currentContributors.forEach(contributor => {
-                  const card = document.createElement('div');
-                  card.className = 'contributor-member';
-                  card.setAttribute('data-tilt', '');
-        
-                  const img = document.createElement('img');
-                  img.src = contributor.avatar_url;
-                  img.alt = contributor.login;
-        
-                  const name = document.createElement('h3');
-                  name.textContent = contributor.login;
-        
-                  const contributions = document.createElement('p');
-                  contributions.textContent = `${contributor.contributions} contributions`;
-        
-                  const viewProfileButton = document.createElement("button");
-                  viewProfileButton.textContent = "View Profile";
-                  viewProfileButton.addEventListener("click", () => {
-                    window.open(contributor.html_url, "_blank");
-                  });
-        
-                  card.appendChild(img);
-                  card.appendChild(name);
-                  card.appendChild(contributions);
-                  container.appendChild(card);
-                  card.appendChild(viewProfileButton);
-                });
-              }
-        
-              function createPaginationButtons() {
-                const paginationContainer = document.getElementById('pagination');
-                paginationContainer.innerHTML = '';
-                const totalPages = Math.ceil(contributors.length / contributorsPerPage);
-        
-                for (let i = 1; i <= totalPages; i++) {
-                  const button = document.createElement('button');
-                  button.textContent = i;
-                  button.classList.add('pagination-button');
-                  if (i === currentPage) {
-                    button.classList.add('active');
-                  }
-                  button.addEventListener('click', () => {
-                    currentPage = i;
-                    displayContributors();
-                    updatePaginationButtons();
-                  });
-                  paginationContainer.appendChild(button);
-                }
-              }
-        
-              function updatePaginationButtons() {
-                const buttons = document.querySelectorAll('.pagination-button');
-                buttons.forEach(button => {
-                  button.classList.remove('active');
-                  if (parseInt(button.textContent) === currentPage) {
-                    button.classList.add('active');
-                  }
-                });
-              }
-        
-              fetchContributors();
-            </script>
-    <div class="gtranslate_wrapper"></div>
-
-    <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
-    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>   
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Progress bar styles */
-        .progress-container {
-            width: 100%;
-            background-color: #f3f3f3;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-        
-        .progress-bar {
-            height: 5px;
-            width: 0%;
-            background-color: #4caf50;
-            transition: width 0.3s;
-        }
-
-        /* Footer styles */
-        .footer {
-            background-color: #333;
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-            position: relative;
-            width: 100%;
-        }
-
-        .footer-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .footer-container p {
-            margin: 5px 0;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 10px;
-        }
-
-        .footer-links a {
-            color: #4caf50;
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
-
-        @media (min-width: 768px) {
-            .footer-container {
-                flex-direction: row;
-                justify-content: space-between;
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 0 20px;
-            }
-
-            .footer-links {
-                margin-top: 0;
-            }
-        }
-
-        /* FAQ section styles */
-        .faq-section {
-            margin: 50px auto;
-            max-width: 900px;
-            padding: 20px;
-        }
-
-        .faq-section h2 {
-            margin-top: 30px;
-        }
-    </style>
-</head>
-<body>
-    <!-- Progress Bar -->
-    <div class="progress-container">
-        <div class="progress-bar" id="myBar"></div>
-    </div>
-
-    <h1>Frequently Asked Questions</h1>
-    <div class="faq-section">
-        <h2>Question 1</h2>
-        <p>Answer to question 1.</p>
-        
-        <h2>Question 2</h2>
-        <p>Answer to question 2.</p>
-
-        <h2>Question 3</h2>
-        <p>Answer to question 3.</p>
-
-        <!-- Add more questions and answers as needed -->
-    </div>
-
-    <!-- Footer Section -->
-    <footer class="footer">
-        <div class="footer-container">
-            <p>&copy; 2024 FinVeda. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="privacy-policy.html">Privacy Policy</a>
-                <a href="terms-of-service.html">Terms of Service</a>
-                <a href="contact.html">Contact Us</a>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Function to update the progress bar
-        function updateProgressBar() {
-            const scrollTop = document.documentElement.scrollTop;
-            const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const progressPercentage = (scrollTop / windowHeight) * 100;
-            const progressBar = document.getElementById("myBar");
-            progressBar.style.width = progressPercentage + "%";
-        }
-
-        window.addEventListener('scroll', updateProgressBar);
-    </script>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>FAQ</title>
-        <link rel="stylesheet" href="styles.css">
-        <style>
-            /* Progress bar styles */
-            .progress-container {
-                width: 100%;
-                background-color: #f3f3f3;
-                position: fixed;
-                top: 0;
-                left: 0;
-                z-index: 1000;
-            }
+           
+            <!-- Footer Copyright
+          <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center;">
+              <p>&copy; 2024 FinVeda. All Rights Reserved.</p>
+          </div> -->
+                <script>
+                  // Function for the contributors section
+                  const owner = 'ayush-that';
+                  const repo = 'FinVeda';
+                  const contributorsPerPage = 8;
+                  let contributors = [];
+                  let currentPage = 1;
             
-            .progress-bar {
-                height: 5px;
-                width: 0%;
-                background-color: #4caf50;
-                transition: width 0.3s;
-            }
-    
-            /* Footer styles */
-            .footer {
-                background-color: #333;
-                color: white;
-                padding: 40px 0;
-                text-align: center;
-                position: relative;
-                width: 100%;
-            }
-    
-            .footer-container {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-            }
-    
-            .footer-container p {
-                margin: 5px 0;
-            }
-    
-            .footer-links {
-                display: flex;
-                gap: 15px;
-                margin-top: 10px;
-            }
-    
-            .footer-links a {
-                color: #4caf50;
-                text-decoration: none;
-                font-size: 14px;
-            }
-    
-            .footer-links a:hover {
-                text-decoration: underline;
-            }
-    
-            @media (min-width: 768px) {
-                .footer-container {
-                    flex-direction: row;
-                    justify-content: space-between;
-                    max-width: 1200px;
-                    margin: 0 auto;
-                    padding: 0 20px;
-                }
-    
-                .footer-links {
-                    margin-top: 0;
-                }
-            }
-    
-            /* FAQ section styles */
-            .faq-section {
-                margin: 50px auto;
-                max-width: 900px;
-                padding: 20px;
-            }
-    
-            .faq-section h2 {
-                margin-top: 30px;
-            }
-        </style>
-    </head>
+                  async function fetchContributors() {
+                    const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/contributors`);
+                    if (!response.ok) {
+                      console.error('Failed to fetch contributors:', response.statusText);
+                      return;
+                    }
+                    contributors = await response.json();
+                    displayContributors();
+                    createPaginationButtons();
+                  }
+            
+                  function displayContributors() {
+                    const container = document.getElementById('contributor-cards');
+                    container.innerHTML = '';
+                    const start = (currentPage - 1) * contributorsPerPage;
+                    const end = start + contributorsPerPage;
+                    const currentContributors = contributors.slice(start, end);
+            
+                    currentContributors.forEach(contributor => {
+                      const card = document.createElement('div');
+                      card.className = 'contributor-member';
+                      card.setAttribute('data-tilt', '');
+            
+                      const img = document.createElement('img');
+                      img.src = contributor.avatar_url;
+                      img.alt = contributor.login;
+            
+                      const name = document.createElement('h3');
+                      name.textContent = contributor.login;
+            
+                      const contributions = document.createElement('p');
+                      contributions.textContent = `${contributor.contributions} contributions`;
+            
+                      const viewProfileButton = document.createElement("button");
+                      viewProfileButton.textContent = "View Profile";
+                      viewProfileButton.addEventListener("click", () => {
+                        window.open(contributor.html_url, "_blank");
+                      });
+            
+                      card.appendChild(img);
+                      card.appendChild(name);
+                      card.appendChild(contributions);
+                      container.appendChild(card);
+                      card.appendChild(viewProfileButton);
+                    });
+                  }
+            
+                  function createPaginationButtons() {
+                    const paginationContainer = document.getElementById('pagination');
+                    paginationContainer.innerHTML = '';
+                    const totalPages = Math.ceil(contributors.length / contributorsPerPage);
+            
+                    for (let i = 1; i <= totalPages; i++) {
+                      const button = document.createElement('button');
+                      button.textContent = i;
+                      button.classList.add('pagination-button');
+                      if (i === currentPage) {
+                        button.classList.add('active');
+                      }
+                      button.addEventListener('click', () => {
+                        currentPage = i;
+                        displayContributors();
+                        updatePaginationButtons();
+                      });
+                      paginationContainer.appendChild(button);
+                    }
+                  }
+            
+                  function updatePaginationButtons() {
+                    const buttons = document.querySelectorAll('.pagination-button');
+                    buttons.forEach(button => {
+                      button.classList.remove('active');
+                      if (parseInt(button.textContent) === currentPage) {
+                        button.classList.add('active');
+                      }
+                    });
+                  }
+            
+                  fetchContributors();
+                </script>
     
 
-    </body>
-    </html>
-    
-</body>
-</html>
-
-
-</body>
-</html>
-
-
-
-</body>
-</html>
+    <div class="gtranslate_wrapper"></div> 
 
             <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
             <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
@@ -1295,7 +1227,8 @@ body.dark-mode {
             <script src="./assets/js/botpress.js"></script>
             <script src="./assets/js/blogmodals.js"></script>
             <script src="./tools/smoothScroll.js"></script>
-          </body>
+
+</head>       </body>
           </html>
     
 

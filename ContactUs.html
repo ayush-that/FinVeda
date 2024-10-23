@@ -555,7 +555,7 @@
                 ">
                 <div class="copyright-content" style="text-align: center">
                   <p class="text" style="text-align: center">
-                    © <span id="copyright-year"></span> FinVeda. All rights
+                    © <span id="copyright-year">2024</span> FinVeda. All rights
                     reserved<br />
                     Made with ♥ in India
                   </p>
@@ -858,7 +858,425 @@
           </div>
         </div>
       </div>
-      
+
+      <header class="header-area">
+        <div class="navbar-area">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <nav class="navbar navbar-expand-lg">
+                  <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="toggler-icon"></span>
+                    <span class="toggler-icon"></span>
+                    <span class="toggler-icon"></span>
+                  </button> -->
+                  <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                    <ul id="nav" class="navbar-nav ml-auto">
+                      <li class="nav-item">
+                        <a class="page-scroll" href="../index.html">Home 🏡</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="page-scroll" href="./about.html">About Us 📖</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="page-scroll" href="../trends.html">Trends 📈</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="page-scroll" href="../tools/sip.html">Tools 🔧</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="page-scroll" href="../blog.html">Blogs 📰</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="page-scroll" href="../quiz.html">Quiz 🤔</a>
+                      </li>
+                      <li class="nav-item no-underline">
+                        <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none; border: none;" href="#"
+                          onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- Login Modal -->
+                  <div id="myModal" class="modal">
+                    <div class="modal-content">
+                      <span class="close" style="display: flex; justify-content: right;">&times;</span>
+                      <div class="mt-3">
+                        <h3 class="join">Login to join us....</h3>
+                        <form class="px-3 py-4" id="loginForm">
+                          <div class="form-group">
+                            <label class="d-flex">Username</label>
+                            <input type="text" placeholder="Username" class="form-control" required />
+                          </div>
+                          <div class="form-group">
+                            <label class="d-flex">Password</label>
+                            <input type="password" placeholder="Password" class="form-control" required>
+                            <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
+                          </div>
+                          <div class="form-check d-flex">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-check-label">Remember me</label>
+                          </div>
+                        </form>
+                        <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('loginForm')">Sign in</button>
+                        <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
+                      </div>
+                    </div>
+                  </div>
+    
+                  <!-- Register Modal -->
+                  <div id="registerModal" class="modal">
+                    <div class="modal-content">
+                      <span class="close" style="display: flex; justify-content: right;">&times;</span>
+                      <div class="mt-3">
+                        <h3 class="join">Register to join us....</h3>
+                        <form class="px-3 py-4" id="registerForm">
+                          <div class="form-group">
+                            <label class="d-flex">Email</label>
+                            <input type="email" placeholder="Email" class="form-control" required />
+                          </div>
+                          <div class="form-group">
+                            <label class="d-flex">Username</label>
+                            <input type="text" placeholder="Username" class="form-control" required />
+                          </div>
+                          <div class="form-group">
+                            <label class="d-flex">Password</label>
+                            <input type="password" placeholder="Password" class="form-control" required>
+                            <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
+                          </div>
+                        </form>
+                        <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('registerForm')">Register</button>
+                        <p class="text-center">Already have an account? <a href="#" id="loginLink">Login</a></p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              </nav>
+    
+              <nav class="mobile-menu ">
+                <a class="page-scroll" href="./index.html">Home 🏡</a>
+                <a class="page-scroll" href="./about.html">About Us 📖</a>
+                <a class="page-scroll" href="./trends.html">Trends 📈</a>
+                <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
+                <a class="page-scroll" href="./blog.html">Blogs 📰</a>
+                <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
+                <a class="page-scroll main-btn" href="#" onclick="openModal()"
+                  onmouseout="this.style.color='white'">Login/Register 💻</a>
+                <div class="mobile-menu__trigger"><span></span></div>
+              </nav>
+    
+    
+              <link href="./navbar.css" rel="stylesheet">
+              <script type="text/javascript" src="./navbar.js"></script>
+    
+            </div>
+          </div>
+        </div>
+        </div>
+      </header>
+    
+      <div class="contact">
+        <h2>Contact Us</h2>
+        <p>Want to get in Touch? We'd love to hear from you. Here's how you can reach us.</p>
+        <div class="informations">
+          <div class="findus">
+            <h3>Find us on...</h3>
+            <p>ayush1337@hotmail.com</p>
+            <p>fin-veda.vercel.app</p>
+            <p>Delhi, India</p>
+          </div>
+          <div class="form">
+            <h3>Share your thoughts...</h3>
+            <form action="POST">
+              <input type="text" id="name" placeholder="Name"/>
+              <input type="text" id="mail" placeholder="Email-id"/>
+              <input type="number" id="number" placeholder="Phone number"/>
+              <textarea type="text" id="msg" placeholder="Type your message..."></textarea>
+            </form>
+            <button type="submit">Submit</button>
+          </div>
+        </div>
+      </div>      
+    
+      <!-- Timed popup that will appear after succesful submission of feebback form! -->
+      <button class="notification" id="successnotification" style="display:none;">
+        <span class="message" id="successmsg">Submitted successfully!</span>
+        <span class="closenotif" id="closeSuccessNotification">✖</span>
+        <div class="timerline" id="timerline"></div>
+      </button>
+    
+      <footer id="footer" class="footer-area pt-120">
+        <div class="container">
+          <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="subscribe-content mt-45">
+                  <h2 class="subscribe-title">
+                    Subscribe Our Newsletter <span>get regular updates</span>
+                  </h2>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="subscribe-form mt-50">
+                  <form id="unique-subscribe-form">
+                    <input type="email" id="unique-news-email" placeholder="Enter Email" required />
+                    <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
+                  </form>
+                  <div id="unique-message" class="unique-popup-message" style="display: none;">
+                    <div class="border-animation"></div>
+                    Thank You for the subscription!
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+          document.getElementById('unique-subscribe-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form from submitting normally
+    
+            // Show popup message
+            var messageDiv = document.getElementById('unique-message');
+            messageDiv.style.display = 'block';
+    
+            // Reset existing animation
+            var borderAnimationDiv = messageDiv.querySelector('.border-animation');
+            borderAnimationDiv.style.animation = 'none';
+            borderAnimationDiv.offsetHeight; // Trigger reflow to restart the animation
+            borderAnimationDiv.style.animation = 'borderAnimation 3s linear forwards';
+    
+            // Hide popup message after 10 seconds
+            setTimeout(function () {
+              messageDiv.style.display = 'none';
+            }, 3000); // 10 seconds
+    
+            // Reset form
+            this.reset();
+          });
+        </script>
+    
+        <div class="footer-widget-pb-100">
+          <div class="row" id="footer">
+            <div class="col-lg-4 col-md-6 col-sm-8">
+              <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                <p class="text custom-margin">
+                  We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-5 col-md-7 col-sm-7">
+              <div class="footer-link d-flex mt-50 justify-content-md-between"
+                style="justify-content: space-around !important;">
+                <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+                  <div class="footer-title">
+                    <h3 class="title custom-margin">Quick Links</h3>
+                  </div>
+                  <ul class="link custom-margin">
+                    <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+                    <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
+                    <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
+                    <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+                    <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+                    <li><a href="./ContactUs.html"><i class="fa fa-phone"></i> Contact Us</a></li>
+                  </ul>
+                </div>
+                <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+                  <div class="footer-title">
+                    <h4 class="title custom-margin">Resources</h4>
+                  </div>
+                  <ul class="link custom-margin">
+                    <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
+                    <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
+                    <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                    <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3-col-md-5-col-sm-5">
+              <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                <div class="footer-title">
+                  <h4 class="title custom-margin">Contact Us</h4>
+                </div>
+                <ul class="contact-custom-margin-big" style="justify-content: space-around;">
+                  <li class="d-sm-flex justify-content-center">
+                    <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                    <p style="width: 80%;">
+                      <a href="mailto:ayush1337@hotmail.com" target="_blank"
+                        style="color: white; text-decoration: underline;">
+                        ayush1337@hotmail.com
+                      </a>
+                    </p>
+                  </li>
+                  <li class="d-sm-flex justify-content-center">
+                    <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                    <div style="width: 80%;">
+                      <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
+                        fin-veda.vercel.app
+                      </a>
+                    </div>
+                  </li>
+                  <li class="d-sm-flex justify-content-center">
+                    <i class="fa fa-location-dot d-sm-flex align-items-center white"
+                      style="font-size: 12px; width: 10%;"></i>
+                    <div style="width: 80%;">
+                      <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
+                        style="color:#fff">
+                        Delhi, India
+                      </a>
+                    </div>
+                  </li>
+                  <li id="social_icons" class="d-sm-flex justify-content-evenly my-3">
+                    <div style="width: 100%; display:flex; ">
+                      <!-- Instagram Icon -->
+                      <a href="https://instagram.com" target="_blank" style="margin: 0 10px; color: #E4405F;" aria-label="Instagram">
+                        <i style="font-size: 25px" class="fa-brands fa-instagram"></i>
+                      </a>
+                  
+                      <!-- Facebook Icon -->
+                      <a href="https://facebook.com" target="_blank" style="margin: 0 10px; color: #4267B2;" aria-label="Facebook">
+                        <i style="font-size: 25px" class="fa-brands fa-facebook"></i>
+                      </a>
+                  
+                      <!-- X/Twitter Icon -->
+                      <a href="https://twitter.com" target="_blank" style="margin: 0 10px; color: #1DA1F2;" aria-label="Twitter">
+                        <i style="font-size: 25px" class="fa-brands fa-x-twitter"></i>
+                      </a>
+                  
+                      <!-- Discord Icon -->
+                      <a href="https://discord.com" target="_blank" style="margin: 0 10px; color: #7289DA;" aria-label="Discord">
+                        <i style="font-size: 25px" class="fa-brands fa-discord"></i>
+                      </a>
+                  
+                      <!-- GitHub Icon -->
+                      <a href="https://github.com" target="_blank" style="margin: 0 10px; color: #333;" aria-label="GitHub">
+                        <i style="font-size: 25px" class="fa-brands fa-github"></i>
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s"
+          style="text-align: center">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="copyright d-sm-flex justify-content-center" style="
+                  display: flex;
+                  justify-content: center;
+                  text-align: center;
+                  width: 100%;
+                  height: 100%;
+                ">
+                <div class="copyright-content" style="text-align: center">
+                  <p class="text" style="text-align: center">
+                    © <span id="copyright-year">2024</span> FinVeda. All rights are
+                    reserved<br />
+                    Made with ♥ in India
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        </div>
+        <div id="particles-2"></div>
+      </footer>
+      <script>
+        document.getElementById("copyright-year").textContent =
+          new Date().getFullYear();
+      </script>
+      <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
+    
+      <script>
+        // Get the modals
+        var loginModal = document.getElementById('myModal');
+        var registerModal = document.getElementById('registerModal');
+    
+        // Get the button that opens the login modal
+        var loginBtn = document.getElementById('loginBtn');
+    
+        // Get the links that open the register and login modals
+        var registerLink = document.getElementById('registerLink');
+        var loginLink = document.getElementById('loginLink');
+    
+        // Get the <span> elements that close the modals
+        var closeBtns = document.getElementsByClassName('close');
+    
+        //show and hide icon button
+        document.addEventListener('DOMContentLoaded', () => {
+          const togglePasswordButtons = document.querySelectorAll('.toggle-password-btn');
+    
+          togglePasswordButtons.forEach(button => {
+            button.addEventListener('click', () => {
+              const passwordInput = button.previousElementSibling;
+              if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                button.innerHTML = `<i class="fa-solid fa-eye-slash"></i>`
+              } else {
+                passwordInput.type = 'password';
+                button.innerHTML = `<i class="fa-solid fa-eye"></i>`
+              }
+            });
+          });
+        });
+    
+        // When the user clicks the register link, open the register modal
+        registerLink.onclick = function (event) {
+          event.preventDefault();
+          loginModal.style.display = 'none';
+          registerModal.style.display = 'block';
+        }
+    
+        // When the user clicks the login link, open the login modal
+        loginLink.onclick = function (event) {
+          event.preventDefault();
+          registerModal.style.display = 'none';
+          loginModal.style.display = 'block';
+        }
+    
+        // When the user clicks on <span> (x), close the modal
+        for (var i = 0; i < closeBtns.length; i++) {
+          closeBtns[i].onclick = function () {
+            loginModal.style.display = 'none';
+            registerModal.style.display = 'none';
+          }
+        }
+    
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+          if (event.target == loginModal) {
+            loginModal.style.display = 'none';
+          }
+          if (event.target == registerModal) {
+            registerModal.style.display = 'none';
+          }
+        }
+      </script>
+    
+      <script src="./assets/js/subscribe.js"></script>
+      <script src="../assets/js/vendor/jquery-1.12.4.min.js"></script>
+      <script src="../assets/js/vendor/modernizr-3.7.1.min.js"></script>
+      <script src="../assets/js/popper.min.js"></script>
+      <script src="../assets/js/bootstrap.min.js"></script>
+      <script src="../assets/js/plugins.js"></script>
+      <script src="../assets/js/slick.min.js"></script>
+      <script src="../assets/js/ajax-contact.js"></script>
+      <script src="../assets/js/waypoints.min.js"></script>
+      <script src="../assets/js/jquery.counterup.min.js"></script>
+      <script src="../assets/js/jquery.magnific-popup.min.js"></script>
+      <script src="../assets/js/jquery.easing.min.js"></script>
+      <script src="../assets/js/scrolling-nav.js"></script>
+      <script src="../assets/js/wow.min.js"></script>
+      <script src="../assets/js/particles.min.js"></script>
+      <script src="../assets/js/main.js"></script>
+      <script src="../assets/js/popup.js"></script>
+      <script src="./tools/smoothScroll.js"></script>
 
 </body>
     
