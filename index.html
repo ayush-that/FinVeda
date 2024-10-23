@@ -68,121 +68,136 @@
     }
 
 
-    
-.unique-popup-message {
-  position: fixed; /* Change to fixed positioning */
-  top: 30px; /* Adjust this value to be below the navbar */
-  right: 2px; /* Adjust this value for the desired distance from the right edge */
-  width: 300px; /* Adjust width as needed */
-  transform: translateX(0); /* Center the popup horizontally */
-  background-color: #a4d8ff;
-  color: #131722;
-  padding: 11px;
-  border-radius: 5px;
-  text-align: center;
-  z-index: 1000;
-  box-sizing: border-box;
-  overflow: hidden; /* Hide the expanding border animation */
-  position: relative;
-}
 
-.border-animation {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 7px; /* Same height as the border */
-  background-color: rgb(4, 0, 128);
-  width: 100%;
-  transform-origin: right; /* Start shrinking from the right */
-}
+    .unique-popup-message {
+      position: fixed;
+      /* Change to fixed positioning */
+      top: 30px;
+      /* Adjust this value to be below the navbar */
+      right: 2px;
+      /* Adjust this value for the desired distance from the right edge */
+      width: 300px;
+      /* Adjust width as needed */
+      transform: translateX(0);
+      /* Center the popup horizontally */
+      background-color: #a4d8ff;
+      color: #131722;
+      padding: 11px;
+      border-radius: 5px;
+      text-align: center;
+      z-index: 1000;
+      box-sizing: border-box;
+      overflow: hidden;
+      /* Hide the expanding border animation */
+      position: relative;
+    }
 
-@keyframes borderAnimation {
-  from {
-    transform: scaleX(0); /* Full width initially */
-  }
-  to {
-    transform: scaleX(1); /* Shrink to zero width */
-  }
-}
-.social-icons {
-    text-align: center;
-  }
-  
-  .social-icons ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .social-icons li {
-    margin: 0 10px;
-  }
-  
-  .social-icons a {
-    color: #337ab7;
-    text-decoration: none;
-    border-radius: 50%;
-    border: 1px solid #ccc; 
-    padding: 10px;
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s; 
-  }
-  
-  .social-icons a:hover {
-    color: #fe8464;
-    border-color: #fe8464; 
-    transform: scale(1.1); 
-  }
-  
-  .or-sign-in-with {
-    margin: 20px 0;
-    font-size: 14px;
-    font-weight: bold;
-    color: #666;
-    text-align: center;
-    position: relative;
-  }
-  
-  .or-sign-in-with::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 0; 
-    width: 35%; 
-    border-top: 1px solid #ccc;
-    transform: translateX(-2%); 
-  }
-  
-  .or-sign-in-with::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: 0; 
-    width: 35%; 
-    border-top: 1px solid #ccc;
-    transform: translateX(2%);
-  }
-  .form-check {
-    display: flex;
-    align-items: center;
-  }
-  .form-check a {
-    margin-left: auto; 
-  }
-  .dropdown {
-  position: relative;
-  display: inline-block;
-}
+    .border-animation {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 7px;
+      /* Same height as the border */
+      background-color: rgb(4, 0, 128);
+      width: 100%;
+      transform-origin: right;
+      /* Start shrinking from the right */
+    }
+
+    @keyframes borderAnimation {
+      from {
+        transform: scaleX(0);
+        /* Full width initially */
+      }
+
+      to {
+        transform: scaleX(1);
+        /* Shrink to zero width */
+      }
+    }
+
+    .social-icons {
+      text-align: center;
+    }
+
+    .social-icons ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .social-icons li {
+      margin: 0 10px;
+    }
+
+    .social-icons a {
+      color: #337ab7;
+      text-decoration: none;
+      border-radius: 50%;
+      border: 1px solid #ccc;
+      padding: 10px;
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      font-size: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #fe8464;
+      border-color: #fe8464;
+      transform: scale(1.1);
+    }
+
+    .or-sign-in-with {
+      margin: 20px 0;
+      font-size: 14px;
+      font-weight: bold;
+      color: #666;
+      text-align: center;
+      position: relative;
+    }
+
+    .or-sign-in-with::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 35%;
+      border-top: 1px solid #ccc;
+      transform: translateX(-2%);
+    }
+
+    .or-sign-in-with::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 35%;
+      border-top: 1px solid #ccc;
+      transform: translateX(2%);
+    }
+
+    .form-check {
+      display: flex;
+      align-items: center;
+    }
+
+    .form-check a {
+      margin-left: auto;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
 
 
 
@@ -425,7 +440,7 @@
                 </div>
               </div>
               <div class="nav-space"></div>
-              <div class="navbar-elements"> 
+              <div class="navbar-elements">
                 <div class="dropdown">
                   <a>
                     <i class="fa-solid fa-bars" style="color: #fff;"></i>
@@ -959,7 +974,7 @@
           <!-- <div class="navbar-area"> -->
           <!-- <div class="container"> -->
           <div class="row">
-           
+
             <!-- <div class="col-lg-12"> -->
             <nav class="navbar navbar-expand-lg">
               <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -973,7 +988,7 @@
                   <div class="icon1">
                     <img src="./assets/images/icon.webp" alt="icon.png">
                   </div>
-                </a> 
+                </a>
 
                 <ul id="nav" class="navbar-nav" style="margin:auto">
 
@@ -987,19 +1002,19 @@
                   <li class="nav-item">
                     <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
                   </li>
-                   
-                <div class="dropdown-tools">
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
-                    <div class="dropdown-content-tools">
-                         <a href="./tools/sip.html#section1">Mutual Fund Investment Calculator</a>
-                          <a href="./tools/sip.html#section2">Emi Calculator</a>
-                          <a href="./tools/sip.html#section3">Saving Goal Calculator</a>
-                          <a href="./tools/sip.html#section4">Insurance Calculator</a>
-                          <a href="./tools/sip.html">And Many More.....</a>
-                     </div>
-                  </li>
-                </div>
+
+                  <div class="dropdown-tools">
+                    <li class="nav-item">
+                      <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
+                      <div class="dropdown-content-tools">
+                        <a href="./tools/sip.html#section1">Mutual Fund Investment Calculator</a>
+                        <a href="./tools/sip.html#section2">Emi Calculator</a>
+                        <a href="./tools/sip.html#section3">Saving Goal Calculator</a>
+                        <a href="./tools/sip.html#section4">Insurance Calculator</a>
+                        <a href="./tools/sip.html">And Many More.....</a>
+                      </div>
+                    </li>
+                  </div>
                   <li class="nav-item">
                     <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
                   </li>
@@ -1011,11 +1026,11 @@
                   </li>
                   <li class="nav-item">
                     <a class="page-scroll" href="./ContactUs.html" style="color: rgb(237, 242, 244);">Contact Us 👔</a>
-                  
+
 
 
                   </li>
- 
+
                   <li class="nav-item no-underline">
                     <a class="main-btn navbar-btn"
                       style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;"
@@ -1025,14 +1040,14 @@
                 <button id="theme-toggle" class="theme-toggle">
                   🌙
                 </button>
-              </div>  
+              </div>
               <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
                 <span></span>
               </div>
             </nav>
             <link href="./navbar.css" rel="stylesheet">
             <script type="text/javascript" src="./navbar.js" defer></script>
-            
+
             <script>
               const toggleButton = document.getElementById('theme-toggle');
               const body = document.body;
@@ -1477,7 +1492,8 @@
           </div>
         </div>
       </div>
-      <div class="row testimonial-wrapper testimonial-active wow fadeInUpBig" data-wow-duration="1s" data-wow-delay="0.8s">
+      <div class="row testimonial-wrapper testimonial-active wow fadeInUpBig" data-wow-duration="1s"
+        data-wow-delay="0.8s">
         <div class="testimonial-item col-lg-4">
           <div class="single-testimonial">
             <div class="testimonial-review d-flex align-items-center justify-content-between">
@@ -1638,7 +1654,7 @@
 
   <style>
     /* General testimonial section styling */
-    
+
     #testimonial {
       background: linear-gradient(135deg, #4b6cb7, #182848);
       /* Attractive gradient background */
@@ -2286,9 +2302,42 @@
             </div>
             <div class="col-lg-6">
               <div class="subscribe-form mt-50">
-                <form id="unique-subscribe-form">
-                  <input type="email" id="unique-news-email" placeholder="Enter Email" required />
-                  <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
+                <form id="unique-subscribe-form" >
+                  <input type="email" id="unique-news-email" placeholder="Enter your email address" required style="
+                      padding: 0.75rem 1rem; 
+                      border: 2px solid #0056b3; 
+                      border-radius: 8px; 
+                      height: 45px; 
+                      font-size: 16px; 
+                      transition: border-color 0.4s ease, box-shadow 0.3s ease, transform 0.2s ease; 
+                      outline: none; 
+                      position: relative; 
+                       
+                      
+                      
+                  " onfocus="this.style.borderColor='#004494'; this.style.boxShadow='0 4px 10px rgba(0, 0, 0, 0.2)'; this.style.transform='translateY(-4px)'; this.style.color='transparent';"
+                    onblur="this.style.borderColor='#0056b3'; this.style.boxShadow='none'; this.style.transform='translateY(0)'; this.style.color='';">
+                  <button class="unique-main-btn" id="unique-subscribe-btn" type="submit" style="
+        height: 45px; 
+        padding: 0 20px; 
+        border: none; 
+        border-radius: 8px; 
+        background-color: #007BFF; /* Professional blue */
+        color: white; 
+        font-size: 16px; 
+        font-weight: 600; 
+        cursor: pointer; 
+        transition: background-color 0.3s ease, transform 0.2s ease; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    " onmouseover="this.style.backgroundColor='#0056b3'; this.style.transform='scale(1.05)';"
+                    onmouseout="this.style.backgroundColor='#007BFF'; this.style.transform='scale(1)';">
+                    Subscribe
+                  </button>
+
+
                 </form>
                 <div id="unique-message" class="unique-popup-message" style="display: none;">
                   <div class="border-animation"></div>
@@ -2517,9 +2566,9 @@
       }
 
 
-    // Close button event listeners for modals
-    registerModal.querySelector(".close").addEventListener("click", closeModal);
-    loginModal.querySelector(".close").addEventListener("click", closeModal);
+      // Close button event listeners for modals
+      registerModal.querySelector(".close").addEventListener("click", closeModal);
+      loginModal.querySelector(".close").addEventListener("click", closeModal);
 
 
 
@@ -2582,18 +2631,18 @@
 
     </script>
     <script src="./smoothScroll.js"></script>
- 
+
     <script src="./assets/js/preloader.js"></script>
     <br /><br />
-  <link rel="stylesheet" href="visi.css">
-  <!-- ############### Footer ############### -->
-  <div class="visitor-counter">
-    <div>Visitor</div>
-    <div class="website-counter"></div>
-  </div>
-  <script src="path/to/visitorCounter.js"></script>
-  <script src="./assets/css/visitors.css"></script>
- 
+    <link rel="stylesheet" href="visi.css">
+    <!-- ############### Footer ############### -->
+    <div class="visitor-counter">
+      <div>Visitor</div>
+      <div class="website-counter"></div>
+    </div>
+    <script src="path/to/visitorCounter.js"></script>
+    <script src="./assets/css/visitors.css"></script>
+
     <script src="visi.js"></script>
     <script src="../assets/js/index.js"></script>
   </body>
