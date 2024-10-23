@@ -1,0 +1,238 @@
+/* Reset and global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  html, body {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #2193b0, #6dd5ed);
+    overflow: hidden;
+  }
+  
+  /* Container */
+  .container {
+    width: 100%;
+    max-width: 850px;
+    height: 600px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .forms-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .sign-in-signup {
+    width: 50%;
+    padding: 0 50px;
+    transition: 0.6s;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .input-field {
+    position: relative;
+    margin: 10px 0;
+    width: 100%;
+  }
+  
+  .input-field input {
+    width: 100%;
+    padding: 10px 15px;
+    background: #f0f0f0;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    font-size: 16px;
+  }
+  
+  .input-field i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #333;
+    font-size: 18px;
+  }
+  
+  .password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: #333;
+    cursor: pointer;
+  }
+  
+  /* Button styles */
+  .btn {
+    width: 100%;
+    border: none;
+    padding: 12px 0;
+    border-radius: 30px;
+    background: linear-gradient(to right, #36d1dc, #5b86e5);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .btn:hover {
+    background: linear-gradient(to right, #2193b0, #6dd5ed);
+  }
+  
+  /* Social media section */
+  .social-text {
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  .social-media {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .social-icon {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #333;
+    color: #fff;
+    border-radius: 50%;
+    margin: 0 10px;
+    font-size: 18px;
+    transition: background 0.3s;
+  }
+  
+  .social-icon:hover {
+    background: #2193b0;
+  }
+  
+  /* Panels Container */
+  .panels-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 40px;
+  }
+  
+  .panel.left-panel {
+    background: linear-gradient(to right, #36d1dc, #5b86e5);
+  }
+  
+  .panel.right-panel {
+    background: linear-gradient(to right, #b06ab3, #4568dc);
+  }
+  
+  .panel .content {
+    color: #fff;
+  }
+  
+  .image {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .btn.transparent {
+    background: none;
+    border: 2px solid #fff;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .btn.transparent:hover {
+    background-color: #fff;
+    color: #333;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    .sign-in-signup {
+      width: 100%;
+      padding: 0 20px;
+    }
+  
+    .panels-container {
+      flex-direction: column;
+      position: static;
+    }
+  
+    .panel {
+      width: 100%;
+      padding: 20px 0;
+    }
+  
+    .panel .image {
+      display: none;
+    }
+  
+    .panel .content {
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .sign-in-signup {
+      padding: 0 10px;
+    }
+  
+    .title {
+      font-size: 1.5rem;
+    }
+  
+    .btn {
+      font-size: 14px;
+    }
+  }
+  
+  /* Home button */
+  .homeBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
