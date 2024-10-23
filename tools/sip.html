@@ -6,7 +6,7 @@
   <title>Tools - FinVeda</title>
   <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="shortcut icon" href="../assets/images/favicon2.png" type="image/png" />
+  <link rel="shortcut icon" href="../assets/images/favicon2.webp" type="image/png" />
   <link rel="stylesheet" href="../assets/css/animate.css" />
   <link rel="stylesheet" href="../assets/css/magnific-popup.css" />
   <link rel="stylesheet" href="../assets/css/slick.css" />
@@ -280,16 +280,19 @@ box-shadow: 0 0 25px #03133c;
             <span class="toggler-icon"></span>
             <span class="toggler-icon"></span>
           </button> -->
-          <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto;">
+          <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
             <div class="icon1">
-              <img src="/assets/images/icon.webp" alt="icon.webp">
+              <a href="../index.html">
+              <img src="../assets/images/icon.png" alt="icon.png">
+              </a>
             </div> 
+            </a>
             <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
               <li class="nav-item">
                 <a class="page-scroll" href="../index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
               </li>
               <li class="nav-item">
-                <a class="page-scroll" href="../about.html" id="active-page" style="color: rgb(237, 242, 244);">About Us 📖</a>
+                <a class="page-scroll" href="../about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
               </li>    
               <li class="nav-item">
                 <a class="page-scroll" href="../trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
@@ -309,11 +312,16 @@ box-shadow: 0 0 25px #03133c;
               <li class="nav-item">
                 <a class="page-scroll" href="../contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
               </li>
-              <li class="nav-item active">
+              <li class="nav-item">
                 <a class="page-scroll" href="../faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
               </li>
               <li class="nav-item no-underline">
-                <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="#" onclick="openModal()">Login/Register 💻</a>
+                <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="../loginPage.html" >Login/Register 💻</a>
+              </li>
+              <li class="nav-item no-underline">
+              <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
+                🌙
+              </button>
               </li>
             </ul>
           </div>
@@ -1115,6 +1123,96 @@ registerCloseButton.addEventListener("click", function() {
 </div>
 
     <!-- End NPV Calculator -->
+
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .containerr {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            color: #555;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .result {
+            font-weight: bold;
+            color: #007bff;
+            margin-top: 10px;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div class="containerr">
+    <h1>TCO Calculator</h1>
+    
+    <label for="initialCost">Initial Cost ($):</label>
+    <input type="number" id="initialCost" placeholder="Enter initial cost" required>
+    
+    <label for="operatingCost">Annual Operating Cost ($):</label>
+    <input type="number" id="operatingCost" placeholder="Enter annual operating cost" required>
+    
+    <label for="years">Years of Ownership:</label>
+    <input type="number" id="years" placeholder="Enter number of years" required>
+    
+    <label for="miscCost">Miscellaneous Costs ($):</label>
+    <input type="number" id="miscCost" placeholder="Enter miscellaneous costs" required>
+    
+    <button class="btn" onclick="calculateTCO()">Calculate TCO</button>
+
+    <div class="result" id="tcoResult"></div>
+</div>
+
+<script>
+    function calculateTCO() {
+        // Get the input values
+        const initialCost = parseFloat(document.getElementById('initialCost').value) || 0;
+        const operatingCost = parseFloat(document.getElementById('operatingCost').value) || 0;
+        const years = parseInt(document.getElementById('years').value) || 0;
+        const miscCost = parseFloat(document.getElementById('miscCost').value) || 0;
+
+        // Calculate TCO
+        const totalOperatingCost = operatingCost * years;
+        const tco = initialCost + totalOperatingCost + miscCost;
+
+        // Display the result
+        document.getElementById('tcoResult').innerHTML = `Total Cost of Ownership: $${tco.toFixed(2)}`;
+    }
+</script>
  
     <!--ROI calculator-->
     <script src="roiCalculator.js" defer></script>
@@ -2062,4 +2160,3 @@ registerCloseButton.addEventListener("click", function() {
 </body>
 
 </html> 
-S

@@ -402,6 +402,8 @@ body.dark-mode {
   
 
   <header class="header-area">
+    <div style="display: flex; justify-content: center;" class="navbar-area">
+      <div style="display: flex; justify-content: center;" class="container">
     <div class="row">
       <div style="display: flex; justify-content: center;" class="">
         <nav class="navbar navbar-expand-lg " style="display: flex;">
@@ -413,7 +415,9 @@ body.dark-mode {
           </button> -->
           <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
             <div class="icon1">
+              <a href="./index.html">
               <img src="assets/images/icon.webp" alt="icon.png">
+              </a>
             </div> 
             <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
               <li class="nav-item">
@@ -440,11 +444,16 @@ body.dark-mode {
               <li class="nav-item">
                 <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
               </li>
-              <li class="nav-item active-link">
-                <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
+              <li class="nav-item">
+                <a class="page-scroll active-link" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
               </li>
               <li class="nav-item no-underline">
                 <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
+              </li>
+              <li class="nav-item no-underline">
+              <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
+                🌙
+              </button>
               </li>
             </ul>
           </div>
@@ -755,17 +764,244 @@ body.dark-mode {
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 </head>
+<body>  
+    <style>
+        /* Progress bar styles */
+        .progress-container {
+            width: 100%;
+            background-color: #f3f3f3;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        
+        .progress-bar {
+            height: 5px;
+            width: 0%;
+            background-color: #4caf50;
+            transition: width 0.3s;
+        }
+
+        /* Footer styles */
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            position: relative;
+            width: 100%;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-container p {
+            margin: 5px 0;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .footer-links a {
+            color: #4caf50;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        @media (min-width: 768px) {
+            .footer-container {
+                flex-direction: row;
+                justify-content: space-between;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+
+            .footer-links {
+                margin-top: 0;
+            }
+        }
+
+        /* FAQ section styles */
+        .faq-section {
+            margin: 50px auto;
+            max-width: 900px;
+            padding: 20px;
+        }
+
+        .faq-section h2 {
+            margin-top: 30px;
+        }
+
+        /* Progress Bar Styles */
+.progress-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    width: 75%; /* Update dynamically as needed */
+    background-color: #007BFF;
+    height: 20px;
+    border-radius: 8px;
+    transition: width 0.4s ease; /* Smooth transition for the progress */
+}
+
+/* FAQ Questions Hover Effect */
+.faq-question {
+    background-color: #f8f9fa; /* Light background */
+    padding: 15px; /* Increased padding for better click area */
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: background-color 0.4s ease, transform 0.3s ease; /* Smoother transitions */
+    cursor: pointer;
+    font-size: 18px; /* Slightly larger font size for visibility */
+}
+
+.faq-question:hover {
+    background-color: #0056b3; /* Change to a darker blue */
+    color: white; /* Change text color to white */
+    transform: scale(1.05); /* Slightly increase size */
+}
+
+/* FAQ Section Header */
+.faq-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.faq-header h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Search Input Styles */
+.search-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 0;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.search-input:hover {
+    border-color: #0056b3; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3); 
+}
+
+/* Feedback Form Styles */
+.feedback-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-form input,
+.feedback-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feedback-form input:focus,
+.feedback-form textarea:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.feedback-form input:hover,
+.feedback-form textarea:hover {
+    border-color: #0056b3; /* Darker border on hover */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3); 
+}
+
+/* Submit Button Styles */
+.feedback-form button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 12px 20px; 
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; 
+    transition: background-color 0.4s ease, transform 0.3s ease; 
+}
+
+.feedback-form button:hover {
+    background-color: #0056b3; 
+    transform: scale(1.05); 
+}
+
+#myBar {
+    transition: width 0.2s ease; 
+}
+
+    </style>
+</head>
 <body>
+    <!-- Progress Bar
+    <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+    </div> -->
 
 
 
 
+    <script>
+        // Function to update the progress bar
+        function updateProgressBar() {
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop; // Support for different browsers
+            const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            
+            // Ensure we do not go below 0 or above 100
+            const progressPercentage = Math.min(Math.max((scrollTop / windowHeight) * 100, 0), 100);
+            
+            const progressBar = document.getElementById("myBar");
+            progressBar.style.width = progressPercentage + "%";
+        }
+    
+        // Throttle the scroll event for performance
+        let timeout;
+        window.addEventListener('scroll', function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(updateProgressBar, 100); // Adjust delay as necessary
+        });
+    </script>
+    
 
+
+    
     <!-- Footer Section -->
 
 
 
-    <button class="notification" id="successnotification" style="display:none;">
+     <!-- Timed popup that will appear after succesful submission of feebback form! -->
+     <button class="notification" id="successnotification" style="display:none;">
       <span class="message" id="successmsg">Submitted successfully!</span>
       <span class="closenotif" id="closeSuccessNotification">✖</span>
       <div class="timerline" id="timerline"></div>
@@ -868,34 +1104,13 @@ body.dark-mode {
                             </a>
                         </div>
                     </li>
-                    <li id="social_icons" class="d-sm-flex justify-content-evenly my-3">
-                      <div style="width: 100%; display:flex; ">
-                        <!-- Instagram Icon -->
-                        <a href="https://instagram.com" target="_blank" style="margin: 0 10px; color: #E4405F;" aria-label="Instagram">
-                          <i style="font-size: 25px" class="fa-brands fa-instagram"></i>
-                        </a>
-                    
-                        <!-- Facebook Icon -->
-                        <a href="https://facebook.com" target="_blank" style="margin: 0 10px; color: #4267B2;" aria-label="Facebook">
-                          <i style="font-size: 25px" class="fa-brands fa-facebook"></i>
-                        </a>
-                    
-                        <!-- X/Twitter Icon -->
-                        <a href="https://twitter.com" target="_blank" style="margin: 0 10px; color: #1DA1F2;" aria-label="Twitter">
-                          <i style="font-size: 25px" class="fa-brands fa-x-twitter"></i>
-                        </a>
-                    
-                        <!-- Discord Icon -->
-                        <a href="https://discord.com" target="_blank" style="margin: 0 10px; color: #7289DA;" aria-label="Discord">
-                          <i style="font-size: 25px" class="fa-brands fa-discord"></i>
-                        </a>
-                    
-                        <!-- GitHub Icon -->
-                        <a href="https://github.com" target="_blank" style="margin: 0 10px; color: #333;" aria-label="GitHub">
-                          <i style="font-size: 25px" class="fa-brands fa-github"></i>
-                        </a>
-                      </div>
-                    </li>
+                    <div class="social-icons">
+                      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                      <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                      <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                      <a href="#"><i class="fa-brands fa-discord"></i></a>
+                      <a href="#"><i class="fa-brands fa-github"></i></a>
+                  </div>
                 </ul>
             </div>
         </div>
@@ -918,7 +1133,7 @@ body.dark-mode {
           >
             <div class="copyright-content" style="text-align: center">
               <p class="text" style="text-align: center">
-                © <span id="copyright-year"></span> FinVeda. All rights are
+                © <span id="copyright-year">2024</span> FinVeda. All rights are
                 reserved<br />
                 Made with ♥ in India
               </p>
@@ -932,424 +1147,102 @@ body.dark-mode {
     <div id="particles-2"></div>
     </div>
     </footer>
-       
-        <!-- Footer Copyright
-      <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center;">
-          <p>&copy; 2024 FinVeda. All Rights Reserved.</p>
-      </div> -->
-            <script>
-              // Function for the contributors section
-              const owner = 'ayush-that';
-              const repo = 'FinVeda';
-              const contributorsPerPage = 8;
-              let contributors = [];
-              let currentPage = 1;
-        
-              async function fetchContributors() {
-                const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/contributors`);
-                if (!response.ok) {
-                  console.error('Failed to fetch contributors:', response.statusText);
-                  return;
-                }
-                contributors = await response.json();
-                displayContributors();
-                createPaginationButtons();
-              }
-        
-              function displayContributors() {
-                const container = document.getElementById('contributor-cards');
-                container.innerHTML = '';
-                const start = (currentPage - 1) * contributorsPerPage;
-                const end = start + contributorsPerPage;
-                const currentContributors = contributors.slice(start, end);
-        
-                currentContributors.forEach(contributor => {
-                  const card = document.createElement('div');
-                  card.className = 'contributor-member';
-                  card.setAttribute('data-tilt', '');
-        
-                  const img = document.createElement('img');
-                  img.src = contributor.avatar_url;
-                  img.alt = contributor.login;
-        
-                  const name = document.createElement('h3');
-                  name.textContent = contributor.login;
-        
-                  const contributions = document.createElement('p');
-                  contributions.textContent = `${contributor.contributions} contributions`;
-        
-                  const viewProfileButton = document.createElement("button");
-                  viewProfileButton.textContent = "View Profile";
-                  viewProfileButton.addEventListener("click", () => {
-                    window.open(contributor.html_url, "_blank");
-                  });
-        
-                  card.appendChild(img);
-                  card.appendChild(name);
-                  card.appendChild(contributions);
-                  container.appendChild(card);
-                  card.appendChild(viewProfileButton);
-                });
-              }
-        
-              function createPaginationButtons() {
-                const paginationContainer = document.getElementById('pagination');
-                paginationContainer.innerHTML = '';
-                const totalPages = Math.ceil(contributors.length / contributorsPerPage);
-        
-                for (let i = 1; i <= totalPages; i++) {
-                  const button = document.createElement('button');
-                  button.textContent = i;
-                  button.classList.add('pagination-button');
-                  if (i === currentPage) {
-                    button.classList.add('active');
-                  }
-                  button.addEventListener('click', () => {
-                    currentPage = i;
+           
+            <!-- Footer Copyright
+          <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center;">
+              <p>&copy; 2024 FinVeda. All Rights Reserved.</p>
+          </div> -->
+                <script>
+                  // Function for the contributors section
+                  const owner = 'ayush-that';
+                  const repo = 'FinVeda';
+                  const contributorsPerPage = 8;
+                  let contributors = [];
+                  let currentPage = 1;
+            
+                  async function fetchContributors() {
+                    const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/contributors`);
+                    if (!response.ok) {
+                      console.error('Failed to fetch contributors:', response.statusText);
+                      return;
+                    }
+                    contributors = await response.json();
                     displayContributors();
-                    updatePaginationButtons();
-                  });
-                  paginationContainer.appendChild(button);
-                }
-              }
-        
-              function updatePaginationButtons() {
-                const buttons = document.querySelectorAll('.pagination-button');
-                buttons.forEach(button => {
-                  button.classList.remove('active');
-                  if (parseInt(button.textContent) === currentPage) {
-                    button.classList.add('active');
+                    createPaginationButtons();
                   }
-                });
-              }
-        
-              fetchContributors();
-            </script>
-    <div class="gtranslate_wrapper"></div>
-
-    <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
-    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>   
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Progress bar styles */
-        .progress-container {
-            width: 100%;
-            background-color: #f3f3f3;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-        
-        .progress-bar {
-            height: 5px;
-            width: 0%;
-            background-color: #4caf50;
-            transition: width 0.3s;
-        }
-
-        /* Footer styles */
-        .footer {
-            background-color: #333;
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-            position: relative;
-            width: 100%;
-        }
-
-        .footer-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .footer-container p {
-            margin: 5px 0;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 10px;
-        }
-
-        .footer-links a {
-            color: #4caf50;
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
-
-        @media (min-width: 768px) {
-            .footer-container {
-                flex-direction: row;
-                justify-content: space-between;
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 0 20px;
-            }
-
-            .footer-links {
-                margin-top: 0;
-            }
-        }
-
-        /* FAQ section styles */
-        .faq-section {
-            margin: 50px auto;
-            max-width: 900px;
-            padding: 20px;
-        }
-
-        .faq-section h2 {
-            margin-top: 30px;
-        }
-    </style>
-</head>
-<body>
-    <!-- Progress Bar -->
-    <div class="progress-container">
-        <div class="progress-bar" id="myBar"></div>
-    </div>
-
-    <h1>Frequently Asked Questions</h1>
-    <div class="faq-section">
-        <h2>Question 1</h2>
-        <p>Answer to question 1.</p>
-        
-        <h2>Question 2</h2>
-        <p>Answer to question 2.</p>
-
-        <h2>Question 3</h2>
-        <p>Answer to question 3.</p>
-
-        <!-- Add more questions and answers as needed -->
-    </div>
-
-    <!-- Footer Section -->
-    <footer class="footer">
-        <div class="footer-container">
-            <p>&copy; 2024 FinVeda. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="privacy-policy.html">Privacy Policy</a>
-                <a href="terms-of-service.html">Terms of Service</a>
-                <a href="contact.html">Contact Us</a>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Function to update the progress bar
-        function updateProgressBar() {
-            const scrollTop = document.documentElement.scrollTop;
-            const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const progressPercentage = (scrollTop / windowHeight) * 100;
-            const progressBar = document.getElementById("myBar");
-            progressBar.style.width = progressPercentage + "%";
-        }
-
-        window.addEventListener('scroll', updateProgressBar);
-    </script>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>FAQ</title>
-        <link rel="stylesheet" href="styles.css">
-        <style>
-            /* Progress bar styles */
-            .progress-container {
-                width: 100%;
-                background-color: #f3f3f3;
-                position: fixed;
-                top: 0;
-                left: 0;
-                z-index: 1000;
-            }
             
-            .progress-bar {
-                height: 5px;
-                width: 0%;
-                background-color: #4caf50;
-                transition: width 0.3s;
-            }
-    
-            /* Footer styles */
-            .footer {
-                background-color: #333;
-                color: white;
-                padding: 40px 0;
-                text-align: center;
-                position: relative;
-                width: 100%;
-            }
-    
-            .footer-container {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-            }
-    
-            .footer-container p {
-                margin: 5px 0;
-            }
-    
-            .footer-links {
-                display: flex;
-                gap: 15px;
-                margin-top: 10px;
-            }
-    
-            .footer-links a {
-                color: #4caf50;
-                text-decoration: none;
-                font-size: 14px;
-            }
-    
-            .footer-links a:hover {
-                text-decoration: underline;
-            }
-    
-            @media (min-width: 768px) {
-                .footer-container {
-                    flex-direction: row;
-                    justify-content: space-between;
-                    max-width: 1200px;
-                    margin: 0 auto;
-                    padding: 0 20px;
-                }
-    
-                .footer-links {
-                    margin-top: 0;
-                }
-            }
-    
-            /* FAQ section styles */
-            .faq-section {
-                margin: 50px auto;
-                max-width: 900px;
-                padding: 20px;
-            }
-    
-            .faq-section h2 {
-                margin-top: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <!-- Progress Bar -->
-        <div class="progress-container">
-            <div class="progress-bar" id="myBar"></div>
-        </div>
-    
-        <h1>Frequently Asked Questions</h1>
-        <div class="faq-section">
-            <h2>Question 1</h2>
-            <p>Answer to question 1.</p>
+                  function displayContributors() {
+                    const container = document.getElementById('contributor-cards');
+                    container.innerHTML = '';
+                    const start = (currentPage - 1) * contributorsPerPage;
+                    const end = start + contributorsPerPage;
+                    const currentContributors = contributors.slice(start, end);
             
-            <h2>Question 2</h2>
-            <p>Answer to question 2.</p>
+                    currentContributors.forEach(contributor => {
+                      const card = document.createElement('div');
+                      card.className = 'contributor-member';
+                      card.setAttribute('data-tilt', '');
+            
+                      const img = document.createElement('img');
+                      img.src = contributor.avatar_url;
+                      img.alt = contributor.login;
+            
+                      const name = document.createElement('h3');
+                      name.textContent = contributor.login;
+            
+                      const contributions = document.createElement('p');
+                      contributions.textContent = `${contributor.contributions} contributions`;
+            
+                      const viewProfileButton = document.createElement("button");
+                      viewProfileButton.textContent = "View Profile";
+                      viewProfileButton.addEventListener("click", () => {
+                        window.open(contributor.html_url, "_blank");
+                      });
+            
+                      card.appendChild(img);
+                      card.appendChild(name);
+                      card.appendChild(contributions);
+                      container.appendChild(card);
+                      card.appendChild(viewProfileButton);
+                    });
+                  }
+            
+                  function createPaginationButtons() {
+                    const paginationContainer = document.getElementById('pagination');
+                    paginationContainer.innerHTML = '';
+                    const totalPages = Math.ceil(contributors.length / contributorsPerPage);
+            
+                    for (let i = 1; i <= totalPages; i++) {
+                      const button = document.createElement('button');
+                      button.textContent = i;
+                      button.classList.add('pagination-button');
+                      if (i === currentPage) {
+                        button.classList.add('active');
+                      }
+                      button.addEventListener('click', () => {
+                        currentPage = i;
+                        displayContributors();
+                        updatePaginationButtons();
+                      });
+                      paginationContainer.appendChild(button);
+                    }
+                  }
+            
+                  function updatePaginationButtons() {
+                    const buttons = document.querySelectorAll('.pagination-button');
+                    buttons.forEach(button => {
+                      button.classList.remove('active');
+                      if (parseInt(button.textContent) === currentPage) {
+                        button.classList.add('active');
+                      }
+                    });
+                  }
+            
+                  fetchContributors();
+                </script>
     
-            <h2>Question 3</h2>
-            <p>Answer to question 3.</p>
-    
-            <!-- Add more questions and answers as needed -->
-        </div>
-    
-        <!-- Footer Section -->
-        <footer class="footer">
-            <div class="footer-container">
-                <p>&copy; 2024 FinVeda. All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="privacy-policy.html">Privacy Policy</a>
-                    <a href="terms-of-service.html">Terms of Service</a>
-                    <a href="contact.html">Contact Us</a>
-                </div>
-            </div>
-        </footer>
-    
-        <script>
-            // Function to update the progress bar
-            function updateProgressBar() {
-                const scrollTop = document.documentElement.scrollTop;
-                const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                const progressPercentage = (scrollTop / windowHeight) * 100;
-                const progressBar = document.getElementById("myBar");
-                progressBar.style.width = progressPercentage + "%";
-            }
-    
-            window.addEventListener('scroll', updateProgressBar);
-        </script>
 
-
-<footer style="background-color: #2C3E50; color: white; padding: 40px 0;">
-  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
-      <!-- About Us Section -->
-      <div style="flex: 1; min-width: 250px; margin-bottom: 20px;">
-          <h3 style="font-size: 1.5rem; margin-bottom: 10px;">About FinVeda</h3>
-          <p style="font-size: 1rem; line-height: 1.6;">
-              FinVeda is your trusted partner in financial solutions, providing expert advice and easy-to-use calculators to help you make informed decisions about your investments and savings.
-          </p>
-      </div>
-
-      <!-- Quick Links Section -->
-      <div style="flex: 1; min-width: 250px; margin-bottom: 20px;">
-          <h3 style="font-size: 1.5rem; margin-bottom: 10px;">Quick Links</h3>
-          <ul style="list-style: none; padding: 0;">
-              <li style="margin-bottom: 10px;"><a href="index.html" style="color: white; text-decoration: none;">Home</a></li>
-              <li style="margin-bottom: 10px;"><a href="about.html" style="color: white; text-decoration: none;">About Us</a></li>
-              <li style="margin-bottom: 10px;"><a href="tools.html" style="color: white; text-decoration: none;">Tools</a></li>
-              <li style="margin-bottom: 10px;"><a href="faq.html" style="color: white; text-decoration: none;">FAQs</a></li>
-          </ul>
-      </div>
-
-      <!-- Contact Section -->
-      <div style="flex: 1; min-width: 250px; margin-bottom: 20px;">
-          <h3 style="font-size: 1.5rem; margin-bottom: 10px;">Contact Us</h3>
-          <p style="font-size: 1rem; line-height: 1.6;">Email: <a href="mailto:support@finveda.com" style="color: white; text-decoration: none;">support@finveda.com</a></p>
-          <p style="font-size: 1rem; line-height: 1.6;">Phone: +91 9369515724</p>
-          <div style="margin-top: 15px;">
-              <a href="#" style="margin-right: 10px;"><img src="facebook-icon.png" alt="Facebook" style="width: 24px;"></a>
-              <a href="#" style="margin-right: 10px;"><img src="twitter-icon.png" alt="Twitter" style="width: 24px;"></a>
-              <a href="#"><img src="linkedin-icon.png" alt="LinkedIn" style="width: 24px;"></a>
-          </div>
-      </div>
-  </div>
-
-  <!-- Footer Bottom -->
-  <div style="text-align: center; padding-top: 20px; border-top: 1px solid #7F8C8D;">
-      <p style="margin: 0; font-size: 1rem;">&copy; 2024 FinVeda. All Rights Reserved.</p>
-      
-  </div>
-</footer>
-
-    </body>
-    </html>
-    
-</body>
-</html>
-
-
-</body>
-</html>
-
-
-
-</body>
-</html>
+    <div class="gtranslate_wrapper"></div> 
 
             <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
             <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
@@ -1380,7 +1273,7 @@ body.dark-mode {
             <script src="./assets/js/botpress.js"></script>
             <script src="./assets/js/blogmodals.js"></script>
             <script src="./tools/smoothScroll.js"></script>
-          </body>
+
+</head>       </body>
           </html>
     
-

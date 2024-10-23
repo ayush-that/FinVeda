@@ -29,7 +29,7 @@ input {
   left: 0;
 }
 
-.sign-in-signup {
+.signin-signup {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -41,12 +41,17 @@ input {
   z-index: 5;
 }
 
+.input-field:focus-within {
+  border-color: #3498db;
+  box-shadow: 0 0 10px #3498db;
+}
+
 form {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding:  5rem;
+  padding: 0rem 5rem;
   transition: all 0.2s 0.7s;
   overflow: hidden;
   grid-column: 1 / 2;
@@ -76,7 +81,7 @@ form.sign-in-form {
   height: 55px;
   border-radius: 55px;
   display: grid;
-  grid-template-columns: 15% 70% 15%;
+  grid-template-columns: 15% 85%;
   padding: 0 0.4rem;
   position: relative;
   border: 2px solid black;
@@ -111,47 +116,27 @@ form.sign-in-form {
   font-weight: 500;
 }
 
-.password-toggle {
-  cursor: pointer;
-}
-
 .social-text {
   padding: 0.7rem 0;
   font-size: 1rem;
-  text-align: center;
 }
 
 .social-media {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .social-icon {
-  height: 46px;
-  width: 46px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 0.45rem;
-  color: rgb(204, 195, 195);
-  background-color: #2b2b2b;
-  border-radius: 50%;
-  border: 1px solid #282828;
-  text-decoration: none;
-  font-size: 1.5rem;
-  transition: 0.3s;
-  cursor: pointer;
+  margin: 0 10px;
 }
 
-#github:hover {
-  color: white ;
-  border-color: white;
-  background-color: black;
+.social-icon i {
+  transition: transform 0.2s ease-in-out;
 }
-#google:hover {
-  color:  #EA4335;
-  background-color: black;
-  border-color: white;
+
+.social-icon:hover i {
+  transform: scale(1.1);
 }
 
 .btn {
@@ -170,10 +155,20 @@ form.sign-in-form {
 }
 
 .btn:hover {
-  background-color: #161618;
   transform: scale(1.1);
 }
 
+.circle {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  position: fixed;
+  background-color: black;  /* Default color of circles */
+  pointer-events: none;     /* Prevent interaction with circles */
+  z-index: 9999;
+  transition: transform 0.1s ease-out;
+  }
+  
 .panels-container {
   position: absolute;
   height: 100%;
@@ -207,7 +202,6 @@ form.sign-in-form {
 .panel {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
   justify-content: space-around;
   text-align: center;
   z-index: 6;
@@ -215,7 +209,7 @@ form.sign-in-form {
 
 .left-panel {
   pointer-events: all;
-  padding: 3rem 17% 2rem 12%;
+  padding: 4rem 17% 2rem 12%;
 }
 
 .right-panel {
@@ -255,6 +249,8 @@ form.sign-in-form {
   transform: translateX(800px);
 }
 
+/* ANIMATION */
+
 .container.sign-up-mode:before {
   transform: translate(100%, -50%);
   right: 52%;
@@ -265,7 +261,7 @@ form.sign-in-form {
   transform: translateX(-800px);
 }
 
-.container.sign-up-mode .sign-in-signup {
+.container.sign-up-mode .signin-signup {
   left: 25%;
 }
 
@@ -292,58 +288,20 @@ form.sign-in-form {
   pointer-events: all;
 }
 
-.homeBtn {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background: #ffffff;
-  color: #000000;
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: 0.3s;
-  text-decoration: none;
-  z-index: 10;
-}
-
-.homeBtn:hover {
-  background: #000000;
-  color: #ffffff;
-}
-
-.password-strength {
-  display: flex;
-  margin-top: 5px;
-  height: 5px;
-  width: 200px;
-}
-
-.password-strength div {
-  height: 100%;
-  width: 33.33%;
-  margin-right: 3px;
-  background-color: #ddd;
-  transition: background-color 0.3s;
-}
-
-.password-strength .weak { background-color: #ff4757; }
-.password-strength .medium { background-color: #ffa502; }
-.password-strength .strong { background-color: #23ad5c; }
-
 @media (max-width: 870px) {
   .container {
     min-height: 800px;
     height: 100vh;
   }
-  .sign-in-signup {
+  .signin-signup {
     width: 100%;
     top: 95%;
     transform: translate(-50%, -100%);
     transition: 1s 0.8s ease-in-out;
   }
 
-  .sign-in-signup,
-  .container.sign-up-mode .sign-in-signup {
+  .signin-signup,
+  .container.sign-up-mode .signin-signup {
     left: 50%;
   }
 
@@ -427,13 +385,13 @@ form.sign-in-form {
     transform: translateY(300px);
   }
 
-  .container.sign-up-mode .sign-in-signup {
+  .container.sign-up-mode .signin-signup {
     top: 5%;
     transform: translate(-50%, 0);
   }
 }
 
-@media  (max-width: 570px) {
+@media (max-width: 570px) {
   form {
     padding: 0 1.5rem;
   }
@@ -458,35 +416,39 @@ form.sign-in-form {
     left: 50%;
   }
 }
-
 .homeBtn {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background: #ffffff;
-  color: #000000;
-  padding: 10px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.3s;
-  text-decoration: none;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: #ffffff;
+    color: #000000; 
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
 }
 
 .homeBtn:hover {
-  background: #232323;
+    background: #232323;
+}
+
+.homeBtn:hover i {
+    color: white; 
 }
 
 .homeBtn:active {
-  background: #191919;
+    background: #191919;
 }
-
 .circle {
-  height: 24px;
-  width: 24px;
-  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  border-radius: 24px;
+  background-color: black;
   position: fixed;
-  background-color: black;  /* Default color of circles */
-  pointer-events: none;     /* Prevent interaction with circles */
-  z-index: 9999;
-  transition: transform 0.1s ease-out;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999999;
+}
   }
