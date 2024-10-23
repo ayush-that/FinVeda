@@ -1265,7 +1265,48 @@ registerCloseButton.addEventListener("click", function() {
     
     <!--End of RoI calculator-->
 
+<!--pension start-->
+<div class="header toool" style="padding-top: 100px;">
+  <h3>Pension Calculator</h3>
+  <p class="cal-content">
+      The Pension Calculator helps you estimate the pension amount based on your annual salary, years of service, and pension percentage.
+  </p>
+</div>
 
+<div class="page-container shadow p-5 mb-5 bg-white rounded mt-5">
+  <form id="pension-form" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+      <div class="form-group">
+          <label for="salary">
+              <b style="color: #6a6972;">Annual Salary (Rs):</b>
+          </label>
+          <input class="form-control" type="number" id="salary" name="salary" required>
+      </div>
+      <div class="form-group">
+          <label for="years">
+              <b style="color: #6a6972;">Years of Service:</b>
+          </label>
+          <input class="form-control" type="number" id="years" name="years" required>
+      </div>
+      <div class="form-group">
+          <label for="pensionPercent">
+              <b style="color: #6a6972;">Pension Percentage (%):</b>
+          </label>
+          <input class="form-control" type="number" id="pensionPercent" name="pensionPercent" step="0.01" required>
+      </div>
+      <div class="btn-calculate" style="display: flex; flex-direction: row;">
+          <button id="submitBtn" type="submit" class="btn btn-calculate">Calculate</button>
+      </div>
+  </form>
+  <div class="calculation" style="margin-top: 20px; display: flex; gap: 20px;">
+      <b>Result:</b>
+      <div class="ans" style="margin-top: -3px;">
+          <div id="pension-result" class="roi" style="font-size: 20px; padding-top: 10px;"></div>
+      </div>
+  </div>
+</div>
+
+<script src="pension.js" defer></script>
+<!--pension end-->
     <!--Start of GST Calculator-->
     <script src="GSTcalc.js" defer></script>
 <div class="header toool" style="padding-top: 100px;">
