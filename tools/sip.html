@@ -271,6 +271,7 @@ box-shadow: 0 0 25px #03133c;
     </div>
   </div>
   <header class="header-area">
+
     <div class="row">
       <div style="display: flex; justify-content: center;" class="">
         <nav class="navbar navbar-expand-lg " style="display: flex;">
@@ -342,6 +343,84 @@ box-shadow: 0 0 25px #03133c;
             </ul>
           </div>
               <div class="">
+
+    <div class="navbar-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <nav class="navbar navbar-expand-lg">
+              <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+              </button> -->
+              <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                <ul id="nav" class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a class="page-scroll" href="../index.html">Home 🏡</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="page-scroll" href="/about.html">About us </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="../trends.html">Trends 📈</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./maps.html">Map🗺 </a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="page-scroll" href="../tools/sip.html" id="active-page">Tools 🔧</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="../blog.html">Blogs 📰</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="../quiz.html">Quiz 🤔</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="../contact.html">Quiz 🤔</a>
+                  </li>
+                  <li class="nav-item no-underline">
+                    <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none; border: none;" data-scroll-nav="0" href="#" onclick="openModal()">Login/Register 💻</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="navbar-btn d-none d-sm-inline-block">
+                <!-- Login Modal -->
+           <!-- Login Modal -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+      <span class="close" style="display: flex; justify-content: right;">&times;</span>
+      <div class="mt-3">
+          <h3 class="join">Login to join us....</h3>
+          <form class="px-3 py-4" id="loginForm">
+              <div class="form-group">
+                  <label class="d-flex">Username</label>
+                  <div class="input-container">
+                      <i class="fa fa-user icon"></i>
+                      <input type="text" placeholder="Username" class="form-control" required />
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label class="d-flex">Password</label>
+                  <div class="input-container">
+                      <i class="fa fa-lock icon"></i>
+                      <input type="password" placeholder="Password" class="form-control" required>
+                      <button type="button" class="toggle-password-btn"><i class="fa fa-eye"></i></button>
+                  </div>
+              </div>
+              <div class="form-check d-flex">
+                  <input type="checkbox" class="form-check-input">
+                  <label class="form-check-label">Remember me</label>
+              </div>
+          </form>
+          <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('loginForm')">Sign in</button>
+          <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
+      </div>
+  </div>
+</div>
+
 
                 <!-- Login Modal -->
                 <div id="myModal" class="modal">
@@ -616,18 +695,23 @@ registerCloseButton.addEventListener("click", function() {
         By inputting your monthly investment amount, investment duration, and expected annual return rate, this tool calculates the total investment, wealth gained, and maturity value, providing a clear 
         picture of your investment growth.
       </p>
-      <div class="know-more">
-        <button class="know-more-btn">Know More</button>
-        <div class="know-more-content">
-          <h6 style="text-align: left; margin: 2% 16%; padding-left: 5px;">Here's how it works:</h6>
-          <ol type="1" style="font-size: 1rem; text-align: left; margin-left: 17%; margin-bottom: 2rem;">
-            <li><b>Monthly Investment:</b> Enter the amount you plan to invest monthly.</li>
-            <li><b>Time Period (years):</b> Specify the number of years for the investment.</li>
-            <li><b>Expected Return Rate (p.a.):</b> Enter the annual return rate you expect.</li>
-            <li><b>Calculate:</b> Computes the total investment, wealth gained, and maturity value based on inputs.</li>
+      <div class="know-more" style="text-align: center; padding: 20px; background-color: #f4f4f9; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        <button class="know-more-btn" style="padding: 10px 20px; font-size: 1.1rem; font-weight: bold; color: #fff; background-color: #007bff; border: none; border-radius: 6px; cursor: pointer; transition: background-color 0.3s ease;">
+          Know More
+        </button>
+        <div class="know-more-content" style="margin-top: 20px; background-color: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+          <h6 style="text-align: left; font-size: 1.25rem; font-weight: 600; margin-bottom: 15px;">How It Works:</h6>
+          <ol type="1" style="font-size: 1rem; text-align: left; padding-left: 20px; line-height: 1.6;">
+            <li><b>Monthly Investment:</b> Enter the amount you plan to invest each month.</li>
+            <li><b>Time Period (years):</b> Specify the number of years for the investment duration.</li>
+            <li><b>Expected Return Rate (p.a.):</b> Input the expected annual return rate.</li>
+            <li><b>Calculate:</b> Computes total investment, wealth gained, and maturity value based on inputs.</li>
           </ol>
         </div>
       </div>
+      
+      </div>
+      
     </div>
     <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5">
       <div class="switch-container radio-button">
@@ -1033,6 +1117,107 @@ registerCloseButton.addEventListener("click", function() {
 </div>
 
     <!-- End NPV Calculator -->
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TCO Calculator - FinVeda</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            color: #555;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .result {
+            font-weight: bold;
+            color: #007bff;
+            margin-top: 10px;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>TCO Calculator</h1>
+    
+    <label for="initialCost">Initial Cost ($):</label>
+    <input type="number" id="initialCost" placeholder="Enter initial cost" required>
+    
+    <label for="operatingCost">Annual Operating Cost ($):</label>
+    <input type="number" id="operatingCost" placeholder="Enter annual operating cost" required>
+    
+    <label for="years">Years of Ownership:</label>
+    <input type="number" id="years" placeholder="Enter number of years" required>
+    
+    <label for="miscCost">Miscellaneous Costs ($):</label>
+    <input type="number" id="miscCost" placeholder="Enter miscellaneous costs" required>
+    
+    <button class="btn" onclick="calculateTCO()">Calculate TCO</button>
+
+    <div class="result" id="tcoResult"></div>
+</div>
+
+<script>
+    function calculateTCO() {
+        // Get the input values
+        const initialCost = parseFloat(document.getElementById('initialCost').value) || 0;
+        const operatingCost = parseFloat(document.getElementById('operatingCost').value) || 0;
+        const years = parseInt(document.getElementById('years').value) || 0;
+        const miscCost = parseFloat(document.getElementById('miscCost').value) || 0;
+
+        // Calculate TCO
+        const totalOperatingCost = operatingCost * years;
+        const tco = initialCost + totalOperatingCost + miscCost;
+
+        // Display the result
+        document.getElementById('tcoResult').innerHTML = `Total Cost of Ownership: $${tco.toFixed(2)}`;
+    }
+</script>
+
+</body>
+</html>
+
  
     <!--ROI calculator-->
     <script src="roiCalculator.js" defer></script>
@@ -1754,10 +1939,34 @@ registerCloseButton.addEventListener("click", function() {
               </div>
           </div>
       </div>
+
+ feature/copyright
+  </div>
+      <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center">
+        <div class="row">
+          <div class="col-lg-12">
+            <div
+              class="copyright d-sm-flex justify-content-center"
+              style="
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                width: 100%;
+                height: 100%;
+              "
+            >
+              <div class="copyright-content" style="text-align: center">
+                <p class="text" style="text-align: center">
+                  © <span id="copyright-year">2024</span> FinVeda. All rights
+                  reserved<br />
+                  Made with ♥ in India
+                </p>
+
       <div class="col-lg-3 col-md-5 col-sm-5">
           <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
               <div class="footer-title">
                   <h4 class="title custom-margin">Contact Us</h4>
+
               </div>
               <ul class="contact custom-margin-big" style="justify-content: space-around;">
                   <li class="d-sm-flex justify-content-center">
@@ -1811,8 +2020,7 @@ registerCloseButton.addEventListener("click", function() {
             text-align: center;
             width: 100%;
             height: 100%;
-          "
-        >
+       
           <div class="copyright-content" style="text-align: center">
             <p class="text" style="text-align: center">
               © <span id="copyright-year"></span> FinVeda. All rights are

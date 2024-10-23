@@ -95,7 +95,7 @@ function Footer() {
                 <div className="copyright d-sm-flex justify-content-between">
                   <div className="copyright-content">
                     <p className="text">
-                      © <span id="copyright-year"></span> FinVeda. All rights reserved, Built with ♥ in India
+                      © <span id="copyright-year">2024</span> FinVeda. All rights reserved, Built with ♥ in India
                     </p>
                   </div>
                 </div>
