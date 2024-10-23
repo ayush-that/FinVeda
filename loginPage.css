@@ -6,6 +6,8 @@
   box-sizing: border-box;
 }
 
+
+
 body,
 input {
   font-family: "Poppins", sans-serif;
@@ -82,7 +84,14 @@ form.sign-in-form {
   grid-template-columns: 15% 85%;
   padding: 0 0.4rem;
   position: relative;
+  border: 2px solid black;
 }
+
+.input-field:focus-within {
+  border-color: #3498db;
+  box-shadow: 0 0 10px #3498db;
+}
+
 
 .input-field i {
   text-align: center;
@@ -146,7 +155,6 @@ form.sign-in-form {
 }
 
 .btn:hover {
-  background-color: #4d84e2;
   transform: scale(1.1);
 }
 
@@ -443,20 +451,4 @@ form.sign-in-form {
   pointer-events: none;
   z-index: 99999999;
 }
-
-
-.forgot-password {
-    text-align: right; 
-    margin: 10px 0; 
-  }
-  
-  .forgot-password a {
-    color: black;
-    text-decoration: underline; 
-    transition: color 0.3s; 
-    
-  }
-  
-  .forgot-password a:hover {
-    color: blue;
   }
