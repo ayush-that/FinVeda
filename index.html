@@ -6,18 +6,21 @@
   <title>Home - FinVeda</title>
   <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="shortcut icon" href="../assets/images/favicon2.png" type="image/png" />
-  <link rel="stylesheet" href="../assets/css/animate.css" />
-  <link rel="stylesheet" href="../assets/css/magnific-popup.css" />
-  <link rel="stylesheet" href="../assets/css/slick.css" />
-  <link rel="stylesheet" href="../assets/css/LineIcons.css" />
-  <link rel="stylesheet" href="../assets/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="../assets/css/default.css" />
-  <link rel="stylesheet" href="../assets/css/style.css" />
-  <link rel="stylesheet" href="../assets/css/quiz.css" />
-  <link rel="stylesheet" href="../assets/css/popup.css" />
-  <link rel="stylesheet" href="GSTstyle.css" />
+  <link rel="shortcut icon" href="./assets/images/favicon2.webp" type="image/png" />
+  <link rel="stylesheet" href="./assets/css/animate.css" />
+  <link rel="stylesheet" href="./assets/css/magnific-popup.css" />
+  <link rel="stylesheet" href="./assets/css/slick.css" />
+  <link rel="stylesheet" href="./assets/css/LineIcons.css" />
+  <link rel="stylesheet" href="./assets/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./assets/css/default.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/quiz.css" />
+  <link rel="stylesheet" href="./assets/css/popup.css" />
+  <link rel="stylesheet" href="./assets/css/cookiepopup.css">
+  <link rel="stylesheet" href="./assets\css\preloader.css" />
+  <link rel="stylesheet" href="./assets/css/faq.css">
+  <link rel="stylesheet" href="./assets/css/index.css">
   <link rel="stylesheet" type="text/css" href="sipcalculatorCss.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.13/lottie.min.js"></script>
@@ -68,6 +71,7 @@
     }
 
 
+ 
 
     .unique-popup-message {
       position: fixed;
@@ -201,6 +205,7 @@
 
 
 
+ 
 
     .unique-popup-message {
       position: fixed;
@@ -326,6 +331,36 @@
     .form-check a {
       margin-left: auto;
     }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+.scroll-btn {
+            position: fixed;
+            top: 100px;
+            right: 4px;
+            background-color: #635adc;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s;
+            display: flex;
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+          }
+
+          .scroll-btn:hover {
+            background-color: #555;
+            /* Darker blue on hover */
+          }
   </style>
 
 <body>
@@ -413,13 +448,32 @@
       document.getElementById("progressBar").style.width = scrolled + "%";
     };
   </script>
+  <button id="scrollBtn" class="scroll-btn" onclick="scrollToNextSection()">
+    <i class="lni-chevron-down"></i>
+</button>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Scroll button functionality
+        const scrollToNextSection = () => {
+            window.scrollBy({
+                top: window.innerHeight,
+                behavior: 'smooth',
+            });
+        };
+
+        // Attach the function to the button
+        document.getElementById('scrollBtn').onclick = scrollToNextSection;
+    });
+</script>
   <div id="preloader">
     <div id="lottie-loader"></div>
   </div>
   <div class="content-wrapper">
-
     <header class="header-area">
-      <div class="row">
+      <div style="display: flex; justify-content: center;" class="navbar-area">
+        <div style="display: flex; justify-content: center;" class="container">
+       <div class="row">
         <div style="display: flex; justify-content: center;" class="">
           <nav class="navbar navbar-expand-lg " style="display: flex;">
             <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -428,11 +482,12 @@
             <span class="toggler-icon"></span>
             <span class="toggler-icon"></span>
           </button> -->
-            <div class="collapse  navbar-collapse sub-menu-bar" id="navbarSupportedContent"
-              style="margin: auto; margin-left: -5px;">
+          <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
+            <div class="icon1">
               <a href="./index.html">
-                <i class="fa-solid fa-house"></i>
+              <img src="assets/images/icon.webp" alt="icon.png">
               </a>
+ 
               <div class="navbar-logo">
                 <div class="icon1">
                   <a href="./index.html">
@@ -462,43 +517,72 @@
               </div>
               <div class="nav-toggle-btn-space-fixed"></div>
             </div>
+=======
+            </div> 
+            <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
+              <li class="nav-item">
+                <a class="page-scroll active-link" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
+              </li>    
+              <li class="nav-item">
+                <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll" href="./quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll" href="./careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
+              </li>
+              <li class="nav-item no-underline">
+                <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
+              </li>
+              <li class="nav-item no-underline">
+              <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
+                🌙
+              </button>
+              </li>
+            </ul>
+          </div>
+ 
+          <script>
+            const toggleButton = document.getElementById('theme-toggle');
+            const body = document.body;
+            const currentTheme = localStorage.getItem('theme');
 
-            <div class="side-icons">
-              <div class="icon-content">
-                <a href="https://github.com" target="_blank" aria-label="GitHub" data-social="github">
-                  <i class="fab fa-github"></i>
-                  <div class="filled"></div>
-                </a>
-              </div>
-              <div class="icon-content">
-                <a href="https://Discord.com" target="_blank" aria-label="Discord" data-social="Discord">
-                  <i class="fab fa-discord"></i>
-                  <div class="filled"></div>
-                </a>
-              </div>
-              <div class="icon-content">
+            if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            toggleButton.classList.add('dark');
+            toggleButton.textContent = '🌞';
+            }
 
-                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn" data-social="linkedin">
-                  <i class="fab fa-linkedin-in"></i>
-                  <div class="filled"></div>
-                </a>
-              </div>
-              <div class="icon-content">
-                <a href="https://x.com" target="_blank" aria-label="X" data-social="X">
-                  <i class="fab fa-x-twitter"></i>
-                  <div class="filled"></div>
-                </a>
-              </div>
-              <div class="icon-content">
-                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook" data-social="facebook">
-                  <i class="fab fa-facebook-f"></i>
-                  <div class="filled"></div>
-                </a>
-              </div>
+            toggleButton.addEventListener('click', function () {
+            body.classList.toggle('dark-mode');
+            toggleButton.classList.toggle('dark');
 
-            </div>
-
-
+            // Update button icon based on mode
+            if (body.classList.contains('dark-mode')) {
+              toggleButton.textContent = '🌞';  // Light mode icon
+              localStorage.setItem('theme', 'dark');
+            } else {
+              toggleButton.textContent = '🌙';  // Dark mode icon
+              localStorage.setItem('theme', 'light');
+            }
+            });
+        </script>
             <div class="">
               <!-- Login Modal -->
               <div id="myModal" class="modal">
@@ -712,17 +796,30 @@
 
           <link href="https://fonts.googleapis.com/css?family=Raleway&amp;display=swap" rel="stylesheet">
 
-
+          <nav class="mobile-menu  active">
+            <a class="page-scroll active-link" href="./index.html">Home 🏡</a>
+            <a class="page-scroll" href="./about.html">About Us 📖</a>
+            <a class="page-scroll" href="./trends.html">Trends 📈</a>
+            <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
+            <a class="page-scroll" href="./blog.html">Blogs 📰</a>
+            <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
+            <a class="page-scroll" href="./contact.html">Contact🤔</a>
+            <li class="nav-item no-underline">
+              <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none; border: none;" href="#" onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
+            </li>
+            
+            <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
+              <span></span>
+            </div>
           </nav>
         </div>
-
-
-
-
-
-        <link href="./navbar.css" rel="stylesheet">
-        <script type="text/javascript" src="./navbar.js"></script>
-
+  <link href="./navbar.css" rel="stylesheet">
+  <script type="text/javascript" src="./navbar.js"></script>
+</div>
+</div>
+</div>
+</div>
+  
         <div id="home" class="header-hero bg_cover" style="background-image: url(./assets/images/banner-bg.svg)">
           <div class="container">
             <h2 class="head-animate" style="font-size: 90px;">
@@ -732,19 +829,22 @@
               <div class="col-lg-8">
                 <div class="header-hero-content text-center">
                   <style>
-                    .head-animate {
-                      text-align: center;
-                      position: relative;
-                      top: 200px;
-                      color: transparent;
-                      -webkit-text-stroke: 2px white;
-                      font-weight: bold;
-                      background: url(./assets/images/back.png);
-                      -webkit-background-clip: text;
-                      background-position: 0 0;
-                      animation: back 20s linear infinite, hovering 1.5s ease-in-out infinite;
-                      ;
-                    }
+.head-animate {
+  text-align: center;
+  position: relative;
+  top: 200px;
+  color: transparent;
+  -webkit-text-stroke: 2px white;
+  -moz-text-stroke: 2px white;
+  -ms-text-stroke: 2px white;
+  font-weight: bold;
+  background: url(./assets/images/back.png);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  background-position: 0 0;
+  animation: back 20s linear infinite, hovering 1.5s ease-in-out infinite;
+}
 
                     @keyframes back {
                       100% {
@@ -823,8 +923,7 @@
     </div>
 
     </section>
-
-
+ 
     <!-- <section id="blog" class="blog-area pt-120"> -->
     <div class="blogfull">
       <!DOCTYPE html>
@@ -1104,6 +1203,7 @@
   </div>
 
 
+ 
   <section id="features" class="services-area pt-120">
     <div class="container">
       <div class="row justify-content-center">
@@ -2452,7 +2552,6 @@
                     Made with ♥ in India
                   </p>
                   <a href="./tools/contributor.html" id="ourvisionlink">Our Contributors</a>
-
                   </ul>
                 </div>
               </div>
@@ -2633,7 +2732,11 @@
     <script src="./smoothScroll.js"></script>
 
     <script src="./assets/js/preloader.js"></script>
+ 
     <br /><br />
+ 
+     
+ 
     <link rel="stylesheet" href="visi.css">
     <!-- ############### Footer ############### -->
     <div class="visitor-counter">
