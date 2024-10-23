@@ -115,6 +115,22 @@
           color: rgb(77, 77, 77) !important;
         }
 
+body {
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode h2 {
+  /* background-color: #121212 !important; */
+  /* color: #e0e0e0 !important; */
+}
+
 
   </style>
 
@@ -201,6 +217,15 @@
       var scrolled = (winScroll / height) * 100;
       document.getElementById("progressBar").style.width = scrolled + "%";
   };
+
+  window.addEventListener("DOMContentLoaded", (event) => {
+      const savedTheme = localStorage.getItem("theme");
+
+      // Apply the theme if stored
+      if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+    });
  </script>
 
 <div class="preloader">
@@ -232,6 +257,11 @@
               <span class="toggler-icon"></span>
             </button> -->
             <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+              <a href="./index.html">
+                <div class="icon1">
+                  <img src="../assets/images/icon.webp" alt="icon.png">
+                </div>
+              </a>
               <ul id="nav" class="navbar-nav">
                 <li class="nav-item">
                   <a class="page-scroll" href="../index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
@@ -258,7 +288,7 @@
                   <a class="page-scroll" href="../contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
                 </li>
                <li class="nav-item no-underline">
-                  <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
+                  <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="/FinVeda/loginPage.html" >Login/Register 💻</a>
                 </li>
               </ul>
             </div>
@@ -390,37 +420,64 @@
         style="background-image: url(../assets/images/banner-bg.svg)"
         >
         <div class="container">
+          <h2 class="head-animate" style="font-size: 90px;">
+            WELCOME TO FINVEDA
+          </h2>
           <div class="row justify-content-center">
             <div class="col-lg-8">
               <div class="header-hero-content text-center">
-                <h3
-                  class="header-sub-title wow fadeInUp"
-                  data-wow-duration="1.3s"
-                  data-wow-delay="0.2s"
-                  >
-                  Say 👋🏼 to FinVeda
-                </h3>
-                <h2
-                  class="header-title wow fadeInUp"
-                  data-wow-duration="1.3s"
-                  data-wow-delay="0.5s"
-                  >
-                  your savvy financial companion
-                </h2>
-                <p
-                  class="text wow fadeInUp"
-                  data-wow-duration="1.3s"
-                  data-wow-delay="0.8s"
-                  >
-                  Wanna learn how to grow your money to become rich? We have made becoming a stock market Guru easy with our AI powered finance advisor - <b>Arth Sathi 🤵🏻</b>
+                <style>
+                  .head-animate {
+                    text-align: center;
+                    position: relative;
+                    top: 200px;
+                    color: transparent;
+                    -webkit-text-stroke: 2px white;
+                    font-weight: bold;
+                    background: url(../assets/images/back.png);
+                    -webkit-background-clip: text;
+                    background-position: 0 0;
+                    animation: back 20s linear infinite, hovering 1.5s ease-in-out infinite;
+                    ;
+                  }
+
+                  @keyframes back {
+                    100% {
+                      background-position: 2000px 0;
+                    }
+                  }
+
+                  @keyframes hovering {
+                    0% {
+                      transform: translateY(0);
+                    }
+
+                    50% {
+                      transform: translateY(-5px);
+                    }
+
+                    100% {
+                      transform: translateY(0);
+                    }
+                  }
+
+                  .header-hero-content h2 {
+                    font-size: 200px;
+                  }
+                </style>
+                <br>
+                <br>
+                <p class="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s"
+                  style="visibility: visible; animation-duration: 1.3s; animation-delay: 0.8s;">
+                  Wanna learn how to grow your money to become rich? We have
+                  made becoming a stock market Guru easy with our AI
+                  powered finance advisor - <b>Arth Sathi 🤵🏻</b>
                 </p>
-                <a
-                  href="../index.html"
-                  class="main-btn wow fadeInUp"
-                  data-wow-duration="1.3s"
-                  data-wow-delay="1.1s"
-                  >Chat with ArthaSathi 💬</a
-                  >
+                <a href="#" class="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s"
+                  onclick="window.botpressWebChat.sendEvent({ type: 'show' }); return false;"
+                  style="visibility: visible; animation-duration: 1.3s; animation-delay: 1.1s;">
+                  Chat with ArthaSathi 💬
+                </a>
               </div>
             </div>
           </div>
@@ -693,7 +750,7 @@
               >
                 <div class="copyright-content" style="text-align: center">
                   <p class="text" style="text-align: center">
-                    © <span id="copyright-year"></span> FinVeda. All rights
+                    © <span id="copyright-year">2024</span> FinVeda. All rights
                     reserved<br />
                     Made with ♥ in India
                   </p>
