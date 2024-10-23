@@ -356,25 +356,102 @@
         </div>
       </header>
     
-      <div class="contact">
-        <h2>Contact Us</h2>
-        <p>Want to get in Touch? We'd love to hear from you. Here's how you can reach us.</p>
-        <div class="informations">
-          <div class="findus">
-            <h3>Find us on...</h3>
-            <p>ayush1337@hotmail.com</p>
-            <p>fin-veda.vercel.app</p>
-            <p>Delhi, India</p>
-          </div>
-          <div class="form">
-            <h3>Share your thoughts...</h3>
-            <form action="POST">
-              <input type="text" id="name" placeholder="Name"/>
-              <input type="text" id="mail" placeholder="Email-id"/>
-              <input type="number" id="number" placeholder="Phone number"/>
-              <textarea type="text" id="msg" placeholder="Type your message..."></textarea>
-            </form>
-            <button type="submit">Submit</button>
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <title>Contact Us - FinVeda</title>
+          <style>
+              body {
+                  font-family: Arial, sans-serif;
+                  background-color: #f4f4f4;
+                  margin: 0;
+                  padding: 20px;
+              }
+              .container {
+                  max-width: 600px;
+                  margin: 0 auto;
+                  background: #fff;
+                  padding: 20px;
+                  border-radius: 10px;
+                  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+              }
+              h1 {
+                  text-align: center;
+                  color: #333;
+              }
+              label {
+                  display: block;
+                  margin: 15px 0 5px;
+                  color: #555;
+              }
+              input[type="text"], input[type="email"], textarea {
+                  width: 100%;
+                  padding: 10px;
+                  margin-bottom: 20px;
+                  border: 1px solid #ddd;
+                  border-radius: 5px;
+              }
+              textarea {
+                  height: 100px;
+              }
+              .btn {
+                  width: 100%;
+                  padding: 10px;
+                  background-color: #007bff;
+                  border: none;
+                  color: white;
+                  font-size: 16px;
+                  cursor: pointer;
+                  border-radius: 5px;
+              }
+              .btn:hover {
+                  background-color: #0056b3;
+              }
+          </style>
+      </head>
+      <body>
+      
+      <div class="container">
+          <h1>Contact Us</h1>
+      
+          <form id="contactForm" onsubmit="showAlert(event)">
+              <label for="name">Your Name:</label>
+              <input type="text" id="name" placeholder="Enter your name" required>
+              
+              <label for="email">Your Email:</label>
+              <input type="email" id="email" placeholder="Enter your email" required>
+              
+              <label for="message">Your Message:</label>
+              <textarea id="message" placeholder="Enter your message" required></textarea>
+              
+              <button type="submit" class="btn">Submit</button>
+          </form>
+      </div>
+      
+      <script>
+          function showAlert(event) {
+              // Prevent form from submitting normally
+              event.preventDefault();
+              
+              // Get input values
+              const name = document.getElementById('name').value;
+              const email = document.getElementById('email').value;
+              const message = document.getElementById('message').value;
+              
+              // Display an alert with form data
+              alert(`Thank you, ${name}! Your message has been received.\n\nDetails:\nName: ${name}\nEmail: ${email}\nMessage: ${message}`);
+              
+              // Optionally, reset the form
+              document.getElementById('contactForm').reset();
+          }
+      </script>
+      
+      </body>
+      </html>
+      
           </div>
         </div>
       </div>      
@@ -858,6 +935,9 @@
           </div>
         </div>
       </div>
+
+     
+
       
 
 </body>
