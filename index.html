@@ -72,12 +72,12 @@
 
 
     
-.unique-popup-message {
-  position: fixed; /* Change to fixed positioning */
-  top: 30px; /* Adjust this value to be below the navbar */
-  right: 2px; /* Adjust this value for the desired distance from the right edge */
-  width: 300px; /* Adjust width as needed */
-  transform: translateX(0); /* Center the popup horizontally */
+/* .unique-popup-message {
+  position: fixed; 
+  top: 30px; 
+  right: 2px; 
+  width: 300px; 
+  transform: translateX(0); 
   background-color: #a4d8ff;
   color: #131722;
   padding: 11px;
@@ -85,7 +85,7 @@
   text-align: center;
   z-index: 1000;
   box-sizing: border-box;
-  overflow: hidden; /* Hide the expanding border animation */
+  overflow: hidden; 
   position: relative;
 }
 
@@ -93,18 +93,18 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 7px; /* Same height as the border */
+  height: 7px;
   background-color: rgb(4, 0, 128);
   width: 100%;
-  transform-origin: right; /* Start shrinking from the right */
+  transform-origin: right; 
 }
 
 @keyframes borderAnimation {
   from {
-    transform: scaleX(0); /* Full width initially */
+    transform: scaleX(0); 
   }
   to {
-    transform: scaleX(1); /* Shrink to zero width */
+    transform: scaleX(1);
   }
 }
 .social-icons {
@@ -185,7 +185,7 @@
   .dropdown {
   position: relative;
   display: inline-block;
-}
+} */
 
 .scroll-btn {
             position: fixed;
@@ -1677,8 +1677,6 @@
   <html lang="en">
 
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback Form</title>
     <style>
       /* Simple CSS for layout and modal */
@@ -1926,105 +1924,111 @@
     </script>
     <script src="/assets/js/faq.js"></script>
 
-    <!-- Footer Section -->
-    <footer id="footer" class="footer-area pt-120">
-      <div class="container">
-        <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="subscribe-content mt-45">
-                <h2 class="subscribe-title">
-                  Subscribe Our Newsletter <span>get regular updates</span>
-                </h2>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="subscribe-form mt-50">
-                <form id="unique-subscribe-form">
-                  <input type="email" id="unique-news-email" placeholder="Enter Email" required />
-                  <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
-                </form>
-                <div id="unique-message" class="unique-popup-message" style="display: none;">
-                  <div class="border-animation"></div>
-                  Thank You for the subscription!
-                </div>
-              </div>
-            </div>
-          </div>
+    
+
+<!-- Timed popup that will appear after succesful submission of feebback form! -->
+<button class="notification" id="successnotification" style="display:none;">
+  <span class="message" id="successmsg">Submitted successfully!</span>
+  <span class="closenotif" id="closeSuccessNotification">✖</span>
+  <div class="timerline" id="timerline"></div>
+</button>
+
+
+<footer id="footer" class="footer-area pt-120">
+<div class="container">
+<div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="subscribe-content mt-45">
+        <h2 class="subscribe-title">
+          Subscribe Our Newsletter <span>get regular updates</span>
+        </h2>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="subscribe-form mt-50">
+        <form id="unique-subscribe-form">
+          <input type="email" id="unique-news-email" placeholder="Enter Email" required/>
+          <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
+        </form>
+        <div id="unique-message" class="unique-popup-message" style="display: none;">
+          <div class="border-animation"></div>
+          Thank You for the subscription!
         </div>
       </div>
-      <div class="footer-widget pb-100">
-        <div class="row" id="footer">
-          <div class="col-lg-4 col-md-6 col-sm-8">
-            <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-              <p class="text custom-margin">
-                We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial
-                blogs.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-5 col-md-7 col-sm-7">
-            <div class="footer-link d-flex mt-50 justify-content-md-between"
-              style="justify-content: space-around !important;">
-              <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+    </div>
+  </div>
+</div>
+</div>
+<div class="footer-widget pb-100">
+<div class="row" id="footer">
+    <div class="col-lg-4 col-md-6 col-sm-8">
+        <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+            <p class="text custom-margin">
+                We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
+            </p>
+        </div>
+    </div>
+    <div class="col-lg-5 col-md-7 col-sm-7">
+        <div class="footer-link d-flex mt-50 justify-content-md-between" style="justify-content: space-around !important;">
+            <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
                 <div class="footer-title">
-                  <h3 class="title custom-margin">Quick Links</h3>
+                    <h3 class="title custom-margin">Quick Links</h3>
                 </div>
                 <ul class="link custom-margin">
-                  <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
-                  <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
-                  <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
-                  <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
-                  <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+                    <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+                    <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
+                    <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
+                    <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+                    <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
                 </ul>
-              </div>
-              <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+            </div>
+            <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
                 <div class="footer-title">
-                  <h4 class="title custom-margin">Resources</h4>
+                    <h4 class="title custom-margin">Resources</h4>
                 </div>
                 <ul class="link custom-margin">
-                  <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
-                  <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
-                  <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
-                  <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
-                  <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
-                  <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                    <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
+                    <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
+                    <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                    <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
                 </ul>
-              </div>
             </div>
-          </div>
-          <div class="col-lg-3 col-md-5 col-sm-5">
-            <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-              <div class="footer-title">
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-5 col-sm-5">
+        <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+            <div class="footer-title">
                 <h4 class="title custom-margin">Contact Us</h4>
-              </div>
-              <ul class="contact custom-margin-big" style="justify-content: space-around;">
+            </div>
+            <ul class="contact custom-margin-big" style="justify-content: space-around;">
                 <li class="d-sm-flex justify-content-center">
-                  <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                  <p style="width: 80%;">
-                    <a href="mailto:ayush1337@hotmail.com" target="_blank"
-                      style="color: white; text-decoration: underline;">
-                      ayush1337@hotmail.com
-                    </a>
-                  </p>
+                    <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                    <p style="width: 80%;">
+                        <a href="mailto:ayush1337@hotmail.com" target="_blank"
+                           style="color: white; text-decoration: underline;">
+                            ayush1337@hotmail.com
+                        </a>
+                    </p>
                 </li>
                 <li class="d-sm-flex justify-content-center">
-                  <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                  <div style="width: 80%;">
-                    <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
-                      fin-veda.vercel.app
-                    </a>
-                  </div>
+                    <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                    <div style="width: 80%;">
+                        <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
+                            fin-veda.vercel.app
+                        </a>
+                    </div>
                 </li>
                 <li class="d-sm-flex justify-content-center">
-                  <i class="fa fa-location-dot d-sm-flex align-items-center white"
-                    style="font-size: 12px; width: 10%;"></i>
-                  <div style="width: 80%;">
-                    <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
-                      style="color:#fff">
-                      Delhi, India
-                    </a>
-                  </div>
+                    <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 12px; width: 10%;"></i>
+                    <div style="width: 80%;">
+                        <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
+                           style="color:#fff">
+                            Delhi, India
+                        </a>
+                    </div>
                 </li>
                 <div class="social-icons">
                   <a href="#"><i class="fa-brands fa-instagram"></i></a>
@@ -2032,43 +2036,46 @@
                   <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
                   <a href="#"><i class="fa-brands fa-discord"></i></a>
                   <a href="#"><i class="fa-brands fa-github"></i></a>
-                </div>
-                feature/copyright
-            </div>
-
-
-          </div>
-        </div>
-        <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s"
-          style="text-align: center">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="copyright d-sm-flex justify-content-center" style="
-                display: flex;
-                justify-content: center;
-                text-align: center;
-                width: 100%;
-                height: 100%;
-              ">
-                <div class="copyright-content" style="text-align: center">
-                  <p class="text" style="text-align: center">
-                    © <span id="copyright-year">2024</span> FinVeda. All rights are
-                    reserved<br />
-                    Made with ♥ in India
-                  </p>
-                  <a href="./tools/contributor.html" id="ourvisionlink">Our Contributors</a>
-
-                  </ul>
-                </div>
               </div>
-            </div>
-          </div>
+            </ul>
         </div>
-    </footer>
+    </div>
+
+
+</div>
+</div>
+<div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center">
+  <div class="row">
+    <div class="col-lg-12">
+      <div
+        class="copyright d-sm-flex justify-content-center"
+        style="
+          display: flex;
+          justify-content: center;
+          text-align: center;
+          width: 100%;
+          height: 100%;
+        "
+      >
+        <div class="copyright-content" style="text-align: center">
+          <p class="text" style="text-align: center">
+            © <span id="copyright-year">2024</span> FinVeda. All rights are
+            reserved<br />
+            Made with ♥ in India
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="particles-2"></div>
+</div>
+</footer>
 
 
     <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
-    </div>
 
 
     <script src="./assets/js/subscribe.js"></script>
@@ -2211,34 +2218,12 @@
         registerModal.querySelector(".close").addEventListener("click", closeModal);
         loginModal.querySelector(".close").addEventListener("click", closeModal);
       });
-      <!-- Footer Section -->
-      <footer style="background-color: #f8f9fa; padding: 20px 0; text-align: center;">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <p style="margin: 0;">&copy; 2024 FinVeda. All rights reserved.</p>
-            </div>
-            <div class="col-md-6">
-              <p style="margin: 0;">
-                Built with dedication and passion. Join us on our journey to make finance more accessible and empowering for everyone.
-                <br> Stay connected and explore our tools for financial growth!
-              </p>
-            </div>
-          </div>
-          <div style="margin-top: 10px;">
-            <a href="/about" style="margin-right: 10px;">About Us</a>
-            <a href="/contact" style="margin-right: 10px;">Contact</a>
-            <a href="/terms" style="margin-right: 10px;">Terms of Service</a>
-            <a href="/privacy">Privacy Policy</a>
-          </div>
-        </div>
-      </footer>
 
     </script>
     <script src="./smoothScroll.js"></script>
  
     <script src="./assets/js/preloader.js"></script>
-    <br /><br />
+
   <link rel="stylesheet" href="visi.css">
   <!-- ############### Footer ############### -->
   <div class="visitor-counter">
