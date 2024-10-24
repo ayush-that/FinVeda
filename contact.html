@@ -66,7 +66,7 @@
       background: #e65c39;
     }
 
-    /* footer {
+    footer {
       text-align: center;
       padding: 20px;
       background: #333;
@@ -74,7 +74,7 @@
       position: relative;
       bottom: 0;
       width: 100%;
-    } */
+    }
 
     #progressBar {
       position: fixed;
@@ -870,24 +870,24 @@
       transform: scale(0.95);
     }
   </style>
-  <h2 style="color: #0056b3;">Get in Touch</h2>
+<h2 style="color: #0056b3;">Get in Touch</h2>
   <div class="contact-info-map-container">
     <div class="contact-frame">
-      <h2 style="text-align: left; font-size: 24px; color: #0056b3;">Contact Us</h2>
+      <h2 style="text-decoration: underline;text-align: center; font-size: 34px; color: #f1eeee;">Contact Us</h2>
       <form action="submit" method="POST" style="display: flex; flex-direction: column;">
-        <label for="name" style="color: #0056b3; margin-bottom: 0.5rem;">Name:</label>
+        <label for="name" style="color: #e8eef4; margin-bottom: 0.5rem;font-weight: bolder;">Name:</label>
         <input type="text" placeholder="Enter your name" id="name" name="name" required
           style="padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #0056b3; border-radius: 4px;">
 
-        <label for="email" style="color: #0056b3; margin-bottom: 0.5rem;">Email:</label>
+        <label for="email"style="color: #e8eef4; margin-bottom: 0.5rem;font-weight: bolder;">Email:</label>
         <input type="email" placeholder="Enter your email" id="email" name="email" required
           style="padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #0056b3; border-radius: 4px;">
 
-        <label for="subject" style="color: #0056b3; margin-bottom: 0.5rem;">Subject:</label>
+        <label for="subject" style="color: #e8eef4; margin-bottom: 0.5rem;font-weight: bolder;">Subject:</label>
         <input type="text" placeholder="Enter subject" id="subject" name="subject" required
           style="padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #0056b3; border-radius: 4px;">
 
-        <label for="message" style="color: #0056b3; margin-bottom: 0.5rem;">Message:</label>
+        <label for="message" style="color: #e8eef4; margin-bottom: 0.5rem;font-weight: bolder;">Message:</label>
         <textarea id="message" placeholder="Enter message" name="message" required
           style="padding: 0.5rem; margin-bottom: 2rem; border: 1px solid #0056b3; border-radius: 4px; min-height: 100px; resize: vertical;"></textarea>
 
@@ -925,6 +925,136 @@
       </div>
     </div>
   </div>
+
+<style>
+
+/* Header Style */
+.header {
+  text-align: center;
+  color: #0056b3;
+  margin-top: 20px;
+  font-size: 28px;
+}
+
+/* Contact Info Container */
+.contact-info-map-container {
+  border: 5px solid white;
+  border-radius: 5%; 
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 20px;
+  background: linear-gradient(to right, #0056b3, #f48727); /* Catchy gradient background */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Frame Styles */
+.contact-frame {
+  color: white;
+  margin-top: 25px;
+  background-color: rgba(42, 37, 37, 0.9); /* Slight transparency for soft effect */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 45%;
+}
+
+/* Form Styles */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  color: #0056b3;
+  margin-bottom: 0.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #0056b3;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #f48727; /* Change border color on focus */
+}
+
+/* Button Style */
+.contact-form button {
+  background-color: #f48727;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3; /* Change button color on hover */
+  transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+/* Info Map Container */
+.info-map-container {
+  margin-top: 20px;
+  background-color: #171616; /* Light gray background for better contrast */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 45%;
+}
+
+/* Info Frame Style */
+.info-frame {
+  margin-bottom: 20px;
+  border: 5px solid white;
+  border-radius: 5%;
+  background-color: white;
+}
+
+/* Social Icons */
+.social-icons a {
+  color: #0056b3;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #f48727; /* Change color on hover */
+}
+
+/* Map Frame Style */
+.map-frame {
+  border: 5px solid white;
+  border-radius: 5%; 
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-info-map-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-frame,
+  .info-map-container {
+    width: 90%; /* Adjust width for smaller screens */
+    margin-bottom: 20px;
+  }
+}
+
+</style>
 
 
   <style>
@@ -1034,7 +1164,7 @@
       color: #007bff;
     }
 
-    /* footer {
+    footer {
       text-align: center;
       padding: 20px;
       background: #333;
@@ -1042,7 +1172,7 @@
       position: relative;
       bottom: 0;
       width: 100%;
-    } */
+    }
 
     body {
       font-family: Arial, sans-serif;
@@ -1090,7 +1220,7 @@
       color: white;
     }
 
-    /* footer {
+    footer {
       text-align: center;
       padding: 20px;
       background: #333;
@@ -1098,7 +1228,7 @@
       position: relative;
       bottom: 0;
       width: 100%;
-    } */
+    }
 
     /* Modal styles */
     .modal {
@@ -1177,7 +1307,7 @@
       cursor: pointer;
     }
 
-    /* footer {
+    footer {
       text-align: center;
       padding: 20px;
       background: #333;
@@ -1185,7 +1315,7 @@
       position: relative;
       bottom: 0;
       width: 100%;
-    } */
+    }
 
     /* Modal styles */
     .modal {
@@ -1296,16 +1426,16 @@
 
 
 
-     <!-- Timed popup that will appear after succesful submission of feebback form! -->
-     <button class="notification" id="successnotification" style="display:none;">
-      <span class="message" id="successmsg">Submitted successfully!</span>
-      <span class="closenotif" id="closeSuccessNotification">✖</span>
-      <div class="timerline" id="timerline"></div>
-    </button>
-    
-    
-    <footer id="footer" class="footer-area pt-120">
-    <div class="container">
+<!-- Timed popup that will appear after succesful submission of feebback form! -->
+<button class="notification" id="successnotification" style="display:none;">
+  <span class="message" id="successmsg">Submitted successfully!</span>
+  <span class="closenotif" id="closeSuccessNotification">✖</span>
+  <div class="timerline" id="timerline"></div>
+</button>
+
+
+<footer id="footer" class="footer-area pt-120">
+  <div class="container">
     <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
       <div class="row">
         <div class="col-lg-6">
@@ -1318,9 +1448,93 @@
         <div class="col-lg-6">
           <div class="subscribe-form mt-50">
             <form id="unique-subscribe-form">
-              <input type="email" id="unique-news-email" placeholder="Enter Email" required/>
-              <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
+              <input type="email" id="unique-news-email" placeholder="Enter your email address" required style="
+                  padding: 0.75rem 1rem; 
+                  border: 2px solid #00a7b3; 
+                  border-radius: 8px; 
+                  height: 45px; 
+                  right: 60px;
+                  font-size: 16px; 
+                  transition: border-color 0.4s ease, box-shadow 0.3s ease, transform 0.2s ease; 
+                  outline: none; 
+                  position: relative; 
+              " onfocus="this.style.borderColor='#004494'; this.style.boxShadow='0 4px 10px rgba(0, 0, 0, 0.2)'; this.style.transform='scale(1.02)'; this.style.color='transparent';"
+                onblur="this.style.borderColor='#0056b3'; this.style.boxShadow='none'; this.style.transform='scale(1)'; this.style.color='';">
+
+
+              <!-- <button 
+          class="unique-main-btn" 
+          id="unique-subscribe-btn" 
+          type="submit" 
+          style="
+              height: 45px; 
+              padding: 0 20px; 
+              border: none; 
+              border-radius: 8px; 
+              background-color: #0056b3; 
+              color: white; 
+              font-size: 16px; 
+              font-weight: 600; 
+              cursor: pointer; 
+              transition: background-color 0.3s ease, transform 0.2s ease; 
+              display: flex; 
+              align-items: center; 
+              justify-content: center; 
+              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+          " 
+          onmouseover="this.style.backgroundColor='#004494'; this.style.transform='scale(1.05)';" 
+          onmouseout="this.style.backgroundColor='#0056b3'; this.style.transform='scale(1)';"
+      >
+          Subscribe
+      </button>
+       -->
+
+
+              <button class="unique-main-btn" id="unique-subscribe-btn" type="submit" style="
+        height: 45px; 
+        padding: 0 20px; 
+        border: none; 
+        border-radius: 8px; 
+        background-color: #007BFF; /* Professional blue */
+        color: white; 
+        font-size: 16px; 
+        font-weight: 600; 
+        cursor: pointer; 
+        transition: background-color 0.3s ease, transform 0.2s ease; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    " onmouseover="this.style.backgroundColor='#0056b3'; this.style.transform='scale(1.05)';"
+                onmouseout="this.style.backgroundColor='#007BFF'; this.style.transform='scale(1)';">
+                Subscribe
+              </button>
+
             </form>
+
+
+            <script>
+              document.getElementById('unique-subscribe-form').addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent form from actually submitting
+
+                // Get the email value from the input field
+                const email = document.getElementById('unique-news-email').value;
+
+                // Create an object to store email data
+                const subscribeData = {
+                  email: email
+                };
+
+                // Save the email data to local storage in JSON format
+                localStorage.setItem('subscribeData', JSON.stringify(subscribeData));
+
+                // Clear the email input field after submitting
+                document.getElementById('unique-news-email').value = '';
+
+                alert('Email subscribed!');
+              });
+            </script>
+
             <div id="unique-message" class="unique-popup-message" style="display: none;">
               <div class="border-animation"></div>
               Thank You for the subscription!
@@ -1329,16 +1543,40 @@
         </div>
       </div>
     </div>
-    </div>
-    <div class="footer-widget pb-100">
+  </div>
+  <script>
+    document.getElementById('unique-subscribe-form').addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent form from submitting normally
+
+      // Show popup message
+      var messageDiv = document.getElementById('unique-message');
+      messageDiv.style.display = 'block';
+
+      // Reset existing animation
+      var borderAnimationDiv = messageDiv.querySelector('.border-animation');
+      borderAnimationDiv.style.animation = 'none';
+      borderAnimationDiv.offsetHeight; // Trigger reflow to restart the animation
+      borderAnimationDiv.style.animation = 'borderAnimation 3s linear forwards';
+
+      // Hide popup message after 10 seconds
+      setTimeout(function () {
+        messageDiv.style.display = 'none';
+      }, 3000); // 10 seconds
+
+      // Reset form
+      this.reset();
+    });
+  </script>
+
+  <div class="footer-widget pb-100">
     <div class="row" id="footer">
-        <div class="col-lg-4 col-md-6 col-sm-8">
-            <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                <p class="text custom-margin">
-                    We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
-                </p>
-            </div>
+      <div class="col-lg-4 col-md-6 col-sm-8">
+        <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+          <p class="text custom-margin">
+            We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
+          </p>
         </div>
+ feature/copyright
         <div class="col-lg-5 col-md-7 col-sm-7">
             <div class="footer-link d-flex mt-50 justify-content-md-between" style="justify-content: space-around !important;">
                 <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
@@ -1346,12 +1584,12 @@
                         <h3 class="title custom-margin">Quick Links</h3>
                     </div>
                     <ul class="link custom-margin">
-                        <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
-                        <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
-                        <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
-                        <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
-                        <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
-                    </ul>
+                      <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+                      <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
+                      <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
+                      <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+                      <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+                  </ul>
                 </div>
                 <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
                     <div class="footer-title">
@@ -1363,86 +1601,129 @@
                         <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
                         <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
                         <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                        
                         <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
-                    </ul>
+                        
+                          </ul>
                 </div>
+
+      </div>
+      <div class="col-lg-5 col-md-7 col-sm-7">
+        <div class="footer-link d-flex mt-50 justify-content-md-between"
+          style="justify-content: space-around !important;">
+          <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+            <div class="footer-title">
+              <h3 class="title custom-margin">Quick Links</h3>
+ main
             </div>
-        </div>
-        <div class="col-lg-3 col-md-5 col-sm-5">
-            <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-                <div class="footer-title">
-                    <h4 class="title custom-margin">Contact Us</h4>
-                </div>
-                <ul class="contact custom-margin-big" style="justify-content: space-around;">
-                    <li class="d-sm-flex justify-content-center">
-                        <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                        <p style="width: 80%;">
-                            <a href="mailto:ayush1337@hotmail.com" target="_blank"
-                               style="color: white; text-decoration: underline;">
-                                ayush1337@hotmail.com
-                            </a>
-                        </p>
-                    </li>
-                    <li class="d-sm-flex justify-content-center">
-                        <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                        <div style="width: 80%;">
-                            <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
-                                fin-veda.vercel.app
-                            </a>
-                        </div>
-                    </li>
-                    <li class="d-sm-flex justify-content-center">
-                        <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 12px; width: 10%;"></i>
-                        <div style="width: 80%;">
-                            <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
-                               style="color:#fff">
-                                Delhi, India
-                            </a>
-                        </div>
-                    </li>
-                    <div class="social-icons">
-                      <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                      <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                      <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                      <a href="#"><i class="fa-brands fa-discord"></i></a>
-                      <a href="#"><i class="fa-brands fa-github"></i></a>
-                  </div>
-                </ul>
+            <ul class="link custom-margin">
+              <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+              <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
+              <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
+              <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+              <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+            </ul>
+          </div>
+          <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+            <div class="footer-title">
+              <h4 class="title custom-margin">Resources</h4>
             </div>
+            <ul class="link resources-link custom-margin">
+              <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+              <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+              <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
+              <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
+              <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+
+              <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
+
+            </ul>
+          </div>
         </div>
-    
-    
+      </div>
+      <div class="col-lg-3 col-md-5 col-sm-5">
+        <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+          <div class="footer-title">
+            <h4 class="title custom-margin" style="text-align: left; margin-bottom: 15.1px;">Contact Us</h4>
+            <!-- Aligning heading to the left -->
+          </div>
+          <ul class="contact custom-margin-big" style="justify-content: space-around;">
+
+            <li class="d-sm-flex justify-content-center"
+              style="align-items: center; margin: 0; padding: 0; margin-bottom: 10px;">
+              <i class="fa fa-envelope d-sm-flex align-items-center white"
+                style="font-size: 16px; margin-right: 10px;"></i>
+              <div style="width: 100%; display: flex; align-items: center;">
+                <a href="mailto:ayush1337@hotmail.com" target="_blank"
+                  style="color: white; text-decoration: underline;">
+                  ayush1337@hotmail.com
+                </a>
+              </div>
+            </li>
+
+            <li class="d-sm-flex justify-content-center"
+              style="align-items: center; margin: 0; padding: 0;margin-bottom: 10px;">
+              <i class="fa fa-globe d-sm-flex align-items-center white"
+                style="font-size: 16px; margin-right: 10px;"></i>
+              <div style="width: 100%; display: flex; align-items: center;">
+                <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff;">
+                  fin-veda.vercel.app
+                </a>
+              </div>
+            </li>
+
+            <li class="d-sm-flex justify-content-center"
+              style="align-items: center; margin: 0; padding: 0; margin-bottom: 10px;">
+              <i class="fa fa-location-dot d-sm-flex align-items-center white"
+                style="font-size: 12px; margin-right: 10px;"></i>
+              <div style="width: 100%; display: flex; align-items: center;">
+                <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
+                  style="color: #fff;">
+                  Delhi, India
+                </a>
+              </div>
+            </li>
+
+
+
+            <div class="social-icons">
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-discord"></i></a>
+              <a href="#"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </ul>
+        </div>
+      </div>
     </div>
-    </div>
-    <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center">
-      <div class="row">
-        <div class="col-lg-12">
-          <div
-            class="copyright d-sm-flex justify-content-center"
-            style="
+  </div>
+  <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s"
+    style="text-align: center">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="copyright d-sm-flex justify-content-center" style="
               display: flex;
               justify-content: center;
               text-align: center;
               width: 100%;
               height: 100%;
-            "
-          >
-            <div class="copyright-content" style="text-align: center">
-              <p class="text" style="text-align: center">
-                © <span id="copyright-year">2024</span> FinVeda. All rights are
-                reserved<br />
-                Made with ♥ in India
-              </p>
-    
-            </div>
+            ">
+          <div class="copyright-content" style="text-align: center">
+            <p class="text" style="text-align: center">
+              © <span id="copyright-year"></span> FinVeda. All rights are
+              reserved<br />
+              Made with ♥ in India
+            </p>
           </div>
         </div>
       </div>
     </div>
-    
-    <div id="particles-2"></div>
-    </div>
-    </footer>
+  </div>
+
+  </div>
+  <div id="particles-2"></div>
+</footer>
 <script>document.getElementById("copyright-year").textContent = new Date().getFullYear();</script>
 <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
 

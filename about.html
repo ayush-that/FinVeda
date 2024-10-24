@@ -566,9 +566,9 @@ h4 {
 /* Paragraph styling */
 p {
   margin-top: 10px;
-  color: #f0ebeb; 
+  color: #f0ebeb; /* Softer text color */
   line-height: 1.5;
-  text-align: center; 
+  text-align: center; /* Center paragraph text */
 }
 
 /* Shadows inside the cards */
@@ -653,11 +653,19 @@ p {
     
 
   /* Parent element styling */
+  .contributors {
+    background: linear-gradient(135deg, #ebb074, #acb6e5);
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
 
   .contributors h2 {
     font-weight: bolder;
+    text-decoration:underline;
     font-size: 2.5rem;
-    color: #fff;
+    color: #d6e2e2;
     margin-bottom: 40px;
     font-weight: 700;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
@@ -801,11 +809,11 @@ p {
   
   /* Card styling with gradient background */
 .contributor-member {
-  background:#c6caeb; /* Gradient background */
+  background: linear-gradient(135deg, #74d5eb, #acb6e5); /* Gradient background */
   border-radius: 12px; /* Rounded corners */
   padding: 20px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
-  transition: all 0.4s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.4s ease;
   cursor: pointer;
   overflow: hidden;
   position: relative;
@@ -813,8 +821,9 @@ p {
 
 /* Hover effect */
 .contributor-member:hover {
+  transform: translateY(-10px); /* Lifting effect */
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Deeper shadow */
-  background: #fffaf0; /* Gradient change on hover */
+  background: linear-gradient(145deg, #89fffd, #7af1e5); /* Gradient change on hover */
 }
 
 /* Image styling inside the card */
@@ -828,7 +837,7 @@ p {
 
 /* Text and button styling */
 .contributor-member h3 {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   margin: 10px 0;
   color: #333;
   transition: color 0.3s ease;
@@ -841,7 +850,7 @@ p {
 }
 
 .contributor-member button {
-  background-color:#737ba5;
+  background-color: #34d185;
   color: white;
   border: none;
   padding: 10px 15px;
@@ -851,8 +860,7 @@ p {
 }
 
 .contributor-member button:hover {
-  background-color: #c6caeb;
-  color: black; /* Darker button color on hover */
+  background-color: #2fa671; /* Darker button color on hover */
 }
 /* Parent element with glowing, rotating border */
 .contributors {

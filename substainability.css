@@ -32,8 +32,9 @@ body {
 
 /* Navbar */
 .navbar-area {
+  display: flex;
+  justify-content: center;
   background-color: #333;
-  padding: 10px 0;
 }
 
 .navbar {
@@ -52,12 +53,12 @@ body {
   text-decoration: none;
   padding: 10px 15px;
   font-weight: bold;
-  transition: background-color 0.3s ease;
-  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
 .navbar-nav .nav-item a:hover {
   background-color: #444;
+  border-radius: 5px;
 }
 
 /* Main Content */
@@ -67,12 +68,12 @@ body {
 
 /* Section Styling */
 section {
-  background-color: white;
+  background: white;
   margin: 20px 0;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 section h2 {
@@ -97,7 +98,7 @@ section ol {
 /* Hover Effects */
 .hover-effect:hover {
   transform: scale(1.02);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Subsection Styling */
@@ -137,7 +138,7 @@ a:hover {
   width: 100%;
 }
 
-/* Lists */
+/* Additional Styling for Specific Elements */
 .importance ul,
 .statistics ul,
 .resources ol {
@@ -157,27 +158,15 @@ a:hover {
 /* Button */
 .main-btn {
   display: inline-block;
-  padding: 12px 24px;
+  padding: 10px 20px;
   background-color: #2ecc71;
   color: white;
   font-weight: bold;
   border-radius: 5px;
   text-align: center;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .main-btn:hover {
   background-color: #27ae60;
-  transform: scale(1.05);
 }
-
-.circle {
-  height: 24px;
-  width: 24px;
-  border-radius: 50%;
-  position: fixed;
-  background-color: black;  /* Default color of circles */
-  pointer-events: none;     /* Prevent interaction with circles */
-  z-index: 9999;
-  transition: transform 0.1s ease-out;
-  }
