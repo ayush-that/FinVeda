@@ -6,8 +6,6 @@
   box-sizing: border-box;
 }
 
-
-
 body,
 input {
   font-family: "Poppins", sans-serif;
@@ -39,11 +37,6 @@ input {
   display: grid;
   grid-template-columns: 1fr;
   z-index: 5;
-}
-
-.input-field:focus-within {
-  border-color: #3498db;
-  box-shadow: 0 0 10px #3498db;
 }
 
 form {
@@ -84,14 +77,7 @@ form.sign-in-form {
   grid-template-columns: 15% 85%;
   padding: 0 0.4rem;
   position: relative;
-  border: 2px solid black;
 }
-
-.input-field:focus-within {
-  border-color: #3498db;
-  box-shadow: 0 0 10px #3498db;
-}
-
 
 .input-field i {
   text-align: center;
@@ -155,20 +141,8 @@ form.sign-in-form {
 }
 
 .btn:hover {
-  transform: scale(1.1);
+  background-color: #4d84e2;
 }
-
-.circle {
-  height: 24px;
-  width: 24px;
-  border-radius: 50%;
-  position: fixed;
-  background-color: black;  /* Default color of circles */
-  pointer-events: none;     /* Prevent interaction with circles */
-  z-index: 9999;
-  transition: transform 0.1s ease-out;
-  }
-  
 .panels-container {
   position: absolute;
   height: 100%;
@@ -451,4 +425,20 @@ form.sign-in-form {
   pointer-events: none;
   z-index: 99999999;
 }
+
+
+.forgot-password {
+    text-align: right; 
+    margin: 10px 0; 
+  }
+  
+  .forgot-password a {
+    color: black;
+    text-decoration: underline; 
+    transition: color 0.3s; 
+    
+  }
+  
+  .forgot-password a:hover {
+    color: blue;
   }

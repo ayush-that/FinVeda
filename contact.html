@@ -66,7 +66,7 @@
       background: #e65c39;
     }
 
-    /* footer {
+    footer {
       text-align: center;
       padding: 20px;
       background: #333;
@@ -74,7 +74,7 @@
       position: relative;
       bottom: 0;
       width: 100%;
-    } */
+    }
 
     #progressBar {
       position: fixed;
@@ -677,71 +677,27 @@
               <script type="text/javascript" src="./navbar.js"></script> --> -->
     <div id="home" class="header-hero bg_cover" style="background-image: url(../assets/images/banner-bg.svg)">
       <div class="container">
-        <h2 class="head-animate" style="font-size: 90px;">
-          WELCOME TO FINVEDA
-        </h2>
         <div class="row justify-content-center">
           <div class="col-lg-8">
             <div class="header-hero-content text-center">
-              <style>
-                .head-animate {
-                  text-align: center;
-                  position: relative;
-                  top: 200px;
-                  color: transparent;
-                  -webkit-text-stroke: 2px white;
-                  -moz-text-stroke: 2px white;
-                  -ms-text-stroke: 2px white;
-                  font-weight: bold;
-                  background: url(./assets/images/back.png);
-                  -webkit-background-clip: text;
-                  -moz-background-clip: text;
-                  background-clip: text;
-                  background-position: 0 0;
-                  animation: back 20s linear infinite, hovering 1.5s ease-in-out infinite;
-                }
-
-                @keyframes back {
-                  100% {
-                    background-position: 2000px 0;
-                  }
-                }
-
-                @keyframes hovering {
-                  0% {
-                    transform: translateY(0);
-                  }
-
-                  50% {
-                    transform: translateY(-5px);
-                  }
-
-                  100% {
-                    transform: translateY(0);
-                  }
-                }
-
-                .header-hero-content h2 {
-                  font-size: 200px;
-                }
-              </style>
-              <br>
-              <br>
-              <p class="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s"
-                style="visibility: visible; animation-duration: 1.3s; animation-delay: 0.8s;">
+              <h3 class="header-sub-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
+                Say 👋🏼 to FinVeda
+              </h3>
+              <h2 class="header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">
+                your savvy financial companion
+              </h2>
+              <p class="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">
                 Wanna learn how to grow your money to become rich? We have
                 made becoming a stock market Guru easy with our AI
                 powered finance advisor - <b>Arth Sathi 🤵🏻</b>
               </p>
               <a href="#" class="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s"
-                onclick="window.botpressWebChat.sendEvent({ type: 'show' }); return false;"
-                style="visibility: visible; animation-duration: 1.3s; animation-delay: 1.1s;">
+                onclick="window.botpressWebChat.sendEvent({ type: 'show' }); return false;">
                 Chat with ArthaSathi 💬
               </a>
             </div>
           </div>
         </div>
-
         <div class="row">
           <div class="col-lg-12">
             <div class="header-hero-image text-center wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">
@@ -1078,7 +1034,7 @@
       color: #007bff;
     }
 
-    /* footer {
+    footer {
       text-align: center;
       padding: 20px;
       background: #333;
@@ -1086,7 +1042,7 @@
       position: relative;
       bottom: 0;
       width: 100%;
-    } */
+    }
 
     body {
       font-family: Arial, sans-serif;
@@ -1134,7 +1090,7 @@
       color: white;
     }
 
-    /* footer {
+    footer {
       text-align: center;
       padding: 20px;
       background: #333;
@@ -1142,7 +1098,7 @@
       position: relative;
       bottom: 0;
       width: 100%;
-    } */
+    }
 
     /* Modal styles */
     .modal {
@@ -1221,7 +1177,7 @@
       cursor: pointer;
     }
 
-    /* footer {
+    footer {
       text-align: center;
       padding: 20px;
       background: #333;
@@ -1229,7 +1185,7 @@
       position: relative;
       bottom: 0;
       width: 100%;
-    } */
+    }
 
     /* Modal styles */
     .modal {
@@ -1340,16 +1296,16 @@
 
 
 
-     <!-- Timed popup that will appear after succesful submission of feebback form! -->
-     <button class="notification" id="successnotification" style="display:none;">
-      <span class="message" id="successmsg">Submitted successfully!</span>
-      <span class="closenotif" id="closeSuccessNotification">✖</span>
-      <div class="timerline" id="timerline"></div>
-    </button>
-    
-    
-    <footer id="footer" class="footer-area pt-120">
-    <div class="container">
+<!-- Timed popup that will appear after succesful submission of feebback form! -->
+<button class="notification" id="successnotification" style="display:none;">
+  <span class="message" id="successmsg">Submitted successfully!</span>
+  <span class="closenotif" id="closeSuccessNotification">✖</span>
+  <div class="timerline" id="timerline"></div>
+</button>
+
+
+<footer id="footer" class="footer-area pt-120">
+  <div class="container">
     <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
       <div class="row">
         <div class="col-lg-6">
@@ -1362,9 +1318,93 @@
         <div class="col-lg-6">
           <div class="subscribe-form mt-50">
             <form id="unique-subscribe-form">
-              <input type="email" id="unique-news-email" placeholder="Enter Email" required/>
-              <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
+              <input type="email" id="unique-news-email" placeholder="Enter your email address" required style="
+                  padding: 0.75rem 1rem; 
+                  border: 2px solid #00a7b3; 
+                  border-radius: 8px; 
+                  height: 45px; 
+                  right: 60px;
+                  font-size: 16px; 
+                  transition: border-color 0.4s ease, box-shadow 0.3s ease, transform 0.2s ease; 
+                  outline: none; 
+                  position: relative; 
+              " onfocus="this.style.borderColor='#004494'; this.style.boxShadow='0 4px 10px rgba(0, 0, 0, 0.2)'; this.style.transform='scale(1.02)'; this.style.color='transparent';"
+                onblur="this.style.borderColor='#0056b3'; this.style.boxShadow='none'; this.style.transform='scale(1)'; this.style.color='';">
+
+
+              <!-- <button 
+          class="unique-main-btn" 
+          id="unique-subscribe-btn" 
+          type="submit" 
+          style="
+              height: 45px; 
+              padding: 0 20px; 
+              border: none; 
+              border-radius: 8px; 
+              background-color: #0056b3; 
+              color: white; 
+              font-size: 16px; 
+              font-weight: 600; 
+              cursor: pointer; 
+              transition: background-color 0.3s ease, transform 0.2s ease; 
+              display: flex; 
+              align-items: center; 
+              justify-content: center; 
+              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+          " 
+          onmouseover="this.style.backgroundColor='#004494'; this.style.transform='scale(1.05)';" 
+          onmouseout="this.style.backgroundColor='#0056b3'; this.style.transform='scale(1)';"
+      >
+          Subscribe
+      </button>
+       -->
+
+
+              <button class="unique-main-btn" id="unique-subscribe-btn" type="submit" style="
+        height: 45px; 
+        padding: 0 20px; 
+        border: none; 
+        border-radius: 8px; 
+        background-color: #007BFF; /* Professional blue */
+        color: white; 
+        font-size: 16px; 
+        font-weight: 600; 
+        cursor: pointer; 
+        transition: background-color 0.3s ease, transform 0.2s ease; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    " onmouseover="this.style.backgroundColor='#0056b3'; this.style.transform='scale(1.05)';"
+                onmouseout="this.style.backgroundColor='#007BFF'; this.style.transform='scale(1)';">
+                Subscribe
+              </button>
+
             </form>
+
+
+            <script>
+              document.getElementById('unique-subscribe-form').addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent form from actually submitting
+
+                // Get the email value from the input field
+                const email = document.getElementById('unique-news-email').value;
+
+                // Create an object to store email data
+                const subscribeData = {
+                  email: email
+                };
+
+                // Save the email data to local storage in JSON format
+                localStorage.setItem('subscribeData', JSON.stringify(subscribeData));
+
+                // Clear the email input field after submitting
+                document.getElementById('unique-news-email').value = '';
+
+                alert('Email subscribed!');
+              });
+            </script>
+
             <div id="unique-message" class="unique-popup-message" style="display: none;">
               <div class="border-animation"></div>
               Thank You for the subscription!
@@ -1373,16 +1413,40 @@
         </div>
       </div>
     </div>
-    </div>
-    <div class="footer-widget pb-100">
+  </div>
+  <script>
+    document.getElementById('unique-subscribe-form').addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent form from submitting normally
+
+      // Show popup message
+      var messageDiv = document.getElementById('unique-message');
+      messageDiv.style.display = 'block';
+
+      // Reset existing animation
+      var borderAnimationDiv = messageDiv.querySelector('.border-animation');
+      borderAnimationDiv.style.animation = 'none';
+      borderAnimationDiv.offsetHeight; // Trigger reflow to restart the animation
+      borderAnimationDiv.style.animation = 'borderAnimation 3s linear forwards';
+
+      // Hide popup message after 10 seconds
+      setTimeout(function () {
+        messageDiv.style.display = 'none';
+      }, 3000); // 10 seconds
+
+      // Reset form
+      this.reset();
+    });
+  </script>
+
+  <div class="footer-widget pb-100">
     <div class="row" id="footer">
-        <div class="col-lg-4 col-md-6 col-sm-8">
-            <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                <p class="text custom-margin">
-                    We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
-                </p>
-            </div>
+      <div class="col-lg-4 col-md-6 col-sm-8">
+        <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+          <p class="text custom-margin">
+            We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
+          </p>
         </div>
+ feature/copyright
         <div class="col-lg-5 col-md-7 col-sm-7">
             <div class="footer-link d-flex mt-50 justify-content-md-between" style="justify-content: space-around !important;">
                 <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
@@ -1390,12 +1454,12 @@
                         <h3 class="title custom-margin">Quick Links</h3>
                     </div>
                     <ul class="link custom-margin">
-                        <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
-                        <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
-                        <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
-                        <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
-                        <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
-                    </ul>
+                      <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+                      <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
+                      <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
+                      <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+                      <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+                  </ul>
                 </div>
                 <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
                     <div class="footer-title">
@@ -1407,86 +1471,129 @@
                         <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
                         <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
                         <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                        
                         <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
-                    </ul>
+                        
+                          </ul>
                 </div>
+
+      </div>
+      <div class="col-lg-5 col-md-7 col-sm-7">
+        <div class="footer-link d-flex mt-50 justify-content-md-between"
+          style="justify-content: space-around !important;">
+          <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+            <div class="footer-title">
+              <h3 class="title custom-margin">Quick Links</h3>
+ main
             </div>
-        </div>
-        <div class="col-lg-3 col-md-5 col-sm-5">
-            <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-                <div class="footer-title">
-                    <h4 class="title custom-margin">Contact Us</h4>
-                </div>
-                <ul class="contact custom-margin-big" style="justify-content: space-around;">
-                    <li class="d-sm-flex justify-content-center">
-                        <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                        <p style="width: 80%;">
-                            <a href="mailto:ayush1337@hotmail.com" target="_blank"
-                               style="color: white; text-decoration: underline;">
-                                ayush1337@hotmail.com
-                            </a>
-                        </p>
-                    </li>
-                    <li class="d-sm-flex justify-content-center">
-                        <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                        <div style="width: 80%;">
-                            <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
-                                fin-veda.vercel.app
-                            </a>
-                        </div>
-                    </li>
-                    <li class="d-sm-flex justify-content-center">
-                        <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 12px; width: 10%;"></i>
-                        <div style="width: 80%;">
-                            <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
-                               style="color:#fff">
-                                Delhi, India
-                            </a>
-                        </div>
-                    </li>
-                    <div class="social-icons">
-                      <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                      <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                      <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                      <a href="#"><i class="fa-brands fa-discord"></i></a>
-                      <a href="#"><i class="fa-brands fa-github"></i></a>
-                  </div>
-                </ul>
+            <ul class="link custom-margin">
+              <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+              <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
+              <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
+              <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+              <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+            </ul>
+          </div>
+          <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+            <div class="footer-title">
+              <h4 class="title custom-margin">Resources</h4>
             </div>
+            <ul class="link resources-link custom-margin">
+              <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+              <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+              <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
+              <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
+              <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+
+              <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
+
+            </ul>
+          </div>
         </div>
-    
-    
+      </div>
+      <div class="col-lg-3 col-md-5 col-sm-5">
+        <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+          <div class="footer-title">
+            <h4 class="title custom-margin" style="text-align: left; margin-bottom: 15.1px;">Contact Us</h4>
+            <!-- Aligning heading to the left -->
+          </div>
+          <ul class="contact custom-margin-big" style="justify-content: space-around;">
+
+            <li class="d-sm-flex justify-content-center"
+              style="align-items: center; margin: 0; padding: 0; margin-bottom: 10px;">
+              <i class="fa fa-envelope d-sm-flex align-items-center white"
+                style="font-size: 16px; margin-right: 10px;"></i>
+              <div style="width: 100%; display: flex; align-items: center;">
+                <a href="mailto:ayush1337@hotmail.com" target="_blank"
+                  style="color: white; text-decoration: underline;">
+                  ayush1337@hotmail.com
+                </a>
+              </div>
+            </li>
+
+            <li class="d-sm-flex justify-content-center"
+              style="align-items: center; margin: 0; padding: 0;margin-bottom: 10px;">
+              <i class="fa fa-globe d-sm-flex align-items-center white"
+                style="font-size: 16px; margin-right: 10px;"></i>
+              <div style="width: 100%; display: flex; align-items: center;">
+                <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff;">
+                  fin-veda.vercel.app
+                </a>
+              </div>
+            </li>
+
+            <li class="d-sm-flex justify-content-center"
+              style="align-items: center; margin: 0; padding: 0; margin-bottom: 10px;">
+              <i class="fa fa-location-dot d-sm-flex align-items-center white"
+                style="font-size: 12px; margin-right: 10px;"></i>
+              <div style="width: 100%; display: flex; align-items: center;">
+                <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
+                  style="color: #fff;">
+                  Delhi, India
+                </a>
+              </div>
+            </li>
+
+
+
+            <div class="social-icons">
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-discord"></i></a>
+              <a href="#"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </ul>
+        </div>
+      </div>
     </div>
-    </div>
-    <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center">
-      <div class="row">
-        <div class="col-lg-12">
-          <div
-            class="copyright d-sm-flex justify-content-center"
-            style="
+  </div>
+  <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s"
+    style="text-align: center">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="copyright d-sm-flex justify-content-center" style="
               display: flex;
               justify-content: center;
               text-align: center;
               width: 100%;
               height: 100%;
-            "
-          >
-            <div class="copyright-content" style="text-align: center">
-              <p class="text" style="text-align: center">
-                © <span id="copyright-year">2024</span> FinVeda. All rights are
-                reserved<br />
-                Made with ♥ in India
-              </p>
-    
-            </div>
+            ">
+          <div class="copyright-content" style="text-align: center">
+            <p class="text" style="text-align: center">
+              © <span id="copyright-year"></span> FinVeda. All rights are
+              reserved<br />
+              Made with ♥ in India
+            </p>
           </div>
         </div>
       </div>
     </div>
-    
-    <div id="particles-2"></div>
-    </div>
-    </footer>
+  </div>
+
+  </div>
+  <div id="particles-2"></div>
+</footer>
 <script>document.getElementById("copyright-year").textContent = new Date().getFullYear();</script>
 <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
 
