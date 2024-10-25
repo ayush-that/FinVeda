@@ -482,92 +482,77 @@
             <span class="toggler-icon"></span>
             <span class="toggler-icon"></span>
           </button> -->
-                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent"
-                  style="margin: auto; margin-left: -5px;">
-                  <div class="icon1">
-                    <a href="./index.html">
-                      <img src="assets/images/icon.webp" alt="icon.png">
-                    </a>
+          <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
+            <div class="icon1">
+              <a href="./index.html">
+              <img src="assets/images/icon.webp" alt="icon.png">
+              </a>
+            </div> 
+            <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
+              <li class="nav-item">
+                <a class="page-scroll active-link" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
+              </li>    
+              <li class="nav-item">
+                <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll" href="./quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll" href="./careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
+              </li>
+              <li class="nav-item no-underline">
+                <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
+              </li>
+              <li class="nav-item no-underline">
+              <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
+                🌙
+              </button>
+              </li>
+            </ul>
+          </div>
 
-                    <div class="navbar-logo">
-                      <div class="icon1">
-                        <a href="./index.html">
-                          <img src="assets/images/icon.webp" alt="icon.webp">
-                      </div>
-                    </div>
-                    <div class="nav-space"></div>
+          <script>
+            const toggleButton = document.getElementById('theme-toggle');
+            const body = document.body;
+            const currentTheme = localStorage.getItem('theme');
 
-                    <div class="nav-toggle-btn-space-fixed"></div>
-                  </div>
-                </div>
-                <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
-                  <li class="nav-item">
-                    <a class="page-scroll active-link" href="./index.html" style="color: rgb(237, 242, 244);">Home
-                      🏡</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
-                  </li>
-                  <li class="nav-item no-underline">
-                    <a class="main-btn navbar-btn"
-                      style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;"
-                      data-scroll-nav="0" href="./loginPage.html">Login/Register 💻</a>
-                  </li>
-                  <li class="nav-item no-underline">
-                    <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
-                      🌙
-                    </button>
-                  </li>
-                </ul>
-            </div>
+            if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            toggleButton.classList.add('dark');
+            toggleButton.textContent = '☀️';
+            }
 
-            <script>
-              const toggleButton = document.getElementById('theme-toggle');
-              const body = document.body;
-              const currentTheme = localStorage.getItem('theme');
+            toggleButton.addEventListener('click', function () {
+            body.classList.toggle('dark-mode');
+            toggleButton.classList.toggle('dark');
 
-              if (currentTheme === 'dark') {
-                body.classList.add('dark-mode');
-                toggleButton.classList.add('dark');
-                toggleButton.textContent = '🌞';
-              }
-
-              toggleButton.addEventListener('click', function () {
-                body.classList.toggle('dark-mode');
-                toggleButton.classList.toggle('dark');
-
-                // Update button icon based on mode
-                if (body.classList.contains('dark-mode')) {
-                  toggleButton.textContent = '🌞';  // Light mode icon
-                  localStorage.setItem('theme', 'dark');
-                } else {
-                  toggleButton.textContent = '🌙';  // Dark mode icon
-                  localStorage.setItem('theme', 'light');
-                }
-              });
-            </script>
-            <div class="">
+            // Update button icon based on mode
+            if (body.classList.contains('dark-mode')) {
+            toggleButton.textContent = '☀️';  // Light mode icon
+            localStorage.setItem('theme', 'dark');
+            } else {
+            toggleButton.textContent = '🌙';  // Dark mode icon
+            localStorage.setItem('theme', 'light');
+            }
+            });
+        </script>
+                    <div class="">
               <!-- Login Modal -->
               <div id="myModal" class="modal">
                 <div class="modal-content">
@@ -911,295 +896,6 @@
 
   <!-- <section id="blog" class="blog-area pt-120"> -->
   <div class="blogfull">
-    <!DOCTYPE html>
-    <html class="no-js" lang="en">
-
-    <head>
-      <meta charset="utf-8" />
-      <title>Home - FinVeda</title>
-      <meta name="description"
-        content="FinVeda is a dynamic financial literacy app that'll help you Learn finance with finesse." />
-      <meta name="author" content="Ayush Singh">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-      <link rel="shortcut icon" href="./assets/images/favicon2.png" type="image/png" />
-      <link rel="stylesheet" href="./assets/css/animate.css" />
-      <link rel="stylesheet" href="./assets/css/magnific-popup.css" />
-      <link rel="stylesheet" href="./assets/css/slick.css" />
-      <link rel="stylesheet" href="./assets/css/LineIcons.css" />
-      <link rel="stylesheet" href="./assets/css/font-awesome.min.css" />
-      <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
-      <link rel="stylesheet" href="./assets/css/default.css" />
-      <link rel="stylesheet" href="./assets/css/style.css" />
-      <link rel="stylesheet" href="./assets/css/quiz.css" />
-      <link rel="stylesheet" href="./assets/css/popup.css" />
-      <link rel="stylesheet" href="./assets/css/cookiepopup.css">
-      <link rel="stylesheet" href="./assets\css\preloader.css" />
-      <link rel="stylesheet" href="./assets/css/faq.css">
-      <link rel="stylesheet" href="./assets/css/index.css">
-      <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
-      <link rel="stylesheet" href="navbar.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-      <script type="text/javascript">
-        (function () {
-          // https://dashboard.emailjs.com/admin/account
-          emailjs.init({
-            publicKey: "o6kveYmOSDrs0l1Mg",
-          });
-        })();
-      </script>
-      <script>
-        // Scroll button functionality
-        const scrollToNextSection = () => {
-          window.scrollBy({
-            top: window.innerHeight,
-            behavior: 'smooth',
-          });
-        };
-      </script>
-      <style>
-        .scroll-btn {
-          position: fixed;
-          top: 100px;
-          right: 4px;
-          background-color: #635adc;
-          color: white;
-          border: none;
-          border-radius: 50%;
-          width: 40px;
-          height: 40px;
-          font-size: 24px;
-          cursor: pointer;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-          transition: background-color 0.3s;
-          display: flex;
-          z-index: 1000;
-          justify-content: center;
-          align-items: center;
-        }
-
-        .scroll-btn:hover {
-          background-color: #555;
-          /* Darker blue on hover */
-        }
-      </style>
-
-    <body>
-      <div id="progressBar"></div>
-      <button id="scrollBtn" class="scroll-btn" onclick="scrollToNextSection()">
-        <i class="lni-chevron-down"></i>
-      </button>
-
-      <div class="scrlUp" id="scrlUp"
-        onclick="scrollToTop()" 
-        style="position: fixed;  top: 400px; left: 40px; width: 50px; height: 50px; background-color: blue; color: white; border-radius: 50%; text-align: center; line-height: 50px; font-size: 24px; cursor: pointer; transition: transform 0.2s ease, background-color 0.3s ease;">
-        ↑
-      </div>
-
-      <script>
-        // Scroll to top function
-        function scrollToTop() {
-          window.scrollTo({ top: 0, behavior: 'smooth' }); // Scrolls smoothly to the top of the page
-        }
-        document.getElementById("scrlUp").onmouseover = function () {
-          this.style.backgroundColor = "#1E90FF"; // Lighter blue on hover
-        };
-        document.getElementById("scrlUp").onmouseout = function () {
-          this.style.backgroundColor = "blue"; // Back to original color
-        };
-      </script>
-
-
-      <script>
-        window.onscroll = function () {
-          var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-          var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-          var scrolled = (winScroll / height) * 100;
-          document.getElementById("progressBar").style.width = scrolled + "%";
-        };
-
-        let scrollToTopBtn = document.getElementById("scrlUp");
-
-        window.onscroll = function () {
-          if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-            scrollToTopBtn.style.display = "block";
-          } else {
-            scrollToTopBtn.style.display = "none";
-          }
-        };
-
-        scrollToTopBtn.onclick = function () {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        };
-
-
-      </script>
-      <div class="circle-container">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-      </div>
-      <header class="header-area">
-        <!-- <div class="navbar-area"> -->
-        <!-- <div class="container"> -->
-        <div class="row">
-
-          <!-- <div class="col-lg-12"> -->
-          <nav class="navbar navbar-expand-lg">
-            <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="toggler-icon"></span>
-                <span class="toggler-icon"></span>
-                <span class="toggler-icon"></span>
-              </button> -->
-            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-              <a href="./index.html">
-                <div class="icon1">
-                  <img src="./assets/images/icon.webp" alt="icon.png">
-                </div>
-              </a>
-
-              <ul id="nav" class="navbar-nav" style="margin:auto">
-
-                <li class="nav-item">
-                  <a class="page-scroll" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
-
-                </li>
-                <li class="nav-item">
-                  <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
-                </li>
-                <li class="nav-item">
-                  <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
-                </li>
-                <li class="nav-item">
-                  <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
-                </li>
-                <li class="nav-item">
-                  <a class="page-scroll" href="./quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
-                </li>
-                <li class="nav-item">
-                  <a class="page-scroll" href="./careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
-                </li>
-                <li class="nav-item">
-                  <a class="page-scroll" href="./ContactUs.html" style="color: rgb(237, 242, 244);">Contact Us 📞</a>
-                <li class="nav-item">
-                  <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
-                </li>
-
-
-                </li>
-
-                <li class="nav-item no-underline">
-                  <a class="main-btn navbar-btn"
-                    style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;"
-                    data-scroll-nav="0" href="./loginPage.html">Login/Register 💻</a>
-                </li>
-              </ul>
-              <button id="theme-toggle" class="theme-toggle">
-                🌙
-              </button>
-            </div>
-            <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
-              <span></span>
-            </div>
-          </nav>
-          <link href="./navbar.css" rel="stylesheet">
-          <script type="text/javascript" src="./navbar.js" defer></script>
-
-          <script>
-            const toggleButton = document.getElementById('theme-toggle');
-            const body = document.body;
-            const currentTheme = localStorage.getItem('theme');
-
-            if (currentTheme === 'dark') {
-              body.classList.add('dark-mode');
-              toggleButton.classList.add('dark');
-              toggleButton.textContent = '🌞';
-            }
-
-            toggleButton.addEventListener('click', function () {
-              body.classList.toggle('dark-mode');
-              toggleButton.classList.toggle('dark');
-
-              // Update button icon based on mode
-              if (body.classList.contains('dark-mode')) {
-                toggleButton.textContent = '🌞';  // Light mode icon
-                localStorage.setItem('theme', 'dark');
-              } else {
-                toggleButton.textContent = '🌙';  // Dark mode icon
-                localStorage.setItem('theme', 'light');
-              }
-            });
-          </script>
-
-        </div>
-  </div>
-  </div>
-  </div>
-
-
-
-  </div>
-  </header>
-
-  <!-- Cookie Consent Popup -->
-  <div id="cookieConsent" class="cookie-consent">
-    <h4>🍪Cookies Consent <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-        fill="#175394" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-        class="cookie-icon">
-        <circle cx="12" cy="12" r="10"></circle>
-        <path d="M12 8v4"></path>
-        <path d="M12 16h.01"></path>
-      </svg></h4>
-    <p>We use cookies to enhance your experience on FinVeda. By continuing to use our site, you agree to our use of
-      cookies. <br> <a href="blogs/privacy-policy.html" target="_blank">Learn more</a></p>
-    <div class="cookie-buttons">
-      <button id="acceptNecessaryCookies">Accept necessary cookies only</button>
-      <button id="acceptAllCookies">Accept all cookies</button>
-    </div>
-  </div>
-
-  </div>
-
-
-
   <section id="features" class="services-area pt-120">
     <div class="container">
       <div class="row justify-content-center">
