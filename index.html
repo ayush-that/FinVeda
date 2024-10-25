@@ -531,7 +531,6 @@
             const toggleButton = document.getElementById('theme-toggle');
             const body = document.body;
             const currentTheme = localStorage.getItem('theme');
-
             if (currentTheme === 'dark') {
             body.classList.add('dark-mode');
             toggleButton.classList.add('dark');
@@ -541,7 +540,6 @@
             toggleButton.addEventListener('click', function () {
             body.classList.toggle('dark-mode');
             toggleButton.classList.toggle('dark');
-
             // Update button icon based on mode
             if (body.classList.contains('dark-mode')) {
             toggleButton.textContent = '☀️';  // Light mode icon
@@ -2536,7 +2534,7 @@
         registerModal.querySelector(".close").addEventListener("click", closeModal);
         loginModal.querySelector(".close").addEventListener("click", closeModal);
       });
-      <!-- Footer Section -->
+      // <!-- Footer Section -->
       <footer style="background-color: #f8f9fa; padding: 20px 0; text-align: center;">
         <div class="container">
           <div class="row">
@@ -2575,6 +2573,12 @@
 
     <script src="visi.js"></script>
     <script src="../assets/js/index.js"></script>
+
+    <div class="gtranslate_wrapper"></div>
+    <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+
+    
   </body>
 
   </html>

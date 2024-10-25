@@ -401,26 +401,26 @@
                 const currentTheme = localStorage.getItem('theme');
 
                 if (currentTheme === 'dark') {
-                body.classList.add('dark-mode');
-                toggleButton.classList.add('dark');
-                toggleButton.textContent = '🌞';
+                  body.classList.add('dark-mode');
+                  toggleButton.classList.add('dark');
+                  toggleButton.textContent = '🌞';
                 }
 
                 toggleButton.addEventListener('click', function () {
-                body.classList.toggle('dark-mode');
-                toggleButton.classList.toggle('dark');
+                  body.classList.toggle('dark-mode');
+                  toggleButton.classList.toggle('dark');
 
-                // Update button icon based on mode
-                if (body.classList.contains('dark-mode')) {
-                  toggleButton.textContent = '🌞';  // Light mode icon
-                  localStorage.setItem('theme', 'dark');
-                } else {
-                  toggleButton.textContent = '🌙';  // Dark mode icon
-                  localStorage.setItem('theme', 'light');
-                }
+                  // Update button icon based on mode
+                  if (body.classList.contains('dark-mode')) {
+                    toggleButton.textContent = '🌞';  // Light mode icon
+                    localStorage.setItem('theme', 'dark');
+                  } else {
+                    toggleButton.textContent = '🌙';  // Dark mode icon
+                    localStorage.setItem('theme', 'light');
+                  }
                 });
               </script>
-              </div>
+          </div>
           <div class="">
             <!-- Login Modal -->
             <div id="myModal" class="modal">
@@ -869,19 +869,19 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-    
+
       margin: 20px auto 63px auto;
       border-radius: 1rem;
       width: 65vw;
       box-shadow: 0 5px 10px 12px rgba(255, 255, 255, 0.4);
     }
 
-    .roadmap h2{
+    .roadmap h2 {
       margin-bottom: 20px;
     }
 
     .roadmap-step {
-    
+
       background: #a5cff9;
       border: 1px solid #ddd;
       padding: 15px;
@@ -891,7 +891,7 @@
       width: 80%;
     }
 
-    .roadmap-step:hover{
+    .roadmap-step:hover {
       background: #d4d4d4;
     }
 
@@ -1285,8 +1285,6 @@
             </ul>
         </div>
     </div>
-
-
 </div>
 </div>
 <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center">
@@ -1308,7 +1306,6 @@
             reserved<br />
             Made with ♥ in India
           </p>
-
         </div>
       </div>
     </div>
