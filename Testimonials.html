@@ -13,30 +13,53 @@
             font-family: 'Arial', sans-serif;
         }
 
+        :root {
+            --primary-blue: #1e3d59;
+            --secondary-blue: #2c5282;
+            --primary-orange: #ff6b6b;
+            --secondary-orange: #ff8c42;
+            --light-bg: #f7fafc;
+        }
+
         body {
-            background: #f5f7ff;
+            background: var(--light-bg);
+            color: var(--primary-blue);
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 3rem 2rem;
         }
 
         .header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary-orange);
+            border-radius: 2px;
         }
 
         .header h1 {
-            color: #1a237e;
-            font-size: 2.5rem;
+            color: var(--primary-blue);
+            font-size: 2.8rem;
             margin-bottom: 1rem;
+            font-weight: 700;
         }
 
         .header p {
-            color: #666;
-            font-size: 1.1rem;
+            color: var(--secondary-blue);
+            font-size: 1.2rem;
         }
 
         .testimonials-carousel {
@@ -51,33 +74,39 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .testimonial-card {
             background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            margin: 1rem;
-            max-width: 800px;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
             margin: 0 auto;
+            max-width: 800px;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
         }
 
         .user-profile {
             display: flex;
             align-items: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.8rem;
         }
 
         .user-avatar {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
-            background: #e0e0e0;
-            margin-right: 1rem;
+            background: var(--light-bg);
+            margin-right: 1.5rem;
             overflow: hidden;
+            border: 3px solid var(--primary-orange);
         }
 
         .user-avatar img {
@@ -87,149 +116,254 @@
         }
 
         .user-info h3 {
-            color: #1a237e;
-            margin-bottom: 0.25rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.4rem;
+            font-size: 1.3rem;
         }
 
         .user-info p {
-            color: #666;
-            font-size: 0.9rem;
+            color: var(--secondary-orange);
+            font-size: 0.95rem;
+            font-weight: 500;
         }
 
         .star-rating {
-            color: #ffd700;
-            margin-bottom: 1rem;
+            color: var(--secondary-orange);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
         }
 
         .testimonial-content {
-            color: #333;
-            font-size: 1.1rem;
-            line-height: 1.6;
+            color: #4a5568;
+            font-size: 1.15rem;
+            line-height: 1.7;
             margin-bottom: 1.5rem;
+            font-style: italic;
         }
 
         .carousel-controls {
             display: flex;
             justify-content: center;
             gap: 1rem;
-            margin-top: 2rem;
+            margin-top: 2.5rem;
         }
 
         .carousel-btn {
-            background: #1a237e;
+            background: var(--primary-blue);
             color: white;
             border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
+            padding: 0.8rem 1.8rem;
+            border-radius: 25px;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 0.95rem;
         }
 
         .carousel-btn:hover {
-            background: #283593;
+            background: var(--primary-orange);
+            transform: translateY(-2px);
         }
 
         .comments-section {
-            margin-top: 3rem;
+            margin-top: 4rem;
             background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
         }
 
-        .comment-form {
-            margin-bottom: 2rem;
+        .comments-section h2 {
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
         }
 
         .comment-form textarea {
             width: 100%;
-            padding: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 8px;
+            padding: 1.2rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
             margin-bottom: 1rem;
             resize: vertical;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .comment-form textarea:focus {
+            outline: none;
+            border-color: var(--secondary-orange);
         }
 
         .comment-form button {
-            background: #1a237e;
+            background: var(--primary-orange);
             color: white;
             border: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
+            padding: 1rem 2rem;
+            border-radius: 25px;
             cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .comment-form button:hover {
+            background: var(--secondary-orange);
+            transform: translateY(-2px);
         }
 
         .comments-list {
             max-height: 400px;
             overflow-y: auto;
+            padding: 1rem;
         }
 
         .comment {
-            padding: 1rem;
-            border-bottom: 1px solid #eee;
+            padding: 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+            transition: background-color 0.3s ease;
+        }
+
+        .comment:hover {
+            background-color: var(--light-bg);
         }
 
         .reactions {
             display: flex;
-            gap: 1rem;
-            margin-top: 0.5rem;
+            gap: 1.5rem;
+            margin-top: 1rem;
         }
 
         .reaction-btn {
             background: none;
             border: none;
             cursor: pointer;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             display: flex;
             align-items: center;
-            gap: 0.25rem;
+            gap: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .reaction-btn:hover {
+            transform: scale(1.1);
         }
 
         .cta-section {
             text-align: center;
-            margin-top: 3rem;
-            padding: 2rem;
-            background: #1a237e;
-            border-radius: 15px;
+            margin-top: 4rem;
+            padding: 3rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            border-radius: 20px;
             color: white;
         }
 
         .cta-section h2 {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .cta-section p {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            opacity: 0.9;
         }
 
         .cta-btn {
             display: inline-block;
-            background: white;
-            color: #1a237e;
-            padding: 1rem 2rem;
-            border-radius: 25px;
+            background: var(--primary-orange);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
-            transition: transform 0.3s;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
         }
 
         .cta-btn:hover {
-            transform: scale(1.05);
+            background: var(--secondary-orange);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
         @media (max-width: 768px) {
             .container {
-                padding: 1rem;
+                padding: 1.5rem;
             }
 
             .header h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
 
             .testimonial-card {
                 margin: 0.5rem;
-                padding: 1.5rem;
+                padding: 1.8rem;
             }
+
+            .cta-section {
+                padding: 2rem;
+            }
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        :root {
+            --primary-blue: #1e3d59;
+            --secondary-blue: #2c5282;
+            --primary-orange: #ff6b6b;
+            --secondary-orange: #ff8c42;
+            --light-bg: #f7fafc;
+        }
+
+        .home-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: var(--primary-blue);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .home-button:hover {
+            background: var(--primary-orange);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .home-button i {
+            font-size: 1.1rem;
+        }
+
+        body {
+            background: var(--light-bg);
+            color: var(--primary-blue);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
         }
     </style>
 </head>
 <body>
+    <a href="index.html" class="home-button">
+        <i class="fas fa-home"></i>
+        Home
+    </a>
     <div class="container">
         <div class="header">
             <h1>What Our Users Say About Finveda</h1>
@@ -241,7 +375,7 @@
                 <div class="testimonial-card">
                     <div class="user-profile">
                         <div class="user-avatar">
-                            <img src="/api/placeholder/60/60" alt="Sarah Johnson">
+                            <img src="/api/placeholder/70/70" alt="Sarah Johnson">
                         </div>
                         <div class="user-info">
                             <h3>Sarah Johnson</h3>
@@ -261,7 +395,7 @@
                 <div class="testimonial-card">
                     <div class="user-profile">
                         <div class="user-avatar">
-                            <img src="/api/placeholder/60/60" alt="Michael Chen">
+                            <img src="/api/placeholder/70/70" alt="Michael Chen">
                         </div>
                         <div class="user-info">
                             <h3>Michael Chen</h3>
@@ -281,7 +415,7 @@
                 <div class="testimonial-card">
                     <div class="user-profile">
                         <div class="user-avatar">
-                            <img src="/api/placeholder/60/60" alt="Emma Williams">
+                            <img src="/api/placeholder/70/70" alt="Emma Williams">
                         </div>
                         <div class="user-info">
                             <h3>Emma Williams</h3>
@@ -296,63 +430,7 @@
                     </p>
                 </div>
             </div>
-            <div class="testimonial-slide">
-                <div class="testimonial-card">
-                    <div class="user-profile">
-                        <div class="user-avatar">
-                            <img src="/api/placeholder/60/60" alt="Emma Williams">
-                        </div>
-                        <div class="user-info">
-                            <h3>Jack Jee</h3>
-                            <p>Share Holder amazing results from the team.</p>
-                        </div>
-                    </div>
-                    <div class="star-rating">
-                        ★★★★½
-                    </div>
-                    <p class="testimonial-content">
-                        "As a beginner in crypto, Finveda's user-friendly interface and comprehensive tutorials made it easy for me to get started. Their customer support is exceptional!"
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-slide">
-                <div class="testimonial-card">
-                    <div class="user-profile">
-                        <div class="user-avatar">
-                            <img src="/api/placeholder/60/60" alt="Emma Williams">
-                        </div>
-                        <div class="user-info">
-                            <h3>Shan Yung</h3>
-                            <p>Amazing Services offered by the company</p>
-                        </div>
-                    </div>
-                    <div class="star-rating">
-                        ★★★★½
-                    </div>
-                    <p class="testimonial-content">
-                        "As a beginner in crypto, Finveda's user-friendly interface and comprehensive tutorials made it easy for me to get started. Their customer support is exceptional!"
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-slide">
-                <div class="testimonial-card">
-                    <div class="user-profile">
-                        <div class="user-avatar">
-                            <img src="/api/placeholder/60/60" alt="Emma Williams">
-                        </div>
-                        <div class="user-info">
-                            <h3>Amy Alice</h3>
-                            <p>Retail Investor | 4 year with Finveda</p>
-                        </div>
-                    </div>
-                    <div class="star-rating">
-                        ★★★★½
-                    </div>
-                    <p class="testimonial-content">
-                        "As a beginner in crypto, Finveda's user-friendly interface and comprehensive tutorials made it easy for me to get started. Their customer support is exceptional!"
-                    </p>
-                </div>
-            </div>
+
             <div class="carousel-controls">
                 <button class="carousel-btn" onclick="previousSlide()">Previous</button>
                 <button class="carousel-btn" onclick="nextSlide()">Next</button>
@@ -381,7 +459,6 @@
         let currentSlide = 0;
         const slides = document.getElementsByClassName('testimonial-slide');
 
-        // Initialize the carousel
         function showSlides() {
             for (let i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
@@ -399,7 +476,6 @@
             showSlides();
         }
 
-        // Initialize comment system
         function addComment() {
             const commentText = document.querySelector('.comment-form textarea').value;
             if (commentText.trim() === '') return;
@@ -434,9 +510,8 @@
             countSpan.textContent = count + 1;
         }
 
-        // Auto-start the carousel
         showSlides();
-        setInterval(nextSlide, 5000); // Change slides every 5 seconds
+        setInterval(nextSlide, 5000);
     </script>
 </body>
 </html>
