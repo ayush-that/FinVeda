@@ -385,12 +385,14 @@
                     <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
                   </li>
                   <li class="nav-item no-underline">
-                    <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
+                    <a class="main-btn navbar-btn"
+                      style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;"
+                      data-scroll-nav="0" href="./loginPage.html">Login/Register 💻</a>
                   </li>
                   <li class="nav-item no-underline">
-                  <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
-                    🌙
-                  </button>
+                    <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
+                      🌙
+                    </button>
                   </li>
                 </ul>
               </div>
@@ -741,7 +743,7 @@
 
     <main>
       <section class="roadmap">
-        <h2>Career Roadmap</h2>
+        <h2>Career Roadmap 🛣️</h2>
         <div class="roadmap-step">
           <div class="roadmap-title">Step 1: Pursue a Relevant Degree</div>
           <p>Consider obtaining a degree in finance, accounting, economics, or business administration.</p>
@@ -801,7 +803,7 @@
       align-items: center;
       margin: 20px;
       padding: 20px;
-      background: #ffffff;
+      background: linear-gradient(145deg, #f0f4ff, #ffffff);
       border-radius: 8px;
 
       box-shadow: 0 2px 16px 10px rgba(255, 255, 255, 0.4);
@@ -819,12 +821,14 @@
     .books-list li {
 
       background: #a5cff9;
-      border-radius: 5px;
+      border-radius: 30px;
       margin: 10px 0;
-      padding: 15px;
+      padding: 20px;
       display: flex;
       align-items: center;
-      transition: background 0.3s;
+      transition: transform 0.3s, background 0.3s;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      position: relative;
     }
 
     li {
@@ -834,12 +838,40 @@
     }
 
     .books-list li:hover {
-      background: #d4d4d4;
+      background: #69adf2;
+      transform: translateY(-5px);
     }
 
     .emoji {
       font-size: 1.5em;
+      margin-right: 15px;
+      animation: pop 0.6s ease-in-out forwards;
       /* Adjust the size of the emoji */
+    }
+
+    /* Pop Animation */
+    @keyframes pop {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .book-item {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .emoji {
+        margin-bottom: 10px;
+      }
     }
 
     body {
@@ -874,6 +906,8 @@
       border-radius: 1rem;
       width: 65vw;
       box-shadow: 0 5px 10px 12px rgba(255, 255, 255, 0.4);
+      background: linear-gradient(145deg, #ffffff, #f0f4ff);
+      overflow: hidden;
     }
 
     .roadmap h2 {
@@ -882,17 +916,20 @@
 
     .roadmap-step {
 
-      background: #a5cff9;
-      border: 1px solid #ddd;
-      padding: 15px;
-      border-radius: 5px;
+      background: white;
+      border: 1px solid #e0e4f1;
+      padding: 20px;
+      border-radius: 30px;
       margin: 10px 0;
       position: relative;
-      width: 80%;
+      width: 85%;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
 
     .roadmap-step:hover {
-      background: #d4d4d4;
+      transform: translateY(-5px) scale(1.02);
+      background: linear-gradient(135deg, #d3e0ff, #b8d6f7);
     }
 
     .roadmap-step::before {
@@ -901,8 +938,10 @@
       left: 50%;
       top: 89px;
       transform: translateX(-50%);
-      border: 10px solid transparent;
-      border-bottom-color: #007bff;
+      border: 15px solid transparent;
+      border-bottom-color: #0056b3;
+      opacity: 0.5;
+      transition: opacity 0.3s ease;
     }
 
     .roadmap-step:last-child::before {
@@ -913,6 +952,47 @@
     .roadmap-title {
       font-size: 1.5em;
       color: #007bff;
+      margin-left: 20px;
+    }
+
+    .roadmap-step>p {
+      margin-left: 20px;
+    }
+
+    /* Animated Icons */
+    .roadmap-icon {
+      font-size: 2.5em;
+      margin-right: 15px;
+      animation: pop 0.6s ease-in-out forwards;
+    }
+
+    /* Keyframe Animation */
+    @keyframes pop {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .roadmap-step {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .roadmap-title {
+        margin-left: 0;
+      }
+
+      .roadmap-icon {
+        margin-bottom: 10px;
+      }
     }
 
     /* footer {
@@ -966,6 +1046,11 @@
 
     .jobs-table th {
       background: #f76b45;
+      color: white;
+    }
+
+    .jobs-table th:hover {
+      background: #f05d34;
       color: white;
     }
 
