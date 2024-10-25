@@ -132,6 +132,7 @@ body {
     transition: width 0.3s ease;
 }
 
+/* Default (light mode) styles */
 .faq-item {
     margin: 20px 0;
     padding: 10px;
@@ -142,17 +143,28 @@ body {
 }
 
 .faq-item:hover {
-    border-color: blue;
+    border-color: #0000ff;
 }
 
 .faq-item.read {
     background-color: #f0f8ff;
 }
 
-/* Accordion Section */
-.accordion {
-    width: 100%;
-    margin: 0 auto;
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+    .faq-item {
+        border-color: #0000ff; /* Darker border for dark mode */
+        background-color: #eee7e7; /* Darker background for dark mode */
+        color: #080808; /* Light text color for dark mode */
+    }
+
+    .faq-item:hover {
+        border-color: lightblue; /* Light blue on hover for dark mode */
+    }
+
+    .faq-item.read {
+        background-color: #444; /* Slightly lighter background for read items in dark mode */
+    }
 }
 
 .accordion-button {
