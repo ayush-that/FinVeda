@@ -63,10 +63,19 @@ FinVeda is a dynamic financial literacy app that'll help you Learn finance with 
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
+<!-- Added Hacktoberfest 2024 and GSSoc Extended 2024 banners -->
+### This project is now OFFICIALLY accepted for
 
-### 💵 How to Contribute
+<div align="center">
+  <img src="https://github.com/neeru24/Connect_icons/blob/main/hacktober.png" alt="Hacktoberfest 2024" width="80%">
+</div>
+<br>
+
+
 
    ![image](https://github.com/user-attachments/assets/5263dc32-ce09-4835-b964-7f996e970eb5)
+
+### 💵 How to Contribute
 
    #### 1. Fork the repository to your GitHub account.
    #### 2. Clone the forked repository to your local machine.
@@ -99,12 +108,38 @@ FinVeda is a dynamic financial literacy app that'll help you Learn finance with 
     <img src="https://api.vaunt.dev/v1/github/entities/ayush-that/repositories/FinVeda/contributors?format=svg&limit=54" width="700" height="250" />
 </p>
 
+<p align="center">
+    <img src="https://api.vaunt.dev/v1/github/entities/ayush-that/repositories/FinVeda/contributors?format=svg&limit=54" width="700" height="250" />
+</p>
+
+<a href="https://github.com/ayush-that/FinVeda/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ayush-that/FinVeda" />
+</a>
+
 #### A Big Thank You to Our Contributors! 🎉👏
 
-We want to extend our heartfelt gratitude to all the amazing contributors who have dedicated their time and effort to make FinVeda a success! Your hard work and commitment to excellence are what drive this project forward. Together, we are building something great! 
-Thank you for being a part of our community! ❤️✨
+We want to extend our heartfelt gratitude to all the amazing contributors who have dedicated their time and effort to make FinVeda a success! Your hard work and commitment to excellence are what drive this project forward. Together, we are building something great! Thank you for being a part of our community! ❤️✨
+
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+## 💗 Stargazers
+
+<div align='left'>
+
+[![Stargazers repo roster for @ayush-that/FinVeda](https://reporoster.com/stars/ayush-that/FinVeda)](https://github.com/ayush-that/FinVeda/stargazers)
+
+</div>
+
+## 💗 Forkers
+
+[![Forkers repo roster for @ayush-that/FinVeda](https://reporoster.com/forks/ayush-that/FinVeda)](https://github.com/ayush-that/FinVeda/network/members)
+
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+
+
 
 ### 🛠️ Troubleshooting
 

@@ -18,11 +18,57 @@
     <link rel="stylesheet"  href="./assets/css/style.css" />
     <link rel="stylesheet"  href="./assets/css/quiz.css" />
     <link rel="stylesheet"  href="./assets/css/popup.css" />
+    <link rel="stylesheet" href="./assets/css/cookiepopup.css">
     <link rel="stylesheet"  href="./assets/css/about.css"/>
     <link rel="stylesheet"  href="./assets/css/preloader.css"/>
+    <link rel="stylesheet" type="text/css" href="sipcalculatorCss.css">
     <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <link rel="stylesheet"  href="./assets/css/about(inlines).css" />
     <link rel="stylesheet" href="navbar.css">
+
+    <style>
+      #progressBar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 8px;
+        background-color: #f76b45;
+        z-index: 9999;
+  
+      }
+  
+      * {
+        cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
+      }
+  
+  
+      .circle {
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        pointer-events: none;
+        background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
+        transition: transform 0.1s, left 0.1s, top 0.1s;
+      }
+  
+      .circle-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 9999;
+      }
+  
+      @media (max-width: 720px) {
+        .circle-container {
+          display: none;
+        }
+      }
+</style>  
         
 </head>
 
@@ -107,11 +153,11 @@
                   <span class="toggler-icon"></span>
                 </button> -->
                 <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
-                  <a href="./index.html">
                   <div class="icon1">
+                    <a href="./index.html">
                     <img src="assets/images/icon.webp" alt="icon.png">
+                    </a>
                   </div> 
-                  </a>
                   <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
                     <li class="nav-item">
                       <a class="page-scroll" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
@@ -137,41 +183,43 @@
                     <li class="nav-item">
                       <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                       <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
                     </li>
                     <li class="nav-item no-underline">
                       <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
                     </li>
+                    <li class="nav-item no-underline">
+                    <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
+                      🌙
+                    </button>
+                    </li>
                   </ul>
-                  <button id="theme-toggle" class="theme-toggle">
-                    🌙
-                  </button>
                 </div>
                 <script>
                   const toggleButton = document.getElementById('theme-toggle');
                   const body = document.body;
                   const currentTheme = localStorage.getItem('theme');
   
-              if (currentTheme === 'dark') {
-              body.classList.add('dark-mode');
-              toggleButton.classList.add('dark');
-              toggleButton.textContent = '🌞';
-              }
-              
-              toggleButton.addEventListener('click', function () {
-              body.classList.toggle('dark-mode');
-              toggleButton.classList.toggle('dark');
-              
-              // Update button icon based on mode
-              if (body.classList.contains('dark-mode')) {
-                toggleButton.textContent = '🌞';  // Light mode icon
-                localStorage.setItem('theme', 'dark');
-              } else {
-                toggleButton.textContent = '🌙';  // Dark mode icon
-                localStorage.setItem('theme', 'light');
-              }
-              });
+                  if (currentTheme === 'dark') {
+                  body.classList.add('dark-mode');
+                  toggleButton.classList.add('dark');
+                  toggleButton.textContent = '🌞';
+                  }
+                  
+                  toggleButton.addEventListener('click', function () {
+                  body.classList.toggle('dark-mode');
+                  toggleButton.classList.toggle('dark');
+                  
+                  // Update button icon based on mode
+                  if (body.classList.contains('dark-mode')) {
+                    toggleButton.textContent = '🌞';  // Light mode icon
+                    localStorage.setItem('theme', 'dark');
+                  } else {
+                    toggleButton.textContent = '🌙';  // Dark mode icon
+                    localStorage.setItem('theme', 'light');
+                  }
+                  });
               </script>
                 <div class="">
 
@@ -435,72 +483,169 @@ registerCloseButton.addEventListener("click", function() {
           <div id="particles-1" class="particles"></div>
         </div> -->
       </header>
-      <div class="blog-content">
+           <div class="about-section" style="padding: 50px;">
         <br><br><br><br>
-        <p></p> 
-                <div class="card">
-                  <h2>About Us</h2>
-                  <div class="row-card">
-                    <div class="col-md-4">
-                      <div class="main">
-                        <div class="service">
-                          <div class="service-logo">
-                            <img src="./assets/images/service-logo.webp" alt="">
-                          </div>
-                          <h4>Financial Kit</h4>
-                          <p>We offer expert written blogs on investment tips and strategies, and current economic trends, all crafted to keep you well-informed. With our SIP and PPF tools you'll discover power of compounding and make informed decisions regarding your savings.
-                            <br>
-                          </p>
+        <p></p>
+        <div class="about-card" style="padding: 50px;">
+            <h2>ABOUT US</h2>
+            <div class="card-row">
+                <div class="card-column">
+                    <div class="service-card" >
+                        <div class="service-content" style="padding: 30px;">
+                            <div class="service-logo">
+                                <img src="./assets/images/service-logo.webp" alt="">
+                            </div>
+                            <h4>Financial Kit</h4>
+                            <p>We offer expert-written blogs on investment tips and strategies, and current economic trends, all crafted to keep you well-informed. With our SIP and PPF tools, you'll discover the power of compounding and make informed decisions regarding your savings.<br></p>
                         </div>
-        
-                        <div class="shadow1"></div>
-                        <div class="shadow2"></div>
-
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="main">
-            <div class="service">
-              <div class="service-logo">
-                <img src="./assets/images/service-logo3.webp" alt="">
-              </div>
-              <h4>Stock Market</h4>
-              <p>You will make smarter decisions by staying updated to the current market happenings in real time with
-                our Stock Market API's results. FinVeda's Personalised AI assistant Arth Sathi revolutionizes financial
-                concepts, providing a dyanmic learning experiences.</p>
+    
+                        <div class="card-shadow1"></div>
+                        <div class="card-shadow2"></div>
+                    </div>
+                </div>
+    
+                <div class="card-column">
+                    <div class="service-card">
+                        <div class="service-content" style="padding: 30px;">
+                            <div class="service-logo">
+                                <img src="./assets/images/service-logo3.webp" alt="">
+                            </div>
+                            <h4>Stock Market</h4>
+                            <p>You will make smarter decisions by staying updated on the current market happenings in real-time with our Stock Market API's results. FinVeda's personalized AI assistant, Arth Sathi, revolutionizes financial concepts, providing dynamic learning experiences.</p>
+                        </div>
+    
+                        <div class="card-shadow1"></div>
+                        <div class="card-shadow2"></div>
+                    </div>
+                </div>
+    
+                <div class="card-column">
+                    <div class="service-card">
+                        <div class="service-content" style="padding: 30px;">
+                            <div class="service-logo">
+                                <img src="./assets/images/service-logo2.webp" alt="">
+                            </div>
+                            <h4>Our Team</h4>
+                            <p>We at FinVeda aim to make you a stock market guru easily with our AI-powered teaching and financial blogs. FinVeda blogs redefine the conventional narrative and are crafted to resonate with readers of all financial backgrounds, making complex concepts digestible.</p>
+                        </div>
+    
+                        <div class="card-shadow1"></div>
+                        <div class="card-shadow2"></div>
+                    </div>
+                </div>
             </div>
-
-            <div class="shadow1"></div>
-            <div class="shadow2"></div>
-
-          </div>
         </div>
-        <div class="col-md-4">
-          <div class="main">
-            <div class="service">
-              <div class="service-logo">
-                <img src="./assets/images/service-logo2.webp" alt="">
-              </div>
-              <h4>Our Team</h4>
-              <p>We at FinVeda aim to make you a stock market Guru easy with our AI powered teaching and financial
-                blogs. FinVeda blogs redefine the conventional narrative and are crafted to resonate with readers of all
-                financial backgrounds, making complex concepts digestible.</p>
-            </div>
-
-            <div class="shadow1"></div>
-            <div class="shadow2"></div>
-
-          </div>
-        </div>
-
-      </div>
     </div>
-  </div>
+    
+<style>
+  /* General about-section styling */
+.about-section {
+  padding: 40px 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: #e9f1f5; /* Soft eye-comfort background color */
+}
+
+/* About card styling */
+.about-card {
+  border: 5px solid rgb(55, 166, 70);
+  background: linear-gradient(135deg, #4b6cb7, #182848);
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #ffffff; /* White background for the card */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Center the heading */
+.about-card h2 {
+  text-align: center; /* Center the main heading */
+  color: #fcfdff; /* Dark color for contrast */
+  margin-top: 10px;
+  margin-bottom: 40px;
+  font-size:40px;
+  font-weight: bolder;
+}
+
+/* Row of cards */
+.card-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Each card column */
+.card-column {
+  flex: 1;
+  max-width: 30%; /* Ensures cards are equally spaced */
+}
+
+/* Service card styling */
+.service-card {
+  border: 2px solid white;
+  background: linear-gradient(135deg, #e68bf8 0%, #5c8da8 100%); /* Gradient background */
+  padding: 20px;
+  border-radius: 12px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Hover effects for service cards */
+.service-card:hover {
+  transform: translateY(-5px); /* Slight lift effect */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Service logo styling */
+.service-logo img {
+  width: 80%; /* Set image width to 80% */
+  margin: 0 auto; /* Center the image */
+  display: block; /* Display as block to center */
+}
+
+/* Headings styling */
+h4 {
+  margin-top: 10px;
+  font-size: 1.5rem;
+  text-align: center; /* Center subheadings */
+  color: #f7eeee; /* Dark text color for better readability */
+}
+
+/* Paragraph styling */
+p {
+  margin-top: 10px;
+  color: #f0ebeb; /* Softer text color */
+  line-height: 1.5;
+  text-align: center; /* Center paragraph text */
+}
+
+/* Shadows inside the cards */
+.card-shadow1, .card-shadow2 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.1; /* Slight transparency */
+}
+
+.card-shadow1 {
+  width: 250px;
+  height: 250px;
+  background: rgba(255, 255, 255, 0.2);
+  top: -50px;
+  left: -50px;
+}
+
+.card-shadow2 {
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.2);
+  bottom: -50px;
+  right: -50px;
+}
+
+</style>
   <div class="blog-content back">
     <div class="good-card">
       <div class="good-card1">
-        <div class="white-card">
+        <div class="white-card" style="padding: 30px;">
           Wanna learn how to grow your money to become rich? We have made becoming a stock market Guru easy with our AI
           powered finance advisor - Arth Sathi 🤵🏻
 
@@ -517,7 +662,7 @@ registerCloseButton.addEventListener("click", function() {
         <div class="round2">
 
         </div>
-        <div class="white-card">
+        <div class="white-card" style="padding: 30px;">
           FinVeda trends fetches live market figures, ensuring users access the most up-to-date information instantly.
           Be it stock prices, currency rates, or commodity values.
         </div>
@@ -527,7 +672,7 @@ registerCloseButton.addEventListener("click", function() {
         <div class="shadow"></div>
       </div>
       <div class="good-card3">
-        <div class="white-card">
+        <div class="white-card" style="padding: 30px;">
           FinVeda tools provide a range of calculators like Mutual Fund Investment tool,EMI calculator, Insurance
           calculator, Savings Goods etc which would make your life easy
         </div>
@@ -538,17 +683,118 @@ registerCloseButton.addEventListener("click", function() {
       </div>
     </div>
 
+  <img style="position: absolute; top: 500px; left:-120px; mix-blend-mode: multiply;" src="./assets/images/contributors.jpeg" alt="photo">
   </div>
   <section class="contributors">
     <h2>Our Contributors</h2>
-    <div class="contributor-cards" id="contributor-cards">
-      <!-- Contributor cards will be inserted here -->
-    </div>
-    <div class="pagination" id="pagination">
-      <!-- Pagination buttons will be inserted here -->
-    </div>
-  </section>
+    <div class="contributor-cards" id="contributor-cards"></div>
+    <div class="pagination" id="pagination"></div>
+</section>
 
+
+  <style>
+    
+
+  /* Parent element styling */
+.contributors {
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contributors h2 {
+    font-weight: bolder;
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Contributor cards container */
+.contributor-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+/* Individual card styling */
+.contributor-member {
+    background: #c6caeb;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+.contributor-member:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    background: #fffaf0;
+}
+
+.contributor-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.contributor-member h3 {
+    font-size: 1.3rem;
+    margin: 10px 0;
+    color: #333;
+}
+
+.contributor-member p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.contributor-member button {
+    background-color: #737ba5;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contributor-member button:hover {
+    background-color: #c6caeb;
+    color: black;
+}
+
+.pagination {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.pagination button {
+    background-color: #151414;
+    border: 2px solid #8ec5fc;
+    color: #b5b6b7;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination button:hover {
+    background-color: #8ec5fc;
+    color: #ffffff;
+}
+
+
+</style>
  <!-- Timed popup that will appear after succesful submission of feebback form! -->
  <button class="notification" id="successnotification" style="display:none;">
   <span class="message" id="successmsg">Submitted successfully!</span>
@@ -603,12 +849,12 @@ registerCloseButton.addEventListener("click", function() {
                     <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
                     <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
                     <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
-                    <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+                    
                 </ul>
             </div>
-            <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+            <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s"> 
                 <div class="footer-title">
-                    <h4 class="title custom-margin">Resources</h4>
+                    <h4 class="title custom-margin" style="margin-top: 0px;">Resources</h4>
                 </div>
                 <ul class="link custom-margin">
                     <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
@@ -624,18 +870,19 @@ registerCloseButton.addEventListener("click", function() {
     <div class="col-lg-3 col-md-5 col-sm-5">
         <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
             <div class="footer-title">
-                <h4 class="title custom-margin">Contact Us</h4>
+                <h4 class="title custom-margin" style=" text-align: left;  ">Contact Us</h4>
             </div>
             <ul class="contact custom-margin-big" style="justify-content: space-around;">
-                <li class="d-sm-flex justify-content-center">
-                    <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                    <p style="width: 80%;">
-                        <a href="mailto:ayush1337@hotmail.com" target="_blank"
-                           style="color: white; text-decoration: underline;">
-                            ayush1337@hotmail.com
-                        </a>
-                    </p>
-                </li>
+                
+              <li class="d-sm-flex justify-content-center">
+                  <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                  <div style="width: 80%;">
+                      <a href="mailto:ayush1337@hotmail.com" target="_blank"
+                      style="color: white; text-decoration: underline;">
+                       ayush1337@hotmail.com
+                   </a>
+                  </div>
+
                 <li class="d-sm-flex justify-content-center">
                     <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
                     <div style="width: 80%;">
@@ -682,7 +929,7 @@ registerCloseButton.addEventListener("click", function() {
       >
         <div class="copyright-content" style="text-align: center">
           <p class="text" style="text-align: center">
-            © <span id="copyright-year"></span> FinVeda. All rights are
+            © <span id="copyright-year">2024</span> FinVeda. All rights are
             reserved<br />
             Made with ♥ in India
           </p>
@@ -707,97 +954,115 @@ registerCloseButton.addEventListener("click", function() {
   <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center;">
       <p>&copy; 2024 FinVeda. All Rights Reserved.</p>
   </div> -->
-        <script>
-          // Function for the contributors section
-          const owner = 'ayush-that';
-          const repo = 'FinVeda';
-          const contributorsPerPage = 8;
-          let contributors = [];
-          let currentPage = 1;
-    
-          async function fetchContributors() {
-            const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/contributors`);
+  <script>
+    // Function for the contributors section
+    const owner = 'ayush-that';
+    const repo = 'FinVeda';
+    const contributorsPerPage = 8;
+    let contributors = [];
+    let currentPage = 1;
+
+    async function fetchContributors() {
+        let page = 1;
+        const allContributors = [];
+
+        while (true) {
+            const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/contributors?page=${page}&per_page=100`);
             if (!response.ok) {
-              console.error('Failed to fetch contributors:', response.statusText);
-              return;
+                console.error('Failed to fetch contributors:', response.statusText);
+                return;
             }
-            contributors = await response.json();
-            displayContributors();
-            createPaginationButtons();
-          }
-    
-          function displayContributors() {
-            const container = document.getElementById('contributor-cards');
-            container.innerHTML = '';
-            const start = (currentPage - 1) * contributorsPerPage;
-            const end = start + contributorsPerPage;
-            const currentContributors = contributors.slice(start, end);
-    
-            currentContributors.forEach(contributor => {
-              const card = document.createElement('div');
-              card.className = 'contributor-member';
-              card.setAttribute('data-tilt', '');
-    
-              const img = document.createElement('img');
-              img.src = contributor.avatar_url;
-              img.alt = contributor.login;
-    
-              const name = document.createElement('h3');
-              name.textContent = contributor.login;
-    
-              const contributions = document.createElement('p');
-              contributions.textContent = `${contributor.contributions} contributions`;
-    
-              const viewProfileButton = document.createElement("button");
-              viewProfileButton.textContent = "View Profile";
-              viewProfileButton.addEventListener("click", () => {
+            const contributorsPage = await response.json();
+            if (contributorsPage.length === 0) break; // Exit if no more contributors
+            allContributors.push(...contributorsPage);
+            page++;
+        }
+
+        contributors = allContributors;
+        displayContributors();
+        createPaginationButtons();
+    }
+
+    function displayContributors() {
+        const container = document.getElementById('contributor-cards');
+        container.innerHTML = '';
+        const start = (currentPage - 1) * contributorsPerPage;
+        const end = start + contributorsPerPage;
+        const currentContributors = contributors.slice(start, end);
+
+        currentContributors.forEach(contributor => {
+            const card = document.createElement('div');
+            card.className = 'contributor-member';
+            card.setAttribute('data-tilt', '');
+
+            const img = document.createElement('img');
+            img.src = contributor.avatar_url;
+            img.alt = contributor.login;
+
+            const name = document.createElement('h3');
+            name.textContent = contributor.login;
+
+            const contributions = document.createElement('p');
+            contributions.textContent = `${contributor.contributions} contributions`;
+
+            const viewProfileButton = document.createElement("button");
+            viewProfileButton.textContent = "View Profile";
+            viewProfileButton.addEventListener("click", () => {
                 window.open(contributor.html_url, "_blank");
-              });
-    
-              card.appendChild(img);
-              card.appendChild(name);
-              card.appendChild(contributions);
-              container.appendChild(card);
-              card.appendChild(viewProfileButton);
             });
-          }
-    
-          function createPaginationButtons() {
-            const paginationContainer = document.getElementById('pagination');
-            paginationContainer.innerHTML = '';
-            const totalPages = Math.ceil(contributors.length / contributorsPerPage);
-    
-            for (let i = 1; i <= totalPages; i++) {
-              const button = document.createElement('button');
-              button.textContent = i;
-              button.classList.add('pagination-button');
-              if (i === currentPage) {
-                button.classList.add('active');
-              }
-              button.addEventListener('click', () => {
-                currentPage = i;
+
+            card.appendChild(img);
+            card.appendChild(name);
+            card.appendChild(contributions);
+            card.appendChild(viewProfileButton);
+            container.appendChild(card);
+        });
+    }
+
+    function createPaginationButtons() {
+        const paginationContainer = document.getElementById('pagination');
+        paginationContainer.innerHTML = '';
+
+        const previousButton = document.createElement('button');
+        previousButton.textContent = 'Previous';
+        previousButton.disabled = currentPage === 1;
+        previousButton.addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
                 displayContributors();
                 updatePaginationButtons();
-              });
-              paginationContainer.appendChild(button);
             }
-          }
-    
-          function updatePaginationButtons() {
-            const buttons = document.querySelectorAll('.pagination-button');
-            buttons.forEach(button => {
-              button.classList.remove('active');
-              if (parseInt(button.textContent) === currentPage) {
-                button.classList.add('active');
-              }
-            });
-          }
-    
-          fetchContributors();
-        </script>
+        });
+        paginationContainer.appendChild(previousButton);
+
+        const nextButton = document.createElement('button');
+        nextButton.textContent = 'Next';
+        nextButton.disabled = currentPage >= Math.ceil(contributors.length / contributorsPerPage);
+        nextButton.addEventListener('click', () => {
+            if (currentPage < Math.ceil(contributors.length / contributorsPerPage)) {
+                currentPage++;
+                displayContributors();
+                updatePaginationButtons();
+            }
+        });
+        paginationContainer.appendChild(nextButton);
+    }
+
+    function updatePaginationButtons() {
+        const paginationContainer = document.getElementById('pagination');
+        const buttons = paginationContainer.querySelectorAll('button');
+        buttons[0].disabled = currentPage === 1; // Previous button
+        buttons[1].disabled = currentPage >= Math.ceil(contributors.length / contributorsPerPage); // Next button
+    }
+
+    fetchContributors();
+</script>
+
+
 <div class="gtranslate_wrapper"></div>
         <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
         <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+        
         <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
 
         <script src="./assets/js/about.js"></script>
