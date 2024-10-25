@@ -18,10 +18,10 @@
   <link rel="stylesheet" href="./assets/css/quiz.css" />
   <link rel="stylesheet" href="./assets/css/popup.css" />
   <link rel="stylesheet" href="./assets/css/cookiepopup.css">
-  <link rel="stylesheet" href="./assets\css\preloader.css" />
+  <link rel="stylesheet" href="./assets/css/preloader.css" />
   <link rel="stylesheet" href="./assets/css/faq.css">
   <link rel="stylesheet" href="./assets/css/index.css">
-  <link rel="stylesheet" type="text/css" href="sipcalculatorCss.css">
+  <link rel="stylesheet" type="text/css" href="./tools/sipcalculator.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.13/lottie.min.js"></script>
 
@@ -498,7 +498,7 @@
               
               <div class="nav-toggle-btn-space-fixed"></div>
             </div>
-=======
+
             </div> 
             <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
               <li class="nav-item">
@@ -530,11 +530,6 @@
               </li>
               <li class="nav-item no-underline">
                 <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
-              </li>
-              <li class="nav-item no-underline">
-              <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
-                🌙
-              </button>
               </li>
             </ul>
           </div>
@@ -930,11 +925,11 @@
         <link rel="stylesheet" href="./assets/css/quiz.css" />
         <link rel="stylesheet" href="./assets/css/popup.css" />
         <link rel="stylesheet" href="./assets/css/cookiepopup.css">
-        <link rel="stylesheet" href="./assets\css\preloader.css" />
+        <link rel="stylesheet" href="./assets/css/preloader.css" />
         <link rel="stylesheet" href="./assets/css/faq.css">
         <link rel="stylesheet" href="./assets/css/index.css">
         <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
-        <link rel="stylesheet" href="navbar.css">
+        <link rel="stylesheet" href="./navbar.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
           rel="stylesheet">
@@ -1117,41 +1112,39 @@
             <link href="./navbar.css" rel="stylesheet">
             <script type="text/javascript" src="./navbar.js" defer></script>
 
-            <script>
-              const toggleButton = document.getElementById('theme-toggle');
-              const body = document.body;
-              const currentTheme = localStorage.getItem('theme');
-
-              if (currentTheme === 'dark') {
-                body.classList.add('dark-mode');
-                toggleButton.classList.add('dark');
-                toggleButton.textContent = '🌞';
-              }
-
-              toggleButton.addEventListener('click', function () {
-                body.classList.toggle('dark-mode');
-                toggleButton.classList.toggle('dark');
-
-                // Update button icon based on mode
-                if (body.classList.contains('dark-mode')) {
-                  toggleButton.textContent = '🌞';  // Light mode icon
-                  localStorage.setItem('theme', 'dark');
-                } else {
-                  toggleButton.textContent = '🌙';  // Dark mode icon
-                  localStorage.setItem('theme', 'light');
-                }
-              });
-            </script>
-
+            
           </div>
     </div>
   </div>
   </div>
-
-
-
   </div>
   </header>
+  <script>
+    const toggleButn = document.getElementById('theme-toggle');
+    const bodyL = document.body;
+    const currentThm = localStorage.getItem('theme');
+
+    if (currentThm === 'dark') {
+      bodyL.classList.add('dark-mode');
+      toggleButn.classList.add('dark');
+      toggleButn.textContent = '🌞';
+    }
+
+    toggleButn.addEventListener('click', function () {
+      bodyL.classList.toggle('dark-mode');
+      toggleButn.classList.toggle('dark');
+
+      // Update button icon based on mode
+      if (bodyL.classList.contains('dark-mode')) {
+        toggleButn.textContent = '🌞';  // Light mode icon
+        localStorage.setItem('theme', 'dark');
+      } else {
+        toggleButn.textContent = '🌙';  // Dark mode icon
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
+
 
   <!-- Cookie Consent Popup -->
   <div id="cookieConsent" class="cookie-consent">
@@ -1274,7 +1267,7 @@
                   <img src="https://cdn.gencraft.com/prod/user/4172de30-fa59-4864-b22e-45b0197666ec/db9cd195-174f-4ebb-a0d1-fceaf968329c/image/image1_0.jpg?Expires=1729873108&amp;Signature=hhs5C3v200T-IcnK670TGnigUc1i2kz1r6P4ykGd3yh4pHlmgeAXt6YBwsWNPi6eCN5ZdQELJtWSheT9DcPALPbU3zv3nkIokmlKiE3hXl8AemO8nu~pIDnz~1u3G77vKJabE2OHSEkIot4CH~RfB-dLMQAsBmgaWO34QPhWh8oSdl7lFxfHeJfK5XnB~fCvZMwd154qJQn5ykcYmOHBfoy2Xuq6tFv5blKoiPdPzdgDSxSjDW14Ya1L~lFk65ZjvSXkYeXm3rjMI7RjpvSF1QIZt1bMLmsbHtAXYcUxGuzIoUeFw8t1GusiGj6Vjwb8IPYl4NS1UXIj0f~23Jqx~g__&amp;Key-Pair-Id=K3RDDB1TZ8BHT8" alt="Finance AI Image" style="width: 540px; height: 372px;">
               </div>
           
-              <script type="text/javascript">
+              <!-- <script type="text/javascript">
                   new TradingView.widget({
                       "container_id": "tv-widget-container",
                       "feedMode": "all_symbols",
@@ -1283,7 +1276,7 @@
                       "colorTheme": "light",
                       "locale": "in"
                   });
-              </script>
+              </script> -->
           </div>
             <!-- TradingView Widget END -->
           </div>
@@ -1390,7 +1383,7 @@
                     "autosize": false,
                     "largeChartUrl": ""
                   };
-                  new TradingView.widget(widgetConfig);
+                  // new TradingView.widget(widgetConfig);
                 };
               </script>
             </div>
@@ -2670,32 +2663,8 @@
         registerModal.querySelector(".close").addEventListener("click", closeModal);
         loginModal.querySelector(".close").addEventListener("click", closeModal);
       });
-      <!-- Footer Section -->
-      <footer style="background-color: #f8f9fa; padding: 20px 0; text-align: center;">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <p style="margin: 0;">&copy; 2024 FinVeda. All rights reserved.</p>
-            </div>
-            <div class="col-md-6">
-              <p style="margin: 0;">
-                Built with dedication and passion. Join us on our journey to make finance more accessible and empowering for everyone.
-                <br> Stay connected and explore our tools for financial growth!
-              </p>
-            </div>
-          </div>
-          <div style="margin-top: 10px;">
-            <a href="/about" style="margin-right: 10px;">About Us</a>
-            <a href="/contact" style="margin-right: 10px;">Contact</a>
-            <a href="/terms" style="margin-right: 10px;">Terms of Service</a>
-            <a href="/privacy">Privacy Policy</a>
-          </div>
-        </div>
-      </footer>
-
     </script>
-    <script src="./smoothScroll.js"></script>
-
+      
     <script src="./assets/js/preloader.js"></script>
 
     <link rel="stylesheet" href="visi.css">
@@ -2704,11 +2673,9 @@
       <div>Visitor</div>
       <div class="website-counter"></div>
     </div>
-    <script src="path/to/visitorCounter.js"></script>
-    <script src="./assets/css/visitors.css"></script>
-
+    
     <script src="visi.js"></script>
-    <script src="../assets/js/index.js"></script>
+    <script src="./assets/js/index.js"></script>
   </body>
 
   </html>
