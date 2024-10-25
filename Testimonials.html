@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finveda Testimonials</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #f5f7ff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            color: #1a237e;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .testimonials-carousel {
+            position: relative;
+            overflow: hidden;
+            padding: 2rem 0;
+        }
+
+        .testimonial-slide {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .user-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #e0e0e0;
+            margin-right: 1rem;
+            overflow: hidden;
+        }
+
+        .user-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .user-info h3 {
+            color: #1a237e;
+            margin-bottom: 0.25rem;
+        }
+
+        .user-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .star-rating {
+            color: #ffd700;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-content {
+            color: #333;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .carousel-btn {
+            background: #1a237e;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .carousel-btn:hover {
+            background: #283593;
+        }
+
+        .comments-section {
+            margin-top: 3rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .comment-form {
+            margin-bottom: 2rem;
+        }
+
+        .comment-form textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            resize: vertical;
+        }
+
+        .comment-form button {
+            background: #1a237e;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .comments-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .comment {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .reactions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .reaction-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: #1a237e;
+            border-radius: 15px;
+            color: white;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 1rem;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: white;
+            color: #1a237e;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .testimonial-card {
+                margin: 0.5rem;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>What Our Users Say About Finveda</h1>
+            <p>Real experiences from our community of investors and crypto enthusiasts</p>
+        </div>
+
+        <div class="testimonials-carousel">
+            <div class="testimonial-slide">
+                <div class="testimonial-card">
+                    <div class="user-profile">
+                        <div class="user-avatar">
+                            <img src="/api/placeholder/60/60" alt="Sarah Johnson">
+                        </div>
+                        <div class="user-info">
+                            <h3>Sarah Johnson</h3>
+                            <p>Cryptocurrency Trader | 2 years with Finveda</p>
+                        </div>
+                    </div>
+                    <div class="star-rating">
+                        ★★★★★
+                    </div>
+                    <p class="testimonial-content">
+                        "Finveda has transformed the way I approach crypto trading. Their intuitive platform and real-time analytics have helped me make more informed decisions. The community support is incredible!"
+                    </p>
+                </div>
+            </div>
+
+            <div class="testimonial-slide">
+                <div class="testimonial-card">
+                    <div class="user-profile">
+                        <div class="user-avatar">
+                            <img src="/api/placeholder/60/60" alt="Michael Chen">
+                        </div>
+                        <div class="user-info">
+                            <h3>Michael Chen</h3>
+                            <p>Investment Analyst | 1.5 years with Finveda</p>
+                        </div>
+                    </div>
+                    <div class="star-rating">
+                        ★★★★★
+                    </div>
+                    <p class="testimonial-content">
+                        "The educational resources and market insights provided by Finveda are unmatched. I've grown my portfolio significantly since joining the platform."
+                    </p>
+                </div>
+            </div>
+
+            <div class="testimonial-slide">
+                <div class="testimonial-card">
+                    <div class="user-profile">
+                        <div class="user-avatar">
+                            <img src="/api/placeholder/60/60" alt="Emma Williams">
+                        </div>
+                        <div class="user-info">
+                            <h3>Emma Williams</h3>
+                            <p>Retail Investor | 1 year with Finveda</p>
+                        </div>
+                    </div>
+                    <div class="star-rating">
+                        ★★★★½
+                    </div>
+                    <p class="testimonial-content">
+                        "As a beginner in crypto, Finveda's user-friendly interface and comprehensive tutorials made it easy for me to get started. Their customer support is exceptional!"
+                    </p>
+                </div>
+            </div>
+            <div class="testimonial-slide">
+                <div class="testimonial-card">
+                    <div class="user-profile">
+                        <div class="user-avatar">
+                            <img src="/api/placeholder/60/60" alt="Emma Williams">
+                        </div>
+                        <div class="user-info">
+                            <h3>Jack Jee</h3>
+                            <p>Share Holder amazing results from the team.</p>
+                        </div>
+                    </div>
+                    <div class="star-rating">
+                        ★★★★½
+                    </div>
+                    <p class="testimonial-content">
+                        "As a beginner in crypto, Finveda's user-friendly interface and comprehensive tutorials made it easy for me to get started. Their customer support is exceptional!"
+                    </p>
+                </div>
+            </div>
+            <div class="testimonial-slide">
+                <div class="testimonial-card">
+                    <div class="user-profile">
+                        <div class="user-avatar">
+                            <img src="/api/placeholder/60/60" alt="Emma Williams">
+                        </div>
+                        <div class="user-info">
+                            <h3>Shan Yung</h3>
+                            <p>Amazing Services offered by the company</p>
+                        </div>
+                    </div>
+                    <div class="star-rating">
+                        ★★★★½
+                    </div>
+                    <p class="testimonial-content">
+                        "As a beginner in crypto, Finveda's user-friendly interface and comprehensive tutorials made it easy for me to get started. Their customer support is exceptional!"
+                    </p>
+                </div>
+            </div>
+            <div class="testimonial-slide">
+                <div class="testimonial-card">
+                    <div class="user-profile">
+                        <div class="user-avatar">
+                            <img src="/api/placeholder/60/60" alt="Emma Williams">
+                        </div>
+                        <div class="user-info">
+                            <h3>Amy Alice</h3>
+                            <p>Retail Investor | 4 year with Finveda</p>
+                        </div>
+                    </div>
+                    <div class="star-rating">
+                        ★★★★½
+                    </div>
+                    <p class="testimonial-content">
+                        "As a beginner in crypto, Finveda's user-friendly interface and comprehensive tutorials made it easy for me to get started. Their customer support is exceptional!"
+                    </p>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn" onclick="previousSlide()">Previous</button>
+                <button class="carousel-btn" onclick="nextSlide()">Next</button>
+            </div>
+        </div>
+
+        <div class="comments-section">
+            <h2>Share Your Experience</h2>
+            <div class="comment-form">
+                <textarea placeholder="Write your comment here..." rows="4"></textarea>
+                <button onclick="addComment()">Post Comment</button>
+            </div>
+            <div class="comments-list" id="commentsList">
+                <!-- Comments will be dynamically added here -->
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Ready to Start Your Financial Journey?</h2>
+            <p>Join thousands of satisfied users who trust Finveda for their financial needs</p>
+            <a href="loginPage.html" class="cta-btn">Get Started Now</a>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.getElementsByClassName('testimonial-slide');
+
+        // Initialize the carousel
+        function showSlides() {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[currentSlide].style.display = "block";
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlides();
+        }
+
+        function previousSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlides();
+        }
+
+        // Initialize comment system
+        function addComment() {
+            const commentText = document.querySelector('.comment-form textarea').value;
+            if (commentText.trim() === '') return;
+
+            const comment = document.createElement('div');
+            comment.className = 'comment';
+            comment.innerHTML = `
+                <p>${commentText}</p>
+                <div class="reactions">
+                    <button class="reaction-btn" onclick="react(this)">
+                        <span>👍</span>
+                        <span class="count">0</span>
+                    </button>
+                    <button class="reaction-btn" onclick="react(this)">
+                        <span>❤️</span>
+                        <span class="count">0</span>
+                    </button>
+                    <button class="reaction-btn" onclick="react(this)">
+                        <span>🎉</span>
+                        <span class="count">0</span>
+                    </button>
+                </div>
+            `;
+
+            document.getElementById('commentsList').prepend(comment);
+            document.querySelector('.comment-form textarea').value = '';
+        }
+
+        function react(button) {
+            const countSpan = button.querySelector('.count');
+            let count = parseInt(countSpan.textContent);
+            countSpan.textContent = count + 1;
+        }
+
+        // Auto-start the carousel
+        showSlides();
+        setInterval(nextSlide, 5000); // Change slides every 5 seconds
+    </script>
+</body>
+</html>
