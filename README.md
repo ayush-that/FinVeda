@@ -95,7 +95,7 @@ FinVeda is a dynamic financial literacy app that'll help you Learn finance with 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ### 💗 Contributors
-[![Contributors graph for @ayush-that/FinVeda](https://github.com/ayush-that/FinVeda/graphs/contributors)](https://github.com/ayush-that/FinVeda/graphs/contributors)
+[![Contributors](https://github.com/ayush-that/FinVeda/graphs/contributors)](https://github.com/ayush-that/FinVeda/graphs/contributors)
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
