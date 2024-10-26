@@ -531,9 +531,9 @@
           </div>
 
           <script>
-            const toggleButton = document.getElementById('theme-toggle');
-            const body = document.body;
-            const currentTheme = localStorage.getItem('theme');
+            var toggleButton = document.getElementById('theme-toggle');
+            var body = document.body;
+            var currentTheme = localStorage.getItem('theme');
             if (currentTheme === 'dark') {
             body.classList.add('dark-mode');
             toggleButton.classList.add('dark');
@@ -778,11 +778,38 @@
                 <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none; border: none;" href="#"
                   onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
               </li>
-
+              <li class="nav-item no-underline">
+                <button id="theme-toggle2" class="theme-toggle2" style="margin-right: 2px;">
+                  🌙
+                </button>
+                </li>
               <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
                 <span></span>
               </div>
             </nav>
+            <script>
+              var toggleButton = document.getElementById('theme-toggle2');
+              var body = document.body;
+              var currentTheme = localStorage.getItem('theme');
+              if (currentTheme === 'dark') {
+              body.classList.add('dark-mode');
+              toggleButton.classList.add('dark');
+              toggleButton.textContent = '☀️';
+              }
+  
+              toggleButton.addEventListener('click', function () {
+              body.classList.toggle('dark-mode');
+              toggleButton.classList.toggle('dark');
+              // Update button icon based on mode
+              if (body.classList.contains('dark-mode')) {
+              toggleButton.textContent = '☀️';  // Light mode icon
+              localStorage.setItem('theme', 'dark');
+              } else {
+              toggleButton.textContent = '🌙';  // Dark mode icon
+              localStorage.setItem('theme', 'light');
+              }
+              });
+          </script>
           </div>
           <link href="./navbar.css" rel="stylesheet">
           <script type="text/javascript" src="./navbar.js"></script>
