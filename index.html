@@ -28,6 +28,89 @@
   <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
   <link rel="stylesheet" href="navbar.css">
   <style>
+    body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        /* Footer Wrapper */
+/* added css to row*/
+.row{
+  margin-top: 60px; /*added margin*/
+}
+
+.footer-wrapper {
+    background-color: #0f2027; /* Footer background */
+    color: white; /* Text color */
+    /* padding: 20px 0; Overall padding */
+    margin : 0;
+    padding : 0;
+    text-align: left;
+}
+
+/* Footer Divider */
+.footer-divider {
+    border: none;
+    border-top: 2px solid #ccc; /* Ruler line color */
+    /* margin: 20px 0; Margin around the divider */
+}
+
+/* Footer Widget */
+/* .footer-widget {
+    padding-bottom: 50px; Bottom padding for footer widget 
+} */
+
+/* Footer Titles */
+.footer-title {
+    font-size: 20px; /* Font size for titles */
+    font-weight: bold; /* Bold font for titles */
+    margin-bottom: 15px; /* Space below titles */
+}
+.footer-title .title{
+  margin-left: 0px;/*added margin left*/
+}
+/* Footer Links */
+.footer-links {
+    list-style: none; /* No list styling */
+    padding: 0; /* No padding */
+}
+
+.footer-links li {
+    margin: 5px 0; /* Space between list items */
+}
+
+.footer-links a {
+    color: white; /* Link color */
+    text-decoration: none; /* No underline */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.footer-links a:hover {
+    color: #ff8c00; /* Highlight color on hover */
+}
+
+/* Contact Section */
+.contact {
+    list-style: none; /* No list styling */
+    padding: 0; /* No padding */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-widget {
+        padding-bottom: 5px; /* Adjusted padding for mobile */
+    }
+
+    .footer-title {
+        font-size: 14px; /* Smaller font size for mobile */
+        
+    }
+    
+    .footer-links li,
+    .contact li {
+        margin: 3px 0; /* Less margin for mobile */
+    }
+}
     #progressBar {
       position: fixed;
       top: 0;
@@ -122,12 +205,14 @@
 
     .social-icons {
       text-align: center;
+      display : flex;
+      gap : 10px;
     }
 
     .social-icons ul {
       list-style: none;
       padding: 0;
-      margin: 0;
+      margin: 0; /*added the below styles*/
       display: flex;
       justify-content: center;
     }
@@ -1836,6 +1921,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback Form</title>
     <style>
+      /*css for footer*/
+
       /* Simple CSS for layout and modal */
       .form-group {
         margin-bottom: 15px;
@@ -2246,7 +2333,7 @@
     </script>
     <script src="/assets/js/faq.js"></script>
 
-    <!-- Footer Section -->
+    <!-- Footer Section --> 
     <footer id="footer" class="footer-area pt-120">
       <div class="container">
         <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
@@ -2321,7 +2408,7 @@
                 <h4 class="title custom-margin">Contact Us</h4>
               </div>
               <ul class="contact custom-margin-big" style="justify-content: space-around;">
-                <li class="d-sm-flex justify-content-center">
+                <li class="d-sm-flex justify-content-left"> <!--changed the justify-content-centre  to  justify-content-left-->
                   <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
                   <p style="width: 80%;">
                     <a href="mailto:ayush1337@hotmail.com" target="_blank"
@@ -2330,7 +2417,7 @@
                     </a>
                   </p>
                 </li>
-                <li class="d-sm-flex justify-content-center">
+                <li class="d-sm-flex justify-content-left"> <!--changed the justify-content-centre  to  justify-content-left-->
                   <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
                   <div style="width: 80%;">
                     <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
@@ -2338,7 +2425,7 @@
                     </a>
                   </div>
                 </li>
-                <li class="d-sm-flex justify-content-center">
+                <li class="d-sm-flex justify-content-left"> <!--changed the justify-content-centre  to  justify-content-left-->
                   <i class="fa fa-location-dot d-sm-flex align-items-center white"
                     style="font-size: 12px; width: 10%;"></i>
                   <div style="width: 80%;">
@@ -2348,6 +2435,7 @@
                     </a>
                   </div>
                 </li>
+              </ul> <!--added the missing ul tag-->
                 <div class="social-icons">
                   <a href="#"><i class="fa-brands fa-instagram"></i></a>
                   <a href="#"><i class="fa-brands fa-facebook"></i></a>
@@ -2387,7 +2475,7 @@
           </div>
         </div>
     </footer>
-
+    
 
 
     <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
