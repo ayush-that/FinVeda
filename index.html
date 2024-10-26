@@ -18,16 +18,99 @@
   <link rel="stylesheet" href="./assets/css/quiz.css" />
   <link rel="stylesheet" href="./assets/css/popup.css" />
   <link rel="stylesheet" href="./assets/css/cookiepopup.css">
-  <link rel="stylesheet" href="./assets\css\preloader.css" />
+  <link rel="stylesheet" href="./assets/css/preloader.css" />
   <link rel="stylesheet" href="./assets/css/faq.css">
   <link rel="stylesheet" href="./assets/css/index.css">
-  <link rel="stylesheet" type="text/css" href="sipcalculatorCss.css">
+  <link rel="stylesheet" type="text/css" href="./tools/sipcalculator.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.13/lottie.min.js"></script>
 
   <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
   <link rel="stylesheet" href="navbar.css">
   <style>
+    body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        /* Footer Wrapper */
+/* added css to row*/
+.row{
+  margin-top: 60px; /*added margin*/
+}
+
+.footer-wrapper {
+    background-color: #0f2027; /* Footer background */
+    color: white; /* Text color */
+    /* padding: 20px 0; Overall padding */
+    margin : 0;
+    padding : 0;
+    text-align: left;
+}
+
+/* Footer Divider */
+.footer-divider {
+    border: none;
+    border-top: 2px solid #ccc; /* Ruler line color */
+    /* margin: 20px 0; Margin around the divider */
+}
+
+/* Footer Widget */
+/* .footer-widget {
+    padding-bottom: 50px; Bottom padding for footer widget 
+} */
+
+/* Footer Titles */
+.footer-title {
+    font-size: 20px; /* Font size for titles */
+    font-weight: bold; /* Bold font for titles */
+    margin-bottom: 15px; /* Space below titles */
+}
+.footer-title .title{
+  margin-left: 0px;/*added margin left*/
+}
+/* Footer Links */
+.footer-links {
+    list-style: none; /* No list styling */
+    padding: 0; /* No padding */
+}
+
+.footer-links li {
+    margin: 5px 0; /* Space between list items */
+}
+
+.footer-links a {
+    color: white; /* Link color */
+    text-decoration: none; /* No underline */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.footer-links a:hover {
+    color: #ff8c00; /* Highlight color on hover */
+}
+
+/* Contact Section */
+.contact {
+    list-style: none; /* No list styling */
+    padding: 0; /* No padding */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-widget {
+        padding-bottom: 5px; /* Adjusted padding for mobile */
+    }
+
+    .footer-title {
+        font-size: 14px; /* Smaller font size for mobile */
+        
+    }
+    
+    .footer-links li,
+    .contact li {
+        margin: 3px 0; /* Less margin for mobile */
+    }
+}
     #progressBar {
       position: fixed;
       top: 0;
@@ -71,7 +154,7 @@
     }
 
 
-
+ 
 
     .unique-popup-message {
       position: fixed;
@@ -205,7 +288,7 @@
 
 
 
-
+ 
 
     .unique-popup-message {
       position: fixed;
@@ -256,12 +339,14 @@
 
     .social-icons {
       text-align: center;
+      display : flex;
+      gap : 10px;
     }
 
     .social-icons ul {
       list-style: none;
       padding: 0;
-      margin: 0;
+      margin: 0; /*added the below styles*/
       display: flex;
       justify-content: center;
     }
@@ -337,30 +422,30 @@
       display: inline-block;
     }
 
-    .scroll-btn {
-      position: fixed;
-      top: 100px;
-      right: 4px;
-      background-color: #635adc;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      font-size: 24px;
-      cursor: pointer;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-      transition: background-color 0.3s;
-      display: flex;
-      z-index: 1000;
-      justify-content: center;
-      align-items: center;
-    }
+.scroll-btn {
+            position: fixed;
+            top: 100px;
+            right: 4px;
+            background-color: #635adc;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s;
+            display: flex;
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+          }
 
-    .scroll-btn:hover {
-      background-color: #555;
-      /* Darker blue on hover */
-    }
+          .scroll-btn:hover {
+            background-color: #555;
+            /* Darker blue on hover */
+          }
   </style>
 
 <body>
@@ -450,22 +535,22 @@
   </script>
   <button id="scrollBtn" class="scroll-btn" onclick="scrollToNextSection()">
     <i class="lni-chevron-down"></i>
-  </button>
+</button>
 
-  <script>
+<script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Scroll button functionality
-      const scrollToNextSection = () => {
-        window.scrollBy({
-          top: window.innerHeight,
-          behavior: 'smooth',
-        });
-      };
+        // Scroll button functionality
+        const scrollToNextSection = () => {
+            window.scrollBy({
+                top: window.innerHeight,
+                behavior: 'smooth',
+            });
+        };
 
-      // Attach the function to the button
-      document.getElementById('scrollBtn').onclick = scrollToNextSection;
+        // Attach the function to the button
+        document.getElementById('scrollBtn').onclick = scrollToNextSection;
     });
-  </script>
+</script>
   <div id="preloader">
     <div id="lottie-loader"></div>
   </div>
@@ -473,10 +558,10 @@
     <header class="header-area">
       <div style="display: flex; justify-content: center;" class="navbar-area">
         <div style="display: flex; justify-content: center;" class="container">
-          <div class="row">
-            <div style="display: flex; justify-content: center;" class="">
-              <nav class="navbar navbar-expand-lg " style="display: flex;">
-                <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+       <div class="row">
+        <div style="display: flex; justify-content: center;" class="">
+          <nav class="navbar navbar-expand-lg " style="display: flex;">
+            <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="toggler-icon"></span>
             <span class="toggler-icon"></span>
@@ -487,6 +572,18 @@
               <a href="./index.html">
               <img src="assets/images/icon.webp" alt="icon.png">
               </a>
+ 
+              <div class="navbar-logo">
+                <div class="icon1">
+                  <a href="./index.html">
+                    <img src="assets/images/icon.webp" alt="icon.webp">
+                </div>
+              </div>
+              <div class="nav-space"></div>
+              
+              <div class="nav-toggle-btn-space-fixed"></div>
+            </div>
+
             </div> 
             <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
               <li class="nav-item">
@@ -505,9 +602,6 @@
                 <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
               </li>
               <li class="nav-item">
-                <a class="page-scroll" href="./finance.html" style="color: rgb(237, 242, 244);">Courses 📚</a>
-              </li>
-              <li class="nav-item">
                 <a class="page-scroll" href="./quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
               </li>
               <li class="nav-item">
@@ -522,38 +616,38 @@
               <li class="nav-item no-underline">
                 <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
               </li>
-              <li class="nav-item no-underline">
-              <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
-                🌙
-              </button>
-              </li>
             </ul>
           </div>
-
+ 
           <script>
             var toggleButton = document.getElementById('theme-toggle');
             var body = document.body;
             var currentTheme = localStorage.getItem('theme');
+            const toggleButton = document.getElementById('theme-toggle');
+            const body = document.body;
+            const currentTheme = localStorage.getItem('theme');
+
             if (currentTheme === 'dark') {
             body.classList.add('dark-mode');
             toggleButton.classList.add('dark');
-            toggleButton.textContent = '☀️';
+            toggleButton.textContent = '🌞';
             }
 
             toggleButton.addEventListener('click', function () {
             body.classList.toggle('dark-mode');
             toggleButton.classList.toggle('dark');
+
             // Update button icon based on mode
             if (body.classList.contains('dark-mode')) {
-            toggleButton.textContent = '☀️';  // Light mode icon
-            localStorage.setItem('theme', 'dark');
+              toggleButton.textContent = '🌞';  // Light mode icon
+              localStorage.setItem('theme', 'dark');
             } else {
-            toggleButton.textContent = '🌙';  // Dark mode icon
-            localStorage.setItem('theme', 'light');
+              toggleButton.textContent = '🌙';  // Dark mode icon
+              localStorage.setItem('theme', 'light');
             }
             });
         </script>
-                    <div class="">
+            <div class="">
               <!-- Login Modal -->
               <div id="myModal" class="modal">
                 <div class="modal-content">
@@ -762,9 +856,70 @@
 
               </script>
             </div>
-            </nav>
+          </nav>
 
-            <link href="https://fonts.googleapis.com/css?family=Raleway&amp;display=swap" rel="stylesheet">
+          <link href="https://fonts.googleapis.com/css?family=Raleway&amp;display=swap" rel="stylesheet">
+
+          <nav class="mobile-menu  active">
+            <a class="page-scroll active-link" href="./index.html">Home 🏡</a>
+            <a class="page-scroll" href="./about.html">About Us 📖</a>
+            <a class="page-scroll" href="./trends.html">Trends 📈</a>
+            <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
+            <a class="page-scroll" href="./blog.html">Blogs 📰</a>
+            <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
+            <a class="page-scroll" href="./contact.html">Contact📞</a>
+            <li class="nav-item no-underline">
+              <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none; border: none;" href="#" onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
+            </li>
+            
+            <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
+              <span></span>
+            </div>
+          </nav>
+        </div>
+  <link href="./navbar.css" rel="stylesheet">
+  <script type="text/javascript" src="./navbar.js"></script>
+</div>
+</div>
+</div>
+</div>
+  
+        <div id="home" class="header-hero bg_cover" style="background-image: url(./assets/images/banner-bg.svg)">
+          <div class="container">
+            <h2 class="head-animate" style="font-size: 90px;">
+              WELCOME TO FINVEDA
+            </h2>
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="header-hero-content text-center">
+                  <style>
+.head-animate {
+  text-align: center;
+  position: relative;
+  top: 200px;
+  color: transparent;
+  -webkit-text-stroke: 2px white;
+  -moz-text-stroke: 2px white;
+  -ms-text-stroke: 2px white;
+  font-weight: bold;
+  background: url(./assets/images/back.png);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  background-position: 0 0;
+  animation: back 20s linear infinite, hovering 1.5s ease-in-out infinite;
+}
+
+                    @keyframes back {
+                      100% {
+                        background-position: 2000px 0;
+                      }
+                    }
+
+                    @keyframes hovering {
+                      0% {
+                        transform: translateY(0);
+                      }
 
             <nav class="mobile-menu  active">
               <a class="page-scroll active-link" href="./index.html">Home 🏡</a>
@@ -810,101 +965,321 @@
               }
               });
           </script>
-          </div>
-          <link href="./navbar.css" rel="stylesheet">
-          <script type="text/javascript" src="./navbar.js"></script>
-        </div>
-      </div>
-  </div>
-  </div>
+                      50% {
+                        transform: translateY(-5px);
+                      }
 
-  <div id="home" class="header-hero bg_cover" style="background-image: url(./assets/images/banner-bg.svg)">
-    <div class="container">
-      <h2 class="head-animate" style="font-size: 90px;">
-        WELCOME TO FINVEDA
-      </h2>
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <div class="header-hero-content text-center">
-            <style>
-              .head-animate {
-                text-align: center;
-                position: relative;
-                top: 200px;
-                color: transparent;
-                -webkit-text-stroke: 2px white;
-                -moz-text-stroke: 2px white;
-                -ms-text-stroke: 2px white;
-                font-weight: bold;
-                background: url(./assets/images/back.png);
-                -webkit-background-clip: text;
-                -moz-background-clip: text;
-                background-clip: text;
-                background-position: 0 0;
-                animation: back 20s linear infinite, hovering 1.5s ease-in-out infinite;
-              }
+                      100% {
+                        transform: translateY(0);
+                      }
+                    }
 
-              @keyframes back {
-                100% {
-                  background-position: 2000px 0;
-                }
-              }
+                    .header-hero-content h2 {
+                      font-size: 200px;
+                    }
+                  </style>
+                  <br>
+                  <br>
+                  <p class="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s"
+                    style="visibility: visible; animation-duration: 1.3s; animation-delay: 0.8s;">
+                    Wanna learn how to grow your money to become rich? We have
+                    made becoming a stock market Guru easy with our AI
+                    powered finance advisor - <b>Arth Sathi 🤵🏻</b>
+                  </p>
+                  <a href="#" class="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s"
+                    onclick="window.botpressWebChat.sendEvent({ type: 'show' }); return false;"
+                    style="visibility: visible; animation-duration: 1.3s; animation-delay: 1.1s;">
+                    Chat with ArthaSathi 💬
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="header-hero-image text-center wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s"
+                  style="visibility: visible; animation-duration: 1.3s; animation-delay: 1.4s;">
+                  <div class="anim" data-tilt="">
+                    <img src="assets/images/header-hero.webp" style="animation: float 1.5s ease-in-out infinite;"
+                      data-tilt="" />
 
-              @keyframes hovering {
-                0% {
-                  transform: translateY(0);
-                }
-
-                50% {
-                  transform: translateY(-5px);
-                }
-
-                100% {
-                  transform: translateY(0);
-                }
-              }
-
-              .header-hero-content h2 {
-                font-size: 200px;
-              }
-            </style>
-            <br>
-            <br>
-            <p class="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s"
-              style="visibility: visible; animation-duration: 1.3s; animation-delay: 0.8s;">
-              Wanna learn how to grow your money to become rich? We have
-              made becoming a stock market Guru easy with our AI
-              powered finance advisor - <b>Arth Sathi 🤵🏻</b>
-            </p>
-            <a href="#" class="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s"
-              onclick="window.botpressWebChat.sendEvent({ type: 'show' }); return false;"
-              style="visibility: visible; animation-duration: 1.3s; animation-delay: 1.1s;">
-              Chat with ArthaSathi 💬
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="header-hero-image text-center wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s"
-            style="visibility: visible; animation-duration: 1.3s; animation-delay: 1.4s;">
-            <div class="anim" data-tilt="">
-              <img src="assets/images/header-hero.webp" style="animation: float 1.5s ease-in-out infinite;"
-                data-tilt="" />
-
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+          <div id="particles-1" class="particles"><canvas class="particles-js-canvas-el" width="1998" height="1012"
+              style="width: 100%; height: 100%;"></canvas></div>
         </div>
+    </header>
+
+
+    <div id="cookieConsent" class="cookie-consent">
+
+      <h4>🍪Cookies Consent <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+          fill="#175394" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="cookie-icon">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M12 8v4"></path>
+          <path d="M12 16h.01"></path>
+        </svg></h4>
+      <p>We use cookies to enhance your experience on FinVeda. By continuing to use our site, you agree to our use of
+        cookies. <br> <a href="blogs/privacy-policy.html" target="_blank">Learn more</a></p>
+      <div class="cookie-buttons">
+        <button id="acceptNecessaryCookies">Accept necessary cookies only</button>
+        <button id="acceptAllCookies">Accept all cookies</button>
       </div>
     </div>
-    <div id="particles-1" class="particles"><canvas class="particles-js-canvas-el" width="1998" height="1012"
-        style="width: 100%; height: 100%;"></canvas></div>
+
+    </section>
+ 
+    <!-- <section id="blog" class="blog-area pt-120"> -->
+    <div class="blogfull">
+      <!DOCTYPE html>
+      <html class="no-js" lang="en">
+
+      <head>
+        <meta charset="utf-8" />
+        <title>Home - FinVeda</title>
+        <meta name="description"
+          content="FinVeda is a dynamic financial literacy app that'll help you Learn finance with finesse." />
+        <meta name="author" content="Ayush Singh">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="shortcut icon" href="./assets/images/favicon2.png" type="image/png" />
+        <link rel="stylesheet" href="./assets/css/animate.css" />
+        <link rel="stylesheet" href="./assets/css/magnific-popup.css" />
+        <link rel="stylesheet" href="./assets/css/slick.css" />
+        <link rel="stylesheet" href="./assets/css/LineIcons.css" />
+        <link rel="stylesheet" href="./assets/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="./assets/css/default.css" />
+        <link rel="stylesheet" href="./assets/css/style.css" />
+        <link rel="stylesheet" href="./assets/css/quiz.css" />
+        <link rel="stylesheet" href="./assets/css/popup.css" />
+        <link rel="stylesheet" href="./assets/css/cookiepopup.css">
+        <link rel="stylesheet" href="./assets/css/preloader.css" />
+        <link rel="stylesheet" href="./assets/css/faq.css">
+        <link rel="stylesheet" href="./assets/css/index.css">
+        <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
+        <link rel="stylesheet" href="./navbar.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script type="text/javascript">
+          (function () {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "o6kveYmOSDrs0l1Mg",
+            });
+          })();
+        </script>
+        <script>
+          // Scroll button functionality
+          const scrollToNextSection = () => {
+            window.scrollBy({
+              top: window.innerHeight,
+              behavior: 'smooth',
+            });
+          };
+        </script>
+        <style>
+          .scroll-btn {
+            position: fixed;
+            top: 100px;
+            right: 4px;
+            background-color: #635adc;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s;
+            display: flex;
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+          }
+
+          .scroll-btn:hover {
+            background-color: #555;
+            /* Darker blue on hover */
+          }
+        </style>
+
+      <body>
+        <div id="progressBar"></div>
+        <button id="scrollBtn" class="scroll-btn" onclick="scrollToNextSection()">
+          <i class="lni-chevron-down"></i>
+        </button>
+
+        <div class="scrlUp" id="scrlUp" onclick="">↑</div>
+        <script>
+          window.onscroll = function () {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progressBar").style.width = scrolled + "%";
+          };
+
+          let scrollToTopBtn = document.getElementById("scrlUp");
+
+          window.onscroll = function () {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+              scrollToTopBtn.style.display = "block";
+            } else {
+              scrollToTopBtn.style.display = "none";
+            }
+          };
+
+          scrollToTopBtn.onclick = function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          };
+
+
+        </script>
+        <div class="circle-container">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+        </div>
+        <header class="header-area">
+          <!-- <div class="navbar-area"> -->
+          <!-- <div class="container"> -->
+          <div class="row">
+
+            <!-- <div class="col-lg-12"> -->
+            <nav class="navbar navbar-expand-lg">
+              <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+              </button> -->
+              <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                <a href="./index.html">
+                  <div class="icon1">
+                    <img src="./assets/images/icon.webp" alt="icon.png">
+                  </div>
+                </a>
+
+                <ul id="nav" class="navbar-nav" style="margin:auto">
+
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
+
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
+                  </li>
+
+            
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./ContactUs.html" style="color: rgb(237, 242, 244);">Contact Us 📞</a>
+
+
+
+                  </li>
+
+                  <li class="nav-item no-underline">
+                    <a class="main-btn navbar-btn"
+                      style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;"
+                      data-scroll-nav="0" href="./loginPage.html">Login/Register 💻</a>
+                  </li>
+                </ul>
+                <button id="theme-toggle" class="theme-toggle">
+                  🌙
+                </button>
+              </div>
+              <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
+                <span></span>
+              </div>
+            </nav>
+            <link href="./navbar.css" rel="stylesheet">
+            <script type="text/javascript" src="./navbar.js" defer></script>
+
+            
+          </div>
+    </div>
+  </div>
+  </div>
   </div>
   </header>
+  <script>
+    const toggleButn = document.getElementById('theme-toggle');
+    const bodyL = document.body;
+    const currentThm = localStorage.getItem('theme');
+
+    if (currentThm === 'dark') {
+      bodyL.classList.add('dark-mode');
+      toggleButn.classList.add('dark');
+      toggleButn.textContent = '🌞';
+    }
+
+    toggleButn.addEventListener('click', function () {
+      bodyL.classList.toggle('dark-mode');
+      toggleButn.classList.toggle('dark');
+
+      // Update button icon based on mode
+      if (bodyL.classList.contains('dark-mode')) {
+        toggleButn.textContent = '🌞';  // Light mode icon
+        localStorage.setItem('theme', 'dark');
+      } else {
+        toggleButn.textContent = '🌙';  // Dark mode icon
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
 
 
+  <!-- Cookie Consent Popup -->
   <div id="cookieConsent" class="cookie-consent">
-
     <h4>🍪Cookies Consent <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
         fill="#175394" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
         class="cookie-icon">
@@ -920,10 +1295,10 @@
     </div>
   </div>
 
-  </section>
+  </div>
 
-  <!-- <section id="blog" class="blog-area pt-120"> -->
-  <div class="blogfull">
+
+ 
   <section id="features" class="services-area pt-120">
     <div class="container">
       <div class="row justify-content-center">
@@ -1021,22 +1396,20 @@
             <!-- TradingView Widget BEGIN -->
             <div class="tradingview-widget-container" style="height: 372px;">
               <div id="tv-widget-container">
-                <img
-                  src="https://cdn.gencraft.com/prod/user/4172de30-fa59-4864-b22e-45b0197666ec/db9cd195-174f-4ebb-a0d1-fceaf968329c/image/image1_0.jpg?Expires=1729873108&amp;Signature=hhs5C3v200T-IcnK670TGnigUc1i2kz1r6P4ykGd3yh4pHlmgeAXt6YBwsWNPi6eCN5ZdQELJtWSheT9DcPALPbU3zv3nkIokmlKiE3hXl8AemO8nu~pIDnz~1u3G77vKJabE2OHSEkIot4CH~RfB-dLMQAsBmgaWO34QPhWh8oSdl7lFxfHeJfK5XnB~fCvZMwd154qJQn5ykcYmOHBfoy2Xuq6tFv5blKoiPdPzdgDSxSjDW14Ya1L~lFk65ZjvSXkYeXm3rjMI7RjpvSF1QIZt1bMLmsbHtAXYcUxGuzIoUeFw8t1GusiGj6Vjwb8IPYl4NS1UXIj0f~23Jqx~g__&amp;Key-Pair-Id=K3RDDB1TZ8BHT8"
-                  alt="Finance AI Image" style="width: 540px; height: 372px;">
+                  <img src="https://cdn.gencraft.com/prod/user/4172de30-fa59-4864-b22e-45b0197666ec/db9cd195-174f-4ebb-a0d1-fceaf968329c/image/image1_0.jpg?Expires=1729873108&amp;Signature=hhs5C3v200T-IcnK670TGnigUc1i2kz1r6P4ykGd3yh4pHlmgeAXt6YBwsWNPi6eCN5ZdQELJtWSheT9DcPALPbU3zv3nkIokmlKiE3hXl8AemO8nu~pIDnz~1u3G77vKJabE2OHSEkIot4CH~RfB-dLMQAsBmgaWO34QPhWh8oSdl7lFxfHeJfK5XnB~fCvZMwd154qJQn5ykcYmOHBfoy2Xuq6tFv5blKoiPdPzdgDSxSjDW14Ya1L~lFk65ZjvSXkYeXm3rjMI7RjpvSF1QIZt1bMLmsbHtAXYcUxGuzIoUeFw8t1GusiGj6Vjwb8IPYl4NS1UXIj0f~23Jqx~g__&amp;Key-Pair-Id=K3RDDB1TZ8BHT8" alt="Finance AI Image" style="width: 540px; height: 372px;">
               </div>
-
-              <script type="text/javascript">
-                new TradingView.widget({
-                  "container_id": "tv-widget-container",
-                  "feedMode": "all_symbols",
-                  "isTransparent": true,
-                  "displayMode": "adaptive",
-                  "colorTheme": "light",
-                  "locale": "in"
-                });
-              </script>
-            </div>
+          
+              <!-- <script type="text/javascript">
+                  new TradingView.widget({
+                      "container_id": "tv-widget-container",
+                      "feedMode": "all_symbols",
+                      "isTransparent": true,
+                      "displayMode": "adaptive",
+                      "colorTheme": "light",
+                      "locale": "in"
+                  });
+              </script> -->
+          </div>
             <!-- TradingView Widget END -->
           </div>
         </div>
@@ -1142,7 +1515,7 @@
                     "autosize": false,
                     "largeChartUrl": ""
                   };
-                  new TradingView.widget(widgetConfig);
+                  // new TradingView.widget(widgetConfig);
                 };
               </script>
             </div>
@@ -1866,6 +2239,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback Form</title>
     <style>
+      /*css for footer*/
+
       /* Simple CSS for layout and modal */
       .form-group {
         margin-bottom: 15px;
@@ -1962,169 +2337,6 @@
         font-size: 20px;
       }
     </style>
-
-    <!-- Newsletter pop-up -->
- <style>
-  .popup-nl {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      justify-content: center;
-      align-items: center;
-      z-index: 1009;
-  }
-
-  .popup-content-nl {
-      display: flex;
-      background-color: white;
-      border-radius: 10px;
-      max-width: 800px;
-      height: 450px;
-      width: 700px;
-      overflow: hidden;
-      position: relative;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  }
-
-  .close1-btn-nl {
-      width: 20px;
-      cursor: pointer;
-      margin: 18px 10px;
-      position: absolute;
-      top: -4px;
-      right: 12px;
-      font-size: 18px;
-      font-weight: 800;
-  }
-
-  .popup-left-nl img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-  }
-
-  .popup-right-nl {
-      padding: 20px;
-      width: 50%;
-      display: flex;
-      flex-direction: column; 
-      align-items: center;
-      justify-content: center;
-  }
-
-  .popup-nl h1 {
-      font-size: 24px;
-      background: linear-gradient(to right, #405cac, #5ad4dc, #0058ff); 
-      -webkit-text-fill-color: transparent; 
-      -webkit-background-clip: text; 
-      text-align: center;
-      margin-bottom: 12px;
-      margin-top: 35px;
-  }
-
-  .h2-nl{
-      font-size: 18px;
-      margin-bottom: 8px;
-      text-align: center;
-      color: #333;
-  }
-
-  .pop_up-nl {
-      margin-bottom: 15px;
-      font-weight: bold;
-      background: -webkit-linear-gradient(left, #6cc7a9, #e476f9, #ff734e);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-size: 12.7px;
-
-  }
-
-  .bold{
-      font-size: 13.1px;
-  }
-
-  input[type="email"] {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 16px;
-      border: 1px solid #000000;
-      border-radius: 5px;
-      font-size: 14px;
-  }
-
-  .signup-btn1-nl {
-      width: 100%;
-      text-align: center;
-      background: linear-gradient(to right, #1d8afb, #a0cfff, #1d8afb);
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-  }
-
-  .signup-btn1-nl:hover {
-      background-color: #4682B4;
-  }
-
-  .no-thanks-nl {
-      display: block;
-      margin-top: 10px;
-      color: #888;
-      text-decoration: none;
-      margin-bottom: 15px;
-  }
-
-  .no-thanks-nl:hover {
-      color: #000000;
-      font-size: 14px;
-  }
-
-  .terms-nl {
-      margin-top: 15px;
-      font-size: 10px;
-      color: #888;
-  }
-
-  .terms-nl a {
-      display: inline;
-  }
-  .terms-nl a:hover {
-      text-decoration: underline;
-  }
-
-  .popup-right-nl p {
-      margin-top: 0;
-      margin-bottom: 10px;
-      text-align: center;
-  }
-
-</style>
-<div id="popup-nl" class="popup-nl">
-  <div class="popup-content-nl">
-      <div class="popup-left-nl">
-          <img src="popup.jpg" alt="finance">
-      </div>
-
-      <div class="popup-right-nl">
-          <a href="# " class="close1-btn-nl close-nl">X</a>
-          <h1>Subscribe to Newsletter</h1>
-          <h2 class="h2-nl">Get regular updates</h2>
-          <p class="pop_up-nl">We have made becoming a stock market Guru easy with our AI powered finance advisor</p>
-          <form id="emailForm-nl">
-              <input type="email" id="email-nl" placeholder="Enter your email" required>
-              <button type="submit" class="signup-btn1-nl">Subscribe</button>
-          </form>
-          <a href="#" class="no-thanks-nl close-nl">No thanks</a>
-          <p class="terms-nl" style="white-space: nowrap;">By subscribing to newsletters, you agree to our <br><a href="terms&cond.html">Terms of Service</a> and <a href="privacynotice.html">Privacy Policy</a>.</p>
-      </div>
-  </div>
-</div>
-<script src="popup.js"></script>
   </head>
 
   <body>
@@ -2137,9 +2349,10 @@
               thoughts.</p>
           </div>
           <label class="form-label" for="name">Name:</label>
-          <input class="form-input" type="text" id="name" name="name" required pattern="[a-zA-Z ]+"
-            oninvalid="this.setCustomValidity('Numbers and Symbols are not allowed')"
-            oninput="this.setCustomValidity('')">
+          <input class="form-input" type="text" id="name" name="name" required 
+                    pattern="[a-zA-Z ]+"
+                    oninvalid="this.setCustomValidity('Numbers and Symbols are not allowed')"
+                    oninput="this.setCustomValidity('')">
         </div>
         <div class="form-group">
           <label class="form-label" for="email">Email:</label>
@@ -2276,7 +2489,7 @@
     </script>
     <script src="/assets/js/faq.js"></script>
 
-    <!-- Footer Section -->
+    <!-- Footer Section --> 
     <footer id="footer" class="footer-area pt-120">
       <div class="container">
         <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
@@ -2290,9 +2503,30 @@
             </div>
             <div class="col-lg-6">
               <div class="subscribe-form mt-50">
-                <form id="unique-subscribe-form" style="display: flex;">
-                  <input type="email" id="unique-news-email" placeholder="Enter Email" required style="width: 55%; margin-right: auto;" />
-                  <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
+                <form id="unique-subscribe-form" >
+                  <input type="email" id="unique-news-email" placeholder="Enter your email address" required>
+                  
+                  <button class="unique-main-btn" id="unique-subscribe-btn" type="submit" style="
+        height: 45px; 
+        padding: 0 20px; 
+        border: none; 
+        border-radius: 8px; 
+        background-color: #007BFF; /* Professional blue */
+        color: black; 
+        font-size: 16px; 
+        font-weight: 600; 
+        cursor: pointer; 
+        transition: background-color 0.3s ease, transform 0.2s ease; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    " onmouseover="this.style.backgroundColor='#0056b3'; this.style.transform='scale(1.05)';"
+                    onmouseout="this.style.backgroundColor='#007BFF'; this.style.transform='scale(1)';">
+                    Subscribe
+                  </button>
+
+
                 </form>
                 <div id="unique-message" class="unique-popup-message" style="display: none;">
                   <div class="border-animation"></div>
@@ -2325,7 +2559,6 @@
                   <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
                   <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
                   <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
-                  <li><a href="./welcome.html"><i class="fas fa-file-alt"></i> Testimonials</a></li>
                   <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
                 </ul>
               </div>
@@ -2345,14 +2578,14 @@
             </div>
           </div>
 
-
+          
           <div class="col-lg-3 col-md-5 col-sm-5">
             <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
               <div class="footer-title">
                 <h4 class="title custom-margin">Contact Us</h4>
               </div>
               <ul class="contact custom-margin-big" style="justify-content: space-around;">
-                <li class="d-sm-flex justify-content-center">
+                <li class="d-sm-flex justify-content-left"> <!--changed the justify-content-centre  to  justify-content-left-->
                   <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
                   <p style="width: 80%;">
                     <a href="mailto:ayush1337@hotmail.com" target="_blank"
@@ -2361,7 +2594,7 @@
                     </a>
                   </p>
                 </li>
-                <li class="d-sm-flex justify-content-center">
+                <li class="d-sm-flex justify-content-left"> <!--changed the justify-content-centre  to  justify-content-left-->
                   <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
                   <div style="width: 80%;">
                     <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
@@ -2369,7 +2602,7 @@
                     </a>
                   </div>
                 </li>
-                <li class="d-sm-flex justify-content-center">
+                <li class="d-sm-flex justify-content-left"> <!--changed the justify-content-centre  to  justify-content-left-->
                   <i class="fa fa-location-dot d-sm-flex align-items-center white"
                     style="font-size: 12px; width: 10%;"></i>
                   <div style="width: 80%;">
@@ -2379,27 +2612,7 @@
                     </a>
                   </div>
                 </li>
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-                <style>
-                  .social-icons {
-                    display: flex;
-                    gap: 20px;
-                    padding: 20px;
-                  }
-                  
-                  .social-icons a {
-                    color: #333;
-                    font-size: 24px;
-                    text-decoration: none;
-                    transition: color 0.3s ease;
-                  }
-                  
-                  .social-icons a:hover {
-                    color: #666;
-                  }
-                </style>
-              </head>
-              <body>
+              </ul> <!--added the missing ul tag-->
                 <div class="social-icons">
                   <a href="#"><i class="fa-brands fa-instagram"></i></a>
                   <a href="#"><i class="fa-brands fa-facebook"></i></a>
@@ -2407,8 +2620,7 @@
                   <a href="#"><i class="fa-brands fa-discord"></i></a>
                   <a href="#"><i class="fa-brands fa-github"></i></a>
                 </div>
-              </body>
-
+                
             </div>
 
 
@@ -2440,8 +2652,7 @@
           </div>
         </div>
     </footer>
-
-
+    
 
     <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
     </div>
@@ -2587,32 +2798,8 @@
         registerModal.querySelector(".close").addEventListener("click", closeModal);
         loginModal.querySelector(".close").addEventListener("click", closeModal);
       });
-      // <!-- Footer Section -->
-      <footer style="background-color: #f8f9fa; padding: 20px 0; text-align: center;">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <p style="margin: 0;">&copy; 2024 FinVeda. All rights reserved.</p>
-            </div>
-            <div class="col-md-6">
-              <p style="margin: 0;">
-                Built with dedication and passion. Join us on our journey to make finance more accessible and empowering for everyone.
-                <br> Stay connected and explore our tools for financial growth!</br>
-              </p>
-            </div>
-          </div>
-          <div style="margin-top: 10px;">
-            <a href="/about" style="margin-right: 10px;">About Us</a>
-            <a href="/contact" style="margin-right: 10px;">Contact</a>
-            <a href="/terms" style="margin-right: 10px;">Terms of Service</a>
-            <a href="/privacy">Privacy Policy</a>
-          </div>
-        </div>
-      </footer>
-
     </script>
-    <script src="./smoothScroll.js"></script>
-
+      
     <script src="./assets/js/preloader.js"></script>
 
     <link rel="stylesheet" href="visi.css">
@@ -2621,17 +2808,9 @@
       <div>Visitor</div>
       <div class="website-counter"></div>
     </div>
-    <script src="path/to/visitorCounter.js"></script>
-    <script src="./assets/css/visitors.css"></script>
-
-    <script src="visi.js"></script>
-    <script src="../assets/js/index.js"></script>
-
-    <div class="gtranslate_wrapper"></div>
-    <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
-    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-
     
+    <script src="visi.js"></script>
+    <script src="./assets/js/index.js"></script>
   </body>
 
   </html>
