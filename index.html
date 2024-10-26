@@ -1025,10 +1025,34 @@
       <p>We use cookies to enhance your experience on FinVeda. By continuing to use our site, you agree to our use of
         cookies. <br> <a href="blogs/privacy-policy.html" target="_blank">Learn more</a></p>
       <div class="cookie-buttons">
-        <button id="acceptNecessaryCookies">Accept necessary cookies only</button>
-        <button id="acceptAllCookies">Accept all cookies</button>
+        <button id="acceptNecessaryCookies" onclick="handlecookies()">Accept necessary cookies only</button>
+        <button id="acceptAllCookies" onclick="handlecookies()">Accept all cookies</button>
       </div>
     </div>
+    
+    <style>
+      .hide {
+        animation: fadeOut 0.5s ease-in forwards;
+      }
+    
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+          display: none; /* Ensure it doesn't take up space */
+        }
+      }
+    </style>
+    
+    <script>
+      function handlecookies() {
+        const cookieConsent = document.getElementById('cookieConsent');
+        cookieConsent.classList.add('hide');
+      }
+    </script>
+    
 
     </section>
  
@@ -1276,25 +1300,7 @@
       }
     });
   </script>
-
-
-  <!-- Cookie Consent Popup -->
-  <div id="cookieConsent" class="cookie-consent">
-    <h4>🍪Cookies Consent <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-        fill="#175394" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-        class="cookie-icon">
-        <circle cx="12" cy="12" r="10"></circle>
-        <path d="M12 8v4"></path>
-        <path d="M12 16h.01"></path>
-      </svg></h4>
-    <p>We use cookies to enhance your experience on FinVeda. By continuing to use our site, you agree to our use of
-      cookies. <br> <a href="blogs/privacy-policy.html" target="_blank">Learn more</a></p>
-    <div class="cookie-buttons">
-      <button id="acceptNecessaryCookies">Accept necessary cookies only</button>
-      <button id="acceptAllCookies">Accept all cookies</button>
-    </div>
-  </div>
-
+  
   </div>
 
 
