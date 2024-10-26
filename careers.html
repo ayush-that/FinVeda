@@ -321,7 +321,7 @@
   </script>
 
 
-
+<!-- 
   <div class="preloader">
     <div class="loader">
       <div class="ytp-spinner">
@@ -337,7 +337,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <header class="header-area">
     <div style="display: flex; justify-content: center;" class="navbar-area">
       <div style="display: flex; justify-content: center;" class="container">
@@ -769,111 +769,240 @@
 
     <section class="books-section">
       <h2>Recommended Books on Finance</h2>
+      <img style="position: absolute;left: 0px; mix-blend-mode:multiply;top: 2400px;" src="./assets/images/book-careers2.png" alt="photo">
       <ul class="books-list">
-        <li><span class="emoji">📚</span><strong style="color:black;">"Rich Dad Poor Dad" by Robert Kiyosaki</strong> -
-          A classic on financial education and investing.</li>
-        <li><span class="emoji">📖</span><strong style="color:black;">"The Intelligent Investor" by Benjamin
-            Graham</strong> - A must-read for aspiring investors.</li>
-        <li><span class="emoji">📘</span><strong style="color:black;">"The Total Money Makeover" by Dave Ramsey</strong>
-          - A guide to personal finance and debt elimination.</li>
-        <li><span class="emoji">📙</span><strong style="color:black;">"A Random Walk Down Wall Street" by Burton
-            Malkiel</strong> - Insights into market trends and investment strategies.</li>
-        <li><span class="emoji">📗</span><strong style="color:black;">"The Millionaire Next Door" by Thomas J.
-            Stanley</strong> - Profiles habits and traits of wealthy individuals.</li>
+        <li>
+          <div class="book-info">
+            <div class="book-title" style="background-image: url('./assets/images/RICH-POOR.jpeg');">
+              <!-- <strong>"Rich Dad Poor Dad" by Robert Kiyosaki</strong> -->
+            </div>
+            <div class="book-description">
+              A classic on financial education and investing.
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="book-info">
+            <div class="book-title" style="background-image: url('./assets/images/The\ Intelligent\ Investor.jpeg');">
+              <!-- <strong>"The Intelligent Investor" by Benjamin Graham</strong> -->
+            </div>
+            <div class="book-description">
+              A must-read for aspiring investors.
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="book-info">
+            <div class="book-title" style="background-image: url('./assets/images/The\ Total\ Money\ Makeover.jpeg');">
+              <!-- <strong>"The Total Money Makeover" by Dave Ramsey</strong> -->
+            </div>
+            <div class="book-description">
+              A guide to personal finance and debt elimination.
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="book-info">
+            <div class="book-title" style="background-image: url('./assets/images/A\ Random\ Walk\ Down\ Wall\ Street.jpeg');">
+              <!-- <strong>"A Random Walk Down Wall Street" by Burton Malkiel</strong> -->
+            </div>
+            <div class="book-description">
+              Insights into market trends and investment strategies.
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="book-info">
+            <div class="book-title" style="background-image: url('./assets/images/The\ Millionaire\ Next\ Door.jpg');">
+              <!-- <strong>"The Millionaire Next Door" by Thomas J. Stanley</strong> -->
+            </div>
+            <div class="book-description">
+              Profiles habits and traits of wealthy individuals.
+            </div>
+          </div>
+        </li>
       </ul>
     </section>
+    
+    
   </main>
 
 
-  <script>
-
-  </script>
-
-
   <style>
-    h2 {
-      color: #007bff;
-      text-align: center;
-      margin-top: 20px;
-    }
+    /* start for books section */
+/* Books Section */
+.book-info{
+  display: flex;
+  justify-content: space-between;
+}
 
-    .books-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 20px;
-      padding: 20px;
-      background: linear-gradient(145deg, #f0f4ff, #ffffff);
-      border-radius: 8px;
+/* Books Section */
+.books-section {
+  padding: 2rem;
+  background-color: #e6f2ff; /* Light blue background */
+  border-radius: 12px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  transition: background-color 0.3s ease; /* Smooth background transition */
+}
 
-      box-shadow: 0 2px 16px 10px rgba(255, 255, 255, 0.4);
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+.books-section:hover {
+  background-color: #d0e8ff; /* Slightly darker blue on hover */
+}
 
-    .books-list {
-      list-style-type: none;
-      padding: 0;
-      width: 100%;
-    }
+.books-section h2 {
+  font-family: 'Georgia', serif;
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
 
-    .books-list li {
+/* Adjusted books-list for Flexbox */
+.books-list {
+  display: flex;              /* Enable flexbox */
+  flex-direction: column;    /* Arrange items in a column */
+  align-items: center;       /* Center items horizontally */
+  padding: 0;
+  margin: 0;
+}
 
-      background: #a5cff9;
-      border-radius: 30px;
-      margin: 10px 0;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      transition: transform 0.3s, background 0.3s;
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-      position: relative;
-    }
+.books-list li {
+  display: flex;              /* Use flex for each book item */
+  flex-direction: column;     /* Align book title and description vertically */
+  align-items: center;        /* Center items horizontally */
+  margin-bottom: 3rem;       /* Increased spacing */
+  position: relative;
+  padding-bottom: 1rem;
+  transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
 
-    li {
-      flex-wrap: wrap;
-      justify-content: space-evenly;
-      display: flex;
-    }
+.books-list li:hover {
+  transform: scale(1.05); /* Slight scale up on hover */
+}
 
-    .books-list li:hover {
-      background: #69adf2;
-      transform: translateY(-5px);
-    }
+/* Book Shape */
+.book-title {
+  background-position-x: right;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 140px;
+  height: 200px;
+  position: relative;
+  background-color: #f5e0c7;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  color: #2d2d2d;
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  margin-bottom: 1.5rem; /* Added space below the book */
+  text-align: left;
+  transform: rotate(-2deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition effects */
+}
 
-    .emoji {
-      font-size: 1.5em;
-      margin-right: 15px;
-      animation: pop 0.6s ease-in-out forwards;
-      /* Adjust the size of the emoji */
-    }
+.book-title:hover {
+  transform: rotate(-2deg) scale(1.05); /* Slight scale up on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
 
-    /* Pop Animation */
-    @keyframes pop {
-      0% {
-        transform: scale(0.5);
-        opacity: 0;
-      }
+.book-title::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 10px;
+  background-color: #d4a26d;
+  border-radius: 4px 0 0 4px;
+}
 
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
+.book-title::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: -5px;
+  width: 6px;
+  height: 80%;
+  background-image: linear-gradient(to bottom, #d4d4d4 25%, transparent 25%, transparent 50%, #d4d4d4 50%);
+  opacity: 0.4;
+  border-radius: 2px;
+}
 
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .book-item {
-        flex-direction: column;
-        text-align: center;
-      }
+/* Cloud Shape for Book Description */
+.book-description {
+  font-size: medium;
+  background-color: #9bf572;
+  font-weight: bolder;
+  padding: 1rem;
+  color: #656060;
+  line-height: 1.4;
+  width: 75%;
+  height: max-content;
+  margin-left: 20px;
+  border-radius: 50px / 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  margin-top: 1.5rem; /* Space above the description */
+  z-index: 1; /* Ensures it stays above other elements */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition effects */
+}
 
-      .emoji {
-        margin-bottom: 10px;
-      }
-    }
+.book-description:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  background-color: #007bff;
+  color: white;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
 
+/* Decorative elements for book-description */
+.book-description::after,
+.book-description::before {
+  content: '';
+  position: absolute;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}
+
+.book-description::before {
+  width: 30px;
+  height: 30px;
+  bottom: -10px;
+  left: 10%;
+  background-color: #0f0f0f;
+}
+
+.book-description::after {
+  width: 40px;
+  height: 40px;
+  top: -25px;
+  right: 10%;
+}
+
+/* Emoji Styling */
+.emoji {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.books-list li:hover .emoji {
+  transform: scale(1.2); /* Scale emoji on hover */
+}
+
+/* Additional Styling for Body */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+   /* end code  */
     body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
