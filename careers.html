@@ -322,7 +322,7 @@
 
 
 
-  <div class="preloader">
+  <!-- <div class="preloader">
     <div class="loader">
       <div class="ytp-spinner">
         <div class="ytp-spinner-container">
@@ -337,7 +337,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <header class="header-area">
     <div style="display: flex; justify-content: center;" class="navbar-area">
       <div style="display: flex; justify-content: center;" class="container">
@@ -740,6 +740,126 @@
 
     </section>
 
+    <style>
+      /* Section Styling */
+section {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f0f4f8;
+}
+
+/* Heading Styling */
+section h2 {
+  font-size: 32px;
+  color: #c36c29;
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 3px solid #0077b6;
+  padding-bottom: 10px;
+}
+
+/* Search Bar Styling */
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-container input[type="text"] {
+  width: 50%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #0d0d0d;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-container input[type="text"]:focus {
+  border-color: #005f99;
+  background-color: #e1ebf7;
+  color: white;
+  box-shadow: 0 0 8px rgba(0, 95, 153, 0.3);
+}
+
+/* Table Container */
+.table-container {
+  overflow-x: auto;
+}
+
+/* Table Styling */
+.jobs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 18px;
+  overflow: hidden;
+  border: 2px solid #0077b6; /* Blue table border */
+}
+
+/* Header with Orange Gradient */
+.jobs-table thead {
+  background: linear-gradient(to right, #ff8c00, #ffa500);
+  color: #fff;
+}
+
+.jobs-table th, .jobs-table td {
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid #0077b6; /* Bottom border for rows */
+  border-left: 2px solid #0077b6; /* Left side color */
+  border-right: 2px solid #0077b6; /* Right side color */
+}
+
+.jobs-table th {
+  background-color: #3b68db;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Table Row Hover Effects */
+.jobs-table tbody tr {
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.jobs-table tbody tr:hover {
+  background-color: #e3f2fd;
+  transform: scale(1.02);
+  color: #0077b6;
+}
+
+.jobs-table tbody tr:nth-child(even) {
+  background-color: #f9fbfd;
+}
+
+.jobs-table tbody tr td {
+  background-color: #ffffff;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+/* Hover Effect on Table Data */
+.jobs-table tbody tr:hover td {
+  background-color: #bbdefb;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 600px) {
+  .search-container input[type="text"] {
+    width: 80%;
+  }
+
+  .jobs-table th, .jobs-table td {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+    </style>
+
 
     <main>
       <section class="roadmap">
@@ -1082,263 +1202,6 @@ body {
 }
 
    /* end code  */
-
-    /* footer {
-      text-align: center;
-      padding: 20px;
-      background: #333;
-      color: white;
-      position: relative;
-      bottom: 0;
-      width: 100%;
-    } */
-
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
-
-    header {
-      background: #007bff;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-
-    h1 {
-      margin: 0;
-    }
-
-    main {
-      padding: 20px;
-    }
-
-    .jobs-table {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0 10px;
-      margin-top: 20px;
-    }
-
-    .jobs-table th,
-    .jobs-table td {
-      background: #fff;
-      border: 1px solid #ddd;
-      padding: 15px;
-      text-align: left;
-      border-radius: 5px;
-    }
-
-    .jobs-table th {
-      background: #f76b45;
-      color: white;
-    }
-
-    .jobs-table th:hover {
-      background: #f05d34;
-      color: white;
-    }
-
-    .table-container {
-      width: 100%;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    /* Responsive for screens below 768px */
-    @media (max-width: 768px) {
-      .jobs-table thead {
-        display: none;
-      }
-
-      .jobs-table tr {
-        display: block;
-        margin-bottom: 10px;
-      }
-
-      .jobs-table td {
-        display: block;
-        text-align: right;
-        padding-left: 50%;
-        position: relative;
-        border: none;
-        border-bottom: 1px solid #ddd;
-      }
-
-      .jobs-table td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 0;
-        width: 50%;
-        padding-left: 10px;
-        font-weight: bold;
-        text-align: left;
-      }
-
-      .jobs-table td:last-child {
-        border-bottom: none;
-      }
-    }
-
-/* 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #333;
-      color: white;
-      position: relative;
-      bottom: 0;
-      width: 100%;
-    } */
-
-    /* Modal styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgb(0, 0, 0);
-      background-color: rgba(0, 0, 0, 0.4);
-      padding-top: 60px;
-    }
-
-    .modal-content {
-      background-color: #fefefe;
-      margin: 5% auto;
-      padding: 20px;
-      border: 1px solid #888;
-      width: 80%;
-      border-radius: 5px;
-    }
-
-    .close {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-      color: black;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    header {
-      background: #007bff;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-
-    h1 {
-      margin: 0;
-    }
-
-    main {
-      padding: 20px;
-    }
-
-    section {
-      margin-bottom: 40px;
-      padding: 20px;
-      background: #fff;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    h2 {
-      color: #007bff;
-    }
-
-    h2:hover {
-      color: #005abc;
-    }
-
-    .jobs-list {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    .jobs-list li {
-      margin-bottom: 10px;
-      padding: 10px;
-      background: #e9ecef;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    /* footer {
-      text-align: center;
-      padding: 20px;
-      background: #333;
-      color: #fff;
-      position: relative;
-      bottom: 0;
-      width: 100%;
-    } */
-
-    /* Modal styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgb(0, 0, 0);
-      background-color: rgba(0, 0, 0, 0.4);
-      padding-top: 60px;
-    }
-
-    .modal-content {
-      background-color: #fefefe;
-      margin: 5% auto;
-      padding: 20px;
-      border: 1px solid #888;
-      width: 80%;
-      border-radius: 5px;
-    }
-
-    .close {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-      color: black;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .blog-content {
-      text-align: left;
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 80%;
-      /* Adjust this value to increase or decrease the margins */
-    }
-
-    @media (max-width: 768px) {
-
-      /* Change the max-width to fit your design needs */
-      .blog-content {
-        max-width: 100%;
-      }
-    }
   </style>
 </body>
 
