@@ -1274,47 +1274,228 @@ main
     <!--end of GST Calc-->
 
     <!--Start of Income Tax Calc-->
-    <script src="IncomeTax.js" defer></script>
-    <div class="header toool" style="padding-top: 100px;">
-        <h3 id="section8">Income Tax Calculator</h3>
-        <p class="cal-content">The Income Tax Calculator determines the tax payable based on your annual income and applicable tax rate. It helps you estimate your tax liability and plan your finances accordingly.</p>
-        <div class="know-more">
-            <button class="know-more-btn">Know More</button>
-            <div class="know-more-content">
-                <h6 style="text-align: left; margin: 2% 16%; padding-left: 5px;">Here's how it works:</h6>
-                <ol type="1" style="font-size: 1rem; text-align: left; margin-left: 17%; margin-bottom: 2rem;">
-                    <li><b>Income</b>: Enter your total annual income.</li>
-                    <li><b>Tax Rate</b>: Specify the applicable tax rate.</li>
-                    <li><b>Calculate Tax</b>: Computes the income tax based on the inputs.</li>
-                </ol>
-            </div>
+    <main class="main-income">
+      <h1 class="main-income-head">Income tax calculator</h1>
+      <form>
+        <p class="disclaimer" id="disclaimer">
+          *Must have AIS and TIS with yourself
+        </p>
+        <label for="actual-income" class="income-label"
+          >Total Income(Income from Deposit,Savings Account,House
+          Property):</label
+        >
+        <input
+          type="number"
+          placeholder="Enter your total income"
+          class="actual-income"
+          id="actual-income"
+        />
+        <label for="actual-deductions" class="income-label"
+          >Total Deductions(Charity,Under 80GG,80E,80TTA,life insurance premium,
+          PPF,Pension):</label
+        >
+        <input
+          type="number"
+          placeholder="Enter your total deductions"
+          class="actual-deductions"
+          id="actual-deductions"
+        />
+        <label for="pan-number" class="income-label">Pan Card Number:</label>
+        <input
+          type="password"
+          placeholder="Enter your pan card"
+          class="pan-number"
+          id="pan-number"
+        />
+        <div class="necessary-buttons">
+          <button
+            type="button"
+            class="submit-button"
+            id="submit-button"
+            onclick="tax_evaluation()"
+          >
+            Calculate
+          </button>
+          <button type="button" class="reset-button" id="reset-button">
+            Clear
+          </button>
         </div>
-    </div>
-    <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5" id="IncomeTax">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <form id="income-tax-calculator" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                    <div class="form-group">
-                        <label for="income" class="income">Income:</label>
-                        <input type="number" id="income" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="tax-rate" class="tax-rate">Tax Rate (%):</label>
-                        <input type="number" id="tax-rate" class="form-control" required>
-                    </div>
-                    <div class="btn-calculate" style="display: flex; flex-direction: row;">
-                        <button id="submitBtn3" type="submit" class="btn btn-calculate">Calculate</button>
-                        <button type="button" class="btn btn-secondary" onclick="clearIncomeTax()"><p class="btn-text">Clear</p></button>
-                    </div>
-                </form>
-                <div id="result" class="mt-3">
-                    <h5>Result:</h5>
-                    <p id="income-tax"></p>
-                    <p id="real-income"></p>
-                </div>
-            </div>
-        </div>
-    </div>
+      </form>
+      <p class="taxable-income" id="taxable-income">
+        Taxable income: <strong id="taxable-income-value"></strong>
+      </p>
+      <p class="tax-payable" id="tax-payable">
+        Tax Payable: <strong id="tax-payable-value"></strong>
+      </p>
+      <p class="income-after-tax" id="income-after-tax">
+        Income After tax: <strong id="income-after-value"></strong>
+      </p>
+    </main>
+
+    <style>
+      *{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+:root{
+    --required-font:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.main-income{
+    border:1px solid black;
+    width:40%;
+    padding:10px;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin:auto;
+    height:100vh;
+    background:linear-gradient(35deg, #d1b3e5, #ffe3f0);
+    border-radius:20px;
+
+}
+
+.main-income-head{
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: 600;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:grey;
+    text-shadow:2px 2px 3px white;
+    margin-top:10px;
+}
+
+.income-label{
+    display:inline-block;
+    width:90%;
+    /* border: 1px solid black; */
+    margin-left:20px;
+    margin-top:20px;
+    font-size: 23px;   
+    color:rgb(100, 98, 98);
+    font-family:var(--required-font);
+}
+
+.actual-income,.actual-deductions,.pan-number{
+    display:block;
+    font-family: var(--required-font);
+    width:90%;
+    height:50px;    
+    margin-top:10px;
+    margin-bottom:10px;
+    padding:10px;
+    font-size: 20px;
+    margin-left:20px;
+    border-radius: 10px;
+}
+
+.disclaimer{
+    /* border:1px solid black; */
+    text-align:center;
+    font-size: 20px;
+    color:red;
+    font-style: italic;
+    margin-top:10px;
+    margin-bottom:5px;
+    
+}
+
+.necessary-buttons{
+    margin-top:20px;
+}
+
+.submit-button, .reset-button{
+    width:150px;
+    height:50px;
+    font-size:24px;
+    background: linear-gradient(120deg, coral, pink,cornflowerblue);
+    border-radius:10px;
+    color:white;
+    border:none;
+}
+
+.submit-button{
+    margin-left:8rem;
+}
+
+.reset-button{
+    margin-left:2rem;
+}
+
+.taxable-income, .tax-payable, .income-after-tax{
+    margin-top:10px;
+    font-size: 23px;
+    color:rgb(106, 99, 99);
+    font-family: var(--required-font);
+    display:none;
+    width:100%;
+    text-align:center;
+    /* visibility:hidden; */
+}
+    </style>
+
+
+    <script>
+      function tax_evaluation() {
+        var total_income =
+          parseFloat(document.getElementById("actual-income").value) || 0;
+        var total_deductions = parseFloat(
+          document.getElementById("actual-deductions").value
+        ) || 0;
+        // Just for the sake of taking user data
+        var pan_card = document.getElementById("pan-number").value;
+
+        //Standard deduction may vary as per rules
+        var standard_deduction = 50000;
+        //Change of taxable income on page and its calculation
+        var taxable_income =
+          total_income - (total_deductions + standard_deduction);
+        document.getElementById("taxable-income-value").innerText =
+          "₹" + taxable_income;
+        console.log(taxable_income);
+        var final_income = taxable_income;
+
+        var tax_payable = 0;
+        if (final_income < 300000) {
+          tax_payable = 0;
+        } else {
+          const slabs = [
+            { limit: 300000, rate: 0 },
+            { limit: 700000, rate: 0.05 },
+            { limit: 1000000, rate: 0.1 },
+            { limit: 1200000, rate: 0.15 },
+            { limit: 1500000, rate: 0.2 },
+            { limit: Infinity, rate: 0.3 }, // For income above ₹1500000
+          ];
+
+          let previous_limit = 0;
+
+            for (let i = 0; i < slabs.length; i++) {
+            if (final_income > slabs[i].limit) {
+                // Calculate tax for the portion between previous slab limit and current slab limit
+                tax_payable += (slabs[i].limit - previous_limit) * slabs[i].rate;
+                previous_limit = slabs[i].limit; // Move to the next slab
+            } else {
+                // If income falls within this slab, calculate the remaining tax and exit
+                tax_payable += (final_income - previous_limit) * slabs[i].rate;
+                break; // Exit loop as we've fully calculated the tax
+            }
+            }
+        }
+        var income_after_tax = taxable_income - tax_payable;
+        document.getElementById("income-after-value").innerText =
+          "₹" + income_after_tax;
+        document.getElementById("tax-payable-value").innerText = "₹" + tax_payable;
+
+        document.getElementById("taxable-income").style.display = "block";
+        document.getElementById("tax-payable").style.display = "block";
+        document.getElementById("income-after-tax").style.display = "block";
+        
+      }
+    </script>
     
   <!-- end of Income Tax Calc-->
    
