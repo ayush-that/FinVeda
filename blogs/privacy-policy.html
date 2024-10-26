@@ -115,9 +115,118 @@
           color: rgb(77, 77, 77) !important;
         }
 
+body {
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode h2 {
+  /* background-color: #121212 !important; */
+  /* color: #e0e0e0 !important; */
+}
+
 
   </style>
+<style>
+  .blog-content {
+      text-align: left;
+      margin: 0 auto;
+      max-width: 80%;
+      padding: 40px; /* Added padding for spacing */
+      background-color: #fdfdfd; /* Subtle off-white background */
+      border-radius: 15px; /* Rounded corners */
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+      transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+  }
 
+  .blog-content:hover {
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+  }
+
+  .blog-content h1 {
+      font-size: 2.8rem; /* Adjusted font size */
+      margin-bottom: 20px; /* Space below title */
+      color: #2c3e50; /* Darker title color */
+      text-align: center; /* Centered title */
+      font-weight: 700; /* Bold title */
+      letter-spacing: 1px; /* Slightly increased letter spacing */
+  }
+
+  .blog-content h4 {
+      font-size: 1.6rem; /* Adjusted section heading size */
+      margin: 30px 0 15px; /* Space around section headings */
+      color: #2980b9; /* Blue color for section headings */
+      border-bottom: 2px solid #2980b9; /* Underline effect */
+      padding-bottom: 5px; /* Space below the underline */
+  }
+
+  .blog-content p {
+      line-height: 1.6; /* Improved line height */
+      margin-bottom: 20px; /* Space below paragraphs */
+      color: #34495e; /* Dark grey for text */
+      font-size: 1.1rem; /* Standard font size */
+      font-family: 'Arial', sans-serif; /* Clear font */
+  }
+
+  .blog-content a {
+      color: #2980b9; /* Primary link color */
+      text-decoration: none; /* Remove underline */
+      font-weight: 600; /* Semi-bold links */
+      transition: color 0.3s ease; /* Smooth transition */
+  }
+
+  .blog-content a:hover {
+      color: #1a5276; /* Darker color on hover */
+      text-decoration: underline; /* Underline on hover for clarity */
+  }
+
+  .blog-content ul,
+  .blog-content ol {
+      padding-left: 20px; /* Indentation for lists */
+      margin-bottom: 20px; /* Space below lists */
+      color: #444; /* Darker color for list text */
+      list-style-position: inside; /* Inside for better alignment */
+  }
+
+  .blog-content li {
+      margin-bottom: 10px; /* Space between list items */
+      font-size: 1.1rem; /* Consistent font size */
+  }
+
+  /* Subtle alternating background for paragraphs */
+  .blog-content p:nth-child(even) {
+      background-color: #f8f8f8; /* Light grey for even paragraphs */
+      padding: 10px; /* Padding for even paragraphs */
+      border-radius: 5px; /* Rounded corners for even paragraphs */
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+      .blog-content {
+          max-width: 90%; /* Wider on small screens */
+          padding: 25px; /* Adjust padding */
+      }
+
+      .blog-content h1 {
+          font-size: 2.4rem; /* Smaller title size */
+      }
+
+      .blog-content h4 {
+          font-size: 1.5rem; /* Smaller heading size */
+      }
+
+      .blog-content p,
+      .blog-content li {
+          font-size: 1rem; /* Smaller text size */
+      }
+  }
+</style>
 <body>
 
   <div class="circle-container">
@@ -201,6 +310,15 @@
       var scrolled = (winScroll / height) * 100;
       document.getElementById("progressBar").style.width = scrolled + "%";
   };
+
+  window.addEventListener("DOMContentLoaded", (event) => {
+      const savedTheme = localStorage.getItem("theme");
+
+      // Apply the theme if stored
+      if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+    });
  </script>
 
 <div class="preloader">
@@ -232,6 +350,11 @@
               <span class="toggler-icon"></span>
             </button> -->
             <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+              <a href="./index.html">
+                <div class="icon1">
+                  <img src="../assets/images/icon.webp" alt="icon.png">
+                </div>
+              </a>
               <ul id="nav" class="navbar-nav">
                 <li class="nav-item">
                   <a class="page-scroll" href="../index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
@@ -258,7 +381,7 @@
                   <a class="page-scroll" href="../contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
                 </li>
                <li class="nav-item no-underline">
-                  <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
+                  <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="/FinVeda/loginPage.html" >Login/Register 💻</a>
                 </li>
               </ul>
             </div>
@@ -390,37 +513,64 @@
         style="background-image: url(../assets/images/banner-bg.svg)"
         >
         <div class="container">
+          <h2 class="head-animate" style="font-size: 90px;">
+            WELCOME TO FINVEDA
+          </h2>
           <div class="row justify-content-center">
             <div class="col-lg-8">
               <div class="header-hero-content text-center">
-                <h3
-                  class="header-sub-title wow fadeInUp"
-                  data-wow-duration="1.3s"
-                  data-wow-delay="0.2s"
-                  >
-                  Say 👋🏼 to FinVeda
-                </h3>
-                <h2
-                  class="header-title wow fadeInUp"
-                  data-wow-duration="1.3s"
-                  data-wow-delay="0.5s"
-                  >
-                  your savvy financial companion
-                </h2>
-                <p
-                  class="text wow fadeInUp"
-                  data-wow-duration="1.3s"
-                  data-wow-delay="0.8s"
-                  >
-                  Wanna learn how to grow your money to become rich? We have made becoming a stock market Guru easy with our AI powered finance advisor - <b>Arth Sathi 🤵🏻</b>
+                <style>
+                  .head-animate {
+                    text-align: center;
+                    position: relative;
+                    top: 200px;
+                    color: transparent;
+                    -webkit-text-stroke: 2px white;
+                    font-weight: bold;
+                    background: url(../assets/images/back.png);
+                    -webkit-background-clip: text;
+                    background-position: 0 0;
+                    animation: back 20s linear infinite, hovering 1.5s ease-in-out infinite;
+                    ;
+                  }
+
+                  @keyframes back {
+                    100% {
+                      background-position: 2000px 0;
+                    }
+                  }
+
+                  @keyframes hovering {
+                    0% {
+                      transform: translateY(0);
+                    }
+
+                    50% {
+                      transform: translateY(-5px);
+                    }
+
+                    100% {
+                      transform: translateY(0);
+                    }
+                  }
+
+                  .header-hero-content h2 {
+                    font-size: 200px;
+                  }
+                </style>
+                <br>
+                <br>
+                <p class="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s"
+                  style="visibility: visible; animation-duration: 1.3s; animation-delay: 0.8s;">
+                  Wanna learn how to grow your money to become rich? We have
+                  made becoming a stock market Guru easy with our AI
+                  powered finance advisor - <b>Arth Sathi 🤵🏻</b>
                 </p>
-                <a
-                  href="../index.html"
-                  class="main-btn wow fadeInUp"
-                  data-wow-duration="1.3s"
-                  data-wow-delay="1.1s"
-                  >Chat with ArthaSathi 💬</a
-                  >
+                <a href="#" class="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s"
+                  onclick="window.botpressWebChat.sendEvent({ type: 'show' }); return false;"
+                  style="visibility: visible; animation-duration: 1.3s; animation-delay: 1.1s;">
+                  Chat with ArthaSathi 💬
+                </a>
               </div>
             </div>
           </div>
@@ -431,7 +581,7 @@
                 data-wow-duration="1.3s"
                 data-wow-delay="1.4s"
                 >
-                <img src="../assets/images/header-hero.png" alt="hero" />
+                <img src="../assets/images/header-hero.webp" alt="hero" />
               </div>
             </div>
           </div>
@@ -693,7 +843,7 @@
               >
                 <div class="copyright-content" style="text-align: center">
                   <p class="text" style="text-align: center">
-                    © <span id="copyright-year"></span> FinVeda. All rights
+                    © <span id="copyright-year">2024</span> FinVeda. All rights
                     reserved<br />
                     Made with ♥ in India
                   </p>

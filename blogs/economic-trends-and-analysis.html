@@ -54,6 +54,121 @@
         background-color: #f76b45;
         z-index: 9999;
       }
+body {
+background-color: white;
+color: black;
+transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode {
+background-color: #121212;
+color: #e0e0e0;
+}
+
+.dark-mode h2 {
+  background-color: #121212 !important;
+  color: #e0e0e0 !important;
+}
+  </style>
+  <style>
+ article {
+    max-width: 800px;
+    margin: 20px auto; /* Added margin for spacing from other elements */
+    padding: 30px; /* Increased padding for a more spacious feel */
+    background: #ffffff;
+    border-radius: 8px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Softer shadow for a subtle depth effect */
+    transition: transform 0.2s; /* Smooth transition for hover effect */
+}
+
+article:hover {
+    transform: translateY(-2px); /* Slight lift on hover for engagement */
+}
+
+h2 {
+    font-size: 26px; 
+    color: #007bff;
+    margin: 20px 0 15px; 
+    border-bottom: 2px solid #eaeaea; 
+    padding-bottom: 5px; 
+}
+
+p {
+    margin-bottom: 20px; 
+    line-height: 1.7; 
+    font-size: 16px; /* Consistent font size for better readability */
+    color: #333; /* Darker color for better contrast */
+}
+
+b {
+    color: #007bff; 
+    font-weight: bold; 
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 30px 0; 
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 25px; 
+    margin-bottom: 20px; 
+    padding: 0; 
+}
+
+li {
+    margin-bottom: 10px; 
+    line-height: 1.6; /* Improved spacing for list items */
+}
+
+blockquote {
+    border-left: 4px solid #007bff;
+    padding: 15px 20px; 
+    background: #f9f9f9;
+    margin: 25px 0; 
+    font-style: italic; 
+    color: #555; 
+    font-size: 1.1em; /* Slightly larger text for quotes */
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px; 
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s; 
+    font-size: 16px; /* Consistent button text size */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    article {
+        padding: 20px; /* Less padding on smaller screens */
+    }
+
+    h2 {
+        font-size: 22px; /* Smaller heading on mobile */
+    }
+
+    p, li {
+        font-size: 14px; /* Adjust font size for better readability */
+    }
+
+    button {
+        width: 100%; /* Full-width button on small screens */
+    }
+}
+
   </style>
 </head>
 
@@ -104,6 +219,15 @@
         coords.x = e.pageX;
         coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
       });
+
+      window.addEventListener("DOMContentLoaded", (event) => {
+      const savedTheme = localStorage.getItem("theme");
+
+      // Apply the theme if stored
+      if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+    });
 
       function animateCircles() {
         let x = coords.x;
@@ -171,6 +295,11 @@
                 <span class="toggler-icon"></span>
               </button> -->
               <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                <a href="./index.html">
+                  <div class="icon1">
+                    <img src="../assets/images/icon.webp" alt="icon.png">
+                  </div>
+                </a>
                 <ul id="nav" class="navbar-nav ml-auto">
                   <li class="nav-item">
                     <a class="page-scroll" href="../index.html">Home 🏡</a>
@@ -338,7 +467,7 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="header-hero-image text-center wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">
-              <img src="../assets/images/header-hero.png" alt="hero" />
+              <img src="../assets/images/header-hero.webp" alt="hero" />
             </div>
           </div>
         </div>
@@ -542,7 +671,7 @@
                 ">
               <div class="copyright-content" style="text-align: center">
                 <p class="text" style="text-align: center">
-                  © <span id="copyright-year"></span> FinVeda. All rights
+                  © <span id="copyright-year">2024</span> FinVeda. All rights
                   reserved<br />
                   Made with ♥ in India
                 </p>

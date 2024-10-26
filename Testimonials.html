@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finveda Testimonials</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        :root {
+            --primary-blue: #1e3d59;
+            --secondary-blue: #2c5282;
+            --primary-orange: #ff6b6b;
+            --secondary-orange: #ff8c42;
+            --light-bg: #f7fafc;
+        }
+
+        body {
+            background: var(--light-bg);
+            color: var(--primary-blue);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary-orange);
+            border-radius: 2px;
+        }
+
+        .header h1 {
+            color: var(--primary-blue);
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .header p {
+            color: var(--secondary-blue);
+            font-size: 1.2rem;
+        }
+
+        .testimonials-carousel {
+            position: relative;
+            overflow: hidden;
+            padding: 2rem 0;
+        }
+
+        .testimonial-slide {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin: 0 auto;
+            max-width: 800px;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.8rem;
+        }
+
+        .user-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: var(--light-bg);
+            margin-right: 1.5rem;
+            overflow: hidden;
+            border: 3px solid var(--primary-orange);
+        }
+
+        .user-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .user-info h3 {
+            color: var(--primary-blue);
+            margin-bottom: 0.4rem;
+            font-size: 1.3rem;
+        }
+
+        .user-info p {
+            color: var(--secondary-orange);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .star-rating {
+            color: var(--secondary-orange);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-content {
+            color: #4a5568;
+            font-size: 1.15rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2.5rem;
+        }
+
+        .carousel-btn {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.8rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .carousel-btn:hover {
+            background: var(--primary-orange);
+            transform: translateY(-2px);
+        }
+
+        .comments-section {
+            margin-top: 4rem;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .comments-section h2 {
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .comment-form textarea {
+            width: 100%;
+            padding: 1.2rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            resize: vertical;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .comment-form textarea:focus {
+            outline: none;
+            border-color: var(--secondary-orange);
+        }
+
+        .comment-form button {
+            background: var(--primary-orange);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .comment-form button:hover {
+            background: var(--secondary-orange);
+            transform: translateY(-2px);
+        }
+
+        .comments-list {
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 1rem;
+        }
+
+        .comment {
+            padding: 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+            transition: background-color 0.3s ease;
+        }
+
+        .comment:hover {
+            background-color: var(--light-bg);
+        }
+
+        .reactions {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .reaction-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .reaction-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .cta-section {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 3rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            border-radius: 20px;
+            color: white;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .cta-section p {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: var(--primary-orange);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .cta-btn:hover {
+            background: var(--secondary-orange);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
+            .testimonial-card {
+                margin: 0.5rem;
+                padding: 1.8rem;
+            }
+
+            .cta-section {
+                padding: 2rem;
+            }
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        :root {
+            --primary-blue: #1e3d59;
+            --secondary-blue: #2c5282;
+            --primary-orange: #ff6b6b;
+            --secondary-orange: #ff8c42;
+            --light-bg: #f7fafc;
+        }
+
+        .home-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: var(--primary-blue);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .home-button:hover {
+            background: var(--primary-orange);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .home-button i {
+            font-size: 1.1rem;
+        }
+
+        body {
+            background: var(--light-bg);
+            color: var(--primary-blue);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="home-button">
+        <i class="fas fa-home"></i>
+        Home
+    </a>
+    <div class="container">
+        <div class="header">
+            <h1>What Our Users Say About Finveda</h1>
+            <p>Real experiences from our community of investors and crypto enthusiasts</p>
+        </div>
+
+        <div class="testimonials-carousel">
+            <div class="testimonial-slide">
+                <div class="testimonial-card">
+                    <div class="user-profile">
+                        <div class="user-avatar">
+                            <img src="/api/placeholder/70/70" alt="Sarah Johnson">
+                        </div>
+                        <div class="user-info">
+                            <h3>Sarah Johnson</h3>
+                            <p>Cryptocurrency Trader | 2 years with Finveda</p>
+                        </div>
+                    </div>
+                    <div class="star-rating">
+                        ★★★★★
+                    </div>
+                    <p class="testimonial-content">
+                        "Finveda has transformed the way I approach crypto trading. Their intuitive platform and real-time analytics have helped me make more informed decisions. The community support is incredible!"
+                    </p>
+                </div>
+            </div>
+
+            <div class="testimonial-slide">
+                <div class="testimonial-card">
+                    <div class="user-profile">
+                        <div class="user-avatar">
+                            <img src="/api/placeholder/70/70" alt="Michael Chen">
+                        </div>
+                        <div class="user-info">
+                            <h3>Michael Chen</h3>
+                            <p>Investment Analyst | 1.5 years with Finveda</p>
+                        </div>
+                    </div>
+                    <div class="star-rating">
+                        ★★★★★
+                    </div>
+                    <p class="testimonial-content">
+                        "The educational resources and market insights provided by Finveda are unmatched. I've grown my portfolio significantly since joining the platform."
+                    </p>
+                </div>
+            </div>
+
+            <div class="testimonial-slide">
+                <div class="testimonial-card">
+                    <div class="user-profile">
+                        <div class="user-avatar">
+                            <img src="/api/placeholder/70/70" alt="Emma Williams">
+                        </div>
+                        <div class="user-info">
+                            <h3>Emma Williams</h3>
+                            <p>Retail Investor | 1 year with Finveda</p>
+                        </div>
+                    </div>
+                    <div class="star-rating">
+                        ★★★★½
+                    </div>
+                    <p class="testimonial-content">
+                        "As a beginner in crypto, Finveda's user-friendly interface and comprehensive tutorials made it easy for me to get started. Their customer support is exceptional!"
+                    </p>
+                </div>
+            </div>
+
+            <div class="carousel-controls">
+                <button class="carousel-btn" onclick="previousSlide()">Previous</button>
+                <button class="carousel-btn" onclick="nextSlide()">Next</button>
+            </div>
+        </div>
+
+        <div class="comments-section">
+            <h2>Share Your Experience</h2>
+            <div class="comment-form">
+                <textarea placeholder="Write your comment here..." rows="4"></textarea>
+                <button onclick="addComment()">Post Comment</button>
+            </div>
+            <div class="comments-list" id="commentsList">
+                <!-- Comments will be dynamically added here -->
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Ready to Start Your Financial Journey?</h2>
+            <p>Join thousands of satisfied users who trust Finveda for their financial needs</p>
+            <a href="loginPage.html" class="cta-btn">Get Started Now</a>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.getElementsByClassName('testimonial-slide');
+
+        function showSlides() {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[currentSlide].style.display = "block";
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlides();
+        }
+
+        function previousSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlides();
+        }
+
+        function addComment() {
+            const commentText = document.querySelector('.comment-form textarea').value;
+            if (commentText.trim() === '') return;
+
+            const comment = document.createElement('div');
+            comment.className = 'comment';
+            comment.innerHTML = `
+                <p>${commentText}</p>
+                <div class="reactions">
+                    <button class="reaction-btn" onclick="react(this)">
+                        <span>👍</span>
+                        <span class="count">0</span>
+                    </button>
+                    <button class="reaction-btn" onclick="react(this)">
+                        <span>❤️</span>
+                        <span class="count">0</span>
+                    </button>
+                    <button class="reaction-btn" onclick="react(this)">
+                        <span>🎉</span>
+                        <span class="count">0</span>
+                    </button>
+                </div>
+            `;
+
+            document.getElementById('commentsList').prepend(comment);
+            document.querySelector('.comment-form textarea').value = '';
+        }
+
+        function react(button) {
+            const countSpan = button.querySelector('.count');
+            let count = parseInt(countSpan.textContent);
+            countSpan.textContent = count + 1;
+        }
+
+        showSlides();
+        setInterval(nextSlide, 5000);
+    </script>
+</body>
+</html>

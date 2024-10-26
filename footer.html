@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet"  href="./assets/css/index.css">
 
     <style>
         body {
@@ -14,166 +15,144 @@
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
         }
-        .footer {
-            background: linear-gradient(to right, #346479, #0f2027);
-            color: white;
-            padding: 20px 0;
-        }
-        .footer-content {
-            display: flex;
-            justify-content: space-around;
-            align-items: flex-start;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .footer-content div {
-            flex: 1;
-            margin: 0 10px;
-        }
-        .footer-content div ul {
-            list-style: none;
-            padding: 0;
-        }
-        .footer-content div ul li {
-            margin: 10px 0;
-            color: #ffffff;
-        }
-        .footer-content div ul li a {
-            color: #ffffff;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        .footer-content div ul li a:hover {
-            color: #ff8c00; /* Change to highlight color */
-            text-decoration: underline;
-        }
-        .footer-icons {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        .footer-icons i {
-            margin-right: 10px;
-            color: #ff8c00;
-        }
-        .footer-bottom {
-            background-color: #0f2027;
-            text-align: center;
-            padding: 10px 0;
-            color: #ffffff;
-        }
-        .floating-buttons {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            flex-direction: column;
-        }
-        .floating-buttons a {
-            background-color: #6a5acd;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            border-radius: 50%;
-            margin: 5px 0;
-            text-decoration: none;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s ease;
-        }
-        .floating-buttons a:hover {
-            background-color: #483d8b;
-        }
-        @media (max-width: 768px) {
-            .footer-content {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
+        /* Footer Wrapper */
+.footer-wrapper {
+    background-color: #0f2027; /* Footer background */
+    color: white; /* Text color */
+    /* padding: 20px 0; Overall padding */
+}
 
-            .footer-content div {
-                margin: 10px 0;
-            }
-        }
-        #social_icons div {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-        #social_icons a:hover i {
-            color: #ff4500;
-        }
+/* Footer Divider */
+.footer-divider {
+    border: none;
+    border-top: 2px solid #ccc; /* Ruler line color */
+    /* margin: 20px 0; Margin around the divider */
+}
+
+/* Footer Widget */
+/* .footer-widget {
+    padding-bottom: 50px; Bottom padding for footer widget 
+} */
+
+/* Footer Titles */
+.footer-title {
+    font-size: 20px; /* Font size for titles */
+    font-weight: bold; /* Bold font for titles */
+    margin-bottom: 15px; /* Space below titles */
+}
+
+/* Footer Links */
+.footer-links {
+    list-style: none; /* No list styling */
+    padding: 0; /* No padding */
+}
+
+.footer-links li {
+    margin: 5px 0; /* Space between list items */
+}
+
+.footer-links a {
+    color: white; /* Link color */
+    text-decoration: none; /* No underline */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.footer-links a:hover {
+    color: #ff8c00; /* Highlight color on hover */
+}
+
+/* Contact Section */
+.contact {
+    list-style: none; /* No list styling */
+    padding: 0; /* No padding */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-widget {
+        padding-bottom: 5px; /* Adjusted padding for mobile */
+    }
+
+    .footer-title {
+        font-size: 14px; /* Smaller font size for mobile */
+    }
+    
+    .footer-links li,
+    .contact li {
+        margin: 3px 0; /* Less margin for mobile */
+    }
+}
+
     </style>
 </head>
 <body>
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-icons">
-                <div><i class="fab fa-instagram"></i><a href="https://instagram.com" target="_blank" aria-label="Instagram">@instagram_user</a></div>
-                <div><i class="fab fa-facebook"></i><a href="https://facebook.com" target="_blank" aria-label="Facebook">@facebook_user</a></div>
-                <div><i class="fab fa-twitter"></i><a href="https://twitter.com" target="_blank" aria-label="Twitter">@twitter_user</a></div>
-                <div><i class="fab fa-discord"></i><a href="https://discord.com" target="_blank" aria-label="Discord">@discord_user</a></div>
-                <div><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/sampada-tiwari-217123257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="Linkedin">@linkedin_user</a></div>
-            <nav>
-                <ul>
-                    <li><a href="#"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
-                    <li><a href="#"><i class="fas fa-undo"></i> Refund Policy</a></li>
-                    <li><a href="#"><i class="fas fa-file-contract"></i> Licensing</a></li>
-                    <li><a href="#"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
-                    <li><a href="#"><i class="fas fa-users"></i> Our Contributors</a></li>
-                </ul>
-            </nav>
-            <nav>
-                <ul>
-                    <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="#"><i class="fas fa-info-circle"></i> About Us</a></li>
-                    <li><a href="#"><i class="fas fa-chart-line"></i> Trends</a></li>
-                    <li><a href="#"><i class="fas fa-tools"></i> Tools</a></li>
-                    <li><a href="#"><i class="fas fa-blog"></i> Blog</a></li>
-                    <li><a href="#"><i class="fas fa-question-circle"></i> Quiz</a></li>
-                </ul>
-            </nav>
-            <div>
-                <ul>
-                    <li><i class="fas fa-envelope"></i> <a href="mailto:ayush1337@hotmail.com">ayush1337@hotmail.com</a></li>
-                    <li><i class="fas fa-globe"></i> <a href="https://fin-veda.vercel.app" target="_blank">fin-veda.vercel.app</a></li>
-                    <li><i class="fas fa-map-marker-alt"></i> Delhi, India</li>
+    <div class="footer-wrapper">
+  <hr class="footer-divider"> <!-- Horizontal line above the footer
+  <div class="footer-widget pb-50"> <!-- Adjusted padding -->
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-8">
+        <div class="footer-about mt-20 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s"> <!-- Adjusted margin -->
+          <p class="text">
+            We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
+          </p>
+        </div>
+      </div>
 
-                    <li id="social_icons" class="d-sm-flex justify-content-evenly my-3">
-                        <div style="width: 100%; display:flex; ">
-                          <a href="https://instagram.com" target="_blank" style="margin: 0 10px; color: #E4405F;" aria-label="Instagram">
-                            <i style="font-size: 25px" class="fa-brands fa-instagram"></i>
-                          </a>
-                          <a href="https://facebook.com" target="_blank" style="margin: 0 10px; color: #4267B2;" aria-label="Facebook">
-                            <i style="font-size: 25px" class="fa-brands fa-facebook"></i>
-                          </a>
-                          <a href="https://twitter.com" target="_blank" style="margin: 0 10px; color: #1DA1F2;" aria-label="Twitter">
-                            <i style="font-size: 25px" class="fa-brands fa-twitter"></i>
-                          </a>
-                          <a href="https://discord.com" target="_blank" style="margin: 0 10px; color: #7289DA;" aria-label="Discord">
-                            <i style="font-size: 25px" class="fa-brands fa-discord"></i>
-                          </a>
-                          <a href="https://github.com" target="_blank" style="margin: 0 10px; color: #333;" aria-label="GitHub">
-                            <i style="font-size: 25px" class="fa-brands fa-github"></i>
-                          </a>
-                        </div>
-                      </li>
-                </ul>
-            </div>
-        </div>
+      <div class="col-lg-5 col-md-7 col-sm-7">
+        <div class="footer-link d-flex mt-20 justify-content-between"> <!-- Adjusted margin -->
+          <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+            <h3 class="footer-title">Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="./blogs/privacy-policy.html">Privacy Policy</a></li>
+              <li><a href="./blogs/refund-policy.html">Refund Policy</a></li>
+              <li><a href="Licensing.html">Licensing</a></li>
+              <li><a href="./blogs/terms-of-service.html">Terms of Service</a></li>
+              <li><a href="./contributors.html">Our Contributors</a></li>
+            </ul>
+          </div>
 
-                </ul>
-            </div>
+          <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+            <h4 class="footer-title">Resources</h4>
+            <ul class="footer-links">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./about.html">About Us</a></li>
+              <li><a href="./trends.html">Trends</a></li>
+              <li><a href="./tools/sip.html">Tools</a></li>
+              <li><a href="./blog.html">Blog</a></li>
+              <li><a href="./quiz.html">Quiz</a></li>
+            </ul>
+          </div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2024 FinVeda. All rights are reserved</p>
-            <p>Made with ♥ in India</p>
+      </div>
+
+      <div class="col-lg-3 col-md-5 col-sm-5">
+        <div class="footer-contact mt-20 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s"> <!-- Adjusted margin -->
+          <h4 class="footer-title">Contact Us</h4>
+          <ul class="contact">
+            <li><i class="fa fa-envelope"></i><a href="mailto:ayush1337@hotmail.com">ayush1337@hotmail.com</a></li>
+            <li><i class="fa fa-globe"></i><a href="https://fin-veda.vercel.app">fin-veda.vercel.app</a></li>
+            <li><i class="fa fa-location-dot"></i><a href="#">Delhi, India</a></li>
+            <li id="social_icons" class="d-flex justify-content-between mt-2"> <!-- Adjusted margin -->
+              <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a>
+              <a href="https://twitter.com"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="https://discord.com"><i class="fa-brands fa-discord"></i></a>
+              <a href="https://github.com"><i class="fa-brands fa-github"></i></a>
+            </li>
+          </ul>
         </div>
-    </footer>
-    <div class="floating-buttons">
-        <a href="#"><i class="fas fa-comment"></i></a>
-        <a href="#"><i class="fas fa-arrow-up"></i></a>
+      </div>
     </div>
+  </div>
+  
+  <hr class="footer-divider"> <!-- Ruler line after the footer -->
+
+  <!-- Copyright Section -->
+  <div class="footer-copyright text-center mt-20 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s"> <!-- Adjusted margin -->
+    <p>© <span id="copyright-year">2024</span> FinVeda. All rights reserved. Made with ♥ in India</p>
+  </div>
+</div>
+
 </body>
 </html>
 

@@ -3,12 +3,9 @@
 
 <head>
   <meta charset="utf-8" />
-
   <title>Carrers - FinVeda</title>
-
-  <title>Careers - FinVeda</title>
-
-  <meta name="description" content="Explore engaging quizzes on finance and economics at Fin Veda. Test your knowledge and learn with interactive quizzes covering various topics." />
+  <meta name="description"
+    content="Explore engaging quizzes on finance and economics at Fin Veda. Test your knowledge and learn with interactive quizzes covering various topics." />
   <meta name="author" content="Ayush Singh">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="shortcut icon" href="./assets/images/favicon2.png" type="image/png" />
@@ -22,64 +19,66 @@
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="assets/css/quiz.css" />
   <link rel="stylesheet" href="assets/css/popup.css" />
+  <link rel="stylesheet"  href="./assets/css/index.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-   <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
+  <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
   <link rel="stylesheet" href="navbar.css">
   <link rel="stylesheet" href="careers.css"> <!-- Link to careers.css -->
   <style>
-    
     body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
 
-        header {
-            background: #f76b45;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        h1 {
-            margin-bottom: 20px;
-        }
+    header {
+      background: #f76b45;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
 
-        main {
-            padding: 20px;
-        }
+    h1 {
+      margin-bottom: 20px;
+    }
 
-        .job-posting {
-            border: 1px solid #ddd;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            background-color: #fff;
-        }
+    main {
+      padding: 20px;
+    }
 
-        button {
-            background: #f76b45;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
+    .job-posting {
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      background-color: #fff;
+    }
 
-        button:hover {
-            background: #e65c39;
-        }
+    button {
+      background: #f76b45;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #333;
-            color: white;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
+    button:hover {
+      background: #e65c39;
+    }
+
+    /* footer {
+      text-align: center;
+      padding: 20px;
+      background: #333;
+      color: white;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    } */
+
     #progressBar {
       position: fixed;
       top: 0;
@@ -88,8 +87,9 @@
       height: 8px;
       background-color: #f76b45;
       z-index: 9999;
-      
+
     }
+
     * {
       cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
     }
@@ -116,124 +116,124 @@
     }
 
     @media (max-width: 720px) {
-      .circle-container{
+      .circle-container {
         display: none;
       }
     }
 
-    
-.unique-popup-message {
-  position: fixed; /* Change to fixed positioning */
-  top: 30px; /* Adjust this value to be below the navbar */
-  right: 2px; /* Adjust this value for the desired distance from the right edge */
-  width: 300px; /* Adjust width as needed */
-  transform: translateX(0); /* Center the popup horizontally */
-  background-color: #a4d8ff;
-  color: #131722;
-  padding: 11px;
-  border-radius: 5px;
-  text-align: center;
-  z-index: 1000;
-  box-sizing: border-box;
-  overflow: hidden; /* Hide the expanding border animation */
-  position: relative;
-}
 
-.border-animation {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 7px; /* Same height as the border */
-  background-color: rgb(4, 0, 128);
-  width: 100%;
-  transform-origin: right; /* Start shrinking from the right */
-}
+    .unique-popup-message {
+      position: fixed;
+      /* Change to fixed positioning */
+      top: 30px;
+      /* Adjust this value to be below the navbar */
+      right: 2px;
+      /* Adjust this value for the desired distance from the right edge */
+      width: 300px;
+      /* Adjust width as needed */
+      transform: translateX(0);
+      /* Center the popup horizontally */
+      background-color: #a4d8ff;
+      color: #131722;
+      padding: 11px;
+      border-radius: 5px;
+      text-align: center;
+      z-index: 1000;
+      box-sizing: border-box;
+      overflow: hidden;
+      /* Hide the expanding border animation */
+      position: relative;
+    }
 
-@keyframes borderAnimation {
-  from {
-    transform: scaleX(0); /* Full width initially */
-  }
-  to {
-    transform: scaleX(1); /* Shrink to zero width */
-  }
-}
+    .border-animation {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 7px;
+      /* Same height as the border */
+      background-color: rgb(4, 0, 128);
+      width: 100%;
+      transform-origin: right;
+      /* Start shrinking from the right */
+    }
 
-.social-icons {
-  text-align: center;
-}
+    @keyframes borderAnimation {
+      from {
+        transform: scaleX(0);
+        /* Full width initially */
+      }
 
-.social-icons ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-}
+      to {
+        transform: scaleX(1);
+        /* Shrink to zero width */
+      }
+    }
 
-.social-icons li {
-  margin: 0 10px;
-}
+    .social-icons {
 
-.social-icons a {
-  color: #337ab7;
-  text-decoration: none;
-  border-radius: 50%;
-  border: 1px solid #ccc; 
-  padding: 10px;
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-  font-size: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.3s; 
-}
+      text-align: left;
+    }
 
-.social-icons a:hover {
-  color: #fe8464;
-  border-color: #fe8464; 
-  transform: scale(1.1); 
-}
+    .social-icons a {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 2.1rem;
+      height: 2.1rem;
+      background-color: transparent;
+      border: 0.2rem solid #0890ff;
+      font-size: 1.1rem;
+      border-radius: 50%;
+      margin: 1rem 0.5rem 0.5rem 0;
+      transition: 0.3s ease;
+      color: #55ff00;
+      text-align: left;
+    }
 
-.or-sign-in-with {
-  margin: 20px 0;
-  font-size: 14px;
-  font-weight: bold;
-  color: #666;
-  text-align: center;
-  position: relative;
-}
+    .social-icons a:hover {
+      color: rgb(139, 249, 12);
+      transform: scale(1.3) translateY(-5px);
+      background-color: #0048ff;
+      box-shadow: 0 0 25px #03133c;
+    }
 
-.or-sign-in-with::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0; 
-  width: 35%; 
-  border-top: 1px solid #ccc;
-  transform: translateX(-2%); 
-}
+    .or-sign-in-with {
+      margin: 20px 0;
+      font-size: 14px;
+      font-weight: bold;
+      color: #666;
+      text-align: center;
+      position: relative;
+    }
 
-.or-sign-in-with::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 0; 
-  width: 35%; 
-  border-top: 1px solid #ccc;
-  transform: translateX(2%);
-}
-.form-check {
-  display: flex;
-  align-items: center;
-}
-.form-check a {
-  margin-left: auto; 
-}
+    .or-sign-in-with::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 35%;
+      border-top: 1px solid #ccc;
+      transform: translateX(-2%);
+    }
 
+    .or-sign-in-with::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 35%;
+      border-top: 1px solid #ccc;
+      transform: translateX(2%);
+    }
+
+    .form-check {
+      display: flex;
+      align-items: center;
+    }
+
+    .form-check a {
+      margin-left: auto;
+    }
   </style>
 
 <body class="quizpage">
@@ -307,7 +307,7 @@
 
       animateCircles();
     });
-    
+
   </script>
 
   <div id="progressBar"></div>
@@ -319,8 +319,8 @@
       document.getElementById("progressBar").style.width = scrolled + "%";
     };
   </script>
-  
- 
+
+
 
   <div class="preloader">
     <div class="loader">
@@ -350,15 +350,15 @@
                 <span class="toggler-icon"></span>
                 <span class="toggler-icon"></span>
               </button> -->
-      <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
-              <div class="icon1">
-                  <img src="assets/images/icon.png" alt="icon.png">
-                </div>
-                
-              
+              <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
+                <div class="icon1">
+                  <a href="./index.html">
+                  <img src="assets/images/icon.webp" alt="icon.png">
+                  </a>
+                </div> 
                 <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
                   <li class="nav-item">
-                    <a class="page-scroll " href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
+                    <a class="page-scroll" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
                   </li>
                   <li class="nav-item">
                     <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
@@ -381,249 +381,257 @@
                   <li class="nav-item">
                     <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
                   </li>
-
-                  <li class="nav-item active">
+                  <li class="nav-item">
                     <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
-                  </li> 
- 
+                  </li>
                   <li class="nav-item no-underline">
                     <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
                   </li>
+                  <li class="nav-item no-underline">
+                  <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
+                    🌙
+                  </button>
+                  </li>
                 </ul>
-                <button id="theme-toggle" class="theme-toggle">
-                  🌙
-                </button>
               </div>
+
               <script>
                 const toggleButton = document.getElementById('theme-toggle');
                 const body = document.body;
                 const currentTheme = localStorage.getItem('theme');
 
-if (currentTheme === 'dark') {
-body.classList.add('dark-mode');
-toggleButton.classList.add('dark');
-toggleButton.textContent = '🌞';
-}
+                if (currentTheme === 'dark') {
+                  body.classList.add('dark-mode');
+                  toggleButton.classList.add('dark');
+                  toggleButton.textContent = '🌞';
+                }
 
-toggleButton.addEventListener('click', function () {
-body.classList.toggle('dark-mode');
-toggleButton.classList.toggle('dark');
+                toggleButton.addEventListener('click', function () {
+                  body.classList.toggle('dark-mode');
+                  toggleButton.classList.toggle('dark');
 
-// Update button icon based on mode
-if (body.classList.contains('dark-mode')) {
-  toggleButton.textContent = '🌞';  // Light mode icon
-  localStorage.setItem('theme', 'dark');
-} else {
-  toggleButton.textContent = '🌙';  // Dark mode icon
-  localStorage.setItem('theme', 'light');
-}
-});
-            </script>
-              </div>
-              <div class="">
-                <!-- Login Modal -->
-                <div id="myModal" class="modal">
-                  <div class="modal-content">
-                    <span class="close" style="display: flex; justify-content: right;">&times;</span>
-                    <div class="mt-3">
-                      <h3 class="join"><i class="fa-solid fa-right-to-bracket"></i>  Login to join us....</h3>
-                      <form class="px-3 py-4" id="loginForm">
-                        <div class="form-group">
-                          <label class="d-flex">Username</label>
-                          <input type="text" placeholder="Username" class="form-control" required />
-                        </div>
-                        <div class="form-group">
-                          <label class="d-flex">Password</label>
-                          <input type="password" placeholder="Password" class="form-control" required>
-                          <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
-                        </div>
-                        <div class="form-check d-flex">
-                          <input type="checkbox" class="form-check-input me-1" style="margin-top: 0;">
-                          <label class="form-check-label" style="margin-bottom: 0;">Remember me</label>
-                          <a href="#" id="forgot-password" style="margin-left: 120px;">Forget Password?</a>
-                        </div>
-                        <div style="height: 20px;"></div>
-                        <button class="main-btn w-100 mb-3" onclick="submitForm('loginForm')">Sign in</button>
-                        <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
-                        <div class="or-sign-in-with text-center">
-                          <p>Or sign in with</p>
-                        </div>
-                        <div class="social-icons mt-3">
-                          <ul class="list-inline">
-                            <li><a href="#" class="google" id="google-login"><i class="fa-brands fa-google"></i></a></li>
-                            <li><a href="#" class="facebook" id="facebook-login"><i class="fa-brands fa-facebook-f"></i></a></li>
-                            <li><a href="#" class="twitter" id="twitter-login"><i class="fa-brands fa-x-twitter"></i></a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                
-                <script>
-                  // Add event listeners to the social media icons
-                  document.getElementById('google-login').addEventListener('click', function() {
-                    window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
-                  });
-                
-                  document.getElementById('facebook-login').addEventListener('click', function() {
-                    window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
-                  });
-                
-                  document.getElementById('twitter-login').addEventListener('click', function() {
-                    window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
-                  });
-                </script>
-  
-          <!-- Register Modal -->
-          <div id="registerModal" class="modal">
-            <div class="modal-content">
-              <span class="close" style="display: flex; justify-content: right;">&times;</span>
-              <div class="mt-3">
-                <h3 class="join"><i class="fa-solid fa-user"></i>  Register to join us....</h3>
-                <form class="px-3 py-4" id="registerForm">
-                  <div class="form-group">
-                      <label class="d-flex">Email</label>
-                      <input type="email" placeholder="Email" class="form-control" required />
-                  </div>
-                  <div class="form-group">
+                  // Update button icon based on mode
+                  if (body.classList.contains('dark-mode')) {
+                    toggleButton.textContent = '🌞';  // Light mode icon
+                    localStorage.setItem('theme', 'dark');
+                  } else {
+                    toggleButton.textContent = '🌙';  // Dark mode icon
+                    localStorage.setItem('theme', 'light');
+                  }
+                });
+              </script>
+          </div>
+          <div class="">
+            <!-- Login Modal -->
+            <div id="myModal" class="modal">
+              <div class="modal-content">
+                <span class="close" style="display: flex; justify-content: right;">&times;</span>
+                <div class="mt-3">
+                  <h3 class="join"><i class="fa-solid fa-right-to-bracket"></i> Login to join us....</h3>
+                  <form class="px-3 py-4" id="loginForm">
+                    <div class="form-group">
                       <label class="d-flex">Username</label>
                       <input type="text" placeholder="Username" class="form-control" required />
-                  </div>
-                  <div class="form-group">
+                    </div>
+                    <div class="form-group">
                       <label class="d-flex">Password</label>
-                      <input type="password" placeholder="Password" class="form-control" id="register-password" required oninput="checkPasswordStrength()">
-                      <button type="button" class="toggle-password-btn" onclick="togglePasswordVisibility('register-password')">
-                          <i class="fa-solid fa-eye"></i>
-                          <i class="fa-solid fa-eye-slash" style="display: none;"></i>
-                      </button>
-                  </div>
-                  <div id="password-meter" style="display: none; margin-top: 5px;">
-                      <div id="meter" style="height: 10px; background-color: #ccc; border-radius: 5px; transition: width 0.3s;"></div>
-                      <div id="strength-text" style="margin-top: 5px; font-weight: bold;"></div>
-                  </div>
-                  </form>
-                  
-                  <!-- Import zxcvbn library -->
-                  <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
-                  <script>
-                      function checkPasswordStrength() {
-                          const password = document.getElementById('register-password').value;
-                          const meter = document.getElementById('meter');
-                          const meterContainer = document.getElementById('password-meter');
-                          const strengthText = document.getElementById('strength-text');
-                  
-                          if (password) {
-                              meterContainer.style.display = 'block'; // Show the meter when typing
-                              const result = zxcvbn(password);
-                              const score = result.score; // Score ranges from 0 to 4
-                  
-                              // Set meter width and color based on score
-                              meter.style.width = (score + 1) * 20 + '%'; // Convert score to percentage
-                              meter.style.backgroundColor = getMeterColor(score);
-                              strengthText.innerText = getStrengthText(score); // Update strength text
-                          } else {
-                              meterContainer.style.display = 'none'; // Hide the meter if no password
-                              strengthText.innerText = ''; // Clear strength text
-                          }
-                      }
-                  
-                      function getMeterColor(score) {
-                          switch (score) {
-                              case 0: return 'red'; // Weak
-                              case 1: return 'orange'; // Fair
-                              case 2: return 'yellow'; // Good
-                              case 3: return 'blue'; // Strong
-                              case 4: return 'green'; // Very Strong
-                              default: return 'gray';
-                          }
-                      }
-                  
-                      function getStrengthText(score) {
-                          switch (score) {
-                              case 0: return 'Very Weak';
-                              case 1: return 'Weak';
-                              case 2: return 'Fair';
-                              case 3: return 'Strong';
-                              case 4: return 'Very Strong';
-                              default: return '';
-                          }
-                      }
-                  
-                      function togglePasswordVisibility(id) {
-                          const passwordInput = document.getElementById(id);
-                          const eyeIcon = passwordInput.nextElementSibling;
-                          if (passwordInput.type === 'password') {
-                              passwordInput.type = 'text';
-                              eyeIcon.children[0].style.display = 'none';
-                              eyeIcon.children[1].style.display = 'inline';
-                          } else {
-                              passwordInput.type = 'password';
-                              eyeIcon.children[0].style.display = 'inline';
-                              eyeIcon.children[1].style.display = 'none';
-                          }
-                      }
-                  </script>
-                  
-                <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('registerForm')">Register</button>
-                <p class="text-center">Already have an account? <a href="#" id="loginLink">Login</a></p>
-                <div class="or-sign-in-with text-center">
-                  <p>Or sign up with</p>
-                </div>
-                <div class="social-icons mt-3">
-                  <ul class="list-inline">
-                    <li><a href="#" class="google" id="google-signup"><i class="fa-brands fa-google"></i></a></li>
-                    <li><a href="#" class="facebook" id="facebook-signup"><i class="fa-brands fa-facebook-f"></i></a></li>
-                    <li><a href="#" class="twitter" id="twitter-signup"><i class="fa-brands fa-twitter"></i></a></li>
-                  </ul>
+                      <input type="password" placeholder="Password" class="form-control" required>
+                      <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
+                    </div>
+                    <div class="form-check d-flex">
+                      <input type="checkbox" class="form-check-input me-1" style="margin-top: 0;">
+                      <label class="form-check-label" style="margin-bottom: 0;">Remember me</label>
+                      <a href="#" id="forgot-password" style="margin-left: 120px;">Forget Password?</a>
+                    </div>
+                    <div style="height: 20px;"></div>
+                    <button class="main-btn w-100 mb-3" onclick="submitForm('loginForm')">Sign in</button>
+                    <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
+                    <div class="or-sign-in-with text-center">
+                      <p>Or sign in with</p>
+                    </div>
+                    <div class="social-icons mt-3">
+                      <ul class="list-inline">
+                        <li><a href="#" class="google" id="google-login"><i class="fa-brands fa-google"></i></a></li>
+                        <li><a href="#" class="facebook" id="facebook-login"><i class="fa-brands fa-facebook-f"></i></a>
+                        </li>
+                        <li><a href="#" class="twitter" id="twitter-login"><i class="fa-brands fa-x-twitter"></i></a>
+                        </li>
+                      </ul>
+                    </div>
                 </div>
               </div>
             </div>
-          </div>
-          
-          <script>
-            // Add event listeners to the social media icons
-            document.getElementById('google-signup').addEventListener('click', function() {
-              window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
-            });
-          
-            document.getElementById('facebook-signup').addEventListener('click', function() {
-              window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
-            });
-          
-            document.getElementById('twitter-signup').addEventListener('click', function() {
-              window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
-            });
-          </script>
+
+            <script>
+              // Add event listeners to the social media icons
+              document.getElementById('google-login').addEventListener('click', function () {
+                window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
+              });
+
+              document.getElementById('facebook-login').addEventListener('click', function () {
+                window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
+              });
+
+              document.getElementById('twitter-login').addEventListener('click', function () {
+                window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
+              });
+            </script>
+
+            <!-- Register Modal -->
+            <div id="registerModal" class="modal">
+              <div class="modal-content">
+                <span class="close" style="display: flex; justify-content: right;">&times;</span>
+                <div class="mt-3">
+                  <h3 class="join"><i class="fa-solid fa-user"></i> Register to join us....</h3>
+                  <form class="px-3 py-4" id="registerForm">
+                    <div class="form-group">
+                      <label class="d-flex">Email</label>
+                      <input type="email" placeholder="Email" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                      <label class="d-flex">Username</label>
+                      <input type="text" placeholder="Username" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                      <label class="d-flex">Password</label>
+                      <input type="password" placeholder="Password" class="form-control" id="register-password" required
+                        oninput="checkPasswordStrength()">
+                      <button type="button" class="toggle-password-btn"
+                        onclick="togglePasswordVisibility('register-password')">
+                        <i class="fa-solid fa-eye"></i>
+                        <i class="fa-solid fa-eye-slash" style="display: none;"></i>
+                      </button>
+                    </div>
+                    <div id="password-meter" style="display: none; margin-top: 5px;">
+                      <div id="meter"
+                        style="height: 10px; background-color: #ccc; border-radius: 5px; transition: width 0.3s;"></div>
+                      <div id="strength-text" style="margin-top: 5px; font-weight: bold;"></div>
+                    </div>
+                  </form>
+
+                  <!-- Import zxcvbn library -->
+                  <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+                  <script>
+                    function checkPasswordStrength() {
+                      const password = document.getElementById('register-password').value;
+                      const meter = document.getElementById('meter');
+                      const meterContainer = document.getElementById('password-meter');
+                      const strengthText = document.getElementById('strength-text');
+
+                      if (password) {
+                        meterContainer.style.display = 'block'; // Show the meter when typing
+                        const result = zxcvbn(password);
+                        const score = result.score; // Score ranges from 0 to 4
+
+                        // Set meter width and color based on score
+                        meter.style.width = (score + 1) * 20 + '%'; // Convert score to percentage
+                        meter.style.backgroundColor = getMeterColor(score);
+                        strengthText.innerText = getStrengthText(score); // Update strength text
+                      } else {
+                        meterContainer.style.display = 'none'; // Hide the meter if no password
+                        strengthText.innerText = ''; // Clear strength text
+                      }
+                    }
+
+                    function getMeterColor(score) {
+                      switch (score) {
+                        case 0: return 'red'; // Weak
+                        case 1: return 'orange'; // Fair
+                        case 2: return 'yellow'; // Good
+                        case 3: return 'blue'; // Strong
+                        case 4: return 'green'; // Very Strong
+                        default: return 'gray';
+                      }
+                    }
+
+                    function getStrengthText(score) {
+                      switch (score) {
+                        case 0: return 'Very Weak';
+                        case 1: return 'Weak';
+                        case 2: return 'Fair';
+                        case 3: return 'Strong';
+                        case 4: return 'Very Strong';
+                        default: return '';
+                      }
+                    }
+
+                    function togglePasswordVisibility(id) {
+                      const passwordInput = document.getElementById(id);
+                      const eyeIcon = passwordInput.nextElementSibling;
+                      if (passwordInput.type === 'password') {
+                        passwordInput.type = 'text';
+                        eyeIcon.children[0].style.display = 'none';
+                        eyeIcon.children[1].style.display = 'inline';
+                      } else {
+                        passwordInput.type = 'password';
+                        eyeIcon.children[0].style.display = 'inline';
+                        eyeIcon.children[1].style.display = 'none';
+                      }
+                    }
+                  </script>
+
+                  <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('registerForm')">Register</button>
+                  <p class="text-center">Already have an account? <a href="#" id="loginLink">Login</a></p>
+                  <div class="or-sign-in-with text-center">
+                    <p>Or sign up with</p>
+                  </div>
+                  <div class="social-icons mt-3">
+                    <ul class="list-inline">
+                      <li><a href="#" class="google" id="google-signup"><i class="fa-brands fa-google"></i></a></li>
+                      <li><a href="#" class="facebook" id="facebook-signup"><i class="fa-brands fa-facebook-f"></i></a>
+                      </li>
+                      <li><a href="#" class="twitter" id="twitter-signup"><i class="fa-brands fa-twitter"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-            </nav>
+            </div>
 
-            
-            <nav class="mobile-menu ">
-              <a class="page-scroll" href="./index.html">Home 🏡</a>
-              <a class="page-scroll" href="./about.html">About Us 📖</a>
-              <a class="page-scroll" href="./trends.html">Trends 📈</a>
-              <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
-              <a class="page-scroll" href="./blog.html">Blogs 📰</a>
-              <a class="page-scroll active-link" href="./quiz.html">Quiz 🤔</a>
-              <a class="page-scroll main-btn" href="#" onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
-              <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
-                <span></span>
-              </div>
-            </nav>
+            <script>
+              // Add event listeners to the social media icons
+              document.getElementById('google-signup').addEventListener('click', function () {
+                window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
+              });
 
-                
-              <link href="./navbar.css" rel="stylesheet">
-              <script type="text/javascript" src="./navbar.js"></script>
+              document.getElementById('facebook-signup').addEventListener('click', function () {
+                window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
+              });
 
+              document.getElementById('twitter-signup').addEventListener('click', function () {
+                window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
+              });
+            </script>
           </div>
+          </nav>
+
+
+          <nav class="mobile-menu ">
+            <a class="page-scroll" href="./index.html">Home 🏡</a>
+            <a class="page-scroll" href="./about.html">About Us 📖</a>
+            <a class="page-scroll" href="./trends.html">Trends 📈</a>
+            <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
+            <a class="page-scroll" href="./blog.html">Blogs 📰</a>
+            <a class="page-scroll active-link" href="./quiz.html">Quiz 🤔</a>
+            <a class="page-scroll main-btn" href="#" onclick="openModal()"
+              onmouseout="this.style.color='white'">Login/Register 💻</a>
+            <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
+              <span></span>
+            </div>
+          </nav>
+
+
+          <link href="./navbar.css" rel="stylesheet">
+          <script type="text/javascript" src="./navbar.js"></script>
+
         </div>
       </div>
+    </div>
     </div>
 
     <!-- removing intro section -->
     <!-- <div id="home" class="header-hero bg_cover" style="background-image: url(../assets/images/banner-bg.svg)"> -->
-      <!-- <div class="container"> -->
-        <!-- <div class="row justify-content-center">
+    <!-- <div class="container"> -->
+    <!-- <div class="row justify-content-center">
           <div class="col-lg-8">
             <div class="header-hero-content text-center">
               <h3 class="header-sub-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
@@ -647,7 +655,7 @@ if (body.classList.contains('dark-mode')) {
         <div class="row">
           <div class="col-lg-12">
             <div class="header-hero-image text-center wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">
-              <img src="../assets/images/header-hero.png" alt="hero" />
+              <img src="../assets/images/header-hero.webp" alt="hero" />
             </div>
           </div>
         </div>
@@ -657,420 +665,492 @@ if (body.classList.contains('dark-mode')) {
   </header>
   <main>
     <section><br><br>
-        <h2>Jobs in Finance</h2>
-        <!-- Search Bar -->
-  <div class="search-container">
-    <input type="text" id="jobSearch" placeholder="Search for jobs by title or keyword">
-  </div>
-   
+      <h2>Jobs in Finance</h2>
+      <!-- Search Bar -->
+      <div class="search-container">
+        <input type="text" id="jobSearch" placeholder="Search for jobs by title or keyword">
+      </div>
+      <div class="table-container">
         <table class="jobs-table">
-            <thead>
-                <tr>
-                    <th>Job Title</th>
-                    <th>Salary</th>
-                    <th>Qualification</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr onclick="openModal('Financial Analyst')">
-                    <td>Financial Analyst</td>
-                    <td>$60,000 - $80,000</td>
-                    <td>Bachelor's in Finance</td>
-                </tr>
-                <tr onclick="openModal('Investment Banker')">
-                    <td>Investment Banker</td>
-                    <td>$100,000 - $200,000</td>
-                    <td>Bachelor's in Finance, Economics, or Business</td>
-                </tr>
-                <tr onclick="openModal('Accountant')">
-                    <td>Accountant</td>
-                    <td>$50,000 - $70,000</td>
-                    <td>Bachelor's in Accounting</td>
-                </tr>
-                <tr onclick="openModal('Risk Manager')">
-                    <td>Risk Manager</td>
-                    <td>$70,000 - $110,000</td>
-                    <td>Bachelor's in Finance or Risk Management</td>
-                </tr>
-                <tr onclick="openModal('Financial Planner')">
-                    <td>Financial Planner</td>
-                    <td>$60,000 - $90,000</td>
-                    <td>Bachelor's in Finance or Business</td>
-                </tr>
-                <tr onclick="openModal('Compliance Officer')">
-                    <td>Compliance Officer</td>
-                    <td>$55,000 - $85,000</td>
-                    <td>Bachelor's in Finance, Business, or Law</td>
-                </tr>
-                <tr onclick="openModal('Portfolio Manager')">
-                    <td>Portfolio Manager</td>
-                    <td>$80,000 - $150,000</td>
-                    <td>Bachelor's in Finance or related field</td>
-                </tr>
-                <tr onclick="openModal('Market Research Analyst')">
-                    <td>Market Research Analyst</td>
-                    <td>$50,000 - $70,000</td>
-                    <td>Bachelor's in Marketing or Business</td>
-                </tr>
-                <tr onclick="openModal('Loan Officer')">
-                    <td>Loan Officer</td>
-                    <td>$50,000 - $75,000</td>
-                    <td>Bachelor's in Finance or Business</td>
-                </tr>
-                <tr onclick="openModal('Treasurer')">
-                    <td>Treasurer</td>
-                    <td>$90,000 - $130,000</td>
-                    <td>Bachelor's in Finance, Accounting, or Business</td>
-                </tr>
-            </tbody>
+          <thead>
+            <tr>
+              <th>Job Title</th>
+              <th>Salary</th>
+              <th>Qualification</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr onclick="openModal('Financial Analyst')">
+              <td data-label="Job Title">Financial Analyst</td>
+              <td data-label="Salary">$60,000 - $80,000</td>
+              <td data-label="Qualification">Bachelor's in Finance</td>
+            </tr>
+            <tr onclick="openModal('Investment Banker')">
+              <td data-label="Job Title">Investment Banker</td>
+              <td data-label="Salary">$100,000 - $200,000</td>
+              <td data-label="Qualification">Bachelor's in Finance, Economics, or Business</td>
+            </tr>
+            <tr onclick="openModal('Accountant')">
+              <td data-label="Job Title">Accountant</td>
+              <td data-label="Salary">$50,000 - $70,000</td>
+              <td data-label="Qualification">Bachelor's in Accounting</td>
+            </tr>
+            <tr onclick="openModal('Risk Manager')">
+              <td data-label="Job Title">Risk Manager</td>
+              <td data-label="Salary">$70,000 - $110,000</td>
+              <td data-label="Qualification">Bachelor's in Finance or Risk Management</td>
+            </tr>
+            <tr onclick="openModal('Financial Planner')">
+              <td data-label="Job Title">Financial Planner</td>
+              <td data-label="Salary">$60,000 - $90,000</td>
+              <td data-label="Qualification">Bachelor's in Finance or Business</td>
+            </tr>
+            <tr onclick="openModal('Compliance Officer')">
+              <td data-label="Job Title">Compliance Officer</td>
+              <td data-label="Salary">$55,000 - $85,000</td>
+              <td data-label="Qualification">Bachelor's in Finance, Business, or Law</td>
+            </tr>
+            <tr onclick="openModal('Portfolio Manager')">
+              <td data-label="Job Title">Portfolio Manager</td>
+              <td data-label="Salary">$80,000 - $150,000</td>
+              <td data-label="Qualification">Bachelor's in Finance or related field</td>
+            </tr>
+            <tr onclick="openModal('Market Research Analyst')">
+              <td data-label="Job Title">Market Research Analyst</td>
+              <td data-label="Salary">$50,000 - $70,000</td>
+              <td data-label="Qualification">Bachelor's in Marketing or Business</td>
+            </tr>
+            <tr onclick="openModal('Loan Officer')">
+              <td data-label="Job Title">Loan Officer</td>
+              <td data-label="Salary">$50,000 - $75,000</td>
+              <td data-label="Qualification">Bachelor's in Finance or Business</td>
+            </tr>
+            <tr onclick="openModal('Treasurer')">
+              <td data-label="Job Title">Treasurer</td>
+              <td data-label="Salary">$90,000 - $130,000</td>
+              <td data-label="Qualification">Bachelor's in Finance, Accounting, or Business</td>
+            </tr>
+          </tbody>
         </table>
-       
+      </div>
+
+
+
     </section>
-  
+
 
     <main>
-        <section class="roadmap">
-            <h2>Career Roadmap</h2>
-            <div class="roadmap-step">
-                <div class="roadmap-title">Step 1: Pursue a Relevant Degree</div>
-                <p>Consider obtaining a degree in finance, accounting, economics, or business administration.</p>
-            </div>
-            <div class="roadmap-step">
-                <div class="roadmap-title">Step 2: Gain Experience</div>
-                <p>Look for internships or entry-level positions in finance to gain practical experience.</p>
-            </div>
-            <div class="roadmap-step">
-                <div class="roadmap-title">Step 3: Network</div>
-                <p>Attend finance-related events, workshops, and seminars to connect with professionals in the field.</p>
-            </div>
-            <div class="roadmap-step">
-                <div class="roadmap-title">Step 4: Get Certified</div>
-                <p>Consider pursuing professional certifications like CFA, CPA, or CFP to enhance your qualifications.</p>
-            </div>
-            <div class="roadmap-step">
-                <div class="roadmap-title">Step 5: Stay Informed</div>
-                <p>Keep up with the latest trends and developments in the finance industry through articles and news.</p>
-            </div>
-        </section>
+      <section class="roadmap">
+        <h2>Career Roadmap</h2>
+        <div class="roadmap-step">
+          <div class="roadmap-title">Step 1: Pursue a Relevant Degree</div>
+          <p>Consider obtaining a degree in finance, accounting, economics, or business administration.</p>
+        </div>
+        <div class="roadmap-step">
+          <div class="roadmap-title">Step 2: Gain Experience</div>
+          <p>Look for internships or entry-level positions in finance to gain practical experience.</p>
+        </div>
+        <div class="roadmap-step">
+          <div class="roadmap-title">Step 3: Network</div>
+          <p>Attend finance-related events, workshops, and seminars to connect with professionals in the field.</p>
+        </div>
+        <div class="roadmap-step">
+          <div class="roadmap-title">Step 4: Get Certified</div>
+          <p>Consider pursuing professional certifications like CFA, CPA, or CFP to enhance your qualifications.</p>
+        </div>
+        <div class="roadmap-step">
+          <div class="roadmap-title">Step 5: Stay Informed</div>
+          <p>Keep up with the latest trends and developments in the finance industry through articles and news.</p>
+        </div>
+      </section>
     </main>
 
     <section class="books-section">
-        <h2>Recommended Books on Finance</h2>
-        <ul class="books-list">
-            <li><span class="emoji">📚</span><strong>"Rich Dad Poor Dad" by Robert Kiyosaki</strong> - A classic on financial education and investing.</li>
-            <li><span class="emoji">📖</span><strong>"The Intelligent Investor" by Benjamin Graham</strong> - A must-read for aspiring investors.</li>
-            <li><span class="emoji">📘</span><strong>"The Total Money Makeover" by Dave Ramsey</strong> - A guide to personal finance and debt elimination.</li>
-            <li><span class="emoji">📙</span><strong>"A Random Walk Down Wall Street" by Burton Malkiel</strong> - Insights into market trends and investment strategies.</li>
-            <li><span class="emoji">📗</span><strong>"The Millionaire Next Door" by Thomas J. Stanley</strong> - Profiles habits and traits of wealthy individuals.</li>
-        </ul>
+      <h2>Recommended Books on Finance</h2>
+      <ul class="books-list">
+        <li><span class="emoji">📚</span><strong style="color:black;">"Rich Dad Poor Dad" by Robert Kiyosaki</strong> -
+          A classic on financial education and investing.</li>
+        <li><span class="emoji">📖</span><strong style="color:black;">"The Intelligent Investor" by Benjamin
+            Graham</strong> - A must-read for aspiring investors.</li>
+        <li><span class="emoji">📘</span><strong style="color:black;">"The Total Money Makeover" by Dave Ramsey</strong>
+          - A guide to personal finance and debt elimination.</li>
+        <li><span class="emoji">📙</span><strong style="color:black;">"A Random Walk Down Wall Street" by Burton
+            Malkiel</strong> - Insights into market trends and investment strategies.</li>
+        <li><span class="emoji">📗</span><strong style="color:black;">"The Millionaire Next Door" by Thomas J.
+            Stanley</strong> - Profiles habits and traits of wealthy individuals.</li>
+      </ul>
     </section>
-</main>
+  </main>
 
 
-        <script>
+  <script>
 
-        </script>
+  </script>
 
 
   <style>
-     
-        h2 {
-            color: #007bff;
-            text-align: center;
-            margin-top: 20px;
-        }
+    h2 {
+      color: #007bff;
+      text-align: center;
+      margin-top: 20px;
+    }
 
-        .books-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 20px;
-            padding: 20px;
-            background: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+    .books-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 8px;
 
-        .books-list {
-            list-style-type: none;
-            padding: 0;
-            width: 100%;
-        }
+      box-shadow: 0 2px 16px 10px rgba(255, 255, 255, 0.4);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-        .books-list li {
-            background: #e9ecef;
-            border-radius: 5px;
-            margin: 10px 0;
-            padding: 15px;
-            display: flex;
-            align-items: center;
-            transition: background 0.3s;
-        }
+    .books-list {
+      list-style-type: none;
+      padding: 0;
+      width: 100%;
+    }
 
-        li {
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-            display: flex;
-          }
+    .books-list li {
 
-        .books-list li:hover {
-            background: #d4d4d4;
-        }
+      background: #a5cff9;
+      border-radius: 5px;
+      margin: 10px 0;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      transition: background 0.3s;
+    }
 
-        .emoji {
-            font-size: 1.5em; /* Adjust the size of the emoji */
-        }
+    li {
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      display: flex;
+    }
+
+    .books-list li:hover {
+      background: #d4d4d4;
+    }
+
+    .emoji {
+      font-size: 1.5em;
+      /* Adjust the size of the emoji */
+    }
+
     body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
 
-        header {
-            background: #007bff;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
+    header {
+      background: #007bff;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
 
-        h1 {
-            margin: 0;
-        }
+    h1 {
+      margin: 0;
+    }
 
-        main {
-            padding: 20px;
-        }
+    main {
+      padding: 20px;
+    }
 
-        .roadmap {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
-        }
+    .roadmap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-        .roadmap-step {
-            background: #fff;
-            border: 1px solid #ddd;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 10px 0;
-            position: relative;
-            width: 80%;
-        }
+      margin: 20px auto 63px auto;
+      border-radius: 1rem;
+      width: 65vw;
+      box-shadow: 0 5px 10px 12px rgba(255, 255, 255, 0.4);
+    }
 
-        .roadmap-step::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 89px;
-            transform: translateX(-50%);
-            border: 10px solid transparent;
-            border-bottom-color: #007bff;
-        }
+    .roadmap h2 {
+      margin-bottom: 20px;
+    }
 
-        .roadmap-step:last-child::before {
-            border-bottom-color: transparent; /* Remove triangle from last step */
-        }
+    .roadmap-step {
 
-        .roadmap-title {
-            font-size: 1.5em;
-            color: #007bff;
-        }
+      background: #a5cff9;
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 5px;
+      margin: 10px 0;
+      position: relative;
+      width: 80%;
+    }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #333;
-            color: white;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
+    .roadmap-step:hover {
+      background: #d4d4d4;
+    }
+
+    .roadmap-step::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 89px;
+      transform: translateX(-50%);
+      border: 10px solid transparent;
+      border-bottom-color: #007bff;
+    }
+
+    .roadmap-step:last-child::before {
+      border-bottom-color: transparent;
+      /* Remove triangle from last step */
+    }
+
+    .roadmap-title {
+      font-size: 1.5em;
+      color: #007bff;
+    }
+
+    /* footer {
+      text-align: center;
+      padding: 20px;
+      background: #333;
+      color: white;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    } */
+
     body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
 
-        header {
-            background: #007bff;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
+    header {
+      background: #007bff;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
 
-        h1 {
-            margin: 0;
-        }
+    h1 {
+      margin: 0;
+    }
 
-        main {
-            padding: 20px;
-        }
+    main {
+      padding: 20px;
+    }
 
-        .jobs-table {
-            width: 100%;
-            border-collapse: separate; /* Allows for spacing */
-            border-spacing: 0 10px; /* Vertical spacing between rows */
-            margin-top: 20px;
-        }
+    .jobs-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 10px;
+      margin-top: 20px;
+    }
 
-        .jobs-table th,
-        .jobs-table td {
-            background: #fff;
-            border: 1px solid #ddd;
-            padding: 15px;
-            text-align: left;
-            border-radius: 5px; /* Rounded corners for cells */
-        }
+    .jobs-table th,
+    .jobs-table td {
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 15px;
+      text-align: left;
+      border-radius: 5px;
+    }
 
-        .jobs-table th {
-            background: #f76b45;
-            color: white;
-        }
+    .jobs-table th {
+      background: #f76b45;
+      color: white;
+    }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #333;
-            color: white;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
 
-        /* Modal styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0, 0, 0);
-            background-color: rgba(0, 0, 0, 0.4);
-            padding-top: 60px;
-        }
+    /* Responsive for screens below 768px */
+    @media (max-width: 768px) {
+      .jobs-table thead {
+        display: none;
+      }
 
-        .modal-content {
-            background-color: #fefefe;
-            margin: 5% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            border-radius: 5px;
-        }
+      .jobs-table tr {
+        display: block;
+        margin-bottom: 10px;
+      }
 
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
+      .jobs-table td {
+        display: block;
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+        border: none;
+        border-bottom: 1px solid #ddd;
+      }
 
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
+      .jobs-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 10px;
+        font-weight: bold;
+        text-align: left;
+      }
 
-        header {
-            background: #007bff;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
+      .jobs-table td:last-child {
+        border-bottom: none;
+      }
+    }
 
-        h1 {
-            margin: 0;
-        }
+/* 
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #333;
+      color: white;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    } */
 
-        main {
-            padding: 20px;
-        }
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.4);
+      padding-top: 60px;
+    }
 
-        section {
-            margin-bottom: 40px;
-            padding: 20px;
-            background: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      border-radius: 5px;
+    }
 
-        h2 {
-            color: #007bff;
-        }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
 
-        .jobs-list {
-            list-style-type: none;
-            padding: 0;
-        }
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
 
-        .jobs-list li {
-            margin-bottom: 10px;
-            padding: 10px;
-            background: #e9ecef;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+    header {
+      background: #007bff;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #333;
-            color: #fff;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
+    h1 {
+      margin: 0;
+    }
 
-        /* Modal styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0, 0, 0);
-            background-color: rgba(0, 0, 0, 0.4);
-            padding-top: 60px;
-        }
+    main {
+      padding: 20px;
+    }
 
-        .modal-content {
-            background-color: #fefefe;
-            margin: 5% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            border-radius: 5px;
-        }
+    section {
+      margin-bottom: 40px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
 
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
+    h2 {
+      color: #007bff;
+    }
 
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-    
+    h2:hover {
+      color: #005abc;
+    }
+
+    .jobs-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .jobs-list li {
+      margin-bottom: 10px;
+      padding: 10px;
+      background: #e9ecef;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* footer {
+      text-align: center;
+      padding: 20px;
+      background: #333;
+      color: #fff;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    } */
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.4);
+      padding-top: 60px;
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      border-radius: 5px;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
     .blog-content {
       text-align: left;
       margin-left: auto;
@@ -1078,207 +1158,162 @@ if (body.classList.contains('dark-mode')) {
       max-width: 80%;
       /* Adjust this value to increase or decrease the margins */
     }
-    @media (max-width: 768px) { /* Change the max-width to fit your design needs */
-    .blog-content {
-      max-width: 100%;
-    }}
+
+    @media (max-width: 768px) {
+
+      /* Change the max-width to fit your design needs */
+      .blog-content {
+        max-width: 100%;
+      }
+    }
   </style>
 </body>
 
 
 
 <!-- Timed popup that will appear after succesful submission of feebback form! -->
-      <button class="notification" id="successnotification" style="display:none;">
-        <span class="message" id="successmsg">Submitted successfully!</span>
-        <span class="closenotif" id="closeSuccessNotification">✖</span>
-        <div class="timerline" id="timerline"></div>
-      </button>
+<button class="notification" id="successnotification" style="display:none;">
+  <span class="message" id="successmsg">Submitted successfully!</span>
+  <span class="closenotif" id="closeSuccessNotification">✖</span>
+  <div class="timerline" id="timerline"></div>
+</button>
 
 
 <footer id="footer" class="footer-area pt-120">
-  <div class="container">
-    <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="subscribe-content mt-45">
-            <h2 class="subscribe-title">
-              Subscribe Our Newsletter <span>get regular updates</span>
-            </h2>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="subscribe-form mt-50">
-            <form id="unique-subscribe-form" style="display: flex;">
-              <input type="email" id="unique-news-email" placeholder="Enter Email" required style="width: 55%; margin-right: auto;"/>
-              <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
-            </form>
-            <div id="unique-message" class="unique-popup-message" style="display: none;">
-              <div class="border-animation"></div>
-              Thank You for the subscription!
-            </div>
-          </div>
+<div class="container">
+<div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="subscribe-content mt-45">
+        <h2 class="subscribe-title">
+          Subscribe Our Newsletter <span>get regular updates</span>
+        </h2>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="subscribe-form mt-50">
+        <form id="unique-subscribe-form">
+          <input type="email" id="unique-news-email" placeholder="Enter Email" required/>
+          <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
+        </form>
+        <div id="unique-message" class="unique-popup-message" style="display: none;">
+          <div class="border-animation"></div>
+          Thank You for the subscription!
         </div>
       </div>
     </div>
   </div>
-  <script>
-    document.getElementById('unique-subscribe-form').addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent form from submitting normally
-  
-      // Show popup message
-      var messageDiv = document.getElementById('unique-message');
-      messageDiv.style.display = 'block';
-      
-      // Reset existing animation
-      var borderAnimationDiv = messageDiv.querySelector('.border-animation');
-      borderAnimationDiv.style.animation = 'none';
-      borderAnimationDiv.offsetHeight; // Trigger reflow to restart the animation
-      borderAnimationDiv.style.animation = 'borderAnimation 3s linear forwards';
-  
-      // Hide popup message after 10 seconds
-      setTimeout(function() {
-        messageDiv.style.display = 'none';
-      }, 3000); // 10 seconds
-  
-      // Reset form
-      this.reset();
-    });
-  </script>
-  
-  <div class="footer-widget pb-100">
-    <div class="row" id="footer">
-        <div class="col-lg-4 col-md-6 col-sm-8">
-            <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                <p class="text custom-margin">
-                    We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
-                </p>
-            </div>
+</div>
+</div>
+<div class="footer-widget pb-100">
+<div class="row" id="footer">
+    <div class="col-lg-4 col-md-6 col-sm-8">
+        <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+            <p class="text custom-margin">
+                We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
+            </p>
         </div>
-        <div class="col-lg-5 col-md-7 col-sm-7">
-            <div class="footer-link d-flex mt-50 justify-content-md-between" style="justify-content: space-around !important;">
-                <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-                    <div class="footer-title">
-                        <h3 class="title custom-margin">Quick Links</h3>
-                    </div>
-                    <ul class="link custom-margin">
-                        <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
-                        <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
-                        <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
-                        <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
-                        <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
-                    </ul>
+    </div>
+    <div class="col-lg-5 col-md-7 col-sm-7">
+        <div class="footer-link d-flex mt-50 justify-content-md-between" style="justify-content: space-around !important;">
+            <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+                <div class="footer-title">
+                    <h3 class="title custom-margin">Quick Links</h3>
                 </div>
-                <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
-                    <div class="footer-title">
-                        <h4 class="title custom-margin">Resources</h4>
-                    </div>
-                    <ul class="link custom-margin">
-                        <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
-                        <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
-                        <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
-                        <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
-                        <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
-                        
-                        <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
-                        
-                          </ul>
-                </div>
+                <ul class="link custom-margin">
+                    <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+                    <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
+                    <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
+                    <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+                    <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+                </ul>
             </div>
-        </div>
-        <div class="col-lg-3 col-md-5 col-sm-5">
-          <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-              <div class="footer-title">
-                  <h4 class="title custom-margin" style="text-align: left; margin-bottom: 15px;">Contact Us</h4> <!-- Aligning heading to the left -->
-              </div>
-                <ul class="contact custom-margin-big" style="justify-content: space-around;">
-                  
-                    <li class="d-sm-flex justify-content-center" style="align-items: center; margin: 0; padding: 0; margin-bottom: 10px;">
-                        <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; margin-right: 10px;"></i>
-                        <div style="width: 100%; display: flex; align-items: center;">
-                            <a href="mailto:ayush1337@hotmail.com" target="_blank" style="color: white; text-decoration: underline;">
-                                ayush1337@hotmail.com
-                            </a>
-                        </div>
-                    </li>
-                
-                    <li class="d-sm-flex justify-content-center" style="align-items: center; margin: 0; padding: 0;margin-bottom: 10px;">
-                        <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; margin-right: 10px;"></i>
-                        <div style="width: 100%; display: flex; align-items: center;">
-                            <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff;">
-                                fin-veda.vercel.app
-                            </a>
-                        </div>
-                    </li>
-                
-                    <li class="d-sm-flex justify-content-center" style="align-items: center; margin: 0; padding: 0; margin-bottom: 10px;">
-                        <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 12.0px; margin-right: 10px;"></i>
-                        <div style="width: 100%; display: flex; align-items: center;">
-                            <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
-                               style="color: #fff;">
-                                Delhi, India
-                            </a>
-                        </div>
-                    </li>
-               <li id="social_icons" class="d-sm-flex justify-content-evenly my-3">
-                      <div style="width: 100%; display:flex; ">
-                        <!-- Instagram Icon -->
-                        <a href="https://instagram.com" target="_blank" style="margin: 0 10px; color: #E4405F;" aria-label="Instagram">
-                          <i style="font-size: 25px" class="fa-brands fa-instagram"></i>
-                        </a>
-                    
-                        <!-- Facebook Icon -->
-                        <a href="https://facebook.com" target="_blank" style="margin: 0 10px; color: #4267B2;" aria-label="Facebook">
-                          <i style="font-size: 25px" class="fa-brands fa-facebook"></i>
-                        </a>
-                    
-                        <!-- X/Twitter Icon -->
-                        <a href="https://twitter.com" target="_blank" style="margin: 0 10px; color: #1DA1F2;" aria-label="Twitter">
-                          <i style="font-size: 25px" class="fa-brands fa-x-twitter"></i>
-                        </a>
-                    
-                        <!-- Discord Icon -->
-                        <a href="https://discord.com" target="_blank" style="margin: 0 10px; color: #7289DA;" aria-label="Discord">
-                          <i style="font-size: 25px" class="fa-brands fa-discord"></i>
-                        </a>
-                    
-                        <!-- GitHub Icon -->
-                        <a href="https://github.com" target="_blank" style="margin: 0 10px; color: #333;" aria-label="GitHub">
-                          <i style="font-size: 25px" class="fa-brands fa-github"></i>
-                        </a>
-                      </div>
-                    </li>
+            <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+                <div class="footer-title">
+                    <h4 class="title custom-margin">Resources</h4>
+                </div>
+                <ul class="link custom-margin">
+                    <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
+                    <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
+                    <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                    <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
                 </ul>
             </div>
         </div>
     </div>
-</div>
-    <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center">
-      <div class="row">
-        <div class="col-lg-12">
-          <div
-            class="copyright d-sm-flex justify-content-center"
-            style="
-              display: flex;
-              justify-content: center;
-              text-align: center;
-              width: 100%;
-              height: 100%;
-            "
-          >
-            <div class="copyright-content" style="text-align: center">
-              <p class="text" style="text-align: center">
-                © <span id="copyright-year"></span> FinVeda. All rights are
-                reserved<br />
-                Made with ♥ in India
-              </p>
+    <div class="col-lg-3 col-md-5 col-sm-5">
+        <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+            <div class="footer-title">
+                <h4 class="title custom-margin">Contact Us</h4>
             </div>
-          </div>
+            <ul class="contact custom-margin-big" style="justify-content: space-around;">
+                <li class="d-sm-flex justify-content-center">
+                    <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                    <p style="width: 80%;">
+                        <a href="mailto:ayush1337@hotmail.com" target="_blank"
+                           style="color: white; text-decoration: underline;">
+                            ayush1337@hotmail.com
+                        </a>
+                    </p>
+                </li>
+                <li class="d-sm-flex justify-content-center">
+                    <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                    <div style="width: 80%;">
+                        <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
+                            fin-veda.vercel.app
+                        </a>
+                    </div>
+                </li>
+                <li class="d-sm-flex justify-content-center">
+                    <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 12px; width: 10%;"></i>
+                    <div style="width: 80%;">
+                        <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
+                           style="color:#fff">
+                            Delhi, India
+                        </a>
+                    </div>
+                </li>
+                <div class="social-icons">
+                  <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                  <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                  <a href="#"><i class="fa-brands fa-discord"></i></a>
+                  <a href="#"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+<div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center">
+  <div class="row">
+    <div class="col-lg-12">
+      <div
+        class="copyright d-sm-flex justify-content-center"
+        style="
+          display: flex;
+          justify-content: center;
+          text-align: center;
+          width: 100%;
+          height: 100%;
+        "
+      >
+        <div class="copyright-content" style="text-align: center">
+          <p class="text" style="text-align: center">
+            © <span id="copyright-year">2024</span> FinVeda. All rights are
+            reserved<br />
+            Made with ♥ in India
+          </p>
         </div>
       </div>
     </div>
-    
   </div>
-  <div id="particles-2"></div>
+</div>
+
+<div id="particles-2"></div>
+</div>
 </footer>
 <script src="careers.js"></script> <!-- Link to careers.js -->
 <script>document.getElementById("copyright-year").textContent = new Date().getFullYear();</script>
@@ -1306,7 +1341,7 @@ if (body.classList.contains('dark-mode')) {
 <script src="../assets/js/quiz_modify.js"></script>
 <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
 <script src="https://mediafiles.botpress.cloud/5e160793-5606-4412-ba4c-337e416f14fe/webchat/config.js" defer></script>
-    <script defer src="./assets/js/arthsathi-style.js"></script>
+<script defer src="./assets/js/arthsathi-style.js"></script>
 <script src="./assets/js/botpress.js"></script>
 
 <script>
@@ -1419,18 +1454,21 @@ if (body.classList.contains('dark-mode')) {
     loginModal.querySelector(".close").addEventListener("click", closeModal);
   });
 
-  
-        document.getElementById("copyright-year").textContent = new Date().getFullYear();
 
-        function applyJob(jobTitle) {
-            alert("You have applied for: " + jobTitle);
-        }
-   
+  document.getElementById("copyright-year").textContent = new Date().getFullYear();
+
+  function applyJob(jobTitle) {
+    alert("You have applied for: " + jobTitle);
+  }
+
 </script>
 <script src="./tools/smoothScroll.js"></script>
+
+<div class="gtranslate_wrapper"></div>
+<script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+
 
 </body>
 
 </html>
-
-   
