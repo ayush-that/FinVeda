@@ -865,6 +865,19 @@ body.dark-mode {
         <div class="progress-bar" id="myBar"></div>
     </div> -->
 
+    <script>
+      document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+          event.preventDefault(); // Prevent the default form submission
+  
+          // Display the alert message
+          alert('Your feedback has been submitted successfully!');
+  
+          // Clear the text field
+          document.getElementById('userEmail').value = '';
+          document.getElementById('userName').value = '';
+          document.getElementById('userFeedback').value = '';
+      });
+  </script>
 
 
 
