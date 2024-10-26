@@ -17,11 +17,14 @@
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/quiz.css" />
   <link rel="stylesheet" href="../assets/css/popup.css" />
+  <link rel="stylesheet" href="../assets/css/index.css" />
   <link rel="stylesheet" href="GSTstyle.css"/>
   <link rel="stylesheet" type="text/css" href="sipcalculatorCss.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
    <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
   <link rel="stylesheet" href="navbar.css">
+
+  
   <style>
     #progressBar {
       position: fixed;
@@ -37,18 +40,7 @@
       cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
     }
 
-    .circle-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
-  gap: 10px; /* Adjust the gap between circles as needed */
-}
-.gridd{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin: 20px;
-}
-  
+
     .circle {
       position: absolute;
       width: 25px;
@@ -76,12 +68,12 @@
     }
 
     
-.unique-popup-message {
-  position: fixed; /* Change to fixed positioning */
-  top: 30px; /* Adjust this value to be below the navbar */
-  right: 2px; /* Adjust this value for the desired distance from the right edge */
-  width: 300px; /* Adjust width as needed */
-  transform: translateX(0); /* Center the popup horizontally */
+ .unique-popup-message {
+  position: fixed; 
+  top: 30px; 
+  right: 2px; 
+  width: 300px;
+  transform: translateX(0); 
   background-color: #a4d8ff;
   color: #131722;
   padding: 11px;
@@ -89,7 +81,7 @@
   text-align: center;
   z-index: 1000;
   box-sizing: border-box;
-  overflow: hidden; /* Hide the expanding border animation */
+  overflow: hidden; 
   position: relative;
 }
 
@@ -97,59 +89,48 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 7px; /* Same height as the border */
+  height: 7px; 
   background-color: rgb(4, 0, 128);
   width: 100%;
-  transform-origin: right; /* Start shrinking from the right */
+  transform-origin: right; 
 }
 
 @keyframes borderAnimation {
   from {
-    transform: scaleX(0); /* Full width initially */
+    transform: scaleX(0); 
   }
   to {
-    transform: scaleX(1); /* Shrink to zero width */
+    transform: scaleX(1); 
   }
 }
-.social-icons {
-    text-align: center;
-  }
-  
-  .social-icons ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .social-icons li {
-    margin: 0 10px;
-  }
-  
-  .social-icons a {
-    color: #337ab7;
-    text-decoration: none;
-    border-radius: 50%;
-    border: 1px solid #ccc; 
-    padding: 10px;
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s; 
-  }
-  
-  .social-icons a:hover {
-    color: #fe8464;
-    border-color: #fe8464; 
-    transform: scale(1.1); 
-  }
+.social-icons{
+
+text-align: left;
+}
+
+.social-icons a {
+display: inline-flex;
+justify-content: center;
+align-items: center;
+width: 2.1rem;
+height: 2.1rem;
+background-color: transparent;
+border: 0.2rem solid #0890ff;
+font-size: 1.1rem;
+border-radius: 50%;
+margin: 1rem 0.5rem 0.5rem 0;
+transition: 0.3s ease;
+color: #55ff00;
+text-align: left;
+}
+
+.social-icons a:hover {
+color: rgb(139, 249, 12);
+transform: scale(1.3) translateY(-5px);
+background-color: #0048ff;
+box-shadow: 0 0 25px #03133c;
+}
+
   
   .or-sign-in-with {
     margin: 20px 0;
@@ -185,9 +166,14 @@
   }
   .form-check a {
     margin-left: auto; 
+  } 
+
+  li{
+    text-color: black;
   }
-
-
+  ol li{
+    color: #131722;
+  }
   </style>
 
 <body>
@@ -292,81 +278,120 @@
     </div>
   </div>
   <header class="header-area">
-    <div class="row">
-      <div style="display: flex; justify-content: center;" class="">
-        <nav class="navbar navbar-expand-lg " style="display: flex;">
-          <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="toggler-icon"></span>
-            <span class="toggler-icon"></span>
-            <span class="toggler-icon"></span>
-          </button> -->
-          <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto;">
-            <div class="icon1">
-              <img src="../assets/images/icon.png" alt="icon.png">
-            </div> 
-            <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
-              <li class="nav-item">
-                <a class="page-scroll" href="../index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="../about.html" id="active-page" style="color: rgb(237, 242, 244);">About Us 📖</a>
-              </li>    
-              <li class="nav-item">
-                <a class="page-scroll" href="../trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll active-link" href="../tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="../blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="../quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="../careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="../contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
-              </li>
-              <li class="nav-item active">
-                <a class="page-scroll" href="../faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
-              </li>
-              <li class="nav-item no-underline">
-                <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="#" onclick="openModal()">Login/Register 💻</a>
-              </li>
-            </ul>
-            <button id="theme-toggle" class="theme-toggle">
-              🌙
-            </button>
-          </div>
-          <script>
-            const toggleButton = document.getElementById('theme-toggle');
-            const body = document.body;
-            const currentTheme = localStorage.getItem('theme');
+    <div class="navbar-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <nav class="navbar navbar-expand-lg">
+              <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+              </button> -->
+              <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
+                <div class="icon1">
+                  <a href="../index.html">
+                  <img src="../assets/images/icon.webp" alt="icon.png">
+                  </a>
+                </div> 
+                </a>
+                <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
+                  <li class="nav-item">
+                    <a class="page-scroll" href="../index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="../about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
+                  </li>    
+                  <li class="nav-item">
+                    <a class="page-scroll" href="../trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll active-link" href="../tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="../blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="../quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="../careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="../contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="../faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
+                  </li>
+                  <li class="nav-item no-underline">
+                    <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="../loginPage.html" >Login/Register 💻</a>
+                  </li>
+                  <li class="nav-item no-underline">
+                  <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
+                    🌙
+                  </button>
+                  </li>
+                </ul>
+              </div>
+                <!-- Login Modal -->
+           <!-- Login Modal -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+      <span class="close" style="display: flex; justify-content: right;">&times;</span>
+      <div class="mt-3">
+          <h3 class="join">Login to join us....</h3>
+          <form class="px-3 py-4" id="loginForm">
+              <div class="form-group">
+                  <label class="d-flex">Username</label>
+                  <div class="input-container">
+                      <i class="fa fa-user icon"></i>
+                      <input type="text" placeholder="Username" class="form-control" required />
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label class="d-flex">Password</label>
+                  <div class="input-container">
+                      <i class="fa fa-lock icon"></i>
+                      <input type="password" placeholder="Password" class="form-control" required>
+                      <button type="button" class="toggle-password-btn"><i class="fa fa-eye"></i></button>
+                  </div>
+              </div>
+              <div class="form-check d-flex">
+                  <input type="checkbox" class="form-check-input">
+                  <label class="form-check-label">Remember me</label>
+              </div>
+          </form>
+          <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('loginForm')">Sign in</button>
+          <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
+      </div>
+  </div>
+</div>
+<script>
+  const toggleButton = document.getElementById('theme-toggle');
+  const body = document.body;
+  const currentTheme = localStorage.getItem('theme');
 
-if (currentTheme === 'dark') {
-body.classList.add('dark-mode');
-toggleButton.classList.add('dark');
-toggleButton.textContent = '🌞';
-}
-
-toggleButton.addEventListener('click', function () {
-body.classList.toggle('dark-mode');
-toggleButton.classList.toggle('dark');
-
-// Update button icon based on mode
-if (body.classList.contains('dark-mode')) {
-toggleButton.textContent = '🌞';  // Light mode icon
-localStorage.setItem('theme', 'dark');
-} else {
-toggleButton.textContent = '🌙';  // Dark mode icon
-localStorage.setItem('theme', 'light');
-}
-});
-        </script>
-              <div class="">
+  if (currentTheme === 'dark') {
+  body.classList.add('dark-mode');
+  toggleButton.classList.add('dark');
+  toggleButton.textContent = '🌞';
+  }
+  
+  toggleButton.addEventListener('click', function () {
+  body.classList.toggle('dark-mode');
+  toggleButton.classList.toggle('dark');
+  
+  // Update button icon based on mode
+  if (body.classList.contains('dark-mode')) {
+    toggleButton.textContent = '🌞';  // Light mode icon
+    localStorage.setItem('theme', 'dark');
+  } else {
+    toggleButton.textContent = '🌙';  // Dark mode icon
+    localStorage.setItem('theme', 'light');
+  }
+  });
+</script>
 
                 <!-- Login Modal -->
                 <div id="myModal" class="modal">
@@ -595,34 +620,51 @@ registerCloseButton.addEventListener("click", function() {
       </div>
     </div>
 
+  
   </header>
   <link rel="stylesheet" type="text/css" href="sipcalculatorCss.css">
   <script type="text/javascript" src="sipcalculatorJs.js"></script>
 
-  <body class="body-background">
+  <body class="body-background" style="color:#131722">
     <div class="header"><br><br>
       <h2>Tools</h2><br>
-      <h3>Mutual Fund Investment Calculator</h3>
+      <h3 id="section1">Mutual Fund Investment Calculator</h3>
       <p class="cal-content">
         The Mutual Fund Investment Calculator helps you estimate the potential returns of your investments, whether through Systematic Investment Plans (SIP) or LumpSum investments. 
         By inputting your monthly investment amount, investment duration, and expected annual return rate, this tool calculates the total investment, wealth gained, and maturity value, providing a clear 
         picture of your investment growth.
       </p>
-      <div class="know-more">
+
+      <div class="know-more" style="color:#131722">
         <button class="know-more-btn">Know More</button>
         <div class="know-more-content">
           <h6 style="text-align: left; margin: 2% 16%; padding-left: 5px;">Here's how it works:</h6>
           <ol type="1" style="font-size: 1rem; text-align: left; margin-left: 17%; margin-bottom: 2rem;">
-            <li><b>Monthly Investment:</b> Enter the amount you plan to invest monthly.</li>
+            <li><b >Monthly Investment:</b> Enter the amount you plan to invest monthly.</li>
             <li><b>Time Period (years):</b> Specify the number of years for the investment.</li>
             <li><b>Expected Return Rate (p.a.):</b> Enter the annual return rate you expect.</li>
             <li><b>Calculate:</b> Computes the total investment, wealth gained, and maturity value based on inputs.</li>
+
+      <div class="know-more" style="text-align: center; padding: 20px; background-color: #f4f4f9; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        <button class="know-more-btn" style="padding: 10px 20px; font-size: 1.1rem; font-weight: bold; color: #fff; background-color: #007bff; border: none; border-radius: 6px; cursor: pointer; transition: background-color 0.3s ease;">
+          Know More
+        </button>
+        <div class="know-more-content" style="margin-top: 20px; background-color: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+          <h6 style="text-align: left; font-size: 1.25rem; font-weight: 600; margin-bottom: 15px;">How It Works:</h6>
+          <ol type="1" style="font-size: 1rem; text-align: left; padding-left: 20px; line-height: 1.6;">
+            <li><b>Monthly Investment:</b> Enter the amount you plan to invest each month.</li>
+            <li><b>Time Period (years):</b> Specify the number of years for the investment duration.</li>
+            <li><b>Expected Return Rate (p.a.):</b> Input the expected annual return rate.</li>
+            <li><b>Calculate:</b> Computes total investment, wealth gained, and maturity value based on inputs.</li>
+
           </ol>
         </div>
       </div>
+      
+      </div>
+      
     </div>
-    <div class="gridd">
-    <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5">
+    <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5 text-black">
       <div class="switch-container radio-button">
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="radio" value="SIP" checked name="checked">
@@ -685,114 +727,94 @@ registerCloseButton.addEventListener("click", function() {
         </div>
       </div>
     </div>
-    
-    
-    <!-- EMI Calculator -->
-    <style>
-      body {
-          font-family: Arial, sans-serif;
-          background-color: #f8f9fa;
-          margin: 0;
-          padding: 0;
-      }
-      .header {
-          padding-top: 10px;
-          text-align: center;
-          color: white;
-          padding: 20px;
-      }
-      .header h3 {
-          margin: 0;
-      }
-      .cal-content {
-          margin: 20px 0;
-      }
-      .know-more {
-          margin-top: 20px;
-      }
-      .know-more-btn {
-          background-color: white;
-          border: none;
-          padding: 10px 20px;
-          color: #007bff;
-          cursor: pointer;
-          font-weight: bold;
-          border-radius: 5px;
-          transition: background-color 0.3s;
-      }
-      .know-more-btn:hover {
-          background-color: #e0e0e0;
-      }
-      .know-more-content {
-          display: none;
-          background: white;
-          padding: 15px;
-          border-radius: 5px;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-      .input-container {
-          padding: 20px;
-          background: white;
-          border-radius: 5px;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-          margin: 20px 0;
-      }
-      .form-control {
-          width: 100%;
-          padding: 10px;
-          margin-top: 5px;
-          border: 1px solid #ced4da;
-          border-radius: 4px;
-      }
-      .btn-calculate {
-          display: flex;
-          justify-content: space-between;
-          margin: 20px 0;
-      }
-      .btn {
-          padding: 10px 20px;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-          font-weight: bold;
-          transition: background-color 0.3s;
-      }
-      .btn-calculate {
-           
-          color: white;
-      }
-      .btn-secondary {
-          background-color: #6c757d;
-          color: white;
-      }
-      .btn:hover {
-          opacity: 0.9;
-      }
-      .result {
-          margin-top: 20px;
-          font-size: medium;
-          padding: 15px;
-          background: #e9ecef;
-          border-radius: 5px;
-      }
-      .result-container {
-          display: flex;
-          flex-direction: column;
-          margin-left: 20px;
-      }
-  </style>
-  <script src="emiCalculator.js"></script>
-</head>
-
-</html>
- 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EMI Calculator</title>
   <style>
+    .page-container {
+    max-width: 600px; /* Maximum width for larger screens */
+    width: 100%; /* Allow it to shrink to fit smaller screens */
+    margin: auto;
+    padding: 20px;
+}
+
+.switch-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.input-container {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.btn-calculate {
+    display: flex;
+    justify-content: center; /* Center the buttons */
+    margin-bottom: 20px;
+}
+
+.btn-calculate button {
+    margin: 0 10px; /* Add horizontal spacing between buttons */
+    text-align: center; /* Center text inside the button */
+    display: inline-flex; /* Use inline-flex to center text */
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+}
+
+/* Result section */
+.result {
+    margin-top: 20px;
+}
+
+.result-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+}
+
+.result-container2 {
+    text-align: right;
+}
+
+@media (max-width: 600px) {
+    .switch-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .result-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .result-container2 {
+        text-align: left;
+    }
+
+    .btn-calculate {
+        flex-direction: column; /* Stack buttons on smaller screens */
+    }
+
+    .btn-calculate button {
+        width: 100%; /* Make buttons full width on small screens */
+        margin-bottom: 10px; /* Space between stacked buttons */
+    }
+}
+
+/* For very small screens (below 300px) */
+@media (max-width: 300px) {
+    .page-container {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .form-group {
+        margin-bottom: 10px; /* Reduce margin for smaller screens */
+    }
+}
+
       body {
           font-family: Arial, sans-serif;
           background-color: #fff0f5;
@@ -842,6 +864,7 @@ registerCloseButton.addEventListener("click", function() {
           border-radius: 5px;
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
           margin: 20px 0;
+          width: 97%;
       }
       .form-control {
           width: 100%;
@@ -866,7 +889,6 @@ registerCloseButton.addEventListener("click", function() {
           flex: 1; /* Equal spacing */
           margin: 0 5px; /* Space between buttons */
       }
-      
       .btn-primary {
           background-color: #0288d1;
           color: white;
@@ -901,7 +923,9 @@ registerCloseButton.addEventListener("click", function() {
 </head>
 <body>
   <div class="header toool">
-      <h3>EMI Calculator</h3>
+    <!-- for Navigation between the tools -->
+      <h3 id="section2">EMI Calculator</h3>
+
       <p class="cal-content">
           The EMI (Equated Monthly Installment) Calculator assists in calculating the monthly installment amount for a loan based on the loan amount, interest rate, and loan tenure.
           It provides insights into the total payment and total interest paid over the loan period, helping you plan your finances better.
@@ -919,7 +943,7 @@ registerCloseButton.addEventListener("click", function() {
           </div>
       </div>
   </div>
-  <div class="page-container">
+  <div class="page-container" style="color:#131722">
       <div class="input-container">
           <div>
               <div><b>Loan Amount (INR)</b></div>
@@ -950,8 +974,8 @@ registerCloseButton.addEventListener("click", function() {
     <!-- Savings Goal Calculator -->
     <script src="SavingsGoalCalculator.js" defer></script>
     <script src="SavingsGoalCalculator.js" ></script>
-    <div class="header toool" style="padding-top: 10px;">
-      <h3>Savings Goal Calculator</h3>
+    <div class="header toool" style="padding-top: 100px;">
+      <h3 id="section3">Savings Goal Calculator</h3>
       <p class="cal-content">
         The Savings Goal Calculator is designed to help you determine how much you need to save monthly to reach your financial goals. By entering your goal amount, current savings, monthly savings, and expected annual interest rate, this calculator shows the time required to achieve your goal.
       </p>
@@ -1005,8 +1029,8 @@ registerCloseButton.addEventListener("click", function() {
 
     <!-- Insurance Calculator -->
     <script src="insuranceCalculator.js" defer></script>
-<div class="header toool" style="padding-top: 10px;">
-  <h3>Insurance Calculator</h3>
+<div class="header toool" style="padding-top: 100px;">
+  <h3 id="section4">Insurance Calculator</h3>
   <p class="cal-content">
     The Insurance Calculator estimates the benefits of an insurance policy based on the sum assured, policy term, and annual premium. This tool helps you understand the potential returns from your insurance policy and plan your coverage effectively.
   </p>
@@ -1043,7 +1067,9 @@ registerCloseButton.addEventListener("click", function() {
       <div><b>Terminal Bonus (%)</b></div>
       <div><input class="form-control" id="TerminalBonus" type="number" /></div>
       <br />
-      <div class="select" style="display: flex; flex-direction: row;"">
+      
+
+      <div class="select" style="display: flex; flex-direction: row; width: 100%;">
       <div class="centered-content">
         <input name="surrenderType" id="surrendered" type="radio" />
         <label for="surrendered"><b>Early Surrendered</b></label>
@@ -1076,8 +1102,8 @@ registerCloseButton.addEventListener("click", function() {
   <!-- End Insurance Calculator -->
     <!-- NPV Calculator -->
     <script src="npvCalculator.js" defer></script>
-<div class="header toool" style="padding-top: 10px;">
-  <h3>Net Present Value<br> (NPV) Calculator</h3>
+<div class="header toool" style="padding-top: 100px;">
+  <h3 id="section5">Net Present Value<br> (NPV) Calculator</h3>
   <p class="cal-content">
     The NPV (Net Present Value) Calculator is a tool designed to help you evaluate the profitability of an investment by calculating the present value of expected future cash flows. This calculator helps investors make informed decisions, ensuring that future cash flows are accurately evaluated in today's terms.
   </p>
@@ -1130,11 +1156,106 @@ registerCloseButton.addEventListener("click", function() {
 </div>
 
     <!-- End NPV Calculator -->
+    <style>
+
+        body {
+
+            font-family:  Arial, sans-serif;
+            background-color:  #f4f4f4;
+            margin: 0;
+            padding: 0px;
+
+        }
+ footer
+
+        .container {
+ 
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            color: #555;
+        }
+        input[type="number"] {
+            
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .result {
+            font-weight: bold;
+            color: #007bff;
+            margin-top: 10px;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div class="containerr">
+    <h1>TCO Calculator</h1>
+    
+    <label for="initialCost">Initial Cost ($):</label>
+    <input type="number" id="initialCost" placeholder="Enter initial cost" required>
+    
+    <label for="operatingCost">Annual Operating Cost ($):</label>
+    <input type="number" id="operatingCost" placeholder="Enter annual operating cost" required>
+    
+    <label for="years">Years of Ownership:</label>
+    <input type="number" id="years" placeholder="Enter number of years" required>
+    
+    <label for="miscCost">Miscellaneous Costs ($):</label>
+    <input type="number" id="miscCost" placeholder="Enter miscellaneous costs" required>
+    
+    <button class="btn" onclick="calculateTCO()">Calculate TCO</button>
+
+    <div class="result" id="tcoResult"></div>
+</div>
+
+<script>
+    function calculateTCO() {
+        // Get the input values
+        const initialCost = parseFloat(document.getElementById('initialCost').value) || 0;
+        const operatingCost = parseFloat(document.getElementById('operatingCost').value) || 0;
+        const years = parseInt(document.getElementById('years').value) || 0;
+        const miscCost = parseFloat(document.getElementById('miscCost').value) || 0;
+
+        // Calculate TCO
+        const totalOperatingCost = operatingCost * years;
+        const tco = initialCost + totalOperatingCost + miscCost;
+
+        // Display the result
+        document.getElementById('tcoResult').innerHTML = `Total Cost of Ownership: $${tco.toFixed(2)}`;
+    }
+</script>
+
  
     <!--ROI calculator-->
     <script src="roiCalculator.js" defer></script>
-    <div class="header toool" style="padding-top: 10px;">
-      <h3>Return on Investment(ROI) Calculator</h3>
+    <div class="header toool" style="padding-top: 100px;">
+      <h3 id="section6">Return on Investment(ROI) Calculator</h3>
       <p class="cal-content">
         The ROI (Return on Investment) Calculator helps you measure the profitability of an investment. By inputting the initial investment amount and the final value of the investment, this tool calculates the percentage return on investment, helping you assess the efficiency of your investment.
       </p>
@@ -1185,8 +1306,8 @@ registerCloseButton.addEventListener("click", function() {
 
     <!--Start of GST Calculator-->
     <script src="GSTcalc.js" defer></script>
-<div class="header toool" style="padding-top: 10px;">
-    <h3>Goods and Service Tax (GST) Calculator</h3>
+<div class="header toool" style="padding-top: 100px;">
+    <h3 id="section7">Goods and Service Tax (GST) Calculator</h3>
     <p class="cal-content">The GST (Goods and Services Tax) Calculator computes the GST-inclusive or exclusive amount based on the original amount and the applicable GST rate. This tool simplifies the calculation of GST for various transactions.</p>
     <div class="know-more">
         <button class="know-more-btn">Know More</button>
@@ -1236,55 +1357,238 @@ registerCloseButton.addEventListener("click", function() {
     <!--end of GST Calc-->
 
     <!--Start of Income Tax Calc-->
-    <script src="IncomeTax.js" defer></script>
-    <div class="header toool" style="padding-top: 10px;">
-        <h3>Income Tax Calculator</h3>
-        <p class="cal-content">The Income Tax Calculator determines the tax payable based on your annual income and applicable tax rate. It helps you estimate your tax liability and plan your finances accordingly.</p>
-        <div class="know-more">
-            <button class="know-more-btn">Know More</button>
-            <div class="know-more-content">
-                <h6 style="text-align: left; margin: 2% 16%; padding-left: 5px;">Here's how it works:</h6>
-                <ol type="1" style="font-size: 1rem; text-align: left; margin-left: 17%; margin-bottom: 2rem;">
-                    <li><b>Income</b>: Enter your total annual income.</li>
-                    <li><b>Tax Rate</b>: Specify the applicable tax rate.</li>
-                    <li><b>Calculate Tax</b>: Computes the income tax based on the inputs.</li>
-                </ol>
-            </div>
+    <main class="main-income">
+      <h1 class="main-income-head">Income tax calculator</h1>
+      <form>
+        <p class="disclaimer" id="disclaimer">
+          *Must have AIS and TIS with yourself
+        </p>
+        <label for="actual-income" class="income-label"
+          >Total Income(Income from Deposit,Savings Account,House
+          Property):</label
+        >
+        <input
+          type="number"
+          placeholder="Enter your total income"
+          class="actual-income"
+          id="actual-income"
+          
+        />
+        <label for="actual-deductions" class="income-label"
+          >Total Deductions(Charity,Under 80GG,80E,80TTA,life insurance premium,
+          PPF,Pension):</label
+        >
+        <input
+          type="number"
+          placeholder="Enter your total deductions"
+          class="actual-deductions"
+          id="actual-deductions"
+        
+        />
+        <label for="pan-number" class="income-label">Pan Card Number:</label>
+        <input
+          type="password"
+          placeholder="Enter your pan card"
+          class="pan-number"
+          id="pan-number"
+        />
+        <div class="necessary-buttons">
+          <button
+            type="button"
+            class="submit-button"
+            id="submit-button"
+            onclick="tax_evaluation()"
+          >
+            Calculate
+          </button>
+          <button type="button" class="reset-button" id="reset-button">
+            Clear
+          </button>
         </div>
-    </div>
-    <div class="page-container shadow p-5 mb-5 bg-white rounded mt-5" id="IncomeTax">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <form id="income-tax-calculator" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                    <div class="form-group">
-                        <label for="income" class="income">Income:</label>
-                        <input type="number" id="income" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="tax-rate" class="tax-rate">Tax Rate (%):</label>
-                        <input type="number" id="tax-rate" class="form-control" required>
-                    </div>
-                    <div class="btn-calculate" style="display: flex; flex-direction: row;">
-                        <button id="submitBtn3" type="submit" class="btn btn-calculate">Calculate</button>
-                        <button type="button" class="btn btn-secondary" onclick="clearIncomeTax()"><p class="btn-text">Clear</p></button>
-                    </div>
-                </form>
-                <div id="result" class="mt-3">
-                    <h5>Result:</h5>
-                    <p id="income-tax"></p>
-                    <p id="real-income"></p>
-                </div>
-            </div>
-        </div>
-    </div>
+      </form>
+      <p class="taxable-income" id="taxable-income">
+        Taxable income: <strong id="taxable-income-value"></strong>
+      </p>
+      <p class="tax-payable" id="tax-payable">
+        Tax Payable: <strong id="tax-payable-value"></strong>
+      </p>
+      <p class="income-after-tax" id="income-after-tax">
+        Income After tax: <strong id="income-after-value"></strong>
+      </p>
+    </main>
+
+    <style>
+      *{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+:root{
+    --required-font:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.main-income{
+    border:1px solid black;
+    width:40%;
+    padding:10px;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin:auto;
+    height:100vh;
+    background:linear-gradient(35deg, #d1b3e5, #ffe3f0);
+    border-radius:20px;
+
+}
+
+.main-income-head{
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: 600;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:grey;
+    text-shadow:2px 2px 3px white;
+    margin-top:10px;
+}
+
+.income-label{
+    display:inline-block;
+    width:90%;
+    /* border: 1px solid black; */
+    margin-left:20px;
+    margin-top:20px;
+    font-size: 23px;   
+    color:rgb(100, 98, 98);
+    font-family:var(--required-font);
+}
+
+.actual-income,.actual-deductions,.pan-number{
+    display:block;
+    font-family: var(--required-font);
+    width:90%;
+    height:50px;    
+    margin-top:10px;
+    margin-bottom:10px;
+    padding:10px;
+    font-size: 20px;
+    margin-left:20px;
+    border-radius: 10px;
+}
+
+.disclaimer{
+    /* border:1px solid black; */
+    text-align:center;
+    font-size: 20px;
+    color:red;
+    font-style: italic;
+    margin-top:10px;
+    margin-bottom:5px;
+    
+}
+
+.necessary-buttons{
+    margin-top:20px;
+}
+
+.submit-button, .reset-button{
+    width:150px;
+    height:50px;
+    font-size:24px;
+    background: linear-gradient(120deg, coral, pink,cornflowerblue);
+    border-radius:10px;
+    color:white;
+    border:none;
+}
+
+.submit-button{
+    margin-left:8rem;
+}
+
+.reset-button{
+    margin-left:2rem;
+}
+
+.taxable-income, .tax-payable, .income-after-tax{
+    margin-top:10px;
+    font-size: 23px;
+    color:rgb(106, 99, 99);
+    font-family: var(--required-font);
+    display:none;
+    width:100%;
+    text-align:center;
+    /* visibility:hidden; */
+}
+    </style>
+
+
+    <script>
+      function tax_evaluation() {
+        var total_income =
+          parseFloat(document.getElementById("actual-income").value) || 0;
+        var total_deductions = parseFloat(
+          document.getElementById("actual-deductions").value
+        ) || 0;
+        // Just for the sake of taking user data
+        var pan_card = document.getElementById("pan-number").value;
+
+        //Standard deduction may vary as per rules
+        var standard_deduction = 50000;
+        //Change of taxable income on page and its calculation
+        var taxable_income =
+          total_income - (total_deductions + standard_deduction);
+        document.getElementById("taxable-income-value").innerText =
+          "₹" + taxable_income;
+        console.log(taxable_income);
+        var final_income = taxable_income;
+
+        var tax_payable = 0;
+        if (final_income < 300000) {
+          tax_payable = 0;
+        } else {
+          const slabs = [
+            { limit: 300000, rate: 0 },
+            { limit: 700000, rate: 0.05 },
+            { limit: 1000000, rate: 0.1 },
+            { limit: 1200000, rate: 0.15 },
+            { limit: 1500000, rate: 0.2 },
+            { limit: Infinity, rate: 0.3 }, // For income above ₹1500000
+          ];
+
+          let previous_limit = 0;
+
+            for (let i = 0; i < slabs.length; i++) {
+            if (final_income > slabs[i].limit) {
+                // Calculate tax for the portion between previous slab limit and current slab limit
+                tax_payable += (slabs[i].limit - previous_limit) * slabs[i].rate;
+                previous_limit = slabs[i].limit; // Move to the next slab
+            } else {
+                // If income falls within this slab, calculate the remaining tax and exit
+                tax_payable += (final_income - previous_limit) * slabs[i].rate;
+                break; // Exit loop as we've fully calculated the tax
+            }
+            }
+        }
+        var income_after_tax = taxable_income - tax_payable;
+        document.getElementById("income-after-value").innerText =
+          "₹" + income_after_tax;
+        document.getElementById("tax-payable-value").innerText = "₹" + tax_payable;
+
+        document.getElementById("taxable-income").style.display = "block";
+        document.getElementById("tax-payable").style.display = "block";
+        document.getElementById("income-after-tax").style.display = "block";
+        
+      }
+    </script>
     
   <!-- end of Income Tax Calc-->
    
   <!-- Profit Margin Calculator starts here -->
   <script src="ProfitMargin.js" defer></script>
 
-  <div class="header toool" style="padding-top: 10px;">
-    <h3>Profit Margin Calculator</h3>
+  <div class="header toool" style="padding-top: 100px;">
+    <h3 id="section9">Profit Margin Calculator</h3>
     <p class="cal-content">The Profit Margin Calculator calculates the profit margin percentage based on the revenue and cost inputs. This tool helps businesses and individuals assess their profitability and make informed pricing and cost management decisions.</p>
     <div class="know-more">
       <button class="know-more-btn">Know More</button>
@@ -1329,8 +1633,8 @@ registerCloseButton.addEventListener("click", function() {
 <!-- expenditure and saving Calculator starts here -->
 <script src="expenditureandsaving.js" defer></script>
 
-<div class="header toool" style="padding-top: 10px;">
-  <h3 class="text-center mb-4">Expenditure and Savings Calculator</h3>
+<div class="header toool" style="padding-top: 100px;">
+  <h3 class="text-center mb-4" id="section10">Expenditure and Savings Calculator</h3>
   <p class="cal-content">The Expenditure and Savings Calculator helps you analyze your monthly savings based on your income and expenses. This tool assists in managing your finances effectively.</p>
   <div class="know-more">
     <button class="know-more-btn">Know More</button>
@@ -1375,7 +1679,7 @@ registerCloseButton.addEventListener("click", function() {
  <!-- GDP calculator  starts from here -->
 
  <div class="header toool">
-  <h3>GDP Calculator</h3>
+  <h3 id="section11">GDP Calculator</h3>
   <p class="cal-content">
     The GDP Calculator computes the Gross Domestic Product (GDP) using the Expenditure Approach, which aggregates personal consumption, gross investment, government consumption, and net exports (exports minus imports) to determine the economic output of a country.
   </p> 
@@ -1446,8 +1750,8 @@ registerCloseButton.addEventListener("click", function() {
      <!--SWP Calculator Start-->
      <script src="SWPCalculator.js" defer></script>
 
-     <div class="header toool" style="padding-top: 10px;">
-       <h3 class="text-center mb-4">Systematic Withdrawal Plan Calculator</h3>
+     <div class="header toool" style="padding-top: 100px;">
+       <h3 class="text-center mb-4" id="section12">Systematic Withdrawal Plan Calculator</h3>
        <p class="cal-content">The SWP (Systematic Withdrawal Plan) calculator is a financial tool that helps investors plan and manage the regular withdrawal of funds from their investment corpus, typically mutual funds. SWP is used to generate a steady income stream, often for retirees or those looking to supplement their income.</p>
        <div class="know-more">
          <button class="know-more-btn">Know More</button>
@@ -1503,8 +1807,8 @@ registerCloseButton.addEventListener("click", function() {
   <!-- credit card payoff calculator starts here  -->
   <script src="creditcardpayoff.js" defer></script>
 
-  <div class="header toool" style="padding-top: 10px;">
-    <h3 class="text-center mb-4">Credit Card Payoff Calculator</h3>
+  <div class="header toool" style="padding-top: 100px;">
+    <h3 class="text-center mb-4" id="section13">Credit Card Payoff Calculator</h3>
     <p class="cal-content">Calculate how long it will take to pay off your credit card balance with this calculator. Enter your balance, APR, and monthly payment to get started.</p>
     <div class="know-more">
       <button class="know-more-btn">Know More</button>
@@ -1554,8 +1858,8 @@ registerCloseButton.addEventListener("click", function() {
   <!-- credeit card payoff calculator ends here  -->
 
   <!-- Bill split calculator  -->
-  <div class="header toool" style="padding-top: 10px;">
-    <h3 class="text-center mb-4">Split Bill Calculator</h3>
+  <div class="header toool" style="padding-top: 100px;">
+    <h3 class="text-center mb-4" id="section14">Split Bill Calculator</h3>
     <p class="cal-content">Calculate how much each person should pay when splitting a bill, including tips. Enter the bill subtotal, desired tip percentage, and the number of people to split the bill.</p>
     <div class="know-more">
         <button class="know-more-btn">Know More</button>
@@ -1611,8 +1915,8 @@ registerCloseButton.addEventListener("click", function() {
  <!--FD Calculator Start-->
      <script src="FDCalculator.js" defer></script>
 
-     <div class="header toool" style="padding-top: 10px;">
-       <h3 class="text-center mb-4">Fixed Deposit Calculator</h3>
+     <div class="header toool" style="padding-top: 100px;">
+       <h3 class="text-center mb-4" id="section15">Fixed Deposit Calculator</h3>
        <p class="cal-content">The FD(Fixed Deposit) Calculator helps compute the maturity amount and interest earned on fixed deposits based on the principal, interest rate, and duration.</p>
        <div class="know-more">
          <button class="know-more-btn">Know More</button>
@@ -1665,8 +1969,8 @@ registerCloseButton.addEventListener("click", function() {
  <!--RD Calculator Start-->
  <script src="RDCalculator.js" defer></script>
 
- <div class="header toool" style="padding-top: 10px;">
-   <h3 class="text-center mb-4">Recurring Deposit Calculator</h3>
+ <div class="header toool" style="padding-top: 100px;">
+   <h3 class="text-center mb-4" id="section16">Recurring Deposit Calculator</h3>
    <p class="cal-content">The RD (Recurring Deposit) calculator computes the maturity amount and interest earned on regular monthly deposits over a fixed period, given a specified annual interest rate.</p>
    <div class="know-more">
      <button class="know-more-btn">Know More</button>
@@ -1719,8 +2023,8 @@ registerCloseButton.addEventListener("click", function() {
   <!--EPF Calculator Start-->
   <script src="EPFCalculator.js" defer></script>
 
-  <div class="header toool" style="padding-top: 10px;">
-    <h3 class="text-center mb-4">Employee Provident Fund Calculator</h3>
+  <div class="header toool" style="padding-top: 100px;">
+    <h3 class="text-center mb-4" id="section17">Employee Provident Fund Calculator</h3>
     <p class="cal-content">The Employee Provident Fund Calculator helps employees estimate their total savings at retirement by factoring in monthly salary, age, contribution rate, annual salary increase, and interest rate. It provides a projection of the accumulated fund, aiding in financial planning for retirement.</p>
     <div class="know-more">
       <button class="know-more-btn">Know More</button>
@@ -1778,196 +2082,159 @@ registerCloseButton.addEventListener("click", function() {
   </div>
   <!--EPF Calculator End-->
 </body>
-</div>
-  
-  <!-- Timed popup that will appear after succesful submission of feebback form! -->
-      <button class="notification" id="successnotification" style="display:none;">
-        <span class="message" id="successmsg">Submitted successfully!</span>
-        <span class="closenotif" id="closeSuccessNotification">✖</span>
-        <div class="timerline" id="timerline"></div>
-      </button>
 
+
+  <!-- Timed popup that will appear after succesful submission of feebback form! -->
+  <button class="notification" id="successnotification" style="display:none;">
+    <span class="message" id="successmsg">Submitted successfully!</span>
+    <span class="closenotif" id="closeSuccessNotification">✖</span>
+    <div class="timerline" id="timerline"></div>
+  </button>
+  
+  
   <footer id="footer" class="footer-area pt-120">
     <div class="container">
-      <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="subscribe-content mt-45">
-              <h2 class="subscribe-title">
-                Subscribe Our Newsletter <span>get regular updates</span>
-              </h2>
-            </div>
+    <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="subscribe-content mt-45">
+            <h2 class="subscribe-title">
+              Subscribe Our Newsletter <span>Get Regular Updates</span>
+            </h2>
           </div>
-          <div class="col-lg-6">
-            <div class="subscribe-form mt-50">
-              <form id="unique-subscribe-form">
-                <input type="email" id="unique-news-email" placeholder="Enter Email" required/>
-                <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
-              </form>
-              <div id="unique-message" class="unique-popup-message" style="display: none;">
-                <div class="border-animation"></div>
-                Thank You for the subscription!
-              </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="subscribe-form mt-50">
+            <form id="unique-subscribe-form">
+              <input type="email" id="unique-news-email" placeholder="Enter Email" required/>
+              <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
+            </form>
+            <div id="unique-message" class="unique-popup-message" style="display: none;">
+              <div class="border-animation"></div>
+              Thank You for the subscription!
             </div>
           </div>
         </div>
       </div>
     </div>
-    <script>
-      document.getElementById('unique-subscribe-form').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent form from submitting normally
-    
-        // Show popup message
-        var messageDiv = document.getElementById('unique-message');
-        messageDiv.style.display = 'block';
-        
-        // Reset existing animation
-        var borderAnimationDiv = messageDiv.querySelector('.border-animation');
-        borderAnimationDiv.style.animation = 'none';
-        borderAnimationDiv.offsetHeight; // Trigger reflow to restart the animation
-        borderAnimationDiv.style.animation = 'borderAnimation 3s linear forwards';
-    
-        // Hide popup message after 10 seconds
-        setTimeout(function() {
-          messageDiv.style.display = 'none';
-        }, 3000); // 10 seconds
-    
-        // Reset form
-        this.reset();
-      });
-    </script>
-    
+    </div>
     <div class="footer-widget pb-100">
-      <div class="row" id="footer">
-          <div class="col-lg-4 col-md-6 col-sm-8">
-              <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                  <p class="text custom-margin">
-                      We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
-                  </p>
-              </div>
-          </div>
-          <div class="col-lg-5 col-md-7 col-sm-7">
-              <div class="footer-link d-flex mt-50 justify-content-md-between" style="justify-content: space-around !important;">
-                  <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-                      <div class="footer-title">
-                          <h3 class="title custom-margin">Quick Links</h3>
-                      </div>
-                      <ul class="link custom-margin">
-                          <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
-                          <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
-                          <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
-                          <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
-                          <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
-                      </ul>
-                  </div>
-                  <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
-                      <div class="footer-title">
-                          <h4 class="title custom-margin">Resources</h4>
-                      </div>
-                      <ul class="link custom-margin">
-                          <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
-                          <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
-                          <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
-                          <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
-                          <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
-                          <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
-          <div class="col-lg-3 col-md-5 col-sm-5">
-              <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-                  <div class="footer-title">
-                      <h4 class="title custom-margin">Contact Us</h4>
-                  </div>
-                  <ul class="contact custom-margin-big" style="justify-content: space-around;">
-                      <li class="d-sm-flex justify-content-center">
-                          <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                          <p style="width: 80%;">
-                              <a href="mailto:ayush1337@hotmail.com" target="_blank"
-                                 style="color: white; text-decoration: underline;">
-                                  ayush1337@hotmail.com
-                              </a>
-                          </p>
-                      </li>
-                      <li class="d-sm-flex justify-content-center">
-                          <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                          <div style="width: 80%;">
-                              <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
-                                  fin-veda.vercel.app
-                              </a>
-                          </div>
-                      </li>
-                      <li class="d-sm-flex justify-content-center">
-                          <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 12px; width: 10%;"></i>
-                          <div style="width: 80%;">
-                              <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
-                                 style="color:#fff">
-                                  Delhi, India
-                              </a>
-                          </div>
-                      </li>
-                      <li id="social_icons" class="d-sm-flex justify-content-evenly my-3">
-                        <div style="width: 100%; display:flex; ">
-                          <!-- Instagram Icon -->
-                          <a href="https://instagram.com" target="_blank" style="margin: 0 10px; color: #E4405F;" aria-label="Instagram">
-                            <i style="font-size: 25px" class="fa-brands fa-instagram"></i>
-                          </a>
-                      
-                          <!-- Facebook Icon -->
-                          <a href="https://facebook.com" target="_blank" style="margin: 0 10px; color: #4267B2;" aria-label="Facebook">
-                            <i style="font-size: 25px" class="fa-brands fa-facebook"></i>
-                          </a>
-                      
-                          <!-- X/Twitter Icon -->
-                          <a href="https://twitter.com" target="_blank" style="margin: 0 10px; color: #1DA1F2;" aria-label="Twitter">
-                            <i style="font-size: 25px" class="fa-brands fa-x-twitter"></i>
-                          </a>
-                      
-                          <!-- Discord Icon -->
-                          <a href="https://discord.com" target="_blank" style="margin: 0 10px; color: #7289DA;" aria-label="Discord">
-                            <i style="font-size: 25px" class="fa-brands fa-discord"></i>
-                          </a>
-                      
-                          <!-- GitHub Icon -->
-                          <a href="https://github.com" target="_blank" style="margin: 0 10px; color: #333;" aria-label="GitHub">
-                            <i style="font-size: 25px" class="fa-brands fa-github"></i>
-                          </a>
-                        </div>
-                      </li>
-                  </ul>
-              </div>
-          </div>
-      </div>
-  </div>
-      <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center">
-        <div class="row">
-          <div class="col-lg-12">
-            <div
-              class="copyright d-sm-flex justify-content-center"
-              style="
-                display: flex;
-                justify-content: center;
-                text-align: center;
-                width: 100%;
-                height: 100%;
-              "
-            >
-              <div class="copyright-content" style="text-align: center">
-                <p class="text" style="text-align: center">
-                  © <span id="copyright-year"></span> FinVeda. All rights
-                  reserved<br />
-                  Made with ♥ in India
+    <div class="row" id="footer">
+        <div class="col-lg-4 col-md-6 col-sm-8">
+            <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                <p class="text custom-margin">
+                    We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
                 </p>
-              </div>
             </div>
+        </div>
+        <div class="col-lg-5 col-md-7 col-sm-7">
+            <div class="footer-link d-flex mt-50 justify-content-md-between" style="justify-content: space-around !important;">
+                <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+                    <div class="footer-title">
+                        <h3 class="title custom-margin">Quick Links</h3>
+                    </div>
+                    <ul class="link custom-margin">
+                        <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+                        <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
+                        <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
+                        <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+                        <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+                    </ul>
+                </div>
+                <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+                    <div class="footer-title">
+                        <h4 class="title custom-margin">Resources</h4>
+                    </div>
+                    <ul class="link custom-margin">
+                        <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
+                        <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
+                        <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                        <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-5 col-sm-5">
+            <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                <div class="footer-title">
+                    <h4 class="title custom-margin">Contact Us</h4>
+                </div>
+                <ul class="contact custom-margin-big" style="justify-content: space-around;">
+                    <li class="d-sm-flex justify-content-center">
+                        <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                        <p style="width: 80%;">
+                            <a href="mailto:ayush1337@hotmail.com" target="_blank"
+                               style="color: white; text-decoration: underline;">
+                                ayush1337@hotmail.com
+                            </a>
+                        </p>
+                    </li>
+                    <li class="d-sm-flex justify-content-center">
+                        <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                        <div style="width: 80%;">
+                            <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
+                                fin-veda.vercel.app
+                            </a>
+                        </div>
+                    </li>
+                    <li class="d-sm-flex justify-content-center">
+                        <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 12px; width: 10%;"></i>
+                        <div style="width: 80%;">
+                            <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
+                               style="color:#fff">
+                                Delhi, India
+                            </a>
+                        </div>
+                    </li>
+                    <div class="social-icons">
+                      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                      <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                      <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                      <a href="#"><i class="fa-brands fa-discord"></i></a>
+                      <a href="#"><i class="fa-brands fa-github"></i></a>
+                  </div>
+                </ul>
+            </div>
+        </div>
+    
+    
+    </div>
+    </div>
+ 
+  <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center">
+    <div class="row">
+      <div class="col-lg-12">
+        <div
+          class="copyright d-sm-flex justify-content-center"
+          style="
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+            height: 100%;"> 
+       
+          <div class="copyright-content" style="text-align: center">
+            <p class="text" style="text-align: center">
+              © 2024 <span id="copyright-year"></span> FinVeda. All rights are
+              reserved<br />
+              Made with ♥ in India
+            </p>
+               <ul/>
+ 
           </div>
         </div>
       </div>
     </div>
+    
     <div id="particles-2"></div>
-  </footer>
-  <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
+    </div>
+    </footer>
+    <div class="gtranslate_wrapper"></div>
+    <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+<a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
 
   
   <script src="./assets/js/subscribe.js"></script>
@@ -2076,10 +2343,10 @@ registerCloseButton.addEventListener("click", function() {
   };
 
   document.addEventListener("DOMContentLoaded", function () {
-    const registerModal =  document.getElementById("registerModal");
-    const loginModal =  document.getElementById("myModal");
-    const registerLink =  document.getElementById("registerLink");
-    const loginLink =  document.getElementById("loginLink");
+    const registerModal = document.getElementById("registerModal");
+    const loginModal = document.getElementById("myModal");
+    const registerLink = document.getElementById("registerLink");
+    const loginLink = document.getElementById("loginLink");
 
     // Event listener for the register link
     registerLink.addEventListener("click", function (event) {
@@ -2104,13 +2371,7 @@ registerCloseButton.addEventListener("click", function() {
 
 
   </script>
-
   <script src="./smoothScroll.js"></script>
-  <div class="gtranslate_wrapper"></div>
-  <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
-  <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-
-
 </body>
 
 </html> 

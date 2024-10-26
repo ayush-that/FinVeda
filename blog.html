@@ -23,6 +23,7 @@
     <link rel="stylesheet"  href="./assets/css/default.css" />
     <link rel="stylesheet"  href="./assets/css/style.css" />
     <link rel="stylesheet"  href="./assets/css/quiz.css" />
+    <link rel="stylesheet"  href="./assets/css/index.css"/>
     <link rel="stylesheet"  href="./assets/css/popup.css" />
     <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
     <link rel="stylesheet"  href="./assets/css/blog.css"/>
@@ -100,13 +101,12 @@
                   <span class="toggler-icon"></span>
                 </button> -->
                 <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
-                
-                <div class="icon1">
-                  <img src="assets/images/icon.webp" alt="icon.png">
-                </div> 
-                  
-                <ul id="nav" class="navbar-nav" style="margin: auto;">
-
+                  <div class="icon1">
+                    <a href="./index.html">
+                    <img src="assets/images/icon.webp" alt="icon.png">
+                    </a>
+                  </div> 
+                  <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
                     <li class="nav-item">
                       <a class="page-scroll" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
                     </li>
@@ -131,41 +131,43 @@
                     <li class="nav-item">
                       <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                       <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
-                    </li> 
+                    </li>
                     <li class="nav-item no-underline">
                       <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
                     </li>
+                    <li class="nav-item no-underline">
+                    <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
+                      🌙
+                    </button>
+                    </li>
                   </ul>
-                  <button id="theme-toggle" class="theme-toggle">
-                    🌙
-                  </button>
                 </div>
                 <script>
                   const toggleButton = document.getElementById('theme-toggle');
                   const body = document.body;
                   const currentTheme = localStorage.getItem('theme');
   
-  if (currentTheme === 'dark') {
-  body.classList.add('dark-mode');
-  toggleButton.classList.add('dark');
-  toggleButton.textContent = '🌞';
-  }
-  
-  toggleButton.addEventListener('click', function () {
-  body.classList.toggle('dark-mode');
-  toggleButton.classList.toggle('dark');
-  
-  // Update button icon based on mode
-  if (body.classList.contains('dark-mode')) {
-    toggleButton.textContent = '🌞';  // Light mode icon
-    localStorage.setItem('theme', 'dark');
-  } else {
-    toggleButton.textContent = '🌙';  // Dark mode icon
-    localStorage.setItem('theme', 'light');
-  }
-  });
+                  if (currentTheme === 'dark') {
+                  body.classList.add('dark-mode');
+                  toggleButton.classList.add('dark');
+                  toggleButton.textContent = '🌞';
+                  }
+                  
+                  toggleButton.addEventListener('click', function () {
+                  body.classList.toggle('dark-mode');
+                  toggleButton.classList.toggle('dark');
+                  
+                  // Update button icon based on mode
+                  if (body.classList.contains('dark-mode')) {
+                    toggleButton.textContent = '🌞';  // Light mode icon
+                    localStorage.setItem('theme', 'dark');
+                  } else {
+                    toggleButton.textContent = '🌙';  // Dark mode icon
+                    localStorage.setItem('theme', 'light');
+                  }
+                  });
               </script>
                 <div class="">
 
@@ -614,7 +616,7 @@
                   <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                     <div class="blog-image">
                       <a href="./blogs/Mutual-Funds-101-A-Beginners-Guide-to-Smart-Investing.html">
-                        <img src="./assets/images/mutual-funds-blog.jpg" alt="blog" />
+                        <img src="./assets/images/mutual-funds-blog.webp" alt="blog" />
                       </a>
                     </div>
                     <div class="blog-content">
@@ -760,7 +762,7 @@
             <div class="col-lg-6">
               <div class="subscribe-content mt-45">
                 <h2 class="subscribe-title">
-                  Subscribe Our Newsletter <span>get regular updates</span>
+                  Subscribe Our Newsletter <span>Get Regular Updates</span>
                 </h2>
               </div>
             </div>
@@ -849,34 +851,13 @@
                                 </a>
                             </div>
                         </li>
-                        <li id="social_icons" class="d-sm-flex justify-content-evenly my-3">
-                          <div style="width: 100%; display:flex; ">
-                            <!-- Instagram Icon -->
-                            <a href="https://instagram.com" target="_blank" style="margin: 0 10px; color: #E4405F;" aria-label="Instagram">
-                              <i style="font-size: 25px" class="fa-brands fa-instagram"></i>
-                            </a>
-                        
-                            <!-- Facebook Icon -->
-                            <a href="https://facebook.com" target="_blank" style="margin: 0 10px; color: #4267B2;" aria-label="Facebook">
-                              <i style="font-size: 25px" class="fa-brands fa-facebook"></i>
-                            </a>
-                        
-                            <!-- X/Twitter Icon -->
-                            <a href="https://twitter.com" target="_blank" style="margin: 0 10px; color: #1DA1F2;" aria-label="Twitter">
-                              <i style="font-size: 25px" class="fa-brands fa-x-twitter"></i>
-                            </a>
-                        
-                            <!-- Discord Icon -->
-                            <a href="https://discord.com" target="_blank" style="margin: 0 10px; color: #7289DA;" aria-label="Discord">
-                              <i style="font-size: 25px" class="fa-brands fa-discord"></i>
-                            </a>
-                        
-                            <!-- GitHub Icon -->
-                            <a href="https://github.com" target="_blank" style="margin: 0 10px; color: #333;" aria-label="GitHub">
-                              <i style="font-size: 25px" class="fa-brands fa-github"></i>
-                            </a>
-                          </div>
-                        </li>
+                        <div class="social-icons">
+                          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                          <a href="#"><i class="fa-brands fa-discord"></i></a>
+                          <a href="#"><i class="fa-brands fa-github"></i></a>
+                      </div>
                     </ul>
                 </div>
             </div>
@@ -897,7 +878,7 @@
               >
                 <div class="copyright-content" style="text-align: center">
                   <p class="text" style="text-align: center">
-                    © <span id="copyright-year"></span> FinVeda. All rights are
+                    © <span id="copyright-year">2024</span> FinVeda. All rights are
                     reserved<br />
                     Made with ♥ in India
                   </p>
