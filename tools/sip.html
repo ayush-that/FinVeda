@@ -728,6 +728,93 @@ registerCloseButton.addEventListener("click", function() {
       </div>
     </div>
   <style>
+    .page-container {
+    max-width: 600px; /* Maximum width for larger screens */
+    width: 100%; /* Allow it to shrink to fit smaller screens */
+    margin: auto;
+    padding: 20px;
+}
+
+.switch-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.input-container {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.btn-calculate {
+    display: flex;
+    justify-content: center; /* Center the buttons */
+    margin-bottom: 20px;
+}
+
+.btn-calculate button {
+    margin: 0 10px; /* Add horizontal spacing between buttons */
+    text-align: center; /* Center text inside the button */
+    display: inline-flex; /* Use inline-flex to center text */
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+}
+
+/* Result section */
+.result {
+    margin-top: 20px;
+}
+
+.result-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+}
+
+.result-container2 {
+    text-align: right;
+}
+
+@media (max-width: 600px) {
+    .switch-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .result-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .result-container2 {
+        text-align: left;
+    }
+
+    .btn-calculate {
+        flex-direction: column; /* Stack buttons on smaller screens */
+    }
+
+    .btn-calculate button {
+        width: 100%; /* Make buttons full width on small screens */
+        margin-bottom: 10px; /* Space between stacked buttons */
+    }
+}
+
+/* For very small screens (below 300px) */
+@media (max-width: 300px) {
+    .page-container {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .form-group {
+        margin-bottom: 10px; /* Reduce margin for smaller screens */
+    }
+}
+
       body {
           font-family: Arial, sans-serif;
           background-color: #fff0f5;
@@ -835,10 +922,6 @@ registerCloseButton.addEventListener("click", function() {
   <script src="emiCalculator.js"></script>
 </head>
 <body>
-
-  <div class="header toool" style="color:#131722">
-      <h3>EMI Calculator</h3>
-
   <div class="header toool">
     <!-- for Navigation between the tools -->
       <h3 id="section2">EMI Calculator</h3>
@@ -1827,7 +1910,6 @@ main
   
   
   <footer id="footer" class="footer-area pt-120">
-main
     <div class="container">
     <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
       <div class="row">
