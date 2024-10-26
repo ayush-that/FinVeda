@@ -743,7 +743,7 @@
 
     <main>
       <section class="roadmap">
-        <h2>Career Roadmap 🛣️</h2>
+        <h2 class="h2">Career Roadmap 🛣️</h2>
         <div class="roadmap-step">
           <div class="roadmap-title">Step 1: Pursue a Relevant Degree</div>
           <p>Consider obtaining a degree in finance, accounting, economics, or business administration.</p>
@@ -765,6 +765,85 @@
           <p>Keep up with the latest trends and developments in the finance industry through articles and news.</p>
         </div>
       </section>
+      <style>
+        .roadmap {
+          border: 10px solid white;
+  background: linear-gradient(135deg, #a492c5, #b39ddb); /* Gradient background for parent */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: background 0.5s ease;
+}
+
+.h2 {
+  font-weight: bolder;
+  font-size: 2.5rem;
+  text-align: center;
+  color: #fefeff; /* Dark purple color for main heading */
+  margin: 40px 0;
+}
+
+.roadmap-step {
+  background: linear-gradient(135deg, #98d1e3, #eeedeb); /* Light orange gradient */
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px 0;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.roadmap-step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.roadmap-title {
+  font-weight: bold;
+  color: #090909; /* Attractive orange-red color for headings */
+  font-size: 1.5em;
+  position: relative;
+}
+
+.roadmap-title::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #eac6bc, #fffaf5); /* Gradient underline */
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  transition: width 0.4s;
+}
+
+.roadmap-title:hover::after {
+  width: 100%;
+}
+
+.roadmap-step p {
+  color: #555; /* Dark gray for text */
+  margin: 10px 0 0;
+  transition: color 0.3s;
+}
+
+.roadmap-step:hover p {
+  color: #4b464a; /* Darker gray on hover */
+}
+
+/* Optional media query for responsiveness */
+@media (max-width: 600px) {
+  .roadmap {
+    padding: 15px;
+  }
+
+  .roadmap-step {
+    padding: 10px;
+  }
+}
+
+      </style>
     </main>
 
     <section class="books-section">
@@ -1003,126 +1082,6 @@ body {
 }
 
    /* end code  */
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
-
-    header {
-      background: #007bff;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-
-    h1 {
-      margin: 0;
-    }
-
-    main {
-      padding: 20px;
-    }
-
-    .roadmap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      margin: 20px auto 63px auto;
-      border-radius: 1rem;
-      width: 65vw;
-      box-shadow: 0 5px 10px 12px rgba(255, 255, 255, 0.4);
-      background: linear-gradient(145deg, #ffffff, #f0f4ff);
-      overflow: hidden;
-    }
-
-    .roadmap h2 {
-      margin-bottom: 20px;
-    }
-
-    .roadmap-step {
-
-      background: white;
-      border: 1px solid #e0e4f1;
-      padding: 20px;
-      border-radius: 30px;
-      margin: 10px 0;
-      position: relative;
-      width: 85%;
-      transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .roadmap-step:hover {
-      transform: translateY(-5px) scale(1.02);
-      background: linear-gradient(135deg, #d3e0ff, #b8d6f7);
-    }
-
-    .roadmap-step::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 89px;
-      transform: translateX(-50%);
-      border: 15px solid transparent;
-      border-bottom-color: #0056b3;
-      opacity: 0.5;
-      transition: opacity 0.3s ease;
-    }
-
-    .roadmap-step:last-child::before {
-      border-bottom-color: transparent;
-      /* Remove triangle from last step */
-    }
-
-    .roadmap-title {
-      font-size: 1.5em;
-      color: #007bff;
-      margin-left: 20px;
-    }
-
-    .roadmap-step>p {
-      margin-left: 20px;
-    }
-
-    /* Animated Icons */
-    .roadmap-icon {
-      font-size: 2.5em;
-      margin-right: 15px;
-      animation: pop 0.6s ease-in-out forwards;
-    }
-
-    /* Keyframe Animation */
-    @keyframes pop {
-      0% {
-        transform: scale(0.5);
-        opacity: 0;
-      }
-
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .roadmap-step {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .roadmap-title {
-        margin-left: 0;
-      }
-
-      .roadmap-icon {
-        margin-bottom: 10px;
-      }
-    }
 
     /* footer {
       text-align: center;
