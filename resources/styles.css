@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root {
+  --primary-color: #2e7d32;
+  --secondary-color: #1565c0;
+  --background-color: #f8f9fa;
+  --text-color: #333;
+  --card-background: #ffffff;
+  --hover-color: #e8f5e9;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.3s;
+  --chat-background: #f0f2f5;
+  --message-background: #e3f2fd;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  margin-bottom: 30px;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+h1 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  font-weight: 700;
+  transition: transform var(--transition-speed) ease;
+}
+
+h1:hover {
+  transform: scale(1.05);
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav button {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+nav button:hover, nav button.active {
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.panel {
+  display: none;
+  animation: fadeIn 0.5s ease;
+}
+
+.panel.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.search-bar {
+  display: flex;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.search-bar input, .search-bar select {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: box-shadow var(--transition-speed) ease, border-color var(--transition-speed) ease;
+}
+
+.search-bar input:focus, .search-bar select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.2);
+}
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.resource {
+  background-color: var(--card-background);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 6px var(--shadow-color);
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.resource:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px var(--shadow-color);
+}
+
+.resource h3 {
+  color: var(--primary-color);
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+}
+
+.resource-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+button:hover {
+  background-color: #3a5a8c;
+  transform: translateY(-2px);
+}
+
+.auth-container, .form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 35px;
+  background-color: var(--card-background);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.2);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px 0;
+  border-top: 1px solid #ddd;
+  color: #666;
+}
+
+#notificationContainer {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.notification {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.5s ease, fadeOut 0.5s ease 2.5s forwards;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #1a1a1a;
+    --text-color: #f0f0f0;
+    --card-background: #2a2a2a;
+    --hover-color: #333;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+  }
+
+  input, textarea, select {
+    background-color: #333;
+    color: var(--text-color);
+    border-color: #444;
+  }
+
+  input:focus, textarea:focus, select:focus {
+    border-color: var(--primary-color);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+
+  .search-bar {
+    flex-direction: column;
+  }
+
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ai-container {
+    background-color: var(--card-background);
+    border-radius: 12px;
+    padding: 25px;
+    margin: 20px 0;
+    box-shadow: 0 4px 6px var(--shadow-color);
+  }
+  
+  .chat-interface {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    background-color: var(--chat-background);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .chat-messages {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  .chat-message {
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    max-width: 80%;
+  }
+  
+  .user-message {
+    background-color: var(--primary-color);
+    color: white;
+    margin-left: auto;
+  }
+  
+  .ai-message {
+    background-color: var(--message-background);
+    margin-right: auto;
+  }
+  
+  .chat-input {
+    display: flex;
+    padding: 15px;
+    background-color: white;
+    border-top: 1px solid #ddd;
+  }
+  
+  .chat-input input {
+    flex-grow: 1;
+    margin-right: 10px;
+  }
+  
+  .chat-input button {
+    padding: 12px 20px;
+    background-color: var(--primary-color);
+  }
+  
+  .resource {
+    background-color: var(--card-background);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    border-left: 4px solid var(--primary-color);
+  }
+  
+  .resource:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px var(--shadow-color);
+  }
+  
+  .resource-category {
+    display: inline-block;
+    padding: 4px 8px;
+    background-color: var(--hover-color);
+    color: var(--primary-color);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Dark mode adjustments */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #1a1a1a;
+      --text-color: #f0f0f0;
+      --card-background: #2a2a2a;
+      --hover-color: #333;
+      --chat-background: #2a2a2a;
+      --message-background: #3a3a3a;
+    }
+  }
