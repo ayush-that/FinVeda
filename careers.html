@@ -322,7 +322,7 @@
 
 
 
-  <div class="preloader">
+  <!-- <div class="preloader">
     <div class="loader">
       <div class="ytp-spinner">
         <div class="ytp-spinner-container">
@@ -337,7 +337,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <header class="header-area">
     <div style="display: flex; justify-content: center;" class="navbar-area">
       <div style="display: flex; justify-content: center;" class="container">
@@ -351,9 +351,9 @@
                 <span class="toggler-icon"></span>
               </button> -->
               <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
-                <div class="icon1">
+                <div class="icon1" >
                   <a href="./index.html">
-                  <img src="assets/images/icon.webp" alt="icon.png">
+                  <img src="assets/images/l (2).png" alt="icon.png">
                   </a>
                 </div> 
                 <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
@@ -740,10 +740,130 @@
 
     </section>
 
+    <style>
+      /* Section Styling */
+section {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f0f4f8;
+}
+
+/* Heading Styling */
+section h2 {
+  font-size: 32px;
+  color: #c36c29;
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 3px solid #0077b6;
+  padding-bottom: 10px;
+}
+
+/* Search Bar Styling */
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-container input[type="text"] {
+  width: 50%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #0d0d0d;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-container input[type="text"]:focus {
+  border-color: #005f99;
+  background-color: #e1ebf7;
+  color: white;
+  box-shadow: 0 0 8px rgba(0, 95, 153, 0.3);
+}
+
+/* Table Container */
+.table-container {
+  overflow-x: auto;
+}
+
+/* Table Styling */
+.jobs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 18px;
+  overflow: hidden;
+  border: 2px solid #0077b6; /* Blue table border */
+}
+
+/* Header with Orange Gradient */
+.jobs-table thead {
+  background: linear-gradient(to right, #ff8c00, #ffa500);
+  color: #fff;
+}
+
+.jobs-table th, .jobs-table td {
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid #0077b6; /* Bottom border for rows */
+  border-left: 2px solid #0077b6; /* Left side color */
+  border-right: 2px solid #0077b6; /* Right side color */
+}
+
+.jobs-table th {
+  background-color: #3b68db;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Table Row Hover Effects */
+.jobs-table tbody tr {
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.jobs-table tbody tr:hover {
+  background-color: #e3f2fd;
+  transform: scale(1.02);
+  color: #0077b6;
+}
+
+.jobs-table tbody tr:nth-child(even) {
+  background-color: #f9fbfd;
+}
+
+.jobs-table tbody tr td {
+  background-color: #ffffff;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+/* Hover Effect on Table Data */
+.jobs-table tbody tr:hover td {
+  background-color: #bbdefb;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 600px) {
+  .search-container input[type="text"] {
+    width: 80%;
+  }
+
+  .jobs-table th, .jobs-table td {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+    </style>
+
 
     <main>
       <section class="roadmap">
-        <h2>Career Roadmap 🛣️</h2>
+        <h2 class="h2">Career Roadmap 🛣️</h2>
         <div class="roadmap-step">
           <div class="roadmap-title">Step 1: Pursue a Relevant Degree</div>
           <p>Consider obtaining a degree in finance, accounting, economics, or business administration.</p>
@@ -765,6 +885,85 @@
           <p>Keep up with the latest trends and developments in the finance industry through articles and news.</p>
         </div>
       </section>
+      <style>
+        .roadmap {
+          border: 10px solid white;
+  background: linear-gradient(135deg, #a492c5, #b39ddb); /* Gradient background for parent */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: background 0.5s ease;
+}
+
+.h2 {
+  font-weight: bolder;
+  font-size: 2.5rem;
+  text-align: center;
+  color: #fefeff; /* Dark purple color for main heading */
+  margin: 40px 0;
+}
+
+.roadmap-step {
+  background: linear-gradient(135deg, #98d1e3, #eeedeb); /* Light orange gradient */
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px 0;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.roadmap-step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.roadmap-title {
+  font-weight: bold;
+  color: #090909; /* Attractive orange-red color for headings */
+  font-size: 1.5em;
+  position: relative;
+}
+
+.roadmap-title::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #eac6bc, #fffaf5); /* Gradient underline */
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  transition: width 0.4s;
+}
+
+.roadmap-title:hover::after {
+  width: 100%;
+}
+
+.roadmap-step p {
+  color: #555; /* Dark gray for text */
+  margin: 10px 0 0;
+  transition: color 0.3s;
+}
+
+.roadmap-step:hover p {
+  color: #4b464a; /* Darker gray on hover */
+}
+
+/* Optional media query for responsiveness */
+@media (max-width: 600px) {
+  .roadmap {
+    padding: 15px;
+  }
+
+  .roadmap-step {
+    padding: 10px;
+  }
+}
+
+      </style>
     </main>
 
     <section class="books-section">
@@ -1003,383 +1202,6 @@ body {
 }
 
    /* end code  */
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
-
-    header {
-      background: #007bff;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-
-    h1 {
-      margin: 0;
-    }
-
-    main {
-      padding: 20px;
-    }
-
-    .roadmap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      margin: 20px auto 63px auto;
-      border-radius: 1rem;
-      width: 65vw;
-      box-shadow: 0 5px 10px 12px rgba(255, 255, 255, 0.4);
-      background: linear-gradient(145deg, #ffffff, #f0f4ff);
-      overflow: hidden;
-    }
-
-    .roadmap h2 {
-      margin-bottom: 20px;
-    }
-
-    .roadmap-step {
-
-      background: white;
-      border: 1px solid #e0e4f1;
-      padding: 20px;
-      border-radius: 30px;
-      margin: 10px 0;
-      position: relative;
-      width: 85%;
-      transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .roadmap-step:hover {
-      transform: translateY(-5px) scale(1.02);
-      background: linear-gradient(135deg, #d3e0ff, #b8d6f7);
-    }
-
-    .roadmap-step::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 89px;
-      transform: translateX(-50%);
-      border: 15px solid transparent;
-      border-bottom-color: #0056b3;
-      opacity: 0.5;
-      transition: opacity 0.3s ease;
-    }
-
-    .roadmap-step:last-child::before {
-      border-bottom-color: transparent;
-      /* Remove triangle from last step */
-    }
-
-    .roadmap-title {
-      font-size: 1.5em;
-      color: #007bff;
-      margin-left: 20px;
-    }
-
-    .roadmap-step>p {
-      margin-left: 20px;
-    }
-
-    /* Animated Icons */
-    .roadmap-icon {
-      font-size: 2.5em;
-      margin-right: 15px;
-      animation: pop 0.6s ease-in-out forwards;
-    }
-
-    /* Keyframe Animation */
-    @keyframes pop {
-      0% {
-        transform: scale(0.5);
-        opacity: 0;
-      }
-
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .roadmap-step {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .roadmap-title {
-        margin-left: 0;
-      }
-
-      .roadmap-icon {
-        margin-bottom: 10px;
-      }
-    }
-
-    /* footer {
-      text-align: center;
-      padding: 20px;
-      background: #333;
-      color: white;
-      position: relative;
-      bottom: 0;
-      width: 100%;
-    } */
-
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
-
-    header {
-      background: #007bff;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-
-    h1 {
-      margin: 0;
-    }
-
-    main {
-      padding: 20px;
-    }
-
-    .jobs-table {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0 10px;
-      margin-top: 20px;
-    }
-
-    .jobs-table th,
-    .jobs-table td {
-      background: #fff;
-      border: 1px solid #ddd;
-      padding: 15px;
-      text-align: left;
-      border-radius: 5px;
-    }
-
-    .jobs-table th {
-      background: #f76b45;
-      color: white;
-    }
-
-    .jobs-table th:hover {
-      background: #f05d34;
-      color: white;
-    }
-
-    .table-container {
-      width: 100%;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    /* Responsive for screens below 768px */
-    @media (max-width: 768px) {
-      .jobs-table thead {
-        display: none;
-      }
-
-      .jobs-table tr {
-        display: block;
-        margin-bottom: 10px;
-      }
-
-      .jobs-table td {
-        display: block;
-        text-align: right;
-        padding-left: 50%;
-        position: relative;
-        border: none;
-        border-bottom: 1px solid #ddd;
-      }
-
-      .jobs-table td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 0;
-        width: 50%;
-        padding-left: 10px;
-        font-weight: bold;
-        text-align: left;
-      }
-
-      .jobs-table td:last-child {
-        border-bottom: none;
-      }
-    }
-
-/* 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #333;
-      color: white;
-      position: relative;
-      bottom: 0;
-      width: 100%;
-    } */
-
-    /* Modal styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgb(0, 0, 0);
-      background-color: rgba(0, 0, 0, 0.4);
-      padding-top: 60px;
-    }
-
-    .modal-content {
-      background-color: #fefefe;
-      margin: 5% auto;
-      padding: 20px;
-      border: 1px solid #888;
-      width: 80%;
-      border-radius: 5px;
-    }
-
-    .close {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-      color: black;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    header {
-      background: #007bff;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-
-    h1 {
-      margin: 0;
-    }
-
-    main {
-      padding: 20px;
-    }
-
-    section {
-      margin-bottom: 40px;
-      padding: 20px;
-      background: #fff;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    h2 {
-      color: #007bff;
-    }
-
-    h2:hover {
-      color: #005abc;
-    }
-
-    .jobs-list {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    .jobs-list li {
-      margin-bottom: 10px;
-      padding: 10px;
-      background: #e9ecef;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    /* footer {
-      text-align: center;
-      padding: 20px;
-      background: #333;
-      color: #fff;
-      position: relative;
-      bottom: 0;
-      width: 100%;
-    } */
-
-    /* Modal styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgb(0, 0, 0);
-      background-color: rgba(0, 0, 0, 0.4);
-      padding-top: 60px;
-    }
-
-    .modal-content {
-      background-color: #fefefe;
-      margin: 5% auto;
-      padding: 20px;
-      border: 1px solid #888;
-      width: 80%;
-      border-radius: 5px;
-    }
-
-    .close {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-      color: black;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .blog-content {
-      text-align: left;
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 80%;
-      /* Adjust this value to increase or decrease the margins */
-    }
-
-    @media (max-width: 768px) {
-
-      /* Change the max-width to fit your design needs */
-      .blog-content {
-        max-width: 100%;
-      }
-    }
   </style>
 </body>
 
@@ -1423,6 +1245,7 @@ body {
 <div class="row" id="footer">
     <div class="col-lg-4 col-md-6 col-sm-8">
         <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+          <img src="./assets/images/l (2).png" alt="FinVeda Logo" style="height: 80px; width: auto; margin-bottom: 15px;" />
             <p class="text custom-margin">
                 We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
             </p>
