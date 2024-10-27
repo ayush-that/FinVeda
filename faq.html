@@ -20,6 +20,7 @@
     <link rel="stylesheet"  href="./assets/css/popup.css" />
     <link rel="stylesheet"  href="./assets/css/about.css"/>
     <link rel="stylesheet"  href="./assets/css/preloader.css"/>
+    <link rel="stylesheet"  href="./assets/css/index.css"/>
     <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <link rel="stylesheet"  href="./assets/css/about(inlines).css" />
     <link rel="stylesheet" href="navbar.css">
@@ -116,7 +117,7 @@ body {
 }
 
 .progress {
-    height: 30px;
+    height: 25px;
     background-color: #e0e0e0;
     margin-bottom: 20px;
 }
@@ -163,7 +164,7 @@ body {
     }
 
     .faq-item.read {
-        background-color: #444; /* Slightly lighter background for read items in dark mode */
+        background-color: #919191; /* Slightly lighter background for read items in dark mode */
     }
 }
 
@@ -426,9 +427,9 @@ body.dark-mode {
             <span class="toggler-icon"></span>
           </button> -->
           <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
-            <div class="icon1">
+            <div class="icon1" >
               <a href="./index.html">
-              <img src="assets/images/icon.webp" alt="icon.png">
+              <img src="assets/images/l (2).png" alt="icon.png">
               </a>
             </div> 
             <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
@@ -779,21 +780,21 @@ body.dark-mode {
 <body>  
     <style>
         /* Progress bar styles */
-        .progress-container {
+        /* .progress-container {
             width: 100%;
             background-color: #f3f3f3;
             position: fixed;
             top: 0;
             left: 0;
             z-index: 1000;
-        }
-        
+        } */
+/*         
         .progress-bar {
             height: 5px;
             width: 0%;
             background-color: #4caf50;
             transition: width 0.3s;
-        }
+        } */
 
         /* Footer styles */
         .footer {
@@ -864,6 +865,19 @@ body.dark-mode {
         <div class="progress-bar" id="myBar"></div>
     </div> -->
 
+    <script>
+      document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+          event.preventDefault(); // Prevent the default form submission
+  
+          // Display the alert message
+          alert('Your feedback has been submitted successfully!');
+  
+          // Clear the text field
+          document.getElementById('userEmail').value = '';
+          document.getElementById('userName').value = '';
+          document.getElementById('userFeedback').value = '';
+      });
+  </script>
 
 
 
@@ -1013,6 +1027,7 @@ body.dark-mode {
     <div class="row" id="footer">
         <div class="col-lg-4 col-md-6 col-sm-8">
             <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+              <img src="./assets/images/l (2).png" alt="FinVeda Logo" style="height: 80px; width: auto; margin-bottom: 15px;" />
                 <p class="text custom-margin">
                     We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
                 </p>

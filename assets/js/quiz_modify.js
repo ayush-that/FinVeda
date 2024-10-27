@@ -545,6 +545,7 @@ function showQuestion(){
         answerButton.appendChild(but);
         if(answer.correct){
             but.dataset.correct=answer.correct;
+            
         }
         but.addEventListener("click",selectAnswer);
     });
@@ -568,9 +569,17 @@ function resetState(){
 
 let isCorrect;
 let selectedBtn;
+let previouslyChosenBtn;
 function selectAnswer(e){
     e.preventDefault();
+    console.log('here')
+    if (previouslyChosenBtn) {
+        previouslyChosenBtn.classList.remove("chosen");
+    }
+    
     selectedBtn=e.target;
+    selectedBtn.classList.add("chosen");
+    previouslyChosenBtn = selectedBtn;
     isCorrect = selectedBtn.dataset.correct==="true";
     submitButton.disabled=false;
     submitButton.addEventListener("click", submitAnswer)   

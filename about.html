@@ -20,6 +20,7 @@
     <link rel="stylesheet"  href="./assets/css/popup.css" />
     <link rel="stylesheet" href="./assets/css/cookiepopup.css">
     <link rel="stylesheet"  href="./assets/css/about.css"/>
+    <link rel="stylesheet"  href="./assets/css/index.css"/>
     <link rel="stylesheet"  href="./assets/css/preloader.css"/>
     <link rel="stylesheet" type="text/css" href="sipcalculatorCss.css">
     <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
@@ -153,9 +154,9 @@
                   <span class="toggler-icon"></span>
                 </button> -->
                 <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
-                  <div class="icon1">
+                  <div class="icon1" >
                     <a href="./index.html">
-                    <img src="assets/images/icon.webp" alt="icon.png">
+                    <img src="assets/images/l (2).png" alt="icon.png">
                     </a>
                   </div> 
                   <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
@@ -544,17 +545,18 @@ registerCloseButton.addEventListener("click", function() {
   font-family: 'Arial', sans-serif;
   background-color: #e9f1f5; /* Soft eye-comfort background color */
 }
-
 /* About card styling */
 .about-card {
-  border: 5px solid rgb(55, 166, 70);
-  background: linear-gradient(135deg, #4b6cb7, #182848);
+  border: 5px solid rgb(215, 233, 217); 
+  background: linear-gradient(135deg, #353a5f,#9ebaf3 60%,#353a5f 100%);;
   padding: 20px;
   border-radius: 12px;
   background-color: #ffffff; /* White background for the card */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
-
+ .about-card.dark-mode {
+    color: rgb(65, 64, 64); 
+  }
 /* Center the heading */
 .about-card h2 {
   text-align: center; /* Center the main heading */
@@ -697,7 +699,6 @@ p {
 
   /* Parent element styling */
 .contributors {
-    background: linear-gradient(135deg, #ebb074, #acb6e5);
     padding: 50px 20px;
     text-align: center;
     border-radius: 12px;
@@ -706,9 +707,8 @@ p {
 
 .contributors h2 {
     font-weight: bolder;
-    text-decoration: underline;
     font-size: 2.5rem;
-    color: #d6e2e2;
+    color: #fff;
     margin-bottom: 40px;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -723,20 +723,19 @@ p {
 
 /* Individual card styling */
 .contributor-member {
-    background: linear-gradient(135deg, #74d5eb, #acb6e5);
+    background: #c6caeb;
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.4s ease;
+    transition: all 0.4s ease;
     cursor: pointer;
     overflow: hidden;
     position: relative;
 }
 
 .contributor-member:hover {
-    transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(145deg, #89fffd, #7af1e5);
+    background: #fffaf0;
 }
 
 .contributor-member img {
@@ -748,7 +747,7 @@ p {
 }
 
 .contributor-member h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin: 10px 0;
     color: #333;
 }
@@ -760,7 +759,7 @@ p {
 }
 
 .contributor-member button {
-    background-color: #34d185;
+    background-color: #737ba5;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -770,7 +769,8 @@ p {
 }
 
 .contributor-member button:hover {
-    background-color: #2fa671;
+    background-color: #c6caeb;
+    color: black;
 }
 
 .pagination {
@@ -812,7 +812,7 @@ p {
     <div class="col-lg-6">
       <div class="subscribe-content mt-45">
         <h2 class="subscribe-title">
-          Subscribe Our Newsletter <span>get regular updates</span>
+          Subscribe Our Newsletter <span>Get Regular Updates</span>
         </h2>
       </div>
     </div>
@@ -835,6 +835,7 @@ p {
 <div class="row" id="footer">
     <div class="col-lg-4 col-md-6 col-sm-8">
         <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+          <img src="./assets/images/l (2).png" alt="FinVeda Logo" style="height: 80px; width: auto; margin-bottom: 15px;" />
             <p class="text custom-margin">
                 We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
             </p>
