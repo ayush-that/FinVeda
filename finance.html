@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="./assets/css/font-awesome.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
   <div id="progressBar"></div>
@@ -120,7 +121,7 @@
 
 
   <main>
-      <div class="course">
+      <div class="course" data-aos="slide-right">
         <h2>Introduction to Finance</h2>
         <!-- Poster image -->
         <img src="assets/images/intro-to-finance.webp" alt="Introduction to Finance Poster" class="poster-image">
@@ -130,7 +131,7 @@
       </div>
       
 
-      <div class="course">
+      <div class="course" data-aos="zoom-in">
         <h2>Introduction to Finance Statments</h2>
         <!-- Poster image -->
         <img src="assets/images/finance-statments.webp" alt="Introduction to Finance statments" class="poster-image">
@@ -140,7 +141,7 @@
       </div>
       
 
-      <div class="course">
+      <div class="course" data-aos="slide-left">
         <h2>Understanding Cash Flow</h2>
         <!-- Poster image -->
         <img src="assets/images/cash-flow.png" alt="understanding-cas-flow" class="poster-image">
@@ -149,7 +150,7 @@
         <button onclick="window.open('https://www.youtube.com/watch?v=hefAHWvrFDQ', '_blank')">Watch Now</button>
       </div>
 
-      <div class="course">
+      <div class="course" data-aos="slide-right">
         <h2>Understanding Stock Market</h2>
         <!-- Poster image -->
         <img src="assets/images/stock-market.png" alt="understanding-cas-flow" class="poster-image">
@@ -158,7 +159,7 @@
         <button onclick="window.open('https://www.youtube.com/watch?v=p7HKvqRI_Bo', '_blank')">Watch Now</button>
       </div>
 
-     <div class="course">
+     <div class="course" data-aos="zoom-in">
         <h2>Personal Finance Managment</h2>
         <!-- Poster image -->
         <img src="assets/images/personal-finance.png" alt="understanding-cas-flow" class="poster-image">
@@ -167,7 +168,7 @@
         <button onclick="window.open('https://www.youtube.com/watch?v=UcAY6qRHlw0', '_blank')">Watch Now</button>
       </div>
 
-      <div class="course">
+      <div class="course" data-aos="slide-left">
         <h2>Invesment Basics</h2>
         <!-- Poster image -->
         <img src="assets/images/invesment-basics.png" alt="understanding-cas-flow" class="poster-image">
@@ -320,5 +321,11 @@
 </footer>
 
   <script src="finance.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 2000
+  });
+</script>
 </body>
 </html>
