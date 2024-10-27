@@ -48,6 +48,66 @@
                 <a href="#" onclick="forgotPassword()">Forgot Password?</a>
               </div>
             <input type="submit" value="Login" class="btn solid" />
+ add/your-feature
+          </form>
+
+          <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FinVeda Website</title>
+  <style>
+    /* Styles for the sign-in section */
+    .sign-in-section {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .sign-in-btn {
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .google-btn { background-color: #db4437; }
+    .facebook-btn { background-color: #3b5998; }
+    .twitter-btn { background-color: #1da1f2; }
+  </style>
+</head>
+<body>
+  <!-- Content of the website -->
+
+  <!-- Sign-in section -->
+  <div class="sign-in-section">
+    <h2>Sign In with Social Media</h2>
+    <p>Select a social media platform to sign in:</p>
+    <button class="sign-in-btn google-btn" onclick="signInWith('Google')">Sign in with Google</button>
+    <button class="sign-in-btn facebook-btn" onclick="signInWith('Facebook')">Sign in with Facebook</button>
+    <button class="sign-in-btn twitter-btn" onclick="signInWith('Twitter')">Sign in with Twitter</button>
+  </div>
+
+  <script>
+    // Simulated sign-in function
+    function signInWith(platform) {
+      alert(`Redirecting to ${platform} login...`);
+      // Here you would integrate real OAuth login redirects
+      // For example, window.location.href = '<auth-provider-url>';
+    }
+  </script>
+</body>
+</html>
+
+            
+
+
+
+
             <p class="social-text">Or Sign in with social platforms</p>
             <div class="social-media">
               <a
@@ -82,6 +142,7 @@
               </a>
             </div>
           </form>
+
           <form action="#" class="sign-up-form">
             <h2 class="title">Sign up</h2>
             <div class="input-field">
