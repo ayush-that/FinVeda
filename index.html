@@ -3,9 +3,42 @@
 
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home - FinVeda</title>
   <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="FinVeda provides comprehensive resources and tools for financial education, investment strategies, and personal finance management. Discover your path to financial wellness today!">
+  <meta name="keywords" content="finance, financial education, personal finance, investment strategies, financial wellness, budgeting, money management">
+  <meta name="author" content="Ayush That">
+
+  <meta property="og:title" content="FinVeda - Your Guide to Financial Wellness">
+  <meta property="og:description" content="FinVeda offers expert resources and tools for improving your financial knowledge and managing your investments effectively.">
+  <meta property="og:url" content="https://github.com/ayush-that/FinVeda">
+  <meta property="og:type" content="website">
+    
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FinVeda - Your Guide to Financial Wellness">
+  <meta name="twitter:description" content="Explore a wealth of financial resources at FinVeda to enhance your financial literacy and investment skills.">
+
+   <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "FinVeda",
+      "url": "https://github.com/ayush-that/FinVeda",
+      "description": "FinVeda provides comprehensive resources and tools for financial education, investment strategies, and personal finance management.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "FinVeda",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "/assets/images/favicon2.webp"  // Replace with your logo URL
+        }
+      }
+    }
+    </script>
+  
   <link rel="shortcut icon" href="/assets/images/favicon2.webp" type="image/png" />
   <link rel="stylesheet" href="./assets/css/animate.css" />
   <link rel="stylesheet" href="./assets/css/magnific-popup.css" />
@@ -263,9 +296,9 @@
           </div>
 
           <script>
-            const toggleButton = document.getElementById('theme-toggle');
-            const body = document.body;
-            const currentTheme = localStorage.getItem('theme');
+            var toggleButton = document.getElementById('theme-toggle');
+            var body = document.body;
+            var currentTheme = localStorage.getItem('theme');
 
             if (currentTheme === 'dark') {
             body.classList.add('dark-mode');
@@ -511,11 +544,40 @@
             <li class="nav-item no-underline">
               <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none; border: none;" href="#" onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
             </li>
-            
+            <li class="nav-item no-underline">
+              <button id="theme-toggle2" class="theme-toggle2" style="margin-right: 2px;">
+                🌙
+              </button>
+              </li>
             <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
               <span></span>
             </div>
           </nav>
+          <script>
+            var toggleButton = document.getElementById('theme-toggle2');
+            var body = document.body;
+            var currentTheme = localStorage.getItem('theme');
+
+            if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            toggleButton.classList.add('dark');
+            toggleButton.textContent = '🌞';
+            }
+
+            toggleButton.addEventListener('click', function () {
+            body.classList.toggle('dark-mode');
+            toggleButton.classList.toggle('dark');
+
+            // Update button icon based on mode
+            if (body.classList.contains('dark-mode')) {
+              toggleButton.textContent = '🌞';  // Light mode icon
+              localStorage.setItem('theme', 'dark');
+            } else {
+              toggleButton.textContent = '🌙';  // Dark mode icon
+              localStorage.setItem('theme', 'light');
+            }
+            });
+        </script>
         </div>
   <link href="./navbar.css" rel="stylesheet">
   <script type="text/javascript" src="./navbar.js"></script>
