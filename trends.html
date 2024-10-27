@@ -39,6 +39,14 @@
         z-index: 9999;
   
       }
+      .theme-toggle2.dark {
+  background-color: #eceae0;
+  color: #000;
+}
+body.dark-mode {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
   
       * {
         cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
@@ -158,18 +166,18 @@
           <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
             <div class="icon1">
               <a href="./index.html">
-              <img src="assets/images/l (2).png" alt="icon.png">
+              <img src="./assets/images/l (2).png" alt="icon.png">
               </a>
             </div> 
             <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
               <li class="nav-item">
-                <a class="page-scroll" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
+                <a class="page-scroll active-link" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
               </li>
               <li class="nav-item">
                 <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
               </li>    
               <li class="nav-item">
-                <a class="page-scroll active-link" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
+                <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
               </li>
               <li class="nav-item">
                 <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
@@ -200,31 +208,31 @@
             </ul>
           </div>
 
-        <script>
-          const toggleButton = document.getElementById('theme-toggle');
-          const body = document.body;
-          const currentTheme = localStorage.getItem('theme');
+          <script>
+            var toggleButton = document.getElementById('theme-toggle');
+            var body = document.body;
+            var currentTheme = localStorage.getItem('theme');
 
-          if (currentTheme === 'dark') {
-          body.classList.add('dark-mode');
-          toggleButton.classList.add('dark');
-          toggleButton.textContent = '🌞';
-          }
+            if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            toggleButton.classList.add('dark');
+            toggleButton.textContent = '🌞';
+            }
 
-          toggleButton.addEventListener('click', function () {
-          body.classList.toggle('dark-mode');
-          toggleButton.classList.toggle('dark');
+            toggleButton.addEventListener('click', function () {
+            body.classList.toggle('dark-mode');
+            toggleButton.classList.toggle('dark');
 
-          // Update button icon based on mode
-          if (body.classList.contains('dark-mode')) {
-          toggleButton.textContent = '🌞';  // Light mode icon
-          localStorage.setItem('theme', 'dark');
-          } else {
-          toggleButton.textContent = '🌙';  // Dark mode icon
-          localStorage.setItem('theme', 'light');
-          }
-          });
-      </script>
+            // Update button icon based on mode
+            if (body.classList.contains('dark-mode')) {
+              toggleButton.textContent = '🌞';  // Light mode icon
+              localStorage.setItem('theme', 'dark');
+            } else {
+              toggleButton.textContent = '🌙';  // Dark mode icon
+              localStorage.setItem('theme', 'light');
+            }
+            });
+        </script>
       <style>
 
         h3{
@@ -298,10 +306,38 @@ background-color: #ddd; /* Button hover color in dark mode */
               onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
           </li>
 
-
+          <li class="nav-item no-underline">
+            <button id="theme-toggle2" class="theme-toggle2" style="margin-right: 2px;">
+              🌙
+            </button>
+            </li>
           <div class="mobile-menu__trigger"><span></span></div>
         </nav>
+        <script>
+          var toggleButton = document.getElementById('theme-toggle2');
+          var body = document.body;
+          var currentTheme = localStorage.getItem('theme');
 
+          if (currentTheme === 'dark') {
+          body.classList.add('dark-mode');
+          toggleButton.classList.add('dark');
+          toggleButton.textContent = '🌞';
+          }
+
+          toggleButton.addEventListener('click', function () {
+          body.classList.toggle('dark-mode');
+          toggleButton.classList.toggle('dark');
+
+          // Update button icon based on mode
+          if (body.classList.contains('dark-mode')) {
+          toggleButton.textContent = '🌞';  // Light mode icon
+          localStorage.setItem('theme', 'dark');
+          } else {
+          toggleButton.textContent = '🌙';  // Dark mode icon
+          localStorage.setItem('theme', 'light');
+          }
+          });
+      </script>
 
       </div>
     </div>
