@@ -534,38 +534,54 @@ body {
   </header>
   <div class="blog-content">
     <article>
-      <br><br><br><br>
+        <br><br><br><br>
         <div class="header">
-        <h1 style="text-align: center;">Refund Policy</h1>
+            <h1 style="text-align: center;">Refund Policy</h1>
         </div><br>
         <div class="Lastupdate">
-          Last updated: <span id="last-updated-date"></span>
+            Last updated: <span id="last-updated-date"></span>
         </div>
-      <p>Certain types of items cannot be returned, like
-        <ul class="ps-4 ms-4" style="list-style: circle;"><br>
-          <li><strong>perishable goods </strong>(such as food, flowers, or plants),</li>
-          <li><strong>custom products </strong>(such as special orders or personalized items), </li>
-          <li><strong>personal care goods </strong>(such as beauty products)</li>
-          <li><strong>hazardous materials, flammable liquids,</strong> or <strong>gases</strong></li>
-          </ul>Kindly contact us in case of additional questions or concerns about your specific item.</p>
-      <br>
-      <p>We will notify you once we’ve received and inspected your return to let you know if the refund was approved or
-        not. If <i>approved</i>, you’ll be automatically refunded on your original payment method <i>within 10 business days.</i>
-        <br>Please remember it can take some time for your bank or credit card company to process and post the refund too.
-      </p>
+
+        <div class="card">
+            <p>Certain types of items cannot be returned, like:</p>
+            <ul class="ps-4 ms-4" style="list-style: circle;">
+                <li><strong>perishable goods</strong> (such as food, flowers, or plants),</li>
+                <li><strong>custom products</strong> (such as special orders or personalized items),</li>
+                <li><strong>personal care goods</strong> (such as beauty products),</li>
+                <li><strong>hazardous materials, flammable liquids,</strong> or <strong>gases</strong></li>
+            </ul>
+            <p>Kindly contact us in case of additional questions or concerns about your specific item.</p>
+        </div>
+
+        <br>
+
+        <div class="card">
+            <p>We will notify you once we’ve received and inspected your return to let you know if the refund was approved or not. If <i>approved</i>, you’ll be automatically refunded on your original payment method <i>within 10 business days.</i></p>
+            <p>Please remember it can take some time for your bank or credit card company to process and post the refund too.</p>
+        </div>
     </article>
+</div>
 
-  </div>
-  <style>
+<style>
     .blog-content {
-      text-align: left;
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 80%;
-      /* Adjust this value to increase or decrease the margins */
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 80%;
     }
-  </style>
-
+    .card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 16px;
+        margin: 10px 0;
+        transition: transform 0.2s, box-shadow 0.2s;
+        background-color: #fff;
+    }
+    .card:hover {
+        transform: scale(1.02);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+</style>
   
 <!-- Timed popup that will appear after succesful submission of feebback form! -->
     <button class="notification" id="successnotification" style="display:none;">

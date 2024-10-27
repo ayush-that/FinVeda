@@ -322,7 +322,7 @@
 
 
 
-  <div class="preloader">
+  <!-- <div class="preloader">
     <div class="loader">
       <div class="ytp-spinner">
         <div class="ytp-spinner-container">
@@ -337,7 +337,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <header class="header-area">
     <div style="display: flex; justify-content: center;" class="navbar-area">
       <div style="display: flex; justify-content: center;" class="container">
@@ -351,9 +351,9 @@
                 <span class="toggler-icon"></span>
               </button> -->
               <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
-                <div class="icon1">
+                <div class="icon1" >
                   <a href="./index.html">
-                  <img src="assets/images/icon.webp" alt="icon.png">
+                  <img src="assets/images/l (2).png" alt="icon.png">
                   </a>
                 </div> 
                 <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
@@ -371,6 +371,9 @@
                   </li>
                   <li class="nav-item">
                     <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./finance.html" style="color: rgb(237, 242, 244);">Courses 📚</a>
                   </li>
                   <li class="nav-item">
                     <a class="page-scroll" href="./quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
@@ -740,10 +743,130 @@
 
     </section>
 
+    <style>
+      /* Section Styling */
+section {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f0f4f8;
+}
+
+/* Heading Styling */
+section h2 {
+  font-size: 32px;
+  color: #c36c29;
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 3px solid #0077b6;
+  padding-bottom: 10px;
+}
+
+/* Search Bar Styling */
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-container input[type="text"] {
+  width: 50%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #0d0d0d;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-container input[type="text"]:focus {
+  border-color: #005f99;
+  background-color: #e1ebf7;
+  color: white;
+  box-shadow: 0 0 8px rgba(0, 95, 153, 0.3);
+}
+
+/* Table Container */
+.table-container {
+  overflow-x: auto;
+}
+
+/* Table Styling */
+.jobs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 18px;
+  overflow: hidden;
+  border: 2px solid #0077b6; /* Blue table border */
+}
+
+/* Header with Orange Gradient */
+.jobs-table thead {
+  background: linear-gradient(to right, #ff8c00, #ffa500);
+  color: #fff;
+}
+
+.jobs-table th, .jobs-table td {
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid #0077b6; /* Bottom border for rows */
+  border-left: 2px solid #0077b6; /* Left side color */
+  border-right: 2px solid #0077b6; /* Right side color */
+}
+
+.jobs-table th {
+  background-color: #3b68db;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Table Row Hover Effects */
+.jobs-table tbody tr {
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.jobs-table tbody tr:hover {
+  background-color: #e3f2fd;
+  transform: scale(1.02);
+  color: #0077b6;
+}
+
+.jobs-table tbody tr:nth-child(even) {
+  background-color: #f9fbfd;
+}
+
+.jobs-table tbody tr td {
+  background-color: #ffffff;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+/* Hover Effect on Table Data */
+.jobs-table tbody tr:hover td {
+  background-color: #bbdefb;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 600px) {
+  .search-container input[type="text"] {
+    width: 80%;
+  }
+
+  .jobs-table th, .jobs-table td {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+    </style>
+
 
     <main>
       <section class="roadmap">
-        <h2>Career Roadmap 🛣️</h2>
+        <h2 class="h2">Career Roadmap 🛣️</h2>
         <div class="roadmap-step">
           <div class="roadmap-title">Step 1: Pursue a Relevant Degree</div>
           <p>Consider obtaining a degree in finance, accounting, economics, or business administration.</p>
@@ -765,492 +888,323 @@
           <p>Keep up with the latest trends and developments in the finance industry through articles and news.</p>
         </div>
       </section>
+      <style>
+        .roadmap {
+          border: 10px solid white;
+  background: linear-gradient(135deg, #a492c5, #b39ddb); /* Gradient background for parent */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: background 0.5s ease;
+}
+
+.h2 {
+  font-weight: bolder;
+  font-size: 2.5rem;
+  text-align: center;
+  color: #fefeff; /* Dark purple color for main heading */
+  margin: 40px 0;
+}
+
+.roadmap-step {
+  background: linear-gradient(135deg, #98d1e3, #eeedeb); /* Light orange gradient */
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px 0;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.roadmap-step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.roadmap-title {
+  font-weight: bold;
+  color: #090909; /* Attractive orange-red color for headings */
+  font-size: 1.5em;
+  position: relative;
+}
+
+.roadmap-title::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #eac6bc, #fffaf5); /* Gradient underline */
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  transition: width 0.4s;
+}
+
+.roadmap-title:hover::after {
+  width: 100%;
+}
+
+.roadmap-step p {
+  color: #555; /* Dark gray for text */
+  margin: 10px 0 0;
+  transition: color 0.3s;
+}
+
+.roadmap-step:hover p {
+  color: #4b464a; /* Darker gray on hover */
+}
+
+/* Optional media query for responsiveness */
+@media (max-width: 600px) {
+  .roadmap {
+    padding: 15px;
+  }
+
+  .roadmap-step {
+    padding: 10px;
+  }
+}
+
+      </style>
     </main>
 
     <section class="books-section">
       <h2>Recommended Books on Finance</h2>
+      <img style="position: absolute;left: 0px; mix-blend-mode:multiply;top: 2400px;" src="./assets/images/book-careers2.png" alt="photo">
       <ul class="books-list">
-        <li><span class="emoji">📚</span><strong style="color:black;">"Rich Dad Poor Dad" by Robert Kiyosaki</strong> -
-          A classic on financial education and investing.</li>
-        <li><span class="emoji">📖</span><strong style="color:black;">"The Intelligent Investor" by Benjamin
-            Graham</strong> - A must-read for aspiring investors.</li>
-        <li><span class="emoji">📘</span><strong style="color:black;">"The Total Money Makeover" by Dave Ramsey</strong>
-          - A guide to personal finance and debt elimination.</li>
-        <li><span class="emoji">📙</span><strong style="color:black;">"A Random Walk Down Wall Street" by Burton
-            Malkiel</strong> - Insights into market trends and investment strategies.</li>
-        <li><span class="emoji">📗</span><strong style="color:black;">"The Millionaire Next Door" by Thomas J.
-            Stanley</strong> - Profiles habits and traits of wealthy individuals.</li>
+        <li>
+          <div class="book-info">
+            <div class="book-title" style="background-image: url('./assets/images/RICH-POOR.jpeg');">
+              <!-- <strong>"Rich Dad Poor Dad" by Robert Kiyosaki</strong> -->
+            </div>
+            <div class="book-description">
+              A classic on financial education and investing.
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="book-info">
+            <div class="book-title" style="background-image: url('./assets/images/The\ Intelligent\ Investor.jpeg');">
+              <!-- <strong>"The Intelligent Investor" by Benjamin Graham</strong> -->
+            </div>
+            <div class="book-description">
+              A must-read for aspiring investors.
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="book-info">
+            <div class="book-title" style="background-image: url('./assets/images/The\ Total\ Money\ Makeover.jpeg');">
+              <!-- <strong>"The Total Money Makeover" by Dave Ramsey</strong> -->
+            </div>
+            <div class="book-description">
+              A guide to personal finance and debt elimination.
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="book-info">
+            <div class="book-title" style="background-image: url('./assets/images/A\ Random\ Walk\ Down\ Wall\ Street.jpeg');">
+              <!-- <strong>"A Random Walk Down Wall Street" by Burton Malkiel</strong> -->
+            </div>
+            <div class="book-description">
+              Insights into market trends and investment strategies.
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="book-info">
+            <div class="book-title" style="background-image: url('./assets/images/The\ Millionaire\ Next\ Door.jpg');">
+              <!-- <strong>"The Millionaire Next Door" by Thomas J. Stanley</strong> -->
+            </div>
+            <div class="book-description">
+              Profiles habits and traits of wealthy individuals.
+            </div>
+          </div>
+        </li>
       </ul>
     </section>
+    
+    
   </main>
 
 
-  <script>
-
-  </script>
-
-
   <style>
-    h2 {
-      color: #007bff;
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .books-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 20px;
-      padding: 20px;
-      background: linear-gradient(145deg, #f0f4ff, #ffffff);
-      border-radius: 8px;
-
-      box-shadow: 0 2px 16px 10px rgba(255, 255, 255, 0.4);
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .books-list {
-      list-style-type: none;
-      padding: 0;
-      width: 100%;
-    }
-
-    .books-list li {
-
-      background: #a5cff9;
-      border-radius: 30px;
-      margin: 10px 0;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      transition: transform 0.3s, background 0.3s;
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-      position: relative;
-    }
-
-    li {
-      flex-wrap: wrap;
-      justify-content: space-evenly;
-      display: flex;
-    }
-
-    .books-list li:hover {
-      background: #69adf2;
-      transform: translateY(-5px);
-    }
-
-    .emoji {
-      font-size: 1.5em;
-      margin-right: 15px;
-      animation: pop 0.6s ease-in-out forwards;
-      /* Adjust the size of the emoji */
-    }
-
-    /* Pop Animation */
-    @keyframes pop {
-      0% {
-        transform: scale(0.5);
-        opacity: 0;
-      }
-
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .book-item {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .emoji {
-        margin-bottom: 10px;
-      }
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
-
-    header {
-      background: #007bff;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-
-    h1 {
-      margin: 0;
-    }
-
-    main {
-      padding: 20px;
-    }
-
-    .roadmap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      margin: 20px auto 63px auto;
-      border-radius: 1rem;
-      width: 65vw;
-      box-shadow: 0 5px 10px 12px rgba(255, 255, 255, 0.4);
-      background: linear-gradient(145deg, #ffffff, #f0f4ff);
-      overflow: hidden;
-    }
-
-    .roadmap h2 {
-      margin-bottom: 20px;
-    }
-
-    .roadmap-step {
-
-      background: white;
-      border: 1px solid #e0e4f1;
-      padding: 20px;
-      border-radius: 30px;
-      margin: 10px 0;
-      position: relative;
-      width: 85%;
-      transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .roadmap-step:hover {
-      transform: translateY(-5px) scale(1.02);
-      background: linear-gradient(135deg, #d3e0ff, #b8d6f7);
-    }
-
-    .roadmap-step::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 89px;
-      transform: translateX(-50%);
-      border: 15px solid transparent;
-      border-bottom-color: #0056b3;
-      opacity: 0.5;
-      transition: opacity 0.3s ease;
-    }
-
-    .roadmap-step:last-child::before {
-      border-bottom-color: transparent;
-      /* Remove triangle from last step */
-    }
-
-    .roadmap-title {
-      font-size: 1.5em;
-      color: #007bff;
-      margin-left: 20px;
-    }
-
-    .roadmap-step>p {
-      margin-left: 20px;
-    }
-
-    /* Animated Icons */
-    .roadmap-icon {
-      font-size: 2.5em;
-      margin-right: 15px;
-      animation: pop 0.6s ease-in-out forwards;
-    }
-
-    /* Keyframe Animation */
-    @keyframes pop {
-      0% {
-        transform: scale(0.5);
-        opacity: 0;
-      }
-
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .roadmap-step {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .roadmap-title {
-        margin-left: 0;
-      }
-
-      .roadmap-icon {
-        margin-bottom: 10px;
-      }
-    }
-
-    /* footer {
-      text-align: center;
-      padding: 20px;
-      background: #333;
-      color: white;
-      position: relative;
-      bottom: 0;
-      width: 100%;
-    } */
-
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
-
-    header {
-      background: #007bff;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-
-    h1 {
-      margin: 0;
-    }
-
-    main {
-      padding: 20px;
-    }
-
-    .jobs-table {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0 10px;
-      margin-top: 20px;
-    }
-
-    .jobs-table th,
-    .jobs-table td {
-      background: #fff;
-      border: 1px solid #ddd;
-      padding: 15px;
-      text-align: left;
-      border-radius: 5px;
-    }
-
-    .jobs-table th {
-      background: #f76b45;
-      color: white;
-    }
-
-    .jobs-table th:hover {
-      background: #f05d34;
-      color: white;
-    }
-
-    .table-container {
-      width: 100%;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    /* Responsive for screens below 768px */
-    @media (max-width: 768px) {
-      .jobs-table thead {
-        display: none;
-      }
-
-      .jobs-table tr {
-        display: block;
-        margin-bottom: 10px;
-      }
-
-      .jobs-table td {
-        display: block;
-        text-align: right;
-        padding-left: 50%;
-        position: relative;
-        border: none;
-        border-bottom: 1px solid #ddd;
-      }
-
-      .jobs-table td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 0;
-        width: 50%;
-        padding-left: 10px;
-        font-weight: bold;
-        text-align: left;
-      }
-
-      .jobs-table td:last-child {
-        border-bottom: none;
-      }
-    }
-
-/* 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #333;
-      color: white;
-      position: relative;
-      bottom: 0;
-      width: 100%;
-    } */
-
-    /* Modal styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgb(0, 0, 0);
-      background-color: rgba(0, 0, 0, 0.4);
-      padding-top: 60px;
-    }
-
-    .modal-content {
-      background-color: #fefefe;
-      margin: 5% auto;
-      padding: 20px;
-      border: 1px solid #888;
-      width: 80%;
-      border-radius: 5px;
-    }
-
-    .close {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-      color: black;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    header {
-      background: #007bff;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-
-    h1 {
-      margin: 0;
-    }
-
-    main {
-      padding: 20px;
-    }
-
-    section {
-      margin-bottom: 40px;
-      padding: 20px;
-      background: #fff;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    h2 {
-      color: #007bff;
-    }
-
-    h2:hover {
-      color: #005abc;
-    }
-
-    .jobs-list {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    .jobs-list li {
-      margin-bottom: 10px;
-      padding: 10px;
-      background: #e9ecef;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    /* footer {
-      text-align: center;
-      padding: 20px;
-      background: #333;
-      color: #fff;
-      position: relative;
-      bottom: 0;
-      width: 100%;
-    } */
-
-    /* Modal styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgb(0, 0, 0);
-      background-color: rgba(0, 0, 0, 0.4);
-      padding-top: 60px;
-    }
-
-    .modal-content {
-      background-color: #fefefe;
-      margin: 5% auto;
-      padding: 20px;
-      border: 1px solid #888;
-      width: 80%;
-      border-radius: 5px;
-    }
-
-    .close {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-      color: black;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .blog-content {
-      text-align: left;
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 80%;
-      /* Adjust this value to increase or decrease the margins */
-    }
-
-    @media (max-width: 768px) {
-
-      /* Change the max-width to fit your design needs */
-      .blog-content {
-        max-width: 100%;
-      }
-    }
+    /* start for books section */
+/* Books Section */
+.book-info{
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Books Section */
+.books-section {
+  padding: 2rem;
+  background-color: #e6f2ff; /* Light blue background */
+  border-radius: 12px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.books-section:hover {
+  background-color: #d0e8ff; /* Slightly darker blue on hover */
+}
+
+.books-section h2 {
+  font-family: 'Georgia', serif;
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+/* Adjusted books-list for Flexbox */
+.books-list {
+  display: flex;              /* Enable flexbox */
+  flex-direction: column;    /* Arrange items in a column */
+  align-items: center;       /* Center items horizontally */
+  padding: 0;
+  margin: 0;
+}
+
+.books-list li {
+  display: flex;              /* Use flex for each book item */
+  flex-direction: column;     /* Align book title and description vertically */
+  align-items: center;        /* Center items horizontally */
+  margin-bottom: 3rem;       /* Increased spacing */
+  position: relative;
+  padding-bottom: 1rem;
+  transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+.books-list li:hover {
+  transform: scale(1.05); /* Slight scale up on hover */
+}
+
+/* Book Shape */
+.book-title {
+  background-position-x: right;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 140px;
+  height: 200px;
+  position: relative;
+  background-color: #f5e0c7;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  color: #2d2d2d;
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  margin-bottom: 1.5rem; /* Added space below the book */
+  text-align: left;
+  transform: rotate(-2deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition effects */
+}
+
+.book-title:hover {
+  transform: rotate(-2deg) scale(1.05); /* Slight scale up on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.book-title::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 10px;
+  background-color: #d4a26d;
+  border-radius: 4px 0 0 4px;
+}
+
+.book-title::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: -5px;
+  width: 6px;
+  height: 80%;
+  background-image: linear-gradient(to bottom, #d4d4d4 25%, transparent 25%, transparent 50%, #d4d4d4 50%);
+  opacity: 0.4;
+  border-radius: 2px;
+}
+
+/* Cloud Shape for Book Description */
+.book-description {
+  font-size: medium;
+  background-color: #9bf572;
+  font-weight: bolder;
+  padding: 1rem;
+  color: #656060;
+  line-height: 1.4;
+  width: 75%;
+  height: max-content;
+  margin-left: 20px;
+  border-radius: 50px / 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  margin-top: 1.5rem; /* Space above the description */
+  z-index: 1; /* Ensures it stays above other elements */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition effects */
+}
+
+.book-description:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  background-color: #007bff;
+  color: white;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Decorative elements for book-description */
+.book-description::after,
+.book-description::before {
+  content: '';
+  position: absolute;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}
+
+.book-description::before {
+  width: 30px;
+  height: 30px;
+  bottom: -10px;
+  left: 10%;
+  background-color: #0f0f0f;
+}
+
+.book-description::after {
+  width: 40px;
+  height: 40px;
+  top: -25px;
+  right: 10%;
+}
+
+/* Emoji Styling */
+.emoji {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.books-list li:hover .emoji {
+  transform: scale(1.2); /* Scale emoji on hover */
+}
+
+/* Additional Styling for Body */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+   /* end code  */
   </style>
 </body>
 
@@ -1271,7 +1225,7 @@
     <div class="col-lg-6">
       <div class="subscribe-content mt-45">
         <h2 class="subscribe-title">
-          Subscribe Our Newsletter <span>get regular updates</span>
+          Subscribe Our Newsletter <span>Get Regular Updates</span>
         </h2>
       </div>
     </div>
@@ -1294,6 +1248,7 @@
 <div class="row" id="footer">
     <div class="col-lg-4 col-md-6 col-sm-8">
         <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+          <img src="./assets/images/l (2).png" alt="FinVeda Logo" style="height: 80px; width: auto; margin-bottom: 15px;" />
             <p class="text custom-margin">
                 We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
             </p>
