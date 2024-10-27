@@ -9,6 +9,7 @@
   <meta name="author" content="Ayush Singh">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="shortcut icon"  href="./assets/images/favicon2.png" type="image/png" />
+  <link rel="shortcut icon" href="./assets/images/favicon2.webp" type="image/png" />
     <link rel="stylesheet"  href="./assets/css/animate.css" />
     <link rel="stylesheet"  href="./assets/css/magnific-popup.css" />
     <link rel="stylesheet"  href="./assets/css/slick.css" />
@@ -38,6 +39,14 @@
         z-index: 9999;
   
       }
+      .theme-toggle2.dark {
+  background-color: #eceae0;
+  color: #000;
+}
+body.dark-mode {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
   
       * {
         cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
@@ -157,24 +166,27 @@
           <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
             <div class="icon1">
               <a href="./index.html">
-              <img src="assets/images/icon.webp" alt="icon.png">
+              <img src="./assets/images/l (2).png" alt="icon.png">
               </a>
             </div> 
             <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
               <li class="nav-item">
-                <a class="page-scroll" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
+                <a class="page-scroll active-link" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
               </li>
               <li class="nav-item">
                 <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
               </li>    
               <li class="nav-item">
-                <a class="page-scroll active-link" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
+                <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
               </li>
               <li class="nav-item">
                 <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
               </li>
               <li class="nav-item">
                 <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll" href="./finance.html" style="color: rgb(237, 242, 244);">Courses 📚</a>
               </li>
               <li class="nav-item">
                 <a class="page-scroll" href="./quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
@@ -199,31 +211,31 @@
             </ul>
           </div>
 
-        <script>
-          const toggleButton = document.getElementById('theme-toggle');
-          const body = document.body;
-          const currentTheme = localStorage.getItem('theme');
+          <script>
+            var toggleButton = document.getElementById('theme-toggle');
+            var body = document.body;
+            var currentTheme = localStorage.getItem('theme');
 
-          if (currentTheme === 'dark') {
-          body.classList.add('dark-mode');
-          toggleButton.classList.add('dark');
-          toggleButton.textContent = '🌞';
-          }
+            if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            toggleButton.classList.add('dark');
+            toggleButton.textContent = '🌞';
+            }
 
-          toggleButton.addEventListener('click', function () {
-          body.classList.toggle('dark-mode');
-          toggleButton.classList.toggle('dark');
+            toggleButton.addEventListener('click', function () {
+            body.classList.toggle('dark-mode');
+            toggleButton.classList.toggle('dark');
 
-          // Update button icon based on mode
-          if (body.classList.contains('dark-mode')) {
-          toggleButton.textContent = '🌞';  // Light mode icon
-          localStorage.setItem('theme', 'dark');
-          } else {
-          toggleButton.textContent = '🌙';  // Dark mode icon
-          localStorage.setItem('theme', 'light');
-          }
-          });
-      </script>
+            // Update button icon based on mode
+            if (body.classList.contains('dark-mode')) {
+              toggleButton.textContent = '🌞';  // Light mode icon
+              localStorage.setItem('theme', 'dark');
+            } else {
+              toggleButton.textContent = '🌙';  // Dark mode icon
+              localStorage.setItem('theme', 'light');
+            }
+            });
+        </script>
       <style>
 
         h3{
@@ -297,10 +309,38 @@ background-color: #ddd; /* Button hover color in dark mode */
               onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
           </li>
 
-
+          <li class="nav-item no-underline">
+            <button id="theme-toggle2" class="theme-toggle2" style="margin-right: 2px;">
+              🌙
+            </button>
+            </li>
           <div class="mobile-menu__trigger"><span></span></div>
         </nav>
+        <script>
+          var toggleButton = document.getElementById('theme-toggle2');
+          var body = document.body;
+          var currentTheme = localStorage.getItem('theme');
 
+          if (currentTheme === 'dark') {
+          body.classList.add('dark-mode');
+          toggleButton.classList.add('dark');
+          toggleButton.textContent = '🌞';
+          }
+
+          toggleButton.addEventListener('click', function () {
+          body.classList.toggle('dark-mode');
+          toggleButton.classList.toggle('dark');
+
+          // Update button icon based on mode
+          if (body.classList.contains('dark-mode')) {
+          toggleButton.textContent = '🌞';  // Light mode icon
+          localStorage.setItem('theme', 'dark');
+          } else {
+          toggleButton.textContent = '🌙';  // Dark mode icon
+          localStorage.setItem('theme', 'light');
+          }
+          });
+      </script>
 
       </div>
     </div>
@@ -335,39 +375,7 @@ background-color: #ddd; /* Button hover color in dark mode */
     </div>
   </div>
   
-      <!-- removing intro section -->
-    <!-- <div id="home" class="header-hero bg_cover" style="background-image: url(./assets/images/banner-bg.svg)">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <div class="header-hero-content text-center">
-              <h3 class="header-sub-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
-                Say 👋🏼 to FinVeda
-              </h3>
-              <h2 class="header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">
-                your savvy financial companion
-              </h2>
-              <p class="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">
-                Wanna learn how to grow your money to become rich? We have made becoming a stock market Guru made easy
-                with our AI powered finance advisor - <b>Arth Sathi 🤵🏻</b>
-              </p>
-              <a href="#" class="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s"
-              onclick="window.botpressWebChat.sendEvent({ type: 'show' }); return false;">
-              Chat with ArthaSathi 💬
-            </a>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="header-hero-image text-center wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">
-              <img src="./assets/images/header-hero.png" alt="hero" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="particles-1" class="particles"></div>
-    </div> -->
+     
   <br><br><br><br>
 
 
@@ -435,8 +443,9 @@ background-color: #ddd; /* Button hover color in dark mode */
     <div class="market-card-container-unique" id="marketStatusContainerUnique"></div>
   </div>
 </section>
+  <div class="container-main">
 
-  <div class="container"><br><br>
+  <div class="container" ><br><br>
     <!-- TradingView Widget BEGIN -->
      <br><br>
     <div class="tradingview-widget-container" style="height: 445px;">
@@ -446,7 +455,7 @@ background-color: #ddd; /* Button hover color in dark mode */
           "feedMode": "all_symbols",
             "isTransparent": false,
               "displayMode": "adaptive",
-                "colorTheme": "light",
+                "currentTheme": "light",
                   "locale": "in"
         }
       </script>
@@ -535,7 +544,8 @@ background-color: #ddd; /* Button hover color in dark mode */
       <!-- TradingView Widget END -->
     </div>
   </div>
-  
+      
+</div>
   <!-- Timed popup that will appear after succesful submission of feebback form! -->
       <button class="notification" id="successnotification" style="display:none;">
         <span class="message" id="successmsg">Submitted successfully!</span>
@@ -575,6 +585,7 @@ background-color: #ddd; /* Button hover color in dark mode */
       <div class="row" id="footer">
           <div class="col-lg-4 col-md-6 col-sm-8">
               <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                <img src="./assets/images/l (2).png" alt="FinVeda Logo" style="height: 80px; width: auto; margin-bottom: 15px;" />
                   <p class="text custom-margin">
                       We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
                   </p>
