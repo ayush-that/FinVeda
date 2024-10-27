@@ -497,7 +497,7 @@ padding: 0; /* No padding */
 /* Footer Separator */
 .footer-separator {
 border-top: 2px solid #ccc;
-width: 80%;
+width: 90%;
 margin-bottom: 10px;
 box-shadow: -10px -10px 20px rgba(0, 0, 0, 0.1), 10px 10px 20px rgba(0, 0, 0, 0.1);
 }
@@ -505,6 +505,7 @@ box-shadow: -10px -10px 20px rgba(0, 0, 0, 0.1), 10px 10px 20px rgba(0, 0, 0, 0.
 /* Footer Area */
 #footer {
 color: white;
+
 /* padding: 50px 0; */
 }
 
@@ -601,4 +602,79 @@ margin-bottom: 5px;
 .subscribe-title {
     font-size: 24px;
 }
+}
+
+.footer-widget {
+  width: 100%; 
+  padding: 0; 
+  margin: 0;
+  background-color: transparent; 
+  color: white;
+   position: relative;
+
+  background-color: transparent;
+  overflow: hidden; 
+
+  justify-content: center; /* Center bubbles */
+}
+
+#footer {
+  width: 100%; 
+}
+
+.footer-copyright {
+  width: 100%; 
+  background-color: transparent; 
+  padding: 20px 0; 
+}
+body {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  align-items: flex-end; 
+}
+
+
+
+.bubble {
+  position: absolute;
+ 
+  bottom: -50px; /* Start from below the footer */
+  width: 70px; /* Bubble size */
+  height: 70px; /* Bubble size */
+  background-color: #61dafb; /* Bubble color */
+  border-radius: 50%; /* Make it round */
+  animation: rise 3s infinite; 
+  opacity: 0.7; /* Slight transparency */
+}
+
+
+@keyframes rise {
+  0% {
+      transform: translateY(0); /* Start position */
+  }
+  100% {
+      transform: translateY(-500px); /* Move upward */
+      opacity: 0; /* Fade out */
+  }
+}
+
+.bubble:nth-child(1) {
+  left: 20%; 
+  animation-delay: 0s; 
+}
+
+.bubble:nth-child(2) {
+  left: 40%; 
+  animation-delay: 0.5s; 
+}
+
+.bubble:nth-child(3) {
+  left: 60%; 
+  animation-delay: 1s; 
+}
+
+.bubble:nth-child(4) {
+  left: 80%; 
+  animation-delay: 1.5s;
 }
