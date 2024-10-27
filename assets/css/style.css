@@ -23,6 +23,54 @@ body {
   transition: background-color 0.3s, color 0.3s;
 
 }
+/* Dropdown Container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  z-index: 1;
+  margin-top: 5px;
+  border-radius: 8px;
+}
+
+/* Dropdown Items */
+.dropdown-menu li {
+  list-style: none;
+  padding: 8px 12px;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: black;
+  display: block;
+}
+
+/* Arrow Icon */
+.arrow {
+  font-size: 12px;
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+/* Arrow Rotation when Active */
+.dropdown.show .arrow {
+  transform: rotate(180deg);
+}
+
+/* Show Dropdown on Click */
+.dropdown.show .dropdown-menu {
+  display: block;
+}
+
 .theme-toggle {
   position: fixed;
   top: 10px;
@@ -769,12 +817,12 @@ p {
   -ms-transition: background-color 0.3s ease-in-out;
   -o-transition: background-color 0.3s ease-in-out;
 }
-.navbar-nav {main
+.navbar-nav main{
  background-color: saddlebrown;
   list-style-type: none;
   margin: 0 1rem;
   padding: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .nav-item {
