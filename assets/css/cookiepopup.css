@@ -22,8 +22,6 @@
 
 #cookieConsent{
     display: fixed;
-    bottom: 3vh;    
-    left: 1vw;
 }
 
 .cookie-consent {
@@ -36,7 +34,7 @@
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.208);
     font-size: 14px;
-    z-index: 1000; 
+    z-index: 1000000; 
     width: 25%;
     height: auto;
     opacity: 0;
@@ -47,6 +45,7 @@
 .cookie-consent.show {
     display: block;
     animation: fadeIn 0.5s ease-out forwards; 
+    z-index: 10000; 
 }
 
 .cookie-consent.hide {
