@@ -688,19 +688,23 @@ registerCloseButton.addEventListener("click", function() {
       <div class="input-container">
         <div>
           <div><b>Monthly investment</b></div>
-          <div><input class="form-control" id="investment" type="number" for="amount"/></div>
+          <div><input class="form-control" id="investment" placeholder="Enter the Monthly Investment" type="number" for="amount"/></div>
           <br />
           <div><b>Time period (yr)</b></div>
-          <div><input class="form-control" id="years" type="number"></div>
+          <div><input class="form-control" id="years"  placeholder="Enter the time period" type="number"></div>
           <br />
           <div><b>Expected return rate (p.a)</b></div>
-          <div><input class="form-control" id="return-rate" type="number" for="amount" /></div>
+          <div><input class="form-control" id="return-rate" type="number"  placeholder="Enter the Expected Return rate" for="amount" /></div>
         </div>
       </div>
       <br/>
-      <div class="btn-calculate" style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+      <!-- <div class="btn-calculate" style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
         <button type="button" id="calculateBtn" onclick="calculateResult()" style="margin-right: 10px;">Calculate</button>
         <button class="button" type="button" id="clearBtn" onclick="clearAll()">Clear</button>
+      </div> -->
+      <div class="btn-calculate">
+        <button id="calculate-Btn4" type="button" class="btn btn-calculate" onclick="calculateResult()">Calculate</button>
+      <button id="clearBtn3" type="button" class="btn btn-clear" onclick="clearAll()"><p class="btn-text">Clear</p></button>
       </div>
       <br />
       <div style="display: flex; justify-content: flex-start; font-size: medium;" class="result"><b>Result :</b></div>
@@ -956,10 +960,12 @@ registerCloseButton.addEventListener("click", function() {
               <div><input class="form-control" id="loanTenure" type="number" placeholder="Enter tenure in months" /></div>
           </div>
       </div>
-      <div class="btn-calculate" style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
-        <button type="button" id="calculateBtn" onclick="calculateEMI()" style="margin-right: 10px;">Calculate</button>
-        <button class="button" type="button" id="clearBtn" onclick="clearAll()">Clear</button>
+    
+      <div class="btn-calculate">
+        <button id="calculate-Btn4" type="button" class="btn btn-calculate" onclick="calculateEMI()">Calculate</button>
+      <button id="clearBtn3" type="button" class="btn btn-clear" onclick="clearAll()"><p class="btn-text">Clear</p></button>
       </div>
+   
       <div class="result">
           <div><b>Result :</b></div>
           <div class="result-container">
@@ -998,23 +1004,24 @@ registerCloseButton.addEventListener("click", function() {
       <div class="input-container">
         <div>
           <div><b>Savings Goal Amount (INR)</b></div>
-          <div><input class="form-control" type="number" id="goalAmount" required /></div>
+          <div><input class="form-control" type="number"  placeholder="Enter the amount" id="goalAmount" required /></div>
           <br />
           <div><b>Current Savings (INR)</b></div>
-          <div><input class="form-control" type="number" id="currentSavings" required /></div>
+          <div><input class="form-control" type="number" placeholder="Enter the Currently Savings" id="currentSavings" required /></div>
           <br />
           <div><b>Monthly Savings (INR)</b></div>
-          <div><input class="form-control" type="number" id="monthlySavings" required /></div>
+          <div><input class="form-control" type="number" placeholder="Enter the MonthlySavings" id="monthlySavings" required /></div>
           <br />
           <div><b>Interest Rate (%)</b></div>
-          <div><input class="form-control" type="number" id="interestRate" required /></div>
+          <div><input class="form-control" type="number"  placeholder="Enter the InterestRate" id="interestRate" required /></div>
         </div>
       </div>
       <br />
       <br />
-      <div class="btn-calculate" style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
-        <button type="button" id="calculateBtn" onclick="calculateSavings()" style="margin-right: 10px;">Calculate</button>
-        <button class="button" type="button" id="clearBtn" onclick="clearsSavings()">Clear</button>
+     
+      <div class="btn-calculate">
+        <button id="calculate-Btn4" type="button" class="btn btn-calculate" onclick="calculateSavings()">Calculate</button>
+      <button id="clearBtn3" type="button" class="btn btn-clear" onclick="clearAll()"><p class="btn-text">Clear</p></button>
       </div>
       <br />
       <div style="display: flex;">
@@ -1053,19 +1060,19 @@ registerCloseButton.addEventListener("click", function() {
   <div class="input-container">
     <div>
       <div><b>Sum assured (INR)</b></div>
-      <div><input class="form-control" id="Sumassured" type="number" style="margin: 1% 5% 0 0" /></div>
+      <div><input class="form-control" id="Sumassured"  placeholder="Enter the Amount" type="number" style="margin: 1% 5% 0 0" /></div>
       <br />
       <div><b>Policy term (Years)</b></div>
-      <div><input class="form-control" id="Policyterm" type="number" /></div>
+      <div><input class="form-control" id="Policyterm"  placeholder="Enter the time period" type="number" /></div>
       <br />
       <div><b>Annual premium (%)</b></div>
-      <div><input class="form-control" id="Annualpremium" type="number" /></div>
+      <div><input class="form-control" id="Annualpremium"  placeholder="Enter the Annualpremium" type="number" /></div>
       <br />
       <div><b>Reversionary Bonus (%)</b></div>
-      <div><input class="form-control" id="ReversionaryBonus" type="number" /></div>
+      <div><input class="form-control" id="ReversionaryBonus" placeholder="Enter the ReversionaryBonus" type="number" /></div>
       <br />
       <div><b>Terminal Bonus (%)</b></div>
-      <div><input class="form-control" id="TerminalBonus" type="number" /></div>
+      <div><input class="form-control" id="TerminalBonus" placeholder="Enter the time TerminalBonus" type="number" /></div>
       <br />
       
 
@@ -1124,10 +1131,10 @@ registerCloseButton.addEventListener("click", function() {
   <div class="input-container">
     <div>
       <div><b>Initial Investment (INR)</b></div>
-      <div><input class="form-control" id="initialInvestment" type="number" style="margin: 1% 5% 0 0" /></div>
+      <div><input class="form-control" id="initialInvestment" placeholder="Enter the Initial Investment" type="number" style="margin: 1% 5% 0 0" /></div>
       <br />
       <div><b>Discount Rate (%)</b></div>
-      <div><input class="form-control" id="discountRate" type="number" /></div>
+      <div><input class="form-control" id="discountRate"  placeholder="Enter the DiscountRate" type="number" /></div>
     </div>
   </div>
   <br />
@@ -1286,10 +1293,11 @@ registerCloseButton.addEventListener("click", function() {
             </label>
             <input class="form-control" type="number" id="return" name="return" required>
           </div>
-          <div class="btn-calculate" style="display: flex; flex-direction: row;">
-            <button id="submitBtn1" type="submit" class="btn btn-calculate">Calculate</button>
-            <button type="button" class="btn btn-secondary" onclick="clearROI()"><p class="btn-text">Clear</p></button>
+          <div class="btn-calculate">
+            <button id="calculate-Btn4" type="button" class="btn btn-calculate" onclick="calculateEMI()">Calculate</button>
+          <button id="clearBtn3" type="button" class="btn btn-clear" onclick="clearROI()"><p class="btn-text">Clear</p></button>
           </div>
+          
         </form>
         <div class="calculation" style="margin-top: 20px; display: flex; gap: 20px;">
           <b>Result:</b>
@@ -1340,10 +1348,12 @@ registerCloseButton.addEventListener("click", function() {
                     <label for="tax-slab" class="tax-slab">Tax Slab (%):</label>
                     <input type="number" id="tax-slab" class="form-control" required>
                 </div>
-                <div class="btn-calculate" style="display: flex; flex-direction: row;">
-                    <button id="submitBtn2" type="submit" class="btn btn-calculate">Calculate</button>
-                    <button type="clearBtn7" class="btn btn-secondary" style="text-align: center;" clearGST()">Clear</button>
+             
+                <div class="btn-calculate">
+                  <button id="calculate-Btn4" type="button" class="btn btn-calculate" onclick="calculate()">Calculate</button>
+                <button id="clearBtn3" type="button" class="btn btn-clear" onclick="clearGST()"><p class="btn-text">Clear</p></button>
                 </div>
+                
             </form>
             <div id="result" class="mt-3">
                 <h5>Result:</h5>
@@ -1609,11 +1619,11 @@ registerCloseButton.addEventListener("click", function() {
         <form id="profit-margin-calculator" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
           <div class="form-group">
             <label for="cost" class="cost">Cost Price:</label>
-            <input type="number" id="cost" class="form-control" required>
+            <input type="number" id="cost"  placeholder="Enter the CostPrice" class="form-control" required>
           </div>
           <div class="form-group">
             <label for="selling-price" class="selling-price">Selling Price:</label>
-            <input type="number" id="selling-price" class="form-control" required>
+            <input type="number" id="selling-price"  placeholder="Enter the Selling Price" class="form-control" required>
           </div>
           <div class="btn-calculate" style="display: flex; flex-direction: row;">
             <button id="submitBtn" type="submit" class="btn btn-calculate">Calculate</button>
@@ -1711,28 +1721,32 @@ registerCloseButton.addEventListener("click", function() {
           <legend>Expenditure Approach</legend>
           <div class="form-group">
             <label for="personal" class="cost">Personal Consumption:</label>
-            <input type="number" id="personal" class="form-control" required>
+            <input type="number" id="personal"  placeholder="Enter the PersonalConsumption" class="form-control" required>
           </div>
           <div class="form-group">
             <label for="investment" class="selling-price">Gross Investment:</label>
-            <input type="number" id="investment1" class="form-control" required>
+            <input type="number" id="investment1"  placeholder="Enter the GrossInvestment" class="form-control" required>
           </div>
           <div class="form-group">
             <label for="consumption" class="cost">Government Consumption:</label>
-            <input type="number" id="consumption" class="form-control" required>
+            <input type="number" id="consumption"  placeholder="Enter the Government Consumption" class="form-control" required>
           </div>
           <div class="form-group">
             <label for="exports" class="selling-price">Exports:</label>
-            <input type="number" id="exports" class="form-control" required>
+            <input type="number" id="exports"  placeholder="Enter the Exports" class="form-control" required>
           </div>
           <div class="form-group">
             <label for="imports" class="cost">Imports:</label>
-            <input type="number" id="imports" class="form-control" required>
+            <input type="number" id="imports"  placeholder="Enter the Imports" class="form-control" required>
           </div>
-          <div class="btn-calculate" style="display: flex; flex-direction: row;">
+          <!-- <div class="btn-calculate" style="display: flex; flex-direction: row;">
             <button id="submitBtn" type="button" class="btn btn-calculate" onclick="calculateGDP()">Calculate</button>
             <button type="button" class="btn btn-secondary" onclick="clearFields()"><p class="btn-text">Clear</p></button>
-          </div>          
+          </div>           -->
+          <div class="btn-calculate">
+            <button id="calculate-Btn4" type="button" class="btn btn-calculate" onclick="calculateGDP()">Calculate</button>
+          <button id="clearBtn3" type="button" class="btn btn-clear" onclick="clearAll()"><p class="btn-text">Clear</p></button>
+          </div>
         </fieldset>
       </form>
       <div id="result" class="mt-3">
@@ -1789,10 +1803,10 @@ registerCloseButton.addEventListener("click", function() {
                  <label for="totalPeriod">Total Period (in years):</label>
                  <input type="number" id="totalPeriod" class="form-control" placeholder="Enter time period in years" required>
                </div>
-               <div class="btn-calculate" style="display: flex; flex-direction: row;">
-                 <button id="calculateBtn1" type="button" class="btn btn-calculate">Calculate</button>
-                 <button id="clearBtn6" type="button" class="btn btn-clear"><p class="btn-text">Clear</p></button>
-               </div>
+               <div class="btn-calculate">
+                <button id="calculate-Btn4" type="button" class="btn btn-calculate" onclick="calculateResult()">Calculate</button>
+              <button id="clearBtn3" type="button" class="btn btn-clear" onclick="clearAll()"><p class="btn-text">Clear</p></button>
+              </div>
              </fieldset>
            </form>
            <div id="result-swp" class="mt-3">
@@ -2084,29 +2098,68 @@ registerCloseButton.addEventListener("click", function() {
 </body>
 
 
-  <!-- Timed popup that will appear after succesful submission of feebback form! -->
-  <button class="notification" id="successnotification" style="display:none;">
-    <span class="message" id="successmsg">Submitted successfully!</span>
-    <span class="closenotif" id="closeSuccessNotification">✖</span>
-    <div class="timerline" id="timerline"></div>
-  </button>
-  
-  
-  <footer id="footer" class="footer-area pt-120">
-    <div class="container">
+<style>
+
+
+  /* Container for form input and button */
+.subscribe-form {
+  display: flex;
+  flex-direction: row; /* Positions the input and button side by side */
+  gap: 10px;           /* Adds space between input and button */
+  align-items: center; /* Ensures both input and button are aligned vertically */
+}
+
+#unique-news-email {
+  flex: 1; /* Allows the input to take up the available width */
+  padding: 10px; /* Adds padding inside the input box */
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+}
+
+#unique-subscribe-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #ff6b6b;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#unique-subscribe-btn:hover {
+  background-color: #ff4b4b;
+}
+
+
+</style>
+
+
+<!-- Timed popup that will appear after succesful submission of feebback form! -->
+<button class="notification" id="successnotification" style="display:none;">
+  <span class="message" id="successmsg">Submitted successfully!</span>
+  <span class="closenotif" id="closeSuccessNotification">✖</span>
+  <div class="timerline" id="timerline"></div>
+</button>
+
+<footer id="footer" class="footer-area pt-120">
+  <div class="container">
     <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
       <div class="row">
-        <div class="col-lg-6">
-          <div class="subscribe-content mt-45">
+        <div class="col-lg-10">
+          <div class="subscribe-content mt-60">
             <h2 class="subscribe-title">
               Subscribe Our Newsletter <span>Get Regular Updates</span>
             </h2>
           </div>
         </div>
-        <div class="col-lg-6">
-          <div class="subscribe-form mt-50">
+        <div class="col-lg-8">
+          <div class="subscribe-form mt-60">
             <form id="unique-subscribe-form">
-              <input type="email" id="unique-news-email" placeholder="Enter Email" required/>
+              <input type="email" id="unique-news-email" aria-colspan="6" placeholder="Enter Email"  required  />
               <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
             </form>
             <div id="unique-message" class="unique-popup-message" style="display: none;">
@@ -2117,7 +2170,31 @@ registerCloseButton.addEventListener("click", function() {
         </div>
       </div>
     </div>
-    </div>
+  </div>
+  <script>
+    document.getElementById('unique-subscribe-form').addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent form from submitting normally
+
+      // Show popup message
+      var messageDiv = document.getElementById('unique-message');
+      messageDiv.style.display = 'block';
+
+      // Reset existing animation
+      var borderAnimationDiv = messageDiv.querySelector('.border-animation');
+      borderAnimationDiv.style.animation = 'none';
+      borderAnimationDiv.offsetHeight; // Trigger reflow to restart the animation
+      borderAnimationDiv.style.animation = 'borderAnimation 3s linear forwards';
+
+      // Hide popup message after 10 seconds
+      setTimeout(function () {
+        messageDiv.style.display = 'none';
+      }, 3000); // 10 seconds
+
+      // Reset form
+      this.reset();
+    });
+  </script>
+   
     <div class="footer-widget pb-100">
     <div class="row" id="footer">
         <div class="col-lg-4 col-md-6 col-sm-8">
