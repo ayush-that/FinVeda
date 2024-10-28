@@ -462,10 +462,10 @@
           <section id="blog" class="blog-area pt-100">
             <div class="container">
               <div class="row">
-                <div ><img id="blog-pic" src="./assets/images/blog-img.webp" alt="QUIZ"></div>
+                <div ><img id="blog-pic" style="mix-blend-mode: multiply;" src="./assets/images/blog-img.webp" alt="QUIZ"></div>
                 <div class="col-lg-6">
                   <div class="section-title pb-35" data-aos="zoom-in">
-                    <h1 id="title" > Blog Posts</h1>
+                    <h1 id="title" style="font-size:2.0 rem;margin-top: 30px;margin-left: 150px;" > Blog Posts</h1>
                   </div>
                 </div>
               </div>
@@ -736,7 +736,7 @@
      position: relative; 
     } /* Hover effect to make it interactive */
      
-     #title:hover {
+     #title{
        color: #3498db; /* Changes color on hover */ 
        text-shadow: 5px 7px 15px rgba(0, 0, 0, 0.6); 
        /* Enhances shadow on hover */ transform: scale(1.05); 
@@ -778,6 +778,105 @@
   transform: scale(1.05); /* Slightly enlarge the image on hover */
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* Increase the shadow on hover */
   filter: brightness(1.2); /* Slightly increase the brightness on hover */
+}
+
+/* Container Styling */
+.blog-area {
+  padding: 60px 0;
+  background-color: #f9f9f9;
+}
+
+/* Blog Header Styling */
+#title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Blog Post Card Styling */
+.single-blog {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #fff;
+}
+
+.single-blog:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling */
+.blog-image img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.single-blog:hover .blog-image img {
+  transform: scale(1.1);
+}
+
+/* Blog Content Styling */
+.blog-content {
+  padding: 20px;
+}
+
+.blog-content p {
+  color: #555;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.single-blog:hover .reviewtext {
+  color: #3b82f6; /* Tailwind Blue-500 */
+}
+
+/* 'Learn More' Button Styling */
+.more {
+  font-size: 0.9rem;
+  color: #3b82f6; /* Tailwind Blue-500 */
+  font-weight: 600;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.more i {
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.single-blog:hover .more i {
+  transform: translateX(5px);
+}
+
+.more:hover {
+  color: #1d4ed8; /* Tailwind Blue-700 */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #title {
+    font-size: 2rem;
+  }
+  .blog-content p {
+    font-size: 1rem;
+  }
+}
+
+.single-blog{
+  background: linear-gradient(45deg, #e0a2fb, #0cbefa);
+  border: 5px solid white;
+}
+.col-lg-4:hover{
+  background: linear-gradient(45deg, #f7f4f4, #777676);
+  border-radius: 5%;
 }
 
 </style>
