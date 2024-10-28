@@ -210,3 +210,14 @@ document.addEventListener("DOMContentLoaded", () => {
         // Reset form
         this.reset();
       });    
+
+      
+function toggleDropdown(show) {
+  const dropdownMenu = document.querySelector('.dropdown-menu');
+  if (show) {
+    dropdownMenu.style.display = 'block';
+  } else {
+    dropdownMenu.style.display = 'none';
+  }
+}
+  
