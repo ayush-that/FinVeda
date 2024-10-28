@@ -1,0 +1,118 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff; /* Light blue background */
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #252793, black); /* Gradient from pink to yellow */
+    
+    
+}
+
+/* Header Styles */
+.second-header {
+    text-align: center;
+    padding: 20px;
+    background-color: #4682b4; /* Steel blue */
+    color: white;
+    margin-top: 80px;
+}
+
+
+h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Main Content Styles */
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    grid-gap: 20px; /* Space between the items */
+    justify-content: center; /* Center the grid horizontally */
+    align-content: center; /* Center the grid vertically */
+    padding: 20px;
+    max-width: 960px; /* Adjust max width for 3 columns */
+    margin: 0 auto; /* Center the grid on the page */
+}
+
+/* Course Card Styles */
+.course {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 350px; /* Keeps the cards narrow */
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.course:hover {
+    transform: translateY(-5px);
+}
+
+h2 {
+    color: #4682b4; /* Steel blue */
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.poster-image {
+    width: 100%; /* Ensures the image takes up the full width of the container */
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #4682b4; /* Steel blue */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #5a9bd3; /* Lighter blue on hover */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr; /* Single column layout on smaller screens */
+    }
+
+    .course {
+        width: 90%; /* Full width on smaller screens */
+    }
+}
+
+.circle {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
+    transition: transform 0.1s, left 0.1s, top 0.1s;
+  }
+
+  .circle-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+  }

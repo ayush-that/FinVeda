@@ -104,16 +104,28 @@ FinVeda is a dynamic financial literacy app that'll help you Learn finance with 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ### 💗 Contributors
-
-<p align ="center">
-    <img src="https://api.vaunt.dev/v1/github/entities/ayush-that/repositories/FinVeda/contributors?format=svg&limit=54" width="700" height= "250" />
+<p align="center">
+    <img src="https://api.vaunt.dev/v1/github/entities/ayush-that/repositories/FinVeda/contributors?format=svg&limit=54" width="700" height="250" />
 </p>
 
 <a href="https://github.com/ayush-that/FinVeda/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=ayush-that/FinVeda" />
 </a>
 
+#### A Big Thank You to Our Contributors! 🎉👏
+
+We want to extend our heartfelt gratitude to all the amazing contributors who have dedicated their time and effort to make FinVeda a success! Your hard work and commitment to excellence are what drive this project forward. Together, we are building something great! Thank you for being a part of our community! ❤️✨
+
+
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+## 💗 Forkers
+
+[![Forkers repo roster for @ayush-that/FinVeda](https://reporoster.com/forks/ayush-that/FinVeda)](https://github.com/ayush-that/FinVeda/network/members)
+
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
 
 ## 💗 Stargazers
 
@@ -123,13 +135,11 @@ FinVeda is a dynamic financial literacy app that'll help you Learn finance with 
 
 </div>
 
-## 💗 Forkers
-
-[![Forkers repo roster for @ayush-that/FinVeda](https://reporoster.com/forks/ayush-that/FinVeda)](https://github.com/ayush-that/FinVeda/network/members)
-
-
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
-
+<picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=ayush-that/FinVeda&type=Date&theme=dark" />
+      <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=ayush-that/FinVeda&type=Date" />
+      <img align="center" alt="Star History Chart" src="https://api.star-history.com/svg?repos=ayush-that/FinVeda&type=Date" />
+</picture>
 
 
 
