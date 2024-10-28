@@ -202,9 +202,9 @@
                 </ul>
               </div>
               <script>
-                const toggleButton = document.getElementById('theme-toggle');
-                const body = document.body;
-                const currentTheme = localStorage.getItem('theme');
+                var toggleButton = document.getElementById('theme-toggle');
+                var body = document.body;
+                var currentTheme = localStorage.getItem('theme');
 
                 if (currentTheme === 'dark') {
                   body.classList.add('dark-mode');
@@ -452,7 +452,48 @@
               </div>
             </nav>
 
-
+            <nav class="mobile-menu ">
+              <a class="page-scroll" href="./index.html">Home 🏡</a>
+              <a class="page-scroll" href="./about.html">About Us 📖</a>
+              <a class="page-scroll" href="./trends.html">Trends 📈</a>
+              <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
+              <a class="page-scroll" href="./blog.html">Blogs 📰</a>
+              <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
+              <a class="page-scroll main-btn" href="#" onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
+              <li class="nav-item no-underline">
+                <button id="theme-toggle2" class="theme-toggle2" style="margin-right: 2px;">
+                  🌙
+                </button>
+              </li>
+              <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
+                <span></span>
+              </div>
+            </nav>
+            <script>
+              var toggleButton = document.getElementById('theme-toggle2');
+              var body = document.body;
+              var currentTheme = localStorage.getItem('theme');
+    
+              if (currentTheme === 'dark') {
+              body.classList.add('dark-mode');
+              toggleButton.classList.add('dark');
+              toggleButton.textContent = '🌞';
+              }
+              
+              toggleButton.addEventListener('click', function () {
+              body.classList.toggle('dark-mode');
+              toggleButton.classList.toggle('dark');
+              
+              // Update button icon based on mode
+              if (body.classList.contains('dark-mode')) {
+                toggleButton.textContent = '🌞';  // Light mode icon
+                localStorage.setItem('theme', 'dark');
+              } else {
+                toggleButton.textContent = '🌙';  // Dark mode icon
+                localStorage.setItem('theme', 'light');
+              }
+              });
+          </script>
             <link href="./navbar.css" rel="stylesheet">
             <script type="text/javascript" src="./navbar.js"></script>
 
@@ -1068,6 +1109,7 @@ prevButton.addEventListener('click', () => {
           <div class="footer-link d-flex mt-50 justify-content-md-between"
             style="justify-content: space-around !important;">
             <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+
                 <div class="footer-title">
                     <h3 class="title custom-margin">Quick Links</h3>
                 </div>
@@ -1076,9 +1118,15 @@ prevButton.addEventListener('click', () => {
                     <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
                     <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
                     <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+
+                    <li><a href="./blogs/sitemap.html"><i class="fa-solid fa-sitemap"></i> Site Map</a></li>
+                </ul>
+
+
                     <!-- Added Our Contributor page -->
                     <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>                    
                 </ul>
+
             </div>
             <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
               <div class="footer-title">

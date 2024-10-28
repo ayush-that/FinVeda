@@ -534,32 +534,19 @@
 
           <link href="https://fonts.googleapis.com/css?family=Raleway&amp;display=swap" rel="stylesheet">
 
-          <nav class="mobile-menu  active">
-            <a class="page-scroll active-link" href="./index.html">Home 🏡</a>
+          <nav class="mobile-menu ">
+            <a class="page-scroll" href="./index.html">Home 🏡</a>
             <a class="page-scroll" href="./about.html">About Us 📖</a>
-             <!-- Dropdown for Explore -->
-            <div class="dropdown" onclick="toggleDropdown()">
-              <a class="page-scroll dropdown-toggle" href="#">
-                <span class="explore-text">Explore</span> 
-                <span class="arrow">▼</span>
-              </a>
-              <ul class="dropdown-menu">
-                <li><a href="./trends.html">Trends 📈</a></li>
-                <li><a href="./tools/sip.html">Tools 🔧</a></li>
-                <li><a href="./blog.html">Blogs 📰</a></li>
-                <li><a href="./quiz.html">Quiz 🤔</a></li>
-              </ul>
-            </div>
-
-            <a class="page-scroll" href="./contact.html">Contact🤔</a>
-            <li class="nav-item no-underline">
-              <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none; border: none;" href="#" onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
-            </li>
+            <a class="page-scroll" href="./trends.html">Trends 📈</a>
+            <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
+            <a class="page-scroll" href="./blog.html">Blogs 📰</a>
+            <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
+            <a class="page-scroll main-btn" href="#" onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
             <li class="nav-item no-underline">
               <button id="theme-toggle2" class="theme-toggle2" style="margin-right: 2px;">
                 🌙
               </button>
-              </li>
+            </li>
             <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
               <span></span>
             </div>
@@ -574,11 +561,11 @@
             toggleButton.classList.add('dark');
             toggleButton.textContent = '🌞';
             }
-
+            
             toggleButton.addEventListener('click', function () {
             body.classList.toggle('dark-mode');
             toggleButton.classList.toggle('dark');
-
+            
             // Update button icon based on mode
             if (body.classList.contains('dark-mode')) {
               toggleButton.textContent = '🌞';  // Light mode icon
@@ -2117,11 +2104,21 @@
                     <h3 class="title custom-margin">Quick Links</h3>
                 </div>
                 <ul class="link custom-margin">
+
+                  <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+                  <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
+                  <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
+                  <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+                  <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+                  <li><a href="./blogs/sitemap.html"><i class="fa-solid fa-sitemap"></i>  Site Map</a></li>
+
                     <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
                     <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
                     <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
                     <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
                     <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+                    <li><a href="./blogs/sitemap.html"><i class="fa-solid fa-sitemap"></i>  Site Map</a></li>
+
                 </ul>
             </div>
             <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
