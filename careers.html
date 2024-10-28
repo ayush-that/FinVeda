@@ -8,7 +8,7 @@
     content="Explore engaging quizzes on finance and economics at Fin Veda. Test your knowledge and learn with interactive quizzes covering various topics." />
   <meta name="author" content="Ayush Singh">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="shortcut icon" href="./assets/images/favicon2.png" type="image/png" />
+  <link rel="shortcut icon" href="/assets/images/favicon2.webp" type="image/png" />
   <link rel="stylesheet" href="assets/css/animate.css" />
   <link rel="stylesheet" href="assets/css/magnific-popup.css" />
   <link rel="stylesheet" href="assets/css/slick.css" />
@@ -353,7 +353,7 @@
               <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
                 <div class="icon1" >
                   <a href="./index.html">
-                  <img src="assets/images/l (2).png" alt="icon.png">
+                    <img src="assets/images/FinvedaLogo.png" alt="icon.png" style="width: 11rem;">
                   </a>
                 </div> 
                 <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
@@ -401,9 +401,9 @@
               </div>
 
               <script>
-                const toggleButton = document.getElementById('theme-toggle');
-                const body = document.body;
-                const currentTheme = localStorage.getItem('theme');
+                var toggleButton = document.getElementById('theme-toggle');
+                var body = document.body;
+                var currentTheme = localStorage.getItem('theme');
 
                 if (currentTheme === 'dark') {
                   body.classList.add('dark-mode');
@@ -609,21 +609,48 @@
           </div>
           </nav>
 
-
           <nav class="mobile-menu ">
             <a class="page-scroll" href="./index.html">Home 🏡</a>
             <a class="page-scroll" href="./about.html">About Us 📖</a>
             <a class="page-scroll" href="./trends.html">Trends 📈</a>
             <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
             <a class="page-scroll" href="./blog.html">Blogs 📰</a>
-            <a class="page-scroll active-link" href="./quiz.html">Quiz 🤔</a>
-            <a class="page-scroll main-btn" href="#" onclick="openModal()"
-              onmouseout="this.style.color='white'">Login/Register 💻</a>
+            <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
+            <a class="page-scroll main-btn" href="#" onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
+            <li class="nav-item no-underline">
+              <button id="theme-toggle2" class="theme-toggle2" style="margin-right: 2px;">
+                🌙
+              </button>
+            </li>
             <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
               <span></span>
             </div>
           </nav>
-
+          <script>
+            var toggleButton = document.getElementById('theme-toggle2');
+            var body = document.body;
+            var currentTheme = localStorage.getItem('theme');
+  
+            if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            toggleButton.classList.add('dark');
+            toggleButton.textContent = '🌞';
+            }
+            
+            toggleButton.addEventListener('click', function () {
+            body.classList.toggle('dark-mode');
+            toggleButton.classList.toggle('dark');
+            
+            // Update button icon based on mode
+            if (body.classList.contains('dark-mode')) {
+              toggleButton.textContent = '🌞';  // Light mode icon
+              localStorage.setItem('theme', 'dark');
+            } else {
+              toggleButton.textContent = '🌙';  // Dark mode icon
+              localStorage.setItem('theme', 'light');
+            }
+            });
+        </script>
 
           <link href="./navbar.css" rel="stylesheet">
           <script type="text/javascript" src="./navbar.js"></script>
@@ -781,7 +808,7 @@ section h2 {
 .search-container input[type="text"]:focus {
   border-color: #005f99;
   background-color: #e1ebf7;
-  color: white;
+  color: rgb(32, 32, 32);
   box-shadow: 0 0 8px rgba(0, 95, 153, 0.3);
 }
 
@@ -970,242 +997,304 @@ section h2 {
     </main>
 
     <section class="books-section">
+      <img style="position: absolute; mix-blend-mode: multiply; left: 100px;height: 130px;" src="assets/images/careers-book-img.jpg" alt="photo">
       <h2>Recommended Books on Finance</h2>
-      <img style="position: absolute;left: 0px; mix-blend-mode:multiply;top: 2400px;" src="./assets/images/book-careers2.png" alt="photo">
-      <ul class="books-list">
-        <li>
-          <div class="book-info">
-            <div class="book-title" style="background-image: url('./assets/images/RICH-POOR.jpeg');">
-              <!-- <strong>"Rich Dad Poor Dad" by Robert Kiyosaki</strong> -->
+      <div class="carousel-container">
+        <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+        <ul class="books-list">
+          <li>
+            <div class="book-card">
+              <div class="book-image" style="background-image: url('./assets/images/RICH-POOR.jpeg');"></div>
+              <div class="book-info">
+                <strong>Rich Dad Poor Dad</strong>
+                <span>by Robert Kiyosaki</span>
+                <p>A classic on financial education and investing.</p>
+              </div>
             </div>
-            <div class="book-description">
-              A classic on financial education and investing.
+          </li>
+          <li>
+            <div class="book-card">
+              <div class="book-image" style="background-image: url('./assets/images/The Intelligent Investor.jpeg');"></div>
+              <div class="book-info">
+                <strong>The Intelligent Investor</strong>
+                <span>by Benjamin Graham</span>
+                <p>A must-read for aspiring investors.</p>
+              </div>
             </div>
-          </div>
-        </li>
-        <li>
-          <div class="book-info">
-            <div class="book-title" style="background-image: url('./assets/images/The\ Intelligent\ Investor.jpeg');">
-              <!-- <strong>"The Intelligent Investor" by Benjamin Graham</strong> -->
+          </li>
+          <li>
+            <div class="book-card">
+              <div class="book-image" style="background-image: url('./assets/images/The Total Money Makeover.jpeg');"></div>
+              <div class="book-info">
+                <strong>The Total Money Makeover</strong>
+                <span>by Dave Ramsey</span>
+                <p>A guide to personal finance and debt elimination.</p>
+              </div>
             </div>
-            <div class="book-description">
-              A must-read for aspiring investors.
+          </li>
+          <li>
+            <div class="book-card">
+              <div class="book-image" style="background-image: url('./assets/images/A Random Walk Down Wall Street.jpeg');"></div>
+              <div class="book-info">
+                <strong>A Random Walk Down Wall Street</strong>
+                <span>by Burton Malkiel</span>
+                <p>Insights into market trends and investment strategies.</p>
+              </div>
             </div>
-          </div>
-        </li>
-        <li>
-          <div class="book-info">
-            <div class="book-title" style="background-image: url('./assets/images/The\ Total\ Money\ Makeover.jpeg');">
-              <!-- <strong>"The Total Money Makeover" by Dave Ramsey</strong> -->
+          </li>
+          <li>
+            <div class="book-card">
+              <div class="book-image" style="background-image: url('./assets/images/The Millionaire Next Door.jpg');"></div>
+              <div class="book-info">
+                <strong>The Millionaire Next Door</strong>
+                <span>by Thomas J. Stanley</span>
+                <p>Profiles habits and traits of wealthy individuals.</p>
+              </div>
             </div>
-            <div class="book-description">
-              A guide to personal finance and debt elimination.
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="book-info">
-            <div class="book-title" style="background-image: url('./assets/images/A\ Random\ Walk\ Down\ Wall\ Street.jpeg');">
-              <!-- <strong>"A Random Walk Down Wall Street" by Burton Malkiel</strong> -->
-            </div>
-            <div class="book-description">
-              Insights into market trends and investment strategies.
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="book-info">
-            <div class="book-title" style="background-image: url('./assets/images/The\ Millionaire\ Next\ Door.jpg');">
-              <!-- <strong>"The Millionaire Next Door" by Thomas J. Stanley</strong> -->
-            </div>
-            <div class="book-description">
-              Profiles habits and traits of wealthy individuals.
-            </div>
-          </div>
-        </li>
-      </ul>
+          </li>
+        </ul>
+        <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+      </div>
     </section>
-    
     
   </main>
 
 
-  <style>
-    /* start for books section */
-/* Books Section */
-.book-info{
-  display: flex;
-  justify-content: space-between;
+<style>/* Styling for the book section */
+  .books-section {
+    background: linear-gradient(45deg, rgb(57, 207, 236), rgb(44, 118, 247));
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    border: 10px solid rgb(154, 150, 150);
+  }
+  
+  .books-section h2 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: white;
+    font-size:xx-large;
+    margin-bottom: 20px;
+  }
+  
+  .carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .books-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    transition: transform 0.5s ease; /* Smooth transition for sliding */
+  }
+  
+  /* Individual book cards */
+  .book-card {
+    height: 400px;
+    width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: #eeeef0;
+    margin: 0 10px; /* Added margin between cards */
+    flex-shrink: 0; /* Prevent cards from shrinking */
+  }
+  
+  .book-card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    background-color: #e0f7fa;
+  }
+  
+  .book-image {
+    height: 340px;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 3px solid #ddd;
+    transition: opacity 0.3s ease;
+  }
+  
+  .book-card:hover .book-image {
+    opacity: 0.9;
+  }
+  
+  .book-info {
+    border: 3px solid #8db3f5;
+    padding: 20px;
+    text-align: left;
+    color: #333;
+  }
+  
+  .book-info strong {
+    color: #0863ff;
+    font-size: 1.2em;
+    display: block;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .book-info span {
+    font-size: 0.95em;
+    color: #666;
+    display: block;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .book-info p {
+    font-size: 0.9em;
+    color: #444;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* Carousel buttons */
+  .carousel-button {
+  background-color: rgba(240, 172, 123, 0.8);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 2em; /* Increased font size for visibility */
+  padding: 15px 20px; /* Increased padding for wider buttons */
+  width: 60px; /* Set a specific width */
+  height: 60px; /* Set a specific height */
+  position: absolute;
+  top: 60%; /* Move button down to 60% of the container height */
+  z-index: 10;
+  transition: background-color 0.3s ease; /* Smooth transition for hover */
 }
 
-/* Books Section */
+.carousel-button.prev {
+  left: 20px; /* Move the left button further from the left edge */
+}
+
+.carousel-button.next {
+  right: 20px; /* Move the right button further from the right edge */
+}
+
+.carousel-button:hover {
+  background-color: rgb(122, 248, 244);
+}
+
+  
+  .carousel-button.prev {
+    left: 10px;
+  }
+  
+  .carousel-button.next {
+    right: 10px;
+  }
+  
+  .carousel-button:hover {
+    background-color: rgba(255, 255, 255, 1);
+  }
+  /* Styling for the book section */
 .books-section {
-  padding: 2rem;
-  background-color: #e6f2ff; /* Light blue background */
-  border-radius: 12px;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
-  max-width: 600px;
-  margin: 0 auto;
+  background: linear-gradient(45deg, rgb(57, 207, 236), rgb(44, 118, 247));
   text-align: center;
-  transition: background-color 0.3s ease; /* Smooth background transition */
-}
-
-.books-section:hover {
-  background-color: #d0e8ff; /* Slightly darker blue on hover */
+  padding: 20px;
+  position: relative;
 }
 
 .books-section h2 {
-  font-family: 'Georgia', serif;
-  font-size: 1.8rem;
-  color: #333;
-  margin-bottom: 1.5rem;
-}
-
-/* Adjusted books-list for Flexbox */
-.books-list {
-  display: flex;              /* Enable flexbox */
-  flex-direction: column;    /* Arrange items in a column */
-  align-items: center;       /* Center items horizontally */
-  padding: 0;
-  margin: 0;
-}
-
-.books-list li {
-  display: flex;              /* Use flex for each book item */
-  flex-direction: column;     /* Align book title and description vertically */
-  align-items: center;        /* Center items horizontally */
-  margin-bottom: 3rem;       /* Increased spacing */
-  position: relative;
-  padding-bottom: 1rem;
-  transition: transform 0.3s ease; /* Smooth transition for scaling */
-}
-
-.books-list li:hover {
-  transform: scale(1.05); /* Slight scale up on hover */
-}
-
-/* Book Shape */
-.book-title {
-  background-position-x: right;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 140px;
-  height: 200px;
-  position: relative;
-  background-color: #f5e0c7;
-  padding: 1rem;
-  border-radius: 4px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  color: #2d2d2d;
-  font-family: 'Georgia', serif;
-  font-weight: bold;
-  margin-bottom: 1.5rem; /* Added space below the book */
-  text-align: left;
-  transform: rotate(-2deg);
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition effects */
-}
-
-.book-title:hover {
-  transform: rotate(-2deg) scale(1.05); /* Slight scale up on hover */
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
-}
-
-.book-title::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 10px;
-  background-color: #d4a26d;
-  border-radius: 4px 0 0 4px;
-}
-
-.book-title::after {
-  content: '';
-  position: absolute;
-  top: 10%;
-  right: -5px;
-  width: 6px;
-  height: 80%;
-  background-image: linear-gradient(to bottom, #d4d4d4 25%, transparent 25%, transparent 50%, #d4d4d4 50%);
-  opacity: 0.4;
-  border-radius: 2px;
-}
-
-/* Cloud Shape for Book Description */
-.book-description {
-  font-size: medium;
-  background-color: #9bf572;
-  font-weight: bolder;
-  padding: 1rem;
-  color: #656060;
-  line-height: 1.4;
-  width: 75%;
-  height: max-content;
-  margin-left: 20px;
-  border-radius: 50px / 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  position: relative;
-  margin-top: 1.5rem; /* Space above the description */
-  z-index: 1; /* Ensures it stays above other elements */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition effects */
-}
-
-.book-description:hover {
-  transform: translateY(-5px); /* Lift effect on hover */
-  background-color: #007bff;
   color: white;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  font-size: 2.2em;
+  margin-bottom: 20px;
 }
 
-/* Decorative elements for book-description */
-.book-description::after,
-.book-description::before {
-  content: '';
-  position: absolute;
-  background-color: #ffffff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden; /* Hide overflow for a clean look */
+  width: calc(300px * 3 + 20px * 2); /* Width for 3 cards and margins */
+  margin: 0 auto; /* Center the carousel */
 }
 
-.book-description::before {
-  width: 30px;
-  height: 30px;
-  bottom: -10px;
-  left: 10%;
-  background-color: #0f0f0f;
-}
-
-.book-description::after {
-  width: 40px;
-  height: 40px;
-  top: -25px;
-  right: 10%;
-}
-
-/* Emoji Styling */
-.emoji {
-  font-size: 1.5rem;
-  margin-right: 1rem;
-  transition: transform 0.2s ease;
-}
-
-.books-list li:hover .emoji {
-  transform: scale(1.2); /* Scale emoji on hover */
-}
-
-/* Additional Styling for Body */
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  margin: 0;
+.books-list {
+  list-style-type: none;
   padding: 0;
-  background-color: #f4f4f4;
+  display: flex;
+  transition: transform 0.5s ease; /* Smooth transition for sliding */
 }
 
-   /* end code  */
+/* Individual book cards */
+.book-card {
+  height: 400px;
+  width: 300px; /* Card width */
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background-color: #eeeef0;
+  margin: 0 10px; /* Added margin between cards */
+  flex-shrink: 0; /* Prevent cards from shrinking */
+}
+
+/* Existing styles for book cards, images, and info remain unchanged... */
+
+/* Carousel buttons */
+.carousel-button {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5em;
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}
+
+.carousel-button:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
   </style>
+
+ <script>
+  let currentIndex = 0; // Current index of the first book card to display
+const visibleCards = 3; // Number of visible cards at a time
+
+function moveSlide(direction) {
+  const booksList = document.querySelector('.books-list');
+  const totalBooks = document.querySelectorAll('.books-list li').length;
+
+  // Update the current index based on direction
+  currentIndex += direction;
+
+  // Loop the carousel
+  if (currentIndex < 0) {
+    currentIndex = 0; // Do not go past the first set
+  } else if (currentIndex > totalBooks - visibleCards) {
+    currentIndex = totalBooks - visibleCards; // Do not go past the last set
+  }
+
+  // Move the list
+  const slideWidth = -currentIndex * (300 + 20); // Width of card + gap
+  booksList.style.transform = `translateX(${slideWidth}px)`;
+}
+
+// Add event listeners for carousel buttons
+document.querySelector('.carousel-button.prev').addEventListener('click', () => moveSlide(-1));
+document.querySelector('.carousel-button.next').addEventListener('click', () => moveSlide(1));
+
+ </script>
 </body>
 
 
@@ -1248,7 +1337,7 @@ body {
 <div class="row" id="footer">
     <div class="col-lg-4 col-md-6 col-sm-8">
         <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-          <img src="./assets/images/l (2).png" alt="FinVeda Logo" style="height: 80px; width: auto; margin-bottom: 15px;" />
+          <img src="./assets/images/FinvedaLogo.png" alt="FinVeda Logo" style="height: 80px; width: auto; margin-bottom: 15px;" />
             <p class="text custom-margin">
                 We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
             </p>
@@ -1268,6 +1357,20 @@ body {
                     <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
                 </ul>
             </div>
+
+            <ul class="link custom-margin">
+              <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+              <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
+              <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
+              <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+              <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+              <li><a href="./blogs/sitemap.html"><i class="fa-solid fa-sitemap"></i> Site Map</a></li>
+            </ul>
+          </div>
+          <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+            <div class="footer-title">
+              <h4 class="title custom-margin">Resources</h4>
+
             <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
                 <div class="footer-title">
                     <h4 class="title custom-margin">Resources</h4>
@@ -1280,6 +1383,7 @@ body {
                     <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
                     <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
                 </ul>
+
             </div>
         </div>
     </div>
@@ -1307,7 +1411,8 @@ body {
                     </div>
                 </li>
                 <li class="d-sm-flex justify-content-center">
-                    <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 12px; width: 10%;"></i>
+                    <!-- Modified: Inline CSS to adjust logo size and sync with other pages -->
+                    <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font: 12px; width: 10%;"></i>
                     <div style="width: 80%;">
                         <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
                            style="color:#fff">
@@ -1315,12 +1420,13 @@ body {
                         </a>
                     </div>
                 </li>
+                <!-- Added: Social Media Redirects -->
                 <div class="social-icons">
-                  <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                  <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                  <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                  <a href="#"><i class="fa-brands fa-discord"></i></a>
-                  <a href="#"><i class="fa-brands fa-github"></i></a>
+                  <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                  <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
+                  <a href="https://discord.com/"><i class="fa-brands fa-discord"></i></a>
+                  <a href="https://github.com/ayush-that/FinVeda"><i class="fa-brands fa-github"></i></a>
               </div>
             </ul>
         </div>
