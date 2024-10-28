@@ -565,6 +565,123 @@ body {
 </div>
 
 <style>
+  /* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap');
+
+/* Base styles for the blog content */
+.blog-content {
+    max-width: 1400px;
+    margin: auto;
+    padding: 30px;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background effect */
+.blog-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(241, 196, 15, 0.1), rgba(230, 126, 34, 0.1));
+    z-index: 0;
+    border-radius: 10px;
+}
+
+/* Header styles */
+.header h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: #e67e22;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Last update date styles */
+.Lastupdate {
+    text-align: center;
+    font-style: italic;
+    color: #7f8c8d;
+    z-index: 1;
+    position: relative;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
+
+/* Card styles */
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(241, 196, 15, 0.5), 0 0 30px rgba(241, 196, 15, 0.3);
+    margin-bottom: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    z-index: 1;
+}
+
+/* Hover effect for cards */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(241, 196, 15, 0.7), 0 0 40px rgba(241, 196, 15, 0.4);
+}
+
+/* Paragraph styles */
+p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Custom list styles */
+ul.ps-4.ms-4 {
+    list-style: circle;
+    font-size: 1em;
+    color: #333;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+    position: relative;
+    color: #e74c3c;
+}
+
+li::before {
+    content: '✓';
+    color: #e67e22;
+    position: absolute;
+    left: -20px;
+}
+
+/* Heading styles for bolded text */
+strong {
+    font-weight: 700;
+    color: #e74c3c;
+}
+
+/* Italics for emphasis */
+i {
+    color: #2980b9;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .blog-content {
+        padding: 15px;
+    }
+}
+
+</style>
+
+<!-- <style>
     .blog-content {
         text-align: left;
         margin-left: auto;
@@ -583,7 +700,7 @@ body {
         transform: scale(1.02);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
-</style>
+</style> -->
   
 <!-- Timed popup that will appear after succesful submission of feebback form! -->
     <button class="notification" id="successnotification" style="display:none;">
