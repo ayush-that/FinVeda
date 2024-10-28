@@ -1173,50 +1173,7 @@ registerCloseButton.addEventListener("click", function() {
             padding: 0px;
 
         }
- footer
-
-        .container {
  
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        label {
-            display: block;
-            margin: 15px 0 5px;
-            color: #555;
-        }
-        input[type="number"] {
-            
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        .result {
-            font-weight: bold;
-            color: #007bff;
-            margin-top: 10px;
-        }
-        .btn {
-            width: 100%;
-            padding: 10px;
-            background-color: #28a745;
-            border: none;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .btn:hover {
-            background-color: #218838;
-        }
     </style>
 </head>
 <body>
@@ -2147,30 +2104,31 @@ registerCloseButton.addEventListener("click", function() {
 
 <footer id="footer" class="footer-area pt-120">
   <div class="container">
-    <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-      <div class="row">
-        <div class="col-lg-10">
-          <div class="subscribe-content mt-60">
-            <h2 class="subscribe-title">
-              Subscribe Our Newsletter <span>Get Regular Updates</span>
-            </h2>
-          </div>
+  <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="subscribe-content mt-45">
+          <h2 class="subscribe-title">
+            Subscribe Our Newsletter <span>get regular updates</span>
+          </h2>
         </div>
-        <div class="col-lg-8">
-          <div class="subscribe-form mt-60">
-            <form id="unique-subscribe-form">
-              <input type="email" id="unique-news-email" aria-colspan="6" placeholder="Enter Email"  required  />
-              <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
-            </form>
-            <div id="unique-message" class="unique-popup-message" style="display: none;">
-              <div class="border-animation"></div>
-              Thank You for the subscription!
-            </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="subscribe-form mt-50">
+          <form id="unique-subscribe-form">
+            <input type="email" id="unique-news-email" placeholder="Enter Email" required style="width: 100%; margin-left: 40px; margin-bottom: 45px;"/>
+            <button class="unique-main-btn" id="unique-subscribe-btn" type="submit" style=" margin-top: 5px;">Subscribe</button>
+          </form>
+          <div id="unique-message" class="unique-popup-message" style="display: none;">
+            <div class="border-animation"></div>
+            Thank You for the subscription!
           </div>
         </div>
       </div>
     </div>
   </div>
+  </div>
+
   <script>
     document.getElementById('unique-subscribe-form').addEventListener('submit', function (event) {
       event.preventDefault(); // Prevent form from submitting normally
