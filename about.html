@@ -785,51 +785,153 @@ prevButton.addEventListener('click', () => {
 </script>
 
 
-  <div class="blog-content back">
-    <div class="good-card">
-      <div class="good-card1">
-        <div class="white-card" style="padding: 30px;">
-          Wanna learn how to grow your money to become rich? We have made becoming a stock market Guru easy with our AI
-          powered finance advisor - Arth Sathi 🤵🏻
-
-        </div>
-        <div class="color-card green">
-
-        </div>
-        <div class="shadow"></div>
+<div class="blog-content back">
+  <div id="good-card">
+      <div id="good-card1">
+        <h1 class="head">Grow with Arth</h1>
+          <div id="white-card1" style="padding: 30px;">
+              Wanna learn how to grow your money to become rich? We have made becoming a stock market Guru easy with our AI
+              powered finance advisor - Arth Sathi 🤵🏻
+          </div>
+          <div id="color-card-green">
+              <!-- Add content or styles if needed -->
+          </div>
+          <div id="shadow1"></div>
       </div>
-      <div class="good-card2">
-        <div class="round1">
-
-        </div>
-        <div class="round2">
-
-        </div>
-        <div class="white-card" style="padding: 30px;">
-          FinVeda trends fetches live market figures, ensuring users access the most up-to-date information instantly.
-          Be it stock prices, currency rates, or commodity values.
-        </div>
-        <div class="color-card orange">
-
-        </div>
-        <div class="shadow"></div>
+      <div id="good-card2">
+          <div id="round1">
+              <!-- Add content or styles if needed -->
+          </div>
+          <div id="round2">
+              <!-- Add content or styles if needed -->
+          </div>
+          <h1 class="head">Live Market Trends</h1>
+          <div id="white-card2" style="padding: 30px;">
+              FinVeda trends fetches live market figures, ensuring users access the most up-to-date information instantly.
+              Be it stock prices, currency rates, or commodity values.
+          </div>
+          <div id="color-card-orange">
+              <!-- Add content or styles if needed -->
+          </div>
+          <div id="shadow2"></div>
       </div>
-      <div class="good-card3">
-        <div class="white-card" style="padding: 30px;">
-          FinVeda tools provide a range of calculators like Mutual Fund Investment tool,EMI calculator, Insurance
-          calculator, Savings Goods etc which would make your life easy
-        </div>
-        <div class="color-card purple">
-
-        </div>
-        <div class="shadow"></div>
+      <div id="good-card3">
+        <h1 class="head">FinVeda Tools</h1>
+          <div id="white-card3" style="padding: 30px;">
+              FinVeda tools provide a range of calculators like Mutual Fund Investment tool, EMI calculator, Insurance
+              calculator, Savings Goods etc which would make your life easy.
+          </div>
+          <div id="color-card-purple">
+              <!-- Add content or styles if needed -->
+          </div>
+          <div id="shadow3"></div>
       </div>
-    </div>
-
-    <img style="position: absolute; top: 5px; left: 400px; mix-blend-mode: multiply;"
-      src="./assets/images/contributors.jpeg" alt="photo">
   </div>
 
+  <img style="position: absolute; top: 5px; left: 400px; mix-blend-mode: multiply;" src="./assets/images/contributors.jpeg" alt="photo">
+</div>
+
+<style>
+  .head{
+    justify-self: center;
+    font-size:1.5rem;
+  }
+  /* Overall background and padding for the blog content */
+#good-card {
+  border: 10px solid white;
+  display: flex;
+  justify-content: space-evenly;
+  background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%); /* Soft gradient background */
+  padding: 40px; /* Increased padding for more spacing */
+  border-radius: 10px; /* Rounded corners */
+  max-width: 1200px; /* Max width for centering */
+  margin: 0 auto; /* Center the section */
+}
+
+/* Individual good cards styling */
+#good-card1, #good-card2, #good-card3 {
+  margin-top: 180px;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%); /* Gradient background */
+  border-radius: 12px; /* Slightly rounded corners */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  padding: 25px; /* Padding for spacing */
+  position: relative; /* Position for shadow overlay */
+  margin-bottom: 10px; /* Space between cards */
+  transition: transform 0.4s ease, box-shadow 0.4s ease; /* Smooth transition effects */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+#good-card1 {
+  background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%); /* Gradient for card 1 */
+}
+
+#good-card2 {
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%); /* Gradient for card 2 */
+}
+
+#good-card3 {
+  background: linear-gradient(135deg, #d9baf6 0%, #bfa2f9 100%); /* Gradient for card 3 */
+}
+
+
+#good-card1:hover, #good-card2:hover, #good-card3:hover {
+  transform: scale(1.05); /* Slight scaling effect */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* More prominent shadow */
+}
+
+
+#white-card1, #white-card2, #white-card3 {
+  color: #1e293b; /* Darker text for readability */
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+
+#color-card-green, #color-card-orange, #color-card-purple {
+  border-radius: 12px; /* Rounded corners for color cards */
+}
+
+#shadow1, #shadow2, #shadow3 {
+  position: absolute; 
+  width: 100%; 
+  height: 100%; 
+  background: rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  border-radius: 12px; /* Match the card's border radius */
+  top: 0; 
+  left: 0; 
+  z-index: 1; /* Make sure shadow is under content */
+}
+
+
+
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0); /* Start and end at the original position */
+  }
+  40% {
+    transform: translateY(-10px); /* Move up */
+  }
+  60% {
+    transform: translateY(-5px); /* Move down slightly */
+  }
+}
+
+
+#good-card1, 
+#good-card2, 
+#good-card3 {
+  animation: bounce 2s infinite; /* Continuous bounce animation */
+}
+
+
+#good-card1, #good-card2, #good-card3 {
+  transition: box-shadow 0.4s ease; /* Keep shadow transition */
+}
+
+</style>
 
   <section class="contributors">
     <h2>Our Contributors</h2>
