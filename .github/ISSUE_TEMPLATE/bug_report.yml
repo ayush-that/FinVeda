@@ -1,40 +1,48 @@
-name: Bug Report
-description: Report a bug you found
-title: "[Bug Title here] "
-labels: "bug"
+
+name: "🐞 Bug Report"
+description: "Create a detailed report to help us improve"
+title: "BUG:"
+labels: ["Bug"]
 body:
-  - type: markdown
+  - type: checkboxes
     attributes:
-      value: |
-        Thanks for taking the time to fill out this bug report!
-
-  - type: textarea #description
-    attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
-      placeholder: Tell us what you see!
-    validations:
-      required: true
-
-  - type: textarea #reproduce
-    attributes:
-      label: How can we reproduce this bug?
-      description: Are there any specific steps you had to take in order to trigger the bug, and what is the expected behaviour we should expect?
-      placeholder: Kindly elaborate.
-    validations:
-      required: true
-
-  - type: textarea #desktop info
-    attributes:
-      label: Desktop Information (Optional)
-      description: Please provide the desktop configuration (OS,Browser, dependency version etc)
-      placeholder: Type here.
-
-  - type: dropdown #urgent
-    attributes:
-      label: Urgency (Optional)
-      description: How urgent do you think it is to fix this bug?
+      label: "Preliminary Check"
+      description: "Please confirm the following before reporting a bug."
       options:
-        - Low priority
-        - Medium priority
-        - High priority
+        - label: "I have searched the existing issues"
+          required: true
+        - label: "This issue is reproducible"
+          required: true
+  - type: textarea
+    attributes:
+      label: "Bug Summary"
+      description: "Provide a concise summary of the bug, including what you expected to happen and what actually happened."
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Steps to Reproduce"
+      description: "List the steps to reproduce the bug. Include specific details so that we can easily replicate the issue."
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Expected Behavior"
+      description: "What did you expect to happen instead?"
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: "Screenshots/Logs"
+      description: "If applicable, add screenshots or logs that can help us understand the issue better."
+    validations:
+      required: false
+  - type: checkboxes
+    attributes:
+      label: "Additional Information"
+      options:
+        - label: "I agree to follow this project's Code of Conduct"
+          required: true
+        - label: "I'm a GSSOC'24 contributor"
+        - label: "I want to work on this issue"
+        - label: "I can provide more details if needed"
