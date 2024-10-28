@@ -5,7 +5,7 @@
     <title>Privacy Policy - FinVeda</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" href="../assets/images/favicon2.png" type="image/png" />
+    <link rel="shortcut icon" href="/assets/images/favicon2.webp" type="image/png" />
     <link rel="stylesheet" href="../assets/css/animate.css" />
     <link rel="stylesheet" href="../assets/css/magnific-popup.css" />
     <link rel="stylesheet" href="../assets/css/slick.css" />
@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="../assets/css/default.css" />
     <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="stylesheet" href="../assets/css/popup.css" />
+    <!-- Linked CSS for social logos -->
+    <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <style>
       #progressBar {
@@ -115,9 +117,118 @@
           color: rgb(77, 77, 77) !important;
         }
 
+body {
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode h2 {
+  /* background-color: #121212 !important; */
+  /* color: #e0e0e0 !important; */
+}
+
 
   </style>
+<style>
+  .blog-content {
+      text-align: left;
+      margin: 0 auto;
+      max-width: 80%;
+      padding: 40px; /* Added padding for spacing */
+      background-color: #fdfdfd; /* Subtle off-white background */
+      border-radius: 15px; /* Rounded corners */
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+      transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+  }
 
+  .blog-content:hover {
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+  }
+
+  .blog-content h1 {
+      font-size: 2.8rem; /* Adjusted font size */
+      margin-bottom: 20px; /* Space below title */
+      color: #2c3e50; /* Darker title color */
+      text-align: center; /* Centered title */
+      font-weight: 700; /* Bold title */
+      letter-spacing: 1px; /* Slightly increased letter spacing */
+  }
+
+  .blog-content h4 {
+      font-size: 1.6rem; /* Adjusted section heading size */
+      margin: 30px 0 15px; /* Space around section headings */
+      color: #2980b9; /* Blue color for section headings */
+      border-bottom: 2px solid #2980b9; /* Underline effect */
+      padding-bottom: 5px; /* Space below the underline */
+  }
+
+  .blog-content p {
+      line-height: 1.6; /* Improved line height */
+      margin-bottom: 20px; /* Space below paragraphs */
+      color: #34495e; /* Dark grey for text */
+      font-size: 1.1rem; /* Standard font size */
+      font-family: 'Arial', sans-serif; /* Clear font */
+  }
+
+  .blog-content a {
+      color: #2980b9; /* Primary link color */
+      text-decoration: none; /* Remove underline */
+      font-weight: 600; /* Semi-bold links */
+      transition: color 0.3s ease; /* Smooth transition */
+  }
+
+  .blog-content a:hover {
+      color: #1a5276; /* Darker color on hover */
+      text-decoration: underline; /* Underline on hover for clarity */
+  }
+
+  .blog-content ul,
+  .blog-content ol {
+      padding-left: 20px; /* Indentation for lists */
+      margin-bottom: 20px; /* Space below lists */
+      color: #444; /* Darker color for list text */
+      list-style-position: inside; /* Inside for better alignment */
+  }
+
+  .blog-content li {
+      margin-bottom: 10px; /* Space between list items */
+      font-size: 1.1rem; /* Consistent font size */
+  }
+
+  /* Subtle alternating background for paragraphs */
+  .blog-content p:nth-child(even) {
+      background-color: #f8f8f8; /* Light grey for even paragraphs */
+      padding: 10px; /* Padding for even paragraphs */
+      border-radius: 5px; /* Rounded corners for even paragraphs */
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+      .blog-content {
+          max-width: 90%; /* Wider on small screens */
+          padding: 25px; /* Adjust padding */
+      }
+
+      .blog-content h1 {
+          font-size: 2.4rem; /* Smaller title size */
+      }
+
+      .blog-content h4 {
+          font-size: 1.5rem; /* Smaller heading size */
+      }
+
+      .blog-content p,
+      .blog-content li {
+          font-size: 1rem; /* Smaller text size */
+      }
+  }
+</style>
 <body>
 
   <div class="circle-container">
@@ -201,6 +312,15 @@
       var scrolled = (winScroll / height) * 100;
       document.getElementById("progressBar").style.width = scrolled + "%";
   };
+
+  window.addEventListener("DOMContentLoaded", (event) => {
+      const savedTheme = localStorage.getItem("theme");
+
+      // Apply the theme if stored
+      if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+    });
  </script>
 
 <div class="preloader">
@@ -232,6 +352,11 @@
               <span class="toggler-icon"></span>
             </button> -->
             <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+              <a href="./index.html">
+                <div class="icon1">
+                  <img src="../assets/images/l (1).png" alt="icon.png">
+                </div>
+              </a>
               <ul id="nav" class="navbar-nav">
                 <li class="nav-item">
                   <a class="page-scroll" href="../index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
@@ -258,7 +383,7 @@
                   <a class="page-scroll" href="../contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
                 </li>
                <li class="nav-item no-underline">
-                  <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
+                  <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="/FinVeda/loginPage.html" >Login/Register 💻</a>
                 </li>
               </ul>
             </div>
@@ -390,37 +515,64 @@
         style="background-image: url(../assets/images/banner-bg.svg)"
         >
         <div class="container">
+          <h2 class="head-animate" style="font-size: 90px;">
+            WELCOME TO FINVEDA
+          </h2>
           <div class="row justify-content-center">
             <div class="col-lg-8">
               <div class="header-hero-content text-center">
-                <h3
-                  class="header-sub-title wow fadeInUp"
-                  data-wow-duration="1.3s"
-                  data-wow-delay="0.2s"
-                  >
-                  Say 👋🏼 to FinVeda
-                </h3>
-                <h2
-                  class="header-title wow fadeInUp"
-                  data-wow-duration="1.3s"
-                  data-wow-delay="0.5s"
-                  >
-                  your savvy financial companion
-                </h2>
-                <p
-                  class="text wow fadeInUp"
-                  data-wow-duration="1.3s"
-                  data-wow-delay="0.8s"
-                  >
-                  Wanna learn how to grow your money to become rich? We have made becoming a stock market Guru easy with our AI powered finance advisor - <b>Arth Sathi 🤵🏻</b>
+                <style>
+                  .head-animate {
+                    text-align: center;
+                    position: relative;
+                    top: 200px;
+                    color: transparent;
+                    -webkit-text-stroke: 2px white;
+                    font-weight: bold;
+                    background: url(../assets/images/back.png);
+                    -webkit-background-clip: text;
+                    background-position: 0 0;
+                    animation: back 20s linear infinite, hovering 1.5s ease-in-out infinite;
+                    ;
+                  }
+
+                  @keyframes back {
+                    100% {
+                      background-position: 2000px 0;
+                    }
+                  }
+
+                  @keyframes hovering {
+                    0% {
+                      transform: translateY(0);
+                    }
+
+                    50% {
+                      transform: translateY(-5px);
+                    }
+
+                    100% {
+                      transform: translateY(0);
+                    }
+                  }
+
+                  .header-hero-content h2 {
+                    font-size: 200px;
+                  }
+                </style>
+                <br>
+                <br>
+                <p class="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s"
+                  style="visibility: visible; animation-duration: 1.3s; animation-delay: 0.8s;">
+                  Wanna learn how to grow your money to become rich? We have
+                  made becoming a stock market Guru easy with our AI
+                  powered finance advisor - <b>Arth Sathi 🤵🏻</b>
                 </p>
-                <a
-                  href="../index.html"
-                  class="main-btn wow fadeInUp"
-                  data-wow-duration="1.3s"
-                  data-wow-delay="1.1s"
-                  >Chat with ArthaSathi 💬</a
-                  >
+                <a href="#" class="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s"
+                  onclick="window.botpressWebChat.sendEvent({ type: 'show' }); return false;"
+                  style="visibility: visible; animation-duration: 1.3s; animation-delay: 1.1s;">
+                  Chat with ArthaSathi 💬
+                </a>
               </div>
             </div>
           </div>
@@ -439,99 +591,115 @@
         <div id="particles-1" class="particles"></div>
       </div>
     </header>
-    <div class="blog-content">
+   <div class="blog-content">
       <article>
-        <br><br><br><br>
-        <div class="header">
-        <h1 style="text-align: center;">Privacy Policy</h1>
-        </div><br>
-        <div class="Lastupdate">
-          Last updated: <span id="last-updated-date"></span>
-        </div>
-        <br>
-        <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
-        <br>
-        <p>We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy.</p>
-        <br><ol style="list-style: decimal;">
-        <li><h4>Personal Data</h4></li>
-        <br>
-        <p>While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:</p>
-        <br>
-        <ul style="list-style: circle; font-size: x-large; color: black;">
-          <li>
-            <p>Email address</p>
-          </li>
-          <li>
-            <p>First name and last name</p>
-          </li>
-          <li>
-            <p>Phone number</p>
-          </li>
-          <li>
-            <p>Usage Data</p>
-          </li>
-        </ul>
-        <br>
-        <li><h4>Usage Data</h4>
-        <br>
-        <p>Usage Data is collected automatically when using the Service.</p>
-        <br>
-        <p>Usage Data may include information such as Your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data.</p>
-        <br>
-        <p>When You access the Service by or through a mobile device, We may collect certain information automatically, including, but not limited to, the type of mobile device You use, Your mobile device unique ID, the IP address of Your mobile device, Your mobile operating system, the type of mobile Internet browser You use, unique device identifiers and other diagnostic data.</p>
-        <br>
-        <p>We may also collect information that Your browser sends whenever You visit our Service or when You access the Service by or through a mobile device.</p>
-        <br></li>
-        <li><h4>Information from Third-Party Social Media Services</h4>
-        <br>
-        <p>The Company allows You to create an account and log in to use the Service through the following Third-party Social Media Services:</p>
-        <br>
-        <ul style="list-style: circle;">
-          <li>Google</li>
-          <li>Facebook</li>
-          <li>Instagram</li>
-          <li>Twitter</li>
-          <li>LinkedIn</li>
-        </ul>
-        <br>
-        <p>If You decide to register through or otherwise grant us access to a Third-Party Social Media Service, We may collect Personal data that is already associated with Your Third-Party Social Media Service's account, such as Your name, Your email address, Your activities or Your contact list associated with that account.</p>
-        <br>
-        <p>You may also have the option of sharing additional information with the Company through Your Third-Party Social Media Service's account. If You choose to provide such information and Personal Data, during registration or otherwise, You are giving the Company permission to use, share, and store it in a manner consistent with this Privacy Policy.</p>
-        <br></li>
-        <li><h4>Tracking Technologies and Cookies</h4>
-        <br>
-        <p>We use Cookies and similar tracking technologies to track the activity on Our Service and store certain information. Tracking technologies used are beacons, tags, and scripts to collect and track information and to improve and analyze Our Service. The technologies We use may include:</p>
-        <br>
-        <ol style="list-style: decimal;">
-          <li><strong>Cookies -</strong> A cookie is a small file placed on Your Device. You can instruct Your browser to refuse all Cookies or to indicate when a Cookie is being sent. However, if You do not accept Cookies, You may not be able to use some parts of our Service. Unless you have adjusted Your browser setting so that it will refuse Cookies, our Service may use Cookies.</li>
+          <br><br><br><br>
+          <div class="header">
+              <h1 style="text-align: center;">Privacy Policy</h1>
+          </div>
           <br>
-          <li><strong>Web Beacons -</strong> Certain sections of our Service and our emails may contain small electronic files known as web beacons (also referred to as clear gifs, pixel tags, and single-pixel gifs) that permit the Company, for example, to count users who have visited those pages or opened an email and for other related website statistics (for example, recording the popularity of a certain section and verifying system and server integrity).</li>
-        </ol>
-        <br></li>
-        <li><h4>Children's Privacy</h4>
-        <br>
-        <p>Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 13 without verification of parental consent, We take steps to remove that information from Our servers.</p>
-        <br>
-        <p>If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent's consent before We collect and use that information.</p>
-        <br></li>
-        <li><h4>Links to Other Websites</h4>
-        <br>
-        <p>Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party's site. We strongly advise You to review the Privacy Policy of every site You visit. We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.</p>
-        <br></li>
-        <li><h4>Changes to this Privacy Policy</h4>
-        <br>
-        <p>We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
-        </li>
-          </ol>
+          <div class="Lastupdate">
+              Last updated: <span id="last-updated-date"></span>
+          </div>
+          <br>
+          <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
+          <br>
+          <p>We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy.</p>
+          <br>
+  
+          <div class="card">
+              <h4>1. Personal Data</h4>
+              <p>While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:</p>
+              <ul style="list-style: circle; font-size: x-large; color: black;">
+                  <li>Email address</li>
+                  <li>First name and last name</li>
+                  <li>Phone number</li>
+                  <li>Usage Data</li>
+              </ul>
+          </div>
+          <br>
+  
+          <div class="card">
+              <h4>2. Usage Data</h4>
+              <p>Usage Data is collected automatically when using the Service.</p>
+              <p>Usage Data may include information such as Your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data.</p>
+              <p>When You access the Service by or through a mobile device, We may collect certain information automatically, including, but not limited to, the type of mobile device You use, Your mobile device unique ID, the IP address of Your mobile device, Your mobile operating system, the type of mobile Internet browser You use, unique device identifiers and other diagnostic data.</p>
+              <p>We may also collect information that Your browser sends whenever You visit our Service or when You access the Service by or through a mobile device.</p>
+          </div>
+          <br>
+  
+          <div class="card">
+              <h4>3. Information from Third-Party Social Media Services</h4>
+              <p>The Company allows You to create an account and log in to use the Service through the following Third-party Social Media Services:</p>
+              <ul style="list-style: circle;">
+                  <li>Google</li>
+                  <li>Facebook</li>
+                  <li>Instagram</li>
+                  <li>Twitter</li>
+                  <li>LinkedIn</li>
+              </ul>
+              <p>If You decide to register through or otherwise grant us access to a Third-Party Social Media Service, We may collect Personal data that is already associated with Your Third-Party Social Media Service's account, such as Your name, Your email address, Your activities or Your contact list associated with that account.</p>
+              <p>You may also have the option of sharing additional information with the Company through Your Third-Party Social Media Service's account. If You choose to provide such information and Personal Data, during registration or otherwise, You are giving the Company permission to use, share, and store it in a manner consistent with this Privacy Policy.</p>
+          </div>
+          <br>
+  
+          <div class="card">
+              <h4>4. Tracking Technologies and Cookies</h4>
+              <p>We use Cookies and similar tracking technologies to track the activity on Our Service and store certain information. Tracking technologies used are beacons, tags, and scripts to collect and track information and to improve and analyze Our Service. The technologies We use may include:</p>
+              <ol style="list-style: decimal;">
+                  <li><strong>Cookies -</strong> A cookie is a small file placed on Your Device. You can instruct Your browser to refuse all Cookies or to indicate when a Cookie is being sent. However, if You do not accept Cookies, You may not be able to use some parts of our Service. Unless you have adjusted Your browser setting so that it will refuse Cookies, our Service may use Cookies.</li>
+                  <br>
+                  <li><strong>Web Beacons -</strong> Certain sections of our Service and our emails may contain small electronic files known as web beacons (also referred to as clear gifs, pixel tags, and single-pixel gifs) that permit the Company, for example, to count users who have visited those pages or opened an email and for other related website statistics (for example, recording the popularity of a certain section and verifying system and server integrity).</li>
+              </ol>
+          </div>
+          <br>
+  
+          <div class="card">
+              <h4>5. Children's Privacy</h4>
+              <p>Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 13 without verification of parental consent, We take steps to remove that information from Our servers.</p>
+              <p>If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent's consent before We collect and use that information.</p>
+          </div>
+          <br>
+  
+          <div class="card">
+              <h4>6. Links to Other Websites</h4>
+              <p>Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party's site. We strongly advise You to review the Privacy Policy of every site You visit. We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.</p>
+          </div>
+          <br>
+  
+          <div class="card">
+              <h4>7. Changes to this Privacy Policy</h4>
+              <p>We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+          </div>
       </article>
-    </div>
+  </div>
+  
+
+  
     <style>
       .blog-content {
       text-align: left;
       margin-left: auto;
       margin-right: auto;
+      padding: 20px;
       max-width: 80%; /* Adjust this value to increase or decrease the margins */
       }
+
+
+      .card {
+          border: 1px solid #ccc;
+          border-radius: 8px;
+          padding: 16px;
+          margin: 16px 0;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s, box-shadow 0.3s;
+      }
+  
+      .card:hover {
+          transform: scale(1.02);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
     </style>
 
   
@@ -601,6 +769,8 @@
                 data-wow-duration="1s"
                 data-wow-delay="0.2s"
                 >
+                <!-- Updated the Page Logo -->
+                <img src="../assets/images/FinvedaLogo.png" alt="FinVeda Logo" style="height: 80px; width: auto; margin-bottom: 15px;" />
                 <p class="text">
                   We at FinVeda aim to make you a stock market Guru easy with our AI powered teaching and financial blogs.
                 </p>
@@ -614,14 +784,16 @@
                   data-wow-delay="0.4s"
                   >
                   <div class="footer-title">
-                    <h4 class="title">Quick Link</h4>
+                    <!-- Renamed to Quick Links as other pages -->
+                    <h4 class="title">Quick Links</h4>
                   </div>
                   <ul class="link">
-                  <li><a href="./privacy-policy.html">Privacy Policy</a></li>
-                  <li><a href="./refund-policy.html">Refund Policy</a></li>
-                  <li><a href="/Licensing.html">Licensing</a></li>
-                  <li><a href="./terms-of-service.html">Terms of Service</a></li>
-                  <li><a href="/contributors.html">Our Contributors</a></li>
+                    <!-- Added: logos for the options -->
+                  <li><a href="./privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+                  <li><a href="./refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
+                  <li><a href="/Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
+                  <li><a href="./terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+                  <li><a href="/contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
                   </ul>
                 </div>
                 <div
@@ -633,12 +805,13 @@
                     <h4 class="title">Resources</h4>
                   </div>
                   <ul class="link">
-                    <li><a href="/index.html">Home</a></li>
-                    <li><a href="/about.html">About Us</a></li>
-                    <li><a href="/trends.html">Trends</a></li>
-                    <li><a href="/tools/sip.html">Tools</a></li>
-                    <li><a href="/blog.html">Blog</a></li>
-                    <li><a href="/quiz.html">Quiz</a></li>
+                    <!-- Added: logos for the options -->
+                    <li><a href="/index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="/about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="/trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
+                    <li><a href="/tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
+                    <li><a href="/blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                    <li><a href="/quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
                   </ul>
                 </div>
               </div>
@@ -673,6 +846,15 @@
                         style="color:#fff">
                         Delhi, India</a></div>
                   </li>
+                  <!-- Added Social Logos -->
+                  <!-- Added: Social Media Redirects -->
+                  <div class="social-icons">
+                    <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://discord.com/"><i class="fa-brands fa-discord"></i></a>
+                    <a href="https://github.com/ayush-that/FinVeda"><i class="fa-brands fa-github"></i></a>
+                </div>
                 </ul>
               </div>
             </div>
@@ -693,7 +875,7 @@
               >
                 <div class="copyright-content" style="text-align: center">
                   <p class="text" style="text-align: center">
-                    © <span id="copyright-year"></span> FinVeda. All rights
+                    © <span id="copyright-year">2024</span> FinVeda. All rights
                     reserved<br />
                     Made with ♥ in India
                   </p>

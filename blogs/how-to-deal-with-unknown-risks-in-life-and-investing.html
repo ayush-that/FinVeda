@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="shortcut icon"
-      href="../assets/images/Favicon1.ico"
+      href="/assets/images/favicon2.webp"
       type="image/png"
       />
     <link rel="stylesheet" href="../assets/css/animate.css" />
@@ -57,7 +57,125 @@ z-index: 9999;
         background-color: #f76b45;
         z-index: 9999;
       }
+
+body {
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode h2 {
+  background-color: #121212 !important;
+  color: #e0e0e0 !important;
+}
 </style>
+
+<style>
+article {
+    max-width: 800px;
+    margin: 20px auto; /* Center the article with spacing */
+    padding: 30px; /* Spacious padding for a clean look */
+    background: #ffffff; /* White background for clarity */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+    transition: transform 0.2s; /* Smooth hover effect */
+}
+
+article:hover {
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+h2 {
+    font-size: 26px; /* Emphasized heading size */
+    color: #007bff; /* Blue color for headings */
+    margin: 20px 0 15px; /* Spacing around heading */
+    border-bottom: 2px solid #eaeaea; /* Underline effect */
+    padding-bottom: 5px; /* Padding for spacing */
+}
+
+p {
+    margin-bottom: 20px; /* Consistent spacing */
+    line-height: 1.7; /* Improved readability */
+    font-size: 16px; /* Standard font size */
+    color: #333; /* Darker text color for contrast */
+}
+
+b {
+    color: #007bff; /* Highlighted text in blue */
+    font-weight: bold; /* Ensured boldness */
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #eee; /* Horizontal rule for separation */
+    margin: 30px 0; /* Spacing around horizontal rules */
+}
+
+ul {
+    list-style-type: disc; /* Bullet points for lists */
+    margin-left: 25px; /* Indentation for lists */
+    margin-bottom: 20px; /* Spacing for list below */
+    padding: 0; /* Remove default padding */
+}
+
+li {
+    margin-bottom: 10px; /* Space between list items */
+    line-height: 1.6; /* Improved spacing for clarity */
+}
+
+blockquote {
+    border-left: 4px solid #007bff; /* Distinct left border for quotes */
+    padding: 15px 20px; /* Padding for quotes */
+    background: #f9f9f9; /* Light background for quotes */
+    margin: 25px 0; /* Separation from other elements */
+    font-style: italic; /* Italics for quotes */
+    color: #555; /* Slightly lighter text color */
+    font-size: 1.1em; /* Slightly larger font for emphasis */
+}
+
+button {
+    background-color: #007bff; /* Button color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    padding: 12px 20px; /* Button padding */
+    cursor: pointer; /* Pointer on hover */
+    border-radius: 5px; /* Rounded corners for button */
+    transition: background-color 0.3s, transform 0.2s; /* Transition effects */
+    font-size: 16px; /* Consistent button text size */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: scale(1.05); /* Enlarge on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    article {
+        padding: 20px; /* Less padding on smaller screens */
+    }
+
+    h2 {
+        font-size: 22px; /* Smaller heading for mobile */
+    }
+
+    p, li {
+        font-size: 14px; /* Adjust font size for better readability */
+    }
+
+    button {
+        width: 100%; /* Full-width button on small screens */
+    }
+}
+
+</style>
+
 </head>
 <body>
 <div class="circle-container">
@@ -106,6 +224,15 @@ document.addEventListener("DOMContentLoaded", function () {
     coords.x = e.pageX;
     coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
   });
+  // When the blog page loads, check for the stored theme preference
+  window.addEventListener("DOMContentLoaded", (event) => {
+      const savedTheme = localStorage.getItem("theme");
+
+      // Apply the theme if stored
+      if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+    });
 
   function animateCircles() {
     let x = coords.x;
@@ -183,6 +310,11 @@ document.addEventListener("DOMContentLoaded", function () {
                   class="collapse navbar-collapse sub-menu-bar"
                   id="navbarSupportedContent"
                   >
+                  <a href="./index.html">
+                    <div class="icon1">
+                      <img src="../assets/images/icon.webp" alt="icon.png">
+                    </div>
+                  </a>
                   <ul id="nav" class="navbar-nav ml-auto">
                     <li class="nav-item">
                       <a class="page-scroll" href="../index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
@@ -382,37 +514,84 @@ document.addEventListener("DOMContentLoaded", function () {
         <div id="particles-1" class="particles"></div>
       </div>
     </header>
-    <div class="blog-content">
-      <article>
-        <br><br><br><br>
-        <p>
-        <h2>How to deal with Unknown Risks in Life and Investing?</h2>
-        </p><br>
-        <p>Unknown risks are those that are unpredictable, unforeseen, or beyond your control. They can arise from various sources, such as natural disasters, political upheavals, technological disruptions, or human errors. Unknown risks can have significant impacts on your life and investments, so it is important to be prepared and resilient.</p>
-        <br>
-        <p>Here are some strategies to help you deal with unknown risks in life and investing:</p>
-        <br>
-        <p><b>Assess your risk appetite and tolerance</b> - This is the amount of risk you are willing and able to take on, based on your financial and emotional situation. Your risk appetite and tolerance may vary depending on your goals, time horizon, and personal preferences. You should know how much money you can afford to lose, and how much volatility you can handle, without compromising your well-being or lifestyle.
-        <p><br>
-        <p><b>Diversify your portfolio </b> - This is the practice of spreading your investments across different asset classes, sectors, regions, and strategies. Diversification can help reduce the impact of any single risk factor on your portfolio, and increase your chances of capturing positive returns from various sources. You should diversify your portfolio according to your risk appetite and tolerance, and rebalance it periodically to maintain your desired allocation.</p>
-        <br>
-        <p><b>Have an emergency fund </b> - This is a pool of money that you can access quickly and easily in case of unexpected expenses or income loss. An emergency fund can help you cope with financial shocks, and avoid selling your investments at a loss or taking on high-interest debt. You should have an emergency fund that can cover at least 3 to 6 months of your essential living expenses, and keep it in a safe and liquid account.</p>
-        <br>
-        <p><b>Buy insurance </b> - This is a way of transferring some of the risks you face to a third party, such as an insurance company, in exchange for a fee or premium. Insurance can protect you and your family from the financial consequences of unforeseen events, such as accidents, illnesses, or death. You should buy insurance that covers your specific needs and risks, and review your coverage regularly to ensure it is adequate and up-to-date.</p>
-        <br>
-        <p><b>Learn and adapt </b> - This is the ability to acquire new knowledge and skills, and adjust your behavior and actions, in response to changing circumstances. Learning and adapting can help you cope with uncertainty, and seize new opportunities that may arise from unknown risks. You should keep yourself informed and educated about the world and the markets, and be flexible and open-minded to new ideas and possibilities.</p>
-        <br>
-        <p>These are some of the ways to deal with unknown risks in life and investing, but there are many more factors to consider. You should also seek professional advice from financial planners, accountants, lawyers, and mentors, who can help you assess your situation and plan accordingly. Dealing with unknown risks is a challenging but rewarding process that can help you grow and thrive in the long run.</p >
-      </article>
-    </div>
     <style>
-      .blog-content {
-      text-align: left;
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 80%; /* Adjust this value to increase or decrease the margins */
-      }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f9fc;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .blog-content {
+            text-align: left;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 800px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
     </style>
+</head>
+<body>
+    <div class="blog-content">
+        <article>
+            <h2>How to deal with Unknown Risks in Life and Investing?</h2>
+            <p>Unknown risks are those that are unpredictable, unforeseen, or beyond your control. They can arise from various sources, such as natural disasters, political upheavals, technological disruptions, or human errors. Unknown risks can have significant impacts on your life and investments, so it is important to be prepared and resilient.</p>
+            <p>Here are some strategies to help you deal with unknown risks in life and investing:</p>
+
+            <div class="card">
+                <div class="card-title">Assess your risk appetite and tolerance</div>
+                <p>This is the amount of risk you are willing and able to take on, based on your financial and emotional situation. Your risk appetite and tolerance may vary depending on your goals, time horizon, and personal preferences.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Diversify your portfolio</div>
+                <p>This is the practice of spreading your investments across different asset classes, sectors, regions, and strategies. Diversification can help reduce the impact of any single risk factor on your portfolio.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Have an emergency fund</div>
+                <p>This is a pool of money that you can access quickly and easily in case of unexpected expenses or income loss. An emergency fund can help you cope with financial shocks.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Buy insurance</div>
+                <p>This is a way of transferring some of the risks you face to a third party, such as an insurance company, in exchange for a fee or premium. Insurance can protect you and your family from the financial consequences of unforeseen events.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Learn and adapt</div>
+                <p>This is the ability to acquire new knowledge and skills, and adjust your behavior and actions, in response to changing circumstances. Learning and adapting can help you cope with uncertainty.</p>
+            </div>
+
+            <p>These are some of the ways to deal with unknown risks in life and investing, but there are many more factors to consider. You should also seek professional advice from financial planners, accountants, lawyers, and mentors, who can help you assess your situation and plan accordingly.</p>
+        </article>
+    </div>
 
   
 <!-- Timed popup that will appear after succesful submission of feebback form! -->
@@ -566,7 +745,7 @@ document.addEventListener("DOMContentLoaded", function () {
               >
                 <div class="copyright-content" style="text-align: center">
                   <p class="text" style="text-align: center">
-                    © <span id="copyright-year"></span> FinVeda. All rights
+                    © <span id="copyright-year">2024</span> FinVeda. All rights
                     reserved<br />
                     Made with ♥ in India
                   </p>

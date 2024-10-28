@@ -23,6 +23,54 @@ body {
   transition: background-color 0.3s, color 0.3s;
 
 }
+/* Dropdown Container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  z-index: 1;
+  margin-top: 5px;
+  border-radius: 8px;
+}
+
+/* Dropdown Items */
+.dropdown-menu li {
+  list-style: none;
+  padding: 8px 12px;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: black;
+  display: block;
+}
+
+/* Arrow Icon */
+.arrow {
+  font-size: 12px;
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+/* Arrow Rotation when Active */
+.dropdown.show .arrow {
+  transform: rotate(180deg);
+}
+
+/* Show Dropdown on Click */
+.dropdown.show .dropdown-menu {
+  display: block;
+}
+
 .theme-toggle {
   position: fixed;
   top: 10px;
@@ -36,19 +84,37 @@ body {
   font-size: 20px;
 }
 
-body.dark-mode {
-  background-color: var(--bg-color-dark);
-  color: var(--text-color-dark);
+.theme-toggle2 {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: #444;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 20px;
 }
+body.dark-mode {
+  background-color: #121212 !important; /* Use !important as a last resort */
+  color: #ffffff !important;
+}
+
 
 .theme-toggle.dark {
   background-color: #eceae0;
   color: #000;
 }
- 
+
+.theme-toggle2.dark {
+  background-color: #eceae0;
+  color: #000;
+}
+
 .btn-text{
 
-  margin-left:  35px;
+  
   color:  white;
 
 }
@@ -154,15 +220,20 @@ h6 {
   color: #2e2e2e;
   margin: 0px;
 }
-
+ 
 h1 {
-  font-size: 48px;
-}
 
-h2 {
   font-size: 36px;
-}
+  color: #ffffff;
 
+}
+ 
+h2 {
+
+  font-size: 22px;
+
+}
+ 
 h3 {
   font-size: 28px;
 }
@@ -185,15 +256,17 @@ ol {
   padding: 0px;
   list-style-type: none;
 }
-
+ 
 p {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 26px;
-  color: #6a6972;
-  margin: 0px;
-}
 
+  font-size:  18px;
+  font-weight:  400;
+  line-height:  26px;
+  color:  #ffffff;
+  margin:  0px;
+
+}
+ 
 .bg_cover {
   background-position: center center;
   background-size: cover;
@@ -744,12 +817,12 @@ p {
   -ms-transition: background-color 0.3s ease-in-out;
   -o-transition: background-color 0.3s ease-in-out;
 }
-.navbar-nav {main
+.navbar-nav main{
  background-color: saddlebrown;
   list-style-type: none;
   margin: 0 1rem;
   padding: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .nav-item {
@@ -1241,7 +1314,7 @@ p {
 }
 
 .header-hero-content .text {
-  color: #fff;
+  color: #090909;
   margin-top: 30px;
 }
 
@@ -1345,7 +1418,7 @@ p {
 
 @media (max-width: 767px) {
   .single-services {
-    margin: 0 auto;
+    margin:0 auto;
     padding: 20px 20px 30px;
   }
 }
@@ -1361,7 +1434,7 @@ p {
 }
 
 .single-services:hover .services-icon {
-  top: -30px;
+  top: -16px;
   scale: 0.75;
   box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
   z-index: 10;
@@ -2017,11 +2090,11 @@ p {
 }
 .single-blog {
   transition: transform 0.5s ease;
-  height: 27rem;
+  height: 30rem;
   box-shadow: 0 4px 8px rgb(51, 55, 55);
   padding: 20px;
   border-radius: 10px;
-  background: linear-gradient(135deg,rgba(0,191,255,0.9),rgba(255,105,180,0.9));
+  background: linear-gradient(135deg,#18a5a7,#d9ecc7);
 }
 .blog-content {
   text-align: left;
@@ -2044,7 +2117,7 @@ p {
 .single-blog:hover {
   transform: scale(0.95);
   cursor: pointer;
-  background: linear-gradient(170deg,rgba(0,191,255,0.9),rgba(255,105,180,0.9));
+  background: linear-gradient(110deg,#18a5a7,#d9ecc7);
 }
 .blog-content .reviewtext{
   color: black;
@@ -2079,7 +2152,7 @@ p {
   font-size: 16px;
   color: black;
   font-weight: 600;
-  margin-top: 20px;
+  margin-top: 100px;
   transition: 0.8s ease;
 }
 .single-blog .blog-content .more:hover::after {
@@ -2096,6 +2169,7 @@ p {
 .row {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .col-lg-4, .col-md-7, .col-md-5 {
@@ -2317,6 +2391,8 @@ p {
   color: #fff;
   line-height: 30px;
   margin-top: 30px;
+  /* Alligned FinVeda description to the left */
+  text-align: left;
 }
 
 .footer-about .social {
@@ -2354,6 +2430,7 @@ p {
     text-decoration: none;
     text-shadow: #FC0 1px 0 10px;
     color: #fff;
+    margin-left: 1rem;
 }
 h3.footer-title.custom-margin :hover{
   transform: scale(1.04);
@@ -2458,6 +2535,7 @@ h3.footer-title.custom-margin :hover{
 
 .footer-contact .contact {
   padding-top: 20px;
+  margin-left:1rem;
 }
 
 .footer-contact .contact li {
@@ -2842,14 +2920,23 @@ text-align: center;
 }
 
 .form-section {
-  width: 40%;
+  width: 50rem;
+  height: 60rem;
   display: flex;
   margin: auto;
   animation: fadeIn 1s ease-in-out;
   border-radius: 20px;
+  align-items: center;
   background: linear-gradient(105deg, #00bfff,#150e4e);
   transform: scale(0.8);
   transition: all 0.3s ease;
+}
+
+.form-group p{
+  color: white;
+  font-size: 17px;
+  margin-top: 50px;
+  margin-bottom: 40px;
 }
 
 .form-section:hover{
@@ -2983,59 +3070,87 @@ text-align: center;
     left: 20%;
   }
 }
-.notification {
+.modal {
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-around;
-  background-color: #fff;
-  padding: 10px;
-  padding-left: 4px;
-  border-radius: 5px;
-  z-index: 1200;/*we need it to show above the mute btn*/
-  width: 300px;
   position: fixed;
-  top: 65px;
-  /* margin-left: 90vw; */
-  right: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 0.5s ease-out;
-  border: 0.2px solid #36f43f;
-  
-}
-#successnotification:hover {
-    background-color: white; 
-    filter: initial;
-}
-
-.notification .message {
-  flex-grow: 1;
-  color: #000;
-  font-family: "Poppins", sans-serif;
-  font-weight: lighter;
-  font-size: 18px;
-}
-
-.notification .closenotif {
-  cursor: pointer;
-  font-size: 16px;
-  color: #aaa;
-  right: 2px;
-}
-
-.notification .closenotif:hover {
-  color: #000;
-}
-
-.notification .timerline {
-  position: absolute;
-  bottom: 0;
+  z-index: 1000;
   left: 0;
-  height: 5px;
-  animation: timerline 2s linear forwards;
-  background-color: #4cf436;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 }
-.closenotif:hover{
-  cursor:pointer;
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  max-width: 400px;
+  width: 100%;
+}
+
+.modal-header {
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-family: "Poppins", sans-serif;
+  color: #36f43f;
+  text-align: center;
+  align-items: center;
+  justify-content: center;  
+}
+
+.modal-message {
+  font-size: 18px;
+  color: #333;
+  font-family: "Poppins", sans-serif;
+}
+
+.modal-footer {
+  margin-top: 20px;
+}
+
+.modal-button {
+  padding: 10px 20px;
+  background-color: #36f43f;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-button:hover {
+  background-color: #2eb931;
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 18px;
+  cursor: pointer;
+  color: #aaa;
+}
+
+.modal-close:hover {
+  color: #000;
+}
+
+/* Animation for modal */
+@keyframes fadeInScale {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 @keyframes fadeIn {
@@ -3047,6 +3162,11 @@ text-align: center;
   from { width: 100%; }
   to { width: 0; }
 }
+.tick-icon {
+      width: 80px;
+      height: 80px;
+      margin: 20px auto;
+    }
 
 .footer-about{
   margin-left: 45px;
@@ -3116,4 +3236,83 @@ text-align: center;
   z-index: 1000;
   height: 290px;
   width: 290px;
+}
+
+/* Consistent link styling */
+.navbar-nav .page-scroll {
+  color: rgb(237, 242, 244);
+  text-decoration: none;
+  padding: 8px 12px;
+  display: inline-block;
+  transition: color 0.3s,border-bottom 0.3s;
+  border-bottom: 2px solid transparent; /* Transparent by default */
+}
+
+/* Hover Effect */
+.navbar-nav .page-scroll:hover {
+  color: #ffcc00; /* Example: Yellow on hover */
+    }
+/* Explore Dropdown: Same styling as other links */
+.nav-item.dropdown > a {
+  color: rgb(237, 242, 244);
+  padding: 8px 12px;
+  display: inline-block;
+  border-bottom: 2px solid transparent; /* Prevent visible underline */
+  transition: color 0.3s, border-bottom 0.3s;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 80%;
+  left: 0;
+  background-color: rgb(0, 0, 0);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 8px;
+  z-index: 20;
+  min-width: 150px;
+}
+
+/* Show dropdown on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Dropdown Links */
+.dropdown-menu li {
+  list-style: none;
+  padding: 8px 0;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  padding: 5px 10px;
+transition: background-color 0.3s;
+}
+
+/* Arrow Rotation Effect */
+.arrow {
+  display: inline-block;
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.nav-item.dropdown:hover .arrow {
+  transform: rotate(180deg);
+} 
+
+.dropdown-toggle::after{
+  border-right: 0;
+  border-left: 0;
+  
+}
+.nav-item a::after {
+  height: -1px;
+}
+.dropdown-toggle::after {
+  border-top: 1px;
 }

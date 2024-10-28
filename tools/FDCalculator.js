@@ -4,9 +4,20 @@ document.addEventListener('DOMContentLoaded', function() {
         let rate = parseFloat(document.getElementById('rate').value);
         let years = parseInt(document.getElementById('years1').value);
 
+        let errorMessage = '';
 
-        if (isNaN(principal) || isNaN(rate) || isNaN(years) || principal <= 0 || rate <= 0 || years <= 0) {
-            alert('Please enter valid values.');
+        if (isNaN(principal) || principal <= 0) {
+            errorMessage += 'Please enter a valid positive number for Principal.\n';
+        }
+        if (isNaN(rate) || rate <= 0) {
+            errorMessage += 'Please enter a valid positive number for Rate of Interest.\n';
+        }
+        if (isNaN(years) || years <= 0) {
+            errorMessage += 'Please enter a valid number of years (greater than 0).\n';
+        }
+
+        if (errorMessage) {
+            alert(errorMessage);
             return;
         }
 
