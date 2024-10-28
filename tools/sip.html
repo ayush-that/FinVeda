@@ -7,6 +7,7 @@
   <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="shortcut icon" href="/assets/images/favicon2.webp" type="image/png" />
+
   <link rel="stylesheet" href="../assets/css/animate.css" />
   <link rel="stylesheet" href="../assets/css/magnific-popup.css" />
   <link rel="stylesheet" href="../assets/css/slick.css" />
@@ -19,6 +20,7 @@
   <link rel="stylesheet" href="../assets/css/popup.css" />
   <link rel="stylesheet" href="../assets/css/index.css" />
   <link rel="stylesheet" href="GSTstyle.css"/>
+
   <link rel="stylesheet" type="text/css" href="sipcalculatorCss.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
    <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
@@ -283,12 +285,7 @@ box-shadow: 0 0 25px #03133c;
         <div class="row">
           <div class="col-lg-12">
             <nav class="navbar navbar-expand-lg">
-              <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="toggler-icon"></span>
-                <span class="toggler-icon"></span>
-                <span class="toggler-icon"></span>
-              </button> -->
+              
               <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
                 <div class="icon1">
                   <a href="../index.html">
@@ -302,31 +299,28 @@ box-shadow: 0 0 25px #03133c;
                   </li>
                   <li class="nav-item">
                     <a class="page-scroll" href="../about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
-                  </li>    
-                  <li class="nav-item">
-                    <a class="page-scroll" href="../trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll active-link" href="../tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="../blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
-                  </li>
+                  </li>     
                   <li class="nav-item">
                     <a class="page-scroll" href="./finance.html" style="color: rgb(237, 242, 244);">Courses 📚</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="../quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="../careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
-                  </li>
+                  </li> 
                   <li class="nav-item">
                     <a class="page-scroll" href="../contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
                   </li>
                   <li class="nav-item">
                     <a class="page-scroll" href="../faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
                   </li>
+                  <!-- Dropdown for Explore -->
+              <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
+                <a class="page-scroll dropdown-toggle" href="#" style="color: rgb(237, 242, 244);">
+                  <span class="explore-text">Explore 📚</span> 
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="./trends.html">Trends 📈</a></li>
+                  <li><a href="./tools/sip.html">Tools 🔧</a></li>
+                  <li><a href="./blog.html">Blogs 📰</a></li>
+                  <li><a href="./quiz.html">Quiz 🤔</a></li>
+                </ul>
+              </li>
                   <li class="nav-item no-underline">
                     <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="../loginPage.html" >Login/Register 💻</a>
                   </li>
@@ -625,21 +619,21 @@ registerCloseButton.addEventListener("click", function() {
 
   
   </header>
-  <link rel="stylesheet" type="text/css" href="sipcalculatorCss.css">
+  <link rel="stylesheet" type="text/css" href="sipcalculator.css">
   <script type="text/javascript" src="sipcalculatorJs.js"></script>
 
-  <body class="body-background" style="color:#131722">
+  <body class="body-background">
     <div class="header"><br><br>
       <h2>Tools</h2><br>
       <h3 id="section1">Mutual Fund Investment Calculator</h3>
-      <p class="cal-content">
+      <p class="cal-content" style="color: #0048ff;">
         The Mutual Fund Investment Calculator helps you estimate the potential returns of your investments, whether through Systematic Investment Plans (SIP) or LumpSum investments. 
         By inputting your monthly investment amount, investment duration, and expected annual return rate, this tool calculates the total investment, wealth gained, and maturity value, providing a clear 
         picture of your investment growth.
       </p>
 
       <div class="know-more" style="color:#131722">
-        <button class="know-more-btn">Know More</button>
+        <button class="know-more-btn" style="color: #0048ff;">Know More</button>
         <div class="know-more-content">
           <h6 style="text-align: left; margin: 2% 16%; padding-left: 5px;">Here's how it works:</h6>
           <ol type="1" style="font-size: 1rem; text-align: left; margin-left: 17%; margin-bottom: 2rem;">
@@ -679,7 +673,7 @@ registerCloseButton.addEventListener("click", function() {
         </div>
         <div class="dropdown">
           <div class="select">
-            <span class="selected">Currency</span>
+            <span class="selected" style="color: black;">Currency</span>
             <div class="caret"></div>
           </div>
           <ul class="menu">
@@ -832,7 +826,7 @@ registerCloseButton.addEventListener("click", function() {
           padding-top: 50px;
           text-align: center;
           padding: 20px;
-          background: linear-gradient(135deg,#a18cd1,#fbc2eb);
+          background-color: linear-gradient( 150deg,#2e47c7,#f0f2f3);
         }
       .header h3 {
           margin: 0;
@@ -923,7 +917,7 @@ registerCloseButton.addEventListener("click", function() {
           margin-left: 20px;
       }
       .toool{
-        background: linear-gradient(135deg,#eadff2,#fff0f8);
+        background-color: linear-gradient( 150deg,#2e47c7,#f0f2f3);
       }
 
       /* alligned the footer content towards left */
@@ -937,9 +931,9 @@ registerCloseButton.addEventListener("click", function() {
 <body>
   <div class="header toool">
     <!-- for Navigation between the tools -->
-      <h3 id="section2">EMI Calculator</h3>
+      <h3 id="section2" style="color: #0048ff;">EMI Calculator</h3>
 
-      <p class="cal-content">
+      <p class="cal-content" style="color: #0048ff;">
           The EMI (Equated Monthly Installment) Calculator assists in calculating the monthly installment amount for a loan based on the loan amount, interest rate, and loan tenure.
           It provides insights into the total payment and total interest paid over the loan period, helping you plan your finances better.
       </p>
@@ -990,8 +984,8 @@ registerCloseButton.addEventListener("click", function() {
     <script src="SavingsGoalCalculator.js" defer></script>
     <script src="SavingsGoalCalculator.js" ></script>
     <div class="header toool" style="padding-top: 100px;">
-      <h3 id="section3">Savings Goal Calculator</h3>
-      <p class="cal-content">
+      <h3 id="section3" style="color: #0048ff;">Savings Goal Calculator</h3>
+      <p class="cal-content" >
         The Savings Goal Calculator is designed to help you determine how much you need to save monthly to reach your financial goals. By entering your goal amount, current savings, monthly savings, and expected annual interest rate, this calculator shows the time required to achieve your goal.
       </p>
       <div class="know-more">
@@ -1046,7 +1040,7 @@ registerCloseButton.addEventListener("click", function() {
     <!-- Insurance Calculator -->
     <script src="insuranceCalculator.js" defer></script>
 <div class="header toool" style="padding-top: 100px;">
-  <h3 id="section4">Insurance Calculator</h3>
+  <h3 id="section4" style="color: #0048ff;">Insurance Calculator</h3>
   <p class="cal-content">
     The Insurance Calculator estimates the benefits of an insurance policy based on the sum assured, policy term, and annual premium. This tool helps you understand the potential returns from your insurance policy and plan your coverage effectively.
   </p>
@@ -1119,7 +1113,7 @@ registerCloseButton.addEventListener("click", function() {
     <!-- NPV Calculator -->
     <script src="npvCalculator.js" defer></script>
 <div class="header toool" style="padding-top: 100px;">
-  <h3 id="section5">Net Present Value<br> (NPV) Calculator</h3>
+  <h3 id="section5" style="color: #0048ff;">Net Present Value<br> (NPV) Calculator</h3>
   <p class="cal-content">
     The NPV (Net Present Value) Calculator is a tool designed to help you evaluate the profitability of an investment by calculating the present value of expected future cash flows. This calculator helps investors make informed decisions, ensuring that future cash flows are accurately evaluated in today's terms.
   </p>
@@ -1182,67 +1176,24 @@ registerCloseButton.addEventListener("click", function() {
             padding: 0px;
 
         }
- footer
-
-        .container {
  
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        label {
-            display: block;
-            margin: 15px 0 5px;
-            color: #555;
-        }
-        input[type="number"] {
-            
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        .result {
-            font-weight: bold;
-            color: #007bff;
-            margin-top: 10px;
-        }
-        .btn {
-            width: 100%;
-            padding: 10px;
-            background-color: #28a745;
-            border: none;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .btn:hover {
-            background-color: #218838;
-        }
     </style>
 </head>
 <body>
 
 <div class="containerr">
-    <h1>TCO Calculator</h1>
+    <h1 style="color: #0048ff;">TCO Calculator</h1>
     
-    <label for="initialCost">Initial Cost ($):</label>
+    <label for="initialCost" style="color: #0048ff;">Initial Cost ($):</label>
     <input type="number" id="initialCost" placeholder="Enter initial cost" required>
     
-    <label for="operatingCost">Annual Operating Cost ($):</label>
+    <label for="operatingCost" style="color: #0048ff;">Annual Operating Cost ($):</label>
     <input type="number" id="operatingCost" placeholder="Enter annual operating cost" required>
     
-    <label for="years">Years of Ownership:</label>
+    <label for="years" style="color: #0048ff;">Years of Ownership:</label>
     <input type="number" id="years" placeholder="Enter number of years" required>
     
-    <label for="miscCost">Miscellaneous Costs ($):</label>
+    <label for="miscCost" style="color: #0048ff;">Miscellaneous Costs ($):</label>
     <input type="number" id="miscCost" placeholder="Enter miscellaneous costs" required>
     
     <button class="btn" onclick="calculateTCO()">Calculate TCO</button>
@@ -1271,7 +1222,7 @@ registerCloseButton.addEventListener("click", function() {
     <!--ROI calculator-->
     <script src="roiCalculator.js" defer></script>
     <div class="header toool" style="padding-top: 100px;">
-      <h3 id="section6">Return on Investment(ROI) Calculator</h3>
+      <h3 id="section6" style="color: #0048ff;">Return on Investment(ROI) Calculator</h3>
       <p class="cal-content">
         The ROI (Return on Investment) Calculator helps you measure the profitability of an investment. By inputting the initial investment amount and the final value of the investment, this tool calculates the percentage return on investment, helping you assess the efficiency of your investment.
       </p>
@@ -1324,7 +1275,7 @@ registerCloseButton.addEventListener("click", function() {
     <!--Start of GST Calculator-->
     <script src="GSTcalc.js" defer></script>
 <div class="header toool" style="padding-top: 100px;">
-    <h3 id="section7">Goods and Service Tax (GST) Calculator</h3>
+    <h3 id="section7" style="color: #0048ff;">Goods and Service Tax (GST) Calculator</h3>
     <p class="cal-content">The GST (Goods and Services Tax) Calculator computes the GST-inclusive or exclusive amount based on the original amount and the applicable GST rate. This tool simplifies the calculation of GST for various transactions.</p>
     <div class="know-more">
         <button class="know-more-btn">Know More</button>
@@ -1377,12 +1328,12 @@ registerCloseButton.addEventListener("click", function() {
 
     <!--Start of Income Tax Calc-->
     <main class="main-income">
-      <h1 class="main-income-head">Income tax calculator</h1>
+      <h1 class="main-income-head" style="color: #0048ff;">Income tax calculator</h1>
       <form>
-        <p class="disclaimer" id="disclaimer">
+        <p class="disclaimer" id="disclaimer" style="color: #0048ff;">
           *Must have AIS and TIS with yourself
         </p>
-        <label for="actual-income" class="income-label"
+        <label for="actual-income" class="income-label" style="color: #0048ff;"
           >Total Income(Income from Deposit,Savings Account,House
           Property):</label
         >
@@ -1411,16 +1362,16 @@ registerCloseButton.addEventListener("click", function() {
           class="pan-number"
           id="pan-number"
         />
-        <div class="necessary-buttons">
+        <div class="necessary-buttons btn-calculate">
           <button
             type="button"
-            class="submit-button"
-            id="submit-button"
+            class="submit-button btn btn-calculate"
+            id="submit-button calculate-Btn4"
             onclick="tax_evaluation()"
           >
             Calculate
           </button>
-          <button type="button" class="reset-button" id="reset-button">
+          <button type="button" class="reset-button btn btn-clear" id="reset-button clearBtn3">
             Clear
           </button>
         </div>
@@ -1457,7 +1408,7 @@ registerCloseButton.addEventListener("click", function() {
     align-items: center;
     margin:auto;
     height:100vh;
-    background:linear-gradient(35deg, #d1b3e5, #ffe3f0);
+    background-color: linear-gradient( 150deg,#2e47c7,#f0f2f3);
     border-radius:20px;
 
 }
@@ -1515,7 +1466,7 @@ registerCloseButton.addEventListener("click", function() {
     width:150px;
     height:50px;
     font-size:24px;
-    background: linear-gradient(120deg, coral, pink,cornflowerblue);
+   background-color: linear-gradient( 150deg,#2e47c7,#f0f2f3);
     border-radius:10px;
     color:white;
     border:none;
@@ -1607,10 +1558,10 @@ registerCloseButton.addEventListener("click", function() {
   <script src="ProfitMargin.js" defer></script>
 
   <div class="header toool" style="padding-top: 100px;">
-    <h3 id="section9">Profit Margin Calculator</h3>
+    <h3 id="section9" style="color: #0048ff;">Profit Margin Calculator</h3>
     <p class="cal-content">The Profit Margin Calculator calculates the profit margin percentage based on the revenue and cost inputs. This tool helps businesses and individuals assess their profitability and make informed pricing and cost management decisions.</p>
     <div class="know-more">
-      <button class="know-more-btn">Know More</button>
+      <button class="know-more-btn" style="color: #0048ff;">Know More</button>
       <div class="know-more-content">
         <h6 style="text-align: left; margin: 2% 16%; padding-left: 5px;">Here's how it works:</h6>
         <ol type="1" style="font-size: 1rem; text-align: left; margin-left: 17%; margin-bottom: 2rem;">
@@ -1653,7 +1604,7 @@ registerCloseButton.addEventListener("click", function() {
 <script src="expenditureandsaving.js" defer></script>
 
 <div class="header toool" style="padding-top: 100px;">
-  <h3 class="text-center mb-4" id="section10">Expenditure and Savings Calculator</h3>
+  <h3 class="text-center mb-4" id="section10" style="color: #0048ff;">Expenditure and Savings Calculator</h3>
   <p class="cal-content">The Expenditure and Savings Calculator helps you analyze your monthly savings based on your income and expenses. This tool assists in managing your finances effectively.</p>
   <div class="know-more">
     <button class="know-more-btn">Know More</button>
@@ -1698,7 +1649,7 @@ registerCloseButton.addEventListener("click", function() {
  <!-- GDP calculator  starts from here -->
 
  <div class="header toool">
-  <h3 id="section11">GDP Calculator</h3>
+  <h3 id="section11" style="color: #0048ff;">GDP Calculator</h3>
   <p class="cal-content">
     The GDP Calculator computes the Gross Domestic Product (GDP) using the Expenditure Approach, which aggregates personal consumption, gross investment, government consumption, and net exports (exports minus imports) to determine the economic output of a country.
   </p> 
@@ -2156,30 +2107,31 @@ registerCloseButton.addEventListener("click", function() {
 
 <footer id="footer" class="footer-area pt-120">
   <div class="container">
-    <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-      <div class="row">
-        <div class="col-lg-10">
-          <div class="subscribe-content mt-60">
-            <h2 class="subscribe-title">
-              Subscribe Our Newsletter <span>Get Regular Updates</span>
-            </h2>
-          </div>
+  <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="subscribe-content mt-45">
+          <h2 class="subscribe-title">
+            Subscribe Our Newsletter <span>get regular updates</span>
+          </h2>
         </div>
-        <div class="col-lg-8">
-          <div class="subscribe-form mt-60">
-            <form id="unique-subscribe-form">
-              <input type="email" id="unique-news-email" aria-colspan="6" placeholder="Enter Email"  required  />
-              <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
-            </form>
-            <div id="unique-message" class="unique-popup-message" style="display: none;">
-              <div class="border-animation"></div>
-              Thank You for the subscription!
-            </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="subscribe-form mt-50">
+          <form id="unique-subscribe-form">
+            <input type="email" id="unique-news-email" placeholder="Enter Email" required style="width: 100%; margin-left: 40px; margin-bottom: 45px;"/>
+            <button class="unique-main-btn" id="unique-subscribe-btn" type="submit" style=" margin-top: 5px;">Subscribe</button>
+          </form>
+          <div id="unique-message" class="unique-popup-message" style="display: none;">
+            <div class="border-animation"></div>
+            Thank You for the subscription!
           </div>
         </div>
       </div>
     </div>
   </div>
+  </div>
+
   <script>
     document.getElementById('unique-subscribe-form').addEventListener('submit', function (event) {
       event.preventDefault(); // Prevent form from submitting normally

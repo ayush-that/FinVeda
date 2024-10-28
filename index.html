@@ -3,9 +3,42 @@
 
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home - FinVeda</title>
   <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="FinVeda provides comprehensive resources and tools for financial education, investment strategies, and personal finance management. Discover your path to financial wellness today!">
+  <meta name="keywords" content="finance, financial education, personal finance, investment strategies, financial wellness, budgeting, money management">
+  <meta name="author" content="Ayush That">
+
+  <meta property="og:title" content="FinVeda - Your Guide to Financial Wellness">
+  <meta property="og:description" content="FinVeda offers expert resources and tools for improving your financial knowledge and managing your investments effectively.">
+  <meta property="og:url" content="https://github.com/ayush-that/FinVeda">
+  <meta property="og:type" content="website">
+    
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FinVeda - Your Guide to Financial Wellness">
+  <meta name="twitter:description" content="Explore a wealth of financial resources at FinVeda to enhance your financial literacy and investment skills.">
+
+   <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "FinVeda",
+      "url": "https://github.com/ayush-that/FinVeda",
+      "description": "FinVeda provides comprehensive resources and tools for financial education, investment strategies, and personal finance management.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "FinVeda",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "/assets/images/favicon2.webp"  // Replace with your logo URL
+        }
+      }
+    }
+    </script>
+  
   <link rel="shortcut icon" href="/assets/images/favicon2.webp" type="image/png" />
   <link rel="stylesheet" href="./assets/css/animate.css" />
   <link rel="stylesheet" href="./assets/css/magnific-popup.css" />
@@ -214,10 +247,10 @@
             <span class="toggler-icon"></span>
             <span class="toggler-icon"></span>
           </button> -->
-          <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
+          <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
             <div class="icon1">
               <a href="./index.html">
-              <img src="./assets/images/l (2).png" alt="icon.png">
+              <img src="./assets/images/FinvedaLogo.png" alt="icon.png" style="width: 11rem;">
               </a>
             </div> 
             <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
@@ -226,31 +259,32 @@
               </li>
               <li class="nav-item">
                 <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
-              </li>    
-              <li class="nav-item">
-                <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
-              </li>
+              </li>     
               <li class="nav-item">
                 <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
-              </li>
+              </li> 
               <li class="nav-item">
                 <a class="page-scroll" href="./finance.html" style="color: rgb(237, 242, 244);">Courses 📚</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
-              </li>
+              </li> 
               <li class="nav-item">
                 <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
               </li>
               <li class="nav-item">
                 <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
               </li>
+              <!-- Dropdown for Explore -->
+              <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
+                <a class="page-scroll dropdown-toggle" href="#" style="color: rgb(237, 242, 244);">
+                  <span class="explore-text">Explore 📚</span> 
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="./trends.html">Trends 📈</a></li>
+                  <li><a href="./tools/sip.html">Tools 🔧</a></li>
+                  <li><a href="./blog.html">Blogs 📰</a></li>
+                  <li><a href="./quiz.html">Quiz 🤔</a></li>
+                </ul>
+              </li>
+
               <li class="nav-item no-underline">
                 <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
               </li>
@@ -263,9 +297,9 @@
           </div>
 
           <script>
-            const toggleButton = document.getElementById('theme-toggle');
-            const body = document.body;
-            const currentTheme = localStorage.getItem('theme');
+            var toggleButton = document.getElementById('theme-toggle');
+            var body = document.body;
+            var currentTheme = localStorage.getItem('theme');
 
             if (currentTheme === 'dark') {
             body.classList.add('dark-mode');
@@ -503,19 +537,58 @@
           <nav class="mobile-menu  active">
             <a class="page-scroll active-link" href="./index.html">Home 🏡</a>
             <a class="page-scroll" href="./about.html">About Us 📖</a>
-            <a class="page-scroll" href="./trends.html">Trends 📈</a>
-            <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
-            <a class="page-scroll" href="./blog.html">Blogs 📰</a>
-            <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
+             <!-- Dropdown for Explore -->
+            <div class="dropdown" onclick="toggleDropdown()">
+              <a class="page-scroll dropdown-toggle" href="#">
+                <span class="explore-text">Explore</span> 
+                <span class="arrow">▼</span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="./trends.html">Trends 📈</a></li>
+                <li><a href="./tools/sip.html">Tools 🔧</a></li>
+                <li><a href="./blog.html">Blogs 📰</a></li>
+                <li><a href="./quiz.html">Quiz 🤔</a></li>
+              </ul>
+            </div>
+
             <a class="page-scroll" href="./contact.html">Contact🤔</a>
             <li class="nav-item no-underline">
               <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none; border: none;" href="#" onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
             </li>
-            
+            <li class="nav-item no-underline">
+              <button id="theme-toggle2" class="theme-toggle2" style="margin-right: 2px;">
+                🌙
+              </button>
+              </li>
             <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
               <span></span>
             </div>
           </nav>
+          <script>
+            var toggleButton = document.getElementById('theme-toggle2');
+            var body = document.body;
+            var currentTheme = localStorage.getItem('theme');
+
+            if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            toggleButton.classList.add('dark');
+            toggleButton.textContent = '🌞';
+            }
+
+            toggleButton.addEventListener('click', function () {
+            body.classList.toggle('dark-mode');
+            toggleButton.classList.toggle('dark');
+
+            // Update button icon based on mode
+            if (body.classList.contains('dark-mode')) {
+              toggleButton.textContent = '🌞';  // Light mode icon
+              localStorage.setItem('theme', 'dark');
+            } else {
+              toggleButton.textContent = '🌙';  // Dark mode icon
+              localStorage.setItem('theme', 'light');
+            }
+            });
+        </script>
         </div>
   <link href="./navbar.css" rel="stylesheet">
   <script type="text/javascript" src="./navbar.js"></script>
@@ -766,7 +839,7 @@
             <!-- TradingView Widget BEGIN -->
             <div class="tradingview-widget-container" style="height: 372px;">
               <div id="tv-widget-container">
-                <img src="https://cdn.gencraft.com/prod/user/4172de30-fa59-4864-b22e-45b0197666ec/db9cd195-174f-4ebb-a0d1-fceaf968329c/image/image1_0.jpg?Expires=1729873108&amp;Signature=hhs5C3v200T-IcnK670TGnigUc1i2kz1r6P4ykGd3yh4pHlmgeAXt6YBwsWNPi6eCN5ZdQELJtWSheT9DcPALPbU3zv3nkIokmlKiE3hXl8AemO8nu~pIDnz~1u3G77vKJabE2OHSEkIot4CH~RfB-dLMQAsBmgaWO34QPhWh8oSdl7lFxfHeJfK5XnB~fCvZMwd154qJQn5ykcYmOHBfoy2Xuq6tFv5blKoiPdPzdgDSxSjDW14Ya1L~lFk65ZjvSXkYeXm3rjMI7RjpvSF1QIZt1bMLmsbHtAXYcUxGuzIoUeFw8t1GusiGj6Vjwb8IPYl4NS1UXIj0f~23Jqx~g__&amp;Key-Pair-Id=K3RDDB1TZ8BHT8" alt="Finance AI Image" style="width: 540px; height: 372px;">
+                <img src="assets/images/finance.jpg">
             </div>
 
 
@@ -1533,7 +1606,7 @@
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/Mutual-Funds-101-A-Beginners-Guide-to-Smart-Investing.html">
-                    <img src="./assets/images/mutual-funds-blog.webp" alt="blog" />
+                    <img src="./assets/images/Mutual-funds.webp" alt="blog" />
                   </a>
                 </div>
                 <div class="blog-content">
@@ -1710,49 +1783,184 @@
   </head>
 
   <body>
-    <div class="form-section">
-      <form class="feedbackform" id="feedback-form">
-        <div class="form-group">
-          <div class="section-title text-center">
-            <h2 class="form-heading">We Value Your Feedback</h2>
-            <p>Your input helps us to improve and provide better services. Please fill out the form to let us know your
-              thoughts.</p>
+    <div id="feedback-container">
+      <form id="user-feedback-form">
+          <div id="form-header">
+              <div id="title-wrapper" class="text-center">
+                  <h2 id="feedback-title">We Value Your Feedback</h2>
+                  <p>Your input helps us to improve and provide better services. Please fill out the form to let us know your thoughts.</p>
+              </div>
+              <label id="input-label-name" for="username">Name:</label>
+              <input id="input-field-name" type="text" id="username" name="username" placeholder="Enter your name" required>
           </div>
-          <label class="form-label" for="name">Name:</label>
-          <input class="form-input" type="text" id="name" name="name" placeholder="Enter the name" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="email">Email:</label>
-          <input class="form-input" placeholder="Enter your email" type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Rating:</label>
-          <div id="emoji-description" class="emoji-description">Select an option</div>
-        </div>
-        <div class="emojis">
-          <input class="form-input" type="radio" id="emoji1" name="rating" value="1">
-          <label class="form-label" for="emoji1">&#128577;</label> <!-- Very Bad -->
-          <input class="form-input" type="radio" id="emoji2" name="rating" value="2">
-          <label class="form-label" for="emoji2">&#128542;</label> <!-- Bad -->
-          <input class="form-input" type="radio" id="emoji3" name="rating" value="3">
-          <label class="form-label" for="emoji3">&#128528;</label> <!-- Neutral -->
-          <input class="form-input" type="radio" id="emoji4" name="rating" value="4">
-          <label class="form-label" for="emoji4">&#128522;</label> <!-- Good -->
-          <input class="form-input" type="radio" id="emoji5" name="rating" value="5">
-          <label class="form-label" for="emoji5">&#128515;</label> <!-- Excellent -->
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="comments">Comments:</label>
-          <textarea class="form-textarea" placeholder="Enter your comments" id="comments" name="comments" rows="4"
-            required></textarea>
-        </div>
-        <div class="form-group">
-          <div class="form-group">
-            <button class="form-button" id="feed-submit" type="submit">Submit</button>
+          <div id="input-group-email">
+              <label id="input-label-email" for="user-email">Email:</label>
+              <input id="input-field-email" placeholder="Enter your email" type="email" id="user-email" name="user-email" required>
           </div>
-        </div>
+          <div id="input-group-rating">
+              <label id="input-label-rating">Rating:</label>
+              <div id="emoji-guide">Select an option</div>
+          </div>
+          <div id="emoji-selection">
+              <input id="input-field-rating-1" type="radio" name="rating" value="1">
+              <label id="input-label-rating-1" for="input-field-rating-1">&#128577;</label> <!-- Very Bad -->
+              <input id="input-field-rating-2" type="radio" name="rating" value="2">
+              <label id="input-label-rating-2" for="input-field-rating-2">&#128542;</label> <!-- Bad -->
+              <input id="input-field-rating-3" type="radio" name="rating" value="3">
+              <label id="input-label-rating-3" for="input-field-rating-3">&#128528;</label> <!-- Neutral -->
+              <input id="input-field-rating-4" type="radio" name="rating" value="4">
+              <label id="input-label-rating-4" for="input-field-rating-4">&#128522;</label> <!-- Good -->
+              <input id="input-field-rating-5" type="radio" name="rating" value="5">
+              <label id="input-label-rating-5" for="input-field-rating-5">&#128515;</label> <!-- Excellent -->
+          </div>
+          <div id="input-group-comments">
+              <label id="input-label-comments" for="user-comments">Comments:</label>
+              <textarea id="textarea-field-comments" placeholder="Enter your comments" id="user-comments" name="user-comments" rows="4" required></textarea>
+          </div>
+          <div id="submit-group">
+              <button id="submit-button" type="submit">Submit</button>
+          </div>
       </form>
-    </div>
+  </div>
+  
+  
+<style>
+  /* Parent div gradient */
+#feedback-container {
+    background: linear-gradient(135deg, #a8e0b3, #3ac7a0); /* Light green to teal gradient */
+    padding: 30px;
+    margin-top: 100px;
+    border-radius: 15px;
+    border: 5px solid white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Adjust as needed */
+    margin: 0 auto;
+}
+
+/* Form styles */
+#user-feedback-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header styles */
+#form-header {
+    margin-bottom: 20px;
+}
+
+/* Title styles */
+#title-wrapper {
+    margin-bottom: 20px;
+}
+
+#feedback-title {
+    font-size: 24px; /* Title size */
+    margin-bottom: 20px;
+}
+
+/* Input and textarea styles */
+#input-group-email,
+#input-group-rating,
+#input-group-comments {
+    margin-bottom: 15px;
+}
+
+#input-label-name,
+#input-label-email,
+#input-label-rating,
+#input-label-comments {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #333;
+}
+
+#input-field-name,
+#input-field-email,
+#textarea-field-comments {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid  #3c2ed3; /* Border color */
+    border-radius: 5px;
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transition effect */
+}
+
+#input-field-name:focus,
+#input-field-email:focus,
+#textarea-field-comments:focus {
+    border-color: #0e8f6b; /* Darker green on focus */
+    box-shadow: 0 0 5px rgba(58, 199, 160, 0.5); /* Focus shadow */
+    outline: none;
+}
+
+/* Emoji selection styles */
+#emoji-selection {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+#input-field-rating-1,
+#input-field-rating-2,
+#input-field-rating-3,
+#input-field-rating-4,
+#input-field-rating-5 {
+    display: none; /* Hide the default radio button */
+}
+
+#input-field-rating-1 + label,
+#input-field-rating-2 + label,
+#input-field-rating-3 + label,
+#input-field-rating-4 + label,
+#input-field-rating-5 + label {
+    font-size: 24px; /* Adjust emoji size */
+    cursor: pointer;
+    transition: transform 0.3s; /* Transition effect */
+}
+
+#input-field-rating-1:checked + label,
+#input-field-rating-2:checked + label,
+#input-field-rating-3:checked + label,
+#input-field-rating-4:checked + label,
+#input-field-rating-5:checked + label {
+    transform: scale(1.2); /* Scale emoji when selected */
+}
+
+/* Button styles */
+#submit-button {
+    background-color: #3c2ed3; /* Button background */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Transition effects */
+}
+
+#submit-button:hover {
+    background-color: #28b594; /* Darker green on hover */
+    transform: translateY(-2px); /* Lift effect */
+}
+
+#submit-button:active {
+    transform: translateY(0); /* Reset lift effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    #feedback-container {
+        padding: 20px;
+    }
+
+    #submit-button {
+        width: 100%;
+    }
+}
+
+</style>
+   
+
+
     <div class="modal" id="successModal">
       <div class="modal-content">
         <span class="modal-close" id="closeSuccessModal">✖</span>
@@ -1896,7 +2104,7 @@
 <div class="row" id="footer">
     <div class="col-lg-4 col-md-6 col-sm-8">
         <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-          <img src="./assets/images/l (2).png" alt="FinVeda Logo" style="height: 80px; width: auto; margin-bottom: 15px;" />
+          <img src="./assets/images/FinvedaLogo.png" alt="FinVeda Logo" style="height: 80px; width: auto; margin-bottom: 15px;" />
             <p class="text custom-margin">
                 We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
             </p>
