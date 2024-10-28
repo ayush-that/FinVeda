@@ -4,29 +4,408 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register & Login</title>
-    <link rel="stylesheet" href="preloaderStyle.css">
     <link rel="stylesheet" href="./loginPage.css" />
-    <link rel="shortcut icon" href="ambulance.png" type="image/x-icon" /> 
     <link rel="shortcut icon" href="./assets/images/favicon2.webp" type="image/png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <style>
+      
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: table;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  z-index: 99999;
+}
+
+.loader {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.loader .ytp-spinner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 64px;
+  margin-left: -32px;
+  z-index: 18;
+  pointer-events: none;
+}
+
+.loader .ytp-spinner .ytp-spinner-container {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  padding-bottom: 100%;
+  top: 50%;
+  left: 50%;
+  margin-top: -50%;
+  margin-left: -50%;
+  -webkit-animation: ytp-spinner-linspin 1568.23529647ms linear infinite;
+  -moz-animation: ytp-spinner-linspin 1568.23529647ms linear infinite;
+  -o-animation: ytp-spinner-linspin 1568.23529647ms linear infinite;
+  animation: ytp-spinner-linspin 1568.23529647ms linear infinite;
+}
+
+.loader .ytp-spinner .ytp-spinner-container .ytp-spinner-rotator {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-animation: ytp-spinner-easespin 5332ms cubic-bezier(0.4, 0, 0.2, 1)
+    infinite both;
+  -moz-animation: ytp-spinner-easespin 5332ms cubic-bezier(0.4, 0, 0.2, 1)
+    infinite both;
+  -o-animation: ytp-spinner-easespin 5332ms cubic-bezier(0.4, 0, 0.2, 1)
+    infinite both;
+  animation: ytp-spinner-easespin 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite
+    both;
+}
+
+.loader
+  .ytp-spinner
+  .ytp-spinner-container
+  .ytp-spinner-rotator
+  .ytp-spinner-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  right: 50%;
+}
+
+.loader
+  .ytp-spinner
+  .ytp-spinner-container
+  .ytp-spinner-rotator
+  .ytp-spinner-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  left: 50%;
+}
+
+.loader .ytp-spinner-circle {
+  box-sizing: border-box;
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  border-style: solid;
+  border-color: #361cc1 #361cc1 #e1e1e1;
+  border-radius: 50%;
+  border-width: 6px;
+}
+
+.loader .ytp-spinner-left .ytp-spinner-circle {
+  left: 0;
+  right: -100%;
+  border-right-color: #e1e1e1;
+  -webkit-animation: ytp-spinner-left-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1)
+    infinite both;
+  -moz-animation: ytp-spinner-left-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1)
+    infinite both;
+  -o-animation: ytp-spinner-left-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1)
+    infinite both;
+  animation: ytp-spinner-left-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite
+    both;
+}
+
+.loader .ytp-spinner-right .ytp-spinner-circle {
+  left: -100%;
+  right: 0;
+  border-left-color: #e1e1e1;
+  -webkit-animation: ytp-right-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite
+    both;
+  -moz-animation: ytp-right-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite
+    both;
+  -o-animation: ytp-right-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+  animation: ytp-right-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+}
+
+@-webkit-keyframes ytp-spinner-linspin {
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ytp-spinner-linspin {
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes ytp-spinner-easespin {
+  12.5% {
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+
+  25% {
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    transform: rotate(270deg);
+  }
+
+  37.5% {
+    -webkit-transform: rotate(405deg);
+    -moz-transform: rotate(405deg);
+    -ms-transform: rotate(405deg);
+    -o-transform: rotate(405deg);
+    transform: rotate(405deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(540deg);
+    -moz-transform: rotate(540deg);
+    -ms-transform: rotate(540deg);
+    -o-transform: rotate(540deg);
+    transform: rotate(540deg);
+  }
+
+  62.5% {
+    -webkit-transform: rotate(675deg);
+    -moz-transform: rotate(675deg);
+    -ms-transform: rotate(675deg);
+    -o-transform: rotate(675deg);
+    transform: rotate(675deg);
+  }
+
+  75% {
+    -webkit-transform: rotate(810deg);
+    -moz-transform: rotate(810deg);
+    -ms-transform: rotate(810deg);
+    -o-transform: rotate(810deg);
+    transform: rotate(810deg);
+  }
+
+  87.5% {
+    -webkit-transform: rotate(945deg);
+    -moz-transform: rotate(945deg);
+    -ms-transform: rotate(945deg);
+    -o-transform: rotate(945deg);
+    transform: rotate(945deg);
+  }
+
+  to {
+    -webkit-transform: rotate(1080deg);
+    -moz-transform: rotate(1080deg);
+    -ms-transform: rotate(1080deg);
+    -o-transform: rotate(1080deg);
+    transform: rotate(1080deg);
+  }
+}
+
+@keyframes ytp-spinner-easespin {
+  12.5% {
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+
+  25% {
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    transform: rotate(270deg);
+  }
+
+  37.5% {
+    -webkit-transform: rotate(405deg);
+    -moz-transform: rotate(405deg);
+    -ms-transform: rotate(405deg);
+    -o-transform: rotate(405deg);
+    transform: rotate(405deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(540deg);
+    -moz-transform: rotate(540deg);
+    -ms-transform: rotate(540deg);
+    -o-transform: rotate(540deg);
+    transform: rotate(540deg);
+  }
+
+  62.5% {
+    -webkit-transform: rotate(675deg);
+    -moz-transform: rotate(675deg);
+    -ms-transform: rotate(675deg);
+    -o-transform: rotate(675deg);
+    transform: rotate(675deg);
+  }
+
+  75% {
+    -webkit-transform: rotate(810deg);
+    -moz-transform: rotate(810deg);
+    -ms-transform: rotate(810deg);
+    -o-transform: rotate(810deg);
+    transform: rotate(810deg);
+  }
+
+  87.5% {
+    -webkit-transform: rotate(945deg);
+    -moz-transform: rotate(945deg);
+    -ms-transform: rotate(945deg);
+    -o-transform: rotate(945deg);
+    transform: rotate(945deg);
+  }
+
+  to {
+    -webkit-transform: rotate(1080deg);
+    -moz-transform: rotate(1080deg);
+    -ms-transform: rotate(1080deg);
+    -o-transform: rotate(1080deg);
+    transform: rotate(1080deg);
+  }
+}
+
+@-webkit-keyframes ytp-spinner-left-spin {
+  0% {
+    -webkit-transform: rotate(130deg);
+    -moz-transform: rotate(130deg);
+    -ms-transform: rotate(130deg);
+    -o-transform: rotate(130deg);
+    transform: rotate(130deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(-5deg);
+    -moz-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    -o-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+  }
+
+  to {
+    -webkit-transform: rotate(130deg);
+    -moz-transform: rotate(130deg);
+    -ms-transform: rotate(130deg);
+    -o-transform: rotate(130deg);
+    transform: rotate(130deg);
+  }
+}
+
+@keyframes ytp-spinner-left-spin {
+  0% {
+    -webkit-transform: rotate(130deg);
+    -moz-transform: rotate(130deg);
+    -ms-transform: rotate(130deg);
+    -o-transform: rotate(130deg);
+    transform: rotate(130deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(-5deg);
+    -moz-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    -o-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+  }
+
+  to {
+    -webkit-transform: rotate(130deg);
+    -moz-transform: rotate(130deg);
+    -ms-transform: rotate(130deg);
+    -o-transform: rotate(130deg);
+    transform: rotate(130deg);
+  }
+}
+
+@-webkit-keyframes ytp-right-spin {
+  0% {
+    -webkit-transform: rotate(-130deg);
+    -moz-transform: rotate(-130deg);
+    -ms-transform: rotate(-130deg);
+    -o-transform: rotate(-130deg);
+    transform: rotate(-130deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(5deg);
+    -moz-transform: rotate(5deg);
+    -ms-transform: rotate(5deg);
+    -o-transform: rotate(5deg);
+    transform: rotate(5deg);
+  }
+
+  to {
+    -webkit-transform: rotate(-130deg);
+    -moz-transform: rotate(-130deg);
+    -ms-transform: rotate(-130deg);
+    -o-transform: rotate(-130deg);
+    transform: rotate(-130deg);
+  }
+}
+
+@keyframes ytp-right-spin {
+  0% {
+    -webkit-transform: rotate(-130deg);
+    -moz-transform: rotate(-130deg);
+    -ms-transform: rotate(-130deg);
+    -o-transform: rotate(-130deg);
+    transform: rotate(-130deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(5deg);
+    -moz-transform: rotate(5deg);
+    -ms-transform: rotate(5deg);
+    -o-transform: rotate(5deg);
+    transform: rotate(5deg);
+  }
+
+  to {
+    -webkit-transform: rotate(-130deg);
+    -moz-transform: rotate(-130deg);
+    -ms-transform: rotate(-130deg);
+    -o-transform: rotate(-130deg);
+    transform: rotate(-130deg);
+  }
+}
+    </style>
   </head>
   <body>
-    <!-- preloader -->
-  <div id="preloader">
-    <div class="wrapper">
-        <div class="box-wrap">
-            <div class="box one"></div>
-            <div class="box two"></div>
-            <div class="box three"></div>
-            <div class="box four"></div>
-            <div class="box five"></div>
-            <div class="box six"></div>
+
+    <div class="preloader">
+      <div class="loader">
+        <div class="ytp-spinner">
+          <div class="ytp-spinner-container">
+            <div class="ytp-spinner-rotator">
+              <div class="ytp-spinner-left">
+                <div class="ytp-spinner-circle"></div>
+              </div>
+              <div class="ytp-spinner-right">
+                <div class="ytp-spinner-circle"></div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
@@ -48,101 +427,25 @@
                 <a href="#" onclick="forgotPassword()">Forgot Password?</a>
               </div>
             <input type="submit" value="Login" class="btn solid" />
- add/your-feature
-          </form>
-
-          <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FinVeda Website</title>
-  <style>
-    /* Styles for the sign-in section */
-    .sign-in-section {
-      margin-top: 20px;
-      padding: 20px;
-      background-color: #f9f9f9;
-      border-radius: 10px;
-      text-align: center;
-    }
-    .sign-in-btn {
-      margin: 10px;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      color: #fff;
-      cursor: pointer;
-      font-size: 16px;
-    }
-    .google-btn { background-color: #db4437; }
-    .facebook-btn { background-color: #3b5998; }
-    .twitter-btn { background-color: #1da1f2; }
-  </style>
-</head>
-<body>
-  <!-- Content of the website -->
-
-  <!-- Sign-in section -->
-  <div class="sign-in-section">
-    <h2>Sign In with Social Media</h2>
-    <p>Select a social media platform to sign in:</p>
-    <button class="sign-in-btn google-btn" onclick="signInWith('Google')">Sign in with Google</button>
-    <button class="sign-in-btn facebook-btn" onclick="signInWith('Facebook')">Sign in with Facebook</button>
-    <button class="sign-in-btn twitter-btn" onclick="signInWith('Twitter')">Sign in with Twitter</button>
-  </div>
-
-  <script>
-    // Simulated sign-in function
-    function signInWith(platform) {
-      alert(`Redirecting to ${platform} login...`);
-      // Here you would integrate real OAuth login redirects
-      // For example, window.location.href = '<auth-provider-url>';
-    }
-  </script>
-</body>
-</html>
-
-            
-
-
-
-
             <p class="social-text">Or Sign in with social platforms</p>
-            <div class="social-media">
-              <a
-                href="https://www.google.com"
-                target="_blank"
-                class="social-icon"
-              >
-                <i
-                  class="fab fa-google"
-                  style="font-size: 24px; color: #4285f4"
-                ></i>
-              </a>
-              <a
-                href="https://facebook.com/YourPage"
-                target="_blank"
-                class="social-icon"
-              >
-                <i
-                  class="fab fa-facebook-f"
-                  style="font-size: 24px; color: #4267b2"
-                ></i>
-              </a>
-              <a
-                href="https://github.com/YourGitHubProfile"
-                target="_blank"
-                class="social-icon"
-              >
-                <i
-                  class="fab fa-github"
-                  style="font-size: 24px; color: #333"
-                ></i>
-              </a>
-            </div>
+            <div class="social-icons">
+              <div class="social-icon-frame">
+                  <a href="https://www.google.com" target="_blank" class="social-icon">
+                      <i class="fab fa-google"></i>
+                  </a>
+              </div>
+              <div class="social-icon-frame">
+                  <a href="https://facebook.com/YourPage" target="_blank" class="social-icon">
+                      <i class="fab fa-facebook-f"></i>
+                  </a>
+              </div>
+              <div class="social-icon-frame">
+                  <a href="https://github.com/YourGitHubProfile" target="_blank" class="social-icon">
+                      <i class="fab fa-github"></i>
+                  </a>
+              </div>
+          </div>
           </form>
-
           <form action="#" class="sign-up-form">
             <h2 class="title">Sign up</h2>
             <div class="input-field">
@@ -171,17 +474,23 @@
         
             <input type="submit" class="btn" value="Sign up" />
             <p class="social-text">Or Sign up with social platforms</p>
-            <div class="social-media">
-                <a href="https://www.google.com" target="_blank" class="social-icon">
-                    <i class="fab fa-google" style="font-size: 24px; color: #4285F4;"></i>
-                </a>
-                <a href="https://facebook.com/YourPage" target="_blank" class="social-icon">
-                    <i class="fab fa-facebook-f" style="font-size: 24px; color: #4267B2;"></i>
-                </a>
-                <a href="https://github.com/YourGitHubProfile" target="_blank" class="social-icon">
-                    <i class="fab fa-github" style="font-size: 24px; color: #333;"></i>
-                </a>
-            </div>
+            <div class="social-icons">
+              <div class="social-icon-frame">
+                  <a href="https://www.google.com" target="_blank" class="social-icon">
+                      <i class="fab fa-google"></i>
+                  </a>
+              </div>
+              <div class="social-icon-frame">
+                  <a href="https://facebook.com/YourPage" target="_blank" class="social-icon">
+                      <i class="fab fa-facebook-f"></i>
+                  </a>
+              </div>
+              <div class="social-icon-frame">
+                  <a href="https://github.com/YourGitHubProfile" target="_blank" class="social-icon">
+                      <i class="fab fa-github"></i>
+                  </a>
+              </div>
+          </div>
         </form>
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>
@@ -260,7 +569,6 @@
         </div>
       </div>
     </div>
-    <script src="preloader.js"></script>
     <script>
       const sign_in_btn = document.querySelector("#sign-in-btn");
       const sign_up_btn = document.querySelector("#sign-up-btn");
@@ -383,5 +691,7 @@
     <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-auth-compat.js"></script>
     <script src="firebase.js"></script>
+    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="./assets/js/main.js"></script>
   </body>
 </html>

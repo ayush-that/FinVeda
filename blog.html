@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Ayush Singh">
     <link
-      rel="shortcut icon"  href="./assets/images/favicon2.png" type="image/png" />
+      rel="shortcut icon"  href="/assets/images/favicon2.webp" type="image/png" />
     <link rel="stylesheet"  href="./assets/css/animate.css" />
     <link rel="stylesheet"  href="./assets/css/magnific-popup.css" />
     <link rel="stylesheet"  href="./assets/css/slick.css" />
@@ -29,6 +29,8 @@
     <link rel="stylesheet"  href="./assets/css/blog.css"/>
      <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
     <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 <body>
 
   <div class="circle-container">
@@ -103,7 +105,7 @@
                 <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
                   <div class="icon1" >
                     <a href="./index.html">
-                    <img src="assets/images/l (2).png" alt="icon.png">
+                      <img src="assets/images/FinvedaLogo.png" alt="icon.png" style="width: 11rem;">
                     </a>
                   </div> 
                   <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
@@ -148,9 +150,9 @@
                   </ul>
                 </div>
                 <script>
-                  const toggleButton = document.getElementById('theme-toggle');
-                  const body = document.body;
-                  const currentTheme = localStorage.getItem('theme');
+                  var toggleButton = document.getElementById('theme-toggle');
+                  var body = document.body;
+                  var currentTheme = localStorage.getItem('theme');
   
                   if (currentTheme === 'dark') {
                   body.classList.add('dark-mode');
@@ -360,11 +362,40 @@
                 <a class="page-scroll" href="./blog.html">Blogs 📰</a>
                 <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
                 <a class="page-scroll main-btn" href="#" onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
+                <li class="nav-item no-underline">
+                  <button id="theme-toggle2" class="theme-toggle2" style="margin-right: 2px;">
+                    🌙
+                  </button>
+                </li>
                 <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
                   <span></span>
                 </div>
               </nav>
+              <script>
+                var toggleButton = document.getElementById('theme-toggle2');
+                var body = document.body;
+                var currentTheme = localStorage.getItem('theme');
 
+                if (currentTheme === 'dark') {
+                body.classList.add('dark-mode');
+                toggleButton.classList.add('dark');
+                toggleButton.textContent = '🌞';
+                }
+                
+                toggleButton.addEventListener('click', function () {
+                body.classList.toggle('dark-mode');
+                toggleButton.classList.toggle('dark');
+                
+                // Update button icon based on mode
+                if (body.classList.contains('dark-mode')) {
+                  toggleButton.textContent = '🌞';  // Light mode icon
+                  localStorage.setItem('theme', 'dark');
+                } else {
+                  toggleButton.textContent = '🌙';  // Dark mode icon
+                  localStorage.setItem('theme', 'light');
+                }
+                });
+            </script>
                   
                 <link href="./navbar.css" rel="stylesheet">
                 <script type="text/javascript" src="./navbar.js"></script>
@@ -436,14 +467,14 @@
               <div class="row">
                 <div ><img id="blog-pic" src="./assets/images/blog-img.webp" alt="QUIZ"></div>
                 <div class="col-lg-6">
-                  <div class="section-title pb-35">
+                  <div class="section-title pb-35" data-aos="zoom-in">
                     <h1 id="title" > Blog Posts</h1>
                   </div>
                 </div>
               </div>
               
-              <div class="row justify-content-start">
-                <div class="col-lg-4 col-md-7">
+              <div class="row justify-content-start"  >
+                <div class="col-lg-4 col-md-7" data-aos="slide-right">
                   <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                     <div class="blog-image">
                       <a href="./blogs/how-to-deal-with-unknown-risks-in-life-and-investing.html">
@@ -462,7 +493,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-4 col-md-7">
+                <div class="col-lg-4 col-md-7" data-aos="zoom-in">
                   <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                     <div class="blog-image">
                       <a href="./blogs/how-to-10x-your-generational-wealth.html">
@@ -477,7 +508,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-4 col-md-7">
+                <div class="col-lg-4 col-md-7" data-aos="slide-left">
                   <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                     <div class="blog-image">
                       <a href="./blogs/invest-minimal.html">
@@ -485,7 +516,7 @@
                       </a>
                     </div>
                     <div class="blog-content">
-                      <a href="./blogs/invest-minimal.html">
+                      <a href="./blogs/invest-minimal.html" >
                         <p class="reviewtext">
                           Investing with Minimal Savings: A Guide for Women Investors
                         </p>
@@ -496,7 +527,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-4 col-md-7">
+                <div class="col-lg-4 col-md-7" data-aos="slide-right">
                   <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                     <div class="blog-image">
                       <a href="./blogs/Pocketmoney.html">
@@ -513,7 +544,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-4 col-md-7">
+                <div class="col-lg-4 col-md-7" data-aos="zoom-in">
                   <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                     <div class="blog-image">
                       <a href="./blogs/senior.html">
@@ -530,7 +561,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-4 col-md-7">
+                <div class="col-lg-4 col-md-7" data-aos="slide-left">
                   <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                     <div class="blog-image">
                       <a href="./blogs/why-investing-in-stocks-is-better-than-fixed-deposit.html">
@@ -547,7 +578,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-4 col-md-7">
+                <div class="col-lg-4 col-md-7" data-aos="slide-right">
                   <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                     <div class="blog-image">
                       <a href="/blogs/starup.html">
@@ -564,7 +595,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-4 col-md-7">
+                <div class="col-lg-4 col-md-7" data-aos="zoom-in">
                   <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                     <div class="blog-image">
                       <a href="./blogs/how-fintech-is-revolutionizing-small-business-lending.html">
@@ -581,7 +612,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-4 col-md-7">
+                <div class="col-lg-4 col-md-7" data-aos="slide-left">
                   <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                     <div class="blog-image">
                       <a href="./blogs/economic-trends-and-analysis.html">
@@ -598,7 +629,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-4 col-md-7">
+                <div class="col-lg-4 col-md-7" data-aos="slide-right">
                   <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                     <div class="blog-image">
                       <a href="./blogs/empowering-you-with-economic-knowledge-for-smarter-decisions.html">
@@ -615,7 +646,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-4 col-md-7">
+                <div class="col-lg-4 col-md-7" data-aos="zoom-in">
                   <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                     <div class="blog-image">
                       <a href="./blogs/Mutual-Funds-101-A-Beginners-Guide-to-Smart-Investing.html">
@@ -634,7 +665,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-4 col-md-7">
+                <div class="col-lg-4 col-md-7" data-aos="slide-left">
                   <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                     <div class="blog-image">
                       <a href="./blogs/saving-for-future.html">
@@ -651,7 +682,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-4 col-md-7">
+                <div class="col-lg-4 col-md-7" data-aos="slide-right">
                   <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                     <div class="blog-image">
                       <a href="./blogs/real-estate-economics.html">
@@ -668,7 +699,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-4 col-md-7">
+                <div class="col-lg-4 col-md-7" data-aos="slide-left">
                   <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                     <div class="blog-image">
                       <a href="./blogs/Types-of-Stock-Investments-A-Quick-Guide.html">
@@ -791,7 +822,7 @@
         <div class="row" id="footer">
             <div class="col-lg-4 col-md-6 col-sm-8">
                 <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                  <img src="./assets/images/l (2).png" alt="FinVeda Logo" style="height: 80px; width: auto; margin-bottom: 15px;" />
+                  <img src="./assets/images/FinvedaLogo.png" alt="FinVeda Logo" style="height: 80px; width: auto; margin-bottom: 15px;" />
                     <p class="text custom-margin">
                         We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
                     </p>
@@ -928,6 +959,12 @@
     <div class="gtranslate_wrapper"></div>
     <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
     <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 2000
+  });
+</script>
 
     
   </body>
