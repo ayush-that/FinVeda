@@ -1772,49 +1772,184 @@
   </head>
 
   <body>
-    <div class="form-section">
-      <form class="feedbackform" id="feedback-form">
-        <div class="form-group">
-          <div class="section-title text-center">
-            <h2 class="form-heading">We Value Your Feedback</h2>
-            <p>Your input helps us to improve and provide better services. Please fill out the form to let us know your
-              thoughts.</p>
+    <div id="feedback-container">
+      <form id="user-feedback-form">
+          <div id="form-header">
+              <div id="title-wrapper" class="text-center">
+                  <h2 id="feedback-title">We Value Your Feedback</h2>
+                  <p>Your input helps us to improve and provide better services. Please fill out the form to let us know your thoughts.</p>
+              </div>
+              <label id="input-label-name" for="username">Name:</label>
+              <input id="input-field-name" type="text" id="username" name="username" placeholder="Enter your name" required>
           </div>
-          <label class="form-label" for="name">Name:</label>
-          <input class="form-input" type="text" id="name" name="name" placeholder="Enter the name" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="email">Email:</label>
-          <input class="form-input" placeholder="Enter your email" type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Rating:</label>
-          <div id="emoji-description" class="emoji-description">Select an option</div>
-        </div>
-        <div class="emojis">
-          <input class="form-input" type="radio" id="emoji1" name="rating" value="1">
-          <label class="form-label" for="emoji1">&#128577;</label> <!-- Very Bad -->
-          <input class="form-input" type="radio" id="emoji2" name="rating" value="2">
-          <label class="form-label" for="emoji2">&#128542;</label> <!-- Bad -->
-          <input class="form-input" type="radio" id="emoji3" name="rating" value="3">
-          <label class="form-label" for="emoji3">&#128528;</label> <!-- Neutral -->
-          <input class="form-input" type="radio" id="emoji4" name="rating" value="4">
-          <label class="form-label" for="emoji4">&#128522;</label> <!-- Good -->
-          <input class="form-input" type="radio" id="emoji5" name="rating" value="5">
-          <label class="form-label" for="emoji5">&#128515;</label> <!-- Excellent -->
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="comments">Comments:</label>
-          <textarea class="form-textarea" placeholder="Enter your comments" id="comments" name="comments" rows="4"
-            required></textarea>
-        </div>
-        <div class="form-group">
-          <div class="form-group">
-            <button class="form-button" id="feed-submit" type="submit">Submit</button>
+          <div id="input-group-email">
+              <label id="input-label-email" for="user-email">Email:</label>
+              <input id="input-field-email" placeholder="Enter your email" type="email" id="user-email" name="user-email" required>
           </div>
-        </div>
+          <div id="input-group-rating">
+              <label id="input-label-rating">Rating:</label>
+              <div id="emoji-guide">Select an option</div>
+          </div>
+          <div id="emoji-selection">
+              <input id="input-field-rating-1" type="radio" name="rating" value="1">
+              <label id="input-label-rating-1" for="input-field-rating-1">&#128577;</label> <!-- Very Bad -->
+              <input id="input-field-rating-2" type="radio" name="rating" value="2">
+              <label id="input-label-rating-2" for="input-field-rating-2">&#128542;</label> <!-- Bad -->
+              <input id="input-field-rating-3" type="radio" name="rating" value="3">
+              <label id="input-label-rating-3" for="input-field-rating-3">&#128528;</label> <!-- Neutral -->
+              <input id="input-field-rating-4" type="radio" name="rating" value="4">
+              <label id="input-label-rating-4" for="input-field-rating-4">&#128522;</label> <!-- Good -->
+              <input id="input-field-rating-5" type="radio" name="rating" value="5">
+              <label id="input-label-rating-5" for="input-field-rating-5">&#128515;</label> <!-- Excellent -->
+          </div>
+          <div id="input-group-comments">
+              <label id="input-label-comments" for="user-comments">Comments:</label>
+              <textarea id="textarea-field-comments" placeholder="Enter your comments" id="user-comments" name="user-comments" rows="4" required></textarea>
+          </div>
+          <div id="submit-group">
+              <button id="submit-button" type="submit">Submit</button>
+          </div>
       </form>
-    </div>
+  </div>
+  
+  
+<style>
+  /* Parent div gradient */
+#feedback-container {
+    background: linear-gradient(135deg, #a8e0b3, #3ac7a0); /* Light green to teal gradient */
+    padding: 30px;
+    margin-top: 100px;
+    border-radius: 15px;
+    border: 5px solid white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Adjust as needed */
+    margin: 0 auto;
+}
+
+/* Form styles */
+#user-feedback-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header styles */
+#form-header {
+    margin-bottom: 20px;
+}
+
+/* Title styles */
+#title-wrapper {
+    margin-bottom: 20px;
+}
+
+#feedback-title {
+    font-size: 24px; /* Title size */
+    margin-bottom: 20px;
+}
+
+/* Input and textarea styles */
+#input-group-email,
+#input-group-rating,
+#input-group-comments {
+    margin-bottom: 15px;
+}
+
+#input-label-name,
+#input-label-email,
+#input-label-rating,
+#input-label-comments {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #333;
+}
+
+#input-field-name,
+#input-field-email,
+#textarea-field-comments {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid  #3c2ed3; /* Border color */
+    border-radius: 5px;
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transition effect */
+}
+
+#input-field-name:focus,
+#input-field-email:focus,
+#textarea-field-comments:focus {
+    border-color: #0e8f6b; /* Darker green on focus */
+    box-shadow: 0 0 5px rgba(58, 199, 160, 0.5); /* Focus shadow */
+    outline: none;
+}
+
+/* Emoji selection styles */
+#emoji-selection {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+#input-field-rating-1,
+#input-field-rating-2,
+#input-field-rating-3,
+#input-field-rating-4,
+#input-field-rating-5 {
+    display: none; /* Hide the default radio button */
+}
+
+#input-field-rating-1 + label,
+#input-field-rating-2 + label,
+#input-field-rating-3 + label,
+#input-field-rating-4 + label,
+#input-field-rating-5 + label {
+    font-size: 24px; /* Adjust emoji size */
+    cursor: pointer;
+    transition: transform 0.3s; /* Transition effect */
+}
+
+#input-field-rating-1:checked + label,
+#input-field-rating-2:checked + label,
+#input-field-rating-3:checked + label,
+#input-field-rating-4:checked + label,
+#input-field-rating-5:checked + label {
+    transform: scale(1.2); /* Scale emoji when selected */
+}
+
+/* Button styles */
+#submit-button {
+    background-color: #3c2ed3; /* Button background */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Transition effects */
+}
+
+#submit-button:hover {
+    background-color: #28b594; /* Darker green on hover */
+    transform: translateY(-2px); /* Lift effect */
+}
+
+#submit-button:active {
+    transform: translateY(0); /* Reset lift effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    #feedback-container {
+        padding: 20px;
+    }
+
+    #submit-button {
+        width: 100%;
+    }
+}
+
+</style>
+   
+
+
     <div class="modal" id="successModal">
       <div class="modal-content">
         <span class="modal-close" id="closeSuccessModal">✖</span>
