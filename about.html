@@ -153,42 +153,44 @@
                   <span class="toggler-icon"></span>
                   <span class="toggler-icon"></span>
                 </button> -->
-              <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent"
+                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent"
                 style="margin: auto; margin-left: -5px;">
                 <div class="icon1">
                   <a href="./index.html">
-                    <img src="assets/images/FinvedaLogo.png" alt="icon.png" style="width: 11rem;">
+                    <img src="./assets/images/FinvedaLogo.png" alt="icon.png" style="width: 11rem;">
                   </a>
                 </div>
                 <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
                   <li class="nav-item">
-                    <a class="page-scroll" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
+                    <a class="page-scroll active-link" href="./index.html" style="color: rgb(237, 242, 244);">Home
+                      🏡</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll active-link" href="./about.html" style="color: rgb(237, 242, 244);">About Us
-                      📖</a>
-                  </li> 
+                    <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
+                  </li>
                   <li class="nav-item">
                     <a class="page-scroll" href="./finance.html" style="color: rgb(237, 242, 244);">Courses 📚</a>
-                  </li> 
+                  </li>
+                 
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
+                  </li>
                   <li class="nav-item">
                     <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
                   </li>
                   <li class="nav-item">
                     <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
                   </li>
-                  <!-- Dropdown for Explore -->
-                <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
-                  <a class="page-scroll dropdown-toggle" href="#" style="color: rgb(237, 242, 244);">
-                    <span class="explore-text">Explore 📚</span> 
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a href="./trends.html">Trends 📈</a></li>
-                    <li><a href="./tools/sip.html">Tools 🔧</a></li>
-                    <li><a href="./blog.html">Blogs 📰</a></li>
-                    <li><a href="./quiz.html">Quiz 🤔</a></li>
-                  </ul>
-                </li>
+
                   <li class="nav-item no-underline">
                     <a class="main-btn navbar-btn"
                       style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;"
@@ -202,7 +204,7 @@
                 </ul>
               </div>
               <script>
-                var toggleButton = document.getElementById('theme-toggle');
+                const toggleButton = document.getElementById('theme-toggle');
                 var body = document.body;
                 var currentTheme = localStorage.getItem('theme');
 
@@ -470,26 +472,26 @@
               </div>
             </nav>
             <script>
-              var toggleButton = document.getElementById('theme-toggle2');
+              const toggleBtn = document.getElementById('theme-toggle2');
               var body = document.body;
               var currentTheme = localStorage.getItem('theme');
     
               if (currentTheme === 'dark') {
               body.classList.add('dark-mode');
-              toggleButton.classList.add('dark');
-              toggleButton.textContent = '🌞';
+              toggleBtn.classList.add('dark');
+              toggleBtn.textContent = '🌞';
               }
               
-              toggleButton.addEventListener('click', function () {
+              toggleBtn.addEventListener('click', function () {
               body.classList.toggle('dark-mode');
-              toggleButton.classList.toggle('dark');
+              toggleBtn.classList.toggle('dark');
               
               // Update button icon based on mode
               if (body.classList.contains('dark-mode')) {
-                toggleButton.textContent = '🌞';  // Light mode icon
+                toggleBtn.textContent = '🌞';  // Light mode icon
                 localStorage.setItem('theme', 'dark');
               } else {
-                toggleButton.textContent = '🌙';  // Dark mode icon
+                toggleBtn.textContent = '🌙';  // Dark mode icon
                 localStorage.setItem('theme', 'light');
               }
               });
@@ -540,97 +542,222 @@
   </header>
 
   <div class="about-section" style="padding: 50px;">
+    <img style="position: absolute; top :200px;mix-blend-mode: multiply;left: 10px;" src="./assets/images/aboutgg.jpg" alt="photo">
     <div class="about-card" style="padding: 50px;">
-        <h2 style="padding-left: 550px;font-size: 2.5rem;margin-bottom: 20px;margin-top: 20px;color: white;">ABOUT US</h2>
-        <div class="carousel">
+        <h2 style="text-align: center; font-size: 3.5rem; margin-bottom: 40px; margin-top: 20px; color: rgb(79, 93, 251);">ABOUT US</h2>
+        <div class="slider carousel">
             <div class="carousel-track">
-                <!-- Card 1 -->
-                <div class="card-column">
+                
+                <!-- Financial Kit Card -->
+                <div class="item card-column">
                     <div class="service-card">
                         <div class="service-content">
                             <div class="service-logo">
                                 <img src="./assets/images/service-logo.webp" alt="Financial Kit">
                             </div>
                             <h4>Financial Kit</h4>
-                            <p>We offer expert-written blogs on investment tips and strategies, and current economic trends, all crafted to keep you well-informed. With our SIP and PPF tools, you'll discover the power of compounding and make informed decisions regarding your savings.</p>
+                            <p>We offer investment tips and strategies, and current economic trends. With our SIP and PPF tools, you'll discover the power of compounding for smart savings.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="card-column">
+                <!-- Stock Market Card -->
+                <div class="item card-column">
                     <div class="service-card">
                         <div class="service-content">
                             <div class="service-logo">
                                 <img src="./assets/images/service-logo3.webp" alt="Stock Market">
                             </div>
                             <h4>Stock Market</h4>
-                            <p>Make smarter decisions by staying updated on current market happenings in real-time with our Stock Market API's results. FinVeda's personalized AI assistant, Arth Sathi, revolutionizes financial concepts, providing dynamic learning experiences.</p>
+                            <p>Make smarter decisions by staying updated with real-time market data. FinVeda’s AI assistant, Arth Sathi, simplifies financial learning.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="card-column">
+                <!-- Our Team Card -->
+                <div class="item card-column">
                     <div class="service-card">
                         <div class="service-content">
                             <div class="service-logo">
                                 <img src="./assets/images/service-logo2.webp" alt="Our Team">
                             </div>
                             <h4>Our Team</h4>
-                            <p>We at FinVeda aim to make you a stock market guru easily with our AI-powered teaching and financial blogs. FinVeda blogs redefine the conventional narrative and are crafted to resonate with readers of all financial backgrounds, making complex concepts digestible.</p>
+                            <p>Our AI-powered resources and financial blogs make complex concepts easy to understand for readers of all backgrounds.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Additional Card 1 -->
-                <div class="card-column">
+                <!-- Additional cards as needed -->
+                <div class="item card-column">
                     <div class="service-card">
                         <div class="service-content">
                             <div class="service-logo">
                                 <img src="./assets/images/images.png" alt="Crypto Insights">
                             </div>
                             <h4>Crypto Insights</h4>
-                            <p>Stay ahead with the latest crypto trends, in-depth analyses, and updates on blockchain technologies. Our platform offers insights to help you understand the rapidly evolving crypto market.</p>
+                            <p>Stay ahead with the latest crypto trends and analyses to navigate the evolving market.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Additional Card 2 -->
-                <div class="card-column">
+                <div class="item card-column">
                     <div class="service-card">
                         <div class="service-content">
                             <div class="service-logo">
                                 <img src="./assets/images/retirement.jpeg" alt="Retirement Planning">
                             </div>
                             <h4>Retirement Planning</h4>
-                            <p>Our comprehensive retirement planning resources assist you in preparing for a secure future, offering tools and tips to maximize your retirement savings and achieve financial freedom.</p>
+                            <p>Prepare for a secure future with our comprehensive retirement planning resources.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Additional Card 3 -->
-                <div class="card-column">
+                <div class="item card-column">
                     <div class="service-card">
                         <div class="service-content">
                             <div class="service-logo">
                                 <img src="./assets/images/tax.jpg" alt="Tax Planning">
                             </div>
                             <h4>Tax Planning</h4>
-                            <p>Our expert resources on tax-saving strategies help you maximize your returns and stay compliant. Learn about deductions, exemptions, and smart tax planning for individuals and businesses alike.</p>
+                            <p>Learn about deductions and exemptions to optimize your tax strategy effectively.</p>
                         </div>
                     </div>
                 </div>
             </div>
+
             <!-- Carousel Navigation Buttons -->
-            <button class="carousel-btn left" id="carousel-prev">&#10094;</button>
-            <button class="carousel-btn right" id="carousel-next">&#10095;</button>
+            <button class="carousel-btn" id="prev">&#10094;</button>
+            <button class="carousel-btn" id="next">&#10095;</button>
         </div>
     </div>
 </div>
 
-
 <style>
+  .about-section{
+    /* background-image: linear-gradient(to top right, #8B5CF6, #EC4899); */
+    /* min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center; */
+    /* align-items: center;
+    font-family: monospace; */
+}
+
+.about-section {
+
+    width: 100%;
+
+}
+
+.slider, .carousel {
+    position: relative;
+    width: 100%;
+    height: 370px;
+    overflow: hidden;
+}
+
+.item {
+    position: absolute;
+    width: 300px;
+    height: 420px;
+    text-align: justify;
+    background-color: rgb(185, 246, 250);
+    border-radius: 10px;
+    
+    transition: 0.5s;
+    left: calc(50% - 110px);
+    border:4px solid #c3e6f7;
+    top: 0;
+}
+.service-logo{
+  width: 100%;;
+}
+.service-logo img{
+  padding:10px;
+  padding-top: 25px;
+  width: 100%;
+
+}
+.service-content{
+  padding: 10px;
+}
+.service-content h4{
+  color:#4562f1;
+  margin-bottom: 10px;
+  padding-left: 35px;
+}
+.service-content p{
+  color: #0e0e0e;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 40%;
+    color: #0e0e0e;
+    background-color: transparent;
+    border: none;
+    font-size: xxx-large;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+#next {
+    right: 400px;
+}
+
+#prev {
+    left: 400px;
+}
+
+</style>
+
+<script>
+  const items = document.querySelectorAll('.carousel-track .item');
+const next = document.getElementById('next');
+const prev = document.getElementById('prev');
+let activeIndex = 3;
+
+function loadShow() {
+    let offset = 0;
+    items[activeIndex].style.transform = `none`;
+    items[activeIndex].style.zIndex = 1;
+    items[activeIndex].style.filter = 'none';
+    items[activeIndex].style.opacity = 1;
+
+    for (let i = activeIndex + 1; i < items.length; i++) {
+        offset++;
+        items[i].style.transform = `translateX(${120 * offset}px) scale(${1 - 0.2 * offset})`;
+        items[i].style.zIndex = -offset;
+        items[i].style.filter = 'blur(5px)';
+        items[i].style.opacity = offset > 2 ? 0 : 0.6;
+    }
+
+    offset = 0;
+    for (let i = activeIndex - 1; i >= 0; i--) {
+        offset++;
+        items[i].style.transform = `translateX(${-120 * offset}px) scale(${1 - 0.2 * offset})`;
+        items[i].style.zIndex = -offset;
+        items[i].style.filter = 'blur(5px)';
+        items[i].style.opacity = offset > 2 ? 0 : 0.6;
+    }
+}
+
+loadShow();
+
+next.onclick = function () {
+    activeIndex = activeIndex + 1 < items.length ? activeIndex + 1 : activeIndex;
+    loadShow();
+};
+
+prev.onclick = function () {
+    activeIndex = activeIndex - 1 >= 0 ? activeIndex - 1 : activeIndex;
+    loadShow();
+};
+
+</script>
+
+
+<!-- <style>
 .about-section {
 
 border: 20px solid white;
@@ -744,9 +871,9 @@ background: rgba(0, 0, 0, 0.7);
 
 
 
-</style>
+</style> -->
 
-
+<!-- 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
 const track = document.querySelector('.carousel-track');
@@ -782,14 +909,14 @@ prevButton.addEventListener('click', () => {
 });
 });
 
-</script>
+</script> -->
 
 
 <div class="blog-content back">
-  <div id="good-card">
-      <div id="good-card1">
+  <div id="good-card" >
+      <div id="good-card1"  style="margin-right: 15px;">
         <h1 class="head">Grow with Arth</h1>
-          <div id="white-card1" style="padding: 30px;">
+          <div id="white-card1" style="padding: 20px; ">
               Wanna learn how to grow your money to become rich? We have made becoming a stock market Guru easy with our AI
               powered finance advisor - Arth Sathi 🤵🏻
           </div>
@@ -798,7 +925,7 @@ prevButton.addEventListener('click', () => {
           </div>
           <div id="shadow1"></div>
       </div>
-      <div id="good-card2">
+      <div id="good-card2" style="margin-right: 15px;">
           <div id="round1">
               <!-- Add content or styles if needed -->
           </div>
@@ -806,7 +933,7 @@ prevButton.addEventListener('click', () => {
               <!-- Add content or styles if needed -->
           </div>
           <h1 class="head">Live Market Trends</h1>
-          <div id="white-card2" style="padding: 30px;">
+          <div id="white-card2" style="padding: 20px;">
               FinVeda trends fetches live market figures, ensuring users access the most up-to-date information instantly.
               Be it stock prices, currency rates, or commodity values.
           </div>
@@ -817,7 +944,7 @@ prevButton.addEventListener('click', () => {
       </div>
       <div id="good-card3">
         <h1 class="head">FinVeda Tools</h1>
-          <div id="white-card3" style="padding: 30px;">
+          <div id="white-card3" style="padding: 20px;">
               FinVeda tools provide a range of calculators like Mutual Fund Investment tool, EMI calculator, Insurance
               calculator, Savings Goods etc which would make your life easy.
           </div>

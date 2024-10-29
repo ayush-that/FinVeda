@@ -71,52 +71,59 @@
             <span class="toggler-icon"></span>
             <span class="toggler-icon"></span>
           </button> -->
-          <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
-            <div class="icon1" >
-              <a href="./index.html">
-                <img src="assets/images/FinvedaLogo.png" alt="icon.png" style="width: 11rem;">
-              </a>
-            </div> 
-            <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
-              <li class="nav-item">
-                <a class="page-scroll" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
-              </li>     
-              <li class="nav-item">
-                <a class="page-scroll active-link" href="./finance.html" style="color: rgb(237, 242, 244);">Courses 📚</a>
-              </li> 
-              <li class="nav-item">
-                <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
-              </li>
-              <!-- Dropdown for Explore -->
-              <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
-                <a class="page-scroll dropdown-toggle" href="#" style="color: rgb(237, 242, 244);">
-                  <span class="explore-text">Explore 📚</span> 
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a href="./trends.html">Trends 📈</a></li>
-                  <li><a href="./tools/sip.html">Tools 🔧</a></li>
-                  <li><a href="./blog.html">Blogs 📰</a></li>
-                  <li><a href="./quiz.html">Quiz 🤔</a></li>
-                </ul>
-              </li>
-              <li class="nav-item no-underline">
-                <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
-              </li>
-              <li class="nav-item no-underline">
-              <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
-                🌙
-              </button>
-              </li>
-            </ul>
-          </div>
+
+          <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent"
+                    style="margin: auto; margin-left: -5px;">
+                    <div class="icon1">
+                      <a href="./index.html">
+                        <img src="./assets/images/FinvedaLogo.png" alt="icon.png" style="width: 11rem;">
+                      </a>
+                    </div>
+                    <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
+                      <li class="nav-item">
+                        <a class="page-scroll active-link" href="./index.html" style="color: rgb(237, 242, 244);">Home
+                          🏡</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="page-scroll" href="./finance.html" style="color: rgb(237, 242, 244);">Courses 📚</a>
+                      </li>
+                     
+                      <li class="nav-item">
+                        <a class="page-scroll" href="./careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
+                      </li>
+                      <li class="nav-item no-underline">
+                        <a class="main-btn navbar-btn"
+                          style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;"
+                          data-scroll-nav="0" href="./loginPage.html">Login/Register 💻</a>
+                      </li>
+                      <li class="nav-item no-underline">
+                        <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
+                          🌙
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+
           <script>
-            var toggleButton = document.getElementById('theme-toggle');
+            const toggleButton = document.getElementById('theme-toggle');
             var body = document.body;
             var currentTheme = localStorage.getItem('theme');
 
@@ -158,26 +165,26 @@
           </div>
         </nav>
         <script>
-          var toggleButton = document.getElementById('theme-toggle2');
+          const toggleBtn = document.getElementById('theme-toggle2');
           var body = document.body;
           var currentTheme = localStorage.getItem('theme');
 
           if (currentTheme === 'dark') {
           body.classList.add('dark-mode');
-          toggleButton.classList.add('dark');
-          toggleButton.textContent = '🌞';
+          toggleBtn.classList.add('dark');
+          toggleBtn.textContent = '🌞';
           }
           
-          toggleButton.addEventListener('click', function () {
+          toggleBtn.addEventListener('click', function () {
           body.classList.toggle('dark-mode');
-          toggleButton.classList.toggle('dark');
+          toggleBtn.classList.toggle('dark');
           
           // Update button icon based on mode
           if (body.classList.contains('dark-mode')) {
-            toggleButton.textContent = '🌞';  // Light mode icon
+            toggleBtn.textContent = '🌞';  // Light mode icon
             localStorage.setItem('theme', 'dark');
           } else {
-            toggleButton.textContent = '🌙';  // Dark mode icon
+            toggleBtn.textContent = '🌙';  // Dark mode icon
             localStorage.setItem('theme', 'light');
           }
           });
@@ -431,6 +438,7 @@ button {
 <div id="particles-2"></div>
 </div>
 </footer>
+<button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top">↑</button>
 
   <script src="finance.js"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

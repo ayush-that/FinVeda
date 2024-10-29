@@ -19,8 +19,11 @@
   <link rel="stylesheet" href="../assets/css/quiz.css" />
   <link rel="stylesheet" href="../assets/css/popup.css" />
   <link rel="stylesheet" href="../assets/css/index.css" />
+
   <link rel="stylesheet" href="GSTstyle.css" />
   <link rel="stylesheet" type="text/css" href="sipcalculator.css">
+  <link rel="stylesheet" href="../assets/css/sip.css" />
+  <link rel="stylesheet" href="GSTstyle.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
   <link rel="stylesheet" href="navbar.css">
@@ -315,8 +318,8 @@
               <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent"
                 style="margin: auto; margin-left: -5px;">
                 <div class="icon1">
-                  <a href="../index.html">
-                    <img src="../assets/images/l (2).png" alt="icon.png">
+                  <a href="./index.html">
+                    <img src="../assets/images/FinvedaLogo.png" alt="icon.png" style="width: 11rem;">
                   </a>
                 </div>
                 </a>
@@ -690,10 +693,10 @@
         </div>
 
       </div>
+
       <div class="slider-item" onclick="openCalculator('savingsGoalCalculator')">
         <h3>Savings Goal Calculator</h3>
         <p>Determine how much to save monthly to reach your goals.</p>
-
         <div class="know-more">
           <button class="know-more-btn">Know More</button>
           <div class="know-more-content">
@@ -1035,7 +1038,7 @@
       .calculator-section:hover{
         background: linear-gradient(135deg,  hsl(325, 100%, 45%), #ff6f00);
       }
-
+      
       .page-container {
         max-width: 85vw;
         width: 85%;
@@ -1124,6 +1127,15 @@
         gap: 1.5vh;
         font-size: 1.1rem;
       }
+      /* Animation for Know More */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
       .result-container2 {
         text-align: left;
@@ -2252,7 +2264,6 @@
             <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
               <div class="footer-title">
                 <h4 class="title custom-margin">Contact Us</h4>
-
 
                 <script>
                   document.getElementById('unique-subscribe-form').addEventListener('submit', function (event) {

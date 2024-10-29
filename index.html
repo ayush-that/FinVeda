@@ -19,7 +19,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="FinVeda - Your Guide to Financial Wellness">
   <meta name="twitter:description" content="Explore a wealth of financial resources at FinVeda to enhance your financial literacy and investment skills.">
-
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
    <!-- Structured Data -->
     <script type="application/ld+json">
     {
@@ -282,6 +282,7 @@
                   <li><a href="./tools/sip.html">Tools 🔧</a></li>
                   <li><a href="./blog.html">Blogs 📰</a></li>
                   <li><a href="./quiz.html">Quiz 🤔</a></li>
+                  <li ><a href="./maps.html"  >MAPS 🗺️</a></li>
                 </ul>
               </li>
 
@@ -297,7 +298,7 @@
           </div>
 
           <script>
-            var toggleButton = document.getElementById('theme-toggle');
+            const toggleButton = document.getElementById('theme-toggle');
             var body = document.body;
             var currentTheme = localStorage.getItem('theme');
 
@@ -552,26 +553,26 @@
             </div>
           </nav>
           <script>
-            var toggleButton = document.getElementById('theme-toggle2');
+            const toggleBtn = document.getElementById('theme-toggle2');
             var body = document.body;
             var currentTheme = localStorage.getItem('theme');
 
             if (currentTheme === 'dark') {
             body.classList.add('dark-mode');
-            toggleButton.classList.add('dark');
-            toggleButton.textContent = '🌞';
+            toggleBtn.classList.add('dark');
+            toggleBtn.textContent = '🌞';
             }
             
-            toggleButton.addEventListener('click', function () {
+            toggleBtn.addEventListener('click', function () {
             body.classList.toggle('dark-mode');
-            toggleButton.classList.toggle('dark');
+            toggleBtn.classList.toggle('dark');
             
             // Update button icon based on mode
             if (body.classList.contains('dark-mode')) {
-              toggleButton.textContent = '🌞';  // Light mode icon
+              toggleBtn.textContent = '🌞';  // Light mode icon
               localStorage.setItem('theme', 'dark');
             } else {
-              toggleButton.textContent = '🌙';  // Dark mode icon
+              toggleBtn.textContent = '🌙';  // Dark mode icon
               localStorage.setItem('theme', 'light');
             }
             });
@@ -1109,6 +1110,24 @@
         </div>
       </div>
   </section>
+  <!--forum Section-->
+  <header class="forum_1">
+  </header>
+
+<main>
+    <section id="destinations" class="destinations">
+      <h1>Discussion Forum</h1>
+        <div class="post-container">
+            <form id="postForm">
+                <textarea id="postContent" placeholder="Write your post here..." required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+            <div id="posts"></div>
+        </div>
+    </section>
+    <!-- Add more sections for other categories -->
+</main>
+<script src="finance.js"></script>
 
   <!-- testimonail section starts here  -->
   <section id="testimonial" style="background-color: white;" class="testimonial-area pt-120">
@@ -1417,7 +1436,7 @@
             </div>
           </div>
           <div class="row justify-content-start">
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7" data-aos="slide-right">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                 <div class="blog-image">
                   <a href="./blogs/how-to-deal-with-unknown-risks-in-life-and-investing.html">
@@ -1436,7 +1455,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7" data-aos="zoom-in">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/how-to-10x-your-generational-wealth.html">
@@ -1451,7 +1470,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7" data-aos="slide-left">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/invest-minimal.html">
@@ -1470,7 +1489,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7" data-aos="slide-right">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/Pocketmoney.html">
@@ -1487,7 +1506,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7" data-aos="zoom-in">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/senior.html">
@@ -1504,7 +1523,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7" data-aos="slide-left">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/why-investing-in-stocks-is-better-than-fixed-deposit.html">
@@ -1521,7 +1540,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7" data-aos="slide-right">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="/blogs/starup.html">
@@ -1538,7 +1557,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7" data-aos="zoom-in">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/how-fintech-is-revolutionizing-small-business-lending.html">
@@ -1555,7 +1574,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7" data-aos="slide-left">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/economic-trends-and-analysis.html">
@@ -1572,7 +1591,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7" data-aos="slide-right">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/empowering-you-with-economic-knowledge-for-smarter-decisions.html">
@@ -1589,7 +1608,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7" data-aos="zoom-in">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/Mutual-Funds-101-A-Beginners-Guide-to-Smart-Investing.html">
@@ -1606,7 +1625,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7" data-aos="slide-left">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/saving-for-future.html">
@@ -1623,7 +1642,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7" data-aos="slide-right">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/real-estate-economics.html">
@@ -1640,7 +1659,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7" data-aos="slide-left">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/Types-of-Stock-Investments-A-Quick-Guide.html">
@@ -1766,51 +1785,123 @@
         cursor: pointer;
         font-size: 20px;
       }
+      #feedback-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #f9f9f9;
+}
+
+#feedback-container label i {
+    margin-right: 8px;
+    color: #555;
+}
+
+#submit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#submit-button:hover {
+    background-color: #45a049;
+}
+
+#success-message {
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 1.1em;
+    color: #2c7a7b;
+    background-color: #e6fffa;
+    border: 1px solid #b2f5ea;
+    border-radius: 4px;
+    display: none; /* Initially hidden */
+}
+
+.hidden {
+    display: none;
+}
+
     </style>
   </head>
 
   <body>
     <div id="feedback-container">
       <form id="user-feedback-form">
-          <div id="form-header">
-              <div id="title-wrapper" class="text-center">
-                  <h2 id="feedback-title">We Value Your Feedback</h2>
-                  <p>Your input helps us to improve and provide better services. Please fill out the form to let us know your thoughts.</p>
-              </div>
-              <label id="input-label-name" for="username">Name:</label>
-              <input id="input-field-name" type="text" id="username" name="username" placeholder="Enter your name" required>
+        <!-- Form fields -->
+        <div id="form-header">
+          <div id="title-wrapper" class="text-center">
+            <h2 id="feedback-title">We Value Your Feedback</h2>
+            <p>Your input helps us to improve and provide better services. Please fill out the form to let us know your
+              thoughts.</p>
           </div>
-          <div id="input-group-email">
-              <label id="input-label-email" for="user-email">Email:</label>
-              <input id="input-field-email" placeholder="Enter your email" type="email" id="user-email" name="user-email" required>
-          </div>
-          <div id="input-group-rating">
-              <label id="input-label-rating">Rating:</label>
-              <div id="emoji-guide">Select an option</div>
-          </div>
-          <div id="emoji-selection">
-              <input id="input-field-rating-1" type="radio" name="rating" value="1">
-              <label id="input-label-rating-1" for="input-field-rating-1">&#128577;</label> <!-- Very Bad -->
-              <input id="input-field-rating-2" type="radio" name="rating" value="2">
-              <label id="input-label-rating-2" for="input-field-rating-2">&#128542;</label> <!-- Bad -->
-              <input id="input-field-rating-3" type="radio" name="rating" value="3">
-              <label id="input-label-rating-3" for="input-field-rating-3">&#128528;</label> <!-- Neutral -->
-              <input id="input-field-rating-4" type="radio" name="rating" value="4">
-              <label id="input-label-rating-4" for="input-field-rating-4">&#128522;</label> <!-- Good -->
-              <input id="input-field-rating-5" type="radio" name="rating" value="5">
-              <label id="input-label-rating-5" for="input-field-rating-5">&#128515;</label> <!-- Excellent -->
-          </div>
-          <div id="input-group-comments">
-              <label id="input-label-comments" for="user-comments">Comments:</label>
-              <textarea id="textarea-field-comments" placeholder="Enter your comments" id="user-comments" name="user-comments" rows="4" required></textarea>
-          </div>
-          <div id="submit-group">
-              <button id="submit-button" type="submit">Submit</button>
-          </div>
+          <label id="input-label-name" for="username">
+            <i class="fas fa-user"></i> Name:
+          </label>
+          <input id="input-field-name" type="text" name="username" placeholder="Enter your name ...." required>
+        </div>
+        <div id="input-group-email">
+          <label id="input-label-email" for="user-email">
+            <i class="fas fa-envelope"></i> Email:
+          </label>
+          <input id="input-field-email" type="email" name="user-email" placeholder="Enter your email ..." required>
+        </div>
+        <div id="input-group-rating">
+          <label id="input-label-rating">
+            <i class="fas fa-star"></i> Rating:
+          </label>
+        </div>
+        <div id="emoji-selection">
+          <input id="input-field-rating-1" type="radio" name="rating" value="1">
+          <label id="input-label-rating-1" for="input-field-rating-1">&#128577;</label>
+          <input id="input-field-rating-2" type="radio" name="rating" value="2">
+          <label id="input-label-rating-2" for="input-field-rating-2">&#128542;</label>
+          <input id="input-field-rating-3" type="radio" name="rating" value="3">
+          <label id="input-label-rating-3" for="input-field-rating-3">&#128528;</label>
+          <input id="input-field-rating-4" type="radio" name="rating" value="4">
+          <label id="input-label-rating-4" for="input-field-rating-4">&#128522;</label>
+          <input id="input-field-rating-5" type="radio" name="rating" value="5">
+          <label id="input-label-rating-5" for="input-field-rating-5">&#128515;</label>
+        </div>
+        <div id="input-group-comments">
+          <label id="input-label-comments" for="user-comments">
+            <i class="fas fa-comments"></i> Comments:
+          </label>
+          <textarea id="textarea-field-comments" name="user-comments" rows="4" placeholder="Enter your comments ....."
+            required></textarea>
+        </div>
+        <div id="submit-group">
+          <button id="submit-button" type="submit">
+            <i class="fas fa-paper-plane"></i> Submit
+          </button>
+        </div>
       </form>
-  </div>
-  
-  
+      <!-- Placeholder for the success message -->
+      <div id="success-message" class="hidden">Thank you for your feedback!</div>
+    </div>
+<script>
+  document.getElementById("user-feedback-form").addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent form from submitting traditionally
+      // Display success message
+      const successMessage = document.getElementById("success-message");
+      successMessage.style.display = "block";
+      successMessage.innerText = "Thank you for your feedback!";
+      // Optional: Clear the form fields after submission
+      event.target.reset();
+    });
+
+</script>
 <style>
   /* Parent div gradient */
 #feedback-container {
@@ -2111,6 +2202,8 @@
                   <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
                   <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
                   <li><a href="./blogs/sitemap.html"><i class="fa-solid fa-sitemap"></i>  Site Map</a></li>
+ 
+
                 </ul>
             </div>
             <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
@@ -2371,173 +2464,214 @@
     
     <script src="visi.js"></script>
     <script src="../assets/js/index.js"></script>
+ 
 
+    <style>
 
-     <!-- Newsletter pop-up -->
- <style>
-  .popup-nl {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      justify-content: center;
-      align-items: center;
-      z-index: 1009;
-  }
+    
+      body {
 
-  .popup-content-nl {
-      display: flex;
-      background-color: white;
-      border-radius: 10px;
-      max-width: 800px;
-      height: 450px;
-      width: 700px;
-      overflow: hidden;
-      position: relative;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  }
+         font-family: Arial, sans-serif;
 
-  .close1-btn-nl {
-      width: 20px;
-      cursor: pointer;
-      margin: 18px 10px;
-      position: absolute;
-      top: -4px;
-      right: 12px;
-      font-size: 18px;
-      font-weight: 800;
-  }
+     }
+     
+     /* Popup Styles */
+     .popup {
 
-  .popup-left-nl img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-  }
+         display: none; /* Hidden by default */
+         position: fixed; /* Stay in place */
+         left: 0;
+         top: 0;
+         width: 100%; /* Full width */
+         height: 100%; /* Full height */
+         background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+         justify-content: center; /* Center the popup */
+         align-items: center; /* Center the popup */
+         z-index: 1000; /* Sit on top */
 
-  .popup-right-nl {
-      padding: 20px;
-      width: 50%;
-      display: flex;
-      flex-direction: column; 
-      align-items: center;
-      justify-content: center;
-  }
+     }
+     
+     .popup-content {
 
-  .popup-nl h1 {
-      font-size: 24px;
-      background: linear-gradient(to right, #099729, #58da75, #099729); 
-      -webkit-text-fill-color: transparent; 
-      -webkit-background-clip: text; 
-      text-align: center;
-      margin-bottom: 12px;
-      margin-top: 35px;
-  }
+         background: linear-gradient(rgb(133 183 242 / 80%), rgb(23 37 149)), url(your-image-url.jpg);
+         padding: 20px;
+         border-radius: 5px;
+         max-width: 500px;
+         max-height: 500px;
+         min-height: 410px;
+         text-align: center;
 
-  .h2-nl{
-      font-size: 18px;
-      margin-bottom: 8px;
-      text-align: center;
-      color: #333;
-  }
+     }
+     
+     /* Set poll options to stack vertically */
+     #pollOptions {
 
-  .pop_up-nl {
-      margin-bottom: 15px;
-      font-weight: bold;
-      background: -webkit-linear-gradient(left, #5b6268, #b9aebc, #5b6268);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-size: 12.7px;
+         display: flex;
+         flex-direction: column; /* Stack buttons vertically */
+         align-items: center; /* Center the buttons */
 
-  }
+     }
+     
+     .poll-button {
 
-  .bold{
-      font-size: 13.1px;
-  }
+         display: block; /* Change to block for full-width */
+         margin: 5px 0; /* Add vertical margin */
+         padding: 10px 15px;
+         border: none;
+         border-radius: 5px;
+         background-color: rgb(14 64 98 / 40%); 
+         color: white;
+         cursor: pointer;
+         transition: background-color 0.3s;
+         width: 100%; /* Full width */
 
-  input[type="email"] {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 16px;
-      border: 1px solid #000000;
-      border-radius: 5px;
-      font-size: 14px;
-  }
+     }
 
-  .signup-btn1-nl {
-      width: 100%;
-      height: 30px;
-      text-align: center;
-      background: linear-gradient(to right, #28a745, #3edd2f, #28a745);
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-  }
+     .poll-button:hover {
 
-  .signup-btn1-nl:hover {
-      background-color: #4682B4;
-  }
+         background-color: #45a049; /* Darker green */
 
-  .no-thanks-nl {
-      display: block;
-      margin-top: 10px;
-      color: #888;
-      text-decoration: none;
-      margin-bottom: 15px;
-  }
+     }
 
-  .no-thanks-nl:hover {
-      color: #000000;
-      font-size: 14px;
-  }
+     .poll-button.selected {
 
-  .terms-nl {
-      margin-top: 15px;
-      font-size: 10px;
-      color: #888;
-  }
+         background-color: #0f1e82; /* Blue for selected */
 
-  .terms-nl a {
-      display: inline;
-  }
-  .terms-nl a:hover {
-      text-decoration: underline;
-  }
+     }
+     
+     /* New Vote Button Styles */
+     .vote-button {
 
-  .popup-right-nl p {
-      margin-top: 0;
-      margin-bottom: 10px;
-      text-align: center;
-  }
+         display: block; /* Change to block for full-width */
+         margin: 5px 0; /* Add vertical margin */
+         padding: 10px 15px;
+         border: none;
+         border-radius: 5px;
+         background-color: #f44336; /* Red */
+         color: white;
+         cursor: pointer;
+         transition: background-color 0.3s;
+         width: 100%; /* Full width */
+         
+     }
 
-</style>
-<div id="popup-nl" class="popup-nl">
-  <div class="popup-content-nl">
-      <div class="popup-left-nl">
-          <img src="popups.jpg" alt="finance">
-      </div>
+     .vote-button:hover {
 
-      <div class="popup-right-nl">
-          <a href="# " class="close1-btn-nl close-nl">X</a>
-          <h1>Subscribe to Newsletter</h1>
-          <h2 class="h2-nl">Get regular updates</h2>
-          <p class="pop_up-nl">We have made becoming a stock market Guru easy with our AI powered finance advisor</p>
-          <form id="emailForm-nl">
-              <input type="email" id="email-nl" placeholder="Enter your email" required>
-              <button type="submit" class="signup-btn1-nl">Subscribe</button>
-          </form>
-          <a href="#" class="no-thanks-nl close-nl">No thanks</a>
-          <p class="terms-nl" style="white-space: nowrap;">By subscribing to newsletters, you agree to our <br><a href="terms&cond.html">Terms of Service</a> and <a href="privacynotice.html">Privacy Policy</a>.</p>
+         background-color: #d32f2f; /* Darker red */
+
+     }
+     
+     /* Result Text Styles */
+#result {
+
+    margin-top: 10px; /* Add space above result text */
+    word-wrap: break-word; /* Allow long text to wrap within the box */
+    overflow: hidden; /* Prevent overflow */
+    max-height: 50px; /* Limit height to prevent overflow */
+    color: rgb(255, 255, 255); /* Set text color to red */
+    
+}
+
+     </style>
+     
+
+    <div class="popup" id="pollPopup">
+      <div class="popup-content">
+          <h2>Which feature of Finveda do you believe boosts your financial knowledge the most?</h2>
+          <div id="pollOptions">
+              <button class="poll-button" data-value="Market Trends">Market Trends - Stay updated with the latest financial news and insights</button>
+              <button class="poll-button" data-value="AI Chatbot">AI Chatbot - Personalized financial guidance at your fingertips</button>
+              <button class="poll-button" data-value="SIP Calculator">SIP Calculator - Easily plan and manage your investments</button>
+          </div>
+          <button id="voteButton" class="vote-button" style="margin-top: 10px;">Vote</button>
+          <p id="result"></p>
       </div>
   </div>
-</div>
-<script src="popups.js"></script>
+  
+  
+  
+  <script>
+  // Show the poll popup 10 seconds after the page loads, if not already voted
+  window.onload = function() {
+    const hasVoted = sessionStorage.getItem('hasVoted');
+    setTimeout(function() {
+      if (!hasVoted) {
+        document.getElementById('pollPopup').style.display = 'flex';
+      }
+    }, 10000); // 10000 milliseconds = 10 seconds
+  };
+
+  const pollButtons = document.querySelectorAll('.poll-button[data-value]');
+  let selectedValue = '';
+
+  pollButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Remove selected class from all buttons
+      pollButtons.forEach(btn => btn.classList.remove('selected'));
+      // Add selected class to the clicked button
+      button.classList.add('selected');
+      selectedValue = button.getAttribute('data-value');
+    });
+  });
 
 
+  document.getElementById('voteButton').addEventListener('click', function() {
+    if (selectedValue) {
+      document.getElementById('result').innerHTML = `You voted for: ${selectedValue}<br>Thank you!`;
+      // Save voting status in session storage
+      sessionStorage.setItem('hasVoted', 'true');
+      // Hide the popup after voting
+      setTimeout(() => {
+        document.getElementById('pollPopup').style.display = 'none';
+      }, 2000);
+    } else {
+      alert("Please select an option!");
+    }
+  });
+
+
+  function initializePoll() {
+    console.log("Poll initialized.");
+  }
+
+  function clearSelectedButton() {
+    pollButtons.forEach(btn => btn.classList.remove('selected'));
+  }
+
+  function addEventListenersToButtons() {
+    pollButtons.forEach(button => {
+      button.addEventListener('mouseenter', function() {
+        button.style.backgroundColor = '#3e8e41'; // Change color on hover
+      });
+      button.addEventListener('mouseleave', function() {
+        button.style.backgroundColor = ''; // Reset color on mouse leave
+      });
+    });
+  }
+
+  function handleVoteSubmission() {
+    if (selectedValue) {
+      console.log("Vote submitted for: " + selectedValue);
+    }
+  }
+
+
+  pollButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      logButtonClick(button);
+      handleVoteSubmission();
+    });
+  });
+
+  
+  for (let i = 0; i < 5; i++) {
+    console.log("Simulating poll process: Step " + (i + 1));
+  }
+
+
+</script>
+
+ 
   </body>
 
   </html>
