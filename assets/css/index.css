@@ -41,6 +41,8 @@ main {
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  margin-left: 400px;
 }
 textarea {
   width: 100%;
@@ -49,6 +51,32 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+#postContent {
+  width: 100%;
+  max-width: 600px;
+  min-height: 150px;
+  padding: 15px;
+  font-size: 16px;
+  color: #333;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  position: relative;
+  z-index: 1;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 0 0 2px transparent; /* Initial border as shadow */
+}
+
+#postContent:hover {
+  transform: scale(1.02); /* Slight growth effect on hover */
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.2), 0 0 15px rgba(0, 0, 0, 0.1); /* Outer shadow effect */
+}
+
+#postContent:focus {
+  box-shadow: 0 0 0 4px #0048ff, 0 0 15px rgba(0, 72, 255, 0.2); /* Blue border on focus */
+}
+
 
 button {
   background: #35424a;
@@ -57,11 +85,60 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-left: 200px;
 }
 
 button:hover {
   background: #2c3e50;
 }
+
+.submit  {
+  background: #35424a; /* Dark gray background */
+  color: #ffffff;
+  padding: 10px 20px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 200px;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+  overflow: hidden;
+}
+
+ .submit::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  border: 2px solid #000000; /* Black border */
+  transform: scale(1.1); /* Start slightly larger */
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+ .submit:hover {
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+ .submit:hover::before {
+  opacity: 1;
+  transform: scale(1); /* Animate border into view */
+}
+
+ .submit:active {
+  background: #2c3e50; /* Darker background on click */
+  transform: scale(0.98); /* Slightly smaller for pressed effect */
+}
+
+ 
+
+
 
 .post {
   margin: 10px 0;
