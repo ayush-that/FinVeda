@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="assets/css/quiz.css" />
   <link rel="stylesheet" href="assets/css/popup.css" />
-  <link rel="stylesheet"  href="./assets/css/index.css"/>
+  <link rel="stylesheet" href="./assets/css/index.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -341,17 +341,18 @@
   <header class="header-area">
     <!-- <div class="navbar-area"> -->
     <!-- <div class="container"> -->
-      <div style="display: flex; justify-content: center;" class="navbar-area">
-        <div style="display: flex; justify-content: center;" class="container">
-    <div class="row">
-      <!-- <div class="col-lg-12"> -->
-      <nav class="navbar navbar-expand-lg">
-        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    <div style="display: flex; justify-content: center;" class="navbar-area">
+      <div style="display: flex; justify-content: center;" class="container">
+        <div class="row">
+          <!-- <div class="col-lg-12"> -->
+          <nav class="navbar navbar-expand-lg">
+            <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="toggler-icon"></span>
                 <span class="toggler-icon"></span>
                 <span class="toggler-icon"></span>
               </button> -->
+
               <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent"
                     style="margin: auto; margin-left: -5px;">
                     <div class="icon1">
@@ -406,13 +407,14 @@
                 const body = document.body;
                 const currentTheme = localStorage.getItem('theme');
 
-                if (currentTheme === 'dark') {
+
+              if (currentTheme === 'dark') {
                 body.classList.add('dark-mode');
                 toggleButton.classList.add('dark');
                 toggleButton.textContent = '🌞';
-                }
+              }
 
-                toggleButton.addEventListener('click', function () {
+              toggleButton.addEventListener('click', function () {
                 body.classList.toggle('dark-mode');
                 toggleButton.classList.toggle('dark');
 
@@ -424,237 +426,238 @@
                   toggleButton.textContent = '🌙';  // Dark mode icon
                   localStorage.setItem('theme', 'light');
                 }
-                });
+              });
             </script>
-          <!-- Login Modal -->
-          <div id="myModal" class="modal">
-            <div class="modal-content">
-              <span class="close" style="display: flex; justify-content: right;">&times;</span>
-              <div class="mt-3">
-                <h3 class="join"><i class="fa-solid fa-right-to-bracket"></i> Login to join us....</h3>
-                <form class="px-3 py-4" id="loginForm">
-                  <div class="form-group">
-                    <label class="d-flex">Username</label>
-                    <input type="text" placeholder="Username" class="form-control" required />
-                  </div>
-                  <div class="form-group">
-                    <label class="d-flex">Password</label>
-                    <input type="password" placeholder="Password" class="form-control" required>
-                    <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
-                  </div>
-                  <div class="form-check d-flex">
-                    <input type="checkbox" class="form-check-input me-1" style="margin-top: 0;">
-                    <label class="form-check-label" style="margin-bottom: 0;">Remember me</label>
-                    <a href="#" id="forgot-password" style="margin-left: 120px;">Forget Password?</a>
-                  </div>
-                  <div style="height: 20px;"></div>
-                  <button class="main-btn w-100 mb-3" onclick="submitForm('loginForm')">Sign in</button>
-                  <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
+            <!-- Login Modal -->
+            <div id="myModal" class="modal">
+              <div class="modal-content">
+                <span class="close" style="display: flex; justify-content: right;">&times;</span>
+                <div class="mt-3">
+                  <h3 class="join"><i class="fa-solid fa-right-to-bracket"></i> Login to join us....</h3>
+                  <form class="px-3 py-4" id="loginForm">
+                    <div class="form-group">
+                      <label class="d-flex">Username</label>
+                      <input type="text" placeholder="Username" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                      <label class="d-flex">Password</label>
+                      <input type="password" placeholder="Password" class="form-control" required>
+                      <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
+                    </div>
+                    <div class="form-check d-flex">
+                      <input type="checkbox" class="form-check-input me-1" style="margin-top: 0;">
+                      <label class="form-check-label" style="margin-bottom: 0;">Remember me</label>
+                      <a href="#" id="forgot-password" style="margin-left: 120px;">Forget Password?</a>
+                    </div>
+                    <div style="height: 20px;"></div>
+                    <button class="main-btn w-100 mb-3" onclick="submitForm('loginForm')">Sign in</button>
+                    <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
+                    <div class="or-sign-in-with text-center">
+                      <p>Or sign in with</p>
+                    </div>
+                    <div class="social-icons mt-3">
+                      <ul class="list-inline">
+                        <li><a href="#" class="google" id="google-login"><i class="fa-brands fa-google"></i></a></li>
+                        <li><a href="#" class="facebook" id="facebook-login"><i class="fa-brands fa-facebook-f"></i></a>
+                        </li>
+                        <li><a href="#" class="twitter" id="twitter-login"><i class="fa-brands fa-x-twitter"></i></a>
+                        </li>
+                      </ul>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+            <script>
+              // Add event listeners to the social media icons
+              document.getElementById('google-login').addEventListener('click', function () {
+                window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
+              });
+
+              document.getElementById('facebook-login').addEventListener('click', function () {
+                window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
+              });
+
+              document.getElementById('twitter-login').addEventListener('click', function () {
+                window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
+              });
+            </script>
+
+            <!-- Register Modal -->
+            <div id="registerModal" class="modal">
+              <div class="modal-content">
+                <span class="close" style="display: flex; justify-content: right;">&times;</span>
+                <div class="mt-3">
+                  <h3 class="join"><i class="fa-solid fa-user"></i> Register to join us....</h3>
+                  <form class="px-3 py-4" id="registerForm">
+                    <div class="form-group">
+                      <label class="d-flex">Email</label>
+                      <input type="email" placeholder="Email" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                      <label class="d-flex">Username</label>
+                      <input type="text" placeholder="Username" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                      <label class="d-flex">Password</label>
+                      <input type="password" placeholder="Password" class="form-control" id="register-password" required
+                        oninput="checkPasswordStrength()">
+                      <button type="button" class="toggle-password-btn"
+                        onclick="togglePasswordVisibility('register-password')">
+                        <i class="fa-solid fa-eye"></i>
+                        <i class="fa-solid fa-eye-slash" style="display: none;"></i>
+                      </button>
+                    </div>
+                    <div id="password-meter" style="display: none; margin-top: 5px;">
+                      <div id="meter"
+                        style="height: 10px; background-color: #ccc; border-radius: 5px; transition: width 0.3s;"></div>
+                      <div id="strength-text" style="margin-top: 5px; font-weight: bold;"></div>
+                    </div>
+                  </form>
+
+                  <!-- Import zxcvbn library -->
+                  <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+                  <script>
+                    function checkPasswordStrength() {
+                      const password = document.getElementById('register-password').value;
+                      const meter = document.getElementById('meter');
+                      const meterContainer = document.getElementById('password-meter');
+                      const strengthText = document.getElementById('strength-text');
+
+                      if (password) {
+                        meterContainer.style.display = 'block'; // Show the meter when typing
+                        const result = zxcvbn(password);
+                        const score = result.score; // Score ranges from 0 to 4
+
+                        // Set meter width and color based on score
+                        meter.style.width = (score + 1) * 20 + '%'; // Convert score to percentage
+                        meter.style.backgroundColor = getMeterColor(score);
+                        strengthText.innerText = getStrengthText(score); // Update strength text
+                      } else {
+                        meterContainer.style.display = 'none'; // Hide the meter if no password
+                        strengthText.innerText = ''; // Clear strength text
+                      }
+                    }
+
+                    function getMeterColor(score) {
+                      switch (score) {
+                        case 0: return 'red'; // Weak
+                        case 1: return 'orange'; // Fair
+                        case 2: return 'yellow'; // Good
+                        case 3: return 'blue'; // Strong
+                        case 4: return 'green'; // Very Strong
+                        default: return 'gray';
+                      }
+                    }
+
+                    function getStrengthText(score) {
+                      switch (score) {
+                        case 0: return 'Very Weak';
+                        case 1: return 'Weak';
+                        case 2: return 'Fair';
+                        case 3: return 'Strong';
+                        case 4: return 'Very Strong';
+                        default: return '';
+                      }
+                    }
+
+                    function togglePasswordVisibility(id) {
+                      const passwordInput = document.getElementById(id);
+                      const eyeIcon = passwordInput.nextElementSibling;
+                      if (passwordInput.type === 'password') {
+                        passwordInput.type = 'text';
+                        eyeIcon.children[0].style.display = 'none';
+                        eyeIcon.children[1].style.display = 'inline';
+                      } else {
+                        passwordInput.type = 'password';
+                        eyeIcon.children[0].style.display = 'inline';
+                        eyeIcon.children[1].style.display = 'none';
+                      }
+                    }
+                  </script>
+
+                  <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('registerForm')">Register</button>
+                  <p class="text-center">Already have an account? <a href="#" id="loginLink">Login</a></p>
                   <div class="or-sign-in-with text-center">
-                    <p>Or sign in with</p>
+                    <p>Or sign up with</p>
                   </div>
                   <div class="social-icons mt-3">
                     <ul class="list-inline">
-                      <li><a href="#" class="google" id="google-login"><i class="fa-brands fa-google"></i></a></li>
-                      <li><a href="#" class="facebook" id="facebook-login"><i class="fa-brands fa-facebook-f"></i></a>
+                      <li><a href="#" class="google" id="google-signup"><i class="fa-brands fa-google"></i></a></li>
+                      <li><a href="#" class="facebook" id="facebook-signup"><i class="fa-brands fa-facebook-f"></i></a>
                       </li>
-                      <li><a href="#" class="twitter" id="twitter-login"><i class="fa-brands fa-x-twitter"></i></a></li>
+                      <li><a href="#" class="twitter" id="twitter-signup"><i class="fa-brands fa-twitter"></i></a></li>
                     </ul>
                   </div>
-              </div>
-            </div>
-          </div>
-
-          <script>
-            // Add event listeners to the social media icons
-            document.getElementById('google-login').addEventListener('click', function () {
-              window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
-            });
-
-            document.getElementById('facebook-login').addEventListener('click', function () {
-              window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
-            });
-
-            document.getElementById('twitter-login').addEventListener('click', function () {
-              window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
-            });
-          </script>
-
-          <!-- Register Modal -->
-          <div id="registerModal" class="modal">
-            <div class="modal-content">
-              <span class="close" style="display: flex; justify-content: right;">&times;</span>
-              <div class="mt-3">
-                <h3 class="join"><i class="fa-solid fa-user"></i> Register to join us....</h3>
-                <form class="px-3 py-4" id="registerForm">
-                  <div class="form-group">
-                    <label class="d-flex">Email</label>
-                    <input type="email" placeholder="Email" class="form-control" required />
-                  </div>
-                  <div class="form-group">
-                    <label class="d-flex">Username</label>
-                    <input type="text" placeholder="Username" class="form-control" required />
-                  </div>
-                  <div class="form-group">
-                    <label class="d-flex">Password</label>
-                    <input type="password" placeholder="Password" class="form-control" id="register-password" required
-                      oninput="checkPasswordStrength()">
-                    <button type="button" class="toggle-password-btn"
-                      onclick="togglePasswordVisibility('register-password')">
-                      <i class="fa-solid fa-eye"></i>
-                      <i class="fa-solid fa-eye-slash" style="display: none;"></i>
-                    </button>
-                  </div>
-                  <div id="password-meter" style="display: none; margin-top: 5px;">
-                    <div id="meter"
-                      style="height: 10px; background-color: #ccc; border-radius: 5px; transition: width 0.3s;"></div>
-                    <div id="strength-text" style="margin-top: 5px; font-weight: bold;"></div>
-                  </div>
-                </form>
-
-                <!-- Import zxcvbn library -->
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
-                <script>
-                  function checkPasswordStrength() {
-                    const password = document.getElementById('register-password').value;
-                    const meter = document.getElementById('meter');
-                    const meterContainer = document.getElementById('password-meter');
-                    const strengthText = document.getElementById('strength-text');
-
-                    if (password) {
-                      meterContainer.style.display = 'block'; // Show the meter when typing
-                      const result = zxcvbn(password);
-                      const score = result.score; // Score ranges from 0 to 4
-
-                      // Set meter width and color based on score
-                      meter.style.width = (score + 1) * 20 + '%'; // Convert score to percentage
-                      meter.style.backgroundColor = getMeterColor(score);
-                      strengthText.innerText = getStrengthText(score); // Update strength text
-                    } else {
-                      meterContainer.style.display = 'none'; // Hide the meter if no password
-                      strengthText.innerText = ''; // Clear strength text
-                    }
-                  }
-
-                  function getMeterColor(score) {
-                    switch (score) {
-                      case 0: return 'red'; // Weak
-                      case 1: return 'orange'; // Fair
-                      case 2: return 'yellow'; // Good
-                      case 3: return 'blue'; // Strong
-                      case 4: return 'green'; // Very Strong
-                      default: return 'gray';
-                    }
-                  }
-
-                  function getStrengthText(score) {
-                    switch (score) {
-                      case 0: return 'Very Weak';
-                      case 1: return 'Weak';
-                      case 2: return 'Fair';
-                      case 3: return 'Strong';
-                      case 4: return 'Very Strong';
-                      default: return '';
-                    }
-                  }
-
-                  function togglePasswordVisibility(id) {
-                    const passwordInput = document.getElementById(id);
-                    const eyeIcon = passwordInput.nextElementSibling;
-                    if (passwordInput.type === 'password') {
-                      passwordInput.type = 'text';
-                      eyeIcon.children[0].style.display = 'none';
-                      eyeIcon.children[1].style.display = 'inline';
-                    } else {
-                      passwordInput.type = 'password';
-                      eyeIcon.children[0].style.display = 'inline';
-                      eyeIcon.children[1].style.display = 'none';
-                    }
-                  }
-                </script>
-
-                <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('registerForm')">Register</button>
-                <p class="text-center">Already have an account? <a href="#" id="loginLink">Login</a></p>
-                <div class="or-sign-in-with text-center">
-                  <p>Or sign up with</p>
-                </div>
-                <div class="social-icons mt-3">
-                  <ul class="list-inline">
-                    <li><a href="#" class="google" id="google-signup"><i class="fa-brands fa-google"></i></a></li>
-                    <li><a href="#" class="facebook" id="facebook-signup"><i class="fa-brands fa-facebook-f"></i></a>
-                    </li>
-                    <li><a href="#" class="twitter" id="twitter-signup"><i class="fa-brands fa-twitter"></i></a></li>
-                  </ul>
                 </div>
               </div>
             </div>
+
+            <script>
+              // Add event listeners to the social media icons
+              document.getElementById('google-signup').addEventListener('click', function () {
+                window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
+              });
+
+              document.getElementById('facebook-signup').addEventListener('click', function () {
+                window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
+              });
+
+              document.getElementById('twitter-signup').addEventListener('click', function () {
+                window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
+              });
+              // Add event listener to the "Register" button in the login modal
+              document.getElementById('registerLink').addEventListener('click', function () {
+                // Close the login modal
+                document.getElementById('myModal').style.display = 'none';
+
+                // Open the registration modal
+                document.getElementById('registerModal').style.display = 'block';
+              });
+              // Add event listener to the "Login" button in the registration modal
+              document.getElementById('loginLink').addEventListener('click', function () {
+                // Close the registration modal
+                document.getElementById('registerModal').style.display = 'none';
+
+                // Open the login modal
+                document.getElementById('myModal').style.display = 'block';
+              });
+              // Function to close the modal window
+              var loginCloseButton = document.querySelector("#myModal .close");
+              loginCloseButton.addEventListener("click", function () {
+                var modal = document.getElementById("myModal");
+                modal.style.display = "none";
+              });
+
+              var registerCloseButton = document.querySelector("#registerModal .close");
+              registerCloseButton.addEventListener("click", function () {
+                var modal = document.getElementById("registerModal");
+                modal.style.display = "none";
+              });
+            </script>
+        </div>
+        </nav>
+
+        <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+        <nav class="mobile-menu ">
+          <a class="page-scroll active-link" href="./index.html">Home 🏡</a>
+          <a class="page-scroll" href="./about.html">About Us 📖</a>
+          <a class="page-scroll" href="./trends.html">Trends 📈</a>
+          <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
+          <a class="page-scroll" href="./blog.html">Blogs 📰</a>
+          <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
+          <a class="page-scroll" href="./contact.html">Contact🤔</a>
+          <li class="nav-item no-underline">
+            <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none; border: none;" href="#"
+              onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
+          </li>
+
+          <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
+            <span></span>
           </div>
-
-          <script>
-            // Add event listeners to the social media icons
-            document.getElementById('google-signup').addEventListener('click', function () {
-              window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
-            });
-
-            document.getElementById('facebook-signup').addEventListener('click', function () {
-              window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
-            });
-
-            document.getElementById('twitter-signup').addEventListener('click', function () {
-              window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
-            });
-            // Add event listener to the "Register" button in the login modal
-            document.getElementById('registerLink').addEventListener('click', function () {
-              // Close the login modal
-              document.getElementById('myModal').style.display = 'none';
-
-              // Open the registration modal
-              document.getElementById('registerModal').style.display = 'block';
-            });
-            // Add event listener to the "Login" button in the registration modal
-            document.getElementById('loginLink').addEventListener('click', function () {
-              // Close the registration modal
-              document.getElementById('registerModal').style.display = 'none';
-
-              // Open the login modal
-              document.getElementById('myModal').style.display = 'block';
-            });
-            // Function to close the modal window
-            var loginCloseButton = document.querySelector("#myModal .close");
-            loginCloseButton.addEventListener("click", function () {
-              var modal = document.getElementById("myModal");
-              modal.style.display = "none";
-            });
-
-            var registerCloseButton = document.querySelector("#registerModal .close");
-            registerCloseButton.addEventListener("click", function () {
-              var modal = document.getElementById("registerModal");
-              modal.style.display = "none";
-            });
-          </script>
-        </div>
-      </nav>
-
-      <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-
-      <nav class="mobile-menu ">
-        <a class="page-scroll active-link" href="./index.html">Home 🏡</a>
-        <a class="page-scroll" href="./about.html">About Us 📖</a>
-        <a class="page-scroll" href="./trends.html">Trends 📈</a>
-        <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
-        <a class="page-scroll" href="./blog.html">Blogs 📰</a>
-        <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
-        <a class="page-scroll" href="./contact.html">Contact🤔</a>
-        <li class="nav-item no-underline">
-          <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none; border: none;" href="#"
-            onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
-        </li>
-
-        <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
-          <span></span>
-        </div>
-      </nav>
-    </div>
+        </nav>
+      </div>
     </div>
     </div>
     </div>
@@ -705,27 +708,27 @@
                   background-position: 0 0;
                   animation: back 20s linear infinite, hovering 1.5s ease-in-out infinite;
                 }
-  
+
                 @keyframes back {
                   100% {
                     background-position: 2000px 0;
                   }
                 }
-  
+
                 @keyframes hovering {
                   0% {
                     transform: translateY(0);
                   }
-  
+
                   50% {
                     transform: translateY(-5px);
                   }
-  
+
                   100% {
                     transform: translateY(0);
                   }
                 }
-  
+
                 .header-hero-content h2 {
                   font-size: 200px;
                 }
@@ -918,7 +921,7 @@
       transform: scale(0.95);
     }
   </style>
-<h2 style="color: #0056b3;">Get in Touch</h2>
+  <h2 style="color: #0056b3;">Get in Touch</h2>
   <div class="contact-info-map-container">
     <div class="contact-frame">
       <h2 style="text-decoration: underline;text-align: center; font-size: 34px; color: #f1eeee;">Contact Us</h2>
@@ -927,7 +930,7 @@
         <input type="text" placeholder="Enter your name" id="name" name="name" required
           style="padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #0056b3; border-radius: 4px;">
 
-        <label for="email"style="color: #e8eef4; margin-bottom: 0.5rem;font-weight: bolder;">Email:</label>
+        <label for="email" style="color: #e8eef4; margin-bottom: 0.5rem;font-weight: bolder;">Email:</label>
         <input type="email" placeholder="Enter your email" id="email" name="email" required
           style="padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #0056b3; border-radius: 4px;">
 
@@ -939,9 +942,10 @@
         <textarea id="message" placeholder="Enter message" name="message" required
           style="padding: 0.5rem; margin-bottom: 2rem; border: 1px solid #0056b3; border-radius: 4px; min-height: 100px; resize: vertical;"></textarea>
 
-        <button type="submit"
-          style="background-color: #f48727; color: white; padding: 0.75rem;border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; transition: background-color 0.3s ease;">Send
+        <button type="submit" class="gradient-border-button" style="width: 150px;">Send
           Message</button>
+        <!-- style="background-color: #f48727; color: white; padding: 0.75rem;border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; transition: background-color 0.3s ease;"-->
+
       </form>
     </div>
     <div class="info-map-container">
@@ -974,135 +978,140 @@
     </div>
   </div>
 
-<style>
+  <style>
+    /* Header Style */
+    .header {
+      text-align: center;
+      color: #0056b3;
+      margin-top: 20px;
+      font-size: 28px;
+    }
 
-/* Header Style */
-.header {
-  text-align: center;
-  color: #0056b3;
-  margin-top: 20px;
-  font-size: 28px;
-}
+    /* Contact Info Container */
+    .contact-info-map-container {
+      border: 5px solid white;
+      border-radius: 5%;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      padding: 20px;
+      background: linear-gradient(to right, #0056b3, #f48727);
+      /* Catchy gradient background */
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
 
-/* Contact Info Container */
-.contact-info-map-container {
-  border: 5px solid white;
-  border-radius: 5%; 
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  padding: 20px;
-  background: linear-gradient(to right, #0056b3, #f48727); /* Catchy gradient background */
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
+    /* Contact Frame Styles */
+    .contact-frame {
+      color: white;
+      margin-top: 25px;
+      background-color: rgba(42, 37, 37, 0.9);
+      /* Slight transparency for soft effect */
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      width: 45%;
+    }
 
-/* Contact Frame Styles */
-.contact-frame {
-  color: white;
-  margin-top: 25px;
-  background-color: rgba(42, 37, 37, 0.9); /* Slight transparency for soft effect */
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  width: 45%;
-}
+    /* Form Styles */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+    }
 
-/* Form Styles */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-}
+    .contact-form label {
+      color: #0056b3;
+      margin-bottom: 0.5rem;
+    }
 
-.contact-form label {
-  color: #0056b3;
-  margin-bottom: 0.5rem;
-}
+    .contact-form input,
+    .contact-form textarea {
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #0056b3;
+      border-radius: 4px;
+      transition: border-color 0.3s ease;
+    }
 
-.contact-form input,
-.contact-form textarea {
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  border: 1px solid #0056b3;
-  border-radius: 4px;
-  transition: border-color 0.3s ease;
-}
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #f48727;
+      /* Change border color on focus */
+    }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: #f48727; /* Change border color on focus */
-}
+    /* Button Style */
+    .contact-form button {
+      background-color: #f48727;
+      color: white;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
 
-/* Button Style */
-.contact-form button {
-  background-color: #f48727;
-  color: white;
-  padding: 0.75rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
+    .contact-form button:hover {
+      background-color: #0056b3;
+      /* Change button color on hover */
+      transform: scale(1.05);
+      /* Slight scale effect on hover */
+    }
 
-.contact-form button:hover {
-  background-color: #0056b3; /* Change button color on hover */
-  transform: scale(1.05); /* Slight scale effect on hover */
-}
+    /* Info Map Container */
+    .info-map-container {
+      margin-top: 20px;
+      background-color: #171616;
+      /* Light gray background for better contrast */
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      width: 45%;
+    }
 
-/* Info Map Container */
-.info-map-container {
-  margin-top: 20px;
-  background-color: #171616; /* Light gray background for better contrast */
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  width: 45%;
-}
+    /* Info Frame Style */
+    .info-frame {
+      margin-bottom: 20px;
+      border: 5px solid white;
+      border-radius: 5%;
+      background-color: white;
+    }
 
-/* Info Frame Style */
-.info-frame {
-  margin-bottom: 20px;
-  border: 5px solid white;
-  border-radius: 5%;
-  background-color: white;
-}
-
-/* Social Icons */
-/* .social-icons a {
+    /* Social Icons */
+    /* .social-icons a {
   color: #0056b3;
   font-size: 1.5rem;
   margin-right: 1rem;
   transition: color 0.3s ease;
 } */
 
-/* .social-icons a:hover {
+    /* .social-icons a:hover {
   color: #f48727; 
 } */
 
-/* Map Frame Style */
-.map-frame {
-  border: 5px solid white;
-  border-radius: 5%; 
-  overflow: hidden;
-  margin-top: 20px;
-}
+    /* Map Frame Style */
+    .map-frame {
+      border: 5px solid white;
+      border-radius: 5%;
+      overflow: hidden;
+      margin-top: 20px;
+    }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .contact-info-map-container {
-    flex-direction: column;
-    align-items: center;
-  }
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .contact-info-map-container {
+        flex-direction: column;
+        align-items: center;
+      }
 
-  .contact-frame,
-  .info-map-container {
-    width: 90%; /* Adjust width for smaller screens */
-    margin-bottom: 20px;
-  }
-}
-
-</style>
+      .contact-frame,
+      .info-map-container {
+        width: 90%;
+        /* Adjust width for smaller screens */
+        margin-bottom: 20px;
+      }
+    }
+  </style>
 
 
   <style>
@@ -1267,7 +1276,8 @@
       background: #f76b45;
       color: white;
     }
-/* 
+
+    /* 
     footer {
       text-align: center;
       padding: 20px;
@@ -1428,7 +1438,8 @@
     ul.link li {
       margin-left: -15px;
     }
-/* 
+
+    /* 
     ul.link li:nth-child(3) {
       position: relative;
       left: -15px;
@@ -1472,17 +1483,58 @@
 
     .subscribe-form form {
       display: flex;
-      gap: 10px; 
+      gap: 10px;
       align-items: center;
     }
 
     #unique-news-email,
     #unique-subscribe-btn {
       margin: 0;
-      padding: 3px 10px; 
+      padding: 3px 10px;
     }
 
+    .gradient-border-button {
+      background-color: #ff4d4d;
+      /* Base red color */
+      color: white;
+      padding: 10px 12px;
+      border: 2px solid transparent;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      
+    }
 
+    .gradient-border-button::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      border-radius: 8px;
+      background: linear-gradient(90deg, black, gray);
+      z-index: -1;
+      transition: opacity 0.3s ease;
+      opacity: 0;
+      /* Initially hidden */
+    }
+
+    .gradient-border-button:hover {
+      background-color: #e60000;
+      /* Darker red on hover */
+      transform: scale(1.05);
+      /* Slight scale on hover */
+    }
+
+    .gradient-border-button:hover::before {
+      opacity: 1;
+      /* Border appears on hover */
+    }
   </style>
 </body>
 
@@ -1499,146 +1551,148 @@
 
 <footer id="footer" class="footer-area pt-120">
   <div class="container">
-  <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-    <div class="row">
-      <div class="col-lg-6">
-        <div class="subscribe-content mt-45">
-          <h2 class="subscribe-title">
-            Subscribe Our Newsletter <span>Get Regular Updates</span>
-          </h2>
+    <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="subscribe-content mt-45">
+            <h2 class="subscribe-title">
+              Subscribe Our Newsletter <span>Get Regular Updates</span>
+            </h2>
+          </div>
         </div>
-      </div>
-      <div class="col-lg-6">
-        <div class="subscribe-form mt-50">
-          <form id="unique-subscribe-form">
-            <input type="email" id="unique-news-email" placeholder="Enter Email" required/>
-            <button class="unique-main-btn " id="unique-subscribe-btn" type="submit">Subscribe</button>
-          </form>
-          <div id="unique-message" class="unique-popup-message" style="display: none;">
-            <div class="border-animation"></div>
-            Thank You for the subscription!
+        <div class="col-lg-6">
+          <div class="subscribe-form mt-50">
+            <form id="unique-subscribe-form">
+              <input type="email" id="unique-news-email" placeholder="Enter Email" required />
+              <button class="unique-main-btn " id="unique-subscribe-btn" type="submit">Subscribe</button>
+            </form>
+            <div id="unique-message" class="unique-popup-message" style="display: none;">
+              <div class="border-animation"></div>
+              Thank You for the subscription!
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  </div>
   <div class="footer-widget pb-100">
-  <div class="row" id="footer">
+    <div class="row" id="footer">
       <div class="col-lg-4 col-md-6 col-sm-8">
-          <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-            <img src="./assets/images/l (2).png" alt="FinVeda Logo"
+        <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+          <!-- Updated the Page Logo -->
+          <img src="./assets/images/FinvedaLogo.png" alt="FinVeda Logo"
             style="height: 80px; width: auto; margin-bottom: 15px;" />
-              <p class="text custom-margin">
-                  We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
-              </p>
-          </div>
+          <p class="text custom-margin">
+            We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
+          </p>
+        </div>
       </div>
       <div class="col-lg-5 col-md-7 col-sm-7">
-          <div class="footer-link d-flex mt-50 justify-content-md-between" style="justify-content: space-around !important;">
-              <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-                  <div class="footer-title">
-                      <h3 class="title custom-margin">Quick Links</h3>
-                  </div>
-                  <ul class="link custom-margin">
-                      <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
-                      <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
-                      <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
-                      <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
-                      <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
-                  </ul>
-              </div>
-              <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
-                  <div class="footer-title">
-                      <h4 class="title custom-margin">Resources</h4>
-                  </div>
-                  <ul class="link custom-margin">
-                      <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
-                      <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
-                      <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
-                      <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
-                      <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
-                      <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
-                  </ul>
-              </div>
+        <div class="footer-link d-flex mt-50 justify-content-md-between"
+          style="justify-content: space-around !important;">
+          <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+            <div class="footer-title">
+              <h3 class="title custom-margin">Quick Links</h3>
+            </div>
+            <ul class="link custom-margin">
+              <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+              <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
+              <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
+              <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+              <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+            </ul>
           </div>
+          <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+            <div class="footer-title">
+              <h4 class="title custom-margin">Resources</h4>
+            </div>
+            <ul class="link custom-margin">
+              <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+              <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+              <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
+              <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
+              <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+              <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div class="col-lg-3 col-md-5 col-sm-5">
-          <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-              <div class="footer-title">
-                  <h4 class="title custom-margin">Contact Us</h4>
-              </div>
-              <ul class="contact custom-margin-big" style="justify-content: space-around;">
-                  <li class="d-sm-flex justify-content-center">
-                      <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                      <p style="width: 80%;">
-                          <a href="mailto:ayush1337@hotmail.com" target="_blank"
-                             style="color: white; text-decoration: underline;">
-                              ayush1337@hotmail.com
-                          </a>
-                      </p>
-                  </li>
-                  <li class="d-sm-flex justify-content-center">
-                      <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                      <div style="width: 80%;">
-                          <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
-                              fin-veda.vercel.app
-                          </a>
-                      </div>
-                  </li>
-                  <li class="d-sm-flex justify-content-center">
-                      <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 12px; width: 10%;"></i>
-                      <div style="width: 80%;">
-                          <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
-                             style="color:#fff">
-                              Delhi, India
-                          </a>
-                      </div>
-                  </li>
-                  <div class="social-icons">
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-discord"></i></a>
-                    <a href="#"><i class="fa-brands fa-github"></i></a>
-                </div>
-              </ul>
+        <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+          <div class="footer-title">
+            <h4 class="title custom-margin">Contact Us</h4>
           </div>
+          <ul class="contact custom-margin-big" style="justify-content: space-around;">
+            <li class="d-sm-flex justify-content-center">
+              <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+              <p style="width: 80%;">
+                <a href="mailto:ayush1337@hotmail.com" target="_blank"
+                  style="color: white; text-decoration: underline;">
+                  ayush1337@hotmail.com
+                </a>
+              </p>
+            </li>
+            <li class="d-sm-flex justify-content-center">
+              <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+              <div style="width: 80%;">
+                <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
+                  fin-veda.vercel.app
+                </a>
+              </div>
+            </li>
+            <li class="d-sm-flex justify-content-center">
+              <!-- Modified: Inline CSS to adjust logo size and sync with other pages -->
+              <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font: 12px; width: 10%;"></i>
+              <div style="width: 80%;">
+                <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
+                  style="color:#fff">
+                  Delhi, India
+                </a>
+              </div>
+            </li>
+            <!-- Added: Social Media Redirects -->
+            <div class="social-icons">
+              <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+              <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="https://discord.com/"><i class="fa-brands fa-discord"></i></a>
+              <a href="https://github.com/ayush-that/FinVeda"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </ul>
+        </div>
       </div>
-  
-  
-  </div>
-  </div>
-  
 
-<div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center">
-  <div class="row">
-    <div class="col-lg-12">
-      <div
-        class="copyright d-sm-flex justify-content-center"
-        style="
+
+    </div>
+  </div>
+
+
+  <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s"
+    style="text-align: center">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="copyright d-sm-flex justify-content-center" style="
           display: flex;
           justify-content: center;
           text-align: center;
           width: 100%;
           height: 100%;
-        "
-      >
-        <div class="copyright-content" style="text-align: center">
-          <p class="text" style="text-align: center">
-            © <span id="copyright-year">2024</span> FinVeda. All rights are
-            reserved<br />
-            Made with ♥ in India
-          </p>
+        ">
+          <div class="copyright-content" style="text-align: center">
+            <p class="text" style="text-align: center">
+              © <span id="copyright-year">2024</span> FinVeda. All rights are
+              reserved<br />
+              Made with ♥ in India
+            </p>
 
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<div id="particles-2"></div>
-</div>
+  <div id="particles-2"></div>
+  </div>
 </footer>
 <script>document.getElementById("copyright-year").textContent = new Date().getFullYear();</script>
 <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>

@@ -71,6 +71,7 @@
             <span class="toggler-icon"></span>
             <span class="toggler-icon"></span>
           </button> -->
+
           <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent"
                     style="margin: auto; margin-left: -5px;">
                     <div class="icon1">
@@ -120,10 +121,11 @@
                       </li>
                     </ul>
                   </div>
+
           <script>
             const toggleButton = document.getElementById('theme-toggle');
-            const body = document.body;
-            const currentTheme = localStorage.getItem('theme');
+            var body = document.body;
+            var currentTheme = localStorage.getItem('theme');
 
             if (currentTheme === 'dark') {
             body.classList.add('dark-mode');
@@ -145,6 +147,50 @@
             }
             });
         </script>
+        <nav class="mobile-menu ">
+          <a class="page-scroll" href="./index.html">Home 🏡</a>
+          <a class="page-scroll" href="./about.html">About Us 📖</a>
+          <a class="page-scroll" href="./trends.html">Trends 📈</a>
+          <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
+          <a class="page-scroll" href="./blog.html">Blogs 📰</a>
+          <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
+          <a class="page-scroll main-btn" href="#" onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
+          <li class="nav-item no-underline">
+            <button id="theme-toggle2" class="theme-toggle2" style="margin-right: 2px;">
+              🌙
+            </button>
+          </li>
+          <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
+            <span></span>
+          </div>
+        </nav>
+        <script>
+          const toggleBtn = document.getElementById('theme-toggle2');
+          var body = document.body;
+          var currentTheme = localStorage.getItem('theme');
+
+          if (currentTheme === 'dark') {
+          body.classList.add('dark-mode');
+          toggleBtn.classList.add('dark');
+          toggleBtn.textContent = '🌞';
+          }
+          
+          toggleBtn.addEventListener('click', function () {
+          body.classList.toggle('dark-mode');
+          toggleBtn.classList.toggle('dark');
+          
+          // Update button icon based on mode
+          if (body.classList.contains('dark-mode')) {
+            toggleBtn.textContent = '🌞';  // Light mode icon
+            localStorage.setItem('theme', 'dark');
+          } else {
+            toggleBtn.textContent = '🌙';  // Dark mode icon
+            localStorage.setItem('theme', 'light');
+          }
+          });
+      </script>
+      <link href="./navbar.css" rel="stylesheet">
+      <script type="text/javascript" src="./navbar.js"></script>
   </header>
   
   <!-- Second Header Section -->
@@ -339,7 +385,8 @@ button {
                     </div>
                 </li>
                 <li class="d-sm-flex justify-content-center">
-                    <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 12px; width: 10%;"></i>
+                    <!-- Modified: Inline CSS to adjust logo size and sync with other pages -->
+                    <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font: 12px; width: 10%;"></i>
                     <div style="width: 80%;">
                         <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
                            style="color:#fff">
@@ -347,12 +394,13 @@ button {
                         </a>
                     </div>
                 </li>
+                <!-- Added: Social Media Redirects -->
                 <div class="social-icons">
-                  <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                  <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                  <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                  <a href="#"><i class="fa-brands fa-discord"></i></a>
-                  <a href="#"><i class="fa-brands fa-github"></i></a>
+                  <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                  <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
+                  <a href="https://discord.com/"><i class="fa-brands fa-discord"></i></a>
+                  <a href="https://github.com/ayush-that/FinVeda"><i class="fa-brands fa-github"></i></a>
               </div>
             </ul>
         </div>
@@ -390,6 +438,7 @@ button {
 <div id="particles-2"></div>
 </div>
 </footer>
+<button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top">↑</button>
 
   <script src="finance.js"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

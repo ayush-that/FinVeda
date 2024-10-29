@@ -131,6 +131,7 @@
                   <li><a href="./tools/sip.html">Tools 🔧</a></li>
                   <li><a href="./blog.html">Blogs 📰</a></li>
                   <li><a href="./quiz.html">Quiz 🤔</a></li>
+                  <li ><a  href="./maps.html">MAPS 🗺️</a></li>
                 </ul>
               </li>
                   <li class="nav-item no-underline">
@@ -146,8 +147,8 @@
 
               <script>
                 const toggleButton = document.getElementById('theme-toggle');
-                const body = document.body;
-                const currentTheme = localStorage.getItem('theme');
+                var body = document.body;
+                var currentTheme = localStorage.getItem('theme');
 
                 if (currentTheme === 'dark') {
                 body.classList.add('dark-mode');
@@ -281,7 +282,31 @@
               </div>
             </nav>
 
-                
+            <script>
+              const toggleBtn = document.getElementById('theme-toggle2');
+              var body = document.body;
+              var currentTheme = localStorage.getItem('theme');
+    
+              if (currentTheme === 'dark') {
+              body.classList.add('dark-mode');
+              toggleBtn.classList.add('dark');
+              toggleBtn.textContent = '🌞';
+              }
+              
+              toggleBtn.addEventListener('click', function () {
+              body.classList.toggle('dark-mode');
+              toggleBtn.classList.toggle('dark');
+              
+              // Update button icon based on mode
+              if (body.classList.contains('dark-mode')) {
+                toggleBtn.textContent = '🌞';  // Light mode icon
+                localStorage.setItem('theme', 'dark');
+              } else {
+                toggleBtn.textContent = '🌙';  // Dark mode icon
+                localStorage.setItem('theme', 'light');
+              }
+              });
+          </script>
               <link href="../navbar.css" rel="stylesheet">
               <script type="text/javascript" src="../navbar.js"></script>
           </div>
@@ -418,11 +443,11 @@
             <span id="correct-span"></span>
             <span id="incorrect-span"></span>
           </div>
-          <div class="quiz-bottom-btns">
-            <button id="pass-btn">Pass</button>
-            <button id="next-btn">Next</button>
-            <button id="submit-btn">Submit</button>
-            <button id="play-again-btn">Play Again</button>
+          <div class="quiz-bottom-btns" >
+            <button id="pass-btn" style="margin: 20px auto;">Pass</button>
+            <button id="next-btn" style="margin: 20px auto;">Next</button>
+            <button id="submit-btn" style="margin: 20px auto;">Submit</button>
+            <button id="play-again-btn" style="margin: 20px auto;">Play Again</button>
           </div>
         </div>
       </div>
@@ -579,7 +604,7 @@
 
 .quiz #answer-buttons .btn:hover {
   background-color: #305a30;
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .quiz #answer-buttons .btn:active {
@@ -607,6 +632,7 @@
   font-size: 1em;
   color: #2d3a32;
   margin-top: 5px;
+  margin-left: 7px;
 }
 
 /* Bottom Buttons */
@@ -722,6 +748,7 @@
               <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
               <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
               <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+              <li><a href="./blogs/sitemap.html"><i class="fa-solid fa-sitemap"></i> Site Map</a></li>
             </ul>
           </div>
           <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
@@ -763,7 +790,8 @@
                     </div>
                 </li>
                 <li class="d-sm-flex justify-content-center">
-                    <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 12px; width: 10%;"></i>
+                    <!-- Modified: Inline CSS to adjust logo size and sync with other pages -->
+                    <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font: 12px; width: 10%;"></i>
                     <div style="width: 80%;">
                         <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
                            style="color:#fff">
@@ -771,12 +799,13 @@
                         </a>
                     </div>
                 </li>
+                <!-- Added: Social Media Redirects -->
                 <div class="social-icons">
-                  <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                  <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                  <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                  <a href="#"><i class="fa-brands fa-discord"></i></a>
-                  <a href="#"><i class="fa-brands fa-github"></i></a>
+                  <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                  <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
+                  <a href="https://discord.com/"><i class="fa-brands fa-discord"></i></a>
+                  <a href="https://github.com/ayush-that/FinVeda"><i class="fa-brands fa-github"></i></a>
               </div>
             </ul>
         </div>

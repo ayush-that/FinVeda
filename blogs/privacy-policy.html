@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="../assets/css/default.css" />
     <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="stylesheet" href="../assets/css/popup.css" />
+    <!-- Linked CSS for social logos -->
+    <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <style>
       #progressBar {
@@ -350,9 +352,9 @@ body {
               <span class="toggler-icon"></span>
             </button> -->
             <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-              <a href="./index.html">
+              <a href="../index.html">
                 <div class="icon1">
-                  <img src="../assets/images/l (1).png" alt="icon.png">
+                  <img src="../assets/images/FinvedaLogo.png" alt="icon.png">
                 </div>
               </a>
               <ul id="nav" class="navbar-nav">
@@ -589,11 +591,13 @@ body {
         <div id="particles-1" class="particles"></div>
       </div>
     </header>
+
+
    <div class="blog-content">
       <article>
           <br><br><br><br>
           <div class="header">
-              <h1 style="text-align: center;">Privacy Policy</h1>
+              <h1 style="text-align: center;color: white;">Privacy Policy</h1>
           </div>
           <br>
           <div class="Lastupdate">
@@ -608,7 +612,7 @@ body {
           <div class="card">
               <h4>1. Personal Data</h4>
               <p>While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:</p>
-              <ul style="list-style: circle; font-size: x-large; color: black;">
+              <ul >
                   <li>Email address</li>
                   <li>First name and last name</li>
                   <li>Phone number</li>
@@ -629,7 +633,7 @@ body {
           <div class="card">
               <h4>3. Information from Third-Party Social Media Services</h4>
               <p>The Company allows You to create an account and log in to use the Service through the following Third-party Social Media Services:</p>
-              <ul style="list-style: circle;">
+              <ul>
                   <li>Google</li>
                   <li>Facebook</li>
                   <li>Instagram</li>
@@ -644,7 +648,7 @@ body {
           <div class="card">
               <h4>4. Tracking Technologies and Cookies</h4>
               <p>We use Cookies and similar tracking technologies to track the activity on Our Service and store certain information. Tracking technologies used are beacons, tags, and scripts to collect and track information and to improve and analyze Our Service. The technologies We use may include:</p>
-              <ol style="list-style: decimal;">
+              <ol>
                   <li><strong>Cookies -</strong> A cookie is a small file placed on Your Device. You can instruct Your browser to refuse all Cookies or to indicate when a Cookie is being sent. However, if You do not accept Cookies, You may not be able to use some parts of our Service. Unless you have adjusted Your browser setting so that it will refuse Cookies, our Service may use Cookies.</li>
                   <br>
                   <li><strong>Web Beacons -</strong> Certain sections of our Service and our emails may contain small electronic files known as web beacons (also referred to as clear gifs, pixel tags, and single-pixel gifs) that permit the Company, for example, to count users who have visited those pages or opened an email and for other related website statistics (for example, recording the popularity of a certain section and verifying system and server integrity).</li>
@@ -669,12 +673,153 @@ body {
               <h4>7. Changes to this Privacy Policy</h4>
               <p>We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
           </div>
+          <a href="#" class="call-to-action">Learn More</a>
+
       </article>
   </div>
   
+<style>
+  /* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap');
 
+/* Base styles for the blog content */
+.blog-content {
+    max-width: 1400px; /* Limits the width of the blog content */
+    margin: auto; /* Centers the blog content */
+    padding: 30px; /* Adds padding around the content */
+    font-family: 'Roboto', sans-serif; /* Sets a readable font */
+    color: #333; /* Sets a dark gray text color */
+    background-color: #ffffff; /* White background for content */
+    border-radius: 10px; /* Rounded corners for the container */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    position: relative; /* Positioning for pseudo-element */
+    overflow: hidden; /* Prevents overflow from pseudo-elements */
+}
+
+/* Background effect */
+.blog-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(52, 152, 219, 0.1)); /* Light gradient overlay */
+    z-index: 0; /* Behind the content */
+    border-radius: 10px; /* Matches the container's border radius */
+}
+.header{
+  background: linear-gradient(1deg,rgb(236, 236, 242),rgb(15, 39, 254));
+}
+/* Header styles */
+.header h1 {
+    font-family: 'Montserrat', sans-serif; /* Font for header */
+    color: #2c3e50; /* Darker color for the title */
+    margin-bottom: 20px; /* Space below the title */
+    position: relative; /* Positioning for text shadow */
+    z-index: 1; /* Above the background */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Soft text shadow */
+}
+
+/* Last update date styles */
+.Lastupdate {
+    text-align: center; /* Centers the last update text */
+    font-style: italic; /* Italicizes the text */
+    color: #7f8c8d; /* Gray color for the last update */
+    z-index: 1; /* Above the background */
+    position: relative; /* Positioning for layering */
+    font-size: 0.9em; /* Slightly smaller font size */
+}
+
+/* Card styles */
+.card {
+    background-color: white; /* White background for the card */
+    padding: 20px; /* Padding inside the card */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 20px rgba(46, 204, 113, 0.5), 0 0 30px rgba(46, 204, 113, 0.3); /* Glowing shadow effect */
+    margin-bottom: 20px; /* Space between cards */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
+    position: relative; /* For layering */
+    z-index: 1; /* Above the background */
+}
+
+/* Hover effect for cards */
+.card:hover {
+    transform: translateY(-5px); /* Slightly raises the card on hover */
+    box-shadow: 0 0 30px rgba(46, 204, 113, 0.7), 0 0 40px rgba(46, 204, 113, 0.4); /* Enhanced glowing shadow on hover */
+}
+
+/* Heading styles for sections */
+.card h4 {
+    font-family: 'Montserrat', sans-serif; /* Bold font for section headings */
+    font-weight: 700; /* Bold text */
+    color: #2980b9; /* Blue color for section headings */
+    margin-bottom: 10px; /* Space below section headings */
+    border-bottom: 2px solid rgba(46, 204, 113, 0.3); /* Underline effect for headings */
+    padding-bottom: 5px; /* Space between heading and underline */
+}
+
+/* List styles */
+ul, ol {
+    margin-left: 20px; /* Indents the lists */
+}
+
+/* List item styles */
+li {
+    margin-bottom: 10px; /* Space between list items */
+    position: relative; /* For custom bullet points */
+}
+
+li::before {
+    content: '✔'; /* Custom bullet point */
+    color: #2980b9; /* Color for bullet point */
+    position: absolute; /* Positioning for custom bullet */
+    left: -20px; /* Positioning the bullet */
+}
+
+/* Paragraph styles */
+p {
+    line-height: 1.6; /* Increases line height for readability */
+    margin-bottom: 15px; /* Space below paragraphs */
+}
+
+/* Interactive elements */
+a {
+    color: #2980b9; /* Link color */
+    text-decoration: none; /* Removes underline */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+a:hover {
+    color: #1a5276; /* Darker blue on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* New Call to Action Button */
+.call-to-action {
+    display: inline-block; /* Makes it a block for padding */
+    background-color: #f1f6f9; /* Button background */
+    color: white; /* Button text color */
+    padding: 10px 20px; /* Padding for button */
+    border-radius: 10px; /* Rounded corners */
+    text-align: center; /* Centers text */
+    margin-top: 20px; /* Space above button */
+    text-decoration: none; /* Removes underline */
+    transition: background-color 0.3s; /* Smooth transition for hover */
+}
+
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .blog-content {
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+}
+
+</style>
   
-    <style>
+    <!-- <style>
       .blog-content {
       text-align: left;
       margin-left: auto;
@@ -698,7 +843,7 @@ body {
           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       }
 
-    </style>
+    </style> -->
 
   
 <!-- Timed popup that will appear after succesful submission of feebback form! -->
@@ -767,6 +912,8 @@ body {
                 data-wow-duration="1s"
                 data-wow-delay="0.2s"
                 >
+                <!-- Updated the Page Logo -->
+                <img src="../assets/images/FinvedaLogo.png" alt="FinVeda Logo" style="height: 80px; width: auto; margin-bottom: 15px;" />
                 <p class="text">
                   We at FinVeda aim to make you a stock market Guru easy with our AI powered teaching and financial blogs.
                 </p>
@@ -780,14 +927,16 @@ body {
                   data-wow-delay="0.4s"
                   >
                   <div class="footer-title">
-                    <h4 class="title">Quick Link</h4>
+                    <!-- Renamed to Quick Links as other pages -->
+                    <h4 class="title">Quick Links</h4>
                   </div>
                   <ul class="link">
-                  <li><a href="./privacy-policy.html">Privacy Policy</a></li>
-                  <li><a href="./refund-policy.html">Refund Policy</a></li>
-                  <li><a href="/Licensing.html">Licensing</a></li>
-                  <li><a href="./terms-of-service.html">Terms of Service</a></li>
-                  <li><a href="/contributors.html">Our Contributors</a></li>
+                    <!-- Added: logos for the options -->
+                  <li><a href="./privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+                  <li><a href="./refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
+                  <li><a href="/Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
+                  <li><a href="./terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+                  <li><a href="/contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
                   </ul>
                 </div>
                 <div
@@ -799,12 +948,13 @@ body {
                     <h4 class="title">Resources</h4>
                   </div>
                   <ul class="link">
-                    <li><a href="/index.html">Home</a></li>
-                    <li><a href="/about.html">About Us</a></li>
-                    <li><a href="/trends.html">Trends</a></li>
-                    <li><a href="/tools/sip.html">Tools</a></li>
-                    <li><a href="/blog.html">Blog</a></li>
-                    <li><a href="/quiz.html">Quiz</a></li>
+                    <!-- Added: logos for the options -->
+                    <li><a href="/index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="/about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="/trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
+                    <li><a href="/tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
+                    <li><a href="/blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                    <li><a href="/quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
                   </ul>
                 </div>
               </div>
@@ -839,6 +989,15 @@ body {
                         style="color:#fff">
                         Delhi, India</a></div>
                   </li>
+                  <!-- Added Social Logos -->
+                  <!-- Added: Social Media Redirects -->
+                  <div class="social-icons">
+                    <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://discord.com/"><i class="fa-brands fa-discord"></i></a>
+                    <a href="https://github.com/ayush-that/FinVeda"><i class="fa-brands fa-github"></i></a>
+                </div>
                 </ul>
               </div>
             </div>
