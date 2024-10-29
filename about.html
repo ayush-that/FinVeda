@@ -1060,7 +1060,7 @@ prevButton.addEventListener('click', () => {
 
 </style>
 
-  <section class="contributors">
+  <section class="contributors" style="margin-bottom: 65px;">
     <h2>Our Contributors</h2>
     <div class="contributor-cards" id="contributor-cards"></div>
     <div class="pagination" id="pagination"></div>
@@ -1073,7 +1073,6 @@ prevButton.addEventListener('click', () => {
   padding: 50px 20px;
   text-align: center;
   border-radius: 12px;
-  background: linear-gradient(135deg, #a6a2f3, #3022cf);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -1087,8 +1086,6 @@ prevButton.addEventListener('click', () => {
 
 /* Contributor cards container */
 .contributor-cards {
-  border: 2px solid gray ;
-  background-color: white;
   border-radius: 5%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -1098,21 +1095,18 @@ prevButton.addEventListener('click', () => {
 
 /* Individual card styling */
 .contributor-member {
-  background: linear-gradient(145deg, #c6caeb, #9ea3e6);
-  border-radius: 15px;
+  background: #f1f0ec;
+  border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
   cursor: pointer;
   overflow: hidden;
   position: relative;
-  border: 2px solid transparent;
 }
 
 .contributor-member:hover {
-  transform: scale(1.05);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-  border-color: #737ba5;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
   background: #fffaf0;
 }
 
@@ -1124,9 +1118,7 @@ prevButton.addEventListener('click', () => {
   margin-bottom: 10px;
   border: 5px solid #8ec5fc;
 }
-.contributor-member:hover {
-  border: 5px solid #8ec5fc;
-}
+
 .contributor-member h3 {
   font-size: 1.5rem;
   margin: 10px 0;
@@ -1148,14 +1140,13 @@ prevButton.addEventListener('click', () => {
   padding: 10px 20px;
   border-radius: 20px;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: all 0.4s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .contributor-member button:hover {
   background-color: #343436;
   color: rgb(221, 214, 214);
-  font-weight: bolder;
 }
 
 /* Pagination styling */
@@ -1457,7 +1448,6 @@ prevButton.addEventListener('click', () => {
 
     fetchContributors();
   </script>
-
 
   <div class="gtranslate_wrapper"></div>
   <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
