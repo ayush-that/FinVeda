@@ -27,7 +27,9 @@
     <link rel="stylesheet"  href="navbar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/market-time.css">
-
+    <link href="./navbar.css" rel="stylesheet">
+    <link rel="stylesheet" href="navbar.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <style>
       #progressBar {
         position: fixed;
@@ -70,7 +72,58 @@
           display: none;
         }
       }
-</style>  
+h3{
+  color: #fff;
+}
+
+.toggle-button {
+padding: 0.5em 1em;
+cursor: pointer;
+border: none;
+background-color: #0c0a0a;
+color: #fff;
+border-radius: 5px;
+transition: background-color 0.3s;
+}
+
+.toggle-button:hover {
+background-color: #555;
+}
+
+.content {
+padding: 2em;
+text-align: center;
+}
+
+h1 {
+font-size: 2.5rem;
+color: whitesmoke;
+margin-top:130px;
+}
+
+p {
+font-size: 1.2rem;
+}
+
+body.dark-mode {
+background-color: #fefefe;
+color: #f1f1f1; /* Change text color to light for dark mode */
+}
+
+.dark-mode .para {
+color: white; /* Change text color to white when dark mode class is applied */
+}
+
+.toggle-button.dark {
+background-color: #f1f1f1; /* Button background in dark mode */
+color: #333; /* Button text color in dark mode */
+}
+
+.toggle-button.dark:hover {
+background-color: #ddd; /* Button hover color in dark mode */
+}
+</style> 
+</head>
 <body>
   <div class="circle-container">
     <div class="circle"></div>
@@ -141,176 +194,88 @@
 
       animateCircles();
     });
-
   </script>
-  <header class="header-area">
-    <div style="display: flex; justify-content: center;" class="navbar-area">
-      <div style="display: flex; justify-content: center;" class="container">
-    <div class="row">
-      <div style="display: flex; justify-content: center;" class="">
-        <nav class="navbar navbar-expand-lg " style="display: flex;">
-          <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="toggler-icon"></span>
-            <span class="toggler-icon"></span>
-            <span class="toggler-icon"></span>
-          </button> -->
-          <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
-            <div class="icon1">
-              <a href="./index.html">
-              <img src="assets/images/l (2).png" alt="icon.png">
-              </a>
-            </div> 
-            <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
-              <li class="nav-item">
-                <a class="page-scroll" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
-              </li>    
-              <li class="nav-item">
-                <a class="page-scroll active-link" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
-              </li>
-              <li class="nav-item no-underline">
-                <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
-              </li>
-              <li class="nav-item no-underline">
-              <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
-                🌙
-              </button>
-              </li>
-            </ul>
-          </div>
+ <header class="header-area">
+  <div class="navbar-area">
+    <div  class="container">
+      <div class="row">
+        <div class="">
+          <nav class="navbar navbar-expand-lg">
+            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+              <div class="icon1" >
+                <a href="./index.html">
+                <img src="assets/images/l (2).png" alt="logo">
+                </a>
+              </div> 
+      
+              <ul id="nav" class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="page-scroll" href="./index.html">Home 🏡</a>
+                </li>
+                <li class="nav-item">
+                  <a class="page-scroll" href="./about.html">About Us 📖</a>
+                </li>    
+                <li class="nav-item">
+                  <a class="page-scroll" href="./trends.html">Trends 📈</a>
+                </li>
+                <li class="nav-item">
+                  <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
+                </li>
+                <li class="nav-item">
+                  <a class="page-scroll" href="./blog.html">Blogs 📰</a>
+                </li>
+                <li class="nav-item">
+                  <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
+                </li>
+                <li class="nav-item">
+                  <a class="page-scroll" href="./careers.html">Career 👔</a>
+                </li>
+                <li class="nav-item">
+                  <a class="page-scroll" href="./contact.html">Contact📞</a>
+                </li>
+                <li class="nav-item">
+                  <a class="page-scroll" href="./faq.html">Help 🙋‍♂️</a>
+                </li>
+                <li class="nav-item ">
+                  <a class="page-scroll" href="./loginPage.html">Login/Register 💻</a>
+                </li>
+                <li class="nav-item no-underline">
+                <button id="theme-toggle" class="theme-toggle" style="margin-right: 10px;">
+                  🌙
+                </button>
+                </li>
+              </ul>
+            </div>
+            <script>
+              const toggleButton = document.getElementById('theme-toggle');
+              const body = document.body;
+              const currentTheme = localStorage.getItem('theme');
 
-        <script>
-          const toggleButton = document.getElementById('theme-toggle');
-          const body = document.body;
-          const currentTheme = localStorage.getItem('theme');
-
-          if (currentTheme === 'dark') {
-          body.classList.add('dark-mode');
-          toggleButton.classList.add('dark');
-          toggleButton.textContent = '🌞';
-          }
-
-          toggleButton.addEventListener('click', function () {
-          body.classList.toggle('dark-mode');
-          toggleButton.classList.toggle('dark');
-
-          // Update button icon based on mode
-          if (body.classList.contains('dark-mode')) {
-          toggleButton.textContent = '🌞';  // Light mode icon
-          localStorage.setItem('theme', 'dark');
-          } else {
-          toggleButton.textContent = '🌙';  // Dark mode icon
-          localStorage.setItem('theme', 'light');
-          }
-          });
-      </script>
-      <style>
-
-        h3{
-          color: #fff;
-        }
-
-      .toggle-button {
-        padding: 0.5em 1em;
-        cursor: pointer;
-        border: none;
-        background-color: #0c0a0a;
-        color: #fff;
-        border-radius: 5px;
-        transition: background-color 0.3s;
-    }
-    
-    .toggle-button:hover {
-        background-color: #555;
-    }
-    
-    .content {
-        padding: 2em;
-        text-align: center;
-    }
-    
-    h1 {
-        font-size: 2.5rem;
-        color: whitesmoke;
-        margin-top:130px;
-    }
-    
-    p {
-        font-size: 1.2rem;
-    }
-    
-    body.dark-mode {
-background-color: #fefefe;
-color: #f1f1f1; /* Change text color to light for dark mode */
-}
-
-.dark-mode .para {
-color: white; /* Change text color to white when dark mode class is applied */
-}
-
-.toggle-button.dark {
-background-color: #f1f1f1; /* Button background in dark mode */
-color: #333; /* Button text color in dark mode */
-}
-
-.toggle-button.dark:hover {
-background-color: #ddd; /* Button hover color in dark mode */
-}
-    </style>
-          
-        </nav>
-    
-
-
-        <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-
-        <nav class="mobile-menu ">
-          <a class="page-scroll active-link" href="./index.html">Home 🏡</a>
-          <a class="page-scroll" href="./about.html">About Us 📖</a>
-          <a class="page-scroll" href="./trends.html">Trends 📈</a>
-          <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
-          <a class="page-scroll" href="./blog.html">Blogs 📰</a>
-          <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
-          <a class="page-scroll" href="./contact.html">Contact🤔</a>
-          <li class="nav-item no-underline">
-            <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none; border: none;" href="#"
-              onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
-          </li>
-
-
-          <div class="mobile-menu__trigger"><span></span></div>
-        </nav>
-
-
+              if (currentTheme === 'dark') {
+              body.classList.add('dark-mode');
+              toggleButton.classList.add('dark');
+              toggleButton.textContent = '🌞';
+              }
+              
+              toggleButton.addEventListener('click', function () {
+              body.classList.toggle('dark-mode');
+              toggleButton.classList.toggle('dark');
+              
+              // Update button icon based on mode
+              if (body.classList.contains('dark-mode')) {
+                toggleButton.textContent = '🌞';  // Light mode icon
+                localStorage.setItem('theme', 'dark');
+              } else {
+                toggleButton.textContent = '🌙';  // Dark mode icon
+                localStorage.setItem('theme', 'light');
+              }
+              });
+          </script>
       </div>
     </div>
   </div>
 </div>
 
-
-
-<link href="./navbar.css" rel="stylesheet">
 <script type="text/javascript" src="./navbar.js"></script>
 
 </div>
@@ -444,11 +409,11 @@ background-color: #ddd; /* Button hover color in dark mode */
       <div class="tradingview-widget-container__widget"></div>
       <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-timeline.js" async>
         {
-          "feedMode": "all_symbols",
-            "isTransparent": false,
-              "displayMode": "adaptive",
-                "colorTheme": "light",
-                  "locale": "in"
+          "feedMode";"all_symbols",
+            "isTransparent"; false,
+              "displayMode"; "adaptive",
+                "colorTheme"; "light",
+                  "locale"; "in"
         }
       </script>
     </div>
@@ -462,18 +427,18 @@ background-color: #ddd; /* Button hover color in dark mode */
       <script type="text/javascript"
         src="https://s3.tradingview.com/external-embedding/embed-widget-crypto-coins-heatmap.js" async>
           {
-            "dataSource": "Crypto",
-              "blockSize": "market_cap_calc",
-                "blockColor": "change",
-                  "locale": "in",
-                    "symbolUrl": "",
-                      "colorTheme": "light",
-                        "hasTopBar": false,
-                          "isDataSetEnabled": false,
-                            "isZoomEnabled": true,
-                              "hasSymbolTooltip": true,
-                                "width": "auto",
-                                  "height": 500
+            "dataSource"; "Crypto",
+              "blockSize"; "market_cap_calc",
+                "blockColor"; "change",
+                  "locale"; "in",
+                    "symbolUrl"; "",
+                      "colorTheme"; "light",
+                        "hasTopBar"; false,
+                          "isDataSetEnabled"; false,
+                            "isZoomEnabled"; true,
+                              "hasSymbolTooltip"; true,
+                                "width"; "auto",
+                                  "height"; 500
           }
         </script>
     </div>
@@ -514,9 +479,9 @@ background-color: #ddd; /* Button hover color in dark mode */
         <script type="text/javascript"
           src="https://s3.tradingview.com/external-embedding/embed-widget-forex-heat-map.js" async>
             {
-              "width": "auto",
-                "height": 500,
-                  "currencies": [
+              "width"; "auto",
+                "height"; 500,
+                  "currencies"; [
                     "EUR",
                     "USD",
                     "JPY",
@@ -527,9 +492,9 @@ background-color: #ddd; /* Button hover color in dark mode */
                     "CNY",
                     "INR"
                   ],
-                    "isTransparent": false,
-                      "colorTheme": "light",
-                        "locale": "in"
+                    "isTransparent"; false,
+                      "colorTheme"; "light",
+                        "locale"; "in"
             }
           </script>
       </div>

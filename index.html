@@ -203,87 +203,136 @@
   </div>
   <div class="content-wrapper">
     <header class="header-area">
-      <div style="display: flex; justify-content: center;" class="navbar-area">
-        <div style="display: flex; justify-content: center;" class="container">
-       <div class="row">
-        <div style="display: flex; justify-content: center;" class="">
-          <nav class="navbar navbar-expand-lg " style="display: flex;">
-            <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="toggler-icon"></span>
-            <span class="toggler-icon"></span>
-            <span class="toggler-icon"></span>
-          </button> -->
-          <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
-            <div class="icon1">
-              <a href="./index.html">
-              <img src="./assets/images/l (2).png" alt="icon.png">
-              </a>
-            </div> 
-            <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
-              <li class="nav-item">
-                <a class="page-scroll active-link" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
-              </li>    
-              <li class="nav-item">
-                <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
-              </li>
-              <li class="nav-item no-underline">
-                <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
-              </li>
-              <li class="nav-item no-underline">
-              <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
-                🌙
-              </button>
-              </li>
-            </ul>
-          </div>
+      <div class="navbar-area">
+        <div  class="container">
+          <div class="row">
+            <div class="">
+              <nav class="navbar navbar-expand-lg">
+                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                  <div class="icon1" >
+                    <a href="./index.html">
+                    <img src="assets/images/l (2).png" alt="logo">
+                    </a>
+                  </div> 
+                  <ul id="nav" class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                      <a class="page-scroll" href="./index.html">Home 🏡</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll" href="./about.html">About Us 📖</a>
+                    </li>    
+                    <li class="nav-item">
+                      <a class="page-scroll" href="./trends.html">Trends 📈</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll" href="./blog.html">Blogs 📰</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll" href="./careers.html">Career 👔</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll" href="./contact.html">Contact📞</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll" href="./faq.html">Help 🙋‍♂️</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll" href="./loginPage.html" id="login-btn">Login/Register 💻</a>
+                    </li>
+                    <li class="nav-item no-underline">
+                    <button id="theme-toggle" class="theme-toggle" style="margin-right: 10px;">
+                      🌙
+                    </button>
+                    </li>
+                  </ul>
+                </div>
+                <script>
+                  const toggleButton = document.getElementById('theme-toggle');
+                  const body = document.body;
+                  const currentTheme = localStorage.getItem('theme');
+  
+                  if (currentTheme === 'dark') {
+                  body.classList.add('dark-mode');
+                  toggleButton.classList.add('dark');
+                  toggleButton.textContent = '🌞';
+                  }
+                  
+                  toggleButton.addEventListener('click', function () {
+                  body.classList.toggle('dark-mode');
+                  toggleButton.classList.toggle('dark');
+                  
+                  // Update button icon based on mode
+                  if (body.classList.contains('dark-mode')) {
+                    toggleButton.textContent = '🌞';  // Light mode icon
+                    localStorage.setItem('theme', 'dark');
+                  } else {
+                    toggleButton.textContent = '🌙';  // Dark mode icon
+                    localStorage.setItem('theme', 'light');
+                  }
+                  });
+              </script>
+                <div class="">
 
-          <script>
-            const toggleButton = document.getElementById('theme-toggle');
-            const body = document.body;
-            const currentTheme = localStorage.getItem('theme');
-
-            if (currentTheme === 'dark') {
-            body.classList.add('dark-mode');
-            toggleButton.classList.add('dark');
-            toggleButton.textContent = '🌞';
-            }
-
-            toggleButton.addEventListener('click', function () {
-            body.classList.toggle('dark-mode');
-            toggleButton.classList.toggle('dark');
-
-            // Update button icon based on mode
-            if (body.classList.contains('dark-mode')) {
-              toggleButton.textContent = '🌞';  // Light mode icon
-              localStorage.setItem('theme', 'dark');
-            } else {
-              toggleButton.textContent = '🌙';  // Dark mode icon
-              localStorage.setItem('theme', 'light');
-            }
-            });
-        </script>
+                  <!-- Login Modal -->
+                  <div id="myModal" class="modal">
+                    <div class="modal-content">
+                      <span class="close" style="display: flex; justify-content: right;">&times;</span>
+                      <div class="mt-3">
+                        <h3 class="join"><i class="fa-solid fa-right-to-bracket"></i>  Login to join us....</h3>
+                        <form class="px-3 py-4" id="loginForm">
+                          <div class="form-group">
+                            <label class="d-flex">Username</label>
+                            <input type="text" placeholder="Username" class="form-control" required />
+                          </div>
+                          <div class="form-group">
+                            <label class="d-flex">Password</label>
+                            <input type="password" placeholder="Password" class="form-control" required>
+                            <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
+                          </div>
+                          <div class="form-check d-flex">
+                            <input type="checkbox" class="form-check-input me-1" style="margin-top: 0;">
+                            <label class="form-check-label" style="margin-bottom: 0;">Remember me</label>
+                            <a href="#" id="forgot-password" style="margin-left: 90px;">Forget Password?</a>
+                          </div>
+                          <div style="height: 20px;"></div>
+                          <button class="main-btn w-100 mb-3" onclick="submitForm('loginForm')">Sign in</button>
+                          <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
+                          <div class="or-sign-in-with text-center">
+                            <p>Or sign in with</p>
+                          </div>
+                          <div class="social-icons mt-3">
+                            <ul class="list-inline">
+                              <li><a href="#" class="google" id="google-login"><i class="fa-brands fa-google"></i></a></li>
+                              <li><a href="#" class="facebook" id="facebook-login"><i class="fa-brands fa-facebook-f"></i></a></li>
+                              <li><a href="#" class="twitter" id="twitter-login"><i class="fa-brands fa-twitter"></i></a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                   
+                  <script>
+                    // Add event listeners to the social media icons
+                    document.getElementById('google-login').addEventListener('click', function() {
+                      window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
+                    });
+                  
+                    document.getElementById('facebook-login').addEventListener('click', function() {
+                      window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
+                    });
+                  
+                    document.getElementById('twitter-login').addEventListener('click', function() {
+                      window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
+                    });
+                  </script>
+    
+            
             <div class="">
               <!-- Login Modal -->
               <div id="myModal" class="modal">
