@@ -208,7 +208,7 @@ body.dark-mode {
           </div>
 
           <script>
-            var toggleButton = document.getElementById('theme-toggle');
+            const toggleButton = document.getElementById('theme-toggle');
             var body = document.body;
             var currentTheme = localStorage.getItem('theme');
 
@@ -313,27 +313,27 @@ background-color: #ddd; /* Button hover color in dark mode */
           <div class="mobile-menu__trigger"><span></span></div>
         </nav>
         <script>
-          var toggleButton = document.getElementById('theme-toggle2');
+          const toggleBtn = document.getElementById('theme-toggle2');
           var body = document.body;
           var currentTheme = localStorage.getItem('theme');
 
           if (currentTheme === 'dark') {
           body.classList.add('dark-mode');
-          toggleButton.classList.add('dark');
-          toggleButton.textContent = '🌞';
+          toggleBtn.classList.add('dark');
+          toggleBtn.textContent = '🌞';
           }
-
-          toggleButton.addEventListener('click', function () {
+          
+          toggleBtn.addEventListener('click', function () {
           body.classList.toggle('dark-mode');
-          toggleButton.classList.toggle('dark');
-
+          toggleBtn.classList.toggle('dark');
+          
           // Update button icon based on mode
           if (body.classList.contains('dark-mode')) {
-          toggleButton.textContent = '🌞';  // Light mode icon
-          localStorage.setItem('theme', 'dark');
+            toggleBtn.textContent = '🌞';  // Light mode icon
+            localStorage.setItem('theme', 'dark');
           } else {
-          toggleButton.textContent = '🌙';  // Dark mode icon
-          localStorage.setItem('theme', 'light');
+            toggleBtn.textContent = '🌙';  // Dark mode icon
+            localStorage.setItem('theme', 'light');
           }
           });
       </script>
