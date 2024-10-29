@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="../assets/css/quiz.css" />
   <link rel="stylesheet" href="../assets/css/popup.css" />
   <link rel="stylesheet" href="../assets/css/index.css" />
+  <link rel="stylesheet" href="../assets/css/sip.css" />
   <link rel="stylesheet" href="GSTstyle.css"/>
 
   <link rel="stylesheet" type="text/css" href="sipcalculatorCss.css">
@@ -724,7 +725,10 @@ registerCloseButton.addEventListener("click", function() {
     max-width: 600px; /* Maximum width for larger screens */
     width: 100%; /* Allow it to shrink to fit smaller screens */
     margin: auto;
+    border-radius: 30px;
+    background-color: white;
     padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .switch-container {
@@ -816,19 +820,18 @@ registerCloseButton.addEventListener("click", function() {
       .header {
           padding-top: 50px;
           text-align: center;
-          padding: 20px;
-          background-color: linear-gradient( 150deg,#2e47c7,#f0f2f3);
+          padding: 30px;
+          background-color: linear-gradient( 150deg,#2e47c7,#f0f2f3); 
         }
       .header h3 {
           margin: 0;
+          font-size: 2rem;
+          letter-spacing: 1px;
         }
       .cal-content {
           margin: 20px 0;
           font-size: 1.1rem;
-      }
-      .know-more {
-          margin-top: 20px;
-      }
+      } 
       .know-more-btn {
           background-color: #ffffff;
           border: none;
@@ -841,6 +844,7 @@ registerCloseButton.addEventListener("click", function() {
       }
       .know-more-btn:hover {
           background-color: #e0f7fa;
+          transform: scale(1.05);+
       }
       .know-more-content {
           display: none;
@@ -853,18 +857,22 @@ registerCloseButton.addEventListener("click", function() {
       .input-container {
           padding: 20px;
           background: linear-gradient(135deg,#eadff2,#fff0f8);
-          border-radius: 5px;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-          margin: 20px 0;
+          border-radius: 15px;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+          margin: 10px 10px 20px 10px;
           width: 97%;
       }
       .form-control {
           width: 100%;
-          padding: 10px;
-          margin-top: 5px;
+          padding: 12px;
+          margin: 10px 0;
           border: 1px solid #b0bec5;
           border-radius: 4px;
           font-size: 1rem;
+      }
+      .form-control:focus {
+        box-shadow: 0 0 5px #0048ff;
+        outline: none;
       }
       .btn-calculate {
           display: flex;
@@ -877,7 +885,7 @@ registerCloseButton.addEventListener("click", function() {
           border-radius: 5px;
           cursor: pointer;
           font-weight: bold;
-          transition: background-color 0.3s;
+          transition: all 0.3s ease;
           flex: 1; /* Equal spacing */
           margin: 0 5px; /* Space between buttons */
       }
@@ -896,20 +904,33 @@ registerCloseButton.addEventListener("click", function() {
           background-color: #b0bec5;
       }
       .result {
-          margin-top: 20px;
+         margin: 10px 10px 20px 10px;
           font-size: medium;
           padding: 15px;
           background: #e3f2fd;
-          border-radius: 5px;
+          border-radius: 8px;
       }
       .result-container {
           display: flex;
           flex-direction: column;
-          margin-left: 20px;
+          gap: 10px; 
       }
+
+.result-container div {
+  font-size: 1.1rem;
+}
       .toool{
         background-color: linear-gradient( 150deg,#2e47c7,#f0f2f3);
       }
+      /* Animation for Know More */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
       /* alligned the footer content towards left */
       #footer{
@@ -961,13 +982,23 @@ registerCloseButton.addEventListener("click", function() {
       </div>
    
       <div class="result">
-          <div><b>Result :</b></div>
-          <div class="result-container">
-              <div>Monthly EMI: <span id="monthlyEMI"></span></div>
-              <div>Total Payment: <span id="totalPayment"></span></div>
-              <div>Total Interest Paid: <span id="totalInterestPaid"></span></div>
-          </div>
+        <div class="result-title"><b>Result :</b></div>
+        <div class="result-container">
+            <div class="result-item">
+                <span class="label">Monthly EMI:</span> 
+                <span class="value" id="monthlyEMI">--</span>
+            </div>
+            <div class="result-item">
+                <span class="label">Total Payment:</span> 
+                <span class="value" id="totalPayment">--</span>
+            </div>
+            <div class="result-item">
+                <span class="label">Total Interest Paid:</span> 
+                <span class="value" id="totalInterestPaid">--</span>
+            </div>
+        </div>
       </div>
+      
   </div>
     <!-- End EMI Calculator -->
   
