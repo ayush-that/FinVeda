@@ -6,6 +6,8 @@
     <title>Register & Login</title>
     <link rel="stylesheet" href="./loginPage.css" />
     <link rel="shortcut icon" href="./assets/images/favicon2.webp" type="image/png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -415,14 +417,21 @@
               <i class="fas fa-user"></i>
               <input type="text" placeholder="Username" />
             </div>
+            
+
             <div class="input-field">
-              <i class="fas fa-lock" id="toggle-password" style="cursor: pointer;"></i>
-              <input
-                type="password"
-                placeholder="Password"
-                id="password-input"
+              <input 
+                type="password" 
+                placeholder="Password" 
+                id="password-input" 
               />
+              <i 
+                class="fas fa-lock" 
+                id="toggle-password" 
+                style="cursor: pointer; position: absolute; right: 10px; top: 50%; transform: translateY(-50%);" 
+              ></i>
             </div>
+
             <div class="forgot-password">
                 <a href="#" onclick="forgotPassword()">Forgot Password?</a>
               </div>
@@ -494,6 +503,8 @@
         </form>
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>
+        
+        
         <script>
             let passwordSignup = document.getElementById("password-input-signup");
             let strengthBarSignup = document.getElementById("strength-bar-signup");
@@ -632,30 +643,33 @@
           console.log(data);
         });
 
-      // Toggle password visibility
-      function togglePassword(fieldId, icon) {
-        const field = document.getElementById(fieldId);
-        const isPassword = field.type === "password";
+      
+        // Toggle password visibility
+          function togglePassword(fieldId, icon) {
+            const field = document.getElementById(fieldId);
+            const isPassword = field.type === "password";
 
-        // Toggle between 'password' and 'text'
-        field.type = isPassword ? "text" : "password";
+            // Toggle between 'password' and 'text'
+            field.type = isPassword ? "text" : "password";
 
-        // Change the icon class between eye and eye-slash
-        icon.classList.toggle("fa-lock-open", isPassword);
-        icon.classList.toggle("fa-lock", !isPassword);
-      }
+            // Change the icon class between eye and eye-slash
+            icon.classList.toggle("fa-lock-open", isPassword);
+            icon.classList.toggle("fa-lock", isPassword === false);
+          }
 
-      document
-        .getElementById("toggle-password")
-        .addEventListener("click", function () {
-          togglePassword("password-input", this);
-        });
+          // Add event listeners for password toggle
+          document
+            .getElementById("toggle-password")
+            .addEventListener("click", function () {
+              togglePassword("password-input", this);
+            });
 
-      document
-        .getElementById("toggle-password-signup")
-        .addEventListener("click", function () {
-          togglePassword("password-input-signup", this);
-        });
+          document
+            .getElementById("toggle-password-signup")
+            .addEventListener("click", function () {
+              togglePassword("password-input-signup", this);
+            });
+
 
       // Check password strength
       function checkPasswordStrength() {
