@@ -541,97 +541,222 @@
   </header>
 
   <div class="about-section" style="padding: 50px;">
+    <img style="position: absolute; top :200px;mix-blend-mode: multiply;left: 10px;" src="./assets/images/aboutgg.jpg" alt="photo">
     <div class="about-card" style="padding: 50px;">
-        <h2 style="padding-left: 550px;font-size: 2.5rem;margin-bottom: 20px;margin-top: 20px;color: white;">ABOUT US</h2>
-        <div class="carousel">
+        <h2 style="text-align: center; font-size: 3.5rem; margin-bottom: 40px; margin-top: 20px; color: rgb(79, 93, 251);">ABOUT US</h2>
+        <div class="slider carousel">
             <div class="carousel-track">
-                <!-- Card 1 -->
-                <div class="card-column">
+                
+                <!-- Financial Kit Card -->
+                <div class="item card-column">
                     <div class="service-card">
                         <div class="service-content">
                             <div class="service-logo">
                                 <img src="./assets/images/service-logo.webp" alt="Financial Kit">
                             </div>
                             <h4>Financial Kit</h4>
-                            <p>We offer expert-written blogs on investment tips and strategies, and current economic trends, all crafted to keep you well-informed. With our SIP and PPF tools, you'll discover the power of compounding and make informed decisions regarding your savings.</p>
+                            <p>We offer investment tips and strategies, and current economic trends. With our SIP and PPF tools, you'll discover the power of compounding for smart savings.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="card-column">
+                <!-- Stock Market Card -->
+                <div class="item card-column">
                     <div class="service-card">
                         <div class="service-content">
                             <div class="service-logo">
                                 <img src="./assets/images/service-logo3.webp" alt="Stock Market">
                             </div>
                             <h4>Stock Market</h4>
-                            <p>Make smarter decisions by staying updated on current market happenings in real-time with our Stock Market API's results. FinVeda's personalized AI assistant, Arth Sathi, revolutionizes financial concepts, providing dynamic learning experiences.</p>
+                            <p>Make smarter decisions by staying updated with real-time market data. FinVeda’s AI assistant, Arth Sathi, simplifies financial learning.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="card-column">
+                <!-- Our Team Card -->
+                <div class="item card-column">
                     <div class="service-card">
                         <div class="service-content">
                             <div class="service-logo">
                                 <img src="./assets/images/service-logo2.webp" alt="Our Team">
                             </div>
                             <h4>Our Team</h4>
-                            <p>We at FinVeda aim to make you a stock market guru easily with our AI-powered teaching and financial blogs. FinVeda blogs redefine the conventional narrative and are crafted to resonate with readers of all financial backgrounds, making complex concepts digestible.</p>
+                            <p>Our AI-powered resources and financial blogs make complex concepts easy to understand for readers of all backgrounds.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Additional Card 1 -->
-                <div class="card-column">
+                <!-- Additional cards as needed -->
+                <div class="item card-column">
                     <div class="service-card">
                         <div class="service-content">
                             <div class="service-logo">
                                 <img src="./assets/images/images.png" alt="Crypto Insights">
                             </div>
                             <h4>Crypto Insights</h4>
-                            <p>Stay ahead with the latest crypto trends, in-depth analyses, and updates on blockchain technologies. Our platform offers insights to help you understand the rapidly evolving crypto market.</p>
+                            <p>Stay ahead with the latest crypto trends and analyses to navigate the evolving market.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Additional Card 2 -->
-                <div class="card-column">
+                <div class="item card-column">
                     <div class="service-card">
                         <div class="service-content">
                             <div class="service-logo">
                                 <img src="./assets/images/retirement.jpeg" alt="Retirement Planning">
                             </div>
                             <h4>Retirement Planning</h4>
-                            <p>Our comprehensive retirement planning resources assist you in preparing for a secure future, offering tools and tips to maximize your retirement savings and achieve financial freedom.</p>
+                            <p>Prepare for a secure future with our comprehensive retirement planning resources.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Additional Card 3 -->
-                <div class="card-column">
+                <div class="item card-column">
                     <div class="service-card">
                         <div class="service-content">
                             <div class="service-logo">
                                 <img src="./assets/images/tax.jpg" alt="Tax Planning">
                             </div>
                             <h4>Tax Planning</h4>
-                            <p>Our expert resources on tax-saving strategies help you maximize your returns and stay compliant. Learn about deductions, exemptions, and smart tax planning for individuals and businesses alike.</p>
+                            <p>Learn about deductions and exemptions to optimize your tax strategy effectively.</p>
                         </div>
                     </div>
                 </div>
             </div>
+
             <!-- Carousel Navigation Buttons -->
-            <button class="carousel-btn left" id="carousel-prev">&#10094;</button>
-            <button class="carousel-btn right" id="carousel-next">&#10095;</button>
+            <button class="carousel-btn" id="prev">&#10094;</button>
+            <button class="carousel-btn" id="next">&#10095;</button>
         </div>
     </div>
 </div>
 
-
 <style>
+  .about-section{
+    /* background-image: linear-gradient(to top right, #8B5CF6, #EC4899); */
+    /* min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center; */
+    /* align-items: center;
+    font-family: monospace; */
+}
+
+.about-section {
+
+    width: 100%;
+
+}
+
+.slider, .carousel {
+    position: relative;
+    width: 100%;
+    height: 370px;
+    overflow: hidden;
+}
+
+.item {
+    position: absolute;
+    width: 300px;
+    height: 420px;
+    text-align: justify;
+    background-color: rgb(185, 246, 250);
+    border-radius: 10px;
+    
+    transition: 0.5s;
+    left: calc(50% - 110px);
+    border:4px solid #c3e6f7;
+    top: 0;
+}
+.service-logo{
+  width: 100%;;
+}
+.service-logo img{
+  padding:10px;
+  padding-top: 25px;
+  width: 100%;
+
+}
+.service-content{
+  padding: 10px;
+}
+.service-content h4{
+  color:#4562f1;
+  margin-bottom: 10px;
+  padding-left: 35px;
+}
+.service-content p{
+  color: #0e0e0e;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 40%;
+    color: #0e0e0e;
+    background-color: transparent;
+    border: none;
+    font-size: xxx-large;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+#next {
+    right: 400px;
+}
+
+#prev {
+    left: 400px;
+}
+
+</style>
+
+<script>
+  const items = document.querySelectorAll('.carousel-track .item');
+const next = document.getElementById('next');
+const prev = document.getElementById('prev');
+let activeIndex = 3;
+
+function loadShow() {
+    let offset = 0;
+    items[activeIndex].style.transform = `none`;
+    items[activeIndex].style.zIndex = 1;
+    items[activeIndex].style.filter = 'none';
+    items[activeIndex].style.opacity = 1;
+
+    for (let i = activeIndex + 1; i < items.length; i++) {
+        offset++;
+        items[i].style.transform = `translateX(${120 * offset}px) scale(${1 - 0.2 * offset})`;
+        items[i].style.zIndex = -offset;
+        items[i].style.filter = 'blur(5px)';
+        items[i].style.opacity = offset > 2 ? 0 : 0.6;
+    }
+
+    offset = 0;
+    for (let i = activeIndex - 1; i >= 0; i--) {
+        offset++;
+        items[i].style.transform = `translateX(${-120 * offset}px) scale(${1 - 0.2 * offset})`;
+        items[i].style.zIndex = -offset;
+        items[i].style.filter = 'blur(5px)';
+        items[i].style.opacity = offset > 2 ? 0 : 0.6;
+    }
+}
+
+loadShow();
+
+next.onclick = function () {
+    activeIndex = activeIndex + 1 < items.length ? activeIndex + 1 : activeIndex;
+    loadShow();
+};
+
+prev.onclick = function () {
+    activeIndex = activeIndex - 1 >= 0 ? activeIndex - 1 : activeIndex;
+    loadShow();
+};
+
+</script>
+
+
+<!-- <style>
 .about-section {
 
 border: 20px solid white;
@@ -745,9 +870,9 @@ background: rgba(0, 0, 0, 0.7);
 
 
 
-</style>
+</style> -->
 
-
+<!-- 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
 const track = document.querySelector('.carousel-track');
@@ -783,7 +908,7 @@ prevButton.addEventListener('click', () => {
 });
 });
 
-</script>
+</script> -->
 
 
 <div class="blog-content back">
