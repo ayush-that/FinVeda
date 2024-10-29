@@ -250,7 +250,7 @@
           <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
             <div class="icon1">
               <a href="./index.html">
-              <img src="./assets/images/FinvedaLogo.png" alt="icon.png" style="width: 11rem;">
+              <img src="./assets/images/FinvedaLogo.png" alt="icon.png" style="width: 13rem;">
               </a>
             </div> 
             <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
@@ -1148,20 +1148,6 @@
         border-radius: 4px;
     }
     
-    button[type="submit"] {
-        align-self: flex-end;
-        padding: 10px 20px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        margin: 0 auto; 
-    }
-    
-    button[type="submit"]:hover {
-        background-color: #0056b3;
-    }
     
     #posts {
         margin-top: 20px;
@@ -1479,8 +1465,8 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-6">
-              <div class="section-title pb-35">
-                <div class="line"></div>
+              <div class="section-title pb-35" style="margin-left: 40%;">
+                <div class="line" style="width: 65%;"></div>
 
                 <h3 class="title" style="color: #2f6be5;"><span></span> Blog Posts</h3>
 
@@ -1889,58 +1875,47 @@
   </head>
 
   <body>
-    <div id="feedback-container">
-      <form id="user-feedback-form">
-        <!-- Form fields -->
-        <div id="form-header">
-          <div id="title-wrapper" class="text-center">
-            <h2 id="feedback-title">We Value Your Feedback</h2>
+    <div class="form-section">
+      <form class="feedbackform" id="feedback-form">
+        <div class="form-group">
+          <div class="section-title text-center">
+            <h2 class="form-heading">We Value Your Feedback</h2>
             <p>Your input helps us to improve and provide better services. Please fill out the form to let us know your
               thoughts.</p>
           </div>
-          <label id="input-label-name" for="username">
-            <i class="fas fa-user"></i> Name:
-          </label>
-          <input id="input-field-name" type="text" name="username" placeholder="Enter your name ...." required>
+          <label class="form-label" for="name">Name:</label>
+          <input class="form-input" type="text" id="name" name="name" placeholder="Enter the name" required="">
         </div>
-        <div id="input-group-email">
-          <label id="input-label-email" for="user-email">
-            <i class="fas fa-envelope"></i> Email:
-          </label>
-          <input id="input-field-email" type="email" name="user-email" placeholder="Enter your email ..." required>
+        <div class="form-group">
+          <label class="form-label" for="email">Email:</label>
+          <input class="form-input" placeholder="Enter your email" type="email" id="email" name="email" required="">
         </div>
-        <div id="input-group-rating">
-          <label id="input-label-rating">
-            <i class="fas fa-star"></i> Rating:
-          </label>
+        <div class="form-group">
+          <label class="form-label">Rating:</label>
+          <div id="emoji-description" class="emoji-description">Select an option</div>
         </div>
-        <div id="emoji-selection">
-          <input id="input-field-rating-1" type="radio" name="rating" value="1">
-          <label id="input-label-rating-1" for="input-field-rating-1">&#128577;</label>
-          <input id="input-field-rating-2" type="radio" name="rating" value="2">
-          <label id="input-label-rating-2" for="input-field-rating-2">&#128542;</label>
-          <input id="input-field-rating-3" type="radio" name="rating" value="3">
-          <label id="input-label-rating-3" for="input-field-rating-3">&#128528;</label>
-          <input id="input-field-rating-4" type="radio" name="rating" value="4">
-          <label id="input-label-rating-4" for="input-field-rating-4">&#128522;</label>
-          <input id="input-field-rating-5" type="radio" name="rating" value="5">
-          <label id="input-label-rating-5" for="input-field-rating-5">&#128515;</label>
+        <div class="emojis">
+          <input class="form-input" type="radio" id="emoji1" name="rating" value="1">
+          <label class="form-label" for="emoji1">🙁</label> <!-- Very Bad -->
+          <input class="form-input" type="radio" id="emoji2" name="rating" value="2">
+          <label class="form-label" for="emoji2">😞</label> <!-- Bad -->
+          <input class="form-input" type="radio" id="emoji3" name="rating" value="3">
+          <label class="form-label" for="emoji3">😐</label> <!-- Neutral -->
+          <input class="form-input" type="radio" id="emoji4" name="rating" value="4">
+          <label class="form-label" for="emoji4">😊</label> <!-- Good -->
+          <input class="form-input" type="radio" id="emoji5" name="rating" value="5">
+          <label class="form-label" for="emoji5">😃</label> <!-- Excellent -->
         </div>
-        <div id="input-group-comments">
-          <label id="input-label-comments" for="user-comments">
-            <i class="fas fa-comments"></i> Comments:
-          </label>
-          <textarea id="textarea-field-comments" name="user-comments" rows="4" placeholder="Enter your comments ....."
-            required></textarea>
+        <div class="form-group">
+          <label class="form-label" for="comments">Comments:</label>
+          <textarea class="form-textarea" placeholder="Enter your comments" id="comments" name="comments" rows="4" required=""></textarea>
         </div>
-        <div id="submit-group">
-          <button id="submit-button" type="submit">
-            <i class="fas fa-paper-plane"></i> Submit
-          </button>
+        <div class="form-group">
+          <div class="form-group">
+            <button class="form-button" id="feed-submit" type="submit">Submit</button>
+          </div>
         </div>
       </form>
-      <!-- Placeholder for the success message -->
-      <div id="success-message" class="hidden">Thank you for your feedback!</div>
     </div>
 <script>
   document.getElementById("user-feedback-form").addEventListener("submit", function (event) {
@@ -1955,17 +1930,7 @@
 
 </script>
 <style>
-  /* Parent div gradient */
-#feedback-container {
-    background: linear-gradient(135deg, #a8e0b3, #3ac7a0); /* Light green to teal gradient */
-    padding: 30px;
-    margin-top: 100px;
-    border-radius: 15px;
-    border: 5px solid white;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    max-width: 600px; /* Adjust as needed */
-    margin: 0 auto;
-}
+
 
 /* Form styles */
 #user-feedback-form {
