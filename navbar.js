@@ -54,3 +54,13 @@ window.addEventListener("scroll", function() {
         });
     }
 });
+function toggleDropdown(show) {
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    if (show) {
+      dropdownMenu.style.display = 'block';
+    } else {
+      dropdownMenu.style.display = 'none';
+    }
+  }
+  
+  

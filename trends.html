@@ -8,8 +8,7 @@
   <meta name="description" content="Explore insightful trends and analyses in finance and economics on FinVeda's Trends page. Discover curated content and data-driven insights to stay informed." />
   <meta name="author" content="Ayush Singh">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="shortcut icon"  href="./assets/images/favicon2.png" type="image/png" />
-  <link rel="shortcut icon" href="./assets/images/favicon2.webp" type="image/png" />
+  <link rel="shortcut icon"  href="/assets/images/favicon2.webp" type="image/png" />
     <link rel="stylesheet"  href="./assets/css/animate.css" />
     <link rel="stylesheet"  href="./assets/css/magnific-popup.css" />
     <link rel="stylesheet"  href="./assets/css/slick.css" />
@@ -39,6 +38,14 @@
         z-index: 9999;
   
       }
+      .theme-toggle2.dark {
+  background-color: #eceae0;
+  color: #000;
+}
+body.dark-mode {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
   
       * {
         cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
@@ -158,7 +165,7 @@
           <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
             <div class="icon1">
               <a href="./index.html">
-              <img src="assets/images/l (2).png" alt="icon.png">
+                <img src="./assets/images/FinvedaLogo.png" alt="icon.png" style="width: 11rem;">
               </a>
             </div> 
             <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
@@ -167,27 +174,28 @@
               </li>
               <li class="nav-item">
                 <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
-              </li>    
+              </li>     
               <li class="nav-item">
-                <a class="page-scroll active-link" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
-              </li>
+                <a class="page-scroll" href="./finance.html" style="color: rgb(237, 242, 244);">Courses 📚</a>
+              </li> 
               <li class="nav-item">
                 <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
               </li>
               <li class="nav-item">
                 <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
+              </li>
+              <!-- Dropdown for Explore -->
+              <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
+                <a class="page-scroll dropdown-toggle" href="#" style="color: rgb(237, 242, 244);">
+                  <span class="explore-text">Explore 📚</span> 
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="./trends.html">Trends 📈</a></li>
+                  <li><a href="./tools/sip.html">Tools 🔧</a></li>
+                  <li><a href="./blog.html">Blogs 📰</a></li>
+                  <li><a href="./quiz.html">Quiz 🤔</a></li>
+                  <li ><a href="./maps.html" >MAPS 🗺️</a></li>
+                </ul>
               </li>
               <li class="nav-item no-underline">
                 <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
@@ -200,31 +208,31 @@
             </ul>
           </div>
 
-        <script>
-          const toggleButton = document.getElementById('theme-toggle');
-          const body = document.body;
-          const currentTheme = localStorage.getItem('theme');
+          <script>
+            const toggleButton = document.getElementById('theme-toggle');
+            var body = document.body;
+            var currentTheme = localStorage.getItem('theme');
 
-          if (currentTheme === 'dark') {
-          body.classList.add('dark-mode');
-          toggleButton.classList.add('dark');
-          toggleButton.textContent = '🌞';
-          }
+            if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            toggleButton.classList.add('dark');
+            toggleButton.textContent = '🌞';
+            }
 
-          toggleButton.addEventListener('click', function () {
-          body.classList.toggle('dark-mode');
-          toggleButton.classList.toggle('dark');
+            toggleButton.addEventListener('click', function () {
+            body.classList.toggle('dark-mode');
+            toggleButton.classList.toggle('dark');
 
-          // Update button icon based on mode
-          if (body.classList.contains('dark-mode')) {
-          toggleButton.textContent = '🌞';  // Light mode icon
-          localStorage.setItem('theme', 'dark');
-          } else {
-          toggleButton.textContent = '🌙';  // Dark mode icon
-          localStorage.setItem('theme', 'light');
-          }
-          });
-      </script>
+            // Update button icon based on mode
+            if (body.classList.contains('dark-mode')) {
+              toggleButton.textContent = '🌞';  // Light mode icon
+              localStorage.setItem('theme', 'dark');
+            } else {
+              toggleButton.textContent = '🌙';  // Dark mode icon
+              localStorage.setItem('theme', 'light');
+            }
+            });
+        </script>
       <style>
 
         h3{
@@ -298,10 +306,38 @@ background-color: #ddd; /* Button hover color in dark mode */
               onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
           </li>
 
-
+          <li class="nav-item no-underline">
+            <button id="theme-toggle2" class="theme-toggle2" style="margin-right: 2px;">
+              🌙
+            </button>
+            </li>
           <div class="mobile-menu__trigger"><span></span></div>
         </nav>
+        <script>
+          const toggleBtn = document.getElementById('theme-toggle2');
+          var body = document.body;
+          var currentTheme = localStorage.getItem('theme');
 
+          if (currentTheme === 'dark') {
+          body.classList.add('dark-mode');
+          toggleBtn.classList.add('dark');
+          toggleBtn.textContent = '🌞';
+          }
+          
+          toggleBtn.addEventListener('click', function () {
+          body.classList.toggle('dark-mode');
+          toggleBtn.classList.toggle('dark');
+          
+          // Update button icon based on mode
+          if (body.classList.contains('dark-mode')) {
+            toggleBtn.textContent = '🌞';  // Light mode icon
+            localStorage.setItem('theme', 'dark');
+          } else {
+            toggleBtn.textContent = '🌙';  // Dark mode icon
+            localStorage.setItem('theme', 'light');
+          }
+          });
+      </script>
 
       </div>
     </div>
@@ -336,39 +372,7 @@ background-color: #ddd; /* Button hover color in dark mode */
     </div>
   </div>
   
-      <!-- removing intro section -->
-    <!-- <div id="home" class="header-hero bg_cover" style="background-image: url(./assets/images/banner-bg.svg)">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <div class="header-hero-content text-center">
-              <h3 class="header-sub-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
-                Say 👋🏼 to FinVeda
-              </h3>
-              <h2 class="header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">
-                your savvy financial companion
-              </h2>
-              <p class="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">
-                Wanna learn how to grow your money to become rich? We have made becoming a stock market Guru made easy
-                with our AI powered finance advisor - <b>Arth Sathi 🤵🏻</b>
-              </p>
-              <a href="#" class="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s"
-              onclick="window.botpressWebChat.sendEvent({ type: 'show' }); return false;">
-              Chat with ArthaSathi 💬
-            </a>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="header-hero-image text-center wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">
-              <img src="./assets/images/header-hero.png" alt="hero" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="particles-1" class="particles"></div>
-    </div> -->
+     
   <br><br><br><br>
 
 
@@ -436,8 +440,9 @@ background-color: #ddd; /* Button hover color in dark mode */
     <div class="market-card-container-unique" id="marketStatusContainerUnique"></div>
   </div>
 </section>
+  <div class="container-main">
 
-  <div class="container"><br><br>
+  <div class="container" ><br><br>
     <!-- TradingView Widget BEGIN -->
      <br><br>
     <div class="tradingview-widget-container" style="height: 445px;">
@@ -447,7 +452,7 @@ background-color: #ddd; /* Button hover color in dark mode */
           "feedMode": "all_symbols",
             "isTransparent": false,
               "displayMode": "adaptive",
-                "colorTheme": "light",
+                "currentTheme": "light",
                   "locale": "in"
         }
       </script>
@@ -536,7 +541,8 @@ background-color: #ddd; /* Button hover color in dark mode */
       <!-- TradingView Widget END -->
     </div>
   </div>
-  
+      
+</div>
   <!-- Timed popup that will appear after succesful submission of feebback form! -->
       <button class="notification" id="successnotification" style="display:none;">
         <span class="message" id="successmsg">Submitted successfully!</span>
@@ -576,7 +582,7 @@ background-color: #ddd; /* Button hover color in dark mode */
       <div class="row" id="footer">
           <div class="col-lg-4 col-md-6 col-sm-8">
               <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                <img src="./assets/images/l (2).png" alt="FinVeda Logo" style="height: 80px; width: auto; margin-bottom: 15px;" />
+                <img src="./assets/images/FinvedaLogo.png" alt="FinVeda Logo" style="height: 80px; width: auto; margin-bottom: 15px;" />
                   <p class="text custom-margin">
                       We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
                   </p>
@@ -594,7 +600,8 @@ background-color: #ddd; /* Button hover color in dark mode */
                           <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
                           <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
                           <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
-                      </ul>
+                          <li><a href="./blogs/sitemap.html"><i class="fa-solid fa-sitemap"></i> Site Map</a></li>
+                        </ul>
                   </div>
                   <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
                       <div class="footer-title">
@@ -635,7 +642,8 @@ background-color: #ddd; /* Button hover color in dark mode */
                           </div>
                       </li>
                       <li class="d-sm-flex justify-content-center">
-                          <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 12px; width: 10%;"></i>
+                          <!-- Modified: Inline CSS to adjust logo size and sync with other pages -->
+                          <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font: 12px; width: 10%;"></i>
                           <div style="width: 80%;">
                               <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
                                  style="color:#fff">
@@ -643,12 +651,13 @@ background-color: #ddd; /* Button hover color in dark mode */
                               </a>
                           </div>
                       </li>
+                      <!-- Added: Social Media Redirects -->
                       <div class="social-icons">
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-discord"></i></a>
-                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://discord.com/"><i class="fa-brands fa-discord"></i></a>
+                        <a href="https://github.com/ayush-that/FinVeda"><i class="fa-brands fa-github"></i></a>
                     </div>
                   </ul>
               </div>
