@@ -3,10 +3,43 @@
 
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home - FinVeda</title>
   <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="shortcut icon" href="./assets/images/favicon2.webp" type="image/png" />
+  <meta name="description" content="FinVeda provides comprehensive resources and tools for financial education, investment strategies, and personal finance management. Discover your path to financial wellness today!">
+  <meta name="keywords" content="finance, financial education, personal finance, investment strategies, financial wellness, budgeting, money management">
+  <meta name="author" content="Ayush That">
+
+  <meta property="og:title" content="FinVeda - Your Guide to Financial Wellness">
+  <meta property="og:description" content="FinVeda offers expert resources and tools for improving your financial knowledge and managing your investments effectively.">
+  <meta property="og:url" content="https://github.com/ayush-that/FinVeda">
+  <meta property="og:type" content="website">
+    
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FinVeda - Your Guide to Financial Wellness">
+  <meta name="twitter:description" content="Explore a wealth of financial resources at FinVeda to enhance your financial literacy and investment skills.">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+   <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "FinVeda",
+      "url": "https://github.com/ayush-that/FinVeda",
+      "description": "FinVeda provides comprehensive resources and tools for financial education, investment strategies, and personal finance management.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "FinVeda",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "/assets/images/favicon2.webp"  // Replace with your logo URL
+        }
+      }
+    }
+    </script>
+  
+  <link rel="shortcut icon" href="/assets/images/favicon2.webp" type="image/png" />
   <link rel="stylesheet" href="./assets/css/animate.css" />
   <link rel="stylesheet" href="./assets/css/magnific-popup.css" />
   <link rel="stylesheet" href="./assets/css/slick.css" />
@@ -18,99 +51,16 @@
   <link rel="stylesheet" href="./assets/css/quiz.css" />
   <link rel="stylesheet" href="./assets/css/popup.css" />
   <link rel="stylesheet" href="./assets/css/cookiepopup.css">
-  <link rel="stylesheet" href="./assets/css/preloader.css" />
+  <link rel="stylesheet" href="./assets\css\preloader.css" />
   <link rel="stylesheet" href="./assets/css/faq.css">
   <link rel="stylesheet" href="./assets/css/index.css">
-  <link rel="stylesheet" type="text/css" href="./tools/sipcalculator.css">
+  <link rel="stylesheet" type="text/css" href="sipcalculatorCss.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.13/lottie.min.js"></script>
 
   <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
   <link rel="stylesheet" href="navbar.css">
   <style>
-    body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-        }
-        /* Footer Wrapper */
-/* added css to row*/
-.row{
-  margin-top: 60px; /*added margin*/
-}
-
-.footer-wrapper {
-    background-color: #0f2027; /* Footer background */
-    color: white; /* Text color */
-    /* padding: 20px 0; Overall padding */
-    margin : 0;
-    padding : 0;
-    text-align: left;
-}
-
-/* Footer Divider */
-.footer-divider {
-    border: none;
-    border-top: 2px solid #ccc; /* Ruler line color */
-    /* margin: 20px 0; Margin around the divider */
-}
-
-/* Footer Widget */
-/* .footer-widget {
-    padding-bottom: 50px; Bottom padding for footer widget 
-} */
-
-/* Footer Titles */
-.footer-title {
-    font-size: 20px; /* Font size for titles */
-    font-weight: bold; /* Bold font for titles */
-    margin-bottom: 15px; /* Space below titles */
-}
-.footer-title .title{
-  margin-left: 0px;/*added margin left*/
-}
-/* Footer Links */
-.footer-links {
-    list-style: none; /* No list styling */
-    padding: 0; /* No padding */
-}
-
-.footer-links li {
-    margin: 5px 0; /* Space between list items */
-}
-
-.footer-links a {
-    color: white; /* Link color */
-    text-decoration: none; /* No underline */
-    transition: color 0.3s; /* Smooth color transition */
-}
-
-.footer-links a:hover {
-    color: #ff8c00; /* Highlight color on hover */
-}
-
-/* Contact Section */
-.contact {
-    list-style: none; /* No list styling */
-    padding: 0; /* No padding */
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .footer-widget {
-        padding-bottom: 5px; /* Adjusted padding for mobile */
-    }
-
-    .footer-title {
-        font-size: 14px; /* Smaller font size for mobile */
-        
-    }
-    
-    .footer-links li,
-    .contact li {
-        margin: 3px 0; /* Less margin for mobile */
-    }
-}
     #progressBar {
       position: fixed;
       top: 0;
@@ -152,276 +102,6 @@
         display: none;
       }
     }
-
-
- 
-
-    .unique-popup-message {
-      position: fixed;
-      /* Change to fixed positioning */
-      top: 30px;
-      /* Adjust this value to be below the navbar */
-      right: 2px;
-      /* Adjust this value for the desired distance from the right edge */
-      width: 300px;
-      /* Adjust width as needed */
-      transform: translateX(0);
-      /* Center the popup horizontally */
-      background-color: #a4d8ff;
-      color: #131722;
-      padding: 11px;
-      border-radius: 5px;
-      text-align: center;
-      z-index: 1000;
-      box-sizing:  border-box;
-      overflow:  hidden;
-      /* Hide the expanding border animation */
-      position: relative;
-    }
-
-    .border-animation {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 7px;
-      /* Same height as the border */
-      background-color: rgb(4, 0, 128);
-      width: 100%;
-      transform-origin: right;
-      /* Start shrinking from the right */
-    }
-
-    @keyframes borderAnimation {
-      from {
-        transform: scaleX(0);
-        /* Full width initially */
-      }
-
-      to {
-        transform: scaleX(1);
-        /* Shrink to zero width */
-      }
-    }
-
-    .social-icons {
-      text-align: center;
-    }
-
-    .social-icons ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-    }
-
-    .social-icons li {
-      margin: 0 10px;
-    }
-
-    .social-icons a {
-      color: #337ab7;
-      text-decoration: none;
-      border-radius: 50%;
-      border: 1px solid #ccc;
-      padding: 10px;
-      display: inline-block;
-      width: 40px;
-      height: 40px;
-      line-height: 40px;
-      text-align: center;
-      font-size: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: transform 0.3s;
-    }
-
-    .social-icons a:hover {
-      color: #fe8464;
-      border-color: #fe8464;
-      transform: scale(1.1);
-    }
-
-    .or-sign-in-with {
-      margin: 20px 0;
-      font-size: 14px;
-      font-weight: bold;
-      color: #666;
-      text-align: center;
-      position: relative;
-    }
-
-    .or-sign-in-with::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 0;
-      width: 35%;
-      border-top: 1px solid #ccc;
-      transform: translateX(-2%);
-    }
-
-    .or-sign-in-with::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      right: 0;
-      width: 35%;
-      border-top: 1px solid #ccc;
-      transform: translateX(2%);
-    }
-
-    .form-check {
-      display: flex;
-      align-items: center;
-    }
-
-    .form-check a {
-      margin-left: auto;
-    }
-
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-
-
- 
-
-    .unique-popup-message {
-      position: fixed;
-      /* Change to fixed positioning */
-      top: 30px;
-      /* Adjust this value to be below the navbar */
-      right: 2px;
-      /* Adjust this value for the desired distance from the right edge */
-      width: 300px;
-      /* Adjust width as needed */
-      transform: translateX(0);
-      /* Center the popup horizontally */
-      background-color: #a4d8ff;
-      color: #131722;
-      padding: 11px;
-      border-radius: 5px;
-      text-align: center;
-      z-index: 1000;
-      box-sizing: border-box;
-      overflow: hidden;
-      /* Hide the expanding border animation */
-      position: relative;
-    }
-
-    .border-animation {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 7px;
-      /* Same height as the border */
-      background-color: rgb(4, 0, 128);
-      width: 100%;
-      transform-origin: right;
-      /* Start shrinking from the right */
-    }
-
-    @keyframes borderAnimation {
-      from {
-        transform: scaleX(0);
-        /* Full width initially */
-      }
-
-      to {
-        transform: scaleX(1);
-        /* Shrink to zero width */
-      }
-    }
-
-    .social-icons {
-      text-align: center;
-      display : flex;
-      gap : 10px;
-    }
-
-    .social-icons ul {
-      list-style: none;
-      padding: 0;
-      margin: 0; /*added the below styles*/
-      display: flex;
-      justify-content: center;
-    }
-
-    .social-icons li {
-      margin: 0 10px;
-    }
-
-    .social-icons a {
-      color: #337ab7;
-      text-decoration: none;
-      border-radius: 50%;
-      border: 1px solid #ccc;
-      padding: 10px;
-      display: inline-block;
-      width: 40px;
-      height: 40px;
-      line-height: 40px;
-      text-align: center;
-      font-size: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: transform 0.3s;
-    }
-
-    .social-icons a:hover {
-      color: #fe8464;
-      border-color: #fe8464;
-      transform: scale(1.1);
-    }
-
-    .or-sign-in-with {
-      margin: 20px 0;
-      font-size: 14px;
-      font-weight: bold;
-      color: #666;
-      text-align: center;
-      position: relative;
-    }
-
-    .or-sign-in-with::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 0;
-      width: 35%;
-      border-top: 1px solid #ccc;
-      transform: translateX(-2%);
-    }
-
-    .or-sign-in-with::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      right: 0;
-      width: 35%;
-      border-top: 1px solid #ccc;
-      transform: translateX(2%);
-    }
-
-    .form-check {
-      display: flex;
-      align-items: center;
-    }
-
-    .form-check a {
-      margin-left: auto;
-    }
-
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
 .scroll-btn {
             position: fixed;
             top: 100px;
@@ -567,23 +247,11 @@
             <span class="toggler-icon"></span>
             <span class="toggler-icon"></span>
           </button> -->
-          <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
+          <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
             <div class="icon1">
               <a href="./index.html">
-              <img src="assets/images/icon.webp" alt="icon.png">
+              <img src="./assets/images/FinvedaLogo.png" alt="icon.png" style="width: 13rem;">
               </a>
- 
-              <div class="navbar-logo">
-                <div class="icon1">
-                  <a href="./index.html">
-                    <img src="assets/images/icon.webp" alt="icon.webp">
-                </div>
-              </div>
-              <div class="nav-space"></div>
-              
-              <div class="nav-toggle-btn-space-fixed"></div>
-            </div>
-
             </div> 
             <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
               <li class="nav-item">
@@ -591,41 +259,48 @@
               </li>
               <li class="nav-item">
                 <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
-              </li>    
-              <li class="nav-item">
-                <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
-              </li>
+              </li>     
               <li class="nav-item">
                 <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
-              </li>
+              </li> 
               <li class="nav-item">
-                <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
-              </li>
+                <a class="page-scroll" href="./finance.html" style="color: rgb(237, 242, 244);">Courses 📚</a>
+              </li> 
               <li class="nav-item">
                 <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
               </li>
               <li class="nav-item">
                 <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
               </li>
+              <!-- Dropdown for Explore -->
+              <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
+                <a class="page-scroll dropdown-toggle" href="#" style="color: rgb(237, 242, 244);">
+                  <span class="explore-text">Explore 📚</span> 
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="./trends.html">Trends 📈</a></li>
+                  <li><a href="./tools/sip.html">Tools 🔧</a></li>
+                  <li><a href="./blog.html">Blogs 📰</a></li>
+                  <li><a href="./quiz.html">Quiz 🤔</a></li>
+                  <li ><a href="./maps.html"  >MAPS 🗺️</a></li>
+                </ul>
+              </li>
+
               <li class="nav-item no-underline">
                 <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
               </li>
+              <li class="nav-item no-underline">
+              <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
+                🌙
+              </button>
+              </li>
             </ul>
           </div>
- 
+
           <script>
-            var toggleButton = document.getElementById('theme-toggle');
+            const toggleButton = document.getElementById('theme-toggle');
             var body = document.body;
             var currentTheme = localStorage.getItem('theme');
-            const toggleButton = document.getElementById('theme-toggle');
-            const body = document.body;
-            const currentTheme = localStorage.getItem('theme');
 
             if (currentTheme === 'dark') {
             body.classList.add('dark-mode');
@@ -860,22 +535,48 @@
 
           <link href="https://fonts.googleapis.com/css?family=Raleway&amp;display=swap" rel="stylesheet">
 
-          <nav class="mobile-menu  active">
-            <a class="page-scroll active-link" href="./index.html">Home 🏡</a>
+          <nav class="mobile-menu ">
+            <a class="page-scroll" href="./index.html">Home 🏡</a>
             <a class="page-scroll" href="./about.html">About Us 📖</a>
             <a class="page-scroll" href="./trends.html">Trends 📈</a>
             <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
             <a class="page-scroll" href="./blog.html">Blogs 📰</a>
             <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
-            <a class="page-scroll" href="./contact.html">Contact📞</a>
+            <a class="page-scroll main-btn" href="#" onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
             <li class="nav-item no-underline">
-              <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none; border: none;" href="#" onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
+              <button id="theme-toggle2" class="theme-toggle2" style="margin-right: 2px;">
+                🌙
+              </button>
             </li>
-            
             <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
               <span></span>
             </div>
           </nav>
+          <script>
+            const toggleBtn = document.getElementById('theme-toggle2');
+            var body = document.body;
+            var currentTheme = localStorage.getItem('theme');
+
+            if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            toggleBtn.classList.add('dark');
+            toggleBtn.textContent = '🌞';
+            }
+            
+            toggleBtn.addEventListener('click', function () {
+            body.classList.toggle('dark-mode');
+            toggleBtn.classList.toggle('dark');
+            
+            // Update button icon based on mode
+            if (body.classList.contains('dark-mode')) {
+              toggleBtn.textContent = '🌞';  // Light mode icon
+              localStorage.setItem('theme', 'dark');
+            } else {
+              toggleBtn.textContent = '🌙';  // Dark mode icon
+              localStorage.setItem('theme', 'light');
+            }
+            });
+        </script>
         </div>
   <link href="./navbar.css" rel="stylesheet">
   <script type="text/javascript" src="./navbar.js"></script>
@@ -921,50 +622,6 @@
                         transform: translateY(0);
                       }
 
-            <nav class="mobile-menu  active">
-              <a class="page-scroll active-link" href="./index.html">Home 🏡</a>
-              <a class="page-scroll" href="./about.html">About Us 📖</a>
-              <a class="page-scroll" href="./trends.html">Trends 📈</a>
-              <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
-              <a class="page-scroll" href="./blog.html">Blogs 📰</a>
-              <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
-              <a class="page-scroll" href="./contact.html">Contact📞</a>
-              <li class="nav-item no-underline">
-                <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none; border: none;" href="#"
-                  onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
-              </li>
-              <li class="nav-item no-underline">
-                <button id="theme-toggle2" class="theme-toggle2" style="margin-right: 2px;">
-                  🌙
-                </button>
-                </li>
-              <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
-                <span></span>
-              </div>
-            </nav>
-            <script>
-              var toggleButton = document.getElementById('theme-toggle2');
-              var body = document.body;
-              var currentTheme = localStorage.getItem('theme');
-              if (currentTheme === 'dark') {
-              body.classList.add('dark-mode');
-              toggleButton.classList.add('dark');
-              toggleButton.textContent = '☀️';
-              }
-  
-              toggleButton.addEventListener('click', function () {
-              body.classList.toggle('dark-mode');
-              toggleButton.classList.toggle('dark');
-              // Update button icon based on mode
-              if (body.classList.contains('dark-mode')) {
-              toggleButton.textContent = '☀️';  // Light mode icon
-              localStorage.setItem('theme', 'dark');
-              } else {
-              toggleButton.textContent = '🌙';  // Dark mode icon
-              localStorage.setItem('theme', 'light');
-              }
-              });
-          </script>
                       50% {
                         transform: translateY(-5px);
                       }
@@ -981,17 +638,49 @@
                   <br>
                   <br>
                   <p class="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s"
-                    style="visibility: visible; animation-duration: 1.3s; animation-delay: 0.8s;">
+                    style="visibility: visible; animation-duration: 1.3s; animation-delay: 0.8s;color:white">
                     Wanna learn how to grow your money to become rich? We have
                     made becoming a stock market Guru easy with our AI
                     powered finance advisor - <b>Arth Sathi 🤵🏻</b>
                   </p>
                   <a href="#" class="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s"
                     onclick="window.botpressWebChat.sendEvent({ type: 'show' }); return false;"
-                    style="visibility: visible; animation-duration: 1.3s; animation-delay: 1.1s;">
+                    style="visibility: visible; animation-duration: 1.3s; animation-delay: 1.1s; color:white">
                     Chat with ArthaSathi 💬
                   </a>
+                  
+                  
+                  
+
                 </div>
+
+                <button class="styled-btn" onclick="window.location.href='reviews.html'">Share Experience</button>
+
+                  <style>
+                    .styled-btn {
+                      background-color: #4CAF50; /* Green background */
+                      color: white; /* White text */
+                      padding: 10px 20px; /* Padding around the text */
+                      font-size: 16px; /* Font size */
+                      border: none; /* Remove border */
+                      border-radius: 8px; /* Rounded corners */
+                      cursor: pointer; /* Pointer cursor on hover */
+                      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Light shadow */
+                      transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+                      margin-top: 20px;
+                      margin-left: 280px;
+                      
+                    }
+                  
+                    .styled-btn:hover {
+                      background-color: #45a049; /* Darker green on hover */
+                      transform: scale(1.05); /* Slightly larger on hover */
+                    }
+                  
+                    .styled-btn:active {
+                      transform: scale(0.98); /* Slightly smaller on click */
+                    }
+                  </style>
               </div>
             </div>
             <div class="row">
@@ -1031,274 +720,8 @@
     </div>
 
     </section>
- 
-    <!-- <section id="blog" class="blog-area pt-120"> -->
-    <div class="blogfull">
-      <!DOCTYPE html>
-      <html class="no-js" lang="en">
-
-      <head>
-        <meta charset="utf-8" />
-        <title>Home - FinVeda</title>
-        <meta name="description"
-          content="FinVeda is a dynamic financial literacy app that'll help you Learn finance with finesse." />
-        <meta name="author" content="Ayush Singh">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-        <link rel="shortcut icon" href="./assets/images/favicon2.png" type="image/png" />
-        <link rel="stylesheet" href="./assets/css/animate.css" />
-        <link rel="stylesheet" href="./assets/css/magnific-popup.css" />
-        <link rel="stylesheet" href="./assets/css/slick.css" />
-        <link rel="stylesheet" href="./assets/css/LineIcons.css" />
-        <link rel="stylesheet" href="./assets/css/font-awesome.min.css" />
-        <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="./assets/css/default.css" />
-        <link rel="stylesheet" href="./assets/css/style.css" />
-        <link rel="stylesheet" href="./assets/css/quiz.css" />
-        <link rel="stylesheet" href="./assets/css/popup.css" />
-        <link rel="stylesheet" href="./assets/css/cookiepopup.css">
-        <link rel="stylesheet" href="./assets/css/preloader.css" />
-        <link rel="stylesheet" href="./assets/css/faq.css">
-        <link rel="stylesheet" href="./assets/css/index.css">
-        <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
-        <link rel="stylesheet" href="./navbar.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-          rel="stylesheet">
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-        <script type="text/javascript">
-          (function () {
-            // https://dashboard.emailjs.com/admin/account
-            emailjs.init({
-              publicKey: "o6kveYmOSDrs0l1Mg",
-            });
-          })();
-        </script>
-        <script>
-          // Scroll button functionality
-          const scrollToNextSection = () => {
-            window.scrollBy({
-              top: window.innerHeight,
-              behavior: 'smooth',
-            });
-          };
-        </script>
-        <style>
-          .scroll-btn {
-            position: fixed;
-            top: 100px;
-            right: 4px;
-            background-color: #635adc;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            font-size: 24px;
-            cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-            transition: background-color 0.3s;
-            display: flex;
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-          }
-
-          .scroll-btn:hover {
-            background-color: #555;
-            /* Darker blue on hover */
-          }
-        </style>
-
-      <body>
-        <div id="progressBar"></div>
-        <button id="scrollBtn" class="scroll-btn" onclick="scrollToNextSection()">
-          <i class="lni-chevron-down"></i>
-        </button>
-
-        <div class="scrlUp" id="scrlUp" onclick="">↑</div>
-        <script>
-          window.onscroll = function () {
-            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            var scrolled = (winScroll / height) * 100;
-            document.getElementById("progressBar").style.width = scrolled + "%";
-          };
-
-          let scrollToTopBtn = document.getElementById("scrlUp");
-
-          window.onscroll = function () {
-            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-              scrollToTopBtn.style.display = "block";
-            } else {
-              scrollToTopBtn.style.display = "none";
-            }
-          };
-
-          scrollToTopBtn.onclick = function () {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          };
 
 
-        </script>
-        <div class="circle-container">
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-        </div>
-        <header class="header-area">
-          <!-- <div class="navbar-area"> -->
-          <!-- <div class="container"> -->
-          <div class="row">
-
-            <!-- <div class="col-lg-12"> -->
-            <nav class="navbar navbar-expand-lg">
-              <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="toggler-icon"></span>
-                <span class="toggler-icon"></span>
-                <span class="toggler-icon"></span>
-              </button> -->
-              <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-                <a href="./index.html">
-                  <div class="icon1">
-                    <img src="./assets/images/icon.webp" alt="icon.png">
-                  </div>
-                </a>
-
-                <ul id="nav" class="navbar-nav" style="margin:auto">
-
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
-
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
-                  </li>
-
-            
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./ContactUs.html" style="color: rgb(237, 242, 244);">Contact Us 📞</a>
-
-
-
-                  </li>
-
-                  <li class="nav-item no-underline">
-                    <a class="main-btn navbar-btn"
-                      style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;"
-                      data-scroll-nav="0" href="./loginPage.html">Login/Register 💻</a>
-                  </li>
-                </ul>
-                <button id="theme-toggle" class="theme-toggle">
-                  🌙
-                </button>
-              </div>
-              <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
-                <span></span>
-              </div>
-            </nav>
-            <link href="./navbar.css" rel="stylesheet">
-            <script type="text/javascript" src="./navbar.js" defer></script>
-
-            
-          </div>
-    </div>
-  </div>
-  </div>
-  </div>
-  </header>
-  <script>
-    const toggleButn = document.getElementById('theme-toggle');
-    const bodyL = document.body;
-    const currentThm = localStorage.getItem('theme');
-
-    if (currentThm === 'dark') {
-      bodyL.classList.add('dark-mode');
-      toggleButn.classList.add('dark');
-      toggleButn.textContent = '🌞';
-    }
-
-    toggleButn.addEventListener('click', function () {
-      bodyL.classList.toggle('dark-mode');
-      toggleButn.classList.toggle('dark');
-
-      // Update button icon based on mode
-      if (bodyL.classList.contains('dark-mode')) {
-        toggleButn.textContent = '🌞';  // Light mode icon
-        localStorage.setItem('theme', 'dark');
-      } else {
-        toggleButn.textContent = '🌙';  // Dark mode icon
-        localStorage.setItem('theme', 'light');
-      }
-    });
-  </script>
-
-
-  <!-- Cookie Consent Popup -->
-  <div id="cookieConsent" class="cookie-consent">
-    <h4>🍪Cookies Consent <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-        fill="#175394" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-        class="cookie-icon">
-        <circle cx="12" cy="12" r="10"></circle>
-        <path d="M12 8v4"></path>
-        <path d="M12 16h.01"></path>
-      </svg></h4>
-    <p>We use cookies to enhance your experience on FinVeda. By continuing to use our site, you agree to our use of
-      cookies. <br> <a href="blogs/privacy-policy.html" target="_blank">Learn more</a></p>
-    <div class="cookie-buttons">
-      <button id="acceptNecessaryCookies">Accept necessary cookies only</button>
-      <button id="acceptAllCookies">Accept all cookies</button>
-    </div>
-  </div>
-
-  </div>
-
-
- 
   <section id="features" class="services-area pt-120">
     <div class="container">
       <div class="row justify-content-center">
@@ -1325,8 +748,10 @@
             <div class="services-content mt-30">
               <h4 class="services-title"><a href="./blog.html">Financial Blogs</a></h4>
               <p class="text">
+                <li>
                 We offer expert written blogs on investment tips and strategies, and current economic trends, all
                 crafted to keep you well-informed.
+                </li>
               </p>
               <a class="more" href="./blog.html">Learn More <i class="lni-chevron-right"></i></a>
             </div>
@@ -1342,8 +767,10 @@
             <div class="services-content mt-30">
               <h4 class="services-title"><a href="tools/sip.html">Finance Tools</a></h4>
               <p class="text">
+                <li>
                 With our SIP and PPF tools you'll discover power of compounding and make informed decisions regarding
                 your savings.
+                </li>
               </p>
               <a class="more" href="tools/sip.html">Learn More <i class="lni-chevron-right"></i></a>
             </div>
@@ -1359,8 +786,10 @@
             <div class="services-content mt-30">
               <h4 class="services-title"><a href="trends.html">Financial Trends</a></h4>
               <p class="text">
+                <li>
                 You will make smarter decisions by staying updated to the current market happenings in real time with
                 our Stock Market API's results.
+                </li>
               </p>
               <a class="more" href="./trends.html">Learn More <i class="lni-chevron-right"></i></a>
             </div>
@@ -1385,8 +814,10 @@
 
 
             <p class="text para">
+              <li>
               FinVeda's Personalized AI Assistant Arth Sathi revolutionizes financial learning. Tailored to your needs,
               it simplifies complex finance concepts, providing a dynamic learning experience.
+              </li>
             </p>
             <a href="#" class="main-btn">Try it for Free</a>
           </div>
@@ -1396,20 +827,21 @@
             <!-- TradingView Widget BEGIN -->
             <div class="tradingview-widget-container" style="height: 372px;">
               <div id="tv-widget-container">
-                  <img src="https://cdn.gencraft.com/prod/user/4172de30-fa59-4864-b22e-45b0197666ec/db9cd195-174f-4ebb-a0d1-fceaf968329c/image/image1_0.jpg?Expires=1729873108&amp;Signature=hhs5C3v200T-IcnK670TGnigUc1i2kz1r6P4ykGd3yh4pHlmgeAXt6YBwsWNPi6eCN5ZdQELJtWSheT9DcPALPbU3zv3nkIokmlKiE3hXl8AemO8nu~pIDnz~1u3G77vKJabE2OHSEkIot4CH~RfB-dLMQAsBmgaWO34QPhWh8oSdl7lFxfHeJfK5XnB~fCvZMwd154qJQn5ykcYmOHBfoy2Xuq6tFv5blKoiPdPzdgDSxSjDW14Ya1L~lFk65ZjvSXkYeXm3rjMI7RjpvSF1QIZt1bMLmsbHtAXYcUxGuzIoUeFw8t1GusiGj6Vjwb8IPYl4NS1UXIj0f~23Jqx~g__&amp;Key-Pair-Id=K3RDDB1TZ8BHT8" alt="Finance AI Image" style="width: 540px; height: 372px;">
-              </div>
-          
-              <!-- <script type="text/javascript">
-                  new TradingView.widget({
-                      "container_id": "tv-widget-container",
-                      "feedMode": "all_symbols",
-                      "isTransparent": true,
-                      "displayMode": "adaptive",
-                      "colorTheme": "light",
-                      "locale": "in"
-                  });
-              </script> -->
-          </div>
+                <img src="assets/images/finance.jpg">
+            </div>
+
+
+              <script type="text/javascript">
+                new TradingView.widget({
+                  "container_id": "tv-widget-container",
+                  "feedMode": "all_symbols",
+                  "isTransparent": true,
+                  "displayMode": "adaptive",
+                  "colorTheme": "light",
+                  "locale": "in"
+                });
+              </script>
+            </div>
             <!-- TradingView Widget END -->
           </div>
         </div>
@@ -1438,8 +870,10 @@
 
 
             <p class="text para">
+              <li>
               FinVeda blogs redefine the conventional narrative and are crafted to resonate with readers of all
               financial backgrounds, making complex concepts digestible.
+              </li>
             </p>
             <a href="./blog.html" class="main-btn">Try it for Free</a>
           </div>
@@ -1489,8 +923,10 @@
 
 
             <p class="text para">
+              <li>
               FinVeda fetches live market figures, ensuring users access the most up-to-date information instantly. Be
               it stock prices, currency rates, or commodity values,
+              </li>
             </p>
             <a href="#" class="main-btn">Try it for Free</a>
           </div>
@@ -1515,7 +951,7 @@
                     "autosize": false,
                     "largeChartUrl": ""
                   };
-                  // new TradingView.widget(widgetConfig);
+                  new TradingView.widget(widgetConfig);
                 };
               </script>
             </div>
@@ -1674,6 +1110,62 @@
         </div>
       </div>
   </section>
+  <!--forum Section-->
+  <header class="forum_1">
+  </header>
+
+<main>
+  <style>
+    #destinations {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    #destinations h1 {
+        text-align: center;
+        font-size: 2em;
+    }
+    
+    .post-container {
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 8px;
+    }
+    
+    #postForm {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    #postContent {
+        width: 100%;
+        height: 100px;
+        padding: 10px;
+        resize: none;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    
+    
+    #posts {
+        margin-top: 20px;
+    }
+    </style>
+    <section id="destinations" class="destinations">
+      <h1>Discussion Forum</h1>
+        <div class="post-container">
+            <form id="postForm">
+                <textarea id="postContent" placeholder="Write your post here..." required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+            <div id="posts"></div>
+        </div>
+    </section>
+    <!-- Add more sections for other categories -->
+</main>
+<script src="finance.js"></script>
 
   <!-- testimonail section starts here  -->
   <section id="testimonial" style="background-color: white;" class="testimonial-area pt-120">
@@ -1688,8 +1180,7 @@
           </div>
         </div>
       </div>
-      <div class="row testimonial-wrapper testimonial-active wow fadeInUpBig" data-wow-duration="1s"
-        data-wow-delay="0.8s">
+      <div class="row testimonial-wrapper testimonial-active wow fadeInUpBig" data-wow-duration="1s" data-wow-delay="0.8s">
         <div class="testimonial-item col-lg-4">
           <div class="single-testimonial">
             <div class="testimonial-review d-flex align-items-center justify-content-between">
@@ -1850,7 +1341,7 @@
 
   <style>
     /* General testimonial section styling */
-
+    
     #testimonial {
       background: linear-gradient(135deg, #4b6cb7, #182848);
       /* Attractive gradient background */
@@ -1974,8 +1465,8 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-6">
-              <div class="section-title pb-35">
-                <div class="line"></div>
+              <div class="section-title pb-35" style="margin-left: 40%;">
+                <div class="line" style="width: 65%;"></div>
 
                 <h3 class="title" style="color: #2f6be5;"><span></span> Blog Posts</h3>
 
@@ -1983,7 +1474,7 @@
             </div>
           </div>
           <div class="row justify-content-start">
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7" data-aos="slide-right">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                 <div class="blog-image">
                   <a href="./blogs/how-to-deal-with-unknown-risks-in-life-and-investing.html">
@@ -2002,7 +1493,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7" data-aos="zoom-in">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/how-to-10x-your-generational-wealth.html">
@@ -2017,7 +1508,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7" data-aos="slide-left">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/invest-minimal.html">
@@ -2036,7 +1527,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7" data-aos="slide-right">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/Pocketmoney.html">
@@ -2053,7 +1544,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7" data-aos="zoom-in">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/senior.html">
@@ -2070,7 +1561,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7" data-aos="slide-left">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/why-investing-in-stocks-is-better-than-fixed-deposit.html">
@@ -2087,7 +1578,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7" data-aos="slide-right">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="/blogs/starup.html">
@@ -2104,7 +1595,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7" data-aos="zoom-in">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/how-fintech-is-revolutionizing-small-business-lending.html">
@@ -2121,7 +1612,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7" data-aos="slide-left">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/economic-trends-and-analysis.html">
@@ -2138,7 +1629,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7" data-aos="slide-right">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/empowering-you-with-economic-knowledge-for-smarter-decisions.html">
@@ -2155,11 +1646,11 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7" data-aos="zoom-in">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/Mutual-Funds-101-A-Beginners-Guide-to-Smart-Investing.html">
-                    <img src="./assets/images/mutual-funds-blog.webp" alt="blog" />
+                    <img src="./assets/images/Mutual-funds.webp" alt="blog" />
                   </a>
                 </div>
                 <div class="blog-content">
@@ -2172,7 +1663,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7" data-aos="slide-left">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/saving-for-future.html">
@@ -2189,7 +1680,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7" data-aos="slide-right">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/real-estate-economics.html">
@@ -2206,7 +1697,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7" data-aos="slide-left">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/Types-of-Stock-Investments-A-Quick-Guide.html">
@@ -2235,12 +1726,8 @@
   <html lang="en">
 
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback Form</title>
     <style>
-      /*css for footer*/
-
       /* Simple CSS for layout and modal */
       .form-group {
         margin-bottom: 15px;
@@ -2336,6 +1823,54 @@
         cursor: pointer;
         font-size: 20px;
       }
+      #feedback-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #f9f9f9;
+}
+
+#feedback-container label i {
+    margin-right: 8px;
+    color: #555;
+}
+
+#submit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#submit-button:hover {
+    background-color: #45a049;
+}
+
+#success-message {
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 1.1em;
+    color: #2c7a7b;
+    background-color: #e6fffa;
+    border: 1px solid #b2f5ea;
+    border-radius: 4px;
+    display: none; /* Initially hidden */
+}
+
+.hidden {
+    display: none;
+}
+
     </style>
   </head>
 
@@ -2349,14 +1884,11 @@
               thoughts.</p>
           </div>
           <label class="form-label" for="name">Name:</label>
-          <input class="form-input" type="text" id="name" name="name" required 
-                    pattern="[a-zA-Z ]+"
-                    oninvalid="this.setCustomValidity('Numbers and Symbols are not allowed')"
-                    oninput="this.setCustomValidity('')">
+          <input class="form-input" type="text" id="name" name="name" placeholder="Enter the name" required="">
         </div>
         <div class="form-group">
           <label class="form-label" for="email">Email:</label>
-          <input class="form-input" placeholder="Enter your email" type="email" id="email" name="email" required>
+          <input class="form-input" placeholder="Enter your email" type="email" id="email" name="email" required="">
         </div>
         <div class="form-group">
           <label class="form-label">Rating:</label>
@@ -2364,20 +1896,19 @@
         </div>
         <div class="emojis">
           <input class="form-input" type="radio" id="emoji1" name="rating" value="1">
-          <label class="form-label" for="emoji1">&#128577;</label> <!-- Very Bad -->
+          <label class="form-label" for="emoji1">🙁</label> <!-- Very Bad -->
           <input class="form-input" type="radio" id="emoji2" name="rating" value="2">
-          <label class="form-label" for="emoji2">&#128542;</label> <!-- Bad -->
+          <label class="form-label" for="emoji2">😞</label> <!-- Bad -->
           <input class="form-input" type="radio" id="emoji3" name="rating" value="3">
-          <label class="form-label" for="emoji3">&#128528;</label> <!-- Neutral -->
+          <label class="form-label" for="emoji3">😐</label> <!-- Neutral -->
           <input class="form-input" type="radio" id="emoji4" name="rating" value="4">
-          <label class="form-label" for="emoji4">&#128522;</label> <!-- Good -->
+          <label class="form-label" for="emoji4">😊</label> <!-- Good -->
           <input class="form-input" type="radio" id="emoji5" name="rating" value="5">
-          <label class="form-label" for="emoji5">&#128515;</label> <!-- Excellent -->
+          <label class="form-label" for="emoji5">😃</label> <!-- Excellent -->
         </div>
         <div class="form-group">
           <label class="form-label" for="comments">Comments:</label>
-          <textarea class="form-textarea" placeholder="Enter your comments" id="comments" name="comments" rows="4"
-            required></textarea>
+          <textarea class="form-textarea" placeholder="Enter your comments" id="comments" name="comments" rows="4" required=""></textarea>
         </div>
         <div class="form-group">
           <div class="form-group">
@@ -2386,6 +1917,145 @@
         </div>
       </form>
     </div>
+<script>
+  document.getElementById("user-feedback-form").addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent form from submitting traditionally
+      // Display success message
+      const successMessage = document.getElementById("success-message");
+      successMessage.style.display = "block";
+      successMessage.innerText = "Thank you for your feedback!";
+      // Optional: Clear the form fields after submission
+      event.target.reset();
+    });
+
+</script>
+<style>
+
+
+/* Form styles */
+#user-feedback-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header styles */
+#form-header {
+    margin-bottom: 20px;
+}
+
+/* Title styles */
+#title-wrapper {
+    margin-bottom: 20px;
+}
+
+#feedback-title {
+    font-size: 24px; /* Title size */
+    margin-bottom: 20px;
+}
+
+/* Input and textarea styles */
+#input-group-email,
+#input-group-rating,
+#input-group-comments {
+    margin-bottom: 15px;
+}
+
+#input-label-name,
+#input-label-email,
+#input-label-rating,
+#input-label-comments {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #333;
+}
+
+#input-field-name,
+#input-field-email,
+#textarea-field-comments {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid  #3c2ed3; /* Border color */
+    border-radius: 5px;
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transition effect */
+}
+
+#input-field-name:focus,
+#input-field-email:focus,
+#textarea-field-comments:focus {
+    border-color: #0e8f6b; /* Darker green on focus */
+    box-shadow: 0 0 5px rgba(58, 199, 160, 0.5); /* Focus shadow */
+    outline: none;
+}
+
+/* Emoji selection styles */
+#emoji-selection {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+#input-field-rating-1,
+#input-field-rating-2,
+#input-field-rating-3,
+#input-field-rating-4,
+#input-field-rating-5 {
+    display: none; /* Hide the default radio button */
+}
+
+#input-field-rating-1 + label,
+#input-field-rating-2 + label,
+#input-field-rating-3 + label,
+#input-field-rating-4 + label,
+#input-field-rating-5 + label {
+    font-size: 24px; /* Adjust emoji size */
+    cursor: pointer;
+    transition: transform 0.3s; /* Transition effect */
+}
+
+#input-field-rating-1:checked + label,
+#input-field-rating-2:checked + label,
+#input-field-rating-3:checked + label,
+#input-field-rating-4:checked + label,
+#input-field-rating-5:checked + label {
+    transform: scale(1.2); /* Scale emoji when selected */
+}
+
+/* Button styles */
+#submit-button {
+    background-color: #3c2ed3; /* Button background */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Transition effects */
+}
+
+#submit-button:hover {
+    background-color: #28b594; /* Darker green on hover */
+    transform: translateY(-2px); /* Lift effect */
+}
+
+#submit-button:active {
+    transform: translateY(0); /* Reset lift effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    #feedback-container {
+        padding: 20px;
+    }
+
+    #submit-button {
+        width: 100%;
+    }
+}
+
+</style>
+   
+
+
     <div class="modal" id="successModal">
       <div class="modal-content">
         <span class="modal-close" id="closeSuccessModal">✖</span>
@@ -2489,174 +2159,54 @@
     </script>
     <script src="/assets/js/faq.js"></script>
 
-    <!-- Footer Section --> 
-    <footer id="footer" class="footer-area pt-120">
-      <div class="container">
-        <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="subscribe-content mt-45">
-                <h2 class="subscribe-title">
-                  Subscribe Our Newsletter <span>Get Regular Updates</span>
-                </h2>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="subscribe-form mt-50">
-                <form id="unique-subscribe-form" >
-                  <input type="email" id="unique-news-email" placeholder="Enter your email address" required>
-                  
-                  <button class="unique-main-btn" id="unique-subscribe-btn" type="submit" style="
-        height: 45px; 
-        padding: 0 20px; 
-        border: none; 
-        border-radius: 8px; 
-        background-color: #007BFF; /* Professional blue */
-        color: black; 
-        font-size: 16px; 
-        font-weight: 600; 
-        cursor: pointer; 
-        transition: background-color 0.3s ease, transform 0.2s ease; 
-        display: flex; 
-        align-items: center; 
-        justify-content: center; 
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    " onmouseover="this.style.backgroundColor='#0056b3'; this.style.transform='scale(1.05)';"
-                    onmouseout="this.style.backgroundColor='#007BFF'; this.style.transform='scale(1)';">
-                    Subscribe
-                  </button>
+    
+
+<!-- Timed popup that will appear after succesful submission of feebback form! -->
+<button class="notification" id="successnotification" style="display:none;">
+  <span class="message" id="successmsg">Submitted successfully!</span>
+  <span class="closenotif" id="closeSuccessNotification">✖</span>
+  <div class="timerline" id="timerline"></div>
+</button>
 
 
-                </form>
-                <div id="unique-message" class="unique-popup-message" style="display: none;">
-                  <div class="border-animation"></div>
-                  Thank You for the subscription!
-                </div>
-              </div>
-            </div>
-          </div>
+<footer id="footer" class="footer-area pt-120">
+<div class="container">
+<div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="subscribe-content mt-45">
+        <h2 class="subscribe-title">
+          Subscribe Our Newsletter <span>get regular updates</span>
+        </h2>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="subscribe-form mt-50">
+        <form id="unique-subscribe-form">
+          <input type="email" id="unique-news-email" placeholder="Enter Email" required/>
+          <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
+        </form>
+        <div id="unique-message" class="unique-popup-message" style="display: none;">
+          <div class="border-animation"></div>
+          Thank You for the subscription!
         </div>
       </div>
-      <div class="footer-widget pb-100">
-        <div class="row" id="footer">
-          <div class="col-lg-4 col-md-6 col-sm-8">
-            <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-              <p class="text custom-margin">
-                We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial
-                blogs.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-5 col-md-7 col-sm-7">
-            <div class="footer-link d-flex mt-50 justify-content-md-between"
-              style="justify-content: space-around !important;">
-              <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-                <div class="footer-title">
-                  <h3 class="title custom-margin">Quick Links</h3>
-                </div>
-                <ul class="link custom-margin">
-                  <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
-                  <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
-                  <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
-                  <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
-                  <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
-                </ul>
-              </div>
-              <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
-                <div class="footer-title">
-                  <h4 class="title custom-margin">Resources</h4>
-                </div>
-                <ul class="link custom-margin">
-                  <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
-                  <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
-                  <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
-                  <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
-                  <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
-                  <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          
-          <div class="col-lg-3 col-md-5 col-sm-5">
-            <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-              <div class="footer-title">
-                <h4 class="title custom-margin">Contact Us</h4>
-              </div>
-              <ul class="contact custom-margin-big" style="justify-content: space-around;">
-                <li class="d-sm-flex justify-content-left"> <!--changed the justify-content-centre  to  justify-content-left-->
-                  <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                  <p style="width: 80%;">
-                    <a href="mailto:ayush1337@hotmail.com" target="_blank"
-                      style="color: white; text-decoration: underline;">
-                      ayush1337@hotmail.com
-                    </a>
-                  </p>
-                </li>
-                <li class="d-sm-flex justify-content-left"> <!--changed the justify-content-centre  to  justify-content-left-->
-                  <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                  <div style="width: 80%;">
-                    <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
-                      fin-veda.vercel.app
-                    </a>
-                  </div>
-                </li>
-                <li class="d-sm-flex justify-content-left"> <!--changed the justify-content-centre  to  justify-content-left-->
-                  <i class="fa fa-location-dot d-sm-flex align-items-center white"
-                    style="font-size: 12px; width: 10%;"></i>
-                  <div style="width: 80%;">
-                    <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
-                      style="color:#fff">
-                      Delhi, India
-                    </a>
-                  </div>
-                </li>
-              </ul> <!--added the missing ul tag-->
-                <div class="social-icons">
-                  <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                  <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                  <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                  <a href="#"><i class="fa-brands fa-discord"></i></a>
-                  <a href="#"><i class="fa-brands fa-github"></i></a>
-                </div>
-                
-            </div>
-
-
-          </div>
 
         </div>
-        <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s"
-          style="text-align: center">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="copyright d-sm-flex justify-content-center" style="
-                display: flex;
-                justify-content: center;
-                text-align: center;
-                width: 100%;
-                height: 100%;
-              ">
-                <div class="copyright-content" style="text-align: center">
-                  <p class="text" style="text-align: center">
-                    © <span id="copyright-year">2024</span> FinVeda. All rights are
-                    reserved<br />
-                    Made with ♥ in India
-                  </p>
-                  <a href="./tools/contributor.html" id="ourvisionlink">Our Contributors</a>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </footer>
-   
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="particles-2"></div>
+</div>
+</footer>
+
 
     <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
-    </div>
-
+    <div class="gtranslate_wrapper"></div>
+    <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
     <script src="./assets/js/subscribe.js"></script>
     <script src="../assets/js/vendor/jquery-1.12.4.min.js"></script>
@@ -2758,9 +2308,9 @@
       }
 
 
-      // Close button event listeners for modals
-      registerModal.querySelector(".close").addEventListener("click", closeModal);
-      loginModal.querySelector(".close").addEventListener("click", closeModal);
+    // Close button event listeners for modals
+    registerModal.querySelector(".close").addEventListener("click", closeModal);
+    loginModal.querySelector(".close").addEventListener("click", closeModal);
 
 
 
@@ -2798,19 +2348,225 @@
         registerModal.querySelector(".close").addEventListener("click", closeModal);
         loginModal.querySelector(".close").addEventListener("click", closeModal);
       });
+
     </script>
-      
+    <script src="./smoothScroll.js"></script>
+ 
     <script src="./assets/js/preloader.js"></script>
 
     <link rel="stylesheet" href="visi.css">
-    <!-- ############### Footer ############### -->
-    <div class="visitor-counter">
-      <div>Visitor</div>
-      <div class="website-counter"></div>
-    </div>
+  
     
     <script src="visi.js"></script>
-    <script src="./assets/js/index.js"></script>
+    <script src="../assets/js/index.js"></script>
+ 
+
+    <style>
+
+    
+      body {
+
+         font-family: Arial, sans-serif;
+
+     }
+     
+     /* Popup Styles */
+     .popup {
+
+         display: none; /* Hidden by default */
+         position: fixed; /* Stay in place */
+         left: 0;
+         top: 0;
+         width: 100%; /* Full width */
+         height: 100%; /* Full height */
+         background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+         justify-content: center; /* Center the popup */
+         align-items: center; /* Center the popup */
+         z-index: 1000; /* Sit on top */
+
+     }
+     
+     .popup-content {
+
+         background: linear-gradient(rgb(133 183 242 / 80%), rgb(23 37 149)), url(your-image-url.jpg);
+         padding: 20px;
+         border-radius: 5px;
+         max-width: 500px;
+         max-height: 500px;
+         min-height: 410px;
+         text-align: center;
+
+     }
+     
+     /* Set poll options to stack vertically */
+     #pollOptions {
+
+         display: flex;
+         flex-direction: column; /* Stack buttons vertically */
+         align-items: center; /* Center the buttons */
+
+     }
+     
+     .poll-button {
+
+         display: block; /* Change to block for full-width */
+         margin: 5px 0; /* Add vertical margin */
+         padding: 10px 15px;
+         border: none;
+         border-radius: 5px;
+         background-color: rgb(14 64 98 / 40%); 
+         color: white;
+         cursor: pointer;
+         transition: background-color 0.3s;
+         width: 100%; /* Full width */
+
+     }
+
+     .poll-button:hover {
+
+         background-color: #45a049; /* Darker green */
+
+     }
+
+     .poll-button.selected {
+
+         background-color: #0f1e82; /* Blue for selected */
+
+     }
+     
+     /* New Vote Button Styles */
+     .vote-button {
+
+         display: block; /* Change to block for full-width */
+         margin: 5px 0; /* Add vertical margin */
+         padding: 10px 15px;
+         border: none;
+         border-radius: 5px;
+         background-color: #f44336; /* Red */
+         color: white;
+         cursor: pointer;
+         transition: background-color 0.3s;
+         width: 100%; /* Full width */
+         
+     }
+
+     .vote-button:hover {
+
+         background-color: #d32f2f; /* Darker red */
+
+     }
+     
+     /* Result Text Styles */
+#result {
+
+    margin-top: 10px; /* Add space above result text */
+    word-wrap: break-word; /* Allow long text to wrap within the box */
+    overflow: hidden; /* Prevent overflow */
+    max-height: 50px; /* Limit height to prevent overflow */
+    color: rgb(255, 255, 255); /* Set text color to red */
+    
+}
+
+     </style>
+     
+
+    <div class="popup" id="pollPopup">
+      <div class="popup-content">
+          <h2>Which feature of Finveda do you believe boosts your financial knowledge the most?</h2>
+          <div id="pollOptions">
+              <button class="poll-button" data-value="Market Trends">Market Trends - Stay updated with the latest financial news and insights</button>
+              <button class="poll-button" data-value="AI Chatbot">AI Chatbot - Personalized financial guidance at your fingertips</button>
+              <button class="poll-button" data-value="SIP Calculator">SIP Calculator - Easily plan and manage your investments</button>
+          </div>
+          <button id="voteButton" class="vote-button" style="margin-top: 10px;">Vote</button>
+          <p id="result"></p>
+      </div>
+  </div>
+  
+  
+  
+  <script>
+  // Show the poll popup 10 seconds after the page loads, if not already voted
+  window.onload = function() {
+    const hasVoted = sessionStorage.getItem('hasVoted');
+    setTimeout(function() {
+      if (!hasVoted) {
+        document.getElementById('pollPopup').style.display = 'flex';
+      }
+    }, 10000); // 10000 milliseconds = 10 seconds
+  };
+
+  const pollButtons = document.querySelectorAll('.poll-button[data-value]');
+  let selectedValue = '';
+
+  pollButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Remove selected class from all buttons
+      pollButtons.forEach(btn => btn.classList.remove('selected'));
+      // Add selected class to the clicked button
+      button.classList.add('selected');
+      selectedValue = button.getAttribute('data-value');
+    });
+  });
+
+
+  document.getElementById('voteButton').addEventListener('click', function() {
+    if (selectedValue) {
+      document.getElementById('result').innerHTML = `You voted for: ${selectedValue}<br>Thank you!`;
+      // Save voting status in session storage
+      sessionStorage.setItem('hasVoted', 'true');
+      // Hide the popup after voting
+      setTimeout(() => {
+        document.getElementById('pollPopup').style.display = 'none';
+      }, 2000);
+    } else {
+      alert("Please select an option!");
+    }
+  });
+
+
+  function initializePoll() {
+    console.log("Poll initialized.");
+  }
+
+  function clearSelectedButton() {
+    pollButtons.forEach(btn => btn.classList.remove('selected'));
+  }
+
+  function addEventListenersToButtons() {
+    pollButtons.forEach(button => {
+      button.addEventListener('mouseenter', function() {
+        button.style.backgroundColor = '#3e8e41'; // Change color on hover
+      });
+      button.addEventListener('mouseleave', function() {
+        button.style.backgroundColor = ''; // Reset color on mouse leave
+      });
+    });
+  }
+
+  function handleVoteSubmission() {
+    if (selectedValue) {
+      console.log("Vote submitted for: " + selectedValue);
+    }
+  }
+
+
+  pollButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      logButtonClick(button);
+      handleVoteSubmission();
+    });
+  });
+
+  
+  for (let i = 0; i < 5; i++) {
+    console.log("Simulating poll process: Step " + (i + 1));
+  }
+
+
+</script>
+
+ 
   </body>
 
   </html>

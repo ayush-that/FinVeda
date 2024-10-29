@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinVeda - Financial Literacy Platform</title>
+    <link rel="shortcut icon" href="/assets/images/favicon2.webp" type="image/png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1><i class="fas fa-money-bill-wave"></i> FinVeda</h1>
+            <nav>
+                <button id="homeBtn" class="active"><i class="fas fa-home"></i> Home</button>
+                <button id="submitBtn"><i class="fas fa-plus-circle"></i> Contribute</button>
+                <button id="moderateBtn" style="display: none;"><i class="fas fa-shield-alt"></i> Moderate</button>
+            </nav>
+            <div id="userInfo"></div>
+        </header>
+
+        <main>
+            <section id="authPanel" class="panel active">
+                <div class="auth-container">
+                    <h2>Welcome to FinVeda</h2>
+                    <p>Your journey to financial literacy starts here. Join our community to access expert resources, AI-powered consulting, and interactive learning materials.</p>
+                    <form id="authForm">
+                        <input type="text" id="username" placeholder="Username" required>
+                        <input type="password" id="password" placeholder="Password" required>
+                        <button type="submit" id="authButton">Login</button>
+                    </form>
+                </div>
+            </section>
+
+            <section id="resourceList" class="panel">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search financial resources...">
+                    <select id="filterCategory">
+                        <option value="">All Categories</option>
+                        <option value="basics">Financial Basics</option>
+                        <option value="investment">Investment</option>
+                        <option value="taxation">Taxation</option>
+                        <option value="insurance">Insurance</option>
+                        <option value="retirement">Retirement Planning</option>
+                        <option value="market">Market Analysis</option>
+                    </select>
+                </div>
+                <div id="resources" class="resource-grid"></div>
+            </section>
+
+            <section id="aiConsultant" class="panel">
+                <div class="ai-container">
+                    <h2>AI Financial Consultant</h2>
+                    <div class="chat-interface">
+                        <div id="chatMessages" class="chat-messages"></div>
+                        <form id="chatForm" class="chat-input">
+                            <input type="text" id="userMessage" placeholder="Ask about financial concepts...">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section id="resourceForm" class="panel">
+                <div class="form-container">
+                    <h2>Contribute Financial Knowledge</h2>
+                    <form id="submitResourceForm">
+                        <input type="text" id="title" placeholder="Resource Title" required>
+                        <textarea id="description" placeholder="Resource Description" required></textarea>
+                        <input type="url" id="url" placeholder="Resource URL" required>
+                        <select id="category" required>
+                            <option value="">Select Category</option>
+                            <option value="basics">Financial Basics</option>
+                            <option value="investment">Investment</option>
+                            <option value="taxation">Taxation</option>
+                            <option value="insurance">Insurance</option>
+                            <option value="retirement">Retirement Planning</option>
+                            <option value="market">Market Analysis</option>
+                        </select>
+                        <button type="submit">Submit Resource</button>
+                    </form>
+                </div>
+            </section>
+
+            <section id="moderationPanel" class="panel">
+                <h2>Content Moderation</h2>
+                <div id="pendingResources"></div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 FinVeda - Empowering Financial Literacy</p>
+        </footer>
+    </div>
+
+    <div id="notificationContainer"></div>
+    <script src="script.js"></script>
+</body>
+</html>
