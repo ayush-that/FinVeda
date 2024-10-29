@@ -297,7 +297,7 @@
           </div>
 
           <script>
-            var toggleButton = document.getElementById('theme-toggle');
+            const toggleButton = document.getElementById('theme-toggle');
             var body = document.body;
             var currentTheme = localStorage.getItem('theme');
 
@@ -552,26 +552,26 @@
             </div>
           </nav>
           <script>
-            var toggleButton = document.getElementById('theme-toggle2');
+            const toggleBtn = document.getElementById('theme-toggle2');
             var body = document.body;
             var currentTheme = localStorage.getItem('theme');
 
             if (currentTheme === 'dark') {
             body.classList.add('dark-mode');
-            toggleButton.classList.add('dark');
-            toggleButton.textContent = '🌞';
+            toggleBtn.classList.add('dark');
+            toggleBtn.textContent = '🌞';
             }
             
-            toggleButton.addEventListener('click', function () {
+            toggleBtn.addEventListener('click', function () {
             body.classList.toggle('dark-mode');
-            toggleButton.classList.toggle('dark');
+            toggleBtn.classList.toggle('dark');
             
             // Update button icon based on mode
             if (body.classList.contains('dark-mode')) {
-              toggleButton.textContent = '🌞';  // Light mode icon
+              toggleBtn.textContent = '🌞';  // Light mode icon
               localStorage.setItem('theme', 'dark');
             } else {
-              toggleButton.textContent = '🌙';  // Dark mode icon
+              toggleBtn.textContent = '🌙';  // Dark mode icon
               localStorage.setItem('theme', 'light');
             }
             });
@@ -1766,51 +1766,123 @@
         cursor: pointer;
         font-size: 20px;
       }
+      #feedback-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #f9f9f9;
+}
+
+#feedback-container label i {
+    margin-right: 8px;
+    color: #555;
+}
+
+#submit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#submit-button:hover {
+    background-color: #45a049;
+}
+
+#success-message {
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 1.1em;
+    color: #2c7a7b;
+    background-color: #e6fffa;
+    border: 1px solid #b2f5ea;
+    border-radius: 4px;
+    display: none; /* Initially hidden */
+}
+
+.hidden {
+    display: none;
+}
+
     </style>
   </head>
 
   <body>
     <div id="feedback-container">
       <form id="user-feedback-form">
-          <div id="form-header">
-              <div id="title-wrapper" class="text-center">
-                  <h2 id="feedback-title">We Value Your Feedback</h2>
-                  <p>Your input helps us to improve and provide better services. Please fill out the form to let us know your thoughts.</p>
-              </div>
-              <label id="input-label-name" for="username">Name:</label>
-              <input id="input-field-name" type="text" id="username" name="username" placeholder="Enter your name" required>
+        <!-- Form fields -->
+        <div id="form-header">
+          <div id="title-wrapper" class="text-center">
+            <h2 id="feedback-title">We Value Your Feedback</h2>
+            <p>Your input helps us to improve and provide better services. Please fill out the form to let us know your
+              thoughts.</p>
           </div>
-          <div id="input-group-email">
-              <label id="input-label-email" for="user-email">Email:</label>
-              <input id="input-field-email" placeholder="Enter your email" type="email" id="user-email" name="user-email" required>
-          </div>
-          <div id="input-group-rating">
-              <label id="input-label-rating">Rating:</label>
-              <div id="emoji-guide">Select an option</div>
-          </div>
-          <div id="emoji-selection">
-              <input id="input-field-rating-1" type="radio" name="rating" value="1">
-              <label id="input-label-rating-1" for="input-field-rating-1">&#128577;</label> <!-- Very Bad -->
-              <input id="input-field-rating-2" type="radio" name="rating" value="2">
-              <label id="input-label-rating-2" for="input-field-rating-2">&#128542;</label> <!-- Bad -->
-              <input id="input-field-rating-3" type="radio" name="rating" value="3">
-              <label id="input-label-rating-3" for="input-field-rating-3">&#128528;</label> <!-- Neutral -->
-              <input id="input-field-rating-4" type="radio" name="rating" value="4">
-              <label id="input-label-rating-4" for="input-field-rating-4">&#128522;</label> <!-- Good -->
-              <input id="input-field-rating-5" type="radio" name="rating" value="5">
-              <label id="input-label-rating-5" for="input-field-rating-5">&#128515;</label> <!-- Excellent -->
-          </div>
-          <div id="input-group-comments">
-              <label id="input-label-comments" for="user-comments">Comments:</label>
-              <textarea id="textarea-field-comments" placeholder="Enter your comments" id="user-comments" name="user-comments" rows="4" required></textarea>
-          </div>
-          <div id="submit-group">
-              <button id="submit-button" type="submit">Submit</button>
-          </div>
+          <label id="input-label-name" for="username">
+            <i class="fas fa-user"></i> Name:
+          </label>
+          <input id="input-field-name" type="text" name="username" placeholder="Enter your name ...." required>
+        </div>
+        <div id="input-group-email">
+          <label id="input-label-email" for="user-email">
+            <i class="fas fa-envelope"></i> Email:
+          </label>
+          <input id="input-field-email" type="email" name="user-email" placeholder="Enter your email ..." required>
+        </div>
+        <div id="input-group-rating">
+          <label id="input-label-rating">
+            <i class="fas fa-star"></i> Rating:
+          </label>
+        </div>
+        <div id="emoji-selection">
+          <input id="input-field-rating-1" type="radio" name="rating" value="1">
+          <label id="input-label-rating-1" for="input-field-rating-1">&#128577;</label>
+          <input id="input-field-rating-2" type="radio" name="rating" value="2">
+          <label id="input-label-rating-2" for="input-field-rating-2">&#128542;</label>
+          <input id="input-field-rating-3" type="radio" name="rating" value="3">
+          <label id="input-label-rating-3" for="input-field-rating-3">&#128528;</label>
+          <input id="input-field-rating-4" type="radio" name="rating" value="4">
+          <label id="input-label-rating-4" for="input-field-rating-4">&#128522;</label>
+          <input id="input-field-rating-5" type="radio" name="rating" value="5">
+          <label id="input-label-rating-5" for="input-field-rating-5">&#128515;</label>
+        </div>
+        <div id="input-group-comments">
+          <label id="input-label-comments" for="user-comments">
+            <i class="fas fa-comments"></i> Comments:
+          </label>
+          <textarea id="textarea-field-comments" name="user-comments" rows="4" placeholder="Enter your comments ....."
+            required></textarea>
+        </div>
+        <div id="submit-group">
+          <button id="submit-button" type="submit">
+            <i class="fas fa-paper-plane"></i> Submit
+          </button>
+        </div>
       </form>
-  </div>
-  
-  
+      <!-- Placeholder for the success message -->
+      <div id="success-message" class="hidden">Thank you for your feedback!</div>
+    </div>
+<script>
+  document.getElementById("user-feedback-form").addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent form from submitting traditionally
+      // Display success message
+      const successMessage = document.getElementById("success-message");
+      successMessage.style.display = "block";
+      successMessage.innerText = "Thank you for your feedback!";
+      // Optional: Clear the form fields after submission
+      event.target.reset();
+    });
+
+</script>
 <style>
   /* Parent div gradient */
 #feedback-container {
@@ -2111,6 +2183,14 @@
                   <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
                   <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
                   <li><a href="./blogs/sitemap.html"><i class="fa-solid fa-sitemap"></i>  Site Map</a></li>
+
+                    <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+                    <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
+                    <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
+                    <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+                    <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+                    <li><a href="./blogs/sitemap.html"><i class="fa-solid fa-sitemap"></i>  Site Map</a></li>
+
                 </ul>
             </div>
             <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
@@ -2371,173 +2451,6 @@
     
     <script src="visi.js"></script>
     <script src="../assets/js/index.js"></script>
-
-
-     <!-- Newsletter pop-up -->
- <style>
-  .popup-nl {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      justify-content: center;
-      align-items: center;
-      z-index: 1009;
-  }
-
-  .popup-content-nl {
-      display: flex;
-      background-color: white;
-      border-radius: 10px;
-      max-width: 800px;
-      height: 450px;
-      width: 700px;
-      overflow: hidden;
-      position: relative;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  }
-
-  .close1-btn-nl {
-      width: 20px;
-      cursor: pointer;
-      margin: 18px 10px;
-      position: absolute;
-      top: -4px;
-      right: 12px;
-      font-size: 18px;
-      font-weight: 800;
-  }
-
-  .popup-left-nl img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-  }
-
-  .popup-right-nl {
-      padding: 20px;
-      width: 50%;
-      display: flex;
-      flex-direction: column; 
-      align-items: center;
-      justify-content: center;
-  }
-
-  .popup-nl h1 {
-      font-size: 24px;
-      background: linear-gradient(to right, #099729, #58da75, #099729); 
-      -webkit-text-fill-color: transparent; 
-      -webkit-background-clip: text; 
-      text-align: center;
-      margin-bottom: 12px;
-      margin-top: 35px;
-  }
-
-  .h2-nl{
-      font-size: 18px;
-      margin-bottom: 8px;
-      text-align: center;
-      color: #333;
-  }
-
-  .pop_up-nl {
-      margin-bottom: 15px;
-      font-weight: bold;
-      background: -webkit-linear-gradient(left, #5b6268, #b9aebc, #5b6268);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-size: 12.7px;
-
-  }
-
-  .bold{
-      font-size: 13.1px;
-  }
-
-  input[type="email"] {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 16px;
-      border: 1px solid #000000;
-      border-radius: 5px;
-      font-size: 14px;
-  }
-
-  .signup-btn1-nl {
-      width: 100%;
-      height: 30px;
-      text-align: center;
-      background: linear-gradient(to right, #28a745, #3edd2f, #28a745);
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-  }
-
-  .signup-btn1-nl:hover {
-      background-color: #4682B4;
-  }
-
-  .no-thanks-nl {
-      display: block;
-      margin-top: 10px;
-      color: #888;
-      text-decoration: none;
-      margin-bottom: 15px;
-  }
-
-  .no-thanks-nl:hover {
-      color: #000000;
-      font-size: 14px;
-  }
-
-  .terms-nl {
-      margin-top: 15px;
-      font-size: 10px;
-      color: #888;
-  }
-
-  .terms-nl a {
-      display: inline;
-  }
-  .terms-nl a:hover {
-      text-decoration: underline;
-  }
-
-  .popup-right-nl p {
-      margin-top: 0;
-      margin-bottom: 10px;
-      text-align: center;
-  }
-
-</style>
-<div id="popup-nl" class="popup-nl">
-  <div class="popup-content-nl">
-      <div class="popup-left-nl">
-          <img src="popups.jpg" alt="finance">
-      </div>
-
-      <div class="popup-right-nl">
-          <a href="# " class="close1-btn-nl close-nl">X</a>
-          <h1>Subscribe to Newsletter</h1>
-          <h2 class="h2-nl">Get regular updates</h2>
-          <p class="pop_up-nl">We have made becoming a stock market Guru easy with our AI powered finance advisor</p>
-          <form id="emailForm-nl">
-              <input type="email" id="email-nl" placeholder="Enter your email" required>
-              <button type="submit" class="signup-btn1-nl">Subscribe</button>
-          </form>
-          <a href="#" class="no-thanks-nl close-nl">No thanks</a>
-          <p class="terms-nl" style="white-space: nowrap;">By subscribing to newsletters, you agree to our <br><a href="terms&cond.html">Terms of Service</a> and <a href="privacynotice.html">Privacy Policy</a>.</p>
-      </div>
-  </div>
-</div>
-<script src="popups.js"></script>
-
-
   </body>
 
   </html>
