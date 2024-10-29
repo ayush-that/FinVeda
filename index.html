@@ -2452,6 +2452,212 @@
     
     <script src="visi.js"></script>
     <script src="../assets/js/index.js"></script>
+
+    <style>
+
+    
+      body {
+
+         font-family: Arial, sans-serif;
+
+     }
+     
+     /* Popup Styles */
+     .popup {
+
+         display: none; /* Hidden by default */
+         position: fixed; /* Stay in place */
+         left: 0;
+         top: 0;
+         width: 100%; /* Full width */
+         height: 100%; /* Full height */
+         background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+         justify-content: center; /* Center the popup */
+         align-items: center; /* Center the popup */
+         z-index: 1000; /* Sit on top */
+
+     }
+     
+     .popup-content {
+
+         background: linear-gradient(rgb(133 183 242 / 80%), rgb(23 37 149)), url(your-image-url.jpg);
+         padding: 20px;
+         border-radius: 5px;
+         max-width: 500px;
+         max-height: 500px;
+         min-height: 410px;
+         text-align: center;
+
+     }
+     
+     /* Set poll options to stack vertically */
+     #pollOptions {
+
+         display: flex;
+         flex-direction: column; /* Stack buttons vertically */
+         align-items: center; /* Center the buttons */
+
+     }
+     
+     .poll-button {
+
+         display: block; /* Change to block for full-width */
+         margin: 5px 0; /* Add vertical margin */
+         padding: 10px 15px;
+         border: none;
+         border-radius: 5px;
+         background-color: rgb(14 64 98 / 40%); 
+         color: white;
+         cursor: pointer;
+         transition: background-color 0.3s;
+         width: 100%; /* Full width */
+
+     }
+
+     .poll-button:hover {
+
+         background-color: #45a049; /* Darker green */
+
+     }
+
+     .poll-button.selected {
+
+         background-color: #0f1e82; /* Blue for selected */
+
+     }
+     
+     /* New Vote Button Styles */
+     .vote-button {
+
+         display: block; /* Change to block for full-width */
+         margin: 5px 0; /* Add vertical margin */
+         padding: 10px 15px;
+         border: none;
+         border-radius: 5px;
+         background-color: #f44336; /* Red */
+         color: white;
+         cursor: pointer;
+         transition: background-color 0.3s;
+         width: 100%; /* Full width */
+         
+     }
+
+     .vote-button:hover {
+
+         background-color: #d32f2f; /* Darker red */
+
+     }
+     
+     /* Result Text Styles */
+#result {
+
+    margin-top: 10px; /* Add space above result text */
+    word-wrap: break-word; /* Allow long text to wrap within the box */
+    overflow: hidden; /* Prevent overflow */
+    max-height: 50px; /* Limit height to prevent overflow */
+    color: rgb(255, 255, 255); /* Set text color to red */
+    
+}
+
+     </style>
+     
+
+    <div class="popup" id="pollPopup">
+      <div class="popup-content">
+          <h2>Which feature of Finveda do you believe boosts your financial knowledge the most?</h2>
+          <div id="pollOptions">
+              <button class="poll-button" data-value="Market Trends">Market Trends - Stay updated with the latest financial news and insights</button>
+              <button class="poll-button" data-value="AI Chatbot">AI Chatbot - Personalized financial guidance at your fingertips</button>
+              <button class="poll-button" data-value="SIP Calculator">SIP Calculator - Easily plan and manage your investments</button>
+          </div>
+          <button id="voteButton" class="vote-button" style="margin-top: 10px;">Vote</button>
+          <p id="result"></p>
+      </div>
+  </div>
+  
+  
+  
+  <script>
+  // Show the poll popup 10 seconds after the page loads, if not already voted
+  window.onload = function() {
+    const hasVoted = sessionStorage.getItem('hasVoted');
+    setTimeout(function() {
+      if (!hasVoted) {
+        document.getElementById('pollPopup').style.display = 'flex';
+      }
+    }, 10000); // 10000 milliseconds = 10 seconds
+  };
+
+  const pollButtons = document.querySelectorAll('.poll-button[data-value]');
+  let selectedValue = '';
+
+  pollButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Remove selected class from all buttons
+      pollButtons.forEach(btn => btn.classList.remove('selected'));
+      // Add selected class to the clicked button
+      button.classList.add('selected');
+      selectedValue = button.getAttribute('data-value');
+    });
+  });
+
+
+  document.getElementById('voteButton').addEventListener('click', function() {
+    if (selectedValue) {
+      document.getElementById('result').innerHTML = `You voted for: ${selectedValue}<br>Thank you!`;
+      // Save voting status in session storage
+      sessionStorage.setItem('hasVoted', 'true');
+      // Hide the popup after voting
+      setTimeout(() => {
+        document.getElementById('pollPopup').style.display = 'none';
+      }, 2000);
+    } else {
+      alert("Please select an option!");
+    }
+  });
+
+
+  function initializePoll() {
+    console.log("Poll initialized.");
+  }
+
+  function clearSelectedButton() {
+    pollButtons.forEach(btn => btn.classList.remove('selected'));
+  }
+
+  function addEventListenersToButtons() {
+    pollButtons.forEach(button => {
+      button.addEventListener('mouseenter', function() {
+        button.style.backgroundColor = '#3e8e41'; // Change color on hover
+      });
+      button.addEventListener('mouseleave', function() {
+        button.style.backgroundColor = ''; // Reset color on mouse leave
+      });
+    });
+  }
+
+  function handleVoteSubmission() {
+    if (selectedValue) {
+      console.log("Vote submitted for: " + selectedValue);
+    }
+  }
+
+
+  pollButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      logButtonClick(button);
+      handleVoteSubmission();
+    });
+  });
+
+  
+  for (let i = 0; i < 5; i++) {
+    console.log("Simulating poll process: Step " + (i + 1));
+  }
+
+
+</script>
+
   </body>
 
   </html>
