@@ -37,6 +37,17 @@ https://github.com/user-attachments/assets/44ddffa1-70b6-43d6-9438-3181f25dd0ad
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
+## 📑 Table of Contents
+1. [🤔 Problem](#-problem)
+2. [🌟 Features](#-features)
+3. [💵 How to Contribute](#-how-to-contribute)
+4. [💗 Contributors](#-contributors)
+5. [🛠️ Troubleshooting](#️-troubleshooting)
+6. [🥑 License](#-license)
+7. [⭐ Star the Repo!](#-star-the-repo)
+   
+---
+
 ### 🤔 Problem
 
 According to a survey by the OECD, <b>only 38% of adults in India are financially literate</b>. Finveda aims to solve this problem by providing a platform for financial literacy education.
@@ -52,10 +63,19 @@ FinVeda is a dynamic financial literacy app that'll help you Learn finance with 
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
+<!-- Added Hacktoberfest 2024 and GSSoc Extended 2024 banners -->
+### This project is now OFFICIALLY accepted for
 
-### 💵 How to Contribute
+<div align="center">
+  <img src="https://github.com/neeru24/Connect_icons/blob/main/hacktober.png" alt="Hacktoberfest 2024" width="80%">
+</div>
+<br>
+
+
 
    ![image](https://github.com/user-attachments/assets/5263dc32-ce09-4835-b964-7f996e970eb5)
+
+### 💵 How to Contribute
 
    #### 1. Fork the repository to your GitHub account.
    #### 2. Clone the forked repository to your local machine.
@@ -84,12 +104,44 @@ FinVeda is a dynamic financial literacy app that'll help you Learn finance with 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ### 💗 Contributors
+<p align="center">
+    <img src="https://api.vaunt.dev/v1/github/entities/ayush-that/repositories/FinVeda/contributors?format=svg&limit=54" width="700" height="250" />
+</p>
 
 <a href="https://github.com/ayush-that/FinVeda/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=ayush-that/FinVeda" />
 </a>
 
+#### A Big Thank You to Our Contributors! 🎉👏
+
+We want to extend our heartfelt gratitude to all the amazing contributors who have dedicated their time and effort to make FinVeda a success! Your hard work and commitment to excellence are what drive this project forward. Together, we are building something great! Thank you for being a part of our community! ❤️✨
+
+
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+## 💗 Forkers
+
+[![Forkers repo roster for @ayush-that/FinVeda](https://reporoster.com/forks/ayush-that/FinVeda)](https://github.com/ayush-that/FinVeda/network/members)
+
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+
+## 💗 Stargazers
+
+<div align='left'>
+
+[![Stargazers repo roster for @ayush-that/FinVeda](https://reporoster.com/stars/ayush-that/FinVeda)](https://github.com/ayush-that/FinVeda/stargazers)
+
+</div>
+
+<picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=ayush-that/FinVeda&type=Date&theme=dark" />
+      <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=ayush-that/FinVeda&type=Date" />
+      <img align="center" alt="Star History Chart" src="https://api.star-history.com/svg?repos=ayush-that/FinVeda&type=Date" />
+</picture>
+
+
 
 ### 🛠️ Troubleshooting
 
@@ -123,3 +175,16 @@ If you find this project useful and would like to support the project, please co
 
 <h3 align="center">Keep learning and exploring! 🚀</h3>
 <h3 align="center">Happy coding! 👩‍💻🎉 </h3>
+
+
+## Connect with Me 🌐
+
+[![Email](https://img.shields.io/badge/Email-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:ayush1337@hotmail.com)
+[![X (formerly Twitter)](https://img.shields.io/badge/X-1DA1F2?style=flat-square&logo=x&logoColor=white)](https://x.com/shydev69)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ayush-that/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ayush-that)
+[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=flat-square&logo=youtube&logoColor=white)](https://www.youtube.com/@ayush-that)
+
+---
+
+Feel free to reach out via any of the platforms above!

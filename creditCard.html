@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Comparison Tool</title>
+    <link rel="shortcut icon" href="/assets/images/favicon2.webp" type="image/png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/creditCard.css">
+</head>
+<body>
+    <div class="cc-app">
+        <header class="cc-header">
+            <h1><i class="fas fa-credit-card"></i> Credit Card Comparison Tool</h1>
+        </header>
+        <main class="cc-main">
+            <aside class="cc-sidebar">
+                <div class="cc-filters">
+                    <h2><i class="fas fa-filter"></i> Filters</h2>
+                    <div class="cc-filter-item">
+                        <label for="cashback">Min Cashback (%)</label>
+                        <input type="range" id="cashback" min="0" max="5" step="0.5" value="0">
+                        <span id="cashback-value">0%</span>
+                    </div>
+                    <div class="cc-filter-item">
+                        <label for="annual-fee">Max Annual Fee (₹)</label>
+                        <input type="range" id="annual-fee" min="0" max="5000" step="100" value="5000">
+                        <span id="annual-fee-value">₹5000</span>
+                    </div>
+                    <div class="cc-filter-item">
+                        <label for="credit-score">Credit Score</label>
+                        <select id="credit-score">
+                            <option value="all">All</option>
+                            <option value="excellent">Excellent</option>
+                            <option value="good">Good</option>
+                            <option value="fair">Fair</option>
+                        </select>
+                    </div>
+                </div>
+            </aside>
+            <div class="cc-content">
+                <div id="cc-list" class="cc-list">
+                    <!-- Credit cards will be dynamically inserted here -->
+                </div>
+                <div id="cc-comparison" class="cc-comparison">
+                    <h2><i class="fas fa-table"></i> Side-by-Side Comparison</h2>
+                    <div id="comparison-container" class="comparison-container">
+                        <!-- Comparison cards will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="./assets/js/credit.js"></script>
+</body>
+</html>
