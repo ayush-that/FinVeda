@@ -102,7 +102,7 @@
               <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
                 <div class="icon1" >
                   <a href="./index.html">
-                  <img src="assets/images/l (2).png" alt="icon.png">
+                    <img src="assets/images/FinvedaLogo.png" alt="icon.png" style="width: 11rem;">
                   </a>
                 </div>  
                 <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
@@ -113,29 +113,27 @@
                     <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
                   </li>    
                   <li class="nav-item">
-                    <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
-                  </li>
-                  <li class="nav-item">
                     <a class="page-scroll" href="./finance.html" style="color: rgb(237, 242, 244);">Courses 📚</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll active-link" href="./quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
-                  </li>
+                  </li> 
                   <li class="nav-item">
                     <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
                   </li>
                   <li class="nav-item">
                     <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
                   </li>
+                  <!-- Dropdown for Explore -->
+              <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
+                <a class="page-scroll dropdown-toggle" href="#" style="color: rgb(237, 242, 244);">
+                  <span class="explore-text">Explore 📚</span> 
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="./trends.html">Trends 📈</a></li>
+                  <li><a href="./tools/sip.html">Tools 🔧</a></li>
+                  <li><a href="./blog.html">Blogs 📰</a></li>
+                  <li><a href="./quiz.html">Quiz 🤔</a></li>
+                  <li ><a  href="./maps.html">MAPS 🗺️</a></li>
+                </ul>
+              </li>
                   <li class="nav-item no-underline">
                     <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
                   </li>
@@ -149,8 +147,8 @@
 
               <script>
                 const toggleButton = document.getElementById('theme-toggle');
-                const body = document.body;
-                const currentTheme = localStorage.getItem('theme');
+                var body = document.body;
+                var currentTheme = localStorage.getItem('theme');
 
                 if (currentTheme === 'dark') {
                 body.classList.add('dark-mode');
@@ -284,94 +282,42 @@
               </div>
             </nav>
 
-                
+            <script>
+              const toggleBtn = document.getElementById('theme-toggle2');
+              var body = document.body;
+              var currentTheme = localStorage.getItem('theme');
+    
+              if (currentTheme === 'dark') {
+              body.classList.add('dark-mode');
+              toggleBtn.classList.add('dark');
+              toggleBtn.textContent = '🌞';
+              }
+              
+              toggleBtn.addEventListener('click', function () {
+              body.classList.toggle('dark-mode');
+              toggleBtn.classList.toggle('dark');
+              
+              // Update button icon based on mode
+              if (body.classList.contains('dark-mode')) {
+                toggleBtn.textContent = '🌞';  // Light mode icon
+                localStorage.setItem('theme', 'dark');
+              } else {
+                toggleBtn.textContent = '🌙';  // Dark mode icon
+                localStorage.setItem('theme', 'light');
+              }
+              });
+          </script>
               <link href="../navbar.css" rel="stylesheet">
               <script type="text/javascript" src="../navbar.js"></script>
           </div>
         </div>
       </div>
     </div>
-    <div id="home" class="header-hero bg_cover" style="background-image: url(./assets/images/banner-bg.svg)">
-      <div class="container">
-        <h2 class="head-animate" style="font-size: 90px;">
-          WELCOME TO FINVEDA
-        </h2>
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <div class="header-hero-content text-center">
-              <style>
-                .head-animate {
-                  text-align: center;
-                  position: relative;
-                  top: 200px;
-                  color: transparent;
-                  -webkit-text-stroke: 2px white;
-                  -moz-text-stroke: 2px white;
-                  -ms-text-stroke: 2px white;
-                  font-weight: bold;
-                  background: url(./assets/images/back.png);
-                  -webkit-background-clip: text;
-                  -moz-background-clip: text;
-                  background-clip: text;
-                  background-position: 0 0;
-                  animation: back 20s linear infinite, hovering 1.5s ease-in-out infinite;
-                }
-  
-                @keyframes back {
-                  100% {
-                    background-position: 2000px 0;
-                  }
-                }
-  
-                @keyframes hovering {
-                  0% {
-                    transform: translateY(0);
-                  }
-  
-                  50% {
-                    transform: translateY(-5px);
-                  }
-  
-                  100% {
-                    transform: translateY(0);
-                  }
-                }
-  
-                .header-hero-content h2 {
-                  font-size: 200px;
-                }
-              </style>
-              <br>
-              <br>
-              <p class="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s"
-                style="visibility: visible; animation-duration: 1.3s; animation-delay: 0.8s;">
-                Wanna learn how to grow your money to become rich? We have
-                made becoming a stock market Guru easy with our AI
-                powered finance advisor - <b>Arth Sathi 🤵🏻</b>
-              </p>
-              <a href="#" class="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s"
-                onclick="window.botpressWebChat.sendEvent({ type: 'show' }); return false;"
-                style="visibility: visible; animation-duration: 1.3s; animation-delay: 1.1s;">
-                Chat with ArthaSathi 💬
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="header-hero-image text-center wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">
-              <img src="./assets/images/header-hero.webp" alt="hero" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="particles-1" class="particles"></div>
-    </div>
   </header>
-  <div class="blog-content wow fadeInUp\" style="display: flex; flex-direction: column;flex-wrap: wrap;" data-wow-duration="1.3s" data-wow-delay="0.5s">
-    <h2 class="test">Test your knowledge</h2>
+    <div class="blog-content wow fadeInUp\" style="border: 10px solid white;display: flex; flex-direction: column;flex-wrap: wrap;background: linear-gradient(to right, rgb(74, 74, 74), rgb(235, 235, 239)); margin-top: 100px !important;" data-wow-duration="1.3s" data-wow-delay="0.5s">
+    <h2 class="test" style="color:rgb(93, 10, 246);">Test your knowledge</h2>
     <div style="position: absolute;width: 100px;height: 100px;right: 100px;z-index: 10; margin-top: 50px;" id="quiz-pic"><img src="./assets/images/quiz-anime2.webp" alt="QUIZ"></div>
-    <div class="quiz-description wow fadeIn" data-wow-duration="1.3s" data-wow-delay="0.5s" style="width: 40%; margin: auto;">
+    <div class="quiz-description wow fadeIn" data-wow-duration="1.3s" data-wow-delay="0.5s" style="margin: auto;">
       <div class="quiztitle wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">Welcome to the Quiz Challenge!</div>
       <div class="quizcontent wow fadeInUp" data-wow-duration="1.2s" data-wow-delay="0.6s">Get ready to test your knowledge and skill with our engaging quiz.</div>
       <div class="quizcontent wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s"> Here's what you need to know before you begin:</div>
@@ -379,7 +325,7 @@
       <div class="quizcontent wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s"> Points Per Question: 1</div>
       <div class="quizcontent2 wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">Good Luck!</div>
     </div>
-    <div style="margin: auto;"><img src="assets/images/QUIZ.jpeg" alt="photo"></div>
+    <div style="margin: auto; position: absolute;mix-blend-mode: multiply;left:10px;top: 800px;"><img src="assets/images/QUIZ.jpeg" alt="photo"></div>
     <form id="financeQuizForm">
       <div id="quiz" class="wow fadeIn" data-wow-duration="1.3s" data-wow-delay="0.5s">
         <span id="completed-perc"></span>
@@ -421,11 +367,11 @@
             <span id="correct-span"></span>
             <span id="incorrect-span"></span>
           </div>
-          <div class="quiz-bottom-btns">
-            <button id="pass-btn">Pass</button>
-            <button id="next-btn">Next</button>
-            <button id="submit-btn">Submit</button>
-            <button id="play-again-btn">Play Again</button>
+          <div class="quiz-bottom-btns" >
+            <button id="pass-btn" style="margin: 20px auto;">Pass</button>
+            <button id="next-btn" style="margin: 20px auto;">Next</button>
+            <button id="submit-btn" style="margin: 20px auto;">Submit</button>
+            <button id="play-again-btn" style="margin: 20px auto;">Play Again</button>
           </div>
         </div>
       </div>
@@ -507,154 +453,163 @@
     <div id="quizResult"></div>
   </div>
   
- 
-<STYLE>
-  /* Quiz container styling */
-.quiz-description {
-  background: linear-gradient(135deg, #3d10bd,#62bdff);
-  padding: 2rem;
-  border-radius: 10px;
-  color: white;
-  font-family: 'Arial', sans-serif;
+<style>
+  /* Basic Structure */
+.blog-content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 20px;
+  background: #f3f8f2;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
 }
 
+.blog-content:hover {
+  transform: scale(1.01);
+}
+
+#quiz-pic img {
+  width: 80px;
+  transition: transform 0.3s ease-in-out;
+}
+
+#quiz-pic img:hover {
+  transform: rotate(15deg) scale(1.05);
+}
+
+.quiz-description {
+    background: linear-gradient(to right, rgb(146, 193, 246), blue);
+  border-radius: 5%;
+  border: 5px solid  grey ;
+  color: #2d3a32;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  width: 1000px;
+  margin-bottom: 20px;
+}
+
+
+
 .quiztitle {
-  font-size: 2rem;
+  font-size: 1.8em;
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: 10px;
+  color: #72d472;
 }
 
 .quizcontent {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+  font-size: 1.1em;
+  margin: 8px 0;
+  color: white;
 }
 
 .quizcontent2 {
-  font-size: 1.5rem;
+  font-size: 1.1em;
   font-weight: bold;
-  margin-top: 1rem;
+  color: #59ff59;
 }
 
-#quiz {
-  background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
-  padding: 2rem;
-  border-radius: 10px;
-  color: white;
-}
-
-h2 {
-  font-weight: bold;
-  font-size: 1.8rem;
-}
-
-#answer-buttons .btn {
-  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+/* Button Styling */
+.quiz #answer-buttons .btn {
+  padding: 10px 20px;
+  margin: 8px;
+  background-color: #6ade6a;
   color: white;
   border: none;
-  padding: 10px 20px;
-  margin: 5px;
+  
   border-radius: 5px;
-  font-weight: bold;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-size: 1em;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-/* Hover effect for buttons */
-#answer-buttons .btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-.chosen {
-  background: linear-gradient(135deg, #3d10bd,#62bdff) !important; /* Rich purple tones */
-  /* Darker shades */
-  /* Softer, warmer tones */
-
-    color: white; /* Change text color if needed */
+.quiz #answer-buttons .btn:hover {
+  background-color: #305a30;
+  transform: scale(1.03);
 }
 
-/* Click/focus effect for buttons */
-#answer-buttons .btn:focus {
-  background: #4caf50; /* Green when clicked */
-  outline: none; /* Removes default focus outline */
-  transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+.quiz #answer-buttons .btn:active {
+  background-color: #204020;
 }
 
 #quiz-progress-bar {
   width: 100%;
-  background: white;
+  height: 10px;
+  background-color: #d3d3d3;
   border-radius: 5px;
-  margin-bottom: 10px;
+  margin: 20px 0;
+  overflow: hidden;
 }
 
 #quiz-progress {
-  background: #4caf50;
-  height: 20px;
+  width: 0;
+  height: 100%;
+  background-color: #407a40;
   border-radius: 5px;
-  width: 0%;
+  transition: width 0.5s ease;
 }
 
-#pass-btn, #next-btn, #submit-btn, #play-again-btn {
-  background: linear-gradient(45deg, #56ab2f, #a8e063);
-  color: white;
+#completed-perc {
+  font-size: 1em;
+  color: #2d3a32;
+  margin-top: 5px;
+  margin-left: 7px;
+}
+
+/* Bottom Buttons */
+.quiz-bottom-btns button {
+  padding: 8px 16px;
+  margin: 10px 5px;
   border: none;
-  padding: 10px 15px;
-  margin: 5px;
   border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-
-/* Hover effect for bottom buttons */
-#pass-btn:hover, #next-btn:hover, #submit-btn:hover, #play-again-btn:hover {
-  background: linear-gradient(45deg, #43c6ac, #191654);
-  transform: scale(1.05);
-}
-
-/* Click/focus effect for bottom buttons */
-#pass-btn:focus, #next-btn:focus, #submit-btn:focus, #play-again-btn:focus {
-  background: #4caf50; /* Green when clicked */
-  outline: none; /* Removes default focus outline */
-  transform: scale(1.05);
-}
-
-#congratulations-image img {
-  max-width: 100%;
-  border-radius: 10px;
-}
-
-#correct-span, #incorrect-span {
-  font-weight: bold;
-  display: block;
-  margin-top: 10px;
-}
-
-#quizResult {
+  background-color: #407a40;
   color: white;
-  font-weight: heavy;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-/* Input focus effect (turns green when clicked) */
-input[type="radio"]:focus {
-  outline: none;
-  box-shadow: 0 0 5px 2px #4caf50; /* Green shadow when clicked */
+.quiz-bottom-btns button:hover {
+  background-color: #305a30;
 }
 
-/* Media queries for responsiveness */
+/* Quiz Images */
+#congratulations-image img {
+  width: 150px;
+  transition: opacity 0.3s;
+}
+
+#congratulations-image img[style*="display: none"] {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+#quizimg1, #quizimg2, #quizimg3, #quizimg4, #quizimg5 {
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
-  .quiz-description, #quiz {
-    padding: 1rem;
+  .blog-content {
+    padding: 15px;
   }
-  .quiztitle {
-    font-size: 1.5rem;
+  .quizcontent {
+    font-size: 1em;
   }
-  h2 {
-    font-size: 1.5rem;
+  .quiz-bottom-btns button {
+    padding: 6px 14px;
   }
 }
 
-</STYLE>
+</style> 
 </body>
 
 
@@ -698,7 +653,7 @@ input[type="radio"]:focus {
     <div class="row" id="footer">
       <div class="col-lg-4 col-md-6 col-sm-8">
         <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-          <img src="./assets/images/l (2).png" alt="FinVeda Logo" style="height: 80px; width: auto; margin-bottom: 15px;" />
+          <img src="./assets/images/FinvedaLogo.png" alt="FinVeda Logo" style="height: 80px; width: auto; margin-bottom: 15px;" />
           <p class="text custom-margin">
             We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
           </p>
@@ -717,6 +672,7 @@ input[type="radio"]:focus {
               <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
               <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
               <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+              <li><a href="./blogs/sitemap.html"><i class="fa-solid fa-sitemap"></i> Site Map</a></li>
             </ul>
           </div>
           <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
@@ -758,7 +714,8 @@ input[type="radio"]:focus {
                     </div>
                 </li>
                 <li class="d-sm-flex justify-content-center">
-                    <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 12px; width: 10%;"></i>
+                    <!-- Modified: Inline CSS to adjust logo size and sync with other pages -->
+                    <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font: 12px; width: 10%;"></i>
                     <div style="width: 80%;">
                         <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
                            style="color:#fff">
@@ -766,12 +723,13 @@ input[type="radio"]:focus {
                         </a>
                     </div>
                 </li>
+                <!-- Added: Social Media Redirects -->
                 <div class="social-icons">
-                  <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                  <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                  <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                  <a href="#"><i class="fa-brands fa-discord"></i></a>
-                  <a href="#"><i class="fa-brands fa-github"></i></a>
+                  <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                  <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
+                  <a href="https://discord.com/"><i class="fa-brands fa-discord"></i></a>
+                  <a href="https://github.com/ayush-that/FinVeda"><i class="fa-brands fa-github"></i></a>
               </div>
             </ul>
         </div>

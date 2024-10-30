@@ -617,32 +617,40 @@
 
 
       // Sign up form submission
-      document.querySelector(".sign-up-form").addEventListener("submit", async function (event) {
-          event.preventDefault();
+       // Sign up form submission
+document.querySelector(".sign-up-form").addEventListener("submit", async function (event) {
+    event.preventDefault();
 
-          // Get the input values
-          const username = document.querySelector(".sign-up-form input[type='text']").value;
-          const email = document.querySelector(".sign-up-form input[type='email']").value;
-          const password = document.querySelector(".sign-up-form input[type='password']").value;
+    // Get the input values
+    const username = document.querySelector(".sign-up-form input[type='text']").value;
+    const email = document.querySelector(".sign-up-form input[type='email']").value;
+    const password = document.querySelector(".sign-up-form input[type='password']").value;
 
-          // Validate inputs
-          if (username === "" || email === "" || password === "") {
-            alert("Please fill in all fields");
-            return;
-          }
+    // Validate inputs
+    if (username === "" || email === "" || password === "") {
+        alert("Please fill in all fields");
+        return;
+    }
 
-          // Generate a UUID
-          const userId = uuid.v4();
-          console.log("Generated UUID:", userId);
+    // Generate a UUID
+    const userId = uuid.v4();
+    console.log("Generated UUID:", userId);
 
-          const data = JSON.stringify({
-            id: userId,
-            username,
-            email,
-            password,
-          });
-          console.log(data);
-        });
+    const data = JSON.stringify({
+        id: userId,
+        username,
+        email,
+        password,
+    });
+    console.log(data);
+
+    // Show submission message in a pop-up
+    alert("Sign up successful! Welcome, " + username + "!");
+
+    // Optionally, you can clear the form after submission
+    document.querySelector(".sign-up-form").reset();
+});
+
 
       
         // Toggle password visibility

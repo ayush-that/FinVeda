@@ -1,6 +1,9 @@
 /* General Styles */
 /* Dark Mode Styles */
+<<<<<<< HEAD
 /* Dark Mode Styles */
+=======
+>>>>>>> 496b1c17f240f0485b2bbc360d3282a8f575171a
 .dark-mode {
     background: linear-gradient(to right, #252793, black); 
     color: #ffffff;
@@ -15,13 +18,20 @@
   }
   
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 496b1c17f240f0485b2bbc360d3282a8f575171a
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f0f8ff; 
     margin: 0;
     padding: 0;
+<<<<<<< HEAD
     background: linear-gradient(to right, #252793, white); 
+=======
+    background: linear-gradient(to right, #252793, white); /* Gradient from pink to yellow */
+>>>>>>> 496b1c17f240f0485b2bbc360d3282a8f575171a
     
     
 }
@@ -111,5 +121,96 @@ button:hover {
 
     .course {
         width: 90%; /* Full width on smaller screens */
+    }
+}
+
+.circle {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
+    transition: transform 0.1s, left 0.1s, top 0.1s;
+  }
+
+  .circle-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+  }
+/* Scroll-to-Top Button Styles */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #4682b4;
+    color: white;
+    padding: 7px 15px;
+    border: none;
+    border-radius: 50%; /* Circular shape */
+    cursor: pointer;
+    font-size: 22px;
+    display: none; /* Hidden by default */
+    z-index: 1000;
+    transition: transform 0.3s, background-color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#scrollToTopBtn:hover {
+    background-color: #5a9bd3;
+    transform: scale(1.1); /* Scale up slightly */
+}
+
+/* Enhanced Tooltip Styling */
+#scrollToTopBtn::after {
+    content: "Go to top";
+    position: absolute;
+    bottom: 120%; /* Tooltip above the button */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background-color: #333;
+    color: #fff;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+/* Triangle Pointer for Tooltip */
+#scrollToTopBtn::before {
+    content: "";
+    position: absolute;
+    bottom: 110%; /* Slightly below tooltip box */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent #333 transparent;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* Show tooltip on hover */
+#scrollToTopBtn:hover::after,
+#scrollToTopBtn:hover::before {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Responsive Positioning */
+@media (max-width: 768px) {
+    #scrollToTopBtn {
+        bottom: 20px;
+        right: 20px;
+        font-size: 18px;
     }
 }

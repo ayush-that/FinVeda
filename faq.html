@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ - FinVeda</title>
-    <link rel="shortcut icon"  href="/assets/images/favicon2.webp" type="image/png" />
+    <link rel="shortcut icon" href="./assets/images/favicon2.webp" type="image/png" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -32,6 +32,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: white !important;
 }
 
 /* FAQ Section Styles */
@@ -265,7 +266,7 @@ body {
 
 .form-group label {
     font-size: 1rem;
-    color: #495057;
+    color: white;
     display: block;
     margin-bottom: 8px;
 }
@@ -429,7 +430,7 @@ body.dark-mode {
           <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
             <div class="icon1" >
               <a href="./index.html">
-              <img src="assets/images/l (2).png" alt="icon.png">
+                <img src="assets/images/FinvedaLogo.png" alt="icon.png" style="width: 11rem;">
               </a>
             </div> 
             <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
@@ -438,30 +439,27 @@ body.dark-mode {
               </li>
               <li class="nav-item">
                 <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
-              </li>    
-              <li class="nav-item">
-                <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
-              </li>
+              </li>     
               <li class="nav-item">
                 <a class="page-scroll" href="./finance.html" style="color: rgb(237, 242, 244);">Courses 📚</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
-              </li>
+              </li> 
               <li class="nav-item">
                 <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
               </li>
               <li class="nav-item">
                 <a class="page-scroll active-link" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
+              </li>
+              <!-- Dropdown for Explore -->
+              <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
+                <a class="page-scroll dropdown-toggle" href="#" style="color: rgb(237, 242, 244);">
+                  <span class="explore-text">Explore 📚</span> 
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="./trends.html">Trends 📈</a></li>
+                  <li><a href="./tools/sip.html">Tools 🔧</a></li>
+                  <li><a href="./blog.html">Blogs 📰</a></li>
+                  <li><a href="./quiz.html">Quiz 🤔</a></li>
+                </ul>
               </li>
               <li class="nav-item no-underline">
                 <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
@@ -638,7 +636,7 @@ body.dark-mode {
  </script>
 
 
-    <!-- FAQ Section -->
+ <!-- FAQ Section -->
     <img style="position:absolute;width:250px; top: 200px; right: 1270px;mix-blend-mode: multiply;" src="assets/images/HELP-IMG.webp" alt="image">
     <div class="faq-section">    
         <div class="faq-intro">
@@ -659,224 +657,263 @@ body.dark-mode {
 
         <div class="accordion" id="faqAccordion">
             <div class="accordion-item">
-              <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                  What is Finveda?
-                </button>
-              </h2>
-              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-                  Finveda is a dynamic financial literacy app with Arthsathi AI chatbot, finance blogs, market trends, SIP calculator, and a quiz for effortless finance learning.
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        What is Finveda?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Finveda is a dynamic financial literacy app with Arthsathi AI chatbot, finance blogs, market trends, SIP calculator, and a quiz for effortless finance learning.
+                    </div>
                 </div>
-              </div>
             </div>
-      
+
             <div class="accordion-item">
-              <h2 class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  What problem does Finveda solve?
-                </button>
-              </h2>
-              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-                  Finveda aims to solve the lack of financial literacy in India, providing tools and resources to improve financial knowledge for individuals.
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        What problem does Finveda solve?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Finveda aims to solve the lack of financial literacy in India, providing tools and resources to improve financial knowledge for individuals.
+                    </div>
                 </div>
-              </div>
             </div>
-      
+
             <div class="accordion-item">
-              <h2 class="accordion-header" id="headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  What services does Finveda offer?
-                </button>
-              </h2>
-              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-                  Finveda offers expert-written blogs, market trends, SIP and PPF calculators, and more for personalized finance education. 
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        What services does Finveda offer?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Finveda offers expert-written blogs, market trends, SIP and PPF calculators, and more for personalized finance education. 
+                    </div>
                 </div>
-              </div>
             </div>
-      
+
             <div class="accordion-item">
-              <h2 class="accordion-header" id="headingFour">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                  How can I start using Finveda?
-                </button>
-              </h2>
-              <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-                  Simply sign up and access all our features, including personalized financial education and tools.
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        How can I start using Finveda?
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Simply sign up and access all our features, including personalized financial education and tools.
+                    </div>
                 </div>
-              </div>
             </div>
-      
+
             <div class="accordion-item">
-              <h2 class="accordion-header" id="headingFive">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                  Is Finveda free to use?
-                </button>
-              </h2>
-              <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-                  Yes, Finveda is completely free to use for all users.
+                <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Is Finveda free to use?
+                    </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes, Finveda is completely free to use for all users.
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
+        </div>
     </div>
 
-    <!-- JavaScript to filter FAQs -->
+    <!-- Feedback Section -->
+    <div class="faq-feedback">
+        <h3 class="faq-title">Submit Your Feedback or Ask a New Question</h3>
+        <form class="feedback-form" id="feedbackForm">
+            <div class="form-group">
+                <label for="userName">Your Name</label>
+                <input type="text" id="userName" class="form-input" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="userEmail">Your Email</label>
+                <input type="email" id="userEmail" class="form-input" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="userFeedback">Your Feedback / Question</label>
+                <textarea id="userFeedback" class="form-input" rows="5" placeholder="Enter your feedback or ask a question" required></textarea>
+            </div>
+            <div class="button-container">
+                <button type="submit" class="submit-btn">Submit Feedback</button>
+            </div>
+        </form>
+    </div>
+
+    <style>
+        /* Global body styles for dark theme */
+        body {
+            background-color: #121212; /* Dark background */
+            color: #ffffff; /* Light text color */
+            font-family: Arial, sans-serif; /* Clean font */
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* FAQ Container styling */
+        .faq-section {
+            background-color: white; /* Darker container background */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        /* FAQ Item styles */
+        .accordion-button {
+            background-color: #2c2c2c; /* Darker background for buttons */
+            color: #ffffff; /* White text */
+            border: 1px solid #4caf50; /* Green border */
+            transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .accordion-button:hover {
+            background-color: #3c3c3c; /* Slightly lighter on hover */
+            color: #fffbeb; /* Light color on hover */
+            box-shadow: 0 0 20px rgba(76, 175, 80, 1); /* Neon glow */
+        }
+
+        .accordion-item {
+            margin: 10px 0; /* Spacing between items */
+        }
+
+        .accordion-body {
+            background-color: #2c2c2c; /* Dark background for accordion body */
+            color: #e0e0e0; /* Light gray text for body */
+            border-radius: 5px;
+            padding: 15px;
+        }
+
+        /* Feedback section styles */
+        .faq-feedback {
+            border: 2px solid #4caf50; /* Green border */
+            background: white; /* Dark gradient */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            color: #ffffff;
+            max-width: 800px;
+            margin: 20px auto;
+            transition: transform 0.3s ease;
+        }
+
+        /* Title styling */
+        .faq-title {
+            margin-top: 15px;
+            margin-bottom: 35px;
+            font-size: 2.0em;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Neon glow */
+            margin-left: 0px;
+
+        }
+
+        /* Form input styles */
+        .form-input {
+            padding: 10px;
+            font-size: 1em;
+            border:  2px solid #ffffff80;
+            border-radius: 5px;
+            outline: none;
+            background-color: #333; 
+            color: #ffffff; 
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+
+        }
+
+        /* New CSS to change label text color to white */
+        .form-group label {
+            color: #ffffff; /* White color for labels */
+        }
+
+        .form-input:focus {
+            border-color: #4caf50; /* Green border on focus */
+            background-color: #444; /* Slightly lighter background on focus */
+        }
+
+        /* Button styles */
+        .submit-btn {
+            background-color: #4caf50; /* Green background */
+            color: white; /* White text */
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #5cb85c; /* Lighter green on hover */
+        }
+
+        /* Search styles */
+        .faq-search {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .faq-search-input {
+            width: 70%; /* Adjusted width */
+            padding: 10px;
+            border: 2px solid #ffffff80;
+            border-radius: 5px;
+            outline: none;
+            background-color: #333; /* Dark input field */
+            color: #ffffff; /* Light text color */
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .faq-search-btn {
+            background-color: #4caf50; /* Green background */
+            color: white; /* White text */
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin-left: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-search-btn:hover {
+            background-color: #5cb85c; /* Lighter green on hover */
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .faq-search {
+                flex-direction: column; /* Stack elements on smaller screens */
+            }
+
+            .faq-search-input {
+                width: 100%; /* Full width on small screens */
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
     <script>
-      function filterFAQs() {
-        const searchInput = document.querySelector('.faq-search-input').value.toLowerCase();
-        const accordionItems = document.querySelectorAll('.accordion-item');
+        function filterFAQs() {
+            const searchInput = document.getElementById('faq-search-input').value.toLowerCase();
+            const faqs = document.querySelectorAll('.accordion-item');
 
-        accordionItems.forEach(item => {
-          const headerText = item.querySelector('.accordion-button').textContent.toLowerCase();
-          const bodyText = item.querySelector('.accordion-body').textContent.toLowerCase();
-
-          if (headerText.includes(searchInput) || bodyText.includes(searchInput)) {
-            item.style.display = 'block';
-          } else {
-            item.style.display = 'none';
-          }
-        });
-      }
+            faqs.forEach(faq => {
+                const question = faq.querySelector('.accordion-button').textContent.toLowerCase();
+                faq.style.display = question.includes(searchInput) ? 'block' : 'none';
+            });
+        }
     </script>
-    <!-- <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="./assets/js/vendor/modernizr-3.7.1.min.js"></script>
-    <script src="./assets/js/main.js"></script>
-    <script src="./tools/smoothScroll.js"></script> -->
-    
-
-
-<!-- Feedback Section -->
-<div class="faq-feedback">
-    <h3 class="faq-title">Submit Your Feedback or Ask a New Question</h3>
-    
-    <form class="feedback-form" id="feedbackForm">
-        <div class="form-group">
-            <label for="userName">Your Name</label>
-            <input type="text" id="userName" class="form-input" placeholder="Enter your name" required>
-        </div>
-        <div class="form-group">
-            <label for="userEmail">Your Email</label>
-            <input type="email" id="userEmail" class="form-input" placeholder="Enter your email" required>
-        </div>
-        <div class="form-group">
-            <label for="userFeedback">Your Feedback / Question</label >
-            <textarea id="userFeedback" class="form-input" rows="5" placeholder="Enter your feedback or ask a question" required></textarea>
-        </div>
-        <div class="button-container">
-            <button type="submit" class="submit-btn">Submit Feedback</button>
-        </div>
-
-    </form>
-</div>
-<style>
-  /* Container styling */
-.faq-feedback {
-    border: 5px solid rgb(22, 23, 23);
-    background: linear-gradient(135deg, #b4a8f9, #8572f4);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    color: #fff;
-    max-width: 800px;
-    margin: 0 auto;
-    transition: transform 0.3s ease;
-}
-.faq-feedback:hover {
-    transform: scale(1.02);
-}
-
-/* Title styling */
-.faq-title {
-  padding-right: 60px;
-  margin-top: 15px;
-    font-size: 2.0em;
-    margin-bottom: 35px;
-    font-weight: bold;
-    text-align: center;
-    transition: color 0.3s ease;
-}
-.faq-title:hover {
-    color: #fffbeb;
-}
-
-/* Form styling */
-.feedback-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-/* Form group styling */
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Label styling */
-.form-group label {
-    font-size: 1em;
-    font-weight: bolder;
-    margin-bottom: 5px;
-    color: #fff;
-}
-
-/* Input field styling */
-.form-input {
-    padding: 10px;
-    font-size: 1em;
-    border: 2px solid #ffffff80;
-    border-radius: 5px;
-    outline: none;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-    background-color: #fef2f2;
-    color: #333;
-}
-
-.form-input:focus {
-    background-color: #f6b6a6;
-    color: whitesmoke;
-    font-weight: 700;
-    border-color: #f472b6;
-    box-shadow: 0 0 5px rgba(244, 114, 182, 0.4);
-}
-
-/* Button styling */
-.submit-btn {
-    
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 1em;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 8px rgba(236, 72, 153, 0.3);
-}
-
-.submit-btn:hover {
-    background-color: #db2777;
-    transform: translateY(-2px);
-}
-
-.submit-btn:active {
-    transform: translateY(0);
-    background-color: #be185d;
-}
-
-/* Button container styling */
-.button-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
-}
-
-</style>
+</body>
 
 
   <!-- Bootstrap JS and jQuery -->
@@ -905,7 +942,7 @@ body.dark-mode {
 
         /* Footer styles */
         .footer {
-            background-color: #333;
+            background-color: #007bff;
             color: white;
             padding: 40px 0;
             text-align: center;
@@ -966,11 +1003,30 @@ body.dark-mode {
         }
     </style>
 </head>
+
+</html>
+
 <body>
     <!-- Progress Bar
     <div class="progress-container">
-        <div class="progress-bar" id="myBar"></div>
-    </div> -->
+ rev/your-rev
+    </div>
+
+
+    
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 FinVeda. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    </div>
 
     <script>
       document.getElementById('feedbackForm').addEventListener('submit', function(event) {
@@ -987,6 +1043,7 @@ body.dark-mode {
   </script>
 
 
+ main
 
     <script>
         // Function to update the progress bar
@@ -1096,6 +1153,7 @@ body.dark-mode {
 
 
 
+
      <!-- Timed popup that will appear after succesful submission of feebback form! -->
      <button class="notification" id="successnotification" style="display:none;">
       <span class="message" id="successmsg">Submitted successfully!</span>
@@ -1134,7 +1192,7 @@ body.dark-mode {
     <div class="row" id="footer">
         <div class="col-lg-4 col-md-6 col-sm-8">
             <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-              <img src="./assets/images/l (2).png" alt="FinVeda Logo" style="height: 80px; width: auto; margin-bottom: 15px;" />
+              <img src="./assets/images/FinvedaLogo.png" alt="FinVeda Logo" style="height: 80px; width: auto; margin-bottom: 15px;" />
                 <p class="text custom-margin">
                     We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
                 </p>
@@ -1152,7 +1210,8 @@ body.dark-mode {
                         <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
                         <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
                         <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
-                    </ul>
+                        <li><a href="./blogs/sitemap.html"><i class="fa-solid fa-sitemap"></i> Site Map</a></li>
+                      </ul>
                 </div>
                 <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
                     <div class="footer-title">
@@ -1193,7 +1252,8 @@ body.dark-mode {
                         </div>
                     </li>
                     <li class="d-sm-flex justify-content-center">
-                        <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 12px; width: 10%;"></i>
+                        <!-- Modified: Inline CSS to adjust logo size and sync with other pages -->
+                        <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font: 12px; width: 10%;"></i>
                         <div style="width: 80%;">
                             <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
                                style="color:#fff">
@@ -1201,12 +1261,13 @@ body.dark-mode {
                             </a>
                         </div>
                     </li>
+                    <!-- Added: Social Media Redirects -->
                     <div class="social-icons">
-                      <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                      <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                      <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                      <a href="#"><i class="fa-brands fa-discord"></i></a>
-                      <a href="#"><i class="fa-brands fa-github"></i></a>
+                      <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                      <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                      <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
+                      <a href="https://discord.com/"><i class="fa-brands fa-discord"></i></a>
+                      <a href="https://github.com/ayush-that/FinVeda"><i class="fa-brands fa-github"></i></a>
                   </div>
                 </ul>
             </div>
