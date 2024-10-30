@@ -286,16 +286,22 @@ button {
   transition: background-color 0.3s; /* Smooth background change */
 }
 
+.course {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
 .course:hover {
-  transform: translateY(-5px); /* Lift effect on hover */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+    transform: translateY(-5px) scale(1.1); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); 
 }
 
 .course:hover button {
-  background-color: #e0e0e0; /* Light gray background on button hover */
+    background-color: #e0e0e0; 
+    transform: scale(1.05); 
+    transition: transform 0.3s ease; 
 }
 
-  </style>
+</style>
 
 
 <footer id="footer" class="footer-area pt-120">

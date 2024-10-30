@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <link rel="shortcut icon" href="./assets/images/favicon2.webp" type="image/png" />
   <link rel="shortcut icon" href="./assets/images/favicon2.png" type="image/png" />
   <link rel="stylesheet" href="./assets/css/animate.css" />
   <link rel="stylesheet" href="./assets/css/magnific-popup.css" />
@@ -167,30 +167,30 @@
                   </li>
                   <li class="nav-item">
                     <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
-                  </li>
+                  </li>  
                   <li class="nav-item">
                     <a class="page-scroll" href="./finance.html" style="color: rgb(237, 242, 244);">Courses 📚</a>
                   </li>
-                 
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
-                  </li>
+                  
                   <li class="nav-item">
                     <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
                   </li>
                   <li class="nav-item">
                     <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
                   </li>
-
+                   <!-- Dropdown for Explore -->
+                   <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
+                    <a class="page-scroll dropdown-toggle" href="#" style="color: rgb(237, 242, 244);">
+                      <span class="explore-text">Explore 📚</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a href="./trends.html">Trends 📈</a></li>
+                      <li><a href="./tools/sip.html">Tools 🔧</a></li>
+                      <li><a href="./blog.html">Blogs 📰</a></li>
+                      <li><a href="./quiz.html">Quiz 🤔</a></li>
+                      <li><a href="./maps.html">MAPS 🗺️</a></li>
+                    </ul>
+                  </li>
                   <li class="nav-item no-underline">
                     <a class="main-btn navbar-btn"
                       style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;"
@@ -226,6 +226,7 @@
                     toggleButton.textContent = '🌙';  // Dark mode icon
                     localStorage.setItem('theme', 'light');
                   }
+                  loadShow();
                 });
               </script>
               <div class="">
@@ -542,7 +543,8 @@
   </header>
 
   <div class="about-section" style="padding: 50px;">
-    <img style="position: absolute; top :200px;mix-blend-mode: multiply;left: 10px;" src="./assets/images/aboutgg.jpg" alt="photo">
+    <img style="position: absolute; top :200px;mix-blend-mode: multiply;left: 10px;" src="./assets/images/aboutgg.jpg" alt="photo">  
+    
     <div class="about-card" style="padding: 50px;">
         <h2 style="text-align: center; font-size: 3.5rem; margin-bottom: 40px; margin-top: 20px; color: rgb(79, 93, 251);">ABOUT US</h2>
         <div class="slider carousel">
@@ -699,8 +701,7 @@
     font-size: xxx-large;
     font-family: monospace;
     font-weight: bold;
-}
-
+} 
 #next {
     right: 400px;
 }
@@ -712,23 +713,28 @@
 </style>
 
 <script>
-  const items = document.querySelectorAll('.carousel-track .item');
+const items = document.querySelectorAll('.carousel-track .item');
 const next = document.getElementById('next');
 const prev = document.getElementById('prev');
-let activeIndex = 3;
+let activeIndex = 0; // Start at the first item
 
 function loadShow() {
     let offset = 0;
+    const isDarkMode = document.body.classList.contains('dark-mode'); // Check if dark mode is active
+
+    // Active item styling
     items[activeIndex].style.transform = `none`;
     items[activeIndex].style.zIndex = 1;
-    items[activeIndex].style.filter = 'none';
+    items[activeIndex].style.filter = isDarkMode ? 'brightness(1)' : 'none'; // Adjust filter for dark mode
     items[activeIndex].style.opacity = 1;
+
+    
 
     for (let i = activeIndex + 1; i < items.length; i++) {
         offset++;
         items[i].style.transform = `translateX(${120 * offset}px) scale(${1 - 0.2 * offset})`;
         items[i].style.zIndex = -offset;
-        items[i].style.filter = 'blur(5px)';
+        items[i].style.filter = 'blur(5px)';  
         items[i].style.opacity = offset > 2 ? 0 : 0.6;
     }
 
@@ -736,8 +742,8 @@ function loadShow() {
     for (let i = activeIndex - 1; i >= 0; i--) {
         offset++;
         items[i].style.transform = `translateX(${-120 * offset}px) scale(${1 - 0.2 * offset})`;
-        items[i].style.zIndex = -offset;
-        items[i].style.filter = 'blur(5px)';
+        items[i].style.zIndex = -offset; 
+        items[i].style.filter = 'blur(5px)'; 
         items[i].style.opacity = offset > 2 ? 0 : 0.6;
     }
 }
@@ -745,13 +751,13 @@ function loadShow() {
 loadShow();
 
 next.onclick = function () {
-    activeIndex = activeIndex + 1 < items.length ? activeIndex + 1 : activeIndex;
-    loadShow();
+  activeIndex = (activeIndex + 1) % items.length; // Wrap around to 0 if at the end
+  loadShow();
 };
 
 prev.onclick = function () {
-    activeIndex = activeIndex - 1 >= 0 ? activeIndex - 1 : activeIndex;
-    loadShow();
+  activeIndex = (activeIndex - 1 + items.length) % items.length; // Wrap around to the last item if at the beginning
+  loadShow();
 };
 
 </script>
@@ -916,7 +922,7 @@ prevButton.addEventListener('click', () => {
   <div id="good-card" >
       <div id="good-card1"  style="margin-right: 15px;">
         <h1 class="head">Grow with Arth</h1>
-          <div id="white-card1" style="padding: 20px; ">
+          <div id="white-card1" style="padding: 10px; ">
               Wanna learn how to grow your money to become rich? We have made becoming a stock market Guru easy with our AI
               powered finance advisor - Arth Sathi 🤵🏻
           </div>
@@ -932,8 +938,8 @@ prevButton.addEventListener('click', () => {
           <div id="round2">
               <!-- Add content or styles if needed -->
           </div>
-          <h1 class="head">Live Market Trends</h1>
-          <div id="white-card2" style="padding: 20px;">
+          <h1 class="head" id="card2">Live Market Trends</h1>
+          <div id="white-card2" style="padding: 10px;">
               FinVeda trends fetches live market figures, ensuring users access the most up-to-date information instantly.
               Be it stock prices, currency rates, or commodity values.
           </div>
@@ -943,8 +949,8 @@ prevButton.addEventListener('click', () => {
           <div id="shadow2"></div>
       </div>
       <div id="good-card3">
-        <h1 class="head">FinVeda Tools</h1>
-          <div id="white-card3" style="padding: 20px;">
+        <h1 class="head" id="card3">FinVeda Tools</h1>
+          <div id="white-card3" style="padding: 10px;">
               FinVeda tools provide a range of calculators like Mutual Fund Investment tool, EMI calculator, Insurance
               calculator, Savings Goods etc which would make your life easy.
           </div>
@@ -969,7 +975,7 @@ prevButton.addEventListener('click', () => {
   display: flex;
   justify-content: space-evenly;
   background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%); /* Soft gradient background */
-  padding: 40px; /* Increased padding for more spacing */
+  padding: 25px; /* Increased padding for more spacing */
   border-radius: 10px; /* Rounded corners */
   max-width: 1200px; /* Max width for centering */
   margin: 0 auto; /* Center the section */
@@ -1057,6 +1063,31 @@ prevButton.addEventListener('click', () => {
 #good-card1, #good-card2, #good-card3 {
   transition: box-shadow 0.4s ease; /* Keep shadow transition */
 }
+
+@media screen and (max-width: 768px) {
+  #good-card1,
+  #good-card2,
+  #good-card3 {
+    font-size: 12px;
+    padding-left: 20px;
+    text-align:center;
+  }
+
+  #card2{
+    font-size: 19px;
+    width: 130%;
+    text-align: center;
+  }
+  #card3{
+    font-size: 21px;
+    width: 110%;
+    text-align:center;
+  }
+  #white-card1, #white-card2, #white-card3 {
+    padding-left:4px;
+  }
+}
+
 
 </style>
 
@@ -1212,7 +1243,7 @@ prevButton.addEventListener('click', () => {
       </div>
     </div>
     <div class="footer-widget pb-100">
-      <div class="row" id="footer">
+      <div class="row" id="footer" >
         <div class="col-lg-4 col-md-6 col-sm-8">
           <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
             <!-- Updated the Page Logo -->
