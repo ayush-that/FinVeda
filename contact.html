@@ -320,8 +320,6 @@
     };
   </script>
 
-
-
   <div class="preloader">
     <div class="loader">
       <div class="ytp-spinner">
@@ -338,6 +336,7 @@
       </div>
     </div>
   </div>
+
   <header class="header-area">
     <!-- <div class="navbar-area"> -->
     <!-- <div class="container"> -->
@@ -763,172 +762,14 @@
       <div id="particles-1" class="particles"></div>
     </div>
   </header>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f8ff;
-      padding: 2rem;
-    }
 
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 2rem;
-      padding-bottom: 5%;
-    }
-
-    .contact-frame {
-      background-color: white;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      width: 100%;
-      max-width: 600px;
-      height: 650px;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-    }
-
-    .contact-frame:hover {
-      background-color: rgba(240, 240, 240, 0.7);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      transform: scale(1.02);
-    }
-
-    .info-frame {
-      border: 2px solid #0056b3;
-      padding: 1rem;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      width: 350px;
-      height: 312px;
-      text-align: center;
-      color: #0056b3;
-      margin-top: 50px;
-    }
-
-    .map-frame {
-      border-radius: 10px;
-      width: 350px;
-      height: 312px;
-      margin: 0 auto;
-    }
-
-    .info-map-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.5rem;
-      margin-left: 1rem;
-      padding-bottom: 3%;
-    }
-
-
-    h2 {
-      color: #0056b3;
-      text-align: center;
-      margin-bottom: 2.5rem;
-    }
-
-    .info-frame a {
-      color: #0056b3;
-      text-decoration: none;
-      margin-top: 20px;
-    }
-
-    .info-frame a:hover {
-      text-decoration: underline;
-    }
-
-    .contact-info-map-container {
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1.5rem;
-      padding-bottom: 10%;
-      padding-top: 2%;
-    }
-
-
-
-
-    input:hover,
-    textarea:hover {
-      border-color: #f48727;
-      box-shadow: 0 0 5px rgba(240, 135, 39, 0.5);
-      transform: scale(1.02);
-      transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #ff8c00;
-      transform: scale(1.05);
-      transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-
-    #info-frame {
-      transition: background-color 0.3s ease, transform 0.3s ease;
-      /* Smooth transition for background color and scaling */
-    }
-
-
-    #info-frame:hover {
-      background-color: rgba(240, 240, 240, 0.7);
-      /* Light grey background on hover */
-      transform: scale(1.02);
-      /* Slightly enlarges the element */
-    }
-
-
-
-    button:hover {
-      background-color: #ff8c00;
-      transform: scale(1.05);
-      transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-
-    #info-frame {
-      transition: background-color 0.3s ease, transform 0.3s ease;
-
-    }
-
-    #info-frame:hover {
-      background-color: rgba(240, 240, 240, 0.7);
-      transform: scale(1.02);
-    }
-
-    #info-frame a {
-      color: #0056b3;
-      transition: color 0.3s ease;
-    }
-
-    #info-frame a:hover {
-      color: #f48727;
-    }
-
-    #map-frame {
-      transition: transform 0.3s ease;
-    }
-
-    #map-frame:hover {
-      transform: scale(1.02);
-    }
-
-    .subscribe-form button:hover {
-      color: #fff;
-      background-position: right center;
-      transform: scale(0.95);
-    }
-  </style>
-
-  <!-- contact section -->
-  <div class="container-fluid">
+  <!-- Contact Section -->
+  <div class="container-fluid pt-10">
     <h2 class="text-center mb-4" style="color: #2cbc98; font-weight: bold; font-size:40px">Get in Touch</h2>
 
-    <div class="contact-info-map-container d-lg-flex rounded">
+    <div class="contact-info-map-container d-flex flex-column flex-lg-row rounded">
       <!-- Contact Form Column -->
-      <div class="contact-frame p-4 shadow-lg">
+      <div class="contact-frame p-4 shadow-lg mb-4 mb-lg-0 me-lg-3">
         <h3 class="text-center text-light mb-4">Contact Us</h3>
         <hr style="border-color: #0056b3;">
         <form class="contact-form mt-3" action="submit" method="POST">
@@ -947,7 +788,7 @@
           <textarea id="message" class="form-control mb-3" placeholder="Enter message" name="message"
             required></textarea>
 
-          <button type="submit" class="btn btn-primary btn-block font-weight-bold mt-3" style="width: 150px;">
+          <button type="submit" class="btn btn-block font-weight-bold mt-3 mx-auto" style="width: 150px;">
             Send Message
           </button>
         </form>
@@ -985,29 +826,20 @@
     </div>
   </div>
 
-
   <style>
-    /* Header Style */
-    .header {
-      text-align: center;
-      color: #0056b3;
-      margin-top: 20px;
-      font-size: 28px;
-    }
-
-    /* Container background and styling */
+    /* Contact Container Styles */
     .contact-info-map-container {
       width: 100%;
+      justify-content: center;
     }
 
     /* Contact Form Styling */
     .contact-frame {
-      background: linear-gradient(135deg,  #ff6f00, hsl(325, 100%, 45%));
+      background: linear-gradient(90deg, #135242, #2cbc98);
       color: #f1f1f1;
       border-radius: 20px;
-      border: 2px solid #2cbc98;
       max-width: 400px;
-      box-shadow: 0 6px 10px #ff6f00;
+      min-width: 300px;
     }
 
     .contact-form .form-control {
@@ -1021,7 +853,7 @@
     }
 
     .contact-form button {
-      background-color: #2cbc98;
+      background-color: #ff6f00;
       color: white;
       border-radius: 5px;
       font-weight: bold;
@@ -1029,52 +861,45 @@
     }
 
     .contact-form button:hover {
-      background-color: #2cbc98;
+      background-color: hsl(325, 100%, 45%);
       transform: scale(1.05);
     }
 
     /* Info and Social Media Links */
     .info-map-container {
-      background: linear-gradient(135deg, hsl(325, 100%, 45%), #ff6f00);
       border-radius: 20px;
       border: 2px solid #2cbc98;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      min-width: 300px;
+      max-width: 400px;
     }
 
     .info-frame {
-      background-color: #ffffff;
-      color: #333;
+      background: linear-gradient(135deg, hsl(325, 100%, 45%), #ff6f00);
       border-radius: 10px;
       padding: 20px;
-      max-width: 400px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
     .icon-link {
-      color: #2cbc98;
+      color: white;
       font-size: 1.5rem;
       margin-right: 1rem;
       transition: color 0.3s ease;
     }
 
-    .icon-link:hover {
-      color: hsl(325, 100%, 45%);
-    }
-    
-    .info-frame p{
-      color: #333;
-      text-align: left;
-    }
-
+    .info-frame p,
     .text-link {
-      color: #ff6f00;
+      color: white;
+      text-align: left;
       font-weight: bold;
       text-decoration: none;
       transition: color 0.3s ease;
     }
 
+    .icon-link:hover,
     .text-link:hover {
-      color: #2cbc98;
+      color: #333;
     }
 
     /* Map frame */
@@ -1094,19 +919,15 @@
       }
 
       .contact-frame,
-      .info-map-container {
-        width: 100%;
-        max-width: 90%;
-        margin-bottom: 20px;
-        padding: 10px;
-      }
-
+      .info-map-container,
       .map-frame {
         width: 100%;
         max-width: 90%;
+        padding: 10px;
       }
     }
   </style>
+
 
   <style>
     h2 {
