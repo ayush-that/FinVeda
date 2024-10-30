@@ -916,7 +916,7 @@ prevButton.addEventListener('click', () => {
   <div id="good-card" >
       <div id="good-card1"  style="margin-right: 15px;">
         <h1 class="head">Grow with Arth</h1>
-          <div id="white-card1" style="padding: 20px; ">
+          <div id="white-card1" style="padding: 10px; ">
               Wanna learn how to grow your money to become rich? We have made becoming a stock market Guru easy with our AI
               powered finance advisor - Arth Sathi 🤵🏻
           </div>
@@ -932,8 +932,8 @@ prevButton.addEventListener('click', () => {
           <div id="round2">
               <!-- Add content or styles if needed -->
           </div>
-          <h1 class="head">Live Market Trends</h1>
-          <div id="white-card2" style="padding: 20px;">
+          <h1 class="head" id="card2">Live Market Trends</h1>
+          <div id="white-card2" style="padding: 10px;">
               FinVeda trends fetches live market figures, ensuring users access the most up-to-date information instantly.
               Be it stock prices, currency rates, or commodity values.
           </div>
@@ -943,8 +943,8 @@ prevButton.addEventListener('click', () => {
           <div id="shadow2"></div>
       </div>
       <div id="good-card3">
-        <h1 class="head">FinVeda Tools</h1>
-          <div id="white-card3" style="padding: 20px;">
+        <h1 class="head" id="card3">FinVeda Tools</h1>
+          <div id="white-card3" style="padding: 10px;">
               FinVeda tools provide a range of calculators like Mutual Fund Investment tool, EMI calculator, Insurance
               calculator, Savings Goods etc which would make your life easy.
           </div>
@@ -969,7 +969,7 @@ prevButton.addEventListener('click', () => {
   display: flex;
   justify-content: space-evenly;
   background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%); /* Soft gradient background */
-  padding: 40px; /* Increased padding for more spacing */
+  padding: 25px; /* Increased padding for more spacing */
   border-radius: 10px; /* Rounded corners */
   max-width: 1200px; /* Max width for centering */
   margin: 0 auto; /* Center the section */
@@ -1057,6 +1057,31 @@ prevButton.addEventListener('click', () => {
 #good-card1, #good-card2, #good-card3 {
   transition: box-shadow 0.4s ease; /* Keep shadow transition */
 }
+
+@media screen and (max-width: 768px) {
+  #good-card1,
+  #good-card2,
+  #good-card3 {
+    font-size: 12px;
+    padding-left: 20px;
+    text-align:center;
+  }
+
+  #card2{
+    font-size: 19px;
+    width: 130%;
+    text-align: center;
+  }
+  #card3{
+    font-size: 21px;
+    width: 110%;
+    text-align:center;
+  }
+  #white-card1, #white-card2, #white-card3 {
+    padding-left:4px;
+  }
+}
+
 
 </style>
 
