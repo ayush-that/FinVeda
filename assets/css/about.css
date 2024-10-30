@@ -1,7 +1,11 @@
 :root{
     --slider-dark:rgba(255,255,255,0.5);
+    --blur-value: 5px;
 }
-
+ 
+.dark-mode {
+  --blur-value: 3px;
+}
 .main{
     width: 100%;
     height: auto;
@@ -460,6 +464,26 @@ body.dark-mode {
     background-color: #e333;
     color: #fff;
     border: 1px solid #444;
+  }
+  body.dark-mode .carousel-btn { 
+    color: #fff;
+    position: absolute;
+    top: 40%; 
+    background-color: transparent;
+    border: none;
+    font-size: xxx-large;
+    font-family: monospace;
+    font-weight: bold;
+  }
+  body.dark-mode .carousel-btn:hover { 
+    color: #fff;
+    position: absolute;
+    top: 40%; 
+    background-color: black;
+    border: none;
+    font-size: xxx-large;
+    font-family: monospace;
+    font-weight: bold;
   }
 
   body.dark-mode .pagination button:hover {
