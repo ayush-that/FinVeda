@@ -8,8 +8,7 @@
   <meta name="description" content="Explore insightful trends and analyses in finance and economics on FinVeda's Trends page. Discover curated content and data-driven insights to stay informed." />
   <meta name="author" content="Ayush Singh">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="shortcut icon"  href="./assets/images/favicon2.png" type="image/png" />
-  <link rel="shortcut icon" href="./assets/images/favicon2.webp" type="image/png" />
+  <link rel="shortcut icon"  href="/assets/images/favicon2.webp" type="image/png" />
     <link rel="stylesheet"  href="./assets/css/animate.css" />
     <link rel="stylesheet"  href="./assets/css/magnific-popup.css" />
     <link rel="stylesheet"  href="./assets/css/slick.css" />
@@ -166,39 +165,37 @@ body.dark-mode {
           <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
             <div class="icon1">
               <a href="./index.html">
-              <img src="./assets/images/l (2).png" alt="icon.png">
+                <img src="./assets/images/FinvedaLogo.png" alt="icon.png" style="width: 13rem;">
               </a>
             </div> 
             <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
               <li class="nav-item">
-                <a class="page-scroll active-link" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
+                <a class="page-scroll" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
               </li>
               <li class="nav-item">
                 <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
-              </li>    
-              <li class="nav-item">
-                <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
-              </li>
+              </li>     
               <li class="nav-item">
                 <a class="page-scroll" href="./finance.html" style="color: rgb(237, 242, 244);">Courses 📚</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="./careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
-              </li>
+              </li> 
               <li class="nav-item">
                 <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
               </li>
               <li class="nav-item">
                 <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
+              </li>
+              <!-- Dropdown for Explore -->
+              <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
+                <a class="page-scroll dropdown-toggle" href="#" style="color: rgb(237, 242, 244);">
+                  <span class="explore-text">Explore 📚</span> 
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="./trends.html">Trends 📈</a></li>
+                  <li><a href="./tools/sip.html">Tools 🔧</a></li>
+                  <li><a href="./blog.html">Blogs 📰</a></li>
+                  <li><a href="./quiz.html">Quiz 🤔</a></li>
+                  <li ><a href="./maps.html" >MAPS 🗺️</a></li>
+                </ul>
               </li>
               <li class="nav-item no-underline">
                 <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
@@ -212,7 +209,7 @@ body.dark-mode {
           </div>
 
           <script>
-            var toggleButton = document.getElementById('theme-toggle');
+            const toggleButton = document.getElementById('theme-toggle');
             var body = document.body;
             var currentTheme = localStorage.getItem('theme');
 
@@ -317,27 +314,27 @@ background-color: #ddd; /* Button hover color in dark mode */
           <div class="mobile-menu__trigger"><span></span></div>
         </nav>
         <script>
-          var toggleButton = document.getElementById('theme-toggle2');
+          const toggleBtn = document.getElementById('theme-toggle2');
           var body = document.body;
           var currentTheme = localStorage.getItem('theme');
 
           if (currentTheme === 'dark') {
           body.classList.add('dark-mode');
-          toggleButton.classList.add('dark');
-          toggleButton.textContent = '🌞';
+          toggleBtn.classList.add('dark');
+          toggleBtn.textContent = '🌞';
           }
-
-          toggleButton.addEventListener('click', function () {
+          
+          toggleBtn.addEventListener('click', function () {
           body.classList.toggle('dark-mode');
-          toggleButton.classList.toggle('dark');
-
+          toggleBtn.classList.toggle('dark');
+          
           // Update button icon based on mode
           if (body.classList.contains('dark-mode')) {
-          toggleButton.textContent = '🌞';  // Light mode icon
-          localStorage.setItem('theme', 'dark');
+            toggleBtn.textContent = '🌞';  // Light mode icon
+            localStorage.setItem('theme', 'dark');
           } else {
-          toggleButton.textContent = '🌙';  // Dark mode icon
-          localStorage.setItem('theme', 'light');
+            toggleBtn.textContent = '🌙';  // Dark mode icon
+            localStorage.setItem('theme', 'light');
           }
           });
       </script>
@@ -443,6 +440,7 @@ background-color: #ddd; /* Button hover color in dark mode */
     <div class="market-card-container-unique" id="marketStatusContainerUnique"></div>
   </div>
 </section>
+  <div class="container-main">
 
   <div class="container" ><br><br>
     <!-- TradingView Widget BEGIN -->
@@ -543,7 +541,8 @@ background-color: #ddd; /* Button hover color in dark mode */
       <!-- TradingView Widget END -->
     </div>
   </div>
-  
+      
+</div>
   <!-- Timed popup that will appear after succesful submission of feebback form! -->
       <button class="notification" id="successnotification" style="display:none;">
         <span class="message" id="successmsg">Submitted successfully!</span>
@@ -583,7 +582,7 @@ background-color: #ddd; /* Button hover color in dark mode */
       <div class="row" id="footer">
           <div class="col-lg-4 col-md-6 col-sm-8">
               <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                <img src="./assets/images/l (2).png" alt="FinVeda Logo" style="height: 80px; width: auto; margin-bottom: 15px;" />
+                <img src="./assets/images/FinvedaLogo.png" alt="FinVeda Logo" style="height: 80px; width: auto; margin-bottom: 15px;" />
                   <p class="text custom-margin">
                       We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
                   </p>
@@ -601,7 +600,8 @@ background-color: #ddd; /* Button hover color in dark mode */
                           <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
                           <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
                           <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
-                      </ul>
+                          <li><a href="./blogs/sitemap.html"><i class="fa-solid fa-sitemap"></i> Site Map</a></li>
+                        </ul>
                   </div>
                   <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
                       <div class="footer-title">
@@ -642,7 +642,8 @@ background-color: #ddd; /* Button hover color in dark mode */
                           </div>
                       </li>
                       <li class="d-sm-flex justify-content-center">
-                          <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 12px; width: 10%;"></i>
+                          <!-- Modified: Inline CSS to adjust logo size and sync with other pages -->
+                          <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font: 12px; width: 10%;"></i>
                           <div style="width: 80%;">
                               <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
                                  style="color:#fff">
@@ -650,12 +651,13 @@ background-color: #ddd; /* Button hover color in dark mode */
                               </a>
                           </div>
                       </li>
+                      <!-- Added: Social Media Redirects -->
                       <div class="social-icons">
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-discord"></i></a>
-                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://discord.com/"><i class="fa-brands fa-discord"></i></a>
+                        <a href="https://github.com/ayush-that/FinVeda"><i class="fa-brands fa-github"></i></a>
                     </div>
                   </ul>
               </div>

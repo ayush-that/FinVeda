@@ -6,7 +6,7 @@
   <title>Refund Policy - FinVeda</title>
   <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="shortcut icon" href="../assets/images/favicon2.png" type="image/png" />
+  <link rel="shortcut icon" href="/assets/images/favicon2.webp" type="image/png" />
   <link rel="stylesheet" href="../assets/css/animate.css" />
   <link rel="stylesheet" href="../assets/css/magnific-popup.css" />
   <link rel="stylesheet" href="../assets/css/slick.css" />
@@ -16,6 +16,8 @@
   <link rel="stylesheet" href="../assets/css/default.css" />
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/popup.css" />
+  <!-- Linked CSS for social logos -->
+  <link rel="stylesheet" href="../assets/css/index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
   <style>
@@ -302,9 +304,9 @@ body {
         <div class="col-lg-12">
           <nav class="navbar navbar-expand-lg">
             <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-              <a href="./index.html">
+              <a href="../index.html">
                 <div class="icon1">
-                  <img src="../assets/images/icon.webp" alt="icon.png">
+                  <img src="../assets/images/FinvedaLogo.png" alt="icon.png" style="margin-top: -6px;">
                 </div>
               </a>
               <ul id="nav" class="navbar-nav">
@@ -563,6 +565,123 @@ body {
 </div>
 
 <style>
+  /* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap');
+
+/* Base styles for the blog content */
+.blog-content {
+    max-width: 1400px;
+    margin: auto;
+    padding: 30px;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background effect */
+.blog-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(241, 196, 15, 0.1), rgba(230, 126, 34, 0.1));
+    z-index: 0;
+    border-radius: 10px;
+}
+
+/* Header styles */
+.header h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: #e67e22;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Last update date styles */
+.Lastupdate {
+    text-align: center;
+    font-style: italic;
+    color: #7f8c8d;
+    z-index: 1;
+    position: relative;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
+
+/* Card styles */
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(241, 196, 15, 0.5), 0 0 30px rgba(241, 196, 15, 0.3);
+    margin-bottom: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    z-index: 1;
+}
+
+/* Hover effect for cards */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(241, 196, 15, 0.7), 0 0 40px rgba(241, 196, 15, 0.4);
+}
+
+/* Paragraph styles */
+p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Custom list styles */
+ul.ps-4.ms-4 {
+    list-style: circle;
+    font-size: 1em;
+    color: #333;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+    position: relative;
+    color: #e74c3c;
+}
+
+li::before {
+    content: '✓';
+    color: #e67e22;
+    position: absolute;
+    left: -20px;
+}
+
+/* Heading styles for bolded text */
+strong {
+    font-weight: 700;
+    color: #e74c3c;
+}
+
+/* Italics for emphasis */
+i {
+    color: #2980b9;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .blog-content {
+        padding: 15px;
+    }
+}
+
+</style>
+
+<!-- <style>
     .blog-content {
         text-align: left;
         margin-left: auto;
@@ -581,7 +700,7 @@ body {
         transform: scale(1.02);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
-</style>
+</style> -->
   
 <!-- Timed popup that will appear after succesful submission of feebback form! -->
     <button class="notification" id="successnotification" style="display:none;">
@@ -590,126 +709,136 @@ body {
       <div class="timerline" id="timerline"></div>
     </button>
 
-    
-  <footer id="footer" class="footer-area pt-120">
-    <div class="container">
-      <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="subscribe-content mt-45">
-              <h2 class="subscribe-title">
-                Subscribe Our Newsletter <span>get regular updates</span>
-              </h2>
+    <footer id="footer" class="footer-area pt-120">
+      <div class="container">
+        <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="subscribe-content mt-45">
+                <h2 class="subscribe-title">
+                  Subscribe Our Newsletter <span>get regular updates</span>
+                </h2>
+              </div>
             </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="subscribe-form mt-50">
-              <form id="unique-subscribe-form">
-                <input type="email" id="unique-news-email" placeholder="Enter Email" required/>
-                <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
-              </form>
-              <div id="unique-message" class="unique-popup-message" style="display: none;">
-                <div class="border-animation"></div>
-                Thank You for the subscription!
+            <div class="col-lg-6">
+              <div class="subscribe-form mt-50">
+                <form id="unique-subscribe-form">
+                  <input type="email" id="unique-news-email" placeholder="Enter Email" required/>
+                  <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
+                </form>
+                <div id="unique-message" class="unique-popup-message" style="display: none;">
+                  <div class="border-animation"></div>
+                  Thank You for the subscription!
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <script>
-      document.getElementById('unique-subscribe-form').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent form from submitting normally
-    
-        // Show popup message
-        var messageDiv = document.getElementById('unique-message');
-        messageDiv.style.display = 'block';
-        
-        // Reset existing animation
-        var borderAnimationDiv = messageDiv.querySelector('.border-animation');
-        borderAnimationDiv.style.animation = 'none';
-        borderAnimationDiv.offsetHeight; // Trigger reflow to restart the animation
-        borderAnimationDiv.style.animation = 'borderAnimation 3s linear forwards';
-    
-        // Hide popup message after 10 seconds
-        setTimeout(function() {
-          messageDiv.style.display = 'none';
-        }, 3000); // 10 seconds
-    
-        // Reset form
-        this.reset();
-      });
-    </script>
-    
+             
       <div class="footer-widget pb-100">
         <div class="row" id="footer">
-          <div class="col-lg-4 col-md-6 col-sm-8">
-            <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-              <p class="text">
-                We at FinVeda aim to make you a stock market Guru easy with our AI powered teaching and financial blogs.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-5 col-md-7 col-sm-7">
-            <div class="footer-link d-flex mt-50 justify-content-md-between" style="justify-content: space-around !important;">
-              <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-                <div class="footer-title">
-                  <h4 class="title">Quick Link</h4>
+            <div class="col-lg-4 col-md-6 col-sm-8">
+                <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                    <p class="text custom-margin">
+                        We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
+                    </p>
                 </div>
-                <ul class="link">
-                  <li><a href="./privacy-policy.html">Privacy Policy</a></li>
-                  <li><a href="./refund-policy.html">Refund Policy</a></li>
-                  <li><a href="/Licensing.html">Licensing</a></li>
-                  <li><a href="./terms-of-service.html">Terms of Service</a></li>
-                  <li><a href="/contributors.html">Our Contributors</a></li>
-                </ul>
-              </div>
-              <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
-                <div class="footer-title">
-                  <h4 class="title">Resources</h4>
+            </div>
+            <div class="col-lg-5 col-md-7 col-sm-7">
+                <div class="footer-link d-flex mt-50 justify-content-md-between" style="justify-content: space-around !important;">
+                    <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+                        <div class="footer-title">
+                            <h3 class="title custom-margin">Quick Links</h3>
+                        </div>
+                        <ul class="link custom-margin">
+                            <li><a href="./privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+                            <li><a href="./refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
+                            <li><a href="../Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
+                            <li><a href="./terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+                            <li><a href="../contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+                        <div class="footer-title">
+                            <h4 class="title custom-margin">Resources</h4>
+                        </div>
+                        <ul class="link custom-margin">
+                            <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                            <li><a href="../about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                            <li><a href="../trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
+                            <li><a href="../tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
+                            <li><a href="../blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                            <li><a href="../quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <ul class="link">
-                  <li><a href="/index.html">Home</a></li>
-                  <li><a href="/about.html">About Us</a></li>
-                  <li><a href="/trends.html">Trends</a></li>
-                  <li><a href="/tools/sip.html">Tools</a></li>
-                  <li><a href="/blog.html">Blog</a></li>
-                  <li><a href="/quiz.html">Quiz</a></li>
-                </ul>
-              </div>
             </div>
-          </div>
-          <div class="col-lg-3 col-md-5 col-sm-5">
-            <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-              <div class="footer-title">
-                <h4 class="title">Contact Us</h4>
-              </div>
-              <ul class="contact custom-margin">
-                <li class="d-sm-flex justify-content-center">
-                  <i class="fa fa-envelope d-sm-flex align-items-center white" style="font: size 16px; width: 10%;"></i>
-                  <p style="width: 80%;">
-                    <a href="mailto:ayush1337@hotmail.com" target="_blank"
-                      style="color: white; text-decoration: underline;">ayush1337@hotmail.com</a>
-                  </p>
-                </li>
-                <li class="d-sm-flex justify-content-center">
-                  <i class="fa fa-globe d-sm-flex align-items-center white" style="font: size 16px; width: 10%;"></i>
-                  <div style="width: 80%;"><a href="https://fin-veda.vercel.app/index.html" target="_blank"
-                      style="color: #fff;">fin-veda.vercel.app</a></div>
-                </li>
-                <li class="d-sm-flex justify-content-center">
-                  <i class="fa fa-location-dot d-sm-flex align-items-center white"
-                    style="font: size 12px; width: 10%;"></i>
-                  <div style="width: 80%;"><a
-                      href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
-                      style="color:#fff">
-                      Delhi, India</a></div>
-                </li>
-              </ul>
+            <div class="col-lg-3 col-md-5 col-sm-5">
+                <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                    <div class="footer-title">
+                        <h4 class="title custom-margin">Contact Us</h4>
+                    </div>
+                    <ul class="contact custom-margin-big" style="justify-content: space-around;">
+                        <li class="d-sm-flex justify-content-center">
+                            <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                            <p style="width: 80%;">
+                                <a href="mailto:ayush1337@hotmail.com" target="_blank"
+                                   style="color: white; text-decoration: underline;">
+                                    ayush1337@hotmail.com
+                                </a>
+                            </p>
+                        </li>
+                        <li class="d-sm-flex justify-content-center">
+                            <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                            <div style="width: 80%;">
+                                <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
+                                    fin-veda.vercel.app
+                                </a>
+                            </div>
+                        </li>
+                        <li class="d-sm-flex justify-content-center">
+                            <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 12px; width: 10%;"></i>
+                            <div style="width: 80%;">
+                                <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
+                                   style="color:#fff">
+                                    Delhi, India
+                                </a>
+                            </div>
+                        </li>
+                        <li id="social_icons" class="d-sm-flex justify-content-evenly my-3">
+                          <div style="width: 100%; display:flex; ">
+                            <!-- Instagram Icon -->
+                            <a href="https://instagram.com" target="_blank" style="margin: 0 10px; color: #E4405F;" aria-label="Instagram">
+                              <i style="font-size: 25px" class="fa-brands fa-instagram"></i>
+                            </a>
+                        
+                            <!-- Facebook Icon -->
+                            <a href="https://facebook.com" target="_blank" style="margin: 0 10px; color: #4267B2;" aria-label="Facebook">
+                              <i style="font-size: 25px" class="fa-brands fa-facebook"></i>
+                            </a>
+                        
+                            <!-- X/Twitter Icon -->
+                            <a href="https://twitter.com" target="_blank" style="margin: 0 10px; color: #1DA1F2;" aria-label="Twitter">
+                              <i style="font-size: 25px" class="fa-brands fa-x-twitter"></i>
+                            </a>
+                        
+                            <!-- Discord Icon -->
+                            <a href="https://discord.com" target="_blank" style="margin: 0 10px; color: #7289DA;" aria-label="Discord">
+                              <i style="font-size: 25px" class="fa-brands fa-discord"></i>
+                            </a>
+                        
+                            <!-- GitHub Icon -->
+                            <a href="https://github.com" target="_blank" style="margin: 0 10px; color: #333;" aria-label="GitHub">
+                              <i style="font-size: 25px" class="fa-brands fa-github"></i>
+                            </a>
+                          </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
+    </div>
       <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center">
         <div class="row">
           <div class="col-lg-12">
@@ -734,9 +863,12 @@ body {
           </div>
         </div>
       </div>
+      
     </div>
     <div id="particles-2"></div>
   </footer>
+
+
   <script>document.getElementById("copyright-year").textContent = new Date().getFullYear();</script>
   <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
 
