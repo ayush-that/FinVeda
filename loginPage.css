@@ -113,17 +113,31 @@ form.sign-in-form {
   align-items: center;
 }
 
+
+.social-icon-frame {
+  display: inline-flex; 
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #333;
+  border-radius: 50%; 
+  padding: 15px; 
+  margin: 5px; 
+  background-color: transparent; 
+  width: 45px; 
+  height: 45px; 
+  transition: transform 0.3s; 
+}
+
+.social-icon-frame:hover {
+  transform: scale(1.05); 
+}
+
 .social-icon {
-  margin: 0 10px;
+  font-size: 22px; 
+  color: inherit; 
+  transition: none; 
 }
 
-.social-icon i {
-  transition: transform 0.2s ease-in-out;
-}
-
-.social-icon:hover i {
-  transform: scale(1.1);
-}
 
 .btn {
   width: 150px;
@@ -447,4 +461,51 @@ form.sign-in-form {
 
 .forgot-password a:hover {
   color: blue;
+}
+
+.input-field {
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.input-field input {
+  
+  padding: 10px;
+  flex-grow: 1;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-field:hover {
+  transform: scale(1.05);
+}
+
+.input-field input:focus {
+
+  outline: 
+  none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+
+}
+
+.btn {
+  transition: transform 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.social-icons a {
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.1);
+}
+
+.social-icons a {
+  margin: 0 10px;
+  display: inline-block;
 }
