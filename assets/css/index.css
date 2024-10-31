@@ -745,7 +745,7 @@ margin-bottom: 5px;
 body {
   margin: 0;
   height: 100%;
-
+}
 .bubble {
   position: absolute;
  
@@ -789,3 +789,47 @@ body {
   animation-delay: 1.5s;
 }
 
+/* Centering and styling the section title */
+.section-title {
+  margin: auto;
+  text-align: center;
+}
+
+.line {
+  width: 65%;
+  height: 3px;
+  background-color: #2f6be5;
+  margin: 0 auto;
+}
+
+/* Animation for left-to-right and right-to-left slide */
+@keyframes slideFromLeft {
+  from {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes slideFromRight {
+  from {
+      transform: translateX(100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+/* Applying animations to specific classes */
+.animated-post.left-slide {
+  animation: slideFromLeft 0.8s ease-in-out;
+}
+
+.animated-post.right-slide {
+  animation: slideFromRight 0.8s ease-in-out;
+}
