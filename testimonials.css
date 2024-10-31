@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+body main {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  background-color: hsl(210, 46%, 95%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 4rem 1.7rem;
+}
+body main .container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: max(1.9vw, 1.5rem);
+  width: max(80vw, 60rem);
+}
+body main .container .card {
+  padding: max(2.2vw, 1.5rem);
+  border-radius: 10px;
+}
+body main .container .card.card-1, body main .container .card.card-4 {
+  grid-column: span 2/span 2;
+}
+body main .container .card.card-5 {
+  grid-row: 1/span 2;
+  grid-column: 4;
+}
+body main .container .card .heading {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  position: relative;
+}
+body main .container .card .heading .img-wrapper {
+  position: relative;
+  width: 2.2rem;
+  height: 2.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main .container .card .heading .img-wrapper .border {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  border-radius: 50%;
+  opacity: 50%;
+}
+body main .container .card .heading .img-wrapper img {
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  position: relative;
+  z-index: 10;
+}
+body main .container .card .heading .text h1,
+body main .container .card .heading .text h2 {
+  margin-block: 0;
+  font-weight: 400;
+}
+body main .container .card .heading .text h1 {
+  font-size: 0.9rem;
+}
+body main .container .card .heading .text h2 {
+  font-size: 0.8rem;
+  opacity: 50%;
+}
+body main .container .card .main {
+  position: relative;
+}
+body main .container .card .main h3 {
+  font-weight: 500;
+}
+body main .container .card .desc p {
+  opacity: 70%;
+  font-size: 0.9rem;
+}
+body main .container .card.card-1 {
+  background-color: hsl(263, 55%, 52%);
+  color: hsl(0, 0%, 100%);
+  position: relative;
+}
+body main .container .card.card-1 .heading .img-wrapper .border {
+  background-color: hsl(0, 0%, 100%);
+}
+body main .container .card.card-1::before {
+  content: "";
+  background-image: url("https://raw.githubusercontent.com/khatri2002/testimonials-grid-section/e8e46d2c6e99c1e65142988a356eedd01037133d/images/bg-pattern-quotation.svg");
+  position: absolute;
+  width: 7rem;
+  height: 7rem;
+  background-size: 7rem 7rem;
+  top: 0;
+  right: 5.5vw;
+}
+body main .container .card.card-2 {
+  background-color: hsl(217, 19%, 35%);
+  color: hsl(0, 0%, 100%);
+}
+body main .container .card.card-3, body main .container .card.card-5 {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(217, 19%, 35%);
+}
+body main .container .card.card-4 {
+  background-color: hsl(219, 29%, 14%);
+  color: hsl(0, 0%, 100%);
+}
+body main .container .card.card-4 .heading .img-wrapper .border {
+  background-color: hsl(263, 55%, 52%);
+}
+@media screen and (width <= 768px) {
+  body main .container {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  body main .container .card.card-1, body main .container .card.card-4 {
+    grid-column: auto;
+  }
+  body main .container .card.card-5 {
+    grid-row: auto;
+    grid-column: auto;
+  }
+  body main .container .card .main h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/*# sourceMappingURL=testimonials.css.map */
