@@ -21,7 +21,13 @@
   <!-- Linked CSS for social logos -->
   <link rel="stylesheet" href="../assets/css/index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <style>
+    /* Specific rule for h1 in light mode */
+    body:not(.dark) h1 {
+       color: black !important; 
+     }
 
+  </style>
 <body>
   <div id="progressBar"></div>
   <div class="circle-container">
@@ -489,12 +495,15 @@
       </div>
     </header>
 
-    <div class="content min-h-screen text-black dark:text-gray-200">
-      <div class="container mx-auto py-8">
-        <h1 class="text-center text-3xl font-semibold mb-8">🤝 FinVeda - Contributors</h1>
-        <div id="contributors" class="contributors flex flex-wrap justify-center gap-8"></div>
-      </div>
-    </div>
+<div class="content min-h-screen text-black dark:text-gray-200">
+  <div class="container mx-auto py-8">
+    <h1 class="text-center text-3xl font-semibold mb-8 text-black dark:text-gray-200">
+    🤝 FinVeda - Contributors
+   </h1>
+
+    <div id="contributors" class="contributors flex flex-wrap justify-center gap-8"></div>
+  </div>
+</div>
     <!-- Timed popup that will appear after succesful submission of feebback form! -->
     <button class="notification" id="successnotification" style="display:none;">
       <span class="message" id="successmsg">Submitted successfully!</span>
