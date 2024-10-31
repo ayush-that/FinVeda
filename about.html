@@ -508,141 +508,396 @@
     </div>
   </header>
 
-  <div class="container about-section py-5 my-md-5">
-    <div class="text-center my-5">
-      <h2 class="display-4 fw-bold text-primary">ABOUT US</h2>
-    </div>
-
-    <div id="aboutCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <!-- Carousel Item 1 -->
-        <div class="carousel-item active">
-          <div class="card h-100 shadow-sm bg-light-mode dark-mode">
-            <img src="./assets/images/service-logo.webp" class="card-img-top" alt="Financial Kit">
-            <div class="card-body">
-              <h5 class="card-title">Financial Kit</h5>
-              <p class="card-text">We offer investment tips and strategies, and current economic trends. With our SIP
-                and PPF tools, you'll discover the power of compounding for smart savings.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Carousel Item 2 -->
-        <div class="carousel-item">
-          <div class="card h-100 shadow-sm bg-light-mode dark-mode">
-            <img src="./assets/images/service-logo3.webp" class="card-img-top" alt="Stock Market">
-            <div class="card-body">
-              <h5 class="card-title">Stock Market</h5>
-              <p class="card-text">Make smarter decisions by staying updated with real-time market data. FinVeda’s AI
-                assistant, Arth Sathi, simplifies financial learning.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Carousel Item 3 -->
-        <div class="carousel-item">
-          <div class="card h-100 shadow-sm bg-light-mode dark-mode">
-            <img src="./assets/images/service-logo2.webp" class="card-img-top" alt="Our Team">
-            <div class="card-body">
-              <h5 class="card-title">Our Team</h5>
-              <p class="card-text">Our AI-powered resources and financial blogs make complex concepts easy to understand
-                for readers of all backgrounds.</p>
-            </div>
-          </div>
-        </div>
-        <!-- carousel item 4 -->
-        <div class="carousel-item">
-          <div class="card h-100 shadow-sm bg-light-mode dark-mode">
-            <img src="./assets/images/images.png" class="card-img-top" alt="Crypto Insights">
-            <div class="card-body">
-              <h5 class="card-title">Crypto Insights</h5>
-              <p class="card-text">Stay ahead with the latest crypto trends and analyses to navigate the evolving
-                market.</p>
-            </div>
-          </div>
-        </div>
-        <!-- carousel item 5 -->
-        <div class="carousel-item">
-          <div class="card h-100 shadow-sm bg-light-mode dark-mode">
-            <img src="./assets/images/retirement.jpeg" class="card-img-top" alt="Retirement Planning">
-            <div class="card-body">
-              <h5 class="card-title">Retirement Planning</h5>
-              <p class="card-text">Prepare for a secure future with our comprehensive retirement planning resources.</p>
-            </div>
-          </div>
-        </div>
-        <!-- carousel item 6 -->
-        <div class="carousel-item">
-          <div class="card h-100 shadow-sm bg-light-mode dark-mode">
-            <img src="./assets/images/tax.jpg" class="card-img-top" alt="Tax Planning">
-            <div class="card-body">
-              <h5 class="card-title">Tax Planning</h5>
-              <p class="card-text">Learn about deductions and exemptions to optimize your tax strategy effectively.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Carousel Controls -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#aboutCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#aboutCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      </button>
-    </div>
-  </div>
-
   <style>
-    /* General About Section Styling */
     .about-section {
-      background-color: var(--background-color, #f8f9fa);
-      color: var(--text-color, #333);
+      background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+      padding: 6rem 1rem;
+      font-family: system-ui, -apple-system, sans-serif;
     }
 
-    /* Card Styling */
-    .card {
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .title-container {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      -webkit-background-clip: text;
+      color: transparent;
+      margin: 0;
+    }
+
+    .title-underline {
+      width: 6rem;
+      height: 4px;
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      margin: 1rem auto;
+      border-radius: 2px;
+    }
+
+    .carousel-wrapper {
+      position: relative;
       overflow: hidden;
-      transition: transform 0.2s ease-in-out;
+      padding: 1rem 0;
+    }
+
+    .carousel {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 100%;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;  /* Firefox */
+    }
+
+    .carousel::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera */
+    }
+
+    .slide {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      padding: 0 1rem;
+    }
+
+    @media (max-width: 1024px) {
+      .slide {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .slide {
+        grid-template-columns: 1fr;
+      }
+      
+      .section-title {
+        font-size: 2.5rem;
+      }
+    }
+
+    .card {
+      background: white;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+                  0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s ease-in-out;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
     }
 
     .card:hover {
-      background-color: cadetblue;
-      color: #333;
+      transform: translateY(-8px);
+    }
+
+    .card-image-wrapper {
+      padding: 1rem;
+      background: #f8f9fa;
+      aspect-ratio: 16/9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .card-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .card:hover .card-image {
+      transform: scale(1.05);
+    }
+
+    .card-content {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
     }
 
     .card-title {
-      font-weight: bold;
-      font-size: 2.5rem;
-      color: #ff9500;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 0 0 1rem 0;
     }
 
-    .card-img-top {
-      height: 200px;
-      object-fit: contain;
-      padding: 15px;
-      transition: transform 0.2s ease-in-out;
+    .card-text {
+      color: #4b5563;
+      line-height: 1.6;
+      margin: 0;
+      flex-grow: 1;
     }
 
-    .card-img-top:hover {
-      transform: translateY(-10px);
-    }
-
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
+    .carousel-control {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 3rem;
+      height: 3rem;
       border-radius: 50%;
+      background: white;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      transition: all 0.2s ease-in-out;
+      z-index: 10;
     }
 
-    /* Dark Mode Support */
-    .dark-mode {
-      background-color: #343a40;
-      color: #f8f9fa;
+    .carousel-control:hover {
+      background: #f8f9fa;
+      transform: translateY(-50%) scale(1.1);
     }
 
-    /* Dynamic Dark Mode */
-    body.dark-mode .about-section {
-      background-color: #343a40;
-      color: #f8f9fa;
+    .carousel-control:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .carousel-control.prev {
+      left: 1rem;
+    }
+
+    .carousel-control.next {
+      right: 1rem;
+    }
+
+    .carousel-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+    }
+
+    .indicator {
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background: #d1d5db;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .indicator.active {
+      width: 1.5rem;
+      border-radius: 1rem;
+      background: #2563eb;
     }
   </style>
+</head>
+<body>
+  <div class="about-section">
+    <div class="container">
+      <div class="title-container">
+        <h2 class="section-title">About Us</h2>
+        <div class="title-underline"></div>
+      </div>
+
+      <div class="carousel-wrapper">
+        <div class="carousel" id="carousel">
+          <div class="slide">
+            <div class="card">
+              <div class="card-image-wrapper">
+                <img src="./assets/images/service-logo.webp" class="card-image" alt="Financial Kit">
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">Financial Kit</h3>
+                <p class="card-text">We offer investment tips and strategies, and current economic trends. With our SIP and PPF tools, you'll discover the power of compounding for smart savings.</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-image-wrapper">
+                <img src="./assets/images/service-logo3.webp" class="card-image" alt="Stock Market">
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">Stock Market</h3>
+                <p class="card-text">Make smarter decisions by staying updated with real-time market data. FinVeda's AI assistant, Arth Sathi, simplifies financial learning.</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-image-wrapper">
+                <img src="./assets/images/service-logo2.webp" class="card-image" alt="Our Team">
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">Our Team</h3>
+                <p class="card-text">Our AI-powered resources and financial blogs make complex concepts easy to understand for readers of all backgrounds.</p>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="card">
+              <div class="card-image-wrapper">
+                <img src="./assets/images/images.png" class="card-image" alt="Crypto Insights">
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">Crypto Insights</h3>
+                <p class="card-text">Stay ahead with the latest crypto trends and analyses to navigate the evolving market.</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-image-wrapper">
+                <img src="./assets/images/retirement.jpeg" class="card-image" alt="Retirement Planning">
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">Retirement Planning</h3>
+                <p class="card-text">Prepare for a secure future with our comprehensive retirement planning resources.</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-image-wrapper">
+                <img src="./assets/images/tax.jpg" class="card-image" alt="Tax Planning">
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">Tax Planning</h3>
+                <p class="card-text">Learn about deductions and exemptions to optimize your tax strategy effectively.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="carousel-control prev" id="prevBtn" aria-label="Previous slide">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M15 19l-7-7 7-7"></path>
+          </svg>
+        </button>
+        <button class="carousel-control next" id="nextBtn" aria-label="Next slide">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+
+        <div class="carousel-indicators" id="carouselIndicators"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    class Carousel {
+      constructor() {
+        this.carousel = document.getElementById('carousel');
+        this.slides = Array.from(this.carousel.children);
+        this.totalSlides = this.slides.length;
+        this.currentSlide = 0;
+        this.isAnimating = false;
+
+        // Controls
+        this.prevBtn = document.getElementById('prevBtn');
+        this.nextBtn = document.getElementById('nextBtn');
+        
+        // Create indicators
+        this.createIndicators();
+        
+        // Initialize
+        this.init();
+      }
+
+      createIndicators() {
+        const indicatorsContainer = document.getElementById('carouselIndicators');
+        this.slides.forEach((_, index) => {
+          const indicator = document.createElement('button');
+          indicator.className = `indicator${index === 0 ? ' active' : ''}`;
+          indicator.setAttribute('aria-label', `Go to slide ${index + 1}`);
+          indicator.addEventListener('click', () => this.goToSlide(index));
+          indicatorsContainer.appendChild(indicator);
+        });
+        this.indicators = Array.from(document.querySelectorAll('.indicator'));
+      }
+
+      init() {
+        // Set initial position
+        this.updateSlidePosition();
+        
+        // Add event listeners
+        this.prevBtn.addEventListener('click', () => this.prev());
+        this.nextBtn.addEventListener('click', () => this.next());
+        
+        // Auto-play
+        this.startAutoPlay();
+        
+        // Pause auto-play on hover
+        this.carousel.addEventListener('mouseenter', () => this.stopAutoPlay());
+        this.carousel.addEventListener('mouseleave', () => this.startAutoPlay());
+      }
+
+      updateSlidePosition() {
+        this.carousel.scrollLeft = this.currentSlide * this.carousel.offsetWidth;
+        this.updateIndicators();
+        this.updateButtons();
+      }
+
+      updateIndicators() {
+        this.indicators.forEach((indicator, index) => {
+          indicator.classList.toggle('active', index === this.currentSlide);
+        });
+      }
+
+      updateButtons() {
+        this.prevBtn.disabled = this.currentSlide === 0;
+        this.nextBtn.disabled = this.currentSlide === this.totalSlides - 1;
+      }
+
+      goToSlide(index) {
+        if (this.isAnimating || index === this.currentSlide) return;
+        this.isAnimating = true;
+        this.currentSlide = index;
+        this.updateSlidePosition();
+        setTimeout(() => {
+          this.isAnimating = false;
+        }, 500);
+      }
+
+      next() {
+        if (this.currentSlide < this.totalSlides - 1) {
+          this.goToSlide(this.currentSlide + 1);
+        }
+      }
+
+      prev() {
+        if (this.currentSlide > 0) {
+          this.goToSlide(this.currentSlide - 1);
+        }
+      }
+
+      startAutoPlay() {
+        this.autoPlayInterval = setInterval(() => {
+          if (this.currentSlide === this.totalSlides - 1) {
+            this.goToSlide(0);
+          } else {
+            this.next();
+          }
+        }, 5000);
+      }
+
+      stopAutoPlay() {
+        clearInterval(this.autoPlayInterval);
+      }
+    }
+
+    // Initialize carousel
+    document.addEventListener('DOMContentLoaded', () => {
+      new Carousel();
+    });
+  </script>
+
 
   <!-- Optional: Add the Bootstrap 5 JavaScript for proper carousel functionality -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
