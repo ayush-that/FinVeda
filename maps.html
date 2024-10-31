@@ -69,170 +69,163 @@
         }
       }
 
-        .financial-literacy-rate {
-    color: black;
+/* Style for Financial Literacy Rates heading */
+.financial-literacy-rate {
+    color: black; 
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Hover effect for Financial Literacy Rates heading */
 .financial-literacy-rate:hover {
-    background-color: orange;
-    color: white;
-    padding: 5px;
-    border-radius: 5px;
+    background-color: orange; 
+    color: white; 
+    padding: 5px; 
+    border-radius: 5px; 
 }
 
+/* Card styling */
 .card {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 20px auto;
-    padding: 20px;
-    max-width: 800px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; 
+    padding: 20px; 
+    max-width: 800px; 
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    opacity: 0; 
+    animation: fadeIn 0.5s forwards; 
 }
 
+/* Card heading styling */
+.card h2 {
+    text-align: center; 
+    margin-bottom: 20px; 
+}
+
+/* Button styles */
 button, 
 input[type="submit"], 
-input[type="button"] {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+input[type="button"], 
+.quiz-button {
+    background-color: #007BFF; 
+    color: white; 
+    border: none; 
+    padding: 10px 15px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease, transform 0.2s ease; 
 }
 
+/* Hover effects for buttons */
 button:hover, 
 input[type="submit"]:hover, 
 input[type="button"]:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
-}
-
-.quiz-button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    background-color: #0056b3; 
+    transform: translateY(-2px); 
 }
 
 .quiz-button:hover {
-    background-color: #218838;
-    transform: translateY(-2px);
+    background-color: #218838; 
+    transform: translateY(-2px); 
 }
 
-.card {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.card h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
+/* Input field styles */
 input[type="text"], 
 input[type="email"], 
 input[type="password"], 
 textarea, 
 select {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; 
+    padding: 10px; 
+    margin: 10px 0; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; 
 }
 
+/* Hover effects for input fields */
 input[type="text"]:hover, 
 input[type="email"]:hover, 
 input[type="password"]:hover, 
 textarea:hover, 
 select:hover {
-    border-color: #007BFF;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    border-color: #007BFF; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
 }
 
+/* Focus effects for input fields */
 input[type="text"]:focus, 
 input[type="email"]:focus, 
 input[type="password"]:focus, 
 textarea:focus, 
 select:focus {
-    border-color: #0056b3;
-    box-shadow: 0 0 8px rgba(0, 86, 179, 0.5);
-    outline: none;
+    border-color: #0056b3; 
+    box-shadow: 0 0 8px rgba(0, 86, 179, 0.5); 
+    outline: none; 
 }
 
+/* Styling for educational resources */
 .educational-resources {
-    text-align: center;
-    margin: 20px 0;
+    text-align: center; 
+    margin: 20px 0; 
 }
 
+/* State initiative card styling */
 .state-initiative {
-    margin: 20px 0;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #ffffff;
+    margin: 20px 0; 
+    padding: 15px; 
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+    background-color: #ffffff; 
 }
 
+/* Hover effect for state initiative cards */
 .state-initiative:hover {
-    background-color: #f1f1f1;
-    transition: background-color 0.3s ease;
+    background-color: #f1f1f1; 
+    transition: background-color 0.3s ease; 
 }
 
-.card {
-    opacity: 0;
-    animation: fadeIn 0.5s forwards;
+/* Resource card styling */
+.resource {
+    background-color: #ffffff; 
+    border: 1px solid #ddd; 
+    border-radius: 10px; 
+    padding: 15px; 
+    margin: 10px; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
+/* Hover effect for resource cards */
+.resource:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+}
+
+/* Text color change on resource hover */
+.resource:hover p {
+    color: #333; 
+}
+
+/* Resource heading styling */
+.resource h2 {
+    color: #007BFF; 
+    transition: color 0.3s ease; 
+}
+
+/* Change resource heading color on hover */
+.resource:hover h2 {
+    color: #0056b3; 
+}
+
+/* Fade-in animation for cards */
 @keyframes fadeIn {
     to {
-        opacity: 1;
+        opacity: 1; 
     }
 }
-
-.resource {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 15px;
-    margin: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.resource:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.resource:hover p {
-    color: #333;
-}
-
-.resource h2 {
-    color: #007BFF;
-    transition: color 0.3s ease;
-}
-
-.resource:hover h2 {
-    color: #0056b3;
-}
-
     </style>
     
 </head>
