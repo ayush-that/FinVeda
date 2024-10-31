@@ -65,6 +65,7 @@
           <div class="row">
             <div style="display: flex; justify-content: center;" class="">
               <nav class="navbar navbar-expand-lg " style="display: flex;">
+
                 <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="toggler-icon"></span>
@@ -76,7 +77,7 @@
                     style="margin: auto; margin-left: -5px;">
                     <div class="icon1">
                       <a href="./index.html">
-                        <img src="./assets/images/FinvedaLogo.png" alt="icon.png" style="width: 11rem;">
+                        <img src="./assets/images/FinvedaLogo.png" alt="icon.png" style="width: 13rem;">
                       </a>
                     </div>
                     <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
@@ -192,8 +193,9 @@
       <link href="./navbar.css" rel="stylesheet">
       <script type="text/javascript" src="./navbar.js"></script>
   </header>
+
   
-  <!-- Second Header Section -->
+
 <div class="second-header">
   <h1>Let's Start Your Journey in World of Finance</h1>
   <p>Learn the basics of finance with these curated video lessons. Click "Watch Now" to view each course.</p>
@@ -284,16 +286,22 @@ button {
   transition: background-color 0.3s; /* Smooth background change */
 }
 
+.course {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
 .course:hover {
-  transform: translateY(-5px); /* Lift effect on hover */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+    transform: translateY(-5px) scale(1.1); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); 
 }
 
 .course:hover button {
-  background-color: #e0e0e0; /* Light gray background on button hover */
+    background-color: #e0e0e0; 
+    transform: scale(1.05); 
+    transition: transform 0.3s ease; 
 }
 
-  </style>
+</style>
 
 
 <footer id="footer" class="footer-area pt-120">

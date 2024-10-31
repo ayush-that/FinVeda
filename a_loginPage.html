@@ -418,12 +418,18 @@
               <input type="text" placeholder="Username" />
             </div>
             
+
             <div class="input-field">
-              <i class="fas fa-lock" id="toggle-password" style="cursor: pointer;"></i>
               <input 
                 type="password" 
-                placeholder="Password" 
-                id="password-input" />
+                placeholder="ㅤPassword" 
+                id="password-input" 
+              />
+              <i 
+                class="fas fa-lock" 
+                id="toggle-password" 
+                style="cursor: pointer; position: absolute; left: 10px; top: 50%; transform: translateY(-50%);" 
+              ></i>
             </div>
             
 
@@ -575,8 +581,6 @@
         </div>
       </div>
     </div>
-
-    
     <script>
       const sign_in_btn = document.querySelector("#sign-in-btn");
       const sign_up_btn = document.querySelector("#sign-up-btn");
@@ -590,7 +594,64 @@
         container.classList.remove("sign-up-mode");
       });
 
-        
+      // Sign in form submission
+      document.querySelector(".sign-in-form").addEventListener("submit", async function (event) {
+          event.preventDefault();
+
+          const username = document.querySelector(".sign-in-form input[type='text']").value;
+          const password = document.querySelector(".sign-in-form input[type='password']").value;
+
+          // Remove the below block of code when the server is ready (Written just for testing)
+          if (username === "username" && password === "123456") {
+              console.log("Login successful!");
+              localStorage.setItem("userID", "7887892rdwed3")
+              localStorage.setItem("JWTtoken", "dummyToken123"); // Example token
+              localStorage.setItem("login", "success");
+              window.location.href = "hospital.html";
+          }
+          // Testing block ends here, proceed with actual request once the server is ready
+
+          const data = JSON.stringify({ username, password });
+          console.log(data);
+      });
+
+
+      // Sign up form submission
+       // Sign up form submission
+document.querySelector(".sign-up-form").addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    // Get the input values
+    const username = document.querySelector(".sign-up-form input[type='text']").value;
+    const email = document.querySelector(".sign-up-form input[type='email']").value;
+    const password = document.querySelector(".sign-up-form input[type='password']").value;
+
+    // Validate inputs
+    if (username === "" || email === "" || password === "") {
+        alert("Please fill in all fields");
+        return;
+    }
+
+    // Generate a UUID
+    const userId = uuid.v4();
+    console.log("Generated UUID:", userId);
+
+    const data = JSON.stringify({
+        id: userId,
+        username,
+        email,
+        password,
+    });
+    console.log(data);
+
+    // Show submission message in a pop-up
+    alert("Sign up successful! Welcome, " + username + "!");
+
+    // Optionally, you can clear the form after submission
+    document.querySelector(".sign-up-form").reset();
+});
+
+
       
         // Toggle password visibility
           function togglePassword(fieldId, icon) {
@@ -655,6 +716,5 @@
     <script src="firebase.js"></script>
     <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
     <script src="./assets/js/main.js"></script>
-    <script src="./loginpage.js"></script>
   </body>
 </html>

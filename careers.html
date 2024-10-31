@@ -698,11 +698,12 @@
     </div> -->
   </header>
   <main>
-    <section><br><br>
+    <section>
       <h2>Jobs in Finance</h2>
       <!-- Search Bar -->
       <div class="search-container">
         <input type="text" id="jobSearch" placeholder="Search for jobs by title or keyword">
+        <input type="number" id="salaryFilter" placeholder="Min Salary" style="margin-left: 30px;">
       </div>
       <div class="table-container">
         <table class="jobs-table">
@@ -713,7 +714,7 @@
               <th>Qualification</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="jobsTableBody">
             <tr onclick="openModal('Financial Analyst')">
               <td data-label="Job Title">Financial Analyst</td>
               <td data-label="Salary">$60,000 - $80,000</td>
@@ -767,13 +768,35 @@
           </tbody>
         </table>
       </div>
-
-
-
+    
+      <script>
+        document.getElementById('salaryFilter').addEventListener('input', filterBySalary);
+    
+        function filterBySalary() {
+          const minSalaryInput = parseInt(document.getElementById('salaryFilter').value);
+          const rows = document.querySelectorAll('#jobsTableBody tr');
+    
+          rows.forEach(row => {
+            const salaryText = row.querySelector('[data-label="Salary"]').textContent;
+            const [minSalary] = salaryText.replace(/[^\d\s]/g, '').split('-').map(s => parseInt(s.trim()));
+    
+            if (minSalaryInput && minSalary) {
+              if (minSalary >= minSalaryInput) {
+                row.style.display = ''; // Show row
+              } else {
+                row.style.display = 'none'; // Hide row
+              }
+            } else {
+              row.style.display = ''; // Show row if input is empty
+            }
+          });
+        }
+      </script>
     </section>
+    
 
     <style>
-      /* Section Styling */
+/* Section Styling */
 section {
   font-family: Arial, sans-serif;
   padding: 20px;
@@ -878,6 +901,12 @@ section h2 {
   background-color: #bbdefb;
 }
 
+/* Dark Mode Specific Styling */
+.dark-mode .jobs-table th, 
+.dark-mode .jobs-table td {
+  color: #000; /* Set table font color to black in dark mode */
+}
+
 /* Responsive Styling */
 @media screen and (max-width: 600px) {
   .search-container input[type="text"] {
@@ -889,6 +918,7 @@ section h2 {
     font-size: 14px;
   }
 }
+
 
     </style>
 
