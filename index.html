@@ -131,6 +131,16 @@
       background-color: #555;
       /* Darker blue on hover */
     }
+
+    .dropdown-menu li a {
+      color: #ff5722;
+      /* Change this color code to any color you like */
+    }
+
+    .dropdown-menu li a:hover {
+      color: #0a69ed;
+      /* Optional: change the color on hover */
+    }
   </style>
 
 <body>
@@ -267,9 +277,6 @@
                       <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
                     </li>
                     <li class="nav-item">
-                      <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
-                    </li>
-                    <li class="nav-item">
                       <a class="page-scroll" href="./finance.html" style="color: rgb(237, 242, 244);">Courses 📚</a>
                     </li>
                     <li class="nav-item">
@@ -292,11 +299,13 @@
                       </ul>
                     </li>
 
-                    <li class="nav-item no-underline">
+                    <!-- Navigation item placeholder for Login/Register or Logout button -->
+                    <li class="nav-item no-underline" id="auth-btn-container">
                       <a class="main-btn navbar-btn"
-                        style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;"
+                        style="padding: 2px 20px; color: rgb(237, 242, 244); animation-duration: 0.4s; animation-name: ease;"
                         data-scroll-nav="0" href="./loginPage.html">Login/Register 💻</a>
                     </li>
+
                     <li class="nav-item no-underline">
                       <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
                         🌙
@@ -304,6 +313,33 @@
                     </li>
                   </ul>
                 </div>
+
+                <script>
+                  // Function to update the authentication button based on login status
+                  function updateAuthButton() {
+                    const authBtnContainer = document.getElementById("auth-btn-container");
+                    const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+                    if (isLoggedIn) {
+                      // Replace with Logout button if user is logged in
+                      authBtnContainer.innerHTML = `<a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244); animation-duration: 0.4s; animation-name: ease;" id="logout-btn">Logout 🚪</a>`;
+
+                      // Attach click event to Logout button
+                      document.getElementById("logout-btn").addEventListener("click", function () {
+                        // Clear login data from local storage and reload page
+                        localStorage.removeItem("isLoggedIn");
+                        localStorage.removeItem("currentUser");
+                        window.location.reload();
+                      });
+                    } else {
+                      // Show Login/Register button if user is not logged in
+                      authBtnContainer.innerHTML = `<a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244); animation-duration: 0.4s; animation-name: ease;" data-scroll-nav="0" href="./loginPage.html">Login/Register 💻</a>`;
+                    }
+                  }
+
+                  // Call updateAuthButton on page load to set the correct button
+                  document.addEventListener("DOMContentLoaded", updateAuthButton);
+                </script>
 
                 <script>
                   const toggleButton = document.getElementById('theme-toggle');
@@ -746,83 +782,82 @@
 
   </section>
 
-
-  <section id="features" class="services-area pt-120">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <div class="section-title text-center pb-40">
-            <h3 style="color: #2f6be5;">
-              <div class="line m-auto"></div>
-
-              FinVeda,
-              <span style="color:#2f6be5;"> comes with everything you need to get started!</span>
-
-            </h3>
+<section id="features" class="services-area pt-120">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="section-title text-center pb-40">
+          <h3 style="color: #2f6be5;">
+            <div class="line m-auto"></div>
+            FinVeda,
+            <span style="color:#2f6be5;"> comes with everything you need to get started!</span>
+          </h3>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-4 col-md-7 col-sm-8">
+        <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+          <div class="services-icon">
+            <img class="shape" src="assets/images/services-shape.svg" alt="shape" />
+            <img class="shape-1" src="assets/images/services-shape-1.svg" alt="shape" />
+            <i class="lni-baloon"></i>
+          </div>
+          <div class="services-content mt-30">
+            <h4 class="services-title"><a href="./blog.html">Financial Blogs</a></h4>
+            <p class="text">
+              <li style="color: black;">
+                We offer expert written blogs on investment tips and strategies, and current economic trends, all
+                crafted to keep you well-informed.
+              </li>
+            </p>
+            <a class="more" href="./blog.html">Learn More <i class="lni-chevron-right"></i></a>
           </div>
         </div>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-4 col-md-7 col-sm-8">
-          <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-            <div class="services-icon">
-              <img class="shape" src="assets/images/services-shape.svg" alt="shape" />
-              <img class="shape-1" src="assets/images/services-shape-1.svg" alt="shape" />
-              <i class="lni-baloon"></i>
-            </div>
-            <div class="services-content mt-30">
-              <h4 class="services-title"><a href="./blog.html">Financial Blogs</a></h4>
-              <p class="text">
-                <li>
-                  We offer expert written blogs on investment tips and strategies, and current economic trends, all
-                  crafted to keep you well-informed.
-                </li>
-              </p>
-              <a class="more" href="./blog.html">Learn More <i class="lni-chevron-right"></i></a>
-            </div>
+      <div class="col-lg-4 col-md-7 col-sm-8">
+        <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+          <div class="services-icon">
+            <img class="shape" src="assets/images/services-shape.svg" alt="shape" />
+            <img class="shape-1" src="assets/images/services-shape-2.svg" alt="shape" />
+            <i class="lni-cog"></i>
+          </div>
+          <div class="services-content mt-30">
+            <h4 class="services-title"><a href="tools/sip.html">Finance Tools</a></h4>
+            <p class="text">
+              <li style="color: black;">
+                With our SIP and PPF tools you'll discover power of compounding and make informed decisions regarding
+                your savings.
+              </li>
+            </p>
+            <a class="more" href="tools/sip.html">Learn More <i class="lni-chevron-right"></i></a>
           </div>
         </div>
-        <div class="col-lg-4 col-md-7 col-sm-8">
-          <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-            <div class="services-icon">
-              <img class="shape" src="assets/images/services-shape.svg" alt="shape" />
-              <img class="shape-1" src="assets/images/services-shape-2.svg" alt="shape" />
-              <i class="lni-cog"></i>
-            </div>
-            <div class="services-content mt-30">
-              <h4 class="services-title"><a href="tools/sip.html">Finance Tools</a></h4>
-              <p class="text">
-                <li>
-                  With our SIP and PPF tools you'll discover power of compounding and make informed decisions regarding
-                  your savings.
-                </li>
-              </p>
-              <a class="more" href="tools/sip.html">Learn More <i class="lni-chevron-right"></i></a>
-            </div>
+      </div>
+      <div class="col-lg-4 col-md-7 col-sm-8">
+        <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+          <div class="services-icon">
+            <img class="shape" src="assets/images/services-shape.svg" alt="shape" />
+            <img class="shape-1" src="assets/images/services-shape-3.svg" alt="shape" />
+            <i class="lni-bolt-alt"></i>
           </div>
-        </div>
-        <div class="col-lg-4 col-md-7 col-sm-8">
-          <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-            <div class="services-icon">
-              <img class="shape" src="assets/images/services-shape.svg" alt="shape" />
-              <img class="shape-1" src="assets/images/services-shape-3.svg" alt="shape" />
-              <i class="lni-bolt-alt"></i>
-            </div>
-            <div class="services-content mt-30">
-              <h4 class="services-title"><a href="trends.html">Financial Trends</a></h4>
-              <p class="text">
-                <li>
-                  You will make smarter decisions by staying updated to the current market happenings in real time with
-                  our Stock Market API's results.
-                </li>
-              </p>
-              <a class="more" href="./trends.html">Learn More <i class="lni-chevron-right"></i></a>
-            </div>
+          <div class="services-content mt-30">
+            <h4 class="services-title"><a href="trends.html">Financial Trends</a></h4>
+            <p class="text">
+              <li style="color: black;">
+                You will make smarter decisions by staying updated to the current market happenings in real time with
+                our Stock Market API's results.
+              </li>
+            </p>
+            <a class="more" href="./trends.html">Learn More <i class="lni-chevron-right"></i></a>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+ 
   <section id="about" class="about-area pt-70">
     <div class="container">
       <div class="row">
@@ -992,6 +1027,43 @@
       <img src="assets/images/about-shape-1.svg" alt="shape" />
     </div>
   </section>
+
+  <section class="about-area pt-71" style="margin-top: 130px;">
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 order-lg-last">
+          <div class="about-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s" style="margin-top: 0px; margin-left: 40px;">
+            <div class="section-title">
+              <div class="line"></div>
+  
+              <h3 class="title" style="color: #2f6be5;">
+  
+                Optimization <span>of Invesment Portfolio</span>
+              </h3>
+            </div>
+  
+  
+            <p class="text para">
+              <li>
+                Optimize your investment portfolio to balance growth and minimize risk, using data-driven strategies for maximum returns. Achieve financial success with smarter, tailored asset selection.
+              </li>
+            </p>
+            <a href="#" class="main-btn">Try it for Free</a>
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-first">
+          <div id="about-4-img">
+            <img src="assets/images/portfolio-optimize.png">
+          </div>
+            </div>
+           
+          </div>
+        </div>
+      
+    </div>
+  </section>
+
   <section id="facts" class="video-counter pt-70">
     <div class="container">
       <div class="row">
@@ -1486,22 +1558,23 @@
 
   <!-- <section id="blog" class="blog-area pt-120"> -->
 
+
   <div class="blogfull">
     <article>
       <section id="blog" class="blog-area pt-100">
         <div class="container">
           <div class="row">
             <div class="col-lg-6">
-              <div class="section-title pb-35" style="margin-left: 40%;">
-                <div class="line" style="width: 65%;"></div>
-
+              <div class="section-title pb-35 pl-100">
+                
                 <h3 class="title" style="color: #2f6be5;"><span></span> Blog Posts</h3>
+                <div class="line mt-10 ml-125" style="width: 50%; margin-top: 5px;"></div>
 
               </div>
             </div>
           </div>
-          <div class="row justify-content-start">
-            <div class="col-lg-4 col-md-7" data-aos="slide-right">
+          <div class="row">
+            <div class="col-lg-4 col-md-7">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                 <div class="blog-image">
                   <a href="./blogs/how-to-deal-with-unknown-risks-in-life-and-investing.html">
@@ -1520,7 +1593,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7" data-aos="zoom-in">
+            <div class="col-lg-4 col-md-7">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/how-to-10x-your-generational-wealth.html">
@@ -1535,7 +1608,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7" data-aos="slide-left">
+            <div class="col-lg-4 col-md-7">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/invest-minimal.html">
@@ -1554,7 +1627,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7" data-aos="slide-right">
+            <div class="col-lg-4 col-md-7">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/Pocketmoney.html">
@@ -1571,7 +1644,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7" data-aos="zoom-in">
+            <div class="col-lg-4 col-md-7">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/senior.html">
@@ -1588,7 +1661,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7" data-aos="slide-left">
+            <div class="col-lg-4 col-md-7">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/why-investing-in-stocks-is-better-than-fixed-deposit.html">
@@ -1605,7 +1678,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7" data-aos="slide-right">
+            <div class="col-lg-4 col-md-7">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="/blogs/starup.html">
@@ -1622,7 +1695,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7" data-aos="zoom-in">
+            <div class="col-lg-4 col-md-7">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/how-fintech-is-revolutionizing-small-business-lending.html">
@@ -1639,7 +1712,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7" data-aos="slide-left">
+            <div class="col-lg-4 col-md-7">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/economic-trends-and-analysis.html">
@@ -1653,101 +1726,14 @@
                   <a class="more" href="./blogs/economic-trends-and-analysis.html">
                     Learn More <i class="lni-chevron-right"></i>
                   </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-7" data-aos="slide-right">
-              <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-                <div class="blog-image">
-                  <a href="./blogs/empowering-you-with-economic-knowledge-for-smarter-decisions.html">
-                    <img src="./assets/images/Empowering.webp" alt="blog" />
-                  </a>
-                </div>
-                <div class="blog-content">
-                  <p class="reviewtext">
-                    Empowering you with economic knowledge for smarter decisions.
-                  </p>
-                  <a class="more" href="./blogs/empowering-you-with-economic-knowledge-for-smarter-decisions.html">
-                    Learn More <i class="lni-chevron-right"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-7" data-aos="zoom-in">
-              <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-                <div class="blog-image">
-                  <a href="./blogs/Mutual-Funds-101-A-Beginners-Guide-to-Smart-Investing.html">
-                    <img src="./assets/images/Mutual-funds.webp" alt="blog" />
-                  </a>
-                </div>
-                <div class="blog-content">
-                  <p class="reviewtext">
-                    Mutual Funds 101: A Beginner's Guide to Smart Investing
-                  </p>
-                  <a class="more" href="./blogs/Mutual-Funds-101-A-Beginners-Guide-to-Smart-Investing.html">
-                    Learn More <i class="lni-chevron-right"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-7" data-aos="slide-left">
-              <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-                <div class="blog-image">
-                  <a href="./blogs/saving-for-future.html">
-                    <img src="./assets/images/saving.webp" alt="blog" />
-                  </a>
-                </div>
-                <div class="blog-content">
-                  <p class="reviewtext">
-                    Saving for the Future.
-                  </p>
-                  <a class="more" href="./blogs/saving-for-future.html">
-                    Learn More <i class="lni-chevron-right"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-7" data-aos="slide-right">
-              <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-                <div class="blog-image">
-                  <a href="./blogs/real-estate-economics.html">
-                    <img src="./assets/images/real-estate.webp" alt="blog" />
-                  </a>
-                </div>
-                <div class="blog-content">
-                  <p class="reviewtext">
-                    Real Estate Economics
-                  </p>
-                  <a class="more" href="./blogs/real-estate-economics.html">
-                    Learn More <i class="lni-chevron-right"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-7" data-aos="slide-left">
-              <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-                <div class="blog-image">
-                  <a href="./blogs/Types-of-Stock-Investments-A-Quick-Guide.html">
-                    <img src="./assets/images/types-of-stock-investment-a-quick-guide-blog.webp" alt="blog" />
-                  </a>
-                </div>
-                <div class="blog-content">
-                  <p class="reviewtext">
-                    Types of Stock Investment: A Quick Guide
-                  </p>
-                  <a class="more" href="./blogs/Types-of-Stock-Investments-A-Quick-Guide.html">
-                    Learn More <i class="lni-chevron-right"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </article>
-  </div>
+                </div>              
 
+              </div>
+              
+          </section>
+      </article>
   </div>
+  
 
   <!DOCTYPE html>
   <html lang="en">
@@ -2234,137 +2220,137 @@
             </div>
           </div>
         </div>
-        </div>
+      </div>
 
-        <div class="footer-widget pb-100">
-          <div class="row" id="footer">
-            <div class="col-lg-4 col-md-6 col-sm-8">
-              <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                <img src="./assets/images/FinvedaLogo.png" alt="FinVeda Logo"
-                  style="height: 80px; width: auto; margin-bottom: 15px;" />
-                <p class="text custom-margin">
-                  We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial
-                  blogs.
-                </p>
-              </div>
+      <div class="footer-widget pb-100">
+        <div class="row" id="footer">
+          <div class="col-lg-4 col-md-6 col-sm-8">
+            <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+              <img src="./assets/images/FinvedaLogo.png" alt="FinVeda Logo"
+                style="height: 80px; width: auto; margin-bottom: 15px;" />
+              <p class="text custom-margin">
+                We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial
+                blogs.
+              </p>
             </div>
-            <div class="col-lg-5 col-md-7 col-sm-7">
-              <div class="footer-link d-flex mt-50 justify-content-md-between"
-                style="justify-content: space-around !important;">
-                <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-                  <div class="footer-title">
-                    <h3 class="title custom-margin">Quick Links</h3>
-                  </div>
-                  <ul class="link custom-margin">
-  
-                    <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
-                    <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
-                    <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
-                    <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
-                    <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
-                    <li><a href="./blogs/sitemap.html"><i class="fa-solid fa-sitemap"></i> Site Map</a></li>
-  
-  
-                  </ul>
-                </div>
-                <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
-                  <div class="footer-title">
-                    <h4 class="title custom-margin">Resources</h4>
-                  </div>
-                  <ul class="link custom-margin">
-                    <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
-                    <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
-                    <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
-                    <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
-                    <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-5 col-sm-5">
-              <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+          </div>
+          <div class="col-lg-5 col-md-7 col-sm-7">
+            <div class="footer-link d-flex mt-50 justify-content-md-between"
+              style="justify-content: space-around !important;">
+              <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
                 <div class="footer-title">
-                  <h4 class="title custom-margin">Contact Us</h4>
+                  <h3 class="title custom-margin">Quick Links</h3>
                 </div>
-                <ul class="contact custom-margin-big" style="justify-content: space-around;">
-                  <li class="d-sm-flex justify-content-center">
-                    <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                    <p style="width: 80%;">
-                      <a href="mailto:ayush1337@hotmail.com" target="_blank"
-                        style="color: white; text-decoration: underline;">
-                        ayush1337@hotmail.com
-                      </a>
-                    </p>
-                  </li>
-                  <li class="d-sm-flex justify-content-center">
-                    <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                    <div style="width: 80%;">
-                      <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
-                        fin-veda.vercel.app
-                      </a>
-                    </div>
-                  </li>
-                  <li class="d-sm-flex justify-content-center">
-                    <!-- Modified: Inline CSS to adjust logo size and sync with other pages -->
-                    <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font: 12px; width: 10%;"></i>
-                    <div style="width: 80%;">
-                      <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
-                        style="color:#fff">
-                        Delhi, India
-                      </a>
-                    </div>
-                  </li>
-                  <!-- Added: Social Media Redirects -->
-                  <div class="social-icons">
-                    <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="https://discord.com/"><i class="fa-brands fa-discord"></i></a>
-                    <a href="https://github.com/ayush-that/FinVeda"><i class="fa-brands fa-github"></i></a>
-                  </div>
+                <ul class="link custom-margin">
+
+                  <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+                  <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
+                  <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
+                  <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+                  <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+                  <li><a href="./blogs/sitemap.html"><i class="fa-solid fa-sitemap"></i> Site Map</a></li>
+
+
+                </ul>
+              </div>
+              <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+                <div class="footer-title">
+                  <h4 class="title custom-margin">Resources</h4>
+                </div>
+                <ul class="link custom-margin">
+                  <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+                  <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                  <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
+                  <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
+                  <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                  <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
                 </ul>
               </div>
             </div>
-  
-  
           </div>
-        </div>
-  
-        <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s"
-          style="text-align: center">
-          <div class="row">
-            <div className="flex flex-col items-center text-gray-800">
-              <div className="flex items-center space-x-2">
-                <span className="font-bold text-2xl">Total Visitors : </span>
-                <a href="https://www.hitwebcounter.com" target="_blank">
-                  <img
-                    src="https://hitwebcounter.com/counter/counter.php?page=17085296&style=0006&nbdigits=5&type=page&initCount=1000"
-                    title="Counter Widget" Alt="Visit counter For Websites" border="0" /></a>
+          <div class="col-lg-3 col-md-5 col-sm-5">
+            <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+              <div class="footer-title">
+                <h4 class="title custom-margin">Contact Us</h4>
               </div>
+              <ul class="contact custom-margin-big" style="justify-content: space-around;">
+                <li class="d-sm-flex justify-content-center">
+                  <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                  <p style="width: 80%;">
+                    <a href="mailto:ayush1337@hotmail.com" target="_blank"
+                      style="color: white; text-decoration: underline;">
+                      ayush1337@hotmail.com
+                    </a>
+                  </p>
+                </li>
+                <li class="d-sm-flex justify-content-center">
+                  <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                  <div style="width: 80%;">
+                    <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
+                      fin-veda.vercel.app
+                    </a>
+                  </div>
+                </li>
+                <li class="d-sm-flex justify-content-center">
+                  <!-- Modified: Inline CSS to adjust logo size and sync with other pages -->
+                  <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font: 12px; width: 10%;"></i>
+                  <div style="width: 80%;">
+                    <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
+                      style="color:#fff">
+                      Delhi, India
+                    </a>
+                  </div>
+                </li>
+                <!-- Added: Social Media Redirects -->
+                <div class="social-icons">
+                  <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                  <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
+                  <a href="https://discord.com/"><i class="fa-brands fa-discord"></i></a>
+                  <a href="https://github.com/ayush-that/FinVeda"><i class="fa-brands fa-github"></i></a>
+                </div>
+              </ul>
             </div>
-            <div class="col-lg-12">
-              <div class="copyright d-sm-flex justify-content-center" style="
+          </div>
+
+
+        </div>
+      </div>
+
+      <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s"
+        style="text-align: center">
+        <div class="row">
+          <div className="flex flex-col items-center text-gray-800">
+            <div className="flex items-center space-x-2">
+              <span className="font-bold text-2xl">Total Visitors : </span>
+              <a href="https://www.hitwebcounter.com" target="_blank">
+                <img
+                  src="https://hitwebcounter.com/counter/counter.php?page=17085296&style=0006&nbdigits=5&type=page&initCount=1000"
+                  title="Counter Widget" Alt="Visit counter For Websites" border="0" /></a>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="copyright d-sm-flex justify-content-center" style="
             display: flex;
             justify-content: center;
             text-align: center;
             width: 100%;
             height: 100%;
           ">
-                <div class="copyright-content" style="text-align: center">
-                  <p class="text" style="text-align: center">
-                    © <span id="copyright-year">2024</span> FinVeda. All rights are
-                    reserved<br />
-                    Made with ♥ in India
-                  </p>
-  
-                </div>
+              <div class="copyright-content" style="text-align: center">
+                <p class="text" style="text-align: center">
+                  © <span id="copyright-year">2024</span> FinVeda. All rights are
+                  reserved<br />
+                  Made with ♥ in India
+                </p>
+
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <div id="particles-2"></div>
+      <div id="particles-2"></div>
       </div>
     </footer>
 
@@ -2658,104 +2644,205 @@
     </style>
 
 
-    <div class="popup" id="pollPopup">
-      <div class="popup-content">
-        <h2>Which feature of Finveda do you believe boosts your financial knowledge the most?</h2>
-        <div id="pollOptions">
-          <button class="poll-button" data-value="Market Trends">Market Trends - Stay updated with the latest financial
-            news and insights</button>
-          <button class="poll-button" data-value="AI Chatbot">AI Chatbot - Personalized financial guidance at your
-            fingertips</button>
-          <button class="poll-button" data-value="SIP Calculator">SIP Calculator - Easily plan and manage your
-            investments</button>
-        </div>
-        <button id="voteButton" class="vote-button" style="margin-top: 10px;">Vote</button>
-        <p id="result"></p>
+      <!-- Newsletter pop-up -->
+ <style>
+  .popup-nl {
+
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 1009;
+
+  }
+
+  .popup-content-nl {
+
+      display: flex;
+      background-color: white;
+      border-radius: 10px;
+      max-width: 800px;
+      height: 450px;
+      width: 700px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+
+  }
+
+  .close1-btn-nl {
+
+      width: 20px;
+      cursor: pointer;
+      margin: 18px 10px;
+      position: absolute;
+      top: -4px;
+      right: 12px;
+      font-size: 18px;
+      font-weight: 800;
+
+  }
+
+  .popup-left-nl img {
+
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+  }
+
+  .popup-right-nl {
+
+      padding: 20px;
+      width: 50%;
+      display: flex;
+      flex-direction: column; 
+      align-items: center;
+      justify-content: center;
+
+  }
+
+  .popup-nl h1 {
+
+      font-size: 24px;
+      background: linear-gradient(to right, #ff4aac, #faa2d3); 
+      -webkit-text-fill-color: transparent; 
+      -webkit-background-clip: text; 
+      text-align: center;
+      margin-bottom: 12px;
+      margin-top: 35px;
+
+  }
+
+  .h2-nl{
+
+      font-size: 18px;
+      margin-bottom: 8px;
+      text-align: center;
+      color: #333;
+
+  }
+
+  .pop_up-nl {
+
+      margin-bottom: 15px;
+      font-weight: bold;
+      background: linear-gradient(135deg, #0d4670, #32bbdc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 12.7px;
+
+  }
+
+  .bold{
+
+      font-size: 13.1px;
+
+  }
+
+  input[type="email"] {
+
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 16px;
+      border: 1px solid #000000;
+      border-radius: 5px;
+      font-size: 14px;
+
+  }
+
+  .signup-btn1-nl {
+
+      width: 100%;
+      height: 40px;
+      text-align: center;
+      background: radial-gradient(circle, #f74b9f, #653b51);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+
+  }
+
+  .signup-btn1-nl:hover {
+
+      background-color: #ff4aac;
+
+  }
+
+  .no-thanks-nl {
+
+      display: block;
+      margin-top: 10px;
+      color: #888;
+      text-decoration: none;
+      margin-bottom: 15px;
+
+  }
+
+  .no-thanks-nl:hover {
+
+      color: #000000;
+      font-size: 14px;
+
+  }
+
+  .terms-nl {
+
+      margin-top: 15px;
+      font-size: 10px;
+      color: #888;
+
+  }
+
+  .terms-nl a {
+
+      display: inline;
+
+  }
+
+  .terms-nl a:hover {
+
+      text-decoration: underline;
+
+  }
+
+  .popup-right-nl p {
+
+      margin-top: 0;
+      margin-bottom: 10px;
+      text-align: center;
+
+  }
+
+</style>
+<div id="popup-nl" class="popup-nl">
+  <div class="popup-content-nl">
+      <div class="popup-left-nl">
+          <img src="newsletterpopup.jpg" alt="finance">
       </div>
-    </div>
 
-
-
-    <script>
-      // Show the poll popup 10 seconds after the page loads, if not already voted
-      window.onload = function () {
-        const hasVoted = sessionStorage.getItem('hasVoted');
-        setTimeout(function () {
-          if (!hasVoted) {
-            document.getElementById('pollPopup').style.display = 'flex';
-          }
-        }, 10000); // 10000 milliseconds = 10 seconds
-      };
-
-      const pollButtons = document.querySelectorAll('.poll-button[data-value]');
-      let selectedValue = '';
-
-      pollButtons.forEach(button => {
-        button.addEventListener('click', function () {
-          // Remove selected class from all buttons
-          pollButtons.forEach(btn => btn.classList.remove('selected'));
-          // Add selected class to the clicked button
-          button.classList.add('selected');
-          selectedValue = button.getAttribute('data-value');
-        });
-      });
-
-
-      document.getElementById('voteButton').addEventListener('click', function () {
-        if (selectedValue) {
-          document.getElementById('result').innerHTML = `You voted for: ${selectedValue}<br>Thank you!`;
-          // Save voting status in session storage
-          sessionStorage.setItem('hasVoted', 'true');
-          // Hide the popup after voting
-          setTimeout(() => {
-            document.getElementById('pollPopup').style.display = 'none';
-          }, 2000);
-        } else {
-          alert("Please select an option!");
-        }
-      });
-
-
-      function initializePoll() {
-        console.log("Poll initialized.");
-      }
-
-      function clearSelectedButton() {
-        pollButtons.forEach(btn => btn.classList.remove('selected'));
-      }
-
-      function addEventListenersToButtons() {
-        pollButtons.forEach(button => {
-          button.addEventListener('mouseenter', function () {
-            button.style.backgroundColor = '#3e8e41'; // Change color on hover
-          });
-          button.addEventListener('mouseleave', function () {
-            button.style.backgroundColor = ''; // Reset color on mouse leave
-          });
-        });
-      }
-
-      function handleVoteSubmission() {
-        if (selectedValue) {
-          console.log("Vote submitted for: " + selectedValue);
-        }
-      }
-
-
-      pollButtons.forEach(button => {
-        button.addEventListener('click', function () {
-          logButtonClick(button);
-          handleVoteSubmission();
-        });
-      });
-
-
-      for (let i = 0; i < 5; i++) {
-        console.log("Simulating poll process: Step " + (i + 1));
-      }
-
-
-    </script>
+      <div class="popup-right-nl">
+          <a href="# " class="close1-btn-nl close-nl">X</a>
+          <h1>Subscribe to Newsletter</h1>
+          <h2 class="h2-nl">Stay Ahead in Your Financial Journey!</h2>
+          <p class="pop_up-nl">Join our community of financial learners and gain exclusive access to expert insights, helpful tools, personalized tips, interactive quizzes, and more!</p>
+          <form id="emailForm-nl">
+              <input type="email" id="email-nl" placeholder="Enter your email" required>
+              <button type="submit" class="signup-btn1-nl">Subscribe</button>
+          </form>
+          <a href="#" class="no-thanks-nl close-nl">No thanks</a>
+          <p class="terms-nl" style="white-space: nowrap;">By subscribing to newsletters, you agree to our <br><a href="terms&cond.html">Terms of Service</a> and <a href="privacynotice.html">Privacy Policy</a>.</p>
+      </div>
+  </div>
+</div>
+<script src="newsletterpopup.js"></script>
 
 
   </body>

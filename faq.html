@@ -32,7 +32,9 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: white !important;
+
+    background-color: #6e7a76;
+
 }
 
 /* FAQ Section Styles */
@@ -112,7 +114,7 @@ body {
     margin: 50px auto; /* Increased margin for better visibility */
     margin-top: 8%;
     padding: 5%;
-    background-color: #f8f9fa;
+    background-color: #2a2f35;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -130,7 +132,7 @@ body {
     border-radius: 5px;
     text-align: center;
     line-height: 25px;
-    color: white;
+    color: rgb(148, 92, 92);
     transition: width 0.3s ease;
 }
 
@@ -149,7 +151,7 @@ body {
 }
 
 .faq-item.read {
-    background-color: #f0f8ff;
+    background-color: #595c5f;
 }
 
 /* Dark mode styles */
@@ -363,23 +365,6 @@ body.dark-mode {
 </head>
 <body>
 
-    <div id="progressBar"></div>
-  <div class="preloader">
-    <div class="loader">
-      <div class="ytp-spinner">
-        <div class="ytp-spinner-container">
-          <div class="ytp-spinner-rotator">
-            <div class="ytp-spinner-left">
-              <div class="ytp-spinner-circle"></div>
-            </div>
-            <div class="ytp-spinner-right">
-              <div class="ytp-spinner-circle"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <div class="circle-container">
     <div class="circle"></div>
@@ -421,12 +406,7 @@ body.dark-mode {
     <div class="row">
       <div style="display: flex; justify-content: center;" class="">
         <nav class="navbar navbar-expand-lg " style="display: flex;">
-          <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="toggler-icon"></span>
-            <span class="toggler-icon"></span>
-            <span class="toggler-icon"></span>
-          </button> -->
+          
           <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
             <div class="icon1" >
               <a href="./index.html">
@@ -605,10 +585,10 @@ body.dark-mode {
             </div>
         </div>
         <!-- FAQ Items -->
-        <div class="faq-item">What is FinVeda?</div>
-        <div class="faq-item">How does FinVeda work?</div>
-        <div class="faq-item">What are the features of FinVeda?</div>
-        <div class="faq-item">How do I contact support?</div>
+        <div class="faq-item" style="color: #0000a3;">What is FinVeda?</div>
+        <div class="faq-item" style="color: #0000a3;" >How does FinVeda work?</div>
+        <div class="faq-item" style="color: #0000a3;">What are the features of FinVeda?</div>
+        <div class="faq-item" style="color: #0000a3;">How do I contact support?</div>
     </div>
 
  <script>
@@ -748,7 +728,7 @@ body.dark-mode {
     <style>
         /* Global body styles for dark theme */
         body {
-            background-color: #121212; /* Dark background */
+            background-color: white; /* Dark background */
             color: #ffffff; /* Light text color */
             font-family: Arial, sans-serif; /* Clean font */
             margin: 0;
@@ -1007,150 +987,7 @@ body.dark-mode {
 </html>
 
 <body>
-    <!-- Progress Bar
-    <div class="progress-container">
- rev/your-rev
-    </div>
-
-
-    
-    <!-- Footer Section -->
-    <footer class="footer">
-        <div class="footer-container">
-            <p>&copy; 2024 FinVeda. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="privacy-policy.html">Privacy Policy</a>
-                <a href="terms-of-service.html">Terms of Service</a>
-                <a href="contact.html">Contact Us</a>
-            </div>
-        </div>
-    </footer>
-
-    </div>
-
-    <script>
-      document.getElementById('feedbackForm').addEventListener('submit', function(event) {
-          event.preventDefault(); // Prevent the default form submission
   
-          // Display the alert message
-          alert('Your feedback has been submitted successfully!');
-  
-          // Clear the text field
-          document.getElementById('userEmail').value = '';
-          document.getElementById('userName').value = '';
-          document.getElementById('userFeedback').value = '';
-      });
-  </script>
-
-
- main
-
-    <script>
-        // Function to update the progress bar
-        function updateProgressBar() {
-            const scrollTop = document.documentElement.scrollTop;
-            const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const progressPercentage = (scrollTop / windowHeight) * 100;
-            const progressBar = document.getElementById("myBar");
-            progressBar.style.width = progressPercentage + "%";
-        }
-
-        window.addEventListener('scroll', updateProgressBar);
-    </script>
-    <!-- <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>FAQ</title>
-        <link rel="stylesheet" href="styles.css">
-        <style>
-            /* Progress bar styles */
-            .progress-container {
-                width: 100%;
-                background-color: #f3f3f3;
-                position: fixed;
-                top: 0;
-                left: 0;
-                z-index: 1000;
-            }
-            
-            .progress-bar {
-                height: 5px;
-                width: 0%;
-                background-color: #4caf50;
-                transition: width 0.3s;
-            }
-    
-            /* Footer styles */
-            .footer {
-                background-color: #333;
-                color: white;
-                padding: 40px 0;
-                text-align: center;
-                position: relative;
-                width: 100%;
-            }
-    
-            .footer-container {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-            }
-    
-            .footer-container p {
-                margin: 5px 0;
-            }
-    
-            .footer-links {
-                display: flex;
-                gap: 15px;
-                margin-top: 10px;
-            }
-    
-            .footer-links a {
-                color: #4caf50;
-                text-decoration: none;
-                font-size: 14px;
-            }
-    
-            .footer-links a:hover {
-                text-decoration: underline;
-            }
-    
-            @media (min-width: 768px) {
-                .footer-container {
-                    flex-direction: row;
-                    justify-content: space-between;
-                    max-width: 1200px;
-                    margin: 0 auto;
-                    padding: 0 20px;
-                }
-    
-                .footer-links {
-                    margin-top: 0;
-                }
-            }
-    
-            /* FAQ section styles */
-            .faq-section {
-                margin: 50px auto;
-                max-width: 900px;
-                padding: 20px;
-            }
-    
-            .faq-section h2 {
-                margin-top: 30px;
-            }
-        </style>
-    </head>
-    </body>
-    </html> -->
-
-    
-    <!-- Footer Section -->
-
 
 
 
