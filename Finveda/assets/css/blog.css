@@ -1,0 +1,139 @@
+#progressBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 8px;
+    background-color: #f76b45;
+    z-index: 9999;
+  }
+  * {
+  cursor: url('./assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
+}
+
+
+.circle {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
+  transition: transform 0.1s, left 0.1s, top 0.1s;
+}
+
+.circle-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@media (max-width: 720px) {
+  .circle-container{
+    display: none;
+  }
+}
+
+.unique-popup-message {
+position: fixed; /* Change to fixed positioning */
+top: 30px; /* Adjust this value to be below the navbar */
+right: 2px; /* Adjust this value for the desired distance from the right edge */
+width: 300px; /* Adjust width as needed */
+transform: translateX(0); /* Center the popup horizontally */
+background-color: #a4d8ff;
+color: #131722;
+padding: 11px;
+border-radius: 5px;
+text-align: center;
+z-index: 1000;
+box-sizing: border-box;
+overflow: hidden; /* Hide the expanding border animation */
+position: relative;
+}
+
+.border-animation {
+position: absolute;
+bottom: 0;
+left: 0;
+height: 7px; /* Same height as the border */
+background-color: rgb(17, 9, 230);
+width: 100%;
+transform-origin: right; /* Start shrinking from the right */
+}
+
+@keyframes borderAnimation {
+from {
+transform: scaleX(0); /* Full width initially */
+}
+to {
+transform: scaleX(1); /* Shrink to zero width */
+}
+}
+.social-icons{
+
+  text-align: left;
+}
+
+.social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  background-color: transparent;
+  border: 0.2rem solid #0890ff;
+  font-size: 1.1rem;
+  border-radius: 50%;
+  margin: 1rem 0.5rem 0.5rem 0;
+  transition: 0.3s ease;
+  color: #55ff00;
+  text-align: left;
+}
+
+.social-icons a:hover {
+  color: rgb(139, 249, 12);
+  transform: scale(1.3) translateY(-5px);
+  background-color: #0048ff;
+  box-shadow: 0 0 25px #03133c;
+}
+
+
+.or-sign-in-with {
+  margin: 20px 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: #666;
+  text-align: center;
+  position: relative;
+}
+
+.or-sign-in-with::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0; 
+  width: 35%; 
+  border-top: 1px solid #ccc;
+  transform: translateX(-2%); 
+}
+
+.or-sign-in-with::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0; 
+  width: 35%; 
+  border-top: 1px solid #ccc;
+  transform: translateX(2%);
+}
+.form-check {
+  display: flex;
+  align-items: center;
+}
+.form-check a {
+  margin-left: auto; 
+}

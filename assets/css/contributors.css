@@ -1,0 +1,333 @@
+/* Custom CSS with Tailwind-inspired utility classes */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .header-hero {
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  
+  .header-hero .container {
+    position: relative;
+  }
+  
+  .header-hero .header-hero-content {
+    position: relative;
+    color: #fff;
+  }
+  
+  .header-hero .header-hero-image {
+    margin-top: 50px;
+  }
+  
+  .header-sub-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  
+  .header-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+  
+  .text {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  
+  .main-btn {
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 12px 30px;
+    border-radius: 30px;
+    background-color: #ffffff;
+    color: #000;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .main-btn:hover {
+    background-color: #000;
+    color: #ffffff;
+  }
+  
+  .content {
+    position: relative;
+    padding-top: 0; 
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px;
+    margin: 0 1rem;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .text-3xl {
+    font-size: 1.875rem;
+  }
+  
+  .font-semibold {
+    font-weight: 600;
+  }
+  
+  .mb-8 {
+    margin-bottom: 0.8rem;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  
+  .justify-center {
+    justify-content: center;
+  }
+  
+  .gap-8 {
+    gap: 2rem;
+  }.contributors {
+    padding-top: 10px; 
+}
+.contributor-card {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: calc(25% - 16px); 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-decoration: none;
+  color: inherit;
+  margin-bottom: 16px; 
+}
+
+.contributor-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(139deg, #3b89ff 50%, #eef6ff 50%);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transform: translate(-100%, -100%);
+  opacity: 0;
+  z-index: -1;
+}
+
+.contributor-card:hover::before {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+.contributor-card:hover {
+  transform: scale(1.05);
+  box-shadow: 1px 1px 5px rgba(64, 83, 255, 0.64);
+}
+
+.contributor-card img {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.contributor-card h2,
+.contributor-card p {
+  position: relative;
+  z-index: 1;
+  transition: text-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.contributor-card:hover h2 {
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+  text-shadow: 1px 1px 2px rgb(0, 136, 255), 0 0 0.2em rgb(255, 73, 249), 0 0 0.8em rgb(250, 134, 246);
+  color: white;
+}
+
+.contributor-card:hover p {
+  /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); */
+  /* text-shadow: 1px 1px 0.5px rgb(4, 249, ), 0 0 1em rgb(255, 102, 0), 0 0 0.2em  rgb(255, 102, 0); */
+  text-shadow: 1px 1px 2px rgb(0, 136, 255), 0 0 0.2em rgb(255, 73, 249), 0 0 0.8em rgb(250, 134, 246);
+  color: rgb(0, 0, 0);
+  font-weight: 400;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.text-gray-900 {
+  color: #1a202c;
+}
+
+.text-gray-100 {
+  color: #f7fafc;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.text-gray-700 {
+  color: #4a5568;
+}
+
+.text-gray-400 {
+  color: #cbd5e0;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+}
+
+.mr-1 {
+  margin-right: 0.25rem;
+}
+
+.bg_cover {
+  background-size: cover;
+  background-position: center;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0.44, rgb(122, 153, 217)),
+      color-stop(0.72, rgb(73, 125, 189)),
+      color-stop(0.86, rgb(28, 58, 148))
+  );
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+  background-color: rgba(0, 0, 0, 1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contributor-card {
+      max-width: 80%;
+  }
+}
+
+/* .contributor-card h2,
+.contributor-card p {
+  transition: color 0.2s ease;
+}
+.contributor-card:hover h2,
+.contributor-card:hover p {
+  color: #ffffff; 
+} */
+
+* {
+  cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
+}
+
+#progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 8px;
+  background-color: #f76b45;
+  z-index: 9999;
+
+}
+
+.circle {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
+  transition: transform 0.1s, left 0.1s, top 0.1s;
+}
+
+.circle-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@media (max-width: 720px) {
+  .circle-container{
+    display: none;
+  }
+}
+
+
+.unique-popup-message {
+position: fixed; /* Change to fixed positioning */
+top: 30px; /* Adjust this value to be below the navbar */
+right: 2px; /* Adjust this value for the desired distance from the right edge */
+width: 300px; /* Adjust width as needed */
+transform: translateX(0); /* Center the popup horizontally */
+background-color: #a4d8ff;
+color: #131722;
+padding: 11px;
+border-radius: 5px;
+text-align: center;
+z-index: 1000;
+box-sizing: border-box;
+overflow: hidden; /* Hide the expanding border animation */
+position: relative;
+}
+
+.border-animation {
+position: absolute;
+bottom: 0;
+left: 0;
+height: 7px; /* Same height as the border */
+background-color: rgb(4, 0, 128);
+width: 100%;
+transform-origin: right; /* Start shrinking from the right */
+}
+
+@keyframes borderAnimation {
+from {
+transform: scaleX(0); /* Full width initially */
+}
+to {
+transform: scaleX(1); /* Shrink to zero width */
+}
+}
+
+

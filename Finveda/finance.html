@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basics of Finance - Video Courses</title>
+  <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./assets/css/default.css" />
+  <link rel="stylesheet" href="finance.css">
+  <link rel="shortcut icon"  href="/assets/images/favicon2.webp" type="image/png" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/animate.css" />
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <link rel="stylesheet" href="./assets/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+  <div class="circle-container">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+  <div id="progressBar"></div>
+  <script>
+    window.onscroll = function () {
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      document.getElementById("progressBar").style.width = scrolled + "%";
+    };
+  </script>
+  <div class="content-wrapper">
+    <header class="header-area">
+      <div style="display: flex; justify-content: center;" class="navbar-area">
+        <div style="display: flex; justify-content: center;" class="container">
+          <div class="row">
+            <div style="display: flex; justify-content: center;" class="">
+              <nav class="navbar navbar-expand-lg " style="display: flex;">
+             
+
+                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                  <div class="icon1">
+                    <a href="./index.html">
+                      <img src="./assets/images/FinvedaLogo.png" alt="icon.png" style="width: 13rem;">
+                    </a>
+                  </div>
+                  <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
+                    <li class="nav-item">
+                      <a class="page-scroll" href="./index.html" style="color: rgb(237, 242, 244);">Home
+                        🏡</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll" href="./finance.html" style="color: rgb(237, 242, 244);">Courses 📚</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
+                    </li>
+                    <!-- Dropdown for Explore -->
+                    <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
+                      <a class="page-scroll dropdown-toggle" href="#" style="color: rgb(237, 242, 244);">
+                        <span class="explore-text">Explore 📚</span>
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a href="./trends.html">Trends 📈</a></li>
+                        <li><a href="./tools/sip.html">Tools 🔧</a></li>
+                        <li><a href="./blog.html">Blogs 📰</a></li>
+                        <li><a href="./quiz.html">Quiz 🤔</a></li>
+                        <li><a href="./maps.html">MAPS 🗺️</a></li>
+                      </ul>
+                    </li>
+
+                    <!-- Navigation item placeholder for Login/Register or Logout button -->
+                    <li class="nav-item no-underline" id="auth-btn-container">
+                      <a class="main-btn navbar-btn"
+                        style="padding: 2px 20px; color: rgb(237, 242, 244); animation-duration: 0.4s; animation-name: ease;"
+                        data-scroll-nav="0" href="./loginPage.html">Login/Register 💻</a>
+                    </li>
+
+                    <li class="nav-item no-underline">
+                      <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
+                        🌙
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+          <script>
+            const toggleButton = document.getElementById('theme-toggle');
+            const body = document.body;
+            const currentTheme = localStorage.getItem('theme');
+          
+            // Apply the saved theme preference on page load
+            if (currentTheme === 'dark') {
+              body.classList.add('dark-mode');
+              toggleButton.textContent = '🌞';
+            }
+          
+            toggleButton.addEventListener('click', function () {
+              body.classList.toggle('dark-mode');
+          
+              // Update button icon and save theme in local storage
+              if (body.classList.contains('dark-mode')) {
+                toggleButton.textContent = '🌞';  // Light mode icon
+                localStorage.setItem('theme', 'dark');
+              } else {
+                toggleButton.textContent = '🌙';  // Dark mode icon
+                localStorage.setItem('theme', 'light');
+              }
+            });
+          </script>
+          
+          
+  </header>
+
+  
+
+<div class="second-header">
+  <h1>Let's Start Your Journey in World of Finance</h1>
+  <p>Learn the basics of finance with these curated video lessons. Click "Watch Now" to view each course.</p>
+</div>
+<style>
+  .second-header {
+    background: linear-gradient(135deg, #8598e7, #2e2ef3);
+    border: 5px solid white;
+    margin-bottom: 30px;
+  }
+
+</style>
+
+<main>
+  <div class="course" data-aos="slide-right">
+    <h2>Introduction to Finance</h2>
+    <img src="assets/images/intro-to-finance.webp" alt="Introduction to Finance Poster" class="poster-image">
+    <button onclick="window.open('https://www.youtube.com/watch?v=ZZY-6_GeZ_g', '_blank')">Watch Now</button>
+  </div>
+
+  <div class="course" data-aos="zoom-in">
+    <h2>Introduction to Finance Statements</h2>
+    <img src="assets/images/finance-statments.webp" alt="Introduction to Finance Statements" class="poster-image">
+    <button onclick="window.open('https://www.youtube.com/watch?v=Fi1wkUczuyk', '_blank')">Watch Now</button>
+  </div>
+
+  <div class="course" data-aos="slide-left">
+    <h2>Understanding Cash Flow</h2>
+    <img src="assets/images/cash-flow.png" alt="Understanding Cash Flow" class="poster-image">
+    <button onclick="window.open('https://www.youtube.com/watch?v=hefAHWvrFDQ', '_blank')">Watch Now</button>
+  </div>
+
+  <div class="course" data-aos="slide-right">
+    <h2>Understanding Stock Market</h2>
+    <img src="assets/images/stock-market.png" alt="Understanding Stock Market" class="poster-image">
+    <button onclick="window.open('https://www.youtube.com/watch?v=p7HKvqRI_Bo', '_blank')">Watch Now</button>
+  </div>
+
+  <div class="course" data-aos="zoom-in">
+    <h2>Personal Finance Management</h2>
+    <img src="assets/images/personal-finance.png" alt="Personal Finance Management" class="poster-image">
+    <button onclick="window.open('https://www.youtube.com/watch?v=UcAY6qRHlw0', '_blank')">Watch Now</button>
+  </div>
+
+  <div class="course" data-aos="slide-left">
+    <h2>Investment Basics</h2>
+    <img src="assets/images/invesment-basics.png" alt="Investment Basics" class="poster-image">
+    <button onclick="window.open('https://www.youtube.com/watch?v=qIw-yFC-HNU', '_blank')">Watch Now</button>
+  </div>
+</main>
+
+  <style>
+    main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.course {
+  margin-left: -30px;
+  background: linear-gradient(135deg, #81c784, #388e3c); /* Light green to dark green gradient */
+  border: 4px solid #f3f4f3; /* Dark green border */
+  border-radius: 10px; /* Rounded corners */
+  width: 300px; /* Adjust width as needed */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.course h2 {
+  color: #fff; /* White text for headings */
+}
+
+.poster-image {
+  width: 100%; /* Responsive image */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 5px; /* Rounded corners for images */
+}
+
+button {
+  background-color: #fff; /* White background for button */
+  color: #388e3c; /* Dark green text for button */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 15px;
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth background change */
+}
+
+.course {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.course:hover {
+    transform: translateY(-5px) scale(1.1); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); 
+}
+
+.course:hover button {
+    background-color: #e0e0e0; 
+    transform: scale(1.05); 
+    transition: transform 0.3s ease; 
+}
+
+</style>
+
+
+<footer id="footer" class="footer-area pt-120">
+<div class="container">
+<div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="subscribe-content mt-45">
+        <h2 class="subscribe-title">
+          Subscribe Our Newsletter <span>get regular updates</span>
+        </h2>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="subscribe-form mt-50">
+        <form id="unique-subscribe-form">
+          <input type="email" id="unique-news-email" placeholder="Enter Email" required/>
+          <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
+        </form>
+        <div id="unique-message" class="unique-popup-message" style="display: none;">
+          <div class="border-animation"></div>
+          Thank You for the subscription!
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="footer-widget pb-100">
+<div class="row" id="footer">
+    <div class="col-lg-4 col-md-6 col-sm-8">
+        <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+          <img src="./assets/images/FinvedaLogo.png" alt="FinVeda Logo" style="height: 80px; width: auto; margin-bottom: 15px;" />
+            <p class="text custom-margin">
+                We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
+            </p>
+        </div>
+    </div>
+    <div class="col-lg-5 col-md-7 col-sm-7">
+        <div class="footer-link d-flex mt-50 justify-content-md-between" style="justify-content: space-around !important;">
+            <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+                <div class="footer-title">
+                    <h3 class="title custom-margin">Quick Links</h3>
+                </div>
+                <ul class="link custom-margin">
+                    <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+                    <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
+                    <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
+                    <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+                    <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+                </ul>
+            </div>
+            <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+                <div class="footer-title">
+                    <h4 class="title custom-margin">Resources</h4>
+                </div>
+                <ul class="link custom-margin">
+                    <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
+                    <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
+                    <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                    <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-5 col-sm-5">
+        <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+            <div class="footer-title">
+                <h4 class="title custom-margin">Contact Us</h4>
+            </div>
+            <ul class="contact custom-margin-big" style="justify-content: space-around;">
+                <li class="d-sm-flex justify-content-center">
+                    <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                    <p style="width: 80%;">
+                        <a href="mailto:ayush1337@hotmail.com" target="_blank"
+                           style="color: white; text-decoration: underline;">
+                            ayush1337@hotmail.com
+                        </a>
+                    </p>
+                </li>
+                <li class="d-sm-flex justify-content-center">
+                    <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                    <div style="width: 80%;">
+                        <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
+                            fin-veda.vercel.app
+                        </a>
+                    </div>
+                </li>
+                <li class="d-sm-flex justify-content-center">
+                    <!-- Modified: Inline CSS to adjust logo size and sync with other pages -->
+                    <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font: 12px; width: 10%;"></i>
+                    <div style="width: 80%;">
+                        <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
+                           style="color:#fff">
+                            Delhi, India
+                        </a>
+                    </div>
+                </li>
+                <!-- Added: Social Media Redirects -->
+                <div class="social-icons">
+                  <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                  <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
+                  <a href="https://discord.com/"><i class="fa-brands fa-discord"></i></a>
+                  <a href="https://github.com/ayush-that/FinVeda"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </ul>
+        </div>
+    </div>
+
+
+</div>
+</div>
+<div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center">
+  <div class="row">
+    <div class="col-lg-12">
+      <div
+        class="copyright d-sm-flex justify-content-center"
+        style="
+          display: flex;
+          justify-content: center;
+          text-align: center;
+          width: 100%;
+          height: 100%;
+        "
+      >
+        <div class="copyright-content" style="text-align: center">
+          <p class="text" style="text-align: center">
+            © <span id="copyright-year">2024</span> FinVeda. All rights are
+            reserved<br />
+            Made with ♥ in India
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="particles-2"></div>
+</div>
+</footer>
+<button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top">↑</button>
+
+  <script src="finance.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 2000
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const coords = { x: 0, y: 0 };
+    const circles = document.querySelectorAll(".circle");
+
+    circles.forEach(function (circle) {
+      circle.x = 0;
+      circle.y = 0;
+    });
+
+    window.addEventListener("mousemove", function (e) {
+      coords.x = e.pageX;
+      coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
+    });
+
+    function animateCircles() {
+      let x = coords.x;
+      let y = coords.y;
+
+      circles.forEach(function (circle, index) {
+        circle.style.left = `${x - 12}px`;
+        circle.style.top = `${y - 12}px`;
+        circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+
+        const nextCircle = circles[index + 1] || circles[0];
+        circle.x = x;
+        circle.y = y;
+
+        x += (nextCircle.x - x) * 0.3;
+        y += (nextCircle.y - y) * 0.3;
+      });
+
+      requestAnimationFrame(animateCircles);
+    }
+
+    animateCircles();
+  });
+
+</script>
+
+</body>
+</html>

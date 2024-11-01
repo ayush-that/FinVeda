@@ -1,0 +1,238 @@
+body {
+  background-color:  black;
+}
+
+
+#progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 8px;
+  background-color: #f76b45;
+  z-index: 9999;
+}
+
+* {
+  cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
+}
+
+.market-status-heading-unique {
+  margin: 20px;
+}
+.circle {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
+  transition: transform 0.1s, left 0.1s, top 0.1s;
+}
+
+.circle-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@media (max-width: 720px) {
+  .circle-container {
+      display: none;
+  }
+}
+
+.unique-popup-message {
+  position: fixed;
+  top: 30px;
+  right: 2px;
+  width: 300px;
+  transform: translateX(0);
+  background-color: #96c1e3;
+  color: #131722;
+  padding: 11px;
+  border-radius: 5px;
+  text-align: center;
+  z-index: 1000;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.border-animation {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 7px;
+  background-color: rgb(4, 0, 128);
+  width: 100%;
+  transform-origin: right;
+  animation: borderAnimation 1s forwards; /* Apply animation */
+}
+
+@keyframes borderAnimation {
+  from {
+      transform: scaleX(0);
+  }
+  to {
+      transform: scaleX(1);
+  }
+}
+ 
+.theme-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: #444;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+body.dark-mode .market-status-section-unique{
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+} 
+body.dark-mode .market-status-heading-unique{
+  color: white;
+}
+body.dark-mode .market-card-unique{
+  background-color: rgb(42, 36, 36);
+  color: var(--text-color-dark);
+}
+body.dark-mode .market-card-unique h3{ 
+  color: rgb(199, 192, 192);
+} 
+body.dark-mode .finlogix-container{
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}  
+body.dark-mode .container-main{
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+} 
+body.dark-mode .footer-area{
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+} 
+.container{
+  height: 100%;
+  width: 100%;
+
+}
+.theme-toggle.dark {
+  background-color: #eceae0;
+  color: #000;
+}
+ 
+.btn-text{
+
+  margin-left:  35px;
+  color:  white;
+
+}
+.social-icons{
+  text-align: left;
+}
+
+.social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  background-color: transparent;
+  border: 0.2rem solid #0890ff;
+  font-size: 1.1rem;
+  border-radius: 50%;
+  margin: 1rem 0.5rem 0.5rem 0;
+  transition: 0.3s ease;
+  color: #55ff00;
+  text-align: left;
+}
+
+.social-icons a:hover {
+  color: rgb(139, 249, 12);
+  transform: scale(1.3) translateY(-5px);
+  background-color: #0048ff;
+  box-shadow: 0 0 25px #03133c;
+}
+
+.or-sign-in-with {
+  margin: 20px 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: #666;
+  text-align: center;
+  position: relative;
+}
+
+.or-sign-in-with::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  width: 33%;
+  border-top: 1px solid #ccc;
+  transform: translateX(-5%);
+}
+
+.or-sign-in-with::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  width: 33%;
+  border-top: 1px solid #ccc;
+  transform: translateX(5%);
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+}
+
+.form-check a {
+  margin-left: auto;
+}
+
+.home-link {
+  display: inline-block;
+  transition: background-color 0.3s, transform 0.3s;
+  background-color: #4267B2;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.home-link:hover {
+  background-color: #fff;
+  transform: scale(1.1);
+  border: 1px solid #2F4F7F;
+}
+
+.home-link:hover .fa-home {
+  color: #2F4F7F;
+}
+
+.home-link:hover .fa-home svg {
+  stroke: #2F4F7F;
+  stroke-width: 2;
+}
+
+.tradingview-widget-container {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid rgb(224, 221, 221);
+}
+
+.tradingview-widget-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 15px rgba(187, 15, 15, 0.2);
+  border: 2px solid rgb(166, 153, 153);
+}

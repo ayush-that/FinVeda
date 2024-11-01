@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register & Login</title>
+    <link rel="stylesheet" href="./loginPage.css" />
+    <link rel="shortcut icon" href="./assets/images/favicon2.webp" type="image/png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: table;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  z-index: 99999;
+}
+
+.loader {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.loader .ytp-spinner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 64px;
+  margin-left: -32px;
+  z-index: 18;
+  pointer-events: none;
+}
+
+.loader .ytp-spinner .ytp-spinner-container {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  padding-bottom: 100%;
+  top: 50%;
+  left: 50%;
+  margin-top: -50%;
+  margin-left: -50%;
+  -webkit-animation: ytp-spinner-linspin 1568.23529647ms linear infinite;
+  -moz-animation: ytp-spinner-linspin 1568.23529647ms linear infinite;
+  -o-animation: ytp-spinner-linspin 1568.23529647ms linear infinite;
+  animation: ytp-spinner-linspin 1568.23529647ms linear infinite;
+}
+
+.loader .ytp-spinner .ytp-spinner-container .ytp-spinner-rotator {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-animation: ytp-spinner-easespin 5332ms cubic-bezier(0.4, 0, 0.2, 1)
+    infinite both;
+  -moz-animation: ytp-spinner-easespin 5332ms cubic-bezier(0.4, 0, 0.2, 1)
+    infinite both;
+  -o-animation: ytp-spinner-easespin 5332ms cubic-bezier(0.4, 0, 0.2, 1)
+    infinite both;
+  animation: ytp-spinner-easespin 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite
+    both;
+}
+
+.loader
+  .ytp-spinner
+  .ytp-spinner-container
+  .ytp-spinner-rotator
+  .ytp-spinner-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  right: 50%;
+}
+
+.loader
+  .ytp-spinner
+  .ytp-spinner-container
+  .ytp-spinner-rotator
+  .ytp-spinner-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  left: 50%;
+}
+
+.loader .ytp-spinner-circle {
+  box-sizing: border-box;
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  border-style: solid;
+  border-color: #361cc1 #361cc1 #e1e1e1;
+  border-radius: 50%;
+  border-width: 6px;
+}
+
+.loader .ytp-spinner-left .ytp-spinner-circle {
+  left: 0;
+  right: -100%;
+  border-right-color: #e1e1e1;
+  -webkit-animation: ytp-spinner-left-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1)
+    infinite both;
+  -moz-animation: ytp-spinner-left-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1)
+    infinite both;
+  -o-animation: ytp-spinner-left-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1)
+    infinite both;
+  animation: ytp-spinner-left-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite
+    both;
+}
+
+.loader .ytp-spinner-right .ytp-spinner-circle {
+  left: -100%;
+  right: 0;
+  border-left-color: #e1e1e1;
+  -webkit-animation: ytp-right-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite
+    both;
+  -moz-animation: ytp-right-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite
+    both;
+  -o-animation: ytp-right-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+  animation: ytp-right-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+}
+
+@-webkit-keyframes ytp-spinner-linspin {
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ytp-spinner-linspin {
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes ytp-spinner-easespin {
+  12.5% {
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+
+  25% {
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    transform: rotate(270deg);
+  }
+
+  37.5% {
+    -webkit-transform: rotate(405deg);
+    -moz-transform: rotate(405deg);
+    -ms-transform: rotate(405deg);
+    -o-transform: rotate(405deg);
+    transform: rotate(405deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(540deg);
+    -moz-transform: rotate(540deg);
+    -ms-transform: rotate(540deg);
+    -o-transform: rotate(540deg);
+    transform: rotate(540deg);
+  }
+
+  62.5% {
+    -webkit-transform: rotate(675deg);
+    -moz-transform: rotate(675deg);
+    -ms-transform: rotate(675deg);
+    -o-transform: rotate(675deg);
+    transform: rotate(675deg);
+  }
+
+  75% {
+    -webkit-transform: rotate(810deg);
+    -moz-transform: rotate(810deg);
+    -ms-transform: rotate(810deg);
+    -o-transform: rotate(810deg);
+    transform: rotate(810deg);
+  }
+
+  87.5% {
+    -webkit-transform: rotate(945deg);
+    -moz-transform: rotate(945deg);
+    -ms-transform: rotate(945deg);
+    -o-transform: rotate(945deg);
+    transform: rotate(945deg);
+  }
+
+  to {
+    -webkit-transform: rotate(1080deg);
+    -moz-transform: rotate(1080deg);
+    -ms-transform: rotate(1080deg);
+    -o-transform: rotate(1080deg);
+    transform: rotate(1080deg);
+  }
+}
+
+@keyframes ytp-spinner-easespin {
+  12.5% {
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+
+  25% {
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    transform: rotate(270deg);
+  }
+
+  37.5% {
+    -webkit-transform: rotate(405deg);
+    -moz-transform: rotate(405deg);
+    -ms-transform: rotate(405deg);
+    -o-transform: rotate(405deg);
+    transform: rotate(405deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(540deg);
+    -moz-transform: rotate(540deg);
+    -ms-transform: rotate(540deg);
+    -o-transform: rotate(540deg);
+    transform: rotate(540deg);
+  }
+
+  62.5% {
+    -webkit-transform: rotate(675deg);
+    -moz-transform: rotate(675deg);
+    -ms-transform: rotate(675deg);
+    -o-transform: rotate(675deg);
+    transform: rotate(675deg);
+  }
+
+  75% {
+    -webkit-transform: rotate(810deg);
+    -moz-transform: rotate(810deg);
+    -ms-transform: rotate(810deg);
+    -o-transform: rotate(810deg);
+    transform: rotate(810deg);
+  }
+
+  87.5% {
+    -webkit-transform: rotate(945deg);
+    -moz-transform: rotate(945deg);
+    -ms-transform: rotate(945deg);
+    -o-transform: rotate(945deg);
+    transform: rotate(945deg);
+  }
+
+  to {
+    -webkit-transform: rotate(1080deg);
+    -moz-transform: rotate(1080deg);
+    -ms-transform: rotate(1080deg);
+    -o-transform: rotate(1080deg);
+    transform: rotate(1080deg);
+  }
+}
+
+@-webkit-keyframes ytp-spinner-left-spin {
+  0% {
+    -webkit-transform: rotate(130deg);
+    -moz-transform: rotate(130deg);
+    -ms-transform: rotate(130deg);
+    -o-transform: rotate(130deg);
+    transform: rotate(130deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(-5deg);
+    -moz-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    -o-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+  }
+
+  to {
+    -webkit-transform: rotate(130deg);
+    -moz-transform: rotate(130deg);
+    -ms-transform: rotate(130deg);
+    -o-transform: rotate(130deg);
+    transform: rotate(130deg);
+  }
+}
+
+@keyframes ytp-spinner-left-spin {
+  0% {
+    -webkit-transform: rotate(130deg);
+    -moz-transform: rotate(130deg);
+    -ms-transform: rotate(130deg);
+    -o-transform: rotate(130deg);
+    transform: rotate(130deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(-5deg);
+    -moz-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    -o-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+  }
+
+  to {
+    -webkit-transform: rotate(130deg);
+    -moz-transform: rotate(130deg);
+    -ms-transform: rotate(130deg);
+    -o-transform: rotate(130deg);
+    transform: rotate(130deg);
+  }
+}
+
+@-webkit-keyframes ytp-right-spin {
+  0% {
+    -webkit-transform: rotate(-130deg);
+    -moz-transform: rotate(-130deg);
+    -ms-transform: rotate(-130deg);
+    -o-transform: rotate(-130deg);
+    transform: rotate(-130deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(5deg);
+    -moz-transform: rotate(5deg);
+    -ms-transform: rotate(5deg);
+    -o-transform: rotate(5deg);
+    transform: rotate(5deg);
+  }
+
+  to {
+    -webkit-transform: rotate(-130deg);
+    -moz-transform: rotate(-130deg);
+    -ms-transform: rotate(-130deg);
+    -o-transform: rotate(-130deg);
+    transform: rotate(-130deg);
+  }
+}
+
+@keyframes ytp-right-spin {
+  0% {
+    -webkit-transform: rotate(-130deg);
+    -moz-transform: rotate(-130deg);
+    -ms-transform: rotate(-130deg);
+    -o-transform: rotate(-130deg);
+    transform: rotate(-130deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(5deg);
+    -moz-transform: rotate(5deg);
+    -ms-transform: rotate(5deg);
+    -o-transform: rotate(5deg);
+    transform: rotate(5deg);
+  }
+
+  to {
+    -webkit-transform: rotate(-130deg);
+    -moz-transform: rotate(-130deg);
+    -ms-transform: rotate(-130deg);
+    -o-transform: rotate(-130deg);
+    transform: rotate(-130deg);
+  }
+}
+
+/* Tooltip styling for the input field */
+.input-field {
+    position: relative; /* Positioning for the tooltip */
+    display: flex;      /* Flexbox for alignment */
+    align-items: center;
+}
+
+/* Tooltip text styling */
+.tooltip-text {
+    position: absolute; /* Absolute positioning relative to .input-field */
+    left: 50%;         /* Center tooltip horizontally */
+    bottom: 100%;      /* Position above the toggle icon */
+    transform: translateX(-50%); /* Adjust to center */
+    margin-bottom: 5px; /* Space between the tooltip and the icon */
+    background-color: #333; /* Tooltip background */
+    color: #fff;       /* Tooltip text color */
+    padding: 5px;      /* Inner spacing */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 12px;   /* Font size */
+    white-space: nowrap; /* Prevent text wrapping */
+    opacity: 0;        /* Initial hidden state */
+    visibility: hidden; /* Initial hidden state */
+    transition: opacity 0.2s; /* Fade-in transition */
+}
+
+/* Show tooltip on hover over the password toggle icon */
+#toggle-password:hover + .tooltip-text,
+#toggle-password-signup:hover + .tooltip-text {
+    opacity: 1;       /* Fade in */
+    visibility: visible; /* Make visible */
+}
+
+
+    </style>
+  </head>
+  <body>
+
+    <div class="preloader">
+      <div class="loader">
+        <div class="ytp-spinner">
+          <div class="ytp-spinner-container">
+            <div class="ytp-spinner-rotator">
+              <div class="ytp-spinner-left">
+                <div class="ytp-spinner-circle"></div>
+              </div>
+              <div class="ytp-spinner-right">
+                <div class="ytp-spinner-circle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <form action="#" class="sign-in-form">
+            <h2 class="title">Sign in</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Username" />
+            </div>
+            
+            <div class="input-field">
+              <i class="fas fa-lock" id="toggle-password" style="cursor: pointer;"></i>
+              <span class="tooltip-text">Click to view password</span>
+              <input 
+                  type="password" 
+                  placeholder="Password" 
+                  id="password-input" />
+          </div>
+          
+            
+            
+
+            <div class="forgot-password">
+                <a href="#" onclick="forgotPassword()">Forgot Password?</a>
+              </div>
+            <input type="submit" value="Login" class="btn solid" />
+            <p class="social-text">Or Sign in with social platforms</p>
+            <div class="social-icons">
+              <div class="social-icon-frame">
+                  <a href="https://www.google.com" target="_blank" class="social-icon">
+                      <i class="fab fa-google"></i>
+                  </a>
+              </div>
+              <div class="social-icon-frame">
+                  <a href="https://facebook.com/YourPage" target="_blank" class="social-icon">
+                      <i class="fab fa-facebook-f"></i>
+                  </a>
+              </div>
+              <div class="social-icon-frame">
+                  <a href="https://github.com/YourGitHubProfile" target="_blank" class="social-icon">
+                      <i class="fab fa-github"></i>
+                  </a>
+              </div>
+          </div>
+          </form>
+          <form action="#" class="sign-up-form">
+            <h2 class="title">Sign up</h2>
+            <div class="input-field">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Username" />
+            </div>
+            <div class="input-field">
+                <i class="fas fa-envelope"></i>
+                <input type="email" placeholder="Email" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock" id="toggle-password-signup" style="cursor: pointer;"></i>
+              <span class="tooltip-text">Click to view password</span>
+              <input type="password" placeholder="Password" id="password-input-signup" />
+          </div>
+          
+        
+            <!-- Password strength meter starts here (initially hidden) -->
+            <div id="password-strength-section" style="display: none;">
+                <label for="password-input-signup">Password Strength:</label>
+                <div class="strength-meter" style="width: 100%; max-width: 300px; height: 10px; background-color: #e0e0e0; border-radius: 5px; margin: 10px auto;">
+                    <div id="strength-bar-signup" style="height: 100%; width: 1%; background-color: #d73f40; border-radius: 5px; transition: width 0.5s, background-color 0.5s;"></div>
+                </div>
+                <div class="strength-label" id="strength-label-signup" style="font-size: 14px; margin-top: 10px;">Weak</div>
+            </div>
+            <!-- Password strength meter ends here -->
+        
+            <input type="submit" class="btn" value="Sign up" />
+            <p class="social-text">Or Sign up with social platforms</p>
+            <div class="social-icons">
+              <div class="social-icon-frame">
+                  <a href="https://www.google.com" target="_blank" class="social-icon">
+                      <i class="fab fa-google"></i>
+                  </a>
+              </div>
+              <div class="social-icon-frame">
+                  <a href="https://facebook.com/YourPage" target="_blank" class="social-icon">
+                      <i class="fab fa-facebook-f"></i>
+                  </a>
+              </div>
+              <div class="social-icon-frame">
+                  <a href="https://github.com/YourGitHubProfile" target="_blank" class="social-icon">
+                      <i class="fab fa-github"></i>
+                  </a>
+              </div>
+          </div>
+        </form>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>
+        
+        
+        <script>
+            let passwordSignup = document.getElementById("password-input-signup");
+            let strengthBarSignup = document.getElementById("strength-bar-signup");
+            let strengthLabelSignup = document.getElementById("strength-label-signup");
+            let passwordStrengthSection = document.getElementById("password-strength-section");
+        
+            passwordSignup.oninput = function () {
+                let value = passwordSignup.value;
+        
+                // Show the strength meter when the user starts typing
+                if (value.length > 0) {
+                    passwordStrengthSection.style.display = "block";
+                } else {
+                    passwordStrengthSection.style.display = "none";
+                }
+        
+                let result = zxcvbn(value);
+                let score = result.score; // Score is between 0 and 4
+                let widths = ["1%", "25%", "50%", "75%", "100%"];
+                let colors = ["#d73f40", "#dc6551", "#f2b84f", "#bde952", "#3ba62f"];
+                let labels = ["Very Weak", "Weak", "Fair", "Good", "Strong"];
+        
+                strengthBarSignup.style.width = widths[score];
+                strengthBarSignup.style.backgroundColor = colors[score];
+                strengthLabelSignup.textContent = labels[score];
+            };
+
+            function forgotPassword() {
+          const email = prompt('Please enter your email address:');
+          if (email) {
+            firebase
+              .auth()
+              .sendPasswordResetEmail(email)
+              .then(() => {
+                alert('Password reset email sent!');
+              })
+              .catch((error) => {
+                console.error('Error:', error.message);
+              });
+          }
+        }
+        </script>
+        
+        </div>
+      </div>
+
+      <div class="panels-container">
+        <a href="index.html" class="homeBtn">
+            <i class="fas fa-home"></i>
+          </a>
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>New here ?</h3>
+            <p>
+              Discover new experiences with FinVeda! <br />Get access to
+              exclusive content and features. <br />
+              Create your account.
+            </p>
+            <a href="index.html" class="homeBtn">
+                <i class="fas fa-home"></i>
+            </a>
+            <button class="btn transparent" id="sign-up-btn">Sign up</button>
+          </div>
+          <img src="img/log.svg" class="image" alt="" />
+        </div>
+        <div class="panel right-panel">
+          <div class="content">
+            <h3>One of us ?</h3>
+            <p>Welcome to our community</p>
+            <button class="btn transparent" id="sign-in-btn">Sign in</button>
+          </div>
+          <img src="img/register.svg" class="image" alt="" />
+        </div>
+      </div>
+    </div>
+
+    
+    <script>
+      const sign_in_btn = document.querySelector("#sign-in-btn");
+      const sign_up_btn = document.querySelector("#sign-up-btn");
+      const container = document.querySelector(".container");
+
+      sign_up_btn.addEventListener("click", () => {
+        container.classList.add("sign-up-mode");
+      });
+
+      sign_in_btn.addEventListener("click", () => {
+        container.classList.remove("sign-up-mode");
+      });
+
+        
+      
+        // Toggle password visibility
+          function togglePassword(fieldId, icon) {
+            const field = document.getElementById(fieldId);
+            const isPassword = field.type === "password";
+
+            // Toggle between 'password' and 'text'
+            field.type = isPassword ? "text" : "password";
+
+            // Change the icon class between eye and eye-slash
+            icon.classList.toggle("fa-lock-open", isPassword);
+            icon.classList.toggle("fa-lock", isPassword === false);
+          }
+
+          // Add event listeners for password toggle
+          document
+            .getElementById("toggle-password")
+            .addEventListener("click", function () {
+              togglePassword("password-input", this);
+            });
+
+          document
+            .getElementById("toggle-password-signup")
+            .addEventListener("click", function () {
+              togglePassword("password-input-signup", this);
+            });
+
+
+      // Check password strength
+      function checkPasswordStrength() {
+        const password = document.querySelector(
+          ".sign-up-form input[type='password']"
+        ).value;
+        const strengthWeak = document.getElementById("strength-weak");
+        const strengthMedium = document.getElementById("strength-medium");
+        const strengthStrong = document.getElementById("strength-strong");
+
+        let strength = 0;
+
+        if (password.length >= 8) strength++;
+        if (password.match(/[A-Z]/)) strength++;
+        if (password.match(/[a-z]/)) strength++;
+        if (password.match(/[0-9]/)) strength++;
+        if (password.match(/[^a-zA-Z0-9]/)) strength++;
+
+        strengthWeak.className = "";
+        strengthMedium.className = "";
+        strengthStrong.className = "";
+
+        if (strength >= 1) strengthWeak.className = "weak";
+        if (strength >= 3) strengthMedium.className = "medium";
+        if (strength >= 5) strengthStrong.className = "strong";
+      }
+
+      document
+        .querySelector(".sign-up-form input[type='password']")
+        .addEventListener("input", checkPasswordStrength);
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-auth-compat.js"></script>
+    <script src="firebase.js"></script>
+    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./loginpage.js"></script>
+  </body>
+</html>
