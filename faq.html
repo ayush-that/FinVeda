@@ -51,11 +51,6 @@
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.faq-title:hover {
-    text-decoration: underline;
-    color: #0000ff;
-    transform: scale(1.05);
-}
 
 /* FAQ Intro Paragraph */
 .faq-intro p {
@@ -112,44 +107,6 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.progress {
-    height: 25px;
-    background-color: #e0e0e0;
-    margin-bottom: 20px;
-    border: 2px solid #0000ff;
-}
-
-.progress-bar {
-    background-color: #0056b3;
-    height: 100%;
-    width: 0;
-    border-radius: 5px;
-    text-align: center;
-    line-height: 25px;
-    color: white;
-    transition: width 0.3s ease;
-}
-
-/* Default (light mode) styles */
-.faq-item {
-    margin: 20px 0;
-    padding: 10px;
-   
-    border: 3px solid #007bff;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: border-color 0.3s;
-}
-
-.faq-item:hover {
-    border-color:white;
-    color: white;
-}
-
-.faq-item.read {
-    background-color:white;
-    color: #0000ff;
-}
 
 /* Dark mode styles */
 @media (prefers-color-scheme: dark) {
@@ -358,6 +315,9 @@ body.dark-mode {
     background-color: #222;
     color: #f1f1f1;
 }
+.photo{
+    filter:none;
+}
   </style>
 </head>
 <body>
@@ -526,6 +486,15 @@ body.dark-mode {
                 .toggle-button.dark:hover {
                 background-color: #ddd; /* Button hover color in dark mode */
                 }
+
+                .images{
+                    display: flex;
+                    align-items: center;
+                }
+
+                img{
+                    margin-left:50px;
+                }
       </style>
            
           </nav>
@@ -567,54 +536,11 @@ body.dark-mode {
 </div>
 </header>
 
-
-     <!-- FAQ Section  -->
-
-
-     <div class="faq-container">
-        <h3 class = "faq-title">FAQ Progress</h3>
-        <!-- Progress Bar -->
-        <div style="margin: 5px 0;">
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-                    <span style="padding-left: 0.75rem;">0%</span>
-                </div>
-            </div>
-        </div>
-        <!-- FAQ Items -->
-        <div class="faq-item" style="color: #0000a3;">What is FinVeda?</div>
-        <div class="faq-item" style="color: #0000a3;" >How does FinVeda work?</div>
-        <div class="faq-item" style="color: #0000a3;">What are the features of FinVeda?</div>
-        <div class="faq-item" style="color: #0000a3;">How do I contact support?</div>
-    </div>
-
- <script>
-     const faqs = document.querySelectorAll('.faq-item');
-     const progressBar = document.querySelector('.progress-bar');
-
-     function updateProgress() {
-         let completed = 0;
-         faqs.forEach(faq => {
-             if (faq.classList.contains('read')) {
-                 completed++;
-             }
-         });
-         let progress = (completed / faqs.length) * 100;
-         progressBar.style.width = progress + '%';
-         progressBar.textContent = Math.round(progress) + '%';
-     }
-
-     faqs.forEach(faq => {
-         faq.addEventListener('click', function() {
-             faq.classList.toggle('read');
-             updateProgress();
-         });
-     });
- </script>
-
+    
 
  <!-- FAQ Section -->
-    <img style="position:absolute;width:250px; top: 200px; right: 1470px;mix-blend-mode: multiply;" src="assets/images/HELP-IMG.webp" alt="image">
+  <div class="images">
+    <img style="width:250px; top: 200px; right: 1470px;mix-blend-mode: multiply;" src="assets/images/HELP-IMG.webp" alt="image" class="photo">
     <div class="faq-section">    
         <div class="faq-intro">
             <h3 class="faq-title">Frequently Asked Questions</h3>
@@ -699,7 +625,7 @@ body.dark-mode {
             </div>
         </div>
     </div>
-
+    </div>
     <!-- Feedback Section -->
     <div class="faq-feedback">
         <h3 class="faq-title">Submit Your Feedback or Ask a New Question</h3>
@@ -721,7 +647,7 @@ body.dark-mode {
             </div>
         </form>
     </div>
-
+    
     <style>
         /* Global body styles for dark theme */
         body {
@@ -775,7 +701,7 @@ body.dark-mode {
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             color: #ffffff;
             max-width: 800px;
-            margin: 20px auto;
+            margin: 20px 425px auto;
             transition: transform 0.3s ease;
         }
 
@@ -827,7 +753,8 @@ body.dark-mode {
         }
 
         .submit-btn:hover {
-            background-color: whitesmoke; /* Lighter green on hover */
+            background-color: #0000ff; 
+            color: white;
         }
 
         /* Search styles */
