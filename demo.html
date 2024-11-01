@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Accordion</title>
+    <style>
+        .accordion-button {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            cursor: pointer;
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .accordion-button:hover {
+            background-color: #e2e2e2;
+        }
+
+        .accordion-body {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 5px;
+            display: none; /* Initially hidden */
+        }
+
+        .show {
+            display: block; /* Display when expanded */
+        }
+
+        .accordion-button::after {
+            content: '▼'; /* Down arrow */
+            margin-left: auto; /* Align to the right */
+            transition: transform 0.3s;
+        }
+
+        .accordion-button.collapsed::after {
+            transform: rotate(-90deg); /* Rotate arrow when collapsed */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed" type="button" aria-expanded="false" aria-controls="collapseFive">
+                        Is Finveda free to use?
+                    </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse">
+                    <div class="accordion-body">
+                        Yes, Finveda is completely free to use for all users.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="final.js"></script> <!-- Link to external JS file -->
+</body>
+</html>
