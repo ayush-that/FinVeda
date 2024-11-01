@@ -633,8 +633,30 @@
     <br><br>
 
     <h1>Tools</h1>
+    <!-- Scroll button style -->
+     <style>
+    .scroll-btn {
+      position: absolute;
+      top: 50%;
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 24px;
+      z-index: 1;
+    }
+    .scroll-btn.leftt {
+      left: 0;
+    }
 
-    <div class="calculator-slider">
+    .scroll-btn.rightt {
+      right: 0;
+    }
+     </style>
+    <button class="scroll-btn leftt" onclick="scrollSliderLeft()">←</button>
+    <div class="calculator-slider" id="slider">
       <div class="slider-item" onclick="openCalculator('mutualFundCalculator')">
         <h3>Mutual Fund Investment Calculator</h3>
         <p>Estimate your potential returns for SIP or LumpSum investments.</p>
@@ -935,6 +957,28 @@
       </div>
 
     </div>
+    <button class="scroll-btn rightt" onclick="scrollSliderRight()">→</button>
+
+    <script>
+      // Scroll amount in pixels
+      const scrollAmount = 300;
+    
+      function scrollSliderLeft() {
+        const slider = document.getElementById('slider');
+        slider.scrollBy({
+          left: -scrollAmount,
+          behavior: 'smooth'
+        });
+      }
+    
+      function scrollSliderRight() {
+        const slider = document.getElementById('slider');
+        slider.scrollBy({
+          left: scrollAmount,
+          behavior: 'smooth'
+        });
+      }
+    </script>
 
     <style>
       body {
