@@ -463,7 +463,7 @@ display: flex;
 margin-left: -5.6rem;
 justify-content: center;
 
-background-color: rgb(159, 152, 252);
+background-color: rgba(0,0,0,0.9);
 border-radius: 10px;
 padding: 15px 30px;
 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -557,7 +557,7 @@ padding: 0; /* No padding */
 /* Footer Separator */
 .footer-separator {
 border-top: 2px solid #ccc;
-width: 80%;
+width: 90%;
 margin-bottom: 10px;
 box-shadow: -10px -10px 20px rgba(0, 0, 0, 0.1), 10px 10px 20px rgba(0, 0, 0, 0.1);
 }
@@ -565,6 +565,7 @@ box-shadow: -10px -10px 20px rgba(0, 0, 0, 0.1), 10px 10px 20px rgba(0, 0, 0, 0.
 /* Footer Area */
 #footer {
 color: white;
+
 /* padding: 50px 0; */
 }
 
@@ -744,10 +745,7 @@ margin-bottom: 5px;
 body {
   margin: 0;
   height: 100%;
-  
-  align-items: flex-end; 
 }
-
 .bubble {
   position: absolute;
  
@@ -759,6 +757,7 @@ body {
   animation: rise 3s infinite; 
   opacity: 0.7; /* Slight transparency */
 }
+
 
 @keyframes rise {
   0% {
@@ -790,8 +789,47 @@ body {
   animation-delay: 1.5s;
 }
 
+/* Centering and styling the section title */
+.section-title {
+  margin: auto;
+  text-align: center;
+}
 
+.line {
+  width: 65%;
+  height: 3px;
+  background-color: #2f6be5;
+  margin: 0 auto;
+}
 
+/* Animation for left-to-right and right-to-left slide */
+@keyframes slideFromLeft {
+  from {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
 
+@keyframes slideFromRight {
+  from {
+      transform: translateX(100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
 
+/* Applying animations to specific classes */
+.animated-post.left-slide {
+  animation: slideFromLeft 0.8s ease-in-out;
+}
 
+.animated-post.right-slide {
+  animation: slideFromRight 0.8s ease-in-out;
+}

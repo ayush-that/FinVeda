@@ -1,7 +1,11 @@
 :root{
     --slider-dark:rgba(255,255,255,0.5);
+    --blur-value: 5px;
 }
-
+ 
+.dark-mode {
+  --blur-value: 3px;
+}
 .main{
     width: 100%;
     height: auto;
@@ -395,7 +399,7 @@ body.dark-mode {
 
   .contributor-member:hover {
     scale: 1.06;
-    background: linear-gradient(135deg,#b5b2b8,#3cc3de);
+    background: white;
     box-shadow: 0 8px 12px #2e3061;
   }
 
@@ -461,6 +465,26 @@ body.dark-mode {
     color: #fff;
     border: 1px solid #444;
   }
+  body.dark-mode .carousel-btn { 
+    color: #fff;
+    position: absolute;
+    top: 40%; 
+    background-color: transparent;
+    border: none;
+    font-size: xxx-large;
+    font-family: monospace;
+    font-weight: bold;
+  }
+  body.dark-mode .carousel-btn:hover { 
+    color: #fff;
+    position: absolute;
+    top: 40%; 
+    background-color: black;
+    border: none;
+    font-size: xxx-large;
+    font-family: monospace;
+    font-weight: bold;
+  }
 
   body.dark-mode .pagination button:hover {
     background-color: rgba(255,255,255,0.5);
@@ -502,3 +526,60 @@ body.dark-mode {
   #myModal, #registerModal {
     z-index: 9999;
   }
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .footer-copyright {
+        font-size: 14px;
+    }
+
+    .contributor-member {
+        width: 100%; /* Make contributor cards full width */
+        margin-bottom: 20px;
+    }
+
+    .back-to-top {
+        bottom: 15px;
+        right: 15px;
+        padding: 8px;
+        font-size: 14px; /* Smaller font for mobile */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-copyright {
+        font-size: 12px;
+    }
+
+    .contributor-member {
+        width: 100%; /* Make contributor cards full width */
+        margin-bottom: 15px;
+    }
+
+    .back-to-top {
+        bottom: 10px;
+        right: 10px;
+        padding: 6px;
+        font-size: 12px; 
+    }
+}
+
+/* Additional styles for back-to-top button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none; 
+    background-color: #007bff; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000; 
+}
+
+/* Hover effect for the button */
+.back-to-top:hover {
+    background-color: #0056b3; 
+}

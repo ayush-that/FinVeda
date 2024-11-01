@@ -126,3 +126,5 @@ window.onscroll = function () {
           registerModal.style.display = 'none';
         }
       }
+
+      
