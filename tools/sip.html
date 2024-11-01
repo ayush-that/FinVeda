@@ -315,86 +315,56 @@
           <div class="col-lg-12">
             <nav class="navbar navbar-expand-lg">
 
-              <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent"
-                style="margin: auto; margin-left: -5px;">
+              <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                 <div class="icon1">
                   <a href="./index.html">
-                    <img src="../assets/images/FinvedaLogo.png" alt="icon.png" style="width: 11rem;">
+                    <img src="../assets/images/FinvedaLogo.png" alt="icon.png" style="width: 13rem;">
                   </a>
                 </div>
-                </a>
                 <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
                   <li class="nav-item">
-                    <a class="page-scroll" href="../index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
+                    <a class="page-scroll" href="../index.html" style="color: rgb(237, 242, 244);">Home
+                      🏡</a>
                   </li>
-
                   <li class="nav-item">
                     <a class="page-scroll" href="../about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
                   </li>
                   <li class="nav-item">
                     <a class="page-scroll" href="../finance.html" style="color: rgb(237, 242, 244);">Courses 📚</a>
-
-                  </li> 
-
+                  </li>
                   <li class="nav-item">
                     <a class="page-scroll" href="../contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="../trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="../tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="../blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
-                  </li>
-                  <li class="nav-item">
                     <a class="page-scroll" href="../faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
                   </li>
-                  <li class="nav-item no-underline">
-                    <a class="main-btn navbar-btn"
-                      style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;"
-                      data-scroll-nav="0" href="../loginPage.html">Login/Register 💻</a>
+                  <!-- Dropdown for Explore -->
+                  <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
+                    <a class="page-scroll dropdown-toggle" href="#" style="color: rgb(237, 242, 244);">
+                      <span class="explore-text">Explore 📚</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a href="../trends.html">Trends 📈</a></li>
+                      <li><a href="./tools/sip.html">Tools 🔧</a></li>
+                      <li><a href="../blog.html">Blogs 📰</a></li>
+                      <li><a href="../quiz.html">Quiz 🤔</a></li>
+                      <li><a href="../maps.html">MAPS 🗺️</a></li>
+                    </ul>
                   </li>
+
+                  <!-- Navigation item placeholder for Login/Register or Logout button -->
+                  <li class="nav-item no-underline" id="auth-btn-container">
+                    <a class="main-btn navbar-btn"
+                      style="padding: 2px 20px; color: rgb(237, 242, 244); animation-duration: 0.4s; animation-name: ease;"
+                      data-scroll-nav="0" href="./loginPage.html">Login/Register 💻</a>
+                  </li>
+
                   <li class="nav-item no-underline">
                     <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
                       🌙
                     </button>
                   </li>
                 </ul>
-              </div>
-              <!-- Login Modal -->
-              <!-- Login Modal -->
-              <div id="myModal" class="modal">
-                <div class="modal-content">
-                  <span class="close" style="display: flex; justify-content: right;">&times;</span>
-                  <div class="mt-3">
-                    <h3 class="join">Login to join us....</h3>
-                    <form class="px-3 py-4" id="loginForm">
-                      <div class="form-group">
-                        <label class="d-flex">Username</label>
-                        <div class="input-container">
-                          <i class="fa fa-user icon"></i>
-                          <input type="text" placeholder="Username" class="form-control" required />
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="d-flex">Password</label>
-                        <div class="input-container">
-                          <i class="fa fa-lock icon"></i>
-                          <input type="password" placeholder="Password" class="form-control" required>
-                          <button type="button" class="toggle-password-btn"><i class="fa fa-eye"></i></button>
-                        </div>
-                      </div>
-                      <div class="form-check d-flex">
-                        <input type="checkbox" class="form-check-input">
-                        <label class="form-check-label">Remember me</label>
-                      </div>
-                    </form>
-                    <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('loginForm')">Sign in</button>
-                    <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
-                  </div>
-                </div>
               </div>
               <script>
                 const toggleButton = document.getElementById('theme-toggle');
@@ -421,7 +391,7 @@
                   }
                 });
               </script>
-
+          </nav>
               <!-- Login Modal -->
               <div id="myModal" class="modal">
                 <div class="modal-content">
@@ -632,7 +602,7 @@
                 });
               </script>
           </div>
-          </nav>
+
 
           <nav class="mobile-menu ">
             <a class="page-scroll" href="../index.html">Home 🏡</a>
@@ -651,8 +621,6 @@
 
           <link href="../navbar.css" rel="stylesheet">
           <script type="text/javascript" src="../navbar.js"></script>
-
-
         </div>
       </div>
     </div>
