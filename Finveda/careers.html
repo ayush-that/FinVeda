@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Carrers - FinVeda</title>
+  <meta name="description"
+    content="Explore engaging quizzes on finance and economics at Fin Veda. Test your knowledge and learn with interactive quizzes covering various topics." />
+  <meta name="author" content="Ayush Singh">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" href="/assets/images/favicon2.webp" type="image/png" />
+  <link rel="stylesheet" href="assets/css/animate.css" />
+  <link rel="stylesheet" href="assets/css/magnific-popup.css" />
+  <link rel="stylesheet" href="assets/css/slick.css" />
+  <link rel="stylesheet" href="assets/css/LineIcons.css" />
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/default.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/quiz.css" />
+  <link rel="stylesheet" href="assets/css/popup.css" />
+  <link rel="stylesheet"  href="./assets/css/index.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="careers.css"> <!-- Link to careers.css -->
+  <style> 
+  
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background: #f76b45;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .job-posting {
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+
+    button {
+      background: #f76b45;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background: #e65c39;
+    }
+
+    /* footer {
+      text-align: center;
+      padding: 20px;
+      background: #333;
+      color: white;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    } */
+
+    #progressBar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 8px;
+      background-color: #f76b45;
+      z-index: 9999;
+
+    }
+
+    * {
+      cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
+    }
+
+
+    .circle {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
+      transition: transform 0.1s, left 0.1s, top 0.1s;
+    }
+
+    .circle-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    @media (max-width: 720px) {
+      .circle-container {
+        display: none;
+      }
+    }
+
+
+    .unique-popup-message {
+      position: fixed;
+      /* Change to fixed positioning */
+      top: 30px;
+      /* Adjust this value to be below the navbar */
+      right: 2px;
+      /* Adjust this value for the desired distance from the right edge */
+      width: 300px;
+      /* Adjust width as needed */
+      transform: translateX(0);
+      /* Center the popup horizontally */
+      background-color: #a4d8ff;
+      color: #131722;
+      padding: 11px;
+      border-radius: 5px;
+      text-align: center;
+      z-index: 1000;
+      box-sizing: border-box;
+      overflow: hidden;
+      /* Hide the expanding border animation */
+      position: relative;
+    }
+
+    .border-animation {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 7px;
+      /* Same height as the border */
+      background-color: rgb(4, 0, 128);
+      width: 100%;
+      transform-origin: right;
+      /* Start shrinking from the right */
+    }
+
+    @keyframes borderAnimation {
+      from {
+        transform: scaleX(0);
+        /* Full width initially */
+      }
+
+      to {
+        transform: scaleX(1);
+        /* Shrink to zero width */
+      }
+    }
+
+    .social-icons {
+
+      text-align: left;
+    }
+
+    .social-icons a {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 2.1rem;
+      height: 2.1rem;
+      background-color: transparent;
+      border: 0.2rem solid #0890ff;
+      font-size: 1.1rem;
+      border-radius: 50%;
+      margin: 1rem 0.5rem 0.5rem 0;
+      transition: 0.3s ease;
+      color: #55ff00;
+      text-align: left;
+    }
+
+    .social-icons a:hover {
+      color: rgb(139, 249, 12);
+      transform: scale(1.3) translateY(-5px);
+      background-color: #0048ff;
+      box-shadow: 0 0 25px #03133c;
+    }
+
+    .or-sign-in-with {
+      margin: 20px 0;
+      font-size: 14px;
+      font-weight: bold;
+      color: #666;
+      text-align: center;
+      position: relative;
+    }
+
+    .or-sign-in-with::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 35%;
+      border-top: 1px solid #ccc;
+      transform: translateX(-2%);
+    }
+
+    .or-sign-in-with::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 35%;
+      border-top: 1px solid #ccc;
+      transform: translateX(2%);
+    }
+
+    .form-check {
+      display: flex;
+      align-items: center;
+    }
+
+    .form-check a {
+      margin-left: auto;
+    }
+  </style>
+
+<body class="quizpage">
+
+  <div class="circle-container">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const coords = { x: 0, y: 0 };
+      const circles = document.querySelectorAll(".circle");
+
+      circles.forEach(function (circle) {
+        circle.x = 0;
+        circle.y = 0;
+      });
+
+      window.addEventListener("mousemove", function (e) {
+        coords.x = e.pageX;
+        coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
+      });
+
+      function animateCircles() {
+        let x = coords.x;
+        let y = coords.y;
+
+        circles.forEach(function (circle, index) {
+          circle.style.left = `${x - 12}px`;
+          circle.style.top = `${y - 12}px`;
+          circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+
+          const nextCircle = circles[index + 1] || circles[0];
+          circle.x = x;
+          circle.y = y;
+
+          x += (nextCircle.x - x) * 0.3;
+          y += (nextCircle.y - y) * 0.3;
+        });
+
+        requestAnimationFrame(animateCircles);
+      }
+
+      animateCircles();
+    });
+
+  </script>
+
+  <div id="progressBar"></div>
+  <script>
+    window.onscroll = function () {
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      document.getElementById("progressBar").style.width = scrolled + "%";
+    };
+  </script>
+
+
+
+  <!-- <div class="preloader">
+    <div class="loader">
+      <div class="ytp-spinner">
+        <div class="ytp-spinner-container">
+          <div class="ytp-spinner-rotator">
+            <div class="ytp-spinner-left">
+              <div class="ytp-spinner-circle"></div>
+            </div>
+            <div class="ytp-spinner-right">
+              <div class="ytp-spinner-circle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <header class="header-area">
+    <div style="display: flex; justify-content: center;" class="navbar-area">
+      <div style="display: flex; justify-content: center;" class="container">
+        <div class="row">
+          <div style="display: flex; justify-content: center;;" class="">
+            <nav class="navbar navbar-expand-lg " style="display: flex;">
+              <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+              </button> -->
+              <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent" style="margin: auto; margin-left: -5px;">
+                <div class="icon1" >
+                  <a href="./index.html">
+                    <img src="assets/images/FinvedaLogo.png" alt="icon.png" style="width: 11rem;">
+                  </a>
+                </div> 
+                <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
+                  </li>    
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./finance.html" style="color: rgb(237, 242, 244);">Courses 📚</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll active-link" href="./careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
+                  </li>
+                  <li ><a class="page-scroll" href="./maps.html" style="color: rgb(237, 242, 244);" >MAPS 🗺️</a></li>
+                  <li class="nav-item no-underline">
+                    <a class="main-btn navbar-btn"
+                      style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;"
+                      data-scroll-nav="0" href="./loginPage.html">Login/Register 💻</a>
+                  </li>
+                  <li class="nav-item no-underline">
+                    <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
+                      🌙
+                    </button>
+                  </li>
+                </ul>
+              </div>
+
+              <script>
+                const toggleButton = document.getElementById('theme-toggle');
+                var body = document.body;
+                var currentTheme = localStorage.getItem('theme');
+
+                if (currentTheme === 'dark') {
+                  body.classList.add('dark-mode');
+                  toggleButton.classList.add('dark');
+                  toggleButton.textContent = '🌞';
+                }
+
+                toggleButton.addEventListener('click', function () {
+                  body.classList.toggle('dark-mode');
+                  toggleButton.classList.toggle('dark');
+
+                  // Update button icon based on mode
+                  if (body.classList.contains('dark-mode')) {
+                    toggleButton.textContent = '🌞';  // Light mode icon
+                    localStorage.setItem('theme', 'dark');
+                  } else {
+                    toggleButton.textContent = '🌙';  // Dark mode icon
+                    localStorage.setItem('theme', 'light');
+                  }
+                });
+              </script>
+          </div>
+          <div class="">
+            <!-- Login Modal -->
+            <div id="myModal" class="modal">
+              <div class="modal-content">
+                <span class="close" style="display: flex; justify-content: right;">&times;</span>
+                <div class="mt-3">
+                  <h3 class="join"><i class="fa-solid fa-right-to-bracket"></i> Login to join us....</h3>
+                  <form class="px-3 py-4" id="loginForm">
+                    <div class="form-group">
+                      <label class="d-flex">Username</label>
+                      <input type="text" placeholder="Username" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                      <label class="d-flex">Password</label>
+                      <input type="password" placeholder="Password" class="form-control" required>
+                      <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
+                    </div>
+                    <div class="form-check d-flex">
+                      <input type="checkbox" class="form-check-input me-1" style="margin-top: 0;">
+                      <label class="form-check-label" style="margin-bottom: 0;">Remember me</label>
+                      <a href="#" id="forgot-password" style="margin-left: 120px;">Forget Password?</a>
+                    </div>
+                    <div style="height: 20px;"></div>
+                    <button class="main-btn w-100 mb-3" onclick="submitForm('loginForm')">Sign in</button>
+                    <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
+                    <div class="or-sign-in-with text-center">
+                      <p>Or sign in with</p>
+                    </div>
+                    <div class="social-icons mt-3">
+                      <ul class="list-inline">
+                        <li><a href="#" class="google" id="google-login"><i class="fa-brands fa-google"></i></a></li>
+                        <li><a href="#" class="facebook" id="facebook-login"><i class="fa-brands fa-facebook-f"></i></a>
+                        </li>
+                        <li><a href="#" class="twitter" id="twitter-login"><i class="fa-brands fa-x-twitter"></i></a>
+                        </li>
+                      </ul>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+            <script>
+              // Add event listeners to the social media icons
+              document.getElementById('google-login').addEventListener('click', function () {
+                window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
+              });
+
+              document.getElementById('facebook-login').addEventListener('click', function () {
+                window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
+              });
+
+              document.getElementById('twitter-login').addEventListener('click', function () {
+                window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
+              });
+            </script>
+
+            <!-- Register Modal -->
+            <div id="registerModal" class="modal">
+              <div class="modal-content">
+                <span class="close" style="display: flex; justify-content: right;">&times;</span>
+                <div class="mt-3">
+                  <h3 class="join"><i class="fa-solid fa-user"></i> Register to join us....</h3>
+                  <form class="px-3 py-4" id="registerForm">
+                    <div class="form-group">
+                      <label class="d-flex">Email</label>
+                      <input type="email" placeholder="Email" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                      <label class="d-flex">Username</label>
+                      <input type="text" placeholder="Username" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                      <label class="d-flex">Password</label>
+                      <input type="password" placeholder="Password" class="form-control" id="register-password" required
+                        oninput="checkPasswordStrength()">
+                      <button type="button" class="toggle-password-btn"
+                        onclick="togglePasswordVisibility('register-password')">
+                        <i class="fa-solid fa-eye"></i>
+                        <i class="fa-solid fa-eye-slash" style="display: none;"></i>
+                      </button>
+                    </div>
+                    <div id="password-meter" style="display: none; margin-top: 5px;">
+                      <div id="meter"
+                        style="height: 10px; background-color: #ccc; border-radius: 5px; transition: width 0.3s;"></div>
+                      <div id="strength-text" style="margin-top: 5px; font-weight: bold;"></div>
+                    </div>
+                  </form>
+
+                  <!-- Import zxcvbn library -->
+                  <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+                  <script>
+                    function checkPasswordStrength() {
+                      const password = document.getElementById('register-password').value;
+                      const meter = document.getElementById('meter');
+                      const meterContainer = document.getElementById('password-meter');
+                      const strengthText = document.getElementById('strength-text');
+
+                      if (password) {
+                        meterContainer.style.display = 'block'; // Show the meter when typing
+                        const result = zxcvbn(password);
+                        const score = result.score; // Score ranges from 0 to 4
+
+                        // Set meter width and color based on score
+                        meter.style.width = (score + 1) * 20 + '%'; // Convert score to percentage
+                        meter.style.backgroundColor = getMeterColor(score);
+                        strengthText.innerText = getStrengthText(score); // Update strength text
+                      } else {
+                        meterContainer.style.display = 'none'; // Hide the meter if no password
+                        strengthText.innerText = ''; // Clear strength text
+                      }
+                    }
+
+                    function getMeterColor(score) {
+                      switch (score) {
+                        case 0: return 'red'; // Weak
+                        case 1: return 'orange'; // Fair
+                        case 2: return 'yellow'; // Good
+                        case 3: return 'blue'; // Strong
+                        case 4: return 'green'; // Very Strong
+                        default: return 'gray';
+                      }
+                    }
+
+                    function getStrengthText(score) {
+                      switch (score) {
+                        case 0: return 'Very Weak';
+                        case 1: return 'Weak';
+                        case 2: return 'Fair';
+                        case 3: return 'Strong';
+                        case 4: return 'Very Strong';
+                        default: return '';
+                      }
+                    }
+
+                    function togglePasswordVisibility(id) {
+                      const passwordInput = document.getElementById(id);
+                      const eyeIcon = passwordInput.nextElementSibling;
+                      if (passwordInput.type === 'password') {
+                        passwordInput.type = 'text';
+                        eyeIcon.children[0].style.display = 'none';
+                        eyeIcon.children[1].style.display = 'inline';
+                      } else {
+                        passwordInput.type = 'password';
+                        eyeIcon.children[0].style.display = 'inline';
+                        eyeIcon.children[1].style.display = 'none';
+                      }
+                    }
+                  </script>
+
+                  <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('registerForm')">Register</button>
+                  <p class="text-center">Already have an account? <a href="#" id="loginLink">Login</a></p>
+                  <div class="or-sign-in-with text-center">
+                    <p>Or sign up with</p>
+                  </div>
+                  <div class="social-icons mt-3">
+                    <ul class="list-inline">
+                      <li><a href="#" class="google" id="google-signup"><i class="fa-brands fa-google"></i></a></li>
+                      <li><a href="#" class="facebook" id="facebook-signup"><i class="fa-brands fa-facebook-f"></i></a>
+                      </li>
+                      <li><a href="#" class="twitter" id="twitter-signup"><i class="fa-brands fa-twitter"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <script>
+              // Add event listeners to the social media icons
+              document.getElementById('google-signup').addEventListener('click', function () {
+                window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
+              });
+
+              document.getElementById('facebook-signup').addEventListener('click', function () {
+                window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
+              });
+
+              document.getElementById('twitter-signup').addEventListener('click', function () {
+                window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
+              });
+            </script>
+          </div>
+          </nav>
+
+          <nav class="mobile-menu ">
+            <a class="page-scroll" href="./index.html">Home 🏡</a>
+            <a class="page-scroll" href="./about.html">About Us 📖</a>
+            <a class="page-scroll" href="./trends.html">Trends 📈</a>
+            <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
+            <a class="page-scroll" href="./blog.html">Blogs 📰</a>
+            <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
+            <a class="page-scroll main-btn" href="#" onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
+            <li class="nav-item no-underline">
+              <button id="theme-toggle2" class="theme-toggle2" style="margin-right: 2px;">
+                🌙
+              </button>
+            </li>
+            <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
+              <span></span>
+            </div>
+          </nav>
+          <script>
+            const toggleBtn = document.getElementById('theme-toggle2');
+            var body = document.body;
+            var currentTheme = localStorage.getItem('theme');
+  
+            if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            toggleBtn.classList.add('dark');
+            toggleBtn.textContent = '🌞';
+            }
+            
+            toggleBtn.addEventListener('click', function () {
+            body.classList.toggle('dark-mode');
+            toggleBtn.classList.toggle('dark');
+            
+            // Update button icon based on mode
+            if (body.classList.contains('dark-mode')) {
+              toggleBtn.textContent = '🌞';  // Light mode icon
+              localStorage.setItem('theme', 'dark');
+            } else {
+              toggleBtn.textContent = '🌙';  // Dark mode icon
+              localStorage.setItem('theme', 'light');
+            }
+            });
+        </script>
+
+          <link href="./navbar.css" rel="stylesheet">
+          <script type="text/javascript" src="./navbar.js"></script>
+
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!-- removing intro section -->
+    <!-- <div id="home" class="header-hero bg_cover" style="background-image: url(../assets/images/banner-bg.svg)"> -->
+    <!-- <div class="container"> -->
+    <!-- <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="header-hero-content text-center">
+              <h3 class="header-sub-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
+                Say 👋🏼 to FinVeda
+              </h3>
+              <h2 class="header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">
+                your savvy financial companion
+              </h2>
+              <p class="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">
+                Wanna learn how to grow your money to become rich? We have
+                made becoming a stock market Guru easy with our AI
+                powered finance advisor - <b>Arth Sathi 🤵🏻</b>
+              </p>
+              <a href="#" class="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s"
+                onclick="window.botpressWebChat.sendEvent({ type: 'show' }); return false;">
+                Chat with ArthaSathi 💬
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="header-hero-image text-center wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">
+              <img src="../assets/images/header-hero.webp" alt="hero" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="particles-1" class="particles"></div>
+    </div> -->
+  </header>
+  <main>
+    <section>
+      <h2>Jobs in Finance</h2>
+      <!-- Search Bar -->
+      <div class="search-container">
+        <input type="text" id="jobSearch" placeholder="Search for jobs by title or keyword">
+        <input type="number" id="salaryFilter" placeholder="Min Salary" style="margin-left: 30px;">
+      </div>
+      <div class="table-container">
+        <table class="jobs-table">
+          <thead>
+            <tr>
+              <th>Job Title</th>
+              <th>Salary</th>
+              <th>Qualification</th>
+            </tr>
+          </thead>
+          <tbody id="jobsTableBody">
+            <tr onclick="openModal('Financial Analyst')">
+              <td data-label="Job Title">Financial Analyst</td>
+              <td data-label="Salary">$60,000 - $80,000</td>
+              <td data-label="Qualification">Bachelor's in Finance</td>
+            </tr>
+            <tr onclick="openModal('Investment Banker')">
+              <td data-label="Job Title">Investment Banker</td>
+              <td data-label="Salary">$100,000 - $200,000</td>
+              <td data-label="Qualification">Bachelor's in Finance, Economics, or Business</td>
+            </tr>
+            <tr onclick="openModal('Accountant')">
+              <td data-label="Job Title">Accountant</td>
+              <td data-label="Salary">$50,000 - $70,000</td>
+              <td data-label="Qualification">Bachelor's in Accounting</td>
+            </tr>
+            <tr onclick="openModal('Risk Manager')">
+              <td data-label="Job Title">Risk Manager</td>
+              <td data-label="Salary">$70,000 - $110,000</td>
+              <td data-label="Qualification">Bachelor's in Finance or Risk Management</td>
+            </tr>
+            <tr onclick="openModal('Financial Planner')">
+              <td data-label="Job Title">Financial Planner</td>
+              <td data-label="Salary">$60,000 - $90,000</td>
+              <td data-label="Qualification">Bachelor's in Finance or Business</td>
+            </tr>
+            <tr onclick="openModal('Compliance Officer')">
+              <td data-label="Job Title">Compliance Officer</td>
+              <td data-label="Salary">$55,000 - $85,000</td>
+              <td data-label="Qualification">Bachelor's in Finance, Business, or Law</td>
+            </tr>
+            <tr onclick="openModal('Portfolio Manager')">
+              <td data-label="Job Title">Portfolio Manager</td>
+              <td data-label="Salary">$80,000 - $150,000</td>
+              <td data-label="Qualification">Bachelor's in Finance or related field</td>
+            </tr>
+            <tr onclick="openModal('Market Research Analyst')">
+              <td data-label="Job Title">Market Research Analyst</td>
+              <td data-label="Salary">$50,000 - $70,000</td>
+              <td data-label="Qualification">Bachelor's in Marketing or Business</td>
+            </tr>
+            <tr onclick="openModal('Loan Officer')">
+              <td data-label="Job Title">Loan Officer</td>
+              <td data-label="Salary">$50,000 - $75,000</td>
+              <td data-label="Qualification">Bachelor's in Finance or Business</td>
+            </tr>
+            <tr onclick="openModal('Treasurer')">
+              <td data-label="Job Title">Treasurer</td>
+              <td data-label="Salary">$90,000 - $130,000</td>
+              <td data-label="Qualification">Bachelor's in Finance, Accounting, or Business</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    
+      <script>
+        document.getElementById('salaryFilter').addEventListener('input', filterBySalary);
+    
+        function filterBySalary() {
+          const minSalaryInput = parseInt(document.getElementById('salaryFilter').value);
+          const rows = document.querySelectorAll('#jobsTableBody tr');
+    
+          rows.forEach(row => {
+            const salaryText = row.querySelector('[data-label="Salary"]').textContent;
+            const [minSalary] = salaryText.replace(/[^\d\s]/g, '').split('-').map(s => parseInt(s.trim()));
+    
+            if (minSalaryInput && minSalary) {
+              if (minSalary >= minSalaryInput) {
+                row.style.display = ''; // Show row
+              } else {
+                row.style.display = 'none'; // Hide row
+              }
+            } else {
+              row.style.display = ''; // Show row if input is empty
+            }
+          });
+        }
+      </script>
+    </section>
+    
+
+    <style>
+/* Section Styling */
+section {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f0f4f8;
+}
+
+/* Heading Styling */
+section h2 {
+  font-size: 32px;
+  color: #c36c29;
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 3px solid #0077b6;
+  padding-bottom: 10px;
+}
+
+/* Search Bar Styling */
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-container input[type="text"] {
+  width: 50%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #0d0d0d;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-container input[type="text"]:focus {
+  border-color: #005f99;
+  background-color: #e1ebf7;
+  color: rgb(32, 32, 32);
+  box-shadow: 0 0 8px rgba(0, 95, 153, 0.3);
+}
+
+/* Table Container */
+.table-container {
+  overflow-x: auto;
+}
+
+/* Table Styling */
+.jobs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 18px;
+  overflow: hidden;
+  border: 2px solid #0077b6; /* Blue table border */
+}
+
+/* Header with Orange Gradient */
+.jobs-table thead {
+  background: linear-gradient(to right, #ff8c00, #ffa500);
+  color: #fff;
+}
+
+.jobs-table th, .jobs-table td {
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid #0077b6; /* Bottom border for rows */
+  border-left: 2px solid #0077b6; /* Left side color */
+  border-right: 2px solid #0077b6; /* Right side color */
+}
+
+.jobs-table th {
+  background-color: #3b68db;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Table Row Hover Effects */
+.jobs-table tbody tr {
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.jobs-table tbody tr:hover {
+  background-color: #e3f2fd;
+  transform: scale(1.02);
+  color: #0077b6;
+}
+
+.jobs-table tbody tr:nth-child(even) {
+  background-color: #f9fbfd;
+}
+
+.jobs-table tbody tr td {
+  background-color: #ffffff;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+/* Hover Effect on Table Data */
+.jobs-table tbody tr:hover td {
+  background-color: #bbdefb;
+}
+
+/* Dark Mode Specific Styling */
+.dark-mode .jobs-table th, 
+.dark-mode .jobs-table td {
+  color: #000; /* Set table font color to black in dark mode */
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 600px) {
+  .search-container input[type="text"] {
+    width: 80%;
+  }
+
+  .jobs-table th, .jobs-table td {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+
+    </style>
+
+
+    <main>
+      <section class="roadmap">
+        <h2 class="h2">Career Roadmap 🛣️</h2>
+        <div class="roadmap-step">
+          <div class="roadmap-title">Step 1: Pursue a Relevant Degree</div>
+          <p>Consider obtaining a degree in finance, accounting, economics, or business administration.</p>
+        </div>
+        <div class="roadmap-step">
+          <div class="roadmap-title">Step 2: Gain Experience</div>
+          <p>Look for internships or entry-level positions in finance to gain practical experience.</p>
+        </div>
+        <div class="roadmap-step">
+          <div class="roadmap-title">Step 3: Network</div>
+          <p>Attend finance-related events, workshops, and seminars to connect with professionals in the field.</p>
+        </div>
+        <div class="roadmap-step">
+          <div class="roadmap-title">Step 4: Get Certified</div>
+          <p>Consider pursuing professional certifications like CFA, CPA, or CFP to enhance your qualifications.</p>
+        </div>
+        <div class="roadmap-step">
+          <div class="roadmap-title">Step 5: Stay Informed</div>
+          <p>Keep up with the latest trends and developments in the finance industry through articles and news.</p>
+        </div>
+      </section>
+      <style>
+        .roadmap {
+          border: 10px solid white;
+  background: linear-gradient(135deg, #a492c5, #b39ddb); /* Gradient background for parent */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: background 0.5s ease;
+}
+
+.h2 {
+  font-weight: bolder;
+  font-size: 2.5rem;
+  text-align: center;
+  color: #fefeff; /* Dark purple color for main heading */
+  margin: 40px 0;
+}
+
+.roadmap-step {
+  background: linear-gradient(135deg, #98d1e3, #eeedeb); /* Light orange gradient */
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px 0;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.roadmap-step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.roadmap-title {
+  font-weight: bold;
+  color: #090909; /* Attractive orange-red color for headings */
+  font-size: 1.5em;
+  position: relative;
+}
+
+.roadmap-title::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #eac6bc, #fffaf5); /* Gradient underline */
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  transition: width 0.4s;
+}
+
+.roadmap-title:hover::after {
+  width: 100%;
+}
+
+.roadmap-step p {
+  color: #555; /* Dark gray for text */
+  margin: 10px 0 0;
+  transition: color 0.3s;
+}
+
+.roadmap-step:hover p {
+  color: #4b464a; /* Darker gray on hover */
+}
+
+/* Optional media query for responsiveness */
+@media (max-width: 600px) {
+  .roadmap {
+    padding: 15px;
+  }
+
+  .roadmap-step {
+    padding: 10px;
+  }
+}
+
+      </style>
+    </main>
+
+    <section class="books-section">
+      <img style="position: absolute; mix-blend-mode: multiply; left: 100px;height: 130px;" src="assets/images/careers-book-img.jpg" alt="photo">
+      <h2>Recommended Books on Finance</h2>
+      <div class="carousel-container">
+        <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+        <ul class="books-list">
+          <li>
+            <div class="book-card">
+              <div class="book-image" style="background-image: url('./assets/images/RICH-POOR.jpeg');"></div>
+              <div class="book-info">
+                <strong>Rich Dad Poor Dad</strong>
+                <span>by Robert Kiyosaki</span>
+                <p>A classic on financial education and investing.</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="book-card">
+              <div class="book-image" style="background-image: url('./assets/images/The Intelligent Investor.jpeg');"></div>
+              <div class="book-info">
+                <strong>The Intelligent Investor</strong>
+                <span>by Benjamin Graham</span>
+                <p>A must-read for aspiring investors.</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="book-card">
+              <div class="book-image" style="background-image: url('./assets/images/The Total Money Makeover.jpeg');"></div>
+              <div class="book-info">
+                <strong>The Total Money Makeover</strong>
+                <span>by Dave Ramsey</span>
+                <p>A guide to personal finance and debt elimination.</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="book-card">
+              <div class="book-image" style="background-image: url('./assets/images/A Random Walk Down Wall Street.jpeg');"></div>
+              <div class="book-info">
+                <strong>A Random Walk Down Wall Street</strong>
+                <span>by Burton Malkiel</span>
+                <p>Insights into market trends and investment strategies.</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="book-card">
+              <div class="book-image" style="background-image: url('./assets/images/The Millionaire Next Door.jpg');"></div>
+              <div class="book-info">
+                <strong>The Millionaire Next Door</strong>
+                <span>by Thomas J. Stanley</span>
+                <p>Profiles habits and traits of wealthy individuals.</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+      </div>
+    </section>
+    
+  </main>
+
+
+<style>/* Styling for the book section */
+  .books-section {
+    background: linear-gradient(45deg, rgb(57, 207, 236), rgb(44, 118, 247));
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    border: 10px solid rgb(154, 150, 150);
+  }
+  
+  .books-section h2 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: white;
+    font-size:xx-large;
+    margin-bottom: 20px;
+  }
+  
+  .carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .books-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    transition: transform 0.5s ease; /* Smooth transition for sliding */
+  }
+  
+  /* Individual book cards */
+  .book-card {
+    height: 400px;
+    width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: #eeeef0;
+    margin: 0 10px; /* Added margin between cards */
+    flex-shrink: 0; /* Prevent cards from shrinking */
+  }
+  
+  .book-card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    background-color: #e0f7fa;
+  }
+  
+  .book-image {
+    height: 340px;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 3px solid #ddd;
+    transition: opacity 0.3s ease;
+  }
+  
+  .book-card:hover .book-image {
+    opacity: 0.9;
+  }
+  
+  .book-info {
+    border: 3px solid #8db3f5;
+    padding: 20px;
+    text-align: left;
+    color: #333;
+  }
+  
+  .book-info strong {
+    color: #0863ff;
+    font-size: 1.2em;
+    display: block;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .book-info span {
+    font-size: 0.95em;
+    color: #666;
+    display: block;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .book-info p {
+    font-size: 0.9em;
+    color: #444;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* Carousel buttons */
+  .carousel-button {
+  background-color: rgba(240, 172, 123, 0.8);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 2em; /* Increased font size for visibility */
+  padding: 15px 20px; /* Increased padding for wider buttons */
+  width: 60px; /* Set a specific width */
+  height: 60px; /* Set a specific height */
+  position: absolute;
+  top: 60%; /* Move button down to 60% of the container height */
+  z-index: 10;
+  transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+.carousel-button.prev {
+  left: 20px; /* Move the left button further from the left edge */
+}
+
+.carousel-button.next {
+  right: 20px; /* Move the right button further from the right edge */
+}
+
+.carousel-button:hover {
+  background-color: rgb(122, 248, 244);
+}
+
+  
+  .carousel-button.prev {
+    left: 10px;
+  }
+  
+  .carousel-button.next {
+    right: 10px;
+  }
+  
+  .carousel-button:hover {
+    background-color: rgba(255, 255, 255, 1);
+  }
+  /* Styling for the book section */
+.books-section {
+  background: linear-gradient(45deg, rgb(57, 207, 236), rgb(44, 118, 247));
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+.books-section h2 {
+  color: white;
+  font-size: 2.2em;
+  margin-bottom: 20px;
+}
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden; /* Hide overflow for a clean look */
+  width: calc(300px * 3 + 20px * 2); /* Width for 3 cards and margins */
+  margin: 0 auto; /* Center the carousel */
+}
+
+.books-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  transition: transform 0.5s ease; /* Smooth transition for sliding */
+}
+
+/* Individual book cards */
+.book-card {
+  height: 400px;
+  width: 300px; /* Card width */
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background-color: #eeeef0;
+  margin: 0 10px; /* Added margin between cards */
+  flex-shrink: 0; /* Prevent cards from shrinking */
+}
+
+/* Existing styles for book cards, images, and info remain unchanged... */
+
+/* Carousel buttons */
+.carousel-button {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5em;
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}
+
+.carousel-button:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+  </style>
+
+ <script>
+  let currentIndex = 0; // Current index of the first book card to display
+const visibleCards = 3; // Number of visible cards at a time
+
+function moveSlide(direction) {
+  const booksList = document.querySelector('.books-list');
+  const totalBooks = document.querySelectorAll('.books-list li').length;
+
+  // Update the current index based on direction
+  currentIndex += direction;
+
+  // Loop the carousel
+  if (currentIndex < 0) {
+    currentIndex = 0; // Do not go past the first set
+  } else if (currentIndex > totalBooks - visibleCards) {
+    currentIndex = totalBooks - visibleCards; // Do not go past the last set
+  }
+
+  // Move the list
+  const slideWidth = -currentIndex * (300 + 20); // Width of card + gap
+  booksList.style.transform = `translateX(${slideWidth}px)`;
+}
+
+// Add event listeners for carousel buttons
+document.querySelector('.carousel-button.prev').addEventListener('click', () => moveSlide(-1));
+document.querySelector('.carousel-button.next').addEventListener('click', () => moveSlide(1));
+
+ </script>
+</body>
+
+
+
+<!-- Timed popup that will appear after succesful submission of feebback form! -->
+<button class="notification" id="successnotification" style="display:none;">
+  <span class="message" id="successmsg">Submitted successfully!</span>
+  <span class="closenotif" id="closeSuccessNotification">✖</span>
+  <div class="timerline" id="timerline"></div>
+</button>
+
+
+<footer id="footer" class="footer-area pt-120">
+<div class="container">
+<div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="subscribe-content mt-45">
+        <h2 class="subscribe-title">
+          Subscribe Our Newsletter <span>Get Regular Updates</span>
+        </h2>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="subscribe-form mt-50">
+        <form id="unique-subscribe-form">
+          <input type="email" id="unique-news-email" placeholder="Enter Email" required/>
+          <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
+        </form>
+        <div id="unique-message" class="unique-popup-message" style="display: none;">
+          <div class="border-animation"></div>
+          Thank You for the subscription!
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="footer-widget pb-100">
+<div class="row" id="footer">
+    <div class="col-lg-4 col-md-6 col-sm-8">
+        <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+          <img src="./assets/images/FinvedaLogo.png" alt="FinVeda Logo" style="height: 80px; width: auto; margin-bottom: 15px;" />
+            <p class="text custom-margin">
+                We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
+            </p>
+        </div>
+    </div>
+    <div class="col-lg-5 col-md-7 col-sm-7">
+        <div class="footer-link d-flex mt-50 justify-content-md-between" style="justify-content: space-around !important;">
+            <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+                <div class="footer-title">
+                    <h3 class="title custom-margin">Quick Links</h3>
+                    <ul class="link custom-margin">
+                      <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+                      <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
+                      <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
+                      <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+                      <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+                  </ul>
+                </div>
+                
+            </div>
+
+        
+         
+         
+            <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+                <div class="footer-title">
+                    <h4 class="title custom-margin">Resources</h4>
+                </div>
+                <ul class="link custom-margin">
+                    <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
+                    <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
+                    <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                    <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-5 col-sm-5">
+        <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+            <div class="footer-title">
+                <h4 class="title custom-margin">Contact Us</h4>
+            </div>
+            <ul class="contact custom-margin-big" style="justify-content: space-around;">
+                <li class="d-sm-flex justify-content-center">
+                    <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                    <p style="width: 80%;">
+                        <a href="mailto:ayush1337@hotmail.com" target="_blank"
+                           style="color: white; text-decoration: underline;">
+                            ayush1337@hotmail.com
+                        </a>
+                    </p>
+                </li>
+                <li class="d-sm-flex justify-content-center">
+                    <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                    <div style="width: 80%;">
+                        <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
+                            fin-veda.vercel.app
+                        </a>
+                    </div>
+                </li>
+                <li class="d-sm-flex justify-content-center">
+                    <!-- Modified: Inline CSS to adjust logo size and sync with other pages -->
+                    <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font: 12px; width: 10%;"></i>
+                    <div style="width: 80%;">
+                        <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
+                           style="color:#fff">
+                            Delhi, India
+                        </a>
+                    </div>
+                </li>
+                <!-- Added: Social Media Redirects -->
+                <div class="social-icons">
+                  <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                  <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
+                  <a href="https://discord.com/"><i class="fa-brands fa-discord"></i></a>
+                  <a href="https://github.com/ayush-that/FinVeda"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+<div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center">
+  <div class="row">
+    <div class="col-lg-12">
+      <div
+        class="copyright d-sm-flex justify-content-center"
+        style="
+          display: flex;
+          justify-content: center;
+          text-align: center;
+          width: 100%;
+          height: 100%;
+        "
+      >
+        <div class="copyright-content" style="text-align: center">
+          <p class="text" style="text-align: center">
+            © <span id="copyright-year">2024</span> FinVeda. All rights are
+            reserved<br />
+            Made with ♥ in India
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="particles-2"></div>
+</div>
+</footer>
+<script src="careers.js"></script> <!-- Link to careers.js -->
+<script>document.getElementById("copyright-year").textContent = new Date().getFullYear();</script>
+<a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
+
+
+<script src="./assets/js/subscribe.js"></script>
+<script src="../assets/js/vendor/jquery-1.12.4.min.js"></script>
+<script src="../assets/js/vendor/modernizr-3.7.1.min.js"></script>
+<script src="../assets/js/popper.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/plugins.js"></script>
+<script src="../assets/js/slick.min.js"></script>
+<script src="../assets/js/ajax-contact.js"></script>
+<script src="../assets/js/waypoints.min.js"></script>
+<script src="../assets/js/jquery.counterup.min.js"></script>
+<script src="../assets/js/jquery.magnific-popup.min.js"></script>
+<script src="../assets/js/jquery.easing.min.js"></script>
+<script src="../assets/js/scrolling-nav.js"></script>
+<script src="../assets/js/wow.min.js"></script>
+<script src="../assets/js/particles.min.js"></script>
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/quiz.js"></script>
+<script src="../assets/js/popup.js"></script>
+<script src="../assets/js/quiz_modify.js"></script>
+<script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+<script src="https://mediafiles.botpress.cloud/5e160793-5606-4412-ba4c-337e416f14fe/webchat/config.js" defer></script>
+<script defer src="./assets/js/arthsathi-style.js"></script>
+<script src="./assets/js/botpress.js"></script>
+
+<script>
+  // Get the modals
+  var loginModal = document.getElementById('myModal');
+  var registerModal = document.getElementById('registerModal');
+
+  // Get the button that opens the login modal
+  var loginBtn = document.getElementById('loginBtn');
+
+  // Get the links that open the register and login modals
+  var registerLink = document.getElementById('registerLink');
+  var loginLink = document.getElementById('loginLink');
+
+  // Get the <span> elements that close the modals
+  var closeBtns = document.getElementsByClassName('close');
+
+  //show and hide icon button
+  document.addEventListener('DOMContentLoaded', () => {
+    const togglePasswordButtons = document.querySelectorAll('.toggle-password-btn');
+
+    togglePasswordButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const passwordInput = button.previousElementSibling;
+        if (passwordInput.type === 'password') {
+          passwordInput.type = 'text';
+          button.innerHTML = `<i class="fa-solid fa-eye-slash"></i>`
+        } else {
+          passwordInput.type = 'password';
+          button.innerHTML = `<i class="fa-solid fa-eye"></i>`
+        }
+      });
+    });
+  });
+
+  // When the user clicks the register link, open the register modal
+  registerLink.onclick = function (event) {
+    event.preventDefault();
+    loginModal.style.display = 'none';
+    registerModal.style.display = 'block';
+  }
+
+  // When the user clicks the login link, open the login modal
+  loginLink.onclick = function (event) {
+    event.preventDefault();
+    registerModal.style.display = 'none';
+    loginModal.style.display = 'block';
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  for (var i = 0; i < closeBtns.length; i++) {
+    closeBtns[i].onclick = function () {
+      loginModal.style.display = 'none';
+      registerModal.style.display = 'none';
+    }
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function (event) {
+    if (event.target == loginModal) {
+      loginModal.style.display = 'none';
+    }
+    if (event.target == registerModal) {
+      registerModal.style.display = 'none';
+    }
+  }
+  function openModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "block";
+    document.title = "Login/Register - FinVeda";  // Update the title when modal is opened
+  }
+
+  function closeModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
+    document.title = "FinVeda";  // Revert the title back when modal is closed
+  }
+
+  window.onclick = function (event) {
+    var modal = document.getElementById("myModal");
+    if (event.target == modal) {
+      closeModal(); // Call closeModal function
+    }
+  };
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const registerModal = document.getElementById("registerModal");
+    const loginModal = document.getElementById("myModal");
+    const registerLink = document.getElementById("registerLink");
+    const loginLink = document.getElementById("loginLink");
+
+    // Event listener for the register link
+    registerLink.addEventListener("click", function (event) {
+      event.preventDefault();
+      loginModal.style.display = "none";
+      registerModal.style.display = "block";
+      document.title = "Login/Register - FinVeda";  // Update title when registering
+    });
+
+    // Event listener for the login link
+    loginLink.addEventListener("click", function (event) {
+      event.preventDefault();
+      registerModal.style.display = "none";
+      loginModal.style.display = "block";
+      document.title = "Login/Register - FinVeda";  // Update title when logging in
+    });
+
+    // Close button event listeners for modals
+    registerModal.querySelector(".close").addEventListener("click", closeModal);
+    loginModal.querySelector(".close").addEventListener("click", closeModal);
+  });
+
+
+  document.getElementById("copyright-year").textContent = new Date().getFullYear();
+
+  function applyJob(jobTitle) {
+    alert("You have applied for: " + jobTitle);
+  }
+
+</script>
+<script src="./tools/smoothScroll.js"></script>
+
+<div class="gtranslate_wrapper"></div>
+<script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+
+
+</body>
+
+</html>
