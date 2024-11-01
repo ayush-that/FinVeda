@@ -388,6 +388,40 @@
     transform: rotate(-130deg);
   }
 }
+
+/* Tooltip styling for the input field */
+.input-field {
+    position: relative; /* Positioning for the tooltip */
+    display: flex;      /* Flexbox for alignment */
+    align-items: center;
+}
+
+/* Tooltip text styling */
+.tooltip-text {
+    position: absolute; /* Absolute positioning relative to .input-field */
+    left: 50%;         /* Center tooltip horizontally */
+    bottom: 100%;      /* Position above the toggle icon */
+    transform: translateX(-50%); /* Adjust to center */
+    margin-bottom: 5px; /* Space between the tooltip and the icon */
+    background-color: #333; /* Tooltip background */
+    color: #fff;       /* Tooltip text color */
+    padding: 5px;      /* Inner spacing */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 12px;   /* Font size */
+    white-space: nowrap; /* Prevent text wrapping */
+    opacity: 0;        /* Initial hidden state */
+    visibility: hidden; /* Initial hidden state */
+    transition: opacity 0.2s; /* Fade-in transition */
+}
+
+/* Show tooltip on hover over the password toggle icon */
+#toggle-password:hover + .tooltip-text,
+#toggle-password-signup:hover + .tooltip-text {
+    opacity: 1;       /* Fade in */
+    visibility: visible; /* Make visible */
+}
+
+
     </style>
   </head>
   <body>
@@ -420,11 +454,14 @@
             
             <div class="input-field">
               <i class="fas fa-lock" id="toggle-password" style="cursor: pointer;"></i>
+              <span class="tooltip-text">Click to view password</span>
               <input 
-                type="password" 
-                placeholder="Password" 
-                id="password-input" />
-            </div>
+                  type="password" 
+                  placeholder="Password" 
+                  id="password-input" />
+          </div>
+          
+            
             
 
             <div class="forgot-password">
@@ -461,10 +498,11 @@
                 <input type="email" placeholder="Email" />
             </div>
             <div class="input-field">
-
-                <i class="fas fa-lock" id="toggle-password-signup" style="cursor: pointer;"></i>
-                <input type="password" placeholder="Password" id="password-input-signup" />
-            </div>
+              <i class="fas fa-lock" id="toggle-password-signup" style="cursor: pointer;"></i>
+              <span class="tooltip-text">Click to view password</span>
+              <input type="password" placeholder="Password" id="password-input-signup" />
+          </div>
+          
         
             <!-- Password strength meter starts here (initially hidden) -->
             <div id="password-strength-section" style="display: none;">
