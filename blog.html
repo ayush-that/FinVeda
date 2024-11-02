@@ -137,16 +137,49 @@
                   <li ><a href="./maps.html" >MAPS 🗺️</a></li>
                 </ul>
               </li>
+                    
+                    <!-- Profile Icon -->
                     <li class="nav-item no-underline">
-                      <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="./loginPage.html" >Login/Register 💻</a>
-                    </li>
-                    <li class="nav-item no-underline">
-                    <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
-                      🌙
-                    </button>
-                    </li>
-                  </ul>
-                </div>
+                      <a href="./profile.html" class="profile-link" style="display: flex; align-items: center; text-decoration: none;">
+                      <img src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg" alt="Profile Icon" style="width: 50px; height: 50px; border-radius: 50%; margin-top: -17px;">
+                     </a>
+                 </li>
+
+                 <style>
+                   /* Override the existing hover styles */
+                   .navbar-nav .nav-item .profile-link:hover {
+                       background-color: transparent !important; /* Remove background color */
+                       border-radius: 0 !important; /* Reset border radius */
+                       transform: none !important; /* Prevent scaling */
+                   }
+                 </style>
+
+                 <li class="nav-item no-underline">
+                   <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
+                     🌙
+                   </button>
+                 </li>
+               </ul>
+             </div>
+
+             <script>
+               function toggleMenu() {
+                   const menu = document.getElementById('profileMenu');
+                   menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+               }
+
+               // Close the dropdown if the user clicks outside of it
+               window.onclick = function(event) {
+                   if (!event.target.matches('.profile-icon img')) {
+                       const menu = document.getElementById('profileMenu');
+                       if (menu.style.display === 'block') {
+                           menu.style.display = 'none';
+                       }
+                   }
+               }
+           </script>
+
+
                 <script>
                   const toggleButton = document.getElementById('theme-toggle');
                   var body = document.body;
@@ -360,15 +393,49 @@
                 <a class="page-scroll" href="./blog.html">Blogs 📰</a>
                 <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
                 <a class="page-scroll main-btn" href="#" onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
-                <li class="nav-item no-underline">
-                  <button id="theme-toggle2" class="theme-toggle2" style="margin-right: 2px;">
-                    🌙
-                  </button>
-                </li>
-                <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
-                  <span></span>
-                </div>
-              </nav>
+                
+                    <!-- Profile Icon -->
+                    <li class="nav-item no-underline">
+                      <a href="./profile.html" class="profile-link" style="display: flex; align-items: center; text-decoration: none;">
+                      <img src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg" alt="Profile Icon" style="width: 50px; height: 50px; border-radius: 50%; margin-top: -17px;">
+                     </a>
+                 </li>
+
+                 <style>
+                   /* Override the existing hover styles */
+                   .navbar-nav .nav-item .profile-link:hover {
+                       background-color: transparent !important; /* Remove background color */
+                       border-radius: 0 !important; /* Reset border radius */
+                       transform: none !important; /* Prevent scaling */
+                   }
+                 </style>
+
+                 <li class="nav-item no-underline">
+                   <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
+                     🌙
+                   </button>
+                 </li>
+               </ul>
+             </div>
+
+             <script>
+               function toggleMenu() {
+                   const menu = document.getElementById('profileMenu');
+                   menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+               }
+
+               // Close the dropdown if the user clicks outside of it
+               window.onclick = function(event) {
+                   if (!event.target.matches('.profile-icon img')) {
+                       const menu = document.getElementById('profileMenu');
+                       if (menu.style.display === 'block') {
+                           menu.style.display = 'none';
+                       }
+                   }
+               }
+           </script>
+
+
               <script>
                 const toggleBtn = document.getElementById('theme-toggle2');
                 var body = document.body;
