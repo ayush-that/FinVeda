@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+
+  <meta charset="utf-8" />
+  <title>Trends - FinVeda</title>
+  <meta name="description" content="Explore insightful trends and analyses in finance and economics on FinVeda's Trends page. Discover curated content and data-driven insights to stay informed." />
+  <meta name="author" content="Ayush Singh">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon"  href="/assets/images/favicon2.webp" type="image/png" />
+    <link rel="stylesheet"  href="./assets/css/animate.css" />
+    <link rel="stylesheet"  href="./assets/css/magnific-popup.css" />
+    <link rel="stylesheet"  href="./assets/css/slick.css" />
+    <link rel="stylesheet"  href="./assets/css/LineIcons.css" />
+    <link rel="stylesheet"  href="./assets/css/font-awesome.min.css" />
+    <link rel="stylesheet"  href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet"  href="./assets/css/default.css" />
+    <link rel="stylesheet"  href="./assets/css/style.css" />
+    <link rel="stylesheet"  href="./assets/css/quiz.css" />
+    <link rel="stylesheet" href="./assets/css/popup.css" />
+    <link rel="stylesheet"  href="./assets/css/about.css"/>
+    <link rel="stylesheet"  href="./assets/css/trends.css"/>
+    <link rel="stylesheet"  href="./assets/css/index.css"/>
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet"  href="navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/market-time.css">
+
+    <style>
+      #progressBar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 8px;
+        background-color: #f76b45;
+        z-index: 9999;
+  
+      }
+      .theme-toggle2.dark {
+  background-color: #eceae0;
+  color: #000;
+}
+body.dark-mode {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+  
+      * {
+        cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
+      }
+  
+  
+      .circle {
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        pointer-events: none;
+        background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
+        transition: transform 0.1s, left 0.1s, top 0.1s;
+      }
+  
+      .circle-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 9999;
+      }
+  
+      @media (max-width: 720px) {
+        .circle-container {
+          display: none;
+        }
+      }
+</style>  
+<body>
+  <div class="circle-container">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const coords = { x: 0, y: 0 };
+      const circles = document.querySelectorAll(".circle");
+
+      circles.forEach(function (circle) {
+        circle.x = 0;
+        circle.y = 0;
+      });
+
+      window.addEventListener("mousemove", function (e) {
+        coords.x = e.pageX;
+        coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
+      });
+
+      function animateCircles() {
+        let x = coords.x;
+        let y = coords.y;
+
+        circles.forEach(function (circle, index) {
+          circle.style.left = `${x - 12}px`;
+          circle.style.top = `${y - 12}px`;
+          circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+
+          const nextCircle = circles[index + 1] || circles[0];
+          circle.x = x;
+          circle.y = y;
+
+          x += (nextCircle.x - x) * 0.3;
+          y += (nextCircle.y - y) * 0.3;
+        });
+
+        requestAnimationFrame(animateCircles);
+      }
+
+      animateCircles();
+    });
+
+  </script>
+  <header class="header-area">
+    <div style="display: flex; justify-content: center;" class="navbar-area">
+      <div style="display: flex; justify-content: center;" class="container">
+    <div class="row">
+      <div style="display: flex; justify-content: center;" class="">
+        <nav class="navbar navbar-expand-lg " style="display: flex;">
+          <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="toggler-icon"></span>
+            <span class="toggler-icon"></span>
+            <span class="toggler-icon"></span>
+          </button> -->
+          <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+            <div class="icon1">
+              <a href="./index.html">
+                <img src="./assets/images/FinvedaLogo.png" alt="icon.png" style="width: 13rem;">
+              </a>
+            </div>
+            <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
+              <li class="nav-item">
+                <a class="page-scroll" href="./index.html" style="color: rgb(237, 242, 244);">Home
+                  🏡</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll" href="./finance.html" style="color: rgb(237, 242, 244);">Courses 📚</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
+              </li>
+              <!-- Dropdown for Explore -->
+              <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
+                <a class="page-scroll dropdown-toggle" href="#" style="color: rgb(237, 242, 244);">
+                  <span class="explore-text">Explore 📚</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="./trends.html">Trends 📈</a></li>
+                  <li><a href="./tools/sip.html">Tools 🔧</a></li>
+                  <li><a href="./blog.html">Blogs 📰</a></li>
+                  <li><a href="./quiz.html">Quiz 🤔</a></li>
+                  <li><a href="./maps.html">MAPS 🗺️</a></li>
+                </ul>
+              </li>
+
+              <!-- Navigation item placeholder for Login/Register or Logout button -->
+              <li class="nav-item no-underline" id="auth-btn-container">
+                <a class="main-btn navbar-btn"
+                  style="padding: 2px 20px; color: rgb(237, 242, 244); animation-duration: 0.4s; animation-name: ease;"
+                  data-scroll-nav="0" href="./loginPage.html">Login/Register 💻</a>
+              </li>
+
+              <li class="nav-item no-underline">
+                <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
+                  🌙
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <script>
+            const toggleButton = document.getElementById('theme-toggle');
+            var body = document.body;
+            var currentTheme = localStorage.getItem('theme');
+
+            if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            toggleButton.classList.add('dark');
+            toggleButton.textContent = '🌞';
+            }
+
+            toggleButton.addEventListener('click', function () {
+            body.classList.toggle('dark-mode');
+            toggleButton.classList.toggle('dark');
+
+            // Update button icon based on mode
+            if (body.classList.contains('dark-mode')) {
+              toggleButton.textContent = '🌞';  // Light mode icon
+              localStorage.setItem('theme', 'dark');
+            } else {
+              toggleButton.textContent = '🌙';  // Dark mode icon
+              localStorage.setItem('theme', 'light');
+            }
+            });
+        </script>
+      <style>
+
+        h3{
+          color: #fff;
+        }
+
+      .toggle-button {
+        padding: 0.5em 1em;
+        cursor: pointer;
+        border: none;
+        background-color: #0c0a0a;
+        color: #fff;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+    
+    .toggle-button:hover {
+        background-color: #555;
+    }
+    
+    .content {
+        padding: 2em;
+        text-align: center;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+        color: whitesmoke;
+        margin-top:130px;
+    }
+    
+    p {
+        font-size: 1.2rem;
+    }
+    
+    body.dark-mode {
+background-color: #fefefe;
+color: #f1f1f1; /* Change text color to light for dark mode */
+}
+
+.dark-mode .para {
+color: white; /* Change text color to white when dark mode class is applied */
+}
+
+.toggle-button.dark {
+background-color: #f1f1f1; /* Button background in dark mode */
+color: #333; /* Button text color in dark mode */
+}
+
+.toggle-button.dark:hover {
+background-color: #ddd; /* Button hover color in dark mode */
+}
+    </style>
+          
+        </nav>
+    
+
+
+        <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+        <nav class="mobile-menu ">
+          <a class="page-scroll active-link" href="./index.html">Home 🏡</a>
+          <a class="page-scroll" href="./about.html">About Us 📖</a>
+          <a class="page-scroll" href="./trends.html">Trends 📈</a>
+          <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
+          <a class="page-scroll" href="./blog.html">Blogs 📰</a>
+          <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
+          <a class="page-scroll" href="./contact.html">Contact🤔</a>
+          <li class="nav-item no-underline">
+            <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none; border: none;" href="#"
+              onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
+          </li>
+
+          <li class="nav-item no-underline">
+            <button id="theme-toggle2" class="theme-toggle2" style="margin-right: 2px;">
+              🌙
+            </button>
+            </li>
+          <div class="mobile-menu__trigger"><span></span></div>
+        </nav>
+        <script>
+          const toggleBtn = document.getElementById('theme-toggle2');
+          var body = document.body;
+          var currentTheme = localStorage.getItem('theme');
+
+          if (currentTheme === 'dark') {
+          body.classList.add('dark-mode');
+          toggleBtn.classList.add('dark');
+          toggleBtn.textContent = '🌞';
+          }
+          
+          toggleBtn.addEventListener('click', function () {
+          body.classList.toggle('dark-mode');
+          toggleBtn.classList.toggle('dark');
+          
+          // Update button icon based on mode
+          if (body.classList.contains('dark-mode')) {
+            toggleBtn.textContent = '🌞';  // Light mode icon
+            localStorage.setItem('theme', 'dark');
+          } else {
+            toggleBtn.textContent = '🌙';  // Dark mode icon
+            localStorage.setItem('theme', 'light');
+          }
+          });
+      </script>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<link href="./navbar.css" rel="stylesheet">
+<script type="text/javascript" src="./navbar.js"></script>
+
+</div>
+
+<div id="particles-1" class="particles"></div>
+</div>
+</header>
+  <div id="progressBar"></div>
+  <div class="preloader">
+    <div class="loader">
+      <div class="ytp-spinner">
+        <div class="ytp-spinner-container">
+          <div class="ytp-spinner-rotator">
+            <div class="ytp-spinner-left">
+              <div class="ytp-spinner-circle"></div>
+            </div>
+            <div class="ytp-spinner-right">
+              <div class="ytp-spinner-circle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+     
+  <br><br><br><br>
+
+
+<section class="market-status-section-unique">
+  <!-- Finlogix Widget BEGIN-->
+  <div class="finlogix-container"></div>
+  <script type="text/javascript" src="https://widget.finlogix.com/Widget.js"></script>
+  <script type="text/javascript">
+    Widget.init({
+      widgetId: "720e589b-b9f1-40f8-904d-79ecc0ff2d18",
+      type: "StripBar",
+      language: "en",
+      symbolPairs: [
+        {
+          symbolId: "83",
+          symbolName: "INDIA50"
+        },
+        {
+          symbolId: "20273",
+          symbolName: "HDFC Bank Limited"
+        },
+        {
+          symbolId: "20281",
+          symbolName: "ICICI Bank Ltd"
+        },
+        {
+          symbolId: "20070",
+          symbolName: "Infosys"
+        },
+        {
+          symbolId: "20199",
+          symbolName: "AXISCapital"
+        },
+        {
+          symbolId: "10029",
+          symbolName: "Microsoft"
+        },
+        {
+          symbolId: "66",
+          symbolName: "BTC/USD"
+        },
+        {
+          symbolId: "20317",
+          symbolName: "Reliance Steel & Aluminum"
+        },
+        {
+          symbolId: "10007",
+          symbolName: "Apple"
+        },
+        {
+          symbolId: "19",
+          symbolName: "EUR/USD"
+        }
+      ],
+      isAdaptive: true
+    });
+  </script>
+  
+  
+
+  <!-- Finlogix Widget END-->
+
+  <h2 class="market-status-heading-unique">Global Market Open & Close Status</h2>
+  <div class="market-scroll-container-unique">
+    <div class="market-card-container-unique" id="marketStatusContainerUnique"></div>
+  </div>
+</section>
+  <div class="container-main">
+
+  <div class="container" ><br><br>
+    <!-- TradingView Widget BEGIN -->
+     <br><br>
+    <div class="tradingview-widget-container" style="height: 445px;">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-timeline.js" async>
+        {
+          "feedMode": "all_symbols",
+            "isTransparent": false,
+              "displayMode": "adaptive",
+                "currentTheme": "light",
+                  "locale": "in"
+        }
+      </script>
+    </div>
+    <!-- TradingView Widget END -->
+  </div>
+  <br><br><br>
+  <div class="container">
+    <!-- TradingView Widget BEGIN -->
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript"
+        src="https://s3.tradingview.com/external-embedding/embed-widget-crypto-coins-heatmap.js" async>
+          {
+            "dataSource": "Crypto",
+              "blockSize": "market_cap_calc",
+                "blockColor": "change",
+                  "locale": "in",
+                    "symbolUrl": "",
+                      "colorTheme": "light",
+                        "hasTopBar": false,
+                          "isDataSetEnabled": false,
+                            "isZoomEnabled": true,
+                              "hasSymbolTooltip": true,
+                                "width": "auto",
+                                  "height": 500
+          }
+        </script>
+    </div>
+    <!-- TradingView Widget END -->
+  </div>
+  <br><br><br>
+
+  <div class="container">
+    <!-- TradingView Widget BEGIN -->
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-stock-heatmap.js"
+        async>
+          {
+            "exchanges": [],
+              "dataSource": "SENSEX",
+                "grouping": "sector",
+                  "blockSize": "market_cap_basic",
+                    "blockColor": "change",
+                      "locale": "in",
+                        "symbolUrl": "",
+                          "colorTheme": "light",
+                            "hasTopBar": false,
+                              "isDataSetEnabled": false,
+                                "isZoomEnabled": true,
+                                  "hasSymbolTooltip": true,
+                                    "width": "auto",
+                                      "height": 500
+          }
+        </script>
+    </div> <br><br><br>
+
+    <div class="container">
+
+      <!-- TradingView Widget BEGIN -->
+      <div class="tradingview-widget-container">
+        <div class="tradingview-widget-container__widget"></div>
+        <script type="text/javascript"
+          src="https://s3.tradingview.com/external-embedding/embed-widget-forex-heat-map.js" async>
+            {
+              "width": "auto",
+                "height": 500,
+                  "currencies": [
+                    "EUR",
+                    "USD",
+                    "JPY",
+                    "GBP",
+                    "AUD",
+                    "CAD",
+                    "NZD",
+                    "CNY",
+                    "INR"
+                  ],
+                    "isTransparent": false,
+                      "colorTheme": "light",
+                        "locale": "in"
+            }
+          </script>
+      </div>
+      <!-- TradingView Widget END -->
+    </div>
+  </div>
+      
+</div>
+  <!-- Timed popup that will appear after succesful submission of feebback form! -->
+      <button class="notification" id="successnotification" style="display:none;">
+        <span class="message" id="successmsg">Submitted successfully!</span>
+        <span class="closenotif" id="closeSuccessNotification">✖</span>
+        <div class="timerline" id="timerline"></div>
+      </button>
+
+      
+  <footer id="footer" class="footer-area pt-120">
+    <div class="container">
+      <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="subscribe-content mt-45">
+              <h2 class="subscribe-title">
+                Subscribe Our Newsletter <span>get regular updates</span>
+              </h2>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="subscribe-form mt-50">
+              <form id="unique-subscribe-form">
+                <input type="email" id="unique-news-email" placeholder="Enter Email" required/>
+                <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
+              </form>
+              <div id="unique-message" class="unique-popup-message" style="display: none;">
+                <div class="border-animation"></div>
+                Thank You for the subscription!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-widget pb-100">
+      <div class="row" id="footer">
+          <div class="col-lg-4 col-md-6 col-sm-8">
+              <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                <img src="./assets/images/FinvedaLogo.png" alt="FinVeda Logo" style="height: 80px; width: auto; margin-bottom: 15px;" />
+                  <p class="text custom-margin">
+                      We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
+                  </p>
+              </div>
+          </div>
+          <div class="col-lg-5 col-md-7 col-sm-7">
+              <div class="footer-link d-flex mt-50 justify-content-md-between" style="justify-content: space-around !important;">
+                  <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+                      <div class="footer-title">
+                          <h3 class="title custom-margin">Quick Links</h3>
+                      </div>
+                      <ul class="link custom-margin">
+                          <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+                          <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
+                          <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
+                          <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+                          <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+                          <li><a href="./blogs/sitemap.html"><i class="fa-solid fa-sitemap"></i> Site Map</a></li>
+                        </ul>
+                  </div>
+                  <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+                      <div class="footer-title">
+                          <h4 class="title custom-margin">Resources</h4>
+                      </div>
+                      <ul class="link custom-margin">
+                          <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+                          <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                          <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
+                          <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
+                          <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                          <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-3 col-md-5 col-sm-5">
+              <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                  <div class="footer-title">
+                      <h4 class="title custom-margin">Contact Us</h4>
+                  </div>
+                  <ul class="contact custom-margin-big" style="justify-content: space-around;">
+                      <li class="d-sm-flex justify-content-center">
+                          <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                          <p style="width: 80%;">
+                              <a href="mailto:ayush1337@hotmail.com" target="_blank"
+                                 style="color: white; text-decoration: underline;">
+                                  ayush1337@hotmail.com
+                              </a>
+                          </p>
+                      </li>
+                      <li class="d-sm-flex justify-content-center">
+                          <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                          <div style="width: 80%;">
+                              <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
+                                  fin-veda.vercel.app
+                              </a>
+                          </div>
+                      </li>
+                      <li class="d-sm-flex justify-content-center">
+                          <!-- Modified: Inline CSS to adjust logo size and sync with other pages -->
+                          <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font: 12px; width: 10%;"></i>
+                          <div style="width: 80%;">
+                              <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
+                                 style="color:#fff">
+                                  Delhi, India
+                              </a>
+                          </div>
+                      </li>
+                      <!-- Added: Social Media Redirects -->
+                      <div class="social-icons">
+                        <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://discord.com/"><i class="fa-brands fa-discord"></i></a>
+                        <a href="https://github.com/ayush-that/FinVeda"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+      <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center">
+        <div class="row">
+          <div class="col-lg-12">
+            <div
+              class="copyright d-sm-flex justify-content-center"
+              style="
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                width: 100%;
+                height: 100%;
+              "
+            >
+              <div class="copyright-content" style="text-align: center">
+                <p class="text" style="text-align: center">
+                  © <span id="copyright-year">2024</span> FinVeda. All rights are
+                  reserved<br />
+                  Made with ♥ in India
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <div id="particles-2"></div>
+  </footer>
+  <script>document.getElementById("copyright-year").textContent = new Date().getFullYear();</script>
+  <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
+  <script src= "./assets/js/trends.js"></script>
+  <script src= "./assets/js/market-time.js"></script>
+  <script src= "./assets/js/subscribe.js"></script>
+  <script src= "./assets/js/vendor/jquery-1.12.4.min.js"></script>
+  <script src= "./assets/js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src= "./assets/js/popper.min.js"></script>
+  <script src= "./assets/js/bootstrap.min.js"></script>
+  <script src= "./assets/js/plugins.js"></script>
+  <script src= "./assets/js/popup.js"></script>
+  <script src= "./assets/js/slick.min.js"></script>
+  <script src= "./assets/js/ajax-contact.js"></script>
+  <script src= "./assets/js/waypoints.min.js"></script>
+  <script src= "./assets/js/jquery.counterup.min.js"></script>
+  <script src= "./assets/js/jquery.magnific-popup.min.js"></script>
+  <script src=  "./assets/js/jquery.easing.min.js"></script>
+  <script src= "./assets/js/scrolling-nav.js"></script>
+  <script src= "./assets/js/wow.min.js"></script>
+  <script src= "./assets/js/particles.min.js"></script>
+  <script src=  "./assets/js/main.js"></script>
+  <script src= "./assets/js/popup.js"></script>
+  <script src= "https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+  <script src= "https://mediafiles.botpress.cloud/5e160793-5606-4412-ba4c-337e416f14fe/webchat/config.js" defer></script>
+  <script defer src= "./assets/js/arthsathi-style.js"></script>
+  <script src= "./assets/js/botpress.js"></script>
+  <script src= "./assets/js/trendsmodals.js"></script>
+  <script src= "./tools/smoothScroll.js"></script>
+
+  <div class="gtranslate_wrapper"></div>
+  <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
+  <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+
+</body>
+
+</html>

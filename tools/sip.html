@@ -338,6 +338,11 @@
                   <li class="nav-item">
                     <a class="page-scroll" href="../faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
                   </li>
+
+                  
+                  <li class="nav-item no-underline">
+                    <a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;" data-scroll-nav="0" href="../loginPage.html" >Login/Register 💻</a>
+
                   <!-- Dropdown for Explore -->
                   <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
                     <a class="page-scroll dropdown-toggle" href="#" style="color: rgb(237, 242, 244);">
@@ -350,6 +355,7 @@
                       <li><a href="../quiz.html">Quiz 🤔</a></li>
                       <li><a href="../maps.html">MAPS 🗺️</a></li>
                     </ul>
+
                   </li>
 
                   <!-- Navigation item placeholder for Login/Register or Logout button -->
@@ -633,8 +639,30 @@
     <br><br>
 
     <h1>Tools</h1>
+    <!-- Scroll button style -->
+     <style>
+    .scroll-btn {
+      position: absolute;
+      top: 50%;
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 24px;
+      z-index: 1;
+    }
+    .scroll-btn.leftt {
+      left: 0;
+    }
 
-    <div class="calculator-slider">
+    .scroll-btn.rightt {
+      right: 0;
+    }
+     </style>
+    <button class="scroll-btn leftt" onclick="scrollSliderLeft()">←</button>
+    <div class="calculator-slider" id="slider">
       <div class="slider-item" onclick="openCalculator('mutualFundCalculator')">
         <h3>Mutual Fund Investment Calculator</h3>
         <p>Estimate your potential returns for SIP or LumpSum investments.</p>
@@ -935,6 +963,28 @@
       </div>
 
     </div>
+    <button class="scroll-btn rightt" onclick="scrollSliderRight()">→</button>
+
+    <script>
+      // Scroll amount in pixels
+      const scrollAmount = 300;
+    
+      function scrollSliderLeft() {
+        const slider = document.getElementById('slider');
+        slider.scrollBy({
+          left: -scrollAmount,
+          behavior: 'smooth'
+        });
+      }
+    
+      function scrollSliderRight() {
+        const slider = document.getElementById('slider');
+        slider.scrollBy({
+          left: scrollAmount,
+          behavior: 'smooth'
+        });
+      }
+    </script>
 
     <style>
       body {
@@ -1937,89 +1987,120 @@
 
       <style>
         * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-        }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-        :root {
-          --font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        }
+:root {
+  --font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 
-        .tco-container,
-        .main-income {
-          background: linear-gradient(135deg, #0048ff 20%, #2cbc98 80%);
-          padding: 20px;
-          border-radius: 10px;
-          margin: 20px auto;
-          text-align: center;
-          width: 90%;
-          max-width: 500px;
-        }
+.tco-container,
+.main-income {
+  background: linear-gradient(135deg, #3a6eff 20%, #5ae3c7 80%);
+  padding: 20px;
+  height: 800px;
+  border-radius: 10px;
+  margin: 20px auto;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
 
-        .tco-header,
-        .main-income-head {
-          color: #ffffff;
-          font-size: 24px;
-          margin-bottom: 20px;
-        }
+.tco-container:hover,
+.main-income:hover {
+  transform: scale(1.02);
+}
 
-        .input-group {
-          margin-bottom: 15px;
-          text-align: left;
-          width: 90%;
-          margin: auto;
-        }
+.tco-header,
+.main-income-head {
+  color: #ffffff;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
 
-        .input-group label {
-          color: #ffffff;
-          display: block;
-          font-size: 18px;
-          margin-bottom: 5px;
-        }
+.input-group {
+  margin-bottom: 25px;
+  text-align: left;
+  width: 90%;
+  margin: auto;
+}
 
-        .input-group input {
-          width: 100%;
-          padding: 10px;
-          border-radius: 5px;
-          font-size: 16px;
-        }
+.input-group label {
+  color: #ffffff;
+  display: block;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
 
-        .calculate-btn,
-        .submit-button,
-        .reset-button {
-          background: linear-gradient(135deg, #0048ff, #2cbc98);
-          color: #ffffff;
-          border: none;
-          border-radius: 10px;
-          padding: 10px 20px;
-          font-size: 18px;
-          margin-top: 20px;
-        }
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  border: 1px solid #ffffff;
+  background-color: #f0f0f0;
+  color: #333;
+  transition: all 0.3s ease;
+}
 
-        .result,
-        .taxable-income,
-        .tax-payable,
-        .income-after-tax {
-          color: #ffffff;
-          font-size: 20px;
-          margin-top: 20px;
-        }
+.input-group input:hover,
+.input-group input:focus {
+  border-color: #ffffff;
+  background-color: #e0e0e0;
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+}
 
-        .button-group {
-          display: flex;
-          justify-content: center;
-          gap: 10px;
-          margin-top: 20px;
-        }
+.calculate-btn,
+.submit-button,
+.reset-button {
+  background: #ffffff;
+  color: #007acc;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
 
-        @media (max-width: 600px) {
+.calculate-btn:hover,
+.submit-button:hover,
+.reset-button:hover {
+  background: #e0e0e0;
+  color: #005fa3;
+  transform: scale(1.05);
+}
 
-          .tco-container,
-          .main-income {
-            width: 100%;
-          }
-        }
+.result,
+.taxable-income,
+.tax-payable,
+.income-after-tax {
+  color: #ffffff;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+  .tco-container,
+  .main-income {
+    width: 100%;
+  }
+}
+
       </style>
 
 

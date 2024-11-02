@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  
+  <meta charset="utf-8" />
+  <title>Quiz - FinVeda</title>
+  <meta name="description"
+    content="Explore engaging quizzes on finance and economics at Fin Veda. Test your knowledge and learn with interactive quizzes covering various topics." />
+  <meta name="author" content="Ayush Singh">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon"  href="assets/images/favicon2.webp" type="image/png" />
+  <link rel="stylesheet"  href="assets/css/animate.css" />
+  <link rel="stylesheet"  href="assets/css/magnific-popup.css" />
+  <link rel="stylesheet"  href="assets/css/slick.css" />
+  <link rel="stylesheet"  href="assets/css/LineIcons.css" />
+  <link rel="stylesheet"  href="assets/css/font-awesome.min.css" />
+  <link rel="stylesheet"  href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet"  href="assets/css/default.css" />
+  <link rel="stylesheet"  href="assets/css/style.css" />
+  <link rel="stylesheet"  href="assets/css/quiz.css" />
+  <link rel="stylesheet"  href="assets/css/popup.css" />
+  <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
+  <link rel="stylesheet" href="navbar.css">
+
+<body class="quizpage">
+
+  <div class="circle-container"> 
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+  <div id="progressBar"></div>
+  <script>
+    window.onscroll = function () {
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      document.getElementById("progressBar").style.width = scrolled + "%";
+    };
+  </script>
+
+
+
+  <div class="preloader">
+    <div class="loader">
+      <div class="ytp-spinner">
+        <div class="ytp-spinner-container">
+          <div class="ytp-spinner-rotator">
+            <div class="ytp-spinner-left">
+              <div class="ytp-spinner-circle"></div>
+            </div>
+            <div class="ytp-spinner-right">
+              <div class="ytp-spinner-circle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <header class="header-area">
+    <div class="navbar-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <nav class="navbar navbar-expand-lg">
+              <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+              </button> -->
+              <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                <div class="icon1">
+                  <a href="./index.html">
+                    <img src="./assets/images/FinvedaLogo.png" alt="icon.png" style="width: 13rem;">
+                  </a>
+                </div>
+                <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
+                  <li class="nav-item">
+                    <a class="page-scroll active-link" href="./index.html" style="color: rgb(237, 242, 244);">Home
+                      🏡</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./finance.html" style="color: rgb(237, 242, 244);">Courses 📚</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
+                  </li>
+                  <!-- Dropdown for Explore -->
+                  <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
+                    <a class="page-scroll dropdown-toggle" href="#" style="color: rgb(237, 242, 244);">
+                      <span class="explore-text">Explore 📚</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a href="./trends.html">Trends 📈</a></li>
+                      <li><a href="./tools/sip.html">Tools 🔧</a></li>
+                      <li><a href="./blog.html">Blogs 📰</a></li>
+                      <li><a href="./quiz.html">Quiz 🤔</a></li>
+                      <li><a href="./maps.html">MAPS 🗺️</a></li>
+                    </ul>
+                  </li>
+
+                  <!-- Navigation item placeholder for Login/Register or Logout button -->
+                  <li class="nav-item no-underline" id="auth-btn-container">
+                    <a class="main-btn navbar-btn"
+                      style="padding: 2px 20px; color: rgb(237, 242, 244); animation-duration: 0.4s; animation-name: ease;"
+                      data-scroll-nav="0" href="./loginPage.html">Login/Register 💻</a>
+                  </li>
+
+                  <li class="nav-item no-underline">
+                    <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
+                      🌙
+                    </button>
+                  </li>
+                </ul>
+              </div>
+
+              <script>
+                const toggleButton = document.getElementById('theme-toggle');
+                const body = document.body;
+                const currentTheme = localStorage.getItem('theme');
+
+                if (currentTheme === 'dark') {
+                body.classList.add('dark-mode');
+                toggleButton.classList.add('dark');
+                toggleButton.textContent = '🌞';
+                }
+
+                toggleButton.addEventListener('click', function () {
+                body.classList.toggle('dark-mode');
+                toggleButton.classList.toggle('dark');
+
+                // Update button icon based on mode
+                if (body.classList.contains('dark-mode')) {
+                  toggleButton.textContent = '🌞';  // Light mode icon
+                  localStorage.setItem('theme', 'dark');
+                } else {
+                  toggleButton.textContent = '🌙';  // Dark mode icon
+                  localStorage.setItem('theme', 'light');
+                }
+                });
+              </script>
+              <div class="navbar-btn d-none d-sm-inline-block">
+                <!-- Login Modal -->
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span
+                      class="close"
+                      style="display: flex; justify-content: right"
+                      >&times;</span
+                    >
+                    <div class="mt-3">
+                      <h3 class="join">Login to join us....</h3>
+                      <form class="px-3 py-4">
+                        <div class="form-group">
+                          <label class="d-flex">Username</label>
+                          <input
+                            type="text"
+                            placeholder="Username"
+                            class="form-control"
+                          />
+                        </div>
+                        <div class="form-group">
+                          <input
+                            type="password"
+                            placeholder="Password"
+                            class="form-control"
+                          />
+                          <button type="button" class="toggle-password-btn">
+                            <i class="fa-solid fa-eye"></i>
+                          </button>
+                        </div>
+                        <div class="form-check d-flex">
+                          <input type="checkbox" class="form-check-input" />
+                          <label class="form-check-label">Remember me</label>
+                        </div>
+                      </form>
+                      <button class="main-btn mt-2 w-100 mb-3">
+                        Sign in
+                      </button>
+                      <p class="text-center">
+                        Don't have an account?
+                        <a href="#" id="registerLink">Register</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Register Modal -->
+                <div id="registerModal" class="modal">
+                  <div class="modal-content">
+                    <span
+                      class="close"
+                      style="display: flex; justify-content: right"
+                      >&times;</span
+                    >
+                    <div class="mt-3">
+                      <h3 class="join">Register to join us....</h3>
+                      <form class="px-3 py-4">
+                        <div class="form-group">
+                          <label class="d-flex">Email</label>
+                          <input
+                            type="email"
+                            placeholder="Email"
+                            class="form-control"
+                          />
+                        </div>
+                        <div class="form-group">
+                          <label class="d-flex">Username</label>
+                          <input
+                            type="text"
+                            placeholder="Username"
+                            class="form-control"
+                          />
+                        </div>
+                        <div class="form-group">
+                          <input
+                            type="password"
+                            placeholder="Password"
+                            class="form-control"
+                            required
+                          />
+                          <button type="button" class="toggle-password-btn">
+                            <i class="fa-solid fa-eye"></i>
+                          </button>
+                        </div>
+                      </form>
+                      <button class="main-btn mt-2 w-100 mb-3">
+                        Register
+                      </button>
+                      <p class="text-center">
+                        Already have an account?
+                        <a href="#" id="loginLink">Login</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </nav>
+            <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+            <nav class="mobile-menu ">
+              <a class="page-scroll" href="../index.html">Home 🏡</a>
+              <a class="page-scroll" href="../about.html">About Us 📖</a>
+              <a class="page-scroll" href="../trends.html">Trends 📈</a>
+              <a class="page-scroll" href="../tools/sip.html">Tools 🔧</a>
+              <a class="page-scroll active-link" href="../blog.html">Blogs 📰</a>
+              <a class="page-scroll" href="../quiz.html">Quiz 🤔</a>
+              <a class="page-scroll main-btn" href="#" onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
+              <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
+                <span></span>
+              </div>
+            </nav>
+
+                
+              <link href="../navbar.css" rel="stylesheet">
+              <script type="text/javascript" src="../navbar.js"></script>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+  <div class="blog-content wow fadeInUp\" style="margin-top: 100px;display: flex; flex-direction: column;flex-wrap: wrap;" data-wow-duration="1.3s" data-wow-delay="0.5s">
+    <h2 class="test">Test your knowledge</h2>
+    <div style="position: absolute;width: 100px;height: 100px;right: 100px;z-index: 10; margin-top: 56px;" id="quiz-pic"><img src="./assets/images/quiz-anime2.webp" alt="QUIZ"></div>
+    <div class="quiz-description wow fadeIn" data-wow-duration="1.3s" data-wow-delay="0.5s" style="width: 40%; margin: auto;">
+      <div class="quiztitle wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">Welcome to the Quiz Challenge!</div>
+      <div class="quizcontent wow fadeInUp" data-wow-duration="1.2s" data-wow-delay="0.6s">Get ready to test your knowledge and skill with our engaging quiz.</div>
+      <div class="quizcontent wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s"> Here's what you need to know before you begin:</div>
+      <div class="quizcontent wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s"> Total Number of Questions: 10</div>
+      <div class="quizcontent wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s"> Points Per Question: 1</div>
+      <div class="quizcontent2 wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">Good Luck!</div>
+    </div>
+    <div style="margin: auto;"><img src="assets/images/QUIZ.jpeg" alt="photo"></div>
+    <form id="financeQuizForm">
+      <div id="quiz" class="wow fadeIn" data-wow-duration="1.3s" data-wow-delay="0.5s">
+        <span id="completed-perc"></span>
+        <div id="quiz-progress-bar">
+          <div id="quiz-progress"></div>
+        </div>
+        <script>
+                
+        </script>
+        <div class="quiz">
+          <h2 id="question">Question goes here</h2>
+          <div id="answer-buttons">
+            <button class="btn" onclick="selectAnswer()">Answer 1</button>
+            <button class="btn" onclick="selectAnswer()">Answer 2</button>
+            <button class="btn" onclick="selectAnswer()">Answer 3</button>
+            <button class="btn" onclick="selectAnswer()">Answer 4</button>
+          </div>
+          <div>
+            <center>
+              <div id="congratulations-image"><img id="quizimg5" style="display: none" src="./assets/images/quiz5.webp"
+                  alt="congratulations" srcset=""></div>
+            </center>
+            <center>
+              <div id="congratulations-image"><img id="quizimg1" style="display: none" src="./assets/images/quiz1.webp"
+                  alt="congratulations" srcset=""></div>
+            </center>
+            <center>
+              <div id="congratulations-image"><img id="quizimg2" style="display: none" src="./assets/images/quiz2.webp"
+                  alt="congratulations" srcset=""></div>
+            </center>
+            <center>
+              <div id="congratulations-image"><img id="quizimg3" style="display: none" src="./assets/images/quiz3.webp"
+                  alt="congratulations" srcset=""></div>
+            </center>
+            <center>
+              <div id="congratulations-image"><img id="quizimg4" style="display: none" src="./assets/images/quiz4.webp"
+                  alt="congratulations" srcset=""></div>
+            </center>
+            <span id="correct-span"></span>
+            <span id="incorrect-span"></span>
+          </div>
+          <div class="quiz-bottom-btns">
+            <button id="pass-btn">Pass</button>
+            <button id="next-btn">Next</button>
+            <button id="submit-btn">Submit</button>
+            <button id="play-again-btn">Play Again</button>
+          </div>
+        </div>
+      </div>
+      <!-- Question 1
+      <label>1. What is the primary purpose of creating a budget?</label><br>
+      <input type="radio" name="q1" value="A"> A. To restrict spending<br>
+      <input type="radio" name="q1" value="B"> B. To track income and expenses<br>
+      <input type="radio" name="q1" value="C"> C. To increase debt<br>
+      <input type="radio" name="q1" value="D"> D. To eliminate savings<br>
+      <br>
+      Question 2
+      <label>2. Why is maintaining an emergency fund important?</label><br>
+      <input type="radio" name="q2" value="A"> A. It earns high interest<br>
+      <input type="radio" name="q2" value="B"> B. It provides investment opportunities<br>
+      <input type="radio" name="q2" value="C"> C. It covers unexpected expenses<br>
+      <input type="radio" name="q2" value="D"> D. It helps build credit<br>
+      <br>
+      Credit and Debt
+      Question 3
+      <label>3. What is a credit score based on?</label><br>
+      <input type="radio" name="q3" value="A"> A. Monthly income<br>
+      <input type="radio" name="q3" value="B"> B. Number of credit cards<br>
+      <input type="radio" name="q3" value="C"> C. Payment history and debt utilization<br>
+      <input type="radio" name="q3" value="D"> D. Social media activity<br>
+      <br>
+      Question 4
+      <label>4. How does compound interest affect debt?</label><br>
+      <input type="radio" name="q4" value="A"> A. It reduces interest over time<br>
+      <input type="radio" name="q4" value="B"> B. It increases debt exponentially<br>
+      <input type="radio" name="q4" value="C"> C. It only applies to savings accounts<br>
+      <input type="radio" name="q4" value="D"> D. It has no impact on debt<br>
+      <br>
+      Question 5
+      <label>5. What is the primary purpose of diversification in an investment portfolio?</label><br>
+      <input type="radio" name="q5" value="A"> A. To maximize returns<br>
+      <input type="radio" name="q5" value="B"> B. To minimize risk<br>
+      <input type="radio" name="q5" value="C"> C. To focus on a single investment<br>
+      <input type="radio" name="q5" value="D"> D. To avoid taxes<br>
+      <br>
+      Question 6
+      <label>6. What is a stock?</label><br>
+      <input type="radio" name="q6" value="A"> A. A type of bond<br>
+      <input type="radio" name="q6" value="B"> B. Ownership in a company<br>
+      <input type="radio" name="q6" value="C"> C. A savings account<br>
+      <input type="radio" name="q6" value="D"> D. A loan to the government<br>
+      <br>
+      Question 7
+      <label>7. Why is starting to save for retirement early advantageous?</label><br>
+      <input type="radio" name="q7" value="A"> A. Early savers receive higher interest rates<br>
+      <input type="radio" name="q7" value="B"> B. Retirement accounts are only available to young savers<br>
+      <input type="radio" name="q7" value="C"> C. Compounding can work over a longer period<br>
+      <input type="radio" name="q7" value="D"> D. Early savers pay fewer taxes<br>
+      <br>
+      Question 8
+      <label>8. What is the main difference between a 401(k) and an IRA?</label><br>
+      <input type="radio" name="q8" value="A"> A. Contribution limits<br>
+      <input type="radio" name="q8" value="B"> B. Eligibility criteria<br>
+      <input type="radio" name="q8" value="C"> C. Investment options<br>
+      <input type="radio" name="q8" value="D"> D. Tax treatment<br>
+      <br>
+      Question 9
+      <label>9. Why is health insurance important?</label><br>
+      <input type="radio" name="q9" value="A"> A. It helps save for retirement<br>
+      <input type="radio" name="q9" value="B"> B. It covers unexpected expenses<br>
+      <input type="radio" name="q9" value="C"> C. It protects against medical costs<br>
+      <input type="radio" name="q9" value="D"> D. It provides life coverage<br>
+      <br>
+      Question 10
+      <label>10. What does life insurance primarily provide?</label><br>
+      <input type="radio" name="q10" value="A"> A. Investment returns<br>
+      <input type="radio" name="q10" value="B"> B. Retirement income<br>
+      <input type="radio" name="q10" value="C"> C. Death benefit to beneficiaries<br>
+      <input type="radio" name="q10" value="D"> D. Home insurance<br>
+      <br> -->
+      <!-- <button type="button" class="submit-button" ">Submit Answers</button> -->
+      <div id="quizResult" onclick="gradeQuiz()"></div>
+    </form>
+    <br><br>
+    <div id="quizResult"></div>
+  </div>
+  
+ 
+<STYLE>
+  /* Quiz container styling */
+.quiz-description {
+  background: linear-gradient(135deg, #3d10bd,#62bdff);
+  padding: 2rem;
+  border-radius: 10px;
+  color: white;
+  font-family: 'Arial', sans-serif;
+}
+
+.quiztitle {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.quizcontent {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.quizcontent2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+#quiz {
+  background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+  padding: 2rem;
+  border-radius: 10px;
+  color: white;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+#answer-buttons .btn {
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+/* Hover effect for buttons */
+#answer-buttons .btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Click/focus effect for buttons */
+#answer-buttons .btn:focus {
+  background: #4caf50; /* Green when clicked */
+  outline: none; /* Removes default focus outline */
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#quiz-progress-bar {
+  width: 100%;
+  background: white;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#quiz-progress {
+  background: #4caf50;
+  height: 20px;
+  border-radius: 5px;
+  width: 0%;
+}
+
+#pass-btn, #next-btn, #submit-btn, #play-again-btn {
+  background: linear-gradient(45deg, #56ab2f, #a8e063);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+/* Hover effect for bottom buttons */
+#pass-btn:hover, #next-btn:hover, #submit-btn:hover, #play-again-btn:hover {
+  background: linear-gradient(45deg, #43c6ac, #191654);
+  transform: scale(1.05);
+}
+
+/* Click/focus effect for bottom buttons */
+#pass-btn:focus, #next-btn:focus, #submit-btn:focus, #play-again-btn:focus {
+  background: #4caf50; /* Green when clicked */
+  outline: none; /* Removes default focus outline */
+  transform: scale(1.05);
+}
+
+#congratulations-image img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+#correct-span, #incorrect-span {
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+
+#quizResult {
+  color: white;
+  font-weight: heavy;
+}
+
+/* Input focus effect (turns green when clicked) */
+input[type="radio"]:focus {
+  outline: none;
+  box-shadow: 0 0 5px 2px #4caf50; /* Green shadow when clicked */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .quiz-description, #quiz {
+    padding: 1rem;
+  }
+  .quiztitle {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+</STYLE>
+</body>
+
+
+
+<!-- Timed popup that will appear after succesful submission of feebback form! -->
+<button class="notification" id="successnotification" style="display:none;">
+  <span class="message" id="successmsg">Submitted successfully!</span>
+  <span class="closenotif" id="closeSuccessNotification">✖</span>
+  <div class="timerline" id="timerline"></div>
+</button>
+
+
+<footer id="footer" class="footer-area pt-120">
+  <div class="container">
+    <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="subscribe-content mt-45">
+            <h2 class="subscribe-title">
+              Subscribe Our Newsletter <span>get regular updates</span>
+            </h2>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="subscribe-form mt-50">
+            <form id="unique-subscribe-form">
+              <input type="email" id="unique-news-email" placeholder="Enter Email" required />
+              <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
+            </form>
+            <div id="unique-message" class="unique-popup-message" style="display: none;">
+              <div class="border-animation"></div>
+              Thank You for the subscription!
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-widget pb-100">
+    <div class="row" id="footer">
+      <div class="col-lg-4 col-md-6 col-sm-8">
+        <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+          <img src="./assets/images/FinvedaLogo.png" alt="FinVeda Logo"
+            style="height: 80px; width: auto; margin-bottom: 15px;" />
+          <p class="text custom-margin">
+            We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial
+            blogs.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-5 col-md-7 col-sm-7">
+        <div class="footer-link d-flex mt-50 justify-content-md-between"
+          style="justify-content: space-around !important;">
+          <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+            <div class="footer-title">
+              <h3 class="title custom-margin">Quick Links</h3>
+            </div>
+            <ul class="link custom-margin">
+
+              <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+              <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
+              <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
+              <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+              <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+              <li><a href="./blogs/sitemap.html"><i class="fa-solid fa-sitemap"></i> Site Map</a></li>
+
+
+            </ul>
+          </div>
+          <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+            <div class="footer-title">
+              <h4 class="title custom-margin">Resources</h4>
+            </div>
+            <ul class="link custom-margin">
+              <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+              <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+              <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
+              <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
+              <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+              <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-5 col-sm-5">
+        <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+          <div class="footer-title">
+            <h4 class="title custom-margin">Contact Us</h4>
+          </div>
+          <ul class="contact custom-margin-big" style="justify-content: space-around;">
+            <li class="d-sm-flex justify-content-center">
+              <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+              <p style="width: 80%;">
+                <a href="mailto:ayush1337@hotmail.com" target="_blank"
+                  style="color: white; text-decoration: underline;">
+                  ayush1337@hotmail.com
+                </a>
+              </p>
+            </li>
+            <li class="d-sm-flex justify-content-center">
+              <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+              <div style="width: 80%;">
+                <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
+                  fin-veda.vercel.app
+                </a>
+              </div>
+            </li>
+            <li class="d-sm-flex justify-content-center">
+              <!-- Modified: Inline CSS to adjust logo size and sync with other pages -->
+              <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font: 12px; width: 10%;"></i>
+              <div style="width: 80%;">
+                <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
+                  style="color:#fff">
+                  Delhi, India
+                </a>
+              </div>
+            </li>
+            <!-- Added: Social Media Redirects -->
+            <div class="social-icons">
+              <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+              <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="https://discord.com/"><i class="fa-brands fa-discord"></i></a>
+              <a href="https://github.com/ayush-that/FinVeda"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </ul>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s"
+    style="text-align: center">
+    <div class="row">
+      <div className="flex flex-col items-center text-gray-800">
+        <div className="flex items-center space-x-2">
+          <span className="font-bold text-2xl">Total Visitors : </span>
+          <a href="https://www.hitwebcounter.com" target="_blank">
+            <img
+              src="https://hitwebcounter.com/counter/counter.php?page=17085296&style=0006&nbdigits=5&type=page&initCount=1000"
+              title="Counter Widget" Alt="Visit counter For Websites" border="0" /></a>
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <div class="copyright d-sm-flex justify-content-center" style="
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+      ">
+          <div class="copyright-content" style="text-align: center">
+            <p class="text" style="text-align: center">
+              © <span id="copyright-year">2024</span> FinVeda. All rights are
+              reserved<br />
+              Made with ♥ in India
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="particles-2"></div>
+  </div>
+</footer>
+<script>document.getElementById("copyright-year").textContent = new Date().getFullYear();</script>
+<a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
+
+
+<script src= "./assets/js/subscribe.js"></script>
+<script src= "./assets/js/vendor/jquery-1.12.4.min.js"></script>
+<script src= "./assets/js/vendor/modernizr-3.7.1.min.js"></script>
+<script src= "./assets/js/popper.min.js"></script>
+<script src= "./assets/js/bootstrap.min.js"></script>
+<script src= ./assets/js/plugins.js"></script>
+<script src= "./assets/js/slick.min.js"></script>
+<script src= "./assets/js/ajax-contact.js"></script>
+<script src= "./assets/js/waypoints.min.js"></script>
+<script src= "./assets/js/jquery.counterup.min.js"></script>
+<script src= "./assets/js/jquery.magnific-popup.min.js"></script>
+<script src= "./assets/js/jquery.easing.min.js"></script>
+<script src= "./assets/js/scrolling-nav.js"></script>
+<script src= "./assets/js/wow.min.js"></script>
+<script src= "./assets/js/particles.min.js"></script>
+<script src= "./assets/js/main.js"></script>
+<script src= "./assets/js/quiz.js"></script>
+<script src= "./assets/js/popup.js"></script>
+<script src= "./assets/js/quiz_modify.js"></script>
+<script src= "https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+<script src= "https://mediafiles.botpress.cloud/5e160793-5606-4412-ba4c-337e416f14fe/webchat/config.js" defer></script>
+<script defer src= "./assets/js/arthsathi-style.js"></script>
+<script src= "./assets/js/botpress.js"></script>
+<script src= "./assets/js/quizmodals.js"></script>
+<script src= "./tools/smoothScroll.js"></script>
+
+<div class="gtranslate_wrapper"></div>
+<script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+
+</body>
+
+</html>

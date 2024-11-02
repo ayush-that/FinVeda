@@ -65,7 +65,7 @@
   <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
   <link rel="stylesheet" href="navbar.css">
   <style>
-    #progressBar {
+    /* #progressBar {
       position: fixed;
       top: 0;
       left: 0;
@@ -74,7 +74,7 @@
       background-color: #f76b45;
       z-index: 9999;
 
-    }
+    } */
 
     * {
       cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
@@ -306,15 +306,53 @@
                         data-scroll-nav="0" href="./loginPage.html">Login/Register 💻</a>
                     </li>
 
+                    <!-- Profile Icon -->
                     <li class="nav-item no-underline">
-                      <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
-                        🌙
+                         <a href="./profile.html" class="profile-link" style="display: flex; align-items: center; text-decoration: none;">
+                         <img src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg" alt="Profile Icon" style="width: 50px; height: 50px; border-radius: 50%; margin-top: -17px;">
+                        </a>
+                    </li>
+
+                    <style>
+                      /* Override the existing hover styles */
+                      .navbar-nav .nav-item .profile-link:hover {
+                          background-color: transparent !important; /* Remove background color */
+                          border-radius: 0 !important; /* Reset border radius */
+                          transform: none !important; /* Prevent scaling */
+                      }
+                    </style>
+
+                    <li class="nav-item no-underline">
+                      <button
+                        id="theme-toggle"
+                        class="theme-toggle relative w-14 h-8 flex items-center bg-gray-300 dark:bg-gray-800 rounded-full shadow-md transition duration-300"
+                        onclick="toggleTheme()"
+                      >
+                        <span
+                          class="icon1 absolute left-1 top-1 w-6 h-6 bg-white dark:bg-yellow-400 rounded-full shadow-md transition-transform duration-300"
+                        ></span>
                       </button>
                     </li>
-                  </ul>
-                </div>
+                    
 
                 <script>
+                  function toggleMenu() {
+                      const menu = document.getElementById('profileMenu');
+                      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+                  }
+              
+                  // Close the dropdown if the user clicks outside of it
+                  window.onclick = function(event) {
+                      if (!event.target.matches('.profile-icon img')) {
+                          const menu = document.getElementById('profileMenu');
+                          if (menu.style.display === 'block') {
+                              menu.style.display = 'none';
+                          }
+                      }
+                  }
+              </script>
+              
+              <script>
                   // Function to update the authentication button based on login status
                   function updateAuthButton() {
                     const authBtnContainer = document.getElementById("auth-btn-container");
@@ -342,29 +380,36 @@
                 </script>
 
                 <script>
-                  const toggleButton = document.getElementById('theme-toggle');
-                  var body = document.body;
-                  var currentTheme = localStorage.getItem('theme');
-
-                  if (currentTheme === 'dark') {
-                    body.classList.add('dark-mode');
-                    toggleButton.classList.add('dark');
-                    toggleButton.textContent = '🌞';
-                  }
-
-                  toggleButton.addEventListener('click', function () {
-                    body.classList.toggle('dark-mode');
-                    toggleButton.classList.toggle('dark');
-
-                    // Update button icon based on mode
-                    if (body.classList.contains('dark-mode')) {
-                      toggleButton.textContent = '🌞';  // Light mode icon
-                      localStorage.setItem('theme', 'dark');
+                  document.addEventListener('DOMContentLoaded', () => {
+                    const toggleButton = document.getElementById('theme-toggle');
+                    const body = document.body;
+                    const currentTheme = localStorage.getItem('theme');
+                  
+                    // Apply saved theme on page load
+                    if (currentTheme === 'dark') {
+                      body.classList.add('dark-mode');
+                      toggleButton.classList.add('dark');
+                      toggleButton.textContent = '🌞';
                     } else {
-                      toggleButton.textContent = '🌙';  // Dark mode icon
-                      localStorage.setItem('theme', 'light');
+                      toggleButton.textContent = '🌙';
                     }
+                  
+                    // Toggle theme on button click
+                    toggleButton.addEventListener('click', () => {
+                      body.classList.toggle('dark-mode');
+                      toggleButton.classList.toggle('dark');
+                  
+                      // Update button icon and save theme preference
+                      if (body.classList.contains('dark-mode')) {
+                        toggleButton.textContent = '🌞';  // Light mode icon
+                        localStorage.setItem('theme', 'dark');
+                      } else {
+                        toggleButton.textContent = '🌙';  // Dark mode icon
+                        localStorage.setItem('theme', 'light');
+                      }
+                    });
                   });
+                  
                 </script>
                 <div class="">
                   <!-- Login Modal -->
@@ -592,11 +637,18 @@
                 <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
                 <a class="page-scroll main-btn" href="#" onclick="openModal()"
                   onmouseout="this.style.color='white'">Login/Register 💻</a>
-                <li class="nav-item no-underline">
-                  <button id="theme-toggle2" class="theme-toggle2" style="margin-right: 2px;">
-                    🌙
-                  </button>
-                </li>
+                  <li class="nav-item no-underline">
+                    <button
+                      id="theme-toggle"
+                      class="theme-toggle relative w-14 h-8 flex items-center bg-gray-300 dark:bg-gray-800 rounded-full shadow-md transition duration-300"
+                      onclick="toggleTheme()"
+                    >
+                      <span
+                        class="icon1 absolute left-1 top-1 w-6 h-6 bg-white dark:bg-yellow-400 rounded-full shadow-md transition-transform duration-300"
+                      ></span>
+                    </button>
+                  </li>
+                  
                 <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
                   <span></span>
                 </div>
@@ -1574,7 +1626,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7 py-4 px-2">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                 <div class="blog-image">
                   <a href="./blogs/how-to-deal-with-unknown-risks-in-life-and-investing.html">
@@ -1593,7 +1645,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7 py-4 px-2">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/how-to-10x-your-generational-wealth.html">
@@ -1608,7 +1660,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7 py-4 px-2">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/invest-minimal.html">
@@ -1627,7 +1679,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7 py-4 px-2">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/Pocketmoney.html">
@@ -1644,7 +1696,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7 py-4 px-2">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/senior.html">
@@ -1661,7 +1713,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7 py-4 px-2">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/why-investing-in-stocks-is-better-than-fixed-deposit.html">
@@ -1678,7 +1730,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7 py-4 px-2">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="/blogs/starup.html">
@@ -1695,7 +1747,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7 py-4 px-2">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/how-fintech-is-revolutionizing-small-business-lending.html">
@@ -1712,7 +1764,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7">
+            <div class="col-lg-4 col-md-7 py-4 px-2">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/economic-trends-and-analysis.html">
@@ -2838,7 +2890,7 @@
               <button type="submit" class="signup-btn1-nl">Subscribe</button>
           </form>
           <a href="#" class="no-thanks-nl close-nl">No thanks</a>
-          <p class="terms-nl" style="white-space: nowrap;">By subscribing to newsletters, you agree to our <br><a href="terms&cond.html">Terms of Service</a> and <a href="privacynotice.html">Privacy Policy</a>.</p>
+          <p class="terms-nl" style="white-space: nowrap;">By subscribing to newsletters, you agree to our <br><a href="./blogs/terms-of-service.html">Terms of Service</a> and <a href="./blogs/privacy-policy.html">Privacy Policy</a>.</p>
       </div>
   </div>
 </div>

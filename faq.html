@@ -200,6 +200,15 @@
                 .toggle-button.dark:hover {
                 background-color: #ddd; /* Button hover color in dark mode */
                 }
+
+                .images{
+                    display: flex;
+                    align-items: center;
+                }
+
+                img{
+                    margin-left:50px;
+                }
       </style>
 
           </nav>
@@ -241,51 +250,7 @@
 </div>
 </header>
 
-
-     <!-- FAQ Section  -->
-
-
-     <div class="faq-container">
-        <h3 class = "faq-title">FAQ Progress</h3>
-        <!-- Progress Bar -->
-        <div style="margin: 5px 0;">
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-                    <span style="padding-left: 0.75rem;">0%</span>
-                </div>
-            </div>
-        </div>
-        <!-- FAQ Items -->
-        <div class="faq-item" style="color: #0000a3;">What is FinVeda?</div>
-        <div class="faq-item" style="color: #0000a3;" >How does FinVeda work?</div>
-        <div class="faq-item" style="color: #0000a3;">What are the features of FinVeda?</div>
-        <div class="faq-item" style="color: #0000a3;">How do I contact support?</div>
-    </div>
-
- <script>
-     const faqs = document.querySelectorAll('.faq-item');
-     const progressBar = document.querySelector('.progress-bar');
-
-     function updateProgress() {
-         let completed = 0;
-         faqs.forEach(faq => {
-             if (faq.classList.contains('read')) {
-                 completed++;
-             }
-         });
-         let progress = (completed / faqs.length) * 100;
-         progressBar.style.width = progress + '%';
-         progressBar.textContent = Math.round(progress) + '%';
-     }
-
-     faqs.forEach(faq => {
-         faq.addEventListener('click', function() {
-             faq.classList.toggle('read');
-             updateProgress();
-         });
-     });
- </script>
-
+    
 
  <style>
         .accordion-button {
@@ -334,8 +299,6 @@
 
 
  <!-- FAQ Section -->
-    <img style="position:absolute;width:250px; top: 200px; right: 1270px;mix-blend-mode: multiply;" src="assets/images/HELP-IMG.webp" alt="image">
-    <div class="faq-section">
         <div class="faq-intro">
             <h3 class="faq-title">Frequently Asked Questions</h3>
             <p>Welcome to Finveda’s FAQ! Here you’ll find answers to common questions about our services, tools, and how we can help you on your financial journey. Still have questions? Contact us or use our AI chatbot for more assistance.</p>
@@ -472,7 +435,7 @@
     </script>
 
     </div>
-
+    </div>
     <!-- Feedback Section -->
     <div class="faq-feedback">
         <h3 class="faq-title">Submit Your Feedback or Ask a New Question</h3>
@@ -494,7 +457,7 @@
             </div>
         </form>
     </div>
-
+    
     <style>
         /* Global body styles for dark theme */
         body {
@@ -507,7 +470,7 @@
 
         /* FAQ Container styling */
         .faq-section {
-            background-color: white; /* Darker container background */
+            background-color: #007bff; /* Darker container background */
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
@@ -516,15 +479,15 @@
 
         /* FAQ Item styles */
         .accordion-button {
-            background-color: #2c2c2c; /* Darker background for buttons */
+            background-color: #1d45bd; /* Darker background for buttons */
             color: #ffffff; /* White text */
             border: 1px solid #4caf50; /* Green border */
             transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
         }
 
         .accordion-button:hover {
-            background-color: #3c3c3c; /* Slightly lighter on hover */
-            color: #fffbeb; /* Light color on hover */
+            background-color: white; /* Slightly lighter on hover */
+            color: #007bff; /* Light color on hover */
             box-shadow: 0 0 20px rgba(76, 175, 80, 1); /* Neon glow */
         }
 
@@ -533,8 +496,8 @@
         }
 
         .accordion-body {
-            background-color: #2c2c2c; /* Dark background for accordion body */
-            color: #e0e0e0; /* Light gray text for body */
+            background-color: white; /* Dark background for accordion body */
+            color: #007bff; /* Light gray text for body */
             border-radius: 5px;
             padding: 15px;
         }
@@ -542,13 +505,13 @@
         /* Feedback section styles */
         .faq-feedback {
             border: 2px solid #4caf50; /* Green border */
-            background: white; /* Dark gradient */
+            background:#007bff; /* Dark gradient */
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             color: #ffffff;
             max-width: 800px;
-            margin: 20px auto;
+            margin: 20px 425px auto;
             transition: transform 0.3s ease;
         }
 
@@ -568,11 +531,9 @@
         .form-input {
             padding: 10px;
             font-size: 1em;
-            border:  2px solid #ffffff80;
+            border:  2px solid #0056b3;
             border-radius: 5px;
             outline: none;
-            background-color: #333;
-            color: #ffffff;
             transition: background-color 0.3s ease, border-color 0.3s ease;
 
         }
@@ -584,13 +545,13 @@
 
         .form-input:focus {
             border-color: #4caf50; /* Green border on focus */
-            background-color: #444; /* Slightly lighter background on focus */
+            background-color: white; /* Slightly lighter background on focus */
         }
 
         /* Button styles */
         .submit-btn {
-            background-color: #4caf50; /* Green background */
-            color: white; /* White text */
+            background-color: white; /* Green background */
+            color: #0000ff; /* White text */
             padding: 10px 15px;
             border: none;
             border-radius: 5px;
@@ -600,7 +561,8 @@
         }
 
         .submit-btn:hover {
-            background-color: #5cb85c; /* Lighter green on hover */
+            background-color: #0000ff; 
+            color: white;
         }
 
         /* Search styles */
@@ -616,14 +578,15 @@
             border: 2px solid #ffffff80;
             border-radius: 5px;
             outline: none;
-            background-color: #333; /* Dark input field */
+            background-color: white; /* Dark input field */
             color: #ffffff; /* Light text color */
             transition: background-color 0.3s ease, border-color 0.3s ease;
         }
 
+        
         .faq-search-btn {
-            background-color: #4caf50; /* Green background */
-            color: white; /* White text */
+            background-color: white; /* Green background */
+            color: #007bff; /* White text */
             border: none;
             border-radius: 5px;
             padding: 10px 15px;
@@ -633,7 +596,8 @@
         }
 
         .faq-search-btn:hover {
-            background-color: #5cb85c; /* Lighter green on hover */
+            background-color: #0000ff; 
+            color: white;
         }
 
         /* Responsive styles */
@@ -698,12 +662,13 @@
             text-align: center;
             position: relative;
             width: 100%;
+            margin: 0px;
         }
 
         .footer-container {
             display: flex;
             flex-direction: column;
-            align-items: center;
+           
             justify-content: center;
         }
 
@@ -732,8 +697,8 @@
                 flex-direction: row;
                 justify-content: space-between;
                 max-width: 1200px;
-                margin: 0 auto;
-                padding: 0 20px;
+                /* margin: 0 auto; */
+                /* padding: 0 20px; */
             }
 
             .footer-links {
@@ -908,15 +873,6 @@
         </div>
       </div>
     </div>
-
-    <div id="particles-2"></div>
-    </div>
-    </footer>
-
-            <!-- Footer Copyright
-          <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center;">
-              <p>&copy; 2024 FinVeda. All Rights Reserved.</p>
-          </div> -->
                 <script>
                   // Function for the contributors section
                   const owner = 'ayush-that';

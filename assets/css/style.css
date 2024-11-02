@@ -261,7 +261,7 @@ p {
   font-size:  18px;
   font-weight:  400;
   line-height:  26px;
-  color:  #ffffff;
+  color: #2f6be5;
   margin:  0px;
 
 }
@@ -866,8 +866,14 @@ p {
 .navbar-nav .nav-item a:hover {
   text-decoration: none !important;
 }
-
-
+.active-link {
+  background-color: rgba(255, 99, 71, 0.2); 
+  border-radius: 5px;
+  color: #ffffff; 
+  transform: scale(0.95);
+  border-bottom: 2px solid #edf2f4; 
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
 .sticky {
   position: fixed;
   z-index: 99;
@@ -883,7 +889,7 @@ p {
 }
 
 .sticky .navbar {
-  padding: 10px 0;
+  padding: 0px;
 }
 
 .navbar {
@@ -1945,7 +1951,8 @@ p {
 .single-team .team-content .holder-name a {
   font-size: 20px;
   font-weight: 700;
-  color: #2e2e2e;
+  color: #94dd23;
+  
 }
 
 .single-team .team-content .text {
@@ -3327,4 +3334,40 @@ transition: background-color 0.3s;
 }
 .dropdown-toggle::after {
   border-top: 1px;
+}
+
+.profile-icon {
+
+  border-radius: 50%;
+  position: relative;
+  margin-left: 20px; /* Adjust space between Login button and Profile icon */
+
+}
+
+.dropdown-menu {
+
+  display: none;
+  position: absolute;
+  top: 35px; /* Adjust based on the height of your navbar */
+  right: 0;
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  z-index: 1;
+
+}
+
+.dropdown-menu a {
+
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+
+}
+
+.dropdown-menu a:hover {
+
+  background-color: #f1f1f1;
+
 }

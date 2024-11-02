@@ -49,15 +49,6 @@ z
     -ms-transition: background-color 0.3s ease-in-out;
     -o-transition: background-color 0.3s ease-in-out;
 } */
-.active-link {
-            background-color: rgba(255, 99, 71, 0.2);
-            /* Soft coral with slight transparency */
-            border-radius: 5px;
-            color: #ffffff;
-            /* White text for contrast */
-            transform: scale(0.95);
-    border-bottom: 2px solid #edf2f4;
-}
 
 .navbar-nav {
 
@@ -239,17 +230,52 @@ z
     padding-left: 3px;
 }
 
-/* .nav-toggle-btn-space-fixed {
+ .nav-toggle-btn-space-fixed {
     width: 100px;
-} */
+} 
 
+/* Navbar toggle button styles */
 #theme-toggle {
     margin-top: 60px;
-}
-
-.icon1 {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  
+  /* Toggle Button Container */
+  .theme-toggle {
+    width: 4.5rem;
+    height: 2rem;
+    background-color: #9193faeb; 
+    border-radius: 8999px; /* Full rounded for switch shape */
+    display: flex;
+    align-items: center;
+    padding: 0.25rem;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  /* Toggle Button Knob */
+  .theme-toggle .icon1 {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #6df09b; 
+    border-radius: 50%;
+    position: absolute;
+    left: 0.25rem;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
     filter: exposure(2);
-}
+  }
+  
+  /* Dark mode styles */
+  body.dark-mode .theme-toggle {
+    background-color: #112a2b; 
+  }
+  
+  body.dark-mode .theme-toggle .icon1 {
+    background-color: #f49c50; 
+    transform: translateX(1.75rem); /* Slide knob to the right */
+  }
+  
 
 .bn30 {
     border: 5em;
@@ -492,11 +518,6 @@ z
     width: 0;
 }
 
-.mobile-menu .active-link {
-    background:
-        linear-gradient(black) bottom/ 100% 2px no-repeat,
-        transparent;
-}
 
 .mobile-menu__trigger {
     cursor: pointer;

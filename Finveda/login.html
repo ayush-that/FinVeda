@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Login/Register - FinVeda</title>
+    <meta name="description" content="Explore FinVeda's secure login portal for seamless access to personalized financial management tools. Efficiently manage your finances with ease and confidence." />
+    <meta name="author" content="Ayush Singh">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="/assets/images/favicon2.webp" type="image/png" />
+    <link rel="stylesheet" href="./assets/css/animate.css" />
+    <link rel="stylesheet" href="./assets/css/magnific-popup.css" />
+    <link rel="stylesheet" href="./assets/css/slick.css" />
+    <link rel="stylesheet" href="./assets/css/LineIcons.css" />
+    <link rel="stylesheet" href="./assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/default.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/login.css" />
+    <link rel="stylesheet" href="./assets/css/register.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="navbar.css">
+  </head>
+  <body>
+    <header class="header-area">
+      <div class="navbar-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <nav class="navbar navbar-expand-lg">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="toggler-icon"></span>
+                  <span class="toggler-icon"></span>
+                  <span class="toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                  <ul id="nav" class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="page-scroll" href="./index.html">Home 🏡</a></li>
+                    <li class="nav-item"><a class="page-scroll" href="./about.html">About Us 📖</a></li>
+                    <li class="nav-item"><a class="page-scroll" href="./trends.html">Trends 📈</a></li>
+                    <li class="nav-item"><a class="page-scroll" href="./tools/sip.html">Tools 🔧</a></li>
+                    <li class="nav-item"><a class="page-scroll" href="./blog.html">Blogs 📰</a></li>
+                    <li class="nav-item"><a class="page-scroll" href="./quiz.html">Quiz 🤔</a></li>
+                  </ul>
+                </div>
+                <div class="navbar-btn d-none d-sm-inline-block">
+                  <a class="main-btn" data-scroll-nav="0" href="#" onclick="openModal()">Login/Register 💻</a>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Login/Register Modals -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close" style="display: flex; justify-content: right;">&times;</span>
+        <div class="mt-3"> 
+          <h3 class="join">Login to join us....</h3>
+          <form class="px-3 py-4" id="loginForm">
+            <table>
+              <tr>
+                <td><label class="d-flex">Email</label></td>
+                <td><input type="email" placeholder="Email" class="form-control" id="login-email" required /></td>
+              </tr>
+              <tr>
+                <td><label class="d-flex">Password</label></td>
+                <td class="password-container">
+                  <input type="password" placeholder="Password" class="form-control" id="login-password" required />
+                  <span class="toggle-password" onclick="togglePasswordVisibility('login-password')">
+                    <i class="fa-regular fa-eye"></i>
+                    <i class="fa-solid fa-eye-slash" style="display: none;"></i>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <div class="form-check d-flex">
+                    <input type="checkbox" class="form-check-input" id="login-remember" />
+                    <label class="form-check-label">Remember me</label>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <div class="error" id="login-error"></div>
+            <button type="submit" class="main-btn mt-2 w-100 mb-2" style="padding: 0px;" id="login-btn">Sign in</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="registerModal" class="modal">
+      <div class="modal-content">
+        <span class="close" style="display: flex; justify-content: right;">&times;</span>
+        <div class="mt-3">
+          <h3 class="join">Register To join us....</h3>
+          <form class="px-3 py-4" id="registerForm">
+            <table>
+              <tr>
+                <td><label class="d-flex">Email</label></td>
+                <td><input type="email" placeholder="Email" class="form-control" id="register-email" required /></td>
+              </tr>
+              <tr>
+                <td><label class="d-flex">Username</label></td>
+                <td><input type="text" placeholder="Username" class="form-control" id="register-username" required /></td>
+              </tr>
+              <tr>
+                <td><label class="d-flex">DOB</label></td>
+                <td><input type="date" placeholder="DOB" class="form-control" id="register-DOB" required /></td>
+              </tr>
+              <tr>
+                <td><label class="d-flex">Password</label></td>
+                <td class="password-container">
+                  <input type="password" placeholder="Password" class="form-control" id="register-password" required />
+                  <span class="toggle-password" onclick="togglePasswordVisibility('register-password')">
+                    <i class="fa-regular fa-eye"></i>
+                    <i class="fa-solid fa-eye-slash" style="display: none;"></i>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <div class="form-check d-flex">
+                    <input type="checkbox" class="form-check-input" id="register-terms" required />
+                    <label class="form-check-label">I accept the <a href="./blogs/terms-of-service.html" target="_blank">Terms and Conditions</a></label>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <div class="error" id="register-error"></div>
+            <button type="submit" class="main-btn mt-2 w-100 mb-3" style="padding: 0px;" id="register-btn">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer" class="footer-area pt-120">
+      <div class="container">
+        <div class="footer-copyright text-center">
+          <p class="text" style="color: white;"> © <span id="copyright-year">2024</span> FinVeda. All rights are reserved<br />
+            Made with ♥ in India</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("copyright-year").textContent = new Date().getFullYear();
+
+      const inputFields = document.querySelectorAll("#registerForm input[required]");
+      const checkbox = document.getElementById("register-terms");
+      const registerPassword = document.getElementById("register-password");
+      const error_div = document.getElementById("register-error");
+
+      document.querySelector('#register-btn').addEventListener('click', (event) => {
+        event.preventDefault();
+
+        let allFilled = true;
+        error_div.innerHTML = "";
+
+        inputFields.forEach(input => {
+          if (!input.value) {
+            allFilled = false;
+            error_div.innerHTML += `Please fill in the required field: ${input.placeholder}<br>`;
+          }
+        });
+
+        if (!checkbox.checked) {
+          allFilled = false;
+          error_div.innerHTML += "Please check the terms and conditions.<br>";
+        }
+
+        if (registerPassword.value.length < 8) {
+          allFilled = false;
+          error_div.innerHTML += "Password length should be at least 8 characters.<br>";
+        } else {
+          const specialCharacterRegex = /[!@#$%^&*(),.?":{}|<>]/;
+          if (!specialCharacterRegex.test(registerPassword.value)) {
+            allFilled = false;
+            error_div.innerHTML += "Password should contain at least one special character.<br>";
+          }
+        }
+
+        if (allFilled) {
+          document.getElementById('registerForm').submit();
+        }
+      });
+
+      function togglePasswordVisibility(inputId) {
+        const passwordInput = document.getElementById(inputId);
+        const eyeOpen = passwordInput.nextElementSibling.children[0];
+        const eyeClosed = passwordInput.nextElementSibling.children[1];
+
+        if (passwordInput.type === "password") {
+          passwordInput.type = "text";
+          eyeOpen.style.display = "none";
+          eyeClosed.style.display = "inline";
+        } else {
+          passwordInput.type = "password";
+          eyeOpen.style.display = "inline";
+          eyeClosed.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>

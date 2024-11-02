@@ -1,0 +1,418 @@
+/* Base styles */
+.header {
+  text-align: center;
+  /* font-size: 30px; */
+}
+body {
+  background-color: linear-gradient( 150deg,#2e47c7,#f0f2f3);
+}
+
+#section1{
+  color: #007bff;
+}
+
+.page-container {
+  margin: 1% 20%;
+  font-size: 16px;
+  transform: scale(0.75);
+  background: linear-gradient( 150deg,#2e47c7,#f0f2f3);
+  transition: all 0.4s ease;
+  width: 40px;
+}
+
+.page-container:hover{
+  transform: scale(0.77);
+  background: linear-gradient(35deg,#2e47c7,#f0f2f3);
+  box-shadow: 10px -12px 20px #f0f2f3;
+}
+
+.switch-container {
+  display: flex;
+  justify-content: center;
+  padding-left: 50px;
+}
+
+.switch-container > div {
+  margin: 1% 10% 3% 0;
+}
+
+.input-container {
+  display: flex;
+  align-content: flex-start;
+  justify-content: center;
+}
+
+.input-container > div {
+  flex-wrap: wrap;
+  margin: 1% 5% 0 0;
+}
+
+input {
+  width: 100%;
+  max-width: 900px;
+  box-sizing: border-box;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  margin: 5px 0% 0 0;
+  padding: 10px;
+}
+
+.centered-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centered-content b {
+  margin-left: 0px; /* Adjust as needed */
+}
+
+.result {
+  padding: 10% 0 0 0;
+  font-size: 24px;
+}
+
+.result-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: center;
+  padding-left: 60px;
+}
+
+.btn-calculate {
+  text-align: center;
+  cursor: pointer;
+  margin-right: 3%;
+}
+
+.btn-calculate button {
+  width: 150px;
+  padding: 10px 20px; /* Adds padding inside the button */
+  background-color: #28a745; /* Green background color */
+  color: #fff; /* White text color */
+  border: none; /* Removes default border */
+  border-radius: 5px; /* Rounds the corners */
+  font-size: 16px; /* Increases font size */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  align-content: center;
+}
+
+.btn-calculate button:hover {
+  background-color: #377fed; /* Blue on hover */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color:#377fed;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.dropdown {
+  min-width: 200px;
+  position: relative;
+  margin: 20px;
+  /* margin-top: 59px !important; */
+}
+
+.dropdown * {
+  box-sizing: border-box;
+}
+
+.select {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 150px;
+}
+
+.select.clicked {
+  border-color: #007bff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.select:hover {
+  background-color: #f9f9f9;
+}
+
+.caret {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #333;
+  transition: transform 0.3s ease;
+}
+
+.select.clicked .caret {
+  transform: rotate(180deg);
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  color: #333;
+  position: absolute;
+  top: 63%;
+  left: 0;
+  width: 75%;
+  transform: scaleY(0);
+  transform-origin: top;
+  opacity: 0;
+  display: none;
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.menu.open {
+  display: block;
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.menu li {
+  padding: 10px;
+  margin: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.menu li:hover {
+  background-color: #f0f0f0;
+}
+
+#total,
+#wealth-gained,
+#maturity-value {
+  border: 1px solid;
+}
+
+.npv-calculate > button {
+  height: 35px;
+  align-items: center;
+  border-radius: 10px;
+  border: 2px solid #19a4cf;
+  background-color: #19a4cf;
+  border-color: #19a4cf;
+  font-size: 15px;
+  width: 125px;
+  cursor: pointer;
+}
+
+.cash-flows-container {
+  margin: 1% 5% 0 0;
+  align-items: center;
+  text-align: center;
+}
+
+#cashFlows {
+  text-align: left;
+}
+
+.cash-flow-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.cash-flow-item input {
+  text-align: left;
+  align-items: center;
+  width: calc(35% - 60px);
+}
+
+.nresult {
+  padding: 2% 0 0 0;
+  font-size: 24px;
+}
+
+.nresult-container,
+.sresult-container,
+.sgresult-container {
+  padding-left: 60px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sresult,
+.sgresult {
+  padding: 0% 0 0 0;
+  font-size: 24px;
+}
+
+.know-more {
+  margin-top: 20px;
+}
+
+.know-more-btn {
+  background-color:#007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.know-more-btn:hover {
+  background-color:#6989ab;
+}
+
+.know-more-content {
+  display: none;
+  padding: 5px 10px;
+  margin: 10px 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+}
+
+.know-more-content.show {
+  display: block;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .page-container {
+    margin: 1% 10%;
+  }
+
+  .switch-container,
+  .input-container {
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+  }
+
+  .switch-container > div,
+  .input-container > div {
+    margin: 1% 0;
+  }
+
+  .btn-calculate button {
+    width: 8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    margin: 1% 5%;
+  }
+
+  .btn-calculate button {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .result-container,
+  .nresult-container,
+  .sresult-container,
+  .sgresult-container {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    font-size: 24px;
+  }
+
+  .btn-calculate button {
+    font-size: 14px;
+  }
+
+  input {
+    margin: 2% 0;
+  }
+}
+
+.cal-content{
+  text-align: center;
+  margin: 1% 15%;
+  padding: 50px;
+  color: #007bff;
+  }
+  
+@media(max-width: 430px){
+  .npv-content{
+    margin:5%;
+    padding:1%;
+
+  }
+}
+
+.result-container{
+  font-size: medium;
+  text-align: left;
+  display: block;
+  padding :30px;
+  margin-right: 100px;
+}
+
+
+@media(max-width: 430px){
+  .result-container{
+    margin:6%;
+    padding:3%;
+    font-size: smaller;
+    text-align: left;
+  }
+}
+
+.result-container2{
+  font-size: medium;
+  padding:20px;
+  margin-left: 100px;
+
+    }
+
+@media(max-width: 430px){
+  .result-container2{
+    margin:5%;
+    padding:1%;
+    font-size: smaller;
+    }
+ }
+ @media (max-width: 768px) {
+  .dropdown {
+    min-width: 150px; /* Smaller width for smaller screens */
+  }
+  
+  .select {
+    padding: 8px; /* Adjust padding */
+  }
+
+  .menu {
+    width: 100%; /* Ensure dropdown matches the container's width */
+  }
+}
+
+@media (max-width: 480px) {
+  .dropdown {
+    min-width: 120px; /* Further reduce width on very small screens */
+  }
+
+  .select {
+    padding: 6px; /* Smaller padding */
+    font-size: 14px; /* Adjust font size for readability */
+  }
+
+  .menu {
+    width: 100%; /* Still cover full width under the text box */
+  }
+}
