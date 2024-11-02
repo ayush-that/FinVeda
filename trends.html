@@ -155,21 +155,16 @@
 
   </script>
   <header class="header-area">
-    <div style="display: flex; justify-content: center;" class="navbar-area">
-      <div style="display: flex; justify-content: center;" class="container">
+    <div style="display: flex; justify-content: center; " class="navbar-area">
+      <div style="display: flex; justify-content: center; " class="container">
         <div class="row">
-          <div style="display: flex; justify-content: center;" class="">
+          <div style="display: flex; justify-content: center; " class="">
             <nav class="navbar navbar-expand-lg " style="display: flex;">
-              <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="toggler-icon"></span>
-            <span class="toggler-icon"></span>
-            <span class="toggler-icon"></span>
-          </button> -->
+
               <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                 <div class="icon1">
                   <a href="./index.html">
-                    <img src="./assets/images/FinvedaLogo.png" alt="icon.png" style="width: 13rem;">
+                    <img src="./assets/images/FinvedaLogo.png" alt="icon.png">
                   </a>
                 </div>
                 <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
@@ -211,30 +206,37 @@
                   </li>
 
                   <li class="nav-item no-underline">
-                    <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
-                      🌙
+                    <button id="theme-toggle"
+                      class="theme-toggle relative w-14 h-8 flex items-center bg-gray-300 dark:bg-gray-800 rounded-full shadow-md transition duration-300"
+                      onclick="toggleTheme()">
+                      <span
+                        class="icon1 absolute left-1 top-1 w-6 h-6 bg-white dark:bg-yellow-400 rounded-full shadow-md transition-transform duration-300"></span>
                     </button>
                   </li>
+
                 </ul>
               </div>
 
               <script>
-                const toggleButton = document.getElementById('theme-toggle');
-                var body = document.body;
-                var currentTheme = localStorage.getItem('theme');
 
-                if (currentTheme === 'dark') {
-                  body.classList.add('dark-mode');
-                  toggleButton.classList.add('dark');
-                  toggleButton.textContent = '🌞';
-                }
+               
+                const toggleButton = document.getElementById('theme-toggle');
+                const navbar = document.querySelector('.navbar');
 
                 toggleButton.addEventListener('click', function () {
-                  body.classList.toggle('dark-mode');
+                  document.body.classList.toggle('dark-mode');
                   toggleButton.classList.toggle('dark');
 
-                  // Update button icon based on mode
-                  if (body.classList.contains('dark-mode')) {
+                  // Toggle padding and margin on the navbar
+
+                  navbar.classList.toggle('no-padding-margin');
+
+                  document.querySelector('.toggle-button').addEventListener('click', function () {
+                  document.querySelector('.navbar').classList.toggle('toggled');
+                });
+
+
+                  if (document.body.classList.contains('dark-mode')) {
                     toggleButton.textContent = '🌞';  // Light mode icon
                     localStorage.setItem('theme', 'dark');
                   } else {
@@ -242,6 +244,7 @@
                     localStorage.setItem('theme', 'light');
                   }
                 });
+
               </script>
               <style>
                 h3 {
@@ -278,7 +281,7 @@
                 }
 
                 body.dark-mode {
-                  background-color: #fefefe;
+                  background-color: white;
                   color: #f1f1f1;
                   /* Change text color to light for dark mode */
                 }
@@ -307,51 +310,6 @@
 
             <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 
-            <nav class="mobile-menu ">
-              <a class="page-scroll active-link" href="./index.html">Home 🏡</a>
-              <a class="page-scroll" href="./about.html">About Us 📖</a>
-              <a class="page-scroll" href="./trends.html">Trends 📈</a>
-              <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
-              <a class="page-scroll" href="./blog.html">Blogs 📰</a>
-              <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
-              <a class="page-scroll" href="./contact.html">Contact🤔</a>
-              <li class="nav-item no-underline">
-                <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none; border: none;" href="#"
-                  onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
-              </li>
-
-              <li class="nav-item no-underline">
-                <button id="theme-toggle2" class="theme-toggle2" style="margin-right: 2px;">
-                  🌙
-                </button>
-              </li>
-              <div class="mobile-menu__trigger"><span></span></div>
-            </nav>
-            <script>
-              const toggleBtn = document.getElementById('theme-toggle2');
-              var body = document.body;
-              var currentTheme = localStorage.getItem('theme');
-
-              if (currentTheme === 'dark') {
-                body.classList.add('dark-mode');
-                toggleBtn.classList.add('dark');
-                toggleBtn.textContent = '🌞';
-              }
-
-              toggleBtn.addEventListener('click', function () {
-                body.classList.toggle('dark-mode');
-                toggleBtn.classList.toggle('dark');
-
-                // Update button icon based on mode
-                if (body.classList.contains('dark-mode')) {
-                  toggleBtn.textContent = '🌞';  // Light mode icon
-                  localStorage.setItem('theme', 'dark');
-                } else {
-                  toggleBtn.textContent = '🌙';  // Dark mode icon
-                  localStorage.setItem('theme', 'light');
-                }
-              });
-            </script>
 
           </div>
         </div>
@@ -782,7 +740,6 @@
       });
     </script>
     <div class="container-main">
-
       <div class="container"><br><br>
         <!-- TradingView Widget BEGIN -->
         <br><br>
@@ -801,6 +758,7 @@
         </div>
         <!-- TradingView Widget END -->
       </div>
+
       <br><br><br>
       <div class="container">
         <!-- TradingView Widget BEGIN -->
@@ -826,8 +784,8 @@
         </div>
         <!-- TradingView Widget END -->
       </div>
-      <br><br><br>
 
+      <br><br><br>
       <div class="container">
         <!-- TradingView Widget BEGIN -->
         <div class="tradingview-widget-container">
@@ -851,40 +809,33 @@
                                           "height": 500
               }
             </script>
-        </div> <br><br><br>
-
-        <div class="container">
-
-          <!-- TradingView Widget BEGIN -->
-          <div class="tradingview-widget-container">
-            <div class="tradingview-widget-container__widget"></div>
-            <script type="text/javascript"
-              src="https://s3.tradingview.com/external-embedding/embed-widget-forex-heat-map.js" async>
-                {
-                  "width": "auto",
-                    "height": 500,
-                      "currencies": [
-                        "EUR",
-                        "USD",
-                        "JPY",
-                        "GBP",
-                        "AUD",
-                        "CAD",
-                        "NZD",
-                        "CNY",
-                        "INR"
-                      ],
-                        "isTransparent": false,
-                          "colorTheme": "light",
-                            "locale": "in"
-                }
-              </script>
-          </div>
-          <!-- TradingView Widget END -->
         </div>
+        <!-- TradingView Widget END -->
       </div>
 
+      <br><br><br>
+      <div class="container">
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript"
+            src="https://s3.tradingview.com/external-embedding/embed-widget-forex-heat-map.js" async>
+              {
+                "width": "auto",
+                  "height": 500,
+                    "currencies": [
+                      "EUR", "USD", "JPY", "GBP", "AUD", "CAD", "NZD", "CNY", "INR"
+                    ],
+                      "isTransparent": false,
+                        "colorTheme": "light",
+                          "locale": "in"
+              }
+            </script>
+        </div>
+        <!-- TradingView Widget END -->
+      </div>
     </div>
+
     <!-- Timed popup that will appear after succesful submission of feebback form! -->
     <button class="notification" id="successnotification" style="display:none;">
       <span class="message" id="successmsg">Submitted successfully!</span>
