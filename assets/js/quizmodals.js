@@ -1,108 +1,117 @@
-  // Get the modals
-  var loginModal = document.getElementById('myModal');
-  var registerModal = document.getElementById('registerModal');
+// Get elements
+const loginModal = document.getElementById('myModal');
+const registerModal = document.getElementById('registerModal');
+const loginBtn = document.getElementById('loginBtn');
+const registerLink = document.getElementById('registerLink');
+const loginLink = document.getElementById('loginLink');
+const closeBtns = document.querySelectorAll('.close');
+const popupMessage = document.getElementById('popupMessage'); // Assuming there's a popupMessage element
 
-  // Get the button that opens the login modal
-  var loginBtn = document.getElementById('loginBtn');
+// Toggle password visibility
+document.addEventListener('DOMContentLoaded', () => {
+  const togglePasswordButtons = document.querySelectorAll('.toggle-password-btn');
 
-  // Get the links that open the register and login modals
-  var registerLink = document.getElementById('registerLink');
-  var loginLink = document.getElementById('loginLink');
-
-  // Get the <span> elements that close the modals
-  var closeBtns = document.getElementsByClassName('close');
-
-  //show and hide icon button
-  document.addEventListener('DOMContentLoaded', () => {
-    const togglePasswordButtons = document.querySelectorAll('.toggle-password-btn');
-
-    togglePasswordButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const passwordInput = button.previousElementSibling;
-        if (passwordInput.type === 'password') {
-          passwordInput.type = 'text';
-          button.innerHTML = `<i class="fa-solid fa-eye-slash"></i>`
-        } else {
-          passwordInput.type = 'password';
-          button.innerHTML = `<i class="fa-solid fa-eye"></i>`
-        }
-      });
+  togglePasswordButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const passwordInput = button.previousElementSibling;
+      passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
+      button.innerHTML = passwordInput.type === 'text' 
+        ? `<i class="fa-solid fa-eye-slash"></i>` 
+        : `<i class="fa-solid fa-eye"></i>`;
     });
   });
+});
 
-  // When the user clicks the register link, open the register modal
-  registerLink.onclick = function (event) {
-    event.preventDefault();
-    loginModal.style.display = 'none';
-    registerModal.style.display = 'block';
+// Function to show popup message with updated duration (3 seconds)
+function showPopupMessage() {
+  popupMessage.style.display = 'block';
+  setTimeout(() => popupMessage.style.display = 'none', 3000); // Shows popup for 3 seconds
+}
+
+// Function to open modals
+function openModal(modal) {
+  modal.style.display = 'block';
+  document.title = "Login/Register - FinVeda";
+}
+
+// Function to close modals
+function closeModal() {
+  loginModal.style.display = 'none';
+  registerModal.style.display = 'none';
+  document.title = "FinVeda";
+}
+
+// Event listeners for opening modals
+registerLink.addEventListener('click', (event) => {
+  event.preventDefault();
+  openModal(registerModal);
+  loginModal.style.display = 'none';
+});
+
+loginLink.addEventListener('click', (event) => {
+  event.preventDefault();
+  openModal(loginModal);
+  registerModal.style.display = 'none';
+});
+
+// Close modal when clicking 'x'
+closeBtns.forEach(btn => btn.addEventListener('click', closeModal));
+
+// Close modal when clicking outside of it
+window.addEventListener('click', (event) => {
+  if (event.target === loginModal || event.target === registerModal) {
+    closeModal();
   }
+});
 
-  // When the user clicks the login link, open the login modal
-  loginLink.onclick = function (event) {
-    event.preventDefault();
-    registerModal.style.display = 'none';
-    loginModal.style.display = 'block';
+// Optimized Circle Animation Logic with Idle Detection
+let coords = { x: 0, y: 0 };
+let idleTimer = null;
+let isAnimating = false;
+
+document.addEventListener('mousemove', (event) => {
+  // Only update coordinates if the mouse position changes
+  if (coords.x !== event.clientX || coords.y !== event.clientY) {
+    coords.x = event.clientX;
+    coords.y = event.clientY;
+    if (!isAnimating) startAnimation();
+    
+    // Reset idle timer when the mouse moves
+    clearTimeout(idleTimer);
+    idleTimer = setTimeout(stopAnimation, 5000); // Stop animation after 5 seconds of inactivity
   }
+});
 
-  // When the user clicks on <span> (x), close the modal
-  for (var i = 0; i < closeBtns.length; i++) {
-    closeBtns[i].onclick = function () {
-      loginModal.style.display = 'none';
-      registerModal.style.display = 'none';
-    }
+function startAnimation() {
+  isAnimating = true;
+  requestAnimationFrame(animate);
+}
+
+function stopAnimation() {
+  isAnimating = false;
+}
+
+function animate() {
+  if (!isAnimating) return;
+  // Animation logic here
+  requestAnimationFrame(animate);
+}
+
+// Improved Animation Reset Mechanism for Border Animation
+function toggleBorderAnimation(element) {
+  element.classList.toggle('border-animation'); // Add or remove 'border-animation' class for resetting
+}
+
+// Assuming there's an element for border animation reset
+const borderAnimationDiv = document.getElementById('borderAnimationDiv');
+borderAnimationDiv.addEventListener('animationend', () => {
+  toggleBorderAnimation(borderAnimationDiv);
+});
+
+// Event Delegation for Expandability
+document.body.addEventListener('click', (event) => {
+  if (event.target.matches('.expandable-element')) {
+    // Handle click event for dynamically added or existing expandable elements
+    event.target.classList.toggle('expanded');
   }
-
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function (event) {
-    if (event.target == loginModal) {
-      loginModal.style.display = 'none';
-    }
-    if (event.target == registerModal) {
-      registerModal.style.display = 'none';
-    }
-  }
-  function openModal() {
-    var modal = document.getElementById("myModal");
-    modal.style.display = "block";
-    document.title = "Login/Register - FinVeda";  // Update the title when modal is opened
-  }
-
-  function closeModal() {
-    var modal = document.getElementById("myModal");
-    modal.style.display = "none";
-    document.title = "FinVeda";  // Revert the title back when modal is closed
-  }
-
-  window.onclick = function (event) {
-    var modal = document.getElementById("myModal");
-    if (event.target == modal) {
-      closeModal(); // Call closeModal function
-    }
-  };
-
-  document.addEventListener("DOMContentLoaded", function () {
-    const registerModal = document.getElementById("registerModal");
-    const loginModal = document.getElementById("myModal");
-    const registerLink = document.getElementById("registerLink");
-    const loginLink = document.getElementById("loginLink");
-
-    // Event listener for the register link
-    registerLink.addEventListener("click", function (event) {
-      event.preventDefault();
-      loginModal.style.display = "none";
-      registerModal.style.display = "block";
-      document.title = "Login/Register - FinVeda";  // Update title when registering
-    });
-
-    // Event listener for the login link
-    loginLink.addEventListener("click", function (event) {
-      event.preventDefault();
-      registerModal.style.display = "none";
-      loginModal.style.display = "block";
-      document.title = "Login/Register - FinVeda";  // Update title when logging in
-    });
-
-    // Close button event listeners for modals
-    registerModal.querySelector(".close").addEventListener("click", closeModal);
-    loginModal.querySelector(".close").addEventListener("click", closeModal);
-  });
+});
