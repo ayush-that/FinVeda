@@ -56,61 +56,94 @@
 //   }
 // }
  
-document.addEventListener("DOMContentLoaded", function () {
-    const coords = { x: 0, y: 0 };
-    const circles = document.querySelectorAll(".circle");
 
-    circles.forEach(function (circle) {
+document.addEventListener("DOMContentLoaded", function () {
+  const coords = { x: 0, y: 0 };
+  const circles = document.querySelectorAll(".circle");
+  let lastX = 0, lastY = 0;
+
+  // Initialize circles' initial position
+  circles.forEach(function (circle) {
       circle.x = 0;
       circle.y = 0;
-    });
+  });
 
-    window.addEventListener("mousemove", function (e) {
-      coords.x = e.pageX;
-      coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
-    });
+  // Optimize mousemove event listener to update coordinates only if position changes
+  window.addEventListener("mousemove", function (e) {
+      if (e.pageX !== lastX || e.pageY !== lastY) {
+          coords.x = e.pageX;
+          coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
+          lastX = e.pageX;
+          lastY = e.pageY;
+      }
+  });
 
-    function animateCircles() {
+  let animationId;
+
+  function animateCircles() {
       let x = coords.x;
       let y = coords.y;
 
       circles.forEach(function (circle, index) {
-        circle.style.left = `${x - 12}px`;
-        circle.style.top = `${y - 12}px`;
-        circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+          circle.style.left = `${x - 12}px`;
+          circle.style.top = `${y - 12}px`;
+          circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
 
-        const nextCircle = circles[index + 1] || circles[0];
-        circle.x = x;
-        circle.y = y;
+          const nextCircle = circles[index + 1] || circles[0];
+          circle.x = x;
+          circle.y = y;
 
-        x += (nextCircle.x - x) * 0.3;
-        y += (nextCircle.y - y) * 0.3;
+          x += (nextCircle.x - x) * 0.3;
+          y += (nextCircle.y - y) * 0.3;
       });
 
-      requestAnimationFrame(animateCircles);
-    }
+      // Continuously request animation frame for smooth animation
+      animationId = requestAnimationFrame(animateCircles);
+  }
 
-    animateCircles();
+  // Start the animation
+  animateCircles();
+
+  // Optional: Stop animation when mouse is idle
+  let idleTimeout;
+  window.addEventListener("mousemove", function () {
+      clearTimeout(idleTimeout); // Reset the idle timer
+      if (!animationId) animateCircles(); // Restart animation if stopped
+
+      idleTimeout = setTimeout(() => {
+          cancelAnimationFrame(animationId);
+          animationId = null;
+      }, 5000); // Stop animation after 5 seconds of inactivity
   });
 
+  // Form submission logic with updated popup duration comment and animation reset improvement
   document.getElementById('unique-subscribe-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form from submitting normally
+      event.preventDefault(); // Prevent form from submitting normally
 
-    // Show popup message
-    var messageDiv = document.getElementById('unique-message');
-    messageDiv.style.display = 'block';
-    
-    // Reset existing animation
-    var borderAnimationDiv = messageDiv.querySelector('.border-animation');
-    borderAnimationDiv.style.animation = 'none';
-    borderAnimationDiv.offsetHeight; // Trigger reflow to restart the animation
-    borderAnimationDiv.style.animation = 'borderAnimation 3s linear forwards';
+      // Show popup message
+      const messageDiv = document.getElementById('unique-message');
+      messageDiv.style.display = 'block';
 
-    // Hide popup message after 10 seconds
-    setTimeout(function() {
-      messageDiv.style.display = 'none';
-    }, 3000); // 10 seconds
+      // Improved border animation reset mechanism
+      messageDiv.classList.remove('animation-active'); // Remove if present
+      void messageDiv.offsetWidth; // Trigger reflow to reset the animation
+      messageDiv.classList.add('animation-active'); // Re-add animation class
 
-    // Reset form
-    this.reset();
+      // Updated comment to reflect the actual duration (3 seconds)
+      // Hide popup message after 3 seconds
+      setTimeout(function() {
+          messageDiv.style.display = 'none';
+      }, 3000);
+
+      // Reset form
+      this.reset();
   });
+
+  // Event delegation setup (optional for expandability)
+  const container = document.getElementById('container'); // Adjust container selector if needed
+  container.addEventListener('click', function (event) {
+      if (event.target.matches('.some-interactive-element')) {
+          // Handle clicks for dynamically added elements here
+      }
+  });
+});
