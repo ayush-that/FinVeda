@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-   
+
 
     <script src="testp.js" defer></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <link rel="shortcut icon"  href="/assets/images/favicon2.webp" type="image/png" />  
+    <link rel="shortcut icon"  href="/assets/images/favicon2.webp" type="image/png" />
     <link rel="shortcut icon" href="./assets/images/favicon2.png" type="image/png" />
     <link rel="stylesheet" href="./assets/css/animate.css" />
     <link rel="stylesheet" href="./assets/css/magnific-popup.css" />
@@ -30,7 +30,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <link rel="stylesheet" href="./assets/css/about(inlines).css" />
     <link rel="stylesheet" href="navbar.css">
-  
+    <link rel="icon" href="logo.png" type="image/png" class="prof">
+
+
     <style>
       #progressBar {
         position: fixed;
@@ -40,14 +42,14 @@
         height: 8px;
         background-color: #f76b45;
         z-index: 9999;
-  
+
       }
-  
+
       * {
         cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
       }
-  
-  
+
+
       .circle {
         position: absolute;
         width: 25px;
@@ -57,7 +59,7 @@
         background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
         transition: transform 0.1s, left 0.1s, top 0.1s;
       }
-  
+
       .circle-container {
         position: fixed;
         top: 0;
@@ -67,7 +69,7 @@
         pointer-events: none;
         z-index: 9999;
       }
-  
+
       @media (max-width: 720px) {
         .circle-container {
           display: none;
@@ -76,16 +78,16 @@
 
 /* Style for Financial Literacy Rates heading */
 .financial-literacy-rate {
-    color: black; 
+    color: black;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Hover effect for Financial Literacy Rates heading */
 .financial-literacy-rate:hover {
-    background-color: orange; 
-    color: white; 
-    padding: 5px; 
-    border-radius: 5px; 
+    background-color: orange;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 /* Card styling */
@@ -94,145 +96,145 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 20px auto; 
-    padding: 20px; 
-    max-width: 800px; 
-    border: 1px solid #ccc; 
-    border-radius: 10px; 
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
-    opacity: 0; 
-    animation: fadeIn 0.5s forwards; 
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
 }
 
 /* Card heading styling */
 .card h2 {
-    text-align: center; 
-    margin-bottom: 20px; 
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 /* Button styles */
-button, 
-input[type="submit"], 
-input[type="button"], 
+button,
+input[type="submit"],
+input[type="button"],
 .quiz-button {
-    background-color: #007BFF; 
-    color: white; 
-    border: none; 
-    padding: 10px 15px; 
-    border-radius: 5px; 
-    cursor: pointer; 
-    transition: background-color 0.3s ease, transform 0.2s ease; 
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 /* Hover effects for buttons */
-button:hover, 
-input[type="submit"]:hover, 
+button:hover,
+input[type="submit"]:hover,
 input[type="button"]:hover {
-    background-color: #0056b3; 
-    transform: translateY(-2px); 
+    background-color: #0056b3;
+    transform: translateY(-2px);
 }
 
 .quiz-button:hover {
-    background-color: #218838; 
-    transform: translateY(-2px); 
+    background-color: #218838;
+    transform: translateY(-2px);
 }
 
 /* Input field styles */
-input[type="text"], 
-input[type="email"], 
-input[type="password"], 
-textarea, 
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
 select {
-    width: 100%; 
-    padding: 10px; 
-    margin: 10px 0; 
-    border: 1px solid #ccc; 
-    border-radius: 5px; 
-    transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Hover effects for input fields */
-input[type="text"]:hover, 
-input[type="email"]:hover, 
-input[type="password"]:hover, 
-textarea:hover, 
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+textarea:hover,
 select:hover {
-    border-color: #007BFF; 
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 /* Focus effects for input fields */
-input[type="text"]:focus, 
-input[type="email"]:focus, 
-input[type="password"]:focus, 
-textarea:focus, 
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus,
 select:focus {
-    border-color: #0056b3; 
-    box-shadow: 0 0 8px rgba(0, 86, 179, 0.5); 
-    outline: none; 
+    border-color: #0056b3;
+    box-shadow: 0 0 8px rgba(0, 86, 179, 0.5);
+    outline: none;
 }
 
 /* Styling for educational resources */
 .educational-resources {
-    text-align: center; 
-    margin: 20px 0; 
+    text-align: center;
+    margin: 20px 0;
 }
 
 /* State initiative card styling */
 .state-initiative {
-    margin: 20px 0; 
-    padding: 15px; 
-    border: 1px solid #ddd; 
-    border-radius: 5px; 
-    background-color: #ffffff; 
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #ffffff;
 }
 
 /* Hover effect for state initiative cards */
 .state-initiative:hover {
-    background-color: #f1f1f1; 
-    transition: background-color 0.3s ease; 
+    background-color: #f1f1f1;
+    transition: background-color 0.3s ease;
 }
 
 /* Resource card styling */
 .resource {
-    background-color: #ffffff; 
-    border: 1px solid #ddd; 
-    border-radius: 10px; 
-    padding: 15px; 
-    margin: 10px; 
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Hover effect for resource cards */
 .resource:hover {
-    transform: translateY(-5px); 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Text color change on resource hover */
 .resource:hover p {
-    color: #333; 
+    color: #333;
 }
 
 /* Resource heading styling */
 .resource h2 {
-    color: #007BFF; 
-    transition: color 0.3s ease; 
+    color: #007BFF;
+    transition: color 0.3s ease;
 }
 
 /* Change resource heading color on hover */
 .resource:hover h2 {
-    color: #0056b3; 
+    color: #0056b3;
 }
 
 /* Fade-in animation for cards */
 @keyframes fadeIn {
     to {
-        opacity: 1; 
+        opacity: 1;
     }
 }
     </style>
-    
+
 
 </head>
 
@@ -278,16 +280,16 @@ select:focus {
       <div class="circle"></div>
       <div class="circle"></div>
     </div>
-  
+
     <div id="progressBar"></div>
-   
+
     <header class="header-area">
       <div class="navbar-area">
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
               <nav class="navbar navbar-expand-lg">
-                
+
                 <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                   <div class="icon1">
                     <a href="./index.html">
@@ -324,14 +326,14 @@ select:focus {
                         <li><a href="./maps.html">MAPS 🗺️</a></li>
                       </ul>
                     </li>
-  
+
                     <!-- Navigation item placeholder for Login/Register or Logout button -->
                     <li class="nav-item no-underline" id="auth-btn-container">
                       <a class="main-btn navbar-btn"
                         style="padding: 2px 20px; color: rgb(237, 242, 244); animation-duration: 0.4s; animation-name: ease;"
                         data-scroll-nav="0" href="./loginPage.html">Login/Register 💻</a>
                     </li>
-  
+
                     <li class="nav-item no-underline">
                       <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
                         🌙
@@ -339,22 +341,22 @@ select:focus {
                     </li>
                   </ul>
                 </div>
-  
+
                 <script>
                   const toggleButton = document.getElementById('theme-toggle');
                   const body = document.body;
                   const currentTheme = localStorage.getItem('theme');
-  
+
                   if (currentTheme === 'dark') {
                   body.classList.add('dark-mode');
                   toggleButton.classList.add('dark');
                   toggleButton.textContent = '🌞';
                   }
-  
+
                   toggleButton.addEventListener('click', function () {
                   body.classList.toggle('dark-mode');
                   toggleButton.classList.toggle('dark');
-  
+
                   // Update button icon based on mode
                   if (body.classList.contains('dark-mode')) {
                     toggleButton.textContent = '🌞';  // Light mode icon
@@ -410,7 +412,7 @@ select:focus {
                       </div>
                     </div>
                   </div>
-  
+
                   <!-- Register Modal -->
                   <div id="registerModal" class="modal">
                     <div class="modal-content">
@@ -463,7 +465,7 @@ select:focus {
                 </div>
               </nav>
               <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-  
+
               <nav class="mobile-menu ">
                 <a class="page-scroll" href="../index.html">Home 🏡</a>
                 <a class="page-scroll" href="../about.html">About Us 📖</a>
@@ -476,15 +478,15 @@ select:focus {
                   <span></span>
                 </div>
               </nav>
-  
-                  
+
+
                 <link href="../navbar.css" rel="stylesheet">
                 <script type="text/javascript" src="../navbar.js"></script>
             </div>
           </div>
         </div>
       </div>
-    
+
     </header>
     <div class="profile-container">
 
@@ -508,7 +510,7 @@ select:focus {
                     </div>
 
                 </div>
-                    <button class="edit-profile-btn edit_profiled" ">Edit Profile</button>
+                    <button class="edit-profile-btn edit_profiled">Edit Profile</button>
                 </a>
             </div>
         </div>
@@ -542,7 +544,7 @@ select:focus {
                     <a href="#">
                     <button class="edit-profile-btn">View</button></a>
                 </div>
-                
+
             </div>
         </div>
 
@@ -551,15 +553,15 @@ select:focus {
             <h2>Notifications</h2>
             <div class="card">
                 <p>Your profile has been updated successfully!</p>
-                
+
                 <button class="edit-profile-btn">View Notification</button>
             </div>
             <div class="card">
                 <p>Joshef Roy has sent you a friend request. Accept or decline?</p>
-                
+
                 <button class="edit-profile-btn">View Notification</button>
             </div>
-            
+
         </section>
     </div>
         <style>
