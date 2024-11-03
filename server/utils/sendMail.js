@@ -55,7 +55,7 @@ const sendMailToAdmin = (userdata) => {
                                 </tr>
                                 <tr>
                                     <td style="border: 1px solid #ddd; padding: 10px; text-align:center;">Submitted At</td>
-                                    <td style="border: 1px solid #ddd; padding: 10px; text-align:center;">${new Date(userdata.submittedAt).toLocaleString()}</td>
+                                    <td style="border: 1px solid #ddd; padding: 10px; text-align:center;">${new Date().toLocaleString()}</td>
                                 </tr>
                             </tbody>
                         </table>
