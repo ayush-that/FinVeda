@@ -3,66 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ Accordion</title>
-    <style>
-        .accordion-button {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            cursor: pointer;
-            background-color: #f7f7f7;
-            border: 1px solid #ccc;
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .accordion-button:hover {
-            background-color: #e2e2e2;
-        }
-
-        .accordion-body {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-top: 5px;
-            display: none; /* Initially hidden */
-        }
-
-        .show {
-            display: block; /* Display when expanded */
-        }
-
-        .accordion-button::after {
-            content: '▼'; /* Down arrow */
-            margin-left: auto; /* Align to the right */
-            transition: transform 0.3s;
-        }
-
-        .accordion-button.collapsed::after {
-            transform: rotate(-90deg); /* Rotate arrow when collapsed */
-        }
-    </style>
+    <title>User Profile</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container mt-5">
-        <div class="accordion" id="faqAccordion">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingFive">
-                    <button class="accordion-button collapsed" type="button" aria-expanded="false" aria-controls="collapseFive">
-                        Is Finveda free to use?
-                    </button>
-                </h2>
-                <div id="collapseFive" class="accordion-collapse">
-                    <div class="accordion-body">
-                        Yes, Finveda is completely free to use for all users.
-                    </div>
-                </div>
+    <div class="container">
+        <h1>User Profile</h1>
+        <div id="profileDisplay" class="profile-display">
+            <img id="profileImage" src="no-profile-photo.png" alt="Profile Image" class="profile-img">
+            <div class="profile-info">
+                <p><strong>Username:</strong> <span id="displayUsername">john_doe</span></p>
+                <p><strong>Email:</strong> <span id="displayEmail">john@example.com</span></p>
+                <p><strong>Bio:</strong> <span id="displayBio">Welcome to my profile!</span></p>
             </div>
         </div>
+
+        <div id="profileEdit" style="display: none;">
+            <form id="profileForm">
+                <div class="form-group">
+                    <label for="imageUpload">Profile Image:</label>
+                    <input type="file" id="imageUpload" accept="image/*">
+                </div>
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" value="john_doe">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" value="john@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="bio">Bio:</label>
+                    <textarea id="bio" name="bio">Welcome to my profile!</textarea>
+                </div>
+                <button type="submit">Save</button>
+                <button type="button" id="cancelButton">Cancel</button>
+            </form>
+        </div>
+
+        <button id="editButton">Edit Profile</button>
     </div>
 
-    <script src="final.js"></script> <!-- Link to external JS file -->
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+.profile-display {
+    display: flex;
+    align-items: center; /* Vertically center items */
+    margin-bottom: 20px;
+}
+
+.profile-img {
+    width: 100px; /* Set the size of the image */
+    height: 100px;
+    border-radius: 50%; /* Make the image circular */
+    border: 1px solid red;
+    object-fit: cover; /* Maintain aspect ratio */
+    margin-right: 20px; /* Space between image and text */
+}
+
+.profile-info {
+    flex: 1; /* Take up remaining space */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button#cancelButton {
+    background-color: #d9534f;
+}
+
+button:disabled {
+    background-color: #ccc;
+}
+
+    </style>
+    <script src="final.js"></script>
 </body>
 </html>
