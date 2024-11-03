@@ -4,18 +4,488 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <title>Profile Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="testp.css"> <!-- Link to your CSS file -->
+   
 
     <script src="testp.js" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="shortcut icon"  href="/assets/images/favicon2.webp" type="image/png" />  
+    <link rel="shortcut icon" href="./assets/images/favicon2.png" type="image/png" />
+    <link rel="stylesheet" href="./assets/css/animate.css" />
+    <link rel="stylesheet" href="./assets/css/magnific-popup.css" />
+    <link rel="stylesheet" href="./assets/css/slick.css" />
+    <link rel="stylesheet" href="./assets/css/LineIcons.css" />
+    <link rel="stylesheet" href="./assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/default.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/quiz.css" />
+    <link rel="stylesheet" href="./assets/css/popup.css" />
+    <link rel="stylesheet" href="./assets/css/cookiepopup.css">
+    <link rel="stylesheet" href="./assets/css/about.css" />
+    <link rel="stylesheet" href="./assets/css/index.css" />
+    <link rel="stylesheet" href="./assets/css/preloader.css" />
+    <link rel="stylesheet" type="text/css" href="sipcalculatorCss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/about(inlines).css" />
+    <link rel="stylesheet" href="navbar.css">
+  
+    <style>
+      #progressBar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 8px;
+        background-color: #f76b45;
+        z-index: 9999;
+  
+      }
+  
+      * {
+        cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
+      }
+  
+  
+      .circle {
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        pointer-events: none;
+        background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
+        transition: transform 0.1s, left 0.1s, top 0.1s;
+      }
+  
+      .circle-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 9999;
+      }
+  
+      @media (max-width: 720px) {
+        .circle-container {
+          display: none;
+        }
+      }
 
-    <title>Profile Page</title>
+/* Style for Financial Literacy Rates heading */
+.financial-literacy-rate {
+    color: black; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for Financial Literacy Rates heading */
+.financial-literacy-rate:hover {
+    background-color: orange; 
+    color: white; 
+    padding: 5px; 
+    border-radius: 5px; 
+}
+
+/* Card styling */
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto; 
+    padding: 20px; 
+    max-width: 800px; 
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    opacity: 0; 
+    animation: fadeIn 0.5s forwards; 
+}
+
+/* Card heading styling */
+.card h2 {
+    text-align: center; 
+    margin-bottom: 20px; 
+}
+
+/* Button styles */
+button, 
+input[type="submit"], 
+input[type="button"], 
+.quiz-button {
+    background-color: #007BFF; 
+    color: white; 
+    border: none; 
+    padding: 10px 15px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+
+/* Hover effects for buttons */
+button:hover, 
+input[type="submit"]:hover, 
+input[type="button"]:hover {
+    background-color: #0056b3; 
+    transform: translateY(-2px); 
+}
+
+.quiz-button:hover {
+    background-color: #218838; 
+    transform: translateY(-2px); 
+}
+
+/* Input field styles */
+input[type="text"], 
+input[type="email"], 
+input[type="password"], 
+textarea, 
+select {
+    width: 100%; 
+    padding: 10px; 
+    margin: 10px 0; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+}
+
+/* Hover effects for input fields */
+input[type="text"]:hover, 
+input[type="email"]:hover, 
+input[type="password"]:hover, 
+textarea:hover, 
+select:hover {
+    border-color: #007BFF; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+}
+
+/* Focus effects for input fields */
+input[type="text"]:focus, 
+input[type="email"]:focus, 
+input[type="password"]:focus, 
+textarea:focus, 
+select:focus {
+    border-color: #0056b3; 
+    box-shadow: 0 0 8px rgba(0, 86, 179, 0.5); 
+    outline: none; 
+}
+
+/* Styling for educational resources */
+.educational-resources {
+    text-align: center; 
+    margin: 20px 0; 
+}
+
+/* State initiative card styling */
+.state-initiative {
+    margin: 20px 0; 
+    padding: 15px; 
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+    background-color: #ffffff; 
+}
+
+/* Hover effect for state initiative cards */
+.state-initiative:hover {
+    background-color: #f1f1f1; 
+    transition: background-color 0.3s ease; 
+}
+
+/* Resource card styling */
+.resource {
+    background-color: #ffffff; 
+    border: 1px solid #ddd; 
+    border-radius: 10px; 
+    padding: 15px; 
+    margin: 10px; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+/* Hover effect for resource cards */
+.resource:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+}
+
+/* Text color change on resource hover */
+.resource:hover p {
+    color: #333; 
+}
+
+/* Resource heading styling */
+.resource h2 {
+    color: #007BFF; 
+    transition: color 0.3s ease; 
+}
+
+/* Change resource heading color on hover */
+.resource:hover h2 {
+    color: #0056b3; 
+}
+
+/* Fade-in animation for cards */
+@keyframes fadeIn {
+    to {
+        opacity: 1; 
+    }
+}
+    </style>
+    
 
 </head>
 
 <body>
- 
+    <div id="progressBar"></div>
+    <script>
+      window.onscroll = function () {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progressBar").style.width = scrolled + "%";
+      };
+    </script>
+    <div class="circle-container">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+  
+    <div id="progressBar"></div>
+   
+    <header class="header-area">
+      <div class="navbar-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <nav class="navbar navbar-expand-lg">
+                
+                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                  <div class="icon1">
+                    <a href="./index.html">
+                      <img src="./assets/images/FinvedaLogo.png" alt="icon.png" style="width: 13rem;">
+                    </a>
+                  </div>
+                  <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
+                    <li class="nav-item">
+                      <a class="page-scroll active-link" href="./index.html" style="color: rgb(237, 242, 244);">Home
+                        🏡</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll" href="./finance.html" style="color: rgb(237, 242, 244);">Courses 📚</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
+                    </li>
+                    <!-- Dropdown for Explore -->
+                    <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
+                      <a class="page-scroll dropdown-toggle" href="#" style="color: rgb(237, 242, 244);">
+                        <span class="explore-text">Explore 📚</span>
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a href="./trends.html">Trends 📈</a></li>
+                        <li><a href="./tools/sip.html">Tools 🔧</a></li>
+                        <li><a href="./blog.html">Blogs 📰</a></li>
+                        <li><a href="./quiz.html">Quiz 🤔</a></li>
+                        <li><a href="./maps.html">MAPS 🗺️</a></li>
+                      </ul>
+                    </li>
+  
+                    <!-- Navigation item placeholder for Login/Register or Logout button -->
+                    <li class="nav-item no-underline" id="auth-btn-container">
+                      <a class="main-btn navbar-btn"
+                        style="padding: 2px 20px; color: rgb(237, 242, 244); animation-duration: 0.4s; animation-name: ease;"
+                        data-scroll-nav="0" href="./loginPage.html">Login/Register 💻</a>
+                    </li>
+  
+                    <li class="nav-item no-underline">
+                      <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
+                        🌙
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+  
+                <script>
+                  const toggleButton = document.getElementById('theme-toggle');
+                  const body = document.body;
+                  const currentTheme = localStorage.getItem('theme');
+  
+                  if (currentTheme === 'dark') {
+                  body.classList.add('dark-mode');
+                  toggleButton.classList.add('dark');
+                  toggleButton.textContent = '🌞';
+                  }
+  
+                  toggleButton.addEventListener('click', function () {
+                  body.classList.toggle('dark-mode');
+                  toggleButton.classList.toggle('dark');
+  
+                  // Update button icon based on mode
+                  if (body.classList.contains('dark-mode')) {
+                    toggleButton.textContent = '🌞';  // Light mode icon
+                    localStorage.setItem('theme', 'dark');
+                  } else {
+                    toggleButton.textContent = '🌙';  // Dark mode icon
+                    localStorage.setItem('theme', 'light');
+                  }
+                  });
+                </script>
+                <div class="navbar-btn d-none d-sm-inline-block">
+                  <!-- Login Modal -->
+                  <div id="myModal" class="modal">
+                    <div class="modal-content">
+                      <span
+                        class="close"
+                        style="display: flex; justify-content: right"
+                        >&times;</span
+                      >
+                      <div class="mt-3">
+                        <h3 class="join">Login to join us....</h3>
+                        <form class="px-3 py-4">
+                          <div class="form-group">
+                            <label class="d-flex">Username</label>
+                            <input
+                              type="text"
+                              placeholder="Username"
+                              class="form-control"
+                            />
+                          </div>
+                          <div class="form-group">
+                            <input
+                              type="password"
+                              placeholder="Password"
+                              class="form-control"
+                            />
+                            <button type="button" class="toggle-password-btn">
+                              <i class="fa-solid fa-eye"></i>
+                            </button>
+                          </div>
+                          <div class="form-check d-flex">
+                            <input type="checkbox" class="form-check-input" />
+                            <label class="form-check-label">Remember me</label>
+                          </div>
+                        </form>
+                        <button class="main-btn mt-2 w-100 mb-3">
+                          Sign in
+                        </button>
+                        <p class="text-center">
+                          Don't have an account?
+                          <a href="#" id="registerLink">Register</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <!-- Register Modal -->
+                  <div id="registerModal" class="modal">
+                    <div class="modal-content">
+                      <span
+                        class="close"
+                        style="display: flex; justify-content: right"
+                        >&times;</span
+                      >
+                      <div class="mt-3">
+                        <h3 class="join">Register to join us....</h3>
+                        <form class="px-3 py-4">
+                          <div class="form-group">
+                            <label class="d-flex">Email</label>
+                            <input
+                              type="email"
+                              placeholder="Email"
+                              class="form-control"
+                            />
+                          </div>
+                          <div class="form-group">
+                            <label class="d-flex">Username</label>
+                            <input
+                              type="text"
+                              placeholder="Username"
+                              class="form-control"
+                            />
+                          </div>
+                          <div class="form-group">
+                            <input
+                              type="password"
+                              placeholder="Password"
+                              class="form-control"
+                              required
+                            />
+                            <button type="button" class="toggle-password-btn">
+                              <i class="fa-solid fa-eye"></i>
+                            </button>
+                          </div>
+                        </form>
+                        <button class="main-btn mt-2 w-100 mb-3">
+                          Register
+                        </button>
+                        <p class="text-center">
+                          Already have an account?
+                          <a href="#" id="loginLink">Login</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+              <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+  
+              <nav class="mobile-menu ">
+                <a class="page-scroll" href="../index.html">Home 🏡</a>
+                <a class="page-scroll" href="../about.html">About Us 📖</a>
+                <a class="page-scroll" href="../trends.html">Trends 📈</a>
+                <a class="page-scroll" href="../tools/sip.html">Tools 🔧</a>
+                <a class="page-scroll active-link" href="../blog.html">Blogs 📰</a>
+                <a class="page-scroll" href="../quiz.html">Quiz 🤔</a>
+                <a class="page-scroll main-btn" href="#" onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
+                <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
+                  <span></span>
+                </div>
+              </nav>
+  
+                  
+                <link href="../navbar.css" rel="stylesheet">
+                <script type="text/javascript" src="../navbar.js"></script>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    </header>
     <div class="profile-container">
 
         <div class="content-section">
@@ -38,7 +508,7 @@
                     </div>
 
                 </div>
-                    <button class="edit-profile-btn edit_profiled">Edit Profile</button>
+                    <button class="edit-profile-btn edit_profiled" ">Edit Profile</button>
                 </a>
             </div>
         </div>
@@ -91,7 +561,208 @@
             </div>
             
         </section>
+    </div>
+        <style>
+            body{
+                background: linear-gradient(to right,rgb(249, 249, 191),rgb(250, 207, 207));
+            }
+            /* General Container Styling */
+.profile-container {
+    border: 10px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 30px auto;
+    max-width: 1200px; /* Increased width */
+    padding: 25px;
+    background: linear-gradient(135deg, #ffecd2, #fcb69f); /* Warm gradient */
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    clip-path: polygon(5% 0, 100% 0%, 95% 100%, 0% 100%);
+}
 
+/* Section Styling with Angled Borders */
+.content-section {
+    width: 90%; /* Increased width */
+    padding: 25px;
+    margin-bottom: 20px;
+    background: #fff5e6; /* Soft orange for contrast */
+    border-radius: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
+}
+
+.content-section h2 {
+    font-size: 1.8rem;
+    color: #333333;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Profile Card with Layered Design */
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #c3eaff, #ffffff); /* Fresh blue gradient */
+    border-radius: 25px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+    transition: transform 0.3s ease;
+}
+
+.profile-card::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    height: 160%;
+    width: 160%;
+    background: linear-gradient(135deg, #e0f7fa, #ffffff);
+    transform: rotate(25deg);
+    z-index: 1;
+    opacity: 0.8;
+    border-radius: 40px;
+}
+
+.profile-card:hover {
+    transform: scale(1.04) rotate(-1deg);
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.profile-image {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 4px solid #5bc0de;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-info {
+    color: #333333;
+}
+
+.profile-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #5bc0de;
+}
+
+.profile-email,
+.profile-phone,
+.profile-bio,
+#last-active {
+    font-size: 0.9rem;
+    color: #555555;
+}
+
+/* Button Styling with Rounded Shapes */
+.edit-profile-btn {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    color: #ffffff;
+    background: #ff6f61; /* Bright coral */
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.edit-profile-btn:hover {
+    background-color: #ff8566; /* Lighter coral on hover */
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Profile Detail Card with Skewed Shape */
+.profile-detail-card {
+    padding: 20px;
+    background: #e6f7ff; /* Light blue background */
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    transform: skew(-5deg);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.profile-detail-card:hover {
+    background-color: #d6f0ff; /* Softer blue on hover */
+    transform: skew(0deg) scale(1.02);
+}
+
+.profile-detail-card h3 {
+    color: #5bc0de;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.profile-detail-card p {
+    color: #666666;
+}
+
+/* Notification Cards with Rounded Corners and Layered Effect */
+.card {
+    padding: 15px;
+    background: #ffffff;
+    border-radius: 25px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.card:hover {
+    transform: scale(1.05) rotate(-2deg);
+    background-color: #ffe0e6; /* Soft pink */
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(135deg, #ffe0e6, #ffffff);
+    z-index: -1;
+    border-radius: 30px;
+}
+
+.card p {
+    color: #333333;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+}
+
+/* Interactive Focus Effect */
+.profile-card:focus-within,
+.profile-detail-card:focus-within,
+.card:focus-within {
+    outline: 3px solid #5bc0de;
+    box-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
+}
+
+        </style>
 </body>
 
 </html>

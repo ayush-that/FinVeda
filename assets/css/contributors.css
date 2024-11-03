@@ -102,12 +102,12 @@ body {
 .contributor-card {
   position: relative;
   overflow: hidden;
-  width: 100%;
-  max-width: calc(25% - 16px); 
+  width: 20%;
+  max-width: calc(15% - 20px); 
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #fff;
+  background-color: rgba(213,222,239,0.3);
   border: 1px solid #ccc;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -117,6 +117,10 @@ body {
   color: inherit;
   margin-bottom: 16px; 
 }
+p.text-gray-700.dark\:text-gray-400{
+  color: black;
+}
+
 
 .contributor-card::before {
   content: '';
@@ -125,7 +129,6 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(139deg, #3b89ff 50%, #eef6ff 50%);
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   transform: translate(-100%, -100%);
   opacity: 0;
@@ -139,7 +142,6 @@ body {
 
 .contributor-card:hover {
   transform: scale(1.05);
-  box-shadow: 1px 1px 5px rgba(64, 83, 255, 0.64);
 }
 
 .contributor-card img {
@@ -329,5 +331,15 @@ to {
 transform: scaleX(1); /* Shrink to zero width */
 }
 }
+a.contributor{
+  transition: all 0.4s ease;
+}
+a.contributor-card:hover{
+  background: rgba(140, 205, 233,0.7);
+  color: black;
+}
 
+a.contributor-card:hover h2.text-lg.font-medium.text-gray-900.dark\:text-gray-100.mb-2,p.text-gray-700.dark\:text-gray-400{
+  color: #000;
+}
 
