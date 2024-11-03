@@ -29,16 +29,6 @@
   <link rel="stylesheet" href="./assets/css/market-time.css">
 
   <style>
-    #progressBar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 0%;
-      height: 8px;
-      background-color: #f76b45;
-      z-index: 9999;
-
-    }
 
     .theme-toggle2.dark {
       background-color: #eceae0;
@@ -155,128 +145,97 @@
 
   </script>
   <header class="header-area">
-    <div style="display: flex; justify-content: center; " class="navbar-area">
-      <div style="display: flex; justify-content: center; " class="container">
+    <div style="display: flex; justify-content: center;" class="navbar-area">
+      <div style="display: flex; justify-content: center;" class="container">
         <div class="row">
-          <div style="display: flex; justify-content: center; " class="">
-            <nav class="navbar navbar-expand-lg " style="display: flex;">
-
+          <div style="display: flex; justify-content: center;" class="">
+            <nav class="navbar navbar-expand-lg" style="display: flex; background-color: #2c3e50;">
               <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-                <div class="icon1">
-                  <a href="./index.html">
-                    <img src="./assets/images/FinvedaLogo.png" alt="icon.png">
-                  </a>
-                </div>
-                <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./index.html" style="color: rgb(237, 242, 244);">Home
-                      🏡</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./finance.html" style="color: rgb(237, 242, 244);">Courses 📚</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
-                  </li>
-                  <!-- Dropdown for Explore -->
-                  <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
-                    <a class="page-scroll dropdown-toggle" href="#" style="color: rgb(237, 242, 244);">
-                      <span class="explore-text">Explore 📚</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a href="./trends.html">Trends 📈</a></li>
-                      <li><a href="./tools/sip.html">Tools 🔧</a></li>
-                      <li><a href="./blog.html">Blogs 📰</a></li>
-                      <li><a href="./quiz.html">Quiz 🤔</a></li>
-                      <li><a href="./maps.html">MAPS 🗺️</a></li>
-                    </ul>
-                  </li>
+                  <div class="icon1">
+                      <a href="./index.html">
+                          <img src="./assets/images/FinvedaLogo.png" alt="Finveda Logo" style="width: 13rem;">
+                      </a>
+                  </div>
+                  <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
+                      <li class="nav-item">
+                          <a class="page-scroll" href="./index.html">
+                              <i class="fas fa-home icon-hover" style="margin: 5px;"></i> Home
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="page-scroll" href="./about.html">
+                              <i class="fas fa-info-circle icon-hover" style="margin: 5px;"></i> About Us
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="page-scroll" href="./finance.html">
+                              <i class="fas fa-graduation-cap icon-hover" style="margin: 5px;"></i> Courses
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="page-scroll" href="./contact.html">
+                              <i class="fas fa-envelope icon-hover" style="margin: 5px;"></i> Contact
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="page-scroll" href="./faq.html">
+                              <i class="fas fa-question-circle icon-hover" style="margin: 5px;"></i> Help
+                          </a>
+                      </li>
+                      <!-- Dropdown for Explore -->
+                      <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
+                          <a class="page-scroll dropdown-toggle" href="#">
+                              <i class="fas fa-chevron-down icon-hover" style="margin: 5px;"></i> Explore More
+                          </a>
+                          <ul class="dropdown-menu">
+                              <li><a class="active-link" href="./trends.html"><i class="fas fa-chart-line icon-hover" style="margin: 5px;"></i> Trends</a></li>
+                              <li><a href="./tools/sip.html"><i class="fas fa-tools icon-hover" style="margin: 5px;"></i> Tools</a></li>
+                              <li><a href="./blog.html"><i class="fas fa-blog icon-hover" style="margin: 5px;"></i> Blogs</a></li>
+                              <li><a href="./quiz.html"><i class="fas fa-question icon-hover" style="margin: 5px;"></i> Quiz</a></li>
+                              <li><a href="./maps.html"><i class="fas fa-map icon-hover" style="margin: 5px;"></i> MAPS</a></li>
+                          </ul>
+                      </li>
+                      <!-- Navigation item placeholder for Login/Register or Logout button -->
+                      <li class="nav-item no-underline" id="auth-btn-container">
+                          <a class="main-btn navbar-btn" style="padding: 2px 20px;" data-scroll-nav="0" href="./loginPage.html">
+                              <i class="fas fa-user-circle icon-hover" style="margin: 5px;"></i> Login/Register
+                          </a>
+                      </li>
+                      <li class="nav-item no-underline align-self-center">
+                          <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()">
+                            <span>🌞</span>
+                          </button>
+                      </li>
+                  </ul>
+              </div>
+          </nav>
+      </div>
+      <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        var body = document.body;
+        var currentTheme = localStorage.getItem('theme');
 
-                  <!-- Navigation item placeholder for Login/Register or Logout button -->
-                  <li class="nav-item no-underline" id="auth-btn-container">
-                    <a class="main-btn navbar-btn"
-                      style="padding: 2px 20px; color: rgb(237, 242, 244); animation-duration: 0.4s; animation-name: ease;"
-                      data-scroll-nav="0" href="./loginPage.html">Login/Register 💻</a>
-                  </li>
+        if (currentTheme === 'dark') {
+          body.classList.add('dark-mode');
+          toggleButton.classList.add('dark');
+          toggleButton.querySelector('span').textContent = '🌞';
+        }
 
-                  
-                    <!-- Profile Icon -->
-                    <li class="nav-item no-underline">
-                      <a href="./profile.html" class="profile-link" style="display: flex; align-items: center; text-decoration: none;">
-                      <img src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg" alt="Profile Icon" style="width: 50px; height: 50px; border-radius: 50%; margin-top: -17px;">
-                     </a>
-                 </li>
+        toggleButton.addEventListener('click', function () {
+          body.classList.toggle('dark-mode');
+          toggleButton.classList.toggle('dark');
 
-                 <style>
-                   /* Override the existing hover styles */
-                   .navbar-nav .nav-item .profile-link:hover {
-                       background-color: transparent !important; /* Remove background color */
-                       border-radius: 0 !important; /* Reset border radius */
-                       transform: none !important; /* Prevent scaling */
-                   }
-                 </style>
-
-                 <li class="nav-item no-underline">
-                   <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
-                     🌙
-                   </button>
-                 </li>
-               </ul>
-             </div>
-
-             <script>
-               function toggleMenu() {
-                   const menu = document.getElementById('profileMenu');
-                   menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-               }
-
-               // Close the dropdown if the user clicks outside of it
-               window.onclick = function(event) {
-                   if (!event.target.matches('.profile-icon img')) {
-                       const menu = document.getElementById('profileMenu');
-                       if (menu.style.display === 'block') {
-                           menu.style.display = 'none';
-                       }
-                   }
-               }
-           </script>
-
-
-              <script>
-
-               
-                const toggleButton = document.getElementById('theme-toggle');
-                const navbar = document.querySelector('.navbar');
-
-                toggleButton.addEventListener('click', function () {
-                  document.body.classList.toggle('dark-mode');
-                  toggleButton.classList.toggle('dark');
-
-                  // Toggle padding and margin on the navbar
-
-                  navbar.classList.toggle('no-padding-margin');
-
-                  document.querySelector('.toggle-button').addEventListener('click', function () {
-                  document.querySelector('.navbar').classList.toggle('toggled');
-                });
-
-
-                  if (document.body.classList.contains('dark-mode')) {
-                    toggleButton.textContent = '🌞';  // Light mode icon
-                    localStorage.setItem('theme', 'dark');
-                  } else {
-                    toggleButton.textContent = '🌙';  // Dark mode icon
-                    localStorage.setItem('theme', 'light');
-                  }
-                });
-
-              </script>
+          // Update button icon based on mode
+          if (body.classList.contains('dark-mode')) {
+            toggleButton.querySelector('span').textContent = '🌙';  // Light mode icon
+            localStorage.setItem('theme', 'dark');
+          } else {
+            toggleButton.querySelector('span').textContent = '🌞';  // Dark mode icon
+            localStorage.setItem('theme', 'light');
+          }
+          loadShow();
+        });
+      </script>
               <style>
                 h3 {
                   color: #fff;
@@ -312,7 +271,7 @@
                 }
 
                 body.dark-mode {
-                  background-color: white;
+                  background-color: #fefefe;
                   color: #f1f1f1;
                   /* Change text color to light for dark mode */
                 }
@@ -341,6 +300,51 @@
 
             <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 
+            <nav class="mobile-menu ">
+              <a class="page-scroll active-link" href="./index.html">Home 🏡</a>
+              <a class="page-scroll" href="./about.html">About Us 📖</a>
+              <a class="page-scroll" href="./trends.html">Trends 📈</a>
+              <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
+              <a class="page-scroll" href="./blog.html">Blogs 📰</a>
+              <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
+              <a class="page-scroll" href="./contact.html">Contact🤔</a>
+              <li class="nav-item no-underline">
+                <a class="main-btn navbar-btn" style="padding: 2px 20px; transform: none; border: none;" href="#"
+                  onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
+              </li>
+
+              <li class="nav-item no-underline">
+                <button id="theme-toggle2" class="theme-toggle2" style="margin-right: 2px;">
+                  🌙
+                </button>
+              </li>
+              <div class="mobile-menu__trigger"><span></span></div>
+            </nav>
+            <script>
+              const toggleBtn = document.getElementById('theme-toggle2');
+              var body = document.body;
+              var currentTheme = localStorage.getItem('theme');
+
+              if (currentTheme === 'dark') {
+                body.classList.add('dark-mode');
+                toggleBtn.classList.add('dark');
+                toggleBtn.textContent = '🌞';
+              }
+
+              toggleBtn.addEventListener('click', function () {
+                body.classList.toggle('dark-mode');
+                toggleBtn.classList.toggle('dark');
+
+                // Update button icon based on mode
+                if (body.classList.contains('dark-mode')) {
+                  toggleBtn.textContent = '🌞';  // Light mode icon
+                  localStorage.setItem('theme', 'dark');
+                } else {
+                  toggleBtn.textContent = '🌙';  // Dark mode icon
+                  localStorage.setItem('theme', 'light');
+                }
+              });
+            </script>
 
           </div>
         </div>
@@ -513,7 +517,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      /*height: 100%;*/
+      height: 100%;
       opacity: 0.8;
     }
 
@@ -521,16 +525,11 @@
       left: 2px;
       text-shadow: -2px 0 red;
       clip: rect(44px, 450px, 56px, 0);
-      animation: glitch-anim 6s infinite linear alternate-reverse;
+      animation: glitch-anim 5s infinite linear alternate-reverse;
     }
 
-    .glitch-effect {
-      position: relative;
-      display: inline-block;
-    }
-    
     .glitch-effect::after {
-      left: 712px;
+      left: -2px;
       text-shadow: -2px 0 blue;
       clip: rect(44px, 450px, 56px, 0);
       animation: glitch-anim2 5s infinite linear alternate-reverse;
@@ -776,6 +775,7 @@
       });
     </script>
     <div class="container-main">
+
       <div class="container"><br><br>
         <!-- TradingView Widget BEGIN -->
         <br><br>
@@ -794,7 +794,6 @@
         </div>
         <!-- TradingView Widget END -->
       </div>
-
       <br><br><br>
       <div class="container">
         <!-- TradingView Widget BEGIN -->
@@ -820,8 +819,8 @@
         </div>
         <!-- TradingView Widget END -->
       </div>
-
       <br><br><br>
+
       <div class="container">
         <!-- TradingView Widget BEGIN -->
         <div class="tradingview-widget-container">
@@ -845,33 +844,40 @@
                                           "height": 500
               }
             </script>
+        </div> <br><br><br>
+
+        <div class="container">
+
+          <!-- TradingView Widget BEGIN -->
+          <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript"
+              src="https://s3.tradingview.com/external-embedding/embed-widget-forex-heat-map.js" async>
+                {
+                  "width": "auto",
+                    "height": 500,
+                      "currencies": [
+                        "EUR",
+                        "USD",
+                        "JPY",
+                        "GBP",
+                        "AUD",
+                        "CAD",
+                        "NZD",
+                        "CNY",
+                        "INR"
+                      ],
+                        "isTransparent": false,
+                          "colorTheme": "light",
+                            "locale": "in"
+                }
+              </script>
+          </div>
+          <!-- TradingView Widget END -->
         </div>
-        <!-- TradingView Widget END -->
       </div>
 
-      <br><br><br>
-      <div class="container">
-        <!-- TradingView Widget BEGIN -->
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript"
-            src="https://s3.tradingview.com/external-embedding/embed-widget-forex-heat-map.js" async>
-              {
-                "width": "auto",
-                  "height": 500,
-                    "currencies": [
-                      "EUR", "USD", "JPY", "GBP", "AUD", "CAD", "NZD", "CNY", "INR"
-                    ],
-                      "isTransparent": false,
-                        "colorTheme": "light",
-                          "locale": "in"
-              }
-            </script>
-        </div>
-        <!-- TradingView Widget END -->
-      </div>
     </div>
-
     <!-- Timed popup that will appear after succesful submission of feebback form! -->
     <button class="notification" id="successnotification" style="display:none;">
       <span class="message" id="successmsg">Submitted successfully!</span>
