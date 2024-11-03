@@ -1,22 +1,52 @@
-// Select the button
-let btn = document.querySelector(".accordion-button");
+document.getElementById("editButton").addEventListener("click", function () {
+  // Hide the display section
+  document.getElementById("profileDisplay").style.display = "none";
 
-// Add click event listener to the button
-btn.addEventListener("click", () => {
-  // Toggle the aria-expanded attribute
-  const isExpanded = btn.getAttribute("aria-expanded") === "true";
-  btn.setAttribute("aria-expanded", !isExpanded);
-  btn.classList.toggle("collapsed");
-
-  // Get the corresponding accordion body
-  const collapseElement = btn.closest("h2").nextElementSibling;
-
-  // Toggle the display of the accordion body
-  if (isExpanded) {
-    collapseElement.querySelector(".accordion-body").classList.remove("show");
-    collapseElement.querySelector(".accordion-body").style.display = "none"; // Hide the content
-  } else {
-    collapseElement.querySelector(".accordion-body").classList.add("show");
-    collapseElement.querySelector(".accordion-body").style.display = "block"; // Show the content
-  }
+  // Show the edit form
+  document.getElementById("profileEdit").style.display = "block";
 });
+
+document
+  .getElementById("profileForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Get updated values
+    const updatedUsername = document.getElementById("username").value;
+    const updatedEmail = document.getElementById("email").value;
+    const updatedBio = document.getElementById("bio").value;
+
+    // Update the displayed values
+    document.getElementById("displayUsername").textContent = updatedUsername;
+    document.getElementById("displayEmail").textContent = updatedEmail;
+    document.getElementById("displayBio").textContent = updatedBio;
+
+    // Hide the edit form and show the display section again
+    document.getElementById("profileEdit").style.display = "none";
+    document.getElementById("profileDisplay").style.display = "flex"; // Show as flex for alignment
+
+    alert("Profile updated successfully!");
+  });
+
+// Handle cancel button
+document.getElementById("cancelButton").addEventListener("click", function () {
+  // Hide the edit form and show the display section again
+  document.getElementById("profileEdit").style.display = "none";
+  document.getElementById("profileDisplay").style.display = "flex"; // Show as flex for alignment
+});
+
+// Handle image upload
+document
+  .getElementById("imageUpload")
+  .addEventListener("change", function (event) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+      document.getElementById("profileImage").src = e.target.result; // Update the image src to the new file
+    };
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  });
