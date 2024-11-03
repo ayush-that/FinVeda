@@ -54,12 +54,12 @@ $(function () {
   }
 
   // Navbar scroll behavior
-  function handleNavbarScroll() {
-    const scroll = $(window).scrollTop();
-    const isSticky = scroll >= SCROLL_THRESHOLD;
-    $(".navbar-area").toggleClass("sticky", isSticky);
-    $(".navbar .navbar-brand img").attr("src", isSticky ? "assets/images/logo-2.svg" : "assets/images/logo.svg");
-  }
+  // function handleNavbarScroll() {
+  //   const scroll = $(window).scrollTop();
+  //   const isSticky = scroll >= SCROLL_THRESHOLD;
+  //   $(".navbar-area").toggleClass("sticky", isSticky);
+  //   $(".navbar .navbar-brand img").attr("src", isSticky ? "assets/images/logo-2.svg" : "assets/images/logo.svg");
+  // }
 
   // Page scroll navigation
   function handlePageScroll() {

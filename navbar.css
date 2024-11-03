@@ -6,50 +6,479 @@
     padding: 0;
 }
 
-z
+.navbar-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    -webkit-transition: all 0.3s ease-out 0s;
+    -moz-transition: all 0.3s ease-out 0s;
+    -ms-transition: all 0.3s ease-out 0s;
+    -o-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+  }
+  
+  /* Adjusted the margin from right side so that it looks uniform on all web pages. */
+  .navbar-collapse{
+    display: flex;
+    margin-right: -5.6rem;
+    justify-content: center;  
+    background-color: black;
+    border-radius: 10px;
+    padding: 15px 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100vw;
+    height: 10%;
+    position: relative;
+    left: 0;
+    transition: background-color 0.3s ease-in-out;
+    -webkit-transition: background-color 0.3s ease-in-out;
+    -moz-transition: background-color 0.3s ease-in-out;
+    -ms-transition: background-color 0.3s ease-in-out;
+    -o-transition: background-color 0.3s ease-in-out;
+  }
+  .navbar-nav main{
+   background-color: saddlebrown;
+    list-style-type: none;
+    margin: 0 1rem;
+    padding: 0;
+    /* overflow: hidden; */
+  }
+  
+  .nav-item {
+    float: left;
+  }
+  
+  
+  .nav-item a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .nav-item a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s;
+  }
+  
+  .no-underline a::after {
+    content: none;
+  }
+  
+  .nav-item a:hover::after, .nav-item a.active-link::after{
+    width: 96%;
+    margin: 0 2.5%;
+  }
+  
+  .navbar-nav .nav-item a {
+    text-decoration: none !important;
+  }
+  
+  .navbar-nav .nav-item a:hover {
+    text-decoration: none !important;
+  }
+  .sticky {
+    position: fixed;
+    z-index: 99;
+    background-color: #fff;
+    -webkit-box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.05);
+    -webkit-transition: all 0.3s ease-out 0s;
+    -moz-transition: all 0.3s ease-out 0s;
+    -ms-transition: all 0.3s ease-out 0s;
+    -o-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+  }
+  
+  .sticky .navbar {
+    padding: 0px;
+  }
+  
+  .navbar {
+    padding: 0 0;
+    border-radius: 5px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    -webkit-transition: all 0.3s ease-out 0s;
+    -moz-transition: all 0.3s ease-out 0s;
+    -ms-transition: all 0.3s ease-out 0s;
+    -o-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+  }
+  
+  .navbar-brand {
+    padding: 0;
+  }
+  
+  .navbar-toggler {
+    padding: 0;
+  }
+  
+  .navbar-toggler .toggler-icon {
+    width: 30px;
+    height: 2px;
+    background-color: #fff;
+    display: block;
+    margin: 5px 0;
+    position: relative;
+    -webkit-transition: all 0.3s ease-out 0s;
+    -moz-transition: all 0.3s ease-out 0s;
+    -ms-transition: all 0.3s ease-out 0s;
+    -o-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+  }
+  
+  .navbar-toggler.active .toggler-icon:nth-of-type(1) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: 7px;
+  }
+  
+  .navbar-toggler.active .toggler-icon:nth-of-type(2) {
+    opacity: 0;
+  }
+  
+  .navbar-toggler.active .toggler-icon:nth-of-type(3) {
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+    top: -7px;
+  }
+  
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .navbar-collapse {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      z-index: 9;
+      -webkit-box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.1);
+      box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.1);
+      padding: 5px 12px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .navbar-collapse {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      z-index: 9;
+      -webkit-box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.1);
+      box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.1);
+      padding: 5px 12px;
+    }
+  }
+  
+  .navbar-nav .nav-item {
+    margin-right: 10px;
+    padding-right: 54px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .navbar-nav .nav-item {
+      margin-right: 12px;
+    }
+  }
+  
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .navbar-nav .nav-item {
+      margin: 0;
+      padding-right: 0;
+    }
+    /* .main-btn{
+      margin-top: 4%;
+      margin-left: 4%;
+    } */
+  }
+  
+  @media (max-width: 767px) {
+    .navbar-nav .nav-item {
+      margin: 0;
+      padding-right: 0;
+    }
+  }
+  
+  .navbar-nav .nav-item a {
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    -webkit-transition: all 0.3s ease-out 0s;
+    -moz-transition: all 0.3s ease-out 0s;
+    -ms-transition: all 0.3s ease-out 0s;
+    -o-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    padding-right: 0;
+  }
+  
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .navbar-nav .nav-item a {
+      display: block;
+      padding: 4px 0;
+      color: #2e2e2e;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .navbar-nav .nav-item a {
+      display: block;
+      padding: 4px 0;
+      color: #2e2e2e;
+      padding-right: 0;
+    }
+  }
+  
+  .navbar-nav .nav-item:hover .sub-menu {
+    top: 100%;
+    opacity: 1;
+    visibility: visible;
+    padding-right: 0;
+  }
+  
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .navbar-nav .nav-item:hover .sub-menu {
+      top: 0;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .navbar-nav .nav-item:hover .sub-menu {
+      top: 0;
+      padding-right: 0;
+    }
+  }
+  
+  .navbar-nav .nav-item .sub-menu {
+    width: 200px;
+    background-color: #fff;
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 110%;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.3s ease-out 0s;
+    -moz-transition: all 0.3s ease-out 0s;
+    -ms-transition: all 0.3s ease-out 0s;
+    -o-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+  }
+  
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .navbar-nav .nav-item .sub-menu {
+      position: relative;
+      padding-right: 0%;
+      width: 100%;
+      top: 5px;
+      display: none;
+      opacity: 1;
+      visibility: visible;
+      padding-right: 0;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .navbar-nav .nav-item .sub-menu {
+      position: relative;
+      width: 100%;
+      top: 0;
+      display: none;
+      opacity: 1;
+      visibility: visible;
+      padding-right: 0;
+    }
+  }
+  
+  .navbar-nav .nav-item .sub-menu li a {
+    display: block;
+    padding: 8px 0px;
+    color: #2e2e2e;
+    padding-right: 0;
+  }
+  
+  .navbar-nav .nav-item .sub-menu li a.active,
+  .navbar-nav .nav-item .sub-menu li a:hover {
+    padding-left: 25px;
+    color: #361cc1;
+    padding-right: 0;
+  }
+  
+  .navbar-nav .sub-nav-toggler {
+    display: none;
+  }
+  
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .navbar-nav .sub-nav-toggler {
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: none;
+      color: #2e2e2e;
+      font-size: 18px;
+      border: 0;
+      width: 30px;
+      height: 30px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .navbar-nav .sub-nav-toggler {
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: none;
+      color: #2e2e2e;
+      font-size: 18px;
+      border: 0;
+      width: 30px;
+      height: 30px;
+      padding-right: 0;
+    }
+  }
+  
+  .navbar-nav .sub-nav-toggler span {
+    width: 8px;
+    height: 8px;
+    border-left: 1px solid #2e2e2e;
+    border-bottom: 1px solid #2e2e2e;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    position: relative;
+    top: -5px;
+  }
+  
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .navbar-btn {
+      position: relative;
+      padding-right: 0;
+      margin-top: 10px;
+      /* top: 60%; */
+      /* left: 7.5%; */
+      /* -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%); */
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .navbar-btn {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      margin-top: 10px;
+      /* -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%); */
+    }
+  }
+  
+  .navbar-btn .main-btn {
+    height: 45px;
+    line-height: 45px;
+    background: -webkit-linear-gradient(left,
+        #fe8464 0%,
+        #fe6e9a 50%,
+        #fe8464 100%);
+    /* background: -o-linear-gradient(left, #fe8464 0%, #fe6e9a 50%, #fe8464 100%); */
+    background: linear-gradient(to right, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
+    background-size: 200%;
+    box-shadow: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    box-shadow: none;
+  }
+  
+  
+  .navbar-btn:hover{
+    color: #fff;
+    background-position: right center;
+    background: rgb(47, 203, 57);
+    transform: none;
+    transition: none;
+    box-shadow: none;
+  }
+  
+  .sticky .navbar-toggler .toggler-icon {
+    background-color: #2e2e2e;
+  }
+  
+  .sticky .navbar-nav .nav-item a {
+    margin-top: -20px;
+  
+  }
+  
+  .header-hero {
+    position: relative;
+    z-index: 5;
+    background-position: bottom center;
+  }
+  
+  .sticky .navbar-nav .nav-item:hover>a {
+    color: #361cc1;
+  }
+  .navbar-btn{
+    background: linear-gradient(135deg,#00bfff,#150e4e);
+  }
+  .navbar-btn:hover{
+    background: linear-gradient(115deg,#150e4e,#00bfff);
+    transform: scale(0.95);
+  }
+  .navbar-btn a:hover{
+    color: #fff;
+    background-position: right center;
+    background: rgb(47, 203, 57);
+    box-shadow: none;
+    transition: none;
+    transform: none;
+  }
+  
+  .menu-btn a:hover{
+    color: #fff;
+    background-position: right center;
+    background: rgb(47, 203, 57);
+  }
+  
 
 /* Navbar Styling */
-/* Adjusted the margin from left side so that it looks uniform on all web pages. */
- */.navbar-collapse {
-    display: flex;
-    /* margin-left: -13rem; */
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgb(72,43,255) !important;
-    border-radius: 10px;
-    padding: 15px 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-bottom: 2px solid #edf2f4;
-    width: 100%;
-    position: relative;
-    left: 0;
-    transition: background-color 0.3s ease-in-out;
-    -webkit-transition: background-color 0.3s ease-in-out;
-    -moz-transition: background-color 0.3s ease-in-out;
-    -ms-transition: background-color 0.3s ease-in-out;
-    -o-transition: background-color 0.3s ease-in-out;
-}
-*/
-
-/* .navbar-collapse {
-    display: flex;
-    justify-content: center;
-    background-color: #3a90dc;
-    border-radius: 10px;
-    padding: 15px 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-bottom: 2px solid #edf2f4;
-    width: 100vw;
-    position: relative;
-    left: 0;
-
-    transition: background-color 0.3s ease-in-out;
-    -webkit-transition: background-color 0.3s ease-in-out;
-    -moz-transition: background-color 0.3s ease-in-out;
-    -ms-transition: background-color 0.3s ease-in-out;
-    -o-transition: background-color 0.3s ease-in-out;
-} */
-
 .navbar-nav {
 
     display:  flex;
@@ -235,45 +664,40 @@ z
 } 
 
 /* Navbar toggle button styles */
+.theme-toggle {
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 20px;
+  }
 #theme-toggle {
-    margin-top: 60px;
     position: relative;
     cursor: pointer;
     overflow: hidden;
   }
-  
-  /* Toggle Button Container */
-  .theme-toggle {
+.theme-toggle {
     width: 4.5rem;
     height: 2rem;
     background-color: #9193faeb; 
-    border-radius: 8999px; /* Full rounded for switch shape */
+    border-radius: 8999px;
     display: flex;
     align-items: center;
     padding: 0.25rem;
-    transition: background-color 0.3s ease-in-out;
+    transition: all 0.5s ease-in-out;
   }
-  
-  /* Toggle Button Knob */
-  .theme-toggle .icon1 {
-    width: 1.5rem;
-    height: 1.5rem;
-    background-color: #6df09b; 
-    border-radius: 50%;
-    position: absolute;
-    left: 0.25rem;
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
-    filter: exposure(2);
+  .theme-toggle:hover {
+    background-color: #9193faeb; 
   }
-  
-  /* Dark mode styles */
-  body.dark-mode .theme-toggle {
+  body.dark-mode .theme-toggle,body.dark-mode .theme-toggle:hover {
     background-color: #112a2b; 
   }
-  
-  body.dark-mode .theme-toggle .icon1 {
-    background-color: #f49c50; 
-    transform: translateX(1.75rem); /* Slide knob to the right */
+  .theme-toggle span{
+    transition: all 0.5s ease-in-out;
+  }
+  body.dark-mode .theme-toggle span{
+    transform: translateX(1.95rem);
+    
   }
   
 
@@ -410,9 +834,8 @@ z
     width: 100px;
 } */
 
-#theme-toggle {
-    margin-top: 5px;
-}
+
+
 
 
 @media (max-width: 1320px) { /* 100% width */
@@ -425,20 +848,23 @@ z
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
-    padding: 10px 5px;
+    padding: 10px 10px;
     transition: all 0.3s ease;
     white-space: nowrap;
 }
 
 /* On hover the text color was also set to the background color earlier hence I have changed to red color since all other tabs navbar text was already to red color, I have set to !important because the inline CSS has more priority compared to external CSS whether it applied on hover or without hover so the #333 should not overwrite when hovered hence I have set it to !important. */
 
-.navbar-nav .nav-item a:hover {
+.navbar-nav .nav-item a:hover,.navbar-nav .nav-item a.active-link{
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
+    color: #0a69ed;
     transform: scale(0.95);
 }
-
-
+.navbar-nav .nav-item a:hover .icon-hover,
+.navbar-nav .nav-item a.active-link .icon-hover {
+    color: #0a69ed;
+}
 .nav-item .navbar-btn{
     background: linear-gradient(135deg,#00bfff,#150e4e);
     transition:all 0.4s ease;
@@ -608,17 +1034,17 @@ z
     padding: 8px 12px;
     display: inline-block;
     transition: color 0.3s,border-bottom 0.3s;
-    border-bottom: 2px solid transparent; /* Transparent by default */
+    border-bottom: 2px solid transparent; 
   }
   
   /* Hover Effect */
   .navbar-nav .page-scroll:hover {
-    color: #ffcc00; /* Example: Yellow on hover */
+    color: #0a69ed; 
       }
-  /* Explore Dropdown: Same styling as other links */
+
 .nav-item.dropdown > a {
     color: rgb(237, 242, 244);
-    padding: 8px 12px;
+    /* padding: 8px 12px; */
     display: inline-block;
     border-bottom: 2px solid transparent; /* Prevent visible underline */
     transition: color 0.3s, border-bottom 0.3s;
@@ -632,10 +1058,10 @@ z
     left: 0;
     background-color: rgb(0, 0, 0);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    padding: 10px;
+    /* padding: 10px; */
     border-radius: 8px;
     z-index: 20;
-    min-width: 150px;
+    /* min-width: 150px; */
   }
   
   /* Show dropdown on hover */
@@ -646,21 +1072,21 @@ z
   /* Dropdown Links */
   .dropdown-menu li {
     list-style: none;
-    padding: 8px 0;
+    /* padding: 8px 0; */
   }
   
   .dropdown-menu li a {
     text-decoration: none;
     color: black;
     display: block;
-    padding: 5px 10px;
+    /* padding: 5px 10px; */
   transition: background-color 0.3s;
   }
   
   /* Arrow Rotation Effect */
   .arrow {
     display: inline-block;
-    margin-left: 5px;
+    /* margin-left: 5px; */
     transition: transform 0.3s ease;
   }
   

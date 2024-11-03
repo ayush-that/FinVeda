@@ -29,16 +29,6 @@
   <link rel="stylesheet" href="./assets/css/market-time.css">
 
   <style>
-    #progressBar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 0%;
-      height: 8px;
-      background-color: #f76b45;
-      z-index: 9999;
-
-    }
 
     .theme-toggle2.dark {
       background-color: #eceae0;
@@ -159,90 +149,93 @@
       <div style="display: flex; justify-content: center;" class="container">
         <div class="row">
           <div style="display: flex; justify-content: center;" class="">
-            <nav class="navbar navbar-expand-lg " style="display: flex;">
-              <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="toggler-icon"></span>
-            <span class="toggler-icon"></span>
-            <span class="toggler-icon"></span>
-          </button> -->
+            <nav class="navbar navbar-expand-lg" style="display: flex; background-color: #2c3e50;">
               <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-                <div class="icon1">
-                  <a href="./index.html">
-                    <img src="./assets/images/FinvedaLogo.png" alt="icon.png" style="width: 13rem;">
-                  </a>
-                </div>
-                <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./index.html" style="color: rgb(237, 242, 244);">Home
-                      🏡</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./finance.html" style="color: rgb(237, 242, 244);">Courses 📚</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
-                  </li>
-                  <!-- Dropdown for Explore -->
-                  <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
-                    <a class="page-scroll dropdown-toggle" href="#" style="color: rgb(237, 242, 244);">
-                      <span class="explore-text">Explore 📚</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a href="./trends.html">Trends 📈</a></li>
-                      <li><a href="./tools/sip.html">Tools 🔧</a></li>
-                      <li><a href="./blog.html">Blogs 📰</a></li>
-                      <li><a href="./quiz.html">Quiz 🤔</a></li>
-                      <li><a href="./maps.html">MAPS 🗺️</a></li>
-                    </ul>
-                  </li>
-
-                  <!-- Navigation item placeholder for Login/Register or Logout button -->
-                  <li class="nav-item no-underline" id="auth-btn-container">
-                    <a class="main-btn navbar-btn"
-                      style="padding: 2px 20px; color: rgb(237, 242, 244); animation-duration: 0.4s; animation-name: ease;"
-                      data-scroll-nav="0" href="./loginPage.html">Login/Register 💻</a>
-                  </li>
-
-                  <li class="nav-item no-underline">
-                    <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
-                      🌙
-                    </button>
-                  </li>
-                </ul>
+                  <div class="icon1">
+                      <a href="./index.html">
+                          <img src="./assets/images/FinvedaLogo.png" alt="Finveda Logo" style="width: 13rem;">
+                      </a>
+                  </div>
+                  <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
+                      <li class="nav-item">
+                          <a class="page-scroll" href="./index.html">
+                              <i class="fas fa-home icon-hover" style="margin: 5px;"></i> Home
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="page-scroll" href="./about.html">
+                              <i class="fas fa-info-circle icon-hover" style="margin: 5px;"></i> About Us
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="page-scroll" href="./finance.html">
+                              <i class="fas fa-graduation-cap icon-hover" style="margin: 5px;"></i> Courses
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="page-scroll" href="./contact.html">
+                              <i class="fas fa-envelope icon-hover" style="margin: 5px;"></i> Contact
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="page-scroll" href="./faq.html">
+                              <i class="fas fa-question-circle icon-hover" style="margin: 5px;"></i> Help
+                          </a>
+                      </li>
+                      <!-- Dropdown for Explore -->
+                      <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
+                          <a class="page-scroll dropdown-toggle" href="#">
+                              <i class="fas fa-chevron-down icon-hover" style="margin: 5px;"></i> Explore More
+                          </a>
+                          <ul class="dropdown-menu">
+                              <li><a class="active-link" href="./trends.html"><i class="fas fa-chart-line icon-hover" style="margin: 5px;"></i> Trends</a></li>
+                              <li><a href="./tools/sip.html"><i class="fas fa-tools icon-hover" style="margin: 5px;"></i> Tools</a></li>
+                              <li><a href="./blog.html"><i class="fas fa-blog icon-hover" style="margin: 5px;"></i> Blogs</a></li>
+                              <li><a href="./quiz.html"><i class="fas fa-question icon-hover" style="margin: 5px;"></i> Quiz</a></li>
+                              <li><a href="./maps.html"><i class="fas fa-map icon-hover" style="margin: 5px;"></i> MAPS</a></li>
+                          </ul>
+                      </li>
+                      <!-- Navigation item placeholder for Login/Register or Logout button -->
+                      <li class="nav-item no-underline" id="auth-btn-container">
+                          <a class="main-btn navbar-btn" style="padding: 2px 20px;" data-scroll-nav="0" href="./loginPage.html">
+                              <i class="fas fa-user-circle icon-hover" style="margin: 5px;"></i> Login/Register
+                          </a>
+                      </li>
+                      <li class="nav-item no-underline align-self-center">
+                          <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()">
+                            <span>🌞</span>
+                          </button>
+                      </li>
+                  </ul>
               </div>
+          </nav>
+      </div>
+      <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        var body = document.body;
+        var currentTheme = localStorage.getItem('theme');
 
-              <script>
-                const toggleButton = document.getElementById('theme-toggle');
-                var body = document.body;
-                var currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark') {
+          body.classList.add('dark-mode');
+          toggleButton.classList.add('dark');
+          toggleButton.querySelector('span').textContent = '🌞';
+        }
 
-                if (currentTheme === 'dark') {
-                  body.classList.add('dark-mode');
-                  toggleButton.classList.add('dark');
-                  toggleButton.textContent = '🌞';
-                }
+        toggleButton.addEventListener('click', function () {
+          body.classList.toggle('dark-mode');
+          toggleButton.classList.toggle('dark');
 
-                toggleButton.addEventListener('click', function () {
-                  body.classList.toggle('dark-mode');
-                  toggleButton.classList.toggle('dark');
-
-                  // Update button icon based on mode
-                  if (body.classList.contains('dark-mode')) {
-                    toggleButton.textContent = '🌞';  // Light mode icon
-                    localStorage.setItem('theme', 'dark');
-                  } else {
-                    toggleButton.textContent = '🌙';  // Dark mode icon
-                    localStorage.setItem('theme', 'light');
-                  }
-                });
-              </script>
+          // Update button icon based on mode
+          if (body.classList.contains('dark-mode')) {
+            toggleButton.querySelector('span').textContent = '🌙';  // Light mode icon
+            localStorage.setItem('theme', 'dark');
+          } else {
+            toggleButton.querySelector('span').textContent = '🌞';  // Dark mode icon
+            localStorage.setItem('theme', 'light');
+          }
+          loadShow();
+        });
+      </script>
               <style>
                 h3 {
                   color: #fff;
