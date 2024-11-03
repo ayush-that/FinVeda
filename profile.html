@@ -15,83 +15,133 @@
 </head>
 
 <body>
- 
-    <div class="profile-container">
 
-        <div class="content-section">
-            <h2>Your Profile</h2>
-            <a href="index.html">
-                <i class="fas fa-home"></i>
-            </a>
-            <div class="profile-card">
-                <div class="profile-header">
-                    <img src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg" alt="Profile Image" class="profile-image">
-
-                    <div class="profile-info">
-                        <h3 class="profile-name">Skylar Reed</h3>
-                        <p class="profile-email">Email: skylar.reed@example.com</p>
-                        <p class="profile-phone">Phone: +987 654 3210</p>
-                        <p class="profile-bio">Joined: October 31, 2024</p>
-                        <p class="profile-bio">About Me: Hello!🙋🏻‍♂️ Feel free to reach out to me at skylar.reed@example.com 😎</p>
-                        <p id="last-active">Last active: 31/10/2024, 11:12 PM</p>
-
-                    </div>
-
-                </div>
-                    <button class="edit-profile-btn edit_profiled">Edit Profile</button>
-                </a>
+   <div class="container">
+        <h1>User Profile</h1>
+        <div id="profileDisplay" class="profile-display">
+            <img id="profileImage" src="no-profile-photo.png" alt="Profile Image" class="profile-img">
+            <div class="profile-info">
+                <p><strong>Username:</strong> <span id="displayUsername">john_doe</span></p>
+                <p><strong>Email:</strong> <span id="displayEmail">john@example.com</span></p>
+                <p><strong>Bio:</strong> <span id="displayBio">Welcome to my profile!</span></p>
             </div>
         </div>
 
-        <div class="content-section">
-
-            <h2>Account Details</h2>
-            <div class="profile-details">
-                <div class="profile-detail-card" id="profileCard">
-                    <h3>Address</h3>
-                    <p id="addressText" contenteditable="false">789 Pine Lane, Austin, TX 73301</p>
-                    <a href="#"><button class="edit-profile-btn">Edit</button></a>
+        <div id="profileEdit" style="display: none;">
+            <form id="profileForm">
+                <div class="form-group">
+                    <label for="imageUpload">Profile Image:</label>
+                    <input type="file" id="imageUpload" accept="image/*">
                 </div>
-
-                <div class="profile-detail-card">
-                    <h3>Change Password</h3>
-                    <p>*********63</p>
-                    <button class="edit-profile-btn">Change</button></a>
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" value="anyone">
                 </div>
-
-                <div class="profile-detail-card">
-                    <h3>Privacy Settings</h3>
-                    <p>Visibility Status: Public</p>
-                    <a href="#">
-                    <button class="edit-profile-btn">Edit</button></a>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" value="anyone@example.com">
                 </div>
-
-                <div class="profile-detail-card">
-                    <h3>Recent Activity</h3>
-                    <p>Updated profile information</p>
-                    <a href="#">
-                    <button class="edit-profile-btn">View</button></a>
+                <div class="form-group">
+                    <label for="bio">Bio:</label>
+                    <textarea id="bio" name="bio">Welcome to my profile!</textarea>
                 </div>
-                
-            </div>
+                <button type="submit">Save</button>
+                <button type="button" id="cancelButton">Cancel</button>
+            </form>
         </div>
 
-        <section class="content-section">
+        <button id="editButton">Edit Profile</button>
+    </div>
 
-            <h2>Notifications</h2>
-            <div class="card">
-                <p>Your profile has been updated successfully!</p>
-                
-                <button class="edit-profile-btn">View Notification</button>
-            </div>
-            <div class="card">
-                <p>Joshef Roy has sent you a friend request. Accept or decline?</p>
-                
-                <button class="edit-profile-btn">View Notification</button>
-            </div>
-            
-        </section>
+    <style>
 
+
+
+
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 600px;
+    height: 500px;
+    margin: 45px auto; /* Maintain the top margin of 45px */
+    padding: 20px;
+    background: #fff;
+    border: 2px solid #ccc; /* Add a border */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    margin-top: 100px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.profile-display {
+    display: flex;
+    align-items: center; /* Vertically center items */
+    margin-bottom: 20px;
+}
+
+.profile-img {
+    width: 100px; /* Set the size of the image */
+    height: 100px;
+    border-radius: 50%; /* Make the image circular */
+    border: 4px solid gray;
+    object-fit: cover; /* Maintain aspect ratio */
+    margin-right: 20px; /* Space between image and text */
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.profile-info {
+    flex: 1; /* Take up remaining space */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button#cancelButton {
+    background-color: #d9534f;
+}
+
+button:disabled {
+    background-color: #ccc;
+}
+
+    </style>
+    <script src="final.js"></script>
 </body>
 
 </html>
