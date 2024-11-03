@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Financial Calculators</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="calculators.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js CDN -->
+</head>
+<body>
+    <div class="calculator">
+        <h2>EMI Calculator</h2>
+        <label for="loanAmount">Loan Amount:</label>
+        <input type="number" id="loanAmount" placeholder="Enter loan amount">
+
+        <label for="interestRate">Interest Rate (Annual %):</label>
+        <input type="number" id="interestRate" placeholder="Enter interest rate">
+
+        <label for="loanTenure">Loan Tenure (months):</label>
+        <input type="number" id="loanTenure" placeholder="Enter loan tenure">
+
+        <button onclick="calculateEMI()">Calculate EMI</button>
+        <div id="emiResult"></div>
+    </div>
+
+    <div class="calculator">
+        <h2>SIP Calculator</h2>
+        <label for="monthlyInvestment">Monthly Investment:</label>
+        <input type="number" id="monthlyInvestment" placeholder="Enter monthly investment">
+
+        <label for="returnRate">Expected Annual Return (%):</label>
+        <input type="number" id="returnRate" placeholder="Enter expected return rate">
+
+        <label for="investmentDuration">Investment Duration (years):</label>
+        <input type="number" id="investmentDuration" placeholder="Enter investment duration">
+
+        <button onclick="calculateSIP()">Calculate SIP</button>
+        <div id="sipResult"></div>
+        <canvas id="sipChart" width="400" height="200"></canvas>
+    </div>
+
+    <div class="calculator">
+        <h2>Retirement Savings Calculator</h2>
+        <label for="currentAge">Current Age:</label>
+        <input type="number" id="currentAge" placeholder="Enter current age">
+
+        <label for="retirementAge">Retirement Age:</label>
+        <input type="number" id="retirementAge" placeholder="Enter retirement age">
+
+        <label for="monthlyExpenses">Expected Monthly Expenses:</label>
+        <input type="number" id="monthlyExpenses" placeholder="Enter monthly expenses">
+
+        <label for="inflationRate">Inflation Rate (%):</label>
+        <input type="number" id="inflationRate" placeholder="Enter inflation rate">
+
+        <button onclick="calculateRetirement()">Calculate Retirement Savings</button>
+        <div id="retirementResult"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</body>
+</html>
