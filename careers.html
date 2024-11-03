@@ -24,8 +24,8 @@
   <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
   <link rel="stylesheet" href="navbar.css">
   <link rel="stylesheet" href="careers.css"> <!-- Link to careers.css -->
-  <style> 
-  
+  <style>
+
     body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
@@ -356,14 +356,14 @@
                   <a href="./index.html">
                     <img src="assets/images/FinvedaLogo.png" alt="icon.png" style="width: 11rem;">
                   </a>
-                </div> 
+                </div>
                 <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
                   <li class="nav-item">
                     <a class="page-scroll" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
                   </li>
                   <li class="nav-item">
                     <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
-                  </li>    
+                  </li>
                   <li class="nav-item">
                     <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
                   </li>
@@ -632,17 +632,17 @@
             const toggleBtn = document.getElementById('theme-toggle2');
             var body = document.body;
             var currentTheme = localStorage.getItem('theme');
-  
+
             if (currentTheme === 'dark') {
             body.classList.add('dark-mode');
             toggleBtn.classList.add('dark');
             toggleBtn.textContent = '🌞';
             }
-            
+
             toggleBtn.addEventListener('click', function () {
             body.classList.toggle('dark-mode');
             toggleBtn.classList.toggle('dark');
-            
+
             // Update button icon based on mode
             if (body.classList.contains('dark-mode')) {
               toggleBtn.textContent = '🌞';  // Light mode icon
@@ -768,18 +768,18 @@
           </tbody>
         </table>
       </div>
-    
+
       <script>
         document.getElementById('salaryFilter').addEventListener('input', filterBySalary);
-    
+
         function filterBySalary() {
           const minSalaryInput = parseInt(document.getElementById('salaryFilter').value);
           const rows = document.querySelectorAll('#jobsTableBody tr');
-    
+
           rows.forEach(row => {
             const salaryText = row.querySelector('[data-label="Salary"]').textContent;
             const [minSalary] = salaryText.replace(/[^\d\s]/g, '').split('-').map(s => parseInt(s.trim()));
-    
+
             if (minSalaryInput && minSalary) {
               if (minSalary >= minSalaryInput) {
                 row.style.display = ''; // Show row
@@ -793,7 +793,7 @@
         }
       </script>
     </section>
-    
+
 
     <style>
       /* General Styles */
@@ -960,7 +960,7 @@ section h2 {
 }
 
 /* Dark Mode Specific Styling */
-.dark-mode .jobs-table th, 
+.dark-mode .jobs-table th,
 .dark-mode .jobs-table td {
   color: #000; /* Set table font color to black in dark mode */
 }
@@ -981,33 +981,9 @@ section h2 {
     </style>
 
 
-    <main>
-      <img style="position: absolute;left: 900px; top: 1200px;mix-blend-mode: multiply;" src="assets/images/roadmap.jpg" alt="roadmap">
-      <section class="roadmap">
-        <h2 class="h2">Career Roadmap 🛣️</h2>
-        <div class="roadmap-step">
-          <div class="roadmap-title">Step 1: Pursue a Relevant Degree</div>
-          <p>Consider obtaining a degree in finance, accounting, economics, or business administration.</p>
-        </div>
-        <div class="roadmap-step">
-          <div class="roadmap-title">Step 2: Gain Experience</div>
-          <p>Look for internships or entry-level positions in finance to gain practical experience.</p>
-        </div>
-        <div class="roadmap-step">
-          <div class="roadmap-title">Step 3: Network</div>
-          <p>Attend finance-related events, workshops, and seminars to connect with professionals in the field.</p>
-        </div>
-        <div class="roadmap-step">
-          <div class="roadmap-title">Step 4: Get Certified</div>
-          <p>Consider pursuing professional certifications like CFA, CPA, or CFP to enhance your qualifications.</p>
-        </div>
-        <div class="roadmap-step">
-          <div class="roadmap-title">Step 5: Stay Informed</div>
-          <p>Keep up with the latest trends and developments in the finance industry through articles and news.</p>
-        </div>
-      </section>
-      <style>
-        /* Container styling */
+   <main>
+<style>
+   /* Container styling */
 .roadmap {
   padding: 2rem;
   background: linear-gradient(135deg, #e0f7fa, #e8f5e9);
@@ -1138,10 +1114,89 @@ section h2 {
   }
 }
 
-      </style>
+  /* Dark theme styles */
+/* Dark theme styles */
+.dark-mode body {
+  background-color: #1b1b2f;
+  color: #f5f5f5;
+}
 
+.dark-mode .roadmap {
+  background: linear-gradient(135deg, #243b55, #2e4053);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
 
-    </main>
+.dark-mode .roadmap .h2 {
+  color: #f5f5f5; /* Fallback color for gradient text */
+  background: linear-gradient(45deg, #ffffff, #e9e7e7); /* White to grey gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Shadow for contrast */
+}
+
+.dark-mode .roadmap-step {
+  background: linear-gradient(135deg, #2e4053, #1b1b2f);
+  border-left: 5px solid #8e44ad;
+}
+
+.dark-mode .roadmap-step:hover {
+  background: linear-gradient(135deg, #1b1b2f, #8e44ad);
+}
+
+.dark-mode .roadmap-title {
+  color: #f39c12;
+}
+
+.dark-mode .roadmap-step p {
+  color: #f5f5f5;
+}
+
+/* Theme toggle button */
+#theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  font-size: 1.2rem;
+  border: none;
+  background: #3498db;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#theme-toggle.dark {
+  background: #8e44ad;
+}
+
+</style>
+
+  <img style="position: absolute; left: 900px; top: 1200px; mix-blend-mode: multiply;" src="assets/images/roadmap.jpg" alt="roadmap">
+  <section class="roadmap">
+    <h2 class="h2">Career Roadmap </h2>
+    <div class="roadmap-step">
+      <div class="roadmap-title">Step 1: Pursue a Relevant Degree</div>
+      <p>Consider obtaining a degree in finance, accounting, economics, or business administration.</p>
+    </div>
+    <div class="roadmap-step">
+      <div class="roadmap-title">Step 2: Gain Experience</div>
+      <p>Look for internships or entry-level positions in finance to gain practical experience.</p>
+    </div>
+    <div class="roadmap-step">
+      <div class="roadmap-title">Step 3: Network</div>
+      <p>Attend finance-related events, workshops, and seminars to connect with professionals in the field.</p>
+    </div>
+    <div class="roadmap-step">
+      <div class="roadmap-title">Step 4: Get Certified</div>
+      <p>Consider pursuing professional certifications like CFA, CPA, or CFP to enhance your qualifications.</p>
+    </div>
+    <div class="roadmap-step">
+      <div class="roadmap-title">Step 5: Stay Informed</div>
+      <p>Keep up with the latest trends and developments in the finance industry through articles and news.</p>
+    </div>
+  </section>
+</main>
 
     <section class="books-section">
       <img style="position: absolute; mix-blend-mode: multiply; left: 100px;height: 130px;" src="assets/images/careers-book-img.jpg" alt="photo">
@@ -1203,7 +1258,7 @@ section h2 {
         <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
       </div>
     </section>
-    
+
   </main>
 
 
@@ -1215,7 +1270,7 @@ section h2 {
     position: relative;
     border: 10px solid rgb(154, 150, 150);
   }
-  
+
   .books-section h2 {
     padding-top: 30px;
     padding-bottom: 30px;
@@ -1223,20 +1278,20 @@ section h2 {
     font-size:xx-large;
     margin-bottom: 20px;
   }
-  
+
   .carousel-container {
     position: relative;
     display: flex;
     align-items: center;
   }
-  
+
   .books-list {
     list-style-type: none;
     padding: 0;
     display: flex;
     transition: transform 0.5s ease; /* Smooth transition for sliding */
   }
-  
+
   /* Individual book cards */
   .book-card {
     height: 400px;
@@ -1248,13 +1303,13 @@ section h2 {
     margin: 0 10px; /* Added margin between cards */
     flex-shrink: 0; /* Prevent cards from shrinking */
   }
-  
+
   .book-card:hover {
     transform: scale(1.08);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     background-color: #e0f7fa;
   }
-  
+
   .book-image {
     height: 340px;
     background-size: cover;
@@ -1262,18 +1317,18 @@ section h2 {
     border-bottom: 3px solid #ddd;
     transition: opacity 0.3s ease;
   }
-  
+
   .book-card:hover .book-image {
     opacity: 0.9;
   }
-  
+
   .book-info {
     border: 3px solid #8db3f5;
     padding: 20px;
     text-align: left;
     color: #333;
   }
-  
+
   .book-info strong {
     color: #0863ff;
     font-size: 1.2em;
@@ -1283,7 +1338,7 @@ section h2 {
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  
+
   .book-info span {
     font-size: 0.95em;
     color: #666;
@@ -1293,7 +1348,7 @@ section h2 {
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  
+
   .book-info p {
     font-size: 0.9em;
     color: #444;
@@ -1301,7 +1356,7 @@ section h2 {
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  
+
   /* Carousel buttons */
   .carousel-button {
   background-color: rgba(240, 172, 123, 0.8);
@@ -1330,15 +1385,15 @@ section h2 {
   background-color: rgb(122, 248, 244);
 }
 
-  
+
   .carousel-button.prev {
     left: 10px;
   }
-  
+
   .carousel-button.next {
     right: 10px;
   }
-  
+
   .carousel-button:hover {
     background-color: rgba(255, 255, 255, 1);
   }
@@ -1498,15 +1553,15 @@ document.querySelector('.carousel-button.next').addEventListener('click', () => 
                       <h3 class="title custom-margin">Quick Links</h3>
                   </div>
                   <ul class="link custom-margin">
-  
+
                     <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
                     <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
                     <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
                     <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
                     <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
                     <li><a href="./blogs/sitemap.html"><i class="fa-solid fa-sitemap"></i>  Site Map</a></li>
-   
-  
+
+
                   </ul>
               </div>
               <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
@@ -1568,18 +1623,18 @@ document.querySelector('.carousel-button.next').addEventListener('click', () => 
               </ul>
           </div>
       </div>
-  
-  
+
+
   </div>
            </div>
-         
+
   <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center">
     <div class="row">
               <div className="flex flex-col items-center text-gray-800">
                 <div className="flex items-center space-x-2">
                     <span className="font-bold text-2xl">Total Visitors : </span>
                     <a href="https://www.hitwebcounter.com" target="_blank">
-                      <img src="https://hitwebcounter.com/counter/counter.php?page=17085296&style=0006&nbdigits=5&type=page&initCount=1000" title="Counter Widget" Alt="Visit counter For Websites"   border="0" /></a>            
+                      <img src="https://hitwebcounter.com/counter/counter.php?page=17085296&style=0006&nbdigits=5&type=page&initCount=1000" title="Counter Widget" Alt="Visit counter For Websites"   border="0" /></a>
 
                 </div>
             </div>
@@ -1600,23 +1655,23 @@ document.querySelector('.carousel-button.next').addEventListener('click', () => 
               reserved<br />
               Made with ♥ in India
             </p>
-  
+
           </div>
         </div>
       </div>
     </div>
   </div>
-  
+
   <div id="particles-2"></div>
   </div>
   </footer>
-  
-  
+
+
       <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
       <div class="gtranslate_wrapper"></div>
       <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
       <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-  
+
       <script src="./assets/js/subscribe.js"></script>
       <script src="../assets/js/vendor/jquery-1.12.4.min.js"></script>
       <script src="../assets/js/vendor/modernizr-3.7.1.min.js"></script>
@@ -1643,21 +1698,21 @@ document.querySelector('.carousel-button.next').addEventListener('click', () => 
         // Get the modals
         var loginModal = document.getElementById('myModal');
         var registerModal = document.getElementById('registerModal');
-  
+
         // Get the button that opens the login modal
         var loginBtn = document.getElementById('loginBtn');
-  
+
         // Get the links that open the register and login modals
         var registerLink = document.getElementById('registerLink');
         var loginLink = document.getElementById('loginLink');
-  
+
         // Get the <span> elements that close the modals
         var closeBtns = document.getElementsByClassName('close');
-  
+
         //show and hide icon button
         document.addEventListener('DOMContentLoaded', () => {
           const togglePasswordButtons = document.querySelectorAll('.toggle-password-btn');
-  
+
           togglePasswordButtons.forEach(button => {
             button.addEventListener('click', () => {
               const passwordInput = button.previousElementSibling;
@@ -1671,22 +1726,22 @@ document.querySelector('.carousel-button.next').addEventListener('click', () => 
             });
           });
         });
-  
-  
+
+
         // When the user clicks the register link, open the register modal
         registerLink.onclick = function (event) {
           event.preventDefault();
           loginModal.style.display = 'none';
           registerModal.style.display = 'block';
         }
-  
+
         // When the user clicks the login link, open the login modal
         loginLink.onclick = function (event) {
           event.preventDefault();
           registerModal.style.display = 'none';
           loginModal.style.display = 'block';
         }
-  
+
         // When the user clicks on <span> (x), close the modal
         for (var i = 0; i < closeBtns.length; i++) {
           closeBtns[i].onclick = function () {
@@ -1694,7 +1749,7 @@ document.querySelector('.carousel-button.next').addEventListener('click', () => 
             registerModal.style.display = 'none';
           }
         }
-  
+
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function (event) {
           if (event.target == loginModal) {
@@ -1709,34 +1764,34 @@ document.querySelector('.carousel-button.next').addEventListener('click', () => 
           modal.style.display = "block";
           document.title = "Login/Register - FinVeda";  // Update the title when modal is opened
         }
-  
+
         function closeModal() {
           var modal = document.getElementById("myModal");
           modal.style.display = "none";
           document.title = "FinVeda";  // Revert the title back when modal is closed
         }
-  
-  
+
+
       // Close button event listeners for modals
       registerModal.querySelector(".close").addEventListener("click", closeModal);
       loginModal.querySelector(".close").addEventListener("click", closeModal);
-  
-  
-  
+
+
+
         window.onclick = function (event) {
           var modal = document.getElementById("myModal");
           if (event.target == modal) {
             closeModal(); // Call closeModal function
           }
         };
-  
-  
+
+
         document.addEventListener("DOMContentLoaded", function () {
           const registerModal = document.getElementById("registerModal");
           const loginModal = document.getElementById("myModal");
           const registerLink = document.getElementById("registerLink");
           const loginLink = document.getElementById("loginLink");
-  
+
           // Event listener for the register link
           registerLink.addEventListener("click", function (event) {
             event.preventDefault();
@@ -1744,7 +1799,7 @@ document.querySelector('.carousel-button.next').addEventListener('click', () => 
             registerModal.style.display = "block";
             document.title = "Login/Register - FinVeda";  // Update title when registering
           });
-  
+
           // Event listener for the login link
           loginLink.addEventListener("click", function (event) {
             event.preventDefault();
@@ -1752,36 +1807,36 @@ document.querySelector('.carousel-button.next').addEventListener('click', () => 
             loginModal.style.display = "block";
             document.title = "Login/Register - FinVeda";  // Update title when logging in
           });
-  
+
           // Close button event listeners for modals
           registerModal.querySelector(".close").addEventListener("click", closeModal);
           loginModal.querySelector(".close").addEventListener("click", closeModal);
         });
-  
+
       </script>
       <script src="./smoothScroll.js"></script>
-   
+
       <script src="./assets/js/preloader.js"></script>
-  
+
       <link rel="stylesheet" href="visi.css">
-    
-      
+
+
       <script src="visi.js"></script>
       <script src="../assets/js/index.js"></script>
-   
-  
+
+
       <style>
-  
-      
+
+
         body {
-  
+
            font-family: Arial, sans-serif;
-  
+
        }
-       
+
        /* Popup Styles */
        .popup {
-  
+
            display: none; /* Hidden by default */
            position: fixed; /* Stay in place */
            left: 0;
@@ -1792,11 +1847,11 @@ document.querySelector('.carousel-button.next').addEventListener('click', () => 
            justify-content: center; /* Center the popup */
            align-items: center; /* Center the popup */
            z-index: 1000; /* Sit on top */
-  
+
        }
-       
+
        .popup-content {
-  
+
            background: linear-gradient(rgb(133 183 242 / 80%), rgb(23 37 149)), url(your-image-url.jpg);
            padding: 20px;
            border-radius: 5px;
@@ -1804,48 +1859,48 @@ document.querySelector('.carousel-button.next').addEventListener('click', () => 
            max-height: 500px;
            min-height: 410px;
            text-align: center;
-  
+
        }
-       
+
        /* Set poll options to stack vertically */
        #pollOptions {
-  
+
            display: flex;
            flex-direction: column; /* Stack buttons vertically */
            align-items: center; /* Center the buttons */
-  
+
        }
-       
+
        .poll-button {
-  
+
            display: block; /* Change to block for full-width */
            margin: 5px 0; /* Add vertical margin */
            padding: 10px 15px;
            border: none;
            border-radius: 5px;
-           background-color: rgb(14 64 98 / 40%); 
+           background-color: rgb(14 64 98 / 40%);
            color: white;
            cursor: pointer;
            transition: background-color 0.3s;
            width: 100%; /* Full width */
-  
+
        }
-  
+
        .poll-button:hover {
-  
+
            background-color: #45a049; /* Darker green */
-  
+
        }
-  
+
        .poll-button.selected {
-  
+
            background-color: #0f1e82; /* Blue for selected */
-  
+
        }
-       
+
        /* New Vote Button Styles */
        .vote-button {
-  
+
            display: block; /* Change to block for full-width */
            margin: 5px 0; /* Add vertical margin */
            padding: 10px 15px;
@@ -1856,29 +1911,29 @@ document.querySelector('.carousel-button.next').addEventListener('click', () => 
            cursor: pointer;
            transition: background-color 0.3s;
            width: 100%; /* Full width */
-           
+
        }
-  
+
        .vote-button:hover {
-  
+
            background-color: #d32f2f; /* Darker red */
-  
+
        }
-       
+
        /* Result Text Styles */
   #result {
-  
+
       margin-top: 10px; /* Add space above result text */
       word-wrap: break-word; /* Allow long text to wrap within the box */
       overflow: hidden; /* Prevent overflow */
       max-height: 50px; /* Limit height to prevent overflow */
       color: rgb(255, 255, 255); /* Set text color to red */
-      
+
   }
-  
+
        </style>
-       
-  
+
+
       <div class="popup" id="pollPopup">
         <div class="popup-content">
             <h2>Which feature of Finveda do you believe boosts your financial knowledge the most?</h2>
@@ -1891,9 +1946,9 @@ document.querySelector('.carousel-button.next').addEventListener('click', () => 
             <p id="result"></p>
         </div>
     </div>
-    
-    
-    
+
+
+
     <script>
     // Show the poll popup 10 seconds after the page loads, if not already voted
     window.onload = function() {
@@ -1904,10 +1959,10 @@ document.querySelector('.carousel-button.next').addEventListener('click', () => 
         }
       }, 10000); // 10000 milliseconds = 10 seconds
     };
-  
+
     const pollButtons = document.querySelectorAll('.poll-button[data-value]');
     let selectedValue = '';
-  
+
     pollButtons.forEach(button => {
       button.addEventListener('click', function() {
         // Remove selected class from all buttons
@@ -1917,8 +1972,8 @@ document.querySelector('.carousel-button.next').addEventListener('click', () => 
         selectedValue = button.getAttribute('data-value');
       });
     });
-  
-  
+
+
     document.getElementById('voteButton').addEventListener('click', function() {
       if (selectedValue) {
         document.getElementById('result').innerHTML = `You voted for: ${selectedValue}<br>Thank you!`;
@@ -1932,16 +1987,16 @@ document.querySelector('.carousel-button.next').addEventListener('click', () => 
         alert("Please select an option!");
       }
     });
-  
-  
+
+
     function initializePoll() {
       console.log("Poll initialized.");
     }
-  
+
     function clearSelectedButton() {
       pollButtons.forEach(btn => btn.classList.remove('selected'));
     }
-  
+
     function addEventListenersToButtons() {
       pollButtons.forEach(button => {
         button.addEventListener('mouseenter', function() {
@@ -1952,25 +2007,25 @@ document.querySelector('.carousel-button.next').addEventListener('click', () => 
         });
       });
     }
-  
+
     function handleVoteSubmission() {
       if (selectedValue) {
         console.log("Vote submitted for: " + selectedValue);
       }
     }
-  
-  
+
+
     pollButtons.forEach(button => {
       button.addEventListener('click', function() {
         logButtonClick(button);
         handleVoteSubmission();
       });
     });
-  
-    
+
+
     for (let i = 0; i < 5; i++) {
       console.log("Simulating poll process: Step " + (i + 1));
-    }  
+    }
 
     const themeToggle = document.getElementById('theme-toggle');
        themeToggle.addEventListener('click', () => {
