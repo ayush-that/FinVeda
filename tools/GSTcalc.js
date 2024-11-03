@@ -14,19 +14,12 @@ function calculateGST() {
     const amount = parseFloat(document.getElementById('amount').value);
     const taxSlab = parseFloat(document.getElementById('tax-slab').value);
 
-    let errorMessage = '';
+    // Clear previous error messages
+    clearErrorMessages();
 
-    if (isNaN(amount) || amount <= 0) {
-        errorMessage += 'Please enter a valid positive number for the amount.\n';
-    }
-    if (isNaN(taxSlab) || taxSlab <= 0) {
-        errorMessage += 'Please enter a valid positive number for the tax slab.\n';
-    }
-
-    if (errorMessage) {
-        alert(errorMessage);
-        return;
-    }
+    // Validate inputs and display errors if any
+    const hasError = validateInputs(amount, taxSlab);
+    if (hasError) return;
 
     let gstAmount, postGSTAmount;
 
@@ -37,16 +30,47 @@ function calculateGST() {
         gstAmount = amount * (taxSlab / (100 + taxSlab));
         postGSTAmount = amount - gstAmount;
     } else {
-        alert('Please select a valid GST mode.');
+        showError('modeError', 'Please select a valid GST mode.');
         return;
     }
 
-    document.getElementById('total-gst').innerText = `GST Amount: ₹${gstAmount.toFixed(2)}`;
-    document.getElementById('post-gst-amount').innerText = `Post GST Amount: ₹${postGSTAmount.toFixed(2)}`;
+    const formatter = new Intl.NumberFormat('en-IN', {
+        style: 'currency',
+        currency: 'INR'
+    });
+
+    document.getElementById('total-gst').innerText = `GST Amount: ${formatter.format(gstAmount)}`;
+    document.getElementById('post-gst-amount').innerText = `Post GST Amount: ${formatter.format(postGSTAmount)}`;
+}
+
+function validateInputs(amount, taxSlab) {
+    let hasError = false;
+
+    if (isNaN(amount) || amount <= 0) {
+        showError('amountError', 'Please enter a valid positive number for the amount.');
+        hasError = true;
+    }
+    if (isNaN(taxSlab) || taxSlab <= 0) {
+        showError('taxSlabError', 'Please enter a valid positive number for the tax slab.');
+        hasError = true;
+    }
+
+    return hasError;
+}
+
+function showError(elementId, message) {
+    document.getElementById(elementId).textContent = message;
+}
+
+function clearErrorMessages() {
+    document.getElementById('amountError').textContent = '';
+    document.getElementById('taxSlabError').textContent = '';
+    document.getElementById('modeError').textContent = '';
 }
 
 function clearGST() {
     document.getElementById('gst-calculator').reset();
     document.getElementById('total-gst').innerText = '';
     document.getElementById('post-gst-amount').innerText = '';
+    clearErrorMessages();
 }
