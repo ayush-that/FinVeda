@@ -562,6 +562,39 @@
   </section>
 <div class="content min-h-screen text-black dark:text-gray-200">
     <h1 class="text-center text-3xl font-semibold mb-8 text-black dark:text-gray-200" data-text="CONTRIBUTORS">CONTRIBUTORS</h1>
+    <style>
+      @property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.contributor-card::after, .contributor-card::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(from var(--angle), transparent 70%,cyan);
+  z-index: -1;
+  padding: 3px;
+  top: -1.5%;
+  border-radius: 10px;
+  animation: 3s spin linear infinite;
+}
+.contributor-card::before{
+  filter: blur(0.8rem);
+  opacity: 0.5;
+}
+
+@keyframes spin{
+  from{
+    --angle:0deg;
+  }
+  to{
+    --angle:360deg;
+  }
+}
+    </style>
     <div id="contributors" class="contributors flex flex-wrap justify-center gap-8"></div>
 </div>
     <!-- Timed popup that will appear after succesful submission of feebback form! -->
