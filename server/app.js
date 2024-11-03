@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import connectDB from "./utils/db.js";
 import cors from "cors";
 import contactRoutes from "./routes/contactRoutes.js";
+import feedbackRoutes from "./routes/feedbackRoutes.js";
 
 dotenv.config();
 const app = express();
@@ -16,6 +17,7 @@ app.use(cors());
 
 // Serve static files from the uploads directory
 app.use("/api/contact", contactRoutes);
+app.use("/api/feedback", feedbackRoutes);
 
 
 const PORT = process.env.PORT || 5000;
