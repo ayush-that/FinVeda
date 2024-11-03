@@ -1914,42 +1914,38 @@
 
     <body>
 
-
-
-
-
       <div class="tco-container">
         <h1 class="tco-header">TCO Calculator</h1>
 
-        <div class="input-group">
+        <div class="input-group"  >
           <label for="initialCost">Initial Cost ($):</label>
           <input type="number" id="initialCost" placeholder="Enter initial cost" required>
         </div>
 
-        <div class="input-group">
+        <div class="input-group"  >
           <label for="operatingCost">Annual Operating Cost ($):</label>
           <input type="number" id="operatingCost" placeholder="Enter annual operating cost" required>
         </div>
 
-        <div class="input-group">
+        <div class="input-group"  >
           <label for="years">Years of Ownership:</label>
           <input type="number" id="years" placeholder="Enter number of years" required>
         </div>
 
-        <div class="input-group">
+        <div class="input-group"  >
           <label for="miscCost">Miscellaneous Costs ($):</label>
           <input type="number" id="miscCost" placeholder="Enter miscellaneous costs" required>
         </div>
 
-        <button class="btn calculate-btn" onclick="calculateTCO()">Calculate TCO</button>
+        <button class="btn calculate-btn" style="width: 50%; margin-left: 25%;" onclick="calculateTCO()">Calculate TCO</button>
 
         <div class="result" id="tcoResult"></div>
       </div>
 
       <main class="main-income">
-        <h1 class="main-income-head">Income Tax Calculator</h1>
+        <h1 class="main-income-head tco-header">Income Tax Calculator</h1>
         <form>
-          <p class="disclaimer" id="disclaimer">*Must have AIS and TIS with yourself</p>
+          <p class="disclaimer" id="disclaimer" style="color: #d33636;">*Must have AIS and TIS with yourself</p>
 
           <div class="input-group">
             <label for="actual-income" class="income-label">Total Income:</label>
@@ -2021,6 +2017,7 @@
   text-align: left;
   width: 90%;
   margin: auto;
+  margin-top: 15px;
 }
 
 .input-group label {
@@ -2061,6 +2058,9 @@
   margin-top: 20px;
   cursor: pointer;
   transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .calculate-btn:hover,
@@ -2093,6 +2093,31 @@
     width: 100%;
   }
 }
+
+.tco-header {
+    color: #333; /* Original color */
+    transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.tco-header:hover {
+    color: #ecf3f4; /* New color on hover */
+    transform: scale(1.1) translateY(-5px); /* Slightly enlarge and lift */
+    text-shadow: 0px 0px 8px rgba(207, 235, 236, 0.7); /* Glow effect */
+    animation: bounce 0.6s ease alternate infinite; /* Bounce animation */
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1.1) translateY(-5px);
+    }
+    50% {
+        transform: scale(1.15) translateY(-10px);
+    }
+    100% {
+        transform: scale(1.1) translateY(-5px);
+    }
+}
+
 
       </style>
 
