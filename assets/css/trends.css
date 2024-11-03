@@ -1,7 +1,22 @@
-body {
-  background-color:  black;
+
+
+:root {
+  --bg-color-dark:white; /* Example dark color */
+  --text-color-dark: black; /* Example text color */
 }
 
+
+body {
+  background-color:  white;
+}
+
+.navbar-light {
+  width: 100%; 
+}
+
+.navbar-dark {
+  width: 100%; 
+}
 
 #progressBar {
   position: fixed;
@@ -15,7 +30,10 @@ body {
 
 * {
   cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
+  margin: 0px;
+  padding: 0px;
 }
+
 
 .market-status-heading-unique {
   margin: 20px;
@@ -26,7 +44,7 @@ body {
   height: 25px;
   border-radius: 50%;
   pointer-events: none;
-  background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
+  background: white;
   transition: transform 0.1s, left 0.1s, top 0.1s;
 }
 
@@ -86,7 +104,7 @@ body {
   position: fixed;
   top: 10px;
   right: 10px;
-  padding: 10px;
+  padding-left: 10px;
   border: none;
   cursor: pointer;
   background-color: #444;
@@ -95,10 +113,11 @@ body {
   font-size: 20px;
 }
 
-body.dark-mode .market-status-section-unique{
+body.dark-mode .market-status-section-unique {
   background-color: var(--bg-color-dark);
   color: var(--text-color-dark);
-} 
+}
+
 body.dark-mode .market-status-heading-unique{
   color: white;
 }
@@ -127,7 +146,7 @@ body.dark-mode .footer-area{
 
 }
 .theme-toggle.dark {
-  background-color: #eceae0;
+  background-color: white;
   color: #000;
 }
  

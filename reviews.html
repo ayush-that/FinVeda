@@ -712,127 +712,149 @@
     </main>
 
     <style>/* Main container styling */
-      .review-container {
-        border: 5px solid rgb(215, 141, 255);
-          max-width: 800px;
-          margin: 20px auto;
-          background-color: rgb(215, 141, 255);
-          border-radius: 8px;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-          padding: 20px;
-          color: #333;
-          font-family: Arial, sans-serif;
-          margin-top: 70px;
-      }
-      
-      /* Tab navigation styling */
-      .review-container .tab-container {
-          display: flex;
-          justify-content: space-around;
-          margin-bottom: 20px;
-      }
-      
-      .review-container .tab {
-          padding: 10px 20px;
-          background-color: #f3f3f4;
-          color: #3a3b3c;
-          border: 5px solid rgb(131, 141, 246);
-          font-weight: bold;
-          border-radius: 8px;
-          cursor: pointer;
-          border: none;
-          transition: background-color 0.3s ease;
-      }
-      
-      .review-container .tab.active,
-      .review-container .tab:hover {
-        background-color: #f3f3f4;
-        color: #3a3b3c;
-      }
-      
-      /* Content sections */
-      .review-container .content-container .content-section {
-          display: none;
-      }
-      
-      .review-container .content-container .content-section.active {
-          display: block;
-      }
-      
-      /* Form styling */
-      .review-container .form-group {
-          margin-bottom: 15px;
-      }
-      
-      .review-container .form-group label {
-          display: block;
-          font-weight: bold;
-          color: #5b6770;
-          margin-bottom: 5px;
-      }
-      
-      .review-container .form-group input[type="text"],
-      .review-container .form-group select,
-      .review-container .form-group textarea {
-          width: 100%;
-          padding: 10px;
-          border-radius: 6px;
-          border: 1px solid #ddd;
-          background-color: #f3f6fa;
-          transition: background-color 0.3s ease;
-      }
-      
-      .review-container .form-group input[type="text"]:focus,
-      .review-container .form-group select:focus,
-      .review-container .form-group textarea:focus {
-          background-color: #e0eaf5;
-          outline: none;
-      }
-      
-      .review-container .form-group input[type="file"] {
-          padding: 8px;
-          background-color: #f3f6fa;
-          border-radius: 6px;
-          border: 1px solid #ddd;
-      }
-      
-      /* Submit button */
-      .review-container .submit-btn {
-          width: 100%;
-          padding: 12px;
-          border: none;
-          background-color: #054a91;
-          color: #ffffff;
-          font-weight: bold;
-          border-radius: 8px;
-          cursor: pointer;
-          transition: background-color 0.3s ease;
-      }
-      
-      .review-container .submit-btn:hover {
-          background-color: #03396c;
-      }
-      
-      /* Star rating */
-      .review-container .star-rating input[type="radio"] {
-          display: none;
-      }
-      
-      .review-container .star-rating label {
-          font-size: 1.5rem;
-          color: #ccc;
-          cursor: pointer;
-          transition: color 0.2s ease;
-      }
-      
-      .review-container .star-rating input[type="radio"]:checked ~ label,
-      .review-container .star-rating label:hover,
-      .review-container .star-rating label:hover ~ label {
-          color: #ffb400;
-      }
-      /* Gradient background for form sections */
+.review-container {
+    border: 5px solid rgb(70, 130, 180); /* Steel Blue */
+    max-width: 70%; /* Reduced width for the form */
+    margin: 20px auto;
+    background-color: rgb(173, 216, 230); /* Light Blue */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+/* Tab navigation styling */
+.review-container .tab-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.review-container .tab {
+    padding: 10px 20px;
+    background-color: #e0f7fa; /* Light Cyan */
+    color: #004d40; /* Dark Teal */
+    border: 5px solid rgb(0, 128, 128); /* Teal */
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.review-container .tab.active,
+.review-container .tab:hover {
+    background-color: #b2ebf2; /* Lighter Cyan */
+    color: #004d40; /* Dark Teal */
+    transform: scale(1.05);
+}
+
+/* Content sections */
+.review-container .content-container .content-section {
+    display: none;
+}
+
+.review-container .content-container .content-section.active {
+    display: block;
+}
+
+/* Form styling */
+.review-container .form-group {
+    margin-bottom: 15px;
+}
+
+.review-container .form-group label {
+    display: block;
+    font-weight: bold;
+    color: #004d40; /* Dark Teal */
+    margin-bottom: 5px;
+}
+
+/* Input fields styling */
+.review-container .form-group input[type="text"],
+.review-container .form-group select,
+.review-container .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 2px solid #ddd; /* Grey */
+    background-color: #ffffff; /* White */
+    transition: background-color 0.3s ease, transform 0.2s, border-color 0.3s ease;
+}
+
+/* Focus and hover effects for input fields */
+.review-container .form-group input[type="text"]:focus,
+.review-container .form-group select:focus,
+.review-container .form-group textarea:focus {
+    background-color: #b2ebf2; /* Lighter Cyan */
+    outline: none;
+    border-color: #00796b; /* Darker Teal */
+    transform: scale(1.02);
+}
+
+.review-container .form-group input[type="text"]:hover,
+.review-container .form-group select:hover,
+.review-container .form-group textarea:hover {
+    border-color: #00796b; /* Darker Teal */
+    transform: scale(1.02);
+}
+
+/* File input styling */
+.review-container .form-group input[type="file"] {
+    padding: 8px;
+    background-color: #ffffff; /* White */
+    border-radius: 6px;
+    border: 2px solid #ddd; /* Grey */
+    transition: border-color 0.3s ease, transform 0.2s;
+}
+
+.review-container .form-group input[type="file"]:hover {
+    border-color: #00796b; /* Darker Teal */
+    transform: scale(1.02);
+}
+
+/* Submit button */
+.review-container .submit-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: linear-gradient(135deg, #00796b, #004d40); /* Darker Teal to Dark Teal */
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 128, 128, 0.3);
+    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s;
+}
+
+.review-container .submit-btn:hover {
+    background: linear-gradient(135deg, #004d40, #00796b); /* Dark Teal to Darker Teal */
+    box-shadow: 0 6px 12px rgba(0, 128, 128, 0.4);
+    transform: scale(1.05);
+}
+
+/* Star rating */
+.review-container .star-rating input[type="radio"] {
+    display: none;
+}
+
+.review-container .star-rating label {
+    font-size: 1.5rem;
+    color: #ccc; /* Light Grey */
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.review-container .star-rating input[type="radio"]:checked ~ label,
+.review-container .star-rating label:hover,
+.review-container .star-rating label:hover ~ label {
+    color: #ffb400; /* Yellow */
+}
+
+/* Gradient background for form sections */
 .review-container .content-section form {
-    background: linear-gradient(135deg, #f3ecff, #36a7f2);
+    background: linear-gradient(135deg, #e0f7fa, #b2ebf2); /* Light gradient */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -850,41 +872,44 @@
 .review-container .content-section form .form-group select,
 .review-container .content-section form .form-group textarea,
 .review-container .content-section form .form-group input[type="file"] {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent White */
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s, border-color 0.3s ease;
 }
 
 .review-container .content-section form .form-group input[type="text"]:focus,
 .review-container .content-section form .form-group select:focus,
 .review-container .content-section form .form-group textarea:focus {
-    background-color: rgb(248, 232, 250);
+    background-color: #b2ebf2; /* Lighter Cyan */
+    border-color: #00796b; /* Darker Teal */
+    transform: scale(1.02);
 }
 
 /* Style the submit button with a gradient for continuity */
 .review-container .content-section form .submit-btn {
-    background: linear-gradient(135deg, #0353a4, #054a91);
+    background: linear-gradient(135deg, #00796b, #004d40); /* Darker Teal to Dark Teal */
     color: #ffffff;
     font-weight: bold;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(3, 83, 164, 0.3);
-    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 128, 128, 0.3);
+    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s;
 }
 
 .review-container .content-section form .submit-btn:hover {
-    background: linear-gradient(135deg, #054a91, #03396c);
-    box-shadow: 0 6px 12px rgba(3, 57, 108, 0.4);
+    background: linear-gradient(135deg, #004d40, #00796b); /* Dark Teal to Darker Teal */
+    box-shadow: 0 6px 12px rgba(0, 128, 128, 0.4);
+    transform: scale(1.05);
 }
 
-.content-container{
-  border: 2px solid grey;
+.content-container {
+    border: 2px solid grey;
 }
 
-.content-container h2{
-  margin-bottom: 12px;
-  justify-self: center;
-  font-size:xx-large;
-  color: #6fb88b;
+.content-container h2 {
+    margin-bottom: 12px;
+    justify-self: center;
+    font-size: xx-large;
+    color: #004d40; /* Dark Teal */
 }
 
       </style>
