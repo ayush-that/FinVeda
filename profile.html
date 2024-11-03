@@ -1,244 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- changes -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-   
-
     <script src="testp.js" defer></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <link rel="shortcut icon"  href="/assets/images/favicon2.webp" type="image/png" />  
-    <link rel="shortcut icon" href="./assets/images/favicon2.png" type="image/png" />
-    <link rel="stylesheet" href="./assets/css/animate.css" />
-    <link rel="stylesheet" href="./assets/css/magnific-popup.css" />
-    <link rel="stylesheet" href="./assets/css/slick.css" />
-    <link rel="stylesheet" href="./assets/css/LineIcons.css" />
-    <link rel="stylesheet" href="./assets/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./assets/css/default.css" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="stylesheet" href="./assets/css/quiz.css" />
-    <link rel="stylesheet" href="./assets/css/popup.css" />
-    <link rel="stylesheet" href="./assets/css/cookiepopup.css">
-    <link rel="stylesheet" href="./assets/css/about.css" />
-    <link rel="stylesheet" href="./assets/css/index.css" />
-    <link rel="stylesheet" href="./assets/css/preloader.css" />
-    <link rel="stylesheet" type="text/css" href="sipcalculatorCss.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-    <link rel="stylesheet" href="./assets/css/about(inlines).css" />
-    <link rel="stylesheet" href="navbar.css">
-  
+    <link rel="shortcut icon" href="/assets/images/favicon2.webp" type="image/png" />  
+    <link rel="stylesheet" href="./assets/css/navbar.css">
+
     <style>
-      #progressBar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 0%;
-        height: 8px;
-        background-color: #f76b45;
-        z-index: 9999;
-  
-      }
-  
-      * {
-        cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
-      }
-  
-  
-      .circle {
-        position: absolute;
-        width: 25px;
-        height: 25px;
-        border-radius: 50%;
-        pointer-events: none;
-        background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
-        transition: transform 0.1s, left 0.1s, top 0.1s;
-      }
-  
-      .circle-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 9999;
-      }
-  
-      @media (max-width: 720px) {
-        .circle-container {
-          display: none;
-        }
-      }
-
-/* Style for Financial Literacy Rates heading */
-.financial-literacy-rate {
-    color: black; 
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Hover effect for Financial Literacy Rates heading */
-.financial-literacy-rate:hover {
-    background-color: orange; 
-    color: white; 
-    padding: 5px; 
-    border-radius: 5px; 
-}
-
-/* Card styling */
-.card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 20px auto; 
-    padding: 20px; 
-    max-width: 800px; 
-    border: 1px solid #ccc; 
-    border-radius: 10px; 
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
-    opacity: 0; 
-    animation: fadeIn 0.5s forwards; 
-}
-
-/* Card heading styling */
-.card h2 {
-    text-align: center; 
-    margin-bottom: 20px; 
-}
-
-/* Button styles */
-button, 
-input[type="submit"], 
-input[type="button"], 
-.quiz-button {
-    background-color: #007BFF; 
-    color: white; 
-    border: none; 
-    padding: 10px 15px; 
-    border-radius: 5px; 
-    cursor: pointer; 
-    transition: background-color 0.3s ease, transform 0.2s ease; 
-}
-
-/* Hover effects for buttons */
-button:hover, 
-input[type="submit"]:hover, 
-input[type="button"]:hover {
-    background-color: #0056b3; 
-    transform: translateY(-2px); 
-}
-
-.quiz-button:hover {
-    background-color: #218838; 
-    transform: translateY(-2px); 
-}
-
-/* Input field styles */
-input[type="text"], 
-input[type="email"], 
-input[type="password"], 
-textarea, 
-select {
-    width: 100%; 
-    padding: 10px; 
-    margin: 10px 0; 
-    border: 1px solid #ccc; 
-    border-radius: 5px; 
-    transition: border-color 0.3s ease, box-shadow 0.3s ease; 
-}
-
-/* Hover effects for input fields */
-input[type="text"]:hover, 
-input[type="email"]:hover, 
-input[type="password"]:hover, 
-textarea:hover, 
-select:hover {
-    border-color: #007BFF; 
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
-}
-
-/* Focus effects for input fields */
-input[type="text"]:focus, 
-input[type="email"]:focus, 
-input[type="password"]:focus, 
-textarea:focus, 
-select:focus {
-    border-color: #0056b3; 
-    box-shadow: 0 0 8px rgba(0, 86, 179, 0.5); 
-    outline: none; 
-}
-
-/* Styling for educational resources */
-.educational-resources {
-    text-align: center; 
-    margin: 20px 0; 
-}
-
-/* State initiative card styling */
-.state-initiative {
-    margin: 20px 0; 
-    padding: 15px; 
-    border: 1px solid #ddd; 
-    border-radius: 5px; 
-    background-color: #ffffff; 
-}
-
-/* Hover effect for state initiative cards */
-.state-initiative:hover {
-    background-color: #f1f1f1; 
-    transition: background-color 0.3s ease; 
-}
-
-/* Resource card styling */
-.resource {
-    background-color: #ffffff; 
-    border: 1px solid #ddd; 
-    border-radius: 10px; 
-    padding: 15px; 
-    margin: 10px; 
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
-}
-
-/* Hover effect for resource cards */
-.resource:hover {
-    transform: translateY(-5px); 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
-}
-
-/* Text color change on resource hover */
-.resource:hover p {
-    color: #333; 
-}
-
-/* Resource heading styling */
-.resource h2 {
-    color: #007BFF; 
-    transition: color 0.3s ease; 
-}
-
-/* Change resource heading color on hover */
-.resource:hover h2 {
-    color: #0056b3; 
-}
-
-/* Fade-in animation for cards */
-@keyframes fadeIn {
-    to {
-        opacity: 1; 
-    }
-}
+        /* Your CSS styles */
     </style>
-    
-
 </head>
-
 <body>
-
    <div class="container">
         <h1>User Profile</h1>
         <div id="profileDisplay" class="profile-display">
@@ -277,95 +53,88 @@ select:focus {
     </div>
 
     <style>
-
-
-
-
         body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
 
-.container {
-    max-width: 600px;
-    height: 500px;
-    margin: 45px auto; /* Maintain the top margin of 45px */
-    padding: 20px;
-    background: #fff;
-    border: 2px solid #ccc; /* Add a border */
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    display: flex; /* Use flexbox for alignment */
-    flex-direction: column; /* Stack children vertically */
-    align-items: center; /* Center children horizontally */
-    margin-top: 100px;
-}
+        .container {
+            max-width: 600px;
+            height: 500px;
+            margin: 45px auto; /* Maintain the top margin of 45px */
+            padding: 20px;
+            background: #fff;
+            border: 2px solid #ccc; /* Add a border */
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex; /* Use flexbox for alignment */
+            flex-direction: column; /* Stack children vertically */
+            align-items: center; /* Center children horizontally */
+            margin-top: 100px;
+        }
 
-h1 {
-    text-align: center;
-}
+        h1 {
+            text-align: center;
+        }
 
-.profile-display {
-    display: flex;
-    align-items: center; /* Vertically center items */
-    margin-bottom: 20px;
-}
+        .profile-display {
+            display: flex;
+            align-items: center; /* Vertically center items */
+            margin-bottom: 20px;
+        }
 
-.profile-img {
-    width: 100px; /* Set the size of the image */
-    height: 100px;
-    border-radius: 50%; /* Make the image circular */
-    border: 4px solid gray;
-    object-fit: cover; /* Maintain aspect ratio */
-    margin-right: 20px; /* Space between image and text */
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-}
+        .profile-img {
+            width: 100px; /* Set the size of the image */
+            height: 100px;
+            border-radius: 50%; /* Make the image circular */
+            border: 4px solid gray;
+            object-fit: cover; /* Maintain aspect ratio */
+            margin-right: 20px; /* Space between image and text */
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+        }
 
-.profile-info {
-    flex: 1; /* Take up remaining space */
-}
+        .profile-info {
+            flex: 1; /* Take up remaining space */
+        }
 
-.form-group {
-    margin-bottom: 15px;
-}
+        .form-group {
+            margin-bottom: 15px;
+        }
 
-label {
-    display: block;
-    margin-bottom: 5px;
-}
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
 
-input[type="text"],
-input[type="email"],
-textarea,
-input[type="file"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
 
-button {
-    padding: 10px 15px;
-    background-color: #5cb85c;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+        button {
+            padding: 10px 15px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-button#cancelButton {
-    background-color: #d9534f;
-}
+        button#cancelButton {
+            background-color: #d9534f;
+        }
 
-button:disabled {
-    background-color: #ccc;
-}
-
+        button:disabled {
+            background-color: #ccc;
+        }
     </style>
     <script src="final.js"></script>
-
 </body>
-
 </html>
