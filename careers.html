@@ -796,6 +796,64 @@
 
 
     <style>
+      /* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff; /* Light theme background */
+}
+
+/* Dark Theme Styles */
+body.dark-mode {
+  background-color: #222;
+  color: #f3ecec;
+}
+
+body.dark-mode .jobs-table {
+  background-color: #222;
+  color: #fff;
+}
+
+body.dark-mode .jobs-table th {
+  background-color: #333;
+  color: #fff;
+}
+
+body.dark-mode .jobs-table td {
+  background-color: #111;
+  color: #fff;
+}
+
+body.dark-mode .jobs-table tr:nth-child(even) {
+  background-color: #222;
+}
+
+body.dark-mode .jobs-table tr:hover {
+  background-color: #333;
+}
+
+body.dark-mode .jobs-table tr:hover td {
+  background-color: #333;
+  color: rgb(224, 224, 226);
+}
+
+
+body.dark-mode .search-container input {
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+body.dark-mode .search-container input:focus {
+  border-color: rgb(203, 203, 233);
+}
+
+body.dark-mode h2 {
+  color: #200857;
+}
+      
 /* Section Styling */
 section {
   font-family: Arial, sans-serif;
@@ -1913,6 +1971,11 @@ document.querySelector('.carousel-button.next').addEventListener('click', () => 
     for (let i = 0; i < 5; i++) {
       console.log("Simulating poll process: Step " + (i + 1));
     }
+
+    const themeToggle = document.getElementById('theme-toggle');
+       themeToggle.addEventListener('click', () => {
+       document.body.classList.toggle('dark-mode');
+});
 
 </body>
 </html>

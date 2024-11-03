@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- changes new -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="testp.css"> <!-- Link to your CSS file -->
-
-    <script src="testp.js" defer></script>
-
     <title>Profile Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="testp.js" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="shortcut icon" href="/assets/images/favicon2.webp" type="image/png" />  
+    <link rel="stylesheet" href="./assets/css/navbar.css">
 
+    <style>
+        /* Your CSS styles */
+    </style>
 </head>
-
 <body>
-
-   <div class="container">
+    <div class="container">
         <h1>User Profile</h1>
         <div id="profileDisplay" class="profile-display">
             <img id="profileImage" src="no-profile-photo.png" alt="Profile Image" class="profile-img">
@@ -54,95 +52,6 @@
         <button id="editButton">Edit Profile</button>
     </div>
 
-    <style>
-
-
-
-
-        body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-
-.container {
-    max-width: 600px;
-    height: 500px;
-    margin: 45px auto; /* Maintain the top margin of 45px */
-    padding: 20px;
-    background: #fff;
-    border: 2px solid #ccc; /* Add a border */
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    display: flex; /* Use flexbox for alignment */
-    flex-direction: column; /* Stack children vertically */
-    align-items: center; /* Center children horizontally */
-    margin-top: 100px;
-}
-
-h1 {
-    text-align: center;
-}
-
-.profile-display {
-    display: flex;
-    align-items: center; /* Vertically center items */
-    margin-bottom: 20px;
-}
-
-.profile-img {
-    width: 100px; /* Set the size of the image */
-    height: 100px;
-    border-radius: 50%; /* Make the image circular */
-    border: 4px solid gray;
-    object-fit: cover; /* Maintain aspect ratio */
-    margin-right: 20px; /* Space between image and text */
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-}
-
-.profile-info {
-    flex: 1; /* Take up remaining space */
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-input[type="text"],
-input[type="email"],
-textarea,
-input[type="file"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button {
-    padding: 10px 15px;
-    background-color: #5cb85c;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button#cancelButton {
-    background-color: #d9534f;
-}
-
-button:disabled {
-    background-color: #ccc;
-}
-
-    </style>
     <script src="final.js"></script>
 </body>
-
 </html>
