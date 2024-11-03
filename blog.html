@@ -131,417 +131,428 @@
                     <a class="page-scroll dropdown-toggle" href="#" style="color: rgb(237, 242, 244);">
                       <span class="explore-text">Explore 📚</span>
                     </a>
-profile
-                  </div> 
-                  <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
-                    </li>    
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./finance.html" style="color: rgb(237, 242, 244);">Courses 📚</a>
-                    </li> 
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
-                    </li>
-                    <!-- Dropdown for Explore -->
-              <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
-                <a class="page-scroll dropdown-toggle" href="#" style="color: rgb(237, 242, 244);">
-                  <span class="explore-text">Explore 📚</span> 
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a href="./trends.html">Trends 📈</a></li>
-                  <li><a href="./tools/sip.html">Tools 🔧</a></li>
-                  <li><a href="./blog.html">Blogs 📰</a></li>
-                  <li><a href="./quiz.html">Quiz 🤔</a></li>
-                  <li ><a href="./maps.html" >MAPS 🗺️</a></li>
-                </ul>
-              </li>
-                    
-                    <!-- Profile Icon -->
-                    <li class="nav-item no-underline">
-                      <a href="./profile.html" class="profile-link" style="display: flex; align-items: center; text-decoration: none;">
-                      <img src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg" alt="Profile Icon" style="width: 50px; height: 50px; border-radius: 50%; margin-top: -17px;">
-                     </a>
-                 </li>
+                    profile
+              </div>
+              <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
+                <li class="nav-item">
+                  <a class="page-scroll" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
+                </li>
+                <li class="nav-item">
+                  <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
+                </li>
+                <li class="nav-item">
+                  <a class="page-scroll" href="./finance.html" style="color: rgb(237, 242, 244);">Courses 📚</a>
+                </li>
+                <li class="nav-item">
+                  <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
+                </li>
+                <li class="nav-item">
+                  <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
+                </li>
+                <!-- Dropdown for Explore -->
+                <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
+                  <a class="page-scroll dropdown-toggle" href="#" style="color: rgb(237, 242, 244);">
+                    <span class="explore-text">Explore 📚</span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a href="./trends.html">Trends 📈</a></li>
+                    <li><a href="./tools/sip.html">Tools 🔧</a></li>
+                    <li><a href="./blog.html">Blogs 📰</a></li>
+                    <li><a href="./quiz.html">Quiz 🤔</a></li>
+                    <li><a href="./maps.html">MAPS 🗺️</a></li>
+                  </ul>
+                </li>
 
-                 <style>
-                   /* Override the existing hover styles */
-                   .navbar-nav .nav-item .profile-link:hover {
-                       background-color: transparent !important; /* Remove background color */
-                       border-radius: 0 !important; /* Reset border radius */
-                       transform: none !important; /* Prevent scaling */
-                   }
-                 </style>
+                <!-- Profile Icon -->
+                <li class="nav-item no-underline">
+                  <a href="./profile.html" class="profile-link"
+                    style="display: flex; align-items: center; text-decoration: none;">
+                    <img src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg" alt="Profile Icon"
+                      style="width: 50px; height: 50px; border-radius: 50%; margin-top: -17px;">
+                  </a>
+                </li>
 
-                 <li class="nav-item no-underline">
-                   <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
-                     🌙
-                   </button>
-                 </li>
-               </ul>
-             </div>
-
-             <script>
-               function toggleMenu() {
-                   const menu = document.getElementById('profileMenu');
-                   menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-               }
-
-               // Close the dropdown if the user clicks outside of it
-               window.onclick = function(event) {
-                   if (!event.target.matches('.profile-icon img')) {
-                       const menu = document.getElementById('profileMenu');
-                       if (menu.style.display === 'block') {
-                           menu.style.display = 'none';
-                       }
-                   }
-               }
-           </script>
-
-
-                <script>
-                  const toggleButton = document.getElementById('theme-toggle');
-                  var body = document.body;
-                  var currentTheme = localStorage.getItem('theme');
-  
-                  if (currentTheme === 'dark') {
- main
-                  body.classList.add('dark-mode');
-                  toggleButton.classList.add('dark');
-                  toggleButton.textContent = '🌞';
-                }
-
-                toggleButton.addEventListener('click', function () {
-                  body.classList.toggle('dark-mode');
-                  toggleButton.classList.toggle('dark');
-
-                  // Update button icon based on mode
-                  if (body.classList.contains('dark-mode')) {
-                    toggleButton.textContent = '🌞';  // Light mode icon
-                    localStorage.setItem('theme', 'dark');
-                  } else {
-                    toggleButton.textContent = '🌙';  // Dark mode icon
-                    localStorage.setItem('theme', 'light');
+                <style>
+                  /* Override the existing hover styles */
+                  .navbar-nav .nav-item .profile-link:hover {
+                    background-color: transparent !important;
+                    /* Remove background color */
+                    border-radius: 0 !important;
+                    /* Reset border radius */
+                    transform: none !important;
+                    /* Prevent scaling */
                   }
-                });
-              </script>
-              <div class="">
+                </style>
 
-                <!-- Login Modal -->
-                <div id="myModal" class="modal">
-                  <div class="modal-content">
-                    <span class="close" style="display: flex; justify-content: right;">&times;</span>
-                    <div class="mt-3">
-                      <h3 class="join"><i class="fa-solid fa-right-to-bracket"></i> Login to join us....</h3>
-                      <form class="px-3 py-4" id="loginForm">
-                        <div class="form-group">
-                          <label class="d-flex">Username</label>
-                          <input type="text" placeholder="Username" class="form-control" required />
-                        </div>
-                        <div class="form-group">
-                          <label class="d-flex">Password</label>
-                          <input type="password" placeholder="Password" class="form-control" required>
-                          <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
-                        </div>
-                        <div class="form-check d-flex">
-                          <input type="checkbox" class="form-check-input me-1" style="margin-top: 0;">
-                          <label class="form-check-label" style="margin-bottom: 0;">Remember me</label>
-                          <a href="#" id="forgot-password" style="margin-left: 90px;">Forget Password?</a>
-                        </div>
-                        <div style="height: 20px;"></div>
-                        <button class="main-btn w-100 mb-3" onclick="submitForm('loginForm')">Sign in</button>
-                        <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
-                        <div class="or-sign-in-with text-center">
-                          <p>Or sign in with</p>
-                        </div>
-                        <div class="social-icons mt-3">
-                          <ul class="list-inline">
-                            <li><a href="#" class="google" id="google-login"><i class="fa-brands fa-google"></i></a>
-                            </li>
-                            <li><a href="#" class="facebook" id="facebook-login"><i
-                                  class="fa-brands fa-facebook-f"></i></a></li>
-                            <li><a href="#" class="twitter" id="twitter-login"><i
-                                  class="fa-brands fa-x-twitter"></i></a></li>
-                          </ul>
-                        </div>
+                <li class="nav-item no-underline">
+                  <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
+                    🌙
+                  </button>
+                </li>
+              </ul>
+          </div>
+
+          <script>
+            function toggleMenu() {
+              const menu = document.getElementById('profileMenu');
+              menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+            }
+
+            // Close the dropdown if the user clicks outside of it
+            window.onclick = function (event) {
+              if (!event.target.matches('.profile-icon img')) {
+                const menu = document.getElementById('profileMenu');
+                if (menu.style.display === 'block') {
+                  menu.style.display = 'none';
+                }
+              }
+            }
+          </script>
+
+
+          <script>
+            const toggleButton = document.getElementById('theme-toggle');
+            var body = document.body;
+            var currentTheme = localStorage.getItem('theme');
+
+            if (currentTheme === 'dark') {
+              main
+              body.classList.add('dark-mode');
+              toggleButton.classList.add('dark');
+              toggleButton.textContent = '🌞';
+            }
+
+            toggleButton.addEventListener('click', function () {
+              body.classList.toggle('dark-mode');
+              toggleButton.classList.toggle('dark');
+
+              // Update button icon based on mode
+              if (body.classList.contains('dark-mode')) {
+                toggleButton.textContent = '🌞';  // Light mode icon
+                localStorage.setItem('theme', 'dark');
+              } else {
+                toggleButton.textContent = '🌙';  // Dark mode icon
+                localStorage.setItem('theme', 'light');
+              }
+            });
+          </script>
+          <div class="">
+
+            <!-- Login Modal -->
+            <div id="myModal" class="modal">
+              <div class="modal-content">
+                <span class="close" style="display: flex; justify-content: right;">&times;</span>
+                <div class="mt-3">
+                  <h3 class="join"><i class="fa-solid fa-right-to-bracket"></i> Login to join us....</h3>
+                  <form class="px-3 py-4" id="loginForm">
+                    <div class="form-group">
+                      <label class="d-flex">Username</label>
+                      <input type="text" placeholder="Username" class="form-control" required />
                     </div>
-                  </div>
-                </div>
-
-                <script>
-                  // Add event listeners to the social media icons
-                  document.getElementById('google-login').addEventListener('click', function () {
-                    window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
-                  });
-
-                  document.getElementById('facebook-login').addEventListener('click', function () {
-                    window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
-                  });
-
-                  document.getElementById('twitter-login').addEventListener('click', function () {
-                    window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
-                  });
-                </script>
-
-                <!-- Register Modal -->
-                <div id="registerModal" class="modal">
-                  <div class="modal-content">
-                    <span class="close" style="display: flex; justify-content: right;">&times;</span>
-                    <div class="mt-3">
-                      <h3 class="join"><i class="fa-solid fa-user"></i> Register to join us....</h3>
-                      <form class="px-3 py-4" id="registerForm">
-                        <div class="form-group">
-                          <label class="d-flex">Email</label>
-                          <input type="email" placeholder="Email" class="form-control" required />
-                        </div>
-                        <div class="form-group">
-                          <label class="d-flex">Username</label>
-                          <input type="text" placeholder="Username" class="form-control" required />
-                        </div>
-                        <div class="form-group">
-                          <label class="d-flex">Password</label>
-                          <input type="password" placeholder="Password" class="form-control" id="register-password"
-                            required oninput="checkPasswordStrength()">
-                          <button type="button" class="toggle-password-btn"
-                            onclick="togglePasswordVisibility('register-password')">
-                            <i class="fa-solid fa-eye"></i>
-                            <i class="fa-solid fa-eye-slash" style="display: none;"></i>
-                          </button>
-                        </div>
-                        <div id="password-meter" style="display: none; margin-top: 5px;">
-                          <div id="meter"
-                            style="height: 10px; background-color: #ccc; border-radius: 5px; transition: width 0.3s;">
-                          </div>
-                          <div id="strength-text" style="margin-top: 5px; font-weight: bold;"></div>
-                        </div>
-                      </form>
-
-                      <!-- Import zxcvbn library -->
-                      <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
-                      <script>
-                        function checkPasswordStrength() {
-                          const password = document.getElementById('register-password').value;
-                          const meter = document.getElementById('meter');
-                          const meterContainer = document.getElementById('password-meter');
-                          const strengthText = document.getElementById('strength-text');
-
-                          if (password) {
-                            meterContainer.style.display = 'block'; // Show the meter when typing
-                            const result = zxcvbn(password);
-                            const score = result.score; // Score ranges from 0 to 4
-
-                            // Set meter width and color based on score
-                            meter.style.width = (score + 1) * 20 + '%'; // Convert score to percentage
-                            meter.style.backgroundColor = getMeterColor(score);
-                            strengthText.innerText = getStrengthText(score); // Update strength text
-                          } else {
-                            meterContainer.style.display = 'none'; // Hide the meter if no password
-                            strengthText.innerText = ''; // Clear strength text
-                          }
-                        }
-
-                        function getMeterColor(score) {
-                          switch (score) {
-                            case 0: return 'red'; // Weak
-                            case 1: return 'orange'; // Fair
-                            case 2: return 'yellow'; // Good
-                            case 3: return 'blue'; // Strong
-                            case 4: return 'green'; // Very Strong
-                            default: return 'gray';
-                          }
-                        }
-
-                        function getStrengthText(score) {
-                          switch (score) {
-                            case 0: return 'Very Weak';
-                            case 1: return 'Weak';
-                            case 2: return 'Fair';
-                            case 3: return 'Strong';
-                            case 4: return 'Very Strong';
-                            default: return '';
-                          }
-                        }
-
-                        function togglePasswordVisibility(id) {
-                          const passwordInput = document.getElementById(id);
-                          const eyeIcon = passwordInput.nextElementSibling;
-                          if (passwordInput.type === 'password') {
-                            passwordInput.type = 'text';
-                            eyeIcon.children[0].style.display = 'none';
-                            eyeIcon.children[1].style.display = 'inline';
-                          } else {
-                            passwordInput.type = 'password';
-                            eyeIcon.children[0].style.display = 'inline';
-                            eyeIcon.children[1].style.display = 'none';
-                          }
-                        }
-                      </script>
-
-                      <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('registerForm')">Register</button>
-                      <p class="text-center">Already have an account? <a href="#" id="loginLink">Login</a></p>
-                      <div class="or-sign-in-with text-center">
-                        <p>Or sign up with</p>
-                      </div>
-                      <div class="social-icons mt-3">
-                        <ul class="list-inline">
-                          <li><a href="#" class="google" id="google-signup"><i class="fa-brands fa-google"></i></a></li>
-                          <li><a href="#" class="facebook" id="facebook-signup"><i
-                                class="fa-brands fa-facebook-f"></i></a></li>
-                          <li><a href="#" class="twitter" id="twitter-signup"><i class="fa-brands fa-twitter"></i></a>
-                          </li>
-                        </ul>
-                      </div>
+                    <div class="form-group">
+                      <label class="d-flex">Password</label>
+                      <input type="password" placeholder="Password" class="form-control" required>
+                      <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
                     </div>
-                  </div>
+                    <div class="form-check d-flex">
+                      <input type="checkbox" class="form-check-input me-1" style="margin-top: 0;">
+                      <label class="form-check-label" style="margin-bottom: 0;">Remember me</label>
+                      <a href="#" id="forgot-password" style="margin-left: 90px;">Forget Password?</a>
+                    </div>
+                    <div style="height: 20px;"></div>
+                    <button class="main-btn w-100 mb-3" onclick="submitForm('loginForm')">Sign in</button>
+                    <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
+                    <div class="or-sign-in-with text-center">
+                      <p>Or sign in with</p>
+                    </div>
+                    <div class="social-icons mt-3">
+                      <ul class="list-inline">
+                        <li><a href="#" class="google" id="google-login"><i class="fa-brands fa-google"></i></a>
+                        </li>
+                        <li><a href="#" class="facebook" id="facebook-login"><i class="fa-brands fa-facebook-f"></i></a>
+                        </li>
+                        <li><a href="#" class="twitter" id="twitter-login"><i class="fa-brands fa-x-twitter"></i></a>
+                        </li>
+                      </ul>
+                    </div>
                 </div>
-
-                <script>
-                  // Add event listeners to the social media icons
-                  document.getElementById('google-signup').addEventListener('click', function () {
-                    window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
-                  });
-
-                  document.getElementById('facebook-signup').addEventListener('click', function () {
-                    window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
-                  });
-
-                  document.getElementById('twitter-signup').addEventListener('click', function () {
-                    window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
-                  });
-
-                </script>
               </div>
-            </nav>
+            </div>
 
-
-            <nav class="mobile-menu ">
-              <a class="page-scroll" href="./index.html">Home 🏡</a>
-              <a class="page-scroll" href="./about.html">About Us 📖</a>
-              <a class="page-scroll" href="./trends.html">Trends 📈</a>
-              <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
-              <a class="page-scroll" href="./blog.html">Blogs 📰</a>
-              <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
-              <a class="page-scroll main-btn" href="#" onclick="openModal()"
-                onmouseout="this.style.color='white'">Login/Register 💻</a>
-              <li class="nav-item no-underline">
-                <button id="theme-toggle2" class="theme-toggle2" style="margin-right: 2px;">
-                  🌙
-                </button>
-              </li>
-              <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
-                <span></span>
-              </div>
-            </nav>
             <script>
-profile
               // Add event listeners to the social media icons
-              document.getElementById('google-signup').addEventListener('click', function() {
+              document.getElementById('google-login').addEventListener('click', function () {
                 window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
               });
-            
-              document.getElementById('facebook-signup').addEventListener('click', function() {
+
+              document.getElementById('facebook-login').addEventListener('click', function () {
                 window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
               });
-            
-              document.getElementById('twitter-signup').addEventListener('click', function() {
+
+              document.getElementById('twitter-login').addEventListener('click', function () {
                 window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
               });
-              
             </script>
+
+            <!-- Register Modal -->
+            <div id="registerModal" class="modal">
+              <div class="modal-content">
+                <span class="close" style="display: flex; justify-content: right;">&times;</span>
+                <div class="mt-3">
+                  <h3 class="join"><i class="fa-solid fa-user"></i> Register to join us....</h3>
+                  <form class="px-3 py-4" id="registerForm">
+                    <div class="form-group">
+                      <label class="d-flex">Email</label>
+                      <input type="email" placeholder="Email" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                      <label class="d-flex">Username</label>
+                      <input type="text" placeholder="Username" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                      <label class="d-flex">Password</label>
+                      <input type="password" placeholder="Password" class="form-control" id="register-password" required
+                        oninput="checkPasswordStrength()">
+                      <button type="button" class="toggle-password-btn"
+                        onclick="togglePasswordVisibility('register-password')">
+                        <i class="fa-solid fa-eye"></i>
+                        <i class="fa-solid fa-eye-slash" style="display: none;"></i>
+                      </button>
+                    </div>
+                    <div id="password-meter" style="display: none; margin-top: 5px;">
+                      <div id="meter"
+                        style="height: 10px; background-color: #ccc; border-radius: 5px; transition: width 0.3s;">
+                      </div>
+                      <div id="strength-text" style="margin-top: 5px; font-weight: bold;"></div>
+                    </div>
+                  </form>
+
+                  <!-- Import zxcvbn library -->
+                  <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+                  <script>
+                    function checkPasswordStrength() {
+                      const password = document.getElementById('register-password').value;
+                      const meter = document.getElementById('meter');
+                      const meterContainer = document.getElementById('password-meter');
+                      const strengthText = document.getElementById('strength-text');
+
+                      if (password) {
+                        meterContainer.style.display = 'block'; // Show the meter when typing
+                        const result = zxcvbn(password);
+                        const score = result.score; // Score ranges from 0 to 4
+
+                        // Set meter width and color based on score
+                        meter.style.width = (score + 1) * 20 + '%'; // Convert score to percentage
+                        meter.style.backgroundColor = getMeterColor(score);
+                        strengthText.innerText = getStrengthText(score); // Update strength text
+                      } else {
+                        meterContainer.style.display = 'none'; // Hide the meter if no password
+                        strengthText.innerText = ''; // Clear strength text
+                      }
+                    }
+
+                    function getMeterColor(score) {
+                      switch (score) {
+                        case 0: return 'red'; // Weak
+                        case 1: return 'orange'; // Fair
+                        case 2: return 'yellow'; // Good
+                        case 3: return 'blue'; // Strong
+                        case 4: return 'green'; // Very Strong
+                        default: return 'gray';
+                      }
+                    }
+
+                    function getStrengthText(score) {
+                      switch (score) {
+                        case 0: return 'Very Weak';
+                        case 1: return 'Weak';
+                        case 2: return 'Fair';
+                        case 3: return 'Strong';
+                        case 4: return 'Very Strong';
+                        default: return '';
+                      }
+                    }
+
+                    function togglePasswordVisibility(id) {
+                      const passwordInput = document.getElementById(id);
+                      const eyeIcon = passwordInput.nextElementSibling;
+                      if (passwordInput.type === 'password') {
+                        passwordInput.type = 'text';
+                        eyeIcon.children[0].style.display = 'none';
+                        eyeIcon.children[1].style.display = 'inline';
+                      } else {
+                        passwordInput.type = 'password';
+                        eyeIcon.children[0].style.display = 'inline';
+                        eyeIcon.children[1].style.display = 'none';
+                      }
+                    }
+                  </script>
+
+                  <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('registerForm')">Register</button>
+                  <p class="text-center">Already have an account? <a href="#" id="loginLink">Login</a></p>
+                  <div class="or-sign-in-with text-center">
+                    <p>Or sign up with</p>
+                  </div>
+                  <div class="social-icons mt-3">
+                    <ul class="list-inline">
+                      <li><a href="#" class="google" id="google-signup"><i class="fa-brands fa-google"></i></a></li>
+                      <li><a href="#" class="facebook" id="facebook-signup"><i class="fa-brands fa-facebook-f"></i></a>
+                      </li>
+                      <li><a href="#" class="twitter" id="twitter-signup"><i class="fa-brands fa-twitter"></i></a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-              </nav>
+              </div>
+            </div>
 
-
-              <nav class="mobile-menu ">
-                <a class="page-scroll" href="./index.html">Home 🏡</a>
-                <a class="page-scroll" href="./about.html">About Us 📖</a>
-                <a class="page-scroll" href="./trends.html">Trends 📈</a>
-                <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
-                <a class="page-scroll" href="./blog.html">Blogs 📰</a>
-                <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
-                <a class="page-scroll main-btn" href="#" onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
-                
-                    <!-- Profile Icon -->
-                    <li class="nav-item no-underline">
-                      <a href="./profile.html" class="profile-link" style="display: flex; align-items: center; text-decoration: none;">
-                      <img src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg" alt="Profile Icon" style="width: 50px; height: 50px; border-radius: 50%; margin-top: -17px;">
-                     </a>
-                 </li>
-
-                 <style>
-                   /* Override the existing hover styles */
-                   .navbar-nav .nav-item .profile-link:hover {
-                       background-color: transparent !important; /* Remove background color */
-                       border-radius: 0 !important; /* Reset border radius */
-                       transform: none !important; /* Prevent scaling */
-                   }
-                 </style>
-
-                 <li class="nav-item no-underline">
-                   <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
-                     🌙
-                   </button>
-                 </li>
-               </ul>
-             </div>
-
-             <script>
-               function toggleMenu() {
-                   const menu = document.getElementById('profileMenu');
-                   menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-               }
-
-               // Close the dropdown if the user clicks outside of it
-               window.onclick = function(event) {
-                   if (!event.target.matches('.profile-icon img')) {
-                       const menu = document.getElementById('profileMenu');
-                       if (menu.style.display === 'block') {
-                           menu.style.display = 'none';
-                       }
-                   }
-               }
-           </script>
-
-
-              <script>
-                const toggleBtn = document.getElementById('theme-toggle2');
-                var body = document.body;
-                var currentTheme = localStorage.getItem('theme');
-main
-
-              if (currentTheme === 'dark') {
-                body.classList.add('dark-mode');
-                toggleBtn.classList.add('dark');
-                toggleBtn.textContent = '🌞';
-              }
-
-              toggleBtn.addEventListener('click', function () {
-                body.classList.toggle('dark-mode');
-                toggleBtn.classList.toggle('dark');
-
-                // Update button icon based on mode
-                if (body.classList.contains('dark-mode')) {
-                  toggleBtn.textContent = '🌞';  // Light mode icon
-                  localStorage.setItem('theme', 'dark');
-                } else {
-                  toggleBtn.textContent = '🌙';  // Dark mode icon
-                  localStorage.setItem('theme', 'light');
-                }
+            <script>
+              // Add event listeners to the social media icons
+              document.getElementById('google-signup').addEventListener('click', function () {
+                window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
               });
+
+              document.getElementById('facebook-signup').addEventListener('click', function () {
+                window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
+              });
+
+              document.getElementById('twitter-signup').addEventListener('click', function () {
+                window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
+              });
+
             </script>
-
-            <link href="./navbar.css" rel="stylesheet">
-            <script type="text/javascript" src="./navbar.js"></script>
-
           </div>
+          </nav>
+
+
+          <nav class="mobile-menu ">
+            <a class="page-scroll" href="./index.html">Home 🏡</a>
+            <a class="page-scroll" href="./about.html">About Us 📖</a>
+            <a class="page-scroll" href="./trends.html">Trends 📈</a>
+            <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
+            <a class="page-scroll" href="./blog.html">Blogs 📰</a>
+            <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
+            <a class="page-scroll main-btn" href="#" onclick="openModal()"
+              onmouseout="this.style.color='white'">Login/Register 💻</a>
+            <li class="nav-item no-underline">
+              <button id="theme-toggle2" class="theme-toggle2" style="margin-right: 2px;">
+                🌙
+              </button>
+            </li>
+            <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
+              <span></span>
+            </div>
+          </nav>
+          <script>
+            profile
+            // Add event listeners to the social media icons
+            document.getElementById('google-signup').addEventListener('click', function () {
+              window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
+            });
+
+            document.getElementById('facebook-signup').addEventListener('click', function () {
+              window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
+            });
+
+            document.getElementById('twitter-signup').addEventListener('click', function () {
+              window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
+            });
+
+          </script>
         </div>
+        </nav>
+
+
+        <nav class="mobile-menu ">
+          <a class="page-scroll" href="./index.html">Home 🏡</a>
+          <a class="page-scroll" href="./about.html">About Us 📖</a>
+          <a class="page-scroll" href="./trends.html">Trends 📈</a>
+          <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
+          <a class="page-scroll" href="./blog.html">Blogs 📰</a>
+          <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
+          <a class="page-scroll main-btn" href="#" onclick="openModal()"
+            onmouseout="this.style.color='white'">Login/Register 💻</a>
+
+          <!-- Profile Icon -->
+          <li class="nav-item no-underline">
+            <a href="./profile.html" class="profile-link"
+              style="display: flex; align-items: center; text-decoration: none;">
+              <img src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg" alt="Profile Icon"
+                style="width: 50px; height: 50px; border-radius: 50%; margin-top: -17px;">
+            </a>
+          </li>
+
+          <style>
+            /* Override the existing hover styles */
+            .navbar-nav .nav-item .profile-link:hover {
+              background-color: transparent !important;
+              /* Remove background color */
+              border-radius: 0 !important;
+              /* Reset border radius */
+              transform: none !important;
+              /* Prevent scaling */
+            }
+          </style>
+
+          <li class="nav-item no-underline">
+            <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
+              🌙
+            </button>
+          </li>
+          </ul>
       </div>
+
+      <script>
+        function toggleMenu() {
+          const menu = document.getElementById('profileMenu');
+          menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (event) {
+          if (!event.target.matches('.profile-icon img')) {
+            const menu = document.getElementById('profileMenu');
+            if (menu.style.display === 'block') {
+              menu.style.display = 'none';
+            }
+          }
+        }
+      </script>
+
+
+      <script>
+        const toggleBtn = document.getElementById('theme-toggle2');
+        var body = document.body;
+        var currentTheme = localStorage.getItem('theme');
+        main
+
+        if (currentTheme === 'dark') {
+          body.classList.add('dark-mode');
+          toggleBtn.classList.add('dark');
+          toggleBtn.textContent = '🌞';
+        }
+
+        toggleBtn.addEventListener('click', function () {
+          body.classList.toggle('dark-mode');
+          toggleBtn.classList.toggle('dark');
+
+          // Update button icon based on mode
+          if (body.classList.contains('dark-mode')) {
+            toggleBtn.textContent = '🌞';  // Light mode icon
+            localStorage.setItem('theme', 'dark');
+          } else {
+            toggleBtn.textContent = '🌙';  // Dark mode icon
+            localStorage.setItem('theme', 'light');
+          }
+        });
+      </script>
+
+      <link href="./navbar.css" rel="stylesheet">
+      <script type="text/javascript" src="./navbar.js"></script>
+
+    </div>
+    </div>
+    </div>
     </div>
 
     <!-- removing intro section -->
@@ -603,29 +614,32 @@ main
     <article>
       <section id="blog" class="blog-area pt-100">
         <div class="container">
-          <div class="row">
-            <div>
+          <div class="row align-items-center">
+            <div class="col-lg-2">
               <img id="blog-pic" style="mix-blend-mode: multiply; left: 210px;" src="./assets/images/blog-img.webp"
                 alt="QUIZ">
             </div>
             <div class="col-lg-6">
-              <div class="section-title pb-35" data-aos="zoom-in">
+              <div class="section-title" data-aos="zoom-in">
                 <h1 id="title" style="font-size: 2.0rem; margin-top: 60px; margin-left: 5px;">Blog Posts</h1>
               </div>
+            </div>
+            <div class="col-lg-2 text-end">
+              <button type="button" class="btn btn-primary add-blog-btn" style="width: 100%;"
+                onclick="window.location.href='/addBlog.html'">Add Blog</button>
             </div>
           </div>
 
           <div class="row justify-content-center mt-4">
             <div class="col-lg-8 col-md-10">
               <form class="search-bar" id="search-form">
-                <div class="input-group">
-                  <input type="text" id="search-input" class="form-control" placeholder="Search for blog posts..."
-                    aria-label="Search" required>
-                </div>
+                <input type="text" id="search-input" class="form-control" placeholder="Search for blog posts..."
+                  aria-label="Search" required>
               </form>
             </div>
           </div>
 
+          <!-- Filtered blog posts -->
           <div id="filtered-blogs" class="row justify-content-start mt-4">
             <!-- Filtered blog posts will be inserted here -->
           </div>
@@ -692,18 +706,10 @@ main
 
     /* Styling for the blog-pic container */
     #blog-pic {
-      position: absolute;
-      /* Absolute positioning */
-      top: 175px;
-      /* Vertically center the image */
-      left: -70px;
-      /* Position it 20px from the left edge of the screen */
-      transform: translateY(-50%);
-      /* Centering the image vertically */
+
+      transform: translateY(10%);
       width: 100px;
-      /* Width for the container */
       z-index: 1;
-      /* Ensure it stays on top */
       padding: 10px;
 
     }
@@ -835,6 +841,33 @@ main
     .btn:hover {
       background-color: #0056b3;
       /* Darker shade for hover */
+    }
+
+    .add-blog-btn {
+      background-color: #007bff;
+      /* Button color */
+      color: white;
+      /* Text color */
+      padding: 10px 20px;
+      /* Padding for a professional look */
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .add-blog-btn:hover {
+      background-color: #0056b3;
+      /* Darker shade on hover */
+      transform: translateY(-2px);
+      /* Slight lift effect */
+    }
+
+    /* Align Add Blog button to the right */
+    .text-end {
+      text-align: right;
+      margin-top: 60px;
     }
 
     /* Responsive adjustments */
