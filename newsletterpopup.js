@@ -8,6 +8,10 @@ window.onload = function() {
     document.getElementById('popup-nl').style.display = 'none';
   });
 
+  if (localStorage.getItem("noThanksClicked") === "true") {
+    document.getElementById('popup-nl').style.visibility = 'hidden';
+  }
+
   // // Close the pop-up when clicking outside the pop-up content
   // window.addEventListener('click', function(event) {
   //   const popupContent = document.querySelector('.popup-content'); // Select the popup content
@@ -31,4 +35,5 @@ window.onload = function() {
   document.querySelector('.no-thanks-nl').addEventListener('click', function(event) {
     event.preventDefault();
     document.getElementById('popup-nl').style.display = 'none';
+    localStorage.setItem("noThanksClicked", "true");
   });
