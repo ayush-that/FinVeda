@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Your Blog</title>
+</head>
+<style>
+    /* Global body styles for upload blog page */
+    body {
+        background-color: #f4f4f4;
+        /* Light background for contrast */
+        color: #333;
+        /* Dark text color for better readability */
+        font-family: Arial, sans-serif;
+        /* Clean font */
+        margin: 0;
+        padding: 20px;
+    }
+
+    /* Blog Upload Container styling */
+    .upload-section {
+        background-color: #007bff;
+        /* Blue container background */
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+        max-width: 800px;
+        /* Limit container width */
+        margin: 0 auto;
+        /* Center the container */
+    }
+
+    /* Title styling */
+    .upload-title {
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-size: 2.5em;
+        font-weight: bold;
+        text-align: center;
+        color: #ffffff;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+        /* Neon glow */
+    }
+
+    /* Form group styles */
+    .form-group {
+        margin-bottom: 20px;
+        /* Spacing between inputs */
+    }
+
+    /* Form input styles */
+    #blogContent {
+        font-size: 1rem;
+    }
+
+    .form-input {
+        padding: 12px;
+        font-size: 1em;
+        border: 2px solid #0056b3;
+        /* Blue border */
+        border-radius: 5px;
+        outline: none;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+        width: 100%;
+        /* Full width inputs */
+    }
+
+    /* Label styles */
+    .form-group label {
+        color: #ffffff;
+        /* White color for labels */
+        font-weight: bold;
+        /* Bold labels */
+        display: block;
+        /* Block display for labels */
+        margin-bottom: 5px;
+        /* Spacing below labels */
+    }
+
+    .form-input:focus {
+        border-color: #4caf50;
+        /* Green border on focus */
+        background-color: #e7f5ff;
+        /* Light blue background on focus */
+    }
+
+    /* Button styles */
+    .submit-btn {
+        background-color: #4caf50;
+        /* Green background */
+        color: white;
+        /* White text */
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1.1em;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        display: block;
+        /* Center the button */
+        width: 30%;
+        /* Full width button */
+    }
+
+    .submit-btn:hover {
+        background-color: #388e3c;
+        /* Darker green on hover */
+        transform: translateY(-2px);
+        /* Slight lift effect */
+    }
+
+    /* Back to Home button styles */
+    .back-btn {
+        background-color: #033a75;
+        /* Blue background */
+        color: white;
+        /* White text */
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1.1em;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        display: block;
+        /* Center the button */
+        width: 30%;
+        /* Full width button */
+        margin-top: 15px;
+        /* Space above the button */
+    }
+
+    .back-btn:hover {
+        background-color: #0056b3;
+        /* Darker blue on hover */
+        transform: translateY(-2px);
+        /* Slight lift effect */
+    }
+
+    /* Feedback section styles */
+    .upload-feedback {
+        border: 2px solid #4caf50;
+        /* Green border */
+        background: #007bff;
+        /* Dark gradient */
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        color: #ffffff;
+        /* White text */
+        transition: transform 0.3s ease;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+    }
+</style>
+
+<body>
+    <div class="upload-feedback">
+        <h3 class="upload-title">Upload Your Blog Post</h3>
+        <form class="upload-form" id="uploadForm">
+            <div class="form-group">
+                <label for="blogTitle">Blog Title</label>
+                <input type="text" id="blogTitle" class="form-input" placeholder="Enter blog title" required>
+            </div>
+            <div class="form-group">
+                <label for="blogContent">Blog Content</label>
+                <textarea id="blogContent" class="form-input" rows="8" placeholder="Write your blog content here"
+                    required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="blogImage">Upload Image</label>
+                <input type="file" id="blogImage" class="form-input" accept="image/*" required>
+            </div>
+            <div class="button-container">
+                <button type="submit" id="blog-submit-button" class="submit-btn">Post Blog</button>
+                <button type="button" class="back-btn" onclick="window.location.href='/blog.html'">Back to
+                    blogs</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Handle form submission
+        document.getElementById('blog-submit-button').addEventListener('click', async function (e) {
+            e.preventDefault();
+
+            const title = document.getElementById('blogTitle').value;
+            const excerpt = document.getElementById('blogContent').value;
+            const featuredImage = document.getElementById('blogImage').files[0];
+
+            if (!title || !excerpt) {
+                alert('Please fill out all required fields.');
+                return;
+            }
+
+            // Prepare the form data
+            const formData = new FormData();
+            formData.append('title', title);
+            formData.append('excerpt', excerpt);
+            if (featuredImage) {
+                formData.append('featuredImage', featuredImage);
+            }
+
+            try {
+                const response = await fetch('http://localhost:5000/api/addBlog/saveBlog', {
+                    method: 'POST',
+                    body: formData
+                });
+                console.log('Blog post created:', response);
+
+                if (response.ok) {
+                    const result = await response.json();
+                    window.location.href = '/blog.html';
+                } else {
+                    console.error('Error creating blog post:', response.statusText);
+                    alert('Failed to create blog post. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            }
+        });
+    </script>
+</body>
+
+</html>
