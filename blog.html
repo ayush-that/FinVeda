@@ -656,7 +656,7 @@
           </div>
 
           <!-- Filtered blog posts -->
-          <div id="filtered-blogs" class="row justify-content-start mt-4">
+          <div id="filtered-blogs" class="row justify-content-start mt-4 card-container">
             <!-- Filtered blog posts will be inserted here -->
           </div>
         </div>
@@ -665,39 +665,27 @@
 
   </div>
   <style>
-    /* General Styling */
     #title {
       font-size: 4rem;
-      /* Adjust to fit your layout */
       margin-left: 40px;
       font-weight: bold;
       color: #2c3e50;
       text-align: center;
       white-space: nowrap;
-      /* Ensures "Blog Posts" stays on one line */
       text-transform: uppercase;
-      /* Optional: Makes text uppercase */
       letter-spacing: 0.1em;
-      /* Adjusts spacing between letters */
       transition: all 0.3s ease-in-out;
-      /* Smooth transition for hover effect */
       text-shadow: 3px 4px 8px rgba(0, 0, 0, 0.4);
-      /* Adds shadow for a 3D effect */
       cursor: pointer;
-      /* Changes cursor on hover */
       display: inline-block;
-      /* Helps with hover animation */
       position: relative;
-
     }
 
-    /* Optional animation for an underline effect on hover */
     #title::after {
       content: '';
       position: absolute;
       left: 0;
       bottom: -10px;
-      /* Distance from the text */
       width: 100%;
       height: 3px;
       background-color: #3498db;
@@ -707,205 +695,178 @@
 
     #title:hover::after {
       transform: scaleX(1);
-      /* Expands the underline on hover */
     }
 
-    /* Styling for the blog-pic container */
+    .card-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      padding: 1rem;
+    }
+
     #blog-pic {
+      max-width: 50%;
+    }
 
-      transform: translateY(10%);
-      width: 100px;
-      z-index: 1;
-      padding: 10px;
+    /* Card Styling */
+    .card {
+      background-color: #ffffff;
+      color: #1a202c;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
 
+    /* Hover Effect */
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
 
-      /* Styling for the image inside the blog-pic */
-      #blog-pic img {
-        border-radius: 10px;
-        /* Rounded corners */
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        /* Shadow around the image */
-        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        /* Smooth transition for hover effects */
+    /* Dark Mode */
+    .card.dark {
+      background-color: #1f2937;
+      color: #f9fafb;
+    }
+
+    /* Image Styling */
+    .card-image {
+      width: 100%;
+      height: 12rem;
+      object-fit: cover;
+      border-top-left-radius: 0.75rem;
+      border-top-right-radius: 0.75rem;
+    }
+
+    /* Content Styling */
+    .card-content {
+      padding: 1.5rem;
+      flex: 1;
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-title-link {
+      color: #1a202c;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .card-title-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Excerpt Text */
+    .card-excerpt {
+      color: #4a5568;
+      margin-bottom: 1rem;
+    }
+
+    /* Dark Mode Adjustments */
+    .card.dark .card-title-link {
+      color: #f9fafb;
+    }
+
+    .card.dark .card-excerpt {
+      color: #a0aec0;
+    }
+
+    /* Footer */
+    .card-footer {
+      display: flex;
+      align-items: center;
+      font-size: 0.875rem;
+      color: #718096;
+      margin-top: auto;
+    }
+
+    .card-footer time {
+      color: inherit;
+    }
+
+    .card-tags {
+      margin-left: 1rem;
+      font-weight: 500;
+      color: #1a202c;
+    }
+
+    .card.dark .card-tags {
+      color: #f9fafb;
+    }
+
+    /* Read More Link */
+    .card-read-more {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      color: #4f46e5;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .card-read-more:hover {
+      color: #3730a3;
+    }
+
+    .icon {
+      height: 1rem;
+      width: 1rem;
+      margin-left: 0.25rem;
+      margin-top: 0px;
+    }
+
+    /* Responsive Layout for Smaller Screens */
+    @media (max-width: 768px) {
+      .card-container {
+        grid-template-columns: 1fr;
       }
+    }
 
-      /* Hover effect for the image */
-      #blog-pic img:hover {
-        transform: scale(1.05);
-        /* Slightly enlarge the image on hover */
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-        /* Increase the shadow on hover */
-        filter: brightness(1.2);
-        /* Slightly increase the brightness on hover */
-      }
+    .add-blog-btn {
+      background-color: #007bff;
+      /* Button color */
+      color: white;
+      /* Text color */
+      padding: 10px 20px;
+      /* Padding for a professional look */
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
 
-      /* Container Styling */
-      .blog-area {
-        padding: 60px 0;
-        background-color: #f9f9f9;
-      }
+    .add-blog-btn:hover {
+      background-color: #0056b3;
+      /* Darker shade on hover */
+      transform: translateY(-2px);
+      /* Slight lift effect */
+    }
 
-      /* Blog Header Styling */
+    /* Align Add Blog button to the right */
+    .text-end {
+      text-align: right;
+      margin-top: 60px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
       #title {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-
-      /* Blog Post Card Styling */
-      .single-blog {
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        background: #fff;
-      }
-
-      .single-blog:hover {
-        transform: scale(1.05);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-      }
-
-      /* Image Styling */
-      .blog-image img {
-        width: 100%;
-        height: auto;
-        transition: transform 0.3s ease;
-      }
-
-      .single-blog:hover .blog-image img {
-        transform: scale(1.1);
-      }
-
-      /* Blog Content Styling */
-      .blog-content {
-        padding: 20px;
+        font-size: 2rem;
       }
 
       .blog-content p {
-        color: #555;
-        font-size: 1.1rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
-        transition: color 0.3s ease;
+        font-size: 1rem;
       }
-
-      .single-blog:hover .reviewtext {
-        color: #052352;
-        /* Tailwind Blue-500 */
-      }
-
-      /* 'Learn More' Button Styling */
-      .more {
-        font-size: 0.9rem;
-        color: #3b82f6;
-        /* Tailwind Blue-500 */
-        font-weight: 600;
-        text-transform: uppercase;
-        display: inline-block;
-        transition: color 0.3s ease;
-      }
-
-      .more i {
-        margin-left: 5px;
-        transition: transform 0.3s ease;
-      }
-
-      .single-blog:hover .more i {
-        transform: translateX(5px);
-      }
-
-      .more:hover {
-        color: #0d1f52;
-        /* Tailwind Blue-700 */
-      }
-
-      /* Responsive adjustments */
-      @media (max-width: 768px) {
-        #title {
-          font-size: 2rem;
-        }
-
-        .blog-content p {
-          font-size: 1rem;
-        }
-      }
-
-      .search-bar {
-        margin-top: 20px;
-      }
-
-      .input-group {
-        display: flex;
-        align-items: center;
-      }
-
-      .form-control {
-        border: 1px solid #ced4da;
-        border-radius: 0.25rem;
-      }
-
-      .btn {
-        border-radius: 0 0.25rem 0.25rem 0;
-        background-color: #007bff;
-        /* Change to your desired button color */
-        color: #fff;
-      }
-
-      .btn:hover {
-        background-color: #0056b3;
-        /* Darker shade for hover */
-      }
-
-      .add-blog-btn {
-        background-color: #007bff;
-        /* Button color */
-        color: white;
-        /* Text color */
-        padding: 10px 20px;
-        /* Padding for a professional look */
-        border: none;
-        border-radius: 5px;
-        font-size: 1em;
-        cursor: pointer;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-      }
-
-      .add-blog-btn:hover {
-        background-color: #0056b3;
-        /* Darker shade on hover */
-        transform: translateY(-2px);
-        /* Slight lift effect */
-      }
-
-      /* Align Add Blog button to the right */
-      .text-end {
-        text-align: right;
-        margin-top: 60px;
-      }
-
-      /* Responsive adjustments */
-      @media (max-width: 768px) {
-        #title {
-          font-size: 2rem;
-        }
-
-        .blog-content p {
-          font-size: 1rem;
-        }
-      }
-
-      .single-blog {
-        background: linear-gradient(45deg, #e0a2fb, #0cbefa);
-        border: 5px solid white;
-      }
-
-      .col-lg-4:hover {
-        background: linear-gradient(45deg, #f7f4f4, #777676);
-        border-radius: 5%;
-      }
+    }
   </style>
 
   <script>
@@ -915,64 +876,79 @@
       {
         title: "How to deal with Unknown Risks in Life and Investing?",
         link: "./blogs/how-to-deal-with-unknown-risks-in-life-and-investing.html",
-        image: "assets/images/blog-1.webp"
+        featureImage: "assets/images/blog-1.webp",
+        excerpt: "Discover strategies for navigating unknown risks in life and investing wisely."
       },
       {
         title: "How to 10x your Generational Wealth?",
         link: "./blogs/how-to-10x-your-generational-wealth.html",
-        image: "./assets/images/blog-2.webp"
+        featureImage: "./assets/images/blog-2.webp",
+        excerpt: "Learn techniques to multiply your wealth across generations effectively."
       },
       {
         title: "Investing with Minimal Savings: A Guide for Women Investors",
         link: "./blogs/invest-minimal.html",
-        image: "./assets/images/women.webp"
+        featureImage: "./assets/images/women.webp",
+        excerpt: "A practical guide for women to start investing with minimal savings."
       },
       {
         title: "The Power of Compound Interest: Grow Your Wealth Wisely",
         link: "./blogs/power-of-compound-interest.html",
-        image: "assets/images/blog-3.webp"
+        featureImage: "assets/images/blog-3.webp",
+        excerpt: "Unlock the potential of compound interest to grow your wealth over time."
       },
       {
         title: "Real Estate Investing: Tips for First-Time Buyers",
         link: "./blogs/real-estate-investing.html",
-        image: "./assets/images/blog-1.webp"
+        featureImage: "./assets/images/blog-1.webp",
+        excerpt: "Essential tips for first-time buyers entering the real estate market."
       },
       {
         title: "The Importance of Financial Literacy in Today’s World",
         link: "./blogs/financial-literacy.html",
-        image: "./assets/images/blog-3.webp"
+        featureImage: "./assets/images/blog-3.webp",
+        excerpt: "Understand why financial literacy is crucial for navigating modern finance."
       },
       {
         title: "How to Create a Budget and Stick to It",
         link: "./blogs/create-a-budget.html",
-        image: "./assets/images/blog-2.webp"
+        featureImage: "./assets/images/blog-2.webp",
+        excerpt: "Step-by-step guide on creating and maintaining a budget successfully."
       },
       {
         title: "Investing for Retirement: Strategies for Every Age",
         link: "./blogs/investing-for-retirement.html",
-        image: "./assets/images/blog-4.webp"
+        featureImage: "./assets/images/blog-4.webp",
+        excerpt: "Explore investment strategies tailored for different stages of life."
       },
       {
         title: "Cryptocurrency 101: What You Need to Know",
         link: "./blogs/cryptocurrency-101.html",
-        image: "./assets/images/blog-3.webp"
+        featureImage: "./assets/images/blog-3.webp",
+        excerpt: "A beginner’s guide to understanding the basics of cryptocurrency."
       },
       {
         title: "Saving for College: Tips for Parents and Students",
         link: "./blogs/saving-for-college.html",
-        image: "./assets/images/blog-2.webp"
+        featureImage: "./assets/images/blog-2.webp",
+        excerpt: "Effective tips for parents and students to save for college expenses."
       },
       {
         title: "How to Build an Emergency Fund: A Step-by-Step Guide",
         link: "./blogs/build-emergency-fund.html",
-        image: "./assets/images/blog-1.webp"
+        featureImage: "./assets/images/blog-1.webp",
+        excerpt: "Learn how to create a solid emergency fund for financial security."
       },
       {
         title: "Understanding Mutual Funds: A Smart Investment Choice",
         link: "./blogs/mutual-funds.html",
-        image: "./assets/images/blog-1.webp"
+        featureImage: "./assets/images/blog-1.webp",
+        excerpt: "An introduction to mutual funds and why they're a wise investment option."
       },
     ];
+
+
+
 
 
     // Function to display blog posts
@@ -980,25 +956,27 @@
       const filteredBlogsContainer = document.getElementById('filtered-blogs');
       filteredBlogsContainer.innerHTML = ''; // Clear previous content
 
+
       blogs.forEach(post => {
         const blogHTML = `
-            <div class="col-lg-4 col-md-7">
-                <div class="single-blog mt-30">
-                    <div class="blog-image">
-                        <a href="${post.link}">
-                            <img src="${post.image}" alt="blog" />
-                        </a>
-                    </div>
-                    <div class="blog-content">
-                        <a href="${post.link}">
-                            <p class="reviewtext">${post.title}</p>
-                        </a>
-                        <a class="more" href="${post.link}">
-                            Learn More <i class="lni-chevron-right"></i>
+            <article class="card" data-aos="fade-right" data-aos-delay="300">
+                <img src="${post.featureImage}" alt="${post.title}" class="card-image" onerror="this.onerror=null; this.src='/placeholder.svg?height=200&width=400';">
+                <div class="card-content">
+                    <h2 class="card-title">
+                        <a href="#" class="card-title-link">${post.title}</a>
+                    </h2>
+                    <p class="card-excerpt">${post.excerpt}</p>
+                    <div class="card-footer">
+                        <time datetime="${new Date().toLocaleString()}">${new Date().toLocaleString()}</time>
+                         <a href="/readmore" class="card-read-more">
+                           <span> Read More </span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
                         </a>
                     </div>
                 </div>
-            </div>
+            </article>
         `;
         filteredBlogsContainer.innerHTML += blogHTML;
       });
@@ -1023,7 +1001,6 @@
   </script>
 
 
-  </style>
   <!-- Timed popup that will appear after succesful submission of feebback form! -->
   <button class="notification" id="successnotification" style="display:none;">
     <span class="message" id="successmsg">Submitted successfully!</span>
@@ -1213,4 +1190,5 @@
 </body>
 
 </head>
+
 </html>
