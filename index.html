@@ -64,6 +64,84 @@
 
   <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
   <link rel="stylesheet" href="navbar.css">
+  <style>
+    #progressBar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 8px;
+      background-color: #f76b45;
+      z-index: 9999;
+
+    }
+
+    * {
+      cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
+    }
+
+
+    .circle {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
+      transition: transform 0.1s, left 0.1s, top 0.1s;
+    }
+
+    .circle-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    @media (max-width: 720px) {
+      .circle-container {
+        display: none;
+      }
+    }
+
+    .scroll-btn {
+      position: fixed;
+      top: 100px;
+      right: 4px;
+      background-color: #635adc;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s;
+      display: flex;
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .scroll-btn:hover {
+      background-color: #555;
+      /* Darker blue on hover */
+    }
+
+    .dropdown-menu li a {
+      color: #ff5722;
+      /* Change this color code to any color you like */
+    }
+
+    .dropdown-menu li a:hover {
+      color: #0a69ed;
+      /* Optional: change the color on hover */
+    }
+  </style>
 
 <body>
 
@@ -139,6 +217,8 @@
 
   </script>
 
+
+
   <div id="progressBar"></div>
   <script>
     window.onscroll = function () {
@@ -148,9 +228,9 @@
       document.getElementById("progressBar").style.width = scrolled + "%";
     };
   </script>
-  <!-- <button id="scrollBtn" class="scroll-btn" onclick="scrollToNextSection()">
+  <button id="scrollBtn" class="scroll-btn" onclick="scrollToNextSection()">
     <i class="lni-chevron-down"></i>
-  </button> -->
+  </button>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -175,11 +255,17 @@
         <div style="display: flex; justify-content: center;" class="container">
           <div class="row">
             <div style="display: flex; justify-content: center;" class="">
-              <nav class="navbar navbar-expand-lg" style="display: flex; background-color: #2c3e50;">
+              <nav class="navbar navbar-expand-lg " style="display: flex;">
+                <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="toggler-icon"></span>
+            <span class="toggler-icon"></span>
+            <span class="toggler-icon"></span>
+          </button> -->
                 <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                   <div class="icon1">
                     <a href="./index.html">
-                      <img src="./assets/images/FinvedaLogo.png" alt="Finveda Logo" style="width: 13rem;">
+                      <img src="./assets/images/FinvedaLogo.png" alt="icon.png" style="width: 13rem;">
                     </a>
                   </div>
                   <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
@@ -245,312 +331,378 @@
                     </li>
                   </ul>
                 </div>
+
+                <script>
+                  // Function to update the authentication button based on login status
+                  function updateAuthButton() {
+                    const authBtnContainer = document.getElementById("auth-btn-container");
+                    const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+                    if (isLoggedIn) {
+                      // Replace with Logout button if user is logged in
+                      authBtnContainer.innerHTML = `<a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244); animation-duration: 0.4s; animation-name: ease;" id="logout-btn">Logout 🚪</a>`;
+
+                      // Attach click event to Logout button
+                      document.getElementById("logout-btn").addEventListener("click", function () {
+                        // Clear login data from local storage and reload page
+                        localStorage.removeItem("isLoggedIn");
+                        localStorage.removeItem("currentUser");
+                        window.location.reload();
+                      });
+                    } else {
+                      // Show Login/Register button if user is not logged in
+                      authBtnContainer.innerHTML = `<a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244); animation-duration: 0.4s; animation-name: ease;" data-scroll-nav="0" href="./loginPage.html">Login/Register 💻</a>`;
+                    }
+                  }
+
+                  // Call updateAuthButton on page load to set the correct button
+                  document.addEventListener("DOMContentLoaded", updateAuthButton);
+                </script>
+
+                <script>
+                  const toggleButton = document.getElementById('theme-toggle');
+                  var body = document.body;
+                  var currentTheme = localStorage.getItem('theme');
+
+                  if (currentTheme === 'dark') {
+                    body.classList.add('dark-mode');
+                    toggleButton.classList.add('dark');
+                    toggleButton.textContent = '🌞';
+                  }
+
+                  toggleButton.addEventListener('click', function () {
+                    body.classList.toggle('dark-mode');
+                    toggleButton.classList.toggle('dark');
+
+                    // Update button icon based on mode
+                    if (body.classList.contains('dark-mode')) {
+                      toggleButton.textContent = '🌞';  // Light mode icon
+                      localStorage.setItem('theme', 'dark');
+                    } else {
+                      toggleButton.textContent = '🌙';  // Dark mode icon
+                      localStorage.setItem('theme', 'light');
+                    }
+                  });
+                </script>
+                <div class="">
+                  <!-- Login Modal -->
+                  <div id="myModal" class="modal">
+                    <div class="modal-content">
+                      <span class="close" style="display: flex; justify-content: right;">×</span>
+                      <div class="mt-3">
+                        <h3 class="join"><i class="fa-solid fa-right-to-bracket"></i> Login to join us....</h3>
+                        <form class="px-3 py-4" id="loginForm">
+                          <div class="form-group">
+                            <label class="d-flex">Username</label>
+                            <input type="text" placeholder="Username" class="form-control" required="">
+                          </div>
+                          <div class="form-group">
+                            <label class="d-flex">Password</label>
+                            <input type="password" placeholder="Password" class="form-control" required="">
+                            <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
+                          </div>
+                          <div class="form-check d-flex">
+                            <input type="checkbox" class="form-check-input me-1" style="margin-top: 0;">
+                            <label class="form-check-label" style="margin-bottom: 0;">Remember me</label>
+                            <a href="#" id="forgot-password" style="margin-left: 120px;">Forget Password?</a>
+                          </div>
+                          <div style="height: 20px;"></div>
+                          <button class="main-btn w-100 mb-3" onclick="submitForm('loginForm')">Sign in</button>
+                          <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
+                          <div class="or-sign-in-with text-center">
+                            <p>Or sign in with</p>
+                          </div>
+                          <div class="social-icons mt-3">
+                            <ul class="list-inline">
+                              <li><a href="#" class="google" id="google-login"><i class="fa-brands fa-google"></i></a>
+                              </li>
+                              <li><a href="#" class="facebook" id="facebook-login"><i
+                                    class="fa-brands fa-facebook-f"></i></a></li>
+                              <li><a href="#" class="twitter" id="twitter-login"><i
+                                    class="fa-brands fa-x-twitter"></i></a>
+                              </li>
+                            </ul>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+
+                  <script>
+                    // Add event listeners to the social media icons
+                    document.getElementById('google-login').addEventListener('click', function () {
+                      window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
+                    });
+
+                    document.getElementById('facebook-login').addEventListener('click', function () {
+                      window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
+                    });
+
+                    document.getElementById('twitter-login').addEventListener('click', function () {
+                      window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
+                    });
+                  </script>
+
+                  <!-- Register Modal -->
+                  <div id="registerModal" class="modal">
+                    <div class="modal-content">
+                      <span class="close" style="display: flex; justify-content: right;">×</span>
+                      <div class="mt-3">
+                        <h3 class="join"><i class="fa-solid fa-user"></i> Register to join us....</h3>
+
+                        <div class="form-group">
+                          <label class="d-flex">Email</label>
+                          <input type="email" placeholder="Email" class="form-control" required="">
+                        </div>
+                        <div class="form-group">
+                          <label class="d-flex">Username</label>
+                          <input type="text" placeholder="Username" class="form-control" required="">
+                        </div>
+                        <div class="form-group">
+                          <label class="d-flex">Password</label>
+                          <input type="password" placeholder="Password" class="form-control" id="register-password"
+                            required="" oninput="checkPasswordStrength()">
+                          <button type="button" class="toggle-password-btn"
+                            onclick="togglePasswordVisibility('register-password')">
+                            <i class="fa-solid fa-eye"></i>
+                            <i class="fa-solid fa-eye-slash" style="display: none;"></i>
+                          </button>
+                        </div>
+                        <div id="password-meter" style="display: none; margin-top: 5px;">
+                          <div id="meter"
+                            style="height: 10px; background-color: #ccc; border-radius: 5px; transition: width 0.3s;">
+                          </div>
+                          <div id="strength-text" style="margin-top: 5px; font-weight: bold;"></div>
+                        </div>
+
+
+                        <!-- Import zxcvbn library -->
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+                        <script>
+                          function checkPasswordStrength() {
+                            const password = document.getElementById('register-password').value;
+                            const meter = document.getElementById('meter');
+                            const meterContainer = document.getElementById('password-meter');
+                            const strengthText = document.getElementById('strength-text');
+
+                            if (password) {
+                              meterContainer.style.display = 'block'; // Show the meter when typing
+                              const result = zxcvbn(password);
+                              const score = result.score; // Score ranges from 0 to 4
+
+                              // Set meter width and color based on score
+                              meter.style.width = (score + 1) * 20 + '%'; // Convert score to percentage
+                              meter.style.backgroundColor = getMeterColor(score);
+                              strengthText.innerText = getStrengthText(score); // Update strength text
+                            } else {
+                              meterContainer.style.display = 'none'; // Hide the meter if no password
+                              strengthText.innerText = ''; // Clear strength text
+                            }
+                          }
+
+                          function getMeterColor(score) {
+                            switch (score) {
+                              case 0: return 'red'; // Weak
+                              case 1: return 'orange'; // Fair
+                              case 2: return 'yellow'; // Good
+                              case 3: return 'blue'; // Strong
+                              case 4: return 'green'; // Very Strong
+                              default: return 'gray';
+                            }
+                          }
+
+                          function getStrengthText(score) {
+                            switch (score) {
+                              case 0: return 'Very Weak';
+                              case 1: return 'Weak';
+                              case 2: return 'Fair';
+                              case 3: return 'Strong';
+                              case 4: return 'Very Strong';
+                              default: return '';
+                            }
+                          }
+
+                          function togglePasswordVisibility(id) {
+                            const passwordInput = document.getElementById(id);
+                            const eyeIcon = passwordInput.nextElementSibling;
+                            if (passwordInput.type === 'password') {
+                              passwordInput.type = 'text';
+                              eyeIcon.children[0].style.display = 'none';
+                              eyeIcon.children[1].style.display = 'inline';
+                            } else {
+                              passwordInput.type = 'password';
+                              eyeIcon.children[0].style.display = 'inline';
+                              eyeIcon.children[1].style.display = 'none';
+                            }
+                          }
+                        </script>
+
+                        <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('registerForm')">Register</button>
+                        <p class="text-center">Already have an account? <a href="#" id="loginLink">Login</a></p>
+                        <div class="or-sign-in-with text-center">
+                          <p>Or sign up with</p>
+                        </div>
+                        <div class="social-icons mt-3">
+                          <ul class="list-inline">
+                            <li><a href="#" class="google" id="google-signup"><i class="fa-brands fa-google"></i></a>
+                            </li>
+                            <li><a href="#" class="facebook" id="facebook-signup"><i
+                                  class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="#" class="twitter" id="twitter-signup"><i class="fa-brands fa-twitter"></i></a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <script>
+                    // Add event listeners to the social media icons
+                    document.getElementById('google-signup').addEventListener('click', function () {
+                      window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
+                    });
+
+                    document.getElementById('facebook-signup').addEventListener('click', function () {
+                      window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
+                    });
+
+
+                    document.getElementById('twitter-signup').addEventListener('click', function () {
+                      window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
+                    });
+                    // Add event listener to the "Register" button in the login modal
+                    document.getElementById('registerLink').addEventListener('click', function () {
+                      // Close the login modal
+                      document.getElementById('myModal').style.display = 'none';
+
+                      // Open the registration modal
+                      document.getElementById('registerModal').style.display = 'block';
+                    });
+                    // Add event listener to the "Login" button in the registration modal
+                    document.getElementById('loginLink').addEventListener('click', function () {
+                      // Close the registration modal
+                      document.getElementById('registerModal').style.display = 'none';
+
+                      // Open the login modal
+                      document.getElementById('myModal').style.display = 'block';
+                    });
+                    // Function to close the modal window
+                    var loginCloseButton = document.querySelector("#myModal .close");
+                    loginCloseButton.addEventListener("click", function () {
+                      var modal = document.getElementById("myModal");
+                      modal.style.display = "none";
+                    });
+                  </script>
+
+
+                  </script>
+                </div>
               </nav>
-            </div>
-            <script>
-              const toggleButton = document.getElementById('theme-toggle');
-              var body = document.body;
-              var currentTheme = localStorage.getItem('theme');
 
-              if (currentTheme === 'dark') {
-                body.classList.add('dark-mode');
-                toggleButton.classList.add('dark');
-                toggleButton.querySelector('span').textContent = '🌞';
-              }
+              <link href="https://fonts.googleapis.com/css?family=Raleway&amp;display=swap" rel="stylesheet">
 
-              toggleButton.addEventListener('click', function () {
-                body.classList.toggle('dark-mode');
-                toggleButton.classList.toggle('dark');
-              }
-
-              );
-            </script>
-            <div class="">
-              <!-- Login Modal -->
-              <div id="myModal" class="modal">
-                <div class="modal-content">
-                  <span class="close" style="display: flex; justify-content: right;">×</span>
-                  <div class="mt-3">
-                    <h3 class="join"><i class="fa-solid fa-right-to-bracket"></i> Login to join us....</h3>
-                    <form class="px-3 py-4" id="loginForm">
-                      <div class="form-group">
-                        <label class="d-flex">Username</label>
-                        <input type="text" placeholder="Username" class="form-control" required="">
-                      </div>
-                      <div class="form-group">
-                        <label class="d-flex">Password</label>
-                        <input type="password" placeholder="Password" class="form-control" required="">
-                        <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
-                      </div>
-                      <div class="form-check d-flex">
-                        <input type="checkbox" class="form-check-input me-1" style="margin-top: 0;">
-                        <label class="form-check-label" style="margin-bottom: 0;">Remember me</label>
-                        <a href="#" id="forgot-password" style="margin-left: 120px;">Forget Password?</a>
-                      </div>
-                      <div style="height: 20px;"></div>
-                      <button class="main-btn w-100 mb-3" onclick="submitForm('loginForm')">Sign in</button>
-                      <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
-                      <div class="or-sign-in-with text-center">
-                        <p>Or sign in with</p>
-                      </div>
-                      <div class="social-icons mt-3">
-                        <ul class="list-inline">
-                          <li><a href="#" class="google" id="google-login"><i class="fa-brands fa-google"></i></a>
-                          </li>
-                          <li><a href="#" class="facebook" id="facebook-login"><i
-                                class="fa-brands fa-facebook-f"></i></a></li>
-                          <li><a href="#" class="twitter" id="twitter-login"><i class="fa-brands fa-x-twitter"></i></a>
-                          </li>
-                        </ul>
-                      </div>
-                    </form>
-                  </div>
+              <nav class="mobile-menu ">
+                <a class="page-scroll" href="./index.html">Home 🏡</a>
+                <a class="page-scroll" href="./about.html">About Us 📖</a>
+                <a class="page-scroll" href="./trends.html">Trends 📈</a>
+                <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
+                <a class="page-scroll" href="./blog.html">Blogs 📰</a>
+                <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
+                <a class="page-scroll main-btn" href="#" onclick="openModal()"
+                  onmouseout="this.style.color='white'">Login/Register 💻</a>
+                <li class="nav-item no-underline">
+                  <button id="theme-toggle2" class="theme-toggle2" style="margin-right: 2px;">
+                    🌙
+                  </button>
+                </li>
+                <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
+                  <span></span>
                 </div>
-              </div>
-
+              </nav>
               <script>
-                // Add event listeners to the social media icons
-                document.getElementById('google-login').addEventListener('click', function () {
-                  window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
-                });
+                const toggleBtn = document.getElementById('theme-toggle2');
+                var body = document.body;
+                var currentTheme = localStorage.getItem('theme');
 
-                document.getElementById('facebook-login').addEventListener('click', function () {
-                  window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
-                });
-
-                document.getElementById('twitter-login').addEventListener('click', function () {
-                  window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
-                });
-              </script>
-
-              <!-- Register Modal -->
-              <div id="registerModal" class="modal">
-                <div class="modal-content">
-                  <span class="close" style="display: flex; justify-content: right;">×</span>
-                  <div class="mt-3">
-                    <h3 class="join"><i class="fa-solid fa-user"></i> Register to join us....</h3>
-
-                    <div class="form-group">
-                      <label class="d-flex">Email</label>
-                      <input type="email" placeholder="Email" class="form-control" required="">
-                    </div>
-                    <div class="form-group">
-                      <label class="d-flex">Username</label>
-                      <input type="text" placeholder="Username" class="form-control" required="">
-                    </div>
-                    <div class="form-group">
-                      <label class="d-flex">Password</label>
-                      <input type="password" placeholder="Password" class="form-control" id="register-password"
-                        required="" oninput="checkPasswordStrength()">
-                      <button type="button" class="toggle-password-btn"
-                        onclick="togglePasswordVisibility('register-password')">
-                        <i class="fa-solid fa-eye"></i>
-                        <i class="fa-solid fa-eye-slash" style="display: none;"></i>
-                      </button>
-                    </div>
-                    <div id="password-meter" style="display: none; margin-top: 5px;">
-                      <div id="meter"
-                        style="height: 10px; background-color: #ccc; border-radius: 5px; transition: width 0.3s;">
-                      </div>
-                      <div id="strength-text" style="margin-top: 5px; font-weight: bold;"></div>
-                    </div>
-
-
-                    <!-- Import zxcvbn library -->
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
-                    <script>
-                      function checkPasswordStrength() {
-                        const password = document.getElementById('register-password').value;
-                        const meter = document.getElementById('meter');
-                        const meterContainer = document.getElementById('password-meter');
-                        const strengthText = document.getElementById('strength-text');
-
-                        if (password) {
-                          meterContainer.style.display = 'block'; // Show the meter when typing
-                          const result = zxcvbn(password);
-                          const score = result.score; // Score ranges from 0 to 4
-
-                          // Set meter width and color based on score
-                          meter.style.width = (score + 1) * 20 + '%'; // Convert score to percentage
-                          meter.style.backgroundColor = getMeterColor(score);
-                          strengthText.innerText = getStrengthText(score); // Update strength text
-                        } else {
-                          meterContainer.style.display = 'none'; // Hide the meter if no password
-                          strengthText.innerText = ''; // Clear strength text
-                        }
-                      }
-
-                      function getMeterColor(score) {
-                        switch (score) {
-                          case 0: return 'red'; // Weak
-                          case 1: return 'orange'; // Fair
-                          case 2: return 'yellow'; // Good
-                          case 3: return 'blue'; // Strong
-                          case 4: return 'green'; // Very Strong
-                          default: return 'gray';
-                        }
-                      }
-
-                      function getStrengthText(score) {
-                        switch (score) {
-                          case 0: return 'Very Weak';
-                          case 1: return 'Weak';
-                          case 2: return 'Fair';
-                          case 3: return 'Strong';
-                          case 4: return 'Very Strong';
-                          default: return '';
-                        }
-                      }
-
-                      function togglePasswordVisibility(id) {
-                        const passwordInput = document.getElementById(id);
-                        const eyeIcon = passwordInput.nextElementSibling;
-                        if (passwordInput.type === 'password') {
-                          passwordInput.type = 'text';
-                          eyeIcon.children[0].style.display = 'none';
-                          eyeIcon.children[1].style.display = 'inline';
-                        } else {
-                          passwordInput.type = 'password';
-                          eyeIcon.children[0].style.display = 'inline';
-                          eyeIcon.children[1].style.display = 'none';
-                        }
-                      }
-                    </script>
-
-                    <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('registerForm')">Register</button>
-                    <p class="text-center">Already have an account? <a href="#" id="loginLink">Login</a></p>
-                    <div class="or-sign-in-with text-center">
-                      <p>Or sign up with</p>
-                    </div>
-                    <div class="social-icons mt-3">
-                      <ul class="list-inline">
-                        <li><a href="#" class="google" id="google-signup"><i class="fa-brands fa-google"></i></a>
-                        </li>
-                        <li><a href="#" class="facebook" id="facebook-signup"><i
-                              class="fa-brands fa-facebook-f"></i></a></li>
-                        <li><a href="#" class="twitter" id="twitter-signup"><i class="fa-brands fa-twitter"></i></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-
-              <script>
-                // Add event listeners to the social media icons
-                document.getElementById('google-signup').addEventListener('click', function () {
-                  window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
-                });
-
-                document.getElementById('facebook-signup').addEventListener('click', function () {
-                  window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
-                });
-
-
-                document.getElementById('twitter-signup').addEventListener('click', function () {
-                  window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
-                });
-                // Add event listener to the "Register" button in the login modal
-                document.getElementById('registerLink').addEventListener('click', function () {
-                  // Close the login modal
-                  document.getElementById('myModal').style.display = 'none';
-
-                  // Open the registration modal
-                  document.getElementById('registerModal').style.display = 'block';
-                });
-                // Add event listener to the "Login" button in the registration modal
-                document.getElementById('loginLink').addEventListener('click', function () {
-                  // Close the registration modal
-                  document.getElementById('registerModal').style.display = 'none';
-
-                  // Open the login modal
-                  document.getElementById('myModal').style.display = 'block';
-                });
-                // Function to close the modal window
-                var loginCloseButton = document.querySelector("#myModal .close");
-                loginCloseButton.addEventListener("click", function () {
-                  var modal = document.getElementById("myModal");
-                  modal.style.display = "none";
-                });
-              </script>
-
-
-              </script>
-            </div>
-
-            <link href="https://fonts.googleapis.com/css?family=Raleway&amp;display=swap" rel="stylesheet">
-
-            <nav class="mobile-menu ">
-              <a class="page-scroll" href="./index.html">Home 🏡</a>
-              <a class="page-scroll" href="./about.html">About Us 📖</a>
-              <a class="page-scroll" href="./trends.html">Trends 📈</a>
-              <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
-              <a class="page-scroll" href="./blog.html">Blogs 📰</a>
-              <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
-              <a class="page-scroll main-btn" href="#" onclick="openModal()"
-                onmouseout="this.style.color='white'">Login/Register 💻</a>
-              <li class="nav-item no-underline">
-                <button id="theme-toggle"
-                  class="theme-toggle relative w-14 h-8 flex items-center bg-gray-300 dark:bg-gray-800 rounded-full shadow-md transition duration-300"
-                  onclick="toggleTheme()">
-                  <span
-                    class="icon1 absolute left-1 top-1 w-6 h-6 bg-white dark:bg-yellow-400 rounded-full shadow-md transition-transform duration-300"></span>
-                </button>
-              </li>
-
-              <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
-                <span></span>
-              </div>
-            </nav>
-            <script>
-              const toggleBtn = document.getElementById('theme-toggle2');
-              var body = document.body;
-              var currentTheme = localStorage.getItem('theme');
-
-              if (currentTheme === 'dark') {
-                body.classList.add('dark-mode');
-                toggleBtn.classList.add('dark');
-                toggleBtn.textContent = '🌞';
-              }
-
-              toggleBtn.addEventListener('click', function () {
-                body.classList.toggle('dark-mode');
-                toggleBtn.classList.toggle('dark');
-
-                // Update button icon based on mode
-                if (body.classList.contains('dark-mode')) {
-                  toggleBtn.textContent = '🌞';  // Light mode icon
-                  localStorage.setItem('theme', 'dark');
-                } else {
-                  toggleBtn.textContent = '🌙';  // Dark mode icon
-                  localStorage.setItem('theme', 'light');
+                if (currentTheme === 'dark') {
+                  body.classList.add('dark-mode');
+                  toggleBtn.classList.add('dark');
+                  toggleBtn.textContent = '🌞';
                 }
-              });
-            </script>
+
+                toggleBtn.addEventListener('click', function () {
+                  body.classList.toggle('dark-mode');
+                  toggleBtn.classList.toggle('dark');
+
+                  // Update button icon based on mode
+                  if (body.classList.contains('dark-mode')) {
+                    toggleBtn.textContent = '🌞';  // Light mode icon
+                    localStorage.setItem('theme', 'dark');
+                  } else {
+                    toggleBtn.textContent = '🌙';  // Dark mode icon
+                    localStorage.setItem('theme', 'light');
+                  }
+                });
+              </script>
+            </div>
+            <link href="./navbar.css" rel="stylesheet">
+            <script type="text/javascript" src="./navbar.js"></script>
           </div>
-          <link href="./navbar.css" rel="stylesheet">
-          <script type="text/javascript" src="./navbar.js"></script>
         </div>
       </div>
   </div>
-  </div>
-<style>
-  .styled-btn{
-    right: 0px;
-    position: relative;
-    left: 280px;  
-  }
-</style>
+
   <div id="home" class="header-hero bg_cover" style="background-image: url(./assets/images/banner-bg.svg)">
     <div class="container">
+      <h2 class="head-animate" style="font-size: 90px;">
+        WELCOME TO FINVEDA
+      </h2>
       <div class="row justify-content-center">
         <div class="col-lg-8">
           <div class="header-hero-content text-center">
+            <style>
+              .head-animate {
+                text-align: center;
+                position: relative;
+                top: 200px;
+                color: transparent;
+                -webkit-text-stroke: 2px white;
+                -moz-text-stroke: 2px white;
+                -ms-text-stroke: 2px white;
+                font-weight: bold;
+                background: url(./assets/images/back.png);
+                -webkit-background-clip: text;
+                -moz-background-clip: text;
+                background-clip: text;
+                background-position: 0 0;
+                animation: back 20s linear infinite, hovering 1.5s ease-in-out infinite;
+              }
+
+              @keyframes back {
+                100% {
+                  background-position: 2000px 0;
+                }
+              }
+
+              @keyframes hovering {
+                0% {
+                  transform: translateY(0);
+                }
+
+                50% {
+                  transform: translateY(-5px);
+                }
+
+                100% {
+                  transform: translateY(0);
+                }
+              }
+
+              .header-hero-content h2 {
+                font-size: 200px;
+              }
+            </style>
             <br>
-            <h2 class="head-animate" style="font-size: 90px; color: white;">
-              WELCOME TO FINVEDA
-            </h2>
             <br>
             <p class="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s"
               style="visibility: visible; animation-duration: 1.3s; animation-delay: 0.8s;color:white">
@@ -566,10 +718,48 @@
 
 
 
+
           </div>
 
           <button class="styled-btn" onclick="window.location.href='reviews.html'">Share Experience</button>
 
+          <style>
+            .styled-btn {
+              background-color: #4CAF50;
+              /* Green background */
+              color: white;
+              /* White text */
+              padding: 10px 20px;
+              /* Padding around the text */
+              font-size: 16px;
+              /* Font size */
+              border: none;
+              /* Remove border */
+              border-radius: 8px;
+              /* Rounded corners */
+              cursor: pointer;
+              /* Pointer cursor on hover */
+              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+              /* Light shadow */
+              transition: background-color 0.3s, transform 0.3s;
+              /* Smooth transition */
+              margin-top: 20px;
+              margin-left: 280px;
+
+            }
+
+            .styled-btn:hover {
+              background-color: #45a049;
+              /* Darker green on hover */
+              transform: scale(1.05);
+              /* Slightly larger on hover */
+            }
+
+            .styled-btn:active {
+              transform: scale(0.98);
+              /* Slightly smaller on click */
+            }
+          </style>
         </div>
       </div>
       <div class="row">
@@ -610,6 +800,7 @@
 
   </section>
 
+
   <section id="features" class="services-area pt-120">
     <div class="container">
       <div class="row justify-content-center">
@@ -617,8 +808,10 @@
           <div class="section-title text-center pb-40">
             <h3 style="color: #2f6be5;">
               <div class="line m-auto"></div>
+
               FinVeda,
               <span style="color:#2f6be5;"> comes with everything you need to get started!</span>
+
             </h3>
           </div>
         </div>
@@ -634,7 +827,7 @@
             <div class="services-content mt-30">
               <h4 class="services-title"><a href="./blog.html">Financial Blogs</a></h4>
               <p class="text">
-                <li style="color: black;">
+                <li>
                   We offer expert written blogs on investment tips and strategies, and current economic trends, all
                   crafted to keep you well-informed.
                 </li>
@@ -653,7 +846,7 @@
             <div class="services-content mt-30">
               <h4 class="services-title"><a href="tools/sip.html">Finance Tools</a></h4>
               <p class="text">
-                <li style="color: black;">
+                <li>
                   With our SIP and PPF tools you'll discover power of compounding and make informed decisions regarding
                   your savings.
                 </li>
@@ -672,7 +865,7 @@
             <div class="services-content mt-30">
               <h4 class="services-title"><a href="trends.html">Financial Trends</a></h4>
               <p class="text">
-                <li style="color: black;">
+                <li>
                   You will make smarter decisions by staying updated to the current market happenings in real time with
                   our Stock Market API's results.
                 </li>
@@ -684,8 +877,6 @@
       </div>
     </div>
   </section>
-
-
   <section id="about" class="about-area pt-70">
     <div class="container">
       <div class="row">
@@ -857,26 +1048,24 @@
   </section>
 
   <section class="about-area pt-71" style="margin-top: 130px;">
-
+    
     <div class="container">
       <div class="row">
         <div class="col-lg-6 order-lg-last">
-          <div class="about-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s"
-            style="margin-top: 0px; margin-left: 40px;">
+          <div class="about-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s" style="margin-top: 0px; margin-left: 40px;">
             <div class="section-title">
               <div class="line"></div>
-
+  
               <h3 class="title" style="color: #2f6be5;">
-
+  
                 Optimization <span>of Invesment Portfolio</span>
               </h3>
             </div>
-
-
+  
+  
             <p class="text para">
               <li>
-                Optimize your investment portfolio to balance growth and minimize risk, using data-driven strategies for
-                maximum returns. Achieve financial success with smarter, tailored asset selection.
+                Optimize your investment portfolio to balance growth and minimize risk, using data-driven strategies for maximum returns. Achieve financial success with smarter, tailored asset selection.
               </li>
             </p>
             <a href="#" class="main-btn">Try it for Free</a>
@@ -886,6 +1075,11 @@
           <div id="about-4-img">
             <img src="assets/images/portfolio-optimize.png">
           </div>
+            </div>
+           
+          </div>
+        </div>
+      
     </div>
   </section>
 
@@ -1038,7 +1232,44 @@
   </header>
 
   <main>
+    <style>
+      #destinations {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+      }
 
+      #destinations h1 {
+        text-align: center;
+        font-size: 2em;
+      }
+
+      .post-container {
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 8px;
+      }
+
+      #postForm {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      #postContent {
+        width: 100%;
+        height: 100px;
+        padding: 10px;
+        resize: none;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+
+      #posts {
+        margin-top: 20px;
+      }
+    </style>
     <section id="destinations" class="destinations">
       <h1>Discussion Forum</h1>
       <div class="post-container">
@@ -1225,6 +1456,7 @@
     </div>
   </section>
   <!-- testimonail section ends here  -->
+
   <style>
     /* General testimonial section styling */
 
@@ -1235,24 +1467,6 @@
       color: #fff;
       /* White font color */
     }
-
-    .testimonial-wrapper {
-      display: flex;
-      flex-wrap: nowrap;
-      overflow-x: hidden;
-      /* Keeps the container fixed width and hides overflow */
-      gap: 20px;
-      scroll-behavior: smooth;
-      /* Enables smooth scrolling for JS control */
-    }
-
-    .testimonial-item {
-      flex: 0 0 auto;
-      width: 100%;
-      max-width: 300px;
-    }
-
-
 
     .section-title .title {
       font-size: 2.5rem;
@@ -1328,16 +1542,13 @@
 
     /* Navigation buttons */
     #slide-buttons {
-      position: relative;
       display: flex;
       justify-content: space-between;
       margin-top: 40px;
     }
 
-
     #prevButton,
     #nextButton {
-      padding: 30px;
       background-color: transparent;
       border: none;
       cursor: pointer;
@@ -1345,11 +1556,14 @@
 
     #prevButton .arrow-left,
     #nextButton .arrow-right {
-      background-color: #ddd; /* Initial button color */
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.2s ease; /* Smooth transition */}
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background: linear-gradient(to bottom right, #ff7e5f, #feb47b);
+      /* Gradient arrows */
+      border-radius: 50%;
+      transition: background 0.3s ease;
+    }
 
     #prevButton:hover .arrow-left,
     #nextButton:hover .arrow-right {
@@ -1357,35 +1571,11 @@
       /* Reverse gradient on hover */
     }
   </style>
-<script>
-  // Select the elements
-const testimonialWrapper = document.querySelector('.testimonial-wrapper');
-const prevButton = document.getElementById('prevButton');
-const nextButton = document.getElementById('nextButton');
-
-// Set scroll amount (width of one testimonial item)
-const scrollAmount = 320; // Adjust based on card width and gap between cards
-
-// Event listener for the "Next" button
-nextButton.addEventListener('click', () => {
-    testimonialWrapper.scrollBy({
-        left: scrollAmount,
-        behavior: 'smooth'
-    });
-});
-
-// Event listener for the "Previous" button
-prevButton.addEventListener('click', () => {
-    testimonialWrapper.scrollBy({
-        left: -scrollAmount,
-        behavior: 'smooth'
-    });
-});
-
-</script>
 
 
 
+
+  <!-- <section id="blog" class="blog-area pt-120"> -->
 
 
   <div class="blogfull">
@@ -1395,7 +1585,7 @@ prevButton.addEventListener('click', () => {
           <div class="row">
             <div class="col-lg-6">
               <div class="section-title pb-35 pl-100">
-
+                
                 <h3 class="title" style="color: #2f6be5;"><span></span> Blog Posts</h3>
                 <div class="line mt-10 ml-125" style="width: 50%; margin-top: 5px;"></div>
 
@@ -1403,7 +1593,7 @@ prevButton.addEventListener('click', () => {
             </div>
           </div>
           <div class="row">
-            <div class="col-lg-4 col-md-7 py-4 px-2">
+            <div class="col-lg-4 col-md-7">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                 <div class="blog-image">
                   <a href="./blogs/how-to-deal-with-unknown-risks-in-life-and-investing.html">
@@ -1422,7 +1612,7 @@ prevButton.addEventListener('click', () => {
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7 py-4 px-2">
+            <div class="col-lg-4 col-md-7">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/how-to-10x-your-generational-wealth.html">
@@ -1437,7 +1627,7 @@ prevButton.addEventListener('click', () => {
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7 py-4 px-2">
+            <div class="col-lg-4 col-md-7">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/invest-minimal.html">
@@ -1456,7 +1646,7 @@ prevButton.addEventListener('click', () => {
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7 py-4 px-2">
+            <div class="col-lg-4 col-md-7">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/Pocketmoney.html">
@@ -1473,7 +1663,7 @@ prevButton.addEventListener('click', () => {
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7 py-4 px-2">
+            <div class="col-lg-4 col-md-7">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/senior.html">
@@ -1490,7 +1680,7 @@ prevButton.addEventListener('click', () => {
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7 py-4 px-2">
+            <div class="col-lg-4 col-md-7">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/why-investing-in-stocks-is-better-than-fixed-deposit.html">
@@ -1507,7 +1697,7 @@ prevButton.addEventListener('click', () => {
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7 py-4 px-2">
+            <div class="col-lg-4 col-md-7">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="/blogs/starup.html">
@@ -1524,7 +1714,7 @@ prevButton.addEventListener('click', () => {
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7 py-4 px-2">
+            <div class="col-lg-4 col-md-7">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/how-fintech-is-revolutionizing-small-business-lending.html">
@@ -1541,7 +1731,7 @@ prevButton.addEventListener('click', () => {
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-7 py-4 px-2">
+            <div class="col-lg-4 col-md-7">
               <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="blog-image">
                   <a href="./blogs/economic-trends-and-analysis.html">
@@ -1555,12 +1745,14 @@ prevButton.addEventListener('click', () => {
                   <a class="more" href="./blogs/economic-trends-and-analysis.html">
                     Learn More <i class="lni-chevron-right"></i>
                   </a>
-                </div>
+                </div>              
 
               </div>
-
+              
+          </section>
+      </article>
   </div>
-
+  
 
   <!DOCTYPE html>
   <html lang="en">
@@ -1568,86 +1760,150 @@ prevButton.addEventListener('click', () => {
   <head>
     <title>Feedback Form</title>
     <style>
-.form-section {
-  background: linear-gradient(#877ec7, #c18cc1, #87cefa);
-    max-width: 900px;
-    margin: auto;
-    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white for form container */
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    height: 1200px;
-}
+      /* Simple CSS for layout and modal */
+      .form-group {
+        margin-bottom: 15px;
+      }
 
-.section-title {
-    margin-bottom: 20px;
-}
+      .form-label {
+        display: block;
+        margin-bottom: 15px;
+      }
 
-.form-heading {
-    font-size: 24px;
-    color: #333;
-}
+      .form-input,
+      .form-textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
 
-.form-label {
-    font-weight: bold;
-    color: #555;
-}
+      .form-button {
+        margin-left: 35%;
+        margin-top: 35px;
+        width: 150px;
+        font-size: 22px;
+        height: 70px;
+        border-radius: 40px;
+        padding: 10px 20px;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
 
-.form-input,
-.form-textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    transition: border 0.3s;
-}
+      .form-button:hover {
+        background-color: #b3d6f9;
+        color: black;
+        transform: scale(0.95);
+      }
 
-.form-input:focus,
-.form-textarea:focus {
-    border-color: #6a5acd; /* Highlight border color */
-    outline: none;
-}
+      .emojis label {
+        font-size: 30px;
+        cursor: pointer;
+        padding: 0 10px;
+      }
 
-.emojis {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px 0;
-}
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+      }
 
-.emojis input {
-    display: none; /* Hide the radio buttons */
-}
+      .modal-content {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+        position: relative;
+        max-width: 400px;
+        width: 100%;
+      }
 
-.emojis label {
-    font-size: 30px; /* Size of emojis */
-    cursor: pointer;
-    transition: transform 0.3s;
-}
+      .modal-header {
+        margin-bottom: 10px;
+      }
 
-.emojis label:hover {
-    transform: scale(1.2); /* Scale up on hover */
-}
+      .modal-message {
+        margin-bottom: 20px;
+      }
 
-.form-button {
-  width: 400px;
-    background-color: #6a5acd; /* Button background color */
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-}
+      .modal-button {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
 
-.form-button:hover {
-    background-color: #5a4dbd; /* Darker shade on hover */
-}
-.form-textarea{
-  height: 400px;
-}
+      .modal-button:hover {
+        background-color: #218838;
+      }
 
+      .modal-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        font-size: 20px;
+      }
+
+      #feedback-container {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        background-color: #f9f9f9;
+      }
+
+      #feedback-container label i {
+        margin-right: 8px;
+        color: #555;
+      }
+
+      #submit-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      #submit-button:hover {
+        background-color: #45a049;
+      }
+
+      #success-message {
+        margin-top: 20px;
+        padding: 15px;
+        font-size: 1.1em;
+        color: #2c7a7b;
+        background-color: #e6fffa;
+        border: 1px solid #b2f5ea;
+        border-radius: 4px;
+        display: none;
+        /* Initially hidden */
+      }
+
+      .hidden {
+        display: none;
+      }
     </style>
   </head>
 
@@ -1690,7 +1946,7 @@ prevButton.addEventListener('click', () => {
         </div>
         <div class="form-group">
           <div class="form-group">
-            <center><button class="form-button" id="feed-submit" type="submit">Submit</button></center>
+            <button class="form-button" id="feed-submit" type="submit">Submit</button>
           </div>
         </div>
       </form>
@@ -1707,6 +1963,144 @@ prevButton.addEventListener('click', () => {
       });
 
     </script>
+    <style>
+      /* Form styles */
+      #user-feedback-form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Header styles */
+      #form-header {
+        margin-bottom: 20px;
+      }
+
+      /* Title styles */
+      #title-wrapper {
+        margin-bottom: 20px;
+      }
+
+      #feedback-title {
+        font-size: 24px;
+        /* Title size */
+        margin-bottom: 20px;
+      }
+
+      /* Input and textarea styles */
+      #input-group-email,
+      #input-group-rating,
+      #input-group-comments {
+        margin-bottom: 15px;
+      }
+
+      #input-label-name,
+      #input-label-email,
+      #input-label-rating,
+      #input-label-comments {
+        font-weight: bold;
+        margin-bottom: 5px;
+        display: block;
+        color: #333;
+      }
+
+      #input-field-name,
+      #input-field-email,
+      #textarea-field-comments {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #3c2ed3;
+        /* Border color */
+        border-radius: 5px;
+        transition: border-color 0.3s, box-shadow 0.3s;
+        /* Transition effect */
+      }
+
+      #input-field-name:focus,
+      #input-field-email:focus,
+      #textarea-field-comments:focus {
+        border-color: #0e8f6b;
+        /* Darker green on focus */
+        box-shadow: 0 0 5px rgba(58, 199, 160, 0.5);
+        /* Focus shadow */
+        outline: none;
+      }
+
+      /* Emoji selection styles */
+      #emoji-selection {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 10px;
+      }
+
+      #input-field-rating-1,
+      #input-field-rating-2,
+      #input-field-rating-3,
+      #input-field-rating-4,
+      #input-field-rating-5 {
+        display: none;
+        /* Hide the default radio button */
+      }
+
+      #input-field-rating-1+label,
+      #input-field-rating-2+label,
+      #input-field-rating-3+label,
+      #input-field-rating-4+label,
+      #input-field-rating-5+label {
+        font-size: 24px;
+        /* Adjust emoji size */
+        cursor: pointer;
+        transition: transform 0.3s;
+        /* Transition effect */
+      }
+
+      #input-field-rating-1:checked+label,
+      #input-field-rating-2:checked+label,
+      #input-field-rating-3:checked+label,
+      #input-field-rating-4:checked+label,
+      #input-field-rating-5:checked+label {
+        transform: scale(1.2);
+        /* Scale emoji when selected */
+      }
+
+      /* Button styles */
+      #submit-button {
+        background-color: #3c2ed3;
+        /* Button background */
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+        /* Transition effects */
+      }
+
+      #submit-button:hover {
+        background-color: #28b594;
+        /* Darker green on hover */
+        transform: translateY(-2px);
+        /* Lift effect */
+      }
+
+      #submit-button:active {
+        transform: translateY(0);
+        /* Reset lift effect */
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 600px) {
+        #feedback-container {
+          padding: 20px;
+        }
+
+        #submit-button {
+          width: 100%;
+        }
+      }
+    </style>
+
+
+
     <div class="modal" id="successModal">
       <div class="modal-content">
         <span class="modal-close" id="closeSuccessModal">✖</span>
@@ -1751,8 +2145,8 @@ prevButton.addEventListener('click', () => {
       });
 
       // Handle form submission and show modal
-      document.getElementById('feedback-form').addEventListener('submit', async function (e) {
-        e.preventDefault(); // Prevent the default form submission
+      document.getElementById('feedback-form').addEventListener('submit', function (e) {
+        e.preventDefault();
 
         // Get form values
         const name = document.getElementById('name').value;
@@ -1763,7 +2157,7 @@ prevButton.addEventListener('click', () => {
         // Validate emoji rating
         if (!rating) {
           alert('Please select an emoji rating before submitting.');
-          return; // Exit the function if no rating is selected
+          return;
         }
 
         // Create feedback object
@@ -1774,38 +2168,30 @@ prevButton.addEventListener('click', () => {
           comments
         };
 
-        try {
-          // Submit data to the backend
-          const response = await fetch('http://localhost:5000/api/feedback/saveFeedback', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(feedback)
-          });
+        // Get existing feedback from localStorage or initialize with an empty array
+        let feedbackData = localStorage.getItem('feedbacks');
+        feedbackData = feedbackData ? JSON.parse(feedbackData) : [];
 
-          // Check if the response is ok
-          if (response.ok) {
-            // Optionally handle the response data
-            const result = await response.json();
-            console.log(result); // Log the result or handle it as needed
+        // Add new feedback
+        feedbackData.push(feedback);
 
-            // Clear form inputs
-            document.getElementById('feedback-form').reset();
-            alert('Feedback submitted successfully!'); // Notify the user
-          } else {
-            // Handle errors (e.g., 4xx or 5xx responses)
-            const errorData = await response.json();
-            console.error('Error submitting feedback:', errorData);
-            alert('Failed to submit feedback. Please try again later.');
-          }
-        } catch (error) {
-          // Handle network errors
-          console.error('Network error:', error);
-          alert('An error occurred while submitting feedback. Please check your connection and try again.');
-        }
+        // Store updated feedback array back in localStorage
+        localStorage.setItem('feedbacks', JSON.stringify(feedbackData));
+
+        // Clear form inputs
+        document.getElementById('feedback-form').reset();
+
+        // Reset emoji description
+        emojiDescription.textContent = 'Select an option';
+
+        // Show success modal
+        document.getElementById('successModal').style.display = 'flex';
+
+        // Close modal after 3 seconds
+        setTimeout(function () {
+          document.getElementById('successModal').style.display = 'none';
+        }, 3000);
       });
-
 
       // Close the modal when the 'Dismiss' button is clicked or 'X' is pressed
       document.getElementById('dismissModal').addEventListener('click', function () {
@@ -1830,12 +2216,12 @@ prevButton.addEventListener('click', () => {
 
     <footer id="footer" class="footer-area pt-120">
       <div class="container">
-        <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s"  style="height: 265px;">
+        <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
           <div class="row">
             <div class="col-lg-6">
               <div class="subscribe-content mt-45">
                 <h2 class="subscribe-title">
-                  Subscribe Our Newsletter <span style="font-size: 28px;"> Get regular updates</span>
+                  Subscribe Our Newsletter <span>get regular updates</span>
                 </h2>
               </div>
             </div>
@@ -1988,155 +2374,7 @@ prevButton.addEventListener('click', () => {
     </footer>
 
 
-    <!-- <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a> -->
-    <button id="scrollToTopBtn" class="scroll-top" aria-label="Scroll to top">
-      <div class="scroll-top-icon">
-          <i class="fa-solid fa-arrow-up"></i>
-      </div>
-      <svg class="progress-ring" width="60" height="60">
-          <circle class="progress-ring__circle" stroke="#ffffff" stroke-width="4" fill="transparent" r="28" cx="30"
-              cy="30"></circle>
-      </svg>
-  </button>
-  <style>
-      .scroll-top {
-          position: fixed;
-          right: 1.6%;
-          background: linear-gradient(100deg, #1ca6f0, #3c7aff, #05deff);
-          color: white;
-          width: 60px;
-          height: 60px;
-          border-radius: 50%;
-          border: none;
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 24px;
-          opacity: 0;
-          visibility: hidden;
-          transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-          box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
-          overflow: visible;
-          z-index: 10;
-          bottom: 5px;
-          /* Ensure button is on top */
-      }
-
-      .scroll-top.show {
-          opacity: 1;
-          visibility: visible;
-      }
-
-      .scroll-top:hover {
-          transform: scale(1.1);
-          /* Subtle scaling instead of expanding */
-          box-shadow: 0 8px 20px rgba(255, 69, 159, 0.6);
-          /* Slightly larger shadow */
-      }
-
-      .scroll-top:active {
-          transform: scale(1.05);
-          /* Minor scale reduction on click */
-      }
-
-      .scroll-top-icon {
-          position: relative;
-          z-index: 2;
-          transition: transform 0.3s ease;
-      }
-
-      .scroll-top:hover .scroll-top-icon {
-          transform: translateY(-3px);
-      }
-
-      /* Progress Ring Styling */
-      .progress-ring {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          transform: rotate(-90deg);
-          /* To start from the top */
-      }
-
-      .progress-ring__circle {
-          transition: stroke-dashoffset 0.35s;
-          transform-origin: 50% 50%;
-      }
-
-      /* Pulse Animation */
-      @keyframes pulse {
-          0% {
-              box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
-          }
-
-          50% {
-              box-shadow: 0 5px 15px rgba(255, 69, 159, 0.7);
-          }
-
-          100% {
-              box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
-          }
-      }
-
-      .scroll-top:hover {
-          animation: pulse 1.5s infinite;
-      }
-
-      .scroll-top.show {
-          animation: none;
-          /* No animation when showing the button */
-      }
-
-      .scroll-top.show:hover {
-          animation: pulse 1.5s infinite;
-          /* Pulse on hover */
-      }
-  </style>
-  <script>
-      // Get the button
-      const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-      const progressCircle = document.querySelector(".progress-ring__circle");
-      const radius = progressCircle.r.baseVal.value;
-      const circumference = 2 * Math.PI * radius;
-
-      // Set the circle progress properties
-      progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
-      progressCircle.style.strokeDashoffset = circumference;
-
-      // Function to show or hide the button based on scroll position
-      function toggleScrollButton() {
-          if (window.scrollY > 100) {
-              scrollToTopBtn.classList.add("show");
-          } else {
-              scrollToTopBtn.classList.remove("show");
-          }
-      }
-
-      // Function to set the scroll progress on the button ring
-      function setProgress(percent) {
-          const offset = circumference - (percent / 100) * circumference;
-          progressCircle.style.strokeDashoffset = offset;
-      }
-
-      // Listen for scroll events to update button visibility and progress
-      window.addEventListener("scroll", () => {
-          toggleScrollButton();
-          const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-          setProgress(scrollPercent);
-      });
-
-      // Smooth scroll to top when the button is clicked
-      scrollToTopBtn.addEventListener("click", () => {
-          window.scrollTo({
-              top: 0,
-              behavior: "smooth"
-          });
-      });
-
-  </script>
+    <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
     <div class="gtranslate_wrapper"></div>
     <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
     <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
@@ -2293,42 +2531,338 @@ prevButton.addEventListener('click', () => {
     <script src="visi.js"></script>
     <script src="../assets/js/index.js"></script>
 
-        </div>
 
-        <div class="popup-right-nl">
+    <style>
+      body {
+
+        font-family: Arial, sans-serif;
+
+      }
+
+      /* Popup Styles */
+      .popup {
+
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        background-color: rgba(0, 0, 0, 0.5);
+        /* Black background with opacity */
+        justify-content: center;
+        /* Center the popup */
+        align-items: center;
+        /* Center the popup */
+        z-index: 1000;
+        /* Sit on top */
+
+      }
+
+      .popup-content {
+
+        background: linear-gradient(rgb(133 183 242 / 80%), rgb(23 37 149)), url(your-image-url.jpg);
+        padding: 20px;
+        border-radius: 5px;
+        max-width: 500px;
+        max-height: 500px;
+        min-height: 410px;
+        text-align: center;
+
+      }
+
+      /* Set poll options to stack vertically */
+      #pollOptions {
+
+        display: flex;
+        flex-direction: column;
+        /* Stack buttons vertically */
+        align-items: center;
+        /* Center the buttons */
+
+      }
+
+      .poll-button {
+
+        display: block;
+        /* Change to block for full-width */
+        margin: 5px 0;
+        /* Add vertical margin */
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        background-color: rgb(14 64 98 / 40%);
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        width: 100%;
+        /* Full width */
+
+      }
+
+      .poll-button:hover {
+
+        background-color: #45a049;
+        /* Darker green */
+
+      }
+
+      .poll-button.selected {
+
+        background-color: #0f1e82;
+        /* Blue for selected */
+
+      }
+
+      /* New Vote Button Styles */
+      .vote-button {
+
+        display: block;
+        /* Change to block for full-width */
+        margin: 5px 0;
+        /* Add vertical margin */
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        background-color: #f44336;
+        /* Red */
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        width: 100%;
+        /* Full width */
+
+      }
+
+      .vote-button:hover {
+
+        background-color: #d32f2f;
+        /* Darker red */
+
+      }
+
+      /* Result Text Styles */
+      #result {
+
+        margin-top: 10px;
+        /* Add space above result text */
+        word-wrap: break-word;
+        /* Allow long text to wrap within the box */
+        overflow: hidden;
+        /* Prevent overflow */
+        max-height: 50px;
+        /* Limit height to prevent overflow */
+        color: rgb(255, 255, 255);
+        /* Set text color to red */
+
+      }
+    </style>
+
+
+      <!-- Newsletter pop-up -->
+ <style>
+  .popup-nl {
+
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 1009;
+
+  }
+
+  .popup-content-nl {
+
+      display: flex;
+      background-color: white;
+      border-radius: 10px;
+      max-width: 800px;
+      height: 450px;
+      width: 700px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+
+  }
+
+  .close1-btn-nl {
+
+      width: 20px;
+      cursor: pointer;
+      margin: 18px 10px;
+      position: absolute;
+      top: -4px;
+      right: 12px;
+      font-size: 18px;
+      font-weight: 800;
+
+  }
+
+  .popup-left-nl img {
+
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+  }
+
+  .popup-right-nl {
+
+      padding: 20px;
+      width: 50%;
+      display: flex;
+      flex-direction: column; 
+      align-items: center;
+      justify-content: center;
+
+  }
+
+  .popup-nl h1 {
+
+      font-size: 24px;
+      background: linear-gradient(to right, #ff4aac, #faa2d3); 
+      -webkit-text-fill-color: transparent; 
+      -webkit-background-clip: text; 
+      text-align: center;
+      margin-bottom: 12px;
+      margin-top: 35px;
+
+  }
+
+  .h2-nl{
+
+      font-size: 18px;
+      margin-bottom: 8px;
+      text-align: center;
+      color: #333;
+
+  }
+
+  .pop_up-nl {
+
+      margin-bottom: 15px;
+      font-weight: bold;
+      background: linear-gradient(135deg, #0d4670, #32bbdc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 12.7px;
+
+  }
+
+  .bold{
+
+      font-size: 13.1px;
+
+  }
+
+  input[type="email"] {
+
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 16px;
+      border: 1px solid #000000;
+      border-radius: 5px;
+      font-size: 14px;
+
+  }
+
+  .signup-btn1-nl {
+
+      width: 100%;
+      height: 40px;
+      text-align: center;
+      background: radial-gradient(circle, #f74b9f, #653b51);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+
+  }
+
+  .signup-btn1-nl:hover {
+
+      background-color: #ff4aac;
+
+  }
+
+  .no-thanks-nl {
+
+      display: block;
+      margin-top: 10px;
+      color: #888;
+      text-decoration: none;
+      margin-bottom: 15px;
+
+  }
+
+  .no-thanks-nl:hover {
+
+      color: #000000;
+      font-size: 14px;
+
+  }
+
+  .terms-nl {
+
+      margin-top: 15px;
+      font-size: 10px;
+      color: #888;
+
+  }
+
+  .terms-nl a {
+
+      display: inline;
+
+  }
+
+  .terms-nl a:hover {
+
+      text-decoration: underline;
+
+  }
+
+  .popup-right-nl p {
+
+      margin-top: 0;
+      margin-bottom: 10px;
+      text-align: center;
+
+  }
+
+</style>
+<div id="popup-nl" class="popup-nl">
+  <div class="popup-content-nl">
+      <div class="popup-left-nl">
+          <img src="newsletterpopup.jpg" alt="finance">
+      </div>
+
+      <div class="popup-right-nl">
           <a href="# " class="close1-btn-nl close-nl">X</a>
           <h1>Subscribe to Newsletter</h1>
           <h2 class="h2-nl">Stay Ahead in Your Financial Journey!</h2>
-          <p class="pop_up-nl">Join our community of financial learners and gain exclusive access to expert insights,
-            helpful tools, personalized tips, interactive quizzes, and more!</p>
+          <p class="pop_up-nl">Join our community of financial learners and gain exclusive access to expert insights, helpful tools, personalized tips, interactive quizzes, and more!</p>
           <form id="emailForm-nl">
-            <input type="email" id="email-nl" placeholder="Enter your email" required>
-            <button type="submit" class="signup-btn1-nl">Subscribe</button>
+              <input type="email" id="email-nl" placeholder="Enter your email" required>
+              <button type="submit" class="signup-btn1-nl">Subscribe</button>
           </form>
           <a href="#" class="no-thanks-nl close-nl">No thanks</a>
-          <p class="terms-nl" style="white-space: nowrap;">By subscribing to newsletters, you agree to our <br><a
-              href="./blogs/terms-of-service.html">Terms of Service</a> and <a
-              href="./blogs/privacy-policy.html">Privacy Policy</a>.</p>
-        </div>
+          <p class="terms-nl" style="white-space: nowrap;">By subscribing to newsletters, you agree to our <br><a href="terms&cond.html">Terms of Service</a> and <a href="privacynotice.html">Privacy Policy</a>.</p>
       </div>
-    </div>
-    <script src="newsletterpopup.js"></script>
-    <script>
-      function toggleMenu() {
-        const menu = document.getElementById('profileMenu');
-        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-      }
+  </div>
+</div>
+<script src="newsletterpopup.js"></script>
 
-      // Close the dropdown if the user clicks outside of it
-      window.onclick = function (event) {
-        if (!event.target.matches('.profile-icon img')) {
-          const menu = document.getElementById('profileMenu');
-          if (menu.style.display === 'block') {
-            menu.style.display = 'none';
-          }
-        }
-      }
-    </script>
 
   </body>
 
