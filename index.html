@@ -1751,8 +1751,8 @@ prevButton.addEventListener('click', () => {
       });
 
       // Handle form submission and show modal
-      document.getElementById('feedback-form').addEventListener('submit', function (e) {
-        e.preventDefault();
+      document.getElementById('feedback-form').addEventListener('submit', async function (e) {
+        e.preventDefault(); // Prevent the default form submission
 
         // Get form values
         const name = document.getElementById('name').value;
@@ -1763,7 +1763,7 @@ prevButton.addEventListener('click', () => {
         // Validate emoji rating
         if (!rating) {
           alert('Please select an emoji rating before submitting.');
-          return;
+          return; // Exit the function if no rating is selected
         }
 
         // Create feedback object
@@ -1774,30 +1774,38 @@ prevButton.addEventListener('click', () => {
           comments
         };
 
-        // Get existing feedback from localStorage or initialize with an empty array
-        let feedbackData = localStorage.getItem('feedbacks');
-        feedbackData = feedbackData ? JSON.parse(feedbackData) : [];
+        try {
+          // Submit data to the backend
+          const response = await fetch('http://localhost:5000/api/feedback/saveFeedback', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(feedback)
+          });
 
-        // Add new feedback
-        feedbackData.push(feedback);
+          // Check if the response is ok
+          if (response.ok) {
+            // Optionally handle the response data
+            const result = await response.json();
+            console.log(result); // Log the result or handle it as needed
 
-        // Store updated feedback array back in localStorage
-        localStorage.setItem('feedbacks', JSON.stringify(feedbackData));
-
-        // Clear form inputs
-        document.getElementById('feedback-form').reset();
-
-        // Reset emoji description
-        emojiDescription.textContent = 'Select an option';
-
-        // Show success modal
-        document.getElementById('successModal').style.display = 'flex';
-
-        // Close modal after 3 seconds
-        setTimeout(function () {
-          document.getElementById('successModal').style.display = 'none';
-        }, 3000);
+            // Clear form inputs
+            document.getElementById('feedback-form').reset();
+            alert('Feedback submitted successfully!'); // Notify the user
+          } else {
+            // Handle errors (e.g., 4xx or 5xx responses)
+            const errorData = await response.json();
+            console.error('Error submitting feedback:', errorData);
+            alert('Failed to submit feedback. Please try again later.');
+          }
+        } catch (error) {
+          // Handle network errors
+          console.error('Network error:', error);
+          alert('An error occurred while submitting feedback. Please check your connection and try again.');
+        }
       });
+
 
       // Close the modal when the 'Dismiss' button is clicked or 'X' is pressed
       document.getElementById('dismissModal').addEventListener('click', function () {
