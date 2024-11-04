@@ -3,9 +3,12 @@ import dotenv from "dotenv";
 import connectDB from "./utils/db.js";
 import cors from "cors";
 import contactRoutes from "./routes/contactRoutes.js";
+
+import feedbackRoutes from "./routes/feedbackRoutes.js";
 import addBlog from "./routes/addBlogRoutes.js";
 import path from "path"; // Import path module
 import { fileURLToPath } from "url"; // Import fileURLToPath
+
 
 dotenv.config();
 const app = express();
@@ -22,6 +25,8 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // Serve static files from the uploads directory
 app.use("/api/contact", contactRoutes);
+
+app.use("/api/feedback", feedbackRoutes);
 app.use("/api/addBlog", addBlog);
 
 

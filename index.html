@@ -148,9 +148,9 @@
       document.getElementById("progressBar").style.width = scrolled + "%";
     };
   </script>
-  <button id="scrollBtn" class="scroll-btn" onclick="scrollToNextSection()">
+  <!-- <button id="scrollBtn" class="scroll-btn" onclick="scrollToNextSection()">
     <i class="lni-chevron-down"></i>
-  </button>
+  </button> -->
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -194,6 +194,11 @@
                       </a>
                     </li>
                     <li class="nav-item">
+                      <a class="page-scroll" href="./contributors.html">
+                        <i class="fas fa-solid fa-people-group icon-hover" style="margin: 5px;"></i> Contributors
+                      </a>
+                    </li>
+                    <li class="nav-item">
                       <a class="page-scroll" href="./finance.html">
                         <i class="fas fa-graduation-cap icon-hover" style="margin: 5px;"></i> Courses
                       </a>
@@ -210,9 +215,9 @@
                     </li>
                     <!-- Dropdown for Explore -->
                     <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
-                      <a class="page-scroll dropdown-toggle" href="#">
+                      <!-- <a class="page-scroll dropdown-toggle" href="#">
                         <i class="fas fa-chevron-down icon-hover" style="margin: 5px;"></i> Explore More
-                      </a>
+                      </a> -->
                       <ul class="dropdown-menu">
                         <li><a href="./trends.html"><i class="fas fa-chart-line icon-hover" style="margin: 5px;"></i>
                             Trends</a></li>
@@ -528,16 +533,22 @@
       </div>
   </div>
   </div>
-
+<style>
+  .styled-btn{
+    right: 0px;
+    position: relative;
+    left: 280px;  
+  }
+</style>
   <div id="home" class="header-hero bg_cover" style="background-image: url(./assets/images/banner-bg.svg)">
     <div class="container">
-      <h2 class="head-animate" style="font-size: 90px;">
-        WELCOME TO FINVEDA
-      </h2>
       <div class="row justify-content-center">
         <div class="col-lg-8">
           <div class="header-hero-content text-center">
             <br>
+            <h2 class="head-animate" style="font-size: 90px; color: white;">
+              WELCOME TO FINVEDA
+            </h2>
             <br>
             <p class="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s"
               style="visibility: visible; animation-duration: 1.3s; animation-delay: 0.8s;color:white">
@@ -550,7 +561,6 @@
               style="visibility: visible; animation-duration: 1.3s; animation-delay: 1.1s; color:white">
               Chat with ArthaSathi 💬
             </a>
-
 
 
 
@@ -1213,7 +1223,6 @@
     </div>
   </section>
   <!-- testimonail section ends here  -->
-
   <div class="blogfull">
     <article>
       <section id="blog" class="blog-area pt-100">
@@ -1394,7 +1403,86 @@
   <head>
     <title>Feedback Form</title>
     <style>
-      /* Simple CSS for layout and modal */
+.form-section {
+  background: linear-gradient(#877ec7, #c18cc1, #87cefa);
+    max-width: 900px;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white for form container */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    height: 1200px;
+}
+
+.section-title {
+    margin-bottom: 20px;
+}
+
+.form-heading {
+    font-size: 24px;
+    color: #333;
+}
+
+.form-label {
+    font-weight: bold;
+    color: #555;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border 0.3s;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    border-color: #6a5acd; /* Highlight border color */
+    outline: none;
+}
+
+.emojis {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.emojis input {
+    display: none; /* Hide the radio buttons */
+}
+
+.emojis label {
+    font-size: 30px; /* Size of emojis */
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.emojis label:hover {
+    transform: scale(1.2); /* Scale up on hover */
+}
+
+.form-button {
+  width: 400px;
+    background-color: #6a5acd; /* Button background color */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.form-button:hover {
+    background-color: #5a4dbd; /* Darker shade on hover */
+}
+.form-textarea{
+  height: 400px;
+}
+
     </style>
   </head>
 
@@ -1437,7 +1525,7 @@
         </div>
         <div class="form-group">
           <div class="form-group">
-            <button class="form-button" id="feed-submit" type="submit">Submit</button>
+            <center><button class="form-button" id="feed-submit" type="submit">Submit</button></center>
           </div>
         </div>
       </form>
@@ -1498,8 +1586,8 @@
       });
 
       // Handle form submission and show modal
-      document.getElementById('feedback-form').addEventListener('submit', function (e) {
-        e.preventDefault();
+      document.getElementById('feedback-form').addEventListener('submit', async function (e) {
+        e.preventDefault(); // Prevent the default form submission
 
         // Get form values
         const name = document.getElementById('name').value;
@@ -1510,7 +1598,7 @@
         // Validate emoji rating
         if (!rating) {
           alert('Please select an emoji rating before submitting.');
-          return;
+          return; // Exit the function if no rating is selected
         }
 
         // Create feedback object
@@ -1521,30 +1609,38 @@
           comments
         };
 
-        // Get existing feedback from localStorage or initialize with an empty array
-        let feedbackData = localStorage.getItem('feedbacks');
-        feedbackData = feedbackData ? JSON.parse(feedbackData) : [];
+        try {
+          // Submit data to the backend
+          const response = await fetch('http://localhost:5000/api/feedback/saveFeedback', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(feedback)
+          });
 
-        // Add new feedback
-        feedbackData.push(feedback);
+          // Check if the response is ok
+          if (response.ok) {
+            // Optionally handle the response data
+            const result = await response.json();
+            console.log(result); // Log the result or handle it as needed
 
-        // Store updated feedback array back in localStorage
-        localStorage.setItem('feedbacks', JSON.stringify(feedbackData));
-
-        // Clear form inputs
-        document.getElementById('feedback-form').reset();
-
-        // Reset emoji description
-        emojiDescription.textContent = 'Select an option';
-
-        // Show success modal
-        document.getElementById('successModal').style.display = 'flex';
-
-        // Close modal after 3 seconds
-        setTimeout(function () {
-          document.getElementById('successModal').style.display = 'none';
-        }, 3000);
+            // Clear form inputs
+            document.getElementById('feedback-form').reset();
+            alert('Feedback submitted successfully!'); // Notify the user
+          } else {
+            // Handle errors (e.g., 4xx or 5xx responses)
+            const errorData = await response.json();
+            console.error('Error submitting feedback:', errorData);
+            alert('Failed to submit feedback. Please try again later.');
+          }
+        } catch (error) {
+          // Handle network errors
+          console.error('Network error:', error);
+          alert('An error occurred while submitting feedback. Please check your connection and try again.');
+        }
       });
+
 
       // Close the modal when the 'Dismiss' button is clicked or 'X' is pressed
       document.getElementById('dismissModal').addEventListener('click', function () {
@@ -1569,12 +1665,12 @@
 
     <footer id="footer" class="footer-area pt-120">
       <div class="container">
-        <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+        <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s"  style="height: 265px;">
           <div class="row">
             <div class="col-lg-6">
               <div class="subscribe-content mt-45">
                 <h2 class="subscribe-title">
-                  Subscribe Our Newsletter <span>get regular updates</span>
+                  Subscribe Our Newsletter <span style="font-size: 28px;"> Get regular updates</span>
                 </h2>
               </div>
             </div>
@@ -1727,7 +1823,155 @@
     </footer>
 
 
-    <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
+    <!-- <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a> -->
+    <button id="scrollToTopBtn" class="scroll-top" aria-label="Scroll to top">
+      <div class="scroll-top-icon">
+          <i class="fa-solid fa-arrow-up"></i>
+      </div>
+      <svg class="progress-ring" width="60" height="60">
+          <circle class="progress-ring__circle" stroke="#ffffff" stroke-width="4" fill="transparent" r="28" cx="30"
+              cy="30"></circle>
+      </svg>
+  </button>
+  <style>
+      .scroll-top {
+          position: fixed;
+          right: 1.6%;
+          background: linear-gradient(100deg, #1ca6f0, #3c7aff, #05deff);
+          color: white;
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          border: none;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 24px;
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+          box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+          overflow: visible;
+          z-index: 10;
+          bottom: 5px;
+          /* Ensure button is on top */
+      }
+
+      .scroll-top.show {
+          opacity: 1;
+          visibility: visible;
+      }
+
+      .scroll-top:hover {
+          transform: scale(1.1);
+          /* Subtle scaling instead of expanding */
+          box-shadow: 0 8px 20px rgba(255, 69, 159, 0.6);
+          /* Slightly larger shadow */
+      }
+
+      .scroll-top:active {
+          transform: scale(1.05);
+          /* Minor scale reduction on click */
+      }
+
+      .scroll-top-icon {
+          position: relative;
+          z-index: 2;
+          transition: transform 0.3s ease;
+      }
+
+      .scroll-top:hover .scroll-top-icon {
+          transform: translateY(-3px);
+      }
+
+      /* Progress Ring Styling */
+      .progress-ring {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          transform: rotate(-90deg);
+          /* To start from the top */
+      }
+
+      .progress-ring__circle {
+          transition: stroke-dashoffset 0.35s;
+          transform-origin: 50% 50%;
+      }
+
+      /* Pulse Animation */
+      @keyframes pulse {
+          0% {
+              box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+          }
+
+          50% {
+              box-shadow: 0 5px 15px rgba(255, 69, 159, 0.7);
+          }
+
+          100% {
+              box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+          }
+      }
+
+      .scroll-top:hover {
+          animation: pulse 1.5s infinite;
+      }
+
+      .scroll-top.show {
+          animation: none;
+          /* No animation when showing the button */
+      }
+
+      .scroll-top.show:hover {
+          animation: pulse 1.5s infinite;
+          /* Pulse on hover */
+      }
+  </style>
+  <script>
+      // Get the button
+      const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+      const progressCircle = document.querySelector(".progress-ring__circle");
+      const radius = progressCircle.r.baseVal.value;
+      const circumference = 2 * Math.PI * radius;
+
+      // Set the circle progress properties
+      progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
+      progressCircle.style.strokeDashoffset = circumference;
+
+      // Function to show or hide the button based on scroll position
+      function toggleScrollButton() {
+          if (window.scrollY > 100) {
+              scrollToTopBtn.classList.add("show");
+          } else {
+              scrollToTopBtn.classList.remove("show");
+          }
+      }
+
+      // Function to set the scroll progress on the button ring
+      function setProgress(percent) {
+          const offset = circumference - (percent / 100) * circumference;
+          progressCircle.style.strokeDashoffset = offset;
+      }
+
+      // Listen for scroll events to update button visibility and progress
+      window.addEventListener("scroll", () => {
+          toggleScrollButton();
+          const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+          setProgress(scrollPercent);
+      });
+
+      // Smooth scroll to top when the button is clicked
+      scrollToTopBtn.addEventListener("click", () => {
+          window.scrollTo({
+              top: 0,
+              behavior: "smooth"
+          });
+      });
+
+  </script>
     <div class="gtranslate_wrapper"></div>
     <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
     <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
@@ -1883,7 +2127,6 @@
 
     <script src="visi.js"></script>
     <script src="../assets/js/index.js"></script>
-
 
         </div>
 

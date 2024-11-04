@@ -460,7 +460,10 @@
                   placeholder="Password" 
                   id="password-input" />
           </div>
-          
+          <div class="form-check d-flex">
+            <input type="checkbox" class="form-check-input" id="login-remember" />
+            <label class="form-check-label">Remember me</label>
+          </div>
             
             
 
@@ -502,6 +505,10 @@
               <span class="tooltip-text">Click to view password</span>
               <input type="password" placeholder="Password" id="password-input-signup" />
           </div>
+          <div class="form-check d-flex">
+            <input type="checkbox" class="form-check-input" id="login-remember" />
+            <label class="form-check-label">Remember me</label>
+          </div>
           
         
             <!-- Password strength meter starts here (initially hidden) -->
@@ -534,11 +541,35 @@
               </div>
           </div>
         </form>
+        <style>
+          .form-check {
+  align-items: center; /* Aligns checkbox and label vertically */
+}
+
+.form-check-input {
+  margin-right: 10px; /* Space between checkbox and label */
+}
+
+        </style>
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>
         
         
         <script>
+          document.querySelector('#login-btn').addEventListener('click', (event) => {
+  event.preventDefault();
+  const emailInput = document.getElementById('login-email');
+  const rememberMeCheckbox = document.getElementById('login-remember');
+
+  if (rememberMeCheckbox.checked) {
+    localStorage.setItem('rememberedEmail', emailInput.value);
+  } else {
+    localStorage.removeItem('rememberedEmail');
+  }
+
+  // Continue with your existing login logic...
+});
+
             let passwordSignup = document.getElementById("password-input-signup");
             let strengthBarSignup = document.getElementById("strength-bar-signup");
             let strengthLabelSignup = document.getElementById("strength-label-signup");
