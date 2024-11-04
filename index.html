@@ -65,7 +65,6 @@
   <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
   <link rel="stylesheet" href="navbar.css">
 
-
 <body>
 
   <div class="circle-container">
@@ -257,17 +256,9 @@
               toggleButton.addEventListener('click', function () {
                 body.classList.toggle('dark-mode');
                 toggleButton.classList.toggle('dark');
+              }
 
-                // Update button icon based on mode
-                if (body.classList.contains('dark-mode')) {
-                  toggleButton.querySelector('span').textContent = '🌙';  // Light mode icon
-                  localStorage.setItem('theme', 'dark');
-                } else {
-                  toggleButton.querySelector('span').textContent = '🌞';  // Dark mode icon
-                  localStorage.setItem('theme', 'light');
-                }
-                loadShow();
-              });
+              );
             </script>
             <div class="">
               <!-- Login Modal -->
@@ -1224,6 +1215,169 @@
     </div>
   </section>
   <!-- testimonail section ends here  -->
+  <style>
+    /* General testimonial section styling */
+
+    #testimonial {
+      background: linear-gradient(135deg, #4b6cb7, #182848);
+      /* Attractive gradient background */
+      padding: 120px 0;
+      color: #fff;
+      /* White font color */
+    }
+
+    .testimonial-wrapper {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: hidden;
+      /* Keeps the container fixed width and hides overflow */
+      gap: 20px;
+      scroll-behavior: smooth;
+      /* Enables smooth scrolling for JS control */
+    }
+
+    .testimonial-item {
+      flex: 0 0 auto;
+      width: 100%;
+      max-width: 300px;
+    }
+
+
+
+    .section-title .title {
+      font-size: 2.5rem;
+      color: greenyellow;
+      font-weight: bold;
+    }
+
+
+    .title:hover {
+      color: white;
+      text-decoration: dotted;
+    }
+
+    /* Styling for each testimonial card */
+    .single-testimonial {
+      background: rgba(167, 43, 43, 0.1);
+      /* Semi-transparent background for testimonial cards */
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .single-testimonial:hover {
+      transform: scale(1.05);
+      /* Hover effect to scale up the testimonial */
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      /* Add a subtle shadow on hover */
+    }
+
+    .testimonial-review .quota i {
+      font-size: 2rem;
+      color: #f7b42c;
+      /* Color for the quote icon */
+    }
+
+    .testimonial-review .star ul li i {
+      color: #ffd700;
+      /* Gold stars for ratings */
+    }
+
+    /* Styling for testimonial text */
+    .testimonial-text p {
+      font-style: italic;
+      color: #e0e0e0;
+    }
+
+    /* Author section styling */
+    .testimonial-author {
+      margin-top: 15px;
+    }
+
+    .author-image .author {
+      border-radius: 50%;
+      border: 3px solid #fff;
+      /* White border around the profile images */
+      width: 50px;
+      height: 50px;
+    }
+
+    .author-content h6.holder-name {
+      font-size: 1.2rem;
+      font-weight: 800;
+      /* Heavy font-weight for author names */
+      color: #fff;
+      /* White font for author names */
+    }
+
+    .author-content p.text {
+      color: #ccc;
+      /* Lighter text color for author details */
+    }
+
+    /* Navigation buttons */
+    #slide-buttons {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+    }
+
+
+    #prevButton,
+    #nextButton {
+      padding: 30px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    #prevButton .arrow-left,
+    #nextButton .arrow-right {
+      background-color: #ddd; /* Initial button color */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease; /* Smooth transition */}
+
+    #prevButton:hover .arrow-left,
+    #nextButton:hover .arrow-right {
+      background: linear-gradient(to bottom right, #feb47b, #ff7e5f);
+      /* Reverse gradient on hover */
+    }
+  </style>
+<script>
+  // Select the elements
+const testimonialWrapper = document.querySelector('.testimonial-wrapper');
+const prevButton = document.getElementById('prevButton');
+const nextButton = document.getElementById('nextButton');
+
+// Set scroll amount (width of one testimonial item)
+const scrollAmount = 320; // Adjust based on card width and gap between cards
+
+// Event listener for the "Next" button
+nextButton.addEventListener('click', () => {
+    testimonialWrapper.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth'
+    });
+});
+
+// Event listener for the "Previous" button
+prevButton.addEventListener('click', () => {
+    testimonialWrapper.scrollBy({
+        left: -scrollAmount,
+        behavior: 'smooth'
+    });
+});
+
+</script>
+
+
+
+
+
   <div class="blogfull">
     <article>
       <section id="blog" class="blog-area pt-100">
@@ -1894,10 +2048,6 @@
     <script src="visi.js"></script>
     <script src="../assets/js/index.js"></script>
 
-    <div id="popup-nl" class="popup-nl">
-      <div class="popup-content-nl">
-        <div class="popup-left-nl">
-          <img src="newsletterpopup.jpg" alt="finance">
         </div>
 
         <div class="popup-right-nl">
