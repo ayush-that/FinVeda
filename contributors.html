@@ -21,6 +21,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-DyZvYh4T9yG3gZNE+HBQQJwIMc/XjCj5R90K0Ih7pbk3WcYYlv5D5+Qh+d0EV9Uw" crossorigin="anonymous">
+
   <!-- Linked CSS for social logos -->
   <link rel="stylesheet" href="../assets/css/index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
@@ -529,37 +531,84 @@
   
 }
 
+/* Stats Section */
+.contributor-stats {
+
+max-width: 1200px;
+margin: 0 auto;
+padding: 4rem 0;
+text-align: center;
+background: #00111c;
+margin-top: 90px;
+
+}
+
+.contributor-stats h2 {
+
+font-size: 2rem;
+margin-bottom: 2rem;
+
+}
+
+.contributor-stats-grid {
+
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 2rem;
+
+}
+
+.contributor-stat-card {
+
+background-color: #132d46;
+border: 1px solid #ccc;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+padding: 1.5rem;
+text-align: center;
+
+}
+
+.contributor-stat-card .contributor-icon {
+
+font-size: 2rem;
+margin-bottom: 1rem;
+
+}
+
+.contributor-stat-card h3 {
+
+font-size: 2rem;
+margin-bottom: 0.5rem;
+color: #ffffff;
+
+}
+
+.contributor-stat-card p {
+
+color: #ffffff;
+
+}
+
+.contributor-icon {
+
+    font-size: 2rem; /* Adjust the size as needed */
+    color: #fff; /* Change color if needed */
+    margin-bottom: 1rem;
+    
+}
+
+
       </style>
-    </header>
+      
+<section class="contributor-stats">
+  <h2>Project Statistics</h2>
+  <div class="contributor-stats-grid" id="statsGrid">
+      <!-- Stats will be dynamically inserted here -->
+  </div>
+</section>
 
-    <section class="contributor-stats">
-      <h2>Project Statistics</h2>
-      <div class="contributor-stats-grid" id="statsGrid">
-    <div class="contributor-stat-card">
-        <div class="contributor-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
-        <h3>234</h3>
-        <p>Contributors</p>
-    </div>
 
-    <div class="contributor-stat-card">
-        <div class="contributor-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><line x1="1.05" y1="12" x2="7" y2="12"></line><line x1="17.01" y1="12" x2="22.96" y2="12"></line></svg></div>
-        <h3>2330</h3>
-        <p>Total Contributions</p>
-    </div>
-
-    <div class="contributor-stat-card">
-        <div class="contributor-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></div>
-        <h3>162</h3>
-        <p>GitHub Stars</p>
-    </div>
-
-    <div class="contributor-stat-card">
-        <div class="contributor-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"></line><circle cx="18" cy="6" r="3"></circle><circle cx="6" y="18" r="3"></circle><path d="M18 9a9 9 0 0 1-9 9"></path></svg></div>
-        <h3>409</h3>
-        <p>Forks</p>
-    </div>
-</div>
-  </section>
 <div class="content min-h-screen text-black dark:text-gray-200">
     <h1 class="text-center text-3xl font-semibold mb-8 text-black dark:text-gray-200" data-text="CONTRIBUTORS">CONTRIBUTORS</h1>
     <style>
