@@ -1573,7 +1573,86 @@ prevButton.addEventListener('click', () => {
   <head>
     <title>Feedback Form</title>
     <style>
-      /* Simple CSS for layout and modal */
+.form-section {
+  background: linear-gradient(#877ec7, #c18cc1, #87cefa);
+    max-width: 900px;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white for form container */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    height: 1200px;
+}
+
+.section-title {
+    margin-bottom: 20px;
+}
+
+.form-heading {
+    font-size: 24px;
+    color: #333;
+}
+
+.form-label {
+    font-weight: bold;
+    color: #555;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border 0.3s;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    border-color: #6a5acd; /* Highlight border color */
+    outline: none;
+}
+
+.emojis {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.emojis input {
+    display: none; /* Hide the radio buttons */
+}
+
+.emojis label {
+    font-size: 30px; /* Size of emojis */
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.emojis label:hover {
+    transform: scale(1.2); /* Scale up on hover */
+}
+
+.form-button {
+  width: 400px;
+    background-color: #6a5acd; /* Button background color */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.form-button:hover {
+    background-color: #5a4dbd; /* Darker shade on hover */
+}
+.form-textarea{
+  height: 400px;
+}
+
     </style>
   </head>
 
@@ -1616,7 +1695,7 @@ prevButton.addEventListener('click', () => {
         </div>
         <div class="form-group">
           <div class="form-group">
-            <button class="form-button" id="feed-submit" type="submit">Submit</button>
+            <center><button class="form-button" id="feed-submit" type="submit">Submit</button></center>
           </div>
         </div>
       </form>
