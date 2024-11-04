@@ -3,124 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profile</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <h1>User Profile</h1>
-        <div id="profileDisplay" class="profile-display">
-            <img id="profileImage" src="no-profile-photo.png" alt="Profile Image" class="profile-img">
-            <div class="profile-info">
-                <p><strong>Username:</strong> <span id="displayUsername">john_doe</span></p>
-                <p><strong>Email:</strong> <span id="displayEmail">john@example.com</span></p>
-                <p><strong>Bio:</strong> <span id="displayBio">Welcome to my profile!</span></p>
-            </div>
-        </div>
-
-        <div id="profileEdit" style="display: none;">
-            <form id="profileForm">
-                <div class="form-group">
-                    <label for="imageUpload">Profile Image:</label>
-                    <input type="file" id="imageUpload" accept="image/*">
-                </div>
-                <div class="form-group">
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" value="john_doe">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" value="john@example.com">
-                </div>
-                <div class="form-group">
-                    <label for="bio">Bio:</label>
-                    <textarea id="bio" name="bio">Welcome to my profile!</textarea>
-                </div>
-                <button type="submit">Save</button>
-                <button type="button" id="cancelButton">Cancel</button>
-            </form>
-        </div>
-
-        <button id="editButton">Edit Profile</button>
-    </div>
-
+    <title>Responsive Layout</title>
     <style>
-        body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
+        .column-layout {
+            display: flex;               /* Correct usage */
+            flex-direction: column;      /* Stack vertically */
+            align-items: center;         /* Center horizontally */
+        }
 
-.container {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
+        .column-layout > div {
+            width: 100%;                /* Full width for each card */
+            max-width: 90%;             /* Side margin */
+            margin: 10px 0;             /* Space between cards */
+            background: lightgray;      /* Just for visibility */
+            padding: 20px;              /* Padding for cards */
+            border-radius: 5px;         /* Rounded corners */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Shadow */
+        }
 
-h1 {
-    text-align: center;
-}
-
-.profile-display {
+          /* General styles for the blog content and cards */
+.blog-content {
     display: flex;
-    align-items: center; /* Vertically center items */
-    margin-bottom: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 15px;
 }
 
-.profile-img {
-    width: 100px; /* Set the size of the image */
-    height: 100px;
-    border-radius: 50%; /* Make the image circular */
-    border: 1px solid red;
-    object-fit: cover; /* Maintain aspect ratio */
-    margin-right: 20px; /* Space between image and text */
+.head {
+    justify-self: center;
+    font-size: 1.5rem;
 }
 
-.profile-info {
-    flex: 1; /* Take up remaining space */
+#good-card {
+    border: 10px solid white;
+    display: flex;
+    justify-content: space-evenly;
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.form-group {
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-input[type="text"],
-input[type="email"],
-textarea,
-input[type="file"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button {
-    padding: 10px 15px;
-    background-color: #5cb85c;
-    color: white;
-    border: none;
-    border-radius: 5px;
+#good-card1, #good-card2, #good-card3 {
+    width: 300px;
+    height: 300px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    position: relative;
+    margin-bottom: 10px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
     cursor: pointer;
 }
 
-button#cancelButton {
-    background-color: #d9534f;
+#good-card1 { background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%); }
+#good-card2 { background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%); }
+#good-card3 { background: linear-gradient(135deg, #d9baf6 0%, #bfa2f9 100%); }
+
+#good-card1:hover, #good-card2:hover, #good-card3:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-button:disabled {
-    background-color: #ccc;
+#white-card1, #white-card2, #white-card3 {
+    color: #1e293b;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+#color-card-green, #color-card-orange, #color-card-purple {
+    border-radius: 12px;
+}
+
+#shadow1, #shadow2, #shadow3 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Responsive styling for mobile view */
+
+
+    #good-card1, #good-card2, #good-card3 {
+        width: 100%; /* Full width on mobile */
+        max-width: 90%; /* Add slight padding on sides */
+        height: auto; /* Auto height to fit content */
+        margin: 10px 0; /* Margin between stacked cards */
+        font-size: 14px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .head {
+        font-size: 1.2rem;
+    }
+
+    #card2, #card3 {
+        width: 100%;
+        font-size: 1.1rem;
+    }
+
+    #white-card1, #white-card2, #white-card3 {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+
+@media screen and (max-width: 480px) {
+    .head {
+        font-size: 1rem;
+    }
+
+    #white-card1, #white-card2, #white-card3 {
+        font-size: 0.8rem;
+    }
+}
+
+.column-layout {
+    display: column;
+}
+
+.column-layout > div {
+    width: 100%;
+    max-width: 90%;
+    margin: 10px 0;
+}
+
+.column-layout {
+    display: column;               /* Use flexbox to enable flex properties */
+    flex-direction: column;      /* Stack the items vertically */
+    align-items: center;
+           /* Center items horizontally */
+}
+
+.column-layout > div {           /* Target child divs directly under this layout */
+    width: 100%;                /* Full width for each card */
+    max-width: 90%;             /* Add some margin on sides */
+    margin: 10px 0;             /* Space between cards */
 }
 
     </style>
-    <script src="final.js"></script>
+</head>
+<body>
+
+<div id="good-card"> <!-- Ensure this ID is correct -->
+    <div class="good-card1">Card 1</div>
+    <div class="good-card2">Card 2</div>
+    <div class="good-card3">Card 3</div>
+</div>
+
+<script>
+    function checkScreenSize() {
+        const goodCard = document.getElementById('good-card');
+        console.log(`Width: ${window.innerWidth}, Height: ${window.innerHeight}`); // Debugging line
+        if (window.innerWidth < 1032 && window.innerHeight < 779) {
+            goodCard.classList.add('column-layout');
+            console.log('Added column-layout'); // Debugging line
+        } else {
+            goodCard.classList.remove('column-layout');
+            console.log('Removed column-layout'); // Debugging line
+        }
+    }
+
+    // Run on page load
+    checkScreenSize();
+
+    // Run whenever the window is resized
+    window.addEventListener('resize', checkScreenSize);
+</script>
+
 </body>
 </html>
