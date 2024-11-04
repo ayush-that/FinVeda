@@ -122,6 +122,14 @@
               <tr>
                 <td colspan="2">
                   <div class="form-check d-flex">
+                    <input type="checkbox" class="form-check-input" id="login-remember" />
+                    <label class="form-check-label" for="login-remember">Remember me</label>
+                  </div>
+                </td>
+              </tr>              
+              <tr>
+                <td colspan="2">
+                  <div class="form-check d-flex">
                     <input type="checkbox" class="form-check-input" id="register-terms" required />
                     <label class="form-check-label">I accept the <a href="./blogs/terms-of-service.html" target="_blank">Terms and Conditions</a></label>
                   </div>
@@ -145,6 +153,21 @@
     </footer>
 
     <script>
+      document.querySelector('#login-btn').addEventListener('click', (event) => {
+  event.preventDefault();
+  
+  const emailInput = document.getElementById('login-email');
+  const rememberMeCheckbox = document.getElementById('login-remember');
+
+  if (rememberMeCheckbox.checked) {
+    localStorage.setItem('rememberedEmail', emailInput.value);
+  } else {
+    localStorage.removeItem('rememberedEmail');
+  }
+
+  // Continue with your existing login logic...
+});
+
       document.getElementById("copyright-year").textContent = new Date().getFullYear();
 
       const inputFields = document.querySelectorAll("#registerForm input[required]");

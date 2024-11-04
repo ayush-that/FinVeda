@@ -76,18 +76,6 @@
       bottom: 0;
       width: 100%;
     } */
-
-    #progressBar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 0%;
-      height: 8px;
-      background-color: #f76b45;
-      z-index: 9999;
-
-    }
-
     * {
       cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
     }
@@ -319,154 +307,97 @@
       document.getElementById("progressBar").style.width = scrolled + "%";
     };
   </script>
-
-
-
-  <!-- <div class="preloader">
-    <div class="loader">
-      <div class="ytp-spinner">
-        <div class="ytp-spinner-container">
-          <div class="ytp-spinner-rotator">
-            <div class="ytp-spinner-left">
-              <div class="ytp-spinner-circle"></div>
-            </div>
-            <div class="ytp-spinner-right">
-              <div class="ytp-spinner-circle"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
   <header class="header-area">
-    <!-- <div class="navbar-area"> -->
-    <!-- <div class="container"> -->
     <div style="display: flex; justify-content: center;" class="navbar-area">
       <div style="display: flex; justify-content: center;" class="container">
         <div class="row">
-          <!-- <div class="col-lg-12"> -->
-          <nav class="navbar navbar-expand-lg">
-            <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="toggler-icon"></span>
-                <span class="toggler-icon"></span>
-                <span class="toggler-icon"></span>
-              </button> -->
-
-
+            <nav class="navbar navbar-expand-lg" style="display: flex; background-color: #2c3e50;">
               <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-                <div class="icon1">
-                  <a href="./index.html">
-                    <img src="./assets/images/FinvedaLogo.png" alt="icon.png" style="width: 13rem;">
-                  </a>
-                </div>
-                <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./index.html" style="color: rgb(237, 242, 244);">Home
-                      🏡</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./finance.html" style="color: rgb(237, 242, 244);">Courses 📚</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll active-link" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
-                  </li>
-                  <!-- Dropdown for Explore -->
-                  <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
-                    <a class="page-scroll dropdown-toggle" href="#" style="color: rgb(237, 242, 244);">
-                      <span class="explore-text">Explore 📚</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a href="./trends.html">Trends 📈</a></li>
-                      <li><a href="./tools/sip.html">Tools 🔧</a></li>
-                      <li><a href="./blog.html">Blogs 📰</a></li>
-                      <li><a href="./quiz.html">Quiz 🤔</a></li>
-                      <li><a href="./maps.html">MAPS 🗺️</a></li>
-                    </ul>
-                  </li>
+                  <div class="icon1">
+                      <a href="./index.html">
+                          <img src="./assets/images/FinvedaLogo.png" alt="Finveda Logo" style="width: 13rem;">
+                      </a>
+                  </div>
+                  <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
+                      <li class="nav-item">
+                          <a class="page-scroll" href="./index.html">
+                              <i class="fas fa-home icon-hover" style="margin: 5px;"></i> Home
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="page-scroll" href="./about.html">
+                              <i class="fas fa-info-circle icon-hover" style="margin: 5px;"></i> About Us
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="page-scroll" href="./finance.html">
+                              <i class="fas fa-graduation-cap icon-hover" style="margin: 5px;"></i> Courses
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="page-scroll active-link" href="./contact.html">
+                              <i class="fas fa-envelope icon-hover" style="margin: 5px;"></i> Contact
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="page-scroll" href="./faq.html">
+                              <i class="fas fa-question-circle icon-hover" style="margin: 5px;"></i> Help
+                          </a>
+                      </li>
+                      <!-- Dropdown for Explore -->
+                      <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
+                          <a class="page-scroll dropdown-toggle" href="#">
+                              <i class="fas fa-chevron-down icon-hover" style="margin: 5px;"></i> Explore More
+                          </a>
+                          <ul class="dropdown-menu">
+                              <li><a href="./trends.html"><i class="fas fa-chart-line icon-hover" style="margin: 5px;"></i> Trends</a></li>
+                              <li><a href="./tools/sip.html"><i class="fas fa-tools icon-hover" style="margin: 5px;"></i> Tools</a></li>
+                              <li><a href="./blog.html"><i class="fas fa-blog icon-hover" style="margin: 5px;"></i> Blogs</a></li>
+                              <li><a href="./quiz.html"><i class="fas fa-question icon-hover" style="margin: 5px;"></i> Quiz</a></li>
+                              <li><a href="./maps.html"><i class="fas fa-map icon-hover" style="margin: 5px;"></i> MAPS</a></li>
+                          </ul>
+                      </li>
+                      <!-- Navigation item placeholder for Login/Register or Logout button -->
+                      <li class="nav-item no-underline" id="auth-btn-container">
+                          <a class="main-btn navbar-btn" style="padding: 2px 20px;" data-scroll-nav="0" href="./loginPage.html">
+                              <i class="fas fa-user-circle icon-hover" style="margin: 5px;"></i> Login/Register
+                          </a>
+                      </li>
+                      <li class="nav-item no-underline align-self-center">
+                          <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()">
+                            <span>🌞</span>
+                          </button>
+                      </li>
+                  </ul>
+              </div>
+          </nav>
+      </div>
+      <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        var body = document.body;
+        var currentTheme = localStorage.getItem('theme');
 
-                  <!-- Navigation item placeholder for Login/Register or Logout button -->
-                  <li class="nav-item no-underline" id="auth-btn-container">
-                    <a class="main-btn navbar-btn"
-                      style="padding: 2px 20px; color: rgb(237, 242, 244); animation-duration: 0.4s; animation-name: ease;"
-                      data-scroll-nav="0" href="./loginPage.html">Login/Register 💻</a>
-                  </li>
+        if (currentTheme === 'dark') {
+          body.classList.add('dark-mode');
+          toggleButton.classList.add('dark');
+          toggleButton.querySelector('span').textContent = '🌞';
+        }
 
-                 
-                    <!-- Profile Icon -->
-                    <li class="nav-item no-underline">
-                      <a href="./profile.html" class="profile-link" style="display: flex; align-items: center; text-decoration: none;">
-                      <img src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg" alt="Profile Icon" style="width: 50px; height: 50px; border-radius: 50%; margin-top: -17px;">
-                     </a>
-                 </li>
+        toggleButton.addEventListener('click', function () {
+          body.classList.toggle('dark-mode');
+          toggleButton.classList.toggle('dark');
 
-                 <style>
-                   /* Override the existing hover styles */
-                   .navbar-nav .nav-item .profile-link:hover {
-                       background-color: transparent !important; /* Remove background color */
-                       border-radius: 0 !important; /* Reset border radius */
-                       transform: none !important; /* Prevent scaling */
-                   }
-                 </style>
-
-                 <li class="nav-item no-underline">
-                   <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
-                     🌙
-                   </button>
-                 </li>
-               </ul>
-             </div>
-
-             <script>
-               function toggleMenu() {
-                   const menu = document.getElementById('profileMenu');
-                   menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-               }
-
-               // Close the dropdown if the user clicks outside of it
-               window.onclick = function(event) {
-                   if (!event.target.matches('.profile-icon img')) {
-                       const menu = document.getElementById('profileMenu');
-                       if (menu.style.display === 'block') {
-                           menu.style.display = 'none';
-                       }
-                   }
-               }
-           </script>
-
-
-            <script>
-              const toggleButton = document.getElementById('theme-toggle');
-              const body = document.body;
-              const currentTheme = localStorage.getItem('theme');
-
-
-              if (currentTheme === 'dark') {
-                body.classList.add('dark-mode');
-                toggleButton.classList.add('dark');
-                toggleButton.textContent = '🌞';
-              }
-
-              toggleButton.addEventListener('click', function () {
-                body.classList.toggle('dark-mode');
-                toggleButton.classList.toggle('dark');
-
-                // Update button icon based on mode
-                if (body.classList.contains('dark-mode')) {
-                  toggleButton.textContent = '🌞';  // Light mode icon
-                  localStorage.setItem('theme', 'dark');
-                } else {
-                  toggleButton.textContent = '🌙';  // Dark mode icon
-                  localStorage.setItem('theme', 'light');
-                }
-              });
-            </script>
+          // Update button icon based on mode
+          if (body.classList.contains('dark-mode')) {
+            toggleButton.querySelector('span').textContent = '🌙';  // Light mode icon
+            localStorage.setItem('theme', 'dark');
+          } else {
+            toggleButton.querySelector('span').textContent = '🌞';  // Dark mode icon
+            localStorage.setItem('theme', 'light');
+          }
+          loadShow();
+        });
+      </script>
             <!-- Login Modal -->
             <div id="myModal" class="modal">
               <div class="modal-content">
@@ -722,7 +653,7 @@
                 
               <link href="./navbar.css" rel="stylesheet">
               <script type="text/javascript" src="./navbar.js"></script> --> -->
-
+ 
   </header>
   <style>
     body {
@@ -886,73 +817,29 @@
   <div class="contact-info-map-container">
     <div class="contact-frame">
       <h2 style="text-decoration: underline;text-align: center; font-size: 34px; color: #7411b7;">Contact Us</h2>
-      <form id="contact-form" action="submit" method="POST" style="display: flex; flex-direction: column;">
-        <label for="name" style="color: #7411b7; margin-bottom: 0.5rem; font-weight: bolder;">Name:</label>
+      <form action="submit" method="POST" style="display: flex; flex-direction: column;">
+        <label for="name" style="color: #7411b7; margin-bottom: 0.5rem;font-weight: bolder;">Name:</label>
         <input type="text" placeholder="Enter your name" id="name" name="name" required
           style="padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #0056b3; border-radius: 4px;">
 
-        <label for="email" style="color: #7411b7; margin-bottom: 0.5rem; font-weight: bolder;">Email:</label>
+        <label for="email" style="color: #7411b7; margin-bottom: 0.5rem;font-weight: bolder;">Email:</label>
         <input type="email" placeholder="Enter your email" id="email" name="email" required
           style="padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #0056b3; border-radius: 4px;">
 
-        <label for="subject" style="color: #7411b7; margin-bottom: 0.5rem; font-weight: bolder;">Subject:</label>
+        <label for="subject" style="color: #7411b7; margin-bottom: 0.5rem;font-weight: bolder;">Subject:</label>
         <input type="text" placeholder="Enter subject" id="subject" name="subject" required
           style="padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #0056b3; border-radius: 4px;">
 
-        <label for="message" style="color: #7411b7; margin-bottom: 0.5rem; font-weight: bolder;">Message:</label>
+        <label for="message" style="color: #7411b7; margin-bottom: 0.5rem;font-weight: bolder;">Message:</label>
         <textarea id="message" placeholder="Enter message" name="message" required
           style="padding: 0.5rem; margin-bottom: 2rem; border: 1px solid #0056b3; border-radius: 4px; min-height: 100px; resize: vertical;"></textarea>
 
-        <button type="submit" class="gradient-border-button" style="width: 150px;">Send Message</button>
+        <button type="submit" class="gradient-border-button" style="width: 150px;">Send
+          Message</button>
+        <!-- style="background-color: #f48727; color: white; padding: 0.75rem;border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; transition: background-color 0.3s ease;"-->
+
       </form>
     </div>
-    <script>
-      document.getElementById('contact-form').addEventListener('submit', async function (event) {
-        event.preventDefault(); // Prevent the form from submitting
-
-        // Get the values from the form fields
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const subject = document.getElementById('subject').value;
-        const message = document.getElementById('message').value;
-
-        // Create a data object
-        const formData = {
-          name: name,
-          email: email,
-          subject: subject,
-          message: message
-        };
-
-        try {
-          // Send the data to the server using fetch
-          const response = await fetch('http://localhost:5000/api/contact/saveContact', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json' // Sending JSON data
-            },
-            body: JSON.stringify(formData) // Convert the data object to a JSON string
-          });
-
-          // Check if the response is okay
-          if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
-          }
-
-          // Parse the JSON response from the server
-          const data = await response.json();
-          alert('We will reach you soon !!')
-          console.log('Success:', data); // Log the response data
-          // You can also show a success message to the user here
-
-        } catch (error) {
-          console.error('Error:', error); // Log any errors
-          // You can also show an error message to the user here
-        }
-      });
-    </script>
-
-
     <div class="info-map-container">
       <div id="info-frame" class="info-frame">
         <p><strong>Email:</strong> <a href="mailto:ayush1337@hotmail.com">ayush1337@hotmail.com</a></p>
@@ -1611,12 +1498,12 @@
 
 <footer id="footer" class="footer-area pt-120">
   <div class="container">
-    <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+    <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s"  style="height: 265px;">
       <div class="row">
         <div class="col-lg-6">
           <div class="subscribe-content mt-45">
-            <h2 class="subscribe-title">
-              Subscribe Our Newsletter <span>Get Regular Updates</span>
+            <h2 class="subscribe-title subscribe-map-title">
+              Subscribe Our Newsletter <span style="font-size: 28px;"> Get regular updates</span>
             </h2>
           </div>
         </div>
@@ -1624,7 +1511,7 @@
           <div class="subscribe-form mt-50">
             <form id="unique-subscribe-form">
               <input type="email" id="unique-news-email" placeholder="Enter Email" required />
-              <button class="unique-main-btn " id="unique-subscribe-btn" type="submit">Subscribe</button>
+              <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
             </form>
             <div id="unique-message" class="unique-popup-message" style="display: none;">
               <div class="border-animation"></div>

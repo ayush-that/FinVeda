@@ -14,13 +14,12 @@
   <link rel="stylesheet" href="./assets/css/font-awesome.min.css" />
   <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
   <link rel="stylesheet" href="./assets/css/default.css" />
+  <link rel="stylesheet" href="./assets/css/index.css" />
   <link rel="stylesheet" href="./assets/css/style.css" />
   <link rel="stylesheet" href="./assets/css/quiz.css" />
   <link rel="stylesheet" href="./assets/css/popup.css" />
   <link rel="stylesheet" href="./assets/css/cookiepopup.css">
   <link rel="stylesheet" href="./assets/css/about.css" />
-  <!-- <link rel="stylesheet" href="./assets/css/about(inlines).css" /> -->
-  <link rel="stylesheet" href="./assets/css/index.css" />
   <link rel="stylesheet" href="./assets/css/preloader.css" />
   <link rel="stylesheet" type="text/css" href="sipcalculatorCss.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
@@ -28,17 +27,6 @@
   <link rel="stylesheet" href="navbar.css">
 
   <style>
-    #progressBar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 0%;
-      height: 8px;
-      background-color: #f76b45;
-      z-index: 9999;
-
-    }
-
     * {
       cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
     }
@@ -139,132 +127,93 @@
       <div style="display: flex; justify-content: center;" class="container">
         <div class="row">
           <div style="display: flex; justify-content: center;;" class="">
-            <nav class="navbar navbar-expand-lg " style="display: flex;">
-              <!-- <button
-                  class="navbar-toggler"
-                  type="button"
-                  data-toggle="collapse"
-                  data-target="#navbarSupportedContent"
-                  aria-controls="navbarSupportedContent"
-                  aria-expanded="false"
-                  aria-label="Toggle navigation"
-                >
-                  <span class="toggler-icon"></span>
-                  <span class="toggler-icon"></span>
-                  <span class="toggler-icon"></span>
-                </button> -->
-                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+            <nav class="navbar navbar-expand-lg" style="display: flex; background-color: #2c3e50;">
+              <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                   <div class="icon1">
-                    <a href="./index.html">
-                      <img src="./assets/images/FinvedaLogo.png" alt="icon.png" style="width: 13rem;">
-                    </a>
+                      <a href="./index.html">
+                          <img src="./assets/images/FinvedaLogo.png" alt="Finveda Logo" style="width: 13rem;">
+                      </a>
                   </div>
                   <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./index.html" style="color: rgb(237, 242, 244);">Home
-                        🏡</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="page-scroll active-link" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./finance.html" style="color: rgb(237, 242, 244);">Courses 📚</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
-                    </li>
-                    <!-- Dropdown for Explore -->
-                    <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
-                      <a class="page-scroll dropdown-toggle" href="#" style="color: rgb(237, 242, 244);">
-                        <span class="explore-text">Explore 📚</span>
-                      </a>
-                      <ul class="dropdown-menu">
-                        <li><a href="./trends.html">Trends 📈</a></li>
-                        <li><a href="./tools/sip.html">Tools 🔧</a></li>
-                        <li><a href="./blog.html">Blogs 📰</a></li>
-                        <li><a href="./quiz.html">Quiz 🤔</a></li>
-                        <li><a href="./maps.html">MAPS 🗺️</a></li>
-                      </ul>
-                    </li>
+                      <li class="nav-item">
+                          <a class="page-scroll" href="./index.html">
+                              <i class="fas fa-home icon-hover" style="margin: 5px;"></i> Home
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="page-scroll active-link" href="./about.html">
+                              <i class="fas fa-info-circle icon-hover" style="margin: 5px;"></i> About Us
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="page-scroll" href="./finance.html">
+                              <i class="fas fa-graduation-cap icon-hover" style="margin: 5px;"></i> Courses
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="page-scroll" href="./contact.html">
+                              <i class="fas fa-envelope icon-hover" style="margin: 5px;"></i> Contact
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="page-scroll" href="./faq.html">
+                              <i class="fas fa-question-circle icon-hover" style="margin: 5px;"></i> Help
+                          </a>
+                      </li>
+                      <!-- Dropdown for Explore -->
+                      <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
+                          <a class="page-scroll dropdown-toggle" href="#">
+                              <i class="fas fa-chevron-down icon-hover" style="margin: 5px;"></i> Explore More
+                          </a>
+                          <ul class="dropdown-menu">
+                              <li><a href="./trends.html"><i class="fas fa-chart-line icon-hover" style="margin: 5px;"></i> Trends</a></li>
+                              <li><a href="./tools/sip.html"><i class="fas fa-tools icon-hover" style="margin: 5px;"></i> Tools</a></li>
+                              <li><a href="./blog.html"><i class="fas fa-blog icon-hover" style="margin: 5px;"></i> Blogs</a></li>
+                              <li><a href="./quiz.html"><i class="fas fa-question icon-hover" style="margin: 5px;"></i> Quiz</a></li>
+                              <li><a href="./maps.html"><i class="fas fa-map icon-hover" style="margin: 5px;"></i> MAPS</a></li>
+                          </ul>
+                      </li>
+                      <!-- Navigation item placeholder for Login/Register or Logout button -->
+                      <li class="nav-item no-underline" id="auth-btn-container">
+                          <a class="main-btn navbar-btn" style="padding: 2px 20px;" data-scroll-nav="0" href="./loginPage.html">
+                              <i class="fas fa-user-circle icon-hover" style="margin: 5px;"></i> Login/Register
+                          </a>
+                      </li>
+                      <li class="nav-item no-underline align-self-center">
+                          <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()">
+                            <span>🌞</span>
+                          </button>
+                      </li>
+                  </ul>
+              </div>
+          </nav>
+      </div>
+      <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        var body = document.body;
+        var currentTheme = localStorage.getItem('theme');
 
-                    <!-- Navigation item placeholder for Login/Register or Logout button -->
-                    <li class="nav-item no-underline" id="auth-btn-container">
-                      <a class="main-btn navbar-btn"
-                        style="padding: 2px 20px; color: rgb(237, 242, 244); animation-duration: 0.4s; animation-name: ease;"
-                        data-scroll-nav="0" href="./loginPage.html">Login/Register 💻</a>
-                    </li>
+        if (currentTheme === 'dark') {
+          body.classList.add('dark-mode');
+          toggleButton.classList.add('dark');
+          toggleButton.querySelector('span').textContent = '🌞';
+        }
 
-                    
-                    <!-- Profile Icon -->
-                    <li class="nav-item no-underline">
-                      <a href="./profile.html" class="profile-link" style="display: flex; align-items: center; text-decoration: none;">
-                      <img src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg" alt="Profile Icon" style="width: 50px; height: 50px; border-radius: 50%; margin-top: -17px;">
-                     </a>
-                 </li>
+        toggleButton.addEventListener('click', function () {
+          body.classList.toggle('dark-mode');
+          toggleButton.classList.toggle('dark');
 
-                 <style>
-                   /* Override the existing hover styles */
-                   .navbar-nav .nav-item .profile-link:hover {
-                       background-color: transparent !important; /* Remove background color */
-                       border-radius: 0 !important; /* Reset border radius */
-                       transform: none !important; /* Prevent scaling */
-                   }
-                 </style>
-
-                 <li class="nav-item no-underline">
-                   <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
-                     🌙
-                   </button>
-                 </li>
-               </ul>
-             </div>
-
-             <script>
-               function toggleMenu() {
-                   const menu = document.getElementById('profileMenu');
-                   menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-               }
-
-               // Close the dropdown if the user clicks outside of it
-               window.onclick = function(event) {
-                   if (!event.target.matches('.profile-icon img')) {
-                       const menu = document.getElementById('profileMenu');
-                       if (menu.style.display === 'block') {
-                           menu.style.display = 'none';
-                       }
-                   }
-               }
-           </script>
-
-              <script>
-                const toggleButton = document.getElementById('theme-toggle');
-                var body = document.body;
-                var currentTheme = localStorage.getItem('theme');
-
-                if (currentTheme === 'dark') {
-                  body.classList.add('dark-mode');
-                  toggleButton.classList.add('dark');
-                  toggleButton.textContent = '🌞';
-                }
-
-                toggleButton.addEventListener('click', function () {
-                  body.classList.toggle('dark-mode');
-                  toggleButton.classList.toggle('dark');
-
-                  // Update button icon based on mode
-                  if (body.classList.contains('dark-mode')) {
-                    toggleButton.textContent = '🌞';  // Light mode icon
-                    localStorage.setItem('theme', 'dark');
-                  } else {
-                    toggleButton.textContent = '🌙';  // Dark mode icon
-                    localStorage.setItem('theme', 'light');
-                  }
-                  loadShow();
-                });
-              </script>
+          // Update button icon based on mode
+          if (body.classList.contains('dark-mode')) {
+            toggleButton.querySelector('span').textContent = '🌙';  // Light mode icon
+            localStorage.setItem('theme', 'dark');
+          } else {
+            toggleButton.querySelector('span').textContent = '🌞';  // Dark mode icon
+            localStorage.setItem('theme', 'light');
+          }
+          loadShow();
+        });
+      </script>
               <div class="">
 
                 <!-- Login Modal -->
@@ -549,12 +498,12 @@
       /* background: linear-gradient(to bottom, #f8f9fa, #e9ecef); */
       padding: 6rem 1rem;
       font-family: system-ui, -apple-system, sans-serif;
-    } 
-
+    }
+/* 
     .container {
       max-width: 1200px;
       margin: 0 auto;
-    }
+    } */
 
     .title-container {
       text-align: center;
@@ -615,7 +564,7 @@
       .slide {
         grid-template-columns: 1fr;
       }
-      
+
       .section-title {
         font-size: 2.5rem;
       }
@@ -625,7 +574,7 @@
       background: white;
       border-radius: 1rem;
       overflow: hidden;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
                   0 2px 4px -1px rgba(0, 0, 0, 0.06);
       transition: transform 0.3s ease-in-out;
       height: 100%;
@@ -686,7 +635,7 @@
       width: 3rem;
       height: 3rem;
       border-radius: 50%;
-      background: black;
+      background: white;
       border: none;
       cursor: pointer;
       display: flex;
@@ -698,7 +647,7 @@
     }
 
     .carousel-control:hover {
-      background: #000000;
+      background: #f8f9fa;
       transform: translateY(-50%) scale(1.1);
     }
 
@@ -708,11 +657,11 @@
     }
 
     .carousel-control.prev {
-      left: 0rem;
+      left: 1rem;
     }
 
     .carousel-control.next {
-      right: 0rem;
+      right: 1rem;
     }
 
     .carousel-indicators {
@@ -811,12 +760,12 @@
         </div>
 
         <button class="carousel-control prev" id="prevBtn" aria-label="Previous slide">
-          <svg width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path d="M15 19l-7-7 7-7"></path>
           </svg>
         </button>
         <button class="carousel-control next" id="nextBtn" aria-label="Next slide">
-          <svg width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path d="M9 5l7 7-7 7"></path>
           </svg>
         </button>
@@ -826,6 +775,11 @@
     </div>
   </div>
 
+  <style>
+    .about-section {
+      margin-bottom: 100px;
+    }
+  </style>
   <script>
     class Carousel {
       constructor() {
@@ -838,10 +792,10 @@
         // Controls
         this.prevBtn = document.getElementById('prevBtn');
         this.nextBtn = document.getElementById('nextBtn');
-        
+
         // Create indicators
         this.createIndicators();
-        
+
         // Initialize
         this.init();
       }
@@ -861,14 +815,14 @@
       init() {
         // Set initial position
         this.updateSlidePosition();
-        
+
         // Add event listeners
         this.prevBtn.addEventListener('click', () => this.prev());
         this.nextBtn.addEventListener('click', () => this.next());
-        
+
         // Auto-play
         this.startAutoPlay();
-        
+
         // Pause auto-play on hover
         this.carousel.addEventListener('mouseenter', () => this.stopAutoPlay());
         this.carousel.addEventListener('mouseleave', () => this.startAutoPlay());
@@ -995,187 +949,153 @@
     </div>
 
     <img style="position: absolute; top: 5px; left: 400px; mix-blend-mode: multiply;"
-      src="./assets/images/contributors.jpeg" alt="photo">
+      src="./assets/images/contributors.jpeg" alt="photo" class="good-img" >
   </div>
 
   <style>
+   /* General styles for the blog content and cards */
+.blog-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 15px;
+}
+
+.good-img {
+  margin-top: -150px;
+  margin-left: 150px;
+}
+.head {
+    justify-self: center;
+    font-size: 1.5rem;
+}
+
+#good-card {
+    border: 10px solid white;
+    display: flex;
+    justify-content: space-evenly;
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#good-card1, #good-card2, #good-card3 {
+    width: 300px;
+    height: 300px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    position: relative;
+    margin-bottom: 10px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+#good-card1 { background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%); }
+#good-card2 { background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%); }
+#good-card3 { background: linear-gradient(135deg, #d9baf6 0%, #bfa2f9 100%); }
+
+#good-card1:hover, #good-card2:hover, #good-card3:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#white-card1, #white-card2, #white-card3 {
+    color: #1e293b;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+#color-card-green, #color-card-orange, #color-card-purple {
+    border-radius: 12px;
+}
+
+#shadow1, #shadow2, #shadow3 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Responsive styling for mobile view */
+
+
+    #good-card1, #good-card2, #good-card3 {
+        width: 100%; /* Full width on mobile */
+        max-width: 90%; /* Add slight padding on sides */
+        height: auto; /* Auto height to fit content */
+        margin: 10px 0; /* Margin between stacked cards */
+        font-size: 14px;
+        padding: 20px;
+        text-align: center;
+    }
+
     .head {
-      justify-self: center;
-      font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
-    /* Overall background and padding for the blog content */
-    #good-card {
-      border: 10px solid white;
-      display: flex;
-      justify-content: space-evenly;
-      background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
-      /* Soft gradient background */
-      padding: 25px;
-      /* Increased padding for more spacing */
-      border-radius: 10px;
-      /* Rounded corners */
-      max-width: 1200px;
-      /* Max width for centering */
-      margin: 0 auto;
-      /* Center the section */
+    #card2, #card3 {
+        width: 100%;
+        font-size: 1.1rem;
     }
 
-    /* Individual good cards styling */
-    #good-card1,
-    #good-card2,
-    #good-card3 {
-      margin-top: 180px;
-      width: 300px;
-      height: 300px;
-      background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
-      /* Gradient background */
-      border-radius: 12px;
-      /* Slightly rounded corners */
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-      /* Shadow for depth */
-      padding: 25px;
-      /* Padding for spacing */
-      position: relative;
-      /* Position for shadow overlay */
-      margin-bottom: 10px;
-      /* Space between cards */
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-      /* Smooth transition effects */
-      cursor: pointer;
-      /* Pointer cursor on hover */
-    }
-
-    #good-card1 {
-      background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);
-      /* Gradient for card 1 */
-    }
-
-    #good-card2 {
-      background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
-      /* Gradient for card 2 */
-    }
-
-    #good-card3 {
-      background: linear-gradient(135deg, #d9baf6 0%, #bfa2f9 100%);
-      /* Gradient for card 3 */
+    #white-card1, #white-card2, #white-card3 {
+        padding: 8px;
+        font-size: 0.9rem;
     }
 
 
-    #good-card1:hover,
-    #good-card2:hover,
-    #good-card3:hover {
-      transform: scale(1.05);
-      /* Slight scaling effect */
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-      /* More prominent shadow */
+@media screen and (max-width: 480px) {
+    .head {
+        font-size: 1rem;
     }
 
-
-    #white-card1,
-    #white-card2,
-    #white-card3 {
-      color: #1e293b;
-      /* Darker text for readability */
-      padding: 10px;
-      margin-bottom: 20px;
+    #white-card1, #white-card2, #white-card3 {
+        font-size: 0.8rem;
     }
+}
+
+.column-layout {
+    display: column;               /* Use flexbox to enable flex properties */
+    flex-direction: column;      /* Stack the items vertically */
+    align-items: center;         /* Center items horizontally */
+
+}
+
+.column-layout > div {
+    width: 100%;
+    max-width: 90%;
+    margin: 10px 0;
+}
 
 
-    #color-card-green,
-    #color-card-orange,
-    #color-card-purple {
-      border-radius: 12px;
-      /* Rounded corners for color cards */
-    }
-
-    #shadow1,
-    #shadow2,
-    #shadow3 {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.1);
-      /* Light shadow for depth */
-      border-radius: 12px;
-      /* Match the card's border radius */
-      top: 0;
-      left: 0;
-      z-index: 1;
-      /* Make sure shadow is under content */
-    }
-
-
-
-
-    @keyframes bounce {
-
-      0%,
-      20%,
-      50%,
-      80%,
-      100% {
-        transform: translateY(0);
-        /* Start and end at the original position */
-      }
-
-      40% {
-        transform: translateY(-10px);
-        /* Move up */
-      }
-
-      60% {
-        transform: translateY(-5px);
-        /* Move down slightly */
-      }
-    }
-
-
-    #good-card1,
-    #good-card2,
-    #good-card3 {
-      animation: bounce 2s infinite;
-      /* Continuous bounce animation */
-    }
-
-
-    #good-card1,
-    #good-card2,
-    #good-card3 {
-      transition: box-shadow 0.4s ease;
-      /* Keep shadow transition */
-    }
-
-    @media screen and (max-width: 768px) {
-
-      #good-card1,
-      #good-card2,
-      #good-card3 {
-        font-size: 12px;
-        padding-left: 20px;
-        text-align: center;
-      }
-
-      #card2 {
-        font-size: 19px;
-        width: 130%;
-        text-align: center;
-      }
-
-      #card3 {
-        font-size: 21px;
-        width: 110%;
-        text-align: center;
-      }
-
-      #white-card1,
-      #white-card2,
-      #white-card3 {
-        padding-left: 4px;
-      }
-    }
   </style>
 
+
+<script>
+
+ function checkScreenSize() {
+    const goodCard = document.getElementById('good-card');
+    if (window.innerWidth < 1032 && window.innerHeight < 779) {
+        goodCard.classList.add('column-layout');
+    } else {
+        goodCard.classList.remove('column-layout');
+    }
+}
+
+// Run on page load
+checkScreenSize();
+
+// Run whenever the window is resized
+window.addEventListener('resize', checkScreenSize);
+
+</script>
   <section class="contributors" style="margin-bottom: 65px;">
     <h2>Our Contributors</h2>
     <div class="contributor-cards" id="contributor-cards"></div>
@@ -1302,12 +1222,12 @@
 
   <footer id="footer" class="footer-area pt-120">
     <div class="container">
-      <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+      <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s"  style="height: 265px;">
         <div class="row">
           <div class="col-lg-6">
             <div class="subscribe-content mt-45">
               <h2 class="subscribe-title">
-                Subscribe Our Newsletter <span>Get Regular Updates</span>
+                Subscribe Our Newsletter <span style="font-size: 28px;"> Get regular updates</span>
               </h2>
             </div>
           </div>
@@ -1568,8 +1488,154 @@
   <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
   <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
-  <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
+  <button id="scrollToTopBtn" class="scroll-top" aria-label="Scroll to top">
+    <div class="scroll-top-icon">
+        <i class="fa-solid fa-arrow-up"></i>
+    </div>
+    <svg class="progress-ring" width="60" height="60">
+        <circle class="progress-ring__circle" stroke="#ffffff" stroke-width="4" fill="transparent" r="28" cx="30"
+            cy="30"></circle>
+    </svg>
+</button>
+<style>
+    .scroll-top {
+        position: fixed;
+        right: 1.6%;
+        background: linear-gradient(100deg, #1ca6f0, #3c7aff, #05deff);
+        color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+        overflow: visible;
+        z-index: 10;
+        bottom: 5px;
+        /* Ensure button is on top */
+    }
 
+    .scroll-top.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .scroll-top:hover {
+        transform: scale(1.1);
+        /* Subtle scaling instead of expanding */
+        box-shadow: 0 8px 20px rgba(255, 69, 159, 0.6);
+        /* Slightly larger shadow */
+    }
+
+    .scroll-top:active {
+        transform: scale(1.05);
+        /* Minor scale reduction on click */
+    }
+
+    .scroll-top-icon {
+        position: relative;
+        z-index: 2;
+        transition: transform 0.3s ease;
+    }
+
+    .scroll-top:hover .scroll-top-icon {
+        transform: translateY(-3px);
+    }
+
+    /* Progress Ring Styling */
+    .progress-ring {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: rotate(-90deg);
+        /* To start from the top */
+    }
+
+    .progress-ring__circle {
+        transition: stroke-dashoffset 0.35s;
+        transform-origin: 50% 50%;
+    }
+
+    /* Pulse Animation */
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+        }
+
+        50% {
+            box-shadow: 0 5px 15px rgba(255, 69, 159, 0.7);
+        }
+
+        100% {
+            box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+        }
+    }
+
+    .scroll-top:hover {
+        animation: pulse 1.5s infinite;
+    }
+
+    .scroll-top.show {
+        animation: none;
+        /* No animation when showing the button */
+    }
+
+    .scroll-top.show:hover {
+        animation: pulse 1.5s infinite;
+        /* Pulse on hover */
+    }
+</style>
+<script>
+    // Get the button
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    const progressCircle = document.querySelector(".progress-ring__circle");
+    const radius = progressCircle.r.baseVal.value;
+    const circumference = 2 * Math.PI * radius;
+
+    // Set the circle progress properties
+    progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
+    progressCircle.style.strokeDashoffset = circumference;
+
+    // Function to show or hide the button based on scroll position
+    function toggleScrollButton() {
+        if (window.scrollY > 100) {
+            scrollToTopBtn.classList.add("show");
+        } else {
+            scrollToTopBtn.classList.remove("show");
+        }
+    }
+
+    // Function to set the scroll progress on the button ring
+    function setProgress(percent) {
+        const offset = circumference - (percent / 100) * circumference;
+        progressCircle.style.strokeDashoffset = offset;
+    }
+
+    // Listen for scroll events to update button visibility and progress
+    window.addEventListener("scroll", () => {
+        toggleScrollButton();
+        const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        setProgress(scrollPercent);
+    });
+
+    // Smooth scroll to top when the button is clicked
+    scrollToTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+
+</script>
   <script src="./assets/js/about.js"></script>
   <script src="./assets/js/subscribe.js"></script>
   <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
