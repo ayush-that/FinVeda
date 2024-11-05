@@ -626,7 +626,7 @@
         <div id="particles-1" class="particles"></div> -->
     <!-- </div> -->
   </header>
-   <div class="blogfull">
+  <div class="blogfull">
     <article>
       <section id="blog" class="blog-area pt-100">
         <div class="container">
@@ -707,7 +707,7 @@
     #blog-pic {
       max-width: 50%;
     }
- 
+
 
     /* Card Styling */
     .card {
@@ -728,7 +728,7 @@
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
     }
 
-     /* Dark Mode */
+    /* Dark Mode */
     .card.dark {
       background-color: #1f2937;
       color: #f9fafb;
@@ -875,6 +875,16 @@
     .play-pause-buttons {
       margin-bottom: 1rem;
     }
+
+    .play-social-button {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .social-media-icons a svg {
+      cursor: pointer;
+    }
   </style>
 
   <script>
@@ -890,6 +900,7 @@
         if (post.featuredImage) {
           imagePath = `http://localhost:5000/${post.featuredImage.replace(/\\/g, '/')}`;
         }
+        const postUrl = `http://localhost:5000/api/addBlog/getBlogById/${post._id}`;
         const blogHTML = `
         <article class="card" data-aos="fade-right" data-aos-delay="300">
             <img src="${imagePath}" alt="${post.title}" class="card-image" onerror="this.onerror=null; this.src='/placeholder.svg?height=200&width=400';">
@@ -899,22 +910,51 @@
                     
                 </h2>
                 <p class="card-excerpt">${post.excerpt}</p>
+                <div class="play-social-button">
                  <div class='play-pause-buttons'>
-                    <button class="speak-button-${post._id}" onclick="handlePlay('${post._id}')" 
-                            data-title="${post.title.replace(/"/g, '&quot;')}" 
-                            data-excerpt="${post.excerpt.replace(/"/g, '&quot;')}">
-                      <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M3.5 1.5L13.5 8L3.5 14.5V1.5Z"/>
+                      <button class="speak-button-${post._id}" onclick="handlePlay('${post._id}')" 
+                              style="padding: 6px 10px;"
+                              data-title="${post.title.replace(/"/g, '&quot;')}" 
+                              data-excerpt="${post.excerpt.replace(/"/g, '&quot;')}">
+                              <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.5 1.5L13.5 8L3.5 14.5V1.5Z"/>
+                              </svg>
+                      </button> 
+                      <button class="pause-button-${post._id} hidden"  onclick="handlePause('${post._id}')" style="padding: 6px 10px;">
+                          <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 1H7V15H5V1ZM9 1H11V15H9V1Z"/>
+                          </svg>
+                      </button>
+                  </div>
+                    <!-- Social Share Buttons -->
+                <div class="mt-2 flex space-x-3 items-center justify-center social-media-icons">
+                  <a href="https://x.com/intent/tweet?url=${encodeURIComponent(postUrl)}&text=${encodeURIComponent(post.title + " " + post.excerpt)}" 
+                    target="_blank" 
+                    class="text-blue-500 hover:text-blue-700 mb-1" 
+                    aria-label="Share on Twitter">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
+                          <path d="M18.3 5.71L12 12l6.3 6.29-1.41 1.41L12 13.41l-6.3 6.29-1.41-1.41L10.59 12 4.29 5.71 5.71 4.29 12 10.59l6.3-6.3 1.41 1.41z"/>
                       </svg>
+                  </a>
+                  <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(postUrl)}" 
+                    target="_blank" 
+                    class="text-blue-700 hover:text-blue-800" 
+                    aria-label="Share on Facebook">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M22.675 0h-21.35C.747 0 0 .747 0 1.675v20.649C0 23.253.747 24 1.675 24h11.675v-10.188H9.691v-4.03h3.659V7.159c0-3.63 1.813-5.651 4.637-5.651 1.343 0 2.79.243 2.79.243v3.05h-1.571c-1.548 0-2.023.964-2.023 1.958v2.34h4.071l-.651 4.03h-3.42V24h6.64C23.253 24 24 23.253 24 22.324V1.675C24 .747 23.253 0 22.675 0z"/>
+                      </svg>
+                  </a>
+                  <a href="https://linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(postUrl)}&text=${encodeURIComponent(post.title + " " + post.excerpt)}" 
+                    target="_blank" 
+                    class="text-blue-700 hover:text-blue-800" 
+                    aria-label="Share on LinkedIn">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M20.447 20.452h-3.556v-5.646c0-1.352-.024-3.09-1.888-3.09-1.886 0-2.174 1.477-2.174 3.016v5.72h-3.558V9.043h3.414v1.588h.048c.477-.88 1.642-1.805 3.377-1.805 3.61 0 4.276 2.376 4.276 5.454v6.171h-.004zM5.255 7.684c-1.148 0-2.078-.938-2.078-2.078 0-1.143.934-2.08 2.078-2.08 1.144 0 2.077.937 2.077 2.08 0 1.14-.933 2.078-2.077 2.078zm1.78 12.768H3.474V9.043h3.561v11.409zM22.227 0H1.773C.793 0 0 .793 0 1.773v20.453C0 23.207.793 24 1.773 24h20.454C23.207 24 24 23.207 24 22.227V1.773C24 .793 23.207 0 22.227 0z"/>
+                      </svg>
+                  </a>
+              </div>
 
-                    </button> 
-                    <button class="pause-button-${post._id} hidden"  onclick="handlePause('${post._id}')">
-                   <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5 1H7V15H5V1ZM9 1H11V15H9V1Z"/>
-                    </svg>
-
-                    </button>
-                    </div>
+                </div>
                 <div class="card-footer">
                     <time datetime="${post.createdAt}">${formatDate(post.createdAt)}</time>
                      <a href="/readmore/${post.id}" class="card-read-more">
@@ -1018,15 +1058,15 @@
 
 
   </script>
- 
 
 
-    <!-- Timed popup that will appear after succesful submission of feebback form! -->
-    <button class="notification" id="successnotification" style="display:none;">
-      <span class="message" id="successmsg">Submitted successfully!</span>
-      <span class="closenotif" id="closeSuccessNotification">✖</span>
-      <div class="timerline" id="timerline"></div>
-    </button>
+
+  <!-- Timed popup that will appear after succesful submission of feebback form! -->
+  <button class="notification" id="successnotification" style="display:none;">
+    <span class="message" id="successmsg">Submitted successfully!</span>
+    <span class="closenotif" id="closeSuccessNotification">✖</span>
+    <div class="timerline" id="timerline"></div>
+  </button>
 
 
   <footer id="footer" class="footer-area pt-120">
@@ -1169,49 +1209,48 @@
       </div>
 
       <div id="particles-2"></div>
-      </div>
-    </footer>
-    <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
-    <script src="./assets/js/blog.js"></script>
-    <script src="./assets/js/subscribe.js"></script>
-    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="./assets/js/vendor/modernizr-3.7.1.min.js"></script>
-    <script src="./assets/js/popper.min.js"></script>
-    <script src="./assets/js/bootstrap.min.js"></script>
-    <script src="./assets/js/plugins.js"></script>
-    <script src="./assets/js/slick.min.js"></script>
-    <script src="./assets/js/ajax-contact.js"></script>
-    <script src="./assets/js/waypoints.min.js"></script>
-    <script src="./assets/js/jquery.counterup.min.js"></script>
-    <script src="./assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="./assets/js/blogposts.js"></script>
-    <script src="./assets/js/jquery.easing.min.js"></script>
-    <script src="./assets/js/scrolling-nav.js"></script>
-    <script src="./assets/js/wow.min.js"></script>
-    <script src="./assets/js/particles.min.js"></script>
-    <script src="./assets/js/main.js"></script>
-    <script src="./assets/js/popup.js"></script>
-    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-    <script src="https://mediafiles.botpress.cloud/5e160793-5606-4412-ba4c-337e416f14fe/webchat/config.js"
-      defer></script>
-    <script defer src="./assets/js/arthsathi-style.js"></script>
-    <script src="./assets/js/botpress.js"></script>
-    <script src="./assets/js/blogmodals.js"></script>
-    <script src="./tools/smoothScroll.js"></script>
+    </div>
+  </footer>
+  <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
+  <script src="./assets/js/blog.js"></script>
+  <script src="./assets/js/subscribe.js"></script>
+  <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+  <script src="./assets/js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="./assets/js/popper.min.js"></script>
+  <script src="./assets/js/bootstrap.min.js"></script>
+  <script src="./assets/js/plugins.js"></script>
+  <script src="./assets/js/slick.min.js"></script>
+  <script src="./assets/js/ajax-contact.js"></script>
+  <script src="./assets/js/waypoints.min.js"></script>
+  <script src="./assets/js/jquery.counterup.min.js"></script>
+  <script src="./assets/js/jquery.magnific-popup.min.js"></script>
+  <script src="./assets/js/blogposts.js"></script>
+  <script src="./assets/js/jquery.easing.min.js"></script>
+  <script src="./assets/js/scrolling-nav.js"></script>
+  <script src="./assets/js/wow.min.js"></script>
+  <script src="./assets/js/particles.min.js"></script>
+  <script src="./assets/js/main.js"></script>
+  <script src="./assets/js/popup.js"></script>
+  <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+  <script src="https://mediafiles.botpress.cloud/5e160793-5606-4412-ba4c-337e416f14fe/webchat/config.js" defer></script>
+  <script defer src="./assets/js/arthsathi-style.js"></script>
+  <script src="./assets/js/botpress.js"></script>
+  <script src="./assets/js/blogmodals.js"></script>
+  <script src="./tools/smoothScroll.js"></script>
 
-    <div class="gtranslate_wrapper"></div>
-    <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
-    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init({
-        duration: 2000
-      });
-    </script>
+  <div class="gtranslate_wrapper"></div>
+  <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
+  <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 2000
+    });
+  </script>
 
 
-  </body>
+</body>
 
-  </head>
+</head>
 
 </html>

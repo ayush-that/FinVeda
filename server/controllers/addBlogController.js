@@ -65,4 +65,21 @@ export async function getAllBlog(req, res) {
     }
 }
 
+// Function to retrieve a specific blog post by ID
+export async function getBlog(req, res) {
+    try {
+        const { id } = req.params;
+
+        // Retrieve the specific blog post by ID
+        const blog = await BlogPost.findById(id);
+        if (!blog) {
+            return res.status(404).json({ message: "Blog post not found." });
+        }
+        return res.status(200).json(blog);
+    } catch (error) {
+        console.error("Error retrieving blog post:", error);
+        res.status(500).json({ message: "Failed to retrieve blog post.", error });
+    }
+}
+
 export { upload };
