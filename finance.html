@@ -415,7 +415,53 @@ button {
 <div id="particles-2"></div>
 </div>
 </footer>
+
+<style>
+  /* Style the scroll-to-top button */
+  #scrollToTopBtn {
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    bottom: 20px;
+    right: 20px;
+    display: none; /* Hidden by default */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: opacity 0.3s;
+  }
+  #scrollToTopBtn:hover {
+    background-color: #0056b3;
+  }
+</style>
+
+
+<!-- Scroll-to-top button -->
 <button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top">↑</button>
+
+<script>
+  // Show the button when scrolled down 300px
+  window.onscroll = function() {
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      scrollToTopBtn.style.display = "block";
+    } else {
+      scrollToTopBtn.style.display = "none";
+    }
+  };
+
+  // Scroll smoothly to the top when the button is clicked
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+</script>
 
   <script src="finance.js"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
