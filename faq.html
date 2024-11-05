@@ -551,7 +551,7 @@ body.dark-mode {
  <!-- FAQ Section -->
   <div class="images">
     <img style="width:250px; top: 200px; right: 1470px;mix-blend-mode: multiply;" src="assets/images/HELP-IMG.webp" alt="image" class="photo">
-    <div class="faq-section">    
+    <div class="faq-section " style="margin-top: 100px;margin-left: -10px;">    
         <div class="faq-intro">
             <h3 class="faq-title">Frequently Asked Questions</h3>
             <p>Welcome to Finveda’s FAQ! Here you’ll find answers to common questions about our services, tools, and how we can help you on your financial journey. Still have questions? Contact us or use our AI chatbot for more assistance.</p>
@@ -560,6 +560,7 @@ body.dark-mode {
         <div class="faq-search">
             <input
                 type="text"
+                style="color: #0c0a0a;"
                 class="faq-search-input"
                 placeholder="Type your question..."
                 aria-label="Search FAQ"
@@ -569,7 +570,7 @@ body.dark-mode {
         </div>
 
         <div class="accordion" id="faqAccordion">
-            <div class="accordion-item">
+            <div class="accordion-item" >
                 <h2 class="accordion-header" id="headingOne">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                         What is Finveda?
@@ -636,6 +637,57 @@ body.dark-mode {
         </div>
     </div>
     </div>
+
+   <style>
+    .accordion-item{
+        background-color: #5776ff;
+    }
+    .accordion-button {
+    background: linear-gradient(135deg, #56ab2f, #a8e063, #b9f1b7);
+    color: #ffffff;
+    font-weight: bold;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.accordion-button::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    border-radius: 10px;
+}
+
+.accordion-button:hover {
+    background: linear-gradient(135deg, #c8f8c2, #56ab2f, #a8e063);
+    transform: scale(1.03);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.accordion-button:focus {
+    outline: none;
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 10px #4facfe, 0 0 20px #56ab2f;
+}
+
+.accordion-button:focus::before {
+    opacity: 1;
+    transform: rotate(45deg);
+}
+
+   </style>
+
+
     <!-- Feedback Section -->
     <div class="faq-feedback">
         <h3 class="faq-title">Submit Your Feedback or Ask a New Question</h3>
