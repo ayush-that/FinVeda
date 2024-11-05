@@ -798,7 +798,77 @@
         </div>
       </div>
 
+      <div class="slider-item" onclick="openCalculator('inflationCalculator')">
+        <h3>Inflation Calculator</h3>
+        <p>Calculates the impact of inflation on the purchasing power of money over time.</p>
+        <div class="know-more">
+          <button class="know-more-btn">Know More</button>
+          <div class="know-more-content">
+            <h6>Here's how it works:</h6>
+            <ol>
+              <li><b>Current Amount</b>: Enter the current amount in INR.</li>
+              <li><b>Inflation Rate (%)</b>: Enter the annual inflation rate.</li>
+              <li><b>Years</b>: Enter the number of years for the inflation effect.</li>
+              <li><b>Calculate Future Value</b>: Calculates the future equivalent value of money considering inflation.
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div class="slider-item" onclick="openCalculator('taxCalculator')">
+        <h3>Tax Calculator</h3>
+        <p>Helps you estimate tax liability based on income, deductions, and credits, providing a clearer picture of
+          your tax situation.</p>
+        <div class="know-more">
+          <button class="know-more-btn">Know More</button>
+          <div class="know-more-content">
+            <h6>Here's how it works:</h6>
+            <ol>
+              <li><b>Income</b>: Enter your annual income.</li>
+              <li><b>Deductions</b>: Enter any applicable deductions.</li>
+              <li><b>Credits</b>: Enter any tax credits.</li>
+              <li><b>Calculate Tax</b>: Calculates estimated tax liability.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
 
+
+      <div class="slider-item" onclick="openCalculator('investmentGrowthCalculator')">
+        <h3>Investment Growth Calculator</h3>
+        <p>Projects the future value of an investment based on contributions, expected rate of return, and time horizon.
+        </p>
+        <div class="know-more">
+          <button class="know-more-btn">Know More</button>
+          <div class="know-more-content">
+            <h6>Here's how it works:</h6>
+            <ol>
+              <li><b>Initial Investment</b>: Enter your initial investment amount.</li>
+              <li><b>Monthly Contribution</b>: Enter your monthly contribution.</li>
+              <li><b>Rate of Return (%)</b>: Enter the expected annual return rate.</li>
+              <li><b>Years</b>: Enter the investment duration in years.</li>
+              <li><b>Calculate Investment Growth</b>: Calculates the future value of your investment.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="slider-item" onclick="openCalculator('emergencyFundCalculator')">
+        <h3>Emergency Fund Calculator</h3>
+        <p>Helps determine how much you need to save for emergencies based on monthly expenses.</p>
+        <div class="know-more">
+          <button class="know-more-btn">Know More</button>
+          <div class="know-more-content">
+            <h6>Here's how it works:</h6>
+            <ol>
+              <li><b>Monthly Expenses</b>: Enter your total monthly expenses.</li>
+              <li><b>Months of Coverage</b>: Enter the number of months you want to cover.</li>
+              <li><b>Calculate Emergency Fund</b>: Calculates the required emergency fund.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
 
       <div class="slider-item" onclick="openCalculator('insuranceCalculator')">
         <h3>Insurance Calculator</h3>
@@ -1659,6 +1729,144 @@
         </div>
       </div>
     </div>
+
+    <div id="inflationCalculator" class="calculator-section" style="display: none;">
+      <div class="input-container">
+        <div>
+          <div><b>Current Amount (INR)</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter current amount" id="currentAmount"
+              required /></div>
+          <br />
+          <div><b>Inflation Rate (%)</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter inflation rate" id="inflationRate"
+              required /></div>
+          <br />
+          <div><b>Years</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter years" id="years" required /></div>
+        </div>
+      </div>
+      <br />
+      <br />
+
+      <div class="btn-calculate">
+        <button id="calculate-Btn1" type="button" class="btn btn-calculate"
+          onclick="calculateInflation()">Calculate</button>
+        <button id="clearBtn1" type="button" class="btn btn-clear" onclick="clearAll()">
+          <p class="btn-text">Clear</p>
+        </button>
+      </div>
+      <br />
+      <div style="display: flex;">
+        <div class="sresult"><b>Result:</b></div>
+        <div class="sresult-container">
+          <div class="sgresult" id="inflationResult"></div>
+        </div>
+      </div>
+    </div>
+    <div id="taxCalculator" class="calculator-section" style="display: none;">
+      <div class="input-container">
+        <div>
+          <div><b>Annual Income (INR)</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter your income" id="income" required /></div>
+          <br />
+          <div><b>Deductions (INR)</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter deductions" id="deductions" required />
+          </div>
+          <br />
+          <div><b>Credits (INR)</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter tax credits" id="credits" required /></div>
+        </div>
+      </div>
+      <br />
+      <br />
+
+      <div class="btn-calculate">
+        <button id="calculate-Btn2" type="button" class="btn btn-calculate" onclick="calculateTax()">Calculate</button>
+        <button id="clearBtn2" type="button" class="btn btn-clear" onclick="clearAll()">
+          <p class="btn-text">Clear</p>
+        </button>
+      </div>
+      <br />
+      <div style="display: flex;">
+        <div class="sresult"><b>Result:</b></div>
+        <div class="sresult-container">
+          <div class="sgresult" id="taxResult"></div>
+        </div>
+      </div>
+    </div>
+    <div id="investmentGrowthCalculator" class="calculator-section" style="display: none;">
+      <div class="input-container">
+        <div>
+          <div><b>Initial Investment (INR)</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter initial amount" id="initialInvestment"
+              required /></div>
+          <br />
+          <div><b>Monthly Contribution (INR)</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter monthly contribution"
+              id="monthlyContribution" required /></div>
+          <br />
+          <div><b>Rate of Return (%)</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter rate of return" id="rateOfReturn"
+              required /></div>
+          <br />
+          <div><b>Years</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter years" id="investmentYears" required />
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+
+      <div class="btn-calculate">
+        <button id="calculate-Btn3" type="button" class="btn btn-calculate"
+          onclick="calculateInvestmentGrowth()">Calculate</button>
+        <button id="clearBtn3" type="button" class="btn btn-clear" onclick="clearAll()">
+          <p class="btn-text">Clear</p>
+        </button>
+      </div>
+      <br />
+      <div style="display: flex;">
+        <div class="sresult"><b>Result:</b></div>
+        <div class="sresult-container">
+          <div class="sgresult" id="investmentResult"></div>
+        </div>
+      </div>
+    </div>
+    <div id="emergencyFundCalculator" class="calculator-section" style="display: none;">
+      <div class="input-container">
+        <div>
+          <div><b>Monthly Expenses (INR)</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter monthly expenses" id="monthlyExpenses"
+              required /></div>
+          <br />
+          <div><b>Months of Coverage</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter months of coverage" id="monthsOfCoverage"
+              required /></div>
+          <br />
+          <button class="btn btn-primary" onclick="calculateEmergencyFund()">Calculate Emergency Fund</button>
+          <br />
+          <div id="result" style="margin-top: 20px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function openCalculator(calculatorId) {
+        document.getElementById(calculatorId).style.display = 'block';
+      }
+
+      function calculateEmergencyFund() {
+        const monthlyExpenses = document.getElementById('monthlyExpenses').value;
+        const monthsOfCoverage = document.getElementById('monthsOfCoverage').value;
+
+        if (monthlyExpenses && monthsOfCoverage) {
+          const emergencyFund = monthlyExpenses * monthsOfCoverage;
+          document.getElementById('result').innerHTML = `<h4>Your Emergency Fund: INR ${emergencyFund}</h4>`;
+        } else {
+          document.getElementById('result').innerHTML = `<h4>Please fill out both fields.</h4>`;
+        }
+      }
+    </script>
 
 
 
