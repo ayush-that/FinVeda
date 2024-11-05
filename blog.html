@@ -627,120 +627,121 @@
         <div id="particles-1" class="particles"></div> -->
     <!-- </div> -->
   </header>
-    <h1>All Blog Posts</h1>
+  <h1>All Blog Posts</h1>
 
-     <style>
-        /* Your existing styles */
-        .blog-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            padding: 20px;
-        }
+  <style>
+    /* Your existing styles */
+    .blog-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+    }
 
-        .blog-post {
-            background-color:#007bff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            width: calc(33% - 40px);
-            max-width: 300px;
-        }
+    .blog-post {
+      background-color: #007bff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: calc(33% - 40px);
+      max-width: 300px;
+    }
 
-        .blog-post img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
+    .blog-post img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
 
-        .blog-title {
-            font-size: 1.5em;
-            color: #333;
-            margin: 10px 0;
-        }
+    .blog-title {
+      font-size: 1.5em;
+      color: #333;
+      margin: 10px 0;
+    }
 
-        .blog-content {
-            color: #666;
-        }
+    .blog-content {
+      color: #666;
+    }
 
-        .add-blog-btn {
-            display: block;
-            width: 150px;
-            margin: 20px auto;
-            padding: 10px;
-            background-color: #007bff;
-            color: #fff;
-            text-align: center;
-            border-radius: 5px;
-            text-decoration: none;
-        }
+    .add-blog-btn {
+      display: block;
+      width: 150px;
+      margin: 20px auto;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      text-align: center;
+      border-radius: 5px;
+      text-decoration: none;
+    }
 
-        .delete-btn {
-            margin-top: 10px;
-            padding: 8px;
-            background-color: #f44336;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+    .delete-btn {
+      margin-top: 10px;
+      padding: 8px;
+      background-color: #f44336;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-        .delete-btn:hover {
-            background-color: #d32f2f;
-        }
-    </style>
-</head>
-<body>
+    .delete-btn:hover {
+      background-color: #d32f2f;
+    }
+  </style>
+  </head>
+
+  <body>
 
     <h1>All Blog Posts</h1>
     <a href="addBlog.html" class="add-blog-btn">Add New Blog</a>
     <div class="blog-container" id="blogContainer"></div>
 
     <script>
-        function displayBlogs() {
-            const blogContainer = document.getElementById('blogContainer');
-            blogContainer.innerHTML = '';
+      function displayBlogs() {
+        const blogContainer = document.getElementById('blogContainer');
+        blogContainer.innerHTML = '';
 
-            const blogs = JSON.parse(localStorage.getItem('blogs')) || [];
-            console.log(blogs); // Log the retrieved blogs
+        const blogs = JSON.parse(localStorage.getItem('blogs')) || [];
+        console.log(blogs); // Log the retrieved blogs
 
-            blogs.forEach((blog, index) => {
-                const blogPost = document.createElement('div');
-                blogPost.classList.add('blog-post');
+        blogs.forEach((blog, index) => {
+          const blogPost = document.createElement('div');
+          blogPost.classList.add('blog-post');
 
-                const imgSrc = blog.imageUrl ? blog.imageUrl : 'path/to/placeholder-image.jpg';
+          const imgSrc = blog.imageUrl ? blog.imageUrl : 'path/to/placeholder-image.jpg';
 
-                blogPost.innerHTML = `
+          blogPost.innerHTML = `
                     <img src="${imgSrc}" alt="Blog Image">
                     <h2 class="blog-title">${blog.title}</h2>
                     <p class="blog-content">${blog.excerpt}</p>
                     <button class="delete-btn" onclick="deleteBlog(${index})">Delete</button>
                 `;
-                blogContainer.appendChild(blogPost);
-            });
-        }
+          blogContainer.appendChild(blogPost);
+        });
+      }
 
-        function deleteBlog(index) {
-            // Get the existing blogs
-            const blogs = JSON.parse(localStorage.getItem('blogs')) || [];
-            // Remove the blog at the specified index
-            blogs.splice(index, 1);
-            // Update local storage
-            localStorage.setItem('blogs', JSON.stringify(blogs));
-            // Refresh the blog display
-            displayBlogs();
-        }
+      function deleteBlog(index) {
+        // Get the existing blogs
+        const blogs = JSON.parse(localStorage.getItem('blogs')) || [];
+        // Remove the blog at the specified index
+        blogs.splice(index, 1);
+        // Update local storage
+        localStorage.setItem('blogs', JSON.stringify(blogs));
+        // Refresh the blog display
+        displayBlogs();
+      }
 
-        window.addEventListener('DOMContentLoaded', displayBlogs);
+      window.addEventListener('DOMContentLoaded', displayBlogs);
     </script>
 
 
-  <!-- Timed popup that will appear after succesful submission of feebback form! -->
-  <button class="notification" id="successnotification" style="display:none;">
-    <span class="message" id="successmsg">Submitted successfully!</span>
-    <span class="closenotif" id="closeSuccessNotification">✖</span>
-    <div class="timerline" id="timerline"></div>
-  </button>
+    <!-- Timed popup that will appear after succesful submission of feebback form! -->
+    <button class="notification" id="successnotification" style="display:none;">
+      <span class="message" id="successmsg">Submitted successfully!</span>
+      <span class="closenotif" id="closeSuccessNotification">✖</span>
+      <div class="timerline" id="timerline"></div>
+    </button>
 
 
   <footer id="footer" class="footer-area pt-120">
@@ -753,176 +754,179 @@
                 Subscribe Our Newsletter <span style="font-size: 25px;"> Get regular updates</span>
               </h2>
             </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="subscribe-form mt-50">
-              <form id="unique-subscribe-form">
-                <input type="email" id="unique-news-email" placeholder="Enter Email" required />
-                <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
-              </form>
-              <div id="unique-message" class="unique-popup-message" style="display: none;">
-                <div class="border-animation"></div>
-                Thank You for the subscription!
+            <div class="col-lg-6">
+              <div class="subscribe-form mt-50">
+                <form id="unique-subscribe-form">
+                  <input type="email" id="unique-news-email" placeholder="Enter Email" required />
+                  <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
+                </form>
+                <div id="unique-message" class="unique-popup-message" style="display: none;">
+                  <div class="border-animation"></div>
+                  Thank You for the subscription!
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="footer-widget pb-100">
-      <div class="row" id="footer">
-        <div class="col-lg-4 col-md-6 col-sm-8">
-          <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-            <img src="./assets/images/FinvedaLogo.png" alt="FinVeda Logo"
-              style="height: 80px; width: auto; margin-bottom: 15px;" />
-            <p class="text custom-margin">
-              We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
-            </p>
-          </div>
-        </div>
-        <div class="col-lg-5 col-md-7 col-sm-7">
-          <div class="footer-link d-flex mt-50 justify-content-md-between"
-            style="justify-content: space-around !important;">
-            <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-              <div class="footer-title">
-                <h3 class="title custom-margin">Quick Links</h3>
-              </div>
-              <ul class="link custom-margin">
-                <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
-                <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
-                <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
-                <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
-                <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
-                <li><a href="./blogs/sitemap.html"><i class="fa-solid fa-sitemap"></i> Site Map</a></li>
-              </ul>
-            </div>
-            <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
-              <div class="footer-title">
-                <h4 class="title custom-margin">Resources</h4>
-              </div>
-              <ul class="link custom-margin">
-                <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
-                <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
-                <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
-                <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
-                <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
-              </ul>
+      <div class="footer-widget pb-100">
+        <div class="row" id="footer">
+          <div class="col-lg-4 col-md-6 col-sm-8">
+            <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+              <img src="./assets/images/FinvedaLogo.png" alt="FinVeda Logo"
+                style="height: 80px; width: auto; margin-bottom: 15px;" />
+              <p class="text custom-margin">
+                We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial
+                blogs.
+              </p>
             </div>
           </div>
-        </div>
-        <div class="col-lg-3 col-md-5 col-sm-5">
-          <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-            <div class="footer-title">
-              <h4 class="title custom-margin">Contact Us</h4>
-            </div>
-            <ul class="contact custom-margin-big" style="justify-content: space-around;">
-              <li class="d-sm-flex justify-content-center">
-                <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                <p style="width: 80%;">
-                  <a href="mailto:ayush1337@hotmail.com" target="_blank"
-                    style="color: white; text-decoration: underline;">
-                    ayush1337@hotmail.com
-                  </a>
-                </p>
-              </li>
-              <li class="d-sm-flex justify-content-center">
-                <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                <div style="width: 80%;">
-                  <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
-                    fin-veda.vercel.app
-                  </a>
+          <div class="col-lg-5 col-md-7 col-sm-7">
+            <div class="footer-link d-flex mt-50 justify-content-md-between"
+              style="justify-content: space-around !important;">
+              <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+                <div class="footer-title">
+                  <h3 class="title custom-margin">Quick Links</h3>
                 </div>
-              </li>
-              <li class="d-sm-flex justify-content-center">
-                <!-- Modified: Inline CSS to adjust logo size and sync with other pages -->
-                <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font: 12px; width: 10%;"></i>
-                <div style="width: 80%;">
-                  <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
-                    style="color:#fff">
-                    Delhi, India
-                  </a>
-                </div>
-              </li>
-              <!-- Added: Social Media Redirects -->
-              <div class="social-icons">
-                <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="https://discord.com/"><i class="fa-brands fa-discord"></i></a>
-                <a href="https://github.com/ayush-that/FinVeda"><i class="fa-brands fa-github"></i></a>
+                <ul class="link custom-margin">
+                  <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+                  <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
+                  <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
+                  <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+                  <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+                  <li><a href="./blogs/sitemap.html"><i class="fa-solid fa-sitemap"></i> Site Map</a></li>
+                  <li><a href="./termsOfUse.html" class="  ">Terms of use</a></li>
+
+                </ul>
               </div>
-            </ul>
+              <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+                <div class="footer-title">
+                  <h4 class="title custom-margin">Resources</h4>
+                </div>
+                <ul class="link custom-margin">
+                  <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+                  <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                  <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
+                  <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
+                  <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                  <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-5 col-sm-5">
+            <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+              <div class="footer-title">
+                <h4 class="title custom-margin">Contact Us</h4>
+              </div>
+              <ul class="contact custom-margin-big" style="justify-content: space-around;">
+                <li class="d-sm-flex justify-content-center">
+                  <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                  <p style="width: 80%;">
+                    <a href="mailto:ayush1337@hotmail.com" target="_blank"
+                      style="color: white; text-decoration: underline;">
+                      ayush1337@hotmail.com
+                    </a>
+                  </p>
+                </li>
+                <li class="d-sm-flex justify-content-center">
+                  <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                  <div style="width: 80%;">
+                    <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
+                      fin-veda.vercel.app
+                    </a>
+                  </div>
+                </li>
+                <li class="d-sm-flex justify-content-center">
+                  <!-- Modified: Inline CSS to adjust logo size and sync with other pages -->
+                  <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font: 12px; width: 10%;"></i>
+                  <div style="width: 80%;">
+                    <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
+                      style="color:#fff">
+                      Delhi, India
+                    </a>
+                  </div>
+                </li>
+                <!-- Added: Social Media Redirects -->
+                <div class="social-icons">
+                  <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                  <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
+                  <a href="https://discord.com/"><i class="fa-brands fa-discord"></i></a>
+                  <a href="https://github.com/ayush-that/FinVeda"><i class="fa-brands fa-github"></i></a>
+                </div>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s"
-      style="text-align: center">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="copyright d-sm-flex justify-content-center" style="
+      <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s"
+        style="text-align: center">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="copyright d-sm-flex justify-content-center" style="
                   display: flex;
                   justify-content: center;
                   text-align: center;
                   width: 100%;
                   height: 100%;
                 ">
-            <div class="copyright-content" style="text-align: center">
-              <p class="text" style="text-align: center">
-                © <span id="copyright-year">2024</span> FinVeda. All rights are
-                reserved<br />
-                Made with ♥ in India
-              </p>
+              <div class="copyright-content" style="text-align: center">
+                <p class="text" style="text-align: center">
+                  © <span id="copyright-year">2024</span> FinVeda. All rights are
+                  reserved<br />
+                  Made with ♥ in India
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div id="particles-2"></div>
-    </div>
-  </footer>
-  <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
-  <script src="./assets/js/blog.js"></script>
-  <script src="./assets/js/subscribe.js"></script>
-  <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
-  <script src="./assets/js/vendor/modernizr-3.7.1.min.js"></script>
-  <script src="./assets/js/popper.min.js"></script>
-  <script src="./assets/js/bootstrap.min.js"></script>
-  <script src="./assets/js/plugins.js"></script>
-  <script src="./assets/js/slick.min.js"></script>
-  <script src="./assets/js/ajax-contact.js"></script>
-  <script src="./assets/js/waypoints.min.js"></script>
-  <script src="./assets/js/jquery.counterup.min.js"></script>
-  <script src="./assets/js/jquery.magnific-popup.min.js"></script>
-  <script src="./assets/js/blogposts.js"></script>
-  <script src="./assets/js/jquery.easing.min.js"></script>
-  <script src="./assets/js/scrolling-nav.js"></script>
-  <script src="./assets/js/wow.min.js"></script>
-  <script src="./assets/js/particles.min.js"></script>
-  <script src="./assets/js/main.js"></script>
-  <script src="./assets/js/popup.js"></script>
-  <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-  <script src="https://mediafiles.botpress.cloud/5e160793-5606-4412-ba4c-337e416f14fe/webchat/config.js" defer></script>
-  <script defer src="./assets/js/arthsathi-style.js"></script>
-  <script src="./assets/js/botpress.js"></script>
-  <script src="./assets/js/blogmodals.js"></script>
-  <script src="./tools/smoothScroll.js"></script>
+      <div id="particles-2"></div>
+      </div>
+    </footer>
+    <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
+    <script src="./assets/js/blog.js"></script>
+    <script src="./assets/js/subscribe.js"></script>
+    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="./assets/js/vendor/modernizr-3.7.1.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/slick.min.js"></script>
+    <script src="./assets/js/ajax-contact.js"></script>
+    <script src="./assets/js/waypoints.min.js"></script>
+    <script src="./assets/js/jquery.counterup.min.js"></script>
+    <script src="./assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="./assets/js/blogposts.js"></script>
+    <script src="./assets/js/jquery.easing.min.js"></script>
+    <script src="./assets/js/scrolling-nav.js"></script>
+    <script src="./assets/js/wow.min.js"></script>
+    <script src="./assets/js/particles.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/popup.js"></script>
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+    <script src="https://mediafiles.botpress.cloud/5e160793-5606-4412-ba4c-337e416f14fe/webchat/config.js"
+      defer></script>
+    <script defer src="./assets/js/arthsathi-style.js"></script>
+    <script src="./assets/js/botpress.js"></script>
+    <script src="./assets/js/blogmodals.js"></script>
+    <script src="./tools/smoothScroll.js"></script>
 
-  <div class="gtranslate_wrapper"></div>
-  <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
-  <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 2000
-    });
-  </script>
+    <div class="gtranslate_wrapper"></div>
+    <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 2000
+      });
+    </script>
 
 
-</body>
+  </body>
 
-</head>
+  </head>
 
 </html>
