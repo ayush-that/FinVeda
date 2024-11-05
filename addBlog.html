@@ -6,27 +6,207 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Your Blog</title>
     <style>
-        /* Your existing styles */
-        body {
-            background-color: #f4f4f4;
-            color: #333;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
+        /* Resetting some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        .upload-feedback {
-            background-color: #007bff;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-            color: white;
-        }
-        /* Other styles remain unchanged */
+/* Body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e9ecef;  /* Light background for better contrast */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container for the form */
+.upload-feedback {
+    border: 10px solid white;
+    background-color: #6f87f1;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 650px;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect for the form container */
+.upload-feedback:hover {
+    transform: translateY(-10px);
+}
+
+/* Title of the form */
+.upload-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #f6f8f6;
+    text-align: center;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for the title */
+.upload-title:hover {
+    color: #388E3C; /* Darker green */
+}
+
+/* Form element containers */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Input and textarea styles */
+.form-input {
+    width: 100%;
+    padding: 14px;
+    border: 4px solid #c4faa4;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #f7f7f7;
+    transition: all 0.3s ease;
+}
+
+/* Input focus effect */
+.form-input:focus {
+    border-color: #4CAF50;
+    outline: none;
+    background-color: #fff;
+}
+
+/* Labels */
+label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #252525;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Button container */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+/* Submit button styles */
+.submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    width: 48%;
+    border: 2px solid white;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Submit button hover effect */
+.submit-btn:hover {
+    background-color: #388E3C;
+    transform: scale(1.05);
+}
+
+/* Back button styles */
+.back-btn {
+    background-color: #f44336;
+    color: white;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    width: 48%;
+    border: 2px solid white;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Back button hover effect */
+.back-btn:hover {
+    background-color: #d32f2f;
+    transform: scale(1.05);
+}
+
+/* File input button */
+input[type="file"] {
+    display: none;
+}
+
+/* Custom file input */
+label[for="blogImage"] {
+    display: inline-block;
+    background-color: #e1f5fe;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #0288d1;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* File input hover effect */
+label[for="blogImage"]:hover {
+    background-color: #b3e5fc;
+    color: #0277bd;
+}
+
+/* Textarea height adjustment */
+textarea {
+    resize: vertical;
+}
+
+/* Upload Message styling */
+#uploadMessage {
+    font-size: 1.1rem;
+    color: #4CAF50;
+    font-weight: 600;
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* Error message styling */
+#errorMessage {
+    font-size: 1.1rem;
+    color: #f44336;
+    font-weight: 600;
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+    .upload-feedback {
+        padding: 20px;
+    }
+    
+    .button-container {
+        flex-direction: column;
+    }
+    
+    .submit-btn,
+    .back-btn {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
+
     </style>
 </head>
 
 <body>
+    <img style="position: absolute;mix-blend-mode: multiply;left: 100px;height:300px;" src="assets/images/upload.png" alt="upload">
     <div class="upload-feedback">
         <h3 class="upload-title">Upload Your Blog Post</h3>
         <form class="upload-form" id="uploadForm">
