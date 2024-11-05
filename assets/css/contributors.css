@@ -129,7 +129,17 @@ p.text-gray-700.dark\:text-gray-400{
   z-index: 1;
 }
 
-.contributor-card h2,
+  .contributor-card h2 {
+    max-width: 100%; /* Constrain width within the card */
+    text-align: center; /* Center-align text */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+    position: relative;
+    z-index: 1;
+    transition: text-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+
 .contributor-card p {
   position: relative;
   z-index: 1;
