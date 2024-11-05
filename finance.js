@@ -68,7 +68,7 @@ function renderCourses() {
 
 // Show the button when the user scrolls down 100px from the top of the page
 window.onscroll = function() {
-const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+const scrollToTopBtn = document.getElementById("scrollBtn");
 if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
     scrollToTopBtn.style.display = "block";
 } else {
