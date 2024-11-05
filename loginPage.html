@@ -454,22 +454,17 @@
             
             <div class="input-field">
               <i class="fas fa-lock" id="toggle-password" style="cursor: pointer;"></i>
-              <span class="tooltip-text">Click to view password</span>
-              <input 
-                  type="password" 
-                  placeholder="Password" 
-                  id="password-input" />
+              <input type="password" placeholder="Password" id="password-input" />
           </div>
-          <div class="form-check d-flex">
-            <input type="checkbox" class="form-check-input" id="login-remember" />
-            <label class="form-check-label">Remember me</label>
-          </div>
-            
-            
-
+          <div class="form-container">
+            <div class="form-check d-flex">
+              <input type="checkbox" class="form-check-input" id="login-remember" />
+              <label class="form-check-label">Remember me</label>
+            </div>
             <div class="forgot-password">
-                <a href="#" onclick="forgotPassword()" >Forgot Password?</a>
-              </div>
+              <a href="#" onclick="forgotPassword()">Forgot Password?</a>
+            </div>
+          </div>
             <input type="submit" value="Login" class="btn solid" />
             <p class="social-text">Or Sign in with social platforms</p>
             <div class="social-icons">
@@ -505,7 +500,7 @@
               <span class="tooltip-text">Click to view password</span>
               <input type="password" placeholder="Password" id="password-input-signup" />
           </div>
-          <div class="form-check d-flex">
+          <div class="form-check" style="padding-right: 40%; margin-top: 10px;">
             <input type="checkbox" class="form-check-input" id="login-remember" />
             <label class="form-check-label">Remember me</label>
           </div>
@@ -541,17 +536,6 @@
               </div>
           </div>
         </form>
-        <style>
-          .form-check {
-  align-items: center; /* Aligns checkbox and label vertically */
-}
-
-.form-check-input {
-  margin-right: 10px; /* Space between checkbox and label */
-}
-
-        </style>
-        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>
         
         
