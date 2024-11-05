@@ -15,11 +15,15 @@ input {
 .container {
   position: relative;
   width: 100%;
-  background: linear-gradient(to right, white,rgb(73, 143, 248));
+  background: linear-gradient(to right, white, rgb(73, 143, 248));
   min-height: 100vh;
   overflow: hidden;
+  transition: background 0.5s ease; 
 }
 
+.container.sign-up-mode {
+  background: linear-gradient(to right, rgb(73, 143, 248), white);
+}
 .forms-container {
   position: absolute;
   width: 100%;
@@ -498,14 +502,14 @@ form.sign-in-form {
   transform: scale(1.05);
 }
 
-.input-field input:focus {
+/* .input-field input:focus {
 
   outline: 
   none;
   border-color: #4CAF50;
   box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
 
-}
+} */
 
 .btn {
   transition: transform 0.3s ease;
@@ -526,4 +530,21 @@ form.sign-in-form {
 .social-icons a {
   margin: 0 10px;
   display: inline-block;
+}
+.form-check {
+  align-items: left;
+  color: #fff; 
+}
+
+.form-check-input {
+  /* margin-right: 5px;  */
+  width: 15px;
+  height: 15px;
+}
+.form-container {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  margin-top: 5px; 
+  gap: 6rem;
 }
