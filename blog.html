@@ -31,7 +31,6 @@
   <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
   <link rel="stylesheet" href="navbar.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <link rel="stylesheet" href="new.css">
 
 <body>
 
@@ -627,113 +626,399 @@
         <div id="particles-1" class="particles"></div> -->
     <!-- </div> -->
   </header>
-  <h1>All Blog Posts</h1>
+   <div class="blogfull">
+    <article>
+      <section id="blog" class="blog-area pt-100">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-2">
+              <img id="blog-pic" style="mix-blend-mode: multiply; left: 210px;" src="./assets/images/blog-img.webp"
+                alt="QUIZ">
+            </div>
+            <div class="col-lg-6">
+              <div class="section-title" data-aos="zoom-in">
+                <h1 id="title" style="font-size: 2.0rem; margin-top: 60px; margin-left: 5px;">Blog Posts</h1>
+              </div>
+            </div>
+            <div class="col-lg-2 text-end">
+              <button type="button" class="btn btn-primary add-blog-btn" style="width: 100%;"
+                onclick="window.location.href='/addBlog.html'">Add Blog</button>
+            </div>
+          </div>
 
+          <div class="row justify-content-center mt-4">
+            <div class="col-lg-8 col-md-10">
+              <form class="search-bar" id="search-form">
+                <input type="text" id="search-input" class="form-control" placeholder="Search for blog posts..."
+                  aria-label="Search" required>
+              </form>
+            </div>
+          </div>
+
+          <!-- Filtered blog posts -->
+          <div id="filtered-blogs" class="row justify-content-start mt-4 card-container">
+            <!-- Filtered blog posts will be inserted here -->
+          </div>
+        </div>
+      </section>
+    </article>
+
+  </div>
   <style>
-    /* Your existing styles */
-    .blog-container {
+    #title {
+      font-size: 4rem;
+      margin-left: 40px;
+      font-weight: bold;
+      color: #2c3e50;
+      text-align: center;
+      white-space: nowrap;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: all 0.3s ease-in-out;
+      text-shadow: 3px 4px 8px rgba(0, 0, 0, 0.4);
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+    }
+
+    #title::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 100%;
+      height: 3px;
+      background-color: #3498db;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    #title:hover::after {
+      transform: scaleX(1);
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      padding: 1rem;
+    }
+
+    #blog-pic {
+      max-width: 50%;
+    }
+ 
+
+    /* Card Styling */
+    .card {
+      background-color: #ffffff;
+      color: #1a202c;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
       display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      padding: 20px;
+      flex-direction: column;
+      height: 100%;
     }
 
-    .blog-post {
-      background-color: #007bff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      width: calc(33% - 40px);
-      max-width: 300px;
+    /* Hover Effect */
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
     }
 
-    .blog-post img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 5px;
+     /* Dark Mode */
+    .card.dark {
+      background-color: #1f2937;
+      color: #f9fafb;
     }
 
-    .blog-title {
-      font-size: 1.5em;
-      color: #333;
-      margin: 10px 0;
+    /* Image Styling */
+    .card-image {
+      width: 100%;
+      height: 12rem;
+      object-fit: cover;
+      border-top-left-radius: 0.75rem;
+      border-top-right-radius: 0.75rem;
     }
 
-    .blog-content {
-      color: #666;
+    /* Content Styling */
+    .card-content {
+      padding: 1.5rem;
+      flex: 1;
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-title-link {
+      color: #1a202c;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .card-title-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Excerpt Text */
+    .card-excerpt {
+      color: #4a5568;
+    }
+
+    /* Dark Mode Adjustments */
+    .card.dark .card-title-link {
+      color: #f9fafb;
+    }
+
+    .card.dark .card-excerpt {
+      color: #a0aec0;
+    }
+
+    /* Footer */
+    .card-footer {
+      display: flex;
+      align-items: center;
+      font-size: 0.875rem;
+      color: #718096;
+      margin-top: auto;
+    }
+
+    .card-footer time {
+      color: inherit;
+    }
+
+    .card-tags {
+      margin-left: 1rem;
+      font-weight: 500;
+      color: #1a202c;
+    }
+
+    .card.dark .card-tags {
+      color: #f9fafb;
+    }
+
+    /* Read More Link */
+    .card-read-more {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      color: #4f46e5;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .card-read-more:hover {
+      color: #3730a3;
+    }
+
+    .icon {
+      height: 1rem;
+      width: 1rem;
+      margin-left: 0.25rem;
+      margin-top: 0px;
+    }
+
+    /* Responsive Layout for Smaller Screens */
+    @media (max-width: 768px) {
+      .card-container {
+        grid-template-columns: 1fr;
+      }
     }
 
     .add-blog-btn {
-      display: block;
-      width: 150px;
-      margin: 20px auto;
-      padding: 10px;
       background-color: #007bff;
-      color: #fff;
-      text-align: center;
-      border-radius: 5px;
-      text-decoration: none;
-    }
-
-    .delete-btn {
-      margin-top: 10px;
-      padding: 8px;
-      background-color: #f44336;
+      /* Button color */
       color: white;
+      /* Text color */
+      padding: 10px 20px;
+      /* Padding for a professional look */
       border: none;
       border-radius: 5px;
+      font-size: 1em;
       cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
-    .delete-btn:hover {
-      background-color: #d32f2f;
+    .add-blog-btn:hover {
+      background-color: #0056b3;
+      /* Darker shade on hover */
+      transform: translateY(-2px);
+      /* Slight lift effect */
+    }
+
+    /* Align Add Blog button to the right */
+    .text-end {
+      text-align: right;
+      margin-top: 60px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      #title {
+        font-size: 2rem;
+      }
+
+      .blog-content p {
+        font-size: 1rem;
+      }
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .play-pause-buttons {
+      margin-bottom: 1rem;
     }
   </style>
-  </head>
 
-  <body>
+  <script>
 
-    <h1>All Blog Posts</h1>
-    <a href="addBlog.html" class="add-blog-btn">Add New Blog</a>
-    <div class="blog-container" id="blogContainer"></div>
+    // Function to display blog posts
+    function displayBlogs(blogs) {
 
-    <script>
-      function displayBlogs() {
-        const blogContainer = document.getElementById('blogContainer');
-        blogContainer.innerHTML = '';
+      const filteredBlogsContainer = document.getElementById('filtered-blogs');
+      filteredBlogsContainer.innerHTML = ''; // Clear previous content
 
-        const blogs = JSON.parse(localStorage.getItem('blogs')) || [];
-        console.log(blogs); // Log the retrieved blogs
+      blogs.forEach(post => {
+        let imagePath = "";
+        if (post.featuredImage) {
+          imagePath = `http://localhost:5000/${post.featuredImage.replace(/\\/g, '/')}`;
+        }
+        const blogHTML = `
+        <article class="card" data-aos="fade-right" data-aos-delay="300">
+            <img src="${imagePath}" alt="${post.title}" class="card-image" onerror="this.onerror=null; this.src='/placeholder.svg?height=200&width=400';">
+            <div class="card-content">
+                <h2 class="card-title flex">
+                    <a href="#" class="card-title-link">${post.title}</a>
+                    
+                </h2>
+                <p class="card-excerpt">${post.excerpt}</p>
+                 <div class='play-pause-buttons'>
+                    <button class="speak-button-${post._id}" onclick="handlePlay('${post._id}')" 
+                            data-title="${post.title.replace(/"/g, '&quot;')}" 
+                            data-excerpt="${post.excerpt.replace(/"/g, '&quot;')}">
+                      <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M3.5 1.5L13.5 8L3.5 14.5V1.5Z"/>
+                      </svg>
 
-        blogs.forEach((blog, index) => {
-          const blogPost = document.createElement('div');
-          blogPost.classList.add('blog-post');
+                    </button> 
+                    <button class="pause-button-${post._id} hidden"  onclick="handlePause('${post._id}')">
+                   <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 1H7V15H5V1ZM9 1H11V15H9V1Z"/>
+                    </svg>
 
-          const imgSrc = blog.imageUrl ? blog.imageUrl : 'path/to/placeholder-image.jpg';
+                    </button>
+                    </div>
+                <div class="card-footer">
+                    <time datetime="${post.createdAt}">${formatDate(post.createdAt)}</time>
+                     <a href="/readmore/${post.id}" class="card-read-more">
+                       <span> Read More </span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </article>
+    `;
+        filteredBlogsContainer.innerHTML += blogHTML;
+      });
+    }
 
-          blogPost.innerHTML = `
-                    <img src="${imgSrc}" alt="Blog Image">
-                    <h2 class="blog-title">${blog.title}</h2>
-                    <p class="blog-content">${blog.excerpt}</p>
-                    <button class="delete-btn" onclick="deleteBlog(${index})">Delete</button>
-                `;
-          blogContainer.appendChild(blogPost);
+    let speechInstance = null; // Store the current SpeechSynthesisUtterance instance
+    let isPaused = false;
+    let currentPosition = 0; // To store the position where we paused
+
+    window.handlePlay = function (id) {
+      const button = document.querySelector(`button[onclick="handlePlay('${id}')"]`);
+      if (button) {
+        const title = button.dataset.title;
+        const excerpt = button.dataset.excerpt;
+        const textToSpeak = `${title}. ${excerpt}`;
+        document.getElementsByClassName(`pause-button-${id}`)[0].classList.remove('hidden')
+        document.getElementsByClassName(`speak-button-${id}`)[0].classList.add('hidden')
+
+        // If speech is paused, resume from the saved position
+        if (isPaused && speechInstance) {
+          isPaused = false;
+          window.speechSynthesis.speak(speechInstance);
+        } else {
+          // Create a new SpeechSynthesisUtterance instance
+          speechInstance = new SpeechSynthesisUtterance(textToSpeak.slice(currentPosition));
+          speechInstance.lang = 'en-US';
+          speechInstance.pitch = 1;
+          speechInstance.rate = 1;
+
+          // Event listener to track speech progress and save current position
+          speechInstance.onboundary = function (event) {
+            if (event.name === 'word') {
+              currentPosition = event.charIndex;
+            }
+          };
+
+          // Play the speech
+          window.speechSynthesis.speak(speechInstance);
+        }
+      }
+    };
+
+    window.handlePause = function (id) {
+      document.getElementsByClassName(`pause-button-${id}`)[0].classList.add('hidden')
+      document.getElementsByClassName(`speak-button-${id}`)[0].classList.remove('hidden')
+      if (speechInstance && !isPaused) {
+        window.speechSynthesis.cancel();
+        isPaused = true;
+      }
+    };
+
+    // Fetch blog posts from server
+    async function fetchBlogs() {
+      try {
+        const response = await fetch('http://localhost:5000/api/addBlog/getAllBlog');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const blogPosts = await response.json();
+        console.log(blogPosts)
+        displayBlogs(blogPosts); // Display all blogs initially
+
+        // Add event listener for input changes
+        document.getElementById('search-input').addEventListener('input', function () {
+          const searchQuery = this.value.toLowerCase();
+
+          // Filter blog posts based on search query
+          const filteredPosts = blogPosts.filter(post =>
+            post.title.toLowerCase().includes(searchQuery)
+          );
+
+          // Display filtered results
+          displayBlogs(filteredPosts);
         });
+      } catch (error) {
+        console.error('Error fetching blog posts:', error);
       }
+    }
 
-      function deleteBlog(index) {
-        // Get the existing blogs
-        const blogs = JSON.parse(localStorage.getItem('blogs')) || [];
-        // Remove the blog at the specified index
-        blogs.splice(index, 1);
-        // Update local storage
-        localStorage.setItem('blogs', JSON.stringify(blogs));
-        // Refresh the blog display
-        displayBlogs();
-      }
+    function formatDate(date) {
+      return new Date(date).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+    }
 
-      window.addEventListener('DOMContentLoaded', displayBlogs);
-    </script>
+    // Initial fetch of blog posts
+    fetchBlogs();
+
+
+  </script>
+ 
 
 
     <!-- Timed popup that will appear after succesful submission of feebback form! -->
