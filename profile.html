@@ -5,6 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-display {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+            border: 2px solid gray;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #cancelButton {
+            background-color: #dc3545;
+        }
+
+        #cancelButton:hover {
+            background-color: #c82333;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -26,11 +94,11 @@
                 </div>
                 <div class="form-group">
                     <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" value="anyone">
+                    <input type="text" id="username" name="username" value="john_doe">
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" value="anyone@example.com">
+                    <input type="email" id="email" name="email" value="john@example.com">
                 </div>
                 <div class="form-group">
                     <label for="bio">Bio:</label>
@@ -43,5 +111,64 @@
 
         <button id="editButton">Edit Profile</button>
     </div>
+
+    <script>
+        const editButton = document.getElementById('editButton');
+        const profileDisplay = document.getElementById('profileDisplay');
+        const profileEdit = document.getElementById('profileEdit');
+        const cancelButton = document.getElementById('cancelButton');
+        const profileForm = document.getElementById('profileForm');
+
+        // Function to toggle between display and edit mode
+        editButton.addEventListener('click', function() {
+            profileDisplay.style.display = 'none';
+            profileEdit.style.display = 'block';
+            document.getElementById('username').focus(); // Set focus to the username field
+        });
+
+        cancelButton.addEventListener('click', function() {
+            resetProfileForm();
+        });
+
+        // Handle form submission
+        profileForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent page refresh
+
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const bio = document.getElementById('bio').value;
+            const imageUpload = document.getElementById('imageUpload').files[0];
+
+            // Update profile display
+            document.getElementById('displayUsername').textContent = username;
+            document.getElementById('displayEmail').textContent = email;
+            document.getElementById('displayBio').textContent = bio;
+
+            // Update profile image if an image is uploaded
+            if (imageUpload) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('profileImage').src = e.target.result; // Set the uploaded image as profile image
+                };
+                reader.readAsDataURL(imageUpload);
+            }
+
+            // Show profile display and hide edit form
+            profileDisplay.style.display = 'flex';
+            profileEdit.style.display = 'none';
+        });
+
+        // Reset the form and return to profile display
+        function resetProfileForm() {
+            // Reset form values
+            document.getElementById('username').value = document.getElementById('displayUsername').textContent;
+            document.getElementById('email').value = document.getElementById('displayEmail').textContent;
+            document.getElementById('bio').value = document.getElementById('displayBio').textContent;
+
+            // Hide edit form and show profile display
+            profileEdit.style.display = 'none';
+            profileDisplay.style.display = 'flex';
+        }
+    </script>
 </body>
 </html>
