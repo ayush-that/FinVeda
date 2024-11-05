@@ -871,132 +871,80 @@
 
   <script>
 
-    // Sample data for blog posts
-    const blogPosts = [
-      {
-        title: "How to deal with Unknown Risks in Life and Investing?",
-        link: "./blogs/how-to-deal-with-unknown-risks-in-life-and-investing.html",
-        featureImage: "assets/images/blog-1.webp",
-        excerpt: "Discover strategies for navigating unknown risks in life and investing wisely."
-      },
-      {
-        title: "How to 10x your Generational Wealth?",
-        link: "./blogs/how-to-10x-your-generational-wealth.html",
-        featureImage: "./assets/images/blog-2.webp",
-        excerpt: "Learn techniques to multiply your wealth across generations effectively."
-      },
-      {
-        title: "Investing with Minimal Savings: A Guide for Women Investors",
-        link: "./blogs/invest-minimal.html",
-        featureImage: "./assets/images/women.webp",
-        excerpt: "A practical guide for women to start investing with minimal savings."
-      },
-      {
-        title: "The Power of Compound Interest: Grow Your Wealth Wisely",
-        link: "./blogs/power-of-compound-interest.html",
-        featureImage: "assets/images/blog-3.webp",
-        excerpt: "Unlock the potential of compound interest to grow your wealth over time."
-      },
-      {
-        title: "Real Estate Investing: Tips for First-Time Buyers",
-        link: "./blogs/real-estate-investing.html",
-        featureImage: "./assets/images/blog-1.webp",
-        excerpt: "Essential tips for first-time buyers entering the real estate market."
-      },
-      {
-        title: "The Importance of Financial Literacy in Today’s World",
-        link: "./blogs/financial-literacy.html",
-        featureImage: "./assets/images/blog-3.webp",
-        excerpt: "Understand why financial literacy is crucial for navigating modern finance."
-      },
-      {
-        title: "How to Create a Budget and Stick to It",
-        link: "./blogs/create-a-budget.html",
-        featureImage: "./assets/images/blog-2.webp",
-        excerpt: "Step-by-step guide on creating and maintaining a budget successfully."
-      },
-      {
-        title: "Investing for Retirement: Strategies for Every Age",
-        link: "./blogs/investing-for-retirement.html",
-        featureImage: "./assets/images/blog-4.webp",
-        excerpt: "Explore investment strategies tailored for different stages of life."
-      },
-      {
-        title: "Cryptocurrency 101: What You Need to Know",
-        link: "./blogs/cryptocurrency-101.html",
-        featureImage: "./assets/images/blog-3.webp",
-        excerpt: "A beginner’s guide to understanding the basics of cryptocurrency."
-      },
-      {
-        title: "Saving for College: Tips for Parents and Students",
-        link: "./blogs/saving-for-college.html",
-        featureImage: "./assets/images/blog-2.webp",
-        excerpt: "Effective tips for parents and students to save for college expenses."
-      },
-      {
-        title: "How to Build an Emergency Fund: A Step-by-Step Guide",
-        link: "./blogs/build-emergency-fund.html",
-        featureImage: "./assets/images/blog-1.webp",
-        excerpt: "Learn how to create a solid emergency fund for financial security."
-      },
-      {
-        title: "Understanding Mutual Funds: A Smart Investment Choice",
-        link: "./blogs/mutual-funds.html",
-        featureImage: "./assets/images/blog-1.webp",
-        excerpt: "An introduction to mutual funds and why they're a wise investment option."
-      },
-    ];
-
-
-
-
-
     // Function to display blog posts
     function displayBlogs(blogs) {
+
       const filteredBlogsContainer = document.getElementById('filtered-blogs');
       filteredBlogsContainer.innerHTML = ''; // Clear previous content
 
-
       blogs.forEach(post => {
+        let imagePath = "";
+        if (post.featuredImage) {
+          imagePath = `http://localhost:5000/${post.featuredImage.replace(/\\/g, '/')}`;
+        }
         const blogHTML = `
-            <article class="card" data-aos="fade-right" data-aos-delay="300">
-                <img src="${post.featureImage}" alt="${post.title}" class="card-image" onerror="this.onerror=null; this.src='/placeholder.svg?height=200&width=400';">
-                <div class="card-content">
-                    <h2 class="card-title">
-                        <a href="#" class="card-title-link">${post.title}</a>
-                    </h2>
-                    <p class="card-excerpt">${post.excerpt}</p>
-                    <div class="card-footer">
-                        <time datetime="${new Date().toLocaleString()}">${new Date().toLocaleString()}</time>
-                         <a href="/readmore" class="card-read-more">
-                           <span> Read More </span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                            </svg>
-                        </a>
-                    </div>
+        <article class="card" data-aos="fade-right" data-aos-delay="300">
+            <img src="${imagePath}" alt="${post.title}" class="card-image" onerror="this.onerror=null; this.src='/placeholder.svg?height=200&width=400';">
+            <div class="card-content">
+                <h2 class="card-title">
+                    <a href="#" class="card-title-link">${post.title}</a>
+                </h2>
+                <p class="card-excerpt">${post.excerpt}</p>
+                <div class="card-footer">
+                    <time datetime="${post.createdAt}">${formatDate(post.createdAt)}</time>
+                     <a href="/readmore/${post.id}" class="card-read-more">
+                       <span> Read More </span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
                 </div>
-            </article>
-        `;
+            </div>
+        </article>
+    `;
         filteredBlogsContainer.innerHTML += blogHTML;
       });
     }
 
-    // Initial display of all blog posts
-    displayBlogs(blogPosts);
+    // Fetch blog posts from server
+    async function fetchBlogs() {
+      try {
+        const response = await fetch('http://localhost:5000/api/addBlog/getAllBlog');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const blogPosts = await response.json();
+        console.log(blogPosts)
+        displayBlogs(blogPosts); // Display all blogs initially
 
-    // Add event listener for input changes
-    document.getElementById('search-input').addEventListener('input', function () {
-      const searchQuery = this.value.toLowerCase();
+        // Add event listener for input changes
+        document.getElementById('search-input').addEventListener('input', function () {
+          const searchQuery = this.value.toLowerCase();
 
-      // Filter blog posts based on search query
-      const filteredPosts = blogPosts.filter(post =>
-        post.title.toLowerCase().includes(searchQuery)
-      );
+          // Filter blog posts based on search query
+          const filteredPosts = blogPosts.filter(post =>
+            post.title.toLowerCase().includes(searchQuery)
+          );
 
-      // Display filtered results
-      displayBlogs(filteredPosts);
-    });
+          // Display filtered results
+          displayBlogs(filteredPosts);
+        });
+      } catch (error) {
+        console.error('Error fetching blog posts:', error);
+      }
+    }
+
+    function formatDate(date) {
+      return new Date(date).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+    }
+
+    // Initial fetch of blog posts
+    fetchBlogs();
+
 
   </script>
 
@@ -1011,7 +959,7 @@
 
   <footer id="footer" class="footer-area pt-120">
     <div class="container">
-      <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s"  style="height: 265px;">
+      <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s" style="height: 265px;">
         <div class="row">
           <div class="col-lg-6">
             <div class="subscribe-content mt-45">

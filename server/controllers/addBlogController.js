@@ -55,4 +55,14 @@ export async function saveBlog(req, res) {
 }
 
 
+export async function getAllBlog(req, res) {
+    try {
+        const blogs = await BlogPost.find(); // Retrieve all blog posts
+        res.status(200).json(blogs); // Respond with the list of blog posts
+    } catch (error) {
+        console.error("Error retrieving blog posts:", error);
+        res.status(500).json({ message: "Failed to retrieve blog posts.", error });
+    }
+}
+
 export { upload };
