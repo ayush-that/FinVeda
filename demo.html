@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Reset</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input[type="email"], input[type="password"] {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #message {
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: green;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container" id="emailFormContainer">
+        <h2>Forgot Your Password?</h2>
+        <p>Enter your email to reset your password:</p>
+        <form id="emailForm">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <button type="submit">Send Reset Link</button>
+        </form>
+        <div id="emailMessage"></div>
+    </div>
+
+    <div class="container" id="resetFormContainer" style="display: none;">
+        <h2>Reset Your Password</h2>
+        <p>Enter your new password:</p>
+        <form id="resetForm">
+            <label for="newPassword">New Password:</label>
+            <input type="password" id="newPassword" placeholder="Enter your new password" required>
+
+            <label for="confirmPassword">Confirm New Password:</label>
+            <input type="password" id="confirmPassword" placeholder="Confirm new password" required>
+
+            <button type="submit">Reset Password</button>
+        </form>
+        <div id="resetMessage"></div>
+    </div>
+
+    <script>
+        // Simulate sending a reset link to the email address
+        document.getElementById("emailForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById("email").value;
+            const emailMessageDiv = document.getElementById("emailMessage");
+
+            // Simulate the email being sent
+            setTimeout(() => {
+                // In a real app, an email would be sent here
+                emailMessageDiv.innerText = `A password reset link has been sent to ${email}. Please check your inbox.`;
+                emailMessageDiv.style.color = "green";
+
+                // Show reset password form
+                document.getElementById("emailFormContainer").style.display = "none";
+                document.getElementById("resetFormContainer").style.display = "block";
+            }, 1500); // Simulate a delay before showing reset form
+        });
+
+        // Handle reset password form submission
+        document.getElementById("resetForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const newPassword = document.getElementById("newPassword").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+            const resetMessageDiv = document.getElementById("resetMessage");
+
+            // Validation: Check if the new password and confirm password match
+            if (newPassword !== confirmPassword) {
+                resetMessageDiv.innerText = "New passwords do not match. Please try again.";
+                resetMessageDiv.style.color = "red";
+                return;
+            }
+
+            // Simulate password reset success
+            setTimeout(() => {
+                resetMessageDiv.innerText = "Your password has been successfully reset!";
+                resetMessageDiv.style.color = "green";
+
+                // Clear the form fields
+                document.getElementById("resetForm").reset();
+            }, 1500); // Simulate an API delay (1.5 seconds)
+        });
+    </script>
+
+</body>
+</html>
