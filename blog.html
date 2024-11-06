@@ -585,7 +585,7 @@
               </div>
             </div>
           </div>
-          
+
           <div class="row justify-content-center mt-4">
             <div class="col-lg-2 text-end">
               <button type="button" class="btn btn-primary add-blog-btn" style="width: 100%; margin-top: 2%;"
@@ -662,7 +662,7 @@
       z-index: 1;
       padding: 10px;
 
-
+    }
       /* Styling for the image inside the blog-pic */
       #blog-pic img {
         border-radius: 10px;
@@ -842,7 +842,7 @@
         border: 5px solid white;
       }
 
-    <style>
+
         /* Basic styles for the blog layout */
         body {
             font-family: Arial, sans-serif;
@@ -952,7 +952,7 @@
 
 .form h2 {
   font-size: 24px;
-  color: white; 
+  color: white;
   text-align: center;
   margin-bottom: 15px;
   font-weight: 600;
@@ -965,7 +965,7 @@
   padding: 12px;
   margin-bottom: 15px;
   font-size: 16px;
-  border: 1px solid #ddd; 
+  border: 1px solid #ddd;
   border-radius: 4px;
   background-color: #f9f9f9; /* Light gray background */
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -974,7 +974,7 @@
 .form input[type="text"]:focus,
 .form input[type="file"]:focus,
 .form textarea:focus {
-  border-color: #007bff; 
+  border-color: #007bff;
   box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
   outline: none;
 }
@@ -982,7 +982,7 @@
 .form button {
   width: 100%;
   padding: 12px;
-  background: #007bff; 
+  background: #007bff;
   color: #fff;
   font-size: 18px;
   font-weight: 600;
@@ -994,7 +994,7 @@
 
 .form button:hover {
   background:white;
-  color: #007bff; 
+  color: #007bff;
 }
 
 /* Responsive Design */
@@ -1015,7 +1015,7 @@
         <button type="submit">Add Blog</button>
     </form>
      </div>
-   
+
 
      <div id="filtered-blogs"></div>
 
@@ -1025,13 +1025,13 @@
         function displayBlogs(blogsToDisplay) {
     // Ensure the container is empty before adding new content
     filteredBlogsContainer.innerHTML = '';
-    
+
     // Iterate over each blog in blogsToDisplay
     blogsToDisplay.forEach(post => {
         const postUrl = `http://localhost:5000/api/addBlog/getBlogById/${post._id}`;
         const blogHTML = `
             <article class="card" data-aos="fade-right" data-aos-delay="300">
-                <img src="${post.imagePath}" alt="${post.title}" class="card-image" 
+                <img src="${post.imagePath}" alt="${post.title}" class="card-image"
                      onerror="this.onerror=null; this.src='/placeholder.svg?height=200&width=400';">
                 <div class="card-content">
                     <h2 class="card-title flex">
@@ -1040,15 +1040,15 @@
                     <p class="card-excerpt">${post.excerpt}</p>
                     <div class="play-social-button">
                         <div class='play-pause-buttons'>
-                            <button class="speak-button-${post._id}" onclick="handlePlay('${post._id}')" 
+                            <button class="speak-button-${post._id}" onclick="handlePlay('${post._id}')"
                                     style="padding: 6px 10px;"
-                                    data-title="${post.title.replace(/"/g, '&quot;')}" 
+                                    data-title="${post.title.replace(/"/g, '&quot;')}"
                                     data-excerpt="${post.excerpt.replace(/"/g, '&quot;')}">
                                 <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M3.5 1.5L13.5 8L3.5 14.5V1.5Z"/>
                                 </svg>
-                            </button> 
-                            <button class="pause-button-${post._id} hidden" onclick="handlePause('${post._id}')" 
+                            </button>
+                            <button class="pause-button-${post._id} hidden" onclick="handlePause('${post._id}')"
                                     style="padding: 6px 10px;">
                                 <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M5 1H7V15H5V1ZM9 1H11V15H9V1Z"/>
@@ -1057,22 +1057,22 @@
                         </div>
                         <!-- Social Share Buttons -->
                         <div class="mt-2 flex space-x-3 items-center justify-center social-media-icons">
-                            <a href="https://x.com/intent/tweet?url=${encodeURIComponent(postUrl)}&text=${encodeURIComponent(post.title + " " + post.excerpt)}" 
-                                target="_blank" class="text-blue-500 hover:text-blue-700 mb-1" 
+                            <a href="https://x.com/intent/tweet?url=${encodeURIComponent(postUrl)}&text=${encodeURIComponent(post.title + " " + post.excerpt)}"
+                                target="_blank" class="text-blue-500 hover:text-blue-700 mb-1"
                                 aria-label="Share on Twitter">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
                                     <path d="M18.3 5.71L12 12l6.3 6.29-1.41 1.41L12 13.41l-6.3 6.29-1.41-1.41L10.59 12 4.29 5.71 5.71 4.29 12 10.59l6.3-6.3 1.41 1.41z"/>
                                 </svg>
                             </a>
-                            <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(postUrl)}" 
-                                target="_blank" class="text-blue-700 hover:text-blue-800" 
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(postUrl)}"
+                                target="_blank" class="text-blue-700 hover:text-blue-800"
                                 aria-label="Share on Facebook">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M22.675 0h-21.35C.747 0 0 .747 0 1.675v20.649C0 23.253.747 24 1.675 24h11.675v-10.188H9.691v-4.03h3.659V7.159c0-3.63 1.813-5.651 4.637-5.651 1.343 0 2.79.243 2.79.243v3.05h-1.571c-1.548 0-2.023.964-2.023 1.958v2.34h4.071l-.651 4.03h-3.42V24h6.64C23.253 24 24 23.253 24 22.324V1.675C24 .747 23.253 0 22.675 0z"/>
                                 </svg>
                             </a>
-                            <a href="https://linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(postUrl)}&text=${encodeURIComponent(post.title + " " + post.excerpt)}" 
-                                target="_blank" class="text-blue-700 hover:text-blue-800" 
+                            <a href="https://linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(postUrl)}&text=${encodeURIComponent(post.title + " " + post.excerpt)}"
+                                target="_blank" class="text-blue-700 hover:text-blue-800"
                                 aria-label="Share on LinkedIn">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M20.447 20.452h-3.556v-5.646c0-1.352-.024-3.09-1.888-3.09-1.886 0-2.174 1.477-2.174 3.016v5.72h-3.558V9.043h3.414v1.588h.048c.477-.88 1.642-1.805 3.377-1.805 3.61 0 4.276 2.376 4.276 5.454v6.171h-.004zM5.255 7.684c-1.148 0-2.078-.938-2.078-2.078 0-1.143.934-2.08 2.078-2.08 1.144 0 2.077.937 2.077 2.08 0 1.14-.933 2.078-2.077 2.078zm1.78 12.768H3.474V9.043h3.561v11.409zM22.227 0H1.773C.793 0 0 .793 0 1.773v20.453C0 23.207.793 24 1.773 24h20.454C23.207 24 24 23.207 24 22.227V1.773C24 .793 23.207 0 22.227 0z"/>
@@ -1134,7 +1134,7 @@
             displayBlogs(filteredPosts);
         });
 
- 
+
         function formatDate(date) {
             return new Date(date).toLocaleDateString('en-US', {
                 year: 'numeric',
@@ -1143,7 +1143,7 @@
             });
         }
     </script>
- 
+
 
 
   <!-- Timed popup that will appear after succesful submission of feebback form! -->
@@ -1177,7 +1177,7 @@
         </div>
       </div>
     </div>
-  
+
     </div>
     <div class="footer-widget pb-100">
     <div class="row" id="footer">
@@ -1196,15 +1196,15 @@
                         <h3 class="title custom-margin">Quick Links</h3>
                     </div>
                     <ul class="link custom-margin">
-  
+
                       <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
                       <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
                       <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
                       <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
                       <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
                       <li><a href="./blogs/sitemap.html"><i class="fa-solid fa-sitemap"></i>  Site Map</a></li>
-  
-  
+
+
                     </ul>
                 </div>
                 <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
@@ -1266,11 +1266,11 @@
                 </ul>
             </div>
         </div>
-  
-  
+
+
     </div>
              </div>
-  
+
     <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center">
       <div class="row">
                 <div className="flex flex-col items-center text-gray-800">
@@ -1278,7 +1278,7 @@
                       <span className="font-bold text-2xl">Total Visitors : </span>
                       <a href="https://www.hitwebcounter.com" target="_blank">
                         <img src="https://hitwebcounter.com/counter/counter.php?page=17085296&style=0006&nbdigits=5&type=page&initCount=1000" title="Counter Widget" Alt="Visit counter For Websites"   border="0" /></a>
-  
+
                   </div>
               </div>
         <div class="col-lg-12">
@@ -1298,17 +1298,17 @@
                 reserved<br />
                 Made with ♥ in India
               </p>
-  
+
             </div>
           </div>
         </div>
       </div>
     </div>
-  
+
     <div id="particles-2"></div>
     </div>
-    </footer>   
-      
+    </footer>
+
         <script src="finance.js"></script>
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
       <script>
@@ -1320,40 +1320,40 @@
         document.addEventListener("DOMContentLoaded", function () {
           const coords = { x: 0, y: 0 };
           const circles = document.querySelectorAll(".circle");
-      
+
           circles.forEach(function (circle) {
             circle.x = 0;
             circle.y = 0;
           });
-      
+
           window.addEventListener("mousemove", function (e) {
             coords.x = e.pageX;
             coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
           });
-      
+
           function animateCircles() {
             let x = coords.x;
             let y = coords.y;
-      
+
             circles.forEach(function (circle, index) {
               circle.style.left = `${x - 12}px`;
               circle.style.top = `${y - 12}px`;
               circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
-      
+
               const nextCircle = circles[index + 1] || circles[0];
               circle.x = x;
               circle.y = y;
-      
+
               x += (nextCircle.x - x) * 0.3;
               y += (nextCircle.y - y) * 0.3;
             });
-      
+
             requestAnimationFrame(animateCircles);
           }
-      
+
           animateCircles();
         });
-      
+
       </script>
     <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
     <script src="./assets/js/blog.js"></script>
@@ -1392,7 +1392,7 @@
         duration: 2000
       });
     </script>
- 
+
 
 </body>
 
