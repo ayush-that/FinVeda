@@ -576,8 +576,7 @@
     </header>
 
 
-
-    <!-- FAQ Section -->
+        <!-- FAQ Section -->
     <div class="images">
         <img style="width:250px; top: 200px; right: 1470px;mix-blend-mode: multiply;" src="assets/images/HELP-IMG.webp"
             alt="image" class="photo">
@@ -595,136 +594,157 @@
                 <button class="faq-search-btn" onclick="filterFAQs()">Search</button>
             </div>
 
-            <div class="accordion" id="faqAccordion">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                            What is Finveda?
-                        </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                        data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Finveda is a dynamic financial literacy app with Arthsathi AI chatbot, finance blogs, market
-                            trends, SIP calculator, and a quiz for effortless finance learning.
-                        </div>
-                    </div>
-                </div>
 
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            What problem does Finveda solve?
-                        </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                        data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Finveda aims to solve the lack of financial literacy in India, providing tools and resources
-                            to improve financial knowledge for individuals.
-                        </div>
-                    </div>
-                </div>
+             <!-- Question 1 -->
+        <div class="question-section">
+            <p class="question"> What is Finveda?</p>
+            <hr>
+            <button class="toggle-button" data-target="answer1">&#8595;</button>
+            <p id="answer1" class="answer">Finveda is a dynamic financial literacy app with Arthsathi AI chatbot, finance blogs, market trends, SIP calculator, and a quiz for effortless finance learning.</p>
+        </div>
 
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            What services does Finveda offer?
-                        </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                        data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Finveda offers expert-written blogs, market trends, SIP and PPF calculators, and more for
-                            personalized finance education.
-                        </div>
-                    </div>
-                </div>
+        <!-- Question 2 -->
+        <div class="question-section">
+            <p class="question">What problem does Finveda solve?</p>
+            <button class="toggle-button" data-target="answer2">&#8595;</button>
+            <p id="answer2" class="answer">Finveda aims to solve the lack of financial literacy in India, providing tools and resources to improve financial knowledge for individuals.</p>
+        </div>
 
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingFour">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                            How can I start using Finveda?
-                        </button>
-                    </h2>
-                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                        data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Simply sign up and access all our features, including personalized financial education and
-                            tools.
-                        </div>
-                    </div>
-                </div>
+        <!-- Question 3 -->
+        <div class="question-section">
+            <p class="question">What services does Finveda offer?</p>
+            <button class="toggle-button" data-target="answer3">&#8595;</button>
+            <p id="answer3" class="answer"> Finveda offers expert-written blogs, market trends, SIP and PPF calculators, and more for personalized finance education.</p>
+        </div>
 
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingFive">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                            Is Finveda free to use?
-                        </button>
-                    </h2>
-                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-                        data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Yes, Finveda is completely free to use for all users.
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- Question 4 -->
+        <div class="question-section">
+            <p class="question"> How can I start using Finveda?</p>
+            <button class="toggle-button" data-target="answer4">&#8595;</button>
+            <p id="answer4" class="answer">Simply sign up and access all our features, including personalized financial education and tools.</p>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question-section">
+            <p class="question">Is Finveda free to use?</p>
+            <button class="toggle-button" data-target="answer5">&#8595;</button>
+            <p id="answer5" class="answer">Yes, Finveda is completely free to use for all users.</p>
         </div>
     </div>
 
-    <style>
-        .accordion-item {
-            background-color: #5776ff;
+        </div>
+    </div>
+
+      <script>
+        // Get all toggle buttons
+        const toggleButtons = document.querySelectorAll('.toggle-button');
+
+        toggleButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const answerId = button.getAttribute('data-target');
+                const answer = document.getElementById(answerId);
+
+                // Toggle the 'show' class on the answer
+                answer.classList.toggle('show');
+
+                // Toggle the 'active' class on the button to change its background color and arrow color
+                button.classList.toggle('active');
+
+                // Change the arrow direction based on whether the answer is shown or not
+                if (answer.classList.contains('show')) {
+                    button.innerHTML = '&#8593;'; // Up arrow
+                } else {
+                    button.innerHTML = '&#8595;'; // Down arrow
+                }
+            });
+        });
+    </script>
+
+     <style>
+        body {
+            font-family: Arial, sans-serif;
+
+            padding: 20px;
         }
 
-        .accordion-button {
-            background: linear-gradient(135deg, #56ab2f, #a8e063, #b9f1b7);
-            color: #ffffff;
-            font-weight: bold;
-            padding: 15px;
-            border: none;
-            border-radius: 10px;
-            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+
+            background-color: none;
+            padding: 20px;
+            border-radius: 8px;
+
+        }
+
+        .question-section {
+            border-radius: 5px;
+            height: 40px;
+            margin-bottom: 70px;
             position: relative;
-            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            display:block;
+            height: auto;
+            padding: 15px;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 12px 12px rgba(0, 0, 0, 0.5);
         }
 
-        .accordion-button::before {
-            content: "";
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
-            transition: opacity 0.3s ease;
-            opacity: 0;
-            border-radius: 10px;
+        .question-section:hover {
+            transform: scale(1.1);
+        }
+        .question {
+            margin-top: 12PX;
+            font-size: 25px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
         }
 
-        .accordion-button:hover {
-            background: linear-gradient(135deg, #c8f8c2, #56ab2f, #a8e063);
-            transform: scale(1.03);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        .answer {
+            margin-top: 10px;
+            font-size: 20px;
+            color: #555;
+            display: block; /* Ensures it takes up space */
+            max-height: 0; /* Start with no height */
+            overflow: hidden; /* Hide the content initially */
+            opacity: 0; /* Start with transparency */
+            transition: max-height 0.1s ease, opacity 0.1s ease; /* Smooth transition */
+            font-weight: 700;
         }
 
-        .accordion-button:focus {
-            outline: none;
-            border: 2px solid #ffffff;
-            box-shadow: 0 0 10px #4facfe, 0 0 20px #56ab2f;
+        .answer.show {
+            max-height: 200px; /* Expand answer height when visible */
+            opacity: 1; /* Make the answer visible */
         }
 
-        .accordion-button:focus::before {
-            opacity: 1;
-            transform: rotate(45deg);
+        .toggle-button {
+            font-size: 28px;
+            cursor: pointer;
+            color: white;
+            background: none;
+            border: none;
+            padding: 0;
+            background-color: #007bff;
+            width: 70px;
+            height: 40px;
+            border-radius: 50%;
+            position: absolute; /* Position relative to the question */
+            top: 16px;
+            right: 10px;
+            transition: background-color 0.3s ease; /* Smooth background transition */
+            transform: translateY(-50%);
         }
+
+        .toggle-button:hover {
+            background-color: green; /* Hover effect */
+        }
+ .toggle-button.active {
+            background-color: red; /* Change the arrow color to red when the button is clicked */
+        }
+
     </style>
 
 
