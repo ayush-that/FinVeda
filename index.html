@@ -2507,7 +2507,7 @@
       });
 
       // Handle form submission and show modal
-      document.getElementById('feedback-form').addEventListener('submit', function (e) {
+      document.getElementById('feedback-form').addEventListener('submit', async function (e) {
         e.preventDefault();
 
         // Get form values
@@ -2540,20 +2540,40 @@
         // Store updated feedback array back in localStorage
         localStorage.setItem('feedbacks', JSON.stringify(feedbackData));
 
-        // Clear form inputs
-        document.getElementById('feedback-form').reset();
+        // Send data to the server using Fetch API
+        try {
+          const response = await fetch('http://localhost:5000/api/feedback/saveFeedback', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(feedback)
+          });
 
-        // Reset emoji description
-        emojiDescription.textContent = 'Select an option';
+          if (!response.ok) {
+            throw new Error('Failed to submit feedback');
+          }
 
-        // Show success modal
-        document.getElementById('successModal').style.display = 'flex';
+          // Clear form inputs
+          document.getElementById('feedback-form').reset();
 
-        // Close modal after 3 seconds
-        setTimeout(function () {
-          document.getElementById('successModal').style.display = 'none';
-        }, 3000);
+          // Reset emoji description
+          emojiDescription.textContent = 'Select an option';
+
+          // Show success modal
+          document.getElementById('successModal').style.display = 'flex';
+
+          // Close modal after 3 seconds
+          setTimeout(function () {
+            document.getElementById('successModal').style.display = 'none';
+          }, 3000);
+
+        } catch (error) {
+          // Handle errors, for example if fetch fails
+          alert('There was an error submitting your feedback. Please try again later.');
+        }
       });
+
 
       // Close the modal when the 'Dismiss' button is clicked or 'X' is pressed
       document.getElementById('dismissModal').addEventListener('click', function () {
