@@ -3,110 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Posts</title>
+    <title>Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
-        /* Your existing styles */
-        .blog-container {
-            display: flex;
-            flex-wrap: wrap;
+        /* Basic styles for the blog layout */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+        #search-input {
+            margin-bottom: 20px;
+            padding: 10px;
+            width: 100%;
+            max-width: 400px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        #filtered-blogs {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
-            padding: 20px;
+            margin-bottom: 20px;
         }
-
-        .blog-post {
-            background-color: #f4f4f4;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            width: calc(33% - 40px);
-            max-width: 300px;
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
-
-        .blog-post img {
-            max-width: 100%;
+        .card-image {
+            width: 100%;
             height: auto;
-            border-radius: 5px;
         }
-
-        .blog-title {
+        .card-content {
+            padding: 15px;
+        }
+        .card-title {
             font-size: 1.5em;
-            color: #333;
+            margin: 0 0 10px;
+        }
+        .card-excerpt {
             margin: 10px 0;
         }
-
-        .blog-content {
-            color: #666;
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
         }
-
-        .add-blog-btn {
+        #create-blog-form {
+            margin-bottom: 20px;
+        }
+        #create-blog-form input, #create-blog-form textarea {
             display: block;
-            width: 150px;
-            margin: 20px auto;
+            width: 100%;
+            margin-bottom: 10px;
             padding: 10px;
-            background-color: #007bff;
-            color: #fff;
-            text-align: center;
-            border-radius: 5px;
-            text-decoration: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
-
-        .delete-btn {
-            margin-top: 10px;
-            padding: 8px;
-            background-color: #f44336;
+        #create-blog-form button {
+            padding: 10px 15px;
+            background-color: #007bff;
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 4px;
             cursor: pointer;
         }
-
-        .delete-btn:hover {
-            background-color: #d32f2f;
+        #create-blog-form button:hover {
+            background-color: #0056b3;
+        }
+        .share-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .share-buttons a {
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+        .share-buttons a:hover {
+            background-color: #0056b3;
+        }
+        .delete-button {
+            padding: 5px 10px;
+            background-color: #dc3545;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .delete-button:hover {
+            background-color: #c82333;
         }
     </style>
 </head>
 <body>
 
-    <h1>All Blog Posts</h1>
-    <a href="addBlog.html" class="add-blog-btn">Add New Blog</a>
-    <div class="blog-container" id="blogContainer"></div>
+    <!-- Form to create a new blog -->
+    <form id="create-blog-form">
+        <h2>Create New Blog</h2>
+        <input type="text" id="blog-title" placeholder="Blog Title" required>
+        <textarea id="blog-excerpt" rows="4" placeholder="Blog Excerpt" required></textarea>
+        <input type="file" id="blog-image" accept="image/*" required>
+        <button type="submit">Add Blog</button>
+    </form>
+
+    <input type="text" id="search-input" placeholder="Search blogs...">
+    <div id="filtered-blogs"></div>
 
     <script>
-        function displayBlogs() {
-            const blogContainer = document.getElementById('blogContainer');
-            blogContainer.innerHTML = '';
+        const blogs = [];
 
-            const blogs = JSON.parse(localStorage.getItem('blogs')) || [];
-            console.log(blogs); // Log the retrieved blogs
+        function displayBlogs(blogsToDisplay) {
+            const filteredBlogsContainer = document.getElementById('filtered-blogs');
+            filteredBlogsContainer.innerHTML = '';
 
-            blogs.forEach((blog, index) => {
-                const blogPost = document.createElement('div');
-                blogPost.classList.add('blog-post');
-
-                const imgSrc = blog.imageUrl ? blog.imageUrl : 'path/to/placeholder-image.jpg';
-
-                blogPost.innerHTML = `
-                    <img src="${imgSrc}" alt="Blog Image">
-                    <h2 class="blog-title">${blog.title}</h2>
-                    <p class="blog-content">${blog.excerpt}</p>
-                    <button class="delete-btn" onclick="deleteBlog(${index})">Delete</button>
+            blogsToDisplay.forEach((post, index) => {
+                const blogHTML = `
+                <article class="card">
+                    <img src="${post.featuredImage}" alt="${post.title}" class="card-image" onerror="this.onerror=null; this.src='/placeholder.svg?height=200&width=400';">
+                    <div class="card-content">
+                        <h2 class="card-title">${post.title}</h2>
+                        <p class="card-excerpt">${post.excerpt}</p>
+                        <div class="share-buttons">
+                            <a href="https://twitter.com/share?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(location.href)}" target="_blank"><i class="fa-solid fa-share-nodes"></i>Twitter</a>
+                            <a href="https://www.instagram.com/share?url=${encodeURIComponent(location.href)}" target="_blank"><i class="fa-solid fa-share-nodes"></i>Instagram</a>
+                            <a href="https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(location.href)}&title=${encodeURIComponent(post.title)}" target="_blank"><i class="fa-solid fa-share-nodes"></i>sLinkedIn</a>
+                        </div>
+                        <div class="card-footer">
+                            <time datetime="${post.createdAt}">${formatDate(post.createdAt)}</time>
+                            <button class="delete-button" onclick="deleteBlog(${index})">Delete</button>
+                        </div>
+                    </div>
+                </article>
                 `;
-                blogContainer.appendChild(blogPost);
+                filteredBlogsContainer.innerHTML += blogHTML;
             });
         }
 
         function deleteBlog(index) {
-            // Get the existing blogs
-            const blogs = JSON.parse(localStorage.getItem('blogs')) || [];
-            // Remove the blog at the specified index
             blogs.splice(index, 1);
-            // Update local storage
-            localStorage.setItem('blogs', JSON.stringify(blogs));
-            // Refresh the blog display
-            displayBlogs();
+            displayBlogs(blogs);
         }
 
-        window.addEventListener('DOMContentLoaded', displayBlogs);
+        document.getElementById('create-blog-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const title = document.getElementById('blog-title').value;
+            const excerpt = document.getElementById('blog-excerpt').value;
+            const imageFile = document.getElementById('blog-image').files[0];
+
+            const reader = new FileReader();
+            reader.onloadend = function () {
+                const newBlogPost = {
+                    title: title,
+                    excerpt: excerpt,
+                    featuredImage: reader.result,
+                    createdAt: new Date().toISOString()
+                };
+                blogs.push(newBlogPost);
+                displayBlogs(blogs);
+                document.getElementById('create-blog-form').reset();
+            };
+
+            if (imageFile) {
+                reader.readAsDataURL(imageFile);
+            }
+        });
+
+        document.getElementById('search-input').addEventListener('input', function () {
+            const searchQuery = this.value.toLowerCase();
+            const filteredPosts = blogs.filter(post =>
+                post.title.toLowerCase().includes(searchQuery)
+            );
+            displayBlogs(filteredPosts);
+        });
+
+        function formatDate(date) {
+            return new Date(date).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+        }
     </script>
 
 </body>
