@@ -29,7 +29,7 @@
   <style>
     /* Specific rule for h1 in light mode */
     body{
-      background-color: #00111c;
+      background-color: white;
     }
     div#contributors{
       gap: 2rem 7rem;
@@ -124,7 +124,7 @@
           <div class="row">
             <div style="display: flex; justify-content: center;" class="">
               <nav class="navbar navbar-expand-lg " style="display: flex;">
-                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+
                   <div class="icon1">
                     <a href="./index.html">
                       <img src="./assets/images/FinvedaLogo.png" alt="icon.png" style="width: 13rem;">
@@ -199,13 +199,14 @@
 
                   if (currentTheme === 'dark') {
                     body.classList.add('dark-mode');
-                    toggleButton.classList.add('dark');
+                    // toggleButton.classList.add('dark');
                     toggleButton.textContent = '🌞';
                   }
 
                   toggleButton.addEventListener('click', function () {
                     body.classList.toggle('dark-mode');
-                    toggleButton.classList.toggle('dark');
+                    // toggleButton.classList.toggle('dark');
+                    const isDarkMode = body.classList.contains('dark-mode');
 
                     // Update button icon based on mode
                     if (body.classList.contains('dark-mode')) {
