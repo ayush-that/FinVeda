@@ -20,122 +20,7 @@
   <link rel="stylesheet" href="../assets/css/index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
  <link rel="stylesheet" href="new.css">
-  <style>
-    #progressBar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 0%;
-      height: 8px;
-      background-color: #f76b45;
-      z-index: 9999;
-
-    }
-    * {
-      cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
-    }
-
-
-    .circle {
-      position: absolute;
-      width: 25px;
-      height: 25px;
-      border-radius: 50%;
-      pointer-events: none;
-      background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
-      transition: transform 0.1s, left 0.1s, top 0.1s;
-    }
-
-    .circle-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 9999;
-    }
-    .header{
-      padding: 30px;
-      border: 1px solid #DEEBFB;
-      border-radius: 10px;
-      background-color: #DEEBFB;
-      color: #fff;
-    }
-    @media (max-width: 720px) {
-      .circle-container{
-        display: none;
-      }
-    }
-
-.unique-popup-message {
-  position: fixed; /* Change to fixed positioning */
-  top: 30px; /* Adjust this value to be below the navbar */
-  right: 2px; /* Adjust this value for the desired distance from the right edge */
-  width: 300px; /* Adjust width as needed */
-  transform: translateX(0); /* Center the popup horizontally */
-  background-color: #a4d8ff;
-  color: #131722;
-  padding: 11px;
-  border-radius: 5px;
-  text-align: center;
-  z-index: 1000;
-  box-sizing: border-box;
-  overflow: hidden; /* Hide the expanding border animation */
-  position: relative;
-}
-
-.border-animation {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 7px; /* Same height as the border */
-  background-color: rgb(4, 0, 128);
-  width: 100%;
-  transform-origin: right; /* Start shrinking from the right */
-}
-
-@keyframes borderAnimation {
-  from {
-    transform: scaleX(0); /* Full width initially */
-  }
-  to {
-    transform: scaleX(1); /* Shrink to zero width */
-  }
-}
-
-
-.Lastupdate {
-          margin-top: 18px;
-          font-size: 18px !important;
-          font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, serif !important;
-          font-weight: 500;
-          margin-bottom: 15px;
-          color: #636262 !important;
-        }
-
-        #last-updated-date {
-          font-size: 17px;
-          color: #636262 !important;
-        }
-
-body {
-  background-color: white;
-  color: black;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.dark-mode {
-  background-color: #121212;
-  color: #e0e0e0;
-}
-
-.dark-mode h2 {
-  background-color: #121212 !important;
-  color: #e0e0e0 !important;
-}
-
-  </style>
+ 
 <style>
   .blog-content {
     background-color: #ffffff; /* Clean white background */
@@ -544,23 +429,24 @@ body {
             Last updated: <span id="last-updated-date"></span>
         </div>
 
-        <div class="card">
-            <p>Certain types of items cannot be returned, like:</p>
-            <ul class="ps-4 ms-4" style="list-style: circle;">
-                <li><strong>perishable goods</strong> (such as food, flowers, or plants),</li>
-                <li><strong>custom products</strong> (such as special orders or personalized items),</li>
-                <li><strong>personal care goods</strong> (such as beauty products),</li>
-                <li><strong>hazardous materials, flammable liquids,</strong> or <strong>gases</strong></li>
-            </ul>
-            <p>Kindly contact us in case of additional questions or concerns about your specific item.</p>
-        </div>
-
-        <br>
-
-        <div class="card">
-            <p>We will notify you once we’ve received and inspected your return to let you know if the refund was approved or not. If <i>approved</i>, you’ll be automatically refunded on your original payment method <i>within 10 business days.</i></p>
-            <p>Please remember it can take some time for your bank or credit card company to process and post the refund too.</p>
-        </div>
+        <div class="card bg-gray-100 border border-gray-300 rounded-lg p-4 shadow-md">
+          <p class="text-gray-700 font-medium">Certain types of items cannot be returned, like:</p>
+          <ul class="list-disc pl-6 ml-4 text-gray-600">
+              <li><strong class="text-gray-800">Perishable goods</strong> (such as food, flowers, or plants)</li>
+              <li><strong class="text-gray-800">Custom products</strong> (such as special orders or personalized items)</li>
+              <li><strong class="text-gray-800">Personal care goods</strong> (such as beauty products)</li>
+              <li><strong class="text-gray-800">Hazardous materials, flammable liquids</strong>, or <strong>gases</strong></li>
+          </ul>
+          <p class="mt-3 text-gray-700">Kindly contact us in case of additional questions or concerns about your specific item.</p>
+      </div>
+      
+      <br>
+      
+      <div class="card bg-gray-100 border border-gray-300 rounded-lg p-4 shadow-md">
+          <p class="text-gray-700 font-medium">We will notify you once we’ve received and inspected your return to let you know if the refund was approved or not. If <i class="text-gray-600">approved</i>, you’ll be automatically refunded on your original payment method <i class="text-gray-600">within 10 business days.</i></p>
+          <p class="mt-3 text-gray-700">Please remember it can take some time for your bank or credit card company to process and post the refund too.</p>
+      </div>
+      
     </article>
 </div>
 
@@ -568,7 +454,7 @@ body {
   /* Importing Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap');
 
-/* Base styles for the blog content */
+/* Base styles for blog content */
 .blog-content {
     max-width: 1400px;
     margin: auto;
@@ -583,7 +469,7 @@ body {
 }
 
 /* Background effect */
-.blog-content::before {
+.blog-bg-effect::before {
     content: "";
     position: absolute;
     top: 0;
@@ -596,7 +482,7 @@ body {
 }
 
 /* Header styles */
-.header h1 {
+.blog-header {
     font-family: 'Montserrat', sans-serif;
     color: #e67e22;
     margin-bottom: 20px;
@@ -606,7 +492,7 @@ body {
 }
 
 /* Last update date styles */
-.Lastupdate {
+.last-update {
     text-align: center;
     font-style: italic;
     color: #7f8c8d;
@@ -617,7 +503,7 @@ body {
 }
 
 /* Card styles */
-.card {
+.card-container {
     background-color: white;
     padding: 20px;
     border-radius: 8px;
@@ -629,32 +515,32 @@ body {
 }
 
 /* Hover effect for cards */
-.card:hover {
+.card-container:hover {
     transform: translateY(-5px);
     box-shadow: 0 0 30px rgba(241, 196, 15, 0.7), 0 0 40px rgba(241, 196, 15, 0.4);
 }
 
 /* Paragraph styles */
-p {
+.paragraph {
     line-height: 1.6;
     margin-bottom: 15px;
 }
 
 /* Custom list styles */
-ul.ps-4.ms-4 {
+.custom-list {
     list-style: circle;
     font-size: 1em;
     color: #333;
     padding-left: 20px;
 }
 
-li {
+.list-item {
     margin-bottom: 10px;
     position: relative;
     color: #e74c3c;
 }
 
-li::before {
+.list-item::before {
     content: '✓';
     color: #e67e22;
     position: absolute;
@@ -662,13 +548,13 @@ li::before {
 }
 
 /* Heading styles for bolded text */
-strong {
+.bold-text {
     font-weight: 700;
     color: #e74c3c;
 }
 
 /* Italics for emphasis */
-i {
+.emphasis {
     color: #2980b9;
 }
 
@@ -1004,7 +890,122 @@ i {
       updateWeekly();
     });
   </script>
+ <style>
+  #progressBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 8px;
+    background-color: #f76b45;
+    z-index: 9999;
 
+  }
+  * {
+    cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
+  }
+
+
+  .circle {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
+    transition: transform 0.1s, left 0.1s, top 0.1s;
+  }
+
+  .circle-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+  }
+  .header{
+    padding: 30px;
+    border: 1px solid #DEEBFB;
+    border-radius: 10px;
+    background-color: #DEEBFB;
+    color: #fff;
+  }
+  @media (max-width: 720px) {
+    .circle-container{
+      display: none;
+    }
+  }
+
+.unique-popup-message {
+position: fixed; /* Change to fixed positioning */
+top: 30px; /* Adjust this value to be below the navbar */
+right: 2px; /* Adjust this value for the desired distance from the right edge */
+width: 300px; /* Adjust width as needed */
+transform: translateX(0); /* Center the popup horizontally */
+background-color: #a4d8ff;
+color: #131722;
+padding: 11px;
+border-radius: 5px;
+text-align: center;
+z-index: 1000;
+box-sizing: border-box;
+overflow: hidden; /* Hide the expanding border animation */
+position: relative;
+}
+
+.border-animation {
+position: absolute;
+bottom: 0;
+left: 0;
+height: 7px; /* Same height as the border */
+background-color: rgb(4, 0, 128);
+width: 100%;
+transform-origin: right; /* Start shrinking from the right */
+}
+
+@keyframes borderAnimation {
+from {
+  transform: scaleX(0); /* Full width initially */
+}
+to {
+  transform: scaleX(1); /* Shrink to zero width */
+}
+}
+
+
+.Lastupdate {
+        margin-top: 18px;
+        font-size: 18px !important;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, serif !important;
+        font-weight: 500;
+        margin-bottom: 15px;
+        color: #636262 !important;
+      }
+
+      #last-updated-date {
+        font-size: 17px;
+        color: #636262 !important;
+      }
+
+body {
+background-color: white;
+color: black;
+transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode {
+background-color: #121212;
+color: #e0e0e0;
+}
+
+.dark-mode h2 {
+background-color: #121212 !important;
+color: #e0e0e0 !important;
+}
+
+</style>
 </body>
 
 </html>
