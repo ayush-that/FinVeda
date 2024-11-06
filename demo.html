@@ -3,193 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
+    <title>File Search Bar with Suggestions and Keyboard Navigation</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+   <style>
+        .search-container {
+            position: relative;
+            width: 300px;
+            margin: 20px auto;
+            border-radius: 25px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            box-sizing: border-box;
+        }
+
+
+        .suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            max-height: 150px;
+            overflow-y: auto;
+            display: none;
+            z-index: 1000;
+        }
+
+        .suggestions div {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .suggestions div:hover,
+        .suggestions .active {
+            background-color: #f0f0f0;
+        }
+
+        .fa-magnifying-glass-dollar {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            pointer-events: none; /* Prevent the icon from capturing mouse events */
+        }
+
+   </style>
+
+
+
     <style>
-        /* Basic styles for the blog layout */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 0;
-        }
-        #search-input {
-            margin-bottom: 20px;
-            padding: 10px;
-            width: 100%;
-            max-width: 400px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        #filtered-blogs {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-        .card {
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-        .card-image {
-            width: 100%;
-            height: auto;
-        }
-        .card-content {
-            padding: 15px;
-        }
-        .card-title {
-            font-size: 1.5em;
-            margin: 0 0 10px;
-        }
-        .card-excerpt {
-            margin: 10px 0;
-        }
-        .card-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 15px;
-        }
-        #create-blog-form {
-            margin-bottom: 20px;
-        }
-        #create-blog-form input, #create-blog-form textarea {
-            display: block;
-            width: 100%;
-            margin-bottom: 10px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        #create-blog-form button {
-            padding: 10px 15px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        #create-blog-form button:hover {
-            background-color: #0056b3;
-        }
-        .share-buttons {
-            display: flex;
-            gap: 10px;
-        }
-        .share-buttons a {
-            padding: 5px 10px;
-            background-color: #007bff;
-            color: white;
-            border-radius: 4px;
-            text-decoration: none;
-        }
-        .share-buttons a:hover {
-            background-color: #0056b3;
-        }
-        .delete-button {
-            padding: 5px 10px;
-            background-color: #dc3545;
-            color: white;
-            border-radius: 4px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-        .delete-button:hover {
-            background-color: #c82333;
-        }
-    </style>
+    /* Existing styles */
+
+    .search-input {
+        width: 100%;
+        padding: 10px;
+        padding-left: 40px; /* Adjust left padding to accommodate the icon */
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 25px;
+        box-sizing: border-box;
+    }
+
+    .fa-magnifying-glass-dollar {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        pointer-events: none; /* Prevent the icon from capturing mouse events */
+        font-size: 20px;
+    }
+</style>
+
 </head>
 <body>
 
-    <!-- Form to create a new blog -->
-    <form id="create-blog-form">
-        <h2>Create New Blog</h2>
-        <input type="text" id="blog-title" placeholder="Blog Title" required>
-        <textarea id="blog-excerpt" rows="4" placeholder="Blog Excerpt" required></textarea>
-        <input type="file" id="blog-image" accept="image/*" required>
-        <button type="submit">Add Blog</button>
-    </form>
+<div class="search-container">
+    <i class="fa-solid fa-magnifying-glass-dollar"></i>
+    <input type="text" class="search-input" id="file-search" placeholder="Search for a file..." oninput="showSuggestions()" onkeydown="navigateSuggestions(event)" />
+    <div class="suggestions" id="suggestions-list"></div>
+</div>
 
-    <input type="text" id="search-input" placeholder="Search blogs...">
-    <div id="filtered-blogs"></div>
+<script>
+    const files = [
+        { name: "Home", path: "index.html" },
+        { name: "Blogs", path: "blog.html" },
+        { name: "Login", path: "login.html" },
+        { name: "Auth", path: "auth.html" },
+        { name: "Maps", path: "maps.html" },
+        { name: "Reviews", path: "reviews.html" }
+    ];
 
-    <script>
-        const blogs = [];
+    let selectedSuggestionIndex = -1;
 
-        function displayBlogs(blogsToDisplay) {
-            const filteredBlogsContainer = document.getElementById('filtered-blogs');
-            filteredBlogsContainer.innerHTML = '';
+    // Function to show suggestions based on input
+    function showSuggestions() {
+        const input = document.getElementById("file-search").value.toLowerCase();
+        const suggestionsList = document.getElementById("suggestions-list");
 
-            blogsToDisplay.forEach((post, index) => {
-                const blogHTML = `
-                <article class="card">
-                    <img src="${post.featuredImage}" alt="${post.title}" class="card-image" onerror="this.onerror=null; this.src='/placeholder.svg?height=200&width=400';">
-                    <div class="card-content">
-                        <h2 class="card-title">${post.title}</h2>
-                        <p class="card-excerpt">${post.excerpt}</p>
-                        <div class="share-buttons">
-                            <a href="https://twitter.com/share?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(location.href)}" target="_blank"><i class="fa-solid fa-share-nodes"></i>Twitter</a>
-                            <a href="https://www.instagram.com/share?url=${encodeURIComponent(location.href)}" target="_blank"><i class="fa-solid fa-share-nodes"></i>Instagram</a>
-                            <a href="https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(location.href)}&title=${encodeURIComponent(post.title)}" target="_blank"><i class="fa-solid fa-share-nodes"></i>sLinkedIn</a>
-                        </div>
-                        <div class="card-footer">
-                            <time datetime="${post.createdAt}">${formatDate(post.createdAt)}</time>
-                            <button class="delete-button" onclick="deleteBlog(${index})">Delete</button>
-                        </div>
-                    </div>
-                </article>
-                `;
-                filteredBlogsContainer.innerHTML += blogHTML;
+        suggestionsList.innerHTML = '';
+        selectedSuggestionIndex = -1; // Reset selection index
+
+        const filteredFiles = files.filter(file => file.name.toLowerCase().includes(input));
+
+        if (input && filteredFiles.length > 0) {
+            suggestionsList.style.display = 'block'; // Show suggestions
+            filteredFiles.forEach((file, index) => {
+                const suggestionItem = document.createElement("div");
+                suggestionItem.textContent = file.name;
+                suggestionItem.dataset.index = index;
+                suggestionItem.onclick = () => window.location.href = file.path; // Navigate on click
+
+                suggestionsList.appendChild(suggestionItem);
             });
+        } else {
+            suggestionsList.style.display = 'none'; // Hide suggestions if no match
         }
+    }
 
-        function deleteBlog(index) {
-            blogs.splice(index, 1);
-            displayBlogs(blogs);
-        }
+    // Function to navigate suggestions with keyboard
+    function navigateSuggestions(event) {
+        const suggestionsList = document.getElementById("suggestions-list");
+        const suggestionItems = suggestionsList.querySelectorAll("div");
 
-        document.getElementById('create-blog-form').addEventListener('submit', function (event) {
-            event.preventDefault();
-            const title = document.getElementById('blog-title').value;
-            const excerpt = document.getElementById('blog-excerpt').value;
-            const imageFile = document.getElementById('blog-image').files[0];
-
-            const reader = new FileReader();
-            reader.onloadend = function () {
-                const newBlogPost = {
-                    title: title,
-                    excerpt: excerpt,
-                    featuredImage: reader.result,
-                    createdAt: new Date().toISOString()
-                };
-                blogs.push(newBlogPost);
-                displayBlogs(blogs);
-                document.getElementById('create-blog-form').reset();
-            };
-
-            if (imageFile) {
-                reader.readAsDataURL(imageFile);
+        if (event.key === "ArrowDown") {
+            selectedSuggestionIndex = (selectedSuggestionIndex + 1) % suggestionItems.length; // Move down
+            updateActiveSuggestion(suggestionItems);
+        } else if (event.key === "ArrowUp") {
+            selectedSuggestionIndex = (selectedSuggestionIndex - 1 + suggestionItems.length) % suggestionItems.length; // Move up
+            updateActiveSuggestion(suggestionItems);
+        } else if (event.key === "Enter") {
+            if (selectedSuggestionIndex > -1 && suggestionItems[selectedSuggestionIndex]) {
+                suggestionItems[selectedSuggestionIndex].click(); // Click active suggestion
             }
-        });
-
-        document.getElementById('search-input').addEventListener('input', function () {
-            const searchQuery = this.value.toLowerCase();
-            const filteredPosts = blogs.filter(post =>
-                post.title.toLowerCase().includes(searchQuery)
-            );
-            displayBlogs(filteredPosts);
-        });
-
-        function formatDate(date) {
-            return new Date(date).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-            });
         }
-    </script>
+    }
+
+    // Function to update the active suggestion's appearance
+    function updateActiveSuggestion(suggestionItems) {
+        suggestionItems.forEach(item => item.classList.remove("active"));
+        if (suggestionItems[selectedSuggestionIndex]) {
+            suggestionItems[selectedSuggestionIndex].classList.add("active");
+            suggestionItems[selectedSuggestionIndex].scrollIntoView({ block: "nearest" }); // Scroll to active suggestion
+        }
+    }
+
+    // Close suggestions when clicking outside the search container
+    document.addEventListener("click", function(event) {
+        if (!event.target.closest(".search-container")) {
+            document.getElementById("suggestions-list").style.display = 'none';
+        }
+    });
+</script>
 
 </body>
 </html>
