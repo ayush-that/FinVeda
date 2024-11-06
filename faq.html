@@ -30,10 +30,10 @@
         /* FAQ Section Styles */
 
         .faq-section {
-            max-width: 1000px;
+            max-width: 800px;
             margin: 20px auto;
             padding: 50px;
-            background-color: #0056b3;
+            background-color: #6d9ed2;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
@@ -326,6 +326,35 @@
         .photo {
             filter: none;
         }
+        .star-rating {
+  display: flex;
+  justify-content: center;
+  direction: rtl; /* This reverses the order of the stars */
+}
+
+.star-rating input {
+  display: none;
+  /* Hide the radio buttons */
+}
+
+.star-rating label {
+  font-size: 3em;
+  /* Star size */
+  color: grey;
+  /* Default star color */
+  cursor: pointer;
+}
+
+.star-rating input:checked~label {
+  color: gold;
+  /* Gold color for selected stars */
+}
+
+.star-rating label:hover,
+.star-rating label:hover~label {
+  color: gold;
+  /* Change color on hover */
+}
     </style>
 </head>
 
@@ -745,6 +774,18 @@
                 <textarea id="userFeedback" class="form-input" rows="5"
                     placeholder="Enter your feedback or ask a question" required></textarea>
             </div>
+            <div class="star-rating" style="text-align: center; margin: 10px;">
+                <input type="radio" id="star5" name="rating" value="5" />
+                <label for="star5" title="5 star">&#9733;</label>
+                <input type="radio" id="star4" name="rating" value="4" />
+                <label for="star4" title="4 stars">&#9733;</label>
+                <input type="radio" id="star3" name="rating" value="3" />
+                <label for="star3" title="3 stars">&#9733;</label>
+                <input type="radio" id="star2" name="rating" value="2" />
+                <label for="star2" title="2 stars">&#9733;</label>
+                <input type="radio" id="star1" name="rating" value="1" />
+                <label for="star1" title="1 stars">&#9733;</label>
+            </div>  
             <div class="button-container">
                 <button type="submit" class="submit-btn">Submit Feedback</button>
             </div>

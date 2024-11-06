@@ -3,111 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Posts</title>
-    <style>
-        /* Your existing styles */
-        .blog-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            padding: 20px;
-        }
+    <title>File Search Bar with Suggestions and Keyboard Navigation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-        .blog-post {
-            background-color: #f4f4f4;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            width: calc(33% - 40px);
-            max-width: 300px;
-        }
 
-        .blog-post img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-
-        .blog-title {
-            font-size: 1.5em;
-            color: #333;
-            margin: 10px 0;
-        }
-
-        .blog-content {
-            color: #666;
-        }
-
-        .add-blog-btn {
-            display: block;
-            width: 150px;
+   <style>
+        .search-container {
+            position: relative;
+            width: 300px;
             margin: 20px auto;
-            padding: 10px;
-            background-color: #007bff;
-            color: #fff;
-            text-align: center;
-            border-radius: 5px;
-            text-decoration: none;
+            border-radius: 25px;
         }
 
-        .delete-btn {
-            margin-top: 10px;
-            padding: 8px;
-            background-color: #f44336;
-            color: white;
-            border: none;
-            border-radius: 5px;
+        .search-input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            box-sizing: border-box;
+        }
+
+
+        .suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            max-height: 150px;
+            overflow-y: auto;
+            display: none;
+            z-index: 1000;
+        }
+
+        .suggestions div {
+            padding: 10px;
             cursor: pointer;
         }
 
-        .delete-btn:hover {
-            background-color: #d32f2f;
+        .suggestions div:hover,
+        .suggestions .active {
+            background-color: #f0f0f0;
         }
-    </style>
+
+        .fa-magnifying-glass-dollar {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            pointer-events: none; /* Prevent the icon from capturing mouse events */
+        }
+
+   </style>
+
+
+
+    <style>
+    /* Existing styles */
+
+    .search-input {
+        width: 100%;
+        padding: 10px;
+        padding-left: 40px; /* Adjust left padding to accommodate the icon */
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 25px;
+        box-sizing: border-box;
+    }
+
+    .fa-magnifying-glass-dollar {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        pointer-events: none; /* Prevent the icon from capturing mouse events */
+        font-size: 20px;
+    }
+</style>
+
 </head>
 <body>
 
-    <h1>All Blog Posts</h1>
-    <a href="addBlog.html" class="add-blog-btn">Add New Blog</a>
-    <div class="blog-container" id="blogContainer"></div>
+<div class="search-container">
+    <i class="fa-solid fa-magnifying-glass-dollar"></i>
+    <input type="text" class="search-input" id="file-search" placeholder="Search for a file..." oninput="showSuggestions()" onkeydown="navigateSuggestions(event)" />
+    <div class="suggestions" id="suggestions-list"></div>
+</div>
 
-    <script>
-        function displayBlogs() {
-            const blogContainer = document.getElementById('blogContainer');
-            blogContainer.innerHTML = '';
+<script>
+    const files = [
+        { name: "Home", path: "index.html" },
+        { name: "Blogs", path: "blog.html" },
+        { name: "Login", path: "login.html" },
+        { name: "Auth", path: "auth.html" },
+        { name: "Maps", path: "maps.html" },
+        { name: "Reviews", path: "reviews.html" }
+    ];
 
-            const blogs = JSON.parse(localStorage.getItem('blogs')) || [];
-            console.log(blogs); // Log the retrieved blogs
+    let selectedSuggestionIndex = -1;
 
-            blogs.forEach((blog, index) => {
-                const blogPost = document.createElement('div');
-                blogPost.classList.add('blog-post');
+    // Function to show suggestions based on input
+    function showSuggestions() {
+        const input = document.getElementById("file-search").value.toLowerCase();
+        const suggestionsList = document.getElementById("suggestions-list");
 
-                const imgSrc = blog.imageUrl ? blog.imageUrl : 'path/to/placeholder-image.jpg';
+        suggestionsList.innerHTML = '';
+        selectedSuggestionIndex = -1; // Reset selection index
 
-                blogPost.innerHTML = `
-                    <img src="${imgSrc}" alt="Blog Image">
-                    <h2 class="blog-title">${blog.title}</h2>
-                    <p class="blog-content">${blog.excerpt}</p>
-                    <button class="delete-btn" onclick="deleteBlog(${index})">Delete</button>
-                `;
-                blogContainer.appendChild(blogPost);
+        const filteredFiles = files.filter(file => file.name.toLowerCase().includes(input));
+
+        if (input && filteredFiles.length > 0) {
+            suggestionsList.style.display = 'block'; // Show suggestions
+            filteredFiles.forEach((file, index) => {
+                const suggestionItem = document.createElement("div");
+                suggestionItem.textContent = file.name;
+                suggestionItem.dataset.index = index;
+                suggestionItem.onclick = () => window.location.href = file.path; // Navigate on click
+
+                suggestionsList.appendChild(suggestionItem);
             });
+        } else {
+            suggestionsList.style.display = 'none'; // Hide suggestions if no match
         }
+    }
 
-        function deleteBlog(index) {
-            // Get the existing blogs
-            const blogs = JSON.parse(localStorage.getItem('blogs')) || [];
-            // Remove the blog at the specified index
-            blogs.splice(index, 1);
-            // Update local storage
-            localStorage.setItem('blogs', JSON.stringify(blogs));
-            // Refresh the blog display
-            displayBlogs();
+    // Function to navigate suggestions with keyboard
+    function navigateSuggestions(event) {
+        const suggestionsList = document.getElementById("suggestions-list");
+        const suggestionItems = suggestionsList.querySelectorAll("div");
+
+        if (event.key === "ArrowDown") {
+            selectedSuggestionIndex = (selectedSuggestionIndex + 1) % suggestionItems.length; // Move down
+            updateActiveSuggestion(suggestionItems);
+        } else if (event.key === "ArrowUp") {
+            selectedSuggestionIndex = (selectedSuggestionIndex - 1 + suggestionItems.length) % suggestionItems.length; // Move up
+            updateActiveSuggestion(suggestionItems);
+        } else if (event.key === "Enter") {
+            if (selectedSuggestionIndex > -1 && suggestionItems[selectedSuggestionIndex]) {
+                suggestionItems[selectedSuggestionIndex].click(); // Click active suggestion
+            }
         }
+    }
 
-        window.addEventListener('DOMContentLoaded', displayBlogs);
-    </script>
+    // Function to update the active suggestion's appearance
+    function updateActiveSuggestion(suggestionItems) {
+        suggestionItems.forEach(item => item.classList.remove("active"));
+        if (suggestionItems[selectedSuggestionIndex]) {
+            suggestionItems[selectedSuggestionIndex].classList.add("active");
+            suggestionItems[selectedSuggestionIndex].scrollIntoView({ block: "nearest" }); // Scroll to active suggestion
+        }
+    }
+
+    // Close suggestions when clicking outside the search container
+    document.addEventListener("click", function(event) {
+        if (!event.target.closest(".search-container")) {
+            document.getElementById("suggestions-list").style.display = 'none';
+        }
+    });
+</script>
 
 </body>
 </html>
