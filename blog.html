@@ -1,3 +1,5 @@
+<!-- improvent  -->
+
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
@@ -572,62 +574,9 @@
     </div>
 
 
-    <!-- removing intro section -->
-    <!-- <div
-        id="home"
-        class="header-hero bg_cover"
-        style="background-image: url(./assets/images/banner-bg.svg)"
-      > -->
-    <!-- <div class="container"> -->
-    <!-- <div class="row justify-content-center">
-            <div class="col-lg-8">
-              <div class="header-hero-content text-center">
-                <h3
-                  class="header-sub-title wow fadeInUp"
-                  data-wow-duration="1.3s"
-                  data-wow-delay="0.2s"
-                >
-                  Say 👋🏼 to FinVeda
-                </h3>
-                <h2
-                  class="header-title wow fadeInUp"
-                  data-wow-duration="1.3s"
-                  data-wow-delay="0.5s"
-                >
-                  your savvy financial companion
-                </h2>
-                <p
-                  class="text wow fadeInUp"
-                  data-wow-duration="1.3s"
-                  data-wow-delay="0.8s"
-                >
-                  Wanna learn how to grow your money to become rich? We have
-                  made becoming a stock market Guru easy with our AI powered
-                  finance advisor - <b>Arth Sathi 🤵🏻</b>
-                </p>
-                <a href="#" class="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s"
-                onclick="window.botpressWebChat.sendEvent({ type: 'show' }); return false;">
-                Chat with ArthaSathi 💬
-              </a>
-              </div>
-            </div> -->
-    <!-- </div>
-          <div class="row">
-            <div class="col-lg-12">
-              <div
-                class="header-hero-image text-center wow fadeIn"
-                data-wow-duration="1.3s"
-                data-wow-delay="1.4s"
-              >
-                <img src="./assets/images/header-hero.webp" alt="hero" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="particles-1" class="particles"></div> -->
-    <!-- </div> -->
+    
   </header>
-   <div class="blogfull">
+  <div class="blogfull">
     <article>
       <section id="blog" class="blog-area pt-100">
         <div class="container">
@@ -646,19 +595,7 @@
             </div>
           </div>
 
-          <!-- <div class="row justify-content-center mt-4">
-            <div class="col-lg-8 col-md-10">
-              <form class="search-bar" id="search-form">
-                <input type="text" id="search-input" class="form-control" placeholder="Search for blog posts..."
-                  aria-label="Search" required>
-              </form>
-            </div>
-          </div>
-
-           Filtered blog posts -->
-          <!-- <div id="filtered-blogs" class="row justify-content-start mt-4 card-container">
-                     </div>
-        </div>  -->
+          
       </section>
     </article>
 
@@ -668,7 +605,7 @@
       font-size: 4rem;
       margin-left: 40px;
       font-weight: bold;
-      color: #2c3e50;
+      color: #007bff;
       text-align: center;
       white-space: nowrap;
       text-transform: uppercase;
@@ -727,7 +664,7 @@
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
     }
 
-     /* Dark Mode */
+    /* Dark Mode */
     .card.dark {
       background-color: #1f2937;
       color: #f9fafb;
@@ -860,6 +797,7 @@
     @media (max-width: 768px) {
       #title {
         font-size: 2rem;
+        color: #007bff;
       }
 
       .blog-content p {
@@ -874,6 +812,16 @@
     .play-pause-buttons {
       margin-bottom: 1rem;
     }
+
+    .play-social-button {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .social-media-icons a svg {
+      cursor: pointer;
+    }
   </style>
 
 
@@ -884,6 +832,7 @@
             margin: 20px;
             padding: 0;
         }
+ 
         #search-input {
             margin-bottom: 20px;
             padding: 10px;
@@ -954,7 +903,7 @@
     </style>
 </head>
 <body>
-
+ 
 
     <style>
         /* Basic styles for the blog layout */
@@ -1053,15 +1002,83 @@
     </style>
 </head>
 <body>
+    <style>
+      /* Form Container Styling */
+.form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #007bff,#9ebaf3 60%,#007bff 100%);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
 
+.form h2 {
+  font-size: 24px;
+  color: white; 
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.form input[type="text"],
+.form input[type="file"],
+.form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  border: 1px solid #ddd; 
+  border-radius: 4px;
+  background-color: #f9f9f9; /* Light gray background */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form input[type="text"]:focus,
+.form input[type="file"]:focus,
+.form textarea:focus {
+  border-color: #007bff; 
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+  outline: none;
+}
+
+.form button {
+  width: 100%;
+  padding: 12px;
+  background: #007bff; 
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form button:hover {
+  background:white;
+  color: #007bff; 
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form {
+    padding: 15px;
+  }
+}
+
+    </style>
     <!-- Form to create a new blog -->
-    <form id="create-blog-form">
+     <div class="form">
+      <form id="create-blog-form">
         <h2>Create New Blog</h2>
         <input type="text" id="blog-title" placeholder="Blog Title" required>
         <textarea id="blog-excerpt" rows="4" placeholder="Blog Excerpt" required></textarea>
         <input type="file" id="blog-image" accept="image/*" required>
         <button type="submit">Add Blog</button>
     </form>
+     </div>
+   
 
      <div id="filtered-blogs"></div>
 
@@ -1069,31 +1086,76 @@
         const blogs = [];
 
         function displayBlogs(blogsToDisplay) {
-            const filteredBlogsContainer = document.getElementById('filtered-blogs');
-            filteredBlogsContainer.innerHTML = '';
+             const postUrl = `http://localhost:5000/api/addBlog/getBlogById/${post._id}`;
+        const blogHTML = `
+        <article class="card" data-aos="fade-right" data-aos-delay="300">
+            <img src="${imagePath}" alt="${post.title}" class="card-image" onerror="this.onerror=null; this.src='/placeholder.svg?height=200&width=400';">
+            <div class="card-content">
+                <h2 class="card-title flex">
+                    <a href="#" class="card-title-link">${post.title}</a>
+                    
+                </h2>
+                <p class="card-excerpt">${post.excerpt}</p>
+                <div class="play-social-button">
+                 <div class='play-pause-buttons'>
+                      <button class="speak-button-${post._id}" onclick="handlePlay('${post._id}')" 
+                              style="padding: 6px 10px;"
+                              data-title="${post.title.replace(/"/g, '&quot;')}" 
+                              data-excerpt="${post.excerpt.replace(/"/g, '&quot;')}">
+                              <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.5 1.5L13.5 8L3.5 14.5V1.5Z"/>
+                              </svg>
+                      </button> 
+                      <button class="pause-button-${post._id} hidden"  onclick="handlePause('${post._id}')" style="padding: 6px 10px;">
+                          <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 1H7V15H5V1ZM9 1H11V15H9V1Z"/>
+                          </svg>
+                      </button>
+                  </div>
+                    <!-- Social Share Buttons -->
+                <div class="mt-2 flex space-x-3 items-center justify-center social-media-icons">
+                  <a href="https://x.com/intent/tweet?url=${encodeURIComponent(postUrl)}&text=${encodeURIComponent(post.title + " " + post.excerpt)}" 
+                    target="_blank" 
+                    class="text-blue-500 hover:text-blue-700 mb-1" 
+                    aria-label="Share on Twitter">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
+                          <path d="M18.3 5.71L12 12l6.3 6.29-1.41 1.41L12 13.41l-6.3 6.29-1.41-1.41L10.59 12 4.29 5.71 5.71 4.29 12 10.59l6.3-6.3 1.41 1.41z"/>
+                      </svg>
+                  </a>
+                  <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(postUrl)}" 
+                    target="_blank" 
+                    class="text-blue-700 hover:text-blue-800" 
+                    aria-label="Share on Facebook">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M22.675 0h-21.35C.747 0 0 .747 0 1.675v20.649C0 23.253.747 24 1.675 24h11.675v-10.188H9.691v-4.03h3.659V7.159c0-3.63 1.813-5.651 4.637-5.651 1.343 0 2.79.243 2.79.243v3.05h-1.571c-1.548 0-2.023.964-2.023 1.958v2.34h4.071l-.651 4.03h-3.42V24h6.64C23.253 24 24 23.253 24 22.324V1.675C24 .747 23.253 0 22.675 0z"/>
+                      </svg>
+                  </a>
+                  <a href="https://linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(postUrl)}&text=${encodeURIComponent(post.title + " " + post.excerpt)}" 
+                    target="_blank" 
+                    class="text-blue-700 hover:text-blue-800" 
+                    aria-label="Share on LinkedIn">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M20.447 20.452h-3.556v-5.646c0-1.352-.024-3.09-1.888-3.09-1.886 0-2.174 1.477-2.174 3.016v5.72h-3.558V9.043h3.414v1.588h.048c.477-.88 1.642-1.805 3.377-1.805 3.61 0 4.276 2.376 4.276 5.454v6.171h-.004zM5.255 7.684c-1.148 0-2.078-.938-2.078-2.078 0-1.143.934-2.08 2.078-2.08 1.144 0 2.077.937 2.077 2.08 0 1.14-.933 2.078-2.077 2.078zm1.78 12.768H3.474V9.043h3.561v11.409zM22.227 0H1.773C.793 0 0 .793 0 1.773v20.453C0 23.207.793 24 1.773 24h20.454C23.207 24 24 23.207 24 22.227V1.773C24 .793 23.207 0 22.227 0z"/>
+                      </svg>
+                  </a>
+              </div>
 
-            blogsToDisplay.forEach((post, index) => {
-                const blogHTML = `
-                <article class="card">
-                    <img src="${post.featuredImage}" alt="${post.title}" class="card-image" onerror="this.onerror=null; this.src='/placeholder.svg?height=200&width=400';">
-                    <div class="card-content">
-                        <h2 class="card-title">${post.title}</h2>
-                        <p class="card-excerpt">${post.excerpt}</p>
-                        <div class="share-buttons">
-                            <a href="https://twitter.com/share?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(location.href)}" target="_blank"><i class="fa-solid fa-share-nodes"></i>Twitter</a>
-                            <a href="https://www.instagram.com/share?url=${encodeURIComponent(location.href)}" target="_blank"><i class="fa-solid fa-share-nodes"></i>Instagram</a>
-                            <a href="https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(location.href)}&title=${encodeURIComponent(post.title)}" target="_blank"><i class="fa-solid fa-share-nodes"></i>sLinkedIn</a>
-                        </div>
-                        <div class="card-footer">
-                            <time datetime="${post.createdAt}">${formatDate(post.createdAt)}</time>
-                            <button class="delete-button" onclick="deleteBlog(${index})">Delete</button>
-                        </div>
-                    </div>
-                </article>
-                `;
-                filteredBlogsContainer.innerHTML += blogHTML;
-            });
-        }
+                </div>
+                <div class="card-footer">
+                    <time datetime="${post.createdAt}">${formatDate(post.createdAt)}</time>
+                     <a href="/readmore/${post.id}" class="card-read-more">
+                       <span> Read More </span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </article>
+    `;
+        filteredBlogsContainer.innerHTML += blogHTML;
+      });
+    }
 
         function deleteBlog(index) {
             blogs.splice(index, 1);
@@ -1132,6 +1194,7 @@
             displayBlogs(filteredPosts);
         });
 
+ 
         function formatDate(date) {
             return new Date(date).toLocaleDateString('en-US', {
                 year: 'numeric',
@@ -1140,22 +1203,26 @@
             });
         }
     </script>
+ 
 
-    <!-- Timed popup that will appear after succesful submission of feebback form! -->
-    <button class="notification" id="successnotification" style="display:none;">
-      <span class="message" id="successmsg">Submitted successfully!</span>
-      <span class="closenotif" id="closeSuccessNotification">✖</span>
-      <div class="timerline" id="timerline"></div>
-    </button>
+
+  <!-- Timed popup that will appear after succesful submission of feebback form! -->
+  <button class="notification" id="successnotification" style="display:none;">
+    <span class="message" id="successmsg">Submitted successfully!</span>
+    <span class="closenotif" id="closeSuccessNotification">✖</span>
+    <div class="timerline" id="timerline"></div>
+  </button>
 
 
     <footer id="footer" class="footer-area pt-120">
       <div class="container">
-        <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s"  style="height: 265px;">
+
+        <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s" style="height: 265px;">
           <div class="row">
             <div class="col-lg-6">
               <div class="subscribe-content mt-45">
-                <h2 class="subscribe-title subscribe-map-title">
+                <h2 class="subscribe-title">
+
                   Subscribe Our Newsletter <span style="font-size: 28px;"> Get regular updates</span>
                 </h2>
               </div>
@@ -1175,6 +1242,7 @@
           </div>
         </div>
       </div>
+
       <div class="footer-widget pb-100">
       <div class="row" id="footer">
           <div class="col-lg-4 col-md-6 col-sm-8">
@@ -1186,32 +1254,40 @@
               </div>
           </div>
           <div class="col-lg-5 col-md-7 col-sm-7">
-              <div class="footer-link d-flex mt-50 justify-content-md-between" style="justify-content: space-around !important;">
-                  <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-                      <div class="footer-title">
-                          <h3 class="title custom-margin">Quick Links</h3>
-                      </div>
-                      <ul class="link custom-margin">
-                          <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
-                          <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
-                          <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
-                          <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
-                          <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
-                      </ul>
-                  </div>
-                  <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
-                      <div class="footer-title">
-                          <h4 class="title custom-margin">Resources</h4>
-                      </div>
-                      <ul class="link custom-margin">
-                          <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
-                          <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
-                          <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
-                          <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
-                          <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
-                          <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
-                      </ul>
-                  </div>
+
+            <div class="footer-link d-flex mt-50 justify-content-md-between"
+              style="justify-content: space-around !important;">
+              <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+                <div class="footer-title">
+                  <h3 class="title custom-margin">Quick Links</h3>
+                </div>
+                <ul class="link custom-margin">
+
+                  <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+                  <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
+                  <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
+                  <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+                  <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+                  <li><a href="./blogs/sitemap.html"><i class="fa-solid fa-sitemap"></i> Site Map</a></li>
+                  <li><a href="./termsOfUse.html" class="  ">Terms of use</a></li>
+
+
+
+                </ul>
+              </div>
+              <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+                <div class="footer-title">
+                  <h4 class="title custom-margin">Resources</h4>
+                </div>
+                <ul class="link custom-margin">
+                  <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+                  <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                  <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
+                  <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
+                  <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                  <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                </ul>
+
               </div>
           </div>
           <div class="col-lg-3 col-md-5 col-sm-5">
@@ -1258,30 +1334,42 @@
                   </ul>
               </div>
           </div>
-      
-      
+
+
+
+        </div>
       </div>
-      </div>
-      <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center">
+
+      <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s"
+        style="text-align: center">
+
         <div class="row">
+          <div className="flex flex-col items-center text-gray-800">
+            <div className="flex items-center space-x-2">
+              <span className="font-bold text-2xl">Total Visitors : </span>
+              <a href="https://www.hitwebcounter.com" target="_blank">
+                <img
+                  src="https://hitwebcounter.com/counter/counter.php?page=17085296&style=0006&nbdigits=5&type=page&initCount=1000"
+                  title="Counter Widget" Alt="Visit counter For Websites" border="0" /></a>
+            </div>
+          </div>
           <div class="col-lg-12">
-            <div
-              class="copyright d-sm-flex justify-content-center"
-              style="
-                display: flex;
-                justify-content: center;
-                text-align: center;
-                width: 100%;
-                height: 100%;
-              "
-            >
-              <div class="copyright-content" style="text-align: center; margin-bottom: -60px;">
+
+            <div class="copyright d-sm-flex justify-content-center" style="
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+          ">
+              <div class="copyright-content" style="text-align: center">
+
                 <p class="text" style="text-align: center">
                   © <span id="copyright-year">2024</span> FinVeda. All rights are
                   reserved<br />
                   Made with ♥ in India
                 </p>
-      
+
               </div>
             </div>
           </div>
@@ -1289,6 +1377,7 @@
       </div>
       
       <div id="particles-2"></div>
+ 
       </div>
       <button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top" style="margin-left:95%; margin-bottom: 30px; border-radius: 50%; width: 60px; height: 60px;">↑</button>
       
@@ -1379,10 +1468,10 @@
         duration: 2000
       });
     </script>
+ 
 
+</body>
 
-  </body>
-
-  </head>
+</head>
 
 </html>
