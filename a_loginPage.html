@@ -13,7 +13,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <style>
-      
+
 .loader {
   position: fixed;
   top: 0;
@@ -411,32 +411,55 @@
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
-          <form action="#" class="sign-in-form">
+          <form action="index.html" class="sign-in-form">
             <h2 class="title">Sign in</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
+              <input type="text" placeholder="Username" required/>
             </div>
-            
+
 
             <div class="input-field">
-              <input 
-                type="password" 
-                placeholder="ㅤPassword" 
-                id="password-input" 
+              <input
+                type="password"
+                placeholder="Password"
+                id="password-input" required
               />
-              <i 
-                class="fas fa-lock" 
-                id="toggle-password" 
-                style="cursor: pointer; position: absolute; left: 10px; top: 50%; transform: translateY(-50%);" 
+              <i
+                class="fas fa-lock"
+                id="toggle-password"
+                style="cursor: pointer; position: absolute; left: 10px; top: 50%; transform: translateY(-50%);"
               ></i>
             </div>
-            
 
+
+            <a href="index.html" class="logn">login</a>
+
+            <style>
+             .logn {
+  color: #361cc1;
+  background-color: #e0e0e0;
+  height: 35px;
+  width: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 25px;
+  transform: scale(1.1);
+}
+
+.logn:hover {
+  text-decoration: underline;
+}
+
+            </style>
             <div class="forgot-password">
                 <a href="#" onclick="forgotPassword()">Forgot Password?</a>
               </div>
-            <input type="submit" value="Login" class="btn solid" />
+
+
+
             <p class="social-text">Or Sign in with social platforms</p>
             <div class="social-icons">
               <div class="social-icon-frame">
@@ -454,6 +477,7 @@
                       <i class="fab fa-github"></i>
                   </a>
               </div>
+
           </div>
           </form>
           <form action="#" class="sign-up-form">
@@ -471,7 +495,7 @@
                 <i class="fas fa-lock" id="toggle-password-signup" style="cursor: pointer;"></i>
                 <input type="password" placeholder="Password" id="password-input-signup" />
             </div>
-        
+
             <!-- Password strength meter starts here (initially hidden) -->
             <div id="password-strength-section" style="display: none;">
                 <label for="password-input-signup">Password Strength:</label>
@@ -481,7 +505,7 @@
                 <div class="strength-label" id="strength-label-signup" style="font-size: 14px; margin-top: 10px;">Weak</div>
             </div>
             <!-- Password strength meter ends here -->
-        
+
             <input type="submit" class="btn" value="Sign up" />
             <p class="social-text">Or Sign up with social platforms</p>
             <div class="social-icons">
@@ -502,32 +526,32 @@
               </div>
           </div>
         </form>
-        
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>
-        
-        
+
+
         <script>
             let passwordSignup = document.getElementById("password-input-signup");
             let strengthBarSignup = document.getElementById("strength-bar-signup");
             let strengthLabelSignup = document.getElementById("strength-label-signup");
             let passwordStrengthSection = document.getElementById("password-strength-section");
-        
+
             passwordSignup.oninput = function () {
                 let value = passwordSignup.value;
-        
+
                 // Show the strength meter when the user starts typing
                 if (value.length > 0) {
                     passwordStrengthSection.style.display = "block";
                 } else {
                     passwordStrengthSection.style.display = "none";
                 }
-        
+
                 let result = zxcvbn(value);
                 let score = result.score; // Score is between 0 and 4
                 let widths = ["1%", "25%", "50%", "75%", "100%"];
                 let colors = ["#d73f40", "#dc6551", "#f2b84f", "#bde952", "#3ba62f"];
                 let labels = ["Very Weak", "Weak", "Fair", "Good", "Strong"];
-        
+
                 strengthBarSignup.style.width = widths[score];
                 strengthBarSignup.style.backgroundColor = colors[score];
                 strengthLabelSignup.textContent = labels[score];
@@ -548,7 +572,7 @@
           }
         }
         </script>
-        
+
         </div>
       </div>
 
@@ -652,7 +676,7 @@ document.querySelector(".sign-up-form").addEventListener("submit", async functio
 });
 
 
-      
+
         // Toggle password visibility
           function togglePassword(fieldId, icon) {
             const field = document.getElementById(fieldId);

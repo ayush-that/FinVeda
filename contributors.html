@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="./assets/css/LineIcons.css" />
   <link rel="stylesheet" href="./assets/css/font-awesome.min.css" />
   <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../assets/css/index.css">
   <link rel="stylesheet" href="./assets/css/default.css" />
   <link rel="stylesheet" href="./assets/css/style.css" />
   <link rel="stylesheet" href="./assets/css/popup.css" />
@@ -24,7 +25,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-DyZvYh4T9yG3gZNE+HBQQJwIMc/XjCj5R90K0Ih7pbk3WcYYlv5D5+Qh+d0EV9Uw" crossorigin="anonymous">
 
   <!-- Linked CSS for social logos -->
-  <link rel="stylesheet" href="../assets/css/index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <style>
     /* Specific rule for h1 in light mode */
@@ -124,9 +124,7 @@
           <div class="row">
             <div style="display: flex; justify-content: center;" class="">
               <nav class="navbar navbar-expand-lg " style="display: flex;">
-                
-                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent"
-                  style="margin: auto; margin-left: -5px;">
+
                   <div class="icon1">
                     <a href="./index.html">
                       <img src="./assets/images/FinvedaLogo.png" alt="icon.png" style="width: 13rem;">
@@ -134,49 +132,66 @@
                   </div>
                   <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
                     <li class="nav-item">
-                      <a class="page-scroll active-link" href="./index.html" style="color: rgb(237, 242, 244);">Home
-                        🏡</a>
+                      <a class="page-scroll" href="./index.html">
+                        <i class="fas fa-home icon-hover" style="margin: 5px;"></i> Home
+                      </a>
                     </li>
                     <li class="nav-item">
-                      <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
+                      <a class="page-scroll" href="./about.html">
+                        <i class="fas fa-info-circle icon-hover" style="margin: 5px;"></i> About Us
+                      </a>
                     </li>
                     <li class="nav-item">
-                      <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
+                      <a class="page-scroll active-link" href="./contributors.html">
+                        <i class="fas fa-solid fa-people-group icon-hover" style="margin: 5px;"></i> Contributors
+                      </a>
                     </li>
                     <li class="nav-item">
-                      <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
+                      <a class="page-scroll" href="./contact.html">
+                        <i class="fas fa-envelope icon-hover" style="margin: 5px;"></i> Contact
+                      </a>
                     </li>
                     <li class="nav-item">
-                      <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
+                      <a class="page-scroll" href="./faq.html">
+                        <i class="fas fa-question-circle icon-hover" style="margin: 5px;"></i> Help
+                      </a>
                     </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./finance.html" style="color: rgb(237, 242, 244);">Courses 📚</a>
+                    <!-- Dropdown for Explore -->
+                  <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
+                    <a class="page-scroll dropdown-toggle" href="#">
+                      <i class="fas fa-chevron-down icon-hover" style="margin: 5px;"></i> Explore More
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="./finance.html">
+                          <i class="fas fa-graduation-cap icon-hover" style="margin: 5px;"></i> Courses
+                        </a>
+                      </li>
+                      <li><a href="./trends.html"><i class="fas fa-chart-line icon-hover" style="margin: 5px;"></i>
+                          Trends</a></li>
+                      <li><a href="./tools/sip.html"><i class="fas fa-tools icon-hover" style="margin: 5px;"></i>
+                          Tools</a></li>
+                      <li><a href="./blog.html"><i class="fas fa-blog icon-hover" style="margin: 5px;"></i> Blogs</a>
+                      </li>
+                      <li><a href="./quiz.html"><i class="fas fa-question icon-hover" style="margin: 5px;"></i> Quiz</a>
+                      </li>
+                      <li><a href="./maps.html"><i class="fas fa-map icon-hover" style="margin: 5px;"></i> MAPS</a></li>
+                    </ul>
+                  </li>
+                    <!-- Navigation item placeholder for Login/Register or Logout button -->
+                    <li class="nav-item no-underline" id="auth-btn-container">
+                      <a class="main-btn navbar-btn" style="padding: 2px 20px;" data-scroll-nav="0"
+                        href="./loginPage.html">
+                        <i class="fas fa-user-circle icon-hover" style="margin: 5px;"></i> Login/Register
+                      </a>
                     </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
-                    </li>
-                    <li class="nav-item no-underline">
-                      <a class="main-btn navbar-btn"
-                        style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;"
-                        data-scroll-nav="0" href="./loginPage.html">Login/Register 💻</a>
-                    </li>
-                    <li class="nav-item no-underline">
-                      <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
-                        🌙
+                    <li class="nav-item no-underline align-self-center">
+                      <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()">
+                        <span>🌞</span>
                       </button>
                     </li>
                   </ul>
                 </div>
-
                 <script>
                   const toggleButton = document.getElementById('theme-toggle');
                   var body = document.body;
@@ -656,12 +671,12 @@ color: #ffffff;
 
     <footer id="footer" class="footer-area pt-120">
       <div class="container">
-        <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+        <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s" style="height: 265px;">
           <div class="row">
             <div class="col-lg-6">
               <div class="subscribe-content mt-45">
                 <h2 class="subscribe-title">
-                  Subscribe Our Newsletter <span>get regular updates</span>
+                  Subscribe Our Newsletter <span style="font-size: 28px;"> Get regular updates</span>
                 </h2>
               </div>
             </div>
