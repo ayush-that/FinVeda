@@ -31,7 +31,6 @@
   <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
   <link rel="stylesheet" href="navbar.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 <body>
 
@@ -480,7 +479,7 @@
 
 
             <nav class="mobile-menu ">
-              <a class="page-scroll" href="index.html">Home 🏡</a>
+              <a class="page-scroll" href="./index.html">Home 🏡</a>
               <a class="page-scroll" href="./about.html">About Us 📖</a>
               <a class="page-scroll" href="./trends.html">Trends 📈</a>
               <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
@@ -570,121 +569,79 @@
 
 
     </div>
-
-
-    <!-- removing intro section -->
-    <!-- <div
-        id="home"
-        class="header-hero bg_cover"
-        style="background-image: url(./assets/images/banner-bg.svg)"
-      > -->
-    <!-- <div class="container"> -->
-    <!-- <div class="row justify-content-center">
-            <div class="col-lg-8">
-              <div class="header-hero-content text-center">
-                <h3
-                  class="header-sub-title wow fadeInUp"
-                  data-wow-duration="1.3s"
-                  data-wow-delay="0.2s"
-                >
-                  Say 👋🏼 to FinVeda
-                </h3>
-                <h2
-                  class="header-title wow fadeInUp"
-                  data-wow-duration="1.3s"
-                  data-wow-delay="0.5s"
-                >
-                  your savvy financial companion
-                </h2>
-                <p
-                  class="text wow fadeInUp"
-                  data-wow-duration="1.3s"
-                  data-wow-delay="0.8s"
-                >
-                  Wanna learn how to grow your money to become rich? We have
-                  made becoming a stock market Guru easy with our AI powered
-                  finance advisor - <b>Arth Sathi 🤵🏻</b>
-                </p>
-                <a href="#" class="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s"
-                onclick="window.botpressWebChat.sendEvent({ type: 'show' }); return false;">
-                Chat with ArthaSathi 💬
-              </a>
-              </div>
-            </div> -->
-    <!-- </div>
-          <div class="row">
-            <div class="col-lg-12">
-              <div
-                class="header-hero-image text-center wow fadeIn"
-                data-wow-duration="1.3s"
-                data-wow-delay="1.4s"
-              >
-                <img src="./assets/images/header-hero.webp" alt="hero" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="particles-1" class="particles"></div> -->
-    <!-- </div> -->
   </header>
-   <div class="blogfull">
+  <div class="blogfull">
     <article>
       <section id="blog" class="blog-area pt-100">
         <div class="container">
           <div class="row align-items-center">
             <div class="col-lg-2">
-              <img id="blog-pic" style="mix-blend-mode: multiply; left: 210px;" src="./assets/images/blog-img.webp"
+              <img id="blog-pic" style="mix-blend-mode: multiply; left: 250px;" src="./assets/images/blog-img.webp"
                 alt="QUIZ">
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-8">
               <div class="section-title" data-aos="zoom-in">
                 <h1 id="title" style="font-size: 2.0rem; margin-top: 60px; margin-left: 5px;">Blog Posts</h1>
               </div>
             </div>
-            <div class="col-lg-2 text-end">
-
-            </div>
           </div>
-
-          <!-- <div class="row justify-content-center mt-4">
+          
+          <div class="row justify-content-center mt-4">
+            <div class="col-lg-2 text-end">
+              <button type="button" class="btn btn-primary add-blog-btn" style="width: 100%; margin-top: 2%;"
+                onclick="window.location.href='/addBlog.html'">Add Blog</button>
+            </div>
             <div class="col-lg-8 col-md-10">
               <form class="search-bar" id="search-form">
                 <input type="text" id="search-input" class="form-control" placeholder="Search for blog posts..."
-                  aria-label="Search" required>
+                aria-label="Search" required>
               </form>
             </div>
           </div>
 
-           Filtered blog posts -->
-          <!-- <div id="filtered-blogs" class="row justify-content-start mt-4 card-container">
-                     </div>
-        </div>  -->
+          <!-- Filtered blog posts -->
+          <div id="filtered-blogs" class="row justify-content-start mt-4">
+            <!-- Filtered blog posts will be inserted here -->
+          </div>
+        </div>
       </section>
     </article>
 
   </div>
   <style>
+    /* General Styling */
     #title {
       font-size: 4rem;
+      /* Adjust to fit your layout */
       margin-left: 40px;
       font-weight: bold;
       color: #2c3e50;
       text-align: center;
       white-space: nowrap;
+      /* Ensures "Blog Posts" stays on one line */
       text-transform: uppercase;
+      /* Optional: Makes text uppercase */
       letter-spacing: 0.1em;
+      /* Adjusts spacing between letters */
       transition: all 0.3s ease-in-out;
+      /* Smooth transition for hover effect */
       text-shadow: 3px 4px 8px rgba(0, 0, 0, 0.4);
+      /* Adds shadow for a 3D effect */
       cursor: pointer;
+      /* Changes cursor on hover */
       display: inline-block;
+      /* Helps with hover animation */
       position: relative;
+
     }
 
+    /* Optional animation for an underline effect on hover */
     #title::after {
       content: '';
       position: absolute;
       left: 0;
       bottom: -10px;
+      /* Distance from the text */
       width: 100%;
       height: 3px;
       background-color: #3498db;
@@ -694,695 +651,507 @@
 
     #title:hover::after {
       transform: scaleX(1);
+      /* Expands the underline on hover */
     }
 
-    .card-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      padding: 1rem;
-    }
-
+    /* Styling for the blog-pic container */
     #blog-pic {
-      max-width: 50%;
-    }
+
+      transform: translateY(10%);
+      width: 100px;
+      z-index: 1;
+      padding: 10px;
 
 
-    /* Card Styling */
-    .card {
-      background-color: #ffffff;
-      color: #1a202c;
-      border-radius: 0.75rem;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
-
-    /* Hover Effect */
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    }
-
-     /* Dark Mode */
-    .card.dark {
-      background-color: #1f2937;
-      color: #f9fafb;
-    }
-
-    /* Image Styling */
-    .card-image {
-      width: 100%;
-      height: 12rem;
-      object-fit: cover;
-      border-top-left-radius: 0.75rem;
-      border-top-right-radius: 0.75rem;
-    }
-
-    /* Content Styling */
-    .card-content {
-      padding: 1.5rem;
-      flex: 1;
-    }
-
-    .card-title {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    .card-title-link {
-      color: #1a202c;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .card-title-link:hover {
-      text-decoration: underline;
-    }
-
-    /* Excerpt Text */
-    .card-excerpt {
-      color: #4a5568;
-    }
-
-    /* Dark Mode Adjustments */
-    .card.dark .card-title-link {
-      color: #f9fafb;
-    }
-
-    .card.dark .card-excerpt {
-      color: #a0aec0;
-    }
-
-    /* Footer */
-    .card-footer {
-      display: flex;
-      align-items: center;
-      font-size: 0.875rem;
-      color: #718096;
-      margin-top: auto;
-    }
-
-    .card-footer time {
-      color: inherit;
-    }
-
-    .card-tags {
-      margin-left: 1rem;
-      font-weight: 500;
-      color: #1a202c;
-    }
-
-    .card.dark .card-tags {
-      color: #f9fafb;
-    }
-
-    /* Read More Link */
-    .card-read-more {
-      display: flex;
-      align-items: center;
-      margin-left: auto;
-      color: #4f46e5;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .card-read-more:hover {
-      color: #3730a3;
-    }
-
-    .icon {
-      height: 1rem;
-      width: 1rem;
-      margin-left: 0.25rem;
-      margin-top: 0px;
-    }
-
-    /* Responsive Layout for Smaller Screens */
-    @media (max-width: 768px) {
-      .card-container {
-        grid-template-columns: 1fr;
+      /* Styling for the image inside the blog-pic */
+      #blog-pic img {
+        border-radius: 10px;
+        /* Rounded corners */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        /* Shadow around the image */
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        /* Smooth transition for hover effects */
       }
-    }
 
-    .add-blog-btn {
-      background-color: #007bff;
-      /* Button color */
-      color: white;
-      /* Text color */
-      padding: 10px 20px;
-      /* Padding for a professional look */
-      border: none;
-      border-radius: 5px;
-      font-size: 1em;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-    }
+      /* Hover effect for the image */
+      #blog-pic img:hover {
+        transform: scale(1.05);
+        /* Slightly enlarge the image on hover */
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+        /* Increase the shadow on hover */
+        filter: brightness(1.2);
+        /* Slightly increase the brightness on hover */
+      }
 
-    .add-blog-btn:hover {
-      background-color: #0056b3;
-      /* Darker shade on hover */
-      transform: translateY(-2px);
-      /* Slight lift effect */
-    }
+      /* Container Styling */
+      .blog-area {
+        padding: 60px 0;
+        background-color: #f9f9f9;
+      }
 
-    /* Align Add Blog button to the right */
-    .text-end {
-      text-align: right;
-      margin-top: 60px;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
+      /* Blog Header Styling */
       #title {
-        font-size: 2rem;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      /* Blog Post Card Styling */
+      .single-blog {
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background: #fff;
+      }
+
+      .single-blog:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Image Styling */
+      .blog-image img {
+        width: 100%;
+        height: auto;
+        transition: transform 0.3s ease;
+      }
+
+      .single-blog:hover .blog-image img {
+        transform: scale(1.1);
+      }
+
+      /* Blog Content Styling */
+      .blog-content {
+        padding: 20px;
       }
 
       .blog-content p {
-        font-size: 1rem;
+        color: #555;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        transition: color 0.3s ease;
       }
-    }
 
-    .hidden {
-      display: none;
-    }
+      .single-blog:hover .reviewtext {
+        color: #052352;
+        /* Tailwind Blue-500 */
+      }
 
-    .play-pause-buttons {
-      margin-bottom: 1rem;
-    }
+      /* 'Learn More' Button Styling */
+      .more {
+        font-size: 0.9rem;
+        color: #3b82f6;
+        /* Tailwind Blue-500 */
+        font-weight: 600;
+        text-transform: uppercase;
+        display: inline-block;
+        transition: color 0.3s ease;
+      }
+
+      .more i {
+        margin-left: 5px;
+        transition: transform 0.3s ease;
+      }
+
+      .single-blog:hover .more i {
+        transform: translateX(5px);
+      }
+
+      .more:hover {
+        color: #0d1f52;
+        /* Tailwind Blue-700 */
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        #title {
+          font-size: 2rem;
+        }
+
+        .blog-content p {
+          font-size: 1rem;
+        }
+      }
+
+      .search-bar {
+        margin-top: 20px;
+      }
+
+      .input-group {
+        display: flex;
+        align-items: center;
+      }
+
+      .form-control {
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+      }
+
+      .btn {
+        border-radius: 0 0.25rem 0.25rem 0;
+        background-color: #007bff;
+        color: #fff;
+      }
+
+      .btn:hover {
+        background-color: #0056b3;
+        /* Darker shade for hover */
+      }
+
+      .add-blog-btn {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .add-blog-btn:hover {
+        background-color: #0056b3;
+        /* Darker shade on hover */
+        transform: translateY(-2px);
+        /* Slight lift effect */
+      }
+
+      /* Align Add Blog button to the right */
+      .text-end {
+        text-align: right;
+        margin-top: 60px;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        #title {
+          font-size: 2rem;
+        }
+
+        .blog-content p {
+          font-size: 1rem;
+        }
+      }
+
+      .single-blog {
+        background: linear-gradient(45deg, #e0a2fb, #0cbefa);
+        border: 5px solid white;
+      }
+
+      .col-lg-4:hover {
+        background: linear-gradient(45deg, #f7f4f4, #777676);
+        border-radius: 5%;
+      }
+      
   </style>
 
+  <script>
 
-<style>
-        /* Basic styles for the blog layout */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 0;
-        }
-        #search-input {
-            margin-bottom: 20px;
-            padding: 10px;
-            width: 100%;
-            max-width: 400px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        #filtered-blogs {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-        .card {
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-        .card-image {
-            width: 100%;
-            height: auto;
-        }
-        .card-content {
-            padding: 15px;
-        }
-        .card-title {
-            font-size: 1.5em;
-            margin: 0 0 10px;
-        }
-        .card-excerpt {
-            margin: 10px 0;
-        }
-        .card-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 15px;
-        }
-        /* Styles for the form */
-        #create-blog-form {
-            margin-bottom: 20px;
-        }
-        #create-blog-form input, #create-blog-form textarea {
-            display: block;
-            width: 100%;
-            margin-bottom: 10px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        #create-blog-form button {
-            padding: 10px 15px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        #create-blog-form button:hover {
-            background-color: #0056b3;
-        }
-        /* Styles for the file input */
-        #blog-image {
-            padding: 0; /* Remove padding for file input */
-        }
-    </style>
-</head>
-<body>
+    // Sample data for blog posts
+    const blogPosts = [
+      {
+        title: "How to deal with Unknown Risks in Life and Investing?",
+        link: "./blogs/how-to-deal-with-unknown-risks-in-life-and-investing.html",
+        image: "assets/images/blog-1.webp"
+      },
+      {
+        title: "How to 10x your Generational Wealth?",
+        link: "./blogs/how-to-10x-your-generational-wealth.html",
+        image: "./assets/images/blog-2.webp"
+      },
+      {
+        title: "Investing with Minimal Savings: A Guide for Women Investors",
+        link: "./blogs/invest-minimal.html",
+        image: "./assets/images/women.webp"
+      },
+      {
+        title: "The Power of Compound Interest: Grow Your Wealth Wisely",
+        link: "./blogs/power-of-compound-interest.html",
+        image: "./assets/images/blog-3.webp"
+      },
+      {
+        title: "Real Estate Investing: Tips for First-Time Buyers",
+        link: "./blogs/real-estate-investing.html",
+        image: "./assets/images/blog-1.webp"
+      },
+      {
+        title: "The Importance of Financial Literacy in Today’s World",
+        link: "./blogs/financial-literacy.html",
+        image: "./assets/images/blog-3.webp"
+      },
+      {
+        title: "How to Create a Budget and Stick to It",
+        link: "./blogs/create-a-budget.html",
+        image: "./assets/images/blog-2.webp"
+      },
+      {
+        title: "Investing for Retirement: Strategies for Every Age",
+        link: "./blogs/investing-for-retirement.html",
+        image: "./assets/images/blog-3.webp"
+      },
+      {
+        title: "Cryptocurrency 101: What You Need to Know",
+        link: "./blogs/cryptocurrency-101.html",
+        image: "./assets/images/blog-1.webp"
+      },
+      {
+        title: "Saving for College: Tips for Parents and Students",
+        link: "./blogs/saving-for-college.html",
+        image: "./assets/images/blog-2.webp"
+      },
+      {
+        title: "How to Build an Emergency Fund: A Step-by-Step Guide",
+        link: "./blogs/build-emergency-fund.html",
+        image: "./assets/images/blog-1.webp"
+      },
+      {
+        title: "Understanding Mutual Funds: A Smart Investment Choice",
+        link: "./blogs/mutual-funds.html",
+        image: "./assets/images/blog-1.webp"
+      },
+    ];
 
 
-    <style>
-        /* Basic styles for the blog layout */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 0;
-        }
-        #search-input {
-            margin-bottom: 20px;
-            padding: 10px;
-            width: 100%;
-            max-width: 400px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        #filtered-blogs {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-        .card {
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-        .card-image {
-            width: 100%;
-            height: auto;
-        }
-        .card-content {
-            padding: 15px;
-        }
-        .card-title {
-            font-size: 1.5em;
-            margin: 0 0 10px;
-        }
-        .card-excerpt {
-            margin: 10px 0;
-        }
-        .card-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 15px;
-        }
-        #create-blog-form {
-            margin-bottom: 20px;
-        }
-        #create-blog-form input, #create-blog-form textarea {
-            display: block;
-            width: 100%;
-            margin-bottom: 10px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        #create-blog-form button {
-            padding: 10px 15px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        #create-blog-form button:hover {
-            background-color: #0056b3;
-        }
-        .share-buttons {
-            display: flex;
-            gap: 10px;
-        }
-        .share-buttons a {
-            padding: 5px 10px;
-            background-color: #007bff;
-            color: white;
-            border-radius: 4px;
-            text-decoration: none;
-        }
-        .share-buttons a:hover {
-            background-color: #0056b3;
-        }
-        .delete-button {
-            padding: 5px 10px;
-            background-color: #dc3545;
-            color: white;
-            border-radius: 4px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-        .delete-button:hover {
-            background-color: #c82333;
-        }
-    </style>
-</head>
-<body>
+    // Function to display blog posts
+    function displayBlogs(blogs) {
+      const filteredBlogsContainer = document.getElementById('filtered-blogs');
+      filteredBlogsContainer.innerHTML = ''; // Clear previous content
 
-    <!-- Form to create a new blog -->
-    <form id="create-blog-form">
-        <h2>Create New Blog</h2>
-        <input type="text" id="blog-title" placeholder="Blog Title" required>
-        <textarea id="blog-excerpt" rows="4" placeholder="Blog Excerpt" required></textarea>
-        <input type="file" id="blog-image" accept="image/*" required>
-        <button type="submit">Add Blog</button>
-    </form>
-
-     <div id="filtered-blogs"></div>
-
-    <script>
-        const blogs = [];
-
-        function displayBlogs(blogsToDisplay) {
-            const filteredBlogsContainer = document.getElementById('filtered-blogs');
-            filteredBlogsContainer.innerHTML = '';
-
-            blogsToDisplay.forEach((post, index) => {
-                const blogHTML = `
-                <article class="card">
-                    <img src="${post.featuredImage}" alt="${post.title}" class="card-image" onerror="this.onerror=null; this.src='/placeholder.svg?height=200&width=400';">
-                    <div class="card-content">
-                        <h2 class="card-title">${post.title}</h2>
-                        <p class="card-excerpt">${post.excerpt}</p>
-                        <div class="share-buttons">
-                            <a href="https://twitter.com/share?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(location.href)}" target="_blank"><i class="fa-solid fa-share-nodes"></i>Twitter</a>
-                            <a href="https://www.instagram.com/share?url=${encodeURIComponent(location.href)}" target="_blank"><i class="fa-solid fa-share-nodes"></i>Instagram</a>
-                            <a href="https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(location.href)}&title=${encodeURIComponent(post.title)}" target="_blank"><i class="fa-solid fa-share-nodes"></i>sLinkedIn</a>
-                        </div>
-                        <div class="card-footer">
-                            <time datetime="${post.createdAt}">${formatDate(post.createdAt)}</time>
-                            <button class="delete-button" onclick="deleteBlog(${index})">Delete</button>
-                        </div>
+      blogs.forEach(post => {
+        const blogHTML = `
+            <div class="col-lg-4 col-md-7">
+                <div class="single-blog mt-30">
+                    <div class="blog-image">
+                        <a href="${post.link}">
+                            <img src="${post.image}" alt="blog" />
+                        </a>
                     </div>
-                </article>
-                `;
-                filteredBlogsContainer.innerHTML += blogHTML;
-            });
-        }
-
-        function deleteBlog(index) {
-            blogs.splice(index, 1);
-            displayBlogs(blogs);
-        }
-
-        document.getElementById('create-blog-form').addEventListener('submit', function (event) {
-            event.preventDefault();
-            const title = document.getElementById('blog-title').value;
-            const excerpt = document.getElementById('blog-excerpt').value;
-            const imageFile = document.getElementById('blog-image').files[0];
-
-            const reader = new FileReader();
-            reader.onloadend = function () {
-                const newBlogPost = {
-                    title: title,
-                    excerpt: excerpt,
-                    featuredImage: reader.result,
-                    createdAt: new Date().toISOString()
-                };
-                blogs.push(newBlogPost);
-                displayBlogs(blogs);
-                document.getElementById('create-blog-form').reset();
-            };
-
-            if (imageFile) {
-                reader.readAsDataURL(imageFile);
-            }
-        });
-
-        document.getElementById('search-input').addEventListener('input', function () {
-            const searchQuery = this.value.toLowerCase();
-            const filteredPosts = blogs.filter(post =>
-                post.title.toLowerCase().includes(searchQuery)
-            );
-            displayBlogs(filteredPosts);
-        });
-
-        function formatDate(date) {
-            return new Date(date).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-            });
-        }
-    </script>
-
-    <!-- Timed popup that will appear after succesful submission of feebback form! -->
-    <button class="notification" id="successnotification" style="display:none;">
-      <span class="message" id="successmsg">Submitted successfully!</span>
-      <span class="closenotif" id="closeSuccessNotification">✖</span>
-      <div class="timerline" id="timerline"></div>
-    </button>
-
-
-    <footer id="footer" class="footer-area pt-120">
-      <div class="container">
-        <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s"  style="height: 265px;">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="subscribe-content mt-45">
-                <h2 class="subscribe-title subscribe-map-title">
-                  Subscribe Our Newsletter <span style="font-size: 28px;"> Get regular updates</span>
-                </h2>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="subscribe-form mt-50">
-                <form id="unique-subscribe-form">
-                  <input type="email" id="unique-news-email" placeholder="Enter Email" required />
-                  <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
-                </form>
-                <div id="unique-message" class="unique-popup-message" style="display: none;">
-                  <div class="border-animation"></div>
-                  Thank You for the subscription!
+                    <div class="blog-content">
+                        <a href="${post.link}">
+                            <p class="reviewtext">${post.title}</p>
+                        </a>
+                        <a class="more" href="${post.link}">
+                            Learn More <i class="lni-chevron-right"></i>
+                        </a>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="footer-widget pb-100">
-      <div class="row" id="footer">
-          <div class="col-lg-4 col-md-6 col-sm-8">
-              <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                <img src="./assets/images/FinvedaLogo.png" alt="FinVeda Logo" style="height: 80px; width: auto; margin-bottom: 15px;" />
-                  <p class="text custom-margin">
-                      We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
-                  </p>
-              </div>
-          </div>
-          <div class="col-lg-5 col-md-7 col-sm-7">
-              <div class="footer-link d-flex mt-50 justify-content-md-between" style="justify-content: space-around !important;">
-                  <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-                      <div class="footer-title">
-                          <h3 class="title custom-margin">Quick Links</h3>
-                      </div>
-                      <ul class="link custom-margin">
-                          <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
-                          <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
-                          <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
-                          <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
-                          <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
-                      </ul>
-                  </div>
-                  <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
-                      <div class="footer-title">
-                          <h4 class="title custom-margin">Resources</h4>
-                      </div>
-                      <ul class="link custom-margin">
-                          <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
-                          <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
-                          <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
-                          <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
-                          <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
-                          <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
-          <div class="col-lg-3 col-md-5 col-sm-5">
-              <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-                  <div class="footer-title">
-                      <h4 class="title custom-margin">Contact Us</h4>
-                  </div>
-                  <ul class="contact custom-margin-big" style="justify-content: space-around;">
-                      <li class="d-sm-flex justify-content-center">
-                          <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                          <p style="width: 80%;">
-                              <a href="mailto:ayush1337@hotmail.com" target="_blank"
-                                 style="color: white; text-decoration: underline;">
-                                  ayush1337@hotmail.com
-                              </a>
-                          </p>
-                      </li>
-                      <li class="d-sm-flex justify-content-center">
-                          <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                          <div style="width: 80%;">
-                              <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
-                                  fin-veda.vercel.app
-                              </a>
-                          </div>
-                      </li>
-                      <li class="d-sm-flex justify-content-center">
-                          <!-- Modified: Inline CSS to adjust logo size and sync with other pages -->
-                          <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font: 12px; width: 10%;"></i>
-                          <div style="width: 80%;">
-                              <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
-                                 style="color:#fff">
-                                  Delhi, India
-                              </a>
-                          </div>
-                      </li>
-                      <!-- Added: Social Media Redirects -->
-                      <div class="social-icons">
-                        <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="https://discord.com/"><i class="fa-brands fa-discord"></i></a>
-                        <a href="https://github.com/ayush-that/FinVeda"><i class="fa-brands fa-github"></i></a>
-                    </div>
-                  </ul>
-              </div>
-          </div>
-      
-      
-      </div>
-      </div>
-      <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center">
-        <div class="row">
-          <div class="col-lg-12">
-            <div
-              class="copyright d-sm-flex justify-content-center"
-              style="
-                display: flex;
-                justify-content: center;
-                text-align: center;
-                width: 100%;
-                height: 100%;
-              "
-            >
-              <div class="copyright-content" style="text-align: center; margin-bottom: -60px;">
-                <p class="text" style="text-align: center">
-                  © <span id="copyright-year">2024</span> FinVeda. All rights are
-                  reserved<br />
-                  Made with ♥ in India
-                </p>
-      
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div id="particles-2"></div>
-      </div>
-      <button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top" style="margin-left:95%; margin-bottom: 30px; border-radius: 50%; width: 60px; height: 60px;">↑</button>
-      
-      </footer>
-
-     
-      
-        <script src="finance.js"></script>
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-      <script>
-        AOS.init({
-          duration: 2000
-        });
-      </script>
-      <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          const coords = { x: 0, y: 0 };
-          const circles = document.querySelectorAll(".circle");
-      
-          circles.forEach(function (circle) {
-            circle.x = 0;
-            circle.y = 0;
-          });
-      
-          window.addEventListener("mousemove", function (e) {
-            coords.x = e.pageX;
-            coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
-          });
-      
-          function animateCircles() {
-            let x = coords.x;
-            let y = coords.y;
-      
-            circles.forEach(function (circle, index) {
-              circle.style.left = `${x - 12}px`;
-              circle.style.top = `${y - 12}px`;
-              circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
-      
-              const nextCircle = circles[index + 1] || circles[0];
-              circle.x = x;
-              circle.y = y;
-      
-              x += (nextCircle.x - x) * 0.3;
-              y += (nextCircle.y - y) * 0.3;
-            });
-      
-            requestAnimationFrame(animateCircles);
-          }
-      
-          animateCircles();
-        });
-      
-      </script>
-    <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
-    <script src="./assets/js/blog.js"></script>
-    <script src="./assets/js/subscribe.js"></script>
-    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="./assets/js/vendor/modernizr-3.7.1.min.js"></script>
-    <script src="./assets/js/popper.min.js"></script>
-    <script src="./assets/js/bootstrap.min.js"></script>
-    <script src="./assets/js/plugins.js"></script>
-    <script src="./assets/js/slick.min.js"></script>
-    <script src="./assets/js/ajax-contact.js"></script>
-    <script src="./assets/js/waypoints.min.js"></script>
-    <script src="./assets/js/jquery.counterup.min.js"></script>
-    <script src="./assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="./assets/js/blogposts.js"></script>
-    <script src="./assets/js/jquery.easing.min.js"></script>
-    <script src="./assets/js/scrolling-nav.js"></script>
-    <script src="./assets/js/wow.min.js"></script>
-    <script src="./assets/js/particles.min.js"></script>
-    <script src="./assets/js/main.js"></script>
-    <script src="./assets/js/popup.js"></script>
-    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-    <script src="https://mediafiles.botpress.cloud/5e160793-5606-4412-ba4c-337e416f14fe/webchat/config.js"
-      defer></script>
-    <script defer src="./assets/js/arthsathi-style.js"></script>
-    <script src="./assets/js/botpress.js"></script>
-    <script src="./assets/js/blogmodals.js"></script>
-    <script src="./tools/smoothScroll.js"></script>
-
-    <div class="gtranslate_wrapper"></div>
-    <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
-    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init({
-        duration: 2000
+        `;
+        filteredBlogsContainer.innerHTML += blogHTML;
       });
-    </script>
+    }
+
+    // Initial display of all blog posts
+    displayBlogs(blogPosts);
+
+    // Add event listener for input changes
+    document.getElementById('search-input').addEventListener('input', function () {
+      const searchQuery = this.value.toLowerCase();
+
+      // Filter blog posts based on search query
+      const filteredPosts = blogPosts.filter(post =>
+        post.title.toLowerCase().includes(searchQuery)
+      );
+
+      // Display filtered results
+      displayBlogs(filteredPosts);
+    });
+
+  </script>
 
 
-  </body>
+  </style>
+  <!-- Timed popup that will appear after succesful submission of feebback form! -->
+  <button class="notification" id="successnotification" style="display:none;">
+    <span class="message" id="successmsg">Submitted successfully!</span>
+    <span class="closenotif" id="closeSuccessNotification">✖</span>
+    <div class="timerline" id="timerline"></div>
+  </button>
 
-  </head>
+
+  <footer id="footer" class="footer-area pt-120">
+    <div class="container">
+      <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s" style="height: 265px;">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="subscribe-content mt-45">
+              <h2 class="subscribe-title">
+                Subscribe Our Newsletter <span style="font-size: 28px;"> Get regular updates</span>
+              </h2>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="subscribe-form mt-50">
+              <form id="unique-subscribe-form">
+                <input type="email" id="unique-news-email" placeholder="Enter Email" required />
+                <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
+              </form>
+              <div id="unique-message" class="unique-popup-message" style="display: none;">
+                <div class="border-animation"></div>
+                Thank You for the subscription!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-widget pb-100">
+      <div class="row" id="footer">
+        <div class="col-lg-4 col-md-6 col-sm-8">
+          <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+            <img src="./assets/images/FinvedaLogo.png" alt="FinVeda Logo"
+              style="height: 80px; width: auto; margin-bottom: 15px;" />
+            <p class="text custom-margin">
+              We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-5 col-md-7 col-sm-7">
+          <div class="footer-link d-flex mt-50 justify-content-md-between"
+            style="justify-content: space-around !important;">
+            <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+              <div class="footer-title">
+                <h3 class="title custom-margin">Quick Links</h3>
+              </div>
+              <ul class="link custom-margin">
+                <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+                <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
+                <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
+                <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+                <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+                <li><a href="./blogs/sitemap.html"><i class="fa-solid fa-sitemap"></i> Site Map</a></li>
+              </ul>
+            </div>
+            <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+              <div class="footer-title">
+                <h4 class="title custom-margin">Resources</h4>
+              </div>
+              <ul class="link custom-margin">
+                <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
+                <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
+                <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-5 col-sm-5">
+          <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+            <div class="footer-title">
+              <h4 class="title custom-margin">Contact Us</h4>
+            </div>
+            <ul class="contact custom-margin-big" style="justify-content: space-around;">
+              <li class="d-sm-flex justify-content-center">
+                <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                <p style="width: 80%;">
+                  <a href="mailto:ayush1337@hotmail.com" target="_blank"
+                    style="color: white; text-decoration: underline;">
+                    ayush1337@hotmail.com
+                  </a>
+                </p>
+              </li>
+              <li class="d-sm-flex justify-content-center">
+                <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                <div style="width: 80%;">
+                  <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
+                    fin-veda.vercel.app
+                  </a>
+                </div>
+              </li>
+              <li class="d-sm-flex justify-content-center">
+                <!-- Modified: Inline CSS to adjust logo size and sync with other pages -->
+                <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font: 12px; width: 10%;"></i>
+                <div style="width: 80%;">
+                  <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
+                    style="color:#fff">
+                    Delhi, India
+                  </a>
+                </div>
+              </li>
+              <!-- Added: Social Media Redirects -->
+              <div class="social-icons">
+                <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://discord.com/"><i class="fa-brands fa-discord"></i></a>
+                <a href="https://github.com/ayush-that/FinVeda"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s"
+      style="text-align: center">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="copyright d-sm-flex justify-content-center" style="
+                  display: flex;
+                  justify-content: center;
+                  text-align: center;
+                  width: 100%;
+                  height: 100%;
+                ">
+            <div class="copyright-content" style="text-align: center">
+              <p class="text" style="text-align: center">
+                © <span id="copyright-year">2024</span> FinVeda. All rights are
+                reserved<br />
+                Made with ♥ in India
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="particles-2"></div>
+    </div>
+  </footer>
+  <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
+  <script src="./assets/js/blog.js"></script>
+  <script src="./assets/js/subscribe.js"></script>
+  <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+  <script src="./assets/js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="./assets/js/popper.min.js"></script>
+  <script src="./assets/js/bootstrap.min.js"></script>
+  <script src="./assets/js/plugins.js"></script>
+  <script src="./assets/js/slick.min.js"></script>
+  <script src="./assets/js/ajax-contact.js"></script>
+  <script src="./assets/js/waypoints.min.js"></script>
+  <script src="./assets/js/jquery.counterup.min.js"></script>
+  <script src="./assets/js/jquery.magnific-popup.min.js"></script>
+  <script src="./assets/js/blogposts.js"></script>
+  <script src="./assets/js/jquery.easing.min.js"></script>
+  <script src="./assets/js/scrolling-nav.js"></script>
+  <script src="./assets/js/wow.min.js"></script>
+  <script src="./assets/js/particles.min.js"></script>
+  <script src="./assets/js/main.js"></script>
+  <script src="./assets/js/popup.js"></script>
+  <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+  <script src="https://mediafiles.botpress.cloud/5e160793-5606-4412-ba4c-337e416f14fe/webchat/config.js" defer></script>
+  <script defer src="./assets/js/arthsathi-style.js"></script>
+  <script src="./assets/js/botpress.js"></script>
+  <script src="./assets/js/blogmodals.js"></script>
+  <script src="./tools/smoothScroll.js"></script>
+
+  <div class="gtranslate_wrapper"></div>
+  <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
+  <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 2000
+    });
+  </script>
+
+
+</body>
 
 </html>
