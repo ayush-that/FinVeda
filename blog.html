@@ -31,6 +31,7 @@
   <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
   <link rel="stylesheet" href="navbar.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 <body>
 
@@ -479,7 +480,7 @@
 
 
             <nav class="mobile-menu ">
-              <a class="page-scroll" href="./index.html">Home 🏡</a>
+              <a class="page-scroll" href="index.html">Home 🏡</a>
               <a class="page-scroll" href="./about.html">About Us 📖</a>
               <a class="page-scroll" href="./trends.html">Trends 📈</a>
               <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
@@ -641,12 +642,11 @@
               </div>
             </div>
             <div class="col-lg-2 text-end">
-              <button type="button" class="btn btn-primary add-blog-btn" style="width: 100%;"
-                onclick="window.location.href='/addBlog.html'">Add Blog</button>
+
             </div>
           </div>
 
-          <div class="row justify-content-center mt-4">
+          <!-- <div class="row justify-content-center mt-4">
             <div class="col-lg-8 col-md-10">
               <form class="search-bar" id="search-form">
                 <input type="text" id="search-input" class="form-control" placeholder="Search for blog posts..."
@@ -655,11 +655,10 @@
             </div>
           </div>
 
-          <!-- Filtered blog posts -->
-          <div id="filtered-blogs" class="row justify-content-start mt-4 card-container">
-            <!-- Filtered blog posts will be inserted here -->
-          </div>
-        </div>
+           Filtered blog posts -->
+          <!-- <div id="filtered-blogs" class="row justify-content-start mt-4 card-container">
+                     </div>
+        </div>  -->
       </section>
     </article>
 
@@ -707,7 +706,7 @@
     #blog-pic {
       max-width: 50%;
     }
- 
+
 
     /* Card Styling */
     .card {
@@ -877,149 +876,270 @@
     }
   </style>
 
-  <script>
 
-    // Function to display blog posts
-    function displayBlogs(blogs) {
-
-      const filteredBlogsContainer = document.getElementById('filtered-blogs');
-      filteredBlogsContainer.innerHTML = ''; // Clear previous content
-
-      blogs.forEach(post => {
-        let imagePath = "";
-        if (post.featuredImage) {
-          imagePath = `http://localhost:5000/${post.featuredImage.replace(/\\/g, '/')}`;
+<style>
+        /* Basic styles for the blog layout */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
         }
-        const blogHTML = `
-        <article class="card" data-aos="fade-right" data-aos-delay="300">
-            <img src="${imagePath}" alt="${post.title}" class="card-image" onerror="this.onerror=null; this.src='/placeholder.svg?height=200&width=400';">
-            <div class="card-content">
-                <h2 class="card-title flex">
-                    <a href="#" class="card-title-link">${post.title}</a>
-                    
-                </h2>
-                <p class="card-excerpt">${post.excerpt}</p>
-                 <div class='play-pause-buttons'>
-                    <button class="speak-button-${post._id}" onclick="handlePlay('${post._id}')" 
-                            data-title="${post.title.replace(/"/g, '&quot;')}" 
-                            data-excerpt="${post.excerpt.replace(/"/g, '&quot;')}">
-                      <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M3.5 1.5L13.5 8L3.5 14.5V1.5Z"/>
-                      </svg>
+        #search-input {
+            margin-bottom: 20px;
+            padding: 10px;
+            width: 100%;
+            max-width: 400px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        #filtered-blogs {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card-image {
+            width: 100%;
+            height: auto;
+        }
+        .card-content {
+            padding: 15px;
+        }
+        .card-title {
+            font-size: 1.5em;
+            margin: 0 0 10px;
+        }
+        .card-excerpt {
+            margin: 10px 0;
+        }
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+        /* Styles for the form */
+        #create-blog-form {
+            margin-bottom: 20px;
+        }
+        #create-blog-form input, #create-blog-form textarea {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        #create-blog-form button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #create-blog-form button:hover {
+            background-color: #0056b3;
+        }
+        /* Styles for the file input */
+        #blog-image {
+            padding: 0; /* Remove padding for file input */
+        }
+    </style>
+</head>
+<body>
 
-                    </button> 
-                    <button class="pause-button-${post._id} hidden"  onclick="handlePause('${post._id}')">
-                   <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5 1H7V15H5V1ZM9 1H11V15H9V1Z"/>
-                    </svg>
 
-                    </button>
+    <style>
+        /* Basic styles for the blog layout */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+        #search-input {
+            margin-bottom: 20px;
+            padding: 10px;
+            width: 100%;
+            max-width: 400px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        #filtered-blogs {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card-image {
+            width: 100%;
+            height: auto;
+        }
+        .card-content {
+            padding: 15px;
+        }
+        .card-title {
+            font-size: 1.5em;
+            margin: 0 0 10px;
+        }
+        .card-excerpt {
+            margin: 10px 0;
+        }
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+        #create-blog-form {
+            margin-bottom: 20px;
+        }
+        #create-blog-form input, #create-blog-form textarea {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        #create-blog-form button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #create-blog-form button:hover {
+            background-color: #0056b3;
+        }
+        .share-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .share-buttons a {
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+        .share-buttons a:hover {
+            background-color: #0056b3;
+        }
+        .delete-button {
+            padding: 5px 10px;
+            background-color: #dc3545;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .delete-button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Form to create a new blog -->
+    <form id="create-blog-form">
+        <h2>Create New Blog</h2>
+        <input type="text" id="blog-title" placeholder="Blog Title" required>
+        <textarea id="blog-excerpt" rows="4" placeholder="Blog Excerpt" required></textarea>
+        <input type="file" id="blog-image" accept="image/*" required>
+        <button type="submit">Add Blog</button>
+    </form>
+
+     <div id="filtered-blogs"></div>
+
+    <script>
+        const blogs = [];
+
+        function displayBlogs(blogsToDisplay) {
+            const filteredBlogsContainer = document.getElementById('filtered-blogs');
+            filteredBlogsContainer.innerHTML = '';
+
+            blogsToDisplay.forEach((post, index) => {
+                const blogHTML = `
+                <article class="card">
+                    <img src="${post.featuredImage}" alt="${post.title}" class="card-image" onerror="this.onerror=null; this.src='/placeholder.svg?height=200&width=400';">
+                    <div class="card-content">
+                        <h2 class="card-title">${post.title}</h2>
+                        <p class="card-excerpt">${post.excerpt}</p>
+                        <div class="share-buttons">
+                            <a href="https://twitter.com/share?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(location.href)}" target="_blank"><i class="fa-solid fa-share-nodes"></i>Twitter</a>
+                            <a href="https://www.instagram.com/share?url=${encodeURIComponent(location.href)}" target="_blank"><i class="fa-solid fa-share-nodes"></i>Instagram</a>
+                            <a href="https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(location.href)}&title=${encodeURIComponent(post.title)}" target="_blank"><i class="fa-solid fa-share-nodes"></i>sLinkedIn</a>
+                        </div>
+                        <div class="card-footer">
+                            <time datetime="${post.createdAt}">${formatDate(post.createdAt)}</time>
+                            <button class="delete-button" onclick="deleteBlog(${index})">Delete</button>
+                        </div>
                     </div>
-                <div class="card-footer">
-                    <time datetime="${post.createdAt}">${formatDate(post.createdAt)}</time>
-                     <a href="/readmore/${post.id}" class="card-read-more">
-                       <span> Read More </span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </article>
-    `;
-        filteredBlogsContainer.innerHTML += blogHTML;
-      });
-    }
+                </article>
+                `;
+                filteredBlogsContainer.innerHTML += blogHTML;
+            });
+        }
 
-    let speechInstance = null; // Store the current SpeechSynthesisUtterance instance
-    let isPaused = false;
-    let currentPosition = 0; // To store the position where we paused
+        function deleteBlog(index) {
+            blogs.splice(index, 1);
+            displayBlogs(blogs);
+        }
 
-    window.handlePlay = function (id) {
-      const button = document.querySelector(`button[onclick="handlePlay('${id}')"]`);
-      if (button) {
-        const title = button.dataset.title;
-        const excerpt = button.dataset.excerpt;
-        const textToSpeak = `${title}. ${excerpt}`;
-        document.getElementsByClassName(`pause-button-${id}`)[0].classList.remove('hidden')
-        document.getElementsByClassName(`speak-button-${id}`)[0].classList.add('hidden')
+        document.getElementById('create-blog-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const title = document.getElementById('blog-title').value;
+            const excerpt = document.getElementById('blog-excerpt').value;
+            const imageFile = document.getElementById('blog-image').files[0];
 
-        // If speech is paused, resume from the saved position
-        if (isPaused && speechInstance) {
-          isPaused = false;
-          window.speechSynthesis.speak(speechInstance);
-        } else {
-          // Create a new SpeechSynthesisUtterance instance
-          speechInstance = new SpeechSynthesisUtterance(textToSpeak.slice(currentPosition));
-          speechInstance.lang = 'en-US';
-          speechInstance.pitch = 1;
-          speechInstance.rate = 1;
+            const reader = new FileReader();
+            reader.onloadend = function () {
+                const newBlogPost = {
+                    title: title,
+                    excerpt: excerpt,
+                    featuredImage: reader.result,
+                    createdAt: new Date().toISOString()
+                };
+                blogs.push(newBlogPost);
+                displayBlogs(blogs);
+                document.getElementById('create-blog-form').reset();
+            };
 
-          // Event listener to track speech progress and save current position
-          speechInstance.onboundary = function (event) {
-            if (event.name === 'word') {
-              currentPosition = event.charIndex;
+            if (imageFile) {
+                reader.readAsDataURL(imageFile);
             }
-          };
-
-          // Play the speech
-          window.speechSynthesis.speak(speechInstance);
-        }
-      }
-    };
-
-    window.handlePause = function (id) {
-      document.getElementsByClassName(`pause-button-${id}`)[0].classList.add('hidden')
-      document.getElementsByClassName(`speak-button-${id}`)[0].classList.remove('hidden')
-      if (speechInstance && !isPaused) {
-        window.speechSynthesis.cancel();
-        isPaused = true;
-      }
-    };
-
-    // Fetch blog posts from server
-    async function fetchBlogs() {
-      try {
-        const response = await fetch('http://localhost:5000/api/addBlog/getAllBlog');
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const blogPosts = await response.json();
-        console.log(blogPosts)
-        displayBlogs(blogPosts); // Display all blogs initially
-
-        // Add event listener for input changes
-        document.getElementById('search-input').addEventListener('input', function () {
-          const searchQuery = this.value.toLowerCase();
-
-          // Filter blog posts based on search query
-          const filteredPosts = blogPosts.filter(post =>
-            post.title.toLowerCase().includes(searchQuery)
-          );
-
-          // Display filtered results
-          displayBlogs(filteredPosts);
         });
-      } catch (error) {
-        console.error('Error fetching blog posts:', error);
-      }
-    }
 
-    function formatDate(date) {
-      return new Date(date).toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      });
-    }
+        document.getElementById('search-input').addEventListener('input', function () {
+            const searchQuery = this.value.toLowerCase();
+            const filteredPosts = blogs.filter(post =>
+                post.title.toLowerCase().includes(searchQuery)
+            );
+            displayBlogs(filteredPosts);
+        });
 
-    // Initial fetch of blog posts
-    fetchBlogs();
-
-
-  </script>
- 
-
+        function formatDate(date) {
+            return new Date(date).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+        }
+    </script>
 
     <!-- Timed popup that will appear after succesful submission of feebback form! -->
     <button class="notification" id="successnotification" style="display:none;">

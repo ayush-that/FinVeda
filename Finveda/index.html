@@ -228,9 +228,109 @@
       document.getElementById("progressBar").style.width = scrolled + "%";
     };
   </script>
-  <button id="scrollBtn" class="scroll-btn" onclick="scrollToNextSection()">
+  <div class="search-container">
+    <input type="text" class="search-bar" placeholder="  Search...">
+    <button class="search-button">🔍</button>
+</div>
+
+<style>
+.search-container {
+    position: fixed; /* Keeps the search bar visible while scrolling */
+    top: 20px; /* Adjust as necessary */
+    right: 20px; /* Adjust as necessary */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Ensure it is above other elements */
+}
+
+/* Existing styles for search-bar and search-button remain unchanged */
+.search-bar {
+    padding: 10px 40px 10px 20px;
+    font-size: 16px;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    background-color: transparent;
+    color: white;
+    outline: none;
+    width: 250px; /* Adjust width */
+}
+
+.search-button {
+    margin-left: 10px; 
+    padding: 10px 16px;
+    font-size: 18px;
+    background-color: #2e2ef3; 
+    border-radius: 30px; 
+    color: white; }
+   /* Mobile responsiveness */
+   @media (max-width: 768px) {
+    .search-container {
+      top: 10px;
+      right: 10px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .search-bar {
+      width: 200px; /* Smaller width for mobile */
+    }
+
+    .search-button {
+      margin-top: 10px;
+    }
+  }
+  .search-bar {
+    padding: 10px 40px 10px 20px; /* Padding for the text and icon */
+    font-size: 16px;
+    border: 2px solid #fff;
+    border-radius: 30px; /* Rounded corners */
+    background-color: transparent;
+    color: white;
+    outline: none;
+    width: 250px; /* Adjust width */
+    transition: border-color 0.3s ease;
+    background-image: url('https://img.icons8.com/ios-filled/50/ffffff/search.png'); /* Search icon */
+    background-position: 10px center; /* Icon position inside the input */
+    background-repeat: no-repeat;
+    background-size: 18px;
+  }
+  .search-button {
+    margin-left: 10px; /* Space between input and button */
+    padding: 10px 16px;
+    font-size: 18px;
+    background-color: #ececee; /* Button background */
+    border: 2px solid #8686bb;
+    border-radius: 30px; /* Rounded corners */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Button hover effect */
+  .search-button:hover {
+    background-color: #fff;
+    color: #2e2ef3;
+    transform: translateY(-2px); /* Subtle hover effect */
+  }
+
+  /* Placeholder text style */
+  .search-bar::placeholder {
+    color: #ddd;
+    opacity: 1; /* Ensure placeholder text is visible */
+  }
+</style>
+
+<button id="scrollBtn" class="scroll-btn" onclick="scrollToNextSection()">
     <i class="lni-chevron-down"></i>
-  </button>
+</button>
+
+
+  
+  
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
