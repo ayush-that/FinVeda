@@ -2918,8 +2918,85 @@
         </div>
       </div>
     </div>
-    <script src="newsletterpopup.js"></script>
+    <!-- Modal Structure -->
+<div id="customModal" class="modal">
+  <div class="modal-content">
+    <span class="close-button" onclick="closeModal()">&times;</span>
+    <h2 class="modal-title">Newsletter Registration</h2>
+    <p id="modalMessage" class="modal-message"></p>
+    <button class="modal-action-button" onclick="closeModal()">OK</button>
+  </div>
+</div>
 
+    <script src="newsletterpopup.js"></script>
+<style>
+  /* Modal overlay */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  z-index: 1010;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal content */
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  
+}
+
+/* Close button */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  color: #aaa;
+  cursor: pointer;
+}
+
+/* Modal title */
+.modal-title {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Modal message */
+.modal-message {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Action button */
+.modal-action-button {
+  background: radial-gradient(circle, #f74b9f, #653b51);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.modal-action-button:hover {
+  background: radial-gradient(circle, #f74b9f, #653b51);
+}
+
+</style>
 
   </body>
 
