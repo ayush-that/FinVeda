@@ -2744,105 +2744,166 @@
     </style>
 
 
-      <!-- Newsletter pop-up -->
+<!-- Newsletter pop-up -->
  <style>
-  .popup-nl {
+ .popup-content-nl {
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    max-width: 800px;
+    height: 450px;
+    width: 90%; /* Adjusted to be responsive */
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    flex-direction: row;
+}
 
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      justify-content: center;
-      align-items: center;
-      z-index: 1009;
+.popup-left-nl img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-  }
+.popup-right-nl {
+    padding: 20px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
-  .popup-content-nl {
+/* Close button styling */
+.close1-btn-nl {
+    width: 20px;
+    cursor: pointer;
+    margin: 18px 10px;
+    position: absolute;
+    top: -4px;
+    right: 12px;
+    font-size: 18px;
+    font-weight: 800;
+}
 
-      display: flex;
-      background-color: white;
-      border-radius: 10px;
-      max-width: 800px;
-      height: 450px;
-      width: 700px;
-      overflow: hidden;
-      position: relative;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+.popup-nl h1 {
+    font-size: 24px;
+    background: linear-gradient(to right, #ff4aac, #faa2d3);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    text-align: center;
+    margin-bottom: 12px;
+    margin-top: 35px;
+}
 
-  }
+.h2-nl {
+    font-size: 18px;
+    margin-bottom: 8px;
+    text-align: center;
+    color: #333;
+}
 
-  .close1-btn-nl {
+.pop_up-nl {
+    margin-bottom: 15px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #0d4670, #32bbdc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 12.7px;
+}
 
-      width: 20px;
-      cursor: pointer;
-      margin: 18px 10px;
-      position: absolute;
-      top: -4px;
-      right: 12px;
-      font-size: 18px;
-      font-weight: 800;
+.popup-right-nl p {
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center;
+}
 
-  }
+.popup-nl {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1009;
+}
 
-  .popup-left-nl img {
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .popup-content-nl {
+        flex-direction: column;
+        height: auto;
+        width: 90%;
+    }
 
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .popup-right-nl {
+        width: 100%;
+        padding: 15px;
+    }
 
-  }
+    .popup-left-nl,
+    .popup-left-nl img {
+        height: 200px; /* Adjust height for mobile */
+    }
 
-  .popup-right-nl {
+    .popup-nl h1 {
+        font-size: 20px;
+    }
 
-      padding: 20px;
-      width: 50%;
-      display: flex;
-      flex-direction: column; 
-      align-items: center;
-      justify-content: center;
+    .h2-nl {
+        font-size: 16px;
+    }
 
-  }
+    .pop_up-nl {
+        font-size: 12px;
+    }
+}
 
-  .popup-nl h1 {
+@media (max-width: 480px) {
+    .popup-content-nl {
+        width: 95%;
+        height: auto;
+    }
 
-      font-size: 24px;
-      background: linear-gradient(to right, #ff4aac, #faa2d3); 
-      -webkit-text-fill-color: transparent; 
-      -webkit-background-clip: text; 
-      text-align: center;
-      margin-bottom: 12px;
-      margin-top: 35px;
+    .popup-nl h1 {
+        font-size: 18px;
+    }
 
-  }
+    .h2-nl {
+        font-size: 14px;
+    }
 
+    .pop_up-nl {
+        font-size: 11px;
+    }
+}
   .h2-nl{
-
       font-size: 18px;
       margin-bottom: 8px;
       text-align: center;
       color: #333;
-
   }
 
   .pop_up-nl {
-
       margin-bottom: 15px;
       font-weight: bold;
       background: linear-gradient(135deg, #0d4670, #32bbdc);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       font-size: 12.7px;
+  }
+    .popup-right-nl p {
+      margin-top: 0;
+      margin-bottom: 10px;
+      text-align: center;
 
   }
 
   .bold{
-
       font-size: 13.1px;
-
   }
 
   input[type="email"] {
@@ -2910,14 +2971,6 @@
   .terms-nl a:hover {
 
       text-decoration: underline;
-
-  }
-
-  .popup-right-nl p {
-
-      margin-top: 0;
-      margin-bottom: 10px;
-      text-align: center;
 
   }
 
