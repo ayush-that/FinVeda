@@ -141,6 +141,10 @@
       color: #0a69ed;
       /* Optional: change the color on hover */
     }
+    body.dark-mode .theme-toggle,body.dark-mode .theme-toggle:hover {
+    background-color: #112a2b; 
+    padding: 0.25rem 2.3rem;
+  }
   </style>
 
 <body>
@@ -463,10 +467,10 @@
 
                     // Update button icon based on mode
                     if (body.classList.contains('dark-mode')) {
-                      toggleButton.textContent = '🌞';  // Light mode icon
+                      toggleButton.textContent = '🌙';  // Light mode icon
                       localStorage.setItem('theme', 'dark');
                     } else {
-                      toggleButton.textContent = '🌙';  // Dark mode icon
+                      toggleButton.textContent = '🌞';  // Dark mode icon
                       localStorage.setItem('theme', 'light');
                     }
                   });
