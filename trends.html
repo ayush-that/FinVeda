@@ -218,7 +218,7 @@
         if (currentTheme === 'dark') {
           body.classList.add('dark-mode');
           toggleButton.classList.add('dark');
-          toggleButton.querySelector('span').textContent = '🌙';
+          toggleButton.querySelector('span').textContent = '🌞';
         }
 
         toggleButton.addEventListener('click', function () {
@@ -227,10 +227,10 @@
 
           // Update button icon based on mode
           if (body.classList.contains('dark-mode')) {
-            toggleButton.querySelector('span').textContent = '🌞';  // Light mode icon
+            toggleButton.querySelector('span').textContent = '🌙';  // Light mode icon
             localStorage.setItem('theme', 'dark');
           } else {
-            toggleButton.querySelector('span').textContent = '🌙';  // Dark mode icon
+            toggleButton.querySelector('span').textContent = '🌞';  // Dark mode icon
             localStorage.setItem('theme', 'light');
           }
           loadShow();
@@ -270,28 +270,23 @@
                   font-size: 1.2rem;
                 }
 
-                body.dark-mode {
-                  background-color: #fefefe;
+                /* body.dark-mode {
+                  background-color: #000000;
                   color: #f1f1f1;
-                  /* Change text color to light for dark mode */
                 }
 
                 .dark-mode .para {
                   color: white;
-                  /* Change text color to white when dark mode class is applied */
                 }
 
                 .toggle-button.dark {
-                  background-color: #f1f1f1;
-                  /* Button background in dark mode */
+                  background-color: #000000;
                   color: #333;
-                  /* Button text color in dark mode */
                 }
 
                 .toggle-button.dark:hover {
-                  background-color: #ddd;
-                  /* Button hover color in dark mode */
-                }
+                  background-color: #000000;
+                } */
               </style>
 
             </nav>
@@ -399,7 +394,7 @@
 
     body {
       font-family: 'Space Grotesk', 'Arial', sans-serif;
-      background-color: var(--bg-dark);
+      /* background-color: var(--bg-dark); */
       color: var(--text-primary);
       line-height: 1.6;
       overflow-x: hidden;
@@ -410,9 +405,9 @@
       display: flex;
       flex-direction: column;
       padding: 2rem;
-      background:
-        radial-gradient(circle at top left, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at bottom right, rgba(255, 107, 255, 0.1) 0%, transparent 50%);
+      background: #fff;
+        /* radial-gradient(circle at top left, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at bottom right, rgba(255, 107, 255, 0.1) 0%, transparent 50%); */
     }
 
     .market-status-heading-unique {
