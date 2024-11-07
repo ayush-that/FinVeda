@@ -1233,81 +1233,140 @@
       </div>
     </div>
   </section>
-  <section id="team" class="team-area pt-120">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-5">
-          <div class="section-title text-center pb-30">
-            <div class="line m-auto"></div>
+ <style>
+    /* Basic Styling */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f3f4f6;
+      margin: 0;
+    }
 
-            <h3 class="title" style="color: #2f6be5;"><span>Meet Our</span> tech-savvy Team</h3>
+    /* Title Styling */
+    h3 {
+      color: #2f6be5;
+      font-size: 36px;
+      text-align: center;
+      margin: 60px 0 10px; /* Increased top margin to 60px */
+      animation: fadeInText 1.5s ease-out;
+    }
 
-          </div>
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-4 col-md-7 col-sm-8">
-          <div class="single-team text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-            <div class="team-image">
-              <img class="images-team" src="assets/images/img-1.webp" alt="Team" />
-              <div class="social-pill">
-                <div class="left">
-                  <a href="https://twitter.com/manyasingh297" title="X profile of Manya Singh"><i
-                      class="fa-brands fa-x-twitter"></i></i></a>
-                </div>
-                <div class="right">
-                  <a href="https://www.linkedin.com/in/manya-singh-7a814327b/" title="Linkedin of Manya Singh"><i
-                      class="lni-linkedin-original"></i></a>
+    /* New subtitle below the main title */
+    .subtitle {
+      text-align: center;
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 30px;
+    }
 
-                </div>
-              </div>
-            </div>
-            <div class="team-content">
-              <h3 class="holder-name"><a href="#">Manya Singh</a></h3>
+    /* Animation for the title */
+    @keyframes fadeInText {
+      0% { opacity: 0; transform: translateY(-10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
 
+    /* Team Card Container */
+    .team-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-              <p class="text para">Developer</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-7 col-sm-8">
-          <div class="single-team text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-            <div class="team-image">
-              <img class="images-team" src="assets/images/img-2.webp" alt="Team" />
-              <div class="social-pill">
-                <div class="left">
-                  <a href="https://twitter.com/ayushdotpro" title="X profile of Ayush Singh"><i
-                      class="fa-brands fa-x-twitter"></i></a>
-                </div>
-                <div class="right">
-                  <a href="https://www.linkedin.com/in/ayush-that/" title="Linkedin of Ayush Singh"><i
-                      class="lni-linkedin-original"></i></a>
+    /* Team Card Styling */
+    .team-card {
+      background: #f9f9f9;
+      border-radius: 12px;
+      width: 260px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    }
 
-                </div>
-              </div>
-              <!-- <div class="social">
-                <ul>
-                  <li>
-                    <a href="https://twitter.com/ayushdotpro" title="X profile of Ayush Singh"><i
-                        class="fa-brands fa-x-twitter"></i></a>
-                  </li>
-                  <li>
-                    <a href="https://www.linkedin.com/in/ayush-that/" title="Linkedin of Ayush Singh"><i
-                        class="lni-linkedin-original"></i></a>
-                  </li>
-                </ul>
-              </div> -->
-            </div>
-            <div class="team-content">
-              <h3 class="holder-name"><a href="#">Ayush Singh</a></h3>
+    /* Hover effect on team card */
+    .team-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.2);
+    }
 
+    /* Profile Image Styling */
+    .team-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      transition: transform 0.3s ease;
+    }
 
-              <p class="text para">Developer</p>
-            </div>
-          </div>
-        </div>
-      </div>
-  </section>
+    /* Slight zoom on image hover */
+    .team-card:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Name and Position */
+    .team-card h4 {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .team-card p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* Social Icons Styling */
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .social-icons a {
+      color: #2f6be5;
+      font-size: 18px;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    /* Improved Hover Effect for Social Icons */
+    .social-icons a:hover {
+      color: #0d47a1;
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+
+<h3>Meet Our Tech Savvy Team</h3>
+<p class="subtitle">Dedicated to building innovative solutions for a better tomorrow.</p>
+
+<div class="team-container">
+  <!-- Team Member 1 -->
+  <div class="team-card">
+    <img src="assets/images/img-1.webp" alt="Team Member">
+    <h4>Manya Singh</h4>
+    <p>Developer</p>
+    <div class="social-icons">
+      <a href="https://twitter.com/manyasingh297" target="_blank" title="Twitter Profile"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.linkedin.com/in/manya-singh-7a814327b/" target="_blank" title="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+
+  <!-- Team Member 2 -->
+  <div class="team-card">
+    <img src="assets/images/img-2.webp" alt="Team Member">
+    <h4>Ayush Singh</h4>
+    <p>Developer</p>
+    <div class="social-icons">
+      <a href="https://twitter.com/ayushdotpro" target="_blank" title="Twitter Profile"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.linkedin.com/in/ayush-that/" target="_blank" title="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+</div>
   <!--forum Section-->
   <header class="forum_1">
   </header>
