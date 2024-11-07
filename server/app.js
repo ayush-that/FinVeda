@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import connectDB from "./utils/db.js";
 import cors from "cors";
 import contactRoutes from "./routes/contactRoutes.js";
-
+import newsletterRoutes from "./routes/newsletterRoutes.js";
 import feedbackRoutes from "./routes/feedbackRoutes.js";
 import addBlog from "./routes/addBlogRoutes.js";
 import path from "path"; // Import path module
@@ -28,6 +28,7 @@ app.use("/api/contact", contactRoutes);
 
 app.use("/api/feedback", feedbackRoutes);
 app.use("/api/addBlog", addBlog);
+app.use("/api/newsletter", newsletterRoutes);
 
 
 const PORT = process.env.PORT || 5000;
