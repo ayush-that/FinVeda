@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ - FinVeda</title>
+    <title>Terms of use - FinVeda</title>
     <link rel="shortcut icon" href="./assets/images/favicon2.webp" type="image/png" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -26,337 +26,7 @@
     <link rel="stylesheet" href="./assets/css/about(inlines).css" />
     <link rel="stylesheet" href="navbar.css">
 
-    <style>
-        /* FAQ Section Styles */
 
-        .faq-section {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 50px;
-            margin-left: 11.7% !important;
-            background-color: #6d9ed2;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        /* FAQ Title */
-        .faq-title {
-            width: 100%;
-            text-align: center;
-            font-size: 34px;
-            font-weight: bold;
-            color: white;
-            margin-bottom: 30px;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-
-        /* FAQ Intro Paragraph */
-        .faq-intro p {
-            margin-top: 10px;
-            text-align: center;
-            font-size: 1.2rem;
-            color: white;
-            margin-bottom: 30px;
-        }
-
-        /* Search Bar */
-        .faq-search {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .faq-search-input {
-            margin-top: 30px;
-            padding: 10px;
-            font-size: 1rem;
-            width: 40%;
-            border: 2px solid #007bff;
-            border-radius: 5px;
-            transition: border-color 0.3s ease;
-        }
-
-        .faq-search-btn {
-            margin-top: 30px;
-            padding: 10px 20px;
-            font-size: 1rem;
-            margin-left: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #007bff;
-            color: #fff;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .faq-search-btn:hover {
-            background-color: #0056b3;
-            transform: scale(1.05);
-        }
-
-        /* FAQ Progress Styles */
-        .faq-container {
-            max-width: 1000px;
-            margin: 50px auto;
-            /* Increased margin for better visibility */
-            margin-top: 8%;
-            padding: 5%;
-            background-color: #007bff;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-
-        /* Dark mode styles */
-        @media (prefers-color-scheme: dark) {
-            .faq-item {
-                border-color: #0000ff;
-                /* Darker border for dark mode */
-                background-color: #eee7e7;
-                /* Darker background for dark mode */
-                color: #080808;
-                /* Light text color for dark mode */
-            }
-
-            .faq-item:hover {
-                border-color: white;
-                /* Light blue on hover for dark mode */
-            }
-
-            .faq-item.read {
-                background-color: white;
-                /* Slightly lighter background for read items in dark mode */
-            }
-        }
-
-        .accordion-button {
-            background-color: #fff;
-            font-size: 18px;
-            font-weight: bold;
-            color: #333;
-            border: 1px solid #ddd;
-            border-radius: 12px;
-            padding: 20px;
-            transition: all 0.3s ease;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .accordion-button:focus {
-            box-shadow: none;
-        }
-
-        .accordion-button:not(.collapsed) {
-            color: #1565C0;
-            background-color: #f7f7ff;
-        }
-
-        .accordion-button:not(.collapsed)::after {
-            /* content: '-'; */
-            font-size: 24px;
-            color: #1565C0;
-        }
-
-        .accordion-button.collapsed::after {
-            /* content: '+'; */
-            font-size: 24px;
-            color: #333;
-        }
-
-        .accordion-item {
-            border: none;
-            margin-bottom: 10px;
-        }
-
-        .accordion-header {
-            border-radius: 12px;
-        }
-
-        .accordion-body {
-            background-color: #007bff;
-            font-size: 16px;
-            color: #666;
-            border-radius: 12px;
-            padding: 20px;
-        }
-
-        /* Hover effects for better interaction */
-        .accordion-button:hover {
-            background-color: #eef2fa;
-            border-color: white;
-            color: #1565C0;
-        }
-
-        .accordion-body {
-            border-top: 1px solid #ddd;
-        }
-
-        /* Feedback Section */
-        .feedback-btn {
-            padding: 10px 20px;
-            margin: 5px;
-            font-size: 1rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            background-color: #007bff;
-            color: #fff;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        k .feedback-btn:hover {
-            background-color: #00b374;
-            transform: scale(1.05);
-        }
-
-        /* Feedback Form Section */
-        .faq-feedback {
-            max-width: 1000px;
-            margin: auto;
-            padding: 5%;
-            background-color: #f8f9fa;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Form Group */
-        .form-group {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-
-        .form-group label {
-            font-size: 1rem;
-            color: white;
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .form-input {
-            width: 100%;
-            padding: 10px;
-            font-size: 1rem;
-            border: 1px solid #ced4da;
-            border-radius: 5px;
-            box-sizing: border-box;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .form-input:focus {
-            /* color: white; */
-            border-color: #007bff;
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-            outline: none;
-        }
-
-        .form-input:hover {
-            border-color: #0056b3;
-        }
-
-        /* Submit Button */
-        .button-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 30px;
-        }
-
-        .submit-btn {
-            padding: 10px 20px;
-            text-align: center;
-            font-size: 1.2rem;
-            border: none;
-            border-radius: 5px;
-            background-color: #007bff;
-            color: #fff;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .submit-btn:hover {
-            background-color: #0056b3;
-            transform: scale(1.05);
-        }
-
-        .submit-btn:focus {
-            outline: none;
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .form-input {
-                width: 100%;
-            }
-        }
-
-        /* Toggle Button Styles */
-        .toggle-button {
-            padding: 0.5em 1em;
-            cursor: pointer;
-            border: none;
-            background-color: #0c0a0a;
-            color: #fff;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .toggle-button:hover {
-            background-color: #555;
-        }
-
-        .toggle-button.dark {
-            background-color: #f1f1f1;
-            color: #333;
-        }
-
-        .toggle-button.dark:hover {
-            background-color: #ddd;
-        }
-
-        .content {
-            padding: 2em;
-            text-align: center;
-        }
-
-        body.dark-mode {
-            background-color: #222;
-            color: #f1f1f1;
-        }
-
-        .photo {
-            filter: none;
-        }
-        .star-rating {
-  display: flex;
-  justify-content: center;
-  direction: rtl; /* This reverses the order of the stars */
-}
-
-.star-rating input {
-  display: none;
-  /* Hide the radio buttons */
-}
-
-.star-rating label {
-  font-size: 3em;
-  /* Star size */
-  color: grey;
-  /* Default star color */
-  cursor: pointer;
-}
-
-.star-rating input:checked~label {
-  color: gold;
-  /* Gold color for selected stars */
-}
-
-.star-rating label:hover,
-.star-rating label:hover~label {
-  color: gold;
-  /* Change color on hover */
-}
-    </style>
 </head>
 
 <body>
@@ -605,397 +275,170 @@
         </div>
     </header>
 
-
-
-    <!-- FAQ Section -->
-    <div class="images">
-        <img style="width:250px; top: 200px; right: 1470px;mix-blend-mode: multiply;" src="assets/images/HELP-IMG.webp"
-            alt="image" class="photo">
-        <div class="faq-section " style="margin-top: 100px;">
-            <div class="faq-intro">
-                <h3 class="faq-title">Frequently Asked Questions</h3>
-                <p>Welcome to Finveda’s FAQ! Here you’ll find answers to common questions about our services, tools, and
-                    how we can help you on your financial journey. Still have questions? Contact us or use our AI
-                    chatbot for more assistance.</p>
-            </div>
-
-            <div class="faq-search">
-                <input type="text" style="color: #0c0a0a;" class="faq-search-input" placeholder="Type your question..."
-                    aria-label="Search FAQ" oninput="filterFAQs()" />
-                <button class="faq-search-btn" onclick="filterFAQs()">Search</button>
-            </div>
-
-            <div class="accordion" id="faqAccordion">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                            What is Finveda?
-                        </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                        data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Finveda is a dynamic financial literacy app with Arthsathi AI chatbot, finance blogs, market
-                            trends, SIP calculator, and a quiz for effortless finance learning.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            What problem does Finveda solve?
-                        </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                        data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Finveda aims to solve the lack of financial literacy in India, providing tools and resources
-                            to improve financial knowledge for individuals.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            What services does Finveda offer?
-                        </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                        data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Finveda offers expert-written blogs, market trends, SIP and PPF calculators, and more for
-                            personalized finance education.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingFour">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                            How can I start using Finveda?
-                        </button>
-                    </h2>
-                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                        data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Simply sign up and access all our features, including personalized financial education and
-                            tools.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingFive">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                            Is Finveda free to use?
-                        </button>
-                    </h2>
-                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-                        data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Yes, Finveda is completely free to use for all users.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <style>
-        .accordion-item {
-            background-color: #5776ff;
-        }
-
-        .accordion-button {
-            background: linear-gradient(135deg, #56ab2f, #a8e063, #b9f1b7);
-            color: #ffffff;
-            font-weight: bold;
-            padding: 15px;
-            border: none;
-            border-radius: 10px;
-            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .accordion-button::before {
-            content: "";
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
-            transition: opacity 0.3s ease;
-            opacity: 0;
-            border-radius: 10px;
-        }
-
-        .accordion-button:hover {
-            background: linear-gradient(135deg, #c8f8c2, #56ab2f, #a8e063);
-            transform: scale(1.03);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        .accordion-button:focus {
-            outline: none;
-            border: 2px solid #ffffff;
-            box-shadow: 0 0 10px #4facfe, 0 0 20px #56ab2f;
-        }
-
-        .accordion-button:focus::before {
-            opacity: 1;
-            transform: rotate(45deg);
-        }
-    </style>
-
-
-    <!-- Feedback Section -->
-    <div class="faq-feedback">
-        <h3 class="faq-title">Submit Your Feedback or Ask a New Question</h3>
-        <form class="feedback-form" id="feedbackForm">
-            <div class="form-group">
-                <label for="userName">Your Name</label>
-                <input type="text" id="userName" class="form-input" placeholder="Enter your name" required>
-            </div>
-            <div class="form-group">
-                <label for="userEmail">Your Email</label>
-                <input type="email" id="userEmail" class="form-input" placeholder="Enter your email" required>
-            </div>
-            <div class="form-group">
-                <label for="userFeedback">Your Feedback / Question</label>
-                <textarea id="userFeedback" class="form-input" rows="5"
-                    placeholder="Enter your feedback or ask a question" required></textarea>
-            </div>
-            <div class="star-rating" style="text-align: center; margin: 10px;">
-                <input type="radio" id="star5" name="rating" value="5" />
-                <label for="star5" title="5 star">&#9733;</label>
-                <input type="radio" id="star4" name="rating" value="4" />
-                <label for="star4" title="4 stars">&#9733;</label>
-                <input type="radio" id="star3" name="rating" value="3" />
-                <label for="star3" title="3 stars">&#9733;</label>
-                <input type="radio" id="star2" name="rating" value="2" />
-                <label for="star2" title="2 stars">&#9733;</label>
-                <input type="radio" id="star1" name="rating" value="1" />
-                <label for="star1" title="1 stars">&#9733;</label>
-            </div>  
-            <div class="button-container">
-                <button type="submit" class="submit-btn">Submit Feedback</button>
-            </div>
-        </form>
-    </div>
-
-    <style>
-        /* Global body styles for dark theme */
-        body {
-            background-color: white;
-            /* Dark background */
-            color: #ffffff;
-            /* Light text color */
-            font-family: Arial, sans-serif;
-            /* Clean font */
-            margin: 0;
-            /* padding: 20px; */
-        }
-
-        /* FAQ Container styling */
-        .faq-section {
-            background-color: #007bff;
-            /* Darker container background */
-            border-radius: 10px;
-            padding: 40px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease;
-            margin: 20px auto;
-        }
-
-        /* FAQ Item styles */
-        .accordion-button {
-            background-color: #1d45bd;
-            /* Darker background for buttons */
-            color: #ffffff;
-            /* White text */
-            border: 1px solid #4caf50;
-            /* Green border */
-            transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .accordion-button:hover {
-            background-color: white;
-            /* Slightly lighter on hover */
-            color: #007bff;
-            /* Light color on hover */
-            box-shadow: 0 0 20px rgba(76, 175, 80, 1);
-            /* Neon glow */
-        }
-
-        .accordion-item {
-            margin: 10px 0;
-            /* Spacing between items */
-        }
-
-        .accordion-body {
-            background-color: white;
-            /* Dark background for accordion body */
-            color: #007bff;
-            /* Light gray text for body */
-            border-radius: 5px;
-            padding: 15px;
-        }
-
-        /* Feedback section styles */
-        .faq-feedback {
-            border: 2px solid #4caf50;
-            /* Green border */
-            background: #007bff;
-            /* Dark gradient */
-            padding: 20px;
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #ffffff;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            color: #ffffff;
-            max-width: 800px;
-
-            margin: 20px auto;
-            transition: transform 0.3s ease;
+            border-left: 5px solid #007bff;
+            /* primary blue accent */
+            transition: transform 0.3s;
         }
 
-        /* Title styling */
-        .faq-title {
-            margin-top: 5px;
-            margin-bottom: 35px;
-            font-size: 2.0em;
-            font-weight: bold;
+
+        h1 {
             text-align: center;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
-            /* Neon glow */
-            margin-left: 0px;
-
+            font-size: 2.2rem;
+            color: #0056b3;
+            /* darker blue */
+            margin-bottom: 1rem;
         }
 
-        /* Form input styles */
-        .form-input {
-            padding: 10px;
-            font-size: 1em;
-            border: 2px solid #0056b3;
-            border-radius: 5px;
-            outline: none;
-            background-color: white;
-            color: #ffffff;
-            transition: background-color 0.3s ease, border-color 0.3s ease;
-
+        p {
+            margin: 1rem 0;
+            color: #333;
+            font-size: 1.1rem;
         }
 
-        /* New CSS to change label text color to white */
-        .form-group label {
-            color: #ffffff;
-            /* White color for labels */
+        ul {
+            padding-left: 20px;
         }
 
-        .form-input:focus {
-            border-color: #4caf50;
-            /* Green border on focus */
-            background-color: rgb(0, 85, 160);
-            /* Slightly lighter background on focus */
-
+        li {
+            margin: 0.5rem 0;
         }
 
-        /* Button styles */
-        .submit-btn {
-            background-color: white;
-            /* Green background */
-            color: #0000ff;
-            /* White text */
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1.1em;
-            transition: background-color 0.3s ease;
+        /* Section headings */
+        .section-title {
+            font-size: 1.5rem;
+            color: #0056b3;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 2px solid #007bff;
         }
 
-        .submit-btn:hover {
-            background-color: #0000ff;
-            color: white;
-        }
-
-        /* Search styles */
-        .faq-search {
+        /* Features section with icons */
+        .features {
             display: flex;
-            justify-content: center;
-            margin: 20px 0;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
         }
 
-        .faq-search-input {
-            width: 70%;
-            /* Adjusted width */
-            padding: 10px;
-            border: 2px solid #ffffff80;
-            border-radius: 5px;
-            outline: none;
-            background-color: white;
-            /* Dark input field */
-            color: #ffffff;
-            /* Light text color */
-            transition: background-color 0.3s ease, border-color 0.3s ease;
+        .feature-item {
+            flex: 1 1 calc(50% - 1rem);
+            background-color: #f0f5ff;
+            /* light blue background for feature boxes */
+            padding: 1rem;
+            border-radius: 8px;
+            color: #0056b3;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            transition: background 0.3s;
         }
 
+        .feature-item:hover {
+            background-color: #e0ecff;
+            /* slightly darker on hover */
+        }
 
-        .faq-search-btn {
-            background-color: white;
-            /* Green background */
-            color: #007bff;
-            /* White text */
+        .feature-item::before {
+            content: "💼";
+            font-size: 1.3rem;
+            margin-right: 0.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #666;
+            padding: 1rem 0;
+            border-top: 1px solid #eee;
+        }
+
+        /* Button */
+        button {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            margin-top: 1.5rem;
+            background-color: #007bff;
+            color: #fff;
             border: none;
             border-radius: 5px;
-            padding: 10px 15px;
-            margin-left: 5px;
+            font-size: 1rem;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
-        .faq-search-btn:hover {
-            background-color: #0000ff;
-            color: white;
-        }
-
-        /* Responsive styles */
-        @media (max-width: 768px) {
-            .faq-search {
-                flex-direction: column;
-                /* Stack elements on smaller screens */
-            }
-
-            .faq-search-input {
-                width: 100%;
-                /* Full width on small screens */
-                margin-bottom: 10px;
-            }
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
         }
     </style>
+
+    <div class="container">
+        <h1>Finveda Terms of Use</h1>
+
+        <!-- Problem statement -->
+        <p>🤔 <strong>Problem:</strong> According to a survey by the OECD, only 38% of adults in India are financially
+            literate. Finveda aims to address this gap by providing a platform focused on financial literacy education
+            for all.</p>
+
+
+
+        <!-- Acceptance of Terms -->
+        <h2 class="section-title">1. Acceptance of Terms</h2>
+        <p>By using Finveda’s services, you agree to be bound by these Terms of Use. If you do not agree with any part
+            of these terms, please refrain from using the platform.</p>
+
+        <!-- User Obligations -->
+        <h2 class="section-title">2. User Obligations</h2>
+        <ul>
+            <li>Users should use the platform solely for educational purposes and not for unauthorized or illegal
+                activities.</li>
+            <li>Users must provide accurate information during account creation and interactions on the platform.</li>
+        </ul>
+
+        <!-- Intellectual Property -->
+        <h2 class="section-title">3. Intellectual Property</h2>
+        <p>All content on Finveda, including text, images, and features, is owned by Finveda or its licensors.
+            Unauthorized use or distribution of this content is prohibited.</p>
+
+        <!-- Limitation of Liability -->
+        <h2 class="section-title">4. Limitation of Liability</h2>
+        <p>Finveda is not liable for any indirect or consequential damages arising from your use of the platform. Our
+            services are provided “as-is” without any warranties.</p>
+
+        <!-- Termination of Use -->
+        <h2 class="section-title">5. Termination of Use</h2>
+        <p>Finveda reserves the right to suspend or terminate user accounts for violations of these terms, at any time
+            and without notice.</p>
+
+        <!-- Governing Law -->
+        <h2 class="section-title">6. Governing Law</h2>
+        <p>These Terms of Use are governed by and construed in accordance with the laws applicable in your jurisdiction.
+        </p>
+
+        <!-- Modification of Terms -->
+        <h2 class="section-title">7. Modification of Terms</h2>
+        <p>Finveda reserves the right to update these terms at any time. Continued use of the platform after changes
+            constitutes acceptance of the new terms.</p>
+
+
+    </div>
     </head>
 
     <body>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-        <script>
-            function filterFAQs() {
-                const searchInput = document.getElementById('faq-search-input').value.toLowerCase();
-                const faqs = document.querySelectorAll('.accordion-item');
 
-                faqs.forEach(faq => {
-                    const question = faq.querySelector('.accordion-button').textContent.toLowerCase();
-                    faq.style.display = question.includes(searchInput) ? 'block' : 'none';
-                });
-            }
-        </script>
     </body>
 
 
@@ -1112,10 +555,10 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="subscribe-form mt-50">
-                            <form id="unique-subscribe-form">
-                                <input type="email" id="unique-news-email" placeholder="Enter Email" required />
+                            <form id="unique-subscribe-form" style=" display: flex; gap: 10px;">
+                                <input style="width: 70%; right: 70px;" type="email" id="unique-news-email" placeholder="Enter Email" required />
                                 <button class="unique-main-btn" id="unique-subscribe-btn"
-                                    type="submit">Subscribe</button>
+                                    type="submit" style="width: 45%;">  Subscribe</button>
                             </form>
                             <div id="unique-message" class="unique-popup-message" style="display: none;">
                                 <div class="border-animation"></div>
@@ -1155,8 +598,6 @@
                                         Service</a></li>
                                 <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
                                 <li><a href="./blogs/sitemap.html"><i class="fa-solid fa-sitemap"></i> Site Map</a></li>
-                                <li><a href="./termsOfUse.html" class="  ">Terms of use</a></li>
-
                             </ul>
                         </div>
                         <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">

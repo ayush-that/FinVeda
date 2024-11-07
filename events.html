@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create and Delete Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(45deg, #ff6b6b, #f7b731, #3bde5c);
+            background-repeat: no-repeat;
+            height: 950px;
+        }
+
+        .container {
+            margin-top: 150px;
+            background-color: #fff;
+            padding: 20px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input, textarea {
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .event-list {
+            margin-top: 20px;
+        }
+
+        .event-item {
+            background-color: #e9ecef;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-left: 4px solid #28a745;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .event-title {
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .event-description, .event-details {
+            margin: 5px 0 0 0;
+            font-size: 0.9em;
+        }
+
+        .delete-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .delete-btn:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Create a New Event</h2>
+        <form id="eventForm">
+            <input type="text" id="eventName" placeholder="Event Name" required>
+            <textarea id="eventDescription" placeholder="Event Description" rows="4" required></textarea>
+
+            <label for="eventDate">Date:</label>
+            <input type="date" id="eventDate" required>
+
+            <input type="hidden" id="eventDay" required> <!-- Hidden input to store day of week -->
+
+            <label for="eventTime">Time:</label>
+            <input type="time" id="eventTime" required>
+
+            <button type="submit">Add Event</button>
+        </form>
+    </div>
+
+    <div class="container event-list">
+        <h2>Upcoming Events</h2>
+        <div id="eventsContainer">
+            <!-- Events will appear here -->
+        </div>
+    </div>
+
+    <script>
+        // Function to get the day of the week from a date
+        function getDayOfWeek(dateString) {
+            const date = new Date(dateString);
+            const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            return days[date.getDay()];
+        }
+
+        // Update day automatically when date is selected
+        document.getElementById("eventDate").addEventListener("change", function() {
+            const eventDate = this.value;
+            const eventDay = getDayOfWeek(eventDate);
+            document.getElementById("eventDay").value = eventDay; // Store the day in hidden input
+        });
+
+        // Handle event form submission
+        document.getElementById("eventForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const eventName = document.getElementById("eventName").value;
+            const eventDescription = document.getElementById("eventDescription").value;
+            const eventDate = document.getElementById("eventDate").value;
+            const eventDay = document.getElementById("eventDay").value; // Get day from hidden input
+            const eventTime = document.getElementById("eventTime").value;
+
+            // Create a new event element
+            const eventItem = document.createElement("div");
+            eventItem.classList.add("event-item");
+
+            // Event title
+            const titleElement = document.createElement("p");
+            titleElement.classList.add("event-title");
+            titleElement.textContent = eventName;
+            eventItem.appendChild(titleElement);
+
+            // Event description
+            const descriptionElement = document.createElement("p");
+            descriptionElement.classList.add("event-description");
+            descriptionElement.textContent = eventDescription;
+            eventItem.appendChild(descriptionElement);
+
+            // Event date, day, and time
+            const detailsElement = document.createElement("p");
+            detailsElement.classList.add("event-details");
+            detailsElement.innerHTML = `<strong>Date:</strong> ${eventDate} | <strong>Day:</strong> ${eventDay} | <strong>Time:</strong> ${eventTime}`;
+            eventItem.appendChild(detailsElement);
+
+            // Create Delete button for the event
+            const deleteButton = document.createElement("button");
+            deleteButton.classList.add("delete-btn");
+            deleteButton.textContent = "Delete";
+            deleteButton.onclick = function() {
+                eventItem.remove(); // Remove event from list
+            };
+            eventItem.appendChild(deleteButton);
+
+            // Add the new event to the events container
+            document.getElementById("eventsContainer").appendChild(eventItem);
+
+            // Clear the form fields
+            document.getElementById("eventForm").reset();
+        });
+    </script>
+
+</body>
+</html>

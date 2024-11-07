@@ -305,323 +305,329 @@
           <div class="col-lg-12">
             <nav class="navbar navbar-expand-lg" style="display: flex; background-color: #2c3e50;">
               <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-                  <div class="icon1">
-                      <a href="./index.html">
-                          <img src="../assets/images/FinvedaLogo.png" alt="Finveda Logo" style="width: 13rem;">
-                      </a>
-                  </div>
-                  <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
-                      <li class="nav-item">
-                          <a class="page-scroll" href="../index.html">
-                              <i class="fas fa-home icon-hover" style="margin: 5px;"></i> Home
-                          </a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="page-scroll" href="../about.html">
-                              <i class="fas fa-info-circle icon-hover" style="margin: 5px;"></i> About Us
-                          </a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="page-scroll" href="../finance.html">
-                              <i class="fas fa-graduation-cap icon-hover" style="margin: 5px;"></i> Courses
-                          </a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="page-scroll" href="../contact.html">
-                              <i class="fas fa-envelope icon-hover" style="margin: 5px;"></i> Contact
-                          </a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="page-scroll" href="../faq.html">
-                              <i class="fas fa-question-circle icon-hover" style="margin: 5px;"></i> Help
-                          </a>
-                      </li>
-                      <!-- Dropdown for Explore -->
-                      <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
-                          <a class="page-scroll dropdown-toggle" href="#">
-                              <i class="fas fa-chevron-down icon-hover" style="margin: 5px;"></i> Explore More
-                          </a>
-                          <ul class="dropdown-menu">
-                              <li><a href="../trends.html"><i class="fas fa-chart-line icon-hover" style="margin: 5px;"></i> Trends</a></li>
-                              <li><a class="active-link" href="./tools/sip.html"><i class="fas fa-tools icon-hover" style="margin: 5px;"></i> Tools</a></li>
-                              <li><a href="../blog.html"><i class="fas fa-blog icon-hover" style="margin: 5px;"></i> Blogs</a></li>
-                              <li><a href="../quiz.html"><i class="fas fa-question icon-hover" style="margin: 5px;"></i> Quiz</a></li>
-                              <li><a href="../maps.html"><i class="fas fa-map icon-hover" style="margin: 5px;"></i> MAPS</a></li>
-                          </ul>
-                      </li>
-                      <!-- Navigation item placeholder for Login/Register or Logout button -->
-                      <li class="nav-item no-underline" id="auth-btn-container">
-                          <a class="main-btn navbar-btn" style="padding: 2px 20px;" data-scroll-nav="0" href="./loginPage.html">
-                              <i class="fas fa-user-circle icon-hover" style="margin: 5px;"></i> Login/Register
-                          </a>
-                      </li>
-                      <li class="nav-item no-underline align-self-center">
-                          <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()">
-                            <span>🌞</span>
-                          </button>
-                      </li>
-                  </ul>
-              </div>
-          </nav>
-      </div>
-      <script>
-        const toggleButton = document.getElementById('theme-toggle');
-        var body = document.body;
-        var currentTheme = localStorage.getItem('theme');
-
-        if (currentTheme === 'dark') {
-          body.classList.add('dark-mode');
-          toggleButton.classList.add('dark');
-          toggleButton.querySelector('span').textContent = '🌞';
-        }
-
-        toggleButton.addEventListener('click', function () {
-          body.classList.toggle('dark-mode');
-          toggleButton.classList.toggle('dark');
-
-          // Update button icon based on mode
-          if (body.classList.contains('dark-mode')) {
-            toggleButton.querySelector('span').textContent = '🌙';  // Light mode icon
-            localStorage.setItem('theme', 'dark');
-          } else {
-            toggleButton.querySelector('span').textContent = '🌞';  // Dark mode icon
-            localStorage.setItem('theme', 'light');
-          }
-          loadShow();
-        });
-      </script>
-          </nav>
-              <!-- Login Modal -->
-              <div id="myModal" class="modal">
-                <div class="modal-content">
-                  <span class="close" style="display: flex; justify-content: right;">&times;</span>
-                  <div class="mt-3">
-                    <h3 class="join"><i class="fa-solid fa-right-to-bracket"></i> Login to join us....</h3>
-                    <form class="px-3 py-4" id="loginForm">
-                      <div class="form-group">
-                        <label class="d-flex">Username</label>
-                        <input type="text" placeholder="Username" class="form-control" required />
-                      </div>
-                      <div class="form-group">
-                        <label class="d-flex">Password</label>
-                        <input type="password" placeholder="Password" class="form-control" required>
-                        <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
-                      </div>
-                      <div class="form-check d-flex">
-                        <input type="checkbox" class="form-check-input me-1" style="margin-top: 0;">
-                        <label class="form-check-label" style="margin-bottom: 0;">Remember me</label>
-                        <a href="#" id="forgot-password" style="margin-left: 90px;">Forget Password?</a>
-                      </div>
-                      <div style="height: 20px;"></div>
-                      <button class="main-btn w-100 mb-3" onclick="submitForm('loginForm')">Sign in</button>
-                      <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
-                      <div class="or-sign-in-with text-center">
-                        <p>Or sign in with</p>
-                      </div>
-                      <div class="social-icons mt-3">
-                        <ul class="list-inline">
-                          <li><a href="#" class="google" id="google-login"><i class="fa-brands fa-google"></i></a></li>
-                          <li><a href="#" class="facebook" id="facebook-login"><i
-                                class="fa-brands fa-facebook-f"></i></a></li>
-                          <li><a href="#" class="twitter" id="twitter-login"><i class="fa-brands fa-x-twitter"></i></a>
-                          </li>
-                        </ul>
-                      </div>
-                  </div>
+                <div class="icon1">
+                  <a href="./index.html">
+                    <img src="../assets/images/FinvedaLogo.png" alt="Finveda Logo" style="width: 13rem;">
+                  </a>
                 </div>
+                <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
+                  <li class="nav-item">
+                    <a class="page-scroll" href="../index.html">
+                      <i class="fas fa-home icon-hover" style="margin: 5px;"></i> Home
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="../about.html">
+                      <i class="fas fa-info-circle icon-hover" style="margin: 5px;"></i> About Us
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="../finance.html">
+                      <i class="fas fa-graduation-cap icon-hover" style="margin: 5px;"></i> Courses
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="../contact.html">
+                      <i class="fas fa-envelope icon-hover" style="margin: 5px;"></i> Contact
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="../faq.html">
+                      <i class="fas fa-question-circle icon-hover" style="margin: 5px;"></i> Help
+                    </a>
+                  </li>
+                  <!-- Dropdown for Explore -->
+                  <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
+                    <a class="page-scroll dropdown-toggle" href="#">
+                      <i class="fas fa-chevron-down icon-hover" style="margin: 5px;"></i> Explore More
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a href="../trends.html"><i class="fas fa-chart-line icon-hover" style="margin: 5px;"></i>
+                          Trends</a></li>
+                      <li><a class="active-link" href="./tools/sip.html"><i class="fas fa-tools icon-hover"
+                            style="margin: 5px;"></i> Tools</a></li>
+                      <li><a href="../blog.html"><i class="fas fa-blog icon-hover" style="margin: 5px;"></i> Blogs</a>
+                      </li>
+                      <li><a href="../quiz.html"><i class="fas fa-question icon-hover" style="margin: 5px;"></i>
+                          Quiz</a></li>
+                      <li><a href="../maps.html"><i class="fas fa-map icon-hover" style="margin: 5px;"></i> MAPS</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <!-- Navigation item placeholder for Login/Register or Logout button -->
+                  <li class="nav-item no-underline" id="auth-btn-container">
+                    <a class="main-btn navbar-btn" style="padding: 2px 20px;" data-scroll-nav="0"
+                      href="./loginPage.html">
+                      <i class="fas fa-user-circle icon-hover" style="margin: 5px;"></i> Login/Register
+                    </a>
+                  </li>
+                  <li class="nav-item no-underline align-self-center">
+                    <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()">
+                      <span>🌞</span>
+                    </button>
+                  </li>
+                </ul>
               </div>
+            </nav>
+          </div>
+          <script>
+            const toggleButton = document.getElementById('theme-toggle');
+            var body = document.body;
+            var currentTheme = localStorage.getItem('theme');
 
-              <script>
-                // Add event listeners to the social media icons
-                document.getElementById('google-login').addEventListener('click', function () {
-                  window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
-                });
+            if (currentTheme === 'dark') {
+              body.classList.add('dark-mode');
+              toggleButton.classList.add('dark');
+              toggleButton.querySelector('span').textContent = '🌞';
+            }
 
-                document.getElementById('facebook-login').addEventListener('click', function () {
-                  window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
-                });
+            toggleButton.addEventListener('click', function () {
+              body.classList.toggle('dark-mode');
+              toggleButton.classList.toggle('dark');
 
-                document.getElementById('twitter-login').addEventListener('click', function () {
-                  window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
-                });
-              </script>
-
-              <!-- Register Modal -->
-              <div id="registerModal" class="modal">
-                <div class="modal-content">
-                  <span class="close" style="display: flex; justify-content: right;">&times;</span>
-                  <div class="mt-3">
-                    <h3 class="join"><i class="fa-solid fa-user"></i> Register to join us....</h3>
-                    <form class="px-3 py-4" id="registerForm">
-                      <div class="form-group">
-                        <label class="d-flex">Email</label>
-                        <input type="email" placeholder="Email" class="form-control" required />
-                      </div>
-                      <div class="form-group">
-                        <label class="d-flex">Username</label>
-                        <input type="text" placeholder="Username" class="form-control" required />
-                      </div>
-                      <div class="form-group">
-                        <label class="d-flex">Password</label>
-                        <input type="password" placeholder="Password" class="form-control" id="register-password"
-                          required oninput="checkPasswordStrength()">
-                        <button type="button" class="toggle-password-btn"
-                          onclick="togglePasswordVisibility('register-password')">
-                          <i class="fa-solid fa-eye"></i>
-                          <i class="fa-solid fa-eye-slash" style="display: none;"></i>
-                        </button>
-                      </div>
-                      <div id="password-meter" style="display: none; margin-top: 5px;">
-                        <div id="meter"
-                          style="height: 10px; background-color: #ccc; border-radius: 5px; transition: width 0.3s;">
-                        </div>
-                        <div id="strength-text" style="margin-top: 5px; font-weight: bold;"></div>
-                      </div>
-                    </form>
-
-                    <!-- Import zxcvbn library -->
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
-                    <script>
-                      function checkPasswordStrength() {
-                        const password = document.getElementById('register-password').value;
-                        const meter = document.getElementById('meter');
-                        const meterContainer = document.getElementById('password-meter');
-                        const strengthText = document.getElementById('strength-text');
-
-                        if (password) {
-                          meterContainer.style.display = 'block'; // Show the meter when typing
-                          const result = zxcvbn(password);
-                          const score = result.score; // Score ranges from 0 to 4
-
-                          // Set meter width and color based on score
-                          meter.style.width = (score + 1) * 20 + '%'; // Convert score to percentage
-                          meter.style.backgroundColor = getMeterColor(score);
-                          strengthText.innerText = getStrengthText(score); // Update strength text
-                        } else {
-                          meterContainer.style.display = 'none'; // Hide the meter if no password
-                          strengthText.innerText = ''; // Clear strength text
-                        }
-                      }
-
-                      function getMeterColor(score) {
-                        switch (score) {
-                          case 0: return 'red'; // Weak
-                          case 1: return 'orange'; // Fair
-                          case 2: return 'yellow'; // Good
-                          case 3: return 'blue'; // Strong
-                          case 4: return 'green'; // Very Strong
-                          default: return 'gray';
-                        }
-                      }
-
-                      function getStrengthText(score) {
-                        switch (score) {
-                          case 0: return 'Very Weak';
-                          case 1: return 'Weak';
-                          case 2: return 'Fair';
-                          case 3: return 'Strong';
-                          case 4: return 'Very Strong';
-                          default: return '';
-                        }
-                      }
-
-                      function togglePasswordVisibility(id) {
-                        const passwordInput = document.getElementById(id);
-                        const eyeIcon = passwordInput.nextElementSibling;
-                        if (passwordInput.type === 'password') {
-                          passwordInput.type = 'text';
-                          eyeIcon.children[0].style.display = 'none';
-                          eyeIcon.children[1].style.display = 'inline';
-                        } else {
-                          passwordInput.type = 'password';
-                          eyeIcon.children[0].style.display = 'inline';
-                          eyeIcon.children[1].style.display = 'none';
-                        }
-                      }
-                    </script>
-
-                    <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('registerForm')">Register</button>
-                    <p class="text-center">Already have an account? <a href="#" id="loginLink">Login</a></p>
-                    <div class="or-sign-in-with text-center">
-                      <p>Or sign up with</p>
-                    </div>
-                    <div class="social-icons mt-3">
-                      <ul class="list-inline">
-                        <li><a href="#" class="google" id="google-signup"><i class="fa-brands fa-google"></i></a></li>
-                        <li><a href="#" class="facebook" id="facebook-signup"><i
-                              class="fa-brands fa-facebook-f"></i></a></li>
-                        <li><a href="#" class="twitter" id="twitter-signup"><i class="fa-brands fa-twitter"></i></a>
-                        </li>
-                      </ul>
-                    </div>
+              // Update button icon based on mode
+              if (body.classList.contains('dark-mode')) {
+                toggleButton.querySelector('span').textContent = '🌙';  // Light mode icon
+                localStorage.setItem('theme', 'dark');
+              } else {
+                toggleButton.querySelector('span').textContent = '🌞';  // Dark mode icon
+                localStorage.setItem('theme', 'light');
+              }
+              loadShow();
+            });
+          </script>
+          </nav>
+          <!-- Login Modal -->
+          <div id="myModal" class="modal">
+            <div class="modal-content">
+              <span class="close" style="display: flex; justify-content: right;">&times;</span>
+              <div class="mt-3">
+                <h3 class="join"><i class="fa-solid fa-right-to-bracket"></i> Login to join us....</h3>
+                <form class="px-3 py-4" id="loginForm">
+                  <div class="form-group">
+                    <label class="d-flex">Username</label>
+                    <input type="text" placeholder="Username" class="form-control" required />
                   </div>
-                </div>
+                  <div class="form-group">
+                    <label class="d-flex">Password</label>
+                    <input type="password" placeholder="Password" class="form-control" required>
+                    <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
+                  </div>
+                  <div class="form-check d-flex">
+                    <input type="checkbox" class="form-check-input me-1" style="margin-top: 0;">
+                    <label class="form-check-label" style="margin-bottom: 0;">Remember me</label>
+                    <a href="#" id="forgot-password" style="margin-left: 90px;">Forget Password?</a>
+                  </div>
+                  <div style="height: 20px;"></div>
+                  <button class="main-btn w-100 mb-3" onclick="submitForm('loginForm')">Sign in</button>
+                  <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
+                  <div class="or-sign-in-with text-center">
+                    <p>Or sign in with</p>
+                  </div>
+                  <div class="social-icons mt-3">
+                    <ul class="list-inline">
+                      <li><a href="#" class="google" id="google-login"><i class="fa-brands fa-google"></i></a></li>
+                      <li><a href="#" class="facebook" id="facebook-login"><i class="fa-brands fa-facebook-f"></i></a>
+                      </li>
+                      <li><a href="#" class="twitter" id="twitter-login"><i class="fa-brands fa-x-twitter"></i></a>
+                      </li>
+                    </ul>
+                  </div>
               </div>
-
-              <script>
-                // Add event listeners to the social media icons
-                document.getElementById('google-signup').addEventListener('click', function () {
-                  window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
-                });
-
-                document.getElementById('facebook-signup').addEventListener('click', function () {
-                  window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
-                });
-
-                document.getElementById('twitter-signup').addEventListener('click', function () {
-                  window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
-                });
-                // Add event listener to the "Register" button in the login modal
-                document.getElementById('registerLink').addEventListener('click', function () {
-                  // Close the login modal
-                  document.getElementById('myModal').style.display = 'none';
-
-                  // Open the registration modal
-                  document.getElementById('registerModal').style.display = 'block';
-                });
-                // Add event listener to the "Login" button in the registration modal
-                document.getElementById('loginLink').addEventListener('click', function () {
-                  // Close the registration modal
-                  document.getElementById('registerModal').style.display = 'none';
-
-                  // Open the login modal
-                  document.getElementById('myModal').style.display = 'block';
-                });
-                // Function to close the modal window
-                var loginCloseButton = document.querySelector("#myModal .close");
-                loginCloseButton.addEventListener("click", function () {
-                  var modal = document.getElementById("myModal");
-                  modal.style.display = "none";
-                });
-
-                var registerCloseButton = document.querySelector("#registerModal .close");
-                registerCloseButton.addEventListener("click", function () {
-                  var modal = document.getElementById("registerModal");
-                  modal.style.display = "none";
-                });
-              </script>
+            </div>
           </div>
 
+          <script>
+            // Add event listeners to the social media icons
+            document.getElementById('google-login').addEventListener('click', function () {
+              window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
+            });
 
-          <nav class="mobile-menu ">
-            <a class="page-scroll" href="../index.html">Home 🏡</a>
-            <a class="page-scroll " href="../about.html">About Us 📖</a>
-            <a class="page-scroll" href="../trends.html">Trends 📈</a>
-            <a class="page-scroll active-link" href="../tools/sip.html">Tools 🔧</a>
-            <a class="page-scroll" href="../blog.html">Blogs 📰</a>
-            <a class="page-scroll" href="../quiz.html">Quiz 🤔</a>
-            <a class="page-scroll main-btn" href="#" onclick="openModal()"
-              onmouseout="this.style.color='white'">Login/Register 💻</a>
-            <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
-              <span></span>
+            document.getElementById('facebook-login').addEventListener('click', function () {
+              window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
+            });
+
+            document.getElementById('twitter-login').addEventListener('click', function () {
+              window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
+            });
+          </script>
+
+          <!-- Register Modal -->
+          <div id="registerModal" class="modal">
+            <div class="modal-content">
+              <span class="close" style="display: flex; justify-content: right;">&times;</span>
+              <div class="mt-3">
+                <h3 class="join"><i class="fa-solid fa-user"></i> Register to join us....</h3>
+                <form class="px-3 py-4" id="registerForm">
+                  <div class="form-group">
+                    <label class="d-flex">Email</label>
+                    <input type="email" placeholder="Email" class="form-control" required />
+                  </div>
+                  <div class="form-group">
+                    <label class="d-flex">Username</label>
+                    <input type="text" placeholder="Username" class="form-control" required />
+                  </div>
+                  <div class="form-group">
+                    <label class="d-flex">Password</label>
+                    <input type="password" placeholder="Password" class="form-control" id="register-password" required
+                      oninput="checkPasswordStrength()">
+                    <button type="button" class="toggle-password-btn"
+                      onclick="togglePasswordVisibility('register-password')">
+                      <i class="fa-solid fa-eye"></i>
+                      <i class="fa-solid fa-eye-slash" style="display: none;"></i>
+                    </button>
+                  </div>
+                  <div id="password-meter" style="display: none; margin-top: 5px;">
+                    <div id="meter"
+                      style="height: 10px; background-color: #ccc; border-radius: 5px; transition: width 0.3s;">
+                    </div>
+                    <div id="strength-text" style="margin-top: 5px; font-weight: bold;"></div>
+                  </div>
+                </form>
+
+                <!-- Import zxcvbn library -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+                <script>
+                  function checkPasswordStrength() {
+                    const password = document.getElementById('register-password').value;
+                    const meter = document.getElementById('meter');
+                    const meterContainer = document.getElementById('password-meter');
+                    const strengthText = document.getElementById('strength-text');
+
+                    if (password) {
+                      meterContainer.style.display = 'block'; // Show the meter when typing
+                      const result = zxcvbn(password);
+                      const score = result.score; // Score ranges from 0 to 4
+
+                      // Set meter width and color based on score
+                      meter.style.width = (score + 1) * 20 + '%'; // Convert score to percentage
+                      meter.style.backgroundColor = getMeterColor(score);
+                      strengthText.innerText = getStrengthText(score); // Update strength text
+                    } else {
+                      meterContainer.style.display = 'none'; // Hide the meter if no password
+                      strengthText.innerText = ''; // Clear strength text
+                    }
+                  }
+
+                  function getMeterColor(score) {
+                    switch (score) {
+                      case 0: return 'red'; // Weak
+                      case 1: return 'orange'; // Fair
+                      case 2: return 'yellow'; // Good
+                      case 3: return 'blue'; // Strong
+                      case 4: return 'green'; // Very Strong
+                      default: return 'gray';
+                    }
+                  }
+
+                  function getStrengthText(score) {
+                    switch (score) {
+                      case 0: return 'Very Weak';
+                      case 1: return 'Weak';
+                      case 2: return 'Fair';
+                      case 3: return 'Strong';
+                      case 4: return 'Very Strong';
+                      default: return '';
+                    }
+                  }
+
+                  function togglePasswordVisibility(id) {
+                    const passwordInput = document.getElementById(id);
+                    const eyeIcon = passwordInput.nextElementSibling;
+                    if (passwordInput.type === 'password') {
+                      passwordInput.type = 'text';
+                      eyeIcon.children[0].style.display = 'none';
+                      eyeIcon.children[1].style.display = 'inline';
+                    } else {
+                      passwordInput.type = 'password';
+                      eyeIcon.children[0].style.display = 'inline';
+                      eyeIcon.children[1].style.display = 'none';
+                    }
+                  }
+                </script>
+
+                <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('registerForm')">Register</button>
+                <p class="text-center">Already have an account? <a href="#" id="loginLink">Login</a></p>
+                <div class="or-sign-in-with text-center">
+                  <p>Or sign up with</p>
+                </div>
+                <div class="social-icons mt-3">
+                  <ul class="list-inline">
+                    <li><a href="#" class="google" id="google-signup"><i class="fa-brands fa-google"></i></a></li>
+                    <li><a href="#" class="facebook" id="facebook-signup"><i class="fa-brands fa-facebook-f"></i></a>
+                    </li>
+                    <li><a href="#" class="twitter" id="twitter-signup"><i class="fa-brands fa-twitter"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
-          </nav>
+          </div>
 
+          <script>
+            // Add event listeners to the social media icons
+            document.getElementById('google-signup').addEventListener('click', function () {
+              window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
+            });
 
-          <link href="../navbar.css" rel="stylesheet">
-          <script type="text/javascript" src="../navbar.js"></script>
+            document.getElementById('facebook-signup').addEventListener('click', function () {
+              window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
+            });
+
+            document.getElementById('twitter-signup').addEventListener('click', function () {
+              window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
+            });
+            // Add event listener to the "Register" button in the login modal
+            document.getElementById('registerLink').addEventListener('click', function () {
+              // Close the login modal
+              document.getElementById('myModal').style.display = 'none';
+
+              // Open the registration modal
+              document.getElementById('registerModal').style.display = 'block';
+            });
+            // Add event listener to the "Login" button in the registration modal
+            document.getElementById('loginLink').addEventListener('click', function () {
+              // Close the registration modal
+              document.getElementById('registerModal').style.display = 'none';
+
+              // Open the login modal
+              document.getElementById('myModal').style.display = 'block';
+            });
+            // Function to close the modal window
+            var loginCloseButton = document.querySelector("#myModal .close");
+            loginCloseButton.addEventListener("click", function () {
+              var modal = document.getElementById("myModal");
+              modal.style.display = "none";
+            });
+
+            var registerCloseButton = document.querySelector("#registerModal .close");
+            registerCloseButton.addEventListener("click", function () {
+              var modal = document.getElementById("registerModal");
+              modal.style.display = "none";
+            });
+          </script>
         </div>
+
+
+        <nav class="mobile-menu ">
+          <a class="page-scroll" href="../index.html">Home 🏡</a>
+          <a class="page-scroll " href="../about.html">About Us 📖</a>
+          <a class="page-scroll" href="../trends.html">Trends 📈</a>
+          <a class="page-scroll active-link" href="../tools/sip.html">Tools 🔧</a>
+          <a class="page-scroll" href="../blog.html">Blogs 📰</a>
+          <a class="page-scroll" href="../quiz.html">Quiz 🤔</a>
+          <a class="page-scroll main-btn" href="#" onclick="openModal()"
+            onmouseout="this.style.color='white'">Login/Register 💻</a>
+          <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
+            <span></span>
+          </div>
+        </nav>
+
+
+        <link href="../navbar.css" rel="stylesheet">
+        <script type="text/javascript" src="../navbar.js"></script>
       </div>
+    </div>
     </div>
     </div>
   </header>
@@ -633,27 +639,28 @@
 
     <h1>Tools</h1>
     <!-- Scroll button style -->
-     <style>
-    .scroll-btn {
-      position: absolute;
-      top: 50%;
-      background-color: #000;
-      display: flex;
-      align-items: center;
-      color: white;
-      padding: 10px;
-      cursor: pointer;
-      font-size: 24px;
-      z-index: 1;
-    }
-    .scroll-btn.leftt {
-      left: 0;
-    }
+    <style>
+      .scroll-btn {
+        position: absolute;
+        top: 50%;
+        background-color: #000;
+        display: flex;
+        align-items: center;
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 24px;
+        z-index: 1;
+      }
 
-    .scroll-btn.rightt {
-      right: 0;
-    }
-     </style>
+      .scroll-btn.leftt {
+        left: 0;
+      }
+
+      .scroll-btn.rightt {
+        right: 0;
+      }
+    </style>
     <button class="scroll-btn leftt" onclick="scrollSliderLeft()">←</button>
     <div class="calculator-slider" id="slider">
       <div class="slider-item" onclick="openCalculator('mutualFundCalculator')">
@@ -691,6 +698,7 @@
         </div>
 
       </div>
+
       <div class="slider-item" onclick="openCalculator('savingsGoalCalculator')">
         <h3>Savings Goal Calculator</h3>
         <p>Determine how much to save monthly to reach your goals.</p>
@@ -707,8 +715,161 @@
             </ol>
           </div>
         </div>
-
       </div>
+
+      <div class="slider-item" onclick="openCalculator('loanAmortizationCalculator')">
+        <h3>Loan Amortization Calculator</h3>
+        <p>Helps you calculate loan payments and the breakdown of principal and interest over the loan term.</p>
+        <div class="know-more">
+          <button class="know-more-btn">Know More</button>
+          <div class="know-more-content">
+            <h6>Here's how it works:</h6>
+            <ol>
+              <li><b>Loan Amount</b>: Enter the total loan amount you need.</li>
+              <li><b>Interest Rate</b>: Specify the annual interest rate for the loan.</li>
+              <li><b>Loan Term</b>: Enter the loan term in years or months.</li>
+              <li><b>Calculate Monthly Payment</b>: Calculates your monthly payment, showing how much goes to principal
+                and interest.</li>
+              <li><b>Amortization Schedule</b>: View a detailed breakdown of each payment's principal and interest
+                components over the loan term.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-item" onclick="openCalculator('budgetingCalculator')">
+        <h3>Budgeting Calculator</h3>
+        <p>A tool to help you create a budget based on your income and expenses, assisting in financial planning.</p>
+        <div class="know-more">
+          <button class="know-more-btn">Know More</button>
+          <div class="know-more-content">
+            <h6>Here's how it works:</h6>
+            <ol>
+              <li><b>Monthly Income</b>: Enter your total monthly income.</li>
+              <li><b>Fixed Expenses</b>: Specify your fixed monthly expenses (e.g., rent, utilities).</li>
+              <li><b>Variable Expenses</b>: Specify your variable monthly expenses (e.g., groceries, entertainment).
+              </li>
+              <li><b>Calculate Budget</b>: Calculates the amount left for savings or other goals.</li>
+              <li><b>Budget Summary</b>: Shows a summary of your income, expenses, and balance.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-item" onclick="openCalculator('savingsGoalCalculator')">
+        <h3>Savings Goal Calculator</h3>
+        <p>This calculator helps you set and track savings goals, showing how much you need to save each month to reach
+          your target.</p>
+        <div class="know-more">
+          <button class="know-more-btn">Know More</button>
+          <div class="know-more-content">
+            <h6>Here's how it works:</h6>
+            <ol>
+              <li><b>Goal Amount</b>: Enter the total amount you aim to save.</li>
+              <li><b>Current Savings</b>: Enter the amount you have saved so far.</li>
+              <li><b>Time Frame</b>: Specify the number of months or years to reach your goal.</li>
+              <li><b>Interest Rate</b>: Enter the expected annual interest rate (optional).</li>
+              <li><b>Calculate Monthly Savings</b>: Calculates how much you need to save monthly to meet your goal
+                within the chosen timeframe.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-item" onclick="openCalculator('retirementSavingsCalculator')">
+        <h3>Retirement Savings Calculator</h3>
+        <p>Assists you in planning for retirement by estimating how much you need to save based on your retirement age
+          and desired lifestyle.</p>
+        <div class="know-more">
+          <button class="know-more-btn">Know More</button>
+          <div class="know-more-content">
+            <h6>Here's how it works:</h6>
+            <ol>
+              <li><b>Current Age</b>: Enter your current age.</li>
+              <li><b>Retirement Age</b>: Specify the age you plan to retire.</li>
+              <li><b>Desired Monthly Income in Retirement</b>: Enter the monthly income you aim to have during
+                retirement.</li>
+              <li><b>Current Savings</b>: Enter the amount you have saved so far.</li>
+              <li><b>Expected Annual Return (%)</b>: Enter the anticipated annual return rate on your investments.</li>
+              <li><b>Calculate Savings Needed</b>: Calculates how much you need to save each month to reach your
+                retirement goal.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-item" onclick="openCalculator('inflationCalculator')">
+        <h3>Inflation Calculator</h3>
+        <p>Calculates the impact of inflation on the purchasing power of money over time.</p>
+        <div class="know-more">
+          <button class="know-more-btn">Know More</button>
+          <div class="know-more-content">
+            <h6>Here's how it works:</h6>
+            <ol>
+              <li><b>Current Amount</b>: Enter the current amount in INR.</li>
+              <li><b>Inflation Rate (%)</b>: Enter the annual inflation rate.</li>
+              <li><b>Years</b>: Enter the number of years for the inflation effect.</li>
+              <li><b>Calculate Future Value</b>: Calculates the future equivalent value of money considering inflation.
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div class="slider-item" onclick="openCalculator('taxCalculator')">
+        <h3>Tax Calculator</h3>
+        <p>Helps you estimate tax liability based on income, deductions, and credits, providing a clearer picture of
+          your tax situation.</p>
+        <div class="know-more">
+          <button class="know-more-btn">Know More</button>
+          <div class="know-more-content">
+            <h6>Here's how it works:</h6>
+            <ol>
+              <li><b>Income</b>: Enter your annual income.</li>
+              <li><b>Deductions</b>: Enter any applicable deductions.</li>
+              <li><b>Credits</b>: Enter any tax credits.</li>
+              <li><b>Calculate Tax</b>: Calculates estimated tax liability.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="slider-item" onclick="openCalculator('investmentGrowthCalculator')">
+        <h3>Investment Growth Calculator</h3>
+        <p>Projects the future value of an investment based on contributions, expected rate of return, and time horizon.
+        </p>
+        <div class="know-more">
+          <button class="know-more-btn">Know More</button>
+          <div class="know-more-content">
+            <h6>Here's how it works:</h6>
+            <ol>
+              <li><b>Initial Investment</b>: Enter your initial investment amount.</li>
+              <li><b>Monthly Contribution</b>: Enter your monthly contribution.</li>
+              <li><b>Rate of Return (%)</b>: Enter the expected annual return rate.</li>
+              <li><b>Years</b>: Enter the investment duration in years.</li>
+              <li><b>Calculate Investment Growth</b>: Calculates the future value of your investment.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="slider-item" onclick="openCalculator('emergencyFundCalculator')">
+        <h3>Emergency Fund Calculator</h3>
+        <p>Helps determine how much you need to save for emergencies based on monthly expenses.</p>
+        <div class="know-more">
+          <button class="know-more-btn">Know More</button>
+          <div class="know-more-content">
+            <h6>Here's how it works:</h6>
+            <ol>
+              <li><b>Monthly Expenses</b>: Enter your total monthly expenses.</li>
+              <li><b>Months of Coverage</b>: Enter the number of months you want to cover.</li>
+              <li><b>Calculate Emergency Fund</b>: Calculates the required emergency fund.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
       <div class="slider-item" onclick="openCalculator('insuranceCalculator')">
         <h3>Insurance Calculator</h3>
         <p>Estimate insurance policy benefits based on inputs.</p>
@@ -862,6 +1023,24 @@
         </div>
 
       </div>
+      <div class="slider-item" onclick="openCalculator('capitalGainsTaxCalculator')">
+        <h3>Capital Gains Tax Calculator</h3>
+        <p>This helps investors calculate the capital gains tax on the profits earned from the sale of their investments,
+          including stocks, mutual funds, and property.</p>
+        <div class="know-more">
+          <button class="know-more-btn">Know More</button>
+          <div class="know-more-content">
+            <h6>Here's how it works:</h6>
+            <ol>
+              <li><b>Initial Investment</b>: Enter the initial amount invested.</li>
+              <li><b>Sale Price</b>: Enter the sale price of your investment.</li>
+              <li><b>Investment Duration</b>: Specify the holding period of your investment in years.</li>
+              <li><b>Type of Asset</b>: Choose the asset type (e.g., short-term or long-term gains) to determine the applicable tax rate.</li>
+              <li><b>Capital Gains Tax</b>: Calculates the applicable capital gains tax based on the profit made and asset type.</li>
+            </ol>
+          </div>
+        </div>
+      </div>      
       <div class="slider-item" onclick="openCalculator('creditcardCalculator')">
         <h3>Credit Card Payoff Calculator</h3>
         <p>Calculate how long it will take to pay off your credit card balance with this calculator.</p>
@@ -955,13 +1134,34 @@
 
       </div>
 
+      <div class="slider-item" onclick="openCalculator('sipCalculator')">
+        <h3>SIP Calculator</h3>
+        <p>Calculate the future value of your SIP investments based on monthly contributions, interest rate, and
+          duration.</p>
+        <div class="know-more">
+          <button class="know-more-btn">Know More</button>
+          <div class="know-more-content">
+            <h6>Here's how it works:</h6>
+            <ol>
+              <li><b>Monthly Investment (₹)</b>: Enter the amount you plan to invest every month.</li>
+              <li><b>Expected Annual Return Rate (%)</b>: Enter the expected rate of return, typically 14% on average.
+              </li>
+              <li><b>Investment Duration (in years)</b>: Enter the total period of investment in years.</li>
+              <li><b>Total Invested Amount</b>: Calculates and displays the total amount invested over the period.</li>
+              <li><b>Future Value (Maturity Amount)</b>: Calculates the expected maturity amount, factoring in monthly
+                compounding.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
     </div>
     <button class="scroll-btn rightt" onclick="scrollSliderRight()">→</button>
 
     <script>
       // Scroll amount in pixels
       const scrollAmount = 300;
-    
+
       function scrollSliderLeft() {
         const slider = document.getElementById('slider');
         slider.scrollBy({
@@ -969,7 +1169,7 @@
           behavior: 'smooth'
         });
       }
-    
+
       function scrollSliderRight() {
         const slider = document.getElementById('slider');
         slider.scrollBy({
@@ -1392,6 +1592,301 @@
         </div>
       </div>
     </div>
+
+    <!-- loanAmortizationCalculator  content here -->
+    <div id="loanAmortizationCalculator" class="calculator-section" style="display: none;">
+      <div class="input-container">
+        <div>
+          <div><b>Loan Amount (INR)</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter the loan amount" id="loanAmount" required />
+          </div>
+          <br />
+          <div><b>Annual Interest Rate (%)</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter the interest rate" id="loanInterestRate"
+              required /></div>
+          <br />
+          <div><b>Loan Term (years)</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter the loan term" id="loanTerm" required />
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+
+      <div class="btn-calculate">
+        <button id="calculate-Btn5" type="button" class="btn btn-calculate"
+          onclick="calculateLoanAmortization()">Calculate</button>
+        <button id="clearBtn4" type="button" class="btn btn-clear" onclick="clearAll()">
+          <p class="btn-text">Clear</p>
+        </button>
+      </div>
+      <br />
+      <div style="display: flex;">
+        <div class="sresult"><b>Result:</b></div>
+        <div class="sresult-container">
+          <div class="sgresult" id="loanResult"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Budgeting Calculator  content here -->
+    <div id="budgetingCalculator" class="calculator-section" style="display: none;">
+      <div class="input-container">
+        <div>
+          <div><b>Monthly Income (INR)</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter your income" id="monthlyIncome" required />
+          </div>
+          <br />
+          <div><b>Fixed Expenses (INR)</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter fixed expenses" id="fixedExpenses"
+              required /></div>
+          <br />
+          <div><b>Variable Expenses (INR)</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter variable expenses" id="variableExpenses"
+              required /></div>
+        </div>
+      </div>
+      <br />
+      <br />
+
+      <div class="btn-calculate">
+        <button id="calculate-Btn6" type="button" class="btn btn-calculate"
+          onclick="calculateBudget()">Calculate</button>
+        <button id="clearBtn5" type="button" class="btn btn-clear" onclick="clearAll()">
+          <p class="btn-text">Clear</p>
+        </button>
+      </div>
+      <br />
+      <div style="display: flex;">
+        <div class="sresult"><b>Result:</b></div>
+        <div class="sresult-container">
+          <div class="sgresult" id="budgetResult"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Savings Goal Calculator content here -->
+    <div id="savingsGoalCalculator" class="calculator-section" style="display: none;">
+      <div class="input-container">
+        <div>
+          <div><b>Goal Amount (INR)</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter your goal amount" id="goalAmount"
+              required /></div>
+          <br />
+          <div><b>Current Savings (INR)</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter current savings" id="currentSavings"
+              required /></div>
+          <br />
+          <div><b>Time Frame (Months)</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter time to goal" id="timeFrame" required />
+          </div>
+          <br />
+          <div><b>Interest Rate (%)</b> <small>(optional)</small></div>
+          <div><input class="form-control" type="number" placeholder="Enter expected interest rate" id="interestRate" />
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+
+      <div class="btn-calculate">
+        <button id="calculate-Btn4" type="button" class="btn btn-calculate"
+          onclick="calculateSavings()">Calculate</button>
+        <button id="clearBtn3" type="button" class="btn btn-clear" onclick="clearAll()">
+          <p class="btn-text">Clear</p>
+        </button>
+      </div>
+      <br />
+      <div style="display: flex;">
+        <div class="sresult"><b>Result:</b></div>
+        <div class="sresult-container">
+          <div class="sgresult" id="savingsResult"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="retirementSavingsCalculator" class="calculator-section" style="display: none;">
+      <div class="input-container">
+        <div>
+          <div><b>Current Age</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter your current age" id="currentAge"
+              required /></div>
+          <br />
+          <div><b>Retirement Age</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter your retirement age" id="retirementAge"
+              required /></div>
+          <br />
+          <div><b>Desired Monthly Income (INR)</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter desired monthly income"
+              id="monthlyIncomeGoal" required /></div>
+          <br />
+          <div><b>Current Savings (INR)</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter current savings" id="currentSavings"
+              required /></div>
+          <br />
+          <div><b>Expected Annual Return (%)</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter expected annual return" id="annualReturn"
+              required /></div>
+        </div>
+      </div>
+      <br />
+      <br />
+
+      <div class="btn-calculate">
+        <button id="calculate-Btn7" type="button" class="btn btn-calculate"
+          onclick="calculateRetirementSavings()">Calculate</button>
+        <button id="clearBtn6" type="button" class="btn btn-clear" onclick="clearAll()">
+          <p class="btn-text">Clear</p>
+        </button>
+      </div>
+      <br />
+      <div style="display: flex;">
+        <div class="sresult"><b>Result:</b></div>
+        <div class="sresult-container">
+          <div class="sgresult" id="retirementResult"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="inflationCalculator" class="calculator-section" style="display: none;">
+      <div class="input-container">
+        <div>
+          <div><b>Current Amount (INR)</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter current amount" id="currentAmount"
+              required /></div>
+          <br />
+          <div><b>Inflation Rate (%)</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter inflation rate" id="inflationRate"
+              required /></div>
+          <br />
+          <div><b>Years</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter years" id="years" required /></div>
+        </div>
+      </div>
+      <br />
+      <br />
+
+      <div class="btn-calculate">
+        <button id="calculate-Btn1" type="button" class="btn btn-calculate"
+          onclick="calculateInflation()">Calculate</button>
+        <button id="clearBtn1" type="button" class="btn btn-clear" onclick="clearAll()">
+          <p class="btn-text">Clear</p>
+        </button>
+      </div>
+      <br />
+      <div style="display: flex;">
+        <div class="sresult"><b>Result:</b></div>
+        <div class="sresult-container">
+          <div class="sgresult" id="inflationResult"></div>
+        </div>
+      </div>
+    </div>
+    <div id="taxCalculator" class="calculator-section" style="display: none;">
+      <div class="input-container">
+        <div>
+          <div><b>Annual Income (INR)</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter your income" id="income" required /></div>
+          <br />
+          <div><b>Deductions (INR)</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter deductions" id="deductions" required />
+          </div>
+          <br />
+          <div><b>Credits (INR)</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter tax credits" id="credits" required /></div>
+        </div>
+      </div>
+      <br />
+      <br />
+
+      <div class="btn-calculate">
+        <button id="calculate-Btn2" type="button" class="btn btn-calculate" onclick="calculateTax()">Calculate</button>
+        <button id="clearBtn2" type="button" class="btn btn-clear" onclick="clearAll()">
+          <p class="btn-text">Clear</p>
+        </button>
+      </div>
+      <br />
+      <div style="display: flex;">
+        <div class="sresult"><b>Result:</b></div>
+        <div class="sresult-container">
+          <div class="sgresult" id="taxResult"></div>
+        </div>
+      </div>
+    </div>
+    <div id="investmentGrowthCalculator" class="calculator-section" style="display: none;">
+      <div class="input-container">
+        <div>
+          <div><b>Initial Investment (INR)</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter initial amount" id="initialInvestment"
+              required /></div>
+          <br />
+          <div><b>Monthly Contribution (INR)</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter monthly contribution"
+              id="monthlyContribution" required /></div>
+          <br />
+          <div><b>Rate of Return (%)</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter rate of return" id="rateOfReturn"
+              required /></div>
+          <br />
+          <div><b>Years</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter years" id="investmentYears" required />
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+
+      <div class="btn-calculate">
+        <button id="calculate-Btn3" type="button" class="btn btn-calculate"
+          onclick="calculateInvestmentGrowth()">Calculate</button>
+        <button id="clearBtn3" type="button" class="btn btn-clear" onclick="clearAll()">
+          <p class="btn-text">Clear</p>
+        </button>
+      </div>
+      <br />
+      <div style="display: flex;">
+        <div class="sresult"><b>Result:</b></div>
+        <div class="sresult-container">
+          <div class="sgresult" id="investmentResult"></div>
+        </div>
+      </div>
+    </div>
+    <div id="emergencyFundCalculator" class="calculator-section" style="display: none;">
+      <div class="input-container">
+        <div>
+          <div><b>Monthly Expenses (INR)</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter monthly expenses" id="monthlyExpenses"
+              required /></div>
+          <br />
+          <div><b>Months of Coverage</b></div>
+          <div><input class="form-control" type="number" placeholder="Enter months of coverage" id="monthsOfCoverage"
+              required /></div>
+          <br />
+          <button class="btn btn-primary" onclick="calculateEmergencyFund()">Calculate Emergency Fund</button>
+          <br />
+          <div id="result" style="margin-top: 20px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function openCalculator(calculatorId) {
+        document.getElementById(calculatorId).style.display = 'block';
+      }
+
+      function calculateEmergencyFund() {
+        const monthlyExpenses = document.getElementById('monthlyExpenses').value;
+        const monthsOfCoverage = document.getElementById('monthsOfCoverage').value;
+
+        if (monthlyExpenses && monthsOfCoverage) {
+          const emergencyFund = monthlyExpenses * monthsOfCoverage;
+          document.getElementById('result').innerHTML = `<h4>Your Emergency Fund: INR ${emergencyFund}</h4>`;
+        } else {
+          document.getElementById('result').innerHTML = `<h4>Please fill out both fields.</h4>`;
+        }
+      }
+    </script>
+
+
 
     <!-- Insurance Calculator content here -->
     <div id="insuranceCalculator" class="calculator-section" style="display: none;">
@@ -1917,27 +2412,28 @@
       <div class="tco-container">
         <h1 class="tco-header">TCO Calculator</h1>
 
-        <div class="input-group"  >
+        <div class="input-group">
           <label for="initialCost">Initial Cost ($):</label>
           <input type="number" id="initialCost" placeholder="Enter initial cost" required>
         </div>
 
-        <div class="input-group"  >
+        <div class="input-group">
           <label for="operatingCost">Annual Operating Cost ($):</label>
           <input type="number" id="operatingCost" placeholder="Enter annual operating cost" required>
         </div>
 
-        <div class="input-group"  >
+        <div class="input-group">
           <label for="years">Years of Ownership:</label>
           <input type="number" id="years" placeholder="Enter number of years" required>
         </div>
 
-        <div class="input-group"  >
+        <div class="input-group">
           <label for="miscCost">Miscellaneous Costs ($):</label>
           <input type="number" id="miscCost" placeholder="Enter miscellaneous costs" required>
         </div>
 
-        <button class="btn calculate-btn" style="width: 50%; margin-left: 25%;" onclick="calculateTCO()">Calculate TCO</button>
+        <button class="btn calculate-btn" style="width: 50%; margin-left: 25%;" onclick="calculateTCO()">Calculate
+          TCO</button>
 
         <div class="result" id="tcoResult"></div>
       </div>
@@ -1976,149 +2472,155 @@
 
       <style>
         * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
 
-:root {
-  --font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
+        :root {
+          --font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
 
-.tco-container,
-.main-income {
-  background: linear-gradient(135deg, #3a6eff 20%, #5ae3c7 80%);
-  padding: 20px;
-  height: 800px;
-  border-radius: 10px;
-  margin: 20px auto;
-  text-align: center;
-  width: 100%;
-  max-width: 500px;
-  border: 1px solid black;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
+        .tco-container,
+        .main-income {
+          background: linear-gradient(135deg, #3a6eff 20%, #5ae3c7 80%);
+          padding: 20px;
+          height: 800px;
+          border-radius: 10px;
+          margin: 20px auto;
+          text-align: center;
+          width: 100%;
+          max-width: 500px;
+          border: 1px solid black;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s ease;
+        }
 
-.tco-container:hover,
-.main-income:hover {
-  transform: scale(1.02);
-}
+        .tco-container:hover,
+        .main-income:hover {
+          transform: scale(1.02);
+        }
 
-.tco-header,
-.main-income-head {
-  color: #ffffff;
-  font-size: 24px;
-  margin-bottom: 20px;
-}
+        .tco-header,
+        .main-income-head {
+          color: #ffffff;
+          font-size: 24px;
+          margin-bottom: 20px;
+        }
 
-.input-group {
-  margin-bottom: 25px;
-  text-align: left;
-  width: 90%;
-  margin: auto;
-  margin-top: 15px;
-}
+        .input-group {
+          margin-bottom: 25px;
+          text-align: left;
+          width: 90%;
+          margin: auto;
+          margin-top: 15px;
+        }
 
-.input-group label {
-  color: #ffffff;
-  display: block;
-  font-size: 18px;
-  margin-bottom: 5px;
-}
+        .input-group label {
+          color: #ffffff;
+          display: block;
+          font-size: 18px;
+          margin-bottom: 5px;
+        }
 
-.input-group input {
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 16px;
-  border: 1px solid #ffffff;
-  background-color: #f0f0f0;
-  color: #333;
-  transition: all 0.3s ease;
-}
+        .input-group input {
+          width: 100%;
+          padding: 10px;
+          border-radius: 5px;
+          font-size: 16px;
+          border: 1px solid #ffffff;
+          background-color: #f0f0f0;
+          color: #333;
+          transition: all 0.3s ease;
+        }
 
-.input-group input:hover,
-.input-group input:focus {
-  border-color: #ffffff;
-  background-color: #e0e0e0;
-  outline: none;
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
-}
+        .input-group input:hover,
+        .input-group input:focus {
+          border-color: #ffffff;
+          background-color: #e0e0e0;
+          outline: none;
+          box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+        }
 
-.calculate-btn,
-.submit-button,
-.reset-button {
-  background: #ffffff;
-  color: #007acc;
-  border: none;
-  border-radius: 10px;
-  padding: 10px 20px;
-  font-size: 18px;
-  margin-top: 20px;
-  cursor: pointer;
-  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+        .calculate-btn,
+        .submit-button,
+        .reset-button {
+          background: #ffffff;
+          color: #007acc;
+          border: none;
+          border-radius: 10px;
+          padding: 10px 20px;
+          font-size: 18px;
+          margin-top: 20px;
+          cursor: pointer;
+          transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
 
-.calculate-btn:hover,
-.submit-button:hover,
-.reset-button:hover {
-  background: #e0e0e0;
-  color: #005fa3;
-  transform: scale(1.05);
-}
+        .calculate-btn:hover,
+        .submit-button:hover,
+        .reset-button:hover {
+          background: #e0e0e0;
+          color: #005fa3;
+          transform: scale(1.05);
+        }
 
-.result,
-.taxable-income,
-.tax-payable,
-.income-after-tax {
-  color: #ffffff;
-  font-size: 20px;
-  margin-top: 20px;
-}
+        .result,
+        .taxable-income,
+        .tax-payable,
+        .income-after-tax {
+          color: #ffffff;
+          font-size: 20px;
+          margin-top: 20px;
+        }
 
-.button-group {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
-}
+        .button-group {
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+          margin-top: 20px;
+        }
 
-@media (max-width: 600px) {
-  .tco-container,
-  .main-income {
-    width: 100%;
-  }
-}
+        @media (max-width: 600px) {
 
-.tco-header {
-    color: #333; /* Original color */
-    transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
-}
+          .tco-container,
+          .main-income {
+            width: 100%;
+          }
+        }
 
-.tco-header:hover {
-    color: #ecf3f4; /* New color on hover */
-    transform: scale(1.1) translateY(-5px); /* Slightly enlarge and lift */
-    text-shadow: 0px 0px 8px rgba(207, 235, 236, 0.7); /* Glow effect */
-    animation: bounce 0.6s ease alternate infinite; /* Bounce animation */
-}
+        .tco-header {
+          color: #333;
+          /* Original color */
+          transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+        }
 
-@keyframes bounce {
-    0% {
-        transform: scale(1.1) translateY(-5px);
-    }
-    50% {
-        transform: scale(1.15) translateY(-10px);
-    }
-    100% {
-        transform: scale(1.1) translateY(-5px);
-    }
-}
+        .tco-header:hover {
+          color: #ecf3f4;
+          /* New color on hover */
+          transform: scale(1.1) translateY(-5px);
+          /* Slightly enlarge and lift */
+          text-shadow: 0px 0px 8px rgba(207, 235, 236, 0.7);
+          /* Glow effect */
+          animation: bounce 0.6s ease alternate infinite;
+          /* Bounce animation */
+        }
 
+        @keyframes bounce {
+          0% {
+            transform: scale(1.1) translateY(-5px);
+          }
 
+          50% {
+            transform: scale(1.15) translateY(-10px);
+          }
+
+          100% {
+            transform: scale(1.1) translateY(-5px);
+          }
+        }
       </style>
 
 
@@ -2139,10 +2641,10 @@
       <div class="timerline" id="timerline"></div>
     </button>
 
-    
+
     <footer id="footer" class="footer-area pt-120">
       <div class="container">
-        <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s"  style="height: 265px;">
+        <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s" style="height: 265px;">
           <div class="row">
             <div class="col-lg-6">
               <div class="subscribe-content mt-45">
@@ -2166,138 +2668,145 @@
           </div>
         </div>
       </div>
-<div class="footer-widget pb-100">
-    <div class="row" id="footer">
-        <div class="col-lg-4 col-md-6 col-sm-8">
+      <div class="footer-widget pb-100">
+        <div class="row" id="footer">
+          <div class="col-lg-4 col-md-6 col-sm-8">
             <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                <img src="../assets/images/FinvedaLogo.png" alt="FinVeda Logo" style="height: 80px; width: auto; margin-bottom: 15px;" />
-                <p class="text custom-margin">
-                    We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
-                </p>
+              <img src="../assets/images/FinvedaLogo.png" alt="FinVeda Logo"
+                style="height: 80px; width: auto; margin-bottom: 15px;" />
+              <p class="text custom-margin">
+                We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial
+                blogs.
+              </p>
             </div>
-        </div>
-        <div class="col-lg-5 col-md-7 col-sm-7">
-            <div class="footer-link d-flex mt-50 justify-content-md-between" style="justify-content: space-around !important;">
-                <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-                    <div class="footer-title">
-                        <h3 class="title custom-margin">Quick Links</h3>
-                    </div>
-                    <ul class="link custom-margin">
-                        <li><a href="../blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
-                        <li><a href="../blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
-                        <li><a href="../Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
-                        <li><a href="../blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
-                        <li><a href="../contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
-                    </ul>
-                </div>
-                <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
-                    <div class="footer-title">
-                        <h4 class="title custom-margin">Resources</h4>
-                    </div>
-                    <ul class="link custom-margin">
-                        <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
-                        <li><a href="../about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
-                        <li><a href="../trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
-                        <li><a href="../tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
-                        <li><a href="../blog.html"><i class="fas fa-blog"></i> Blog</a></li>
-                        <li><a href="../quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-5 col-sm-5">
-            <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+          </div>
+          <div class="col-lg-5 col-md-7 col-sm-7">
+            <div class="footer-link d-flex mt-50 justify-content-md-between"
+              style="justify-content: space-around !important;">
+              <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
                 <div class="footer-title">
-                    <h4 class="title custom-margin">Contact Us</h4>
+                  <h3 class="title custom-margin">Quick Links</h3>
                 </div>
-                <ul class="contact custom-margin-big" style="justify-content: space-around;">
-                    <li class="d-sm-flex justify-content-center">
-                        <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                        <p style="width: 80%;">
-                            <a href="mailto:ayush1337@hotmail.com" target="_blank" style="color: white; text-decoration: underline;">
-                                ayush1337@hotmail.com
-                            </a>
-                        </p>
-                    </li>
-                    <li class="d-sm-flex justify-content-center">
-                        <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                        <div style="width: 80%;">
-                            <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff;">
-                                fin-veda.vercel.app
-                            </a>
-                        </div>
-                    </li>
-                    <li class="d-sm-flex justify-content-center">
-                        <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font: 12px; width: 10%;"></i>
-                        <div style="width: 80%;">
-                            <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu" style="color:#fff">
-                                Delhi, India
-                            </a>
-                        </div>
-                    </li>
-                    <div class="social-icons">
-                        <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="https://discord.com/"><i class="fa-brands fa-discord"></i></a>
-                        <a href="https://github.com/ayush-that/FinVeda"><i class="fa-brands fa-github"></i></a>
-                    </div>
+                <ul class="link custom-margin">
+                  <li><a href="../blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+                  <li><a href="../blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
+                  <li><a href="../Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
+                  <li><a href="../blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+                  <li><a href="../contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
                 </ul>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center">
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="copyright d-sm-flex justify-content-center" style="display: flex; justify-content: center; text-align: center; width: 100%; height: 100%;">
-                <div class="copyright-content" style="text-align: center">
-                    <p class="text" style="text-align: center">
-                        © <span id="copyright-year">2024</span> FinVeda. All rights are reserved<br />
-                        Made with ♥ in India
-                    </p>
+              </div>
+              <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+                <div class="footer-title">
+                  <h4 class="title custom-margin">Resources</h4>
                 </div>
+                <ul class="link custom-margin">
+                  <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                  <li><a href="../about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                  <li><a href="../trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
+                  <li><a href="../tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
+                  <li><a href="../blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                  <li><a href="../quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                </ul>
+              </div>
             </div>
+          </div>
+          <div class="col-lg-3 col-md-5 col-sm-5">
+            <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+              <div class="footer-title">
+                <h4 class="title custom-margin">Contact Us</h4>
+              </div>
+              <ul class="contact custom-margin-big" style="justify-content: space-around;">
+                <li class="d-sm-flex justify-content-center">
+                  <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                  <p style="width: 80%;">
+                    <a href="mailto:ayush1337@hotmail.com" target="_blank"
+                      style="color: white; text-decoration: underline;">
+                      ayush1337@hotmail.com
+                    </a>
+                  </p>
+                </li>
+                <li class="d-sm-flex justify-content-center">
+                  <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                  <div style="width: 80%;">
+                    <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff;">
+                      fin-veda.vercel.app
+                    </a>
+                  </div>
+                </li>
+                <li class="d-sm-flex justify-content-center">
+                  <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font: 12px; width: 10%;"></i>
+                  <div style="width: 80%;">
+                    <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
+                      style="color:#fff">
+                      Delhi, India
+                    </a>
+                  </div>
+                </li>
+                <div class="social-icons">
+                  <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                  <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
+                  <a href="https://discord.com/"><i class="fa-brands fa-discord"></i></a>
+                  <a href="https://github.com/ayush-that/FinVeda"><i class="fa-brands fa-github"></i></a>
+                </div>
+              </ul>
+            </div>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
 
-<script>
-    document.getElementById('unique-subscribe-form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevent form from submitting normally
+      <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s"
+        style="text-align: center">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="copyright d-sm-flex justify-content-center"
+              style="display: flex; justify-content: center; text-align: center; width: 100%; height: 100%;">
+              <div class="copyright-content" style="text-align: center">
+                <p class="text" style="text-align: center">
+                  © <span id="copyright-year">2024</span> FinVeda. All rights are reserved<br />
+                  Made with ♥ in India
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        // Show popup message
-        var messageDiv = document.getElementById('unique-message');
-        messageDiv.style.display = 'block';
+      <script>
+        document.getElementById('unique-subscribe-form').addEventListener('submit', function (event) {
+          event.preventDefault(); // Prevent form from submitting normally
 
-        // Reset existing animation
-        var borderAnimationDiv = messageDiv.querySelector('.border-animation');
-        borderAnimationDiv.style.animation = 'none';
-        borderAnimationDiv.offsetHeight; // Trigger reflow to restart the animation
-        borderAnimationDiv.style.animation = 'borderAnimation 3s linear forwards';
+          // Show popup message
+          var messageDiv = document.getElementById('unique-message');
+          messageDiv.style.display = 'block';
 
-        // Hide popup message after 10 seconds
-        setTimeout(function () {
+          // Reset existing animation
+          var borderAnimationDiv = messageDiv.querySelector('.border-animation');
+          borderAnimationDiv.style.animation = 'none';
+          borderAnimationDiv.offsetHeight; // Trigger reflow to restart the animation
+          borderAnimationDiv.style.animation = 'borderAnimation 3s linear forwards';
+
+          // Hide popup message after 10 seconds
+          setTimeout(function () {
             messageDiv.style.display = 'none';
-        }, 3000); // 10 seconds
+          }, 3000); // 10 seconds
 
-        // Reset form
-        this.reset();
-    });
-</script>
+          // Reset form
+          this.reset();
+        });
+      </script>
 
-        </div>
+      </div>
 
-        <div id="particles-2"></div>
+      <div id="particles-2"></div>
       </div>
 
     </footer>
 
-<div class="gtranslate_wrapper"></div>
-<script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
-<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-<a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
+    <div class="gtranslate_wrapper"></div>
+    <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+    <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
 
 
     <script src="./assets/js/subscribe.js"></script>

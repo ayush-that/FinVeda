@@ -15,19 +15,21 @@
   <link rel="stylesheet" href="./assets/css/LineIcons.css" />
   <link rel="stylesheet" href="./assets/css/font-awesome.min.css" />
   <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../assets/css/index.css">
   <link rel="stylesheet" href="./assets/css/default.css" />
   <link rel="stylesheet" href="./assets/css/style.css" />
   <link rel="stylesheet" href="./assets/css/popup.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-DyZvYh4T9yG3gZNE+HBQQJwIMc/XjCj5R90K0Ih7pbk3WcYYlv5D5+Qh+d0EV9Uw" crossorigin="anonymous">
+
   <!-- Linked CSS for social logos -->
-  <link rel="stylesheet" href="../assets/css/index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <style>
     /* Specific rule for h1 in light mode */
     body{
-      background-color: #00111c;
+      background-color:#00111c ;
     }
     div#contributors{
       gap: 2rem 7rem;
@@ -120,16 +122,10 @@
       <div style="display: flex; justify-content: center;" class="navbar-area">
         <div style="display: flex; justify-content: center;" class="container">
           <div class="row">
+            <!-- this div was missing in the contribution code.I learned it from about.html -->
             <div style="display: flex; justify-content: center;" class="">
-              <nav class="navbar navbar-expand-lg " style="display: flex;">
-                <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="toggler-icon"></span>
-            <span class="toggler-icon"></span>
-            <span class="toggler-icon"></span>
-          </button> -->
-                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent"
-                  style="margin: auto; margin-left: -5px;">
+              <nav class="navbar navbar-expand-lg" style="display: flex; background-color: #2c3e50;">
+                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                   <div class="icon1">
                     <a href="./index.html">
                       <img src="./assets/images/FinvedaLogo.png" alt="icon.png" style="width: 13rem;">
@@ -137,49 +133,72 @@
                   </div>
                   <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
                     <li class="nav-item">
-                      <a class="page-scroll active-link" href="./index.html" style="color: rgb(237, 242, 244);">Home
-                        🏡</a>
+                      <a class="page-scroll" href="./index.html">
+                        <i class="fas fa-home icon-hover" style="margin: 5px;"></i> Home
+                      </a>
                     </li>
                     <li class="nav-item">
-                      <a class="page-scroll" href="./about.html" style="color: rgb(237, 242, 244);">About Us 📖</a>
+                      <a class="page-scroll" href="./about.html">
+                        <i class="fas fa-info-circle icon-hover" style="margin: 5px;"></i> About Us
+                      </a>
                     </li>
                     <li class="nav-item">
-                      <a class="page-scroll" href="./trends.html" style="color: rgb(237, 242, 244);">Trends 📈</a>
+                      <a class="page-scroll active-link" href="./contributors.html">
+                        <i class="fas fa-solid fa-people-group icon-hover" style="margin: 5px;"></i> Contributors
+                      </a>
                     </li>
                     <li class="nav-item">
-                      <a class="page-scroll" href="./tools/sip.html" style="color: rgb(237, 242, 244);">Tools 🔧</a>
+                      <a class="page-scroll" href="./contact.html">
+                        <i class="fas fa-envelope icon-hover" style="margin: 5px;"></i> Contact
+                      </a>
                     </li>
                     <li class="nav-item">
-                      <a class="page-scroll" href="./blog.html" style="color: rgb(237, 242, 244);">Blogs 📰</a>
+                      <a class="page-scroll" href="./faq.html">
+                        <i class="fas fa-question-circle icon-hover" style="margin: 5px;"></i> Help
+                      </a>
                     </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./finance.html" style="color: rgb(237, 242, 244);">Courses 📚</a>
+                    <!-- Dropdown for Explore -->
+                  <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
+                    <a class="page-scroll dropdown-toggle" href="#">
+                      <i class="fas fa-chevron-down icon-hover" style="margin: 5px;"></i> Explore More
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="./finance.html">
+                          <i class="fas fa-graduation-cap icon-hover" style="margin: 5px;"></i> Courses
+                        </a>
+                      </li>
+                      <li><a href="./trends.html"><i class="fas fa-chart-line icon-hover" style="margin: 5px;"></i>
+                          Trends</a></li>
+                      <li><a href="./tools/sip.html"><i class="fas fa-tools icon-hover" style="margin: 5px;"></i>
+                          Tools</a></li>
+                      <li><a href="./blog.html"><i class="fas fa-blog icon-hover" style="margin: 5px;"></i> Blogs</a>
+                      </li>
+                      <li><a href="./quiz.html"><i class="fas fa-question icon-hover" style="margin: 5px;"></i> Quiz</a>
+                      </li>
+                      <li><a href="./maps.html"><i class="fas fa-map icon-hover" style="margin: 5px;"></i> MAPS</a></li>
+                    </ul>
+                  </li>
+                    <!-- Navigation item placeholder for Login/Register or Logout button -->
+                    <li class="nav-item no-underline" id="auth-btn-container">
+                      <a class="main-btn navbar-btn" style="padding: 2px 20px;" data-scroll-nav="0"
+                        href="./loginPage.html">
+                        <i class="fas fa-user-circle icon-hover" style="margin: 5px;"></i> Login/Register
+                      </a>
                     </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./quiz.html" style="color: rgb(237, 242, 244);">Quiz 🤔</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./careers.html" style="color: rgb(237, 242, 244);">Career 👔</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./contact.html" style="color: rgb(237, 242, 244);">Contact📞</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./faq.html" style="color: rgb(237, 242, 244);">Help 🙋‍♂️</a>
-                    </li>
-                    <li class="nav-item no-underline">
-                      <a class="main-btn navbar-btn"
-                        style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;"
-                        data-scroll-nav="0" href="./loginPage.html">Login/Register 💻</a>
-                    </li>
-                    <li class="nav-item no-underline">
-                      <button id="theme-toggle" class="theme-toggle" style="margin-right: 2px;">
-                        🌙
+                    <li class="nav-item no-underline align-self-center">
+                      <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()">
+                        <span>🌞</span>
                       </button>
                     </li>
                   </ul>
+                  <!-- this div and nav closing was missing in the contribution code.I learned it from about.html -->
+                  </div>
+                  </nav>
                 </div>
 
+
+                
                 <script>
                   const toggleButton = document.getElementById('theme-toggle');
                   var body = document.body;
@@ -187,13 +206,14 @@
 
                   if (currentTheme === 'dark') {
                     body.classList.add('dark-mode');
-                    toggleButton.classList.add('dark');
+                    // toggleButton.classList.add('dark');
                     toggleButton.textContent = '🌞';
                   }
 
                   toggleButton.addEventListener('click', function () {
                     body.classList.toggle('dark-mode');
-                    toggleButton.classList.toggle('dark');
+                    // toggleButton.classList.toggle('dark');
+                    const isDarkMode = body.classList.contains('dark-mode');
 
                     // Update button icon based on mode
                     if (body.classList.contains('dark-mode')) {
@@ -529,37 +549,84 @@
   
 }
 
+/* Stats Section */
+.contributor-stats {
+
+max-width: 1200px;
+margin: 0 auto;
+padding: 4rem 0;
+text-align: center;
+background: #00111c;
+margin-top: 90px;
+
+}
+
+.contributor-stats h2 {
+
+font-size: 2rem;
+margin-bottom: 2rem;
+
+}
+
+.contributor-stats-grid {
+
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 2rem;
+
+}
+
+.contributor-stat-card {
+
+background-color: #132d46;
+border: 1px solid #ccc;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+padding: 1.5rem;
+text-align: center;
+
+}
+
+.contributor-stat-card .contributor-icon {
+
+font-size: 2rem;
+margin-bottom: 1rem;
+
+}
+
+.contributor-stat-card h3 {
+
+font-size: 2rem;
+margin-bottom: 0.5rem;
+color: #ffffff;
+
+}
+
+.contributor-stat-card p {
+
+color: #ffffff;
+
+}
+
+.contributor-icon {
+
+    font-size: 2rem; /* Adjust the size as needed */
+    color: #fff; /* Change color if needed */
+    margin-bottom: 1rem;
+    
+}
+
+
       </style>
-    </header>
+      
+<section class="contributor-stats">
+  <h2>Project Statistics</h2>
+  <div class="contributor-stats-grid" id="statsGrid">
+      <!-- Stats will be dynamically inserted here -->
+  </div>
+</section>
 
-    <section class="contributor-stats">
-      <h2>Project Statistics</h2>
-      <div class="contributor-stats-grid" id="statsGrid">
-    <div class="contributor-stat-card">
-        <div class="contributor-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
-        <h3>234</h3>
-        <p>Contributors</p>
-    </div>
 
-    <div class="contributor-stat-card">
-        <div class="contributor-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><line x1="1.05" y1="12" x2="7" y2="12"></line><line x1="17.01" y1="12" x2="22.96" y2="12"></line></svg></div>
-        <h3>2330</h3>
-        <p>Total Contributions</p>
-    </div>
-
-    <div class="contributor-stat-card">
-        <div class="contributor-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></div>
-        <h3>162</h3>
-        <p>GitHub Stars</p>
-    </div>
-
-    <div class="contributor-stat-card">
-        <div class="contributor-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"></line><circle cx="18" cy="6" r="3"></circle><circle cx="6" y="18" r="3"></circle><path d="M18 9a9 9 0 0 1-9 9"></path></svg></div>
-        <h3>409</h3>
-        <p>Forks</p>
-    </div>
-</div>
-  </section>
 <div class="content min-h-screen text-black dark:text-gray-200">
     <h1 class="text-center text-3xl font-semibold mb-8 text-black dark:text-gray-200" data-text="CONTRIBUTORS">CONTRIBUTORS</h1>
     <style>
@@ -611,12 +678,12 @@
 
     <footer id="footer" class="footer-area pt-120">
       <div class="container">
-        <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+        <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s" style="height: 265px;">
           <div class="row">
             <div class="col-lg-6">
               <div class="subscribe-content mt-45">
                 <h2 class="subscribe-title">
-                  Subscribe Our Newsletter <span>get regular updates</span>
+                  Subscribe Our Newsletter <span style="font-size: 28px;"> Get regular updates</span>
                 </h2>
               </div>
             </div>

@@ -228,9 +228,109 @@
       document.getElementById("progressBar").style.width = scrolled + "%";
     };
   </script>
-  <button id="scrollBtn" class="scroll-btn" onclick="scrollToNextSection()">
+  <div class="search-container">
+    <input type="text" class="search-bar" placeholder="  Search...">
+    <button class="search-button">🔍</button>
+</div>
+
+<style>
+.search-container {
+    position: fixed; /* Keeps the search bar visible while scrolling */
+    top: 20px; /* Adjust as necessary */
+    right: 20px; /* Adjust as necessary */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Ensure it is above other elements */
+}
+
+/* Existing styles for search-bar and search-button remain unchanged */
+.search-bar {
+    padding: 10px 40px 10px 20px;
+    font-size: 16px;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    background-color: transparent;
+    color: white;
+    outline: none;
+    width: 250px; /* Adjust width */
+}
+
+.search-button {
+    margin-left: 10px; 
+    padding: 10px 16px;
+    font-size: 18px;
+    background-color: #2e2ef3; 
+    border-radius: 30px; 
+    color: white; }
+   /* Mobile responsiveness */
+   @media (max-width: 768px) {
+    .search-container {
+      top: 10px;
+      right: 10px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .search-bar {
+      width: 200px; /* Smaller width for mobile */
+    }
+
+    .search-button {
+      margin-top: 10px;
+    }
+  }
+  .search-bar {
+    padding: 10px 40px 10px 20px; /* Padding for the text and icon */
+    font-size: 16px;
+    border: 2px solid #fff;
+    border-radius: 30px; /* Rounded corners */
+    background-color: transparent;
+    color: white;
+    outline: none;
+    width: 250px; /* Adjust width */
+    transition: border-color 0.3s ease;
+    background-image: url('https://img.icons8.com/ios-filled/50/ffffff/search.png'); /* Search icon */
+    background-position: 10px center; /* Icon position inside the input */
+    background-repeat: no-repeat;
+    background-size: 18px;
+  }
+  .search-button {
+    margin-left: 10px; /* Space between input and button */
+    padding: 10px 16px;
+    font-size: 18px;
+    background-color: #ececee; /* Button background */
+    border: 2px solid #8686bb;
+    border-radius: 30px; /* Rounded corners */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Button hover effect */
+  .search-button:hover {
+    background-color: #fff;
+    color: #2e2ef3;
+    transform: translateY(-2px); /* Subtle hover effect */
+  }
+
+  /* Placeholder text style */
+  .search-bar::placeholder {
+    color: #ddd;
+    opacity: 1; /* Ensure placeholder text is visible */
+  }
+</style>
+
+<button id="scrollBtn" class="scroll-btn" onclick="scrollToNextSection()">
     <i class="lni-chevron-down"></i>
-  </button>
+</button>
+
+
+  
+  
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -1133,81 +1233,140 @@
       </div>
     </div>
   </section>
-  <section id="team" class="team-area pt-120">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-5">
-          <div class="section-title text-center pb-30">
-            <div class="line m-auto"></div>
+ <style>
+    /* Basic Styling */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f3f4f6;
+      margin: 0;
+    }
 
-            <h3 class="title" style="color: #2f6be5;"><span>Meet Our</span> tech-savvy Team</h3>
+    /* Title Styling */
+    h3 {
+      color: #2f6be5;
+      font-size: 36px;
+      text-align: center;
+      margin: 60px 0 10px; /* Increased top margin to 60px */
+      animation: fadeInText 1.5s ease-out;
+    }
 
-          </div>
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-4 col-md-7 col-sm-8">
-          <div class="single-team text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-            <div class="team-image">
-              <img class="images-team" src="assets/images/img-1.webp" alt="Team" />
-              <div class="social-pill">
-                <div class="left">
-                  <a href="https://twitter.com/manyasingh297" title="X profile of Manya Singh"><i
-                      class="fa-brands fa-x-twitter"></i></i></a>
-                </div>
-                <div class="right">
-                  <a href="https://www.linkedin.com/in/manya-singh-7a814327b/" title="Linkedin of Manya Singh"><i
-                      class="lni-linkedin-original"></i></a>
+    /* New subtitle below the main title */
+    .subtitle {
+      text-align: center;
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 30px;
+    }
 
-                </div>
-              </div>
-            </div>
-            <div class="team-content">
-              <h3 class="holder-name"><a href="#">Manya Singh</a></h3>
+    /* Animation for the title */
+    @keyframes fadeInText {
+      0% { opacity: 0; transform: translateY(-10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
 
+    /* Team Card Container */
+    .team-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-              <p class="text para">Developer</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-7 col-sm-8">
-          <div class="single-team text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-            <div class="team-image">
-              <img class="images-team" src="assets/images/img-2.webp" alt="Team" />
-              <div class="social-pill">
-                <div class="left">
-                  <a href="https://twitter.com/ayushdotpro" title="X profile of Ayush Singh"><i
-                      class="fa-brands fa-x-twitter"></i></a>
-                </div>
-                <div class="right">
-                  <a href="https://www.linkedin.com/in/ayush-that/" title="Linkedin of Ayush Singh"><i
-                      class="lni-linkedin-original"></i></a>
+    /* Team Card Styling */
+    .team-card {
+      background: #f9f9f9;
+      border-radius: 12px;
+      width: 260px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    }
 
-                </div>
-              </div>
-              <!-- <div class="social">
-                <ul>
-                  <li>
-                    <a href="https://twitter.com/ayushdotpro" title="X profile of Ayush Singh"><i
-                        class="fa-brands fa-x-twitter"></i></a>
-                  </li>
-                  <li>
-                    <a href="https://www.linkedin.com/in/ayush-that/" title="Linkedin of Ayush Singh"><i
-                        class="lni-linkedin-original"></i></a>
-                  </li>
-                </ul>
-              </div> -->
-            </div>
-            <div class="team-content">
-              <h3 class="holder-name"><a href="#">Ayush Singh</a></h3>
+    /* Hover effect on team card */
+    .team-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.2);
+    }
 
+    /* Profile Image Styling */
+    .team-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      transition: transform 0.3s ease;
+    }
 
-              <p class="text para">Developer</p>
-            </div>
-          </div>
-        </div>
-      </div>
-  </section>
+    /* Slight zoom on image hover */
+    .team-card:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Name and Position */
+    .team-card h4 {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .team-card p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* Social Icons Styling */
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .social-icons a {
+      color: #2f6be5;
+      font-size: 18px;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    /* Improved Hover Effect for Social Icons */
+    .social-icons a:hover {
+      color: #0d47a1;
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+
+<h3>Meet Our Tech Savvy Team</h3>
+<p class="subtitle">Dedicated to building innovative solutions for a better tomorrow.</p>
+
+<div class="team-container">
+  <!-- Team Member 1 -->
+  <div class="team-card">
+    <img src="assets/images/img-1.webp" alt="Team Member">
+    <h4>Manya Singh</h4>
+    <p>Developer</p>
+    <div class="social-icons">
+      <a href="https://twitter.com/manyasingh297" target="_blank" title="Twitter Profile"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.linkedin.com/in/manya-singh-7a814327b/" target="_blank" title="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+
+  <!-- Team Member 2 -->
+  <div class="team-card">
+    <img src="assets/images/img-2.webp" alt="Team Member">
+    <h4>Ayush Singh</h4>
+    <p>Developer</p>
+    <div class="social-icons">
+      <a href="https://twitter.com/ayushdotpro" target="_blank" title="Twitter Profile"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.linkedin.com/in/ayush-that/" target="_blank" title="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+</div>
   <!--forum Section-->
   <header class="forum_1">
   </header>
@@ -2644,105 +2803,166 @@
     </style>
 
 
-      <!-- Newsletter pop-up -->
+<!-- Newsletter pop-up -->
  <style>
-  .popup-nl {
+ .popup-content-nl {
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    max-width: 800px;
+    height: 450px;
+    width: 90%; /* Adjusted to be responsive */
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    flex-direction: row;
+}
 
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      justify-content: center;
-      align-items: center;
-      z-index: 1009;
+.popup-left-nl img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-  }
+.popup-right-nl {
+    padding: 20px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
-  .popup-content-nl {
+/* Close button styling */
+.close1-btn-nl {
+    width: 20px;
+    cursor: pointer;
+    margin: 18px 10px;
+    position: absolute;
+    top: -4px;
+    right: 12px;
+    font-size: 18px;
+    font-weight: 800;
+}
 
-      display: flex;
-      background-color: white;
-      border-radius: 10px;
-      max-width: 800px;
-      height: 450px;
-      width: 700px;
-      overflow: hidden;
-      position: relative;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+.popup-nl h1 {
+    font-size: 24px;
+    background: linear-gradient(to right, #ff4aac, #faa2d3);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    text-align: center;
+    margin-bottom: 12px;
+    margin-top: 35px;
+}
 
-  }
+.h2-nl {
+    font-size: 18px;
+    margin-bottom: 8px;
+    text-align: center;
+    color: #333;
+}
 
-  .close1-btn-nl {
+.pop_up-nl {
+    margin-bottom: 15px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #0d4670, #32bbdc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 12.7px;
+}
 
-      width: 20px;
-      cursor: pointer;
-      margin: 18px 10px;
-      position: absolute;
-      top: -4px;
-      right: 12px;
-      font-size: 18px;
-      font-weight: 800;
+.popup-right-nl p {
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center;
+}
 
-  }
+.popup-nl {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1009;
+}
 
-  .popup-left-nl img {
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .popup-content-nl {
+        flex-direction: column;
+        height: auto;
+        width: 90%;
+    }
 
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .popup-right-nl {
+        width: 100%;
+        padding: 15px;
+    }
 
-  }
+    .popup-left-nl,
+    .popup-left-nl img {
+        height: 200px; /* Adjust height for mobile */
+    }
 
-  .popup-right-nl {
+    .popup-nl h1 {
+        font-size: 20px;
+    }
 
-      padding: 20px;
-      width: 50%;
-      display: flex;
-      flex-direction: column; 
-      align-items: center;
-      justify-content: center;
+    .h2-nl {
+        font-size: 16px;
+    }
 
-  }
+    .pop_up-nl {
+        font-size: 12px;
+    }
+}
 
-  .popup-nl h1 {
+@media (max-width: 480px) {
+    .popup-content-nl {
+        width: 95%;
+        height: auto;
+    }
 
-      font-size: 24px;
-      background: linear-gradient(to right, #ff4aac, #faa2d3); 
-      -webkit-text-fill-color: transparent; 
-      -webkit-background-clip: text; 
-      text-align: center;
-      margin-bottom: 12px;
-      margin-top: 35px;
+    .popup-nl h1 {
+        font-size: 18px;
+    }
 
-  }
+    .h2-nl {
+        font-size: 14px;
+    }
 
+    .pop_up-nl {
+        font-size: 11px;
+    }
+}
   .h2-nl{
-
       font-size: 18px;
       margin-bottom: 8px;
       text-align: center;
       color: #333;
-
   }
 
   .pop_up-nl {
-
       margin-bottom: 15px;
       font-weight: bold;
       background: linear-gradient(135deg, #0d4670, #32bbdc);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       font-size: 12.7px;
+  }
+    .popup-right-nl p {
+      margin-top: 0;
+      margin-bottom: 10px;
+      text-align: center;
 
   }
 
   .bold{
-
       font-size: 13.1px;
-
   }
 
   input[type="email"] {
@@ -2810,14 +3030,6 @@
   .terms-nl a:hover {
 
       text-decoration: underline;
-
-  }
-
-  .popup-right-nl p {
-
-      margin-top: 0;
-      margin-bottom: 10px;
-      text-align: center;
 
   }
 

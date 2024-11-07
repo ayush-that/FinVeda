@@ -11,7 +11,7 @@ export async function saveFeedback(req, res) {
 
         // Create new contact document
         const newFeedback = new Feedback({ name, email, rating, comments });
-
+        console.log(newFeedback)
         // Save contact form data to the database
         await newFeedback.save();
 
@@ -25,6 +25,12 @@ export async function saveFeedback(req, res) {
     }
 }
 
-export async function getFeedback(req, res) {
-    res.send('hello feedback')
-}
+export const getAllFeedback = async (req, res) => {
+    try {
+        const feedbackList = await Feedback.find().sort({ createdAt: -1 }); // Sort by created date
+        res.status(200).json(feedbackList); // Respond with feedback list
+    } catch (error) {
+        console.error('Error fetching feedback:', error);
+        res.status(500).json({ message: 'Server error', error: error.message }); // Handle errors
+    }
+};
