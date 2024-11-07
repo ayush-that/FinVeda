@@ -68,6 +68,124 @@
   <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
   <link rel="stylesheet" href="navbar.css">
   <style>
+
+
+    
+body {
+
+font-family: Arial, sans-serif;
+
+}
+
+/* Polls Popup Styles */
+.popups {
+
+display: none; /* Hidden by default */
+position: fixed; /* Stay in place */
+left: 0;
+top: 0;
+width: 100%; /* Full width */
+height: 100%; /* Full height */
+background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+justify-content: center; /* Center the popup */
+align-items: center; /* Center the popup */
+z-index: 1000; /* Sit on top */
+
+}
+
+.popups-content {
+
+background: linear-gradient(#ffffff, #e4e2ff), url(your-image-url.jpg);
+padding: 20px;
+border-radius: 5px;
+max-width: 400px;
+text-align: center;
+
+}
+
+/* Set poll options to stack vertically */
+#pollOptions {
+
+display: flex;
+flex-direction: column; /* Stack buttons vertically */
+align-items: center; /* Center the buttons */
+
+}
+
+.poll-button {
+
+display: block; /* Change to block for full-width */
+margin: 5px 0; /* Add vertical margin */
+padding: 10px 15px;
+border: none;
+border-radius: 5px;
+background-color: rgba(16,22,26,.4); /* Green */
+color: white;
+cursor: pointer;
+transition: background-color 0.3s;
+width: 100%; /* Full width */
+text-align: center;
+font-size: 15px;
+
+}
+
+.poll-button:hover {
+
+background-color: #45a049; /* Darker green */
+
+}
+
+.poll-button.selected {
+
+background-color: #ae242a; /* Blue for selected */
+
+}
+
+/* New Vote Button Styles */
+.vote-button {
+
+display: block; /* Change to block for full-width */
+margin: 5px 0; /* Add vertical margin */
+padding: 10px 15px;
+border: none;
+border-radius: 5px;
+background-color: #f44336; /* Red */
+color: white;
+cursor: pointer;
+transition: background-color 0.3s;
+width: 100%; /* Full width */
+text-align: center;
+
+}
+
+.vote-button:hover {
+
+background-color: #d32f2f; /* Darker red */
+
+}
+
+.uppercase {
+
+text-transform: uppercase;
+font-size: 16px;
+text-align: center;
+color: #0045d1;
+
+}
+
+#result {
+
+    margin-top: 10px; /* Space above result text */
+    word-wrap: break-word; /* Allow long text to wrap */
+    overflow: hidden; /* Prevent overflow */
+    max-height: 50px; /* Limit height */
+    color: #0045d1; /* Text color */
+    text-align: center; /* Center align the text */
+    color: #ac2127;
+
+}
+
+
     #progressBar {
       position: fixed;
       top: 0;
@@ -153,6 +271,81 @@
   </style>
 
 <body>
+
+  <!-- Poll Pop-up -->
+  <div class="popups" id="pollPopup">
+    <div class="popups-content">
+      <h2 class="uppercase">What is your preferred investment strategy for the upcoming year?</h2>
+      <div id="pollOptions">
+        <button class="poll-button" data-value="Balanced Portfolio">Balanced Portfolio – A mix of equities and safer options like PPF and bonds.</button>
+        <button class="poll-button" data-value="Aggressive Growth">Aggressive Growth – Focused on high-risk investments like stocks and crypto.</button>
+        <button class="poll-button" data-value="Conservative Strategy">Conservative Strategy – I prefer safer options with guaranteed returns like Fixed Deposits.</button>
+
+        <!-- Additional buttons (hidden) -->
+        <button class="poll-button hidden" style="display: none;" data-value="Option4">Option4</button>
+        <button class="poll-button hidden" style="display: none;" data-value="Option5">Option5</button>
+      </div>
+      <button id="voteButton" class="vote-button">Vote</button>
+      <p id="result" style="text-align: center;"></p> <!-- Result display -->
+    </div>
+  </div>
+
+  <script>
+
+    // Check if the user has already voted in this session
+    const hasVoted = sessionStorage.getItem('hasVoted');
+
+    // Show the poll popup after a delay, only if the user hasn't voted
+    function checkAndDisplayPollPopup() {
+      if (!hasVoted) {
+          document.getElementById('pollPopup').style.display = 'flex'; // Show poll
+      }
+    }
+
+    // Set timeout for poll display
+    setTimeout(checkAndDisplayPollPopup, 10000);
+
+    // Manage user selections and votes
+    const pollButtons = document.querySelectorAll('.poll-button[data-value]');
+    let selectedValue = '';
+
+    // Handle clicks on poll buttons
+    pollButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            pollButtons.forEach(btn => btn.classList.remove('selected')); // Clear previous selections
+            button.classList.add('selected'); // Highlight selected button
+            selectedValue = button.getAttribute('data-value'); // Store selected value
+        });
+    });
+
+    // Handle voting process
+    document.getElementById('voteButton').addEventListener('click', function() {
+        if (selectedValue) {
+            document.getElementById('result').innerHTML = `You voted for: ${selectedValue}<br>Thank you!`; // Show result
+            sessionStorage.setItem('hasVoted', 'true'); // Save voting status
+            setTimeout(() => {
+                document.getElementById('pollPopup').style.display = 'none'; // Hide poll
+            }, 2000);
+        } else {
+            alert("Please select an option!"); // Alert if no option is selected
+        }
+    });
+
+    // Function to log the voting action
+    function logVoteAction() {
+        console.log("User has voted for: " + selectedValue); // Log selected value
+    }
+
+    // Event listener for the vote button to log action
+    document.getElementById('voteButton').addEventListener('click', logVoteAction);
+
+    // Log when the script has loaded
+    console.log("Poll script initialized and ready!");
+
+    
+  </script>
+
+
 
   <div class="circle-container">
     <div class="circle"></div>
@@ -3171,7 +3364,7 @@
         padding: 10px 15px;
         border: none;
         border-radius: 5px;
-        background-color: #f44336;
+        background: linear-gradient(to right, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
         /* Red */
         color: white;
         cursor: pointer;
@@ -3199,7 +3392,7 @@
         /* Prevent overflow */
         max-height: 50px;
         /* Limit height to prevent overflow */
-        color: rgb(255, 255, 255);
+        color: #0045d1;
         /* Set text color to red */
 
       }
