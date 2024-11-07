@@ -465,7 +465,6 @@
               <a href="#" onclick="forgotPassword()">Forgot Password?</a>
             </div>
           </div>
-            <input type="submit" value="Login" class="btn solid" />
             <p class="social-text">Or Sign in with social platforms</p>
             <div class="social-icons">
               <div class="social-icon-frame">
@@ -516,7 +515,14 @@
             </div>
             <!-- Password strength meter ends here -->
         
-            <input type="submit" class="btn" value="Sign up" />
+            <input type="button" value="Signup" class="btn solid" onclick="generateAndSendOTP()" />
+          <div id="otp-section" style="display: none;">
+            <div class="input-field">
+              <i class="fas fa-key"></i>
+              <input type="text" id="otp" placeholder="Enter OTP" maxlength="6" required />
+            </div>
+            <input type="button" value="Verify OTP" class="btn solid" onclick="verifyOTP()" />
+          </div>
             <p class="social-text">Or Sign up with social platforms</p>
             <div class="social-icons">
               <div class="social-icon-frame">
