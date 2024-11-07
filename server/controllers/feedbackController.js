@@ -11,7 +11,7 @@ export async function saveFeedback(req, res) {
 
         // Create new contact document
         const newFeedback = new Feedback({ name, email, rating, comments });
-
+        console.log(newFeedback)
         // Save contact form data to the database
         await newFeedback.save();
 
