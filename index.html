@@ -142,10 +142,12 @@
       color: #0a69ed;
       /* Optional: change the color on hover */
     }
-    body.dark-mode .theme-toggle,body.dark-mode .theme-toggle:hover {
-    background-color: #112a2b; 
-    padding: 0.25rem 2.3rem;
-  }
+
+    body.dark-mode .theme-toggle,
+    body.dark-mode .theme-toggle:hover {
+      background-color: #112a2b;
+      padding: 0.25rem 2.3rem;
+    }
   </style>
 
 <body>
@@ -280,14 +282,15 @@
 
 
                   <i class="fa-brands fa-searchengin glass" style="font-size: 35px; left: 150px;"></i>
-<div class="search-container">
-  <input type="text" class="search-input" id="file-search" placeholder="Search for a file..." oninput="showSuggestions()" onkeydown="navigateSuggestions(event)" />
-    <div class="suggestions" id="suggestions-list"></div>
-</div>
+                  <div class="search-container">
+                    <input type="text" class="search-input" id="file-search" placeholder="Search for a file..."
+                      oninput="showSuggestions()" onkeydown="navigateSuggestions(event)" />
+                    <div class="suggestions" id="suggestions-list"></div>
+                  </div>
 
-<style>
+                  <style>
 
-</style>
+                  </style>
                   <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
                     <li class="nav-item">
                       <a class="page-scroll active-link" href="./index.html">
@@ -315,27 +318,29 @@
                       </a>
                     </li>
                     <!-- Dropdown for Explore -->
-                  <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
-                    <a class="page-scroll dropdown-toggle" href="#">
-                      <i class="fas fa-chevron-down icon-hover" style="margin: 5px;"></i> Explore More
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="./finance.html">
-                          <i class="fas fa-graduation-cap icon-hover" style="margin: 5px;"></i> Courses
-                        </a>
-                      </li>
-                      <li><a href="./trends.html"><i class="fas fa-chart-line icon-hover" style="margin: 5px;"></i>
-                          Trends</a></li>
-                      <li><a href="./tools/sip.html"><i class="fas fa-tools icon-hover" style="margin: 5px;"></i>
-                          Tools</a></li>
-                      <li><a href="./blog.html"><i class="fas fa-blog icon-hover" style="margin: 5px;"></i> Blogs</a>
-                      </li>
-                      <li><a href="./quiz.html"><i class="fas fa-question icon-hover" style="margin: 5px;"></i> Quiz</a>
-                      </li>
-                      <li><a href="./maps.html"><i class="fas fa-map icon-hover" style="margin: 5px;"></i> MAPS</a></li>
-                    </ul>
-                  </li>
+                    <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
+                      <a class="page-scroll dropdown-toggle" href="#">
+                        <i class="fas fa-chevron-down icon-hover" style="margin: 5px;"></i> Explore More
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li>
+                          <a href="./finance.html">
+                            <i class="fas fa-graduation-cap icon-hover" style="margin: 5px;"></i> Courses
+                          </a>
+                        </li>
+                        <li><a href="./trends.html"><i class="fas fa-chart-line icon-hover" style="margin: 5px;"></i>
+                            Trends</a></li>
+                        <li><a href="./tools/sip.html"><i class="fas fa-tools icon-hover" style="margin: 5px;"></i>
+                            Tools</a></li>
+                        <li><a href="./blog.html"><i class="fas fa-blog icon-hover" style="margin: 5px;"></i> Blogs</a>
+                        </li>
+                        <li><a href="./quiz.html"><i class="fas fa-question icon-hover" style="margin: 5px;"></i>
+                            Quiz</a>
+                        </li>
+                        <li><a href="./maps.html"><i class="fas fa-map icon-hover" style="margin: 5px;"></i> MAPS</a>
+                        </li>
+                      </ul>
+                    </li>
                     <!-- Navigation item placeholder for Login/Register or Logout button -->
                     <li class="nav-item no-underline" id="auth-btn-container">
                       <a class="main-btn navbar-btn" style="padding: 2px 20px;" data-scroll-nav="0"
@@ -352,77 +357,77 @@
                 </div>
 
 
-<script>
-    const files = [
-        { name: "Home", path: "index.html" },
-        { name: "Blogs", path: "blog.html" },
-        { name: "Login", path: "login.html" },
-        { name: "Auth", path: "auth.html" },
-        { name: "Maps", path: "maps.html" },
-        { name: "Reviews", path: "reviews.html" }
-    ];
+                <script>
+                  const files = [
+                    { name: "Home", path: "index.html" },
+                    { name: "Blogs", path: "blog.html" },
+                    { name: "Login", path: "login.html" },
+                    { name: "Auth", path: "auth.html" },
+                    { name: "Maps", path: "maps.html" },
+                    { name: "Reviews", path: "reviews.html" }
+                  ];
 
-    let selectedSuggestionIndex = -1;
+                  let selectedSuggestionIndex = -1;
 
-    // Function to show suggestions based on input
-    function showSuggestions() {
-        const input = document.getElementById("file-search").value.toLowerCase();
-        const suggestionsList = document.getElementById("suggestions-list");
+                  // Function to show suggestions based on input
+                  function showSuggestions() {
+                    const input = document.getElementById("file-search").value.toLowerCase();
+                    const suggestionsList = document.getElementById("suggestions-list");
 
-        suggestionsList.innerHTML = '';
-        selectedSuggestionIndex = -1; // Reset selection index
+                    suggestionsList.innerHTML = '';
+                    selectedSuggestionIndex = -1; // Reset selection index
 
-        const filteredFiles = files.filter(file => file.name.toLowerCase().includes(input));
+                    const filteredFiles = files.filter(file => file.name.toLowerCase().includes(input));
 
-        if (input && filteredFiles.length > 0) {
-            suggestionsList.style.display = 'block'; // Show suggestions
-            filteredFiles.forEach((file, index) => {
-                const suggestionItem = document.createElement("div");
-                suggestionItem.textContent = file.name;
-                suggestionItem.dataset.index = index;
-                suggestionItem.onclick = () => window.location.href = file.path; // Navigate on click
+                    if (input && filteredFiles.length > 0) {
+                      suggestionsList.style.display = 'block'; // Show suggestions
+                      filteredFiles.forEach((file, index) => {
+                        const suggestionItem = document.createElement("div");
+                        suggestionItem.textContent = file.name;
+                        suggestionItem.dataset.index = index;
+                        suggestionItem.onclick = () => window.location.href = file.path; // Navigate on click
 
-                suggestionsList.appendChild(suggestionItem);
-            });
-        } else {
-            suggestionsList.style.display = 'none'; // Hide suggestions if no match
-        }
-    }
+                        suggestionsList.appendChild(suggestionItem);
+                      });
+                    } else {
+                      suggestionsList.style.display = 'none'; // Hide suggestions if no match
+                    }
+                  }
 
-    // Function to navigate suggestions with keyboard
-    function navigateSuggestions(event) {
-        const suggestionsList = document.getElementById("suggestions-list");
-        const suggestionItems = suggestionsList.querySelectorAll("div");
+                  // Function to navigate suggestions with keyboard
+                  function navigateSuggestions(event) {
+                    const suggestionsList = document.getElementById("suggestions-list");
+                    const suggestionItems = suggestionsList.querySelectorAll("div");
 
-        if (event.key === "ArrowDown") {
-            selectedSuggestionIndex = (selectedSuggestionIndex + 1) % suggestionItems.length; // Move down
-            updateActiveSuggestion(suggestionItems);
-        } else if (event.key === "ArrowUp") {
-            selectedSuggestionIndex = (selectedSuggestionIndex - 1 + suggestionItems.length) % suggestionItems.length; // Move up
-            updateActiveSuggestion(suggestionItems);
-        } else if (event.key === "Enter") {
-            if (selectedSuggestionIndex > -1 && suggestionItems[selectedSuggestionIndex]) {
-                suggestionItems[selectedSuggestionIndex].click(); // Click active suggestion
-            }
-        }
-    }
+                    if (event.key === "ArrowDown") {
+                      selectedSuggestionIndex = (selectedSuggestionIndex + 1) % suggestionItems.length; // Move down
+                      updateActiveSuggestion(suggestionItems);
+                    } else if (event.key === "ArrowUp") {
+                      selectedSuggestionIndex = (selectedSuggestionIndex - 1 + suggestionItems.length) % suggestionItems.length; // Move up
+                      updateActiveSuggestion(suggestionItems);
+                    } else if (event.key === "Enter") {
+                      if (selectedSuggestionIndex > -1 && suggestionItems[selectedSuggestionIndex]) {
+                        suggestionItems[selectedSuggestionIndex].click(); // Click active suggestion
+                      }
+                    }
+                  }
 
-    // Function to update the active suggestion's appearance
-    function updateActiveSuggestion(suggestionItems) {
-        suggestionItems.forEach(item => item.classList.remove("active"));
-        if (suggestionItems[selectedSuggestionIndex]) {
-            suggestionItems[selectedSuggestionIndex].classList.add("active");
-            suggestionItems[selectedSuggestionIndex].scrollIntoView({ block: "nearest" }); // Scroll to active suggestion
-        }
-    }
+                  // Function to update the active suggestion's appearance
+                  function updateActiveSuggestion(suggestionItems) {
+                    suggestionItems.forEach(item => item.classList.remove("active"));
+                    if (suggestionItems[selectedSuggestionIndex]) {
+                      suggestionItems[selectedSuggestionIndex].classList.add("active");
+                      suggestionItems[selectedSuggestionIndex].scrollIntoView({ block: "nearest" }); // Scroll to active suggestion
+                    }
+                  }
 
-    // Close suggestions when clicking outside the search container
-    document.addEventListener("click", function(event) {
-        if (!event.target.closest(".search-container")) {
-            document.getElementById("suggestions-list").style.display = 'none';
-        }
-    });
-</script>
+                  // Close suggestions when clicking outside the search container
+                  document.addEventListener("click", function (event) {
+                    if (!event.target.closest(".search-container")) {
+                      document.getElementById("suggestions-list").style.display = 'none';
+                    }
+                  });
+                </script>
 
                 <script>
                   // Function to update the authentication button based on login status
@@ -521,69 +526,66 @@
                   </div>
 
 
-   <style>
-        .search-container {
-            position: relative;
-            width: 300px;
-            margin: 20px auto;
-            border-radius: 25px;
-        }
+                  <style>
+                    .search-container {
+                      position: relative;
+                      width: 300px;
+                      margin: 20px auto;
+                      border-radius: 25px;
+                    }
 
-        .search-input {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 25px;
-            box-sizing: border-box;
-        }
-
-
-        .suggestions {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            max-height: 150px;
-            overflow-y: auto;
-            display: none;
-            z-index: 1000;
-        }
-
-        .suggestions div {
-            padding: 10px;
-            cursor: pointer;
-        }
-
-        .suggestions div:hover,
-        .suggestions .active {
-            background-color: #f0f0f0;
-        }
+                    .search-input {
+                      width: 100%;
+                      padding: 10px;
+                      font-size: 16px;
+                      border: 1px solid #ccc;
+                      border-radius: 25px;
+                      box-sizing: border-box;
+                    }
 
 
-   </style>
+                    .suggestions {
+                      position: absolute;
+                      top: 100%;
+                      left: 0;
+                      width: 100%;
+                      background-color: #fff;
+                      border: 1px solid #ccc;
+                      border-radius: 4px;
+                      max-height: 150px;
+                      overflow-y: auto;
+                      display: none;
+                      z-index: 1000;
+                    }
+
+                    .suggestions div {
+                      padding: 10px;
+                      cursor: pointer;
+                    }
+
+                    .suggestions div:hover,
+                    .suggestions .active {
+                      background-color: #f0f0f0;
+                    }
+                  </style>
 
 
 
-    <style>
-    /* Existing styles */
+                  <style>
+                    /* Existing styles */
 
-    .search-input {
-        width: 100%;
-        padding: 10px;
-        padding-left: 40px; /* Adjust left padding to accommodate the icon */
-        font-size: 16px;
-        border: 1px solid #ccc;
-        border-radius: 25px;
-        box-sizing: border-box;
-        margin-top: -80px;
-    }
-
-
-</style>
+                    .search-input {
+                      width: 100%;
+                      padding: 10px;
+                      padding-left: 40px;
+                      /* Adjust left padding to accommodate the icon */
+                      font-size: 16px;
+                      border: 1px solid #ccc;
+                      border-radius: 25px;
+                      box-sizing: border-box;
+                      margin-top: -80px;
+                    }
+                  </style>
 
                   <script>
                     // Add event listeners to the social media icons
@@ -1494,97 +1496,103 @@
     </section>
     <style>
       /* Main Section Styling */
-#destinations {
-  padding: 2rem;
-  background-color: #f4f4f9; /* Light background color */
-  color: #333; /* Darker text color for contrast */
-  font-family: Arial, sans-serif;
-}
+      #destinations {
+        padding: 2rem;
+        background-color: #f4f4f9;
+        /* Light background color */
+        color: #333;
+        /* Darker text color for contrast */
+        font-family: Arial, sans-serif;
+      }
 
-#destinations h1 {
-  text-align: center;
-  color: #222; /* Darker shade for the title */
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
+      #destinations h1 {
+        text-align: center;
+        color: #222;
+        /* Darker shade for the title */
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
 
-/* Post Container Styling */
-.post-container {
-  max-width: 800px;
-  margin: 0 auto;
-  background-color: #ffffff;
-  border: 1px solid #ddd;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  padding: 1.5rem;
-}
+      /* Post Container Styling */
+      .post-container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 1.5rem;
+      }
 
-/* Form Styling */
-#postForm {
-  display: flex;
-  flex-direction: column;
-}
+      /* Form Styling */
+      #postForm {
+        display: flex;
+        flex-direction: column;
+      }
 
-#postForm textarea {
-  width: 370px;
-  height: 200px;
-  padding: 0.75rem;
-  margin-bottom: 1rem;
-  font-size: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  resize: vertical;
-  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
-  transition: border-color 0.3s;
-}
+      #postForm textarea {
+        width: 370px;
+        height: 200px;
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        resize: vertical;
+        box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+        transition: border-color 0.3s;
+      }
 
-#postForm textarea:focus {
-  border-color: #5a67d8; /* Soft blue focus color */
-  outline: none;
-}
+      #postForm textarea:focus {
+        border-color: #5a67d8;
+        /* Soft blue focus color */
+        outline: none;
+      }
 
-#postForm button {
-  align-self: flex-end;
-  padding: 0.75rem 1.5rem;
-  background-color: #5a67d8; /* Button color */
-  color: #ffffff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: bold;
-  transition: background-color 0.3s;
-}
+      #postForm button {
+        align-self: flex-end;
+        padding: 0.75rem 1.5rem;
+        background-color: #5a67d8;
+        /* Button color */
+        color: #ffffff;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: bold;
+        transition: background-color 0.3s;
+      }
 
-#postForm button:hover {
-  background-color: #4c51bf; /* Darker shade on hover */
-}
+      #postForm button:hover {
+        background-color: #4c51bf;
+        /* Darker shade on hover */
+      }
 
-/* Posts Display Styling */
-#posts {
-  margin-top: 1.5rem;
-}
+      /* Posts Display Styling */
+      #posts {
+        margin-top: 1.5rem;
+      }
 
-.post {
-  padding: 1rem;
-  margin-bottom: 1rem;
-  background-color: #fafafa;
-  border: 1px solid #eee;
-  border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
+      .post {
+        padding: 1rem;
+        margin-bottom: 1rem;
+        background-color: #fafafa;
+        border: 1px solid #eee;
+        border-radius: 6px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      }
 
-.post-content {
-  color: #444;
-  font-size: 1rem;
-}
+      .post-content {
+        color: #444;
+        font-size: 1rem;
+      }
 
-.post-time {
-  font-size: 0.875rem;
-  color: #888;
-  margin-top: 0.5rem;
-}
+      .post-time {
+        font-size: 0.875rem;
+        color: #888;
+        margin-top: 0.5rem;
+      }
     </style>
     <!-- Add more sections for other categories -->
   </main>
@@ -1805,19 +1813,19 @@
     }
 
     /* Styling for each testimonial card */
-.single-testimonial {
-    background: rgba(167, 43, 43, 0.1);
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 30px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    transform-origin: center; 
-}
+    .single-testimonial {
+      background: rgba(167, 43, 43, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transform-origin: center;
+    }
 
-.single-testimonial:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
+    .single-testimonial:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
 
     .testimonial-review .quota i {
       font-size: 2rem;
@@ -1869,7 +1877,7 @@
       justify-content: space-between;
       margin-top: 40px;
     }
-   
+
 
     #prevButton,
     #nextButton {
@@ -1881,11 +1889,14 @@
 
     #prevButton .arrow-left,
     #nextButton .arrow-right {
-      background-color: #ddd; /* Initial button color */
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.2s ease; /* Smooth transition */}
+      background-color: #ddd;
+      /* Initial button color */
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+      /* Smooth transition */
+    }
 
     #prevButton:hover .arrow-left,
     #nextButton:hover .arrow-right {
@@ -1893,38 +1904,38 @@
       /* Reverse gradient on hover */
     }
   </style>
-<script>
-  // Select the elements
-const testimonialWrapper = document.querySelector('.testimonial-wrapper');
-const prevButton = document.getElementById('prevButton');
-const nextButton = document.getElementById('nextButton');
+  <script>
+    // Select the elements
+    const testimonialWrapper = document.querySelector('.testimonial-wrapper');
+    const prevButton = document.getElementById('prevButton');
+    const nextButton = document.getElementById('nextButton');
 
-// Set scroll amount (width of one testimonial item)
-const scrollAmount = 320; // Adjust based on card width and gap between cards
+    // Set scroll amount (width of one testimonial item)
+    const scrollAmount = 320; // Adjust based on card width and gap between cards
 
-// Event listener for the "Next" button
-nextButton.addEventListener('click', () => {
-    testimonialWrapper.scrollBy({
+    // Event listener for the "Next" button
+    nextButton.addEventListener('click', () => {
+      testimonialWrapper.scrollBy({
         left: scrollAmount,
         behavior: 'smooth'
+      });
     });
-});
 
-// Event listener for the "Previous" button
-prevButton.addEventListener('click', () => {
-    testimonialWrapper.scrollBy({
+    // Event listener for the "Previous" button
+    prevButton.addEventListener('click', () => {
+      testimonialWrapper.scrollBy({
         left: -scrollAmount,
         behavior: 'smooth'
+      });
     });
-});
 
-</script>
+  </script>
 
 
   <!-- <section id="blog" class="blog-area pt-120"> -->
 
 
-  <div class="blogfull"> 
+  <div class="blogfull">
     <article>
       <section id="blog" class="blog-area pt-100">
         <div class="">
@@ -2254,7 +2265,7 @@ prevButton.addEventListener('click', () => {
   </head>
 
   <body>
-    <div class="form-section"> 
+    <div class="form-section">
       <form class="feedbackform" id="feedback-form">
         <div class="form-group">
           <div class="section-title text-center">
@@ -2443,6 +2454,11 @@ prevButton.addEventListener('click', () => {
           width: 100%;
         }
       }
+
+      .flex-width {
+        flex: 0 0 75% !important;
+        max-width: 100% !important;
+      }
     </style>
 
 
@@ -2491,7 +2507,7 @@ prevButton.addEventListener('click', () => {
       });
 
       // Handle form submission and show modal
-      document.getElementById('feedback-form').addEventListener('submit', function (e) {
+      document.getElementById('feedback-form').addEventListener('submit', async function (e) {
         e.preventDefault();
 
         // Get form values
@@ -2524,20 +2540,40 @@ prevButton.addEventListener('click', () => {
         // Store updated feedback array back in localStorage
         localStorage.setItem('feedbacks', JSON.stringify(feedbackData));
 
-        // Clear form inputs
-        document.getElementById('feedback-form').reset();
+        // Send data to the server using Fetch API
+        try {
+          const response = await fetch('http://localhost:5000/api/feedback/saveFeedback', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(feedback)
+          });
 
-        // Reset emoji description
-        emojiDescription.textContent = 'Select an option';
+          if (!response.ok) {
+            throw new Error('Failed to submit feedback');
+          }
 
-        // Show success modal
-        document.getElementById('successModal').style.display = 'flex';
+          // Clear form inputs
+          document.getElementById('feedback-form').reset();
 
-        // Close modal after 3 seconds
-        setTimeout(function () {
-          document.getElementById('successModal').style.display = 'none';
-        }, 3000);
+          // Reset emoji description
+          emojiDescription.textContent = 'Select an option';
+
+          // Show success modal
+          document.getElementById('successModal').style.display = 'flex';
+
+          // Close modal after 3 seconds
+          setTimeout(function () {
+            document.getElementById('successModal').style.display = 'none';
+          }, 3000);
+
+        } catch (error) {
+          // Handle errors, for example if fetch fails
+          alert('There was an error submitting your feedback. Please try again later.');
+        }
       });
+
 
       // Close the modal when the 'Dismiss' button is clicked or 'X' is pressed
       document.getElementById('dismissModal').addEventListener('click', function () {
@@ -2564,16 +2600,17 @@ prevButton.addEventListener('click', () => {
       <div class="container">
         <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s" style="height: 265px;">
           <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-6 flex-width">
               <div class="subscribe-content mt-45">
                 <h2 class="subscribe-title">
                   Subscribe Our Newsletter <span style="font-size: 28px;"> Get regular updates</span>
                 </h2>
               </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 flex-width">
               <div class="subscribe-form mt-50">
                 <form id="unique-subscribe-form">
+                  <input type="text" id="unique-news-name" placeholder="Enter Name" required />
                   <input type="email" id="unique-news-email" placeholder="Enter Email" required />
                   <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
                 </form>
@@ -2586,6 +2623,7 @@ prevButton.addEventListener('click', () => {
           </div>
         </div>
       </div>
+
 
       <div class="footer-widget pb-100">
         <div class="row" id="footer">
@@ -2749,6 +2787,40 @@ prevButton.addEventListener('click', () => {
       defer></script>
     <script defer src="./assets/js/arthsathi-style.js"></script>
     <script src="./assets/js/botpress.js"></script>
+
+    <script>
+
+      document.getElementById("unique-subscribe-form").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevents form from submitting and refreshing the page
+
+        const name = document.getElementById("unique-news-name").value;
+        const email = document.getElementById("unique-news-email").value;
+        const data = {
+          name: name,
+          email: email
+        };
+
+        // Send the data to the API using fetch
+        fetch('http://localhost:5000/api/newsletter/suscribe', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        })
+          .then(response => response.json())
+          .then(data => {
+            console.log('Success:', data);
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+          });
+
+
+      });
+
+    </script>
+
     <script>
       // Get the modals
       var loginModal = document.getElementById('myModal');
@@ -3211,286 +3283,288 @@ prevButton.addEventListener('click', () => {
       </div>
     </div>
     <!-- Modal Structure -->
-<div id="customModal" class="modal">
-  <div class="modal-content">
-    <span class="close-button" onclick="closeModal()">&times;</span>
-    <h2 class="modal-title">Newsletter Registration</h2>
-    <p id="modalMessage" class="modal-message"></p>
-    <button class="modal-action-button" onclick="closeModal()">OK</button>
-  </div>
-</div>
+    <div id="customModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" onclick="closeModal()">&times;</span>
+        <h2 class="modal-title">Newsletter Registration</h2>
+        <p id="modalMessage" class="modal-message"></p>
+        <button class="modal-action-button" onclick="closeModal()">OK</button>
+      </div>
+    </div>
 
     <script src="newsletterpopup.js"></script>
-<style>
-  /* Modal overlay */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
-  z-index: 1010;
-  justify-content: center;
-  align-items: center;
-}
+    <style>
+      /* Modal overlay */
+      .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        /* Semi-transparent background */
+        z-index: 1010;
+        justify-content: center;
+        align-items: center;
+      }
 
-/* Modal content */
-.modal-content {
-  background-color: #fff;
-  padding: 20px;
-  width: 90%;
-  max-width: 400px;
-  border-radius: 8px;
-  text-align: center;
-  position: relative;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  
-}
+      /* Modal content */
+      .modal-content {
+        background-color: #fff;
+        padding: 20px;
+        width: 90%;
+        max-width: 400px;
+        border-radius: 8px;
+        text-align: center;
+        position: relative;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 
-/* Close button */
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 1.5rem;
-  color: #aaa;
-  cursor: pointer;
-}
+      }
 
-/* Modal title */
-.modal-title {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-  color: #333;
-}
+      /* Close button */
+      .close-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 1.5rem;
+        color: #aaa;
+        cursor: pointer;
+      }
 
-/* Modal message */
-.modal-message {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 20px;
-}
+      /* Modal title */
+      .modal-title {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+        color: #333;
+      }
 
-/* Action button */
-.modal-action-button {
-  background: radial-gradient(circle, #f74b9f, #653b51);
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-}
+      /* Modal message */
+      .modal-message {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 20px;
+      }
 
-.modal-action-button:hover {
-  background: radial-gradient(circle, #f74b9f, #653b51);
-}
+      /* Action button */
+      .modal-action-button {
+        background: radial-gradient(circle, #f74b9f, #653b51);
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+      }
 
-</style>
+      .modal-action-button:hover {
+        background: radial-gradient(circle, #f74b9f, #653b51);
+      }
+    </style>
 
- <!-- Newsletter pop-up -->
- <style>
-  .popup-nl {
+    <!-- Newsletter pop-up -->
+    <style>
+      .popup-nl {
 
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      justify-content: center;
-      align-items: center;
-      z-index: 1009;
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        justify-content: center;
+        align-items: center;
+        z-index: 1009;
 
-  }
+      }
 
-  .popup-content-nl {
+      .popup-content-nl {
 
-      display: flex;
-      background-color: white;
-      border-radius: 10px;
-      max-width: 800px;
-      height: 450px;
-      width: 700px;
-      overflow: hidden;
-      position: relative;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        display: flex;
+        background-color: white;
+        border-radius: 10px;
+        max-width: 800px;
+        height: 450px;
+        width: 700px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 
-  }
+      }
 
-  .close1-btn-nl {
+      .close1-btn-nl {
 
-      width: 20px;
-      cursor: pointer;
-      margin: 18px 10px;
-      position: absolute;
-      top: -4px;
-      right: 12px;
-      font-size: 18px;
-      font-weight: 800;
+        width: 20px;
+        cursor: pointer;
+        margin: 18px 10px;
+        position: absolute;
+        top: -4px;
+        right: 12px;
+        font-size: 18px;
+        font-weight: 800;
 
-  }
+      }
 
-  .popup-left-nl img {
+      .popup-left-nl img {
 
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
 
-  }
+      }
 
-  .popup-right-nl {
+      .popup-right-nl {
 
-      padding: 20px;
-      width: 50%;
-      display: flex;
-      flex-direction: column; 
-      align-items: center;
-      justify-content: center;
+        padding: 20px;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
-  }
+      }
 
-  .popup-nl h1 {
+      .popup-nl h1 {
 
-      font-size: 24px;
-      background: linear-gradient(to right, #ff4aac, #faa2d3); 
-      -webkit-text-fill-color: transparent; 
-      -webkit-background-clip: text; 
-      text-align: center;
-      margin-bottom: 12px;
-      margin-top: 35px;
+        font-size: 24px;
+        background: linear-gradient(to right, #ff4aac, #faa2d3);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        text-align: center;
+        margin-bottom: 12px;
+        margin-top: 35px;
 
-  }
+      }
 
-  .h2-nl{
+      .h2-nl {
 
-      font-size: 18px;
-      margin-bottom: 8px;
-      text-align: center;
-      color: #333;
+        font-size: 18px;
+        margin-bottom: 8px;
+        text-align: center;
+        color: #333;
 
-  }
+      }
 
-  .pop_up-nl {
+      .pop_up-nl {
 
-      margin-bottom: 15px;
-      font-weight: bold;
-      background: linear-gradient(135deg, #0d4670, #32bbdc);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-size: 12.7px;
+        margin-bottom: 15px;
+        font-weight: bold;
+        background: linear-gradient(135deg, #0d4670, #32bbdc);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 12.7px;
 
-  }
+      }
 
-  .bold{
+      .bold {
 
-      font-size: 13.1px;
+        font-size: 13.1px;
 
-  }
+      }
 
-  input[type="email"] {
+      input[type="email"] {
 
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 16px;
-      border: 1px solid #000000;
-      border-radius: 5px;
-      font-size: 14px;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 16px;
+        border: 1px solid #000000;
+        border-radius: 5px;
+        font-size: 14px;
 
-  }
+      }
 
-  .signup-btn1-nl {
+      .signup-btn1-nl {
 
-      width: 100%;
-      height: 40px;
-      text-align: center;
-      background: radial-gradient(circle, #f74b9f, #653b51);
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
+        width: 100%;
+        height: 40px;
+        text-align: center;
+        background: radial-gradient(circle, #f74b9f, #653b51);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
 
-  }
+      }
 
-  .signup-btn1-nl:hover {
+      .signup-btn1-nl:hover {
 
-      background-color: #ff4aac;
+        background-color: #ff4aac;
 
-  }
+      }
 
-  .no-thanks-nl {
+      .no-thanks-nl {
 
-      display: block;
-      margin-top: 10px;
-      color: #888;
-      text-decoration: none;
-      margin-bottom: 15px;
+        display: block;
+        margin-top: 10px;
+        color: #888;
+        text-decoration: none;
+        margin-bottom: 15px;
 
-  }
+      }
 
-  .no-thanks-nl:hover {
+      .no-thanks-nl:hover {
 
-      color: #000000;
-      font-size: 14px;
+        color: #000000;
+        font-size: 14px;
 
-  }
+      }
 
-  .terms-nl {
+      .terms-nl {
 
-      margin-top: 15px;
-      font-size: 10px;
-      color: #888;
+        margin-top: 15px;
+        font-size: 10px;
+        color: #888;
 
-  }
+      }
 
-  .terms-nl a {
+      .terms-nl a {
 
-      display: inline;
+        display: inline;
 
-  }
+      }
 
-  .terms-nl a:hover {
+      .terms-nl a:hover {
 
-      text-decoration: underline;
+        text-decoration: underline;
 
-  }
+      }
 
-  .popup-right-nl p {
+      .popup-right-nl p {
 
-      margin-top: 0;
-      margin-bottom: 10px;
-      text-align: center;
+        margin-top: 0;
+        margin-bottom: 10px;
+        text-align: center;
 
-  }
-
-</style>
-<div id="popup-nl" class="popup-nl">
-  <div class="popup-content-nl">
-      <div class="popup-left-nl">
+      }
+    </style>
+    <div id="popup-nl" class="popup-nl">
+      <div class="popup-content-nl">
+        <div class="popup-left-nl">
           <img src="newspopup.jpg" alt="finance">
-      </div>
+        </div>
 
-      <div class="popup-right-nl">
+        <div class="popup-right-nl">
           <a href="# " class="close1-btn-nl close-nl">X</a>
           <h1>Subscribe to Newsletter</h1>
           <h2 class="h2-nl">Stay Ahead in Your Financial Journey!</h2>
-          <p class="pop_up-nl">Join our community of financial learners and gain exclusive access to expert insights, helpful tools, personalized tips, interactive quizzes, and more!</p>
+          <p class="pop_up-nl">Join our community of financial learners and gain exclusive access to expert insights,
+            helpful tools, personalized tips, interactive quizzes, and more!</p>
           <form id="emailForm-nl">
-              <input type="email" id="email-nl" placeholder="Enter your email" required>
-              <button type="submit" class="signup-btn1-nl">Subscribe</button>
+            <input type="email" id="email-nl" placeholder="Enter your email" required>
+            <button type="submit" class="signup-btn1-nl">Subscribe</button>
           </form>
           <a href="#" class="no-thanks-nl close-nl">No thanks</a>
-          <p class="terms-nl" style="white-space: nowrap;">By subscribing to newsletters, you agree to our <br><a href="terms&cond.html">Terms of Service</a> and <a href="privacynotice.html">Privacy Policy</a>.</p>
+          <p class="terms-nl" style="white-space: nowrap;">By subscribing to newsletters, you agree to our <br><a
+              href="terms&cond.html">Terms of Service</a> and <a href="privacynotice.html">Privacy Policy</a>.</p>
+        </div>
       </div>
-  </div>
-</div>
-<script src="newspopup.js"></script>
+    </div>
+    <script src="newspopup.js"></script>
 
-<script src="script.js"></script> <!-- Link to your service worker registration script -->
+    <script src="script.js"></script> <!-- Link to your service worker registration script -->
 
   </body>
 
