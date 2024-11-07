@@ -72,6 +72,15 @@
         #cancelButton:hover {
             background-color: #c82333;
         }
+
+        #passwordReset {
+            margin-top: 20px;
+        }
+
+        #passwordReset input {
+            margin-bottom: 10px;
+        }
+
     </style>
 </head>
 <body>
@@ -83,6 +92,7 @@
                 <p><strong>Username:</strong> <span id="displayUsername">john_doe</span></p>
                 <p><strong>Email:</strong> <span id="displayEmail">john@example.com</span></p>
                 <p><strong>Bio:</strong> <span id="displayBio">Welcome to my profile!</span></p>
+                <p><strong>Password:</strong> <span id="displayPassword">******</span> <button id="resetPasswordButton">Reset Password</button></p>
             </div>
         </div>
 
@@ -109,6 +119,24 @@
             </form>
         </div>
 
+        <!-- Password Reset Section -->
+        <div id="passwordReset" style="display: none;">
+            <h2>Reset Your Password</h2>
+            <form id="passwordForm">
+                <div class="form-group">
+                    <label for="newPassword">New Password:</label>
+                    <input type="password" id="newPassword" required placeholder="Enter new password">
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" id="confirmPassword" required placeholder="Confirm new password">
+                </div>
+                <button type="submit">Reset Password</button>
+                <button type="button" id="cancelPasswordResetButton">Cancel</button>
+            </form>
+            <div id="passwordResetMessage"></div>
+        </div>
+
         <button id="editButton">Edit Profile</button>
     </div>
 
@@ -118,6 +146,12 @@
         const profileEdit = document.getElementById('profileEdit');
         const cancelButton = document.getElementById('cancelButton');
         const profileForm = document.getElementById('profileForm');
+
+        const resetPasswordButton = document.getElementById('resetPasswordButton');
+        const passwordReset = document.getElementById('passwordReset');
+        const cancelPasswordResetButton = document.getElementById('cancelPasswordResetButton');
+        const passwordForm = document.getElementById('passwordForm');
+        const passwordResetMessage = document.getElementById('passwordResetMessage');
 
         // Function to toggle between display and edit mode
         editButton.addEventListener('click', function() {
@@ -130,7 +164,7 @@
             resetProfileForm();
         });
 
-        // Handle form submission
+        // Handle form submission for profile update
         profileForm.addEventListener('submit', function(e) {
             e.preventDefault(); // Prevent page refresh
 
@@ -169,6 +203,43 @@
             profileEdit.style.display = 'none';
             profileDisplay.style.display = 'flex';
         }
+
+        // Show password reset form
+        resetPasswordButton.addEventListener('click', function() {
+            profileDisplay.style.display = 'none';
+            passwordReset.style.display = 'block';
+        });
+
+        // Handle password reset form submission
+        passwordForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (newPassword !== confirmPassword) {
+                passwordResetMessage.innerText = 'Passwords do not match. Please try again.';
+                passwordResetMessage.style.color = 'red';
+                return;
+            }
+
+            // Simulate updating the password
+            document.getElementById('displayPassword').textContent = '******'; // Hide the password
+            passwordResetMessage.innerText = 'Your password has been successfully reset!';
+            passwordResetMessage.style.color = 'green';
+
+            // Hide password reset form and show profile display
+            setTimeout(() => {
+                passwordReset.style.display = 'none';
+                profileDisplay.style.display = 'flex';
+            }, 1500); // Delay to simulate password reset success
+        });
+
+        // Cancel password reset
+        cancelPasswordResetButton.addEventListener('click', function() {
+            passwordReset.style.display = 'none';
+            profileDisplay.style.display = 'flex';
+        });
     </script>
 </body>
 </html>
