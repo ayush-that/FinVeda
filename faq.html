@@ -30,10 +30,11 @@
         /* FAQ Section Styles */
 
         .faq-section {
-            max-width: 1000px;
+            max-width: 800px;
             margin: 20px auto;
             padding: 50px;
-            background-color: #0056b3;
+            margin-left: 11.7% !important;
+            background-color: #6d9ed2;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
@@ -51,7 +52,7 @@
 
         /* FAQ Intro Paragraph */
         .faq-intro p {
-            margin-top: 50px;
+            margin-top: 10px;
             text-align: center;
             font-size: 1.2rem;
             color: white;
@@ -326,6 +327,35 @@
         .photo {
             filter: none;
         }
+        .star-rating {
+  display: flex;
+  justify-content: center;
+  direction: rtl; /* This reverses the order of the stars */
+}
+
+.star-rating input {
+  display: none;
+  /* Hide the radio buttons */
+}
+
+.star-rating label {
+  font-size: 3em;
+  /* Star size */
+  color: grey;
+  /* Default star color */
+  cursor: pointer;
+}
+
+.star-rating input:checked~label {
+  color: gold;
+  /* Gold color for selected stars */
+}
+
+.star-rating label:hover,
+.star-rating label:hover~label {
+  color: gold;
+  /* Change color on hover */
+}
     </style>
 </head>
 
@@ -581,7 +611,7 @@
     <div class="images">
         <img style="width:250px; top: 200px; right: 1470px;mix-blend-mode: multiply;" src="assets/images/HELP-IMG.webp"
             alt="image" class="photo">
-        <div class="faq-section " style="margin-top: 100px;margin-left: -10px;">
+        <div class="faq-section " style="margin-top: 100px;">
             <div class="faq-intro">
                 <h3 class="faq-title">Frequently Asked Questions</h3>
                 <p>Welcome to Finveda’s FAQ! Here you’ll find answers to common questions about our services, tools, and
@@ -745,6 +775,18 @@
                 <textarea id="userFeedback" class="form-input" rows="5"
                     placeholder="Enter your feedback or ask a question" required></textarea>
             </div>
+            <div class="star-rating" style="text-align: center; margin: 10px;">
+                <input type="radio" id="star5" name="rating" value="5" />
+                <label for="star5" title="5 star">&#9733;</label>
+                <input type="radio" id="star4" name="rating" value="4" />
+                <label for="star4" title="4 stars">&#9733;</label>
+                <input type="radio" id="star3" name="rating" value="3" />
+                <label for="star3" title="3 stars">&#9733;</label>
+                <input type="radio" id="star2" name="rating" value="2" />
+                <label for="star2" title="2 stars">&#9733;</label>
+                <input type="radio" id="star1" name="rating" value="1" />
+                <label for="star1" title="1 stars">&#9733;</label>
+            </div>  
             <div class="button-container">
                 <button type="submit" class="submit-btn">Submit Feedback</button>
             </div>
@@ -769,7 +811,7 @@
             background-color: #007bff;
             /* Darker container background */
             border-radius: 10px;
-            padding: 20px;
+            padding: 40px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s ease;
             margin: 20px auto;
@@ -827,7 +869,7 @@
 
         /* Title styling */
         .faq-title {
-            margin-top: 15px;
+            margin-top: 5px;
             margin-bottom: 35px;
             font-size: 2.0em;
             font-weight: bold;
