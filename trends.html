@@ -218,7 +218,7 @@
         if (currentTheme === 'dark') {
           body.classList.add('dark-mode');
           toggleButton.classList.add('dark');
-          toggleButton.querySelector('span').textContent = '🌞';
+          toggleButton.querySelector('span').textContent = '🌙';
         }
 
         toggleButton.addEventListener('click', function () {
@@ -227,10 +227,10 @@
 
           // Update button icon based on mode
           if (body.classList.contains('dark-mode')) {
-            toggleButton.querySelector('span').textContent = '🌙';  // Light mode icon
+            toggleButton.querySelector('span').textContent = '🌞';  // Light mode icon
             localStorage.setItem('theme', 'dark');
           } else {
-            toggleButton.querySelector('span').textContent = '🌞';  // Dark mode icon
+            toggleButton.querySelector('span').textContent = '🌙';  // Dark mode icon
             localStorage.setItem('theme', 'light');
           }
           loadShow();
