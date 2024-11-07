@@ -375,32 +375,60 @@
             </div>
           </nav>
         </div>
+        <li class="nav-item no-underline align-self-center">
+          <button id="theme-toggle" class="theme-toggle">
+            <span>🌞</span>
+          </button>
+        </li>
+        
         <script>
-          const toggleButton = document.getElementById('theme-toggle');
-          var body = document.body;
-          var currentTheme = localStorage.getItem('theme');
-
-          if (currentTheme === 'dark') {
-            body.classList.add('dark-mode');
-            toggleButton.classList.add('dark');
-            toggleButton.querySelector('span').textContent = '🌞';
-          }
-
-          toggleButton.addEventListener('click', function () {
-            body.classList.toggle('dark-mode');
-            toggleButton.classList.toggle('dark');
-
-            // Update button icon based on mode
-            if (body.classList.contains('dark-mode')) {
-              toggleButton.querySelector('span').textContent = '🌙';  // Light mode icon
-              localStorage.setItem('theme', 'dark');
+          // Function to initialize theme based on localStorage
+          function initializeTheme() {
+            const body = document.body;
+            const toggleButton = document.getElementById('theme-toggle');
+            const currentTheme = localStorage.getItem('theme');
+        
+            // Apply saved theme
+            if (currentTheme === 'dark') {
+              body.classList.add('dark-mode');
+              toggleButton.classList.add('dark');
+              toggleButton.querySelector('span').textContent = '🌙'; // Dark mode icon
             } else {
-              toggleButton.querySelector('span').textContent = '🌞';  // Dark mode icon
-              localStorage.setItem('theme', 'light');
+              toggleButton.querySelector('span').textContent = '🌞'; // Light mode icon
             }
-            loadShow();
+          }
+        
+          // Call initializeTheme on page load
+          document.addEventListener('DOMContentLoaded', () => {
+            initializeTheme();
+        
+            const toggleButton = document.getElementById('theme-toggle');
+            const body = document.body;
+        
+            // Event listener for theme toggle
+            toggleButton.addEventListener('click', () => {
+              body.classList.toggle('dark-mode');
+              toggleButton.classList.toggle('dark');
+        
+              // Update icon and save theme
+              if (body.classList.contains('dark-mode')) {
+                toggleButton.querySelector('span').textContent = '🌙'; // Dark mode icon
+                localStorage.setItem('theme', 'dark');
+              } else {
+                toggleButton.querySelector('span').textContent = '🌞'; // Light mode icon
+                localStorage.setItem('theme', 'light');
+              }
+        
+              loadShow(); // Call any additional function if needed
+            });
           });
+        
+          // Function placeholder for additional operations (if needed)
+          function loadShow() {
+            // Additional actions can go here
+          }
         </script>
+        
         <!-- Login Modal -->
         <div id="myModal" class="modal">
           <div class="modal-content">
