@@ -281,14 +281,18 @@
                     </a>
                   </div>
 
-
-
-                  <i class="fa-brands fa-searchengin glass" style="font-size: 35px; left: 150px;"></i>
+                 
                   <div class="search-container">
-                    <input type="text" class="search-input" id="file-search" placeholder="Search for a file..."
+                    <input type="text" class="search-input" id="file-search" placeholder="Search"
                       oninput="showSuggestions()" onkeydown="navigateSuggestions(event)" />
+
                     <div class="suggestions" id="suggestions-list"></div>
+
+                    <i class="fa-brands fa-searchengin glass" style="font-size: 20px; position: absolute; right:5px; top:50%; transform:translateY(-50%); cursor: pointer; color:black;" aria-hidden="true"  title="Search"></i>
+
                   </div>
+
+               
 
                   <style>
 
@@ -535,6 +539,7 @@
                   <style>
                     .search-container {
                       position: relative;
+                      display: inline-block;
                       width: 300px;
                       margin: 20px auto;
                       border-radius: 25px;
@@ -543,10 +548,12 @@
                     .search-input {
                       width: 100%;
                       padding: 10px;
+                      padding-right: 40px;
                       font-size: 16px;
                       border: 1px solid #ccc;
                       border-radius: 25px;
                       box-sizing: border-box;
+                      text-align: center;
                     }
 
 
@@ -577,21 +584,7 @@
 
 
 
-                  <style>
-                    /* Existing styles */
-
-                    .search-input {
-                      width: 100%;
-                      padding: 10px;
-                      padding-left: 40px;
-                      /* Adjust left padding to accommodate the icon */
-                      font-size: 16px;
-                      border: 1px solid #ccc;
-                      border-radius: 25px;
-                      box-sizing: border-box;
-                      margin-top: -80px;
-                    }
-                  </style>
+                 
 
                   <script>
                     // Add event listeners to the social media icons
