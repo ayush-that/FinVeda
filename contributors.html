@@ -4,14 +4,170 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contributors</title>
-  <link rel="stylesheet" href="./assets/css/contributors.css">
   <link rel="icon" href="../image/ml-fusion-lab-logo.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+    
+    /* Main Container */
+    body {
+      background-color: #121212;
+      color: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Navigation Styling */
+    .home-nav {
+      width: 100%;
+      text-align: center;
+      padding: 15px;
+      background: linear-gradient(135deg, #ff6ec7, #8e44ad);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    .home-nav a {
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.1em;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+    .home-nav a:hover {
+      background-color: #ff6ec7;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+    }
+    .hero .title {
+      font-size: 3em;
+      color: #ff6ec7;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    }
+    .hero p {
+      font-size: 1.2em;
+      color: #e1e1e1;
+    }
+
+    /* Project Statistics Section */
+    .contributor-stats {
+      background-color: #222;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      margin: 30px 0;
+      width: 90%;
+      max-width: 800px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+    .contributor-stats h2 {
+      color: #ff6ec7;
+      font-size: 2em;
+      margin-bottom: 15px;
+    }
+    .contributor-stats-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    /* Contributors Grid */
+    .contributors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      width: 90%;
+      max-width: 1200px;
+    }
+
+    /* Contributor Card Styling */
+    .contributor-card {
+      background: #1d1d1d;
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    .contributor-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .contributor-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at center, rgba(255, 110, 199, 0.2), transparent 60%);
+      transition: opacity 0.5s;
+      opacity: 0;
+      z-index: 0;
+    }
+    .contributor-card:hover::before {
+      opacity: 1;
+    }
+
+    .contributor-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      transition: transform 0.3s ease, filter 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    .contributor-card:hover img {
+      transform: scale(1.1);
+      filter: brightness(1.4);
+    }
+
+    .contributor-card p,
+    .contributor-card a {
+      color: #f1f1f1;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+      font-size: 1.1em;
+      position: relative;
+      z-index: 1;
+    }
+    .contributor-card a {
+      color: #ff6ec7;
+      font-weight: bold;
+      text-decoration: underline;
+      transition: color 0.3s ease;
+    }
+    .contributor-card a:hover {
+      color: #f9f9f9;
+    }
+  </style>
 </head>
 <body>
-    <div class="home-nav">
-        <a href="/">Go to Home</a>
-    </div>
+
+  <div class="home-nav">
+    <a href="/">Go to Home</a>
+  </div>
+
+  <section class="hero">
+    <h1 class="title">Our Contributors</h1>
+    <p>Meet the talented individuals contributing to our project.</p>
+  </section>
 
   <section class="contributor-stats">
     <h2>Project Statistics</h2>
@@ -20,66 +176,10 @@
     </div>
   </section>
 
-  <div class="container">
-    <h1 class="title">Our Contributors</h1>
+  <div id="contributors" class="contributors-grid">
+    <!-- Contributor cards will be added here -->
   </div>
-  <div id="contributors" class="contributors-grid"></div>
 
-  <style>
-    .contributor-card::before{
-    content: '';
-    position: absolute;
-    background: radial-gradient(var(--clr),transparent,transparent);
-    height: 500px;
-    width: 500px;
-    top: var(--y);
-    left: var(--x);
-    transform: translate(-50%,-50%);
-    opacity: 0;
-    transition: 0.5s, top 0s,left 0s;
-    }
-
-    .contributor-card:hover::before{
-      opacity: 1;
-    }
-
-    .contributor-card::after{
-      content: '';
-      position: absolute;
-      inset: 2px;
-      border-radius: 8px;
-      background-color:rgba(19, 45, 70,0.8);;
-     
-    }
-
-    .contributor-card p,
-    .contributor-card a {
-      position: relative;
-      z-index: 1;         
-      color: #ddd;        
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); 
-    }
-
-    .contributor-card a {
-      color: #aaa;        
-      font-weight: bold;
-      text-decoration: underline;
-    }
-
-    .contributor-card img {
-      border-radius: 50%; 
-      margin-bottom: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
-      filter: brightness(1.2); 
-      z-index: 1; 
-      transition: transform 0.3s ease, filter 0.3s ease;
-    }
-
-    .contributor-card:hover img {
-      transform: scale(1.05);
-      filter: brightness(1.4); 
-    }
-  </style>
   <script src="./assets/js/contributors.js"></script>
 </body>
 </html>
