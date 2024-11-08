@@ -228,9 +228,109 @@
       document.getElementById("progressBar").style.width = scrolled + "%";
     };
   </script>
-  <button id="scrollBtn" class="scroll-btn" onclick="scrollToNextSection()">
+  <div class="search-container">
+    <input type="text" class="search-bar" placeholder="  Search...">
+    <button class="search-button">🔍</button>
+</div>
+
+<style>
+.search-container {
+    position: fixed; /* Keeps the search bar visible while scrolling */
+    top: 20px; /* Adjust as necessary */
+    right: 20px; /* Adjust as necessary */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Ensure it is above other elements */
+}
+
+/* Existing styles for search-bar and search-button remain unchanged */
+.search-bar {
+    padding: 10px 40px 10px 20px;
+    font-size: 16px;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    background-color: transparent;
+    color: white;
+    outline: none;
+    width: 250px; /* Adjust width */
+}
+
+.search-button {
+    margin-left: 10px; 
+    padding: 10px 16px;
+    font-size: 18px;
+    background-color: #2e2ef3; 
+    border-radius: 30px; 
+    color: white; }
+   /* Mobile responsiveness */
+   @media (max-width: 768px) {
+    .search-container {
+      top: 10px;
+      right: 10px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .search-bar {
+      width: 200px; /* Smaller width for mobile */
+    }
+
+    .search-button {
+      margin-top: 10px;
+    }
+  }
+  .search-bar {
+    padding: 10px 40px 10px 20px; /* Padding for the text and icon */
+    font-size: 16px;
+    border: 2px solid #fff;
+    border-radius: 30px; /* Rounded corners */
+    background-color: transparent;
+    color: white;
+    outline: none;
+    width: 250px; /* Adjust width */
+    transition: border-color 0.3s ease;
+    background-image: url('https://img.icons8.com/ios-filled/50/ffffff/search.png'); /* Search icon */
+    background-position: 10px center; /* Icon position inside the input */
+    background-repeat: no-repeat;
+    background-size: 18px;
+  }
+  .search-button {
+    margin-left: 10px; /* Space between input and button */
+    padding: 10px 16px;
+    font-size: 18px;
+    background-color: #ececee; /* Button background */
+    border: 2px solid #8686bb;
+    border-radius: 30px; /* Rounded corners */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Button hover effect */
+  .search-button:hover {
+    background-color: #fff;
+    color: #2e2ef3;
+    transform: translateY(-2px); /* Subtle hover effect */
+  }
+
+  /* Placeholder text style */
+  .search-bar::placeholder {
+    color: #ddd;
+    opacity: 1; /* Ensure placeholder text is visible */
+  }
+</style>
+
+<button id="scrollBtn" class="scroll-btn" onclick="scrollToNextSection()">
     <i class="lni-chevron-down"></i>
-  </button>
+</button>
+
+
+  
+  
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -2234,84 +2334,89 @@
               </p>
             </div>
           </div>
-          <div class="col-lg-5 col-md-7 col-sm-7">
-            <div class="footer-link d-flex mt-50 justify-content-md-between"
-              style="justify-content: space-around !important;">
-              <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-                <div class="footer-title">
-                  <h3 class="title custom-margin">Quick Links</h3>
+
+          <div style="display: flex; justify-content: space-evenly;">
+            <div>
+              <div class="footer-link d-flex mt-50">
+                <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+                  <div class="footer-title">
+                    <h3 class="title custom-margin">Quick Links</h3>
+                  </div>
+                  <ul class="link custom-margin">
+  
+                    <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+                    <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
+                    <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
+                    <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+                    <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+                    <li><a href="./blogs/sitemap.html"><i class="fa-solid fa-sitemap"></i> Site Map</a></li>
+  
+  
+                  </ul>
                 </div>
-                <ul class="link custom-margin">
-
-                  <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
-                  <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
-                  <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
-                  <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
-                  <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
-                  <li><a href="./blogs/sitemap.html"><i class="fa-solid fa-sitemap"></i> Site Map</a></li>
-
-
-                </ul>
+                <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+                  <div class="footer-title">
+                    <h4 class="title custom-margin">Resources</h4>
+                  </div>
+                  <ul class="link custom-margin">
+                    <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
+                    <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
+                    <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                    <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                  </ul>
+                </div>
               </div>
-              <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+            </div>
+  
+            <div>
+              <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
                 <div class="footer-title">
-                  <h4 class="title custom-margin">Resources</h4>
+                  <h4 class="title custom-margin">Contact Us</h4>
                 </div>
-                <ul class="link custom-margin">
-                  <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
-                  <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
-                  <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
-                  <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
-                  <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
-                  <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                <ul class="contact custom-margin-big">
+                  <li class="d-sm-flex justify-content-center">
+                    <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                    <p style="width: 80%;">
+                      <a href="mailto:ayush1337@hotmail.com" target="_blank"
+                        style="color: white; text-decoration: underline;">
+                        ayush1337@hotmail.com
+                      </a>
+                    </p>
+                  </li>
+                  <li class="d-sm-flex justify-content-center">
+                    <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                    <div style="width: 80%;">
+                      <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
+                        fin-veda.vercel.app
+                      </a>
+                    </div>
+                  </li>
+                  <li class="d-sm-flex justify-content-center">
+                    <!-- Modified: Inline CSS to adjust logo size and sync with other pages -->
+                    <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font: 12px; width: 10%;"></i>
+                    <div style="width: 80%;">
+                      <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
+                        style="color:#fff">
+                        Delhi, India
+                      </a>
+                    </div>
+                  </li>
+                  <!-- Added: Social Media Redirects -->
+                  <div class="social-icons">
+                    <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://discord.com/"><i class="fa-brands fa-discord"></i></a>
+                    <a href="https://github.com/ayush-that/FinVeda"><i class="fa-brands fa-github"></i></a>
+                  </div>
                 </ul>
               </div>
             </div>
+
           </div>
-          <div class="col-lg-3 col-md-5 col-sm-5">
-            <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-              <div class="footer-title">
-                <h4 class="title custom-margin">Contact Us</h4>
-              </div>
-              <ul class="contact custom-margin-big" style="justify-content: space-around;">
-                <li class="d-sm-flex justify-content-center">
-                  <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                  <p style="width: 80%;">
-                    <a href="mailto:ayush1337@hotmail.com" target="_blank"
-                      style="color: white; text-decoration: underline;">
-                      ayush1337@hotmail.com
-                    </a>
-                  </p>
-                </li>
-                <li class="d-sm-flex justify-content-center">
-                  <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                  <div style="width: 80%;">
-                    <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
-                      fin-veda.vercel.app
-                    </a>
-                  </div>
-                </li>
-                <li class="d-sm-flex justify-content-center">
-                  <!-- Modified: Inline CSS to adjust logo size and sync with other pages -->
-                  <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font: 12px; width: 10%;"></i>
-                  <div style="width: 80%;">
-                    <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
-                      style="color:#fff">
-                      Delhi, India
-                    </a>
-                  </div>
-                </li>
-                <!-- Added: Social Media Redirects -->
-                <div class="social-icons">
-                  <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
-                  <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
-                  <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
-                  <a href="https://discord.com/"><i class="fa-brands fa-discord"></i></a>
-                  <a href="https://github.com/ayush-that/FinVeda"><i class="fa-brands fa-github"></i></a>
-                </div>
-              </ul>
-            </div>
-          </div>
+          <!-- quick and resourse -->
 
 
         </div>
@@ -2644,105 +2749,166 @@
     </style>
 
 
-      <!-- Newsletter pop-up -->
+<!-- Newsletter pop-up -->
  <style>
-  .popup-nl {
+ .popup-content-nl {
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    max-width: 800px;
+    height: 450px;
+    width: 90%; /* Adjusted to be responsive */
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    flex-direction: row;
+}
 
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      justify-content: center;
-      align-items: center;
-      z-index: 1009;
+.popup-left-nl img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-  }
+.popup-right-nl {
+    padding: 20px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
-  .popup-content-nl {
+/* Close button styling */
+.close1-btn-nl {
+    width: 20px;
+    cursor: pointer;
+    margin: 18px 10px;
+    position: absolute;
+    top: -4px;
+    right: 12px;
+    font-size: 18px;
+    font-weight: 800;
+}
 
-      display: flex;
-      background-color: white;
-      border-radius: 10px;
-      max-width: 800px;
-      height: 450px;
-      width: 700px;
-      overflow: hidden;
-      position: relative;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+.popup-nl h1 {
+    font-size: 24px;
+    background: linear-gradient(to right, #ff4aac, #faa2d3);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    text-align: center;
+    margin-bottom: 12px;
+    margin-top: 35px;
+}
 
-  }
+.h2-nl {
+    font-size: 18px;
+    margin-bottom: 8px;
+    text-align: center;
+    color: #333;
+}
 
-  .close1-btn-nl {
+.pop_up-nl {
+    margin-bottom: 15px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #0d4670, #32bbdc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 12.7px;
+}
 
-      width: 20px;
-      cursor: pointer;
-      margin: 18px 10px;
-      position: absolute;
-      top: -4px;
-      right: 12px;
-      font-size: 18px;
-      font-weight: 800;
+.popup-right-nl p {
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center;
+}
 
-  }
+.popup-nl {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1009;
+}
 
-  .popup-left-nl img {
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .popup-content-nl {
+        flex-direction: column;
+        height: auto;
+        width: 90%;
+    }
 
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .popup-right-nl {
+        width: 100%;
+        padding: 15px;
+    }
 
-  }
+    .popup-left-nl,
+    .popup-left-nl img {
+        height: 200px; /* Adjust height for mobile */
+    }
 
-  .popup-right-nl {
+    .popup-nl h1 {
+        font-size: 20px;
+    }
 
-      padding: 20px;
-      width: 50%;
-      display: flex;
-      flex-direction: column; 
-      align-items: center;
-      justify-content: center;
+    .h2-nl {
+        font-size: 16px;
+    }
 
-  }
+    .pop_up-nl {
+        font-size: 12px;
+    }
+}
 
-  .popup-nl h1 {
+@media (max-width: 480px) {
+    .popup-content-nl {
+        width: 95%;
+        height: auto;
+    }
 
-      font-size: 24px;
-      background: linear-gradient(to right, #ff4aac, #faa2d3); 
-      -webkit-text-fill-color: transparent; 
-      -webkit-background-clip: text; 
-      text-align: center;
-      margin-bottom: 12px;
-      margin-top: 35px;
+    .popup-nl h1 {
+        font-size: 18px;
+    }
 
-  }
+    .h2-nl {
+        font-size: 14px;
+    }
 
+    .pop_up-nl {
+        font-size: 11px;
+    }
+}
   .h2-nl{
-
       font-size: 18px;
       margin-bottom: 8px;
       text-align: center;
       color: #333;
-
   }
 
   .pop_up-nl {
-
       margin-bottom: 15px;
       font-weight: bold;
       background: linear-gradient(135deg, #0d4670, #32bbdc);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       font-size: 12.7px;
+  }
+    .popup-right-nl p {
+      margin-top: 0;
+      margin-bottom: 10px;
+      text-align: center;
 
   }
 
   .bold{
-
       font-size: 13.1px;
-
   }
 
   input[type="email"] {
@@ -2810,14 +2976,6 @@
   .terms-nl a:hover {
 
       text-decoration: underline;
-
-  }
-
-  .popup-right-nl p {
-
-      margin-top: 0;
-      margin-bottom: 10px;
-      text-align: center;
 
   }
 

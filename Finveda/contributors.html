@@ -18,6 +18,8 @@
   <link rel="stylesheet" href="./assets/css/default.css" />
   <link rel="stylesheet" href="./assets/css/style.css" />
   <link rel="stylesheet" href="./assets/css/popup.css" />
+
+ 
   <!-- Linked CSS for social logos -->
   <link rel="stylesheet" href="../assets/css/index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
@@ -590,7 +592,7 @@
     🤝 FinVeda - Contributors
    </h1>
 
-    <div id="contributors" class="contributors flex flex-wrap justify-center gap-8"></div>
+    <div id="contributors" class="contributors flex flex-wrap justify-center gap-8" ></div>
   </div>
 </div>
     <!-- Timed popup that will appear after succesful submission of feebback form! -->
@@ -766,6 +768,58 @@
   <script src="./assets/js/main.js"></script>
   <script src="./assets/js/popup.js"></script>
   <script src="./tools/smoothScroll.js"></script>
+  
+<script src="./contributor.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Function to check if an element is in the viewport
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.inner1Width || document.documentElement.clientWidth)
+    );
+  }
+
+  // Function to add the 'is-visible' class when an element is in view
+  function checkVisibility() {
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    animatedElements.forEach(el => {
+      if (isElementInViewport(el)) {
+        el.classList.add('is-visible');
+      }
+    });
+  }
+
+  // Function to add the 'animate-on-scroll' class to contributor cards
+  function addAnimationClass() {
+    const contributorCards = document.querySelectorAll('.contributor-card');
+    contributorCards.forEach(card => {
+      card.classList.add('animate-on-scroll');
+    });
+    checkVisibility(); 
+  }
+
+  // Run the function once all contributor cards are loaded
+  const observer = new MutationObserver((mutations) => {
+    if (document.querySelectorAll('.contributor-card').length > 0) {
+      addAnimationClass();
+      observer.disconnect(); // Stop observing once we've added the classes
+    }
+  });
+
+  // Start observing the document with the configured parameters
+  observer.observe(document.body, { childList: true, subtree: true });
+
+  // Listen for scroll events
+  window.addEventListener('scroll', checkVisibility);
+  // Also check visibility on window resize
+  window.addEventListener('resize', checkVisibility);
+});
+</script>
+
 </body>
 
 </html>

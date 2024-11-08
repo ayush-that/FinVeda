@@ -133,32 +133,60 @@
                 </div>
               </nav>
             </div>
+            <li class="nav-item no-underline align-self-center">
+              <button id="theme-toggle" class="theme-toggle">
+                <span>🌞</span>
+              </button>
+            </li>
+            
             <script>
-              const toggleButton = document.getElementById('theme-toggle');
-              var body = document.body;
-              var currentTheme = localStorage.getItem('theme');
-
-              if (currentTheme === 'dark') {
-                body.classList.add('dark-mode');
-                toggleButton.classList.add('dark');
-                toggleButton.querySelector('span').textContent = '🌞';
-              }
-
-              toggleButton.addEventListener('click', function () {
-                body.classList.toggle('dark-mode');
-                toggleButton.classList.toggle('dark');
-
-                // Update button icon based on mode
-                if (body.classList.contains('dark-mode')) {
-                  toggleButton.querySelector('span').textContent = '🌙';  // Light mode icon
-                  localStorage.setItem('theme', 'dark');
+              // Function to initialize theme based on localStorage
+              function initializeTheme() {
+                const body = document.body;
+                const toggleButton = document.getElementById('theme-toggle');
+                const currentTheme = localStorage.getItem('theme');
+            
+                // Apply saved theme
+                if (currentTheme === 'dark') {
+                  body.classList.add('dark-mode');
+                  toggleButton.classList.add('dark');
+                  toggleButton.querySelector('span').textContent = '🌙'; // Dark mode icon
                 } else {
-                  toggleButton.querySelector('span').textContent = '🌞';  // Dark mode icon
-                  localStorage.setItem('theme', 'light');
+                  toggleButton.querySelector('span').textContent = '🌞'; // Light mode icon
                 }
-                loadShow();
+              }
+            
+              // Call initializeTheme on page load
+              document.addEventListener('DOMContentLoaded', () => {
+                initializeTheme();
+            
+                const toggleButton = document.getElementById('theme-toggle');
+                const body = document.body;
+            
+                // Event listener for theme toggle
+                toggleButton.addEventListener('click', () => {
+                  body.classList.toggle('dark-mode');
+                  toggleButton.classList.toggle('dark');
+            
+                  // Update icon and save theme
+                  if (body.classList.contains('dark-mode')) {
+                    toggleButton.querySelector('span').textContent = '🌙'; // Dark mode icon
+                    localStorage.setItem('theme', 'dark');
+                  } else {
+                    toggleButton.querySelector('span').textContent = '🌞'; // Light mode icon
+                    localStorage.setItem('theme', 'light');
+                  }
+            
+                  loadShow(); // Call any additional function if needed
+                });
               });
+            
+              // Function placeholder for additional operations (if needed)
+              function loadShow() {
+                // Additional actions can go here
+              }
             </script>
+            
 
 
     </header>
@@ -166,16 +194,134 @@
 
 
     <div class="second-header">
-      <h1>Let's Start Your Journey in World of Finance</h1>
-      <p>Learn the basics of finance with these curated video lessons. Click "Watch Now" to view each course.</p>
+        <h1  >Let's Start Your Journey in World of Finance</h1>
+      <p style="color: #a41313;">Learn the basics of finance with these curated video lessons. Click "Watch Now" to view each course.</p>
+
+       
+      
+    
+      <!-- Search Bar and Button -->
+      <div class="search-container">
+        <input type="text" style="padding-left:20px" class="search-bar" placeholder="   Search...">
+        <button class="search-button">🔍</button>
+      </div>
     </div>
+    
     <style>
+      /* Header styling */
       .second-header {
         background: linear-gradient(135deg, #8598e7, #2e2ef3);
         border: 5px solid white;
         margin-bottom: 30px;
+        position: relative;
+        padding: 20px;
+        padding-bottom: 60px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+      }
+    
+      /* Container for search bar and button */
+      .search-container {
+        position: absolute;
+        top: 80px;
+        padding-top: 10px;
+        right: 35%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    
+      /* Search bar styling */
+      .search-bar {
+        padding: 10px 40px 10px 20px; /* Padding for the text and icon */
+        font-size: 16px;
+        border: 2px solid #fff;
+        border-radius: 30px; /* Rounded corners */
+        background-color: transparent;
+        color: white;
+        outline: none;
+        width: 250px; /* Adjust width */
+        transition: border-color 0.3s ease;
+        background-image: url('https://img.icons8.com/ios-filled/50/ffffff/search.png'); /* Search icon */
+        background-position: 10px center; /* Icon position inside the input */
+        background-repeat: no-repeat;
+        background-size: 18px;
+      }
+    
+      /* Search bar focus effect */
+      .search-bar:focus {
+        border-color: #9999df; /* Highlight border on focus */
+      }
+    
+      /* Search button styling */
+      .search-button {
+        margin-left: 10px; /* Space between input and button */
+        padding: 10px 16px;
+        font-size: 18px;
+        background-color: #ececee; /* Button background */
+        border: 2px solid #8686bb;
+        border-radius: 30px; /* Rounded corners */
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    
+      /* Button hover effect */
+      .search-button:hover {
+        background-color: #fff;
+        color: #2e2ef3;
+        transform: translateY(-2px); /* Subtle hover effect */
+      }
+    
+      /* Placeholder text style */
+      .search-bar::placeholder {
+        color: #ddd;
+        opacity: 1; /* Ensure placeholder text is visible */
+      }
+    
+      /* Mobile responsiveness */
+      @media (max-width: 768px) {
+        .search-container {
+          top: 10px;
+          right: 10px;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+    
+        .search-bar {
+          width: 200px; /* Smaller width for mobile */
+        }
+    
+        .search-button {
+          margin-top: 10px;
+        }
       }
     </style>
+    <script>
+      document.querySelector('.search-bar').addEventListener('input', function () {
+        const searchTerm = this.value.toLowerCase(); 
+        const courses = document.querySelectorAll('.course'); 
+    
+        courses.forEach(course => {
+          const courseTitle = course.querySelector('h2').textContent.toLowerCase(); 
+          // Check if the course title includes the search term
+          if (courseTitle.includes(searchTerm)) {
+            course.style.display = 'block'; 
+          } else {
+            course.style.display = 'none'; 
+          }
+        });
+      });
+    </script>
+    
+    
 
     <main>
       <div class="course" data-aos="slide-right">
@@ -215,9 +361,9 @@
       </div>
 
 
-      <div class="course" data-aos="">
+      <!-- <div class="course" data-aos="">
         <button onclick="loadMore()">Load More</button>
-      </div>
+      </div> -->
 
 
 

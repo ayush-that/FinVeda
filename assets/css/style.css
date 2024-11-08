@@ -2121,6 +2121,19 @@ p {
   border-radius: 8px;
   position: relative;
 }
+
+@media (max-width: 600px) {
+  #article{
+    width: 100vw;
+  }
+  .section-title{
+    padding: 0;
+  }
+  .single-blog .blog-content a .more {
+    margin-top: 30px;
+  }
+}
+
 .single-blog:hover {
   transform: scale(0.95);
   cursor: pointer;
@@ -2252,7 +2265,7 @@ p {
 
 @media (max-width: 767px) {
   .subscribe-content .subscribe-title {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 
@@ -2269,9 +2282,10 @@ p {
   height: 65px;
   padding: 0 30px;
   border-radius: 5px;
-  width: 60%;
+  width: 100%;
   color: #2e2e2e;
   margin-top: 20px;
+  
 
 }
 
@@ -2314,7 +2328,7 @@ p {
   right: 0;
   border-radius: 8px;
   height: 65px;
-  width: 150px;
+  width: 175px;
   color: white;
   border: none;
   line-height: 65px;
@@ -2338,8 +2352,10 @@ p {
 @media (max-width: 767px) {
   .subscribe-form button {
     position: relative;
-    width: 100%;
-    margin-top: 20px;
+    width:100%;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 13px;
     border-radius: 8px;
   }
 }
@@ -2347,7 +2363,9 @@ p {
 @media only screen and (min-width: 576px) and (max-width: 767px) {
   .subscribe-form button {
     position: absolute;
-    width: auto;
+    width:100px;
+    padding-left: 13px;
+    height: 50px;
     margin-top: 0;
     border-radius: 8px;
   }
@@ -2932,7 +2950,7 @@ text-align: center;
   margin-top: 20px;
 }
 
-.form-section {
+.form-section { 
   width: 50rem;
   height: 60rem;
   display: flex;
@@ -3070,6 +3088,21 @@ text-align: center;
   .form-section {
     width: 100%;
     padding: 20px;
+  }
+
+  .form-section h2{
+    padding-top: 30px;
+  }
+
+ #form-group2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #form-group2 .form-button{
+    margin-left: 0%;
+    margin-top: 15px;
   }
 
   .form-info-section {
@@ -3366,16 +3399,41 @@ transition: background-color 0.3s;
   }
 }
 
-/* Move testimonials to the right */
-.testimonial-wrapper .single-testimonial {
-  margin-left: auto;
-  padding-right: 20px; 
-  transform: translateX(40px);
+
+.services-list-item {
+  color: #333; /* Dark color for light mode */
 }
 
-/* If you need to adjust the container to prevent horizontal scroll */
-.testimonial-wrapper {
-  overflow-x: hidden;
+
+.dark-mode .services-list-item {
+  color: #f0f0f0; /* Light color for dark mode */
+}
+.services-list-item {
+  color: #f0f0f0; /* Light color for dark mode */
+}
+.dark-mode .services-content,
+.dark-mode .single-services {
+  color: #f0f0f0; /* Light color for dark mode */
+  background-color: #333; /* Dark background for dark mode */
+}
+/* Dark mode styles */
+.dark-mode .services-content .services-title a,
+.dark-mode .services-content .services-description,
+.dark-mode .services-content .services-list-item {
+  color: #ffffff; /* White color for dark mode */
 }
 
-/* ** end ** */
+
+.dark-mode .single-services {
+  background-color: #333333; /* Dark background for the service box */
+}
+
+
+.dark-mode .services-content .more {
+  color: #ffffff; /* White color for the link */
+}
+
+
+.dark-mode .services-icon i {
+  color: #ffffff; /* White color for the icon */
+}

@@ -20,6 +20,37 @@ document.querySelector(".sign-up-form").addEventListener("submit", function (e) 
     }
   });
   
+  let generatedOtp = "";
+
+// Function to generate and display OTP
+function generateAndSendOTP() {
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+
+  if (username && password) {
+    // Generate a 6-digit OTP
+    generatedOtp = Math.floor(100000 + Math.random() * 900000).toString();
+    alert(`Your OTP is: ${generatedOtp}`); // Display OTP for testing (replace with SMS or email in production)
+    
+    // Show the OTP input section
+    document.getElementById("otp-section").style.display = "block";
+  } else {
+    alert("Please enter a valid username and password.");
+  }
+}
+
+// Function to verify the OTP entered by the user
+function verifyOTP() {
+  const userOtp = document.getElementById("otp").value;
+
+  if (userOtp === generatedOtp) {
+    alert("OTP verified! Login successful.");
+    window.location.href = "homepage.html"; // Redirect to the dashboard
+  } else {
+    alert("Invalid OTP. Please try again.");
+  }
+}
+
   // Login functionality
   document.querySelector(".sign-in-form").addEventListener("submit", function (e) {
     e.preventDefault();
