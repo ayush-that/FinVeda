@@ -1,171 +1,94 @@
-window.onscroll = function () {
-  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  var scrolled = (winScroll / height) * 100;
-  document.getElementById("progressBar").style.width = scrolled + "%";
-};
+const repoOwner = "ayush-that";  // Repository owner for FinVeda
+const repoName = "FinVeda";      // Repository name for FinVeda
 
-document.addEventListener("DOMContentLoaded", function () {
-  const coords = { x: 0, y: 0 };
-  const circles = document.querySelectorAll(".circle");
+// URLs to fetch data
+const contributorsUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contributors`;
+const repoUrl = `https://api.github.com/repos/${repoOwner}/${repoName}`;
 
-  circles.forEach(function (circle) {
-      circle.x = 0;
-      circle.y = 0;
-  });
+async function fetchContributorData() {
+  try {
+    // Fetch all contributors with pagination
+    const contributors = await fetchAllContributors();
 
-  window.addEventListener("mousemove", function (e) {
-      coords.x = e.pageX;
-      coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
-  });
+    // Fetch repository data (stars, forks, etc.)
+    const repoRes = await fetch(repoUrl);
+    const repoData = await repoRes.json();
 
-  function animateCircles() {
-      let x = coords.x;
-      let y = coords.y;
+    // Render stats
+    renderStats(repoData, contributors);
 
-      circles.forEach(function (circle, index) {
-          circle.style.left = `${x - 12}px`;
-          circle.style.top = `${y - 12}px`;
-          circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+    // Render contributors
+    renderContributors(contributors);
 
-          const nextCircle = circles[index + 1] || circles[0];
-          circle.x = x;
-          circle.y = y;
+    // Apply mouse effect to cards
+    applyMouseEffectToCards();
 
-          x += (nextCircle.x - x) * 0.3;
-          y += (nextCircle.y - y) * 0.3;
-      });
-
-      requestAnimationFrame(animateCircles);
+  } catch (error) {
+    console.error("Error fetching data:", error);
   }
+}
 
-  animateCircles();
-});
+// Fetch all contributors across pages
+async function fetchAllContributors() {
+  let contributors = [];
+  let page = 1;
+  let response;
 
-document.addEventListener('DOMContentLoaded', function () {
-  const contributorsContainer = document.getElementById('contributors');
+  do {
+    response = await fetch(`${contributorsUrl}?page=${page}&per_page=100`);
+    const contributorsData = await response.json();
+    contributors.push(...contributorsData);
+    page++;
+  } while (response.headers.get('link') && response.headers.get('link').includes('rel="next"')); // Check for next page
 
-  async function fetchRepoStats() {
-      try {
-          const response = await fetch('https://api.github.com/repos/ayush-that/FinVeda');
-          return await response.json();
-      } catch (error) {
-          console.error('Error fetching repository stats:', error);
-          return {};
-      }
-  }
+  return contributors;
+}
 
-  async function fetchContributors() {
-      try {
-          let page = 1;
-          const perPage = 100;
-          let totalContributors = [];
+// Render stats like total contributions, stars, forks, etc.
+function renderStats(repoData, contributors) {
+  const statsGrid = document.getElementById("statsGrid");
 
-          while (true) {
-              const response = await fetch(`https://api.github.com/repos/ayush-that/FinVeda/contributors?per_page=${perPage}&page=${page}`);
-              const contributors = await response.json();
+  statsGrid.innerHTML = `
+    <div class="contributor-stat-card"><h3>${contributors.length}</h3><p>Contributors</p></div>
+    <div class="contributor-stat-card"><h3>${contributors.reduce((sum, { contributions }) => sum + contributions, 0)}</h3><p>Total Contributions</p></div>
+    <div class="contributor-stat-card"><h3>${repoData.stargazers_count}</h3><p>GitHub Stars</p></div>
+    <div class="contributor-stat-card"><h3>${repoData.forks_count}</h3><p>Forks</p></div>
+  `;
+}
 
-              if (contributors.length === 0) break;
+// Render the list of contributors
+function renderContributors(contributors) {
+  const contributorsContainer = document.getElementById("contributors");
 
-              totalContributors = totalContributors.concat(contributors);
-              page++;
-          }
-
-          totalContributors.forEach(contributor => {
-              const contributorCard = document.createElement('a');
-              contributorCard.href = contributor.html_url;
-              contributorCard.target = '_blank';
-              contributorCard.className = 'contributor-card';
-              contributorCard.innerHTML = `
-                  <img src="${contributor.avatar_url}" alt="${contributor.login}">
-                  <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">${contributor.login}</h2>
-                  <p class="text-gray-700 dark:text-gray-400">Contributions: ${contributor.contributions}</p>
-                  <p class="text-gray-700 dark:text-gray-400 flex-center"><i class="fab fa-github mr-1"></i> GitHub Profile</p>
-              `;
-              contributorsContainer.appendChild(contributorCard);
-          });
-
-          // Get repository stats
-          const repoStats = await fetchRepoStats();
-          const totalContributions = totalContributors.reduce((sum, c) => sum + c.contributions, 0);
-
-          // Call renderStats with the prepared data
-          renderStats({
-              totalContributions,
-              stargazers_count: repoStats.stargazers_count,
-              forks_count: repoStats.forks_count
-          }, totalContributors.length);
-      } catch (error) {
-          console.error('Error fetching contributors:', error);
-      }
-  }
-
-  fetchContributors();
-});
-
-document.getElementById('unique-subscribe-form').addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevent form from submitting normally
-
-  // Show popup message
-  var messageDiv = document.getElementById('unique-message');
-  messageDiv.style.display = 'block';
-  
-  // Reset existing animation
-  var borderAnimationDiv = messageDiv.querySelector('.border-animation');
-  borderAnimationDiv.style.animation = 'none';
-  borderAnimationDiv.offsetHeight; // Trigger reflow to restart the animation
-  borderAnimationDiv.style.animation = 'borderAnimation 3s linear forwards';
-
-  // Hide popup message after 10 seconds
-  setTimeout(function() {
-      messageDiv.style.display = 'none';
-  }, 3000); // 10 seconds
-
-  // Reset form
-  this.reset();
-});
-
-document.getElementById("copyright-year").textContent = new Date().getFullYear();
-
-// Render stats
-function renderStats(repoStats, contributorsCount) {
-  const statsGrid = document.getElementById('statsGrid');
-  const stats = [
-      { label: 'Contributors', value: contributorsCount, icon: 'users' },
-      { label: 'Total Contributions', value: repoStats.totalContributions || 0, icon: 'git-commit' },
-      { label: 'GitHub Stars', value: repoStats.stargazers_count || 0, icon: 'star' },
-      { label: 'Forks', value: repoStats.forks_count || 0, icon: 'git-branch' }
-  ];
-
-  statsGrid.innerHTML = stats.map(stat => `
-      <div class="contributor-stat-card">
-          <div class="contributor-icon">${getIcon(stat.icon)}</div>
-          <h3>${stat.value}</h3>
-          <p>${stat.label}</p>
-      </div>
+  contributorsContainer.innerHTML = contributors.map(({ login, contributions, avatar_url, html_url }) => `
+    <div class="contributor-card" style="--clr:#5affe7">
+      <img src="${avatar_url}" alt="${login}'s avatar">
+      <p><strong>${login}</strong></p>
+      <p>Contributions: ${contributions}</p>
+      <a href="${html_url}" target="_blank">GitHub Profile</a>
+    </div>
   `).join('');
 }
 
+// Apply mouse effect on the contributor cards
+function applyMouseEffectToCards() {
+  const cards = document.querySelectorAll('.contributor-card');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', function(e) {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
 
-// Function to get icons (ensure this is defined)
-function getIcon(iconName) {
-  // Placeholder implementation; replace with actual icon logic
-  return `<i class="icon-${iconName}"></i>`;
+      card.style.setProperty('--x', x + 'px');
+      card.style.setProperty('--y', y + 'px');
+    });
+  });
 }
 
+// Call the function to fetch and display data
+fetchContributorData();
 
-function getIcon(iconName) {
-  switch (iconName) {
-      case 'users':
-          return '<i class="fas fa-users"></i>'; // Font Awesome Users Icon
-      case 'git-commit':
-          return '<i class="fas fa-clipboard-check"></i>'; // Font Awesome Contributions Icon
-      case 'star':
-          return '<i class="fas fa-star"></i>'; // Font Awesome Star Icon
-      case 'git-branch':
-          return '<i class="fas fa-code-branch"></i>'; // Font Awesome Forks Icon
-      default:
-          return ''; // Fallback for unknown icons
-  }
-}
-
+// Initialize the page when the DOM is loaded
+document.addEventListener('DOMContentLoaded', function () {
+  // Your initialization code here if needed
+});

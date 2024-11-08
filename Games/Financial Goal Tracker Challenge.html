@@ -222,5 +222,37 @@
             window.location.href = 'index.html';
         }
     </script>
+
+    <!-- Back to Home Button -->
+<button id="backToHomeBtn" style="
+position: fixed;
+top: 20px;
+left: 20px;
+padding: 10px 20px;
+background-color: #007bff;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;">
+Back to Home
+</button>
+
+<script>
+// Get the Back to Home button element
+const backToHomeBtn = document.getElementById("backToHomeBtn");
+
+// Add a click event to the button to redirect to the home page
+backToHomeBtn.addEventListener("click", function() {
+    // Redirect to the home page; use an absolute path if needed
+    window.location.href = "/index.html"; // Adjust as needed
+
+    // For a different URL structure, try:
+     window.location.href = "https://fin-veda.vercel.app//index.html"; // Full URL
+});
+</script>
+
+
+
+
 </body>
 </html>
