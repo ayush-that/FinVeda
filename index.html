@@ -1514,19 +1514,103 @@
   <header class="forum_1">
   </header>
 
-  <main>
-    <section id="destinations" class="destinations">
-      <h1>Discussion Forum</h1>
-      <div class="post-container">
-        <form id="postForm">
-          <textarea id="postContent" placeholder="Write your post here..." required></textarea>
-          <button type="submit">Submit</button>
-        </form>
-        <div id="posts"></div>
-      </div>
-    </section>
-    <!-- Add more sections for other categories -->
+  <main class="forum-body">
+    <main class="forum-main">
+      <img src="assets/images/discuss.png" style="position: absolute;mix-blend-mode: multiply;left: 100px;" alt="dicuss">
+      <section style="width: 1000px; height: 800px;" id="destinations" class="destinations">
+        <h1 class="forum-title">Discussion Forum</h1>
+        <div  style="width: 800px; height: 600px;" class="post-container">
+          <form style="width: 800px; height: 500px;"  id="postForm" class="post-form">
+            <input type="text" id="name" class="input-field name-input" placeholder="Enter your name" required>
+            <textarea id="postContent" class="input-field post-textarea" placeholder="Write your post here..." required></textarea>
+            <button type="submit" class="submit-button">Submit</button>
+          </form>
+          <div id="posts"></div>
+        </div>
+      </section>
+    </main>
   </main>
+  <style>
+    .forum-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%; /* Adjusts the width to roughly 3 times its original center-aligned width */
+  background-color: #f0f8ff;
+  font-family: Arial, sans-serif;
+}
+
+.forum-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.destinations {
+  text-align: center;
+}
+
+.forum-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.post-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post-form {
+  background: linear-gradient(135deg, #d4fc79, #96e6a1);
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  border: 3px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(45deg, #89f7fe, #66a6ff);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-field {margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 3px solid #ddd;
+  border-radius: 10%;
+  outline: none;
+  font-size: 1em;
+  background-color: #ffffff; /* Sets input fields to have a white background */
+}
+
+.name-input {
+  /* additional styling for name input if needed */
+}
+
+.post-textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.submit-button {
+  background: linear-gradient(135deg, #84fab0, #8fd3f4);
+  color: white;
+  font-size: 1em;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-button:hover {
+  background: linear-gradient(135deg, #8fd3f4, #84fab0);
+}
+
+  </style>
   <script src="finance.js"></script>
 
   <!-- testimonail section starts here  -->
