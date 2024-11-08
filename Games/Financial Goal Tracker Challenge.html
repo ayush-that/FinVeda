@@ -5,15 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Financial Goal Tracker</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://raw.githubusercontent.com/ayush-that/FinVeda/refs/heads/main/assets/images/Favicon1.ico" type="image/x-icon">
 </head>
 <body>
     <div class="container">
-        <h1>Financial Goal Tracker Challenge</h1>
+        <!-- Home Button -->
+        <div class="home-button">
+            <button onclick="goHome()">Home</button>
+        </div>
+        
+        <h1>Financial Goal Tracker</h1>
+        
         <div class="goal-input">
             <label for="goal-amount">Set Your Goal Amount ($):</label>
             <input type="number" id="goal-amount" placeholder="Enter your goal">
             <button onclick="setGoal()">Set Goal</button>
         </div>
+        
         <div class="tracker">
             <h2>Track Your Progress</h2>
             <div id="goal-display" class="goal-display"></div>
@@ -26,159 +34,193 @@
             <div id="status" class="status"></div>
         </div>
     </div>
+    
     <style>
         /* Reset and Font Setup */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-/* Background */
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #4facfe, #00f2fe);
-    color: #333;
-}
+        /* Background */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            color: #333;
+        }
 
-/* Main Container */
-.container {
-    text-align: center;
-    width: 620px;
-    padding: 30px;
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-}
+        /* Main Container */
+        .container {
+            text-align: center;
+            width: 620px;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
 
-.container:hover {
-    transform: scale(1.02);
-}
+        .container:hover {
+            transform: scale(1.02);
+        }
 
-h1, h2 {
-    color: #222;
-    margin-bottom: 15px;
-}
+        h1, h2 {
+            color: #222;
+            margin-bottom: 15px;
+        }
 
-.goal-input,
-.tracker {
-    margin-bottom: 25px;
-}
+        /* Home Button */
+        .home-button {
+            text-align: left;
+            margin-bottom: 15px;
+        }
 
-.goal-input label,
-.tracker label {
-    font-size: 0.9em;
-    color: #666;
-}
+        .home-button button {
+            padding: 10px 20px;
+            color: #fff;
+            background: #4facfe;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
 
-.goal-display {
-    margin-top: 10px;
-    font-size: 1.1em;
-    font-weight: bold;
-    color: #444;
-}
+        .home-button button:hover {
+            background: #00a9fe;
+        }
 
-/* Input Fields */
-input[type="number"] {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    outline: none;
-    transition: border 0.3s ease;
-}
+        .goal-input,
+        .tracker {
+            margin-bottom: 25px;
+        }
 
-input[type="number"]:focus {
-    border-color: #4facfe;
-}
+        .goal-input label,
+        .tracker label {
+            font-size: 0.9em;
+            color: #666;
+        }
 
-/* Buttons */
-button {
-    padding: 12px 20px;
-    color: #fff;
-    background: linear-gradient(135deg, #4facfe, #00f2fe);
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
+        .goal-display {
+            margin-top: 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #444;
+        }
 
-button:hover {
-    background: linear-gradient(135deg, #00f2fe, #4facfe);
-}
+        /* Input Fields */
+        input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            outline: none;
+            transition: border 0.3s ease, box-shadow 0.3s ease;
+        }
 
-/* Progress Bar */
-#progress-bar {
-    width: 100%;
-    height: 25px;
-    background-color: #eee;
-    border-radius: 15px;
-    overflow: hidden;
-    margin-top: 20px;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
-}
+        /* Hover Effect for Input Fields */
+        input[type="number"]:hover {
+            border-color: #4facfe;
+            box-shadow: 0 0 8px rgba(79, 172, 254, 0.3);
+        }
 
-#progress-fill {
-    height: 100%;
-    width: 0%;
-    background: linear-gradient(135deg, #28a745, #85e085);
-    transition: width 0.5s ease;
-}
+        input[type="number"]:focus {
+            border-color: #4facfe;
+            box-shadow: 0 0 8px rgba(79, 172, 254, 0.5);
+        }
 
-/* Status */
-.status {
-    margin-top: 15px;
-    font-weight: bold;
-    font-size: 1em;
-    color: #555;
-}
+        /* Buttons */
+        button {
+            padding: 12px 20px;
+            color: #fff;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
 
+        button:hover {
+            background: linear-gradient(135deg, #00f2fe, #4facfe);
+        }
+
+        /* Progress Bar */
+        #progress-bar {
+            width: 100%;
+            height: 25px;
+            background-color: #eee;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-top: 20px;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        #progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(135deg, #28a745, #85e085);
+            transition: width 0.5s ease;
+        }
+
+        /* Status */
+        .status {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 1em;
+            color: #555;
+        }
     </style>
+    
     <script>
+        // Set goal and add savings functions
         let goalAmount = 0;
-let currentSavings = 0;
+        let currentSavings = 0;
 
-function setGoal() {
-    goalAmount = parseFloat(document.getElementById('goal-amount').value);
-    if (isNaN(goalAmount) || goalAmount <= 0) {
-        alert("Please enter a valid goal amount.");
-        return;
-    }
-    document.getElementById('goal-display').innerText = `Goal: $${goalAmount.toFixed(2)}`;
-    updateProgress();
-}
+        function setGoal() {
+            goalAmount = parseFloat(document.getElementById('goal-amount').value);
+            if (isNaN(goalAmount) || goalAmount <= 0) {
+                alert("Please enter a valid goal amount.");
+                return;
+            }
+            document.getElementById('goal-display').innerText = `Goal: $${goalAmount.toFixed(2)}`;
+            updateProgress();
+        }
 
-function addSavings() {
-    const saveAmount = parseFloat(document.getElementById('save-amount').value);
-    if (isNaN(saveAmount) || saveAmount <= 0) {
-        alert("Please enter a valid savings amount.");
-        return;
-    }
-    currentSavings += saveAmount;
-    updateProgress();
-}
+        function addSavings() {
+            const saveAmount = parseFloat(document.getElementById('save-amount').value);
+            if (isNaN(saveAmount) || saveAmount <= 0) {
+                alert("Please enter a valid savings amount.");
+                return;
+            }
+            currentSavings += saveAmount;
+            updateProgress();
+        }
 
-function updateProgress() {
-    if (goalAmount === 0) {
-        document.getElementById('status').innerText = "Please set a goal first.";
-        return;
-    }
+        function updateProgress() {
+            if (goalAmount === 0) {
+                document.getElementById('status').innerText = "Please set a goal first.";
+                return;
+            }
 
-    const progress = Math.min((currentSavings / goalAmount) * 100, 100);
-    document.getElementById('progress-fill').style.width = `${progress}%`;
+            const progress = Math.min((currentSavings / goalAmount) * 100, 100);
+            document.getElementById('progress-fill').style.width = `${progress}%`;
 
-    if (currentSavings >= goalAmount) {
-        document.getElementById('status').innerText = `🎉 Congratulations! You've reached your goal of $${goalAmount.toFixed(2)}!`;
-    } else {
-        document.getElementById('status').innerText = `Saved: $${currentSavings.toFixed(2)} / $${goalAmount.toFixed(2)}`;
-    }
-}
+            if (currentSavings >= goalAmount) {
+                document.getElementById('status').innerText = `🎉 Congratulations! You've reached your goal of $${goalAmount.toFixed(2)}!`;
+            } else {
+                document.getElementById('status').innerText = `Saved: $${currentSavings.toFixed(2)} / $${goalAmount.toFixed(2)}`;
+            }
+        }
+
+        // Function to navigate back to the homepage
+        function goHome() {
+            window.location.href = 'index.html';
+        }
     </script>
 </body>
 </html>
