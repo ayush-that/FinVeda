@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="content">
+            <h1>Want<span> to play a </span>GAME?</h1><br>
+            <button class="nav-button" onclick="window.location.href='Financial Goal Tracker Challenge.html'">Financial Goal Tracker Challenge</button>
+            <button class="nav-button" onclick="window.location.href='Retirment planning game.html'">Retirement planning Game</button>
+        </div>
+        <img src="https://github.com/shriyadindi/comingsoonpage/blob/main/rocket.png?raw=true" class="rocket">
+    </div>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins',sans-serif;
+    box-sizing: border-box;
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(https://github.com/shriyadindi/comingsoonpage/blob/main/background.png?raw=true);
+    background-position: center;
+    background-size: cover;
+    padding: 0 8%;
+}
+.logo{
+    width: 120px;
+    padding: 20px 0;
+    cursor: pointer;
+}
+.content{
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+    color: #fff;
+}
+.content h1{
+    font-size: 64px;
+    font-weight: 600;
+}
+.content h1 span{
+    padding-top: 40px;
+    color: #ff3753;
+}
+.nav-button {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: white;
+            background: linear-gradient(135deg, #e91e63, #ff4081);
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .nav-button a{
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Hover effect with scaling */
+        .nav-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Button animation on click */
+        .nav-button:active {
+            transform: scale(0.95);
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Adding a glow effect on hover */
+        .nav-button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .nav-button:hover::after {
+            opacity: 1;
+        }
+.rocket{
+    width: 250px;
+    position: absolute;
+    right: 10%;
+    bottom: 0;
+    animation: rocket 4s linear infinite;
+}
+@keyframes rocket{
+    0%{
+        bottom: 0;
+        opacity: 0;
+    }
+    100%{
+        bottom: 105%;
+        opacity: 1;
+    }
+}
+    </style>
+</body>
+
+</html>

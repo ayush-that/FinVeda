@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retirement Planning Game</title>
+    <style>
+        /* Enhanced CSS Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: radial-gradient(circle, #f9a8d4, #f472b6, #a16dc1);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 2.5em;
+            margin-top: 80px;
+            text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.3s;
+            margin-top: 120px;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        .info {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .choice-btn {
+            background: linear-gradient(135deg, #8e24aa, #d81b60);
+            color: #fff;
+            padding: 14px 28px;
+            margin: 10px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1em;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+        }
+
+        .choice-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #7c4dff, #d81b60);
+        }
+
+        .choice-btn i {
+            font-size: 1.2em;
+        }
+
+        .progress {
+            width: 100%;
+            background: #f0f0f0;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 30px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(to right, #ff79a5, #d81b60);
+            width: 0;
+            transition: width 0.6s ease-in-out;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #d81b60;
+            font-weight: bold;
+            text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Add a subtle floating animation */
+        .container {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>Retirement Planning Game</h1>
+    <div class="container">
+        <div class="info" id="info">Plan your moves wisely to reach your retirement goal!</div>
+        <button class="choice-btn" onclick="makeChoice('save')">
+            <i class="fas fa-piggy-bank"></i> Save Money
+        </button>
+        <button class="choice-btn" onclick="makeChoice('invest')">
+            <i class="fas fa-chart-line"></i> Invest Money
+        </button>
+        <button class="choice-btn" onclick="makeChoice('spend')">
+            <i class="fas fa-shopping-cart"></i> Spend Money
+        </button>
+        <div class="progress">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <div id="message"></div>
+    </div>
+
+    <script>
+        // JavaScript Logic
+        let progress = 0;
+
+        function makeChoice(choice) {
+            const message = document.getElementById('message');
+            const info = document.getElementById('info');
+            const progressBar = document.getElementById('progress-bar');
+
+            if (choice === 'save') {
+                progress += 5;
+                message.textContent = "Good choice! Saving helps you get closer to retirement.";
+            } else if (choice === 'invest') {
+                progress += Math.floor(Math.random() * 10) + 5;
+                message.textContent = "Smart move! Investments can grow your retirement fund.";
+            } else if (choice === 'spend') {
+                progress -= 10;
+                message.textContent = "Spending slows down your retirement journey. Save more!";
+            }
+
+            if (progress < 0) progress = 0;
+            if (progress >= 100) {
+                progress = 100;
+                message.textContent = "Congratulations! You've reached your retirement goal!";
+                info.textContent = "Great job on planning for your future!";
+            }
+
+            progressBar.style.width = progress + "%";
+        }
+    </script>
+</body>
+</html>
