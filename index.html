@@ -1619,12 +1619,12 @@
       <div class="section-title text-center pb-40">
         <div class="line m-auto"></div>
 
-        <h3 class="title">Users sharing<span> their experience</span></h3>
+        <h3 style="margin-top: 50px; margin-bottom: 10px;font-size:2.9rem;" class="title">Users sharing<span> their experience</span></h3>
 
       </div>
     </div>
   </div>
-  <div class="slider">
+  <div style="margin-top: 0px;" class="slider">
     <div class="item">
       <img src="https://i.pravatar.cc/250?u=user1@finveda.com" alt="Aditi Verma">
       <div class="stars">★★★★★</div>
@@ -1701,60 +1701,49 @@
   <!-- testimonail section ends here  -->
 
   <style>
-    .section-title .title {
-      font-size: 2.5rem;
-      color: rgb(27, 45, 0);
-      font-weight: bold;
+    .section-title .title,
+    .slider,
+    .item,
+    .slider p,
+    .slider h2,
+    .slider .job-title,
+    .slider .location {
+      font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-
+  
     .slider {
       position: relative;
       margin-top: 100px;
       width: 100%;
       height: 550px;
-      /* Increased height */
       overflow: hidden;
     }
-
-    @media (prefers-color-scheme: dark) {
-
-
-      .slider p,
-      .slider h2,
-      .slider .job-title,
-      .slider .location {
-        color: #000000;
-        /* Ensure all text is light */
-      }
-
-      .slider .stars {
-        color: #ffd700;
-        /* Bright gold color for stars */
-      }
-    }
-
-
+  
     .item {
       position: absolute;
       width: 350px;
-      /* Increased width */
       height: 500px;
-      /* Increased height */
-      text-align: justify;
       background-color: #fff;
       border-radius: 10px;
       padding: 20px;
       transition: 0.5s;
       left: calc(50% - 175px);
-      /* Adjusted for new width */
-      top: 0;
+      top: 40px;
       margin-bottom: 100px;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
     }
+  
+    /* Pink gradient background for the focused card */
+    .item.focused {
+  background: linear-gradient(135deg, #fccde9, #f33396);
+ 
+  box-shadow: 0 0 10px rgb(38, 200, 250), 0 0 10px rgb(38, 200, 250), 0 0 30px rgba(0, 119, 255, 0.3);
+}
 
+  
     #next,
     #prev {
       position: absolute;
@@ -1768,44 +1757,21 @@
       opacity: 0.5;
       transition: opacity 0.5s;
       z-index: 10;
-      /* Ensure buttons are above slides */
     }
-
+  
     #next {
       right: 50px;
     }
-
+  
     #prev {
       left: 50px;
     }
-
+  
     #prev:hover,
     #next:hover {
-      opacity: 8;
+      opacity: 1;
     }
-
-    /* css for mouse cursor trail effect */
-    .circle {
-      position: absolute;
-      width: 25px;
-      height: 25px;
-      border-radius: 50%;
-      pointer-events: none;
-      background: radial-gradient(circle, rgba(70, 130, 180, 0.3), skyblue, rgba(0, 0, 50, 0.3), white);
-      transition: transform 0.1s, left 0.1s, top 0.1s;
-    }
-
-    .circle-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 9999;
-      /* removed the non-breaking space (&nbsp;) */
-    }
-
+  
     .item img {
       width: 150px;
       height: 150px;
@@ -1815,52 +1781,57 @@
       cursor: pointer;
       transition: transform 0.3s ease;
     }
-
+  
     .item img:hover {
       transform: scale(1.1);
     }
-
+  
     .item h2 {
       margin: 0 0 10px 0;
       font-size: 1.2em;
     }
-
-
+  
     .item p {
       text-align: justify;
       font-size: 0.9em;
       margin-bottom: 20px;
     }
-
+  
     .stars {
       color: #ffd700;
       font-size: 1.6em;
       margin-top: auto;
     }
-
+  
     .item .job-title {
       color: #007BFF;
       font-weight: bold;
       margin: 0 0 5px 0;
     }
-
+  
     .item .location {
       color: #000408;
       font-style: italic;
       margin: 0 0 15px 0;
     }
   </style>
+  
   <script>
     let items = document.querySelectorAll('.slider .item');
     let active = 3;
     let autoScrollInterval;
-
+  
     function loadShow() {
+      // Remove 'focused' class from all items
+      items.forEach(item => item.classList.remove('focused'));
+  
+      // Apply styles to the active item
+      items[active].classList.add('focused'); // Add focused class to the active item
       items[active].style.transform = `none`;
       items[active].style.zIndex = 1;
       items[active].style.filter = 'none';
       items[active].style.opacity = 1;
-
+  
       let stt = 0;
       for (let i = active + 1; i < items.length; i++) {
         stt++;
@@ -1878,46 +1849,47 @@
         items[i].style.opacity = stt > 2 ? 0 : 0.6;
       }
     }
-
+  
     function startAutoScroll() {
       autoScrollInterval = setInterval(() => {
         active = active + 1 < items.length ? active + 1 : 0;
         loadShow();
       }, 3000); // Auto-scroll every 3 seconds
     }
-
+  
     function stopAutoScroll() {
       clearInterval(autoScrollInterval);
     }
-
+  
     loadShow();
     startAutoScroll();
-
+  
     let next = document.getElementById('next');
     let prev = document.getElementById('prev');
     next.style.display = 'block';
     prev.style.display = 'block';
-
+  
     next.onclick = function () {
       stopAutoScroll(); // stop auto-scroll when manually navigating
       active = active + 1 < items.length ? active + 1 : 0;
       loadShow();
       startAutoScroll(); // restart auto-scroll
     }
-
+  
     prev.onclick = function () {
       stopAutoScroll(); // stop auto-scroll when manually navigating
       active = active - 1 >= 0 ? active - 1 : items.length - 1;
       loadShow();
       startAutoScroll(); // restart auto-scroll
     }
-
+  
     // Optional: Pause auto-scroll on hover and resume on mouse leave
     items.forEach(item => {
       item.addEventListener('mouseenter', stopAutoScroll);
       item.addEventListener('mouseleave', startAutoScroll);
     });
   </script>
+  
 
 
   <!-- <section id="blog" class="blog-area pt-120"> -->
