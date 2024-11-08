@@ -316,3 +316,124 @@ a.contributor-card:hover{
 a.contributor-card:hover h2.text-lg.font-medium.text-gray-900.dark\:text-gray-100.mb-2,p.text-gray-700.dark\:text-gray-400{
   color: white;
 }
+
+/* Responsive adjustments for small screens */
+@media (max-width: 1024px) {
+  .contributor-card {
+    width: 30%; /* Adjust to fit 3 in a row */
+    max-width: calc(30% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .contributor-card {
+    width: 45%; /* Adjust to fit 2 in a row */
+    max-width: calc(45% - 20px);
+  }
+  .header-title {
+    font-size: 2rem;
+  }
+  .header-sub-title {
+    font-size: 1.25rem;
+  }
+  .main-btn {
+    padding: 10px 20px;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .contributor-card {
+    width: 80%; /* Single column on smaller screens */
+    max-width: calc(80% - 20px);
+  }
+  .container {
+    padding: 8px;
+  }
+  .header-title {
+    font-size: 1.75rem;
+  }
+  .header-sub-title {
+    font-size: 1rem;
+  }
+  .text-3xl {
+    font-size: 1.5rem;
+  }
+  .main-btn {
+    padding: 8px 16px;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .header-hero {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .header-title {
+    font-size: 1.5rem;
+  }
+  .main-btn {
+    padding: 6px 12px;
+  }
+}
+
+/* For Footer Section */
+/* Social Media Icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Adjust spacing as needed */
+  margin-top: 20px;
+}
+
+.social-icons a {
+  font-size: 1.5rem;
+  color: #ffffff; /* Adjust icon color */
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #f76b45; /* Change to desired hover color */
+}
+
+/* Footer Text */
+.footer-copyright {
+  margin-top: 50px;
+  padding: 20px;
+  text-align: center;
+  background-color: #132d46; /* Footer background color */
+  color: #ffffff;
+}
+
+.footer-copyright p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .social-icons {
+    gap: 10px; /* Reduce gap on smaller screens */
+    font-size: 1.25rem; /* Slightly smaller icons */
+  }
+
+  .footer-copyright {
+    padding: 10px;
+    font-size: 0.875rem; /* Slightly smaller font */
+  }
+  
+  .social-icons a {
+    font-size: 1.25rem; /* Adjust for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .social-icons {
+    gap: 8px; /* Further reduce gap on very small screens */
+  }
+
+  .footer-copyright p {
+    font-size: 0.8rem; /* Even smaller text on very small screens */
+  }
+}
