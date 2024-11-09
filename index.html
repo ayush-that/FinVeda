@@ -320,29 +320,32 @@
                       </a>
                     </li>
                     <!-- Dropdown for Explore -->
-                  <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
-                    <a class="page-scroll dropdown-toggle" href="#">
-                      <i class="fas fa-chevron-down icon-hover" style="margin: 5px;"></i> Explore More
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="./finance.html">
-                          <i class="fas fa-graduation-cap icon-hover" style="margin: 5px;"></i> Courses
-                        </a>
-                      </li>
-                      <li><a href="./trends.html"><i class="fas fa-chart-line icon-hover" style="margin: 5px;"></i>
-                          Trends</a></li>
-                      <li><a href="./tools/sip.html"><i class="fas fa-tools icon-hover" style="margin: 5px;"></i>
-                          Tools</a></li>
-                      <li><a href="./blog.html"><i class="fas fa-blog icon-hover" style="margin: 5px;"></i> Blogs</a>
-                      </li>
-                      <li><a href="./quiz.html"><i class="fas fa-question icon-hover" style="margin: 5px;"></i> Quiz</a>
-                      </li>
-                      <li><a href="./Games/Games.html"><i class="fas fa-gamepad icon-hover" style="margin: 5px;"></i> Games</a>
-                      </li>
-                      <li><a href="./maps.html"><i class="fas fa-map icon-hover" style="margin: 5px;"></i> MAPS</a></li>
-                    </ul>
-                  </li>
+                    <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
+                      <a class="page-scroll dropdown-toggle" href="#">
+                        <i class="fas fa-chevron-down icon-hover" style="margin: 5px;"></i> Explore More
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li>
+                          <a href="./finance.html">
+                            <i class="fas fa-graduation-cap icon-hover" style="margin: 5px;"></i> Courses
+                          </a>
+                        </li>
+                        <li><a href="./trends.html"><i class="fas fa-chart-line icon-hover" style="margin: 5px;"></i>
+                            Trends</a></li>
+                        <li><a href="./tools/sip.html"><i class="fas fa-tools icon-hover" style="margin: 5px;"></i>
+                            Tools</a></li>
+                        <li><a href="./blog.html"><i class="fas fa-blog icon-hover" style="margin: 5px;"></i> Blogs</a>
+                        </li>
+                        <li><a href="./quiz.html"><i class="fas fa-question icon-hover" style="margin: 5px;"></i>
+                            Quiz</a>
+                        </li>
+                        <li><a href="./Games/Games.html"><i class="fas fa-gamepad icon-hover" style="margin: 5px;"></i>
+                            Games</a>
+                        </li>
+                        <li><a href="./maps.html"><i class="fas fa-map icon-hover" style="margin: 5px;"></i> MAPS</a>
+                        </li>
+                      </ul>
+                    </li>
                     <!-- Navigation item placeholder for Login/Register or Logout button -->
                     <li class="nav-item no-underline" id="auth-btn-container">
                       <a class="main-btn navbar-btn" style="padding: 2px 20px;" data-scroll-nav="0"
@@ -458,35 +461,35 @@
                   document.addEventListener("DOMContentLoaded", updateAuthButton);
                 </script>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const toggleButton = document.getElementById('theme-toggle');
-    const body = document.body;
+                <script>
+                  document.addEventListener('DOMContentLoaded', () => {
+                    const toggleButton = document.getElementById('theme-toggle');
+                    const body = document.body;
 
-    // Load theme from localStorage
-    const currentTheme = localStorage.getItem('theme');
-    if (currentTheme === 'dark') {
-      body.classList.add('dark-mode');
-      toggleButton.classList.add('dark');
-      toggleButton.textContent = '🌙'; // Update icon to match dark mode
-    }
+                    // Load theme from localStorage
+                    const currentTheme = localStorage.getItem('theme');
+                    if (currentTheme === 'dark') {
+                      body.classList.add('dark-mode');
+                      toggleButton.classList.add('dark');
+                      toggleButton.textContent = '🌙'; // Update icon to match dark mode
+                    }
 
-    // Toggle theme on button click
-    toggleButton.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      toggleButton.classList.toggle('dark');
+                    // Toggle theme on button click
+                    toggleButton.addEventListener('click', () => {
+                      body.classList.toggle('dark-mode');
+                      toggleButton.classList.toggle('dark');
 
-      // Update button icon and localStorage based on mode
-      if (body.classList.contains('dark-mode')) {
-        toggleButton.textContent = '🌙'; // Dark mode icon
-        localStorage.setItem('theme', 'dark');
-      } else {
-        toggleButton.textContent = '🌞'; // Light mode icon
-        localStorage.setItem('theme', 'light');
-      }
-    });
-  });
-</script>
+                      // Update button icon and localStorage based on mode
+                      if (body.classList.contains('dark-mode')) {
+                        toggleButton.textContent = '🌙'; // Dark mode icon
+                        localStorage.setItem('theme', 'dark');
+                      } else {
+                        toggleButton.textContent = '🌞'; // Light mode icon
+                        localStorage.setItem('theme', 'light');
+                      }
+                    });
+                  });
+                </script>
                 <div class="">
                   <!-- Login Modal -->
                   <div id="myModal" class="modal">
@@ -819,8 +822,7 @@
 
   <div id="home" class="header-hero bg_cover" style="background-image: url(./assets/images/banner-bg.svg)">
     <div class="container">
-      <h2 class="head-animate"
-      style="font-size: 90px;">
+      <h2 class="head-animate" style="font-size: 90px;">
         WELCOME TO FINVEDA
       </h2>
       <div class="row justify-content-center">
@@ -843,31 +845,31 @@
                 background-position: 0 0;
                 animation: back 20s linear infinite, hovering 1.5s ease-in-out infinite;
               }
-    
+
               @keyframes back {
                 100% {
                   background-position: 2000px 0;
                 }
               }
-    
+
               @keyframes hovering {
                 0% {
                   transform: translateY(0);
                 }
-    
+
                 50% {
                   transform: translateY(-5px);
                 }
-    
+
                 100% {
                   transform: translateY(0);
                 }
               }
-    
+
               .header-hero-content h2 {
                 font-size: 200px;
               }
-    
+
               /* Styled button */
               .styled-btn {
                 background-color: #4CAF50;
@@ -882,27 +884,30 @@
                 margin-top: 20px;
                 margin-left: 280px;
               }
-    
+
               .styled-btn:hover {
                 background-color: #45a049;
                 transform: scale(1.05);
               }
-    
+
               .styled-btn:active {
                 transform: scale(0.98);
               }
-    
+
               /* Mobile Responsive Styles */
               @media (max-width: 1024px) {
                 .head-animate {
-                  font-size: 90px; /* Adjust font size for tablets */
-                  top: 100px; /* Adjust positioning */
+                  font-size: 90px;
+                  /* Adjust font size for tablets */
+                  top: 100px;
+                  /* Adjust positioning */
                 }
-    
+
                 .header-hero-content h2 {
-                  font-size: 150px; /* Adjust heading size for medium screens */
+                  font-size: 150px;
+                  /* Adjust heading size for medium screens */
                 }
-    
+
                 .styled-btn {
                   margin-left: 0;
                   width: 100%;
@@ -910,99 +915,107 @@
                   font-size: 18px;
                   margin-top: 10px;
                 }
-    
+
                 .header-hero-image img {
-                  width: 80%; /* Adjust image size for smaller screens */
+                  width: 80%;
+                  /* Adjust image size for smaller screens */
                   height: auto;
                 }
               }
-    
+
               @media (max-width: 768px) {
                 .head-animate {
-                  font-size: 70px; /* Adjust font size for smaller tablets and larger phones */
+                  font-size: 70px;
+                  /* Adjust font size for smaller tablets and larger phones */
                   top: 50px;
                 }
-    
+
                 .header-hero-content h2 {
-                  font-size: 120px; /* Adjust heading size */
+                  font-size: 120px;
+                  /* Adjust heading size */
                 }
-    
+
                 .styled-btn {
                   margin-left: 0;
                   width: 100%;
                   padding: 14px 0;
                   font-size: 18px;
                 }
-    
+
                 .header-hero-image img {
-                  width: 100%; /* Make the image fully responsive */
+                  width: 100%;
+                  /* Make the image fully responsive */
                   height: auto;
                 }
-    
+
                 .header-hero-content p {
-                  font-size: 16px; /* Reduce paragraph font size */
+                  font-size: 16px;
+                  /* Reduce paragraph font size */
                 }
               }
-    
+
               @media (max-width: 480px) {
                 .head-animate {
-                  font-size: 50px; /* Further reduce font size for very small screens */
+                  font-size: 50px;
+                  /* Further reduce font size for very small screens */
                   top: 20px;
                 }
-    
+
                 .header-hero-content h2 {
                   font-size: 80px;
                 }
-    
+
                 .header-hero-content p {
-                  font-size: 14px; /* Make text smaller on very small screens */
+                  font-size: 14px;
+                  /* Make text smaller on very small screens */
                   padding: 0 10px;
                 }
-    
+
                 .styled-btn {
                   padding: 16px 0;
                   font-size: 18px;
                   width: 100%;
                   margin-left: 0;
                 }
-    
+
                 .header-hero-image img {
                   width: 100%;
                   height: auto;
                 }
               }
             </style>
-    
+
             <br><br>
-            <p class="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s" 
-               style="visibility: visible; animation-duration: 1.3s; animation-delay: 0.8s; color:white">
+            <p class="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s"
+              style="visibility: visible; animation-duration: 1.3s; animation-delay: 0.8s; color:white">
               Wanna learn how to grow your money to become rich? We have
               made becoming a stock market Guru easy with our AI-powered finance advisor - <b>Arth Sathi 🤵🏻</b>
             </p>
             <a href="#" class="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s"
-               onclick="window.botpressWebChat.sendEvent({ type: 'show' }); return false;"
-               style="visibility: visible; animation-duration: 1.3s; animation-delay: 1.1s; color:white">
+              onclick="window.botpressWebChat.sendEvent({ type: 'show' }); return false;"
+              style="visibility: visible; animation-duration: 1.3s; animation-delay: 1.1s; color:white">
               Chat with ArthaSathi 💬
             </a>
           </div>
-    
+
           <button class="styled-btn" onclick="window.location.href='reviews.html'">Share Experience</button>
-    
+
         </div>
       </div>
       <div class="row">
         <div class="col-lg-12">
           <div class="header-hero-image text-center wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s"
-               style="visibility: visible; animation-duration: 1.3s; animation-delay: 1.4s;">
+            style="visibility: visible; animation-duration: 1.3s; animation-delay: 1.4s;">
             <div class="anim" data-tilt="">
-              <img src="assets/images/header-hero.webp" style="animation: float 1.5s ease-in-out infinite;" data-tilt=""/>
+              <img src="assets/images/header-hero.webp" style="animation: float 1.5s ease-in-out infinite;"
+                data-tilt="" />
             </div>
           </div>
         </div>
       </div>
     </div>
-    
-    
+
+
     <div id="particles-1" class="particles"><canvas class="particles-js-canvas-el" width="1998" height="1012"
         style="width: 100%; height: 100%;"></canvas></div>
   </div>
@@ -1510,19 +1523,19 @@
         </div>
       </div>
   </section>
-  <!--forum Section-->
-  <header class="forum_1">
-  </header>
+
 
   <main class="forum-body">
     <main class="forum-main">
-      <img src="assets/images/discuss.png" style="position: absolute;mix-blend-mode: multiply;left: 100px;" alt="dicuss">
+      <img src="assets/images/discuss.png" style="position: absolute;mix-blend-mode: multiply;left: 100px;"
+        alt="dicuss">
       <section style="width: 1000px; height: 800px;" id="destinations" class="destinations">
-        <h1 class="forum-title">Discussion Forum</h1>
-        <div  style="width: 800px; height: 600px;" class="post-container">
-          <form style="width: 800px; height: 500px;"  id="postForm" class="post-form">
+        <h1 class="forum-title" style="color: white;"> Discussion Forum</h1>
+        <div style="width: 800px; height: 600px;" class="post-container">
+          <form style="width: 800px; height: 500px;" id="postForm" class="post-form">
             <input type="text" id="name" class="input-field name-input" placeholder="Enter your name" required>
-            <textarea id="postContent" class="input-field post-textarea" placeholder="Write your post here..." required></textarea>
+            <textarea id="postContent" class="input-field post-textarea" placeholder="Write your post here..."
+              required></textarea>
             <button type="submit" class="submit-button">Submit</button>
           </form>
           <div id="posts"></div>
@@ -1532,84 +1545,90 @@
   </main>
   <style>
     .forum-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  width: 100%; /* Adjusts the width to roughly 3 times its original center-aligned width */
-  background-color: #f0f8ff;
-  font-family: Arial, sans-serif;
-}
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      width: 100%;
+      /* Adjusts the width to roughly 3 times its original center-aligned width */
+      background-color: #f0f8ff;
+      font-family: Arial, sans-serif;
+    }
 
-.forum-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+    .forum-main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-.destinations {
-  text-align: center;
-}
+    .destinations {
+      text-align: center;
+    }
 
-.forum-title {
-  font-size: 2em;
-  margin-bottom: 20px;
-  color: #333;
-}
+    .forum-title {
+      font-size: 2em;
+      margin-bottom: 10px;
+      color: white;
+    }
 
-.post-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+    h1 {
+      color: white;
+    }
 
-.post-form {
-  background: linear-gradient(135deg, #d4fc79, #96e6a1);
-  padding: 20px;
-  border-radius: 10px;
-  width: 100%;
-  max-width: 500px;
-  border: 3px solid;
-  border-image-slice: 1;
-  border-image-source: linear-gradient(45deg, #89f7fe, #66a6ff);
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
+    .post-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-.input-field {margin-top: 10px;
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 3px solid #ddd;
-  border-radius: 10%;
-  outline: none;
-  font-size: 1em;
-  background-color: #ffffff; /* Sets input fields to have a white background */
-}
+    .post-form {
+      background: linear-gradient(135deg, #007BFF, #77b7fd, #007BFF);
+      padding: 20px;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 500px;
+      border: 3px solid;
+      border-image-slice: 1;
+      border-image-source: linear-gradient(45deg, #89f7fe, #66a6ff);
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
 
-.name-input {
-  /* additional styling for name input if needed */
-}
+    .input-field {
+      margin-top: 10px;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 3px solid #ddd;
+      border-radius: 10%;
+      outline: none;
+      font-size: 1em;
+      background-color: #ffffff;
+      /* Sets input fields to have a white background */
+    }
 
-.post-textarea {
-  min-height: 100px;
-  resize: vertical;
-}
+    .name-input {
+      /* additional styling for name input if needed */
+    }
 
-.submit-button {
-  background: linear-gradient(135deg, #84fab0, #8fd3f4);
-  color: white;
-  font-size: 1em;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
+    .post-textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
 
-.submit-button:hover {
-  background: linear-gradient(135deg, #8fd3f4, #84fab0);
-}
+    .submit-button {
+      background: linear-gradient(135deg, #007BFF, white);
+      color: white;
+      font-size: 1em;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
 
+    .submit-button:hover {
+      background: linear-gradient(135deg, white, #007BFF);
+    }
   </style>
   <script src="finance.js"></script>
 
@@ -1619,7 +1638,8 @@
       <div class="section-title text-center pb-40">
         <div class="line m-auto"></div>
 
-        <h3 style="margin-top: 50px; margin-bottom: 10px;font-size:2.9rem;" class="title">Users sharing<span> their experience</span></h3>
+        <h3 style="margin-top: 50px; margin-bottom: 10px;font-size:2.9rem;" class="title">Users sharing<span> their
+            experience</span></h3>
 
       </div>
     </div>
@@ -1695,7 +1715,8 @@
       <div class="location">Location: Kolkata, India</div>
     </div>
     <button id="next">></button>
-    <button id="prev"><</button>
+    <button id="prev">
+      << /button>
   </div>
 
   <!-- testimonail section ends here  -->
@@ -1710,7 +1731,7 @@
     .slider .location {
       font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-  
+
     .slider {
       position: relative;
       margin-top: 100px;
@@ -1718,7 +1739,7 @@
       height: 550px;
       overflow: hidden;
     }
-  
+
     .item {
       position: absolute;
       width: 350px;
@@ -1735,15 +1756,15 @@
       align-items: center;
       text-align: center;
     }
-  
+
     /* Pink gradient background for the focused card */
     .item.focused {
-  background: linear-gradient(135deg, #fccde9, #f33396);
- 
-  box-shadow: 0 0 10px rgb(38, 200, 250), 0 0 10px rgb(38, 200, 250), 0 0 30px rgba(0, 119, 255, 0.3);
-}
+      background: linear-gradient(135deg, #fccde9, #f33396);
 
-  
+      box-shadow: 0 0 10px rgb(38, 200, 250), 0 0 10px rgb(38, 200, 250), 0 0 30px rgba(0, 119, 255, 0.3);
+    }
+
+
     #next,
     #prev {
       position: absolute;
@@ -1758,20 +1779,20 @@
       transition: opacity 0.5s;
       z-index: 10;
     }
-  
+
     #next {
       right: 50px;
     }
-  
+
     #prev {
       left: 50px;
     }
-  
+
     #prev:hover,
     #next:hover {
       opacity: 1;
     }
-  
+
     .item img {
       width: 150px;
       height: 150px;
@@ -1781,57 +1802,57 @@
       cursor: pointer;
       transition: transform 0.3s ease;
     }
-  
+
     .item img:hover {
       transform: scale(1.1);
     }
-  
+
     .item h2 {
       margin: 0 0 10px 0;
       font-size: 1.2em;
     }
-  
+
     .item p {
       text-align: justify;
       font-size: 0.9em;
       margin-bottom: 20px;
     }
-  
+
     .stars {
       color: #ffd700;
       font-size: 1.6em;
       margin-top: auto;
     }
-  
+
     .item .job-title {
       color: #007BFF;
       font-weight: bold;
       margin: 0 0 5px 0;
     }
-  
+
     .item .location {
       color: #000408;
       font-style: italic;
       margin: 0 0 15px 0;
     }
   </style>
-  
+
   <script>
     let items = document.querySelectorAll('.slider .item');
     let active = 3;
     let autoScrollInterval;
-  
+
     function loadShow() {
       // Remove 'focused' class from all items
       items.forEach(item => item.classList.remove('focused'));
-  
+
       // Apply styles to the active item
       items[active].classList.add('focused'); // Add focused class to the active item
       items[active].style.transform = `none`;
       items[active].style.zIndex = 1;
       items[active].style.filter = 'none';
       items[active].style.opacity = 1;
-  
+
       let stt = 0;
       for (let i = active + 1; i < items.length; i++) {
         stt++;
@@ -1849,47 +1870,47 @@
         items[i].style.opacity = stt > 2 ? 0 : 0.6;
       }
     }
-  
+
     function startAutoScroll() {
       autoScrollInterval = setInterval(() => {
         active = active + 1 < items.length ? active + 1 : 0;
         loadShow();
       }, 3000); // Auto-scroll every 3 seconds
     }
-  
+
     function stopAutoScroll() {
       clearInterval(autoScrollInterval);
     }
-  
+
     loadShow();
     startAutoScroll();
-  
+
     let next = document.getElementById('next');
     let prev = document.getElementById('prev');
     next.style.display = 'block';
     prev.style.display = 'block';
-  
+
     next.onclick = function () {
       stopAutoScroll(); // stop auto-scroll when manually navigating
       active = active + 1 < items.length ? active + 1 : 0;
       loadShow();
       startAutoScroll(); // restart auto-scroll
     }
-  
+
     prev.onclick = function () {
       stopAutoScroll(); // stop auto-scroll when manually navigating
       active = active - 1 >= 0 ? active - 1 : items.length - 1;
       loadShow();
       startAutoScroll(); // restart auto-scroll
     }
-  
+
     // Optional: Pause auto-scroll on hover and resume on mouse leave
     items.forEach(item => {
       item.addEventListener('mouseenter', stopAutoScroll);
       item.addEventListener('mouseleave', startAutoScroll);
     });
   </script>
-  
+
 
 
   <!-- <section id="blog" class="blog-area pt-120"> -->
@@ -2582,12 +2603,12 @@
           </div>
         </div>
       </div>
- 
+
       <div class="footer-widget pb-100">
         <div class="row" id="footer">
           <div class="col-lg-4 col-md-6 col-sm-8 mr-80">
             <div class="footer-about mt-50 mr-80 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
- 
+
               <img src="./assets/images/FinvedaLogo.png" alt="FinVeda Logo"
                 style="height: 80px; width: auto; margin-bottom: 15px;" />
               <p class="text custom-margin">
@@ -2605,15 +2626,16 @@
                     <h3 class="title custom-margin">Quick Links</h3>
                   </div>
                   <ul class="link custom-margin">
-  
+
                     <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
                     <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
                     <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
-                    <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+                    <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a>
+                    </li>
                     <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
                     <li><a href="./blogs/sitemap.html"><i class="fa-solid fa-sitemap"></i> Site Map</a></li>
-  
-  
+
+
                   </ul>
                 </div>
                 <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
@@ -2631,7 +2653,7 @@
                 </div>
               </div>
             </div>
-  
+
             <div>
               <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
                 <div class="footer-title">
@@ -2639,7 +2661,8 @@
                 </div>
                 <ul class="contact custom-margin-big">
                   <li class="d-sm-flex justify-content-center">
-                    <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                    <i class="fa fa-envelope d-sm-flex align-items-center white"
+                      style="font-size: 16px; width: 10%;"></i>
                     <p style="width: 80%;">
                       <a href="mailto:ayush1337@hotmail.com" target="_blank"
                         style="color: white; text-decoration: underline;">
@@ -2657,7 +2680,8 @@
                   </li>
                   <li class="d-sm-flex justify-content-center">
                     <!-- Modified: Inline CSS to adjust logo size and sync with other pages -->
-                    <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font: 12px; width: 10%;"></i>
+                    <i class="fa fa-location-dot d-sm-flex align-items-center white"
+                      style="font: 12px; width: 10%;"></i>
                     <div style="width: 80%;">
                       <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
                         style="color:#fff">
@@ -2718,7 +2742,7 @@
             </div>
           </div>
         </div>
- 
+
       </div>
 
       <div id="particles-2"></div>
