@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz with Timer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="quiz-container">
+    <h1>Quiz Time!</h1>
+    <p id="timer">Time Left: <span id="time">60</span>s</p>
+
+    <div id="question-container">
+      <p id="question"></p>
+      <div id="options">
+        <!-- Options will be dynamically added here -->
+      </div>
+      <button id="next-btn" onclick="nextQuestion()">Next</button>
+    </div>
+
+    <div id="result-container" style="display: none;">
+      <h2>Quiz Complete!</h2>
+      <p id="score"></p>
+      <button onclick="restartQuiz()">Restart Quiz</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+
+  <style>
+        body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f7f7f7;
+}
+
+.quiz-container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+}
+
+#timer {
+  font-size: 18px;
+  color: #333;
+}
+
+#options button {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+}
+
+#options button:hover {
+  background-color: #0056b3;
+}
+
+#next-btn {
+  margin-top: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+}
+
+#result-container {
+  font-size: 20px;
+}
+
+  </style>
+
+
+<script>
+      const questions = [
+  {
+    question: "What is the capital of France?",
+    options: ["Berlin", "London", "Paris", "Madrid"],
+    answer: "Paris"
+  },
+  {
+    question: "What is 2 + 2?",
+    options: ["3", "4", "5", "6"],
+    answer: "4"
+  },
+  {
+    question: "Which planet is known as the Red Planet?",
+    options: ["Earth", "Mars", "Jupiter", "Saturn"],
+    answer: "Mars"
+  }
+];
+
+let currentQuestionIndex = 0;
+let score = 0;
+let timeLeft = 60;
+let timer;
+
+function startQuiz() {
+  document.getElementById("question-container").style.display = "block";
+  document.getElementById("result-container").style.display = "none";
+  showQuestion(questions[currentQuestionIndex]);
+  startTimer();
+}
+
+function startTimer() {
+  timer = setInterval(() => {
+    timeLeft--;
+    document.getElementById("time").innerText = timeLeft;
+    if (timeLeft <= 0) {
+      endQuiz();
+    }
+  }, 1000);
+}
+
+function showQuestion(questionObj) {
+  document.getElementById("question").innerText = questionObj.question;
+  const optionsDiv = document.getElementById("options");
+  optionsDiv.innerHTML = "";
+
+  questionObj.options.forEach(option => {
+    const button = document.createElement("button");
+    button.innerText = option;
+    button.onclick = () => selectAnswer(option, questionObj.answer);
+    optionsDiv.appendChild(button);
+  });
+}
+
+function selectAnswer(selectedOption, correctAnswer) {
+  if (selectedOption === correctAnswer) {
+    score++;
+  }
+  document.getElementById("next-btn").disabled = false;
+}
+
+function nextQuestion() {
+  currentQuestionIndex++;
+  if (currentQuestionIndex < questions.length) {
+    showQuestion(questions[currentQuestionIndex]);
+    document.getElementById("next-btn").disabled = true;
+  } else {
+    endQuiz();
+  }
+}
+
+function endQuiz() {
+  clearInterval(timer);
+  document.getElementById("question-container").style.display = "none";
+  document.getElementById("result-container").style.display = "block";
+  document.getElementById("score").innerText = `Your Score: ${score} / ${questions.length}`;
+}
+
+function restartQuiz() {
+  currentQuestionIndex = 0;
+  score = 0;
+  timeLeft = 60;
+  document.getElementById("time").innerText = timeLeft;
+  startQuiz();
+}
+
+// Initialize quiz
+startQuiz();
+
+</script>
+</body>
+</html>
