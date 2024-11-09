@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Goal Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://raw.githubusercontent.com/ayush-that/FinVeda/refs/heads/main/assets/images/Favicon1.ico" type="image/x-icon">
+    <style>
+        .circle {
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        pointer-events: none;
+        background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
+        transition: transform 0.1s, left 0.1s, top 0.1s;
+      }
+    
+      .circle-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 9999;
+      }
+    </style>
+</head>
+<body>
+    <div class="circle-container">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const coords = { x: 0, y: 0 };
+          const circles = document.querySelectorAll(".circle");
+  
+          circles.forEach(function (circle) {
+            circle.x = 0;
+            circle.y = 0;
+          });
+  
+          window.addEventListener("mousemove", function (e) {
+            coords.x = e.pageX;
+            coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
+          });
+  
+          function animateCircles() {
+            let x = coords.x;
+            let y = coords.y;
+  
+            circles.forEach(function (circle, index) {
+              circle.style.left = `${x - 12}px`;
+              circle.style.top = `${y - 12}px`;
+              circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+  
+              const nextCircle = circles[index + 1] || circles[0];
+              circle.x = x;
+              circle.y = y;
+  
+              x += (nextCircle.x - x) * 0.3;
+              y += (nextCircle.y - y) * 0.3;
+            });
+  
+            requestAnimationFrame(animateCircles);
+          }
+  
+          animateCircles();
+        });
+  
+      </script>
+  
+    <div class="container">
+        <!-- Home Button -->
+        <div class="home-button">
+            <button onclick="goHome()">Home</button>
+        </div>
+        
+        <h1>Financial Goal Tracker</h1>
+        
+        <div class="goal-input">
+            <label for="goal-amount">Set Your Goal Amount ($):</label>
+            <input type="number" id="goal-amount" placeholder="Enter your goal">
+            <button onclick="setGoal()">Set Goal</button>
+        </div>
+        
+        <div class="tracker">
+            <h2>Track Your Progress</h2>
+            <div id="goal-display" class="goal-display"></div>
+            <label for="save-amount">Add Savings ($):</label>
+            <input type="number" id="save-amount" placeholder="Enter savings">
+            <button onclick="addSavings()">Add to Savings</button>
+            <div id="progress-bar">
+                <div id="progress-fill"></div>
+            </div>
+            <div id="status" class="status"></div>
+        </div>
+    </div>
+    
+    <style>
+        /* Reset and Font Setup */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Background */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            color: #333;
+        }
+
+        /* Main Container */
+        .container {
+            text-align: center;
+            width: 620px;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        h1, h2 {
+            color: #222;
+            margin-bottom: 15px;
+        }
+
+        /* Home Button */
+        .home-button {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        .home-button button {
+            padding: 10px 20px;
+            color: #fff;
+            background: #4facfe;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .home-button button:hover {
+            background: #00a9fe;
+        }
+
+        .goal-input,
+        .tracker {
+            margin-bottom: 25px;
+        }
+
+        .goal-input label,
+        .tracker label {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .goal-display {
+            margin-top: 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #444;
+        }
+
+        /* Input Fields */
+        input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            outline: none;
+            transition: border 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Hover Effect for Input Fields */
+        input[type="number"]:hover {
+            border-color: #4facfe;
+            box-shadow: 0 0 8px rgba(79, 172, 254, 0.3);
+        }
+
+        input[type="number"]:focus {
+            border-color: #4facfe;
+            box-shadow: 0 0 8px rgba(79, 172, 254, 0.5);
+        }
+
+        /* Buttons */
+        button {
+            padding: 12px 20px;
+            color: #fff;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #00f2fe, #4facfe);
+        }
+
+        /* Progress Bar */
+        #progress-bar {
+            width: 100%;
+            height: 25px;
+            background-color: #eee;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-top: 20px;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        #progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(135deg, #28a745, #85e085);
+            transition: width 0.5s ease;
+        }
+
+        /* Status */
+        .status {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 1em;
+            color: #555;
+        }
+    </style>
+    
+    <script>
+        // Set goal and add savings functions
+        let goalAmount = 0;
+        let currentSavings = 0;
+
+        function setGoal() {
+            goalAmount = parseFloat(document.getElementById('goal-amount').value);
+            if (isNaN(goalAmount) || goalAmount <= 0) {
+                alert("Please enter a valid goal amount.");
+                return;
+            }
+            document.getElementById('goal-display').innerText = `Goal: $${goalAmount.toFixed(2)}`;
+            updateProgress();
+        }
+
+        function addSavings() {
+            const saveAmount = parseFloat(document.getElementById('save-amount').value);
+            if (isNaN(saveAmount) || saveAmount <= 0) {
+                alert("Please enter a valid savings amount.");
+                return;
+            }
+            currentSavings += saveAmount;
+            updateProgress();
+        }
+
+        function updateProgress() {
+            if (goalAmount === 0) {
+                document.getElementById('status').innerText = "Please set a goal first.";
+                return;
+            }
+
+            const progress = Math.min((currentSavings / goalAmount) * 100, 100);
+            document.getElementById('progress-fill').style.width = `${progress}%`;
+
+            if (currentSavings >= goalAmount) {
+                document.getElementById('status').innerText = `🎉 Congratulations! You've reached your goal of $${goalAmount.toFixed(2)}!`;
+            } else {
+                document.getElementById('status').innerText = `Saved: $${currentSavings.toFixed(2)} / $${goalAmount.toFixed(2)}`;
+            }
+        }
+
+        // Function to navigate back to the homepage
+        function goHome() {
+            window.location.href = 'index.html';
+        }
+    </script>
+
+    <!-- Back to Home Button -->
+<button id="backToHomeBtn" style="
+position: fixed;
+top: 20px;
+left: 20px;
+padding: 10px 20px;
+background-color: #007bff;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;">
+Back to Home
+</button>
+
+<script>
+// Get the Back to Home button element
+const backToHomeBtn = document.getElementById("backToHomeBtn");
+
+// Add a click event to the button to redirect to the home page
+backToHomeBtn.addEventListener("click", function() {
+    // Redirect to the home page; use an absolute path if needed
+    window.location.href = "/index.html"; // Adjust as needed
+
+    // For a different URL structure, try:
+     window.location.href = "https://fin-veda.vercel.app//index.html"; // Full URL
+});
+</script>
+
+
+
+
+</body>
+</html>

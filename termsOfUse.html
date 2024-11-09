@@ -26,6 +26,27 @@
     <link rel="stylesheet" href="./assets/css/about(inlines).css" />
     <link rel="stylesheet" href="navbar.css">
 
+      <style>
+ .circle {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
+    transition: transform 0.1s, left 0.1s, top 0.1s;
+  }
+
+  .circle-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+  }
+          </style>
 
 </head>
 
@@ -401,9 +422,9 @@
         <!-- User Obligations -->
         <h2 class="section-title">2. User Obligations</h2>
         <ul>
-            <li>Users should use the platform solely for educational purposes and not for unauthorized or illegal
-                activities.</li>
-            <li>Users must provide accurate information during account creation and interactions on the platform.</li>
+            <p>Users should use the platform solely for educational purposes and not for unauthorized or illegal
+                activities.<p>
+            <p>Users must provide accurate information during account creation and interactions on the platform.</p>
         </ul>
 
         <!-- Intellectual Property -->
@@ -555,10 +576,10 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="subscribe-form mt-50">
-                            <form id="unique-subscribe-form">
-                                <input type="email" id="unique-news-email" placeholder="Enter Email" required />
+                            <form id="unique-subscribe-form" style=" display: flex; gap: 10px;">
+                                <input style="width: 70%; right: 70px;" type="email" id="unique-news-email" placeholder="Enter Email" required />
                                 <button class="unique-main-btn" id="unique-subscribe-btn"
-                                    type="submit">Subscribe</button>
+                                    type="submit" style="width: 45%;">  Subscribe</button>
                             </form>
                             <div id="unique-message" class="unique-popup-message" style="display: none;">
                                 <div class="border-animation"></div>

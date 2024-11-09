@@ -2271,9 +2271,10 @@ p {
   height: 65px;
   padding: 0 30px;
   border-radius: 5px;
-  width: 60%;
+  width: 100%;
   color: #2e2e2e;
   margin-top: 20px;
+  
 
 }
 
@@ -2316,7 +2317,7 @@ p {
   right: 0;
   border-radius: 8px;
   height: 65px;
-  width: 150px;
+  width: 175px;
   color: white;
   border: none;
   line-height: 65px;
@@ -2340,11 +2341,10 @@ p {
 @media (max-width: 767px) {
   .subscribe-form button {
     position: relative;
-    width:100px;
+    width:100%;
     padding-top: 0;
     padding-bottom: 0;
     padding-left: 13px;
-    height: 50px;
     border-radius: 8px;
   }
 }
@@ -3388,3 +3388,41 @@ transition: background-color 0.3s;
   }
 }
 
+
+.services-list-item {
+  color: #333; /* Dark color for light mode */
+}
+
+
+.dark-mode .services-list-item {
+  color: #f0f0f0; /* Light color for dark mode */
+}
+.services-list-item {
+  color: #f0f0f0; /* Light color for dark mode */
+}
+.dark-mode .services-content,
+.dark-mode .single-services {
+  color: #f0f0f0; /* Light color for dark mode */
+  background-color: #333; /* Dark background for dark mode */
+}
+/* Dark mode styles */
+.dark-mode .services-content .services-title a,
+.dark-mode .services-content .services-description,
+.dark-mode .services-content .services-list-item {
+  color: #ffffff; /* White color for dark mode */
+}
+
+
+.dark-mode .single-services {
+  background-color: #333333; /* Dark background for the service box */
+}
+
+
+.dark-mode .services-content .more {
+  color: #ffffff; /* White color for the link */
+}
+
+
+.dark-mode .services-icon i {
+  color: #ffffff; /* White color for the icon */
+}

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Strategy Game</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/ayush-that/FinVeda/refs/heads/main/assets/images/Favicon1.ico" type="image/x-icon">
+    <style>
+   .circle {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
+    transition: transform 0.1s, left 0.1s, top 0.1s;
+  }
+
+  .circle-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+  }
+    </style>
+</head>
+<body>
+    <div class="circle-container">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const coords = { x: 0, y: 0 };
+          const circles = document.querySelectorAll(".circle");
+
+          circles.forEach(function (circle) {
+            circle.x = 0;
+            circle.y = 0;
+          });
+
+          window.addEventListener("mousemove", function (e) {
+            coords.x = e.pageX;
+            coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
+          });
+
+          function animateCircles() {
+            let x = coords.x;
+            let y = coords.y;
+
+            circles.forEach(function (circle, index) {
+              circle.style.left = `${x - 12}px`;
+              circle.style.top = `${y - 12}px`;
+              circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+
+              const nextCircle = circles[index + 1] || circles[0];
+              circle.x = x;
+              circle.y = y;
+
+              x += (nextCircle.x - x) * 0.3;
+              y += (nextCircle.y - y) * 0.3;
+            });
+
+            requestAnimationFrame(animateCircles);
+          }
+
+          animateCircles();
+        });
+
+    </script>
+
+    <div class="container">
+        <h1>💼 Investment Strategy Game</h1>
+        <p>Build your virtual wealth by making wise investment choices!</p>
+
+        <div class="game-controls">
+            <button onclick="invest('stocks')">📈 Invest in Stocks</button>
+            <button onclick="invest('bonds')">💵 Invest in Bonds</button>
+            <button onclick="invest('realEstate')">🏠 Invest in Real Estate</button>
+            <button onclick="nextDay()">➡️ Next Day</button>
+        </div>
+
+        <div class="game-stats">
+            <div class="stat"><strong>Day:</strong> <span id="day">1</span></div>
+            <div class="stat"><strong>Portfolio Value:</strong> $<span id="portfolioValue">1000</span></div>
+            <div class="stat"><strong>Stocks:</strong> $<span id="stocksValue">0</span></div>
+            <div class="stat"><strong>Bonds:</strong> $<span id="bondsValue">0</span></div>
+            <div class="stat"><strong>Real Estate:</strong> $<span id="realEstateValue">0</span></div>
+        </div>
+
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+    </div>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #f78ca0, #f9748f, #fd868c);
+}
+
+.container {
+    max-width: 700px;
+    padding: 30px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.game-controls button {
+    margin: 8px;
+    padding: 12px 25px;
+    background: #6a1b9a;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+
+.game-controls button:hover {
+    background: #9c27b0;
+}
+
+.game-stats {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 20px;
+}
+
+.stat {
+    font-size: 1.1em;
+    color: #333;
+    padding: 10px;
+    border-radius: 6px;
+    background: #f4f4f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 20px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 10%;
+    height: 100%;
+    background: linear-gradient(to right, #ff6f61, #d500f9);
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+    </style>
+
+    <script>
+        let day = 1;
+let portfolioValue = 1000;
+let stocksValue = 0;
+let bondsValue = 0;
+let realEstateValue = 0;
+
+function updateStats() {
+    document.getElementById("day").innerText = day;
+    document.getElementById("portfolioValue").innerText = portfolioValue.toFixed(2);
+    document.getElementById("stocksValue").innerText = stocksValue.toFixed(2);
+    document.getElementById("bondsValue").innerText = bondsValue.toFixed(2);
+    document.getElementById("realEstateValue").innerText = realEstateValue.toFixed(2);
+
+    // Update progress bar based on portfolio value
+    const progressBar = document.getElementById("progressBar");
+    const progressPercentage = Math.min((portfolioValue / 10000) * 100, 100);
+    progressBar.style.width = progressPercentage + "%";
+}
+
+function invest(type) {
+    const investmentAmount = 100;
+    if (portfolioValue < investmentAmount) {
+        alert("Not enough funds to invest.");
+        return;
+    }
+
+    portfolioValue -= investmentAmount;
+
+    if (type === "stocks") {
+        stocksValue += investmentAmount;
+    } else if (type === "bonds") {
+        bondsValue += investmentAmount;
+    } else if (type === "realEstate") {
+        realEstateValue += investmentAmount;
+    }
+
+    updateStats();
+}
+
+function nextDay() {
+    day++;
+
+    stocksValue *= 1 + (Math.random() * 0.2 - 0.1); // Stocks fluctuate -10% to +10%
+    bondsValue *= 1 + (Math.random() * 0.04 - 0.02); // Bonds fluctuate -2% to +2%
+    realEstateValue *= 1 + (Math.random() * 0.1 - 0.05); // Real Estate fluctuates -5% to +5%
+
+    portfolioValue = stocksValue + bondsValue + realEstateValue;
+
+    updateStats();
+}
+
+updateStats();
+    </script>
+</body>
+</html>
