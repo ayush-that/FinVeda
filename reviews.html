@@ -627,22 +627,22 @@
 </head>
 <body>
     <main>
-        <section id="user-content" class="review-container">
-            <div class="tab-container">
+        <section id="user-content" class="review-container" style="margin-top: 70px;">
+            <div class="tab-container" style="margin-top: 30px;">
                 <button class="tab active" data-tab="user-stories">Financial Success Stories</button>
                 <button class="tab" data-tab="reviews">Learning Resources Reviews</button>
             </div>
 
             <div class="content-container">
                 <div id="user-stories" class="content-section active">
-                    <h2>Share Your Financial Success Story</h2>
+                  <h2><span id="typing-effect">Share Your Financial Success Story</span></h2>
                     <form id="storyForm">
                         <div class="form-group">
                             <label for="storyTitle">Success Story Title:</label>
                             <input type="text" id="storyTitle" placeholder="e.g., How I Became Debt-Free in 2 Years" required>
                         </div>
                         <div class="form-group">
-                            <label for="storyCategory">Category:</label>
+                            <label for="storyCategory">📂Category:</label>
                             <select id="storyCategory" required>
                                 <option value="investing">Investing Success</option>
                                 <option value="saving">Saving Strategy</option>
@@ -652,11 +652,11 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="storyText">Your Journey:</label>
+                            <label for="storyText">📖Your Journey:</label>
                             <textarea id="storyText" rows="6" placeholder="Share your financial journey and success tips..." required></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="storyImage">Upload a Relevant Image:</label>
+                            <label for="storyImage">📷Upload a Relevant Image:</label>
                             <input type="file" id="storyImage" accept="image/*" required>
                         </div>
                         <button type="submit" class="submit-btn">Share Your Success</button>
@@ -712,16 +712,24 @@
     </main>
 
     <style>/* Main container styling */
+/* Container and General Styles */
 .review-container {
-    border: 5px solid rgb(70, 130, 180); /* Steel Blue */
-    max-width: 70%; /* Reduced width for the form */
+    border: 3px solid rgb(70, 130, 180); /* Steel Blue */
+    max-width: 70%; 
     margin: 20px auto;
-    background-color: rgb(173, 216, 230); /* Light Blue */
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    background: linear-gradient(135deg, #ebf8ff, #cfe9f3); /* Light Blue Gradient */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    padding: 25px;
     color: #333;
     font-family: Arial, sans-serif;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Smooth fade-in effect */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* Tab navigation styling */
@@ -735,12 +743,12 @@
     padding: 10px 20px;
     background-color: #e0f7fa; /* Light Cyan */
     color: #004d40; /* Dark Teal */
-    border: 5px solid rgb(0, 128, 128); /* Teal */
+    border: 2px solid rgb(0, 128, 128); /* Teal */
     font-weight: bold;
     border-radius: 8px;
     cursor: pointer;
     border: none;
-    transition: background-color 0.3s ease, transform 0.2s;
+    transition: background-color 0.4s ease, transform 0.3s ease;
 }
 
 .review-container .tab.active,
@@ -753,10 +761,17 @@
 /* Content sections */
 .review-container .content-container .content-section {
     display: none;
+    animation: slideUp 0.8s ease-in-out;
 }
 
 .review-container .content-container .content-section.active {
     display: block;
+}
+
+/* Slide-up effect */
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
 /* Form styling */
@@ -777,10 +792,10 @@
 .review-container .form-group textarea {
     width: 100%;
     padding: 12px;
-    border-radius: 6px;
+    border-radius: 8px;
     border: 2px solid #ddd; /* Grey */
-    background-color: #ffffff; /* White */
-    transition: background-color 0.3s ease, transform 0.2s, border-color 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent White */
+    transition: background-color 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
 }
 
 /* Focus and hover effects for input fields */
@@ -793,20 +808,12 @@
     transform: scale(1.02);
 }
 
-.review-container .form-group input[type="text"]:hover,
-.review-container .form-group select:hover,
-.review-container .form-group textarea:hover {
-    border-color: #00796b; /* Darker Teal */
-    transform: scale(1.02);
-}
-
 /* File input styling */
 .review-container .form-group input[type="file"] {
     padding: 8px;
-    background-color: #ffffff; /* White */
     border-radius: 6px;
     border: 2px solid #ddd; /* Grey */
-    transition: border-color 0.3s ease, transform 0.2s;
+    transition: border-color 0.3s ease, transform 0.2s ease;
 }
 
 .review-container .form-group input[type="file"]:hover {
@@ -835,10 +842,6 @@
 }
 
 /* Star rating */
-.review-container .star-rating input[type="radio"] {
-    display: none;
-}
-
 .review-container .star-rating label {
     font-size: 1.5rem;
     color: #ccc; /* Light Grey */
@@ -852,27 +855,11 @@
     color: #ffb400; /* Yellow */
 }
 
-/* Gradient background for form sections */
-.review-container .content-section form {
-    background: linear-gradient(135deg, #e0f7fa, #b2ebf2); /* Light gradient */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Add a subtle hover effect to form */
-.review-container .content-section form:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-}
-
 /* Form group styling within the gradient form */
 .review-container .content-section form .form-group input[type="text"],
 .review-container .content-section form .form-group select,
-.review-container .content-section form .form-group textarea,
-.review-container .content-section form .form-group input[type="file"] {
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent White */
+.review-container .content-section form .form-group textarea {
+    background-color: rgba(255, 255, 255, 0.85); /* Slightly transparent White */
     border: 2px solid rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease, transform 0.2s, border-color 0.3s ease;
 }
@@ -885,35 +872,63 @@
     transform: scale(1.02);
 }
 
-/* Style the submit button with a gradient for continuity */
-.review-container .content-section form .submit-btn {
-    background: linear-gradient(135deg, #00796b, #004d40); /* Darker Teal to Dark Teal */
-    color: #ffffff;
-    font-weight: bold;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 128, 128, 0.3);
-    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s;
-}
-
-.review-container .content-section form .submit-btn:hover {
-    background: linear-gradient(135deg, #004d40, #00796b); /* Dark Teal to Darker Teal */
-    box-shadow: 0 6px 12px rgba(0, 128, 128, 0.4);
-    transform: scale(1.05);
-}
-
-.content-container {
-    border: 2px solid grey;
-}
-
+/* Section Title */
 .content-container h2 {
     margin-bottom: 12px;
-    justify-self: center;
     font-size: xx-large;
     color: #004d40; /* Dark Teal */
+    animation: fadeIn 1s ease-in-out;
+}
+/* Typing effect styling */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
 }
 
-      </style>
+@keyframes blink {
+    50% { border-color: transparent; }
+}
 
+#typing-effect {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #004d40; /* Cursor color */
+    font-size: xx-large;
+    animation: typing 0.5s steps(30, end), blink 0.6s infinite;
+}
+      </style>
+<script>
+  class TypingEffect {
+    constructor(elementId, text, typingSpeed = 100) {
+        this.textElement = document.getElementById(elementId);
+        this.text = text;
+        this.typingSpeed = typingSpeed;
+        this.index = 0;
+    }
+
+    // Function to type out the text
+    type() {
+        if (this.index < this.text.length) {
+            this.textElement.innerHTML += this.text.charAt(this.index);
+            this.index++;
+            setTimeout(() => this.type(), this.typingSpeed);
+        }
+    }
+
+    // Start the typing effect and clear any existing content first
+    start() {
+        this.textElement.innerHTML = '';  // Clear any previous content
+        this.type();  // Start typing the text
+    }
+}
+
+// Initialize and start the typing effect
+document.addEventListener("DOMContentLoaded", () => {
+    const typingEffect = new TypingEffect("typing-effect", "Share Your Financial Success Story", 100);
+    typingEffect.start();
+});
+</script>
 
 <footer id="footer" class="footer-area pt-120">
     <div class="container">
