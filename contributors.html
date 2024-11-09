@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contributors</title>
+  <link rel="stylesheet" href="./assets/css/contributors.css">
   <link rel="icon" href="../image/ml-fusion-lab-logo.png">
   <link rel="icon" href="https://raw.githubusercontent.com/ayush-that/FinVeda/refs/heads/main/assets/images/Favicon1.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -112,10 +113,66 @@
     </div>
   </section>
 
-  <div id="contributors" class="contributors-grid">
-    <!-- Contributor cards will be added here -->
+  <div class="container">
+    <h1 class="title">Our Contributors</h1>
   </div>
+  <div id="contributors" class="contributors-grid"></div>
 
+  <style>
+    .contributor-card::before{
+    content: '';
+    position: absolute;
+    background: radial-gradient(var(--clr),transparent,transparent);
+    height: 500px;
+    width: 500px;
+    top: var(--y);
+    left: var(--x);
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    transition: 0.5s, top 0s,left 0s;
+    }
+
+    .contributor-card:hover::before{
+      opacity: 1;
+    }
+
+    .contributor-card::after{
+      content: '';
+      position: absolute;
+      inset: 2px;
+      border-radius: 8px;
+      background-color:rgba(19, 45, 70,0.8);;
+     
+    }
+
+    .contributor-card p,
+    .contributor-card a {
+      position: relative;
+      z-index: 1;         
+      color: #ddd;        
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); 
+    }
+
+    .contributor-card a {
+      color: #aaa;        
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    .contributor-card img {
+      border-radius: 50%; 
+      margin-bottom: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+      filter: brightness(1.2); 
+      z-index: 1; 
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .contributor-card:hover img {
+      transform: scale(1.05);
+      filter: brightness(1.4); 
+    }
+  </style>
   <script src="./assets/js/contributors.js"></script>
 </body>
 </html>
