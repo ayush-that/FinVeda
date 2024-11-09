@@ -188,3 +188,9 @@ If you find this project useful and would like to support the project, please co
 ---
 
 Feel free to reach out via any of the platforms above!
+
+<div align="center">
+    <a href="#top">
+        <img src="https://img.shields.io/badge/Back%20to%20Top-000000?style=for-the-badge&logo=github&logoColor=white" alt="Back to Top">
+    </a>
+</div>
