@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Filing Game</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #6dd5ed, #2193b0);
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        .game-container {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 90%;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .question-box {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .score-bar {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .score-bar span {
+            margin-right: 10px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        progress {
+            width: 100%;
+            height: 16px;
+            appearance: none;
+        }
+
+        progress::-webkit-progress-bar {
+            background-color: #e6e6e6;
+            border-radius: 10px;
+        }
+
+        progress::-webkit-progress-value {
+            background-color: #2193b0;
+            border-radius: 10px;
+        }
+
+        .btn {
+            cursor: pointer;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .start-btn, .next-btn {
+            background-color: #2193b0;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .start-btn:hover, .next-btn:hover {
+            background-color: #176a78;
+            transform: scale(1.05);
+        }
+
+        .btn-container .btn {
+            background-color: #e0e0e0;
+            color: #333;
+            margin: 5px;
+            padding: 10px;
+            min-width: 120px;
+            border-radius: 8px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn-container .btn:hover {
+            background-color: #c2c2c2;
+            transform: scale(1.05);
+        }
+
+        .correct {
+            background-color: #4caf50 !important;
+            color: white;
+        }
+
+        .wrong {
+            background-color: #f44336 !important;
+            color: white;
+        }
+
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Tax Filing Game</h1>
+        <p>Test your tax knowledge and earn points!</p>
+
+        <div class="score-bar">
+            <span>Score:</span>
+            <progress id="progress-bar" value="0" max="100"></progress>
+        </div>
+
+        <div id="question-container" class="hide">
+            <div id="question" class="question-box">Question text</div>
+            <div id="answer-buttons" class="btn-container"></div>
+        </div>
+
+        <button id="start-btn" class="btn start-btn">🚀 Start Game</button>
+        <button id="next-btn" class="btn next-btn hide">➡️ Next</button>
+    </div>
+
+    <script>
+        const startButton = document.getElementById("start-btn");
+        const nextButton = document.getElementById("next-btn");
+        const questionContainer = document.getElementById("question-container");
+        const questionElement = document.getElementById("question");
+        const answerButtonsElement = document.getElementById("answer-buttons");
+        const progressBar = document.getElementById("progress-bar");
+
+        let shuffledQuestions, currentQuestionIndex, score;
+
+        startButton.addEventListener("click", startGame);
+        nextButton.addEventListener("click", () => {
+            currentQuestionIndex++;
+            setNextQuestion();
+        });
+
+        function startGame() {
+            score = 0;
+            progressBar.value = 0;
+            startButton.classList.add("hide");
+            questionContainer.classList.remove("hide");
+            shuffledQuestions = questions.sort(() => Math.random() - 0.5);
+            currentQuestionIndex = 0;
+            setNextQuestion();
+        }
+
+        function setNextQuestion() {
+            resetState();
+            showQuestion(shuffledQuestions[currentQuestionIndex]);
+        }
+
+        function showQuestion(question) {
+            questionElement.innerText = question.question;
+            question.answers.forEach(answer => {
+                const button = document.createElement("button");
+                button.innerText = answer.text;
+                button.classList.add("btn");
+                if (answer.correct) {
+                    button.dataset.correct = answer.correct;
+                }
+                button.addEventListener("click", selectAnswer);
+                answerButtonsElement.appendChild(button);
+            });
+        }
+
+        function resetState() {
+            nextButton.classList.add("hide");
+            while (answerButtonsElement.firstChild) {
+                answerButtonsElement.removeChild(answerButtonsElement.firstChild);
+            }
+        }
+
+        function selectAnswer(e) {
+            const selectedButton = e.target;
+            const correct = selectedButton.dataset.correct;
+            if (correct) {
+                score += 20; // Adjust score increment as needed
+                progressBar.value = score;
+            }
+            Array.from(answerButtonsElement.children).forEach(button => {
+                setStatusClass(button, button.dataset.correct);
+            });
+            if (shuffledQuestions.length > currentQuestionIndex + 1) {
+                nextButton.classList.remove("hide");
+            } else {
+                startButton.innerText = "Restart";
+                startButton.classList.remove("hide");
+            }
+        }
+
+        function setStatusClass(element, correct) {
+            clearStatusClass(element);
+            if (correct) {
+                element.classList.add("correct");
+            } else {
+                element.classList.add("wrong");
+            }
+        }
+
+        function clearStatusClass(element) {
+            element.classList.remove("correct");
+            element.classList.remove("wrong");
+        }
+
+        const questions = [
+            {
+                question: "What is the deadline for filing taxes in the US?",
+                answers: [
+                    { text: "April 15", correct: true },
+                    { text: "January 1", correct: false },
+                    { text: "December 31", correct: false },
+                    { text: "March 15", correct: false }
+                ]
+            },
+            {
+                question: "Which form is used for individual income tax returns in the US?",
+                answers: [
+                    { text: "W-2", correct: false },
+                    { text: "1040", correct: true },
+                    { text: "1099", correct: false },
+                    { text: "W-9", correct: false }
+                ]
+            },
+            {
+                question: "What is a tax deduction?",
+                answers: [
+                    { text: "An amount that lowers taxable income", correct: true },
+                    { text: "A penalty for late filing", correct: false },
+                    { text: "A type of income tax", correct: false },
+                    { text: "A refund from the IRS", correct: false }
+                ]
+            }
+        ];
+    </script>
+</body>
+</html>
