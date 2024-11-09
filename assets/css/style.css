@@ -330,7 +330,6 @@ p {
 
 .join {
   background: -webkit-linear-gradient(rgb(51, 200, 193), rgb(17, 155, 210));
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -340,19 +339,44 @@ p {
   line-height: 42px;
 }
 
+/* Default Title Styling */
+.section-title .title {
+  font-size: 32px;
+  padding-top: 10px;
+  color: black;
+}
+
+.section-title .title span {
+  font-weight: 400;
+  display: contents;
+}
+
+/* Subtitle Styling */
+.section-title .sub-title {
+  font-size: 18px;
+  font-weight: 400;
+  color: #361cc1;
+  text-transform: uppercase;
+}
+
+/* Media Queries */
 @media (max-width: 767px) {
   .section-title .title {
-    font-size: 20px;
+    font-size: 24px; /* Default for max-width 767px */
+  }
+  
+  .section-title .sub-title {
+    font-size: 16px;
   }
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
   .section-title .title {
-    font-size: 30px;
+    font-size: 30px; /* Adjust title size for screen sizes between 576px and 767px */
   }
 }
 
-@media screen and (max-width: 375px) {
+@media (max-width: 375px) {
   .container {
     overflow-x: hidden;
   }
@@ -361,45 +385,10 @@ p {
   }
 }
 
-.section-title .title span {
-  font-weight: 400;
-  display: contents;
-}
-
-.section-title .sub-title {
-  font-size: 18px;
-  font-weight: 400;
-  color: #361cc1;
-  text-transform: uppercase;
-}
-
-@media (max-width: 767px) {
-  .section-title .sub-title {
-    font-size: 16px;
-  }
-}
-
-.section-title .title {
-  font-size: 32px;
-  padding-top: 10px;
-  color: black;
-}
-
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .section-title .title {
-    font-size: 30px;
+    font-size: 30px; /* Adjust title size for screen sizes between 992px and 1199px */
   }
-}
-
-@media (max-width: 767px) {
-  .section-title .title {
-    font-size: 24px;
-  }
-}
-
-.section-title .title span {
-  font-weight: 400;
-  display: contents;
 }
 
 .slick-slide {
@@ -2151,7 +2140,7 @@ p {
   height: 4.2em; 
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+ 
   -webkit-box-orient: vertical;
   margin-bottom: 15px;
   transition: 0.25s ease;

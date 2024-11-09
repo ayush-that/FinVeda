@@ -1,21 +1,14 @@
-
-
 :root {
-  --bg-color-dark:white; /* Example dark color */
-  --text-color-dark: black; /* Example text color */
+  --bg-color-dark: #333; /* Dark background color */
+  --text-color-dark: white; /* Text color for dark mode */
 }
-
 
 body {
-  background-color:  white;
+  background-color: white;
 }
 
-.navbar-light {
-  width: 100%; 
-}
-
-.navbar-dark {
-  width: 100%; 
+.navbar-light, .navbar-dark {
+  width: 100%;
 }
 
 #progressBar {
@@ -34,10 +27,10 @@ body {
   padding: 0px;
 }
 
-
 .market-status-heading-unique {
   margin: 20px;
 }
+
 .circle {
   position: absolute;
   width: 25px;
@@ -88,7 +81,7 @@ body {
   background-color: rgb(4, 0, 128);
   width: 100%;
   transform-origin: right;
-  animation: borderAnimation 1s forwards; /* Apply animation */
+  animation: borderAnimation 1s forwards;
 }
 
 @keyframes borderAnimation {
@@ -99,45 +92,44 @@ body {
       transform: scaleX(1);
   }
 }
-body.dark-mode .market-status-section-unique{
+
+/* Dark Mode Styles */
+body.dark-mode .market-status-section-unique {
   background-color: var(--bg-color-dark);
   color: var(--text-color-dark);
 }
 
-body.dark-mode .market-status-heading-unique{
+body.dark-mode .market-status-heading-unique {
   color: white;
 }
-body.dark-mode .market-card-unique{
+
+body.dark-mode .market-card-unique {
   background-color: rgb(42, 36, 36);
   color: var(--text-color-dark);
 }
-body.dark-mode .market-card-unique h3{ 
+
+body.dark-mode .market-card-unique h3 {
   color: rgb(199, 192, 192);
-} 
-body.dark-mode .finlogix-container{
+}
+
+body.dark-mode .finlogix-container, body.dark-mode .container-main,
+body.dark-mode .footer-area {
   background-color: var(--bg-color-dark);
   color: var(--text-color-dark);
-}  
-body.dark-mode .container-main{
-  background-color: var(--bg-color-dark);
-  color: var(--text-color-dark);
-} 
-body.dark-mode .footer-area{
-  background-color: var(--bg-color-dark);
-  color: var(--text-color-dark);
-} 
-.container{
+}
+
+/* Container and Button Styles */
+.container {
   height: 100%;
   width: 100%;
-
 }
-.btn-text{
 
-  margin-left:  35px;
-  color:  white;
-
+.btn-text {
+  margin-left: 35px;
+  color: white;
 }
-.social-icons{
+
+.social-icons {
   text-align: left;
 }
 
@@ -154,7 +146,6 @@ body.dark-mode .footer-area{
   margin: 1rem 0.5rem 0.5rem 0;
   transition: 0.3s ease;
   color: #55ff00;
-  text-align: left;
 }
 
 .social-icons a:hover {
@@ -173,24 +164,21 @@ body.dark-mode .footer-area{
   position: relative;
 }
 
-.or-sign-in-with::before {
+.or-sign-in-with::before, .or-sign-in-with::after {
   content: "";
   position: absolute;
   top: 50%;
-  left: 12px;
   width: 33%;
   border-top: 1px solid #ccc;
-  transform: translateX(-5%);
+  transform: translateY(-50%);
+}
+
+.or-sign-in-with::before {
+  left: 12px;
 }
 
 .or-sign-in-with::after {
-  content: "";
-  position: absolute;
-  top: 50%;
   right: 12px;
-  width: 33%;
-  border-top: 1px solid #ccc;
-  transform: translateX(5%);
 }
 
 .form-check {
@@ -226,6 +214,7 @@ body.dark-mode .footer-area{
   stroke-width: 2;
 }
 
+/* Trading Widget Hover Effects */
 .tradingview-widget-container {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 2px solid rgb(224, 221, 221);
@@ -235,4 +224,23 @@ body.dark-mode .footer-area{
   transform: scale(1.05);
   box-shadow: 0px 4px 15px rgba(187, 15, 15, 0.2);
   border: 2px solid rgb(166, 153, 153);
+}
+
+/* Responsiveness for small screens */
+@media (max-width: 768px) {
+  .social-icons a {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .unique-popup-message {
+    width: 250px;
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .home-link {
+    font-size: 14px;
+    padding: 8px;
+  }
 }

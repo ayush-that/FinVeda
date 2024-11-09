@@ -1,3 +1,4 @@
+/* Modal Styling */
 .modal {
   display: none; /* Hidden by default */
   position: fixed;
@@ -46,6 +47,18 @@
     width: 95%; /* Slightly wider on very small screens */
     padding: 15px;
   }
+
+  /* Adjust button size and layout for smaller screens */
+  .main-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+  }
+  
+  /* Adjust header button for hero section on small screens */
+  .header-hero .main-btn {
+    width: 80%; /* Increase button size for smaller screens */
+  }
 }
 
 /* Additional styles for form elements */
@@ -58,21 +71,32 @@
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-size: 16px;
 }
 
 .main-btn {
   width: 100%;
-  background: linear-gradient(to right,#fe8464 0%, #fe6e9a 50%, #fe8464 100%);
+  background: linear-gradient(to right, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-}
-
-.header-hero .main-btn{
-  width: 60%;
+  padding: 12px;
+  font-size: 18px;
 }
 
 .main-btn:hover {
   background-color: #0056b3;
+}
+
+/* Further responsiveness for very small screens */
+@media (max-width: 375px) {
+  .modal-content {
+    margin: 5% auto;
+    padding: 10px;
+  }
+
+  .main-btn {
+    font-size: 14px; /* Adjust font size for very small screens */
+  }
 }

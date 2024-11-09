@@ -215,45 +215,73 @@
 }
 
 @media (max-width: 768px) {
-    .card h2 {
-        font-size: 20px;
-        margin-bottom: 20px;
-    }
+  /* Title Adjustments */
+  .card h2 {
+      font-size: 1.25rem; /* Adjust size for readability on mobile */
+      margin-bottom: 15px; /* Reduced margin */
+      text-align: center; /* Center-align titles */
+  }
 
-    .row-card {
-        flex-direction: column; 
-        /* gap: 20px; */
-    }
+  /* Flex Container Adjustments for row-card */
+  .row-card {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px; /* Add spacing between items */
+      justify-content: center; /* Center items on smaller screens */
+  }
 
-    .col-md-4 {
-        flex: 0 0 100%;
-        max-width: 100%;
-        padding: 10px 0;
-    }
+  /* Adjust column layout for smaller screens */
+  .col-md-4 {
+      flex: 1 1 100%; /* Ensure it takes full width on small screens */
+      max-width: 100%;
+      padding: 10px;
+  }
 
-    .service {
-        width: 100%;
-        padding: 20px;
-    }
+  /* Full-width services */
+  .service {
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box; /* Include padding in width calculation */
+  }
 
-    .shadow1,
-    .shadow2 {
-        width: 100%;
-        left: 0;
-    }
+  /* Adjust shadow cards */
+  .shadow1, .shadow2 {
+      width: 100%;
+      left: 0;
+      box-sizing: border-box; /* Include padding and margin in width calculation */
+  }
 
-    .good-card {
-        flex-direction: column; 
-        gap: 10px;
-        margin-top: 5%;
-    }
+  /* Adjust the layout of good-card */
+  .good-card {
+      display: flex;
+      flex-direction: column; 
+      gap: 15px; /* Add gap between items */
+      margin-top: 20px; /* More space between sections */
+  }
 
-    .white-card,
-    .color-card {
-        width: 100%; 
-        max-width: none; 
-    }
+  /* Ensure white-card and color-card are full-width */
+  .white-card, .color-card {
+      width: 100%;
+      max-width: 100%;
+      padding: 20px;
+      box-sizing: border-box; /* Ensure padding doesn't affect width */
+  }
+
+  /* Make sure images are responsive */
+  .card-image {
+      width: 100%; /* Ensure images fit their container */
+      height: auto; /* Maintain aspect ratio */
+  }
+
+  /* Ensure button sizes are mobile-friendly */
+  .button {
+      width: 100%;
+      padding: 12px;
+      font-size: 1.1rem; /* Make buttons larger and easier to tap */
+      box-sizing: border-box;
+  }
 }
+
 
 .social-icons{
 
