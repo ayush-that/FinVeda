@@ -1,4 +1,5 @@
-/* improvement */
+/* General Responsiveness for Various Components */
+
 #progressBar {
   position: fixed;
   top: 0;
@@ -8,145 +9,214 @@
   background-color: #f76b45;
   z-index: 9999;
 }
+
 * {
-cursor: url('./assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
+  cursor: url('./assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
 }
 
-
+/* Circle Effect */
 .circle {
-position: absolute;
-width: 25px;
-height: 25px;
-border-radius: 50%;
-pointer-events: none;
-background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
-transition: transform 0.1s, left 0.1s, top 0.1s;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
+  transition: transform 0.1s, left 0.1s, top 0.1s;
 }
 
 .circle-container {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-pointer-events: none;
-z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
 }
 
 @media (max-width: 720px) {
-.circle-container{
-  display: none;
-}
+  .circle-container {
+    display: none;
+  }
 }
 
+/* Unique Popup Message */
 .unique-popup-message {
-position: fixed; /* Change to fixed positioning */
-top: 30px; /* Adjust this value to be below the navbar */
-right: 2px; /* Adjust this value for the desired distance from the right edge */
-width: 300px; /* Adjust width as needed */
-transform: translateX(0); /* Center the popup horizontally */
-background-color: #a4d8ff;
-color: #131722;
-padding: 11px;
-border-radius: 5px;
-text-align: center;
-z-index: 1000;
-box-sizing: border-box;
-overflow: hidden; /* Hide the expanding border animation */
-position: relative;
+  position: fixed;
+  top: 30px;
+  right: 2px;
+  max-width: 90%;
+  width: 300px;
+  background-color: #a4d8ff;
+  color: #131722;
+  padding: 11px;
+  border-radius: 5px;
+  text-align: center;
+  z-index: 1000;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
+/* Border Animation */
 .border-animation {
-position: absolute;
-bottom: 0;
-left: 0;
-height: 7px; /* Same height as the border */
-background-color: rgb(17, 9, 230);
-width: 100%;
-transform-origin: right; /* Start shrinking from the right */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 7px;
+  background-color: rgb(17, 9, 230);
+  width: 100%;
+  transform-origin: right;
 }
 
 @keyframes borderAnimation {
-from {
-transform: scaleX(0); /* Full width initially */
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
 }
-to {
-transform: scaleX(1); /* Shrink to zero width */
-}
-}
-.social-icons{
 
-text-align: left;
+/* Social Icons */
+.social-icons {
+  text-align: left;
 }
 
 .social-icons a {
-display: inline-flex;
-justify-content: center;
-align-items: center;
-width: 2.1rem;
-height: 2.1rem;
-background-color: transparent;
-border: 0.2rem solid #0890ff;
-font-size: 1.1rem;
-border-radius: 50%;
-margin: 1rem 0.5rem 0.5rem 0;
-transition: 0.3s ease;
-color: #55ff00;
-text-align: left;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  background-color: transparent;
+  border: 0.2rem solid #0890ff;
+  font-size: 1.1rem;
+  border-radius: 50%;
+  margin: 1rem 0.5rem 0.5rem 0;
+  transition: 0.3s ease;
+  color: #55ff00;
 }
 
 .social-icons a:hover {
-color: rgb(139, 249, 12);
-transform: scale(1.3) translateY(-5px);
-background-color: #0048ff;
-box-shadow: 0 0 25px #03133c;
+  color: rgb(139, 249, 12);
+  transform: scale(1.3) translateY(-5px);
+  background-color: #0048ff;
+  box-shadow: 0 0 25px #03133c;
 }
 
-
+/* Or Sign-in-with Separator */
 .or-sign-in-with {
-margin: 20px 0;
-font-size: 14px;
-font-weight: bold;
-color: #666;
-text-align: center;
-position: relative;
+  margin: 20px 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: #666;
+  text-align: center;
+  position: relative;
+}
+
+.or-sign-in-with::before,
+.or-sign-in-with::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 35%;
+  border-top: 1px solid #ccc;
 }
 
 .or-sign-in-with::before {
-content: "";
-position: absolute;
-top: 50%;
-left: 0; 
-width: 35%; 
-border-top: 1px solid #ccc;
-transform: translateX(-2%); 
+  left: 0;
+  transform: translateX(-2%);
 }
 
 .or-sign-in-with::after {
-content: "";
-position: absolute;
-top: 50%;
-right: 0; 
-width: 35%; 
-border-top: 1px solid #ccc;
-transform: translateX(2%);
+  right: 0;
+  transform: translateX(2%);
 }
+
+/* Form and Check Elements */
 .form-check {
-display: flex;
-align-items: center;
+  display: flex;
+  align-items: center;
 }
+
 .form-check a {
-margin-left: auto; 
+  margin-left: auto;
 }
+
 .form {
-height: 500px;
-background-color: #0890ff;
-margin: 100px;
+  background-color: #0890ff;
+  margin: 5%;
+  padding: 2rem;
+  border-radius: 8px;
+  box-sizing: border-box;
 }
+
 h2 {
-/* display: flex; */
-/* align-items: center; */
-justify-content: center;
-margin-top: 30px;
-/* margin: 40px; */
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .form {
+    margin: 10%;
+    padding: 1.5rem;
+  }
+
+  .unique-popup-message {
+    right: 5px;
+    max-width: 85%;
+  }
+
+  .social-icons a {
+    width: 1.8rem;
+    height: 1.8rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .form {
+    margin: 15%;
+    padding: 1.2rem;
+  }
+
+  .unique-popup-message {
+    max-width: 80%;
+    padding: 8px;
+  }
+
+  .or-sign-in-with {
+    font-size: 13px;
+  }
+
+  .social-icons a {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .form {
+    margin: 5%;
+    padding: 1rem;
+  }
+
+  .unique-popup-message {
+    top: 20px;
+    right: 2px;
+    max-width: 90%;
+  }
+
+  .or-sign-in-with {
+    font-size: 12px;
+  }
+
+  .social-icons a {
+    width: 1.3rem;
+    height: 1.3rem;
+    font-size: 0.8rem;
+  }
 }

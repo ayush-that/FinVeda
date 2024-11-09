@@ -8,6 +8,29 @@
   <link rel="icon" href="../image/ml-fusion-lab-logo.png">
   <link rel="icon" href="https://raw.githubusercontent.com/ayush-that/FinVeda/refs/heads/main/assets/images/Favicon1.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="shortcut icon"  href="/assets/images/favicon2.webp" type="image/png" />  
+    <link rel="shortcut icon" href="./assets/images/favicon2.png" type="image/png" />
+    <link rel="stylesheet" href="./assets/css/animate.css" />
+    <link rel="stylesheet" href="./assets/css/magnific-popup.css" />
+    <link rel="stylesheet" href="./assets/css/slick.css" />
+    <link rel="stylesheet" href="./assets/css/LineIcons.css" />
+    <link rel="stylesheet" href="./assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/default.css" />
+    <link rel="stylesheet" href="./assets/css/index.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/quiz.css" />
+    <link rel="stylesheet" href="./assets/css/popup.css" />
+    <link rel="stylesheet" href="./assets/css/cookiepopup.css">
+    <link rel="stylesheet" href="./assets/css/about.css" />
+    <link rel="stylesheet" href="./assets/css/preloader.css" />
+    <link rel="stylesheet" type="text/css" href="sipcalculatorCss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/about(inlines).css" />
+    <link rel="stylesheet" href="navbar.css">
+  
+ 
   <style>
     .circle {
         position: absolute;
@@ -102,13 +125,243 @@
     });
 
   </script>
-    <div class="home-nav">
-        <a href="/">Go to Home</a>
-    </div>
+  <header class="header-area">
+    <div class="navbar-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <nav class="navbar navbar-expand-lg" style="display: flex; background-color: #2c3e50;">
+              <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                  <div class="icon1">
+                      <a href="./index.html">
+                          <img src="./assets/images/FinvedaLogo.png" alt="Finveda Logo" style="width: 13rem;">
+                      </a>
+                  </div>
+                  <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
+                      <li class="nav-item">
+                          <a class="page-scroll" href="./index.html">
+                              <i class="fas fa-home icon-hover" style="margin: 5px;"></i> Home
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="page-scroll" href="./about.html">
+                              <i class="fas fa-info-circle icon-hover" style="margin: 5px;"></i> About Us
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="page-scroll" href="./finance.html">
+                              <i class="fas fa-graduation-cap icon-hover" style="margin: 5px;"></i> Courses
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="page-scroll" href="./contact.html">
+                              <i class="fas fa-envelope icon-hover" style="margin: 5px;"></i> Contact
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="page-scroll" href="./faq.html">
+                              <i class="fas fa-question-circle icon-hover" style="margin: 5px;"></i> Help
+                          </a>
+                      </li>
+                      <!-- Dropdown for Explore -->
+                      <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
+                          <a class="page-scroll dropdown-toggle" href="#">
+                              <i class="fas fa-chevron-down icon-hover" style="margin: 5px;"></i> Explore More
+                          </a>
+                          <ul class="dropdown-menu">
+                              <li><a href="./trends.html"><i class="fas fa-chart-line icon-hover" style="margin: 5px;"></i> Trends</a></li>
+                              <li><a href="./tools/sip.html"><i class="fas fa-tools icon-hover" style="margin: 5px;"></i> Tools</a></li>
+                              <li><a href="./blog.html"><i class="fas fa-blog icon-hover" style="margin: 5px;"></i> Blogs</a></li>
+                              <li><a href="./quiz.html"><i class="fas fa-question icon-hover" style="margin: 5px;"></i> Quiz</a></li>
+                              <li><a class="active-link" href="./maps.html"><i class="fas fa-map icon-hover" style="margin: 5px;"></i> MAPS</a></li>
+                          </ul>
+                      </li>
+                      <!-- Navigation item placeholder for Login/Register or Logout button -->
+                      <li class="nav-item no-underline" id="auth-btn-container">
+                          <a class="main-btn navbar-btn" style="padding: 2px 20px;" data-scroll-nav="0" href="./loginPage.html">
+                              <i class="fas fa-user-circle icon-hover" style="margin: 5px;"></i> Login/Register
+                          </a>
+                      </li>
+                      <li class="nav-item no-underline align-self-center">
+                          <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()">
+                            <span>🌞</span>
+                          </button>
+                      </li>
+                  </ul>
+              </div>
+          </nav>
+      </div>
+      <script>
+        // Function to initialize theme based on localStorage
+        function initializeTheme() {
+          const body = document.body;
+          const toggleButton = document.getElementById('theme-toggle');
+          const currentTheme = localStorage.getItem('theme');
+      
+          // Apply saved theme
+          if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            toggleButton.classList.add('dark');
+            toggleButton.querySelector('span').textContent = '🌙'; // Dark mode icon
+          } else {
+            toggleButton.querySelector('span').textContent = '🌞'; // Light mode icon
+          }
+        }
+      
+        // Call initializeTheme on page load
+        document.addEventListener('DOMContentLoaded', () => {
+          initializeTheme();
+      
+          const toggleButton = document.getElementById('theme-toggle');
+          const body = document.body;
+      
+          // Event listener for theme toggle
+          toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            toggleButton.classList.toggle('dark');
+      
+            // Update icon and save theme
+            if (body.classList.contains('dark-mode')) {
+              toggleButton.querySelector('span').textContent = '🌙'; // Dark mode icon
+              localStorage.setItem('theme', 'dark');
+            } else {
+              toggleButton.querySelector('span').textContent = '🌞'; // Light mode icon
+              localStorage.setItem('theme', 'light');
+            }
+      
+            loadShow(); // Call any additional function if needed
+          });
+        });
+      
+        // Function placeholder for additional operations (if needed)
+        function loadShow() {
+          // Additional actions can go here
+        }
+      </script>
+                <!-- Login Modal -->
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span
+                      class="close"
+                      style="display: flex; justify-content: right"
+                      >&times;</span
+                    >
+                    <div class="mt-3">
+                      <h3 class="join">Login to join us....</h3>
+                      <form class="px-3 py-4">
+                        <div class="form-group">
+                          <label class="d-flex">Username</label>
+                          <input
+                            type="text"
+                            placeholder="Username"
+                            class="form-control"
+                          />
+                        </div>
+                        <div class="form-group">
+                          <input
+                            type="password"
+                            placeholder="Password"
+                            class="form-control"
+                          />
+                          <button type="button" class="toggle-password-btn">
+                            <i class="fa-solid fa-eye"></i>
+                          </button>
+                        </div>
+                        <div class="form-check d-flex">
+                          <input type="checkbox" class="form-check-input" />
+                          <label class="form-check-label">Remember me</label>
+                        </div>
+                      </form>
+                      <button class="main-btn mt-2 w-100 mb-3">
+                        Sign in
+                      </button>
+                      <p class="text-center">
+                        Don't have an account?
+                        <a href="#" id="registerLink">Register</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
 
-  <section class="contributor-stats">
+                <!-- Register Modal -->
+                <div id="registerModal" class="modal">
+                  <div class="modal-content">
+                    <span
+                      class="close"
+                      style="display: flex; justify-content: right"
+                      >&times;</span
+                    >
+                    <div class="mt-3">
+                      <h3 class="join">Register to join us....</h3>
+                      <form class="px-3 py-4">
+                        <div class="form-group">
+                          <label class="d-flex">Email</label>
+                          <input
+                            type="email"
+                            placeholder="Email"
+                            class="form-control"
+                          />
+                        </div>
+                        <div class="form-group">
+                          <label class="d-flex">Username</label>
+                          <input
+                            type="text"
+                            placeholder="Username"
+                            class="form-control"
+                          />
+                        </div>
+                        <div class="form-group">
+                          <input
+                            type="password"
+                            placeholder="Password"
+                            class="form-control"
+                            required
+                          />
+                          <button type="button" class="toggle-password-btn">
+                            <i class="fa-solid fa-eye"></i>
+                          </button>
+                        </div>
+                      </form>
+                      <button class="main-btn mt-2 w-100 mb-3">
+                        Register
+                      </button>
+                      <p class="text-center">
+                        Already have an account?
+                        <a href="#" id="loginLink">Login</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </nav>
+            <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+            <nav class="mobile-menu ">
+              <a class="page-scroll" href="../index.html">Home 🏡</a>
+              <a class="page-scroll" href="../about.html">About Us 📖</a>
+              <a class="page-scroll" href="../trends.html">Trends 📈</a>
+              <a class="page-scroll" href="../tools/sip.html">Tools 🔧</a>
+              <a class="page-scroll active-link" href="../blog.html">Blogs 📰</a>
+              <a class="page-scroll" href="../quiz.html">Quiz 🤔</a>
+              <a class="page-scroll main-btn" href="#" onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
+              <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
+                <span></span>
+              </div>
+            </nav>
+
+                
+              <link href="../navbar.css" rel="stylesheet">
+              <script type="text/javascript" src="../navbar.js"></script>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+  <section class="contributor-stats" style="background-color: rgb(89, 192, 240);margin-top: 150px;">
     <h2>Project Statistics</h2>
-    <div class="contributor-stats-grid" id="statsGrid">
+    <div style="color:white ;" class="contributor-stats-grid" id="statsGrid">
       <!-- Dynamic Stats will be added by JavaScript -->
     </div>
   </section>
@@ -116,7 +369,7 @@
   <div class="container">
     <h1 class="title">Our Contributors</h1>
   </div>
-  <div id="contributors" class="contributors-grid"></div>
+  <div style="margin-left:5px;" id="contributors" class="contributors-grid"></div>
 
   <style>
     .contributor-card::before{
@@ -174,5 +427,295 @@
     }
   </style>
   <script src="./assets/js/contributors.js"></script>
-</body>
+    <div class="container">
+      <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s"  style="height: 265px;">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="subscribe-content mt-45">
+              <h2 class="subscribe-title subscribe-map-title">
+                Subscribe Our Newsletter <span style="font-size: 28px;"> Get regular updates</span>
+              </h2>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="subscribe-form mt-50">
+              <form id="unique-subscribe-form">
+                <input type="email" id="unique-news-email" placeholder="Enter Email" required />
+                <button class="unique-main-btn" id="unique-subscribe-btn" type="submit" style="margin-top: 10px;">Subscribe</button>
+              </form>
+              <div id="unique-message" class="unique-popup-message" style="display: none;">
+                <div class="border-animation"></div>
+                Thank You for the subscription!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-widget pb-100">
+    <div class="row" id="footer">
+        <div class="col-lg-4 col-md-6 col-sm-8">
+            <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+              <img src="./assets/images/FinvedaLogo.png" alt="FinVeda Logo" style="height: 80px; width: auto; margin-bottom: 15px;" />
+                <p class="text custom-margin">
+                    We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
+                </p>
+            </div>
+        </div>
+        <div class="col-lg-5 col-md-7 col-sm-7">
+            <div class="footer-link d-flex mt-50 justify-content-md-between" style="justify-content: space-around !important;">
+                <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+                    <div class="footer-title">
+                        <h3 class="title custom-margin">Quick Links</h3>
+                    </div>
+                    <ul class="link custom-margin">
+                        <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+                        <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
+                        <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
+                        <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+                        <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+                    </ul>
+                </div>
+                <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+                    <div class="footer-title">
+                        <h4 class="title custom-margin">Resources</h4>
+                    </div>
+                    <ul class="link custom-margin">
+                        <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
+                        <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
+                        <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                        <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-5 col-sm-5">
+            <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                <div class="footer-title">
+                    <h4 class="title custom-margin">Contact Us</h4>
+                </div>
+                <ul class="contact custom-margin-big" style="justify-content: space-around;">
+                    <li class="d-sm-flex justify-content-center">
+                        <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                        <p style="width: 80%;">
+                            <a href="mailto:ayush1337@hotmail.com" target="_blank"
+                               style="color: white; text-decoration: underline;">
+                                ayush1337@hotmail.com
+                            </a>
+                        </p>
+                    </li>
+                    <li class="d-sm-flex justify-content-center">
+                        <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                        <div style="width: 80%;">
+                            <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
+                                fin-veda.vercel.app
+                            </a>
+                        </div>
+                    </li>
+                    <li class="d-sm-flex justify-content-center">
+                        <!-- Modified: Inline CSS to adjust logo size and sync with other pages -->
+                        <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font: 12px; width: 10%;"></i>
+                        <div style="width: 80%;">
+                            <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
+                               style="color:#fff">
+                                Delhi, India
+                            </a>
+                        </div>
+                    </li>
+                    <!-- Added: Social Media Redirects -->
+                    <div class="social-icons">
+                      <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                      <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                      <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
+                      <a href="https://discord.com/"><i class="fa-brands fa-discord"></i></a>
+                      <a href="https://github.com/ayush-that/FinVeda"><i class="fa-brands fa-github"></i></a>
+                  </div>
+                </ul>
+            </div>
+        </div>
+    
+    
+    </div>
+    </div>
+    <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center">
+      <div class="row">
+        <div class="col-lg-12">
+          <div
+            class="copyright d-sm-flex justify-content-center"
+            style="
+              display: flex;
+              justify-content: center;
+              text-align: center;
+              width: 100%;
+              height: 100%;
+            "
+          >
+            <div class="copyright-content" style="text-align: center; margin-bottom: -60px;">
+              <p class="text" style="text-align: center">
+                © <span id="copyright-year">2024</span> FinVeda. All rights are
+                reserved<br />
+                Made with ♥ in India
+              </p>
+    
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="particles-2"></div>
+    </div>
+    <button id="scrollToTopBtn" class="scroll-top" aria-label="Scroll to top">
+      <div class="scroll-top-icon">
+        <i class="fa-solid fa-arrow-up"></i>
+      </div>
+      <svg class="progress-ring" width="60" height="60">
+        <circle class="progress-ring__circle" stroke="#ffffff" stroke-width="4" fill="transparent" r="28" cx="30"
+          cy="30"></circle>
+      </svg>
+    </button>
+    <style>
+      .scroll-top {
+        position: fixed;
+        right: 1.6%;
+        background: #635adc;
+        color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+        overflow: visible;
+        z-index: 10;
+        bottom: 15px;
+        margin-right: 10px;
+        /* Ensure button is on top */
+      }
+
+      .scroll-top.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .scroll-top:hover {
+        transform: scale(1.1);
+        /* Subtle scaling instead of expanding */
+        box-shadow: 0 8px 20px rgba(255, 69, 159, 0.6);
+        /* Slightly larger shadow */
+      }
+
+      .scroll-top:active {
+        transform: scale(1.05);
+        /* Minor scale reduction on click */
+      }
+
+      .scroll-top-icon {
+        position: relative;
+        z-index: 2;
+        transition: transform 0.3s ease;
+      }
+
+      .scroll-top:hover .scroll-top-icon {
+        transform: translateY(-3px);
+      }
+
+      /* Progress Ring Styling */
+      .progress-ring {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: rotate(-90deg);
+        /* To start from the top */
+      }
+
+      .progress-ring__circle {
+        transition: stroke-dashoffset 0.35s;
+        transform-origin: 50% 50%;
+      }
+
+      /* Pulse Animation */
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+        }
+
+        50% {
+          box-shadow: 0 5px 15px rgba(255, 69, 159, 0.7);
+        }
+
+        100% {
+          box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+        }
+      }
+
+      .scroll-top:hover {
+        animation: pulse 1.5s infinite;
+      }
+
+      .scroll-top.show {
+        animation: none;
+        /* No animation when showing the button */
+      }
+
+      .scroll-top.show:hover {
+        animation: pulse 1.5s infinite;
+        /* Pulse on hover */
+      }
+    </style>
+    <script>
+      // Get the button
+      const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+      const progressCircle = document.querySelector(".progress-ring__circle");
+      const radius = progressCircle.r.baseVal.value;
+      const circumference = 2 * Math.PI * radius;
+
+      // Set the circle progress properties
+      progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
+      progressCircle.style.strokeDashoffset = circumference;
+
+      // Function to show or hide the button based on scroll position
+      function toggleScrollButton() {
+        if (window.scrollY > 100) {
+          scrollToTopBtn.classList.add("show");
+        } else {
+          scrollToTopBtn.classList.remove("show");
+        }
+      }
+
+      // Function to set the scroll progress on the button ring
+      function setProgress(percent) {
+        const offset = circumference - (percent / 100) * circumference;
+        progressCircle.style.strokeDashoffset = offset;
+      }
+
+      // Listen for scroll events to update button visibility and progress
+      window.addEventListener("scroll", () => {
+        toggleScrollButton();
+        const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        setProgress(scrollPercent);
+      });
+
+      // Smooth scroll to top when the button is clicked
+      scrollToTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      });
+    </script>
+    </footer>  -->
+</body>  <!-- <footer id="footer" class="footer-area pt-120">
+
 </html>
