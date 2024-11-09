@@ -1,30 +1,35 @@
 :root {
   --bg-color-dark: #333; /* Dark background color */
   --text-color-dark: white; /* Text color for dark mode */
+  --primary-color: #f76b45; /* Primary button or accent color */
+  --border-color-light: #ccc;
 }
 
 body {
   background-color: white;
+  color: #333; /* Default text color */
+  font-family: Arial, sans-serif;
 }
 
 .navbar-light, .navbar-dark {
   width: 100%;
 }
 
+/* Progress Bar */
 #progressBar {
   position: fixed;
   top: 0;
   left: 0;
   width: 0%;
   height: 8px;
-  background-color: #f76b45;
+  background-color: var(--primary-color);
   z-index: 9999;
 }
 
 * {
   cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 
 .market-status-heading-unique {
@@ -53,7 +58,7 @@ body {
 
 @media (max-width: 720px) {
   .circle-container {
-      display: none;
+    display: none;
   }
 }
 
@@ -62,15 +67,12 @@ body {
   top: 30px;
   right: 2px;
   width: 300px;
-  transform: translateX(0);
   background-color: #96c1e3;
   color: #131722;
   padding: 11px;
   border-radius: 5px;
   text-align: center;
   z-index: 1000;
-  box-sizing: border-box;
-  overflow: hidden;
 }
 
 .border-animation {
@@ -86,15 +88,24 @@ body {
 
 @keyframes borderAnimation {
   from {
-      transform: scaleX(0);
+    transform: scaleX(0);
   }
   to {
-      transform: scaleX(1);
+    transform: scaleX(1);
   }
 }
 
 /* Dark Mode Styles */
-body.dark-mode .market-status-section-unique {
+body.dark-mode {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+body.dark-mode .market-status-section-unique,
+body.dark-mode .market-card-unique,
+body.dark-mode .finlogix-container,
+body.dark-mode .container-main,
+body.dark-mode .footer-area {
   background-color: var(--bg-color-dark);
   color: var(--text-color-dark);
 }
@@ -103,19 +114,8 @@ body.dark-mode .market-status-heading-unique {
   color: white;
 }
 
-body.dark-mode .market-card-unique {
-  background-color: rgb(42, 36, 36);
-  color: var(--text-color-dark);
-}
-
 body.dark-mode .market-card-unique h3 {
   color: rgb(199, 192, 192);
-}
-
-body.dark-mode .finlogix-container, body.dark-mode .container-main,
-body.dark-mode .footer-area {
-  background-color: var(--bg-color-dark);
-  color: var(--text-color-dark);
 }
 
 /* Container and Button Styles */
@@ -169,7 +169,7 @@ body.dark-mode .footer-area {
   position: absolute;
   top: 50%;
   width: 33%;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid var(--border-color-light);
   transform: translateY(-50%);
 }
 
