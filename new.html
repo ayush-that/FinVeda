@@ -1,56 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Enhanced Blog Page with Share Buttons</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
 
-  <div class="container">
-    <h1>My Blog</h1>
 
-    <!-- Blog Form to Add New Blog Post -->
-    <div class="blog-form">
-      <input type="text" id="blogTitle" placeholder="Enter blog title" required>
-      <textarea id="blogContent" placeholder="Enter blog content" required></textarea>
-      <input type="file" id="blogImage" accept="image/*">
-      <button onclick="addBlog()">Add Blog</button>
+
+    <!-- FAQ Section -->
+    <div class="images">
+        <img style="width:250px; top: 200px; right: 1470px;mix-blend-mode: multiply;" src="assets/images/HELP-IMG.webp"
+            alt="image" class="photo">
+        <div class="faq-section " style="margin-top: 100px;margin-left: -10px;">
+            <div class="faq-intro">
+                <h3 class="faq-title">Frequently Asked Questions</h3>
+                <p>Welcome to Finveda’s FAQ! Here you’ll find answers to common questions about our services, tools, and
+                    how we can help you on your financial journey. Still have questions? Contact us or use our AI
+                    chatbot for more assistance.</p>
+            </div>
+
+            <div class="faq-search">
+                <input type="text" style="color: #0c0a0a;" class="faq-search-input" placeholder="Type your question..."
+                    aria-label="Search FAQ" oninput="filterFAQs()" />
+                <button class="faq-search-btn" onclick="filterFAQs()">Search</button>
+            </div>
+
+
+  <div class="faq-container">
+    <h1>Frequently Asked Questions</h1>
+
+    <br>
+    <br>
+    <!-- Question 1 -->
+    <div class="question">
+      <h2>What is Finveda?</h2>
+      <button onclick="toggleAnswer(this)">Show Answer</button>
+      <p class="answer">Finveda is a dynamic financial literacy app with Arthsathi AI chatbot, finance blogs, market trends, SIP calculator, and a quiz for effortless finance learning.</p>
     </div>
 
-    <!-- Display Blogs Here -->
-    <div id="blogList" class="blog-list">
-      <!-- Blog posts will be dynamically added here -->
+    <!-- Question 2 -->
+    <div class="question">
+      <h2>What problem does Finveda solve?</h2>
+      <button onclick="toggleAnswer(this)">Show Answer</button>
+      <p class="answer">Finveda aims to solve the lack of financial literacy in India, providing tools and resources to improve financial knowledge for individuals.</p>
     </div>
+
+    <!-- Question 3 -->
+    <div class="question">
+      <h2>What services does Finveda offer?</h2>
+      <button onclick="toggleAnswer(this)">Show Answer</button>
+      <p class="answer">Finveda offers expert-written blogs, market trends, SIP and PPF calculators, and more for personalized finance education.</p>
+    </div>
+
+    <div class="question">
+      <h2>How can I start using Finveda?</h2>
+      <button onclick="toggleAnswer(this)">Show Answer</button>
+      <p class="answer">Simply sign up and access all our features, including personalized financial education and tools.</p>
+    </div>
+
+    <div class="question">
+      <h2>Is Finveda free to use?</h2>
+      <button onclick="toggleAnswer(this)">Show Answer</button>
+      <p class="answer">Yes, Finveda is completely free to use for all users.</p>
+    </div>
+
+
   </div>
 
-  <script src="script.js"></script>
+        </div>
+    </div>
+
 
   <style>
-                * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
+     body {
   font-family: Arial, sans-serif;
-  background-color:#007bff;
-  display: flex;
-  justify-content: center;
+  background-color: #f4f4f9;
   align-items: center;
   height: 100vh;
 }
 
-.container {
-  width: 500px;
+.faq-container {
+  width: 600px;
   padding: 20px;
   background-color: #ffffff;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  overflow-y: auto;
-  max-height: 90vh;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
 h1 {
@@ -58,194 +86,100 @@ h1 {
   color: #333;
 }
 
-.blog-form {
-  margin-bottom: 20px;
+.question {
+  margin-bottom: 50px;
 }
 
-.blog-form input[type="text"],
-.blog-form textarea,
-.blog-form input[type="file"] {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background-color: #f9f9f9;
+.question h2 {
+  color: #333;
 }
 
-.blog-form button {
-  width: 100%;
-  padding: 12px;
+.question button {
+  padding: 8px 12px;
   border: none;
   border-radius: 4px;
   background-color: #007bff;
   color: white;
-  font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
+  margin-top: -26px; /* Adds space above the button */
+  margin-left: auto; /* Aligns button to the right */
+  margin-right: 0; /* Aligns button to the right */
+  display: block; /* Makes button a block-level element so it takes full width available */
 }
 
-.blog-form button:hover {
+.question button:hover {
   background-color: #0056b3;
 }
 
-.blog-list {
-  margin-top: 20px;
-}
-
-.blog-post {
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  background-color: #fafafa;
-  position: relative;
-}
-
-.blog-post h3 {
-  color: #333;
-}
-
-.blog-post p {
+.answer {
+  display: none;
   color: #666;
-}
-
-.blog-post img {
-  width: 100%;
-  max-height: 200px;
   margin-top: 10px;
-  border-radius: 4px;
-  object-fit: cover;
-}
-
-.blog-post .delete-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  padding: 6px 12px;
-  border: none;
-  border-radius: 4px;
-  background-color: #dc3545;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.blog-post .delete-btn:hover {
-  background-color: #c82333;
-}
-
-.share-buttons {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.share-buttons button {
-  padding: 6px 10px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  color: white;
-}
-
-.share-buttons .twitter {
-  background-color: #1DA1F2;
-}
-
-.share-buttons .linkedin {
-  background-color: #0077b5;
-}
-
-.share-buttons .instagram {
-  background-color: #C13584;
 }
 
   </style>
 
-<script>
-  const blogList = document.getElementById("blogList");
+    <style>
+        .accordion-item {
+            background-color: #5776ff;
+        }
 
-function addBlog() {
-  const title = document.getElementById("blogTitle").value;
-  const content = document.getElementById("blogContent").value;
-  const imageFile = document.getElementById("blogImage").files[0];
+        .accordion-button {
+            background: linear-gradient(135deg, #56ab2f, #a8e063, #b9f1b7);
+            color: #ffffff;
+            font-weight: bold;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
 
-  if (title === "" || content === "") {
-    alert("Please fill in both the title and content.");
-    return;
+        .accordion-button::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+            transition: opacity 0.3s ease;
+            opacity: 0;
+            border-radius: 10px;
+        }
+
+        .accordion-button:hover {
+            background: linear-gradient(135deg, #c8f8c2, #56ab2f, #a8e063);
+            transform: scale(1.03);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .accordion-button:focus {
+            outline: none;
+            border: 2px solid #ffffff;
+            box-shadow: 0 0 10px #4facfe, 0 0 20px #56ab2f;
+        }
+
+        .accordion-button:focus::before {
+            opacity: 1;
+            transform: rotate(45deg);
+        }
+    </style>
+
+
+
+ <script>
+    function toggleAnswer(button) {
+  const answer = button.nextElementSibling;
+  if (answer.style.display === "none" || answer.style.display === "") {
+    answer.style.display = "block";
+    button.innerText = "Hide Answer";
+  } else {
+    answer.style.display = "none";
+    button.innerText = "Show Answer";
   }
-
-  // Create blog post elements
-  const blogPost = document.createElement("div");
-  blogPost.classList.add("blog-post");
-
-  const blogTitle = document.createElement("h3");
-  blogTitle.innerText = title;
-
-  const blogContent = document.createElement("p");
-  blogContent.innerText = content;
-
-  const deleteBtn = document.createElement("button");
-  deleteBtn.classList.add("delete-btn");
-  deleteBtn.innerText = "Delete";
-  deleteBtn.onclick = () => deleteBlog(blogPost);
-
-  // Share buttons container
-  const shareButtons = document.createElement("div");
-  shareButtons.classList.add("share-buttons");
-
-  const twitterBtn = createShareButton("Twitter", "twitter", `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(location.href)}`);
-  const linkedinBtn = createShareButton("LinkedIn", "linkedin", `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(location.href)}&title=${encodeURIComponent(title)}`);
-  const instagramBtn = createShareButton("Instagram", "instagram", `https://www.instagram.com/`);
-
-  shareButtons.appendChild(twitterBtn);
-  shareButtons.appendChild(linkedinBtn);
-  shareButtons.appendChild(instagramBtn);
-
-  // Append title, content, delete button, and share buttons to the blog post
-  blogPost.appendChild(blogTitle);
-  blogPost.appendChild(blogContent);
-
-  // If an image is uploaded, create an image element and add it to the blog post
-  if (imageFile) {
-    const reader = new FileReader();
-    reader.onload = function (e) {
-      const blogImage = document.createElement("img");
-      blogImage.src = e.target.result;
-      blogPost.appendChild(blogImage);
-    };
-    reader.readAsDataURL(imageFile);
-  }
-
-  blogPost.appendChild(deleteBtn);
-  blogPost.appendChild(shareButtons);
-
-  // Add the new blog post to the blog list
-  blogList.appendChild(blogPost);
-
-  // Clear the form fields
-  document.getElementById("blogTitle").value = "";
-  document.getElementById("blogContent").value = "";
-  document.getElementById("blogImage").value = "";
 }
-
-function deleteBlog(blogPost) {
-  blogList.removeChild(blogPost);
-}
-
-function createShareButton(platform, className, url) {
-  const button = document.createElement("button");
-  button.innerText = platform;
-  button.classList.add(className);
-  button.onclick = () => {
-    window.open(url, "_blank");
-  };
-  return button;
-}
-
 </script>
-</body>
-</html>
-
-
