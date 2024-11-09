@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Financial Literacy Dashboard</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <link rel="shortcut icon"  href="/assets/images/favicon2.webp" type="image/png" />  
+    <link rel="shortcut icon"  href="/assets/images/favicon2.webp" type="image/png" />
     <link rel="shortcut icon" href="./assets/images/favicon2.png" type="image/png" />
     <link rel="stylesheet" href="./assets/css/animate.css" />
     <link rel="stylesheet" href="./assets/css/magnific-popup.css" />
@@ -25,13 +25,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <link rel="stylesheet" href="./assets/css/about(inlines).css" />
     <link rel="stylesheet" href="navbar.css">
-  
+    <link rel="stylesheet" href="new.css">
+
     <style>
       * {
         cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
       }
-  
-  
+
+
       .circle {
         position: absolute;
         width: 25px;
@@ -41,7 +42,7 @@
         background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
         transition: transform 0.1s, left 0.1s, top 0.1s;
       }
-  
+
       .circle-container {
         position: fixed;
         top: 0;
@@ -51,7 +52,7 @@
         pointer-events: none;
         z-index: 9999;
       }
-  
+
       @media (max-width: 720px) {
         .circle-container {
           display: none;
@@ -60,16 +61,16 @@
 
 /* Style for Financial Literacy Rates heading */
 .financial-literacy-rate {
-    color: black; 
+    color: black;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Hover effect for Financial Literacy Rates heading */
 .financial-literacy-rate:hover {
-    background-color: orange; 
-    color: white; 
-    padding: 5px; 
-    border-radius: 5px; 
+    background-color: orange;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 /* Card styling */
@@ -78,145 +79,145 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 20px auto; 
-    padding: 20px; 
-    max-width: 800px; 
-    border: 1px solid #ccc; 
-    border-radius: 10px; 
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
-    opacity: 0; 
-    animation: fadeIn 0.5s forwards; 
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
 }
 
 /* Card heading styling */
 .card h2 {
-    text-align: center; 
-    margin-bottom: 20px; 
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 /* Button styles */
-button, 
-input[type="submit"], 
-input[type="button"], 
+button,
+input[type="submit"],
+input[type="button"],
 .quiz-button {
-    background-color: #007BFF; 
-    color: white; 
-    border: none; 
-    padding: 10px 15px; 
-    border-radius: 5px; 
-    cursor: pointer; 
-    transition: background-color 0.3s ease, transform 0.2s ease; 
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 /* Hover effects for buttons */
-button:hover, 
-input[type="submit"]:hover, 
+button:hover,
+input[type="submit"]:hover,
 input[type="button"]:hover {
-    background-color: #0056b3; 
-    transform: translateY(-2px); 
+    background-color: #0056b3;
+    transform: translateY(-2px);
 }
 
 .quiz-button:hover {
-    background-color: #218838; 
-    transform: translateY(-2px); 
+    background-color: #218838;
+    transform: translateY(-2px);
 }
 
 /* Input field styles */
-input[type="text"], 
-input[type="email"], 
-input[type="password"], 
-textarea, 
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
 select {
-    width: 100%; 
-    padding: 10px; 
-    margin: 10px 0; 
-    border: 1px solid #ccc; 
-    border-radius: 5px; 
-    transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Hover effects for input fields */
-input[type="text"]:hover, 
-input[type="email"]:hover, 
-input[type="password"]:hover, 
-textarea:hover, 
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+textarea:hover,
 select:hover {
-    border-color: #007BFF; 
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 /* Focus effects for input fields */
-input[type="text"]:focus, 
-input[type="email"]:focus, 
-input[type="password"]:focus, 
-textarea:focus, 
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus,
 select:focus {
-    border-color: #0056b3; 
-    box-shadow: 0 0 8px rgba(0, 86, 179, 0.5); 
-    outline: none; 
+    border-color: #0056b3;
+    box-shadow: 0 0 8px rgba(0, 86, 179, 0.5);
+    outline: none;
 }
 
 /* Styling for educational resources */
 .educational-resources {
-    text-align: center; 
-    margin: 20px 0; 
+    text-align: center;
+    margin: 20px 0;
 }
 
 /* State initiative card styling */
 .state-initiative {
-    margin: 20px 0; 
-    padding: 15px; 
-    border: 1px solid #ddd; 
-    border-radius: 5px; 
-    background-color: #ffffff; 
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #ffffff;
 }
 
 /* Hover effect for state initiative cards */
 .state-initiative:hover {
-    background-color: #f1f1f1; 
-    transition: background-color 0.3s ease; 
+    background-color: #f1f1f1;
+    transition: background-color 0.3s ease;
 }
 
 /* Resource card styling */
 .resource {
-    background-color: #ffffff; 
-    border: 1px solid #ddd; 
-    border-radius: 10px; 
-    padding: 15px; 
-    margin: 10px; 
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Hover effect for resource cards */
 .resource:hover {
-    transform: translateY(-5px); 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Text color change on resource hover */
 .resource:hover p {
-    color: #333; 
+    color: #333;
 }
 
 /* Resource heading styling */
 .resource h2 {
-    color: #007BFF; 
-    transition: color 0.3s ease; 
+    color: #007BFF;
+    transition: color 0.3s ease;
 }
 
 /* Change resource heading color on hover */
 .resource:hover h2 {
-    color: #0056b3; 
+    color: #0056b3;
 }
 
 /* Fade-in animation for cards */
 @keyframes fadeIn {
     to {
-        opacity: 1; 
+        opacity: 1;
     }
 }
     </style>
-    
+
 </head>
 <body>
     <div id="progressBar"></div>
@@ -260,9 +261,9 @@ select:focus {
       <div class="circle"></div>
       <div class="circle"></div>
     </div>
-  
+
     <div id="progressBar"></div>
-   
+
     <header class="header-area">
       <div class="navbar-area">
         <div class="container">
@@ -335,7 +336,7 @@ select:focus {
             const body = document.body;
             const toggleButton = document.getElementById('theme-toggle');
             const currentTheme = localStorage.getItem('theme');
-        
+
             // Apply saved theme
             if (currentTheme === 'dark') {
               body.classList.add('dark-mode');
@@ -345,19 +346,19 @@ select:focus {
               toggleButton.querySelector('span').textContent = '🌞'; // Light mode icon
             }
           }
-        
+
           // Call initializeTheme on page load
           document.addEventListener('DOMContentLoaded', () => {
             initializeTheme();
-        
+
             const toggleButton = document.getElementById('theme-toggle');
             const body = document.body;
-        
+
             // Event listener for theme toggle
             toggleButton.addEventListener('click', () => {
               body.classList.toggle('dark-mode');
               toggleButton.classList.toggle('dark');
-        
+
               // Update icon and save theme
               if (body.classList.contains('dark-mode')) {
                 toggleButton.querySelector('span').textContent = '🌙'; // Dark mode icon
@@ -366,11 +367,11 @@ select:focus {
                 toggleButton.querySelector('span').textContent = '🌞'; // Light mode icon
                 localStorage.setItem('theme', 'light');
               }
-        
+
               loadShow(); // Call any additional function if needed
             });
           });
-        
+
           // Function placeholder for additional operations (if needed)
           function loadShow() {
             // Additional actions can go here
@@ -420,7 +421,7 @@ select:focus {
                       </div>
                     </div>
                   </div>
-  
+
                   <!-- Register Modal -->
                   <div id="registerModal" class="modal">
                     <div class="modal-content">
@@ -473,7 +474,7 @@ select:focus {
                 </div>
               </nav>
               <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-  
+
               <nav class="mobile-menu ">
                 <a class="page-scroll" href="../index.html">Home 🏡</a>
                 <a class="page-scroll" href="../about.html">About Us 📖</a>
@@ -486,18 +487,18 @@ select:focus {
                   <span></span>
                 </div>
               </nav>
-  
-                  
+
+
                 <link href="../navbar.css" rel="stylesheet">
                 <script type="text/javascript" src="../navbar.js"></script>
             </div>
           </div>
         </div>
       </div>
-    
+
     </header>
-  
-    
+
+
     <h1>Financial Literacy Dashboard</h1>
     <div id="map"></div>
     <h2>Financial Literacy Rates</h2>
@@ -518,8 +519,8 @@ select:focus {
             margin-top: 100px;
             font-family: Arial, sans-serif;
         }
-      
-      
+
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -551,7 +552,7 @@ h1 {
 h1:hover {
     background-color: white; /* Darker green on hover */
     color: #007BFF;
-  
+
    margin-left: 20px;
    margin-right: 20px;
    border:2px solid #007BFF;
@@ -592,7 +593,7 @@ h2 {
 h2:hover {
   background-color: white;
     color: #007BFF;
-  
+
    margin-left: 20px;
    margin-right: 20px;
    border:2px solid #007BFF;
@@ -600,7 +601,7 @@ h2:hover {
 
 /* Table styling */
 table {
- 
+
     width: 97%;
     border-collapse: collapse;
     margin: 20px;
@@ -611,7 +612,7 @@ table {
 }
 
 table:hover {
-    border-color:white; 
+    border-color:white;
 }
 
 th, td {
@@ -646,7 +647,7 @@ tbody tr:hover {
 
 /* Hover effect for table cells */
 td:hover {
-    border-color:white; 
+    border-color:white;
     color: #007BFF;
 }
 
@@ -662,7 +663,7 @@ td {
     <section id="educational-resources" style="margin: 20px;width: 90%; max-width: 1200px;align-items: center; text-align: center; padding: 30px; background-color: white; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);margin-left: 170px;border: 10px #007BFF solid;">
       <h2 style="color: #007BFF; background-color: white; font-size: 28px; margin: 20px; padding: 10px;">Educational Resources and Initiatives by State</h2>
       <p style="color: #718096; font-size: 16px; margin-bottom: 30px;">Explore financial education programs and initiatives available across different states in India to enhance financial literacy and economic empowerment.</p>
-      
+
       <div class="state-resources">
           <!-- Punjab -->
           <div class="resource" style="background-color: white; border: 3px solid #007BFF; padding: 15px; margin-bottom: 20px; border-radius: 8px; transition: transform 0.3s;">
@@ -726,7 +727,7 @@ td {
   <section id="feedback" style="margin-left: 150px; margin-top: 50px; width: 90%; max-width: 600px; background-color: white; border-radius: 8px; padding: 20px;border:3px solid #007BFF; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); margin-bottom: 20px;">
     <h2 style="color: #2c5282; font-size: 24px; text-align: center; padding: 10px;">Share Your Feedback</h2>
     <p style="color: #4a5568; font-size: 16px; text-align: center;">Help us improve our financial education platform by sharing your thoughts!</p>
-    
+
     <form style="display: flex; flex-direction: column; gap: 15px; margin-top: 20px; ">
         <label style="font-size: 14px; color: #2d3748;">
             Name:
@@ -753,7 +754,7 @@ td {
 <section id="quiz" style="top: 3650px;left:680px;position: absolute;width: 90%; max-width: 500px; background-color: white; border-radius: 8px; padding: 20px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); border: 2px solid #007BFF; margin-top: 120px; margin-left: 100px;">
     <h2 style="color: #2c5282; padding: 10px; font-size: 24px; text-align: center;">Financial Literacy Quiz</h2>
     <p style="color: #4a5568; font-size: 16px; text-align: center;">Test your knowledge on basic financial concepts!</p>
-    
+
     <form style="display: flex; flex-direction: column; gap: 15px; margin-top: 20px;">
         <!-- Question 1 -->
         <div style="text-align: left;">
@@ -916,7 +917,7 @@ td {
             literacyTableBody.appendChild(row);
         }
     </script>
-    
+
     <footer id="footer" class="footer-area pt-120">
       <div class="container">
         <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s"  style="height: 265px;">
@@ -1022,12 +1023,13 @@ td {
                         <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
                         <a href="https://discord.com/"><i class="fa-brands fa-discord"></i></a>
                         <a href="https://github.com/ayush-that/FinVeda"><i class="fa-brands fa-github"></i></a>
+                          <a href="https://www.linkedin.com/in/ayush-that/"><i class="fa-brands fa-linkedin"></i></a>
                     </div>
                   </ul>
               </div>
           </div>
-      
-      
+
+
       </div>
       </div>
       <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center">
@@ -1049,21 +1051,21 @@ td {
                   reserved<br />
                   Made with ♥ in India
                 </p>
-      
+
               </div>
             </div>
           </div>
         </div>
       </div>
-      
+
       <div id="particles-2"></div>
       </div>
       <button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top" style="margin-left:95%; margin-bottom: 30px; border-radius: 50%; width: 60px; height: 60px;">↑</button>
-      
+
       </footer>
 
-     
-      
+
+
         <script src="finance.js"></script>
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
       <script>
@@ -1075,40 +1077,40 @@ td {
         document.addEventListener("DOMContentLoaded", function () {
           const coords = { x: 0, y: 0 };
           const circles = document.querySelectorAll(".circle");
-      
+
           circles.forEach(function (circle) {
             circle.x = 0;
             circle.y = 0;
           });
-      
+
           window.addEventListener("mousemove", function (e) {
             coords.x = e.pageX;
             coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
           });
-      
+
           function animateCircles() {
             let x = coords.x;
             let y = coords.y;
-      
+
             circles.forEach(function (circle, index) {
               circle.style.left = `${x - 12}px`;
               circle.style.top = `${y - 12}px`;
               circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
-      
+
               const nextCircle = circles[index + 1] || circles[0];
               circle.x = x;
               circle.y = y;
-      
+
               x += (nextCircle.x - x) * 0.3;
               y += (nextCircle.y - y) * 0.3;
             });
-      
+
             requestAnimationFrame(animateCircles);
           }
-      
+
           animateCircles();
         });
-      
+
       </script>
 </body>
 </html>
