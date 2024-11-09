@@ -90,7 +90,7 @@
       background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
       transition: transform 0.1s, left 0.1s, top 0.1s;
     }
-
+  
     .circle-container {
       position: fixed;
       top: 0;
@@ -255,25 +255,20 @@
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
   </div>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const coords = { x: 0, y: 0 };
       const circles = document.querySelectorAll(".circle");
 
-      circles.forEach(function (circle, index) {
+      circles.forEach(function (circle) {
         circle.x = 0;
         circle.y = 0;
-
-        circle.style.position = 'absolute';
       });
 
       window.addEventListener("mousemove", function (e) {
         coords.x = e.pageX;
-        coords.y = e.pageY - window.scrollY;
+        coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
       });
 
       function animateCircles() {
@@ -281,14 +276,16 @@
         let y = coords.y;
 
         circles.forEach(function (circle, index) {
-          circle.x += (x - circle.x) * 0.3;
-          circle.y += (y - circle.y) * 0.3;
-
-          circle.style.left = `${circle.x - 12}px`;
-          circle.style.top = `${circle.y - 12}px`;
+          circle.style.left = `${x - 12}px`;
+          circle.style.top = `${y - 12}px`;
           circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
-          x = circle.x;
-          y = circle.y;
+
+          const nextCircle = circles[index + 1] || circles[0];
+          circle.x = x;
+          circle.y = y;
+
+          x += (nextCircle.x - x) * 0.3;
+          y += (nextCircle.y - y) * 0.3;
         });
 
         requestAnimationFrame(animateCircles);
@@ -296,6 +293,7 @@
 
       animateCircles();
     });
+
   </script>
 
   <div id="progressBar"></div>
