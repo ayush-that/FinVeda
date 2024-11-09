@@ -1,178 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contributors</title>
-  <link rel="stylesheet" href="./assets/css/contributors.css">
-  <link rel="icon" href="../image/ml-fusion-lab-logo.png">
-  <link rel="icon" href="https://raw.githubusercontent.com/ayush-that/FinVeda/refs/heads/main/assets/images/Favicon1.ico" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    .circle {
-        position: absolute;
-        width: 25px;
-        height: 25px;
-        border-radius: 50%;
-        pointer-events: none;
-        background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
-        transition: transform 0.1s, left 0.1s, top 0.1s;
-      }
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-      .circle-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 9999;
-      }
+  <style>
+    body {
+      font-family: monospace;
+    }
+
+    .contributor-header {
+      background-color: #ebf5f6;
+    }
+
+    .contributor-stats {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 0;
+      text-align: center;
+    }
+
+    .contributor-stats h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .contributor-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 40px;
+    }
+
+    .contributor-stat-card {
+      background-color: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .contributor-stat-card .contributor-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .contributor-stat-card h3 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .contributor-stat-card p {
+      color: #666;
+    }
+
+    /* Contributors Section */
+    .contributor-contributors {
+      max-width: 1200px;
+      margin: auto;
+      padding: 4rem 0;
+      text-align: center;
+    }
+
+    .contributor-contributors h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      font-weight: 700;
+      color: #0077b6;
+      font-family: Montserrat, sans-serif;
+    }
+
+    .contributor-contributors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .contributor-contributor-card {
+      background-color: #c3c3f0;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contributor-contributor-card:hover {
+      transform: translateY(-5px);
+      border: unset;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .contributor-contributor-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin: 1.5rem auto;
+      display: block;
+      border: 4px solid #f0f0f0;
+    }
+
+    .contributor-contributor-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .contributor-contributor-card p {
+      color: #666;
+      margin-bottom: 1rem;
+    }
+
+    .contributor-contributor-card .contributor-contributions {
+      background-color: #f0f0f0;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .contributor-contributor-card .contributor-footer {
+      background-color: #f9f9f9;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: outset;
+    }
+
+    .contributor-contributor-card .contributor-footer a {
+      color: #333;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      font-size: 25px;
+      margin: auto;
+    }
+
+    .contributor-contributor-card .contributor-footer svg {
+      margin-right: 0.5rem;
+    }
+
+    .home-nav a {
+      text-decoration: none;
+      height: 50px;
+      width: 150px;
+      color: rgb(18, 255, 5);
+      font-size: 1.25rem;
+      position: absolute;
+      top: 20px;
+      left: 40px;
+      background-color: rgba(62, 65, 222, 0.822);
+      border-radius: 30px;
+      transition: all 0.4s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   </style>
 </head>
+
 <body>
-  <div class="circle-container">
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
+  <div class="home-nav">
+    <a href="index.html">Go to Home</a>
   </div>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const coords = { x: 0, y: 0 };
-      const circles = document.querySelectorAll(".circle");
-
-      circles.forEach(function (circle) {
-        circle.x = 0;
-        circle.y = 0;
-      });
-
-      window.addEventListener("mousemove", function (e) {
-        coords.x = e.pageX;
-        coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
-      });
-
-      function animateCircles() {
-        let x = coords.x;
-        let y = coords.y;
-
-        circles.forEach(function (circle, index) {
-          circle.style.left = `${x - 12}px`;
-          circle.style.top = `${y - 12}px`;
-          circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
-
-          const nextCircle = circles[index + 1] || circles[0];
-          circle.x = x;
-          circle.y = y;
-
-          x += (nextCircle.x - x) * 0.3;
-          y += (nextCircle.y - y) * 0.3;
-        });
-
-        requestAnimationFrame(animateCircles);
-      }
-
-      animateCircles();
-    });
-
-  </script>
-    <div class="home-nav">
-        <a href="/">Go to Home</a>
-    </div>
-
-  <section class="contributor-stats">
-    <h2>Project Statistics</h2>
-    <div class="contributor-stats-grid" id="statsGrid">
-      <!-- Dynamic Stats will be added by JavaScript -->
+  <section class="contributor-header">
+    <div class="contributor-contributors" id="contributorSection">
+      <h2 className="text-green-700">
+        Meet Our Contributors
+      </h2>
+      <div id="loading" class="contributor-loading">Loading...</div>
     </div>
   </section>
 
-  <div class="container">
-    <h1 class="title">Our Contributors</h1>
-  </div>
-  <div id="contributors" class="contributors-grid"></div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const contributorSection = document.getElementById("contributorSection");
+      const loading = document.getElementById("loading");
 
-  <style>
-    .contributor-card::before{
-    content: '';
-    position: absolute;
-    background: radial-gradient(var(--clr),transparent,transparent);
-    height: 500px;
-    width: 500px;
-    top: var(--y);
-    left: var(--x);
-    transform: translate(-50%,-50%);
-    opacity: 0;
-    transition: 0.5s, top 0s,left 0s;
-    }
+      async function fetchData() {
+        loading.style.display = "block";
+        let contributors = [];
+        let page = 1;
 
-    .contributor-card:hover::before{
-      opacity: 1;
-    }
+        while (true) {
+          const response = await fetch(`https://api.github.com/repos/ayush-that/FinVeda/contributors?per_page=100&page=${page}`);
+          const data = await response.json();
+          if (data.length === 0) break;
+          contributors = contributors.concat(data);
+          page++;
+        }
 
-    .contributor-card::after{
-      content: '';
-      position: absolute;
-      inset: 2px;
-      border-radius: 8px;
-      background-color:rgba(19, 45, 70,0.8);;
-     
-    }
+        const repoResponse = await fetch("https://api.github.com/repos/ayush-that/FinVeda");
+        const repoStats = await repoResponse.json();
+        loading.style.display = "none";
 
-    .contributor-card p,
-    .contributor-card a {
-      position: relative;
-      z-index: 1;         
-      color: #ddd;        
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); 
-    }
+        displayStats(repoStats, contributors);
+        displayContributors(contributors);
+      }
 
-    .contributor-card a {
-      color: #aaa;        
-      font-weight: bold;
-      text-decoration: underline;
-    }
+      function displayStats(repoStats, contributors) {
+        const totalContributions = contributors.reduce((sum, contributor) => sum + contributor.contributions, 0);
+        const statsGrid = document.createElement("div");
+        statsGrid.classList.add("contributor-stats-grid");
 
-    .contributor-card img {
-      border-radius: 50%; 
-      margin-bottom: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
-      filter: brightness(1.2); 
-      z-index: 1; 
-      transition: transform 0.3s ease, filter 0.3s ease;
-    }
+        const stats = [
+          { label: 'Contributors', value: contributors.length, icon: 'fa-users' },
+          { label: 'Total Contributions', value: totalContributions, icon: 'fa-code-branch' },
+          { label: 'GitHub Stars', value: repoStats.stargazers_count || 0, icon: 'fa-star' },
+          { label: 'Forks', value: repoStats.forks_count || 0, icon: 'fa-code-fork' }
+        ];
 
-    .contributor-card:hover img {
-      transform: scale(1.05);
-      filter: brightness(1.4); 
-    }
-  </style>
-  <script src="./assets/js/contributors.js"></script>
+        stats.forEach(stat => {
+          const statCard = document.createElement("div");
+          statCard.classList.add("contributor-stat-card");
+          statCard.innerHTML = `
+                <div class="contributor-icon"><i class="fas ${stat.icon}"></i></div>
+                <h3>${stat.value}</h3>
+                <p>${stat.label}</p>
+            `;
+          statsGrid.appendChild(statCard);
+        });
+
+        contributorSection.appendChild(statsGrid);
+      }
+
+      function displayContributors(contributors) {
+        const contributorsGrid = document.createElement("div");
+        contributorsGrid.classList.add("contributor-contributors-grid");
+
+        contributors.forEach(contributor => {
+          const contributorCard = document.createElement("div");
+          contributorCard.classList.add("contributor-contributor-card");
+          contributorCard.innerHTML = `
+                <img src="${contributor.avatar_url}" alt="${contributor.login}" />
+                <h3>${contributor.login}</h3>
+                <p>${contributor.type}</p>
+                <div class="contributor-contributions">${contributor.contributions} Contributions</div>
+                <div class="contributor-footer">
+                    <a href="${contributor.html_url}" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            `;
+          contributorsGrid.appendChild(contributorCard);
+        });
+
+        contributorSection.appendChild(contributorsGrid);
+      }
+
+      fetchData();
+    });
+
+  </script>
 </body>
+
 </html>
