@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Freedom Adventure</title>
+    <style>
+        /* Reset styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Body and Background */
+        body {
+            background: linear-gradient(to right, #3b82f6, #60a5fa);
+            color: #ffffff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        /* Header Section */
+        header {
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 700px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        header:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        #cta-button {
+            background: #4ade80;
+            color: #000;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        #cta-button:hover {
+            background: #22c55e;
+            transform: scale(1.1);
+        }
+
+        /* Steps Section */
+        #steps-section {
+            padding: 30px 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        #steps-section h2 {
+            grid-column: span 3;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .step-card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .step-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .step-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .step-card p {
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        /* Footer Section */
+        footer {
+            padding: 20px;
+            background-color: #2563eb;
+            width: 100%;
+            max-width: 700px;
+            margin-top: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        footer:hover {
+            transform: scale(1.05);
+        }
+
+        #cta-footer {
+            background: #4ade80;
+            color: #000;
+            border: none;
+            padding: 12px 35px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.3s;
+            margin-top: 10px;
+        }
+
+        #cta-footer:hover {
+            background: #22c55e;
+            transform: scale(1.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #steps-section {
+                grid-template-columns: 1fr;
+            }
+
+            header, footer {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Embark on Your Financial Freedom Adventure</h1>
+        <p>Take control of your financial journey and unlock a world of possibilities. Start your journey to financial independence today!</p>
+        <button id="cta-button">Start Now</button>
+    </header>
+
+    <!-- Steps Section -->
+    <section id="steps-section">
+        <h2>3 Steps to Financial Freedom</h2>
+        <div class="step-card">
+            <h3>1. Budgeting Basics</h3>
+            <p>Learn to manage your income and expenses effectively with smart budgeting strategies.</p>
+        </div>
+        <div class="step-card">
+            <h3>2. Smart Investments</h3>
+            <p>Explore investment opportunities that align with your financial goals for a prosperous future.</p>
+        </div>
+        <div class="step-card">
+            <h3>3. Building Passive Income</h3>
+            <p>Create sources of income that grow with minimal effort, giving you more freedom.</p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Ready to take the first step towards financial freedom?</p>
+        <button id="cta-footer">Join Us Today</button>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Button interactions
+        document.getElementById("cta-button").addEventListener("click", () => {
+            alert("Welcome to the Financial Freedom Adventure! Let's get started.");
+        });
+
+        document.getElementById("cta-footer").addEventListener("click", () => {
+            alert("Thank you for joining us on the path to financial independence!");
+        });
+    </script>
+</body>
+</html>
