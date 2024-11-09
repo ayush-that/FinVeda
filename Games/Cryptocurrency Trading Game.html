@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptocurrency Trading Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #007bff, #00d2ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            width: 350px;
+            text-align: center;
+        }
+
+        header {
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+
+        .tagline {
+            font-size: 16px;
+            color: #ddd;
+            margin-top: 10px;
+        }
+
+        .game-info {
+            margin-top: 20px;
+        }
+
+        .balance, .crypto-info {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 15px 25px;
+            font-size: 16px;
+            font-weight: 500;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .buy {
+            background-color: #28a745;
+            color: #fff;
+        }
+
+        .sell {
+            background-color: #dc3545;
+            color: #fff;
+        }
+
+        .trade-info {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            width: 60%;
+            margin-top: 10px;
+            text-align: center;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+        }
+
+        .messages p {
+            margin-top: 25px;
+            color: #ffdd57;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Crypto Trading Game</h1>
+            <p class="tagline">Trade crypto, make profits, grow your portfolio!</p>
+        </header>
+        <section class="game-info">
+            <div class="balance">
+                <p>Balance: $<span id="balance">1000</span></p>
+            </div>
+            <div class="crypto-info">
+                <p>Current Price: $<span id="crypto-price">50</span></p>
+            </div>
+            <div class="controls">
+                <button id="buy-btn" class="btn buy">Buy</button>
+                <button id="sell-btn" class="btn sell">Sell</button>
+            </div>
+            <div class="trade-info">
+                <label for="amount">Amount to Trade: </label>
+                <input type="number" id="amount" min="1" value="1" step="1" />
+            </div>
+            <div class="messages">
+                <p id="message"></p>
+            </div>
+        </section>
+    </div>
+    <script>
+        let balance = 1000; // Starting balance
+        let cryptoPrice = 50; // Initial price of the cryptocurrency
+        let cryptoAmount = 0; // Amount of cryptocurrency owned by the player
+
+        const balanceElement = document.getElementById("balance");
+        const cryptoPriceElement = document.getElementById("crypto-price");
+        const amountElement = document.getElementById("amount");
+        const messageElement = document.getElementById("message");
+
+        const buyButton = document.getElementById("buy-btn");
+        const sellButton = document.getElementById("sell-btn");
+
+        // Function to update the balance and crypto price
+        function updateDisplay() {
+            balanceElement.textContent = balance.toFixed(2);
+            cryptoPriceElement.textContent = cryptoPrice.toFixed(2);
+        }
+
+        // Handle buy action
+        buyButton.addEventListener("click", () => {
+            const amount = parseInt(amountElement.value);
+            if (amount * cryptoPrice > balance) {
+                messageElement.textContent = "Insufficient balance to buy!";
+                messageElement.style.color = "#ff0000";
+            } else {
+                balance -= amount * cryptoPrice;
+                cryptoAmount += amount;
+                messageElement.textContent = `Bought ${amount} coins for $${(amount * cryptoPrice).toFixed(2)}!`;
+                messageElement.style.color = "#28a745";
+                updateDisplay();
+            }
+        });
+
+        // Handle sell action
+        sellButton.addEventListener("click", () => {
+            const amount = parseInt(amountElement.value);
+            if (amount > cryptoAmount) {
+                messageElement.textContent = "Not enough coins to sell!";
+                messageElement.style.color = "#ff0000";
+            } else {
+                balance += amount * cryptoPrice;
+                cryptoAmount -= amount;
+                messageElement.textContent = `Sold ${amount} coins for $${(amount * cryptoPrice).toFixed(2)}!`;
+                messageElement.style.color = "#dc3545";
+                updateDisplay();
+            }
+        });
+
+        // Randomly change the cryptocurrency price every 5 seconds
+        setInterval(() => {
+            const randomChange = (Math.random() - 0.5) * 10; // Price change between -5 and +5
+            cryptoPrice = Math.max(1, cryptoPrice + randomChange); // Ensure the price never goes below 1
+            updateDisplay();
+        }, 5000);
+
+        // Initial update of display
+        updateDisplay();
+    </script>
+</body>
+</html>
