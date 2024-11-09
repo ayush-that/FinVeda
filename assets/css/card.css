@@ -1,136 +1,119 @@
+/* Card Styling */
 .card2 {
-    margin: 10px;
-    width: 100%;
-    max-width: 310px;
+  margin: 10px;
+  width: 100%;
+  max-width: 310px;
+  height: 70px;
+  background: #353535;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  backdrop-filter: blur(10px);
+  transition: transform 0.5s ease-in-out, background-color 0.5s ease;
+}
+
+.card2:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+/* Image Styling */
+.img {
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+  border-radius: 10px;
+  background: linear-gradient(#d7cfcf, #9198e5);
+  transition: background 0.5s ease;
+}
+
+.card2:hover > .img {
+  background: linear-gradient(#9198e5, #712020);
+}
+
+/* TextBox Styling */
+.textBox {
+  width: calc(100% - 90px);
+  margin-left: 10px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.textContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Text Styling */
+.span {
+  font-size: 10px;
+}
+
+.h1 {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.p {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+/* Feature Section */
+.feature {
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Responsive Styling for Small Screens */
+@media (max-width: 450px) {
+  .card2 {
+    max-width: 290px;
     height: 70px;
-    background: #353535;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    backdrop-filter: blur(10px);
-    transition: 0.5s ease-in-out;
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+    margin: 10px auto;
   }
-  
+
   .card2:hover {
-    cursor: pointer;
     transform: scale(1.05);
   }
-  
+
   .img {
-    width: 50px;
-    height: 50px;
-    margin-left: 10px;
-    border-radius: 10px;
-    background: linear-gradient(#d7cfcf, #9198e5);
+    width: 40px;
+    height: 40px;
+    margin-left: 8px;
+    border-radius: 8px;
   }
-  
-  .card:hover > .img {
-    transition: 0.5s ease-in-out;
+
+  .card2:hover > .img {
     background: linear-gradient(#9198e5, #712020);
   }
-  
+
   .textBox {
-    width: calc(100% - 90px);
+    width: calc(100% - 60px);
     margin-left: 10px;
-    color: white;
-    font-family: 'Poppins' sans-serif;
+    font-size: 12px;
   }
-  
+
   .textContent {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    width: 100%;
   }
-  
+
   .span {
-    font-size: 10px;
+    font-size: 8px;
   }
-  
+
   .h1 {
     font-size: 12px;
-    font-weight: bold;
   }
-  
+
   .p {
-    font-size: 12px;
-    font-weight: lighter;
+    font-size: 10px;
   }
-  
-  .feature{
-   margin: 50px;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-  }
-  @media (max-width: 450px) {
-    .card2 {
-      width: 100%;
-      max-width: 290px;
-      height: 70px;
-      background: #353535;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: left;
-      backdrop-filter: blur(5px);
-      transition: transform 0.3s ease-in-out, background-color 0.3s ease; /* Smoother transition */
-      margin-bottom: 20px;
-      margin: 10px auto; /* Center card horizontally */
-    }
-  
-    .card2:hover {
-      cursor: pointer;
-      transform: scale(1.05); /* Smooth hover effect */
-    }
-  
-    .img {
-      width: 40px;
-      height: 40px;
-      margin-left: 8px;
-      border-radius: 8px;
-      background: linear-gradient(#d7cfcf, #9198e5);
-      transition: background 0.3s ease; /* Smooth background change on hover */
-    }
-  
-    .card2:hover > .img {
-      background: linear-gradient(#9198e5, #712020); /* Hover background change */
-    }
-  
-    .textBox {
-      width: calc(100% - 60px);
-      margin-left: 10px;
-      color: white;
-      font-family: 'Poppins', sans-serif;
-      font-size: 12px; /* Adjust font size for better readability */
-    }
-  
-    .textContent {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-    }
-  
-    .span {
-      font-size: 8px;
-    }
-  
-    .h1 {
-      font-size: 12px;
-      font-weight: bold;
-    }
-  
-    .p {
-      font-size: 10px;
-      font-weight: lighter;
-    }
-  }
-  
-
-
-
-
-
-
-  
+}

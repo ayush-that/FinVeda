@@ -1,36 +1,46 @@
+/* Password container styling */
 .password-container {
   position: relative;
-  width: 100%; /* Set the width of the container */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  width: 100%; /* Full width for flexibility */
+  box-sizing: border-box; /* Include padding and border in total dimensions */
 }
 
 .password-container input {
-  width: 100%; /* Ensure the input takes the full width of the container */
-  padding-right: 40px; /* Add right padding to make space for the icon */
-  box-sizing: border-box; /* Include padding and border in the input's total width */
+  width: 100%; /* Input takes full width */
+  padding-right: 45px; /* Space for icon */
+  padding-left: 10px; /* Optional padding for consistency */
+  box-sizing: border-box;
+  border: 1px solid #ccc; /* Light border for clarity */
+  border-radius: 5px;
+  height: 40px;
 }
 
+/* Toggle password visibility icon */
 .password-container .toggle-password {
   position: absolute;
-  top: 50%; /* Position it in the center vertically */
-  right: 100px; /* Adjust this value to position the icon from the right */
-  transform: translateY(-50%); /* Center the icon vertically */
-  cursor: pointer; /* Change cursor to pointer on hover */
-  color: #555; /* Set the color of the icon */
-  font-size: 16px; /* Adjust the font size as needed */
-  z-index: 1; /* Ensure it appears above other elements */
+  top: 50%; /* Center vertically */
+  right: 10px; /* Adjust icon's horizontal position */
+  transform: translateY(-50%); /* Center icon within input field */
+  cursor: pointer;
+  color: #555; /* Icon color */
+  font-size: 18px; /* Icon size */
+  z-index: 1; /* Ensure icon appears on top */
 }
 
-
+/* Table styling */
 table {
-  width: 100%;
+  width: 100%; /* Full width */
+  border-collapse: collapse; /* Removes spacing between table cells */
 }
 
 table tr td {
-  padding: 10px 0;
+  padding: 10px 0; /* Spacing for cells */
+  border-bottom: 1px solid #ddd; /* Light border for row separation */
 }
 
+/* Error message styling */
 .error {
-  color: rgb(247, 2, 2);
-  font-size: 0.9em;
+  color: rgb(247, 2, 2); /* Red for error */
+  font-size: 0.9em; /* Slightly smaller font */
+  padding-top: 5px; /* Space above error message */
 }
