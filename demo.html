@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question and Answer Toggle</title>
+
+
+
+    <!-- FAQ Section -->
+    <div class="images">
+        <img style="width:250px; top: 200px; right: 1470px;mix-blend-mode: multiply;" src="assets/images/HELP-IMG.webp"
+            alt="image" class="photo">
+        <div class="faq-section " style="margin-top: 100px;margin-left: -10px;">
+            <div class="faq-intro">
+                <h3 class="faq-title">Frequently Asked Questions</h3>
+                <p>Welcome to Finveda’s FAQ! Here you’ll find answers to common questions about our services, tools, and
+                    how we can help you on your financial journey. Still have questions? Contact us or use our AI
+                    chatbot for more assistance.</p>
+            </div>
+
+            <div class="faq-search">
+                <input type="text" style="color: #0c0a0a;" class="faq-search-input" placeholder="Type your question..."
+                    aria-label="Search FAQ" oninput="filterFAQs()" />
+                <button class="faq-search-btn" onclick="filterFAQs()">Search</button>
+            </div>
+
+
+             <!-- Question 1 -->
+        <div class="question-section">
+            <p class="question"> What is Finveda?</p>
+            <hr>
+            <button class="toggle-button" data-target="answer1">&#8595;</button>
+            <p id="answer1" class="answer">Finveda is a dynamic financial literacy app with Arthsathi AI chatbot, finance blogs, market trends, SIP calculator, and a quiz for effortless finance learning.</p>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question-section">
+            <p class="question">What problem does Finveda solve?</p>
+            <button class="toggle-button" data-target="answer2">&#8595;</button>
+            <p id="answer2" class="answer">Finveda aims to solve the lack of financial literacy in India, providing tools and resources to improve financial knowledge for individuals.</p>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question-section">
+            <p class="question">What services does Finveda offer?</p>
+            <button class="toggle-button" data-target="answer3">&#8595;</button>
+            <p id="answer3" class="answer"> Finveda offers expert-written blogs, market trends, SIP and PPF calculators, and more for personalized finance education.</p>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question-section">
+            <p class="question"> How can I start using Finveda?</p>
+            <button class="toggle-button" data-target="answer4">&#8595;</button>
+            <p id="answer4" class="answer">Simply sign up and access all our features, including personalized financial education and tools.</p>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question-section">
+            <p class="question">Is Finveda free to use?</p>
+            <button class="toggle-button" data-target="answer5">&#8595;</button>
+            <p id="answer5" class="answer">Yes, Finveda is completely free to use for all users.</p>
+        </div>
+    </div>
+
+        </div>
+    </div>
+
+      <script>
+        // Get all toggle buttons
+        const toggleButtons = document.querySelectorAll('.toggle-button');
+
+        toggleButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const answerId = button.getAttribute('data-target');
+                const answer = document.getElementById(answerId);
+
+                // Toggle the 'show' class on the answer
+                answer.classList.toggle('show');
+
+                // Toggle the 'active' class on the button to change its background color and arrow color
+                button.classList.toggle('active');
+
+                // Change the arrow direction based on whether the answer is shown or not
+                if (answer.classList.contains('show')) {
+                    button.innerHTML = '&#8593;'; // Up arrow
+                } else {
+                    button.innerHTML = '&#8595;'; // Down arrow
+                }
+            });
+        });
+    </script>
+
+     <style>
+        body {
+            font-family: Arial, sans-serif;
+
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+
+            background-color: none;
+            padding: 20px;
+            border-radius: 8px;
+
+        }
+
+        .question-section {
+            border-radius: 5px;
+            height: 40px;
+            margin-bottom: 70px;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            display:block;
+            height: auto;
+            padding: 15px;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 12px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .question-section:hover {
+            transform: scale(1.1);
+        }
+        .question {
+            margin-top: 12PX;
+            font-size: 25px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .answer {
+            margin-top: 10px;
+            font-size: 20px;
+            color: #555;
+            display: block; /* Ensures it takes up space */
+            max-height: 0; /* Start with no height */
+            overflow: hidden; /* Hide the content initially */
+            opacity: 0; /* Start with transparency */
+            transition: max-height 0.1s ease, opacity 0.1s ease; /* Smooth transition */
+            font-weight: 700;
+        }
+
+        .answer.show {
+            max-height: 200px; /* Expand answer height when visible */
+            opacity: 1; /* Make the answer visible */
+        }
+
+        .toggle-button {
+            font-size: 28px;
+            cursor: pointer;
+            color: white;
+            background: none;
+            border: none;
+            padding: 0;
+            background-color: #007bff;
+            width: 70px;
+            height: 40px;
+            border-radius: 50%;
+            position: absolute; /* Position relative to the question */
+            top: 16px;
+            right: 10px;
+            transition: background-color 0.3s ease; /* Smooth background transition */
+            transform: translateY(-50%);
+        }
+
+        .toggle-button:hover {
+            background-color: green; /* Hover effect */
+        }
+ .toggle-button.active {
+            background-color: red; /* Change the arrow color to red when the button is clicked */
+        }
+
+    </style>
+
+
+</body>
+</html>
