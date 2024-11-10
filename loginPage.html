@@ -14,26 +14,6 @@
     />
     <style>
       
-      .circle {
-        position: absolute;
-        width: 25px;
-        height: 25px;
-        border-radius: 50%;
-        pointer-events: none;
-        background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
-        transition: transform 0.1s, left 0.1s, top 0.1s;
-      }
-
-      .circle-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 9999;
-      }
-
 .loader {
   position: fixed;
   top: 0;
@@ -462,79 +442,6 @@
         </div>
       </div>
     </div>
-
-    <div class="circle-container">
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-    </div>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const coords = { x: 0, y: 0 };
-        const circles = document.querySelectorAll(".circle");
-  
-        circles.forEach(function (circle) {
-          circle.x = 0;
-          circle.y = 0;
-        });
-  
-        window.addEventListener("mousemove", function (e) {
-          coords.x = e.pageX;
-          coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
-        });
-  
-        function animateCircles() {
-          let x = coords.x;
-          let y = coords.y;
-  
-          circles.forEach(function (circle, index) {
-            circle.style.left = `${x - 12}px`;
-            circle.style.top = `${y - 12}px`;
-            circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
-  
-            const nextCircle = circles[index + 1] || circles[0];
-            circle.x = x;
-            circle.y = y;
-  
-            x += (nextCircle.x - x) * 0.3;
-            y += (nextCircle.y - y) * 0.3;
-          });
-  
-          requestAnimationFrame(animateCircles);
-        }
-  
-        animateCircles();
-      });
-  
-    </script>
-    
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
@@ -547,19 +454,20 @@
             
             <div class="input-field">
               <i class="fas fa-lock" id="toggle-password" style="cursor: pointer;"></i>
-              <input type="password" placeholder="Password" id="password-input" />
+              <span class="tooltip-text">Click to view password</span>
+              <input 
+                  type="password" 
+                  placeholder="Password" 
+                  id="password-input" />
           </div>
-          <div class="form-container">
-            <div class="form-check d-flex">
-              <input type="checkbox" class="form-check-input" id="login-remember" />
-              <label class="form-check-label">Remember me</label>
-            </div>
-            <div class="forgot-password">
-              <a href="#" onclick="forgotPassword()">Forgot Password?</a>
-            </div>
+          
             
-          </div>
-          <button class="btn-transparent" id="sign-up-btn">Sign In</button>
+            
+
+            <div class="forgot-password">
+                <a href="#" onclick="forgotPassword()">Forgot Password?</a>
+              </div>
+            <input type="submit" value="Sign In" class="btn solid" />
             <p class="social-text">Or Sign in with social platforms</p>
             <div class="social-icons">
               <div class="social-icon-frame">
@@ -594,10 +502,6 @@
               <span class="tooltip-text">Click to view password</span>
               <input type="password" placeholder="Password" id="password-input-signup" />
           </div>
-          <div class="form-check" style="padding-right: 40%; margin-top: 10px;">
-            <input type="checkbox" class="form-check-input" id="login-remember" />
-            <label class="form-check-label">Remember me</label>
-          </div>
           
         
             <!-- Password strength meter starts here (initially hidden) -->
@@ -610,19 +514,12 @@
             </div>
             <!-- Password strength meter ends here -->
         
-            <input type="button" value="Signup" class="btn solid" onclick="generateAndSendOTP()" />
-          <div id="otp-section" style="display: none;">
-            <div class="input-field">
-              <i class="fas fa-key"></i>
-              <input type="text" id="otp" placeholder="Enter OTP" maxlength="6" required />
-            </div>
-            <input type="button" value="Verify OTP" class="btn solid" onclick="verifyOTP()" />
-          </div>
+            <input type="submit" class="btn" value="Sign up" />
             <p class="social-text">Or Sign up with social platforms</p>
             <div class="social-icons">
               <div class="social-icon-frame">
                   <a href="https://www.google.com" target="_blank" class="social-icon">
-                      <i class="fab fa-google" ></i>
+                      <i class="fab fa-google"></i>
                   </a>
               </div>
               <div class="social-icon-frame">
@@ -637,24 +534,11 @@
               </div>
           </div>
         </form>
+        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>
         
         
         <script>
-          document.querySelector('#login-btn').addEventListener('click', (event) => {
-  event.preventDefault();
-  const emailInput = document.getElementById('login-email');
-  const rememberMeCheckbox = document.getElementById('login-remember');
-
-  if (rememberMeCheckbox.checked) {
-    localStorage.setItem('rememberedEmail', emailInput.value);
-  } else {
-    localStorage.removeItem('rememberedEmail');
-  }
-
-  // Continue with your existing login logic...
-});
-
             let passwordSignup = document.getElementById("password-input-signup");
             let strengthBarSignup = document.getElementById("strength-bar-signup");
             let strengthLabelSignup = document.getElementById("strength-label-signup");
@@ -715,7 +599,7 @@
             <a href="index.html" class="homeBtn">
                 <i class="fas fa-home"></i>
             </a>
-            <button class="btn-transparent" id="sign-up-btn">Sign up</button>
+            <button class="btn transparent" id="sign-up-btn">Sign up</button>
           </div>
           <img src="img/log.svg" class="image" alt="" />
         </div>
@@ -723,7 +607,7 @@
           <div class="content">
             <h3>One of us ?</h3>
             <p>Welcome to our community</p>
-            <button class="btn-transparent" id="sign-in-btn">Sign in</button>
+            <button class="btn transparent" id="sign-in-btn">Sign in</button>
           </div>
           <img src="img/register.svg" class="image" alt="" />
         </div>
