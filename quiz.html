@@ -169,7 +169,7 @@
               const body = document.body;
               const toggleButton = document.getElementById('theme-toggle');
               const currentTheme = localStorage.getItem('theme');
-          
+
               // Apply saved theme
               if (currentTheme === 'dark') {
                 body.classList.add('dark-mode');
@@ -179,19 +179,19 @@
                 toggleButton.querySelector('span').textContent = '🌞'; // Light mode icon
               }
             }
-          
+
             // Call initializeTheme on page load
             document.addEventListener('DOMContentLoaded', () => {
               initializeTheme();
-          
+
               const toggleButton = document.getElementById('theme-toggle');
               const body = document.body;
-          
+
               // Event listener for theme toggle
               toggleButton.addEventListener('click', () => {
                 body.classList.toggle('dark-mode');
                 toggleButton.classList.toggle('dark');
-          
+
                 // Update icon and save theme
                 if (body.classList.contains('dark-mode')) {
                   toggleButton.querySelector('span').textContent = '🌙'; // Dark mode icon
@@ -200,11 +200,11 @@
                   toggleButton.querySelector('span').textContent = '🌞'; // Light mode icon
                   localStorage.setItem('theme', 'light');
                 }
-          
+
                 loadShow(); // Call any additional function if needed
               });
             });
-          
+
             // Function placeholder for additional operations (if needed)
             function loadShow() {
               // Additional actions can go here
@@ -324,6 +324,81 @@
       </div>
       <div class="quizcontent2 wow fadeInUp young" data-wow-duration="1.3s" data-wow-delay="0.5s">Good Luck!</div>
     </div>
+
+
+<div class="timer-box">
+  <label for="timeInput">Set Timer (Max: 1 min):</label>
+  <input type="number" id="timeInput" min="1" max="60" placeholder="Enter seconds" required>
+
+  <div class="time-display" id="timeDisplay">Time Left: 00s</div>
+
+  <button class="start-btn" onclick="startTimer()">Start Timer</button>
+</div>
+
+<script>
+  let countdown;
+  const timeDisplay = document.getElementById("timeDisplay");
+
+  function startTimer() {
+    clearInterval(countdown); // Clear any existing timer
+    const inputTime = parseInt(document.getElementById("timeInput").value);
+
+    if (isNaN(inputTime) || inputTime < 1 || inputTime > 60) {
+      alert("Please enter a valid time between 1 and 60 seconds.");
+      return;
+    }
+
+    let timeLeft = inputTime;
+    timeDisplay.textContent = `Time Left: ${timeLeft}s`;
+
+    countdown = setInterval(() => {
+      timeLeft--;
+      timeDisplay.textContent = `Time Left: ${timeLeft}s`;
+
+      if (timeLeft <= 0) {
+        clearInterval(countdown);
+        timeDisplay.textContent = "Time's up!";
+        alert("Time's up!");
+      }
+    }, 1000);
+  }
+</script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+    }
+    .timer-box {
+      text-align: center;
+      width: 300px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 15px;
+      background-color: rgb(192, 226, 241);
+      box-shadow: 0px 8px 8px rgba(0,0,0,0.5);
+      margin-top: 90px;
+      margin-left: 150px;
+      margin-bottom: 40px;
+    }
+    .time-display {
+      font-size: 24px;
+      font-weight: bold;
+      color: red;
+      margin: 10px 0;
+    }
+    .start-btn {
+      padding: 10px;
+      border: none;
+      background-color: #4CAF50;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
     <div style="margin: auto;"><img src="assets/images/QUIZ.jpeg" alt="photo"></div>
     <form id="financeQuizForm">
       <div id="quiz" class="wow fadeIn" data-wow-duration="1.3s" data-wow-delay="0.5s">
@@ -331,9 +406,11 @@
         <div id="quiz-progress-bar">
           <div id="quiz-progress"></div>
         </div>
-        <script>
 
-        </script>
+
+</head>
+<body>
+</div>
         <div class="quiz">
           <h2 id="question">Question goes here</h2>
           <div id="answer-buttons">
@@ -623,6 +700,8 @@
       }
     }
   </STYLE>
+
+
 </body>
 
 
