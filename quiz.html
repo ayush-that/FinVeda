@@ -169,7 +169,7 @@
               const body = document.body;
               const toggleButton = document.getElementById('theme-toggle');
               const currentTheme = localStorage.getItem('theme');
-          
+
               // Apply saved theme
               if (currentTheme === 'dark') {
                 body.classList.add('dark-mode');
@@ -179,19 +179,19 @@
                 toggleButton.querySelector('span').textContent = '🌞'; // Light mode icon
               }
             }
-          
+
             // Call initializeTheme on page load
             document.addEventListener('DOMContentLoaded', () => {
               initializeTheme();
-          
+
               const toggleButton = document.getElementById('theme-toggle');
               const body = document.body;
-          
+
               // Event listener for theme toggle
               toggleButton.addEventListener('click', () => {
                 body.classList.toggle('dark-mode');
                 toggleButton.classList.toggle('dark');
-          
+
                 // Update icon and save theme
                 if (body.classList.contains('dark-mode')) {
                   toggleButton.querySelector('span').textContent = '🌙'; // Dark mode icon
@@ -200,11 +200,11 @@
                   toggleButton.querySelector('span').textContent = '🌞'; // Light mode icon
                   localStorage.setItem('theme', 'light');
                 }
-          
+
                 loadShow(); // Call any additional function if needed
               });
             });
-          
+
             // Function placeholder for additional operations (if needed)
             function loadShow() {
               // Additional actions can go here
@@ -447,7 +447,7 @@
       <br> -->
       <!-- <button type="button" class="submit-button" ">Submit Answers</button> -->
       <div id="quizResult" onclick="gradeQuiz()"></div>
- 
+
     </form>
     <br><br>
     <div id="quizResult"></div>
@@ -621,7 +621,7 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
     backdrop-filter: blur(5px); /* Apply blur effect */
-    z-index: 999; 
+    z-index: 999;
 }
 
 /* Alert box styling */
@@ -634,7 +634,7 @@
     border: 1px solid #f5c2c7;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1000; 
+    z-index: 1000;
     text-align: center;
     border-radius: 8px;
 }
@@ -794,6 +794,7 @@
               <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
               <a href="https://discord.com/"><i class="fa-brands fa-discord"></i></a>
               <a href="https://github.com/ayush-that/FinVeda"><i class="fa-brands fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/ayush-that/"><i class="fa-brands fa-linkedin"></i></a>
             </div>
           </ul>
         </div>
