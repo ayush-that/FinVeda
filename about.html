@@ -955,7 +955,7 @@
 
     <div class="blog-content back">
       <div id="good-card">
-        <div id="good-card1" style="margin-right: 15px;">
+        <div id="good-card1">
           <h1 class="head">Grow with Arth</h1>
           <div id="white-card1" style="padding: 10px; ">
             Wanna learn how to grow your money to become rich? We have made becoming a stock market Guru easy with our
@@ -967,7 +967,7 @@
           </div>
           <div id="shadow1"></div>
         </div>
-        <div id="good-card2" style="margin-right: 15px;">
+        <div id="good-card2">
           <div id="round1">
             <!-- Add content or styles if needed -->
           </div>
@@ -1108,6 +1108,7 @@
         font-size: 14px;
         padding: 20px;
         text-align: center;
+        margin-right: 15px;
       }
 
       .head {
@@ -1125,6 +1126,20 @@
       #white-card3 {
         padding: 8px;
         font-size: 0.9rem;
+      }
+
+      @media screen and (max-width: 480px) {
+        #good-card{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        #good-card1,
+        #good-card2,
+        #good-card3 {
+          margin-right: 0px;
+        }
       }
 
 

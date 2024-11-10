@@ -24,7 +24,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
         <link rel="stylesheet" href="./assets/css/about(inlines).css" />
         <link rel="stylesheet" href="navbar.css">
-    
+
         <style>
            .circle {
         position: absolute;
@@ -55,11 +55,11 @@
             background-color: #f76b45;
             z-index: 9999;
           }
-    
+
           * {
             cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
           }
-    
+
           .circle {
             position: absolute;
             width: 25px;
@@ -69,7 +69,7 @@
             background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
             transition: transform 0.1s, left 0.1s, top 0.1s;
           }
-    
+
           .circle-container {
             position: fixed;
             top: 0;
@@ -79,20 +79,20 @@
             pointer-events: none;
             z-index: 9999;
           }
-    
+
           @media (max-width: 720px) {
             .circle-container {
               display: none;
             }
           }
-        
+
           body p {
     color: #000000; /* Replace #000000 with your desired color code */
 }
 
-        </style>  
+        </style>
     </head>
-    
+
     <body>
       <div id="progressBar"></div>
       <script>
@@ -103,7 +103,7 @@
           document.getElementById("progressBar").style.width = scrolled + "%";
         };
       </script>
-      
+
       <div class="circle-container">
       <div class="circle"></div>
       <div class="circle"></div>
@@ -175,7 +175,7 @@
       });
 
     </script>
-    
+
       <div id="progressBar"></div>
       <header class="header-area">
         <div style="display: flex; justify-content: center;" class="navbar-area">
@@ -188,7 +188,7 @@
                       <a href="./index.html">
                         <img src="./assets/images/FinvedaLogo.png" alt="Finveda Logo" style="width: 13rem;">
                       </a>
-                    </div> 
+                    </div>
                     <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
                       <li class="nav-item">
                         <a class="page-scroll" href="./index.html" style="color: rgb(237, 242, 244);">Home 🏡</a>
@@ -227,22 +227,22 @@
                       </li>
                     </ul>
                   </div>
-    
+
                   <script>
                     const toggleButton = document.getElementById('theme-toggle');
                     var body = document.body;
                     var currentTheme = localStorage.getItem('theme');
-    
+
                     if (currentTheme === 'dark') {
                       body.classList.add('dark-mode');
                       toggleButton.classList.add('dark');
                       toggleButton.textContent = '🌞';
                     }
-                    
+
                     toggleButton.addEventListener('click', function () {
                       body.classList.toggle('dark-mode');
                       toggleButton.classList.toggle('dark');
-                      
+
                       if (body.classList.contains('dark-mode')) {
                         toggleButton.textContent = '🌞';
                         localStorage.setItem('theme', 'dark');
@@ -252,7 +252,7 @@
                       }
                     });
                   </script>
-    
+
                   <div class="">
                     <!-- Login Modal -->
                     <div id="myModal" class="modal">
@@ -292,22 +292,22 @@
                         </div>
                       </div>
                     </div>
-    
+
                     <!-- Social Media Login Scripts -->
                     <script>
                       document.getElementById('google-login').addEventListener('click', function() {
                         window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
                       });
-                    
+
                       document.getElementById('facebook-login').addEventListener('click', function() {
                         window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
                       });
-                    
+
                       document.getElementById('twitter-login').addEventListener('click', function() {
                         window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
                       });
                     </script>
-    
+
                     <!-- Register Modal -->
                     <div id="registerModal" class="modal">
                       <div class="modal-content">
@@ -351,7 +351,7 @@
                         </div>
                       </div>
                     </div>
-                    
+
                     <!-- Password Strength Check Script -->
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
                     <script>
@@ -360,12 +360,12 @@
                         const meter = document.getElementById('meter');
                         const meterContainer = document.getElementById('password-meter');
                         const strengthText = document.getElementById('strength-text');
-                    
+
                         if (password) {
                           meterContainer.style.display = 'block';
                           const result = zxcvbn(password);
                           const score = result.score;
-                    
+
                           meter.style.width = (score + 1) * 20 + '%';
                           meter.style.backgroundColor = getMeterColor(score);
                           strengthText.innerText = getStrengthText(score);
@@ -374,7 +374,7 @@
                           strengthText.innerText = '';
                         }
                       }
-                    
+
                       function getMeterColor(score) {
                         switch (score) {
                           case 0: return 'red';
@@ -385,7 +385,7 @@
                           default: return 'gray';
                         }
                       }
-                    
+
                       function getStrengthText(score) {
                         switch (score) {
                           case 0: return 'Very Weak';
@@ -396,7 +396,7 @@
                           default: return '';
                         }
                       }
-                    
+
                       function togglePasswordVisibility(id) {
                         const passwordInput = document.getElementById(id);
                         const eyeIcon = passwordInput.nextElementSibling;
@@ -411,41 +411,41 @@
                         }
                       }
                     </script>
-    
+
                     <!-- Social Media Signup Scripts -->
                     <script>
                       document.getElementById('google-signup').addEventListener('click', function() {
                         window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
                       });
-                    
+
                       document.getElementById('facebook-signup').addEventListener('click', function() {
                         window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
                       });
-                    
+
                       document.getElementById('twitter-signup').addEventListener('click', function() {
                         window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
                       });
                     </script>
-    
+
                     <!-- Modal Control Scripts -->
                     <script>
                       function openModal() {
                         var modal = document.getElementById("myModal");
                         modal.style.display = "block";
                       }
-                      
+
                       var loginCloseButton = document.querySelector("#myModal .close");
                       loginCloseButton.addEventListener("click", function() {
                         var modal = document.getElementById("myModal");
                         modal.style.display = "none";
                       });
-                      
+
                       var registerCloseButton = document.querySelector("#registerModal .close");
                       registerCloseButton.addEventListener("click", function() {
                         var modal = document.getElementById("registerModal");
                         modal.style.display = "none";
                       });
-                      
+
                       var registerLink = document.getElementById("registerLink");
                       registerLink.addEventListener("click", function() {
                         var registerModal = document.getElementById("registerModal");
@@ -453,7 +453,7 @@
                         var loginModal = document.getElementById("myModal");
                         loginModal.style.display = "none";
                       });
-                      
+
                       var loginLink = document.getElementById("loginLink");
                       loginLink.addEventListener("click", function() {
                         var loginModal = document.getElementById("myModal");
@@ -488,17 +488,17 @@
                   const toggleBtn = document.getElementById('theme-toggle2');
                   var body = document.body;
                   var currentTheme = localStorage.getItem('theme');
-        
+
                   if (currentTheme === 'dark') {
                   body.classList.add('dark-mode');
                   toggleBtn.classList.add('dark');
                   toggleBtn.textContent = '🌞';
                   }
-                  
+
                   toggleBtn.addEventListener('click', function () {
                   body.classList.toggle('dark-mode');
                   toggleBtn.classList.toggle('dark');
-                  
+
                   // Update button icon based on mode
                   if (body.classList.contains('dark-mode')) {
                     toggleBtn.textContent = '🌞';  // Light mode icon
@@ -511,7 +511,7 @@
               </script>
                 <link href="./navbar.css" rel="stylesheet">
                 <script type="text/javascript" src="./navbar.js"></script>
-    
+
               </div>
             </div>
           </div>
@@ -774,7 +774,7 @@
 /* Container and General Styles */
 .review-container {
     border: 3px solid rgb(70, 130, 180); /* Steel Blue */
-    max-width: 70%; 
+    max-width: 70%;
     margin: 20px auto;
     background: linear-gradient(135deg, #ebf8ff, #cfe9f3); /* Light Blue Gradient */
     border-radius: 12px;
@@ -1038,10 +1038,10 @@ document.addEventListener("DOMContentLoaded", () => {
                         <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
                         <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
                         <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
-                        
+
                     </ul>
                 </div>
-                <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s"> 
+                <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
                     <div class="footer-title">
                         <h4 class="title custom-margin" style="margin-top: 0px;">Resources</h4>
                     </div>
@@ -1062,7 +1062,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <h4 class="title custom-margin" style=" text-align: left;  ">Contact Us</h4>
                 </div>
                 <ul class="contact custom-margin-big" style="justify-content: space-around;">
-                    
+
                   <li class="d-sm-flex justify-content-center">
                       <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
                       <div style="width: 80%;">
@@ -1071,7 +1071,7 @@ document.addEventListener("DOMContentLoaded", () => {
                            ayush1337@hotmail.com
                        </a>
                       </div>
-    
+
                     <li class="d-sm-flex justify-content-center">
                         <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
                         <div style="width: 80%;">
@@ -1095,12 +1095,13 @@ document.addEventListener("DOMContentLoaded", () => {
                       <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
                       <a href="#"><i class="fa-brands fa-discord"></i></a>
                       <a href="#"><i class="fa-brands fa-github"></i></a>
+                      <a href="https://www.linkedin.com/in/ayush-that/"><i class="fa-brands fa-linkedin"></i></a>
                   </div>
                 </ul>
             </div>
         </div>
-    
-    
+
+
     </div>
     </div>
     <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center">
@@ -1122,13 +1123,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 reserved<br />
                 Made with ♥ in India
               </p>
-    
+
             </div>
           </div>
         </div>
       </div>
     </div>
-    
+
     <div id="particles-2"></div>
     </div>
     </footer>

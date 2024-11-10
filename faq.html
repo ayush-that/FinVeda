@@ -237,7 +237,7 @@
             padding: 5%;
             background-color: #f8f9fa;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
 
         /* Form Group */
@@ -453,7 +453,7 @@
         });
 
       </script>
-  
+
     <div id="progressBar"></div>
 
     <header class="header-area">
@@ -538,14 +538,14 @@
                           <span>🌞</span>
                         </button>
                       </li>
-                      
+
                       <script>
                         // Function to initialize theme based on localStorage
                         function initializeTheme() {
                           const body = document.body;
                           const toggleButton = document.getElementById('theme-toggle');
                           const currentTheme = localStorage.getItem('theme');
-                      
+
                           // Apply saved theme
                           if (currentTheme === 'dark') {
                             body.classList.add('dark-mode');
@@ -555,19 +555,19 @@
                             toggleButton.querySelector('span').textContent = '🌞'; // Light mode icon
                           }
                         }
-                      
+
                         // Call initializeTheme on page load
                         document.addEventListener('DOMContentLoaded', () => {
                           initializeTheme();
-                      
+
                           const toggleButton = document.getElementById('theme-toggle');
                           const body = document.body;
-                      
+
                           // Event listener for theme toggle
                           toggleButton.addEventListener('click', () => {
                             body.classList.toggle('dark-mode');
                             toggleButton.classList.toggle('dark');
-                      
+
                             // Update icon and save theme
                             if (body.classList.contains('dark-mode')) {
                               toggleButton.querySelector('span').textContent = '🌙'; // Dark mode icon
@@ -576,17 +576,17 @@
                               toggleButton.querySelector('span').textContent = '🌞'; // Light mode icon
                               localStorage.setItem('theme', 'light');
                             }
-                      
+
                             loadShow(); // Call any additional function if needed
                           });
                         });
-                      
+
                         // Function placeholder for additional operations (if needed)
                         function loadShow() {
                           // Additional actions can go here
                         }
                       </script>
-                      
+
                     <style>
                         h3 {
 
@@ -706,12 +706,12 @@
                         how we can help you on your financial journey. Still have questions? Contact us or use our AI
                         chatbot for more assistance.</p>
                 </div>
-            
+
                 <div class="faq-search">
                     <input type="text" id="faq-search-input" style="color: #0c0a0a;" class="faq-search-input" placeholder="Type your question..." aria-label="Search FAQ" oninput="filterFAQs()">
                     <button class="faq-search-btn" onclick="filterFAQs()">Search</button>
                 </div>
-            
+
                 <div class="accordion" id="faqAccordion">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingOne">
@@ -727,7 +727,7 @@
                             </div>
                         </div>
                     </div>
-            
+
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingTwo">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -742,7 +742,7 @@
                             </div>
                         </div>
                     </div>
-            
+
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingThree">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -757,7 +757,7 @@
                             </div>
                         </div>
                     </div>
-            
+
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingFour">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
@@ -772,7 +772,7 @@
                             </div>
                         </div>
                     </div>
-            
+
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingFive">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
@@ -788,7 +788,7 @@
                     </div>
                 </div>
             </div>
-</div>            
+</div>
 
     <style>
         .accordion-item {
@@ -868,7 +868,7 @@
                 <label for="star2" title="2 stars">&#9733;</label>
                 <input type="radio" id="star1" name="rating" value="1" />
                 <label for="star1" title="1 stars">&#9733;</label>
-            </div>  
+            </div>
             <div class="button-container">
                 <button type="submit" class="submit-btn">Submit Feedback</button>
             </div>
@@ -935,18 +935,16 @@
 
         /* Feedback section styles */
         .faq-feedback {
-            border: 2px solid #4caf50;
-            /* Green border */
             background: #007bff;
-            /* Dark gradient */
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
             color: #ffffff;
             max-width: 800px;
 
             margin: 20px auto;
             transition: transform 0.3s ease;
+            margin-left: 28%;
         }
 
         /* Title styling */
@@ -1071,11 +1069,11 @@
             function filterFAQs() {
                 const searchInput = document.getElementById('faq-search-input').value.toLowerCase();
                 const faqs = document.querySelectorAll('.accordion-item');
-        
+
                 faqs.forEach(faq => {
                     const question = faq.querySelector('.accordion-button').textContent.toLowerCase();
                     const answer = faq.querySelector('.accordion-body').textContent.toLowerCase();
-        
+
                     // Display the FAQ item only if the search term matches either the question or answer
                     if (question.includes(searchInput) || answer.includes(searchInput)) {
                         faq.style.display = 'block';
@@ -1085,7 +1083,7 @@
                 });
             }
         </script>
-        
+
     </body>
 
 
@@ -1106,7 +1104,7 @@
             left: 0;
             z-index: 1000;
         } */
-            /*         
+            /*
         .progress-bar {
             height: 5px;
             width: 0%;
@@ -1294,13 +1292,14 @@
                     <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
                     <a href="https://discord.com/"><i class="fa-brands fa-discord"></i></a>
                     <a href="https://github.com/ayush-that/FinVeda"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/ayush-that/"><i class="fa-brands fa-linkedin"></i></a>
                   </div>
                 </ul>
               </div>
             </div>
           </div>
         </div>
-  
+
         <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s"
           style="text-align: center">
           <div class="row">
@@ -1317,33 +1316,33 @@
             </div>
           </div>
         </div>
-  
+
         <script>
           document.getElementById('unique-subscribe-form').addEventListener('submit', function (event) {
             event.preventDefault(); // Prevent form from submitting normally
-  
+
             // Show popup message
             var messageDiv = document.getElementById('unique-message');
             messageDiv.style.display = 'block';
-  
+
             // Reset existing animation
             var borderAnimationDiv = messageDiv.querySelector('.border-animation');
             borderAnimationDiv.style.animation = 'none';
             borderAnimationDiv.offsetHeight; // Trigger reflow to restart the animation
             borderAnimationDiv.style.animation = 'borderAnimation 3s linear forwards';
-  
+
             // Hide popup message after 10 seconds
             setTimeout(function () {
               messageDiv.style.display = 'none';
             }, 3000); // 10 seconds
-  
+
             // Reset form
             this.reset();
           });
         </script>
-  
+
         </div>
-  
+
         <div id="particles-2"></div>
 
     <button id="scrollToTopBtn" class="scroll-top" aria-label="Scroll to top">
@@ -1380,34 +1379,34 @@
           margin-right: 10px;
           /* Ensure button is on top */
         }
-  
+
         .scroll-top.show {
           opacity: 1;
           visibility: visible;
         }
-  
+
         .scroll-top:hover {
           transform: scale(1.1);
           /* Subtle scaling instead of expanding */
           box-shadow: 0 8px 20px rgba(255, 69, 159, 0.6);
           /* Slightly larger shadow */
         }
-  
+
         .scroll-top:active {
           transform: scale(1.05);
           /* Minor scale reduction on click */
         }
-  
+
         .scroll-top-icon {
           position: relative;
           z-index: 2;
           transition: transform 0.3s ease;
         }
-  
+
         .scroll-top:hover .scroll-top-icon {
           transform: translateY(-3px);
         }
-  
+
         /* Progress Ring Styling */
         .progress-ring {
           position: absolute;
@@ -1418,36 +1417,36 @@
           transform: rotate(-90deg);
           /* To start from the top */
         }
-  
+
         .progress-ring__circle {
           transition: stroke-dashoffset 0.35s;
           transform-origin: 50% 50%;
         }
-  
+
         /* Pulse Animation */
         @keyframes pulse {
           0% {
             box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
           }
-  
+
           50% {
             box-shadow: 0 5px 15px rgba(255, 69, 159, 0.7);
           }
-  
+
           100% {
             box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
           }
         }
-  
+
         .scroll-top:hover {
           animation: pulse 1.5s infinite;
         }
-  
+
         .scroll-top.show {
           animation: none;
           /* No animation when showing the button */
         }
-  
+
         .scroll-top.show:hover {
           animation: pulse 1.5s infinite;
           /* Pulse on hover */
@@ -1459,11 +1458,11 @@
         const progressCircle = document.querySelector(".progress-ring__circle");
         const radius = progressCircle.r.baseVal.value;
         const circumference = 2 * Math.PI * radius;
-  
+
         // Set the circle progress properties
         progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
         progressCircle.style.strokeDashoffset = circumference;
-  
+
         // Function to show or hide the button based on scroll position
         function toggleScrollButton() {
           if (window.scrollY > 100) {
@@ -1472,20 +1471,20 @@
             scrollToTopBtn.classList.remove("show");
           }
         }
-  
+
         // Function to set the scroll progress on the button ring
         function setProgress(percent) {
           const offset = circumference - (percent / 100) * circumference;
           progressCircle.style.strokeDashoffset = offset;
         }
-  
+
         // Listen for scroll events to update button visibility and progress
         window.addEventListener("scroll", () => {
           toggleScrollButton();
           const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
           setProgress(scrollPercent);
         });
-  
+
         // Smooth scroll to top when the button is clicked
         scrollToTopBtn.addEventListener("click", () => {
           window.scrollTo({
