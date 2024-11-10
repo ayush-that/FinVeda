@@ -489,6 +489,7 @@ let score=0;
 let questionNo=0;
 let num=0;
 let numbers = [];
+submitButton.addEventListener("click", submitAnswer)
 
 function startQuiz(){
     console.log(questions.length);
@@ -530,7 +531,7 @@ function showQuestion(){
     
     spanCorrect.style.display='none';
     spanIncorrect.style.display='none';
-    submitButton.disabled=true;
+   
     currentQuestionIndex = numbers[num];
     let currentQuestion = questions[currentQuestionIndex];
     
@@ -565,10 +566,13 @@ function resetState(){
     while(answerButton.firstChild){
         answerButton.removeChild(answerButton.firstChild);
     }
+     // Reset selected button for the new question
+     selectedBtn = null;
+     previouslyChosenBtn = null;  // Reset previous selection
 }
 
 let isCorrect;
-let selectedBtn;
+let selectedBtn=null;
 let previouslyChosenBtn;
 function selectAnswer(e){
     e.preventDefault();
@@ -582,10 +586,15 @@ function selectAnswer(e){
     previouslyChosenBtn = selectedBtn;
     isCorrect = selectedBtn.dataset.correct==="true";
     submitButton.disabled=false;
-    submitButton.addEventListener("click", submitAnswer)   
+      
 }
 
 function submitAnswer(){
+    if (!selectedBtn) {
+        showAlert();
+        return;
+    }
+
     if(isCorrect){
         selectedBtn.classList.add("correct");
         score+=1;
@@ -683,4 +692,22 @@ function handleNextButton(){
         showScore();
     }
 }
+
+
+function showAlert() {
+    const alertBox = document.getElementById("alertBox");
+    const overlay = document.getElementById("overlay");
+    alertBox.style.display = "block";
+    overlay.style.display = "block";
+}
+
+function closeAlert() {
+    const alertBox = document.getElementById("alertBox");
+    const overlay = document.getElementById("overlay");
+    alertBox.style.display = "none";
+    overlay.style.display = "none";
+}
+
+
+
 startQuiz()

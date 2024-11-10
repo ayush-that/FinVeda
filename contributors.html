@@ -53,7 +53,7 @@
       }
   </style>
 </head>
-<body>
+<body style="background-color: #00111c;">
   <div class="circle-container">
     <div class="circle"></div>
     <div class="circle"></div>
@@ -182,62 +182,10 @@
                               <i class="fas fa-user-circle icon-hover" style="margin: 5px;"></i> Login/Register
                           </a>
                       </li>
-                      <li class="nav-item no-underline align-self-center">
-                          <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()">
-                            <span>🌞</span>
-                          </button>
-                      </li>
                   </ul>
               </div>
           </nav>
       </div>
-      <script>
-        // Function to initialize theme based on localStorage
-        function initializeTheme() {
-          const body = document.body;
-          const toggleButton = document.getElementById('theme-toggle');
-          const currentTheme = localStorage.getItem('theme');
-      
-          // Apply saved theme
-          if (currentTheme === 'dark') {
-            body.classList.add('dark-mode');
-            toggleButton.classList.add('dark');
-            toggleButton.querySelector('span').textContent = '🌙'; // Dark mode icon
-          } else {
-            toggleButton.querySelector('span').textContent = '🌞'; // Light mode icon
-          }
-        }
-      
-        // Call initializeTheme on page load
-        document.addEventListener('DOMContentLoaded', () => {
-          initializeTheme();
-      
-          const toggleButton = document.getElementById('theme-toggle');
-          const body = document.body;
-      
-          // Event listener for theme toggle
-          toggleButton.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            toggleButton.classList.toggle('dark');
-      
-            // Update icon and save theme
-            if (body.classList.contains('dark-mode')) {
-              toggleButton.querySelector('span').textContent = '🌙'; // Dark mode icon
-              localStorage.setItem('theme', 'dark');
-            } else {
-              toggleButton.querySelector('span').textContent = '🌞'; // Light mode icon
-              localStorage.setItem('theme', 'light');
-            }
-      
-            loadShow(); // Call any additional function if needed
-          });
-        });
-      
-        // Function placeholder for additional operations (if needed)
-        function loadShow() {
-          // Additional actions can go here
-        }
-      </script>
                 <!-- Login Modal -->
                 <div id="myModal" class="modal">
                   <div class="modal-content">
@@ -359,8 +307,8 @@
   
   </header>
 
-  <section class="contributor-stats" style="background-color: rgb(89, 192, 240);margin-top: 150px;">
-    <h2>Project Statistics</h2>
+  <section class="contributor-stats" style="margin-top: 150px;">
+    <h2 style="color: white;">Project Statistics</h2>
     <div style="color:white ;" class="contributor-stats-grid" id="statsGrid">
       <!-- Dynamic Stats will be added by JavaScript -->
     </div>
@@ -468,6 +416,7 @@
           </div>
         </div>
         <div class="col-lg-5 col-md-7 col-sm-7">
+
           <div class="footer-link d-flex mt-50 justify-content-md-between"
             style="justify-content: space-around !important;">
             <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
