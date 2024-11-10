@@ -794,6 +794,7 @@
       </div>
   </div>
 
+
   <div id="home" class="header-hero bg_cover" style="background-image: url(./assets/images/banner-bg.svg)">
     <div class="container">
       <h2 class="head-animate" style="font-size: 90px;">
@@ -973,6 +974,42 @@
 
           <button class="styled-btn" onclick="window.location.href='reviews.html'">Share Experience</button>
 
+
+  <script>
+
+        const card = document.querySelector('#home');
+        const header = document.querySelector('header');
+
+        function applyHoverEffect(element) {
+            element.addEventListener('mousemove', (e) => {
+                const elementRect = element.getBoundingClientRect();
+                const elementX = elementRect.left + elementRect.width / 2;
+                const elementY = elementRect.top + elementRect.height / 2;
+
+                const mouseX = e.clientX;
+                const mouseY = e.clientY;
+
+                const deltaX = mouseX - elementX;
+                const deltaY = mouseY - elementY;
+
+                // Increase these values to make the effect larger
+                const rotateX = (deltaY / elementRect.height) * 30;  // Increased from 10 to 30 for more depth
+                const rotateY = -(deltaX / elementRect.width) * 30;  // Increased from 10 to 30 for more depth
+
+                // Apply transformations based on mouse position
+                element.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+
+            element.addEventListener('mouseleave', () => {
+                // Reset the element back to normal when the cursor leaves
+                element.style.transform = 'rotateX(0) rotateY(0)';
+            });
+        }
+
+        // Apply hover effect on both card and header
+        applyHoverEffect(card);
+        applyHoverEffect(header);
+  </script>
         </div>
       </div>
       <div class="row">
