@@ -453,7 +453,7 @@
     });
 
   </script>
-  
+
     <div id="progressBar"></div>
 
     <header class="header-area">
@@ -538,14 +538,14 @@
                           <span>🌞</span>
                         </button>
                       </li>
-                      
+
                       <script>
                         // Function to initialize theme based on localStorage
                         function initializeTheme() {
                           const body = document.body;
                           const toggleButton = document.getElementById('theme-toggle');
                           const currentTheme = localStorage.getItem('theme');
-                      
+
                           // Apply saved theme
                           if (currentTheme === 'dark') {
                             body.classList.add('dark-mode');
@@ -555,19 +555,19 @@
                             toggleButton.querySelector('span').textContent = '🌞'; // Light mode icon
                           }
                         }
-                      
+
                         // Call initializeTheme on page load
                         document.addEventListener('DOMContentLoaded', () => {
                           initializeTheme();
-                      
+
                           const toggleButton = document.getElementById('theme-toggle');
                           const body = document.body;
-                      
+
                           // Event listener for theme toggle
                           toggleButton.addEventListener('click', () => {
                             body.classList.toggle('dark-mode');
                             toggleButton.classList.toggle('dark');
-                      
+
                             // Update icon and save theme
                             if (body.classList.contains('dark-mode')) {
                               toggleButton.querySelector('span').textContent = '🌙'; // Dark mode icon
@@ -576,17 +576,17 @@
                               toggleButton.querySelector('span').textContent = '🌞'; // Light mode icon
                               localStorage.setItem('theme', 'light');
                             }
-                      
+
                             loadShow(); // Call any additional function if needed
                           });
                         });
-                      
+
                         // Function placeholder for additional operations (if needed)
                         function loadShow() {
                           // Additional actions can go here
                         }
                       </script>
-                      
+
                     <style>
                         h3 {
 
@@ -695,100 +695,190 @@
 
 
 
+
+
     <!-- FAQ Section -->
     <div class="images">
         <img style="width:250px; top: 200px; right: 1470px;mix-blend-mode: multiply;" src="assets/images/HELP-IMG.webp"
             alt="image" class="photo">
-            <div class="faq-section" style="margin-top: 100px;">
-                <div class="faq-intro">
-                    <h3 class="faq-title">Frequently Asked Questions</h3>
-                    <p>Welcome to Finveda’s FAQ! Here you’ll find answers to common questions about our services, tools, and
-                        how we can help you on your financial journey. Still have questions? Contact us or use our AI
-                        chatbot for more assistance.</p>
-                </div>
-            
-                <div class="faq-search">
-                    <input type="text" id="faq-search-input" style="color: #0c0a0a;" class="faq-search-input" placeholder="Type your question..." aria-label="Search FAQ" oninput="filterFAQs()">
-                    <button class="faq-search-btn" onclick="filterFAQs()">Search</button>
-                </div>
-            
-                <div class="accordion" id="faqAccordion">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                <i class="fas fa-university me-2"></i> <!-- Icon for "What is Finveda?" -->
-                                What is Finveda?
-                            </button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                Finveda is a dynamic financial literacy app with Arthsathi AI chatbot, finance blogs, market
-                                trends, SIP calculator, and a quiz for effortless finance learning.
-                            </div>
-                        </div>
-                    </div>
-            
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                <i class="fas fa-lightbulb me-2"></i> <!-- Icon for "What problem does Finveda solve?" -->
-                                What problem does Finveda solve?
-                            </button>
-                        </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                Finveda aims to solve the lack of financial literacy in India, providing tools and resources
-                                to improve financial knowledge for individuals.
-                            </div>
-                        </div>
-                    </div>
-            
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingThree">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                <i class="fas fa-tools me-2"></i> <!-- Icon for "What services does Finveda offer?" -->
-                                What services does Finveda offer?
-                            </button>
-                        </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                Finveda offers expert-written blogs, market trends, SIP and PPF calculators, and more for
-                                personalized finance education.
-                            </div>
-                        </div>
-                    </div>
-            
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingFour">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                <i class="fas fa-sign-in-alt me-2"></i> <!-- Icon for "How can I start using Finveda?" -->
-                                How can I start using Finveda?
-                            </button>
-                        </h2>
-                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                Simply sign up and access all our features, including personalized financial education and
-                                tools.
-                            </div>
-                        </div>
-                    </div>
-            
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingFive">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                <i class="fas fa-dollar-sign me-2"></i> <!-- Icon for "Is Finveda free to use?" -->
-                                Is Finveda free to use?
-                            </button>
-                        </h2>
-                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                Yes, Finveda is completely free to use for all users.
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="faq-section " style="margin-top: 100px;">
+            <div class="faq-intro">
+                <h3 class="faq-title">Frequently Asked Questions</h3>
+                <p>Welcome to Finveda’s FAQ! Here you’ll find answers to common questions about our services, tools, and
+                    how we can help you on your financial journey. Still have questions? Contact us or use our AI
+                    chatbot for more assistance.</p>
             </div>
-</div>            
+
+            <div class="faq-search">
+                <input type="text" style="color: #0c0a0a;" class="faq-search-input" placeholder="Type your question..."
+                    aria-label="Search FAQ" oninput="filterFAQs()" />
+                <button class="faq-search-btn" onclick="filterFAQs()">Search</button>
+            </div>
+
+
+  <div class="faq-container">
+    <h1>Frequently Asked Questions</h1>
+
+    <br>
+    <br>
+    <!-- Question 1 -->
+    <div class="question">
+      <h2>What is Finveda?</h2>
+      <button onclick="toggleAnswer(this)">Show Answer</button>
+      <p class="answer">Finveda is a dynamic financial literacy app with Arthsathi AI chatbot, finance blogs, market trends, SIP calculator, and a quiz for effortless finance learning.</p>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question">
+      <h2>What problem does Finveda solve?</h2>
+      <button onclick="toggleAnswer(this)">Show Answer</button>
+      <p class="answer">Finveda aims to solve the lack of financial literacy in India, providing tools and resources to improve financial knowledge for individuals.</p>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question">
+      <h2>What services does Finveda offer?</h2>
+      <button onclick="toggleAnswer(this)">Show Answer</button>
+      <p class="answer">Finveda offers expert-written blogs, market trends, SIP and PPF calculators, and more for personalized finance education.</p>
+    </div>
+
+    <div class="question">
+      <h2>How can I start using Finveda?</h2>
+      <button onclick="toggleAnswer(this)">Show Answer</button>
+      <p class="answer">Simply sign up and access all our features, including personalized financial education and tools.</p>
+    </div>
+
+    <div class="question">
+      <h2>Is Finveda free to use?</h2>
+      <button onclick="toggleAnswer(this)">Show Answer</button>
+      <p class="answer">Yes, Finveda is completely free to use for all users.</p>
+    </div>
+
+
+  </div>
+
+        </div>
+    </div>
+
+
+  <style>
+     body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  align-items: center;
+  height: 100vh;
+}
+
+.faq-container {
+  width: 600px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.question {
+  margin-bottom: 50px;
+}
+
+.question h2 {
+  color: #333;
+}
+
+.question button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: -26px; /* Adds space above the button */
+  margin-left: auto; /* Aligns button to the right */
+  margin-right: 0; /* Aligns button to the right */
+  display: block; /* Makes button a block-level element so it takes full width available */
+}
+
+.question button:hover {
+  background-color: #0056b3;
+}
+
+.answer {
+  display: none;
+  color: #666;
+  margin-top: 10px;
+}
+
+  </style>
+
+    <style>
+        .accordion-item {
+            background-color: #5776ff;
+        }
+
+        .accordion-button {
+            background: linear-gradient(135deg, #56ab2f, #a8e063, #b9f1b7);
+            color: #ffffff;
+            font-weight: bold;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .accordion-button::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+            transition: opacity 0.3s ease;
+            opacity: 0;
+            border-radius: 10px;
+        }
+
+        .accordion-button:hover {
+            background: linear-gradient(135deg, #c8f8c2, #56ab2f, #a8e063);
+            transform: scale(1.03);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .accordion-button:focus {
+            outline: none;
+            border: 2px solid #ffffff;
+            box-shadow: 0 0 10px #4facfe, 0 0 20px #56ab2f;
+        }
+
+        .accordion-button:focus::before {
+            opacity: 1;
+            transform: rotate(45deg);
+        }
+    </style>
+
+
+
+ <script>
+    function toggleAnswer(button) {
+  const answer = button.nextElementSibling;
+  if (answer.style.display === "none" || answer.style.display === "") {
+    answer.style.display = "block";
+    button.innerText = "Hide Answer";
+  } else {
+    answer.style.display = "none";
+    button.innerText = "Show Answer";
+  }
+}
+</script>
 
     <style>
         .accordion-item {
@@ -868,7 +958,7 @@
                 <label for="star2" title="2 stars">&#9733;</label>
                 <input type="radio" id="star1" name="rating" value="1" />
                 <label for="star1" title="1 stars">&#9733;</label>
-            </div>  
+            </div>
             <div class="button-container">
                 <button type="submit" class="submit-btn">Submit Feedback</button>
             </div>
@@ -1071,11 +1161,11 @@
             function filterFAQs() {
                 const searchInput = document.getElementById('faq-search-input').value.toLowerCase();
                 const faqs = document.querySelectorAll('.accordion-item');
-        
+
                 faqs.forEach(faq => {
                     const question = faq.querySelector('.accordion-button').textContent.toLowerCase();
                     const answer = faq.querySelector('.accordion-body').textContent.toLowerCase();
-        
+
                     // Display the FAQ item only if the search term matches either the question or answer
                     if (question.includes(searchInput) || answer.includes(searchInput)) {
                         faq.style.display = 'block';
@@ -1085,7 +1175,7 @@
                 });
             }
         </script>
-        
+
     </body>
 
 
@@ -1106,7 +1196,7 @@
             left: 0;
             z-index: 1000;
         } */
-            /*         
+            /*
         .progress-bar {
             height: 5px;
             width: 0%;

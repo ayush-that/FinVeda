@@ -1,251 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Enhanced Blog Page with Share Buttons</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reset Password</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" href="ambulance.png" type="image/x-icon" />
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #71b7e6, #9b59b6);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+            position: relative;
+        }
+
+        .modal-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .input-field {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .input-field input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .input-field input:focus {
+            border-color: #007bff;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #54c5c9;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #45b3b3;
+        }
+
+        .feedback {
+            margin-top: 10px;
+            font-size: 14px;
+            color: red;
+        }
+
+        .feedback.success {
+            color: green;
+        }
+
+        .close {
+            color: #aaa;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+        }
+    </style>
 </head>
+
 <body>
 
-  <div class="container">
-    <h1>My Blog</h1>
+    <div class="modal-content">
+        <span class="close" id="close-modal">&times;</span>
+        <h2>Reset Your Password</h2>
 
-    <!-- Blog Form to Add New Blog Post -->
-    <div class="blog-form">
-      <input type="text" id="blogTitle" placeholder="Enter blog title" required>
-      <textarea id="blogContent" placeholder="Enter blog content" required></textarea>
-      <input type="file" id="blogImage" accept="image/*">
-      <button onclick="addBlog()">Add Blog</button>
+        <!-- Input fields for new password -->
+        <div class="input-field">
+            <input type="password" id="new-password" placeholder="Enter New Password" required />
+        </div>
+        <div class="input-field">
+            <input type="password" id="confirm-password" placeholder="Confirm New Password" required />
+        </div>
+
+        <!-- Button to reset password -->
+        <button id="reset-password" class="btn">Reset Password</button>
+
+        <div id="feedback" class="feedback"></div>
     </div>
 
-    <!-- Display Blogs Here -->
-    <div id="blogList" class="blog-list">
-      <!-- Blog posts will be dynamically added here -->
-    </div>
-  </div>
+    <script>
+        document.getElementById('close-modal').onclick = function () {
+            window.location.href = "index.html";  // Redirect to index page
+        }
 
-  <script src="script.js"></script>
+        document.getElementById('reset-password').onclick = function () {
+            const newPassword = document.getElementById('new-password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const feedback = document.getElementById('feedback');
 
-  <style>
-                * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+            // Check if passwords match
+            if (newPassword && confirmPassword) {
+                if (newPassword === confirmPassword) {
+                    // Simulate a password reset process
+                    feedback.textContent = 'Password reset successfully!';
+                    feedback.classList.add('success');
+                    feedback.classList.remove('error');
 
-body {
-  font-family: Arial, sans-serif;
-  background-color:#007bff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
+                    // Redirect to index.html after 2 seconds
+                    setTimeout(() => {
+                        window.location.href = "index.html";
+                    }, 2000);
+                } else {
+                    feedback.textContent = 'Passwords do not match!';
+                    feedback.classList.add('error');
+                    feedback.classList.remove('success');
+                }
+            } else {
+                feedback.textContent = 'Please fill out both fields.';
+                feedback.classList.add('error');
+                feedback.classList.remove('success');
+            }
+        }
 
-.container {
-  width: 500px;
-  padding: 20px;
-  background-color: #ffffff;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  overflow-y: auto;
-  max-height: 90vh;
-}
+        // Close the modal when clicking outside of it
+        window.onclick = function (event) {
+            const modal = document.querySelector('.modal-content');
+            if (event.target === modal) {
+                window.location.href = "index.html";  // Redirect to index page
+            }
+        }
+    </script>
 
-h1 {
-  text-align: center;
-  color: #333;
-}
-
-.blog-form {
-  margin-bottom: 20px;
-}
-
-.blog-form input[type="text"],
-.blog-form textarea,
-.blog-form input[type="file"] {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background-color: #f9f9f9;
-}
-
-.blog-form button {
-  width: 100%;
-  padding: 12px;
-  border: none;
-  border-radius: 4px;
-  background-color: #007bff;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.blog-form button:hover {
-  background-color: #0056b3;
-}
-
-.blog-list {
-  margin-top: 20px;
-}
-
-.blog-post {
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  background-color: #fafafa;
-  position: relative;
-}
-
-.blog-post h3 {
-  color: #333;
-}
-
-.blog-post p {
-  color: #666;
-}
-
-.blog-post img {
-  width: 100%;
-  max-height: 200px;
-  margin-top: 10px;
-  border-radius: 4px;
-  object-fit: cover;
-}
-
-.blog-post .delete-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  padding: 6px 12px;
-  border: none;
-  border-radius: 4px;
-  background-color: #dc3545;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.blog-post .delete-btn:hover {
-  background-color: #c82333;
-}
-
-.share-buttons {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.share-buttons button {
-  padding: 6px 10px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  color: white;
-}
-
-.share-buttons .twitter {
-  background-color: #1DA1F2;
-}
-
-.share-buttons .linkedin {
-  background-color: #0077b5;
-}
-
-.share-buttons .instagram {
-  background-color: #C13584;
-}
-
-  </style>
-
-<script>
-  const blogList = document.getElementById("blogList");
-
-function addBlog() {
-  const title = document.getElementById("blogTitle").value;
-  const content = document.getElementById("blogContent").value;
-  const imageFile = document.getElementById("blogImage").files[0];
-
-  if (title === "" || content === "") {
-    alert("Please fill in both the title and content.");
-    return;
-  }
-
-  // Create blog post elements
-  const blogPost = document.createElement("div");
-  blogPost.classList.add("blog-post");
-
-  const blogTitle = document.createElement("h3");
-  blogTitle.innerText = title;
-
-  const blogContent = document.createElement("p");
-  blogContent.innerText = content;
-
-  const deleteBtn = document.createElement("button");
-  deleteBtn.classList.add("delete-btn");
-  deleteBtn.innerText = "Delete";
-  deleteBtn.onclick = () => deleteBlog(blogPost);
-
-  // Share buttons container
-  const shareButtons = document.createElement("div");
-  shareButtons.classList.add("share-buttons");
-
-  const twitterBtn = createShareButton("Twitter", "twitter", `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(location.href)}`);
-  const linkedinBtn = createShareButton("LinkedIn", "linkedin", `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(location.href)}&title=${encodeURIComponent(title)}`);
-  const instagramBtn = createShareButton("Instagram", "instagram", `https://www.instagram.com/`);
-
-  shareButtons.appendChild(twitterBtn);
-  shareButtons.appendChild(linkedinBtn);
-  shareButtons.appendChild(instagramBtn);
-
-  // Append title, content, delete button, and share buttons to the blog post
-  blogPost.appendChild(blogTitle);
-  blogPost.appendChild(blogContent);
-
-  // If an image is uploaded, create an image element and add it to the blog post
-  if (imageFile) {
-    const reader = new FileReader();
-    reader.onload = function (e) {
-      const blogImage = document.createElement("img");
-      blogImage.src = e.target.result;
-      blogPost.appendChild(blogImage);
-    };
-    reader.readAsDataURL(imageFile);
-  }
-
-  blogPost.appendChild(deleteBtn);
-  blogPost.appendChild(shareButtons);
-
-  // Add the new blog post to the blog list
-  blogList.appendChild(blogPost);
-
-  // Clear the form fields
-  document.getElementById("blogTitle").value = "";
-  document.getElementById("blogContent").value = "";
-  document.getElementById("blogImage").value = "";
-}
-
-function deleteBlog(blogPost) {
-  blogList.removeChild(blogPost);
-}
-
-function createShareButton(platform, className, url) {
-  const button = document.createElement("button");
-  button.innerText = platform;
-  button.classList.add(className);
-  button.onclick = () => {
-    window.open(url, "_blank");
-  };
-  return button;
-}
-
-</script>
 </body>
+
 </html>
-
-
