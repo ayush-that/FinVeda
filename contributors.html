@@ -53,7 +53,7 @@
       }
   </style>
 </head>
-<body style="background-color: #00111c;">
+<body>
   <div class="circle-container">
     <div class="circle"></div>
     <div class="circle"></div>
@@ -182,10 +182,62 @@
                               <i class="fas fa-user-circle icon-hover" style="margin: 5px;"></i> Login/Register
                           </a>
                       </li>
+                      <li class="nav-item no-underline align-self-center">
+                          <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()">
+                            <span>🌞</span>
+                          </button>
+                      </li>
                   </ul>
               </div>
           </nav>
       </div>
+      <script>
+        // Function to initialize theme based on localStorage
+        function initializeTheme() {
+          const body = document.body;
+          const toggleButton = document.getElementById('theme-toggle');
+          const currentTheme = localStorage.getItem('theme');
+      
+          // Apply saved theme
+          if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            toggleButton.classList.add('dark');
+            toggleButton.querySelector('span').textContent = '🌙'; // Dark mode icon
+          } else {
+            toggleButton.querySelector('span').textContent = '🌞'; // Light mode icon
+          }
+        }
+      
+        // Call initializeTheme on page load
+        document.addEventListener('DOMContentLoaded', () => {
+          initializeTheme();
+      
+          const toggleButton = document.getElementById('theme-toggle');
+          const body = document.body;
+      
+          // Event listener for theme toggle
+          toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            toggleButton.classList.toggle('dark');
+      
+            // Update icon and save theme
+            if (body.classList.contains('dark-mode')) {
+              toggleButton.querySelector('span').textContent = '🌙'; // Dark mode icon
+              localStorage.setItem('theme', 'dark');
+            } else {
+              toggleButton.querySelector('span').textContent = '🌞'; // Light mode icon
+              localStorage.setItem('theme', 'light');
+            }
+      
+            loadShow(); // Call any additional function if needed
+          });
+        });
+      
+        // Function placeholder for additional operations (if needed)
+        function loadShow() {
+          // Additional actions can go here
+        }
+      </script>
                 <!-- Login Modal -->
                 <div id="myModal" class="modal">
                   <div class="modal-content">
@@ -307,8 +359,8 @@
   
   </header>
 
-  <section class="contributor-stats" style="margin-top: 150px;">
-    <h2 style="color: white;">Project Statistics</h2>
+  <section class="contributor-stats" style="background-color: rgb(89, 192, 240);margin-top: 150px;">
+    <h2>Project Statistics</h2>
     <div style="color:white ;" class="contributor-stats-grid" id="statsGrid">
       <!-- Dynamic Stats will be added by JavaScript -->
     </div>
@@ -375,304 +427,301 @@
     }
   </style>
   <script src="./assets/js/contributors.js"></script>
-
-
-  <footer id="footer" class="footer-area pt-120">
+  <footer id="footer" class="footer-area pt-120" style="background-color: #1a1a1a; color: white;">
     <div class="container">
-
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="subscribe-content mt-45">
-              <h2 class="subscribe-title">
-
-              </h2>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="subscribe-form mt-50">
-              <form id="unique-subscribe-form">
-                <input type="email" id="unique-news-email" placeholder="Enter Email" required />
-                <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
-              </form>
-              <div id="unique-message" class="unique-popup-message" style="display: none;">
-                <div class="border-animation"></div>
-                Thank You for the subscription!
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-widget pb-100">
-
-      <div class="row" id="footer">
-        <div class="col-lg-4 col-md-6 col-sm-8">
-          <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-            <img src="../assets/images/FinvedaLogo.png" alt="FinVeda Logo"
-
-              style="height: 80px; width: auto; margin-bottom: 15px;" />
-            <p class="text custom-margin">
-              We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial
-              blogs.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-lg-5 col-md-7 col-sm-7">
-
-          <div class="footer-link d-flex mt-50 justify-content-md-between"
-            style="justify-content: space-around !important;">
-            <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-              <div class="footer-title">
-                <h3 class="title custom-margin">Quick Links</h3>
-              </div>
-              <ul class="link custom-margin">
-                <li><a href="../blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
-                <li><a href="../blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
-                <li><a href="../Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
-                <li><a href="../blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
-                <li><a href="../contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
-              </ul>
-            </div>
-            <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
-              <div class="footer-title">
-                <h4 class="title custom-margin">Resources</h4>
-              </div>
-              <ul class="link custom-margin">
-                <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="../about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
-                <li><a href="../trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
-                <li><a href="../tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
-                <li><a href="../blog.html"><i class="fas fa-blog"></i> Blog</a></li>
-                <li><a href="../quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-5 col-sm-5">
-          <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-            <div class="footer-title">
-              <h4 class="title custom-margin">Contact Us</h4>
-            </div>
-            <ul class="contact custom-margin-big" style="justify-content: space-around;">
-              <li class="d-sm-flex justify-content-center">
-                <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                <p style="width: 80%;">
-                  <a href="mailto:ayush1337@hotmail.com" target="_blank"
-                    style="color: white; text-decoration: underline;">
-                    ayush1337@hotmail.com
-                  </a>
-                </p>
-              </li>
-              <li class="d-sm-flex justify-content-center">
-                <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
-                <div style="width: 80%;">
-                  <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff;">
-                    fin-veda.vercel.app
-                  </a>
+        <!-- Newsletter Section -->
+        <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s" style="height: 265px; background-color: #0890ff;">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="subscribe-content mt-45">
+                        <h2 class="subscribe-title">
+                            Subscribe to Our Newsletter
+                            <span style="font-size: 22px;"> Get regular updates</span>
+                        </h2>
+                    </div>
                 </div>
-              </li>
-              <li class="d-sm-flex justify-content-center">
-                <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font: 12px; width: 10%;"></i>
-                <div style="width: 80%;">
-                  <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
-                    style="color:#fff">
-                    Delhi, India
-                  </a>
+                <div class="col-lg-6">
+                    <div class="subscribe-form mt-50">
+                        <form id="unique-subscribe-form">
+                            <input type="email" id="unique-news-email" placeholder="Enter Email" required style="padding: 10px; border-radius: 5px; border: none; width: 80%;"/>
+                            <button class="unique-main-btn" id="unique-subscribe-btn" type="submit" style="border-radius: 5px; padding: 10px 20px; background-color: #ea5541; color: white; border: none;">
+                                Subscribe
+                            </button>
+                        </form>
+                        <div id="unique-message" class="unique-popup-message" style="display: none;">
+                            <div class="border-animation"></div>
+                            Thank You for the subscription!
+                        </div>
+                    </div>
                 </div>
-              </li>
-              <div class="social-icons">
-                <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="https://discord.com/"><i class="fa-brands fa-discord"></i></a>
-                <a href="https://github.com/ayush-that/FinVeda"><i class="fa-brands fa-github"></i></a>
-              </div>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s"
-      style="text-align: center">
-      <div class="row">
-        
-        <div class="col-lg-12">
-
-          <div class="copyright d-sm-flex justify-content-center"
-
-            <div class="copyright-content" style="text-align: center">
-              <p class="text" style="text-align: center">
-                © <span id="copyright-year">2024</span> FinVeda. All rights are reserved<br />
-                Made with ♥ in India
-              </p>
-
             </div>
-          </div>
         </div>
-      </div>
+
+        <!-- Footer Widget Section -->
+        <div class="footer-widget pb-100">
+            <div class="row">
+                <!-- About Section -->
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                        <img src="./assets/images/FinvedaLogo.png" alt="FinVeda Logo" style="height: 80px; width: auto; margin-bottom: 15px;"/>
+                        <p class="text custom-margin">
+                            We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Quick Links Section -->
+                <div class="col-lg-5 col-md-7 col-sm-7">
+                    <div class="footer-link d-flex mt-50 justify-content-md-between" style="justify-content: space-around !important;">
+                        <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+                            <div class="footer-title">
+                                <h3 class="title custom-margin">Quick Links</h3>
+                            </div>
+                            <ul class="link custom-margin">
+                                <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+                                <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
+                                <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
+                                <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+                                <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+                                <li><a href="./blogs/sitemap.html"><i class="fa-solid fa-sitemap"></i> Site Map</a></li>
+                            </ul>
+                        </div>
+                        <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+                            <div class="footer-title">
+                                <h4 class="title custom-margin">Resources</h4>
+                            </div>
+                            <ul class="link custom-margin">
+                                <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+                                <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                                <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
+                                <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
+                                <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                                <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="col-lg-3 col-md-5 col-sm-5">
+                    <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                        <div class="footer-title">
+                            <h4 class="title custom-margin">Contact Us</h4>
+                        </div>
+                        <ul class="contact custom-margin-big" style="justify-content: space-around;">
+                            <li class="d-sm-flex justify-content-center">
+                                <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                                <p style="width: 80%;">
+                                    <a href="mailto:ayush1337@hotmail.com" target="_blank" style="color: white; text-decoration: underline;">
+                                        ayush1337@hotmail.com
+                                    </a>
+                                </p>
+                            </li>
+                            <li class="d-sm-flex justify-content-center">
+                                <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                                <div style="width: 80%;">
+                                    <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff;">
+                                        fin-veda.vercel.app
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="d-sm-flex justify-content-center">
+                                <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                                <div style="width: 80%;">
+                                    <a href="https://www.google.com/maps/place/Delhi" style="color:#fff">
+                                        Delhi, India
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <!-- Social Media Icons -->
+                        <div class="social-icons">
+                            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="https://discord.com/"><i class="fa-brands fa-discord"></i></a>
+                            <a href="https://github.com/ayush-that/FinVeda"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Section -->
+        <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="copyright d-sm-flex justify-content-center">
+                        <div class="copyright-content">
+                            <p class="text">
+                                © <span id="copyright-year">2024</span> FinVeda. All rights reserved<br />
+                                Made with ♥ in India
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-
-  </footer>
+    <div id="particles-2"></div>
+</footer>
+    
+    
     
 
-    
- 
-   <button id="scrollToTopBtn" class="scroll-top" aria-label="Scroll to top">
-    <div class="scroll-top-icon">
-      <i class="fa-solid fa-arrow-up"></i>
+    <div id="particles-2"></div>
     </div>
-    <svg class="progress-ring" width="60" height="60">
-      <circle class="progress-ring__circle" stroke="#ffffff" stroke-width="4" fill="transparent" r="28" cx="30"
-        cy="30"></circle>
-    </svg>
-  </button>
-  <style>
-    .scroll-top {
-      position: fixed;
-      right: 1.6%;
-      background: blue;
-      color: white;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
-      overflow: visible;
-      z-index: 10;
-      bottom: 110px;
-      margin-right: 10px;
-      /* Ensure button is on top */
-    }
-
-    .scroll-top.show {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .scroll-top:hover {
-      transform: scale(1.1);
-      /* Subtle scaling instead of expanding */
-      box-shadow: 0 8px 20px rgba(255, 69, 159, 0.6);
-      /* Slightly larger shadow */
-    }
-
-    .scroll-top:active {
-      transform: scale(1.05);
-      /* Minor scale reduction on click */
-    }
-
-    .scroll-top-icon {
-      position: relative;
-      z-index: 2;
-      transition: transform 0.3s ease;
-    }
-
-    .scroll-top:hover .scroll-top-icon {
-      transform: translateY(-3px);
-    }
-
-    /* Progress Ring Styling */
-    .progress-ring {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      transform: rotate(-90deg);
-      /* To start from the top */
-    }
-
-    .progress-ring__circle {
-      transition: stroke-dashoffset 0.35s;
-      transform-origin: 50% 50%;
-    }
-
-    /* Pulse Animation */
-    @keyframes pulse {
-      0% {
+    <button id="scrollToTopBtn" class="scroll-top" aria-label="Scroll to top">
+      <div class="scroll-top-icon">
+        <i class="fa-solid fa-arrow-up"></i>
+      </div>
+      <svg class="progress-ring" width="60" height="60">
+        <circle class="progress-ring__circle" stroke="#ffffff" stroke-width="4" fill="transparent" r="28" cx="30"
+          cy="30"></circle>
+      </svg>
+    </button>
+    <style>
+      .scroll-top {
+        position: fixed;
+        right: 1.6%;
+        background: #635adc;
+        color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
         box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+        overflow: visible;
+        z-index: 10;
+        bottom: 15px;
+        margin-right: 10px;
+        /* Ensure button is on top */
       }
 
-      50% {
-        box-shadow: 0 5px 15px rgba(255, 69, 159, 0.7);
+      .scroll-top.show {
+        opacity: 1;
+        visibility: visible;
       }
 
-      100% {
-        box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+      .scroll-top:hover {
+        transform: scale(1.1);
+        /* Subtle scaling instead of expanding */
+        box-shadow: 0 8px 20px rgba(255, 69, 159, 0.6);
+        /* Slightly larger shadow */
       }
-    }
 
-    .scroll-top:hover {
-      animation: pulse 1.5s infinite;
-    }
-
-    .scroll-top.show {
-      animation: none;
-      /* No animation when showing the button */
-    }
-
-    .scroll-top.show:hover {
-      animation: pulse 1.5s infinite;
-      /* Pulse on hover */
-    }
-  </style>
-  <script>
-    // Get the button
-    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-    const progressCircle = document.querySelector(".progress-ring__circle");
-    const radius = progressCircle.r.baseVal.value;
-    const circumference = 2 * Math.PI * radius;
-
-    // Set the circle progress properties
-    progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
-    progressCircle.style.strokeDashoffset = circumference;
-
-    // Function to show or hide the button based on scroll position
-    function toggleScrollButton() {
-      if (window.scrollY > 100) {
-        scrollToTopBtn.classList.add("show");
-      } else {
-        scrollToTopBtn.classList.remove("show");
+      .scroll-top:active {
+        transform: scale(1.05);
+        /* Minor scale reduction on click */
       }
-    }
 
-    // Function to set the scroll progress on the button ring
-    function setProgress(percent) {
-      const offset = circumference - (percent / 100) * circumference;
-      progressCircle.style.strokeDashoffset = offset;
-    }
+      .scroll-top-icon {
+        position: relative;
+        z-index: 2;
+        transition: transform 0.3s ease;
+      }
 
-    // Listen for scroll events to update button visibility and progress
-    window.addEventListener("scroll", () => {
-      toggleScrollButton();
-      const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-      setProgress(scrollPercent);
-    });
+      .scroll-top:hover .scroll-top-icon {
+        transform: translateY(-3px);
+      }
 
-    // Smooth scroll to top when the button is clicked
-    scrollToTopBtn.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
+      /* Progress Ring Styling */
+      .progress-ring {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: rotate(-90deg);
+        /* To start from the top */
+      }
+
+      .progress-ring__circle {
+        transition: stroke-dashoffset 0.35s;
+        transform-origin: 50% 50%;
+      }
+
+      /* Pulse Animation */
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+        }
+
+        50% {
+          box-shadow: 0 5px 15px rgba(255, 69, 159, 0.7);
+        }
+
+        100% {
+          box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+        }
+      }
+
+      .scroll-top:hover {
+        animation: pulse 1.5s infinite;
+      }
+
+      .scroll-top.show {
+        animation: none;
+        /* No animation when showing the button */
+      }
+
+      .scroll-top.show:hover {
+        animation: pulse 1.5s infinite;
+        /* Pulse on hover */
+      }
+    </style>
+    <script>
+      // Get the button
+      const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+      const progressCircle = document.querySelector(".progress-ring__circle");
+      const radius = progressCircle.r.baseVal.value;
+      const circumference = 2 * Math.PI * radius;
+
+      // Set the circle progress properties
+      progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
+      progressCircle.style.strokeDashoffset = circumference;
+
+      // Function to show or hide the button based on scroll position
+      function toggleScrollButton() {
+        if (window.scrollY > 100) {
+          scrollToTopBtn.classList.add("show");
+        } else {
+          scrollToTopBtn.classList.remove("show");
+        }
+      }
+
+      // Function to set the scroll progress on the button ring
+      function setProgress(percent) {
+        const offset = circumference - (percent / 100) * circumference;
+        progressCircle.style.strokeDashoffset = offset;
+      }
+
+      // Listen for scroll events to update button visibility and progress
+      window.addEventListener("scroll", () => {
+        toggleScrollButton();
+        const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        setProgress(scrollPercent);
       });
 
-    });
-  </script>
-
-</body> 
-
+      // Smooth scroll to top when the button is clicked
+      scrollToTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      });
+    </script>
+    </footer>  -->
+</body>  <!-- <footer id="footer" class="footer-area pt-120">
 
 </html>
