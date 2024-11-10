@@ -1,36 +1,44 @@
 .footer-widget-pb-100 {
     background-color: rgb(0, 59, 117);
 }
+
 .col-lg-3-col-md-5-col-sm-5 {
     background-color: rgb(0, 59, 117);
 }
+
 .contact-custom-margin-big {
     background-color: rgb(0, 59, 117);
     width: 300px;
     margin: 20% 0 0 -7%;
 }
+
 .contact {
-    width:1200px;
+    width: 100%;
+    max-width: 1200px;
     height: auto;
     background-color: rgb(255, 255, 255);
     align-self: center;
-    margin: 13% 0 0 10%;
+    margin: 13% auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0 5%;
 }
+
 .contact .informations {
     background-color: rgb(250, 250, 250);
     box-shadow: 5px 5px 10px grey;
-    height: 450px;
-    width: 1000px;
-    margin: 5%;
+    width: 100%;
+    max-width: 1000px;
+    margin: 5% 0;
     display: flex;
     flex-direction: row;
+    padding: 20px;
 }
+
 .informations .findus {
-    height: 500px;
-    width:350px;
+    width: 100%;
+    max-width: 350px;
     background-color: rgb(18, 18, 95);
     margin: -2.5% 0 0 5%;
     box-shadow: 5px 5px 10px grey;
@@ -38,46 +46,113 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 20px;
 }
+
 .findus p, .findus h3 {
     color: white;
-    margin:  0 0 10%;
+    margin: 0 0 10%;
 }
+
 .form h3 {
     text-align: center;
     margin: 5%;
 }
+
 .informations form {
     display: flex;
     flex-direction: column;
     margin: 5% 0 0 10%;
 }
-.informations form input {
-    width: 500px;
-    height: 40px;
+
+.informations form input, .informations form textarea {
+    width: 100%;
+    max-width: 500px;
+    font-size: 18px;
+    border: none;
+    border-bottom: 2px solid black;
+    border-radius: 5px;
+    padding-left: 4%;
     margin-bottom: 5%;
-    font-size: 18px;
-    border: none;
-    border-bottom: 2px solid black;
-    border-radius: 5px;
-    padding-left: 4%;
 }
+
 .informations form textarea {
-    width: 500px;
     height: 100px;
-    font-size: 18px;
-    border: none;
-    border-bottom: 2px solid black;
-    border-radius: 5px;
-    padding-left: 4%;
 }
+
 .form button {
     width: 100px;
     height: 40px;
     align-self: center;
-    margin: 3% 0 0 45%;
+    margin: 3% auto;
     background-color: rgb(19, 19, 89);
     color: white;
     border: none;
     border-radius: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .contact {
+        margin: 10% auto;
+        padding: 0 3%;
+    }
+
+    .informations {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .informations .findus {
+        margin: 5% auto;
+    }
+
+    .informations form {
+        margin: 5% 0;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .informations form input, .informations form textarea {
+        max-width: 100%;
+    }
+
+    .contact-custom-margin-big {
+        margin: 10% auto;
+        width: 250px;
+    }
+
+    .form button {
+        width: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact {
+        margin: 8% auto;
+        padding: 0 2%;
+    }
+
+    .informations .findus {
+        width: 90%;
+        max-width: 300px;
+        padding: 15px;
+        margin: 5% 0;
+    }
+
+    .findus p, .findus h3 {
+        margin: 5%;
+        font-size: 14px;
+    }
+
+    .informations form input, .informations form textarea {
+        font-size: 16px;
+        padding-left: 3%;
+    }
+
+    .form button {
+        width: 70px;
+    }
 }
