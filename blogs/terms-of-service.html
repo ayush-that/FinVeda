@@ -125,117 +125,103 @@
   <br>
   <br>
 
-  <header class="header-area" >
-    <div class="navbar-area">
-      <div class="container">
+  <header class="header-area">
+    <div style="display: flex; justify-content: center;" class="navbar-area">
+      <div style="display: flex; justify-content: center;" class="container">
         <div class="row">
-          <div class="col-lg-12">
-            <nav class="navbar navbar-expand-lg">
+          <div style="display: flex; justify-content: center;;" class="">
+            <nav class="navbar navbar-expand-lg" style="display: flex; background-color: #2c3e50;">
               <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-                <a href="../index.html">
-                  <div class="icon1">
-                    <img src="../assets/images/FinvedaLogo.png" alt="icon.png">
-                  </div>
-                </a>
-                <ul id="nav" class="navbar-nav">
+                <div class="icon1">
+                  <a href="../index.html">
+                    <img src="../assets/images/FinvedaLogo.png" alt="Finveda Logo" style="width: 13rem;">
+                  </a>
+                </div>
+                <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
                   <li class="nav-item">
-                    <a class="page-scroll" href="../index.html">Home 🏡</a>
+                    <a class="page-scroll" href="../index.html">
+                      <i class="fas fa-home icon-hover" style="margin: 5px;"></i> Home
+                    </a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="../about.html">About Us 📖</a>
+                    <a class="page-scroll" href="../about.html">
+                      <i class="fas fa-info-circle icon-hover" style="margin: 5px;"></i> About Us
+                    </a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="../trends.html">Trends 📈</a>
+                    <a class="page-scroll" href="../finance.html">
+                      <i class="fas fa-graduation-cap icon-hover" style="margin: 5px;"></i> Courses
+                    </a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="../tools/sip.html">Tools 🔧</a>
+                    <a class="page-scroll" href="../contact.html">
+                      <i class="fas fa-envelope icon-hover" style="margin: 5px;"></i> Contact
+                    </a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="../blog.html">Blogs 📰</a>
+                    <a class="page-scroll" href="../faq.html">
+                      <i class="fas fa-question-circle icon-hover" style="margin: 5px;"></i> Help
+                    </a>
                   </li>
-                 
-                  <li class="nav-item">
-                    <a class="page-scroll" href="../careers.html">Career 👔</a>
+                  <!-- Dropdown for Explore -->
+                  <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
+                    <a class="page-scroll dropdown-toggle" href="#">
+                      <i class="fas fa-chevron-down icon-hover" style="margin: 5px;"></i> Explore More
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a href="../trends.html"><i class="fas fa-chart-line icon-hover" style="margin: 5px;"></i>
+                          Trends</a></li>
+                      <li><a href="../tools/sip.html"><i class="fas fa-tools icon-hover" style="margin: 5px;"></i>
+                          Tools</a></li>
+                      <li><a class="active-link" href="../blog.html"><i class="fas fa-blog icon-hover"
+                            style="margin: 5px;"></i> Blogs</a></li>
+                      <li><a href="../quiz.html"><i class="fas fa-question icon-hover" style="margin: 5px;"></i> Quiz</a>
+                      </li>
+                      <li><a href="../maps.html"><i class="fas fa-map icon-hover" style="margin: 5px;"></i> MAPS</a></li>
+                    </ul>
                   </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="../contact.html">Contact📞</a>
+                  <!-- Navigation item placeholder for Login/Register or Logout button -->
+                  <li class="nav-item no-underline" id="auth-btn-container">
+                    <a class="main-btn navbar-btn" style="padding: 2px 20px;" data-scroll-nav="0"
+                      href="../loginPage.html">
+                      <i class="fas fa-user-circle icon-hover" style="margin: 5px;"></i> Login/Register
+                    </a>
                   </li>
-                  <li class="nav-item no-underline">
-                    <a class="main-btn navbar-btn"
-                      style="padding: 2px 20px; color: rgb(237, 242, 244);animation-duration: 0.4s;animation-name: ease;"
-                      data-scroll-nav="0" href="../loginPage.html">Login/Register 💻</a>
+                  <li class="nav-item no-underline align-self-center">
+                    <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()">
+                      <span>🌞</span>
+                    </button>
                   </li>
                 </ul>
               </div>
-              <div class="">
-                <!-- Login Modal -->
-                <div id="myModal" class="modal">
-                  <div class="modal-content">
-                    <span class="close" style="display: flex; justify-content: right">&times;</span>
-                    <div class="mt-3">
-                      <h3 class="join">Login to join us....</h3>
-                      <form class="px-3 py-4">
-                        <div class="form-group">
-                          <label class="d-flex">Username</label>
-                          <input type="text" placeholder="Username" class="form-control" />
-                        </div>
-                        <div class="form-group">
-                          <label class="d-flex">Password</label>
-                          <input type="password" placeholder="Password" class="form-control" />
-                          <button type="button" class="toggle-password-btn">
-                            <i class="fa-solid fa-eye"></i>
-                          </button>
-                        </div>
-                        <div class="form-check d-flex">
-                          <input type="checkbox" class="form-check-input" />
-                          <label class="form-check-label">Remember me</label>
-                        </div>
-                      </form>
-                      <button class="main-btn mt-2 w-100 mb-3">
-                        Sign in
-                      </button>
-                      <p class="text-center">
-                        Don't have an account?
-                        <a href="#" id="registerLink">Register</a>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Register Modal -->
-                <div id="registerModal" class="modal">
-                  <div class="modal-content">
-                    <span class="close" style="display: flex; justify-content: right">&times;</span>
-                    <div class="mt-3">
-                      <h3 class="join">Register to join us....</h3>
-                      <form class="px-3 py-4">
-                        <div class="form-group">
-                          <label class="d-flex">Email</label>
-                          <input type="email" placeholder="Email" class="form-control" />
-                        </div>
-                        <div class="form-group">
-                          <label class="d-flex">Username</label>
-                          <input type="text" placeholder="Username" class="form-control" />
-                        </div>
-                        <div class="form-group">
-                          <label class="d-flex">Password</label>
-                          <input type="password" placeholder="Password" class="form-control" required />
-                          <button type="button" class="toggle-password-btn">
-                            <i class="fa-solid fa-eye"></i>
-                          </button>
-                        </div>
-                      </form>
-                      <button class="main-btn mt-2 w-100 mb-3">
-                        Register
-                      </button>
-                      <p class="text-center">
-                        Already have an account?
-                        <a href="#" id="loginLink">Login</a>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            </nav>
+          </div>
+          <script>
+            const toggleButton = document.getElementById('theme-toggle');
+            var body = document.body;
+            var currentTheme = localStorage.getItem('theme');
+  
+            if (currentTheme === 'dark') {
+              body.classList.add('dark-mode');
+              toggleButton.classList.add('dark');
+              toggleButton.querySelector('span').textContent = '🌞';
+            }
+  
+            toggleButton.addEventListener('click', function () {
+              body.classList.toggle('dark-mode');
+              toggleButton.classList.toggle('dark');
+  
+              // Update button icon based on mode
+              if (body.classList.contains('dark-mode')) {
+                toggleButton.querySelector('span').textContent = '🌙';  // Light mode icon
+                localStorage.setItem('theme', 'dark');
+              } else {
+                toggleButton.querySelector('span').textContent = '🌞';  // Dark mode icon
+                localStorage.setItem('theme', 'light');
+              }
+              loadShow();
+            });
+          </script>
             </nav>
 
             <nav class="mobile-menu ">
@@ -380,7 +366,43 @@
   <div id="particles-1" class="particles"><canvas class="particles-js-canvas-el" width="1998" height="1012"
       style="width: 100%; height: 100%;"></canvas></div>
   </div>
-  </header>`
+  </header>
+  <style>
+    /* Dark mode styles for blog content */
+    .dark-mode .blog-content {
+        background-color: #1e1e1e; 
+        color: #ffffff; 
+    }
+  
+    .dark-mode .card 
+ {
+        background-color: #2a2a2a;
+        border: 1px solid #444; 
+    }
+    .dark-mode .card p
+ {
+        background-color: #2a2a2a;
+        color: white;
+    }
+    .dark-mode .card ol
+ {
+  background-color: #444;
+        color: white;
+    }
+    .dark-mode a {
+        color: #4fa3ff; 
+    }
+    .dark-mode .blog-content h1 {
+        color: #ffffff; /* Change to white or any light color you prefer */
+    }
+    .dark-mode .Lastupdate {
+    color: #c0c0c0; 
+}
+
+.dark-mode .Lastupdate span {
+    color: #ffffff; 
+}
+  </style>
   <div class="blog-content">
     <article>
       <br><br><br><br>
