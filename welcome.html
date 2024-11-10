@@ -1,287 +1,1415 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Finveda Reviews</title>
-    <link rel="shortcut icon" href="/assets/images/favicon2.webp" type="image/png" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-            font-family: 'Roboto', sans-serif;
-            color: #fff;
-             background: linear-gradient(45deg, #ff6b6b, #f7b731, #3bde5c);
-             height: 100%;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - FinVeda</title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="FinVeda provides comprehensive resources and tools for financial education, investment strategies, and personal finance management. Discover your path to financial wellness today!">
+  <meta name="keywords"
+    content="finance, financial education, personal finance, investment strategies, financial wellness, budgeting, money management">
+  <meta name="author" content="Ayush That">
 
-        .background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+  <meta property="og:title" content="FinVeda - Your Guide to Financial Wellness">
+  <meta property="og:description"
+    content="FinVeda offers expert resources and tools for improving your financial knowledge and managing your investments effectively.">
+  <meta property="og:url" content="https://github.com/ayush-that/FinVeda">
+  <meta property="og:type" content="website">
 
-            animation: gradientAnimation 15s ease infinite;
-            z-index: -1;
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FinVeda - Your Guide to Financial Wellness">
+  <meta name="twitter:description"
+    content="Explore a wealth of financial resources at FinVeda to enhance your financial literacy and investment skills.">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="manifest" href="/manifest.json">
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "FinVeda",
+      "url": "https://github.com/ayush-that/FinVeda",
+      "description": "FinVeda provides comprehensive resources and tools for financial education, investment strategies, and personal finance management.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "FinVeda",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "/assets/images/favicon2.webp"  // Replace with your logo URL
         }
+      }
+    }
+    </script>
 
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+  <link rel="shortcut icon" href="/assets/images/favicon2.webp" type="image/png" />
+  <link rel="stylesheet" href="./assets/css/animate.css" />
+  <link rel="stylesheet" href="./assets/css/magnific-popup.css" />
+  <link rel="stylesheet" href="./assets/css/slick.css" />
+  <link rel="stylesheet" href="./assets/css/LineIcons.css" />
+  <link rel="stylesheet" href="./assets/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./assets/css/default.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/quiz.css" />
+  <link rel="stylesheet" href="./assets/css/popup.css" />
+  <link rel="stylesheet" href="./assets/css/cookiepopup.css">
+  <link rel="stylesheet" href="./assets\css\preloader.css" />
+  <link rel="stylesheet" href="./assets/css/faq.css">
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <link rel="stylesheet" type="text/css" href="sipcalculatorCss.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.13/lottie.min.js"></script>
 
-        .particle {
-            position: absolute;
-            border-radius: 50%;
-            pointer-events: none;
-            opacity: 0.7;
-            animation: float 5s infinite ease-in-out;
-            transition: transform 0.3s ease, background-color 0.3s;
-        }
+  <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
+  <link rel="stylesheet" href="navbar.css">
+  <style>
+    #progressBar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 8px;
+      background-color: #f76b45;
+      z-index: 9999;
 
-        .particle:hover {
-            transform: scale(1.5);
-            background-color: #ff6b6b;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .welcome-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .welcome-title {
-            font-size: 4rem;
-            opacity: 0;
-            animation: fadeIn 1.5s forwards;
-            animation-delay: 0.5s;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .welcome-text {
-            font-size: 1.5rem;
-            opacity: 0;
-            animation: fadeIn 1.5s forwards;
-            animation-delay: 1.5s;
-            margin-top: 20px;
-        }
-
-        .btn-start {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 1.2rem;
-            border-radius: 5px;
-            background-color: #3aac53;
-            color: #fff;
-            transition: all 0.3s ease;
-        }
-
-        .btn-start:hover {
-            transform: translateY(-5px);
-            background-color: #28a745;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-start:focus {
-            outline: none;
-        }
-
-        /* Circle styles */
-        .circle {
-            height: 24px;
-            width: 24px;
-            border-radius: 50%;
-            background-color: black;
-            position: fixed;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 99999999;
-            transition: transform 0.1s ease-out;
-        }
-        .counter-container {
-        position: absolute;
-        bottom: 30px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        justify-content: center;
-        background: rgba(0, 0, 0, 0.7);
-        padding: 10px 20px;
-        border-radius: 8px;
-        z-index: 2; /* Ensures counters are on top */
-        color: #fff;
-        font-size: 1.2rem;
-        font-weight: bold;
     }
 
-    .counter {
-        margin: 0 15px;
-        text-align: center;
+    * {
+      cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
     }
-    </style>
-</head>
+
+
+    .circle {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
+      transition: transform 0.1s, left 0.1s, top 0.1s;
+    }
+
+    .circle-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    @media (max-width: 720px) {
+      .circle-container {
+        display: none;
+      }
+    }
+
+    .scroll-btn {
+      position: fixed;
+      top: 100px;
+      right: 4px;
+      background-color: #635adc;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s;
+      display: flex;
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .scroll-btn:hover {
+      background-color: #555;
+      /* Darker blue on hover */
+    }
+
+    .dropdown-menu li a {
+      color: #ff5722;
+      /* Change this color code to any color you like */
+    }
+
+    .dropdown-menu li a:hover {
+      color: #0a69ed;
+      /* Optional: change the color on hover */
+    }
+    body.dark-mode .theme-toggle,body.dark-mode .theme-toggle:hover {
+    background-color: #112a2b;
+    padding: 0.25rem 2.3rem;
+  }
+  </style>
 
 <body>
-    <div class="gtranslate_wrapper"></div>
-    <script>
-    window.gtranslateSettings = {
-      "default_language":"en",
-      "detect_browser_language":true,
-      "wrapper_selector":".gtranslate_wrapper"
-    }
-    </script>
-    <script
-      src="https://cdn.gtranslate.net/widgets/latest/float.js"
-      defer
-    ></script>
-    <!-- Circles -->
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
 
-    <!-- Background -->
-    <div class="background"></div>
+  <div class="circle-container">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const coords = { x: 0, y: 0 };
+      const circles = document.querySelectorAll(".circle");
 
-    <!-- Welcome Section -->
-    <div class="welcome-container">
-        <h1 class="welcome-title">Welcome to Finveda's Successful Users Secret</h1>
-        <p class="welcome-text">Don't Trust Blindly See the Truth and then move forward.</p>
-        <a href="Testimonials.html" class="btn btn-start">Start Reading Reviews</a>
-    </div>
+      circles.forEach(function (circle) {
+        circle.x = 0;
+        circle.y = 0;
+      });
 
-    <div class="counter-container">
-        <div class="counter">
-            <div id="registration-count">0</div>
-            <p>Registrations</p>
-        </div>
-        <div class="counter">
-            <div id="user-count">0</div>
-            <p>Users</p>
-        </div>
-    </div>
-    <script>
-        let registrationCount = 0;
-    let userCount = 0;
+      window.addEventListener("mousemove", function (e) {
+        coords.x = e.pageX;
+        coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
+      });
 
-    // Start the interval and store its ID
-    const counterInterval = setInterval(incrementCounters, 50);
+      function animateCircles() {
+        let x = coords.x;
+        let y = coords.y;
 
-    function incrementCounters() {
-        if (registrationCount >= 500 && userCount >= 5000) {
-            // Stop the counter when both reach 500 or more
-            clearInterval(counterInterval);
-            return;
-        }
+        circles.forEach(function (circle, index) {
+          circle.style.left = `${x - 12}px`;
+          circle.style.top = `${y - 12}px`;
+          circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
 
-        // Increment counts only if they haven't reached 500 yet
-        if (registrationCount < 500) {
-            registrationCount += Math.floor(Math.random() * 10 + 1);
-            if (registrationCount > 500) registrationCount = 5000; // Cap at 500
-        }
+          const nextCircle = circles[index + 1] || circles[0];
+          circle.x = x;
+          circle.y = y;
 
-        if (userCount < 500) {
-            userCount += Math.floor(Math.random() * 15 + 1);
-            if (userCount > 500) userCount = 500; // Cap at 500
-        }
-
-        document.getElementById('registration-count').textContent = `+${registrationCount}`;
-        document.getElementById('user-count').textContent = `+${userCount}`;
-    }
-        // Generate random particles in the background
-        const particleCount = 100;
-
-        for (let i = 0; i < particleCount; i++) {
-            const particle = document.createElement('div');
-            particle.classList.add('particle');
-            const size = Math.random() * 10 + 5; // Random size between 5 and 15px
-            particle.style.width = `${size}px`;
-            particle.style.height = `${size}px`;
-            particle.style.backgroundColor = `rgba(255, 255, 255, ${Math.random()})`; // Random opacity
-            particle.style.top = `${Math.random() * 100}vh`;
-            particle.style.left = `${Math.random() * 100}vw`;
-            particle.style.animationDelay = `${Math.random() * 2}s`; // Random animation delay
-            document.body.appendChild(particle);
-        }
-    </script>
-
-    <script>
-        // Cursor tail effect
-        const coords = { x: 0, y: 0 };
-        const circles = document.querySelectorAll(".circle");
-        const colors = ["#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d", "#e36e5c", "#df685c", "#d5585c"];
-
-        circles.forEach((circle, index) => {
-            circle.x = 0;
-            circle.y = 0;
-            circle.style.backgroundColor = colors[index % colors.length];
+          x += (nextCircle.x - x) * 0.3;
+          y += (nextCircle.y - y) * 0.3;
         });
 
-        window.addEventListener("mousemove", (e) => {
-            coords.x = e.clientX;
-            coords.y = e.clientY;
+        requestAnimationFrame(animateCircles);
+      }
+
+      animateCircles();
+    });
+
+  </script>
+
+
+
+  <div id="progressBar"></div>
+  <script>
+    window.onscroll = function () {
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      document.getElementById("progressBar").style.width = scrolled + "%";
+    };
+  </script>
+  <button id="scrollBtn" class="scroll-btn" onclick="scrollToNextSection()">
+    <i class="lni-chevron-down"></i>
+  </button>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Scroll button functionality
+      const scrollToNextSection = () => {
+        window.scrollBy({
+          top: window.innerHeight,
+          behavior: 'smooth',
         });
+      };
 
-        function animateCircles() {
-            let x = coords.x;
-            let y = coords.y;
+      // Attach the function to the button
+      document.getElementById('scrollBtn').onclick = scrollToNextSection;
+    });
+  </script>
+  <div id="preloader">
+    <div id="lottie-loader"></div>
+  </div>
+  <div class="content-wrapper">
+    <header class="header-area">
+      <div style="display: flex; justify-content: center;" class="navbar-area">
+        <div style="display: flex; justify-content: center;" class="container">
+          <div class="row">
+            <div style="display: flex; justify-content: center;" class="">
+              <nav class="navbar navbar-expand-lg " style="display: flex;">
+                <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="toggler-icon"></span>
+            <span class="toggler-icon"></span>
+            <span class="toggler-icon"></span>
+          </button> -->
+                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
 
-            circles.forEach((circle, index) => {
-                circle.style.left = x - 12 + "px";
-                circle.style.top = y - 12 + "px";
-                circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
 
-                circle.x = x;
-                circle.y = y;
 
-                const nextCircle = circles[index + 1] || circles[0];
-                x += (nextCircle.x - x) * 0.3;
-                y += (nextCircle.y - y) * 0.3;
+                  <div class="icon1">
+                    <a href="./index.html">
+                      <img src="./assets/images/FinvedaLogo.png" alt="icon.png" style="width: 13rem;">
+                    </a>
+                  </div>
+
+
+
+                  <i class="fa-brands fa-searchengin glass" style="font-size: 35px; left: 150px;"></i>
+<div class="search-container">
+  <input type="text" class="search-input" id="file-search" placeholder="Search for a file..." oninput="showSuggestions()" onkeydown="navigateSuggestions(event)" />
+    <div class="suggestions" id="suggestions-list"></div>
+</div>
+
+<style>
+
+</style>
+                  <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
+                    <li class="nav-item">
+                      <a class="page-scroll" href="./faq.html">
+                        <i class="fas fa-question-circle icon-hover" style="margin: 5px;"></i> Help
+                      </a>
+                    </li>
+
+                    <!-- Navigation item placeholder for Login/Register or Logout button -->
+                    <li class="nav-item no-underline" id="auth-btn-container">
+                      <a class="main-btn navbar-btn" style="padding: 2px 20px;" data-scroll-nav="0"
+                        href="./loginPage.html">
+                        <i class="fas fa-user-circle icon-hover" style="margin: 5px;"></i> Login/Register
+                      </a>
+                    </li>
+
+                  </ul>
+                </div>
+
+
+<script>
+    const files = [
+        { name: "Home", path: "index.html" },
+        { name: "Blogs", path: "blog.html" },
+        { name: "Login", path: "login.html" },
+        { name: "Auth", path: "auth.html" },
+        { name: "Maps", path: "maps.html" },
+        { name: "Reviews", path: "reviews.html" }
+    ];
+
+    let selectedSuggestionIndex = -1;
+
+    // Function to show suggestions based on input
+    function showSuggestions() {
+        const input = document.getElementById("file-search").value.toLowerCase();
+        const suggestionsList = document.getElementById("suggestions-list");
+
+        suggestionsList.innerHTML = '';
+        selectedSuggestionIndex = -1; // Reset selection index
+
+        const filteredFiles = files.filter(file => file.name.toLowerCase().includes(input));
+
+        if (input && filteredFiles.length > 0) {
+            suggestionsList.style.display = 'block'; // Show suggestions
+            filteredFiles.forEach((file, index) => {
+                const suggestionItem = document.createElement("div");
+                suggestionItem.textContent = file.name;
+                suggestionItem.dataset.index = index;
+                suggestionItem.onclick = () => window.location.href = file.path; // Navigate on click
+
+                suggestionsList.appendChild(suggestionItem);
             });
+        } else {
+            suggestionsList.style.display = 'none'; // Hide suggestions if no match
+        }
+    }
 
-            requestAnimationFrame(animateCircles);
+    // Function to navigate suggestions with keyboard
+    function navigateSuggestions(event) {
+        const suggestionsList = document.getElementById("suggestions-list");
+        const suggestionItems = suggestionsList.querySelectorAll("div");
+
+        if (event.key === "ArrowDown") {
+            selectedSuggestionIndex = (selectedSuggestionIndex + 1) % suggestionItems.length; // Move down
+            updateActiveSuggestion(suggestionItems);
+        } else if (event.key === "ArrowUp") {
+            selectedSuggestionIndex = (selectedSuggestionIndex - 1 + suggestionItems.length) % suggestionItems.length; // Move up
+            updateActiveSuggestion(suggestionItems);
+        } else if (event.key === "Enter") {
+            if (selectedSuggestionIndex > -1 && suggestionItems[selectedSuggestionIndex]) {
+                suggestionItems[selectedSuggestionIndex].click(); // Click active suggestion
+            }
+        }
+    }
+
+    // Function to update the active suggestion's appearance
+    function updateActiveSuggestion(suggestionItems) {
+        suggestionItems.forEach(item => item.classList.remove("active"));
+        if (suggestionItems[selectedSuggestionIndex]) {
+            suggestionItems[selectedSuggestionIndex].classList.add("active");
+            suggestionItems[selectedSuggestionIndex].scrollIntoView({ block: "nearest" }); // Scroll to active suggestion
+        }
+    }
+
+    // Close suggestions when clicking outside the search container
+    document.addEventListener("click", function(event) {
+        if (!event.target.closest(".search-container")) {
+            document.getElementById("suggestions-list").style.display = 'none';
+        }
+    });
+</script>
+
+                <script>
+                  // Function to update the authentication button based on login status
+                  function updateAuthButton() {
+                    const authBtnContainer = document.getElementById("auth-btn-container");
+                    const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+                    if (isLoggedIn) {
+                      // Replace with Logout button if user is logged in
+                      authBtnContainer.innerHTML = `<a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244); animation-duration: 0.4s; animation-name: ease;" id="logout-btn">Logout 🚪</a>`;
+
+                      // Attach click event to Logout button
+                      document.getElementById("logout-btn").addEventListener("click", function () {
+                        // Clear login data from local storage and reload page
+                        localStorage.removeItem("isLoggedIn");
+                        localStorage.removeItem("currentUser");
+                        window.location.reload();
+                      });
+                    } else {
+                      // Show Login/Register button if user is not logged in
+                      authBtnContainer.innerHTML = `<a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244); animation-duration: 0.4s; animation-name: ease;" data-scroll-nav="0" href="./loginPage.html">Login/Register 💻</a>`;
+                    }
+                  }
+
+                  // Call updateAuthButton on page load to set the correct button
+                  document.addEventListener("DOMContentLoaded", updateAuthButton);
+                </script>
+
+                <script>
+                  const toggleButton = document.getElementById('theme-toggle');
+                  var body = document.body;
+                  var currentTheme = localStorage.getItem('theme');
+
+                  if (currentTheme === 'dark') {
+                    body.classList.add('dark-mode');
+                    toggleButton.classList.add('dark');
+                    toggleButton.textContent = '🌞';
+                  }
+
+                  toggleButton.addEventListener('click', function () {
+                    body.classList.toggle('dark-mode');
+                    toggleButton.classList.toggle('dark');
+
+                    // Update button icon based on mode
+                    if (body.classList.contains('dark-mode')) {
+                      toggleButton.textContent = '🌙';  // Light mode icon
+                      localStorage.setItem('theme', 'dark');
+                    } else {
+                      toggleButton.textContent = '🌞';  // Dark mode icon
+                      localStorage.setItem('theme', 'light');
+                    }
+                  });
+                </script>
+                <div class="">
+                  <!-- Login Modal -->
+                  <div id="myModal" class="modal">
+                    <div class="modal-content">
+                      <span class="close" style="display: flex; justify-content: right;">×</span>
+                      <div class="mt-3">
+                        <h3 class="join"><i class="fa-solid fa-right-to-bracket"></i> Login to join us....</h3>
+                        <form class="px-3 py-4" id="loginForm">
+                          <div class="form-group">
+                            <label class="d-flex">Username</label>
+                            <input type="text" placeholder="Username" class="form-control" required="">
+                          </div>
+                          <div class="form-group">
+                            <label class="d-flex">Password</label>
+                            <input type="password" placeholder="Password" class="form-control" required="">
+                            <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
+                          </div>
+                          <div class="form-check d-flex">
+                            <input type="checkbox" class="form-check-input me-1" style="margin-top: 0;">
+                            <label class="form-check-label" style="margin-bottom: 0;">Remember me</label>
+                            <a href="#" id="forgot-password" style="margin-left: 120px;">Forget Password?</a>
+                          </div>
+                          <div style="height: 20px;"></div>
+                          <button class="main-btn w-100 mb-3" onclick="submitForm('loginForm')">Sign in</button>
+                          <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
+                          <div class="or-sign-in-with text-center">
+                            <p>Or sign in with</p>
+                          </div>
+                          <div class="social-icons mt-3">
+                            <ul class="list-inline">
+                              <li><a href="#" class="google" id="google-login"><i class="fa-brands fa-google"></i></a>
+                              </li>
+                              <li><a href="#" class="facebook" id="facebook-login"><i
+                                    class="fa-brands fa-facebook-f"></i></a></li>
+                              <li><a href="#" class="twitter" id="twitter-login"><i
+                                    class="fa-brands fa-x-twitter"></i></a>
+                              </li>
+                            </ul>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+
+
+   <style>
+        .search-container {
+
+            width: 300px;
+            margin-right: 820px;
+            border-radius: 25px;
+            margin-left: -12px;
         }
 
-        animateCircles();
-    </script>
-</body>
+        .search-input {
 
-</html>
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            box-sizing: border-box;
+        }
+
+
+        .suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            max-height: 150px;
+            overflow-y: auto;
+            display: none;
+            z-index: 1000;
+        }
+
+        .suggestions div {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .suggestions div:hover,
+        .suggestions .active {
+            background-color: #f0f0f0;
+        }
+
+
+   </style>
+
+
+
+    <style>
+    /* Existing styles */
+
+    .search-input {
+        width: 100%;
+        padding: 10px;
+        padding-left: 40px; /* Adjust left padding to accommodate the icon */
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 25px;
+        box-sizing: border-box;
+        margin-top: -80px;
+    }
+
+
+</style>
+
+                  <script>
+                    // Add event listeners to the social media icons
+                    document.getElementById('google-login').addEventListener('click', function () {
+                      window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
+                    });
+
+                    document.getElementById('facebook-login').addEventListener('click', function () {
+                      window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
+                    });
+
+                    document.getElementById('twitter-login').addEventListener('click', function () {
+                      window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
+                    });
+                  </script>
+
+                  <!-- Register Modal -->
+                  <div id="registerModal" class="modal">
+                    <div class="modal-content">
+                      <span class="close" style="display: flex; justify-content: right;">×</span>
+                      <div class="mt-3">
+                        <h3 class="join"><i class="fa-solid fa-user"></i> Register to join us....</h3>
+
+                        <div class="form-group">
+                          <label class="d-flex">Email</label>
+                          <input type="email" placeholder="Email" class="form-control" required="">
+                        </div>
+                        <div class="form-group">
+                          <label class="d-flex">Username</label>
+                          <input type="text" placeholder="Username" class="form-control" required="">
+                        </div>
+                        <div class="form-group">
+                          <label class="d-flex">Password</label>
+                          <input type="password" placeholder="Password" class="form-control" id="register-password"
+                            required="" oninput="checkPasswordStrength()">
+                          <button type="button" class="toggle-password-btn"
+                            onclick="togglePasswordVisibility('register-password')">
+                            <i class="fa-solid fa-eye"></i>
+                            <i class="fa-solid fa-eye-slash" style="display: none;"></i>
+                          </button>
+                        </div>
+                        <div id="password-meter" style="display: none; margin-top: 5px;">
+                          <div id="meter"
+                            style="height: 10px; background-color: #ccc; border-radius: 5px; transition: width 0.3s;">
+                          </div>
+                          <div id="strength-text" style="margin-top: 5px; font-weight: bold;"></div>
+                        </div>
+
+
+                        <!-- Import zxcvbn library -->
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+                        <script>
+                          function checkPasswordStrength() {
+                            const password = document.getElementById('register-password').value;
+                            const meter = document.getElementById('meter');
+                            const meterContainer = document.getElementById('password-meter');
+                            const strengthText = document.getElementById('strength-text');
+
+                            if (password) {
+                              meterContainer.style.display = 'block'; // Show the meter when typing
+                              const result = zxcvbn(password);
+                              const score = result.score; // Score ranges from 0 to 4
+
+                              // Set meter width and color based on score
+                              meter.style.width = (score + 1) * 20 + '%'; // Convert score to percentage
+                              meter.style.backgroundColor = getMeterColor(score);
+                              strengthText.innerText = getStrengthText(score); // Update strength text
+                            } else {
+                              meterContainer.style.display = 'none'; // Hide the meter if no password
+                              strengthText.innerText = ''; // Clear strength text
+                            }
+                          }
+
+                          function getMeterColor(score) {
+                            switch (score) {
+                              case 0: return 'red'; // Weak
+                              case 1: return 'orange'; // Fair
+                              case 2: return 'yellow'; // Good
+                              case 3: return 'blue'; // Strong
+                              case 4: return 'green'; // Very Strong
+                              default: return 'gray';
+                            }
+                          }
+
+                          function getStrengthText(score) {
+                            switch (score) {
+                              case 0: return 'Very Weak';
+                              case 1: return 'Weak';
+                              case 2: return 'Fair';
+                              case 3: return 'Strong';
+                              case 4: return 'Very Strong';
+                              default: return '';
+                            }
+                          }
+
+                          function togglePasswordVisibility(id) {
+                            const passwordInput = document.getElementById(id);
+                            const eyeIcon = passwordInput.nextElementSibling;
+                            if (passwordInput.type === 'password') {
+                              passwordInput.type = 'text';
+                              eyeIcon.children[0].style.display = 'none';
+                              eyeIcon.children[1].style.display = 'inline';
+                            } else {
+                              passwordInput.type = 'password';
+                              eyeIcon.children[0].style.display = 'inline';
+                              eyeIcon.children[1].style.display = 'none';
+                            }
+                          }
+                        </script>
+
+                        <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('registerForm')">Register</button>
+                        <p class="text-center">Already have an account? <a href="#" id="loginLink">Login</a></p>
+                        <div class="or-sign-in-with text-center">
+                          <p>Or sign up with</p>
+                        </div>
+                        <div class="social-icons mt-3">
+                          <ul class="list-inline">
+                            <li><a href="#" class="google" id="google-signup"><i class="fa-brands fa-google"></i></a>
+                            </li>
+                            <li><a href="#" class="facebook" id="facebook-signup"><i
+                                  class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="#" class="twitter" id="twitter-signup"><i class="fa-brands fa-twitter"></i></a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <script>
+                    // Add event listeners to the social media icons
+                    document.getElementById('google-signup').addEventListener('click', function () {
+                      window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
+                    });
+
+                    document.getElementById('facebook-signup').addEventListener('click', function () {
+                      window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
+                    });
+
+
+                    document.getElementById('twitter-signup').addEventListener('click', function () {
+                      window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
+                    });
+                    // Add event listener to the "Register" button in the login modal
+                    document.getElementById('registerLink').addEventListener('click', function () {
+                      // Close the login modal
+                      document.getElementById('myModal').style.display = 'none';
+
+                      // Open the registration modal
+                      document.getElementById('registerModal').style.display = 'block';
+                    });
+                    // Add event listener to the "Login" button in the registration modal
+                    document.getElementById('loginLink').addEventListener('click', function () {
+                      // Close the registration modal
+                      document.getElementById('registerModal').style.display = 'none';
+
+                      // Open the login modal
+                      document.getElementById('myModal').style.display = 'block';
+                    });
+                    // Function to close the modal window
+                    var loginCloseButton = document.querySelector("#myModal .close");
+                    loginCloseButton.addEventListener("click", function () {
+                      var modal = document.getElementById("myModal");
+                      modal.style.display = "none";
+                    });
+                  </script>
+
+
+                  </script>
+                </div>
+              </nav>
+
+              <link href="https://fonts.googleapis.com/css?family=Raleway&amp;display=swap" rel="stylesheet">
+
+              <nav class="mobile-menu ">
+                <a class="page-scroll" href="./index.html">Home 🏡</a>
+                <a class="page-scroll" href="./about.html">About Us 📖</a>
+                <a class="page-scroll" href="./trends.html">Trends 📈</a>
+                <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
+                <a class="page-scroll" href="./blog.html">Blogs 📰</a>
+                <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
+                <a class="page-scroll main-btn" href="#" onclick="openModal()"
+                  onmouseout="this.style.color='white'">Login/Register 💻</a>
+                <li class="nav-item no-underline">
+                  <button id="theme-toggle2" class="theme-toggle2" style="margin-right: 2px;">
+                    🌙
+                  </button>
+                </li>
+                <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
+                  <span></span>
+                </div>
+              </nav>
+              <script>
+                const toggleBtn = document.getElementById('theme-toggle2');
+                var body = document.body;
+                var currentTheme = localStorage.getItem('theme');
+
+                if (currentTheme === 'dark') {
+                  body.classList.add('dark-mode');
+                  toggleBtn.classList.add('dark');
+                  toggleBtn.textContent = '🌞';
+                }
+
+                toggleBtn.addEventListener('click', function () {
+                  body.classList.toggle('dark-mode');
+                  toggleBtn.classList.toggle('dark');
+
+                  // Update button icon based on mode
+                  if (body.classList.contains('dark-mode')) {
+                    toggleBtn.textContent = '🌞';  // Light mode icon
+                    localStorage.setItem('theme', 'dark');
+                  } else {
+                    toggleBtn.textContent = '🌙';  // Dark mode icon
+                    localStorage.setItem('theme', 'light');
+                  }
+                });
+              </script>
+            </div>
+            <link href="./navbar.css" rel="stylesheet">
+            <script type="text/javascript" src="./navbar.js"></script>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div id="home" class="header-hero bg_cover" style="background-image: url(./assets/images/banner-bg.svg)">
+    <div class="container">
+      <h2 class="head-animate" style="font-size: 90px;">
+        WELCOME TO FINVEDA
+      </h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="header-hero-content text-center">
+            <style>
+              .head-animate {
+                text-align: center;
+                position: relative;
+                top: 200px;
+                color: transparent;
+                -webkit-text-stroke: 2px white;
+                -moz-text-stroke: 2px white;
+                -ms-text-stroke: 2px white;
+                font-weight: bold;
+                background: url(./assets/images/back.png);
+                -webkit-background-clip: text;
+                -moz-background-clip: text;
+                background-clip: text;
+                background-position: 0 0;
+                animation: back 20s linear infinite, hovering 1.5s ease-in-out infinite;
+              }
+
+              @keyframes back {
+                100% {
+                  background-position: 2000px 0;
+                }
+              }
+
+              @keyframes hovering {
+                0% {
+                  transform: translateY(0);
+                }
+
+                50% {
+                  transform: translateY(-5px);
+                }
+
+                100% {
+                  transform: translateY(0);
+                }
+              }
+
+              .header-hero-content h2 {
+                font-size: 200px;
+              }
+            </style>
+            <br>
+            <br>
+            <p class="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s"
+              style="visibility: visible; animation-duration: 1.3s; animation-delay: 0.8s;color:white">
+              Wanna learn how to grow your money to become rich? We have
+              made becoming a stock market Guru easy with our AI
+              powered finance advisor - <b>Arth Sathi 🤵🏻</b>
+            </p>
+
+          </div>
+          <style>
+            .styled-btn {
+              background-color: #4CAF50;
+              /* Green background */
+              color: white;
+              /* White text */
+              padding: 10px 20px;
+              /* Padding around the text */
+              font-size: 16px;
+              /* Font size */
+              border: none;
+              /* Remove border */
+              border-radius: 8px;
+              /* Rounded corners */
+              cursor: pointer;
+              /* Pointer cursor on hover */
+              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+              /* Light shadow */
+              transition: background-color 0.3s, transform 0.3s;
+              /* Smooth transition */
+              margin-top: 20px;
+              margin-left: 280px;
+
+            }
+
+            .styled-btn:hover {
+              background-color: #45a049;
+              /* Darker green on hover */
+              transform: scale(1.05);
+              /* Slightly larger on hover */
+            }
+
+            .styled-btn:active {
+              transform: scale(0.98);
+              /* Slightly smaller on click */
+            }
+          </style>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="header-hero-image text-center wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s"
+            style="visibility: visible; animation-duration: 1.3s; animation-delay: 1.4s;">
+            <div class="anim" data-tilt="">
+              <img src="assets/images/header-hero.webp" style="animation: float 1.5s ease-in-out infinite;"
+                data-tilt="" />
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="particles-1" class="particles"><canvas class="particles-js-canvas-el" width="1998" height="1012"
+        style="width: 100%; height: 100%;"></canvas></div>
+  </div>
+  </header>
+
+
+  </section>
+
+
+  <section id="features" class="services-area pt-120">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="section-title text-center pb-40">
+            <h3 style="color: #2f6be5;">
+              <div class="line m-auto"></div>
+
+              FinVeda,
+              <span style="color:#2f6be5;"> comes with everything you need to get started!</span>
+
+            </h3>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-7 col-sm-8">
+          <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+            <div class="services-icon">
+              <img class="shape" src="assets/images/services-shape.svg" alt="shape" />
+              <img class="shape-1" src="assets/images/services-shape-1.svg" alt="shape" />
+              <i class="lni-baloon"></i>
+            </div>
+            <div class="services-content mt-30">
+              <h4 class="services-title"><a href="./blog.html">Financial Blogs</a></h4>
+              <p class="text">
+                <li>
+                  We offer expert written blogs on investment tips and strategies, and current economic trends, all
+                  crafted to keep you well-informed.
+                </li>
+              </p>
+              <a class="more" href="./blog.html">Learn More <i class="lni-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-7 col-sm-8">
+          <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+            <div class="services-icon">
+              <img class="shape" src="assets/images/services-shape.svg" alt="shape" />
+              <img class="shape-1" src="assets/images/services-shape-2.svg" alt="shape" />
+              <i class="lni-cog"></i>
+            </div>
+            <div class="services-content mt-30">
+              <h4 class="services-title"><a href="tools/sip.html">Finance Tools</a></h4>
+              <p class="text">
+                <li>
+                  With our SIP and PPF tools you'll discover power of compounding and make informed decisions regarding
+                  your savings.
+                </li>
+              </p>
+              <a class="more" href="tools/sip.html">Learn More <i class="lni-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-7 col-sm-8">
+          <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+            <div class="services-icon">
+              <img class="shape" src="assets/images/services-shape.svg" alt="shape" />
+              <img class="shape-1" src="assets/images/services-shape-3.svg" alt="shape" />
+              <i class="lni-bolt-alt"></i>
+            </div>
+            <div class="services-content mt-30">
+              <h4 class="services-title"><a href="trends.html">Financial Trends</a></h4>
+              <p class="text">
+                <li>
+                  You will make smarter decisions by staying updated to the current market happenings in real time with
+                  our Stock Market API's results.
+                </li>
+              </p>
+              <a class="more" href="./trends.html">Learn More <i class="lni-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="about" class="about-area pt-70">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="about-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
+            <div class="section-title">
+              <div class="line"></div>
+
+              <h3 class="title" style="color: #2f6be5;">
+
+                Personalized AI Guru <span>to Teach You Finance</span>
+              </h3>
+            </div>
+
+
+
+  <body>
+    <script>
+      document.getElementById("user-feedback-form").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form from submitting traditionally
+        // Display success message
+        const successMessage = document.getElementById("success-message");
+        successMessage.style.display = "block";
+        successMessage.innerText = "Thank you for your feedback!";
+        // Optional: Clear the form fields after submission
+        event.target.reset();
+      });
+
+    </script>
+    <style>
+      /* Form styles */
+      #user-feedback-form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Header styles */
+      #form-header {
+        margin-bottom: 20px;
+      }
+
+      /* Title styles */
+      #title-wrapper {
+        margin-bottom: 20px;
+      }
+
+      #feedback-title {
+        font-size: 24px;
+        /* Title size */
+        margin-bottom: 20px;
+      }
+
+      /* Input and textarea styles */
+      #input-group-email,
+      #input-group-rating,
+      #input-group-comments {
+        margin-bottom: 15px;
+      }
+
+      #input-label-name,
+      #input-label-email,
+      #input-label-rating,
+      #input-label-comments {
+        font-weight: bold;
+        margin-bottom: 5px;
+        display: block;
+        color: #333;
+      }
+
+      #input-field-name,
+      #input-field-email,
+      #textarea-field-comments {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #3c2ed3;
+        /* Border color */
+        border-radius: 5px;
+        transition: border-color 0.3s, box-shadow 0.3s;
+        /* Transition effect */
+      }
+
+      #input-field-name:focus,
+      #input-field-email:focus,
+      #textarea-field-comments:focus {
+        border-color: #0e8f6b;
+        /* Darker green on focus */
+        box-shadow: 0 0 5px rgba(58, 199, 160, 0.5);
+        /* Focus shadow */
+        outline: none;
+      }
+
+      /* Emoji selection styles */
+      #emoji-selection {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 10px;
+      }
+
+      #input-field-rating-1,
+      #input-field-rating-2,
+      #input-field-rating-3,
+      #input-field-rating-4,
+      #input-field-rating-5 {
+        display: none;
+        /* Hide the default radio button */
+      }
+
+      #input-field-rating-1+label,
+      #input-field-rating-2+label,
+      #input-field-rating-3+label,
+      #input-field-rating-4+label,
+      #input-field-rating-5+label {
+        font-size: 24px;
+        /* Adjust emoji size */
+        cursor: pointer;
+        transition: transform 0.3s;
+        /* Transition effect */
+      }
+
+      #input-field-rating-1:checked+label,
+      #input-field-rating-2:checked+label,
+      #input-field-rating-3:checked+label,
+      #input-field-rating-4:checked+label,
+      #input-field-rating-5:checked+label {
+        transform: scale(1.2);
+        /* Scale emoji when selected */
+      }
+
+      /* Button styles */
+      #submit-button {
+        background-color: #3c2ed3;
+        /* Button background */
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+        /* Transition effects */
+      }
+
+      #submit-button:hover {
+        background-color: #28b594;
+        /* Darker green on hover */
+        transform: translateY(-2px);
+        /* Lift effect */
+      }
+
+      #submit-button:active {
+        transform: translateY(0);
+        /* Reset lift effect */
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 600px) {
+        #feedback-container {
+          padding: 20px;
+        }
+
+        #submit-button {
+          width: 100%;
+        }
+      }
+    </style>
+
+
+
+    <div class="modal" id="successModal">
+      <div class="modal-content">
+        <span class="modal-close" id="closeSuccessModal">✖</span>
+
+        <!-- Tick  Icon in the center -->
+        <img src="./assets/css/checked.png" alt="Tick Icon" class="tick-icon">
+
+        <h2 class="modal-header">Success!</h2>
+        <p class="modal-message" id="successMessage">Submitted successfully!</p>
+        <div class="modal-footer">
+          <button id="dismissModal" class="modal-button">Dismiss</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Function to update emoji description when an emoji is selected
+      const emojiInputs = document.querySelectorAll('input[name="rating"]');
+      const emojiDescription = document.getElementById('emoji-description');
+
+      emojiInputs.forEach(input => {
+        input.addEventListener('change', function () {
+          switch (this.value) {
+            case '1':
+              emojiDescription.textContent = 'Very Bad 😡';
+              break;
+            case '2':
+              emojiDescription.textContent = 'Bad 😞';
+              break;
+            case '3':
+              emojiDescription.textContent = 'Neutral 😐';
+              break;
+            case '4':
+              emojiDescription.textContent = 'Good 🙂';
+              break;
+            case '5':
+              emojiDescription.textContent = 'Excellent 😍';
+              break;
+            default:
+              emojiDescription.textContent = 'Select an option';
+          }
+        });
+      });
+
+      // Handle form submission and show modal
+      document.getElementById('feedback-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const rating = document.querySelector('input[name="rating"]:checked') ? document.querySelector('input[name="rating"]:checked').value : '';
+        const comments = document.getElementById('comments').value;
+
+        // Validate emoji rating
+        if (!rating) {
+          alert('Please select an emoji rating before submitting.');
+          return;
+        }
+
+        // Create feedback object
+        const feedback = {
+          name,
+          email,
+          rating,
+          comments
+        };
+
+        // Get existing feedback from localStorage or initialize with an empty array
+        let feedbackData = localStorage.getItem('feedbacks');
+        feedbackData = feedbackData ? JSON.parse(feedbackData) : [];
+
+        // Add new feedback
+        feedbackData.push(feedback);
+
+        // Store updated feedback array back in localStorage
+        localStorage.setItem('feedbacks', JSON.stringify(feedbackData));
+
+        // Clear form inputs
+        document.getElementById('feedback-form').reset();
+
+        // Reset emoji description
+        emojiDescription.textContent = 'Select an option';
+
+        // Show success modal
+        document.getElementById('successModal').style.display = 'flex';
+
+        // Close modal after 3 seconds
+        setTimeout(function () {
+          document.getElementById('successModal').style.display = 'none';
+        }, 3000);
+      });
+
+      // Close the modal when the 'Dismiss' button is clicked or 'X' is pressed
+      document.getElementById('dismissModal').addEventListener('click', function () {
+        document.getElementById('successModal').style.display = 'none';
+      });
+
+      document.getElementById('closeSuccessModal').addEventListener('click', function () {
+        document.getElementById('successModal').style.display = 'none';
+      });
+    </script>
+    <script src="/assets/js/faq.js"></script>
+
+
+
+    <!-- Timed popup that will appear after succesful submission of feebback form! -->
+    <button class="notification" id="successnotification" style="display:none;">
+      <span class="message" id="successmsg">Submitted successfully!</span>
+      <span class="closenotif" id="closeSuccessNotification">✖</span>
+      <div class="timerline" id="timerline"></div>
+    </button>
+
+
+
+    <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
+    <div class="gtranslate_wrapper"></div>
+    <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+
+    <script src="./assets/js/subscribe.js"></script>
+    <script src="../assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="../assets/js/vendor/modernizr-3.7.1.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/plugins.js"></script>
+    <script src="../assets/js/slick.min.js"></script>
+    <script src="../assets/js/ajax-contact.js"></script>
+    <script src="../assets/js/waypoints.min.js"></script>
+    <script src="../assets/js/jquery.counterup.min.js"></script>
+    <script src="../assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="../assets/js/jquery.easing.min.js"></script>
+    <script src="../assets/js/scrolling-nav.js"></script>
+    <script src="../assets/js/wow.min.js"></script>
+    <script src="../assets/js/particles.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/popup.js"></script>
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+    <script src="https://mediafiles.botpress.cloud/5e160793-5606-4412-ba4c-337e416f14fe/webchat/config.js"
+      defer></script>
+    <script defer src="./assets/js/arthsathi-style.js"></script>
+    <script src="./assets/js/botpress.js"></script>
+    <script>
+      // Get the modals
+      var loginModal = document.getElementById('myModal');
+      var registerModal = document.getElementById('registerModal');
+
+      // Get the button that opens the login modal
+      var loginBtn = document.getElementById('loginBtn');
+
+      // Get the links that open the register and login modals
+      var registerLink = document.getElementById('registerLink');
+      var loginLink = document.getElementById('loginLink');
+
+      // Get the <span> elements that close the modals
+      var closeBtns = document.getElementsByClassName('close');
+
+      //show and hide icon button
+      document.addEventListener('DOMContentLoaded', () => {
+        const togglePasswordButtons = document.querySelectorAll('.toggle-password-btn');
+
+        togglePasswordButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            const passwordInput = button.previousElementSibling;
+            if (passwordInput.type === 'password') {
+              passwordInput.type = 'text';
+              button.innerHTML = `<i class="fa-solid fa-eye-slash"></i>`
+            } else {
+              passwordInput.type = 'password';
+              button.innerHTML = `<i class="fa-solid fa-eye"></i>`
+            }
+          });
+        });
+      });
+
+
+      // When the user clicks the register link, open the register modal
+      registerLink.onclick = function (event) {
+        event.preventDefault();
+        loginModal.style.display = 'none';
+        registerModal.style.display = 'block';
+      }
+
+      // When the user clicks the login link, open the login modal
+      loginLink.onclick = function (event) {
+        event.preventDefault();
+        registerModal.style.display = 'none';
+        loginModal.style.display = 'block';
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      for (var i = 0; i < closeBtns.length; i++) {
+        closeBtns[i].onclick = function () {
+          loginModal.style.display = 'none';
+          registerModal.style.display = 'none';
+        }
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == loginModal) {
+          loginModal.style.display = 'none';
+        }
+        if (event.target == registerModal) {
+          registerModal.style.display = 'none';
+        }
+      }
+      function openModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "block";
+        document.title = "Login/Register - FinVeda";  // Update the title when modal is opened
+      }
+
+      function closeModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+        document.title = "FinVeda";  // Revert the title back when modal is closed
+      }
+
+
+      // Close button event listeners for modals
+      registerModal.querySelector(".close").addEventListener("click", closeModal);
+      loginModal.querySelector(".close").addEventListener("click", closeModal);
+
+
+
+      window.onclick = function (event) {
+        var modal = document.getElementById("myModal");
+        if (event.target == modal) {
+          closeModal(); // Call closeModal function
+        }
+      };
+
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const registerModal = document.getElementById("registerModal");
+        const loginModal = document.getElementById("myModal");
+        const registerLink = document.getElementById("registerLink");
+        const loginLink = document.getElementById("loginLink");
+
+        // Event listener for the register link
+        registerLink.addEventListener("click", function (event) {
+          event.preventDefault();
+          loginModal.style.display = "none";
+          registerModal.style.display = "block";
+          document.title = "Login/Register - FinVeda";  // Update title when registering
+        });
+
+        // Event listener for the login link
+        loginLink.addEventListener("click", function (event) {
+          event.preventDefault();
+          registerModal.style.display = "none";
+          loginModal.style.display = "block";
+          document.title = "Login/Register - FinVeda";  // Update title when logging in
+        });
+
+        // Close button event listeners for modals
+        registerModal.querySelector(".close").addEventListener("click", closeModal);
+        loginModal.querySelector(".close").addEventListener("click", closeModal);
+      });
+
+    </script>
+    <script src="./tools/smoothScroll.js"></script>
+
+    <script src="./assets/js/preloader.js"></script>
+
+    <link rel="stylesheet" href="visi.css">
+
+
+    <script src="visi.js"></script>
+    <script src="../assets/js/index.js"></script>
+
+
+
+
+  </div>
+</div>
+<script src="newspopup.js"></script>
+
+<script src="script.js"></script> <!-- Link to your service worker registration script -->
+
+  </body>
+
+  </html>
