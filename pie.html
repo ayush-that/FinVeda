@@ -1,0 +1,2374 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pie-Chart-FinVeda</title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="FinVeda provides comprehensive resources and tools for financial education, investment strategies, and personal finance management. Discover your path to financial wellness today!">
+  <meta name="keywords"
+    content="finance, financial education, personal finance, investment strategies, financial wellness, budgeting, money management">
+  <meta name="author" content="Ayush That">
+
+  <meta property="og:title" content="FinVeda - Your Guide to Financial Wellness">
+  <meta property="og:description"
+    content="FinVeda offers expert resources and tools for improving your financial knowledge and managing your investments effectively.">
+  <meta property="og:url" content="https://github.com/ayush-that/FinVeda">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FinVeda - Your Guide to Financial Wellness">
+  <meta name="twitter:description"
+    content="Explore a wealth of financial resources at FinVeda to enhance your financial literacy and investment skills.">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="manifest" href="/manifest.json">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "FinVeda",
+      "url": "https://github.com/ayush-that/FinVeda",
+      "description": "FinVeda provides comprehensive resources and tools for financial education, investment strategies, and personal finance management.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "FinVeda",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "/assets/images/favicon2.webp"  // Replace with your logo URL
+        }
+      }
+    }
+    </script>
+
+  <link rel="shortcut icon" href="/assets/images/favicon2.webp" type="image/png" />
+  <link rel="stylesheet" href="./assets/css/animate.css" />
+  <link rel="stylesheet" href="./assets/css/magnific-popup.css" />
+  <link rel="stylesheet" href="./assets/css/slick.css" />
+  <link rel="stylesheet" href="./assets/css/LineIcons.css" />
+  <link rel="stylesheet" href="./assets/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./assets/css/default.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/quiz.css" />
+  <link rel="stylesheet" href="./assets/css/popup.css" />
+  <link rel="stylesheet" href="./assets/css/cookiepopup.css">
+  <link rel="stylesheet" href="./assets\css\preloader.css" />
+  <link rel="stylesheet" href="./assets/css/faq.css">
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <link rel="stylesheet" type="text/css" href="sipcalculatorCss.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.13/lottie.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
+  <link rel="stylesheet" href="navbar.css">
+  <style>
+    #progressBar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 8px;
+      background-color: #f76b45;
+      z-index: 9999;
+
+    }
+
+    * {
+      cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
+    }
+
+
+    .circle {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
+      transition: transform 0.1s, left 0.1s, top 0.1s;
+    }
+
+    .circle-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    @media (max-width: 720px) {
+      .circle-container {
+        display: none;
+      }
+    }
+
+    .scroll-btn {
+      position: fixed;
+      top: 100px;
+      right: 4px;
+      background-color: #635adc;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s;
+      display: flex;
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .scroll-btn:hover {
+      background-color: #555;
+      /* Darker blue on hover */
+    }
+
+    .dropdown-menu li a {
+      color: #ff5722;
+      /* Change this color code to any color you like */
+    }
+
+    .dropdown-menu li a:hover {
+      color: #0a69ed;
+      /* Optional: change the color on hover */
+    }
+
+    body.dark-mode .theme-toggle,
+    body.dark-mode .theme-toggle:hover {
+      background-color: #112a2b;
+      padding: 0.25rem 2.3rem;
+    }
+  </style>
+
+<body>
+
+  <div class="circle-container">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const coords = { x: 0, y: 0 };
+      const circles = document.querySelectorAll(".circle");
+
+      circles.forEach(function (circle) {
+        circle.x = 0;
+        circle.y = 0;
+      });
+
+      window.addEventListener("mousemove", function (e) {
+        coords.x = e.pageX;
+        coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
+      });
+
+      function animateCircles() {
+        let x = coords.x;
+        let y = coords.y;
+
+        circles.forEach(function (circle, index) {
+          circle.style.left = `${x - 12}px`;
+          circle.style.top = `${y - 12}px`;
+          circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+
+          const nextCircle = circles[index + 1] || circles[0];
+          circle.x = x;
+          circle.y = y;
+
+          x += (nextCircle.x - x) * 0.3;
+          y += (nextCircle.y - y) * 0.3;
+        });
+
+        requestAnimationFrame(animateCircles);
+      }
+
+      animateCircles();
+    });
+
+  </script>
+
+
+
+  <div id="progressBar"></div>
+  <script>
+    window.onscroll = function () {
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      document.getElementById("progressBar").style.width = scrolled + "%";
+    };
+  </script>
+  <button id="scrollBtn" class="scroll-btn" onclick="scrollToNextSection()">
+    <i class="lni-chevron-down"></i>
+  </button>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Scroll button functionality
+      const scrollToNextSection = () => {
+        window.scrollBy({
+          top: window.innerHeight,
+          behavior: 'smooth',
+        });
+      };
+
+      // Attach the function to the button
+      document.getElementById('scrollBtn').onclick = scrollToNextSection;
+    });
+  </script>
+  <div id="preloader">
+    <div id="lottie-loader"></div>
+  </div>
+  <div class="content-wrapper">
+    <header class="header-area">
+      <div style="display: flex; justify-content: center;" class="navbar-area">
+        <div style="display: flex; justify-content: center;" class="container">
+          <div class="row">
+            <div style="display: flex; justify-content: center;" class="">
+              <nav class="navbar navbar-expand-lg " style="display: flex;">
+                <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="toggler-icon"></span>
+            <span class="toggler-icon"></span>
+            <span class="toggler-icon"></span>
+          </button> -->
+                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+
+
+
+                  <div class="icon1">
+                    <a href="./index.html">
+                      <img src="./assets/images/FinvedaLogo.png" alt="icon.png" style="width: 13rem;">
+                    </a>
+                  </div>
+
+
+
+                  <i class="fa-brands fa-searchengin glass" style="font-size: 35px; left: 150px;"></i>
+                  <div class="search-container">
+                    <input type="text" class="search-input" id="file-search" placeholder="Search for a file..."
+                      oninput="showSuggestions()" onkeydown="navigateSuggestions(event)" />
+                    <div class="suggestions" id="suggestions-list"></div>
+                  </div>
+
+                  <style>
+
+                  </style>
+                  <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
+                    <li class="nav-item">
+                      <a class="page-scroll active-link" href="./index.html">
+                        <i class="fas fa-home icon-hover" style="margin: 5px;"></i> Home
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll" href="./about.html">
+                        <i class="fas fa-info-circle icon-hover" style="margin: 5px;"></i> About Us
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll" href="./contributors.html">
+                        <i class="fas fa-solid fa-people-group icon-hover" style="margin: 5px;"></i> Contributors
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll" href="./contact.html">
+                        <i class="fas fa-envelope icon-hover" style="margin: 5px;"></i> Contact
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll" href="./faq.html">
+                        <i class="fas fa-question-circle icon-hover" style="margin: 5px;"></i> Help
+                      </a>
+                    </li>
+                    <!-- Dropdown for Explore -->
+                  <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
+                    <a class="page-scroll dropdown-toggle" href="#">
+                      <i class="fas fa-chevron-down icon-hover" style="margin: 5px;"></i> Explore More
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="./finance.html">
+                          <i class="fas fa-graduation-cap icon-hover" style="margin: 5px;"></i> Courses
+                        </a>
+                      </li>
+                      <li><a href="./trends.html"><i class="fas fa-chart-line icon-hover" style="margin: 5px;"></i>
+                          Trends</a></li>
+                      <li><a href="./tools/sip.html"><i class="fas fa-tools icon-hover" style="margin: 5px;"></i>
+                          Tools</a></li>
+                      <li><a href="./blog.html"><i class="fas fa-blog icon-hover" style="margin: 5px;"></i> Blogs</a>
+                      </li>
+                      <li><a href="./quiz.html"><i class="fas fa-question icon-hover" style="margin: 5px;"></i> Quiz</a>
+                      </li>
+                      <li><a href="./Games/Games.html"><i class="fas fa-gamepad icon-hover" style="margin: 5px;"></i> Games</a>
+                      </li>
+                      <li><a href="./maps.html"><i class="fas fa-map icon-hover" style="margin: 5px;"></i> MAPS</a></li>
+                    </ul>
+                  </li>
+                    <!-- Navigation item placeholder for Login/Register or Logout button -->
+                    <li class="nav-item no-underline" id="auth-btn-container">
+                      <a class="main-btn navbar-btn" style="padding: 2px 20px;" data-scroll-nav="0"
+                        href="./loginPage.html">
+                        <i class="fas fa-user-circle icon-hover" style="margin: 5px;"></i> Login/Register
+                      </a>
+                    </li>
+                    <li class="nav-item no-underline align-self-center">
+                      <button id="theme-toggle" class="theme-toggle">
+                        <span>🌞</span>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+
+
+                <script>
+                  const files = [
+                    { name: "Home", path: "index.html" },
+                    { name: "Blogs", path: "blog.html" },
+                    { name: "Login", path: "login.html" },
+                    { name: "Auth", path: "auth.html" },
+                    { name: "Maps", path: "maps.html" },
+                    { name: "Reviews", path: "reviews.html" }
+                  ];
+
+                  let selectedSuggestionIndex = -1;
+
+                  // Function to show suggestions based on input
+                  function showSuggestions() {
+                    const input = document.getElementById("file-search").value.toLowerCase();
+                    const suggestionsList = document.getElementById("suggestions-list");
+
+                    suggestionsList.innerHTML = '';
+                    selectedSuggestionIndex = -1; // Reset selection index
+
+                    const filteredFiles = files.filter(file => file.name.toLowerCase().includes(input));
+
+                    if (input && filteredFiles.length > 0) {
+                      suggestionsList.style.display = 'block'; // Show suggestions
+                      filteredFiles.forEach((file, index) => {
+                        const suggestionItem = document.createElement("div");
+                        suggestionItem.textContent = file.name;
+                        suggestionItem.dataset.index = index;
+                        suggestionItem.onclick = () => window.location.href = file.path; // Navigate on click
+
+                        suggestionsList.appendChild(suggestionItem);
+                      });
+                    } else {
+                      suggestionsList.style.display = 'none'; // Hide suggestions if no match
+                    }
+                  }
+
+                  // Function to navigate suggestions with keyboard
+                  function navigateSuggestions(event) {
+                    const suggestionsList = document.getElementById("suggestions-list");
+                    const suggestionItems = suggestionsList.querySelectorAll("div");
+
+                    if (event.key === "ArrowDown") {
+                      selectedSuggestionIndex = (selectedSuggestionIndex + 1) % suggestionItems.length; // Move down
+                      updateActiveSuggestion(suggestionItems);
+                    } else if (event.key === "ArrowUp") {
+                      selectedSuggestionIndex = (selectedSuggestionIndex - 1 + suggestionItems.length) % suggestionItems.length; // Move up
+                      updateActiveSuggestion(suggestionItems);
+                    } else if (event.key === "Enter") {
+                      if (selectedSuggestionIndex > -1 && suggestionItems[selectedSuggestionIndex]) {
+                        suggestionItems[selectedSuggestionIndex].click(); // Click active suggestion
+                      }
+                    }
+                  }
+
+                  // Function to update the active suggestion's appearance
+                  function updateActiveSuggestion(suggestionItems) {
+                    suggestionItems.forEach(item => item.classList.remove("active"));
+                    if (suggestionItems[selectedSuggestionIndex]) {
+                      suggestionItems[selectedSuggestionIndex].classList.add("active");
+                      suggestionItems[selectedSuggestionIndex].scrollIntoView({ block: "nearest" }); // Scroll to active suggestion
+                    }
+                  }
+
+                  // Close suggestions when clicking outside the search container
+                  document.addEventListener("click", function (event) {
+                    if (!event.target.closest(".search-container")) {
+                      document.getElementById("suggestions-list").style.display = 'none';
+                    }
+                  });
+                </script>
+
+                <script>
+                  // Function to update the authentication button based on login status
+                  function updateAuthButton() {
+                    const authBtnContainer = document.getElementById("auth-btn-container");
+                    const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+                    if (isLoggedIn) {
+                      // Replace with Logout button if user is logged in
+                      authBtnContainer.innerHTML = `<a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244); animation-duration: 0.4s; animation-name: ease;" id="logout-btn">Logout 🚪</a>`;
+
+                      // Attach click event to Logout button
+                      document.getElementById("logout-btn").addEventListener("click", function () {
+                        // Clear login data from local storage and reload page
+                        localStorage.removeItem("isLoggedIn");
+                        localStorage.removeItem("currentUser");
+                        window.location.reload();
+                      });
+                    } else {
+                      // Show Login/Register button if user is not logged in
+                      authBtnContainer.innerHTML = `<a class="main-btn navbar-btn" style="padding: 2px 20px; color: rgb(237, 242, 244); animation-duration: 0.4s; animation-name: ease;" data-scroll-nav="0" href="./loginPage.html">Login/Register 💻</a>`;
+                    }
+                  }
+
+                  // Call updateAuthButton on page load to set the correct button
+                  document.addEventListener("DOMContentLoaded", updateAuthButton);
+                </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Load theme from localStorage
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme === 'dark') {
+      body.classList.add('dark-mode');
+      toggleButton.classList.add('dark');
+      toggleButton.textContent = '🌙'; // Update icon to match dark mode
+    }
+
+    // Toggle theme on button click
+    toggleButton.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      toggleButton.classList.toggle('dark');
+
+      // Update button icon and localStorage based on mode
+      if (body.classList.contains('dark-mode')) {
+        toggleButton.textContent = '🌙'; // Dark mode icon
+        localStorage.setItem('theme', 'dark');
+      } else {
+        toggleButton.textContent = '🌞'; // Light mode icon
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  });
+</script>
+                <div class="">
+                  <!-- Login Modal -->
+                  <div id="myModal" class="modal">
+                    <div class="modal-content">
+                      <span class="close" style="display: flex; justify-content: right;">×</span>
+                      <div class="mt-3">
+                        <h3 class="join"><i class="fa-solid fa-right-to-bracket"></i> Login to join us....</h3>
+                        <form class="px-3 py-4" id="loginForm">
+                          <div class="form-group">
+                            <label class="d-flex">Username</label>
+                            <input type="text" placeholder="Username" class="form-control" required="">
+                          </div>
+                          <div class="form-group">
+                            <label class="d-flex">Password</label>
+                            <input type="password" placeholder="Password" class="form-control" required="">
+                            <button type="button" class="toggle-password-btn"><i class="fa-solid fa-eye"></i></button>
+                          </div>
+                          <div class="form-check d-flex">
+                            <input type="checkbox" class="form-check-input me-1" style="margin-top: 0;">
+                            <label class="form-check-label" style="margin-bottom: 0;">Remember me</label>
+                            <a href="#" id="forgot-password" style="margin-left: 120px;">Forget Password?</a>
+                          </div>
+                          <div style="height: 20px;"></div>
+                          <button class="main-btn w-100 mb-3" onclick="submitForm('loginForm')">Sign in</button>
+                          <p class="text-center">Don't have an account? <a href="#" id="registerLink">Register</a></p>
+                          <div class="or-sign-in-with text-center">
+                            <p>Or sign in with</p>
+                          </div>
+                          <div class="social-icons mt-3">
+                            <ul class="list-inline">
+                              <li><a href="#" class="google" id="google-login"><i class="fa-brands fa-google"></i></a>
+                              </li>
+                              <li><a href="#" class="facebook" id="facebook-login"><i
+                                    class="fa-brands fa-facebook-f"></i></a></li>
+                              <li><a href="#" class="twitter" id="twitter-login"><i
+                                    class="fa-brands fa-x-twitter"></i></a>
+                              </li>
+                            </ul>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <style>
+                    .search-container {
+                      position: relative;
+                      width: 300px;
+                      margin: 20px auto;
+                      border-radius: 25px;
+                    }
+
+                    .search-input {
+                      width: 100%;
+                      padding: 10px;
+                      font-size: 16px;
+                      border: 1px solid #ccc;
+                      border-radius: 25px;
+                      box-sizing: border-box;
+                    }
+
+
+                    .suggestions {
+                      position: absolute;
+                      top: 100%;
+                      left: 0;
+                      width: 100%;
+                      background-color: #fff;
+                      border: 1px solid #ccc;
+                      border-radius: 4px;
+                      max-height: 150px;
+                      overflow-y: auto;
+                      display: none;
+                      z-index: 1000;
+                    }
+
+                    .suggestions div {
+                      padding: 10px;
+                      cursor: pointer;
+                    }
+
+                    .suggestions div:hover,
+                    .suggestions .active {
+                      background-color: #f0f0f0;
+                    }
+                  </style>
+
+
+
+                  <style>
+                    /* Existing styles */
+
+                    .search-input {
+                      width: 100%;
+                      padding: 10px;
+                      padding-left: 40px;
+                      /* Adjust left padding to accommodate the icon */
+                      font-size: 16px;
+                      border: 1px solid #ccc;
+                      border-radius: 25px;
+                      box-sizing: border-box;
+                      margin-top: -80px;
+                    }
+                  </style>
+
+                  <script>
+                    // Add event listeners to the social media icons
+                    document.getElementById('google-login').addEventListener('click', function () {
+                      window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
+                    });
+
+                    document.getElementById('facebook-login').addEventListener('click', function () {
+                      window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
+                    });
+
+                    document.getElementById('twitter-login').addEventListener('click', function () {
+                      window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
+                    });
+                  </script>
+
+                  <!-- Register Modal -->
+                  <div id="registerModal" class="modal">
+                    <div class="modal-content">
+                      <span class="close" style="display: flex; justify-content: right;">×</span>
+                      <div class="mt-3">
+                        <h3 class="join"><i class="fa-solid fa-user"></i> Register to join us....</h3>
+
+                        <div class="form-group">
+                          <label class="d-flex">Email</label>
+                          <input type="email" placeholder="Email" class="form-control" required="">
+                        </div>
+                        <div class="form-group">
+                          <label class="d-flex">Username</label>
+                          <input type="text" placeholder="Username" class="form-control" required="">
+                        </div>
+                        <div class="form-group">
+                          <label class="d-flex">Password</label>
+                          <input type="password" placeholder="Password" class="form-control" id="register-password"
+                            required="" oninput="checkPasswordStrength()">
+                          <button type="button" class="toggle-password-btn"
+                            onclick="togglePasswordVisibility('register-password')">
+                            <i class="fa-solid fa-eye"></i>
+                            <i class="fa-solid fa-eye-slash" style="display: none;"></i>
+                          </button>
+                        </div>
+                        <div id="password-meter" style="display: none; margin-top: 5px;">
+                          <div id="meter"
+                            style="height: 10px; background-color: #ccc; border-radius: 5px; transition: width 0.3s;">
+                          </div>
+                          <div id="strength-text" style="margin-top: 5px; font-weight: bold;"></div>
+                        </div>
+
+
+                        <!-- Import zxcvbn library -->
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+                        <script>
+                          function checkPasswordStrength() {
+                            const password = document.getElementById('register-password').value;
+                            const meter = document.getElementById('meter');
+                            const meterContainer = document.getElementById('password-meter');
+                            const strengthText = document.getElementById('strength-text');
+
+                            if (password) {
+                              meterContainer.style.display = 'block'; // Show the meter when typing
+                              const result = zxcvbn(password);
+                              const score = result.score; // Score ranges from 0 to 4
+
+                              // Set meter width and color based on score
+                              meter.style.width = (score + 1) * 20 + '%'; // Convert score to percentage
+                              meter.style.backgroundColor = getMeterColor(score);
+                              strengthText.innerText = getStrengthText(score); // Update strength text
+                            } else {
+                              meterContainer.style.display = 'none'; // Hide the meter if no password
+                              strengthText.innerText = ''; // Clear strength text
+                            }
+                          }
+
+                          function getMeterColor(score) {
+                            switch (score) {
+                              case 0: return 'red'; // Weak
+                              case 1: return 'orange'; // Fair
+                              case 2: return 'yellow'; // Good
+                              case 3: return 'blue'; // Strong
+                              case 4: return 'green'; // Very Strong
+                              default: return 'gray';
+                            }
+                          }
+
+                          function getStrengthText(score) {
+                            switch (score) {
+                              case 0: return 'Very Weak';
+                              case 1: return 'Weak';
+                              case 2: return 'Fair';
+                              case 3: return 'Strong';
+                              case 4: return 'Very Strong';
+                              default: return '';
+                            }
+                          }
+
+                          function togglePasswordVisibility(id) {
+                            const passwordInput = document.getElementById(id);
+                            const eyeIcon = passwordInput.nextElementSibling;
+                            if (passwordInput.type === 'password') {
+                              passwordInput.type = 'text';
+                              eyeIcon.children[0].style.display = 'none';
+                              eyeIcon.children[1].style.display = 'inline';
+                            } else {
+                              passwordInput.type = 'password';
+                              eyeIcon.children[0].style.display = 'inline';
+                              eyeIcon.children[1].style.display = 'none';
+                            }
+                          }
+                        </script>
+
+                        <button class="main-btn mt-2 w-100 mb-3" onclick="submitForm('registerForm')">Register</button>
+                        <p class="text-center">Already have an account? <a href="#" id="loginLink">Login</a></p>
+                        <div class="or-sign-in-with text-center">
+                          <p>Or sign up with</p>
+                        </div>
+                        <div class="social-icons mt-3">
+                          <ul class="list-inline">
+                            <li><a href="#" class="google" id="google-signup"><i class="fa-brands fa-google"></i></a>
+                            </li>
+                            <li><a href="#" class="facebook" id="facebook-signup"><i
+                                  class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="#" class="twitter" id="twitter-signup"><i class="fa-brands fa-twitter"></i></a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <script>
+                    // Add event listeners to the social media icons
+                    document.getElementById('google-signup').addEventListener('click', function () {
+                      window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=profile email';
+                    });
+
+                    document.getElementById('facebook-signup').addEventListener('click', function () {
+                      window.location.href = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=public_profile email';
+                    });
+
+
+                    document.getElementById('twitter-signup').addEventListener('click', function () {
+                      window.location.href = 'https://twitter.com/i/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=users.read';
+                    });
+                    // Add event listener to the "Register" button in the login modal
+                    document.getElementById('registerLink').addEventListener('click', function () {
+                      // Close the login modal
+                      document.getElementById('myModal').style.display = 'none';
+
+                      // Open the registration modal
+                      document.getElementById('registerModal').style.display = 'block';
+                    });
+                    // Add event listener to the "Login" button in the registration modal
+                    document.getElementById('loginLink').addEventListener('click', function () {
+                      // Close the registration modal
+                      document.getElementById('registerModal').style.display = 'none';
+
+                      // Open the login modal
+                      document.getElementById('myModal').style.display = 'block';
+                    });
+                    // Function to close the modal window
+                    var loginCloseButton = document.querySelector("#myModal .close");
+                    loginCloseButton.addEventListener("click", function () {
+                      var modal = document.getElementById("myModal");
+                      modal.style.display = "none";
+                    });
+                  </script>
+
+
+                  </script>
+                </div>
+              </nav>
+
+              <link href="https://fonts.googleapis.com/css?family=Raleway&amp;display=swap" rel="stylesheet">
+
+              <nav class="mobile-menu ">
+                <a class="page-scroll" href="./index.html">Home 🏡</a>
+                <a class="page-scroll" href="./about.html">About Us 📖</a>
+                <a class="page-scroll" href="./trends.html">Trends 📈</a>
+                <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
+                <a class="page-scroll" href="./blog.html">Blogs 📰</a>
+                <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
+                <a class="page-scroll main-btn" href="#" onclick="openModal()"
+                  onmouseout="this.style.color='white'">Login/Register 💻</a>
+                <li class="nav-item no-underline">
+                  <button id="theme-toggle2" class="theme-toggle2" style="margin-right: 2px;">
+                    🌙
+                  </button>
+                </li>
+                <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
+                  <span></span>
+                </div>
+              </nav>
+              <script>
+                const toggleBtn = document.getElementById('theme-toggle2');
+                var body = document.body;
+                var currentTheme = localStorage.getItem('theme');
+
+                if (currentTheme === 'dark') {
+                  body.classList.add('dark-mode');
+                  toggleBtn.classList.add('dark');
+                  toggleBtn.textContent = '🌞';
+                }
+
+                toggleBtn.addEventListener('click', function () {
+                  body.classList.toggle('dark-mode');
+                  toggleBtn.classList.toggle('dark');
+
+                  // Update button icon based on mode
+                  if (body.classList.contains('dark-mode')) {
+                    toggleBtn.textContent = '🌞';  // Light mode icon
+                    localStorage.setItem('theme', 'dark');
+                  } else {
+                    toggleBtn.textContent = '🌙';  // Dark mode icon
+                    localStorage.setItem('theme', 'light');
+                  }
+                });
+              </script>
+            </div>
+            <link href="./navbar.css" rel="stylesheet">
+            <script type="text/javascript" src="./navbar.js"></script>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div id="home" class="header-hero bg_cover" style="background-image: url(./assets/images/banner-bg.svg)">
+    <div class="container">
+      <h2 class="head-animate"
+      style="font-size: 90px;">
+        WELCOME TO  Veda-Pie
+      </h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="header-hero-content text-center">
+            <style>
+              .head-animate {
+                text-align: center;
+                position: relative;
+                top: 200px;
+                color: transparent;
+                -webkit-text-stroke: 2px white;
+                -moz-text-stroke: 2px white;
+                -ms-text-stroke: 2px white;
+                font-weight: bold;
+                background: url(./assets/images/back.png);
+                -webkit-background-clip: text;
+                -moz-background-clip: text;
+                background-clip: text;
+                background-position: 0 0;
+                animation: back 20s linear infinite, hovering 1.5s ease-in-out infinite;
+              }
+
+              @keyframes back {
+                100% {
+                  background-position: 2000px 0;
+                }
+              }
+
+              @keyframes hovering {
+                0% {
+                  transform: translateY(0);
+                }
+
+                50% {
+                  transform: translateY(-5px);
+                }
+
+                100% {
+                  transform: translateY(0);
+                }
+              }
+
+              .header-hero-content h2 {
+                font-size: 200px;
+              }
+
+              /* Styled button */
+              .styled-btn {
+                background-color: #4CAF50;
+                color: white;
+                padding: 10px 20px;
+                font-size: 16px;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+                transition: background-color 0.3s, transform 0.3s;
+                margin-top: 20px;
+                margin-left: 280px;
+              }
+
+              .styled-btn:hover {
+                background-color: #45a049;
+                transform: scale(1.05);
+              }
+
+              .styled-btn:active {
+                transform: scale(0.98);
+              }
+
+              /* Mobile Responsive Styles */
+              @media (max-width: 1024px) {
+                .head-animate {
+                  font-size: 90px; /* Adjust font size for tablets */
+                  top: 100px; /* Adjust positioning */
+                }
+
+                .header-hero-content h2 {
+                  font-size: 150px; /* Adjust heading size for medium screens */
+                }
+
+                .styled-btn {
+                  margin-left: 0;
+                  width: 100%;
+                  padding: 14px 0;
+                  font-size: 18px;
+                  margin-top: 10px;
+                }
+
+                .header-hero-image img {
+                  width: 80%; /* Adjust image size for smaller screens */
+                  height: auto;
+                }
+              }
+
+              @media (max-width: 768px) {
+                .head-animate {
+                  font-size: 70px; /* Adjust font size for smaller tablets and larger phones */
+                  top: 50px;
+                }
+
+                .header-hero-content h2 {
+                  font-size: 120px; /* Adjust heading size */
+                }
+
+                .styled-btn {
+                  margin-left: 0;
+                  width: 100%;
+                  padding: 14px 0;
+                  font-size: 18px;
+                }
+
+                .header-hero-image img {
+                  width: 100%; /* Make the image fully responsive */
+                  height: auto;
+                }
+
+                .header-hero-content p {
+                  font-size: 16px; /* Reduce paragraph font size */
+                }
+              }
+
+              @media (max-width: 480px) {
+                .head-animate {
+                  font-size: 50px; /* Further reduce font size for very small screens */
+                  top: 20px;
+                }
+
+                .header-hero-content h2 {
+                  font-size: 80px;
+                }
+
+                .header-hero-content p {
+                  font-size: 14px; /* Make text smaller on very small screens */
+                  padding: 0 10px;
+                }
+
+                .styled-btn {
+                  padding: 16px 0;
+                  font-size: 18px;
+                  width: 100%;
+                  margin-left: 0;
+                }
+
+                .header-hero-image img {
+                  width: 100%;
+                  height: auto;
+                }
+              }
+            </style>
+
+            <br><br>
+             <a href="#" class="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s"
+               onclick="window.botpressWebChat.sendEvent({ type: 'show' }); return false;"
+               style="visibility: visible; animation-duration: 1.3s; animation-delay: 1.1s; color:white">
+              Chat with ArthaSathi 💬
+            </a>
+          </div>
+
+          <button class="styled-btn" onclick="window.location.href='reviews.html'">Share Experience</button>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="header-hero-image text-center wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s"
+               style="visibility: visible; animation-duration: 1.3s; animation-delay: 1.4s;">
+            <div class="anim" data-tilt="">
+              <img src="assets/images/header-hero.webp" style="animation: float 1.5s ease-in-out infinite;" data-tilt=""/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="particles-1" class="particles"><canvas class="particles-js-canvas-el" width="1998" height="1012"
+        style="width: 100%; height: 100%;"></canvas></div>
+  </div>
+  </header>
+
+
+  <div id="cookieConsent" class="cookie-consent">
+
+    <h4>🍪Cookies Consent <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+        fill="#175394" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="cookie-icon">
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="M12 8v4"></path>
+        <path d="M12 16h.01"></path>
+      </svg></h4>
+    <p>We use cookies to enhance your experience on FinVeda. By continuing to use our site, you agree to our use of
+      cookies. <br> <a href="blogs/privacy-policy.html" target="_blank">Learn more</a></p>
+    <div class="cookie-buttons">
+      <button id="acceptNecessaryCookies">Accept necessary cookies only</button>
+      <button id="acceptAllCookies">Accept all cookies</button>
+    </div>
+  </div>
+
+  </section>
+
+  <section>
+
+       <style>
+
+         .pie {
+            margin-top: 50px;
+            margin-left: 600px;
+         }
+
+        .input-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .input-container input {
+            width: 130px;
+            padding: 5px;
+
+            height: 45px;
+            border-radius: 12px;
+        }
+        canvas {
+
+            margin-right: 400px;
+            max-width: 600px;
+            max-height: 600px;
+            margin-top: 30px;
+            margin-bottom: 50px;
+            margin-left: 100px;
+        }
+
+        .generate:hover {
+            cursor: pointer;
+        }
+
+        h1 {
+            color: #0f1e82;
+        }
+
+        label {
+            color: #000000;
+            font-size: 25px;
+            font-weight: 700;
+        }
+
+        .pie-heading {
+            margin-left: 150px;
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="pie">
+
+        <h1 class="pie-heading" >Financial Distribution Pie Chart</h1>
+
+    <div class="input-container">
+        <label>Savings: <input type="number" id="savings" placeholder="Enter Savings" /></label>
+        <label>Investments: <input type="number" id="investments" placeholder="Enter Investments" /></label>
+        <label>Expenses: <input type="number" id="expenses" placeholder="Enter Expenses" /></label>
+        <button onclick="generateChart()" class="generate" >Generate Chart</button>
+    </div>
+
+    <canvas id="myPieChart"></canvas>
+
+    </div>
+
+    <script>
+        let myPieChart;
+
+        function generateChart() {
+            // Get values from input fields
+            const savings = parseFloat(document.getElementById('savings').value) || 0;
+            const investments = parseFloat(document.getElementById('investments').value) || 0;
+            const expenses = parseFloat(document.getElementById('expenses').value) || 0;
+
+            // Check if values are valid
+            if (savings + investments + expenses === 0) {
+                alert("Please enter at least one positive value for savings, investments, or expenses.");
+                return;
+            }
+
+            // Destroy the existing chart instance if it exists
+            if (myPieChart) {
+                myPieChart.destroy();
+            }
+
+            // Set up the chart data
+            const data = {
+                labels: ['Savings', 'Investments', 'Expenses'],
+                datasets: [{
+                    data: [savings, investments, expenses],
+                    backgroundColor: ['#66b3ff', '#99ff99', '#ff9999'],
+                }]
+            };
+
+            // Get the canvas context
+            const ctx = document.getElementById('myPieChart').getContext('2d');
+
+            // Create a new pie chart
+            myPieChart = new Chart(ctx, {
+                type: 'pie',
+                data: data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(tooltipItem) {
+                                    const total = data.datasets[0].data.reduce((a, b) => a + b, 0);
+                                    const value = data.datasets[0].data[tooltipItem.dataIndex];
+                                    const percentage = ((value / total) * 100).toFixed(1);
+                                    return `${tooltipItem.label}: $${value} (${percentage}%)`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+  </section>
+
+  <!--forum Section-->
+  <header class="forum_1">
+  </header>
+
+
+  <script src="finance.js"></script>
+  <script>
+    let items = document.querySelectorAll('.slider .item');
+    let active = 3;
+    let autoScrollInterval;
+
+    function loadShow() {
+      items[active].style.transform = `none`;
+      items[active].style.zIndex = 1;
+      items[active].style.filter = 'none';
+      items[active].style.opacity = 1;
+
+      let stt = 0;
+      for (let i = active + 1; i < items.length; i++) {
+        stt++;
+        items[i].style.transform = `translateX(${120 * stt}px) scale(${1 - 0.2 * stt}) perspective(16px) rotateY(-1deg)`;
+        items[i].style.zIndex = -stt;
+        items[i].style.filter = 'blur(5px)';
+        items[i].style.opacity = stt > 2 ? 0 : 0.6;
+      }
+      stt = 0;
+      for (let i = active - 1; i >= 0; i--) {
+        stt++;
+        items[i].style.transform = `translateX(${-120 * stt}px) scale(${1 - 0.2 * stt}) perspective(16px) rotateY(1deg)`;
+        items[i].style.zIndex = -stt;
+        items[i].style.filter = 'blur(5px)';
+        items[i].style.opacity = stt > 2 ? 0 : 0.6;
+      }
+    }
+
+    function startAutoScroll() {
+      autoScrollInterval = setInterval(() => {
+        active = active + 1 < items.length ? active + 1 : 0;
+        loadShow();
+      }, 3000); // Auto-scroll every 3 seconds
+    }
+
+    function stopAutoScroll() {
+      clearInterval(autoScrollInterval);
+    }
+
+    loadShow();
+    startAutoScroll();
+
+    let next = document.getElementById('next');
+    let prev = document.getElementById('prev');
+    next.style.display = 'block';
+    prev.style.display = 'block';
+
+    next.onclick = function () {
+      stopAutoScroll(); // stop auto-scroll when manually navigating
+      active = active + 1 < items.length ? active + 1 : 0;
+      loadShow();
+      startAutoScroll(); // restart auto-scroll
+    }
+
+    prev.onclick = function () {
+      stopAutoScroll(); // stop auto-scroll when manually navigating
+      active = active - 1 >= 0 ? active - 1 : items.length - 1;
+      loadShow();
+      startAutoScroll(); // restart auto-scroll
+    }
+
+    // Optional: Pause auto-scroll on hover and resume on mouse leave
+    items.forEach(item => {
+      item.addEventListener('mouseenter', stopAutoScroll);
+      item.addEventListener('mouseleave', startAutoScroll);
+    });
+  </script>
+
+
+  <!-- <section id="blog" class="blog-area pt-120"> -->
+
+
+
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <title>Feedback Form</title>
+  </head>
+
+  <body>
+
+    <script>
+      document.getElementById("user-feedback-form").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form from submitting traditionally
+        // Display success message
+        const successMessage = document.getElementById("success-message");
+        successMessage.style.display = "block";
+        successMessage.innerText = "Thank you for your feedback!";
+        // Optional: Clear the form fields after submission
+        event.target.reset();
+      });
+
+    </script>
+
+    <div class="modal" id="successModal">
+      <div class="modal-content">
+        <span class="modal-close" id="closeSuccessModal">✖</span>
+
+        <!-- Tick  Icon in the center -->
+        <img src="./assets/css/checked.png" alt="Tick Icon" class="tick-icon">
+
+        <h2 class="modal-header">Success!</h2>
+        <p class="modal-message" id="successMessage">Submitted successfully!</p>
+        <div class="modal-footer">
+          <button id="dismissModal" class="modal-button">Dismiss</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Function to update emoji description when an emoji is selected
+      const emojiInputs = document.querySelectorAll('input[name="rating"]');
+      const emojiDescription = document.getElementById('emoji-description');
+
+      emojiInputs.forEach(input => {
+        input.addEventListener('change', function () {
+          switch (this.value) {
+            case '1':
+              emojiDescription.textContent = 'Very Bad 😡';
+              break;
+            case '2':
+              emojiDescription.textContent = 'Bad 😞';
+              break;
+            case '3':
+              emojiDescription.textContent = 'Neutral 😐';
+              break;
+            case '4':
+              emojiDescription.textContent = 'Good 🙂';
+              break;
+            case '5':
+              emojiDescription.textContent = 'Excellent 😍';
+              break;
+            default:
+              emojiDescription.textContent = 'Select an option';
+          }
+        });
+      });
+
+      // Handle form submission and show modal
+      document.getElementById('feedback-form').addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const rating = document.querySelector('input[name="rating"]:checked') ? document.querySelector('input[name="rating"]:checked').value : '';
+        const comments = document.getElementById('comments').value;
+
+        // Validate emoji rating
+        if (!rating) {
+          alert('Please select an emoji rating before submitting.');
+          return;
+        }
+
+        // Create feedback object
+        const feedback = {
+          name,
+          email,
+          rating,
+          comments
+        };
+
+        // Get existing feedback from localStorage or initialize with an empty array
+        let feedbackData = localStorage.getItem('feedbacks');
+        feedbackData = feedbackData ? JSON.parse(feedbackData) : [];
+
+        // Add new feedback
+        feedbackData.push(feedback);
+
+        // Store updated feedback array back in localStorage
+        localStorage.setItem('feedbacks', JSON.stringify(feedbackData));
+
+        // Send data to the server using Fetch API
+        try {
+          const response = await fetch('http://localhost:5000/api/feedback/saveFeedback', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(feedback)
+          });
+
+          if (!response.ok) {
+            throw new Error('Failed to submit feedback');
+          }
+
+          // Clear form inputs
+          document.getElementById('feedback-form').reset();
+
+          // Reset emoji description
+          emojiDescription.textContent = 'Select an option';
+
+          // Show success modal
+          document.getElementById('successModal').style.display = 'flex';
+
+          // Close modal after 3 seconds
+          setTimeout(function () {
+            document.getElementById('successModal').style.display = 'none';
+          }, 3000);
+
+        } catch (error) {
+          // Handle errors, for example if fetch fails
+          alert('There was an error submitting your feedback. Please try again later.');
+        }
+      });
+
+
+      // Close the modal when the 'Dismiss' button is clicked or 'X' is pressed
+      document.getElementById('dismissModal').addEventListener('click', function () {
+        document.getElementById('successModal').style.display = 'none';
+      });
+
+      document.getElementById('closeSuccessModal').addEventListener('click', function () {
+        document.getElementById('successModal').style.display = 'none';
+      });
+    </script>
+    <script src="/assets/js/faq.js"></script>
+
+
+
+    <!-- Timed popup that will appear after succesful submission of feebback form! -->
+    <button class="notification" id="successnotification" style="display:none;">
+      <span class="message" id="successmsg">Submitted successfully!</span>
+      <span class="closenotif" id="closeSuccessNotification">✖</span>
+      <div class="timerline" id="timerline"></div>
+    </button>
+
+
+    <footer id="footer" class="footer-area pt-120">
+      <div class="container">
+        <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="subscribe-content mt-45">
+                <h2 class="subscribe-title">
+                  Subscribe Our Newsletter <span>get regular updates</span>
+                </h2>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="subscribe-form mt-50">
+                <form id="unique-subscribe-form">
+                  <input type="email" id="unique-news-email" placeholder="Enter Email" required />
+                  <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
+                </form>
+                <div id="unique-message" class="unique-popup-message" style="display: none;">
+                  <div class="border-animation"></div>
+                  Thank You for the subscription!
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-widget pb-100">
+        <div class="row" id="footer">
+          <div class="col-lg-4 col-md-6 col-sm-8 mr-80">
+            <div class="footer-about mt-50 mr-80 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+
+              <img src="./assets/images/FinvedaLogo.png" alt="FinVeda Logo"
+                style="height: 80px; width: auto; margin-bottom: 15px;" />
+              <p class="text custom-margin">
+                We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial
+                blogs.
+              </p>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-evenly;">
+            <div>
+              <div class="footer-link d-flex mt-50 mr-45">
+                <div class="link-wrapper wow fadeIn mr-80" data-wow-duration="1s" data-wow-delay="0.4s">
+                  <div class="footer-title">
+                    <h3 class="title custom-margin">Quick Links</h3>
+                  </div>
+                  <ul class="link custom-margin">
+
+                    <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+                    <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
+                    <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
+                    <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+                    <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+                    <li><a href="./blogs/sitemap.html"><i class="fa-solid fa-sitemap"></i> Site Map</a></li>
+
+
+                  </ul>
+                </div>
+                <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+                  <div class="footer-title">
+                    <h4 class="title custom-margin">Resources</h4>
+                  </div>
+                  <ul class="link custom-margin">
+                    <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
+                    <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
+                    <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                    <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                <div class="footer-title">
+                  <h4 class="title custom-margin">Contact Us</h4>
+                </div>
+                <ul class="contact custom-margin-big">
+                  <li class="d-sm-flex justify-content-center">
+                    <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                    <p style="width: 80%;">
+                      <a href="mailto:ayush1337@hotmail.com" target="_blank"
+                        style="color: white; text-decoration: underline;">
+                        ayush1337@hotmail.com
+                      </a>
+                    </p>
+                  </li>
+                  <li class="d-sm-flex justify-content-center">
+                    <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                    <div style="width: 80%;">
+                      <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff ;">
+                        fin-veda.vercel.app
+                      </a>
+                    </div>
+                  </li>
+                  <li class="d-sm-flex justify-content-center">
+                    <!-- Modified: Inline CSS to adjust logo size and sync with other pages -->
+                    <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font: 12px; width: 10%;"></i>
+                    <div style="width: 80%;">
+                      <a href="https://www.google.com/maps/place/Delhi/@28.6436846,76.7635778,10z/data=!3m1!4b1!4m6!3m5!1s0x390cfd5b347eb62d:0x37205b715389640!8m2!3d28.7040592!4d77.1024902!16zL20vMDlmMDc?entry=ttu"
+                        style="color:#fff">
+                        Delhi, India
+                      </a>
+                    </div>
+                  </li>
+                  <!-- Added: Social Media Redirects -->
+                  <div class="social-icons">
+                    <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://discord.com/"><i class="fa-brands fa-discord"></i></a>
+                    <a href="https://github.com/ayush-that/FinVeda"><i class="fa-brands fa-github"></i></a>
+                  </div>
+
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- quick and resourse -->
+
+
+        </div>
+      </div>
+
+      <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s"
+        style="text-align: center">
+        <div class="row">
+          <div className="flex flex-col items-center text-gray-800">
+            <div className="flex items-center space-x-2">
+              <span className="font-bold text-2xl">Total Visitors : </span>
+              <a href="https://www.hitwebcounter.com" target="_blank">
+                <img
+                  src="https://hitwebcounter.com/counter/counter.php?page=17085296&style=0006&nbdigits=5&type=page&initCount=1000"
+                  title="Counter Widget" Alt="Visit counter For Websites" border="0" /></a>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="copyright d-sm-flex justify-content-center" style="
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+          ">
+              <div class="copyright-content" style="text-align: center">
+                <p class="text" style="text-align: center">
+                  © <span id="copyright-year">2024</span> FinVeda. All rights are
+                  reserved<br />
+                  Made with ♥ in India
+                </p>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="particles-2"></div>
+      </div>
+    </footer>
+
+
+
+    <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
+    <div class="gtranslate_wrapper"></div>
+    <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+
+    <script src="./assets/js/subscribe.js"></script>
+    <script src="../assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="../assets/js/vendor/modernizr-3.7.1.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/plugins.js"></script>
+    <script src="../assets/js/slick.min.js"></script>
+    <script src="../assets/js/ajax-contact.js"></script>
+    <script src="../assets/js/waypoints.min.js"></script>
+    <script src="../assets/js/jquery.counterup.min.js"></script>
+    <script src="../assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="../assets/js/jquery.easing.min.js"></script>
+    <script src="../assets/js/scrolling-nav.js"></script>
+    <script src="../assets/js/wow.min.js"></script>
+    <script src="../assets/js/particles.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/popup.js"></script>
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+    <script src="https://mediafiles.botpress.cloud/5e160793-5606-4412-ba4c-337e416f14fe/webchat/config.js"
+      defer></script>
+    <script defer src="./assets/js/arthsathi-style.js"></script>
+    <script src="./assets/js/botpress.js"></script>
+
+    <script>
+
+      document.getElementById("unique-subscribe-form").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevents form from submitting and refreshing the page
+
+        const name = document.getElementById("unique-news-name").value;
+        const email = document.getElementById("unique-news-email").value;
+        const data = {
+          name: name,
+          email: email
+        };
+
+        // Send the data to the API using fetch
+        fetch('http://localhost:5000/api/newsletter/suscribe', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        })
+          .then(response => response.json())
+          .then(data => {
+            console.log('Success:', data);
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+          });
+
+
+      });
+
+    </script>
+
+    <script>
+      // Get the modals
+      var loginModal = document.getElementById('myModal');
+      var registerModal = document.getElementById('registerModal');
+
+      // Get the button that opens the login modal
+      var loginBtn = document.getElementById('loginBtn');
+
+      // Get the links that open the register and login modals
+      var registerLink = document.getElementById('registerLink');
+      var loginLink = document.getElementById('loginLink');
+
+      // Get the <span> elements that close the modals
+      var closeBtns = document.getElementsByClassName('close');
+
+      //show and hide icon button
+      document.addEventListener('DOMContentLoaded', () => {
+        const togglePasswordButtons = document.querySelectorAll('.toggle-password-btn');
+
+        togglePasswordButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            const passwordInput = button.previousElementSibling;
+            if (passwordInput.type === 'password') {
+              passwordInput.type = 'text';
+              button.innerHTML = `<i class="fa-solid fa-eye-slash"></i>`
+            } else {
+              passwordInput.type = 'password';
+              button.innerHTML = `<i class="fa-solid fa-eye"></i>`
+            }
+          });
+        });
+      });
+
+
+      // When the user clicks the register link, open the register modal
+      registerLink.onclick = function (event) {
+        event.preventDefault();
+        loginModal.style.display = 'none';
+        registerModal.style.display = 'block';
+      }
+
+      // When the user clicks the login link, open the login modal
+      loginLink.onclick = function (event) {
+        event.preventDefault();
+        registerModal.style.display = 'none';
+        loginModal.style.display = 'block';
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      for (var i = 0; i < closeBtns.length; i++) {
+        closeBtns[i].onclick = function () {
+          loginModal.style.display = 'none';
+          registerModal.style.display = 'none';
+        }
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == loginModal) {
+          loginModal.style.display = 'none';
+        }
+        if (event.target == registerModal) {
+          registerModal.style.display = 'none';
+        }
+      }
+      function openModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "block";
+        document.title = "Login/Register - FinVeda";  // Update the title when modal is opened
+      }
+
+      function closeModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+        document.title = "FinVeda";  // Revert the title back when modal is closed
+      }
+
+
+      // Close button event listeners for modals
+      registerModal.querySelector(".close").addEventListener("click", closeModal);
+      loginModal.querySelector(".close").addEventListener("click", closeModal);
+
+
+
+      window.onclick = function (event) {
+        var modal = document.getElementById("myModal");
+        if (event.target == modal) {
+          closeModal(); // Call closeModal function
+        }
+      };
+
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const registerModal = document.getElementById("registerModal");
+        const loginModal = document.getElementById("myModal");
+        const registerLink = document.getElementById("registerLink");
+        const loginLink = document.getElementById("loginLink");
+
+        // Event listener for the register link
+        registerLink.addEventListener("click", function (event) {
+          event.preventDefault();
+          loginModal.style.display = "none";
+          registerModal.style.display = "block";
+          document.title = "Login/Register - FinVeda";  // Update title when registering
+        });
+
+        // Event listener for the login link
+        loginLink.addEventListener("click", function (event) {
+          event.preventDefault();
+          registerModal.style.display = "none";
+          loginModal.style.display = "block";
+          document.title = "Login/Register - FinVeda";  // Update title when logging in
+        });
+
+        // Close button event listeners for modals
+        registerModal.querySelector(".close").addEventListener("click", closeModal);
+        loginModal.querySelector(".close").addEventListener("click", closeModal);
+      });
+
+    </script>
+    <script src="./tools/smoothScroll.js"></script>
+
+    <script src="./assets/js/preloader.js"></script>
+
+    <link rel="stylesheet" href="visi.css">
+
+
+    <script src="visi.js"></script>
+    <script src="../assets/js/index.js"></script>
+
+
+    <style>
+      body {
+
+        font-family: Arial, sans-serif;
+
+      }
+
+      /* Popup Styles */
+      .popup {
+
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        background-color: rgba(0, 0, 0, 0.5);
+        /* Black background with opacity */
+        justify-content: center;
+        /* Center the popup */
+        align-items: center;
+        /* Center the popup */
+        z-index: 1000;
+        /* Sit on top */
+
+      }
+
+      .popup-content {
+
+        background: linear-gradient(rgb(133 183 242 / 80%), rgb(23 37 149)), url(your-image-url.jpg);
+        padding: 20px;
+        border-radius: 5px;
+        max-width: 500px;
+        max-height: 500px;
+        min-height: 410px;
+        text-align: center;
+
+      }
+
+      /* Set poll options to stack vertically */
+      #pollOptions {
+
+        display: flex;
+        flex-direction: column;
+        /* Stack buttons vertically */
+        align-items: center;
+        /* Center the buttons */
+
+      }
+
+      .poll-button {
+
+        display: block;
+        /* Change to block for full-width */
+        margin: 5px 0;
+        /* Add vertical margin */
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        background-color: rgb(14 64 98 / 40%);
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        width: 100%;
+        /* Full width */
+
+      }
+
+      .poll-button:hover {
+
+        background-color: #45a049;
+        /* Darker green */
+
+      }
+
+      .poll-button.selected {
+
+        background-color: #0f1e82;
+        /* Blue for selected */
+
+      }
+
+      /* New Vote Button Styles */
+      .vote-button {
+
+        display: block;
+        /* Change to block for full-width */
+        margin: 5px 0;
+        /* Add vertical margin */
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        background-color: #f44336;
+        /* Red */
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        width: 100%;
+        /* Full width */
+
+      }
+
+      .vote-button:hover {
+
+        background-color: #d32f2f;
+        /* Darker red */
+
+      }
+
+      /* Result Text Styles */
+      #result {
+
+        margin-top: 10px;
+        /* Add space above result text */
+        word-wrap: break-word;
+        /* Allow long text to wrap within the box */
+        overflow: hidden;
+        /* Prevent overflow */
+        max-height: 50px;
+        /* Limit height to prevent overflow */
+        color: rgb(255, 255, 255);
+        /* Set text color to red */
+
+      }
+    </style>
+
+
+    <!-- Newsletter pop-up -->
+    <style>
+      .popup-nl {
+
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        justify-content: center;
+        align-items: center;
+        z-index: 1009;
+
+      }
+
+      .popup-content-nl {
+
+        display: flex;
+        background-color: white;
+        border-radius: 10px;
+        max-width: 800px;
+        height: 450px;
+        width: 700px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+
+      }
+
+      .close1-btn-nl {
+
+        width: 20px;
+        cursor: pointer;
+        margin: 18px 10px;
+        position: absolute;
+        top: -4px;
+        right: 12px;
+        font-size: 18px;
+        font-weight: 800;
+
+      }
+
+      .popup-left-nl img {
+
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+      }
+
+      .popup-right-nl {
+
+        padding: 20px;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+      }
+
+      .popup-nl h1 {
+
+        font-size: 24px;
+        background: linear-gradient(to right, #ff4aac, #faa2d3);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        text-align: center;
+        margin-bottom: 12px;
+        margin-top: 35px;
+
+      }
+
+      .h2-nl {
+
+        font-size: 18px;
+        margin-bottom: 8px;
+        text-align: center;
+        color: #333;
+
+      }
+
+      .pop_up-nl {
+
+        margin-bottom: 15px;
+        font-weight: bold;
+        background: linear-gradient(135deg, #0d4670, #32bbdc);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 12.7px;
+
+      }
+
+      .bold {
+
+        font-size: 13.1px;
+
+      }
+
+      input[type="email"] {
+
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 16px;
+        border: 1px solid #000000;
+        border-radius: 5px;
+        font-size: 14px;
+
+      }
+
+      .signup-btn1-nl {
+
+        width: 100%;
+        height: 40px;
+        text-align: center;
+        background: radial-gradient(circle, #f74b9f, #653b51);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+
+      }
+
+      .signup-btn1-nl:hover {
+
+        background-color: #ff4aac;
+
+      }
+
+      .no-thanks-nl {
+
+        display: block;
+        margin-top: 10px;
+        color: #888;
+        text-decoration: none;
+        margin-bottom: 15px;
+
+      }
+
+      .no-thanks-nl:hover {
+
+        color: #000000;
+        font-size: 14px;
+
+      }
+
+      .terms-nl {
+
+        margin-top: 15px;
+        font-size: 10px;
+        color: #888;
+
+      }
+
+      .terms-nl a {
+
+        display: inline;
+
+      }
+
+      .terms-nl a:hover {
+
+        text-decoration: underline;
+
+      }
+
+      .popup-right-nl p {
+
+        margin-top: 0;
+        margin-bottom: 10px;
+        text-align: center;
+
+      }
+    </style>
+    <div id="popup-nl" class="popup-nl">
+      <div class="popup-content-nl">
+        <div class="popup-left-nl">
+          <img src="newsletterpopup.jpg" alt="finance">
+        </div>
+
+        <div class="popup-right-nl">
+          <a href="# " class="close1-btn-nl close-nl">X</a>
+          <h1>Subscribe to Newsletter</h1>
+          <h2 class="h2-nl">Stay Ahead in Your Financial Journey!</h2>
+          <p class="pop_up-nl">Join our community of financial learners and gain exclusive access to expert insights,
+            helpful tools, personalized tips, interactive quizzes, and more!</p>
+          <form id="emailForm-nl">
+            <input type="email" id="email-nl" placeholder="Enter your email" required>
+            <button type="submit" class="signup-btn1-nl">Subscribe</button>
+          </form>
+          <a href="#" class="no-thanks-nl close-nl">No thanks</a>
+          <p class="terms-nl" style="white-space: nowrap;">By subscribing to newsletters, you agree to our <br><a
+              href="terms&cond.html">Terms of Service</a> and <a href="privacynotice.html">Privacy Policy</a>.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Structure -->
+    <div id="customModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" onclick="closeModal()">&times;</span>
+        <h2 class="modal-title">Newsletter Registration</h2>
+        <p id="modalMessage" class="modal-message"></p>
+        <button class="modal-action-button" onclick="closeModal()">OK</button>
+      </div>
+    </div>
+
+    <script src="newsletterpopup.js"></script>
+    <style>
+      /* Modal overlay */
+      .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        /* Semi-transparent background */
+        z-index: 1010;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* Modal content */
+      .modal-content {
+        background-color: #fff;
+        padding: 20px;
+        width: 90%;
+        max-width: 400px;
+        border-radius: 8px;
+        text-align: center;
+        position: relative;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+      }
+
+      /* Close button */
+      .close-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 1.5rem;
+        color: #aaa;
+        cursor: pointer;
+      }
+
+      /* Modal title */
+      .modal-title {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      /* Modal message */
+      .modal-message {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 20px;
+      }
+
+      /* Action button */
+      .modal-action-button {
+        background: radial-gradient(circle, #f74b9f, #653b51);
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+
+      .modal-action-button:hover {
+        background: radial-gradient(circle, #f74b9f, #653b51);
+      }
+    </style>
+
+    <!-- Newsletter pop-up -->
+    <style>
+      .popup-nl {
+
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        justify-content: center;
+        align-items: center;
+        z-index: 1009;
+
+      }
+
+      .popup-content-nl {
+
+        display: flex;
+        background-color: white;
+        border-radius: 10px;
+        max-width: 800px;
+        height: 450px;
+        width: 700px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+
+      }
+
+      .close1-btn-nl {
+
+        width: 20px;
+        cursor: pointer;
+        margin: 18px 10px;
+        position: absolute;
+        top: -4px;
+        right: 12px;
+        font-size: 18px;
+        font-weight: 800;
+
+      }
+
+      .popup-left-nl img {
+
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+      }
+
+      .popup-right-nl {
+
+        padding: 20px;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+      }
+
+      .popup-nl h1 {
+
+        font-size: 24px;
+        background: linear-gradient(to right, #ff4aac, #faa2d3);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        text-align: center;
+        margin-bottom: 12px;
+        margin-top: 35px;
+
+      }
+
+      .h2-nl {
+
+        font-size: 18px;
+        margin-bottom: 8px;
+        text-align: center;
+        color: #333;
+
+      }
+
+      .pop_up-nl {
+
+        margin-bottom: 15px;
+        font-weight: bold;
+        background: linear-gradient(135deg, #0d4670, #32bbdc);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 12.7px;
+
+      }
+
+      .bold {
+
+        font-size: 13.1px;
+
+      }
+
+      input[type="email"] {
+
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 16px;
+        border: 1px solid #000000;
+        border-radius: 5px;
+        font-size: 14px;
+
+      }
+
+      .signup-btn1-nl {
+
+        width: 100%;
+        height: 40px;
+        text-align: center;
+        background: radial-gradient(circle, #f74b9f, #653b51);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+
+      }
+
+      .signup-btn1-nl:hover {
+
+        background-color: #ff4aac;
+
+      }
+
+      .no-thanks-nl {
+
+        display: block;
+        margin-top: 10px;
+        color: #888;
+        text-decoration: none;
+        margin-bottom: 15px;
+
+      }
+
+      .no-thanks-nl:hover {
+
+        color: #000000;
+        font-size: 14px;
+
+      }
+
+      .terms-nl {
+
+        margin-top: 15px;
+        font-size: 10px;
+        color: #888;
+
+      }
+
+      .terms-nl a {
+
+        display: inline;
+
+      }
+
+      .terms-nl a:hover {
+
+        text-decoration: underline;
+
+      }
+
+      .popup-right-nl p {
+
+        margin-top: 0;
+        margin-bottom: 10px;
+        text-align: center;
+
+      }
+    </style>
+    <div id="popup-nl" class="popup-nl">
+      <div class="popup-content-nl">
+        <div class="popup-left-nl">
+          <img src="newspopup.jpg" alt="finance">
+        </div>
+
+        <div class="popup-right-nl">
+          <a href="# " class="close1-btn-nl close-nl">X</a>
+          <h1>Subscribe to Newsletter</h1>
+          <h2 class="h2-nl">Stay Ahead in Your Financial Journey!</h2>
+          <p class="pop_up-nl">Join our community of financial learners and gain exclusive access to expert insights,
+            helpful tools, personalized tips, interactive quizzes, and more!</p>
+          <form id="emailForm-nl">
+            <input type="email" id="email-nl" placeholder="Enter your email" required>
+            <button type="submit" class="signup-btn1-nl">Subscribe</button>
+          </form>
+          <a href="#" class="no-thanks-nl close-nl">No thanks</a>
+          <p class="terms-nl" style="white-space: nowrap;">By subscribing to newsletters, you agree to our <br><a
+              href="terms&cond.html">Terms of Service</a> and <a href="privacynotice.html">Privacy Policy</a>.</p>
+        </div>
+      </div>
+    </div>
+    <script src="newspopup.js"></script>
+
+    <script src="script.js"></script> <!-- Link to your service worker registration script -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 2000
+      });
+    </script>
+  </body>
+
+  </html>
