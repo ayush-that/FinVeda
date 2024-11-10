@@ -5,6 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tax Filing Game</title>
     <link rel="icon" href="https://raw.githubusercontent.com/ayush-that/FinVeda/refs/heads/main/assets/images/Favicon1.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="shortcut icon"  href="/assets/images/favicon2.webp" type="image/png" />  
+    <link rel="shortcut icon" href="./assets/images/favicon2.png" type="image/png" />
+    <link rel="stylesheet" href="./assets/css/animate.css" />
+    <link rel="stylesheet" href="./assets/css/magnific-popup.css" />
+    <link rel="stylesheet" href="./assets/css/slick.css" />
+    <link rel="stylesheet" href="./assets/css/LineIcons.css" />
+    <link rel="stylesheet" href="./assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/default.css" />
+    <link rel="stylesheet" href="./assets/css/index.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/quiz.css" />
+    <link rel="stylesheet" href="./assets/css/popup.css" />
+    <link rel="stylesheet" href="./assets/css/cookiepopup.css">
+    <link rel="stylesheet" href="./assets/css/about.css" />
+    <link rel="stylesheet" href="./assets/css/preloader.css" />
+    <link rel="stylesheet" type="text/css" href="sipcalculatorCss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/about(inlines).css" />
+    <link rel="stylesheet" href="navbar.css">
     <style>
         .circle {
     position: absolute;
@@ -231,6 +252,107 @@
         });
 
       </script>
+       <!-- Added the navbar.css file here so that the navbar looks nice and uniform in all pages -->
+ <link rel="stylesheet" href="navbar.css">
+ <header class="header-area">
+   <div class="navbar-area">
+     <div class="container">
+       <div class="row">
+         <div class="col-lg-12">
+           <nav class="navbar navbar-expand-lg" style="display: flex; background-color: #2c3e50;">
+             <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+               <div class="icon1">
+                 <!-- <a href="./index.html"> -->
+                   <h1 style="color: white; margin-top: 15px;">FINVEDA</h1>
+                   <!-- <img src="./assets/images/FinvedaLogo.png" alt="Finveda Logo" style="width: 13rem;"> -->
+
+               </div>
+               <ul id="nav" class="navbar-nav ml-auto" style="margin: auto;">
+                 <li class="nav-item">
+                   <a class="page-scroll" href="../index.html">
+                     <i class="fas fa-home icon-hover" style="margin: 5px;"></i> Home
+                   </a>
+                 </li>
+                 <li class="nav-item">
+                   <a class="page-scroll" href="../about.html">
+                     <i class="fas fa-info-circle icon-hover" style="margin: 5px;"></i> About Us
+                   </a>
+                 </li>
+                 <li class="nav-item">
+                   <a class="page-scroll" href="../finance.html">
+                     <i class="fas fa-graduation-cap icon-hover" style="margin: 5px;"></i> Courses
+                   </a>
+                 </li>
+                 <li class="nav-item">
+                   <a class="page-scroll" href="../contact.html">
+                     <i class="fas fa-envelope icon-hover" style="margin: 5px;"></i> Contact
+                   </a>
+                 </li>
+                 <li class="nav-item">
+                   <a class="page-scroll" href="../faq.html">
+                     <i class="fas fa-question-circle icon-hover" style="margin: 5px;"></i> Help
+                   </a>
+                 </li>
+                 <!-- Dropdown for Explore -->
+                 <li class="nav-item dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
+                   <a class="page-scroll dropdown-toggle" href="#">
+                     <i class="fas fa-chevron-down icon-hover" style="margin: 5px;"></i> Explore More
+                   </a>
+                   <ul class="dropdown-menu">
+                     <li><a href="../trends.html"><i class="fas fa-chart-line icon-hover" style="margin: 5px;"></i>
+                         Trends</a></li>
+                     <li><a href="../tools/sip.html"><i class="fas fa-tools icon-hover" style="margin: 5px;"></i>
+                         Tools</a></li>
+                     <li><a href="../blog.html"><i class="fas fa-blog icon-hover" style="margin: 5px;"></i> Blogs</a>
+                     </li>
+                     <li><a class="active-link" href="./quiz.html"><i class="fas fa-question icon-hover"
+                           style="margin: 5px;"></i> Quiz</a></li>
+                     <li><a href="../maps.html"><i class="fas fa-map icon-hover" style="margin: 5px;"></i> MAPS</a></li>
+                   </ul>
+                 </li>
+                 <!-- Navigation item placeholder for Login/Register or Logout button -->
+                 <li class="nav-item no-underline" id="auth-btn-container">
+                   <a class="main-btn navbar-btn" style="margin: 5px;padding: 4px 20px;" data-scroll-nav="0"
+                     href="../loginPage.html">
+                     <i class="fas fa-user-circle icon-hover" style="margin: 5px;"></i> Login/Register
+                   </a>
+                 </li>
+                 <li class="nav-item no-underline align-self-center">
+                   <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()">
+                     <span>🌞</span>
+                   </button>
+                 </li>
+               </ul>
+             </div>
+           </nav>
+         </div>
+       </div>
+       </nav>
+       <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+       <nav class="mobile-menu ">
+         <a class="page-scroll" href="../index.html">Home 🏡</a>
+         <a class="page-scroll" href="../about.html">About Us 📖</a>
+         <a class="page-scroll" href="../trends.html">Trends 📈</a>
+         <a class="page-scroll" href="../tools/sip.html">Tools 🔧</a>
+         <a class="page-scroll active-link" href="../blog.html">Blogs 📰</a>
+         <a class="page-scroll" href="../quiz.html">Quiz 🤔</a>
+         <a class="page-scroll main-btn" href="#" onclick="openModal()"
+           onmouseout="this.style.color='white'">Login/Register 💻</a>
+         <div class="mobile-menu__trigger" onclick="toggleMobileMenu()">
+           <span></span>
+         </div>
+       </nav>
+
+
+       <link href="../navbar.css" rel="stylesheet">
+       <script type="text/javascript" src="../navbar.js"></script>
+     </div>
+   </div>
+   </div>
+   </div>
+
+ </header>
     <div class="game-container">
         <h1>Tax Filing Game</h1>
         <p>Test your tax knowledge and earn points!</p>
