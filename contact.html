@@ -90,7 +90,7 @@
       background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
       transition: transform 0.1s, left 0.1s, top 0.1s;
     }
-  
+
     .circle-container {
       position: fixed;
       top: 0;
@@ -378,14 +378,14 @@
             <span>🌞</span>
           </button>
         </li>
-        
+
         <script>
           // Function to initialize theme based on localStorage
           function initializeTheme() {
             const body = document.body;
             const toggleButton = document.getElementById('theme-toggle');
             const currentTheme = localStorage.getItem('theme');
-        
+
             // Apply saved theme
             if (currentTheme === 'dark') {
               body.classList.add('dark-mode');
@@ -395,19 +395,19 @@
               toggleButton.querySelector('span').textContent = '🌞'; // Light mode icon
             }
           }
-        
+
           // Call initializeTheme on page load
           document.addEventListener('DOMContentLoaded', () => {
             initializeTheme();
-        
+
             const toggleButton = document.getElementById('theme-toggle');
             const body = document.body;
-        
+
             // Event listener for theme toggle
             toggleButton.addEventListener('click', () => {
               body.classList.toggle('dark-mode');
               toggleButton.classList.toggle('dark');
-        
+
               // Update icon and save theme
               if (body.classList.contains('dark-mode')) {
                 toggleButton.querySelector('span').textContent = '🌙'; // Dark mode icon
@@ -416,17 +416,17 @@
                 toggleButton.querySelector('span').textContent = '🌞'; // Light mode icon
                 localStorage.setItem('theme', 'light');
               }
-        
+
               loadShow(); // Call any additional function if needed
             });
           });
-        
+
           // Function placeholder for additional operations (if needed)
           function loadShow() {
             // Additional actions can go here
           }
         </script>
-        
+
         <!-- Login Modal -->
         <div id="myModal" class="modal">
           <div class="modal-content">
@@ -893,7 +893,7 @@
       letter-spacing: 1.5px;
       text-transform: uppercase;
       background: linear-gradient(to right, #4b0082, #ff007f);
-      
+
       color: transparent;
       animation: textPop 1s ease forwards;
       transition: transform 0.5s ease, color 0.3s ease;
@@ -1239,7 +1239,7 @@
       color: white;
     }
 
-    /* 
+    /*
     footer {
       text-align: center;
       padding: 20px;
@@ -1401,7 +1401,7 @@
       margin-left: -15px;
     }
 
-    /* 
+    /*
     ul.link li:nth-child(3) {
       position: relative;
       left: -15px;
@@ -1617,6 +1617,7 @@
               <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
               <a href="https://discord.com/"><i class="fa-brands fa-discord"></i></a>
               <a href="https://github.com/ayush-that/FinVeda"><i class="fa-brands fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/ayush-that/"><i class="fa-brands fa-linkedin"></i></a>
             </div>
           </ul>
         </div>
