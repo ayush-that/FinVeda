@@ -1,0 +1,32 @@
+name: Duplicate Issue Detector
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  detect-duplicate:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Detect duplicate issues
+        id: detect
+        uses: actions-cool/issues-similarity-analysis@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          owner: ${{ github.repository_owner }}
+          repo: ${{ github.event.repository.name }}
+          threshold: 0.7 # Similarity threshold; adjust as needed
+          label: duplicate
+          close: true
+
+      - name: Comment on Duplicate Issue
+        if: steps.detect.outputs.duplicate == 'true'
+        run: |
+          curl -X POST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/comments \
+            -d '{"body": "This issue is a duplicate of #${{ steps.detect.outputs.original_issue_number }}. Please refer to the original issue for updates."}'
