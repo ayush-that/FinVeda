@@ -53,7 +53,7 @@
       }
   </style>
 </head>
-<body style="background-color: #00111c;">
+<body>
   <div class="circle-container">
     <div class="circle"></div>
     <div class="circle"></div>
@@ -182,10 +182,62 @@
                               <i class="fas fa-user-circle icon-hover" style="margin: 5px;"></i> Login/Register
                           </a>
                       </li>
+                      <li class="nav-item no-underline align-self-center">
+                          <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()">
+                            <span>🌞</span>
+                          </button>
+                      </li>
                   </ul>
               </div>
           </nav>
       </div>
+      <script>
+        // Function to initialize theme based on localStorage
+        function initializeTheme() {
+          const body = document.body;
+          const toggleButton = document.getElementById('theme-toggle');
+          const currentTheme = localStorage.getItem('theme');
+      
+          // Apply saved theme
+          if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            toggleButton.classList.add('dark');
+            toggleButton.querySelector('span').textContent = '🌙'; // Dark mode icon
+          } else {
+            toggleButton.querySelector('span').textContent = '🌞'; // Light mode icon
+          }
+        }
+      
+        // Call initializeTheme on page load
+        document.addEventListener('DOMContentLoaded', () => {
+          initializeTheme();
+      
+          const toggleButton = document.getElementById('theme-toggle');
+          const body = document.body;
+      
+          // Event listener for theme toggle
+          toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            toggleButton.classList.toggle('dark');
+      
+            // Update icon and save theme
+            if (body.classList.contains('dark-mode')) {
+              toggleButton.querySelector('span').textContent = '🌙'; // Dark mode icon
+              localStorage.setItem('theme', 'dark');
+            } else {
+              toggleButton.querySelector('span').textContent = '🌞'; // Light mode icon
+              localStorage.setItem('theme', 'light');
+            }
+      
+            loadShow(); // Call any additional function if needed
+          });
+        });
+      
+        // Function placeholder for additional operations (if needed)
+        function loadShow() {
+          // Additional actions can go here
+        }
+      </script>
                 <!-- Login Modal -->
                 <div id="myModal" class="modal">
                   <div class="modal-content">
@@ -307,8 +359,8 @@
   
   </header>
 
-  <section class="contributor-stats" style="margin-top: 150px;">
-    <h2 style="color: white;">Project Statistics</h2>
+  <section class="contributor-stats" style="background-color: rgb(89, 192, 240);margin-top: 150px;">
+    <h2>Project Statistics</h2>
     <div style="color:white ;" class="contributor-stats-grid" id="statsGrid">
       <!-- Dynamic Stats will be added by JavaScript -->
     </div>
@@ -375,33 +427,142 @@
     }
   </style>
   <script src="./assets/js/contributors.js"></script>
-
-  
-  <footer id="footer" class="footer-area pt-120">
+  <footer id="footer" class="footer-area pt-120" style="background-color: #1a1a1a; color: white;">
     <div class="container">
-      <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="subscribe-content mt-45">
-              <h2 class="subscribe-title">
-                Subscribe Our Newsletter <span>get regular updates</span>
-              </h2>
+        <!-- Newsletter Section -->
+        <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s" style="height: 265px; background-color: #0890ff;">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="subscribe-content mt-45">
+                        <h2 class="subscribe-title">
+                            Subscribe to Our Newsletter
+                            <span style="font-size: 22px;"> Get regular updates</span>
+                        </h2>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="subscribe-form mt-50">
+                        <form id="unique-subscribe-form">
+                            <input type="email" id="unique-news-email" placeholder="Enter Email" required style="padding: 10px; border-radius: 5px; border: none; width: 80%;"/>
+                            <button class="unique-main-btn" id="unique-subscribe-btn" type="submit" style="border-radius: 5px; padding: 10px 20px; background-color: #ea5541; color: white; border: none;">
+                                Subscribe
+                            </button>
+                        </form>
+                        <div id="unique-message" class="unique-popup-message" style="display: none;">
+                            <div class="border-animation"></div>
+                            Thank You for the subscription!
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="subscribe-form mt-50">
-              <form id="unique-subscribe-form">
-                <input type="email" id="unique-news-email" placeholder="Enter Email" required />
-                <button class="unique-main-btn" id="unique-subscribe-btn" type="submit">Subscribe</button>
-              </form>
-              <div id="unique-message" class="unique-popup-message" style="display: none;">
-                <div class="border-animation"></div>
-                Thank You for the subscription!
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
+
+        <!-- Footer Widget Section -->
+        <div class="footer-widget pb-100">
+            <div class="row">
+                <!-- About Section -->
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="footer-about mt-50 ml-45 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                        <img src="./assets/images/FinvedaLogo.png" alt="FinVeda Logo" style="height: 80px; width: auto; margin-bottom: 15px;"/>
+                        <p class="text custom-margin">
+                            We at FinVeda aim to make you a stock market Guru easily with our AI-powered teaching and financial blogs.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Quick Links Section -->
+                <div class="col-lg-5 col-md-7 col-sm-7">
+                    <div class="footer-link d-flex mt-50 justify-content-md-between" style="justify-content: space-around !important;">
+                        <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+                            <div class="footer-title">
+                                <h3 class="title custom-margin">Quick Links</h3>
+                            </div>
+                            <ul class="link custom-margin">
+                                <li><a href="./blogs/privacy-policy.html"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+                                <li><a href="./blogs/refund-policy.html"><i class="fas fa-undo-alt"></i> Refund Policy</a></li>
+                                <li><a href="Licensing.html"><i class="fas fa-file-contract"></i> Licensing</a></li>
+                                <li><a href="./blogs/terms-of-service.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+                                <li><a href="./contributors.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+                                <li><a href="./blogs/sitemap.html"><i class="fa-solid fa-sitemap"></i> Site Map</a></li>
+                            </ul>
+                        </div>
+                        <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+                            <div class="footer-title">
+                                <h4 class="title custom-margin">Resources</h4>
+                            </div>
+                            <ul class="link custom-margin">
+                                <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+                                <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                                <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
+                                <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
+                                <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                                <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="col-lg-3 col-md-5 col-sm-5">
+                    <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                        <div class="footer-title">
+                            <h4 class="title custom-margin">Contact Us</h4>
+                        </div>
+                        <ul class="contact custom-margin-big" style="justify-content: space-around;">
+                            <li class="d-sm-flex justify-content-center">
+                                <i class="fa fa-envelope d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                                <p style="width: 80%;">
+                                    <a href="mailto:ayush1337@hotmail.com" target="_blank" style="color: white; text-decoration: underline;">
+                                        ayush1337@hotmail.com
+                                    </a>
+                                </p>
+                            </li>
+                            <li class="d-sm-flex justify-content-center">
+                                <i class="fa fa-globe d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                                <div style="width: 80%;">
+                                    <a href="https://fin-veda.vercel.app/index.html" target="_blank" style="color: #fff;">
+                                        fin-veda.vercel.app
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="d-sm-flex justify-content-center">
+                                <i class="fa fa-location-dot d-sm-flex align-items-center white" style="font-size: 16px; width: 10%;"></i>
+                                <div style="width: 80%;">
+                                    <a href="https://www.google.com/maps/place/Delhi" style="color:#fff">
+                                        Delhi, India
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <!-- Social Media Icons -->
+                        <div class="social-icons">
+                            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="https://discord.com/"><i class="fa-brands fa-discord"></i></a>
+                            <a href="https://github.com/ayush-that/FinVeda"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Section -->
+        <div class="footer-copyright mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="text-align: center">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="copyright d-sm-flex justify-content-center">
+                        <div class="copyright-content">
+                            <p class="text">
+                                © <span id="copyright-year">2024</span> FinVeda. All rights reserved<br />
+                                Made with ♥ in India
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="footer-widget pb-100">
