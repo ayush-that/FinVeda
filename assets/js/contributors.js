@@ -44,16 +44,38 @@ async function fetchAllContributors() {
   return contributors;
 }
 
+function animateCount(element, target, duration = 1000) {
+  let start = 0;
+  const increment = target / (duration / 16);  // Calculates increment 
+  
+  function updateCount() {
+    start += increment;
+    if (start < target) {
+      element.innerText = Math.floor(start);
+      requestAnimationFrame(updateCount);
+    } else {
+      element.innerText = target; // Ensure final value is exact
+    }
+  }
+  
+  updateCount();
+}
+
 // Render stats like total contributions, stars, forks, etc.
 function renderStats(repoData, contributors) {
   const statsGrid = document.getElementById("statsGrid");
 
   statsGrid.innerHTML = `
-    <div class="contributor-stat-card"><h3>${contributors.length}</h3><p>Contributors</p></div>
-    <div class="contributor-stat-card"><h3>${contributors.reduce((sum, { contributions }) => sum + contributions, 0)}</h3><p>Total Contributions</p></div>
-    <div class="contributor-stat-card"><h3>${repoData.stargazers_count}</h3><p>GitHub Stars</p></div>
-    <div class="contributor-stat-card"><h3>${repoData.forks_count}</h3><p>Forks</p></div>
+    <div class="contributor-stat-card"><h3 id="contributor-count">${contributors.length}</h3><p>Contributors</p></div>
+    <div class="contributor-stat-card"><h3 id="total-contributions">${contributors.reduce((sum, { contributions }) => sum + contributions, 0)}</h3><p>Total Contributions</p></div>
+    <div class="contributor-stat-card"><h3 id="stars-count">${repoData.stargazers_count}</h3><p>GitHub Stars</p></div>
+    <div class="contributor-stat-card"><h3 id="forks-count">${repoData.forks_count}</h3><p>Forks</p></div>
   `;
+   // Apply counting animation to each stat
+  animateCount(document.getElementById("contributor-count"), contributors.length);
+  animateCount(document.getElementById("total-contributions"), contributors.reduce((sum, { contributions }) => sum + contributions, 0));
+  animateCount(document.getElementById("stars-count"), repoData.stargazers_count);
+  animateCount(document.getElementById("forks-count"), repoData.forks_count);
 }
 
 // Render the list of contributors
