@@ -22,11 +22,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <style>
-    * {
-      cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
-    }
-
-
     .circle {
       position: absolute;
       width: 25px;
@@ -46,6 +41,46 @@
       pointer-events: none;
       z-index: 9999;
     }
+
+    @media (max-width: 720px) {
+      .circle-container{
+        display: none;
+      }
+    }
+
+    #progressBar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 8px;
+        background-color: #f76b45;
+        z-index: 9999;
+      }
+
+body {
+background-color: white;
+color: black;
+transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode {
+background-color: #121212;
+color: #e0e0e0;
+}
+
+.dark-mode h2 {
+  background-color: #121212 !important;
+  color: #e0e0e0 !important;
+}
+  </style>
+  <style>
+    * {
+      cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
+    }
+
+
+
 
     @media (max-width: 720px) {
       .circle-container {
@@ -120,40 +155,46 @@
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
   </div>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const coords = { x: 0, y: 0 };
       const circles = document.querySelectorAll(".circle");
 
-      circles.forEach(function (circle, index) {
+      circles.forEach(function (circle) {
         circle.x = 0;
         circle.y = 0;
-
-        circle.style.position = 'absolute';
       });
 
       window.addEventListener("mousemove", function (e) {
         coords.x = e.pageX;
-        coords.y = e.pageY - window.scrollY;
+        coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
       });
+
+      window.addEventListener("DOMContentLoaded", (event) => {
+      const savedTheme = localStorage.getItem("theme");
+
+      // Apply the theme if stored
+      if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+    });
 
       function animateCircles() {
         let x = coords.x;
         let y = coords.y;
 
         circles.forEach(function (circle, index) {
-          circle.x += (x - circle.x) * 0.3;
-          circle.y += (y - circle.y) * 0.3;
-
-          circle.style.left = `${circle.x - 12}px`;
-          circle.style.top = `${circle.y - 12}px`;
+          circle.style.left = `${x - 12}px`;
+          circle.style.top = `${y - 12}px`;
           circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
-          x = circle.x;
-          y = circle.y;
+
+          const nextCircle = circles[index + 1] || circles[0];
+          circle.x = x;
+          circle.y = y;
+
+          x += (nextCircle.x - x) * 0.3;
+          y += (nextCircle.y - y) * 0.3;
         });
 
         requestAnimationFrame(animateCircles);
@@ -161,6 +202,7 @@
 
       animateCircles();
     });
+
   </script>
 
   <div id="progressBar"></div>
