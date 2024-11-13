@@ -961,244 +961,181 @@
       document.addEventListener('DOMContentLoaded', () => toggleDarkMode());
     </script>
 
-    <div class="blog-content back">
-      <div id="good-card">
-        <div id="good-card1">
-          <h1 class="head">Grow with Arth</h1>
-          <div id="white-card1" style="padding: 10px; ">
-            Wanna learn how to grow your money to become rich? We have made becoming a stock market Guru easy with our
-            AI
-            powered finance advisor - Arth Sathi 🤵🏻
-          </div>
-          <div id="color-card-green">
-            <!-- Add content or styles if needed -->
-          </div>
-          <div id="shadow1"></div>
-        </div>
-        <div id="good-card2">
-          <div id="round1">
-            <!-- Add content or styles if needed -->
-          </div>
-          <div id="round2">
-            <!-- Add content or styles if needed -->
-          </div>
-          <h1 class="head" id="card2">Live Market Trends</h1>
-          <div id="white-card2" style="padding: 10px;">
-            FinVeda trends fetches live market figures, ensuring users access the most up-to-date information instantly.
-            Be it stock prices, currency rates, or commodity values.
-          </div>
-          <div id="color-card-orange">
-            <!-- Add content or styles if needed -->
-          </div>
-          <div id="shadow2"></div>
-        </div>
-        <div id="good-card3">
-          <h1 class="head" id="card3">FinVeda Tools</h1>
-          <div id="white-card3" style="padding: 10px;">
-            FinVeda tools provide a range of calculators like Mutual Fund Investment tool, EMI calculator, Insurance
-            calculator, Savings Goods etc which would make your life easy.
-          </div>
-          <div id="color-card-purple">
-            <!-- Add content or styles if needed -->
-          </div>
-          <div id="shadow3"></div>
-        </div>
-      </div>
-
-      <img style="position: absolute; top: 5px; left: 400px; mix-blend-mode: multiply;"
-        src="./assets/images/contributors.jpeg" alt="photo" class="good-img">
-    </div>
-
-    <style>
-      /* General styles for the blog content and cards */
-      .blog-content {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        gap: 15px;
-      }
-
-      .good-img {
-        margin-top: -150px;
-        margin-left: 150px;
-      }
-
-      .head {
-        justify-self: center;
-        font-size: 1.5rem;
-      }
-
-      #good-card {
-        border: 10px solid white;
-        display: flex;
-        justify-content: space-evenly;
-        background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
-        padding: 25px;
-        border-radius: 10px;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      #good-card1,
-      #good-card2,
-      #good-card3 {
-        width: 300px;
-        height: 300px;
-        border-radius: 12px;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-        padding: 25px;
+<style>
+    /* CSS for Flip Card */
+    .flip-card {
+        width: 100%;
+        height: 250px;
+        perspective: 1000px;
+        margin-top: 30px;
         position: relative;
-        margin-bottom: 10px;
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
-        cursor: pointer;
-      }
+    }
 
-      #good-card1 {
-        background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);
-      }
+    .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
 
-      #good-card2 {
-        background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
-      }
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
 
-      #good-card3 {
-        background: linear-gradient(135deg, #d9baf6 0%, #bfa2f9 100%);
-      }
-
-      #good-card1:hover,
-      #good-card2:hover,
-      #good-card3:hover {
-        transform: scale(1.05);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-      }
-
-      #white-card1,
-      #white-card2,
-      #white-card3 {
-        color: #1e293b;
-        padding: 10px;
-        margin-bottom: 20px;
-      }
-
-      #color-card-green,
-      #color-card-orange,
-      #color-card-purple {
-        border-radius: 12px;
-      }
-
-      #shadow1,
-      #shadow2,
-      #shadow3 {
+    .flip-card-front, .flip-card-back {
         position: absolute;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.1);
-        border-radius: 12px;
-        top: 0;
-        left: 0;
-        z-index: 1;
-      }
-
-      /* Responsive styling for mobile view */
-
-
-      #good-card1,
-      #good-card2,
-      #good-card3 {
-        width: 100%;
-        /* Full width on mobile */
-        max-width: 90%;
-        /* Add slight padding on sides */
-        height: auto;
-        /* Auto height to fit content */
-        margin: 10px 0;
-        /* Margin between stacked cards */
-        font-size: 14px;
-        padding: 20px;
-        text-align: center;
-        margin-right: 15px;
-      }
-
-      .head {
-        font-size: 1.2rem;
-      }
-
-      #card2,
-      #card3 {
-        width: 100%;
-        font-size: 1.1rem;
-      }
-
-      #white-card1,
-      #white-card2,
-      #white-card3 {
-        padding: 8px;
-        font-size: 0.9rem;
-      }
-
-      @media screen and (max-width: 480px) {
-        #good-card{
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-        #good-card1,
-        #good-card2,
-        #good-card3 {
-          margin-right: 0px;
-        }
-      }
-
-
-      @media screen and (max-width: 480px) {
-        .head {
-          font-size: 1rem;
-        }
-
-        #white-card1,
-        #white-card2,
-        #white-card3 {
-          font-size: 0.8rem;
-        }
-      }
-
-      .column-layout {
-        display: column;
-        /* Use flexbox to enable flex properties */
+        backface-visibility: hidden;
+        display: flex;
         flex-direction: column;
-        /* Stack the items vertically */
         align-items: center;
-        /* Center items horizontally */
+        justify-content: center;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border: 2px solid transparent;
+        background-clip: padding-box;
+    }
 
-      }
+    .flip-card-front {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+    }
 
-      .column-layout>div {
-        width: 100%;
-        max-width: 90%;
-        margin: 10px 0;
-      }
-    </style>
+    .flip-card-front h4 {
+        color: #2f6be5;
+        font-size: 1.5em;
+        margin-top: 10px;
+    }
 
+    .flip-card-front img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin-bottom: 15px;
+    }
 
-    <script>
+    .flip-card-back {
+        background: rgba(47, 107, 229, 0.8);
+        color: #fff;
+        transform: rotateY(180deg);
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+    }
 
-      function checkScreenSize() {
-        const goodCard = document.getElementById('good-card');
-        if (window.innerWidth < 1032 && window.innerHeight < 779) {
-          goodCard.classList.add('column-layout');
-        } else {
-          goodCard.classList.remove('column-layout');
-        }
-      }
+    .flip-card-back p {
+        margin: 0 0 15px;
+        font-size: 1em;
+        text-align: center;
+        color: #ffffff;
+    }
 
-      // Run on page load
-      checkScreenSize();
+    .flip-card-back a {
+        color: #fff;
+        font-weight: bold;
+        text-decoration: none;
+        transition: color 0.3s ease-in-out;
+    }
 
-      // Run whenever the window is resized
-      window.addEventListener('resize', checkScreenSize);
+    .flip-card-back a:hover {
+        color: #ffd700;
+    }
 
-    </script>
+    /* Animated Border Effect */
+    .flip-card:before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        right: -2px;
+        bottom: -2px;
+        left: -2px;
+        border-radius: 15px;
+        background: linear-gradient(135deg, #2f6be5, #ffd700);
+        background-size: 300% 300%;
+        animation: borderGlow 3s infinite;
+        z-index: -1;
+    }
+
+    @keyframes borderGlow {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+</style>
+</head>
+<body>
+
+<section id="features" class="services-area pt-120">
+<div class="container">
+    <!-- Section Title -->
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="section-title text-center pb-40">
+                <h3 style="color: #2f6be5;">
+                    <div class="line m-auto"></div>
+                    FinVeda, <span style="color:#2f6be5;">comes with everything you need to get started!</span>
+                </h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Animated Flip Cards for Features -->
+    <div class="row justify-content-center">
+        <!-- Financial Blogs Card -->
+        <div class="col-lg-4 col-md-7 col-sm-8">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://bs-uploads.toptal.io/blackfish-uploads/components/blog_post_page/6428813/cover_image/optimized/Profitability-Optimization_BLOG-23df67f3151e1935dbe15b589f6c39d5.png" alt="Financial Blogs" class="card-image">
+                        <h4>Financial Blogs</h4>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Expert blogs on investment tips and strategies, covering current economic trends to keep you informed.</p>
+                        <a href="./blog.html" class="more">Learn More <i class="lni-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Finance Tools Card -->
+        <div class="col-lg-4 col-md-7 col-sm-8">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://cdn2.iconfinder.com/data/icons/financial-tools/512/financial_tools-512.png" alt="Finance Tools" class="card-image">
+                        <h4>Finance Tools</h4>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Discover the power of compounding with SIP and PPF tools to make informed savings decisions.</p>
+                        <a href="tools/sip.html" class="more">Learn More <i class="lni-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Financial Trends Card -->
+        <div class="col-lg-4 col-md-7 col-sm-8">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://static.thenounproject.com/png/836919-200.png" alt="Financial Trends" class="card-image">
+                        <h4>Financial Trends</h4>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Stay updated with real-time market happenings and make smart financial decisions.</p>
+                        <a href="trends.html" class="more">Learn More <i class="lni-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
     <section class="contributors" style="margin-bottom: 65px; ">
       <h2>Our Contributors</h2>
       <div class="contributor-cards" id="contributor-cards"></div>
