@@ -741,96 +741,168 @@
 
   <body>
     <div class="about-section">
-      <div class="container">
-        <div class="title-container">
-          <h2 class="section-title">About Us</h2>
-          <div class="title-underline"></div>
-        </div>
+    <style>
+      /* Main card styling */
+.card {
+    position: relative;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-        <div class="carousel-wrapper">
-          <div class="carousel" id="carousel">
-            <div class="slide">
-              <div class="card">
-                <div class="card-image-wrapper">
-                  <img src="./assets/images/service-logo.webp" class="card-image" alt="Financial Kit">
-                </div>
-                <div class="card-content">
-                  <h3 class="card-title">Financial Kit</h3>
-                  <p class="card-text">We offer investment tips and strategies, and current economic trends. With our
-                    SIP and PPF tools, you'll discover the power of compounding for smart savings.</p>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-image-wrapper">
-                  <img src="./assets/images/service-logo3.webp" class="card-image" alt="Stock Market">
-                </div>
-                <div class="card-content">
-                  <h3 class="card-title">Stock Market</h3>
-                  <p class="card-text">Make smarter decisions by staying updated with real-time market data. FinVeda's
-                    AI assistant, Arth Sathi, simplifies financial learning.</p>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-image-wrapper">
-                  <img src="./assets/images/service-logo2.webp" class="card-image" alt="Our Team">
-                </div>
-                <div class="card-content">
-                  <h3 class="card-title">Our Team</h3>
-                  <p class="card-text">Our AI-powered resources and financial blogs make complex concepts easy to
-                    understand for readers of all backgrounds.</p>
-                </div>
-              </div>
-            </div>
-            <div class="slide">
-              <div class="card">
-                <div class="card-image-wrapper">
-                  <img src="./assets/images/images.png" class="card-image" alt="Crypto Insights">
-                </div>
-                <div class="card-content">
-                  <h3 class="card-title">Crypto Insights</h3>
-                  <p class="card-text">Stay ahead with the latest crypto trends and analyses to navigate the evolving
-                    market.</p>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-image-wrapper">
-                  <img src="./assets/images/retirement.jpeg" class="card-image" alt="Retirement Planning">
-                </div>
-                <div class="card-content">
-                  <h3 class="card-title">Retirement Planning</h3>
-                  <p class="card-text">Prepare for a secure future with our comprehensive retirement planning resources.
-                  </p>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-image-wrapper">
-                  <img src="./assets/images/tax.jpg" class="card-image" alt="Tax Planning">
-                </div>
-                <div class="card-content">
-                  <h3 class="card-title">Tax Planning</h3>
-                  <p class="card-text">Learn about deductions and exemptions to optimize your tax strategy effectively.
-                  </p>
-                </div>
-              </div>
-            </div>
+/* Hover transform effect */
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Overlay image for background effect */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://1finance.co.in/magazine/wp-content/uploads/2024/01/Blog-5-b-scaled.jpg'); /* Add your image path here */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.12; /* Lower opacity for a subtle background */
+    transition: opacity 0.3s;
+    z-index: 1; /* Places the image behind content */
+}
+
+/* Animated gradient background on hover */
+.card:hover::before {
+    opacity: 0.2; /* Slightly increase opacity on hover */
+    background-image: linear-gradient(135deg, rgba(255, 0, 150, 0.5), rgba(0, 204, 255, 0.5));
+    background-blend-mode: overlay;
+    animation: bgAnimation 3s infinite alternate; /* Animation for gradient */
+}
+
+/* Content inside card, positioned above the background */
+.card-content {
+    position: relative;
+    padding: 15px;
+    z-index: 2; /* Ensures it stays above background */
+    transition: color 0.3s;
+    color: #222;
+}
+
+/* Keyframes for animated gradient */
+@keyframes bgAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Card title and text styling */
+.card-title {
+    font-size: 1.5rem;
+    color:black;
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    font-size: 1rem;
+    color:black;
+    line-height: 1.5;
+}
+</style>
+<div class="container">
+  <div class="title-container">
+    <h2 class="section-title">About Us</h2>
+    <div class="title-underline"></div>
+  </div>
+
+  <div class="carousel-wrapper">
+    <div class="carousel" id="carousel">
+      <div class="slide">
+        <div class="card">
+          <div class="card-image-wrapper">
+            <img src="./assets/images/service-logo.webp" class="card-image" alt="Financial Kit">
           </div>
-
-          <button class="carousel-control prev" id="prevBtn" aria-label="Previous slide">
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M15 19l-7-7 7-7"></path>
-            </svg>             
-          </button>
-          <button class="carousel-control next" id="nextBtn" aria-label="Next slide">
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M9 5l7 7-7 7"></path>
-            </svg>
-          </button>
-
-          <div class="carousel-indicators" id="carouselIndicators"></div>
+          <div class="card-content">
+            <h3 class="card-title">Financial Kit</h3>
+            <p class="card-text">We offer investment tips and strategies, and current economic trends. With our
+              SIP and PPF tools, you'll discover the power of compounding for smart savings.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-image-wrapper">
+            <img src="./assets/images/service-logo3.webp" class="card-image" alt="Stock Market">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Stock Market</h3>
+            <p class="card-text">Make smarter decisions by staying updated with real-time market data. FinVeda's
+              AI assistant, Arth Sathi, simplifies financial learning.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-image-wrapper">
+            <img src="./assets/images/service-logo2.webp" class="card-image" alt="Our Team">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Our Team</h3>
+            <p class="card-text">Our AI-powered resources and financial blogs make complex concepts easy to
+              understand for readers of all backgrounds.</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="card">
+          <div class="card-image-wrapper">
+            <img src="./assets/images/images.png" class="card-image" alt="Crypto Insights">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Crypto Insights</h3>
+            <p class="card-text">Stay ahead with the latest crypto trends and analyses to navigate the evolving
+              market.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-image-wrapper">
+            <img src="./assets/images/retirement.jpeg" class="card-image" alt="Retirement Planning">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Retirement Planning</h3>
+            <p class="card-text">Prepare for a secure future with our comprehensive retirement planning resources.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-image-wrapper">
+            <img src="./assets/images/tax.jpg" class="card-image" alt="Tax Planning">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Tax Planning</h3>
+            <p class="card-text">Learn about deductions and exemptions to optimize your tax strategy effectively.
+            </p>
+          </div>
         </div>
       </div>
     </div>
 
+    <button class="carousel-control prev" id="prevBtn" aria-label="Previous slide">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M15 19l-7-7 7-7"></path>
+      </svg>             
+    </button>
+    <button class="carousel-control next" id="nextBtn" aria-label="Next slide" disabled="">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M9 5l7 7-7 7"></path>
+      </svg>
+    </button>
+
+    <div class="carousel-indicators" id="carouselIndicators"><button class="indicator" aria-label="Go to slide 1"></button><button class="indicator active" aria-label="Go to slide 2"></button></div>
+  </div>
+</div>
     <style>
       .about-section {
         margin-bottom: 100px;
