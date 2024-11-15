@@ -1064,84 +1064,183 @@
   </div>
 
   </section>
+  <style>
+    /* CSS for Flip Card */
+    .flip-card {
+        width: 100%;
+        height: 250px;
+        perspective: 1000px;
+        margin-top: 30px;
+        position: relative;
+    }
 
+    .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
 
-  <section id="features" class="services-area pt-120">
-    <div class="container">
-      <div class="row justify-content-center">
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border: 2px solid transparent;
+        background-clip: padding-box;
+    }
+
+    .flip-card-front {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .flip-card-front h4 {
+        color: #2f6be5;
+        font-size: 1.5em;
+        margin-top: 10px;
+    }
+
+    .flip-card-front img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin-bottom: 15px;
+    }
+
+    .flip-card-back {
+        background: rgba(47, 107, 229, 0.8);
+        color: #fff;
+        transform: rotateY(180deg);
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .flip-card-back p {
+        margin: 0 0 15px;
+        font-size: 1em;
+        text-align: center;
+    }
+
+    .flip-card-back a {
+        color: #fff;
+        font-weight: bold;
+        text-decoration: none;
+        transition: color 0.3s ease-in-out;
+    }
+
+    .flip-card-back a:hover {
+        color: #ffd700;
+    }
+
+    /* Animated Border Effect */
+    .flip-card:before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        right: -2px;
+        bottom: -2px;
+        left: -2px;
+        border-radius: 15px;
+        background: linear-gradient(135deg, #2f6be5, #ffd700);
+        background-size: 300% 300%;
+        animation: borderGlow 3s infinite;
+        z-index: -1;
+    }
+
+    @keyframes borderGlow {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+</style>
+</head>
+<body>
+
+<section id="features" class="services-area pt-120">
+<div class="container">
+    <!-- Section Title -->
+    <div class="row justify-content-center">
         <div class="col-lg-10">
-          <div class="section-title text-center pb-40">
-            <h3 style="color: #2f6be5;">
-              <div class="line m-auto"></div>
-
-              FinVeda,
-              <span style="color:#2f6be5;"> comes with everything you need to get started!</span>
-
-            </h3>
-          </div>
+            <div class="section-title text-center pb-40">
+                <h3 style="color: #2f6be5;">
+                    <div class="line m-auto"></div>
+                    FinVeda, <span style="color:#2f6be5;">comes with everything you need to get started!</span>
+                </h3>
+            </div>
         </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-4 col-md-7 col-sm-8">
-          <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-            <div class="services-icon">
-              <img class="shape" src="assets/images/services-shape.svg" alt="shape" />
-              <img class="shape-1" src="assets/images/services-shape-1.svg" alt="shape" />
-              <i class="lni-baloon"></i>
-            </div>
-            <div class="services-content mt-30">
-              <h4 class="services-title"><a href="./blog.html">Financial Blogs</a></h4>
-              <p class="text">
-                <li>
-                  We offer expert written blogs on investment tips and strategies, and current economic trends, all
-                  crafted to keep you well-informed.
-                </li>
-              </p>
-              <a class="more" href="./blog.html">Learn More <i class="lni-chevron-right"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-7 col-sm-8">
-          <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-            <div class="services-icon">
-              <img class="shape" src="assets/images/services-shape.svg" alt="shape" />
-              <img class="shape-1" src="assets/images/services-shape-2.svg" alt="shape" />
-              <i class="lni-cog"></i>
-            </div>
-            <div class="services-content mt-30">
-              <h4 class="services-title"><a href="tools/sip.html">Finance Tools</a></h4>
-              <p class="text">
-                <li>
-                  With our SIP and PPF tools you'll discover power of compounding and make informed decisions regarding
-                  your savings.
-                </li>
-              </p>
-              <a class="more" href="tools/sip.html">Learn More <i class="lni-chevron-right"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-7 col-sm-8">
-          <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-            <div class="services-icon">
-              <img class="shape" src="assets/images/services-shape.svg" alt="shape" />
-              <img class="shape-1" src="assets/images/services-shape-3.svg" alt="shape" />
-              <i class="lni-bolt-alt"></i>
-            </div>
-            <div class="services-content mt-30">
-              <h4 class="services-title"><a href="trends.html">Financial Trends</a></h4>
-              <p class="text">
-                <li>
-                  You will make smarter decisions by staying updated to the current market happenings in real time with
-                  our Stock Market API's results.
-                </li>
-              </p>
-              <a class="more" href="./trends.html">Learn More <i class="lni-chevron-right"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
+
+    <!-- Animated Flip Cards for Features -->
+    <div class="row justify-content-center">
+        <!-- Financial Blogs Card -->
+        <div class="col-lg-4 col-md-7 col-sm-8">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://bs-uploads.toptal.io/blackfish-uploads/components/blog_post_page/6428813/cover_image/optimized/Profitability-Optimization_BLOG-23df67f3151e1935dbe15b589f6c39d5.png" alt="Financial Blogs" class="card-image">
+                        <h4>Financial Blogs</h4>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Expert blogs on investment tips and strategies, covering current economic trends to keep you informed.</p>
+                        <a href="./blog.html" class="more">Learn More <i class="lni-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Finance Tools Card -->
+        <div class="col-lg-4 col-md-7 col-sm-8">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://cdn2.iconfinder.com/data/icons/financial-tools/512/financial_tools-512.png" alt="Finance Tools" class="card-image">
+                        <h4>Finance Tools</h4>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Discover the power of compounding with SIP and PPF tools to make informed savings decisions.</p>
+                        <a href="tools/sip.html" class="more">Learn More <i class="lni-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Financial Trends Card -->
+        <div class="col-lg-4 col-md-7 col-sm-8">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://static.thenounproject.com/png/836919-200.png" alt="Financial Trends" class="card-image">
+                        <h4>Financial Trends</h4>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Stay updated with real-time market happenings and make smart financial decisions.</p>
+                        <a href="trends.html" class="more">Learn More <i class="lni-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+</body>
+</html>
+  
   <section id="about" class="about-area pt-70">
     <div class="container">
       <div class="row">
