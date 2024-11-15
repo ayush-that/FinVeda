@@ -1033,49 +1033,166 @@
       document.addEventListener('DOMContentLoaded', () => toggleDarkMode());
     </script>
 
-    <div class="blog-content back">
-      <div id="good-card">
-        <div id="good-card1">
-          <h1 class="head">Grow with Arth</h1>
-          <div id="white-card1" style="padding: 10px; ">
-            Wanna learn how to grow your money to become rich? We have made becoming a stock market Guru easy with our
-            AI
-            powered finance advisor - Arth Sathi 🤵🏻
-          </div>
-          <div id="color-card-green">
-            <!-- Add content or styles if needed -->
-          </div>
-          <div id="shadow1"></div>
-        </div>
-        <div id="good-card2">
-          <div id="round1">
-            <!-- Add content or styles if needed -->
-          </div>
-          <div id="round2">
-            <!-- Add content or styles if needed -->
-          </div>
-          <h1 class="head" id="card2">Live Market Trends</h1>
-          <div id="white-card2" style="padding: 10px;">
-            FinVeda trends fetches live market figures, ensuring users access the most up-to-date information instantly.
-            Be it stock prices, currency rates, or commodity values.
-          </div>
-          <div id="color-card-orange">
-            <!-- Add content or styles if needed -->
-          </div>
-          <div id="shadow2"></div>
-        </div>
-        <div id="good-card3">
-          <h1 class="head" id="card3">FinVeda Tools</h1>
-          <div id="white-card3" style="padding: 10px;">
-            FinVeda tools provide a range of calculators like Mutual Fund Investment tool, EMI calculator, Insurance
-            calculator, Savings Goods etc which would make your life easy.
-          </div>
-          <div id="color-card-purple">
-            <!-- Add content or styles if needed -->
-          </div>
-          <div id="shadow3"></div>
-        </div>
+   <style>
+     /* Glowing pastel neon border for the main card */
+.neon-card {
+  position: relative;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 20px; /* Softer round edges */
+  background: linear-gradient(135deg, #ffffff, #e8f1fc, #fdf1f5); /* Pastel gradient background */
+  color: #4f4f4f;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 4px solid transparent;
+  background-clip: padding-box;
+  box-shadow: 0 0 15px rgba(255, 182, 193, 0.8), 0 0 25px rgba(173, 216, 230, 0.8), 0 0 35px rgba(255, 239, 213, 0.8); /* Soft pastel glow */
+  animation: float 3s ease-in-out infinite; /* Floating effect */
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); /* Makes the card "float" */
+  }
+}
+
+/* Gradient border effect */
+.neon-card:before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  z-index: -1;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #ffb6c1, #add8e6, #ffefd5); /* Softer pastel hues */
+  animation: pastel-glow 3s infinite alternate;
+}
+
+/* Glow animation */
+@keyframes pastel-glow {
+  0% {
+    filter: brightness(1);
+  }
+  100% {
+    filter: brightness(1.2);
+  }
+}
+
+/* Bend and bounce animation on click */
+.neon-card:active {
+  transform: scale(0.95);
+  animation: bounce 0.4s ease-out; /* Fun bounce effect */
+  box-shadow: 0 0 20px rgba(255, 182, 193, 0.9), 0 0 30px rgba(173, 216, 230, 0.9);
+}
+
+/* Bounce animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(0.95);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Styling for inner content boxes */
+#white-card1, #white-card2, #white-card3 {
+  position: relative;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 15px; /* Rounded corners */
+  background: linear-gradient(135deg, #f9f9f9, #f0f4f8); /* Soft white-grey gradient */
+  color: #4f4f4f;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+  box-shadow: 0 0 10px rgba(173, 216, 230, 0.5), 0 0 15px rgba(255, 182, 193, 0.5); /* Softer inner glow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: pulse 2s infinite ease-in-out; /* Pulsating effect */
+}
+
+/* Pulsating animation */
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(173, 216, 230, 0.5), 0 0 15px rgba(255, 182, 193, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(173, 216, 230, 0.8), 0 0 25px rgba(255, 182, 193, 0.8);
+  }
+}
+
+/* Bend animation on click for content */
+#white-card1:active, #white-card2:active, #white-card3:active {
+  transform: scale(0.97);
+  box-shadow: 0 0 15px rgba(173, 216, 230, 0.8), 0 0 20px rgba(255, 182, 193, 0.8);
+}
+
+/* Typography: Aesthetic fonts and alignment */
+.neon-card .head {
+  font-family: 'Poppins', sans-serif; /* Modern, clean font */
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #6c757d; /* Neutral grey text for aesthetic balance */
+  position: relative;
+  display: inline-block;
+  transition: transform 0.4s ease, color 0.3s ease, background-color 0.3s ease;
+  transform-origin: center; /* Keeps the rotation centered */
+  padding: 10px;
+  background-color: #ffeb3b; /* Set a background color */
+  border-radius: 8px; /* Optional: rounded corners */
+}
+
+/* Hover effect to "pop" and rotate with scale down */
+.neon-card .head:hover {
+  transform: rotate(0deg) scale(0.8); /* No continuous rotation, stops rotation on hover */
+  color: #ff6ec4; /* Change color on hover */
+  background-color: #f44336; /* Change background color on hover */
+}
+
+/* Hover effect to "pop" */
+.neon-card:hover {
+  transform: scale(1.05); /* Subtle pop */
+  box-shadow: 0 0 25px rgba(255, 182, 193, 1), 0 0 35px rgba(173, 216, 230, 1);
+}
+  </style>
+      <div class="blog-content back">
+  <div id="good-card">
+    <div id="good-card1" class="neon-card">
+      <h1 class="head">Grow with Arth</h1>
+      <div id="white-card1" style="padding: 10px;">
+        Wanna learn how to grow your money to become rich? We have made becoming a stock market Guru easy with our AI
+        powered finance advisor - Arth Sathi 🤵🏻
       </div>
+      <div id="color-card-green"></div>
+      <div id="shadow1"></div>
+    </div>
+    <div id="good-card2" class="neon-card">
+      <div id="round1"></div>
+      <div id="round2"></div>
+      <h1 class="head" id="card2">Live Market Trends</h1>
+      <div id="white-card2" style="padding: 10px;">
+        FinVeda trends fetches live market figures, ensuring users access the most up-to-date information instantly. Be
+        it stock prices, currency rates, or commodity values.
+      </div>
+      <div id="color-card-orange"></div>
+      <div id="shadow2"></div>
+    </div>
+    <div id="good-card3" class="neon-card">
+      <h1 class="head" id="card3">FinVeda Tools</h1>
+      <div id="white-card3" style="padding: 10px;">
+        FinVeda tools provide a range of calculators like Mutual Fund Investment tool, EMI calculator, Insurance
+        calculator, Savings Goods etc which would make your life easy.
+      </div>
+      <div id="color-card-purple"></div>
+      <div id="shadow3"></div>
+    </div>
+  </div>
+</div>
 
       <img style="position: absolute; top: 5px; left: 400px; mix-blend-mode: multiply;"
         src="./assets/images/contributors.jpeg" alt="photo" class="good-img">
