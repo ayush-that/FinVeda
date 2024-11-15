@@ -315,74 +315,121 @@
   
   </header>
 
-  <section class="contributor-stats" style="margin-top: 150px;">
-    <h2 style="color: white;">Project Statistics</h2>
-    <div style="color:white ;" class="contributor-stats-grid" id="statsGrid">
-      <!-- Dynamic Stats will be added by JavaScript -->
+  <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<section class="contributor-stats" style="margin-top: 150px;">
+  <h2 style="color: white; text-align: center;">
+    <span class="symbol">♥</span> Project Statistics
+  </h2>
+  <div class="contributor-stats-grid" id="statsGrid">
+    <div class="contributor-stat-card">
+      <i class="fas fa-users stat-icon"></i> <!-- Contributors Icon -->
+      <h3 id="contributor-count">257</h3>
+      <p>Contributors</p>
     </div>
-  </section>
-
-  <div class="container">
-    <h1 class="title">Our Contributors</h1>
+    <div class="contributor-stat-card">
+      <i class="fas fa-tasks stat-icon"></i> <!-- Total Contributions Icon -->
+      <h3 id="total-contributions">3015</h3>
+      <p>Total Contributions</p>
+    </div>
+    <div class="contributor-stat-card">
+      <i class="fas fa-star stat-icon"></i> <!-- GitHub Stars Icon -->
+      <h3 id="stars-count">170</h3>
+      <p>GitHub Stars</p>
+    </div>
+    <div class="contributor-stat-card">
+      <i class="fas fa-code-branch stat-icon"></i> <!-- Forks Icon -->
+      <h3 id="forks-count">438</h3>
+      <p>Forks</p>
+    </div>
   </div>
-  <div style="margin-left:5px;" id="contributors" class="contributors-grid"></div>
+</section>
 
-  <style>
-    .contributor-card::before{
-    content: '';
-    position: absolute;
-    background: radial-gradient(var(--clr),transparent,transparent);
-    height: 500px;
-    width: 500px;
-    top: var(--y);
-    left: var(--x);
-    transform: translate(-50%,-50%);
-    opacity: 0;
-    transition: 0.5s, top 0s,left 0s;
-    }
+<style>
+  /* Styling and Animation for the Heart Symbol */
+  .symbol {
+    font-size: 1.5rem;
+    color: #ff69b4;
+    animation: bounce 1s infinite;
+    margin-right: 10px;
+  }
 
-    .contributor-card:hover::before{
-      opacity: 1;
+  /* Bounce animation */
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
     }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
 
-    .contributor-card::after{
-      content: '';
-      position: absolute;
-      inset: 2px;
-      border-radius: 8px;
-      background-color:rgba(19, 45, 70,0.8);;
-     
-    }
+  /* Full-width layout for Contributor Stats Section */
+  .contributor-stats {
+    width: 100%;
+    text-align: center;
+  }
 
-    .contributor-card p,
-    .contributor-card a {
-      position: relative;
-      z-index: 1;         
-      color: #ddd;        
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); 
-    }
+  .contributor-stats-grid {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    box-sizing: border-box;
+    gap: 20px;
+    color: white;
+    max-width: 100%;
+  }
 
-    .contributor-card a {
-      color: #aaa;        
-      font-weight: bold;
-      text-decoration: underline;
-    }
+  .contributor-stat-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px; /* Increased width for each card */
+    text-align: center;
+    box-sizing: border-box;
+  }
 
-    .contributor-card img {
-      border-radius: 50%; 
-      margin-bottom: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
-      filter: brightness(1.2); 
-      z-index: 1; 
-      transition: transform 0.3s ease, filter 0.3s ease;
-    }
+  /* Icon styling and pulsing animation */
+  .stat-icon {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 10px;
+    animation: pulse 1.5s infinite;
+  }
 
-    .contributor-card:hover img {
-      transform: scale(1.05);
-      filter: brightness(1.4); 
+  /* Pulse animation for icons */
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
     }
-  </style>
-  <script src="./assets/js/contributors.js"></script>
+    50% {
+      transform: scale(1.1);
+    }
+  }
+
+  /* Additional Font Awesome icon settings */
+  .fa, .fa-brands, .fa-duotone, .fa-light, .fa-regular, .fa-solid, .fa-thin, .fab, .fad, .fal, .far, .fas, .fat {
+    -webkit-font-smoothing: antialiased;
+    display: var(--fa-display, inline-block);
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1.2;
+    text-rendering: auto;
+  }
+
+  /* Additional Styling for H3 and P */
+  .contributor-stat-card h3 {
+    font-size: 1.5rem;
+    margin: 5px 0;
+  }
+
+  .contributor-stat-card p {
+    font-size: 1rem;
+    margin: 0;
+  }
+</style>
+<script src="./assets/js/contributors.js"></script>
 
 
   <footer id="footer" class="footer-area pt-120">
