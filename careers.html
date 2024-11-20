@@ -611,6 +611,96 @@
           </div>
           </nav>
 
+<!-- Forgot Password Modal -->
+<div id="forgotPasswordModal" class="modal">
+ <div class="modal-content">
+   <span class="close" style="display: flex; justify-content: right;">&times;</span>
+   <div class="mt-3">
+     <h3 class="join"><i class="fa-solid fa-unlock"></i> Forgot Password</h3>
+     <form class="px-3 py-4" id="forgotPasswordForm">
+       <div class="form-group">
+         <label class="d-flex">Enter your email address</label>
+         <input type="email" placeholder="Email Address" class="form-control" required />
+       </div>
+       <button class="main-btn w-100 mb-3">Submit</button>
+       <p class="text-center">
+         <a href="#" id="backToLogin">Back to Login</a>
+       </p>
+     </form>
+   </div>
+ </div>
+</div>
+
+<script>
+ // Get modal elements
+const registerModal = document.getElementById("registerModal");
+const forgotPasswordModal = document.getElementById("forgotPasswordModal");
+const loginModal = document.getElementById("myModal");
+
+
+// Get action elements
+const registerLink = document.getElementById("registerLink");
+const loginLink = document.getElementById("loginLink");
+const forgotPasswordLink = document.getElementById("forgot-password");
+const backToLoginLink = document.getElementById("backToLogin");
+
+
+// Get close buttons
+const closeButtons = document.querySelectorAll(".modal .close");
+
+
+// Utility function to show a specific modal and hide others
+const showModal = (modalToShow) => {
+ [registerModal, forgotPasswordModal, loginModal].forEach((modal) => {
+   modal.style.display = modal === modalToShow ? "block" : "none";
+ });
+};
+
+
+// Show Register Modal
+registerLink.addEventListener("click", (e) => {
+ e.preventDefault();
+ showModal(registerModal);
+});
+
+
+// Show Login Modal from Register
+loginLink.addEventListener("click", (e) => {
+ e.preventDefault();
+ showModal(loginModal);
+});
+
+
+// Show Forgot Password Modal
+forgotPasswordLink.addEventListener("click", (e) => {
+ e.preventDefault();
+ showModal(forgotPasswordModal);
+});
+
+
+// Back to Login from Forgot Password
+backToLoginLink.addEventListener("click", (e) => {
+ e.preventDefault();
+ showModal(loginModal);
+});
+
+
+// Close modals when clicking the close button
+closeButtons.forEach((button) => {
+ button.addEventListener("click", () => {
+   button.closest(".modal").style.display = "none";
+ });
+});
+
+
+// Hide modal when clicking outside the modal content
+window.addEventListener("click", (e) => {
+ if (e.target.classList.contains("modal")) {
+   e.target.style.display = "none";
+ }
+});
+</script>
+
           <nav class="mobile-menu ">
             <a class="page-scroll" href="./index.html">Home 🏡</a>
             <a class="page-scroll" href="./about.html">About Us 📖</a>
@@ -1694,126 +1784,7 @@ document.querySelector('.carousel-button.next').addEventListener('click', () => 
         defer></script>
       <script defer src="./assets/js/arthsathi-style.js"></script>
       <script src="./assets/js/botpress.js"></script>
-      <script>
-        // Get the modals
-        var loginModal = document.getElementById('myModal');
-        var registerModal = document.getElementById('registerModal');
-
-        // Get the button that opens the login modal
-        var loginBtn = document.getElementById('loginBtn');
-
-        // Get the links that open the register and login modals
-        var registerLink = document.getElementById('registerLink');
-        var loginLink = document.getElementById('loginLink');
-
-        // Get the <span> elements that close the modals
-        var closeBtns = document.getElementsByClassName('close');
-
-        //show and hide icon button
-        document.addEventListener('DOMContentLoaded', () => {
-          const togglePasswordButtons = document.querySelectorAll('.toggle-password-btn');
-
-          togglePasswordButtons.forEach(button => {
-            button.addEventListener('click', () => {
-              const passwordInput = button.previousElementSibling;
-              if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                button.innerHTML = `<i class="fa-solid fa-eye-slash"></i>`
-              } else {
-                passwordInput.type = 'password';
-                button.innerHTML = `<i class="fa-solid fa-eye"></i>`
-              }
-            });
-          });
-        });
-
-
-        // When the user clicks the register link, open the register modal
-        registerLink.onclick = function (event) {
-          event.preventDefault();
-          loginModal.style.display = 'none';
-          registerModal.style.display = 'block';
-        }
-
-        // When the user clicks the login link, open the login modal
-        loginLink.onclick = function (event) {
-          event.preventDefault();
-          registerModal.style.display = 'none';
-          loginModal.style.display = 'block';
-        }
-
-        // When the user clicks on <span> (x), close the modal
-        for (var i = 0; i < closeBtns.length; i++) {
-          closeBtns[i].onclick = function () {
-            loginModal.style.display = 'none';
-            registerModal.style.display = 'none';
-          }
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-          if (event.target == loginModal) {
-            loginModal.style.display = 'none';
-          }
-          if (event.target == registerModal) {
-            registerModal.style.display = 'none';
-          }
-        }
-        function openModal() {
-          var modal = document.getElementById("myModal");
-          modal.style.display = "block";
-          document.title = "Login/Register - FinVeda";  // Update the title when modal is opened
-        }
-
-        function closeModal() {
-          var modal = document.getElementById("myModal");
-          modal.style.display = "none";
-          document.title = "FinVeda";  // Revert the title back when modal is closed
-        }
-
-
-      // Close button event listeners for modals
-      registerModal.querySelector(".close").addEventListener("click", closeModal);
-      loginModal.querySelector(".close").addEventListener("click", closeModal);
-
-
-
-        window.onclick = function (event) {
-          var modal = document.getElementById("myModal");
-          if (event.target == modal) {
-            closeModal(); // Call closeModal function
-          }
-        };
-
-
-        document.addEventListener("DOMContentLoaded", function () {
-          const registerModal = document.getElementById("registerModal");
-          const loginModal = document.getElementById("myModal");
-          const registerLink = document.getElementById("registerLink");
-          const loginLink = document.getElementById("loginLink");
-
-          // Event listener for the register link
-          registerLink.addEventListener("click", function (event) {
-            event.preventDefault();
-            loginModal.style.display = "none";
-            registerModal.style.display = "block";
-            document.title = "Login/Register - FinVeda";  // Update title when registering
-          });
-
-          // Event listener for the login link
-          loginLink.addEventListener("click", function (event) {
-            event.preventDefault();
-            registerModal.style.display = "none";
-            loginModal.style.display = "block";
-            document.title = "Login/Register - FinVeda";  // Update title when logging in
-          });
-
-          // Close button event listeners for modals
-          registerModal.querySelector(".close").addEventListener("click", closeModal);
-          loginModal.querySelector(".close").addEventListener("click", closeModal);
-        });
-
-      </script>
+      
       <script src="./smoothScroll.js"></script>
 
       <script src="./assets/js/preloader.js"></script>
@@ -2031,6 +2002,5 @@ document.querySelector('.carousel-button.next').addEventListener('click', () => 
        themeToggle.addEventListener('click', () => {
        document.body.classList.toggle('dark-mode');
 });
-
 </body>
 </html>
