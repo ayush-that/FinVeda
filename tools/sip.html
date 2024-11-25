@@ -2334,23 +2334,25 @@
           <form id="fixed-deposit-calculator"
             style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
             <fieldset>
+              <legend>Fixed Deposit Calculator</legend>
               <div class="form-group">
                 <label for="principal">Principal Amount (₹):</label>
                 <input type="number" id="principal" placeholder="Enter Principal Amount" required>
+                <div id="principalError" class="error-message"></div>
               </div>
               <div class="form-group">
                 <label for="rate">Annual Interest Rate (%):</label>
                 <input type="number" id="rate" step="0.01" placeholder="Enter Annual Interest Rate" required>
+                <div id="rateError" class="error-message"></div>
               </div>
               <div class="form-group">
                 <label for="years">Time Period (in years):</label>
                 <input type="number" id="years1" placeholder="Enter Time Period" required>
+                <div id="yearsError" class="error-message"></div>
               </div>
               <div class="btn-calculate">
-                <button id="calculateBtn2" type="button" class="btn btn-calculate">Calculate</button>
-                <button id="clearBtn1" type="button" class="btn btn-clear">
-                  <p class="btn-text">Clear</p>
-                </button>
+                <button id="calculatefd" type="button" class="btn btn-calculate">Calculate</button>
+                <button id="clearfd" type="button" class="btn btn-clear"> Clear </button>
               </div>
             </fieldset>
           </form>

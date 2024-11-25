@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('calculateBtn2').addEventListener('click', function() {
+    document.getElementById('calculatefd').addEventListener('click', function() {
         const principal = parseFloat(document.getElementById('principal').value);
         const rate = parseFloat(document.getElementById('rate').value);
         const years = parseInt(document.getElementById('years1').value);
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('maturityAmount').textContent = formatter.format(maturityAmount);
     });
 
-    document.getElementById('clearBtn1').addEventListener('click', function() {
+    document.getElementById('clearfd').addEventListener('click', function() {
         clearInputs();
     });
 
