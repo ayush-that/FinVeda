@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("calculate-Btn3").addEventListener("click", function() {
+    document.getElementById("calculateRd").addEventListener("click", function() {
         const monthlyInstallment = parseFloat(document.getElementById("monthly-installment").value);
         const annualInterestRate = parseFloat(document.getElementById("rate1").value);
         const timePeriodMonths = parseFloat(document.getElementById("months1").value);
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("maturityAmount1").innerText = `Maturity Amount: ${formatter.format(maturityAmount)}`;
     });
 
-    document.getElementById("clearBtn2").addEventListener("click", function() {
+    document.getElementById("clearRd").addEventListener("click", function() {
         clearInputs();
     });
 
